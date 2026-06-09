@@ -28,84 +28,84 @@ namespace xtd {
       /// @{
       /// @brief Create a system-defined radio_button that represent abort radio_button.
       /// @return The created radio_button.
-      static radio_button abort();
+      [[nodiscard]] static auto abort() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent abort radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button abort(const drawing::point& location);
+      [[nodiscard]] static auto abort(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent abort radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button abort(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto abort(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent abort radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button abort(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto abort(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent abort radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button abort(bool checked);
+      [[nodiscard]] static auto abort(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent abort radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button abort(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto abort(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent abort radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button abort(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto abort(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent abort radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button abort(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto abort(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent abort radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button abort(const control& parent);
+      [[nodiscard]] static auto abort(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent abort radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button abort(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto abort(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent abort radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button abort(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto abort(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent abort radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button abort(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto abort(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent abort radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button abort(const control& parent, bool checked);
+      [[nodiscard]] static auto abort(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent abort radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button abort(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto abort(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent abort radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button abort(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto abort(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent abort radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -113,88 +113,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button abort(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto abort(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent about radio_button.
       /// @return The created radio_button.
-      static radio_button about();
+      [[nodiscard]] static auto about() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent about radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button about(const drawing::point& location);
+      [[nodiscard]] static auto about(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent about radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button about(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto about(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent about radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button about(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto about(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent about radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button about(bool checked);
+      [[nodiscard]] static auto about(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent about radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button about(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto about(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent about radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button about(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto about(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent about radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button about(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto about(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent about radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button about(const control& parent);
+      [[nodiscard]] static auto about(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent about radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button about(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto about(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent about radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button about(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto about(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent about radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button about(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto about(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent about radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button about(const control& parent, bool checked);
+      [[nodiscard]] static auto about(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent about radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button about(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto about(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent about radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button about(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto about(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent about radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -202,88 +202,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button about(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto about(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent actual_size radio_button.
       /// @return The created radio_button.
-      static radio_button actual_size();
+      [[nodiscard]] static auto actual_size() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent actual_size radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button actual_size(const drawing::point& location);
+      [[nodiscard]] static auto actual_size(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent actual_size radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button actual_size(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto actual_size(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent actual_size radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button actual_size(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto actual_size(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent actual_size radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button actual_size(bool checked);
+      [[nodiscard]] static auto actual_size(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent actual_size radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button actual_size(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto actual_size(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent actual_size radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button actual_size(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto actual_size(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent actual_size radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button actual_size(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto actual_size(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent actual_size radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button actual_size(const control& parent);
+      [[nodiscard]] static auto actual_size(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent actual_size radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button actual_size(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto actual_size(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent actual_size radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button actual_size(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto actual_size(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent actual_size radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button actual_size(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto actual_size(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent actual_size radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button actual_size(const control& parent, bool checked);
+      [[nodiscard]] static auto actual_size(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent actual_size radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button actual_size(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto actual_size(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent actual_size radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button actual_size(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto actual_size(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent actual_size radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -291,88 +291,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button actual_size(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto actual_size(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent add radio_button.
       /// @return The created radio_button.
-      static radio_button add();
+      [[nodiscard]] static auto add() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent add radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button add(const drawing::point& location);
+      [[nodiscard]] static auto add(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent add radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button add(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto add(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent add radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button add(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto add(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent add radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button add(bool checked);
+      [[nodiscard]] static auto add(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent add radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button add(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto add(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent add radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button add(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto add(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent add radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button add(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto add(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent add radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button add(const control& parent);
+      [[nodiscard]] static auto add(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent add radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button add(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto add(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent add radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button add(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto add(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent add radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button add(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto add(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent add radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button add(const control& parent, bool checked);
+      [[nodiscard]] static auto add(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent add radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button add(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto add(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent add radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button add(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto add(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent add radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -380,88 +380,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button add(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto add(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent alignment radio_button.
       /// @return The created radio_button.
-      static radio_button alignment();
+      [[nodiscard]] static auto alignment() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent alignment radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button alignment(const drawing::point& location);
+      [[nodiscard]] static auto alignment(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent alignment radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button alignment(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto alignment(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent alignment radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button alignment(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto alignment(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent alignment radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button alignment(bool checked);
+      [[nodiscard]] static auto alignment(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent alignment radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button alignment(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto alignment(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent alignment radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button alignment(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto alignment(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent alignment radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button alignment(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto alignment(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent alignment radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button alignment(const control& parent);
+      [[nodiscard]] static auto alignment(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent alignment radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button alignment(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto alignment(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent alignment radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button alignment(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto alignment(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent alignment radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button alignment(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto alignment(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent alignment radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button alignment(const control& parent, bool checked);
+      [[nodiscard]] static auto alignment(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent alignment radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button alignment(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto alignment(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent alignment radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button alignment(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto alignment(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent alignment radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -469,88 +469,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button alignment(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto alignment(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent align_left radio_button.
       /// @return The created radio_button.
-      static radio_button align_left();
+      [[nodiscard]] static auto align_left() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent align_left radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button align_left(const drawing::point& location);
+      [[nodiscard]] static auto align_left(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent align_left radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button align_left(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto align_left(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent align_left radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button align_left(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto align_left(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent align_left radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button align_left(bool checked);
+      [[nodiscard]] static auto align_left(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent align_left radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button align_left(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto align_left(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent align_left radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button align_left(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto align_left(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent align_left radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button align_left(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto align_left(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent align_left radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button align_left(const control& parent);
+      [[nodiscard]] static auto align_left(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent align_left radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button align_left(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto align_left(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent align_left radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button align_left(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto align_left(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent align_left radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button align_left(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto align_left(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent align_left radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button align_left(const control& parent, bool checked);
+      [[nodiscard]] static auto align_left(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent align_left radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button align_left(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto align_left(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent align_left radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button align_left(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto align_left(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent align_left radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -558,88 +558,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button align_left(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto align_left(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent align_right radio_button.
       /// @return The created radio_button.
-      static radio_button align_right();
+      [[nodiscard]] static auto align_right() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent align_right radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button align_right(const drawing::point& location);
+      [[nodiscard]] static auto align_right(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent align_right radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button align_right(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto align_right(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent align_right radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button align_right(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto align_right(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent align_right radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button align_right(bool checked);
+      [[nodiscard]] static auto align_right(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent align_right radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button align_right(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto align_right(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent align_right radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button align_right(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto align_right(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent align_right radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button align_right(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto align_right(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent align_right radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button align_right(const control& parent);
+      [[nodiscard]] static auto align_right(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent align_right radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button align_right(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto align_right(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent align_right radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button align_right(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto align_right(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent align_right radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button align_right(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto align_right(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent align_right radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button align_right(const control& parent, bool checked);
+      [[nodiscard]] static auto align_right(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent align_right radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button align_right(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto align_right(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent align_right radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button align_right(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto align_right(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent align_right radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -647,88 +647,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button align_right(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto align_right(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent apply radio_button.
       /// @return The created radio_button.
-      static radio_button apply();
+      [[nodiscard]] static auto apply() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent apply radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button apply(const drawing::point& location);
+      [[nodiscard]] static auto apply(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent apply radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button apply(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto apply(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent apply radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button apply(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto apply(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent apply radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button apply(bool checked);
+      [[nodiscard]] static auto apply(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent apply radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button apply(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto apply(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent apply radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button apply(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto apply(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent apply radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button apply(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto apply(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent apply radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button apply(const control& parent);
+      [[nodiscard]] static auto apply(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent apply radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button apply(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto apply(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent apply radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button apply(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto apply(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent apply radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button apply(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto apply(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent apply radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button apply(const control& parent, bool checked);
+      [[nodiscard]] static auto apply(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent apply radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button apply(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto apply(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent apply radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button apply(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto apply(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent apply radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -736,88 +736,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button apply(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto apply(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent ascending radio_button.
       /// @return The created radio_button.
-      static radio_button ascending();
+      [[nodiscard]] static auto ascending() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent ascending radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button ascending(const drawing::point& location);
+      [[nodiscard]] static auto ascending(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent ascending radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button ascending(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto ascending(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent ascending radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button ascending(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto ascending(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent ascending radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button ascending(bool checked);
+      [[nodiscard]] static auto ascending(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent ascending radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button ascending(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto ascending(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent ascending radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button ascending(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto ascending(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent ascending radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button ascending(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto ascending(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent ascending radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button ascending(const control& parent);
+      [[nodiscard]] static auto ascending(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent ascending radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button ascending(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto ascending(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent ascending radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button ascending(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto ascending(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent ascending radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button ascending(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto ascending(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent ascending radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button ascending(const control& parent, bool checked);
+      [[nodiscard]] static auto ascending(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent ascending radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button ascending(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto ascending(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent ascending radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button ascending(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto ascending(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent ascending radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -825,88 +825,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button ascending(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto ascending(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent back radio_button.
       /// @return The created radio_button.
-      static radio_button back();
+      [[nodiscard]] static auto back() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent back radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button back(const drawing::point& location);
+      [[nodiscard]] static auto back(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent back radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button back(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto back(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent back radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button back(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto back(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent back radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button back(bool checked);
+      [[nodiscard]] static auto back(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent back radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button back(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto back(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent back radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button back(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto back(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent back radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button back(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto back(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent back radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button back(const control& parent);
+      [[nodiscard]] static auto back(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent back radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button back(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto back(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent back radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button back(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto back(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent back radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button back(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto back(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent back radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button back(const control& parent, bool checked);
+      [[nodiscard]] static auto back(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent back radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button back(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto back(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent back radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button back(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto back(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent back radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -914,88 +914,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button back(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto back(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent bold radio_button.
       /// @return The created radio_button.
-      static radio_button bold();
+      [[nodiscard]] static auto bold() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent bold radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button bold(const drawing::point& location);
+      [[nodiscard]] static auto bold(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent bold radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button bold(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto bold(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent bold radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button bold(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto bold(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent bold radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button bold(bool checked);
+      [[nodiscard]] static auto bold(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent bold radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button bold(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto bold(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent bold radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button bold(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto bold(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent bold radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button bold(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto bold(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent bold radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button bold(const control& parent);
+      [[nodiscard]] static auto bold(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent bold radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button bold(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto bold(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent bold radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button bold(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto bold(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent bold radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button bold(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto bold(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent bold radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button bold(const control& parent, bool checked);
+      [[nodiscard]] static auto bold(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent bold radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button bold(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto bold(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent bold radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button bold(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto bold(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent bold radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -1003,88 +1003,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button bold(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto bold(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent bottom radio_button.
       /// @return The created radio_button.
-      static radio_button bottom();
+      [[nodiscard]] static auto bottom() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent bottom radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button bottom(const drawing::point& location);
+      [[nodiscard]] static auto bottom(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent bottom radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button bottom(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto bottom(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent bottom radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button bottom(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto bottom(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent bottom radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button bottom(bool checked);
+      [[nodiscard]] static auto bottom(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent bottom radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button bottom(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto bottom(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent bottom radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button bottom(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto bottom(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent bottom radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button bottom(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto bottom(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent bottom radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button bottom(const control& parent);
+      [[nodiscard]] static auto bottom(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent bottom radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button bottom(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto bottom(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent bottom radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button bottom(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto bottom(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent bottom radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button bottom(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto bottom(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent bottom radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button bottom(const control& parent, bool checked);
+      [[nodiscard]] static auto bottom(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent bottom radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button bottom(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto bottom(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent bottom radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button bottom(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto bottom(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent bottom radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -1092,88 +1092,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button bottom(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto bottom(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent cancel radio_button.
       /// @return The created radio_button.
-      static radio_button cancel();
+      [[nodiscard]] static auto cancel() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent cancel radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button cancel(const drawing::point& location);
+      [[nodiscard]] static auto cancel(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent cancel radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button cancel(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto cancel(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent cancel radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button cancel(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto cancel(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent cancel radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button cancel(bool checked);
+      [[nodiscard]] static auto cancel(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent cancel radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button cancel(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto cancel(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent cancel radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button cancel(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto cancel(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent cancel radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button cancel(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto cancel(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent cancel radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button cancel(const control& parent);
+      [[nodiscard]] static auto cancel(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent cancel radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button cancel(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto cancel(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent cancel radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button cancel(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto cancel(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent cancel radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button cancel(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto cancel(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent cancel radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button cancel(const control& parent, bool checked);
+      [[nodiscard]] static auto cancel(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent cancel radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button cancel(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto cancel(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent cancel radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button cancel(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto cancel(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent cancel radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -1181,88 +1181,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button cancel(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto cancel(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent cdrom radio_button.
       /// @return The created radio_button.
-      static radio_button cdrom();
+      [[nodiscard]] static auto cdrom() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent cdrom radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button cdrom(const drawing::point& location);
+      [[nodiscard]] static auto cdrom(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent cdrom radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button cdrom(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto cdrom(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent cdrom radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button cdrom(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto cdrom(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent cdrom radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button cdrom(bool checked);
+      [[nodiscard]] static auto cdrom(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent cdrom radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button cdrom(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto cdrom(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent cdrom radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button cdrom(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto cdrom(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent cdrom radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button cdrom(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto cdrom(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent cdrom radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button cdrom(const control& parent);
+      [[nodiscard]] static auto cdrom(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent cdrom radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button cdrom(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto cdrom(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent cdrom radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button cdrom(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto cdrom(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent cdrom radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button cdrom(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto cdrom(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent cdrom radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button cdrom(const control& parent, bool checked);
+      [[nodiscard]] static auto cdrom(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent cdrom radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button cdrom(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto cdrom(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent cdrom radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button cdrom(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto cdrom(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent cdrom radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -1270,88 +1270,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button cdrom(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto cdrom(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent centered radio_button.
       /// @return The created radio_button.
-      static radio_button centered();
+      [[nodiscard]] static auto centered() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent centered radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button centered(const drawing::point& location);
+      [[nodiscard]] static auto centered(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent centered radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button centered(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto centered(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent centered radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button centered(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto centered(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent centered radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button centered(bool checked);
+      [[nodiscard]] static auto centered(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent centered radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button centered(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto centered(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent centered radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button centered(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto centered(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent centered radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button centered(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto centered(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent centered radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button centered(const control& parent);
+      [[nodiscard]] static auto centered(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent centered radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button centered(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto centered(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent centered radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button centered(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto centered(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent centered radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button centered(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto centered(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent centered radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button centered(const control& parent, bool checked);
+      [[nodiscard]] static auto centered(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent centered radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button centered(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto centered(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent centered radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button centered(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto centered(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent centered radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -1359,88 +1359,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button centered(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto centered(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent clear radio_button.
       /// @return The created radio_button.
-      static radio_button clear();
+      [[nodiscard]] static auto clear() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent clear radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button clear(const drawing::point& location);
+      [[nodiscard]] static auto clear(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent clear radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button clear(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto clear(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent clear radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button clear(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto clear(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent clear radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button clear(bool checked);
+      [[nodiscard]] static auto clear(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent clear radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button clear(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto clear(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent clear radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button clear(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto clear(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent clear radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button clear(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto clear(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent clear radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button clear(const control& parent);
+      [[nodiscard]] static auto clear(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent clear radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button clear(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto clear(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent clear radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button clear(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto clear(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent clear radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button clear(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto clear(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent clear radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button clear(const control& parent, bool checked);
+      [[nodiscard]] static auto clear(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent clear radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button clear(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto clear(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent clear radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button clear(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto clear(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent clear radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -1448,88 +1448,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button clear(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto clear(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent close radio_button.
       /// @return The created radio_button.
-      static radio_button close();
+      [[nodiscard]] static auto close() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent close radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button close(const drawing::point& location);
+      [[nodiscard]] static auto close(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent close radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button close(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto close(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent close radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button close(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto close(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent close radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button close(bool checked);
+      [[nodiscard]] static auto close(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent close radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button close(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto close(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent close radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button close(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto close(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent close radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button close(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto close(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent close radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button close(const control& parent);
+      [[nodiscard]] static auto close(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent close radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button close(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto close(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent close radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button close(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto close(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent close radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button close(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto close(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent close radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button close(const control& parent, bool checked);
+      [[nodiscard]] static auto close(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent close radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button close(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto close(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent close radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button close(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto close(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent close radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -1537,88 +1537,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button close(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto close(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent color radio_button.
       /// @return The created radio_button.
-      static radio_button color();
+      [[nodiscard]] static auto color() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent color radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button color(const drawing::point& location);
+      [[nodiscard]] static auto color(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent color radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button color(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto color(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent color radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button color(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto color(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent color radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button color(bool checked);
+      [[nodiscard]] static auto color(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent color radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button color(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto color(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent color radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button color(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto color(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent color radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button color(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto color(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent color radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button color(const control& parent);
+      [[nodiscard]] static auto color(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent color radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button color(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto color(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent color radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button color(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto color(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent color radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button color(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto color(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent color radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button color(const control& parent, bool checked);
+      [[nodiscard]] static auto color(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent color radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button color(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto color(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent color radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button color(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto color(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent color radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -1626,88 +1626,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button color(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto color(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent contents radio_button.
       /// @return The created radio_button.
-      static radio_button contents();
+      [[nodiscard]] static auto contents() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent contents radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button contents(const drawing::point& location);
+      [[nodiscard]] static auto contents(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent contents radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button contents(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto contents(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent contents radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button contents(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto contents(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent contents radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button contents(bool checked);
+      [[nodiscard]] static auto contents(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent contents radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button contents(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto contents(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent contents radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button contents(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto contents(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent contents radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button contents(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto contents(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent contents radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button contents(const control& parent);
+      [[nodiscard]] static auto contents(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent contents radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button contents(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto contents(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent contents radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button contents(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto contents(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent contents radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button contents(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto contents(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent contents radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button contents(const control& parent, bool checked);
+      [[nodiscard]] static auto contents(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent contents radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button contents(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto contents(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent contents radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button contents(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto contents(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent contents radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -1715,88 +1715,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button contents(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto contents(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent convert radio_button.
       /// @return The created radio_button.
-      static radio_button convert();
+      [[nodiscard]] static auto convert() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent convert radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button convert(const drawing::point& location);
+      [[nodiscard]] static auto convert(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent convert radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button convert(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto convert(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent convert radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button convert(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto convert(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent convert radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button convert(bool checked);
+      [[nodiscard]] static auto convert(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent convert radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button convert(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto convert(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent convert radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button convert(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto convert(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent convert radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button convert(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto convert(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent convert radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button convert(const control& parent);
+      [[nodiscard]] static auto convert(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent convert radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button convert(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto convert(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent convert radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button convert(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto convert(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent convert radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button convert(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto convert(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent convert radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button convert(const control& parent, bool checked);
+      [[nodiscard]] static auto convert(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent convert radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button convert(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto convert(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent convert radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button convert(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto convert(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent convert radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -1804,88 +1804,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button convert(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto convert(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent copy radio_button.
       /// @return The created radio_button.
-      static radio_button copy();
+      [[nodiscard]] static auto copy() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent copy radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button copy(const drawing::point& location);
+      [[nodiscard]] static auto copy(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent copy radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button copy(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto copy(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent copy radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button copy(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto copy(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent copy radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button copy(bool checked);
+      [[nodiscard]] static auto copy(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent copy radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button copy(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto copy(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent copy radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button copy(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto copy(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent copy radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button copy(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto copy(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent copy radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button copy(const control& parent);
+      [[nodiscard]] static auto copy(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent copy radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button copy(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto copy(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent copy radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button copy(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto copy(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent copy radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button copy(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto copy(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent copy radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button copy(const control& parent, bool checked);
+      [[nodiscard]] static auto copy(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent copy radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button copy(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto copy(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent copy radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button copy(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto copy(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent copy radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -1893,88 +1893,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button copy(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto copy(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent customize radio_button.
       /// @return The created radio_button.
-      static radio_button customize();
+      [[nodiscard]] static auto customize() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent customize radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button customize(const drawing::point& location);
+      [[nodiscard]] static auto customize(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent customize radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button customize(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto customize(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent customize radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button customize(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto customize(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent customize radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button customize(bool checked);
+      [[nodiscard]] static auto customize(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent customize radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button customize(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto customize(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent customize radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button customize(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto customize(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent customize radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button customize(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto customize(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent customize radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button customize(const control& parent);
+      [[nodiscard]] static auto customize(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent customize radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button customize(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto customize(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent customize radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button customize(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto customize(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent customize radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button customize(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto customize(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent customize radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button customize(const control& parent, bool checked);
+      [[nodiscard]] static auto customize(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent customize radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button customize(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto customize(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent customize radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button customize(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto customize(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent customize radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -1982,88 +1982,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button customize(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto customize(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent cut radio_button.
       /// @return The created radio_button.
-      static radio_button cut();
+      [[nodiscard]] static auto cut() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent cut radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button cut(const drawing::point& location);
+      [[nodiscard]] static auto cut(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent cut radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button cut(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto cut(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent cut radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button cut(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto cut(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent cut radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button cut(bool checked);
+      [[nodiscard]] static auto cut(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent cut radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button cut(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto cut(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent cut radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button cut(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto cut(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent cut radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button cut(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto cut(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent cut radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button cut(const control& parent);
+      [[nodiscard]] static auto cut(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent cut radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button cut(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto cut(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent cut radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button cut(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto cut(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent cut radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button cut(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto cut(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent cut radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button cut(const control& parent, bool checked);
+      [[nodiscard]] static auto cut(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent cut radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button cut(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto cut(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent cut radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button cut(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto cut(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent cut radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -2071,88 +2071,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button cut(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto cut(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent del radio_button.
       /// @return The created radio_button.
-      static radio_button del();
+      [[nodiscard]] static auto del() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent del radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button del(const drawing::point& location);
+      [[nodiscard]] static auto del(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent del radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button del(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto del(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent del radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button del(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto del(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent del radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button del(bool checked);
+      [[nodiscard]] static auto del(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent del radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button del(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto del(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent del radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button del(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto del(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent del radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button del(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto del(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent del radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button del(const control& parent);
+      [[nodiscard]] static auto del(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent del radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button del(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto del(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent del radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button del(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto del(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent del radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button del(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto del(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent del radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button del(const control& parent, bool checked);
+      [[nodiscard]] static auto del(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent del radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button del(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto del(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent del radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button del(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto del(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent del radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -2160,88 +2160,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button del(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto del(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent descending radio_button.
       /// @return The created radio_button.
-      static radio_button descending();
+      [[nodiscard]] static auto descending() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent descending radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button descending(const drawing::point& location);
+      [[nodiscard]] static auto descending(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent descending radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button descending(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto descending(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent descending radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button descending(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto descending(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent descending radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button descending(bool checked);
+      [[nodiscard]] static auto descending(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent descending radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button descending(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto descending(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent descending radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button descending(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto descending(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent descending radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button descending(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto descending(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent descending radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button descending(const control& parent);
+      [[nodiscard]] static auto descending(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent descending radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button descending(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto descending(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent descending radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button descending(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto descending(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent descending radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button descending(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto descending(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent descending radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button descending(const control& parent, bool checked);
+      [[nodiscard]] static auto descending(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent descending radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button descending(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto descending(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent descending radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button descending(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto descending(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent descending radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -2249,88 +2249,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button descending(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto descending(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent down radio_button.
       /// @return The created radio_button.
-      static radio_button down();
+      [[nodiscard]] static auto down() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent down radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button down(const drawing::point& location);
+      [[nodiscard]] static auto down(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent down radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button down(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto down(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent down radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button down(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto down(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent down radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button down(bool checked);
+      [[nodiscard]] static auto down(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent down radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button down(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto down(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent down radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button down(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto down(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent down radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button down(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto down(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent down radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button down(const control& parent);
+      [[nodiscard]] static auto down(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent down radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button down(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto down(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent down radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button down(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto down(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent down radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button down(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto down(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent down radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button down(const control& parent, bool checked);
+      [[nodiscard]] static auto down(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent down radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button down(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto down(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent down radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button down(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto down(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent down radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -2338,88 +2338,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button down(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto down(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent edit radio_button.
       /// @return The created radio_button.
-      static radio_button edit();
+      [[nodiscard]] static auto edit() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent edit radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button edit(const drawing::point& location);
+      [[nodiscard]] static auto edit(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent edit radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button edit(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto edit(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent edit radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button edit(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto edit(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent edit radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button edit(bool checked);
+      [[nodiscard]] static auto edit(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent edit radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button edit(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto edit(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent edit radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button edit(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto edit(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent edit radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button edit(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto edit(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent edit radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button edit(const control& parent);
+      [[nodiscard]] static auto edit(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent edit radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button edit(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto edit(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent edit radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button edit(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto edit(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent edit radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button edit(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto edit(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent edit radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button edit(const control& parent, bool checked);
+      [[nodiscard]] static auto edit(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent edit radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button edit(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto edit(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent edit radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button edit(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto edit(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent edit radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -2427,88 +2427,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button edit(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto edit(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent execute radio_button.
       /// @return The created radio_button.
-      static radio_button execute();
+      [[nodiscard]] static auto execute() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent execute radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button execute(const drawing::point& location);
+      [[nodiscard]] static auto execute(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent execute radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button execute(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto execute(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent execute radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button execute(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto execute(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent execute radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button execute(bool checked);
+      [[nodiscard]] static auto execute(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent execute radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button execute(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto execute(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent execute radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button execute(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto execute(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent execute radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button execute(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto execute(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent execute radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button execute(const control& parent);
+      [[nodiscard]] static auto execute(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent execute radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button execute(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto execute(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent execute radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button execute(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto execute(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent execute radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button execute(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto execute(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent execute radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button execute(const control& parent, bool checked);
+      [[nodiscard]] static auto execute(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent execute radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button execute(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto execute(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent execute radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button execute(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto execute(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent execute radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -2516,88 +2516,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button execute(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto execute(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent exit radio_button.
       /// @return The created radio_button.
-      static radio_button exit();
+      [[nodiscard]] static auto exit() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent exit radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button exit(const drawing::point& location);
+      [[nodiscard]] static auto exit(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent exit radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button exit(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto exit(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent exit radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button exit(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto exit(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent exit radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button exit(bool checked);
+      [[nodiscard]] static auto exit(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent exit radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button exit(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto exit(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent exit radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button exit(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto exit(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent exit radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button exit(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto exit(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent exit radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button exit(const control& parent);
+      [[nodiscard]] static auto exit(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent exit radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button exit(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto exit(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent exit radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button exit(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto exit(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent exit radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button exit(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto exit(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent exit radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button exit(const control& parent, bool checked);
+      [[nodiscard]] static auto exit(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent exit radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button exit(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto exit(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent exit radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button exit(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto exit(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent exit radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -2605,88 +2605,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button exit(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto exit(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent file radio_button.
       /// @return The created radio_button.
-      static radio_button file();
+      [[nodiscard]] static auto file() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent file radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button file(const drawing::point& location);
+      [[nodiscard]] static auto file(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent file radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button file(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto file(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent file radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button file(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto file(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent file radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button file(bool checked);
+      [[nodiscard]] static auto file(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent file radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button file(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto file(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent file radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button file(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto file(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent file radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button file(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto file(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent file radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button file(const control& parent);
+      [[nodiscard]] static auto file(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent file radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button file(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto file(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent file radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button file(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto file(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent file radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button file(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto file(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent file radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button file(const control& parent, bool checked);
+      [[nodiscard]] static auto file(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent file radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button file(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto file(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent file radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button file(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto file(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent file radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -2694,88 +2694,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button file(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto file(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent find radio_button.
       /// @return The created radio_button.
-      static radio_button find();
+      [[nodiscard]] static auto find() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent find radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button find(const drawing::point& location);
+      [[nodiscard]] static auto find(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent find radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button find(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto find(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent find radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button find(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto find(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent find radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button find(bool checked);
+      [[nodiscard]] static auto find(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent find radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button find(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto find(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent find radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button find(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto find(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent find radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button find(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto find(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent find radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button find(const control& parent);
+      [[nodiscard]] static auto find(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent find radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button find(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto find(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent find radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button find(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto find(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent find radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button find(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto find(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent find radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button find(const control& parent, bool checked);
+      [[nodiscard]] static auto find(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent find radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button find(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto find(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent find radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button find(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto find(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent find radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -2783,88 +2783,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button find(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto find(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent first radio_button.
       /// @return The created radio_button.
-      static radio_button first();
+      [[nodiscard]] static auto first() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent first radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button first(const drawing::point& location);
+      [[nodiscard]] static auto first(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent first radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button first(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto first(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent first radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button first(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto first(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent first radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button first(bool checked);
+      [[nodiscard]] static auto first(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent first radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button first(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto first(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent first radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button first(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto first(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent first radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button first(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto first(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent first radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button first(const control& parent);
+      [[nodiscard]] static auto first(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent first radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button first(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto first(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent first radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button first(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto first(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent first radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button first(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto first(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent first radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button first(const control& parent, bool checked);
+      [[nodiscard]] static auto first(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent first radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button first(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto first(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent first radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button first(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto first(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent first radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -2872,88 +2872,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button first(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto first(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent floppy radio_button.
       /// @return The created radio_button.
-      static radio_button floppy();
+      [[nodiscard]] static auto floppy() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent floppy radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button floppy(const drawing::point& location);
+      [[nodiscard]] static auto floppy(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent floppy radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button floppy(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto floppy(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent floppy radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button floppy(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto floppy(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent floppy radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button floppy(bool checked);
+      [[nodiscard]] static auto floppy(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent floppy radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button floppy(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto floppy(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent floppy radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button floppy(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto floppy(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent floppy radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button floppy(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto floppy(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent floppy radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button floppy(const control& parent);
+      [[nodiscard]] static auto floppy(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent floppy radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button floppy(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto floppy(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent floppy radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button floppy(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto floppy(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent floppy radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button floppy(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto floppy(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent floppy radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button floppy(const control& parent, bool checked);
+      [[nodiscard]] static auto floppy(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent floppy radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button floppy(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto floppy(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent floppy radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button floppy(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto floppy(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent floppy radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -2961,88 +2961,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button floppy(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto floppy(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent font radio_button.
       /// @return The created radio_button.
-      static radio_button font();
+      [[nodiscard]] static auto font() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent font radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button font(const drawing::point& location);
+      [[nodiscard]] static auto font(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent font radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button font(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto font(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent font radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button font(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto font(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent font radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button font(bool checked);
+      [[nodiscard]] static auto font(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent font radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button font(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto font(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent font radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button font(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto font(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent font radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button font(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto font(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent font radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button font(const control& parent);
+      [[nodiscard]] static auto font(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent font radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button font(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto font(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent font radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button font(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto font(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent font radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button font(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto font(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent font radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button font(const control& parent, bool checked);
+      [[nodiscard]] static auto font(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent font radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button font(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto font(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent font radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button font(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto font(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent font radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -3050,88 +3050,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button font(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto font(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent forward radio_button.
       /// @return The created radio_button.
-      static radio_button forward();
+      [[nodiscard]] static auto forward() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent forward radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button forward(const drawing::point& location);
+      [[nodiscard]] static auto forward(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent forward radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button forward(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto forward(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent forward radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button forward(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto forward(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent forward radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button forward(bool checked);
+      [[nodiscard]] static auto forward(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent forward radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button forward(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto forward(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent forward radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button forward(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto forward(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent forward radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button forward(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto forward(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent forward radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button forward(const control& parent);
+      [[nodiscard]] static auto forward(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent forward radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button forward(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto forward(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent forward radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button forward(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto forward(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent forward radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button forward(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto forward(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent forward radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button forward(const control& parent, bool checked);
+      [[nodiscard]] static auto forward(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent forward radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button forward(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto forward(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent forward radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button forward(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto forward(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent forward radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -3139,88 +3139,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button forward(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto forward(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent harddisk radio_button.
       /// @return The created radio_button.
-      static radio_button harddisk();
+      [[nodiscard]] static auto harddisk() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent harddisk radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button harddisk(const drawing::point& location);
+      [[nodiscard]] static auto harddisk(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent harddisk radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button harddisk(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto harddisk(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent harddisk radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button harddisk(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto harddisk(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent harddisk radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button harddisk(bool checked);
+      [[nodiscard]] static auto harddisk(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent harddisk radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button harddisk(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto harddisk(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent harddisk radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button harddisk(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto harddisk(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent harddisk radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button harddisk(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto harddisk(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent harddisk radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button harddisk(const control& parent);
+      [[nodiscard]] static auto harddisk(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent harddisk radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button harddisk(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto harddisk(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent harddisk radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button harddisk(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto harddisk(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent harddisk radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button harddisk(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto harddisk(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent harddisk radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button harddisk(const control& parent, bool checked);
+      [[nodiscard]] static auto harddisk(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent harddisk radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button harddisk(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto harddisk(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent harddisk radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button harddisk(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto harddisk(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent harddisk radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -3228,88 +3228,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button harddisk(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto harddisk(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent help radio_button.
       /// @return The created radio_button.
-      static radio_button help();
+      [[nodiscard]] static auto help() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent help radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button help(const drawing::point& location);
+      [[nodiscard]] static auto help(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent help radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button help(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto help(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent help radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button help(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto help(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent help radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button help(bool checked);
+      [[nodiscard]] static auto help(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent help radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button help(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto help(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent help radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button help(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto help(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent help radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button help(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto help(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent help radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button help(const control& parent);
+      [[nodiscard]] static auto help(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent help radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button help(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto help(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent help radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button help(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto help(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent help radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button help(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto help(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent help radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button help(const control& parent, bool checked);
+      [[nodiscard]] static auto help(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent help radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button help(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto help(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent help radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button help(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto help(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent help radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -3317,88 +3317,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button help(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto help(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent home radio_button.
       /// @return The created radio_button.
-      static radio_button home();
+      [[nodiscard]] static auto home() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent home radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button home(const drawing::point& location);
+      [[nodiscard]] static auto home(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent home radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button home(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto home(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent home radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button home(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto home(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent home radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button home(bool checked);
+      [[nodiscard]] static auto home(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent home radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button home(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto home(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent home radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button home(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto home(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent home radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button home(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto home(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent home radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button home(const control& parent);
+      [[nodiscard]] static auto home(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent home radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button home(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto home(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent home radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button home(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto home(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent home radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button home(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto home(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent home radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button home(const control& parent, bool checked);
+      [[nodiscard]] static auto home(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent home radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button home(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto home(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent home radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button home(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto home(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent home radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -3406,88 +3406,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button home(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto home(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent ignore radio_button.
       /// @return The created radio_button.
-      static radio_button ignore();
+      [[nodiscard]] static auto ignore() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent ignore radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button ignore(const drawing::point& location);
+      [[nodiscard]] static auto ignore(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent ignore radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button ignore(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto ignore(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent ignore radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button ignore(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto ignore(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent ignore radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button ignore(bool checked);
+      [[nodiscard]] static auto ignore(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent ignore radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button ignore(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto ignore(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent ignore radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button ignore(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto ignore(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent ignore radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button ignore(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto ignore(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent ignore radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button ignore(const control& parent);
+      [[nodiscard]] static auto ignore(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent ignore radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button ignore(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto ignore(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent ignore radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button ignore(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto ignore(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent ignore radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button ignore(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto ignore(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent ignore radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button ignore(const control& parent, bool checked);
+      [[nodiscard]] static auto ignore(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent ignore radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button ignore(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto ignore(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent ignore radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button ignore(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto ignore(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent ignore radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -3495,88 +3495,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button ignore(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto ignore(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent indent radio_button.
       /// @return The created radio_button.
-      static radio_button indent();
+      [[nodiscard]] static auto indent() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent indent radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button indent(const drawing::point& location);
+      [[nodiscard]] static auto indent(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent indent radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button indent(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto indent(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent indent radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button indent(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto indent(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent indent radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button indent(bool checked);
+      [[nodiscard]] static auto indent(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent indent radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button indent(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto indent(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent indent radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button indent(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto indent(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent indent radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button indent(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto indent(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent indent radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button indent(const control& parent);
+      [[nodiscard]] static auto indent(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent indent radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button indent(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto indent(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent indent radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button indent(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto indent(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent indent radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button indent(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto indent(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent indent radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button indent(const control& parent, bool checked);
+      [[nodiscard]] static auto indent(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent indent radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button indent(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto indent(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent indent radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button indent(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto indent(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent indent radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -3584,88 +3584,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button indent(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto indent(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent index radio_button.
       /// @return The created radio_button.
-      static radio_button index();
+      [[nodiscard]] static auto index() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent index radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button index(const drawing::point& location);
+      [[nodiscard]] static auto index(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent index radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button index(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto index(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent index radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button index(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto index(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent index radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button index(bool checked);
+      [[nodiscard]] static auto index(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent index radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button index(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto index(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent index radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button index(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto index(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent index radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button index(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto index(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent index radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button index(const control& parent);
+      [[nodiscard]] static auto index(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent index radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button index(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto index(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent index radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button index(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto index(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent index radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button index(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto index(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent index radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button index(const control& parent, bool checked);
+      [[nodiscard]] static auto index(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent index radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button index(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto index(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent index radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button index(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto index(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent index radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -3673,88 +3673,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button index(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto index(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent info radio_button.
       /// @return The created radio_button.
-      static radio_button info();
+      [[nodiscard]] static auto info() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent info radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button info(const drawing::point& location);
+      [[nodiscard]] static auto info(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent info radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button info(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto info(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent info radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button info(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto info(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent info radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button info(bool checked);
+      [[nodiscard]] static auto info(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent info radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button info(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto info(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent info radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button info(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto info(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent info radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button info(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto info(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent info radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button info(const control& parent);
+      [[nodiscard]] static auto info(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent info radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button info(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto info(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent info radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button info(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto info(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent info radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button info(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto info(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent info radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button info(const control& parent, bool checked);
+      [[nodiscard]] static auto info(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent info radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button info(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto info(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent info radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button info(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto info(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent info radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -3762,88 +3762,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button info(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto info(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent italic radio_button.
       /// @return The created radio_button.
-      static radio_button italic();
+      [[nodiscard]] static auto italic() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent italic radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button italic(const drawing::point& location);
+      [[nodiscard]] static auto italic(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent italic radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button italic(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto italic(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent italic radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button italic(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto italic(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent italic radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button italic(bool checked);
+      [[nodiscard]] static auto italic(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent italic radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button italic(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto italic(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent italic radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button italic(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto italic(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent italic radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button italic(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto italic(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent italic radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button italic(const control& parent);
+      [[nodiscard]] static auto italic(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent italic radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button italic(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto italic(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent italic radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button italic(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto italic(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent italic radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button italic(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto italic(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent italic radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button italic(const control& parent, bool checked);
+      [[nodiscard]] static auto italic(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent italic radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button italic(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto italic(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent italic radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button italic(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto italic(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent italic radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -3851,88 +3851,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button italic(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto italic(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent justified radio_button.
       /// @return The created radio_button.
-      static radio_button justified();
+      [[nodiscard]] static auto justified() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent justified radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button justified(const drawing::point& location);
+      [[nodiscard]] static auto justified(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent justified radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button justified(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto justified(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent justified radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button justified(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto justified(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent justified radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button justified(bool checked);
+      [[nodiscard]] static auto justified(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent justified radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button justified(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto justified(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent justified radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button justified(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto justified(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent justified radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button justified(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto justified(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent justified radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button justified(const control& parent);
+      [[nodiscard]] static auto justified(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent justified radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button justified(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto justified(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent justified radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button justified(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto justified(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent justified radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button justified(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto justified(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent justified radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button justified(const control& parent, bool checked);
+      [[nodiscard]] static auto justified(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent justified radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button justified(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto justified(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent justified radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button justified(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto justified(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent justified radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -3940,88 +3940,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button justified(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto justified(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent jump_to radio_button.
       /// @return The created radio_button.
-      static radio_button jump_to();
+      [[nodiscard]] static auto jump_to() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent jump_to radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button jump_to(const drawing::point& location);
+      [[nodiscard]] static auto jump_to(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent jump_to radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button jump_to(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto jump_to(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent jump_to radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button jump_to(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto jump_to(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent jump_to radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button jump_to(bool checked);
+      [[nodiscard]] static auto jump_to(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent jump_to radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button jump_to(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto jump_to(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent jump_to radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button jump_to(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto jump_to(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent jump_to radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button jump_to(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto jump_to(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent jump_to radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button jump_to(const control& parent);
+      [[nodiscard]] static auto jump_to(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent jump_to radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button jump_to(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto jump_to(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent jump_to radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button jump_to(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto jump_to(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent jump_to radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button jump_to(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto jump_to(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent jump_to radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button jump_to(const control& parent, bool checked);
+      [[nodiscard]] static auto jump_to(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent jump_to radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button jump_to(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto jump_to(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent jump_to radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button jump_to(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto jump_to(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent jump_to radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -4029,88 +4029,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button jump_to(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto jump_to(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent last radio_button.
       /// @return The created radio_button.
-      static radio_button last();
+      [[nodiscard]] static auto last() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent last radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button last(const drawing::point& location);
+      [[nodiscard]] static auto last(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent last radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button last(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto last(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent last radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button last(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto last(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent last radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button last(bool checked);
+      [[nodiscard]] static auto last(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent last radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button last(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto last(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent last radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button last(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto last(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent last radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button last(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto last(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent last radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button last(const control& parent);
+      [[nodiscard]] static auto last(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent last radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button last(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto last(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent last radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button last(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto last(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent last radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button last(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto last(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent last radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button last(const control& parent, bool checked);
+      [[nodiscard]] static auto last(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent last radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button last(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto last(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent last radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button last(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto last(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent last radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -4118,88 +4118,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button last(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto last(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent network radio_button.
       /// @return The created radio_button.
-      static radio_button network();
+      [[nodiscard]] static auto network() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent network radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button network(const drawing::point& location);
+      [[nodiscard]] static auto network(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent network radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button network(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto network(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent network radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button network(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto network(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent network radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button network(bool checked);
+      [[nodiscard]] static auto network(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent network radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button network(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto network(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent network radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button network(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto network(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent network radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button network(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto network(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent network radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button network(const control& parent);
+      [[nodiscard]] static auto network(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent network radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button network(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto network(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent network radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button network(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto network(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent network radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button network(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto network(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent network radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button network(const control& parent, bool checked);
+      [[nodiscard]] static auto network(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent network radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button network(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto network(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent network radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button network(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto network(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent network radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -4207,88 +4207,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button network(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto network(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent new_ radio_button.
       /// @return The created radio_button.
-      static radio_button new_();
+      [[nodiscard]] static auto new_() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent new_ radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button new_(const drawing::point& location);
+      [[nodiscard]] static auto new_(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent new_ radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button new_(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto new_(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent new_ radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button new_(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto new_(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent new_ radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button new_(bool checked);
+      [[nodiscard]] static auto new_(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent new_ radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button new_(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto new_(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent new_ radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button new_(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto new_(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent new_ radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button new_(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto new_(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent new_ radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button new_(const control& parent);
+      [[nodiscard]] static auto new_(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent new_ radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button new_(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto new_(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent new_ radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button new_(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto new_(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent new_ radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button new_(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto new_(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent new_ radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button new_(const control& parent, bool checked);
+      [[nodiscard]] static auto new_(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent new_ radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button new_(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto new_(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent new_ radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button new_(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto new_(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent new_ radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -4296,88 +4296,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button new_(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto new_(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent next radio_button.
       /// @return The created radio_button.
-      static radio_button next();
+      [[nodiscard]] static auto next() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent next radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button next(const drawing::point& location);
+      [[nodiscard]] static auto next(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent next radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button next(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto next(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent next radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button next(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto next(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent next radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button next(bool checked);
+      [[nodiscard]] static auto next(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent next radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button next(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto next(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent next radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button next(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto next(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent next radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button next(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto next(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent next radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button next(const control& parent);
+      [[nodiscard]] static auto next(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent next radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button next(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto next(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent next radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button next(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto next(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent next radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button next(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto next(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent next radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button next(const control& parent, bool checked);
+      [[nodiscard]] static auto next(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent next radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button next(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto next(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent next radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button next(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto next(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent next radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -4385,88 +4385,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button next(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto next(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent no radio_button.
       /// @return The created radio_button.
-      static radio_button no();
+      [[nodiscard]] static auto no() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent no radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button no(const drawing::point& location);
+      [[nodiscard]] static auto no(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent no radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button no(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto no(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent no radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button no(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto no(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent no radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button no(bool checked);
+      [[nodiscard]] static auto no(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent no radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button no(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto no(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent no radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button no(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto no(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent no radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button no(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto no(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent no radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button no(const control& parent);
+      [[nodiscard]] static auto no(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent no radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button no(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto no(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent no radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button no(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto no(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent no radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button no(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto no(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent no radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button no(const control& parent, bool checked);
+      [[nodiscard]] static auto no(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent no radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button no(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto no(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent no radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button no(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto no(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent no radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -4474,88 +4474,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button no(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto no(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent ok radio_button.
       /// @return The created radio_button.
-      static radio_button ok();
+      [[nodiscard]] static auto ok() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent ok radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button ok(const drawing::point& location);
+      [[nodiscard]] static auto ok(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent ok radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button ok(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto ok(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent ok radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button ok(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto ok(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent ok radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button ok(bool checked);
+      [[nodiscard]] static auto ok(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent ok radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button ok(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto ok(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent ok radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button ok(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto ok(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent ok radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button ok(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto ok(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent ok radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button ok(const control& parent);
+      [[nodiscard]] static auto ok(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent ok radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button ok(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto ok(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent ok radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button ok(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto ok(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent ok radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button ok(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto ok(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent ok radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button ok(const control& parent, bool checked);
+      [[nodiscard]] static auto ok(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent ok radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button ok(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto ok(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent ok radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button ok(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto ok(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent ok radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -4563,88 +4563,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button ok(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto ok(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent open radio_button.
       /// @return The created radio_button.
-      static radio_button open();
+      [[nodiscard]] static auto open() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent open radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button open(const drawing::point& location);
+      [[nodiscard]] static auto open(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent open radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button open(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto open(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent open radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button open(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto open(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent open radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button open(bool checked);
+      [[nodiscard]] static auto open(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent open radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button open(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto open(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent open radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button open(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto open(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent open radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button open(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto open(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent open radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button open(const control& parent);
+      [[nodiscard]] static auto open(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent open radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button open(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto open(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent open radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button open(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto open(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent open radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button open(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto open(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent open radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button open(const control& parent, bool checked);
+      [[nodiscard]] static auto open(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent open radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button open(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto open(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent open radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button open(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto open(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent open radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -4652,88 +4652,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button open(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto open(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent options radio_button.
       /// @return The created radio_button.
-      static radio_button options();
+      [[nodiscard]] static auto options() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent options radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button options(const drawing::point& location);
+      [[nodiscard]] static auto options(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent options radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button options(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto options(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent options radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button options(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto options(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent options radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button options(bool checked);
+      [[nodiscard]] static auto options(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent options radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button options(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto options(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent options radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button options(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto options(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent options radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button options(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto options(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent options radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button options(const control& parent);
+      [[nodiscard]] static auto options(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent options radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button options(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto options(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent options radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button options(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto options(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent options radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button options(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto options(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent options radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button options(const control& parent, bool checked);
+      [[nodiscard]] static auto options(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent options radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button options(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto options(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent options radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button options(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto options(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent options radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -4741,88 +4741,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button options(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto options(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent paste radio_button.
       /// @return The created radio_button.
-      static radio_button paste();
+      [[nodiscard]] static auto paste() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent paste radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button paste(const drawing::point& location);
+      [[nodiscard]] static auto paste(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent paste radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button paste(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto paste(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent paste radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button paste(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto paste(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent paste radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button paste(bool checked);
+      [[nodiscard]] static auto paste(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent paste radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button paste(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto paste(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent paste radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button paste(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto paste(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent paste radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button paste(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto paste(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent paste radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button paste(const control& parent);
+      [[nodiscard]] static auto paste(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent paste radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button paste(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto paste(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent paste radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button paste(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto paste(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent paste radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button paste(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto paste(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent paste radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button paste(const control& parent, bool checked);
+      [[nodiscard]] static auto paste(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent paste radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button paste(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto paste(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent paste radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button paste(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto paste(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent paste radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -4830,88 +4830,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button paste(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto paste(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent preferences radio_button.
       /// @return The created radio_button.
-      static radio_button preferences();
+      [[nodiscard]] static auto preferences() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent preferences radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button preferences(const drawing::point& location);
+      [[nodiscard]] static auto preferences(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent preferences radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button preferences(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto preferences(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent preferences radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button preferences(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto preferences(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent preferences radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button preferences(bool checked);
+      [[nodiscard]] static auto preferences(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent preferences radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button preferences(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto preferences(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent preferences radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button preferences(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto preferences(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent preferences radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button preferences(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto preferences(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent preferences radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button preferences(const control& parent);
+      [[nodiscard]] static auto preferences(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent preferences radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button preferences(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto preferences(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent preferences radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button preferences(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto preferences(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent preferences radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button preferences(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto preferences(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent preferences radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button preferences(const control& parent, bool checked);
+      [[nodiscard]] static auto preferences(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent preferences radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button preferences(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto preferences(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent preferences radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button preferences(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto preferences(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent preferences radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -4919,88 +4919,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button preferences(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto preferences(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent previous radio_button.
       /// @return The created radio_button.
-      static radio_button previous();
+      [[nodiscard]] static auto previous() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent previous radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button previous(const drawing::point& location);
+      [[nodiscard]] static auto previous(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent previous radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button previous(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto previous(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent previous radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button previous(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto previous(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent previous radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button previous(bool checked);
+      [[nodiscard]] static auto previous(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent previous radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button previous(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto previous(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent previous radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button previous(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto previous(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent previous radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button previous(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto previous(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent previous radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button previous(const control& parent);
+      [[nodiscard]] static auto previous(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent previous radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button previous(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto previous(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent previous radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button previous(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto previous(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent previous radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button previous(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto previous(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent previous radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button previous(const control& parent, bool checked);
+      [[nodiscard]] static auto previous(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent previous radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button previous(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto previous(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent previous radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button previous(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto previous(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent previous radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -5008,88 +5008,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button previous(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto previous(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent print radio_button.
       /// @return The created radio_button.
-      static radio_button print();
+      [[nodiscard]] static auto print() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent print radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button print(const drawing::point& location);
+      [[nodiscard]] static auto print(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent print radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button print(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto print(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent print radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button print(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto print(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent print radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button print(bool checked);
+      [[nodiscard]] static auto print(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent print radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button print(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto print(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent print radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button print(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto print(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent print radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button print(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto print(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent print radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button print(const control& parent);
+      [[nodiscard]] static auto print(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent print radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button print(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto print(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent print radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button print(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto print(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent print radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button print(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto print(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent print radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button print(const control& parent, bool checked);
+      [[nodiscard]] static auto print(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent print radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button print(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto print(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent print radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button print(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto print(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent print radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -5097,88 +5097,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button print(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto print(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent print_preview radio_button.
       /// @return The created radio_button.
-      static radio_button print_preview();
+      [[nodiscard]] static auto print_preview() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent print_preview radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button print_preview(const drawing::point& location);
+      [[nodiscard]] static auto print_preview(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent print_preview radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button print_preview(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto print_preview(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent print_preview radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button print_preview(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto print_preview(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent print_preview radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button print_preview(bool checked);
+      [[nodiscard]] static auto print_preview(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent print_preview radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button print_preview(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto print_preview(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent print_preview radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button print_preview(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto print_preview(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent print_preview radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button print_preview(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto print_preview(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent print_preview radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button print_preview(const control& parent);
+      [[nodiscard]] static auto print_preview(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent print_preview radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button print_preview(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto print_preview(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent print_preview radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button print_preview(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto print_preview(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent print_preview radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button print_preview(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto print_preview(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent print_preview radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button print_preview(const control& parent, bool checked);
+      [[nodiscard]] static auto print_preview(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent print_preview radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button print_preview(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto print_preview(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent print_preview radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button print_preview(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto print_preview(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent print_preview radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -5186,88 +5186,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button print_preview(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto print_preview(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent properties radio_button.
       /// @return The created radio_button.
-      static radio_button properties();
+      [[nodiscard]] static auto properties() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent properties radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button properties(const drawing::point& location);
+      [[nodiscard]] static auto properties(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent properties radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button properties(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto properties(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent properties radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button properties(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto properties(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent properties radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button properties(bool checked);
+      [[nodiscard]] static auto properties(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent properties radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button properties(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto properties(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent properties radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button properties(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto properties(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent properties radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button properties(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto properties(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent properties radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button properties(const control& parent);
+      [[nodiscard]] static auto properties(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent properties radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button properties(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto properties(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent properties radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button properties(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto properties(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent properties radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button properties(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto properties(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent properties radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button properties(const control& parent, bool checked);
+      [[nodiscard]] static auto properties(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent properties radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button properties(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto properties(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent properties radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button properties(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto properties(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent properties radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -5275,88 +5275,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button properties(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto properties(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent quit radio_button.
       /// @return The created radio_button.
-      static radio_button quit();
+      [[nodiscard]] static auto quit() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent quit radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button quit(const drawing::point& location);
+      [[nodiscard]] static auto quit(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent quit radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button quit(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto quit(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent quit radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button quit(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto quit(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent quit radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button quit(bool checked);
+      [[nodiscard]] static auto quit(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent quit radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button quit(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto quit(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent quit radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button quit(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto quit(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent quit radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button quit(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto quit(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent quit radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button quit(const control& parent);
+      [[nodiscard]] static auto quit(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent quit radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button quit(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto quit(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent quit radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button quit(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto quit(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent quit radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button quit(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto quit(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent quit radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button quit(const control& parent, bool checked);
+      [[nodiscard]] static auto quit(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent quit radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button quit(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto quit(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent quit radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button quit(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto quit(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent quit radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -5364,88 +5364,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button quit(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto quit(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent redo radio_button.
       /// @return The created radio_button.
-      static radio_button redo();
+      [[nodiscard]] static auto redo() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent redo radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button redo(const drawing::point& location);
+      [[nodiscard]] static auto redo(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent redo radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button redo(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto redo(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent redo radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button redo(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto redo(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent redo radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button redo(bool checked);
+      [[nodiscard]] static auto redo(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent redo radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button redo(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto redo(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent redo radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button redo(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto redo(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent redo radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button redo(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto redo(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent redo radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button redo(const control& parent);
+      [[nodiscard]] static auto redo(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent redo radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button redo(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto redo(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent redo radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button redo(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto redo(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent redo radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button redo(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto redo(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent redo radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button redo(const control& parent, bool checked);
+      [[nodiscard]] static auto redo(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent redo radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button redo(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto redo(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent redo radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button redo(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto redo(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent redo radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -5453,88 +5453,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button redo(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto redo(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent refresh radio_button.
       /// @return The created radio_button.
-      static radio_button refresh();
+      [[nodiscard]] static auto refresh() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent refresh radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button refresh(const drawing::point& location);
+      [[nodiscard]] static auto refresh(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent refresh radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button refresh(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto refresh(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent refresh radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button refresh(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto refresh(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent refresh radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button refresh(bool checked);
+      [[nodiscard]] static auto refresh(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent refresh radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button refresh(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto refresh(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent refresh radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button refresh(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto refresh(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent refresh radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button refresh(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto refresh(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent refresh radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button refresh(const control& parent);
+      [[nodiscard]] static auto refresh(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent refresh radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button refresh(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto refresh(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent refresh radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button refresh(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto refresh(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent refresh radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button refresh(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto refresh(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent refresh radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button refresh(const control& parent, bool checked);
+      [[nodiscard]] static auto refresh(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent refresh radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button refresh(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto refresh(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent refresh radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button refresh(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto refresh(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent refresh radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -5542,88 +5542,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button refresh(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto refresh(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent remove radio_button.
       /// @return The created radio_button.
-      static radio_button remove();
+      [[nodiscard]] static auto remove() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent remove radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button remove(const drawing::point& location);
+      [[nodiscard]] static auto remove(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent remove radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button remove(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto remove(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent remove radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button remove(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto remove(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent remove radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button remove(bool checked);
+      [[nodiscard]] static auto remove(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent remove radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button remove(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto remove(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent remove radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button remove(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto remove(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent remove radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button remove(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto remove(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent remove radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button remove(const control& parent);
+      [[nodiscard]] static auto remove(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent remove radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button remove(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto remove(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent remove radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button remove(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto remove(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent remove radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button remove(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto remove(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent remove radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button remove(const control& parent, bool checked);
+      [[nodiscard]] static auto remove(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent remove radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button remove(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto remove(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent remove radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button remove(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto remove(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent remove radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -5631,88 +5631,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button remove(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto remove(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent replace radio_button.
       /// @return The created radio_button.
-      static radio_button replace();
+      [[nodiscard]] static auto replace() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent replace radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button replace(const drawing::point& location);
+      [[nodiscard]] static auto replace(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent replace radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button replace(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto replace(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent replace radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button replace(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto replace(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent replace radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button replace(bool checked);
+      [[nodiscard]] static auto replace(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent replace radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button replace(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto replace(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent replace radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button replace(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto replace(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent replace radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button replace(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto replace(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent replace radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button replace(const control& parent);
+      [[nodiscard]] static auto replace(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent replace radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button replace(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto replace(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent replace radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button replace(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto replace(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent replace radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button replace(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto replace(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent replace radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button replace(const control& parent, bool checked);
+      [[nodiscard]] static auto replace(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent replace radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button replace(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto replace(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent replace radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button replace(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto replace(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent replace radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -5720,88 +5720,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button replace(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto replace(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent retry radio_button.
       /// @return The created radio_button.
-      static radio_button retry();
+      [[nodiscard]] static auto retry() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent retry radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button retry(const drawing::point& location);
+      [[nodiscard]] static auto retry(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent retry radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button retry(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto retry(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent retry radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button retry(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto retry(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent retry radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button retry(bool checked);
+      [[nodiscard]] static auto retry(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent retry radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button retry(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto retry(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent retry radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button retry(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto retry(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent retry radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button retry(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto retry(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent retry radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button retry(const control& parent);
+      [[nodiscard]] static auto retry(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent retry radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button retry(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto retry(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent retry radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button retry(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto retry(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent retry radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button retry(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto retry(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent retry radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button retry(const control& parent, bool checked);
+      [[nodiscard]] static auto retry(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent retry radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button retry(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto retry(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent retry radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button retry(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto retry(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent retry radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -5809,88 +5809,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button retry(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto retry(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent revert_to_saved radio_button.
       /// @return The created radio_button.
-      static radio_button revert_to_saved();
+      [[nodiscard]] static auto revert_to_saved() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent revert_to_saved radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button revert_to_saved(const drawing::point& location);
+      [[nodiscard]] static auto revert_to_saved(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent revert_to_saved radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button revert_to_saved(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto revert_to_saved(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent revert_to_saved radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button revert_to_saved(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto revert_to_saved(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent revert_to_saved radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button revert_to_saved(bool checked);
+      [[nodiscard]] static auto revert_to_saved(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent revert_to_saved radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button revert_to_saved(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto revert_to_saved(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent revert_to_saved radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button revert_to_saved(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto revert_to_saved(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent revert_to_saved radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button revert_to_saved(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto revert_to_saved(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent revert_to_saved radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button revert_to_saved(const control& parent);
+      [[nodiscard]] static auto revert_to_saved(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent revert_to_saved radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button revert_to_saved(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto revert_to_saved(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent revert_to_saved radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button revert_to_saved(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto revert_to_saved(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent revert_to_saved radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button revert_to_saved(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto revert_to_saved(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent revert_to_saved radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button revert_to_saved(const control& parent, bool checked);
+      [[nodiscard]] static auto revert_to_saved(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent revert_to_saved radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button revert_to_saved(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto revert_to_saved(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent revert_to_saved radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button revert_to_saved(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto revert_to_saved(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent revert_to_saved radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -5898,88 +5898,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button revert_to_saved(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto revert_to_saved(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent save radio_button.
       /// @return The created radio_button.
-      static radio_button save();
+      [[nodiscard]] static auto save() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent save radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button save(const drawing::point& location);
+      [[nodiscard]] static auto save(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent save radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button save(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto save(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent save radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button save(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto save(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent save radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button save(bool checked);
+      [[nodiscard]] static auto save(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent save radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button save(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto save(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent save radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button save(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto save(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent save radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button save(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto save(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent save radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button save(const control& parent);
+      [[nodiscard]] static auto save(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent save radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button save(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto save(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent save radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button save(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto save(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent save radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button save(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto save(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent save radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button save(const control& parent, bool checked);
+      [[nodiscard]] static auto save(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent save radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button save(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto save(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent save radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button save(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto save(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent save radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -5987,88 +5987,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button save(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto save(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent save_as radio_button.
       /// @return The created radio_button.
-      static radio_button save_as();
+      [[nodiscard]] static auto save_as() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent save_as radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button save_as(const drawing::point& location);
+      [[nodiscard]] static auto save_as(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent save_as radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button save_as(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto save_as(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent save_as radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button save_as(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto save_as(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent save_as radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button save_as(bool checked);
+      [[nodiscard]] static auto save_as(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent save_as radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button save_as(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto save_as(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent save_as radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button save_as(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto save_as(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent save_as radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button save_as(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto save_as(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent save_as radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button save_as(const control& parent);
+      [[nodiscard]] static auto save_as(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent save_as radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button save_as(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto save_as(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent save_as radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button save_as(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto save_as(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent save_as radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button save_as(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto save_as(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent save_as radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button save_as(const control& parent, bool checked);
+      [[nodiscard]] static auto save_as(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent save_as radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button save_as(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto save_as(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent save_as radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button save_as(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto save_as(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent save_as radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -6076,88 +6076,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button save_as(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto save_as(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent search radio_button.
       /// @return The created radio_button.
-      static radio_button search();
+      [[nodiscard]] static auto search() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent search radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button search(const drawing::point& location);
+      [[nodiscard]] static auto search(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent search radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button search(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto search(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent search radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button search(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto search(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent search radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button search(bool checked);
+      [[nodiscard]] static auto search(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent search radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button search(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto search(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent search radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button search(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto search(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent search radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button search(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto search(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent search radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button search(const control& parent);
+      [[nodiscard]] static auto search(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent search radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button search(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto search(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent search radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button search(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto search(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent search radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button search(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto search(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent search radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button search(const control& parent, bool checked);
+      [[nodiscard]] static auto search(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent search radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button search(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto search(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent search radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button search(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto search(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent search radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -6165,88 +6165,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button search(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto search(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent select_all radio_button.
       /// @return The created radio_button.
-      static radio_button select_all();
+      [[nodiscard]] static auto select_all() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent select_all radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button select_all(const drawing::point& location);
+      [[nodiscard]] static auto select_all(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent select_all radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button select_all(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto select_all(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent select_all radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button select_all(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto select_all(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent select_all radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button select_all(bool checked);
+      [[nodiscard]] static auto select_all(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent select_all radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button select_all(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto select_all(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent select_all radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button select_all(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto select_all(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent select_all radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button select_all(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto select_all(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent select_all radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button select_all(const control& parent);
+      [[nodiscard]] static auto select_all(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent select_all radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button select_all(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto select_all(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent select_all radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button select_all(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto select_all(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent select_all radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button select_all(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto select_all(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent select_all radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button select_all(const control& parent, bool checked);
+      [[nodiscard]] static auto select_all(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent select_all radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button select_all(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto select_all(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent select_all radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button select_all(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto select_all(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent select_all radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -6254,88 +6254,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button select_all(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto select_all(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent settings radio_button.
       /// @return The created radio_button.
-      static radio_button settings();
+      [[nodiscard]] static auto settings() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent settings radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button settings(const drawing::point& location);
+      [[nodiscard]] static auto settings(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent settings radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button settings(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto settings(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent settings radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button settings(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto settings(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent settings radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button settings(bool checked);
+      [[nodiscard]] static auto settings(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent settings radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button settings(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto settings(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent settings radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button settings(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto settings(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent settings radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button settings(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto settings(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent settings radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button settings(const control& parent);
+      [[nodiscard]] static auto settings(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent settings radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button settings(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto settings(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent settings radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button settings(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto settings(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent settings radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button settings(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto settings(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent settings radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button settings(const control& parent, bool checked);
+      [[nodiscard]] static auto settings(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent settings radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button settings(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto settings(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent settings radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button settings(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto settings(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent settings radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -6343,88 +6343,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button settings(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto settings(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent spell_check radio_button.
       /// @return The created radio_button.
-      static radio_button spell_check();
+      [[nodiscard]] static auto spell_check() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent spell_check radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button spell_check(const drawing::point& location);
+      [[nodiscard]] static auto spell_check(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent spell_check radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button spell_check(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto spell_check(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent spell_check radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button spell_check(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto spell_check(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent spell_check radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button spell_check(bool checked);
+      [[nodiscard]] static auto spell_check(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent spell_check radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button spell_check(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto spell_check(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent spell_check radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button spell_check(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto spell_check(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent spell_check radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button spell_check(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto spell_check(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent spell_check radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button spell_check(const control& parent);
+      [[nodiscard]] static auto spell_check(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent spell_check radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button spell_check(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto spell_check(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent spell_check radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button spell_check(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto spell_check(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent spell_check radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button spell_check(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto spell_check(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent spell_check radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button spell_check(const control& parent, bool checked);
+      [[nodiscard]] static auto spell_check(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent spell_check radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button spell_check(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto spell_check(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent spell_check radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button spell_check(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto spell_check(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent spell_check radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -6432,88 +6432,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button spell_check(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto spell_check(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent stop radio_button.
       /// @return The created radio_button.
-      static radio_button stop();
+      [[nodiscard]] static auto stop() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent stop radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button stop(const drawing::point& location);
+      [[nodiscard]] static auto stop(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent stop radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button stop(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto stop(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent stop radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button stop(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto stop(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent stop radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button stop(bool checked);
+      [[nodiscard]] static auto stop(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent stop radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button stop(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto stop(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent stop radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button stop(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto stop(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent stop radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button stop(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto stop(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent stop radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button stop(const control& parent);
+      [[nodiscard]] static auto stop(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent stop radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button stop(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto stop(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent stop radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button stop(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto stop(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent stop radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button stop(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto stop(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent stop radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button stop(const control& parent, bool checked);
+      [[nodiscard]] static auto stop(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent stop radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button stop(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto stop(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent stop radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button stop(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto stop(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent stop radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -6521,88 +6521,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button stop(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto stop(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent strikeout radio_button.
       /// @return The created radio_button.
-      static radio_button strikeout();
+      [[nodiscard]] static auto strikeout() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent strikeout radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button strikeout(const drawing::point& location);
+      [[nodiscard]] static auto strikeout(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent strikeout radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button strikeout(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto strikeout(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent strikeout radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button strikeout(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto strikeout(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent strikeout radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button strikeout(bool checked);
+      [[nodiscard]] static auto strikeout(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent strikeout radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button strikeout(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto strikeout(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent strikeout radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button strikeout(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto strikeout(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent strikeout radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button strikeout(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto strikeout(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent strikeout radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button strikeout(const control& parent);
+      [[nodiscard]] static auto strikeout(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent strikeout radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button strikeout(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto strikeout(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent strikeout radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button strikeout(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto strikeout(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent strikeout radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button strikeout(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto strikeout(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent strikeout radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button strikeout(const control& parent, bool checked);
+      [[nodiscard]] static auto strikeout(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent strikeout radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button strikeout(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto strikeout(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent strikeout radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button strikeout(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto strikeout(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent strikeout radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -6610,88 +6610,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button strikeout(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto strikeout(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent tools radio_button.
       /// @return The created radio_button.
-      static radio_button tools();
+      [[nodiscard]] static auto tools() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent tools radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button tools(const drawing::point& location);
+      [[nodiscard]] static auto tools(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent tools radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button tools(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto tools(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent tools radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button tools(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto tools(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent tools radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button tools(bool checked);
+      [[nodiscard]] static auto tools(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent tools radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button tools(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto tools(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent tools radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button tools(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto tools(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent tools radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button tools(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto tools(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent tools radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button tools(const control& parent);
+      [[nodiscard]] static auto tools(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent tools radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button tools(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto tools(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent tools radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button tools(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto tools(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent tools radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button tools(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto tools(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent tools radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button tools(const control& parent, bool checked);
+      [[nodiscard]] static auto tools(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent tools radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button tools(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto tools(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent tools radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button tools(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto tools(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent tools radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -6699,88 +6699,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button tools(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto tools(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent top radio_button.
       /// @return The created radio_button.
-      static radio_button top();
+      [[nodiscard]] static auto top() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent top radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button top(const drawing::point& location);
+      [[nodiscard]] static auto top(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent top radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button top(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto top(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent top radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button top(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto top(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent top radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button top(bool checked);
+      [[nodiscard]] static auto top(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent top radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button top(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto top(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent top radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button top(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto top(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent top radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button top(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto top(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent top radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button top(const control& parent);
+      [[nodiscard]] static auto top(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent top radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button top(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto top(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent top radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button top(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto top(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent top radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button top(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto top(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent top radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button top(const control& parent, bool checked);
+      [[nodiscard]] static auto top(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent top radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button top(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto top(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent top radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button top(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto top(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent top radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -6788,88 +6788,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button top(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto top(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent undelete radio_button.
       /// @return The created radio_button.
-      static radio_button undelete();
+      [[nodiscard]] static auto undelete() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent undelete radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button undelete(const drawing::point& location);
+      [[nodiscard]] static auto undelete(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent undelete radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button undelete(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto undelete(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent undelete radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button undelete(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto undelete(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent undelete radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button undelete(bool checked);
+      [[nodiscard]] static auto undelete(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent undelete radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button undelete(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto undelete(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent undelete radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button undelete(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto undelete(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent undelete radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button undelete(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto undelete(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent undelete radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button undelete(const control& parent);
+      [[nodiscard]] static auto undelete(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent undelete radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button undelete(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto undelete(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent undelete radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button undelete(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto undelete(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent undelete radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button undelete(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto undelete(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent undelete radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button undelete(const control& parent, bool checked);
+      [[nodiscard]] static auto undelete(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent undelete radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button undelete(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto undelete(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent undelete radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button undelete(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto undelete(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent undelete radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -6877,88 +6877,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button undelete(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto undelete(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent underline radio_button.
       /// @return The created radio_button.
-      static radio_button underline();
+      [[nodiscard]] static auto underline() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent underline radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button underline(const drawing::point& location);
+      [[nodiscard]] static auto underline(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent underline radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button underline(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto underline(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent underline radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button underline(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto underline(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent underline radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button underline(bool checked);
+      [[nodiscard]] static auto underline(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent underline radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button underline(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto underline(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent underline radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button underline(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto underline(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent underline radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button underline(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto underline(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent underline radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button underline(const control& parent);
+      [[nodiscard]] static auto underline(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent underline radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button underline(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto underline(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent underline radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button underline(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto underline(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent underline radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button underline(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto underline(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent underline radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button underline(const control& parent, bool checked);
+      [[nodiscard]] static auto underline(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent underline radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button underline(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto underline(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent underline radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button underline(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto underline(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent underline radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -6966,88 +6966,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button underline(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto underline(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent undo radio_button.
       /// @return The created radio_button.
-      static radio_button undo();
+      [[nodiscard]] static auto undo() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent undo radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button undo(const drawing::point& location);
+      [[nodiscard]] static auto undo(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent undo radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button undo(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto undo(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent undo radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button undo(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto undo(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent undo radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button undo(bool checked);
+      [[nodiscard]] static auto undo(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent undo radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button undo(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto undo(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent undo radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button undo(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto undo(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent undo radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button undo(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto undo(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent undo radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button undo(const control& parent);
+      [[nodiscard]] static auto undo(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent undo radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button undo(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto undo(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent undo radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button undo(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto undo(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent undo radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button undo(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto undo(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent undo radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button undo(const control& parent, bool checked);
+      [[nodiscard]] static auto undo(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent undo radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button undo(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto undo(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent undo radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button undo(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto undo(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent undo radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -7055,88 +7055,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button undo(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto undo(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent unindent radio_button.
       /// @return The created radio_button.
-      static radio_button unindent();
+      [[nodiscard]] static auto unindent() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent unindent radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button unindent(const drawing::point& location);
+      [[nodiscard]] static auto unindent(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent unindent radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button unindent(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto unindent(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent unindent radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button unindent(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto unindent(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent unindent radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button unindent(bool checked);
+      [[nodiscard]] static auto unindent(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent unindent radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button unindent(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto unindent(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent unindent radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button unindent(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto unindent(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent unindent radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button unindent(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto unindent(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent unindent radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button unindent(const control& parent);
+      [[nodiscard]] static auto unindent(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent unindent radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button unindent(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto unindent(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent unindent radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button unindent(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto unindent(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent unindent radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button unindent(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto unindent(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent unindent radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button unindent(const control& parent, bool checked);
+      [[nodiscard]] static auto unindent(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent unindent radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button unindent(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto unindent(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent unindent radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button unindent(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto unindent(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent unindent radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -7144,88 +7144,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button unindent(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto unindent(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent up radio_button.
       /// @return The created radio_button.
-      static radio_button up();
+      [[nodiscard]] static auto up() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent up radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button up(const drawing::point& location);
+      [[nodiscard]] static auto up(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent up radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button up(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto up(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent up radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button up(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto up(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent up radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button up(bool checked);
+      [[nodiscard]] static auto up(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent up radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button up(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto up(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent up radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button up(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto up(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent up radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button up(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto up(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent up radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button up(const control& parent);
+      [[nodiscard]] static auto up(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent up radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button up(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto up(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent up radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button up(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto up(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent up radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button up(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto up(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent up radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button up(const control& parent, bool checked);
+      [[nodiscard]] static auto up(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent up radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button up(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto up(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent up radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button up(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto up(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent up radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -7233,88 +7233,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button up(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto up(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent view radio_button.
       /// @return The created radio_button.
-      static radio_button view();
+      [[nodiscard]] static auto view() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent view radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button view(const drawing::point& location);
+      [[nodiscard]] static auto view(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent view radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button view(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto view(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent view radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button view(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto view(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent view radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button view(bool checked);
+      [[nodiscard]] static auto view(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent view radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button view(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto view(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent view radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button view(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto view(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent view radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button view(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto view(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent view radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button view(const control& parent);
+      [[nodiscard]] static auto view(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent view radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button view(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto view(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent view radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button view(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto view(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent view radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button view(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto view(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent view radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button view(const control& parent, bool checked);
+      [[nodiscard]] static auto view(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent view radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button view(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto view(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent view radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button view(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto view(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent view radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -7322,88 +7322,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button view(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto view(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent window radio_button.
       /// @return The created radio_button.
-      static radio_button window();
+      [[nodiscard]] static auto window() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent window radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button window(const drawing::point& location);
+      [[nodiscard]] static auto window(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent window radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button window(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto window(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent window radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button window(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto window(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent window radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button window(bool checked);
+      [[nodiscard]] static auto window(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent window radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button window(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto window(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent window radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button window(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto window(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent window radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button window(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto window(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent window radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button window(const control& parent);
+      [[nodiscard]] static auto window(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent window radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button window(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto window(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent window radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button window(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto window(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent window radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button window(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto window(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent window radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button window(const control& parent, bool checked);
+      [[nodiscard]] static auto window(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent window radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button window(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto window(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent window radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button window(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto window(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent window radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -7411,88 +7411,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button window(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto window(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent yes radio_button.
       /// @return The created radio_button.
-      static radio_button yes();
+      [[nodiscard]] static auto yes() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent yes radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button yes(const drawing::point& location);
+      [[nodiscard]] static auto yes(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent yes radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button yes(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto yes(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent yes radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button yes(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto yes(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent yes radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button yes(bool checked);
+      [[nodiscard]] static auto yes(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent yes radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button yes(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto yes(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent yes radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button yes(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto yes(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent yes radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button yes(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto yes(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent yes radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button yes(const control& parent);
+      [[nodiscard]] static auto yes(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent yes radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button yes(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto yes(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent yes radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button yes(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto yes(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent yes radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button yes(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto yes(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent yes radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button yes(const control& parent, bool checked);
+      [[nodiscard]] static auto yes(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent yes radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button yes(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto yes(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent yes radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button yes(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto yes(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent yes radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -7500,88 +7500,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button yes(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto yes(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent zoom_in radio_button.
       /// @return The created radio_button.
-      static radio_button zoom_in();
+      [[nodiscard]] static auto zoom_in() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent zoom_in radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button zoom_in(const drawing::point& location);
+      [[nodiscard]] static auto zoom_in(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent zoom_in radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button zoom_in(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto zoom_in(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent zoom_in radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button zoom_in(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto zoom_in(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent zoom_in radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button zoom_in(bool checked);
+      [[nodiscard]] static auto zoom_in(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent zoom_in radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button zoom_in(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto zoom_in(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent zoom_in radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button zoom_in(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto zoom_in(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent zoom_in radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button zoom_in(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto zoom_in(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent zoom_in radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button zoom_in(const control& parent);
+      [[nodiscard]] static auto zoom_in(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent zoom_in radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button zoom_in(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto zoom_in(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent zoom_in radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button zoom_in(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto zoom_in(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent zoom_in radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button zoom_in(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto zoom_in(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent zoom_in radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button zoom_in(const control& parent, bool checked);
+      [[nodiscard]] static auto zoom_in(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent zoom_in radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button zoom_in(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto zoom_in(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent zoom_in radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button zoom_in(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto zoom_in(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent zoom_in radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -7589,88 +7589,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button zoom_in(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto zoom_in(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent zoom_out radio_button.
       /// @return The created radio_button.
-      static radio_button zoom_out();
+      [[nodiscard]] static auto zoom_out() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent zoom_out radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button zoom_out(const drawing::point& location);
+      [[nodiscard]] static auto zoom_out(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent zoom_out radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button zoom_out(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto zoom_out(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent zoom_out radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button zoom_out(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto zoom_out(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent zoom_out radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button zoom_out(bool checked);
+      [[nodiscard]] static auto zoom_out(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent zoom_out radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button zoom_out(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto zoom_out(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent zoom_out radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button zoom_out(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto zoom_out(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent zoom_out radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button zoom_out(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto zoom_out(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent zoom_out radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button zoom_out(const control& parent);
+      [[nodiscard]] static auto zoom_out(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent zoom_out radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button zoom_out(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto zoom_out(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent zoom_out radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button zoom_out(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto zoom_out(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent zoom_out radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button zoom_out(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto zoom_out(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent zoom_out radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button zoom_out(const control& parent, bool checked);
+      [[nodiscard]] static auto zoom_out(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent zoom_out radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button zoom_out(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto zoom_out(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent zoom_out radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button zoom_out(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto zoom_out(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent zoom_out radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -7678,88 +7678,88 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button zoom_out(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto zoom_out(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       
       /// @brief Create a system-defined radio_button that represent zoom_to_fit radio_button.
       /// @return The created radio_button.
-      static radio_button zoom_to_fit();
+      [[nodiscard]] static auto zoom_to_fit() -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent zoom_to_fit radio_button with specified location.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button zoom_to_fit(const drawing::point& location);
+      [[nodiscard]] static auto zoom_to_fit(const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent zoom_to_fit radio_button with specified location, and size.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button zoom_to_fit(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto zoom_to_fit(const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent zoom_to_fit radio_button with specified location, size, and name.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button zoom_to_fit(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto zoom_to_fit(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent zoom_to_fit radio_button with specified and check_state.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button zoom_to_fit(bool checked);
+      [[nodiscard]] static auto zoom_to_fit(bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent zoom_to_fit radio_button with specified check_state, and location.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button zoom_to_fit(bool checked, const drawing::point& location);
+      [[nodiscard]] static auto zoom_to_fit(bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent zoom_to_fit radio_button with specified check_state, location, and size.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button zoom_to_fit(bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto zoom_to_fit(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent zoom_to_fit radio_button with specified check_state, location, size, and name.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button zoom_to_fit(bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto zoom_to_fit(bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent zoom_to_fit radio_button with specified parent.
       /// @param parent The control that contains the radio_button.
       /// @return The created radio_button.
-      static radio_button zoom_to_fit(const control& parent);
+      [[nodiscard]] static auto zoom_to_fit(const xtd::forms::control& parent) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent zoom_to_fit radio_button with specified parent, and location.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button zoom_to_fit(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto zoom_to_fit(const xtd::forms::control& parent, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent zoom_to_fit radio_button with specified parent,  location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button zoom_to_fit(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto zoom_to_fit(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent zoom_to_fit radio_button with specified parent, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button zoom_to_fit(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto zoom_to_fit(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent zoom_to_fit radio_button with specified parent, and check_state.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @return The created radio_button.
-      static radio_button zoom_to_fit(const control& parent, bool checked);
+      [[nodiscard]] static auto zoom_to_fit(const xtd::forms::control& parent, bool checked) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent zoom_to_fit radio_button with specified parent, check_state, and location.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @return The created radio_button.
-      static radio_button zoom_to_fit(const control& parent, bool checked, const drawing::point& location);
+      [[nodiscard]] static auto zoom_to_fit(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent zoom_to_fit radio_button with specified parent, check_state, location, and size.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
       /// @param location The radio_button location in pixels.
       /// @param size The radio_button size in pixels.
       /// @return The created radio_button.
-      static radio_button zoom_to_fit(const control& parent, bool checked, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto zoom_to_fit(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size) -> xtd::forms::radio_button;
       /// @brief Create a system-defined radio_button that represent zoom_to_fit radio_button with specified parent, check_state, location, size, and name.
       /// @param parent The control that contains the radio_button.
       /// @param check_state One of the xtd::forms::check_state enumeration values.
@@ -7767,7 +7767,7 @@ namespace xtd {
       /// @param size The radio_button size in pixels.
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
-      static radio_button zoom_to_fit(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto zoom_to_fit(const xtd::forms::control& parent, bool checked, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> xtd::forms::radio_button;
       /// @}
     };
   }
