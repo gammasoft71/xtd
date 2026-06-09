@@ -41,7 +41,7 @@ struct status_bar::data {
   data(status_bar& control) : control {control} {}
   status_bar& control;
   status_bar_panel_collection panels;
-  bool is_system_status_bar = false;
+  bool system_status_bar = false;
   dock_style non_system_dock = dock_style::none;
   bool show_panels = false;
   bool show_tool_tips = false;
@@ -100,18 +100,18 @@ status_bar::status_bar() {
 }
 
 dock_style status_bar::dock() const noexcept {
-  //if (is_system_status_bar()) return data_->non_system_dock;
+  //if (system_status_bar()) return data_->non_system_dock;
   return control::dock();
 }
 
 control& status_bar::dock(dock_style dock) {
-  if (is_system_status_bar()) {
+  if (system_status_bar()) {
     data_->non_system_dock = dock;
     if (control_appearance() == forms::control_appearance::system) post_recreate_handle();
   } else {
-    auto current_size = is_horizontal() ? height() : width();
+    auto current_size = horizontal() ? height() : width();
     control::dock(dock);
-    if (is_horizontal()) height(current_size);
+    if (horizontal()) height(current_size);
     else width(current_size);
   }
   return *this;
@@ -305,7 +305,7 @@ status_bar status_bar::create(const control& parent, xtd::forms::dock_style styl
 forms::create_params status_bar::create_params() const noexcept {
   auto create_params = control::create_params();
   
-  if (is_system_status_bar())
+  if (system_status_bar())
     create_params.class_name("statusbar");
     
   if (data_->non_system_dock == dock_style::left) create_params.style(create_params.style() | SBARS_LEFT);
@@ -352,7 +352,7 @@ void status_bar::on_handle_created(const event_args& e) {
 }
 
 void status_bar::on_handle_destroyed(const event_args& e) {
-  if (is_system_status_bar()) {
+  if (system_status_bar()) {
     [[maybe_unused]] auto _ = native::status_bar::set_system_status_bar(parent().value().get().handle(), 0);
     data_->system_status_bar_panel_handles.clear();
   }
@@ -371,19 +371,19 @@ void status_bar::on_resize(const event_args& e) {
   resize_spring_panels();
 }
 
-bool status_bar::is_horizontal() const noexcept {
+bool status_bar::horizontal() const noexcept {
   return dock() != dock_style::left && dock() != dock_style::right;
 }
 
-bool status_bar::is_system_status_bar() const noexcept {
-  auto result = data_->is_system_status_bar || control_appearance() == xtd::forms::control_appearance::system;
+bool status_bar::system_status_bar() const noexcept {
+  auto result = data_->system_status_bar || control_appearance() == xtd::forms::control_appearance::system;
   return result;
 }
 
-status_bar& status_bar::is_system_status_bar(bool value) {
-  if (data_->is_system_status_bar != value) {
+status_bar& status_bar::system_status_bar(bool value) {
+  if (data_->system_status_bar != value) {
     control_appearance(value ? forms::control_appearance::system : forms::control_appearance::standard);
-    data_->is_system_status_bar = value;
+    data_->system_status_bar = value;
     post_recreate_handle();
   }
   return *this;
@@ -397,13 +397,13 @@ void status_bar::fill() {
   data_->spring_panels.clear();
   data_->status_bar_panels.clear();
   auto reversed_panels = data_->panels;
-  if (!is_system_status_bar()) std::reverse(reversed_panels.begin(), reversed_panels.end());
-  if (!is_system_status_bar() && auto_size())
+  if (!system_status_bar()) std::reverse(reversed_panels.begin(), reversed_panels.end());
+  if (!system_status_bar() && auto_size())
     size({padding().left() + padding().right(), padding().top() + padding().bottom()});
   for (xtd::usize index = 0; index < reversed_panels.count(); ++index) {
     auto& button_item = reversed_panels[index].get();
     intptr control_handle = 0;
-    if (is_system_status_bar()) {
+    if (system_status_bar()) {
       if (reversed_panels[index].get().style() == status_bar_panel_style::push_button || (!data_->drop_down_arrows && button_item.style() == status_bar_panel_style::drop_down_button))
         control_handle = native::status_bar::add_status_bar_panel(handle(), button_item.text(), button_item.tool_tip_text(), button_item.image_index() < data_->image_list.images().count() ? data_->image_list.images()[button_item.image_index()] : image::empty, button_item.enabled(), button_item.visible());
       else if (reversed_panels[index].get().style() == status_bar_panel_style::toggle_button)
@@ -426,7 +426,7 @@ void status_bar::fill() {
       button_item.data_->handle = reinterpret_cast<intptr>(button_control.get());
       button_control->parent(*this);
       button_control->status_bar_panel(button_item);
-      if (is_horizontal()) button_control->dock(dock_style::left);
+      if (horizontal()) button_control->dock(dock_style::left);
       else button_control->dock(dock_style::top);
       button_control->enabled(button_item.enabled());
       button_control->flat(appearance() == status_bar_appearance::flat);
@@ -460,9 +460,9 @@ void status_bar::fill() {
       if (data_->show_text) button_control->text(button_item.text());
   
       if (auto_size()) {
-        if (is_horizontal() && height() < button_control->height()) height(button_control->height() + padding().top() + padding().bottom());
-        if (!is_horizontal() && width() < button_control->width()) width(button_control->width() + padding().left() + padding().right());
-        if (is_horizontal()) width(width() + button_control->width());
+        if (horizontal() && height() < button_control->height()) height(button_control->height() + padding().top() + padding().bottom());
+        if (!horizontal() && width() < button_control->width()) width(button_control->width() + padding().left() + padding().right());
+        if (horizontal()) width(width() + button_control->width());
         else height(height() + button_control->height());
       }
   
@@ -472,7 +472,7 @@ void status_bar::fill() {
     }
   }
   
-  if (is_system_status_bar()) {
+  if (system_status_bar()) {
     parent_client_size_guard pcsg(*this); // Workaround : Get client size because after changing tool bar to system, the client size does not correct.
     native::status_bar::set_system_status_bar(parent().value().get().handle(), handle());
   }
@@ -488,20 +488,20 @@ void status_bar::wnd_proc(message& message) {
 void status_bar::resize_spring_panels() {
   /*
   if (data_->spring_panels.count()) {
-    auto remaining_size = is_horizontal() ? size().width - padding().left() - padding().right() : size().height - padding().top() - padding().bottom();
+    auto remaining_size = horizontal() ? size().width - padding().left() - padding().right() : size().height - padding().top() - padding().bottom();
     for (auto status_bar_panel : data_->status_bar_panels) {
       if (status_bar_panel->style() != status_bar_panel_style::stretchable_separator && status_bar_panel->visible())
-        remaining_size -= is_horizontal() ? status_bar_panel->size().width : status_bar_panel->size().height;
+        remaining_size -= horizontal() ? status_bar_panel->size().width : status_bar_panel->size().height;
     }
   
     auto stretchable_size = remaining_size / as<int32>(data_->spring_panels.count());
     for (auto stretchable_separator : data_->spring_panels) {
-      auto default_stretchable_size = (is_horizontal() ? image_size().width : image_size().height) / 2;
+      auto default_stretchable_size = (horizontal() ? image_size().width : image_size().height) / 2;
       if (stretchable_size > default_stretchable_size) {
-        if (is_horizontal()) stretchable_separator->width(stretchable_size);
+        if (horizontal()) stretchable_separator->width(stretchable_size);
         else stretchable_separator->height(stretchable_size);
       } else {
-        if (is_horizontal()) stretchable_separator->width(default_stretchable_size);
+        if (horizontal()) stretchable_separator->width(default_stretchable_size);
         else stretchable_separator->height(default_stretchable_size);
       }
     }
@@ -512,7 +512,7 @@ void status_bar::resize_spring_panels() {
 
 void status_bar::update_status_bar_panel_control(intptr handle, const xtd::string& text, const xtd::string& tool_tip_text, const xtd::drawing::image& image, xtd::forms::horizontal_alignment alignment, xtd::forms::status_bar_panel_auto_size auto_size, xtd::forms::status_bar_panel_border_style border_style, xtd::forms::status_bar_panel_style panel_style, int32 min_width, int32 width) {
   if (!handle) return;
-  if (is_system_status_bar()) {
+  if (system_status_bar()) {
     //native::status_bar::update_status_bar_item(this->handle(), handle, text, tool_tip_text, image, visible(), 100, false);
   } else {
     reinterpret_cast<status_bar_panel_control*>(handle)->text(text);
