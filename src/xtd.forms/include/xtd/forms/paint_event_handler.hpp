@@ -11,7 +11,7 @@ namespace xtd {
   namespace forms {
     /// @brief Represents the method that will handle the xtd::forms::control::paint event of a control.
     /// ```cpp
-    /// using paint_event_handler = xtd::delegate<void(object& sender, paint_event_args& e)>;
+    /// using paint_event_handler = xtd::delegate<void(xtd::object& sender, xtd::forms::paint_event_args& e)>;
     /// ```
     /// @param sender The source of the event.
     /// @param e A paint_event_args that contains the event data.
