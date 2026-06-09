@@ -167,7 +167,7 @@ namespace xtd {
       template<typename result_t>
       template<typename ...items_t>
       auto xtd::threading::tasks::basic_task<result_t>::when_all(items_t&&... items) -> task<> {
-        return task_factory {}.start_new([&items...] mutable {
+        return task_factory {}.start_new([&items...]() mutable {
           task<>::wait_all(std::forward<items_t>(items)...);
         });
       }
@@ -175,7 +175,7 @@ namespace xtd {
       template<typename result_t>
       template<typename ...items_t>
       auto xtd::threading::tasks::basic_task<result_t>::when_any(items_t&&... items) -> task<xtd::usize> {
-        return task_factory {}.start_new([&items...] mutable {
+        return task_factory {}.start_new([&items...]() mutable {
           return task<>::wait_any(std::forward<items_t>(items)...);
         });
       }
@@ -187,12 +187,12 @@ namespace xtd {
 
       template<typename result1_t, typename result2_t>
       inline auto operator &&(const task<result1_t>& t1, const task<result2_t>& t2) -> task<> {
-        return task_factory {}.start_new([t1, t2] mutable {task<>::wait_all(t1, t2);});
+        return task_factory {}.start_new([t1, t2]() mutable {task<>::wait_all(t1, t2);});
       }
       
       template<typename result1_t, typename result2_t>
       inline auto operator ||(const task<result1_t>& t1, const task<result2_t>& t2) -> task<> {
-        return task_factory {}.start_new([t1, t2] mutable {task<>::wait_any(t1, t2);});
+        return task_factory {}.start_new([t1, t2]() mutable {task<>::wait_any(t1, t2);});
       }
       /// @endcond
     }

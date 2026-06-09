@@ -44,5 +44,5 @@ auto cancellation_token_source::wait_handle() noexcept -> threading::wait_handle
 }
 
 auto cancellation_token_source::cancel() -> void {
-  data_->cancel_timer = timer {[token = data_->token] mutable {token.cancel();}, data_->milliseconds_delay, timeout::infinite};
+  data_->cancel_timer = timer {[token = data_->token]() mutable {token.cancel();}, data_->milliseconds_delay, timeout::infinite};
 }
