@@ -40,51 +40,51 @@ namespace xtd {
       /// @{
       /// @brief Gets a value indicating the horizontal or vertical orientation of the split_container panels.
       /// @return One of the orientation values. The default is vertical.
-      virtual xtd::forms::orientation orientation() const noexcept;
+      [[nodiscard]] virtual xtd::forms::orientation orientation() const noexcept;
       /// @brief Sets a value indicating the horizontal or vertical orientation of the split_container panels.
-      /// @param orientation One of the orientation values. The default is vertical.
+      /// @param value One of the orientation values. The default is vertical.
       /// @return Current split_container instance.
-      virtual split_container& orientation(xtd::forms::orientation orientation);
+      virtual auto orientation(xtd::forms::orientation value) -> split_container&;
       
       /// @brief Gets the left or top panel of the splitter_panel, depending on orientation.
       /// @return If orientation is vertical, the left panel of the split_container. If orientation is horizontal, the top panel of the split_container.
-      virtual const splitter_panel& panel1() const noexcept;
+      [[nodiscard]] virtual const splitter_panel& panel1() const noexcept;
       /// @brief Gets the left or top panel of the splitter_panel, depending on orientation.
       /// @return If orientation is vertical, the left panel of the split_container. If orientation is horizontal, the top panel of the split_container.
-      virtual splitter_panel& panel1() noexcept;
+      [[nodiscard]] virtual splitter_panel& panel1() noexcept;
       
       /// @brief Gets the right or bottom panel of the splitter_panel, depending on orientation.
       /// @return If orientation is vertical, the right panel of the split_container. If orientation is horizontal, the bottom panel of the split_container.
-      virtual const splitter_panel& panel2() const noexcept;
+      [[nodiscard]] virtual const splitter_panel& panel2() const noexcept;
       /// @brief Gets the right or bottom panel of the splitter_panel, depending on orientation.
       /// @return If orientation is vertical, the right panel of the split_container. If orientation is horizontal, the bottom panel of the split_container.
-      virtual splitter_panel& panel2() noexcept;
+      [[nodiscard]] virtual splitter_panel& panel2() noexcept;
       
       /// @brief Gets the location of the splitter, in pixels, from the left or top edge of the split_container.
       /// @return An int32 representing the location of the splitter, in pixels, from the left or top edge of the split_container. The default value is 50 pixels.
-      virtual int32 splitter_distance() const noexcept;
+      [[nodiscard]] virtual xtd::int32 splitter_distance() const noexcept;
       /// @brief Sets the location of the splitter, in pixels, from the left or top edge of the split_container.
-      /// @param splitter_distance An int32 representing the location of the splitter, in pixels, from the left or top edge of the split_container. The default value is 50 pixels.
+      /// @param value An int32 representing the location of the splitter, in pixels, from the left or top edge of the split_container. The default value is 50 pixels.
       /// @return Current split_container instance.
-      virtual split_container& splitter_distance(int32 splitter_distance);
+      virtual auto splitter_distance(xtd::int32 value) -> split_container&;
       
       /// @brief Gets the style of the splitter.
       /// @return One of xtd::forms::splitter_style values. The default is xtd::forms::splitter_style::update_children
-      virtual xtd::forms::splitter_style splitter_style() const noexcept;
+      [[nodiscard]] virtual xtd::forms::splitter_style splitter_style() const noexcept;
       /// @brief Sets the style of the splitter.
-      /// @param splitter_style One of xtd::forms::splitter_style values. The default is xtd::forms::splitter_style::update_children
+      /// @param value One of xtd::forms::splitter_style values. The default is xtd::forms::splitter_style::update_children
       /// @return Current split_container instance.
-      virtual split_container& splitter_style(xtd::forms::splitter_style splitter_style);
+      virtual auto splitter_style(xtd::forms::splitter_style value) -> split_container&;
       
       /// @brief Gets or sets the width of the splitter in pixels.
       /// @return An int32 representing the width of the splitter, in pixels. The default is four pixels.
       /// @remarks Use the splitter_width property to change the width of the splitter itself, not the split_container.
-      virtual int32 splitter_width() const noexcept;
+      [[nodiscard]] virtual xtd::int32 splitter_width() const noexcept;
       /// @brief Gets or sets the width of the splitter in pixels.
-      /// @param splitter_width An int32 representing the width of the splitter, in pixels. The default is four pixels.
+      /// @param value An int32 representing the width of the splitter, in pixels. The default is four pixels.
       /// @return Current split_container instance.
       /// @remarks Use the splitter_width property to change the width of the splitter itself, not the split_container.
-      virtual split_container& splitter_width(int32 splitter_width);
+      virtual auto splitter_width(xtd::int32 value) -> split_container&;
       /// @}
       
       /// @name Public Static Methods
@@ -92,61 +92,61 @@ namespace xtd {
       /// @{
       /// @brief A factory to create an xtd::forms::split_container.
       /// @return New xtd::forms::split_container created.
-      static split_container create();
+      [[nodiscard]] static auto create() -> split_container;
       /// @brief A factory to create an xtd::forms::split_container with specified location.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::split_container.
       /// @return New xtd::forms::split_container created.
-      static split_container create(const drawing::point& location);
+      [[nodiscard]] static auto create(const xtd::drawing::point& location) -> split_container;
       /// @brief A factory to create an xtd::forms::split_container with specified location, and size.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::split_container.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::split_container.
       /// @return New xtd::forms::split_container created.
-      static split_container create(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto create(const xtd::drawing::point& location, const xtd::drawing::size& size) -> split_container;
       /// @brief A factory to create an xtd::forms::split_container with specified location, size, and name.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::split_container.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::split_container.
       /// @param name The name of the xtd::forms::split_container.
       /// @return New xtd::forms::split_container created.
-      static split_container create(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto create(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> split_container;
       /// @brief A factory to create an xtd::forms::split_container with specified parent.
       /// @param parent The parent that contains the new created xtd::forms::split_container.
       /// @return New xtd::forms::split_container created.
-      static split_container create(const control& parent);
+      [[nodiscard]] static auto create(const xtd::forms::control& parent) -> split_container;
       /// @brief A factory to create an xtd::forms::split_container with specified parent, and location.
       /// @param parent The parent that contains the new created xtd::forms::split_container.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::split_container.
       /// @return New xtd::forms::split_container created.
-      static split_container create(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto create(const xtd::forms::control& parent, const xtd::drawing::point& location) -> split_container;
       /// @brief A factory to create an xtd::forms::split_container with specified parent, location, and size.
       /// @param parent The parent that contains the new created xtd::forms::split_container.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::split_container.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::split_container.
       /// @return New xtd::forms::split_container created.
-      static split_container create(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto create(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> split_container;
       /// @brief A factory to create an xtd::forms::split_container with specified parent, location, size, and name.
       /// @param parent The parent that contains the new created xtd::forms::split_container.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::split_container.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::split_container.
       /// @param name The name of the xtd::forms::split_container.
       /// @return New xtd::forms::split_container created.
-      static split_container create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto create(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> split_container;
       /// @}
       
     protected:
       /// @name Protected Properties
       
       /// @{
-      drawing::size default_size() const noexcept override;
+      [[nodiscard]] auto default_size() const noexcept -> xtd::drawing::size override;
       /// @}
       
       /// @name Protected Methods
       
       /// @{
-      void on_resize(const event_args& e) override;
+      auto on_resize(const xtd::event_args& e) -> void override;
       /// @}
       
     private:
-      void arrange_children();
+      auto arrange_children() -> void;
       
       xtd::sptr<data> data_;
     };
