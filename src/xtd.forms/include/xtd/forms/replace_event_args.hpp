@@ -35,29 +35,24 @@ namespace xtd {
       replace_event_args(const xtd::string& find_string, const xtd::string& replace_string, bool match_case, bool whole_word) : find_string_(find_string), replace_string_(replace_string), match_case_(match_case), whole_word_(whole_word) {}
       /// @}
       
-      /// @cond
-      replace_event_args(const replace_event_args&) = default;
-      replace_event_args& operator =(const replace_event_args&) = default;
-      /// @endcond
-      
       /// @name Public Properties
       
       /// @{
       /// @brief Gets the string to find.
       /// @return The string to find.
-      const xtd::string& find_string() const noexcept {return find_string_;}
+      [[nodiscard]] auto find_string() const noexcept -> const xtd::string& {return find_string_;}
       
       /// @brief Gets the replaced string.
       /// @return The replaced string.
-      const xtd::string& replace_string() const noexcept {return replace_string_;}
+      [[nodiscard]] auto replace_string() const noexcept -> const xtd::string& {return replace_string_;}
       
       /// @brief Gets the match case value.
       /// @return `true` if match case option selected; otherwise `false`. The default is `false`.
-      bool match_case() const noexcept {return match_case_;}
+      [[nodiscard]] auto match_case() const noexcept -> bool {return match_case_;}
       
       /// @brief Gets the whole word value.
       /// @return `true` if whole word option selected; otherwise `false`. The default is `false`.
-      bool whole_word() const noexcept {return whole_word_;}
+      [[nodiscard]] auto whole_word() const noexcept -> bool {return whole_word_;}
       
       /// @}
       
