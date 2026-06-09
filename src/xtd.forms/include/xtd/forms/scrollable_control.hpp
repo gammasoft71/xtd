@@ -19,7 +19,7 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms
-    class forms_export_ scrollable_control : public control {
+    class forms_export_ scrollable_control : public xtd::forms::control {
       struct data;
       
     public:
@@ -28,39 +28,39 @@ namespace xtd {
       /// @{
       /// @brief Gets a value indicating whether the container enables the user to scroll to any controls placed outside of its visible boundaries.
       /// @return `true` if the container enables auto-scrolling; otherwise, `false`. The default value is `false`.
-      virtual bool auto_scroll() const noexcept;
+      [[nodiscard]] virtual auto auto_scroll() const noexcept -> bool;
       /// @brief Sets a value indicating whether the container enables the user to scroll to any controls placed outside of its visible boundaries.
-      /// @param auto_scroll `true` if the container enables auto-scrolling; otherwise, `false`. The default value is `false`.
+      /// @param value `true` if the container enables auto-scrolling; otherwise, `false`. The default value is `false`.
       /// @return Current scrollable_control instance.
-      virtual scrollable_control& auto_scroll(bool auto_scroll);
+      virtual auto auto_scroll(bool value) -> scrollable_control&;
       
       /// @brief Gets the size of the auto-scroll margin.
       /// @return A size that represents the height and width of the auto-scroll margin in pixels.
-      drawing::size auto_scroll_margin() const noexcept;
+      [[nodiscard]] auto auto_scroll_margin() const noexcept -> xtd::drawing::size;
       /// @brief Sets the size of the auto-scroll margin.
       /// @param value A size that represents the height and width of the auto-scroll margin in pixels.
       /// @return Current scrollable_control instance.
-      scrollable_control& auto_scroll_margin(const drawing::size& value);
+      auto auto_scroll_margin(const xtd::drawing::size& value) -> scrollable_control&;
       
       /// @brief Gets the rectangle that represents the virtual display area of the control.
       /// @return A rectangle that represents the display area of the control.
-      drawing::rectangle display_rectangle() const noexcept override;
+      [[nodiscard]] auto display_rectangle() const noexcept -> xtd::drawing::rectangle override;
       
       /// @brief Gets a value indicating whether the horizontal scroll bar is visible.
       /// @return `true` if the horizontal scroll bar is visible; otherwise, `false`.
-      virtual bool h_scroll() const noexcept;
+      [[nodiscard]] virtual auto h_scroll() const noexcept -> bool;
       /// @brief Sets a value indicating whether the horizontal scroll bar is visible.
-      /// @param hscrooll `true` if the horizontal scroll bar is visible; otherwise, `false`.
+      /// @param value `true` if the horizontal scroll bar is visible; otherwise, `false`.
       /// @return Current scrollable_control instance.
-      virtual scrollable_control& h_scroll(bool h_scroll);
+      virtual auto h_scroll(bool value) -> scrollable_control&;
       
       /// @brief Gets a value indicating whether the vertical scroll bar is visible.
       /// @return `true` if the vertical scroll bar is visible; otherwise, `false`.
-      virtual bool v_scroll() const noexcept;
+      [[nodiscard]] virtual auto v_scroll() const noexcept -> bool;
       /// @brief Sets a value indicating whether the vertical scroll bar is visible.
-      /// @param vscroll `true` if the vertical scroll bar is visible; otherwise, `false`.
+      /// @param value `true` if the vertical scroll bar is visible; otherwise, `false`.
       /// @return Current scrollable_control instance.
-      virtual scrollable_control& v_scroll(bool v_scroll);
+      virtual auto v_scroll(bool value) -> scrollable_control&;
       /// @}
       
     protected:
@@ -74,13 +74,13 @@ namespace xtd {
       /// @name Protected Properties
       
       /// @{
-      forms::create_params create_params() const noexcept override;
+      [[nodiscard]] auto create_params() const noexcept -> xtd::forms::create_params override;
       /// @}
       
       /// @name Protected Methods
       
       /// @{
-      void on_layout(const event_args& e) override;
+      auto on_layout(const event_args& e) -> void override;
       /// @}
       
     private:
