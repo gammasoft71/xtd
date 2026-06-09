@@ -27,7 +27,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates the use of save_file_dialog dialog.
     /// @include save_file_dialog.cpp
-    class forms_export_ save_file_dialog final : public file_dialog {
+    class forms_export_ save_file_dialog final : public xtd::forms::file_dialog {
     public:
       /// @name Public Constructors
       
@@ -41,12 +41,12 @@ namespace xtd {
       /// @{
       /// @brief Opens the file with read/write permission selected by the user.
       /// @return The read/write file selected by the user.
-      std::fstream open_file() const noexcept;
+      [[nodiscard]] auto open_file() const noexcept -> std::fstream;
       /// @}
       
     private:
-      bool run_file_dialog(intptr hwnd_owner) override;
-      void run_file_sheet(intptr owner) override;
+      auto run_file_dialog(xtd::intptr hwnd_owner) -> bool override;
+      auto run_file_sheet(xtd::intptr owner) -> void override;
     };
   }
 }
