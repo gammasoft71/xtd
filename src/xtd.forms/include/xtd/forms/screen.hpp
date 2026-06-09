@@ -29,12 +29,10 @@ namespace xtd {
     /// @par Examples
     /// The following code example shows how to get screen informations of screen component.
     /// @include screen_informations.cpp
-    class forms_export_ screen : public object, public iequatable<screen> {
+    class forms_export_ screen : public xtd::object, public xtd::iequatable<screen> {
     public:
       /// @cond
       screen() = default;
-      screen(const screen&) = default;
-      screen& operator =(const screen&) = default;
       /// @endcond
       
       /// @name Public Properties
@@ -43,42 +41,42 @@ namespace xtd {
       /// @brief Gets the number of bits of memory, associated with one pixel of data.
       /// @return The number of bits of memory, associated with one pixel of data.
       /// @remarks Typically, the number of bits per pixel for a screen is useful when working with bitmaps.
-      int32 bits_per_pixel() const noexcept;
+      [[nodiscard]] auto bits_per_pixel() const noexcept -> xtd::int32;
       
       /// @brief Gets the bounds of the display.
       /// @return A xtd::drawing::rectangle, representing the bounds of the display.
-      const drawing::rectangle& bounds() const noexcept;
+      [[nodiscard]] auto bounds() const noexcept -> const xtd::drawing::rectangle&;
       
       /// @brief Gets the device name associated with a display.
       /// @return The device name associated with a display.
       /// @remarks This string may contain non-printable characters.
-      const xtd::string& device_name() const;
+      [[nodiscard]] auto device_name() const -> const xtd::string&;
       
       /// @brief Gets a value indicating whether a particular display is high resolution.
       /// @return `true` if this display is high resolution; otherwise, `false`.
-      bool high_resolution() const noexcept;
+      [[nodiscard]] auto high_resolution() const noexcept -> bool;
       
       /// @brief Gets the number of pixels per inch of the display.
       /// @return The number of pixels per inch of the display.
       /// @remarks See get_standard_pixels_per_inch() for more informations.
-      int32 pixels_per_inch() const noexcept;
+      [[nodiscard]] auto pixels_per_inch() const noexcept -> xtd::int32;
       
       /// @brief Gets a value indicating whether a particular display is the primary device.
       /// @return `true` if this display is primary; otherwise, `false`.
-      bool primary() const noexcept;
+      [[nodiscard]] auto primary() const noexcept -> bool;
       
       /// @brief Gets the scale factor of the display.
       /// @return The scale factor of the display.
       /// @remarks This value is computed from pixels_per_inch() for the display divided by get_standard_pixels_per_inch().
       /// @remarks If scale factor is equal to 1.0 is a standard display; greater than 1.0 is a high DPI display.
       /// @remarks See get_standard_pixels_per_inch() for more informations.
-      double scale_factor() const noexcept;
+      [[nodiscard]] auto scale_factor() const noexcept -> double;
       
       /// @brief Gets the working area of the display. The working area is the desktop area of the display, excluding taskbars, docked windows, and docked tool bars.
       /// @return A xtd::drawing::rectangle, representing the working area of the display.
       /// @remarks The working area is the desktop area of the display, excluding taskbars, docked windows, and docked tool bars.
       /// @remarks working_area will return the entire area of the screen if the Windows Taskbar is set to Auto-Hide, no matter whether the Taskbar is currently displayed or not.
-      const drawing::rectangle& working_area() const noexcept;
+      [[nodiscard]] auto working_area() const noexcept -> const xtd::drawing::rectangle&;
       /// @}
       
       /// @name Public Static Properties
@@ -86,12 +84,12 @@ namespace xtd {
       /// @{
       /// @brief Gets an array of all displays on the system.
       /// @return An array of type screen, containing all displays on the system.
-      static xtd::array<screen> all_screens();
+      [[nodiscard]] static auto all_screens() -> xtd::array<screen>;
       
       /// @brief Gets the primary display.
       /// @return The primary display.
       /// @remarks For a single display system, the primary display is the only display.
-      static screen primary_screen();
+      [[nodiscard]] static auto primary_screen() -> screen;
       /// @}
       
       /// @name Public Methods
@@ -100,15 +98,15 @@ namespace xtd {
       /// @brief Determines whether the specified object is equal to the current object.
       /// @param obj The object to compare with the current object.
       /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-      bool equals(const xtd::object& obj) const noexcept override;
+      [[nodiscard]] auto equals(const xtd::object& obj) const noexcept -> bool override;
       /// @brief Determines whether the specified object is equal to the current object.
       /// @param other The object to compare with the current object.
       /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-      bool equals(const screen& other) const noexcept override;
+      [[nodiscard]] auto equals(const screen& other) const noexcept -> bool override;
       
       /// @brief Serves as a hash function for a particular type.
       /// @return A hash code for the current object.
-      xtd::usize get_hash_code() const noexcept override;
+      [[nodiscard]] auto get_hash_code() const noexcept -> xtd::usize override;
       /// @}
       
       /// @name Public Static Methods
@@ -116,47 +114,47 @@ namespace xtd {
       /// @{
       /// @brief Creates the xtd::drawing::graphics for the screen.
       /// @return A xtd::drawing::graphics for the screen.
-      static drawing::graphics create_graphics();
+      [[nodiscard]] static auto create_graphics() -> xtd::drawing::graphics;
       
       /// @brief Retrieves a screen for the display that contains the largest portion of the specified control.
       /// @param control A xtd::forms::control for which to retrieve a Screen.
       /// @return A screen for the display that contains the largest region of the specified control. In multiple display environments where no display contains the control, the display closest to the specified control is returned.
-      static screen from_control(const control& control);
+      [[nodiscard]] static auto from_control(const xtd::forms::control& control) -> screen;
       
       /// @brief Retrieves a screen for the display that contains the largest portion of the object referred to by the specified handle.
       /// @param handle The window handle for which to retrieve the screen.
       /// @return A screen for the display that contains the largest region of the object. In multiple display environments where no display contains any portion of the specified handle, the display closest to the object is returned.
-      static screen from_handle(intptr handle);
+      [[nodiscard]] static auto from_handle(xtd::intptr handle) -> screen;
       
       /// @brief Retrieves a screen for the display that contains the specified point.
       /// @param point A xtd::drawing::point that specifies the location for which to retrieve a screen.
       /// @return A screen for the display that contains the point. In multiple display environments where no display contains the point, the display closest to the specified point is returned.
-      static screen from_point(const drawing::point& point);
+      [[nodiscard]] static auto from_point(const xtd::drawing::point& point) -> screen;
       
       /// @brief Retrieves a screen for the display that contains the largest portion of the rectangle.
       /// @param A xtd::drawing::rectangle that specifies the area for which to retrieve the display.
       /// @return A screen for the display that contains the largest region of the specified rectangle. In multiple display environments where no display contains the rectangle, the display closest to the rectangle is returned.
-      static screen from_rectangle(const drawing::rectangle& rect);
+      [[nodiscard]] static auto from_rectangle(const xtd::drawing::rectangle& rect) -> screen;
       
       /// @brief Retrieves the bounds of the display that contains the largest portion of the specified control.
       /// @param control The control for which to retrieve the display bounds.
       /// @return A xtd::drawing::rectangle that specifies the bounds of the display that contains the specified control. In multiple display environments where no display contains the specified control, the display closest to the control is returned.
-      static drawing::rectangle get_bounds(const control& control);
+      [[nodiscard]] static auto get_bounds(const xtd::forms::control& control) -> xtd::drawing::rectangle;
       
       /// @brief Retrieves the bounds of the display that contains the largest portion of the specified handle.
       /// @param handle The window handle for which to retrieve the display bounds.
       /// @return A xtd::drawing::rectangle that specifies the bounds of the display that contains the specified handle. In multiple display environments where no display contains the specified handle, the display closest to the object is returned.
-      static drawing::rectangle get_bounds(intptr handle);
+      [[nodiscard]] static auto get_bounds(xtd::intptr handle) -> xtd::drawing::rectangle;
       
       /// @brief Retrieves the bounds of the display that contains the specified point.
       /// @param point A xtd::drawing::point that specifies the coordinates for which to retrieve the display bounds.
       /// @return A xtd::drawing::rectangle that specifies the bounds of the display that contains the specified point. In multiple display environments where no display contains the specified point, the display closest to the point is returned.
-      static drawing::rectangle get_bounds(const drawing::point& point);
+      [[nodiscard]] static auto get_bounds(const xtd::drawing::point& point) -> xtd::drawing::rectangle;
       
       /// @brief Retrieves the bounds of the display that contains the largest portion of the specified rectangle.
       /// @param rect A xtd::drawing::rectangle that specifies the area for which to retrieve the display bounds.
       /// @return A xtd::drawing::rectangle that specifies the bounds of the display that contains the specified rectangle. In multiple display environments where no monitor contains the specified rectangle, the monitor closest to the rectangle is returned.
-      static drawing::rectangle get_bounds(const drawing::rectangle& rect);
+      [[nodiscard]] static auto get_bounds(const xtd::drawing::rectangle& rect) -> xtd::drawing::rectangle;
       
       /// @brief Gets the the standard number of pixels per inch of the display.
       /// @return The standard number of pixels per inch of the display.
@@ -167,39 +165,39 @@ namespace xtd {
       /// | Pixels per inch (PPI)             |      96 |    72 |    96 |
       /// | Pixels per centimeters (pixel/cm) |      38 |    28 |    38 |
       /// | Pitch (µm)                        |     265 |   353 |   265 |
-      static int32 get_standard_pixels_per_inch();
+      [[nodiscard]] static auto get_standard_pixels_per_inch() -> xtd::int32;
       
       /// @brief Retrieves the working area for the display that contains the largest region of the specified control. The working area is the desktop area of the display, excluding taskbars, docked windows, and docked tool bars.
       /// @param control The control for which to retrieve the working area.
       /// @return A xtd::drawing::rectangle that specifies the working area. In multiple display environments where no display contains the specified control, the display closest to the control is returned.
-      static drawing::rectangle get_working_area(const control& control);
+      [[nodiscard]] static auto get_working_area(const xtd::forms::control& control) -> xtd::drawing::rectangle;
       
       /// @brief Retrieves the working area for the display that contains the largest region of the specified handle. The working area is the desktop area of the display, excluding taskbars, docked windows, and docked tool bars.
       /// @param handle The window handle for which to retrieve the working area.
       /// @return A xtd::drawing::rectangle that specifies the working area. In multiple display environments where no display contains the specified handle, the display closest to the object is returned.
-      static drawing::rectangle get_working_area(intptr handle);
+      [[nodiscard]] static auto get_working_area(xtd::intptr handle) -> xtd::drawing::rectangle;
       
       /// @brief Retrieves the working area closest to the specified point. The working area is the desktop area of the display, excluding taskbars, docked windows, and docked tool bars.
       /// @param point A xtd::drawing::point that specifies the coordinates for which to retrieve the working area.
       /// @return A xtd::drawing::rectangle that specifies the working area. In multiple display environments where no display contains the specified point, the display closest to the point is returned.
-      static drawing::rectangle get_working_area(const drawing::point& point);
+      [[nodiscard]] static auto get_working_area(const xtd::drawing::point& point) -> xtd::drawing::rectangle;
       
       /// @brief Retrieves the working area for the display that contains the largest portion of the specified rectangle. The working area is the desktop area of the display, excluding taskbars, docked windows, and docked tool bars.
       /// @param rect The xtd::drawing::rectangle that specifies the area for which to retrieve the working area.
       /// @return A xtd::drawing::rectangle that specifies the working area. In multiple display environments where no display contains the specified rectangle, the display closest to the rectangle is returned.
-      static drawing::rectangle get_working_area(const drawing::rectangle& rect);
+      [[nodiscard]] static auto get_working_area(const xtd::drawing::rectangle& rect) -> xtd::drawing::rectangle;
       /// @}
       
     private:
-      screen(int32 bits_per_pixel, const drawing::rectangle& bounds, const xtd::string& device_name, int32 pixels_per_inch, bool primary, double scale_factor, const drawing::rectangle& working_area);
+      screen(xtd::int32 bits_per_pixel, const xtd::drawing::rectangle& bounds, const xtd::string& device_name, xtd::int32 pixels_per_inch, bool primary, double scale_factor, const xtd::drawing::rectangle& working_area);
       
-      int32 bits_per_pixel_ = 0;
-      drawing::rectangle bounds_;
+      xtd::int32 bits_per_pixel_ = 0;
+      xtd::drawing::rectangle bounds_;
       xtd::string device_name_;
-      int32 pixels_per_inch_ = 96;
+      xtd::int32 pixels_per_inch_ = 96;
       bool primary_ = false;
       double scale_factor_ = 1.;
-      drawing::rectangle working_area_;
+      xtd::drawing::rectangle working_area_;
     };
   }
 }
