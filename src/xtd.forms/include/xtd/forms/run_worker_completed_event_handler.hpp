@@ -11,7 +11,7 @@ namespace xtd {
   namespace forms {
     /// @brief Represents the method that will handle the xtd::forms::background_worker::run_worker_completed event. This class cannot be inherited.
     /// ```cpp
-    /// using run_worker_completed_event_handler = xtd::delegate<void(object& sender, const run_worker_completed_event_args& e)>;
+    /// using run_worker_completed_event_handler = xtd::delegate<void(xtd::object& sender, const xtd::forms::run_worker_completed_event_args& e)>;
     /// ```
     /// @param sender The source of the event.
     /// @param e A do_work_event_args that contains the event data.
@@ -25,6 +25,6 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms events
     /// @remarks When you create a run_worker_completed_event_handler delegate, you identify the method that will handle the event. To associate the event with your event handler, add an instance of the delegate to the event. The event-handler method is called whenever the event occurs, unless you remove the delegate
-    using run_worker_completed_event_handler = xtd::delegate<void(object& sender, const run_worker_completed_event_args& e)>;
+    using run_worker_completed_event_handler = xtd::delegate<void(xtd::object& sender, const xtd::forms::run_worker_completed_event_args& e)>;
   }
 }
