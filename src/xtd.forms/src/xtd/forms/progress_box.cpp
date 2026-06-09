@@ -5,175 +5,175 @@ using namespace xtd::forms;
 
 xtd::uptr<progress_dialog> progress_box::dialog_;
 
-bool progress_box::cancelled() {
+auto progress_box::cancelled() -> bool {
   return dialog_ && dialog_->cancelled();
 }
 
-bool progress_box::skipped() {
+auto progress_box::skipped() -> bool {
   return dialog_ && dialog_->skipped();
 }
 
-int32 progress_box::minimum() {
+auto progress_box::minimum() -> int32 {
   return dialog_ ? dialog_->minimum() : 0;
 }
 
-int32 progress_box::maximum() {
+auto progress_box::maximum() -> int32 {
   return dialog_ ? dialog_->maximum() : 100;
 }
 
-void progress_box::hide() {
+auto progress_box::hide() -> void {
   dialog_.reset();
 }
 
-void progress_box::show(const xtd::string& title) {
+auto progress_box::show(const xtd::string& title) -> void {
   show_progress_box(nullptr, progress_box_options::none, title);
 }
 
-void progress_box::show(const xtd::string& title, const progress_box_options options) {
+auto progress_box::show(const xtd::string& title, progress_box_options options) -> void {
   show_progress_box(nullptr, options, title);
 }
 
-void progress_box::show(const xtd::string& title, const xtd::string& message) {
+auto progress_box::show(const xtd::string& title, const xtd::string& message) -> void {
   show_progress_box(nullptr, progress_box_options::none, title, message);
 }
 
-void progress_box::show(const xtd::string& title, const xtd::string& message, const progress_box_options options) {
+auto progress_box::show(const xtd::string& title, const xtd::string& message, progress_box_options options) -> void {
   show_progress_box(nullptr, options, title, message);
 }
 
-void progress_box::show(const xtd::string& title, const xtd::string& message, const int32 initial_value) {
+auto progress_box::show(const xtd::string& title, const xtd::string& message, int32 initial_value) -> void {
   show_progress_box(nullptr, progress_box_options::none, title, message, initial_value);
 }
 
-void progress_box::show(const xtd::string& title, const xtd::string& message, const int32 initial_value, const progress_box_options options) {
+auto progress_box::show(const xtd::string& title, const xtd::string& message, int32 initial_value, progress_box_options options) -> void {
   show_progress_box(nullptr, options, title, message, initial_value);
 }
 
-void progress_box::show(const xtd::string& title, const xtd::string& message, const int32 initial_value, const int32 minimum) {
+auto progress_box::show(const xtd::string& title, const xtd::string& message, int32 initial_value, int32 minimum) -> void {
   show_progress_box(nullptr, progress_box_options::none, title, message, initial_value, minimum);
 }
 
-void progress_box::show(const xtd::string& title, const xtd::string& message, const int32 initial_value, const int32 minimum, const progress_box_options options) {
+auto progress_box::show(const xtd::string& title, const xtd::string& message, int32 initial_value, int32 minimum, progress_box_options options) -> void {
   show_progress_box(nullptr, options, title, message, initial_value, minimum);
 }
 
-void progress_box::show(const xtd::string& title, const xtd::string& message, const int32 initial_value, const int32 minimum, const int32 maximum) {
+auto progress_box::show(const xtd::string& title, const xtd::string& message, int32 initial_value, int32 minimum, int32 maximum) -> void {
   show_progress_box(nullptr, progress_box_options::none, title, message, initial_value, minimum, maximum);
 }
 
-void progress_box::show(const xtd::string& title, const xtd::string& message, const int32 initial_value, const int32 minimum, const int32 maximum, const progress_box_options options) {
+auto progress_box::show(const xtd::string& title, const xtd::string& message, int32 initial_value, int32 minimum, int32 maximum, progress_box_options options) -> void {
   show_progress_box(nullptr, options, title, message, initial_value, minimum, maximum);
 }
 
-void progress_box::show(const xtd::string& title, const xtd::string& message, const int32 initial_value, const int32 minimum, const int32 maximum, const bool marquee, const xtd::usize marquee_animation_speed) {
+auto progress_box::show(const xtd::string& title, const xtd::string& message, int32 initial_value, int32 minimum, int32 maximum, bool marquee, usize marquee_animation_speed) -> void {
   show_progress_box(nullptr, progress_box_options::none, title, message, initial_value, minimum, maximum, marquee, marquee_animation_speed);
 }
 
-void progress_box::show(const xtd::string& title, const xtd::string& message, const int32 initial_value, const int32 minimum, const int32 maximum, const bool marquee, const xtd::usize marquee_animation_speed, const progress_box_options options) {
+auto progress_box::show(const xtd::string& title, const xtd::string& message, int32 initial_value, int32 minimum, int32 maximum, bool marquee, usize marquee_animation_speed, progress_box_options options) -> void {
   show_progress_box(nullptr, options, title, message, initial_value, minimum, maximum, marquee, marquee_animation_speed);
 }
 
-void progress_box::show(const xtd::string& title, const xtd::string& message, const int32 initial_value, const int32 minimum, const int32 maximum, const bool marquee, const xtd::usize marquee_animation_speed, const array<xtd::string>& informations) {
+auto progress_box::show(const xtd::string& title, const xtd::string& message, int32 initial_value, int32 minimum, int32 maximum, bool marquee, usize marquee_animation_speed, const array<xtd::string>& informations) -> void {
   show_progress_box(nullptr, progress_box_options::none, title, message, initial_value, minimum, maximum, marquee, marquee_animation_speed, informations);
 }
 
-void progress_box::show(const xtd::string& title, const xtd::string& message, const int32 initial_value, const int32 minimum, const int32 maximum, const bool marquee, const xtd::usize marquee_animation_speed, const array<xtd::string>& informations, const progress_box_options options) {
+auto progress_box::show(const xtd::string& title, const xtd::string& message, int32 initial_value, int32 minimum, int32 maximum, bool marquee, usize marquee_animation_speed, const array<xtd::string>& informations, progress_box_options options) -> void {
   show_progress_box(nullptr, options, title, message, initial_value, minimum, maximum, marquee, marquee_animation_speed, informations);
 }
 
-void progress_box::show(const iwin32_window& owner, const xtd::string& title) {
+auto progress_box::show(const iwin32_window& owner, const xtd::string& title) -> void {
   show_progress_box(&owner, progress_box_options::none, title);
 }
 
-void progress_box::show(const iwin32_window& owner, const xtd::string& title, const progress_box_options options) {
+auto progress_box::show(const iwin32_window& owner, const xtd::string& title, progress_box_options options) -> void {
   show_progress_box(&owner, options, title);
 }
 
-void progress_box::show(const iwin32_window& owner, const xtd::string& title, const xtd::string& message) {
+auto progress_box::show(const iwin32_window& owner, const xtd::string& title, const xtd::string& message) -> void {
   show_progress_box(&owner, progress_box_options::none, title, message);
 }
 
-void progress_box::show(const iwin32_window& owner, const xtd::string& title, const xtd::string& message, const progress_box_options options) {
+auto progress_box::show(const iwin32_window& owner, const xtd::string& title, const xtd::string& message, progress_box_options options) -> void {
   show_progress_box(&owner, options, title, message);
 }
 
-void progress_box::show(const iwin32_window& owner, const xtd::string& title, const xtd::string& message, const int32 initial_value) {
+auto progress_box::show(const iwin32_window& owner, const xtd::string& title, const xtd::string& message, int32 initial_value) -> void {
   show_progress_box(&owner, progress_box_options::none, title, message, initial_value);
 }
 
-void progress_box::show(const iwin32_window& owner, const xtd::string& title, const xtd::string& message, const int32 initial_value, const progress_box_options options) {
+auto progress_box::show(const iwin32_window& owner, const xtd::string& title, const xtd::string& message, int32 initial_value, progress_box_options options) -> void {
   show_progress_box(&owner, options, title, message, initial_value);
 }
 
-void progress_box::show(const iwin32_window& owner, const xtd::string& title, const xtd::string& message, const int32 initial_value, const int32 minimum) {
+auto progress_box::show(const iwin32_window& owner, const xtd::string& title, const xtd::string& message, int32 initial_value, int32 minimum) -> void {
   show_progress_box(&owner, progress_box_options::none, title, message, initial_value, minimum);
 }
 
-void progress_box::show(const iwin32_window& owner, const xtd::string& title, const xtd::string& message, const int32 initial_value, const int32 minimum, const progress_box_options options) {
+auto progress_box::show(const iwin32_window& owner, const xtd::string& title, const xtd::string& message, int32 initial_value, int32 minimum, progress_box_options options) -> void {
   show_progress_box(&owner, options, title, message, initial_value, minimum);
 }
 
-void progress_box::show(const iwin32_window& owner, const xtd::string& title, const xtd::string& message, const int32 initial_value, const int32 minimum, const int32 maximum) {
+auto progress_box::show(const iwin32_window& owner, const xtd::string& title, const xtd::string& message, int32 initial_value, int32 minimum, int32 maximum) -> void {
   show_progress_box(&owner, progress_box_options::none, title, message, initial_value, minimum, maximum);
 }
 
-void progress_box::show(const iwin32_window& owner, const xtd::string& title, const xtd::string& message, const int32 initial_value, const int32 minimum, const int32 maximum, const progress_box_options options) {
+auto progress_box::show(const iwin32_window& owner, const xtd::string& title, const xtd::string& message, int32 initial_value, int32 minimum, int32 maximum, progress_box_options options) -> void {
   show_progress_box(&owner, options, title, message, initial_value, minimum, maximum);
 }
 
-void progress_box::show(const iwin32_window& owner, const xtd::string& title, const xtd::string& message, const int32 initial_value, const int32 minimum, const int32 maximum, const bool marquee, const xtd::usize marquee_animation_speed) {
+auto progress_box::show(const iwin32_window& owner, const xtd::string& title, const xtd::string& message, int32 initial_value, int32 minimum, int32 maximum, bool marquee, usize marquee_animation_speed) -> void {
   show_progress_box(&owner, progress_box_options::none, title, message, initial_value, minimum, maximum, marquee, marquee_animation_speed);
 }
 
-void progress_box::show(const iwin32_window& owner, const xtd::string& title, const xtd::string& message, const int32 initial_value, const int32 minimum, const int32 maximum, const bool marquee, const xtd::usize marquee_animation_speed, const progress_box_options options) {
+auto progress_box::show(const iwin32_window& owner, const xtd::string& title, const xtd::string& message, int32 initial_value, int32 minimum, int32 maximum, bool marquee, usize marquee_animation_speed, progress_box_options options) -> void {
   show_progress_box(&owner, options, title, message, initial_value, minimum, maximum, marquee, marquee_animation_speed);
 }
 
-void progress_box::show(const iwin32_window& owner, const xtd::string& title, const xtd::string& message, const int32 initial_value, const int32 minimum, const int32 maximum, const bool marquee, const xtd::usize marquee_animation_speed, const array<xtd::string>& informations) {
+auto progress_box::show(const iwin32_window& owner, const xtd::string& title, const xtd::string& message, int32 initial_value, int32 minimum, int32 maximum, bool marquee, usize marquee_animation_speed, const array<xtd::string>& informations) -> void {
   show_progress_box(&owner, progress_box_options::none, title, message, initial_value, minimum, maximum, marquee, marquee_animation_speed, informations);
 }
 
-void progress_box::show(const iwin32_window& owner, const xtd::string& title, const xtd::string& message, const int32 initial_value, const int32 minimum, const int32 maximum, const bool marquee, const xtd::usize marquee_animation_speed, const array<xtd::string>& informations, const progress_box_options options) {
+auto progress_box::show(const iwin32_window& owner, const xtd::string& title, const xtd::string& message, int32 initial_value, int32 minimum, int32 maximum, bool marquee, usize marquee_animation_speed, const array<xtd::string>& informations, progress_box_options options) -> void {
   show_progress_box(&owner, options, title, message, initial_value, minimum, maximum, marquee, marquee_animation_speed, informations);
 }
 
-void progress_box::update(const progress_box_options options) {
+auto progress_box::update(progress_box_options options) -> void {
   if (dialog_) dialog_->show_cancel_button((options & progress_box_options::show_cancel_button) == progress_box_options::show_cancel_button).show_skip_button((options & progress_box_options::show_skip_button) == progress_box_options::show_skip_button).show_elapsed_time((options & progress_box_options::show_elapsed_time) == progress_box_options::show_elapsed_time).show_estimated_time((options & progress_box_options::show_estimated_time) == progress_box_options::show_estimated_time).show_remaining_time((options & progress_box_options::show_remaining_time) == progress_box_options::show_remaining_time);
 }
 
-void progress_box::update(const int32 value) {
+auto progress_box::update(int32 value) -> void {
   if (dialog_) dialog_->value(value);
 }
 
-void progress_box::update(const int32 value, const xtd::string& title) {
+auto progress_box::update(int32 value, const xtd::string& title) -> void {
   if (dialog_) dialog_->value(value).text(title);
 }
 
-void progress_box::update(const int32 value, const xtd::string& title, const xtd::string& message) {
+auto progress_box::update(int32 value, const xtd::string& title, const xtd::string& message) -> void {
   if (dialog_) dialog_->value(value).text(title).message(message);
 }
 
-void progress_box::update(const int32 value, const xtd::string& title, const xtd::string& message, const int32 minimum) {
+auto progress_box::update(int32 value, const xtd::string& title, const xtd::string& message, int32 minimum) -> void {
   if (dialog_) dialog_->value(value).text(title).message(message).minimum(minimum);
 }
 
-void progress_box::update(const int32 value, const xtd::string& title, const xtd::string& message, const int32 minimum, const int32 maximum) {
+auto progress_box::update(int32 value, const xtd::string& title, const xtd::string& message, int32 minimum, int32 maximum) -> void {
   if (dialog_) dialog_->value(value).text(title).message(message).minimum(minimum).maximum(maximum);
 }
 
-void progress_box::update(const int32 value, const xtd::string& title, const xtd::string& message, const int32 minimum, const int32 maximum, const bool marquee) {
+auto progress_box::update(int32 value, const xtd::string& title, const xtd::string& message, int32 minimum, int32 maximum, bool marquee) -> void {
   if (dialog_) dialog_->value(value).text(title).message(message).minimum(minimum).maximum(maximum).marquee(marquee);
 }
 
-void progress_box::update(const int32 value, const xtd::string& title, const xtd::string& message, const int32 minimum, const int32 maximum, const bool marquee, const xtd::usize marquee_animation_speed) {
+auto progress_box::update(int32 value, const xtd::string& title, const xtd::string& message, int32 minimum, int32 maximum, bool marquee, usize marquee_animation_speed) -> void {
   if (dialog_) dialog_->value(value).text(title).message(message).minimum(minimum).maximum(maximum).marquee(marquee).marquee_animation_speed(marquee_animation_speed);
 }
 
-void progress_box::update(const int32 value, const xtd::string& title, const xtd::string& message, const int32 minimum, const int32 maximum, const bool marquee, const xtd::usize marquee_animation_speed, const array<xtd::string>& informations) {
+auto progress_box::update(int32 value, const xtd::string& title, const xtd::string& message, int32 minimum, int32 maximum, bool marquee, usize marquee_animation_speed, const array<xtd::string>& informations) -> void {
   if (dialog_) dialog_->value(value).text(title).message(message).minimum(minimum).maximum(maximum).marquee(marquee).marquee_animation_speed(marquee_animation_speed).informations(informations);
 }
 
-void progress_box::show_progress_box(const iwin32_window* owner, const progress_box_options options, const xtd::string& title, const xtd::string& message, int32 initial_value, int32 minimum, int32 maximum, const bool marquee, xtd::usize marquee_animation_speed, const array<xtd::string>& informations) {
+auto progress_box::show_progress_box(const iwin32_window* owner, progress_box_options options, const xtd::string& title, const xtd::string& message, int32 initial_value, int32 minimum, int32 maximum, bool marquee, xtd::usize marquee_animation_speed, const array<xtd::string>& informations) -> void {
   if (dialog_) return;
   dialog_ = xtd::new_uptr<progress_dialog>();
   dialog_->text(title)
