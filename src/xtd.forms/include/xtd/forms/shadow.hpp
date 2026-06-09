@@ -26,7 +26,7 @@ namespace xtd {
     /// @remarks The xtd::forms::shadow_label::shadow class defines the properties of a shadow within a xtd::forms::shadow_label control. You can use these properties to provide data to the xtd::forms::shadow_label::shadow_clicked event of the xtd::forms::shadow_label control to perform tasks when the shadow is clicked in the control. The xtd::forms::shadow_label::shadow_data property enables you to define information that the xtd::forms::shadow_label::shadow_clicked event can use to display a URL within your web browser or to open a file.
     /// @remarks In addition to information related to the shadow, the properties of the xtd::forms::shadow_label::shadow class also help define the text of the xtd::forms::shadow_label::lLink and its display state. The xtd::forms::shadow_label::start and xtd::forms::shadow_label::length properties define the location and length of text from the text of the xtd::forms::shadow_label control to display as a shadow. The xtd::forms::shadow_label::enabled property allows you to display the shadow as a disabled shadow, and the xtd::forms::shadow_label::visited property can alert the user that they already visited the specified shadow in the current instance of the xtd::forms::shadow_label.
     /// @remarks You can display multiple shadows in a single xtd::forms::shadow_label control. Each xtd::forms::shadow_label::shadow is added into the xtd::forms::shadow_label::shadow_collection associated with the xtd::forms::shadow_label control. To obtain the collection of shadows defined in a xtd::forms::shadow_label control, use the xtd::forms::shadow_label::shadows property.
-    class forms_export_ shadow : public object, public xtd::iequatable<shadow> {
+    class forms_export_ shadow : public xtd::object, public xtd::iequatable<shadow> {
       struct data;
       
     public:
@@ -45,28 +45,28 @@ namespace xtd {
       /// @brief Initializes a new instance of the xtd::forms::shadow class with the specified offset x, and offset y.
       /// @param x The shadow offset x in pixels.
       /// @param y The shadow offset y in pixels.
-      shadow(int32 x, int32 y);
+      shadow(xtd::int32 x, xtd::int32 y);
       /// @brief Initializes a new instance of the xtd::forms::shadow class with the specified offset x, offset y, and radius.
       /// @param x The shadow offset x in pixels.
       /// @param y The shadow offset y in pixels.
       /// @param radius The shadow blurring radius.
-      shadow(int32 x, int32 y, int32 radius);
+      shadow(xtd::int32 x, xtd::int32 y, xtd::int32 radius);
       /// @brief Initializes a new instance of the xtd::forms::shadow class with the specified offset x, offset y and color.
       /// @param x The shadow offset x in pixels.
       /// @param y The shadow offset y in pixels.
-      shadow(int32 x, int32 y, const xtd::drawing::color& color);
+      shadow(xtd::int32 x, xtd::int32 y, const xtd::drawing::color& color);
       /// @brief Initializes a new instance of the xtd::forms::shadow class with the specified offset x, offset y, and color.
       /// @param x The shadow offset x in pixels.
       /// @param y The shadow offset y in pixels.
       /// @param radius The shadow blurring radius.
-      shadow(int32 x, int32 y, int32 radius, const xtd::drawing::color& color);
+      shadow(xtd::int32 x, xtd::int32 y, xtd::int32 radius, const xtd::drawing::color& color);
       /// @brief Initializes a new instance of the xtd::forms::shadow class with the specified offset point.
       /// @param offset The shadow offset point in pixels.
       explicit shadow(const xtd::drawing::point& offset);
       /// @brief Initializes a new instance of the xtd::forms::shadow class with the specified offset point, and radius.
       /// @param offset The shadow offset point in pixels.
       /// @param radius The shadow blurring radius.
-      shadow(const xtd::drawing::point& offset, int32 radius);
+      shadow(const xtd::drawing::point& offset, xtd::int32 radius);
       /// @brief Initializes a new instance of the xtd::forms::shadow class with the specified offset point, and color.
       /// @param offset The shadow offset point in pixels.
       /// @param color The shadow color.
@@ -75,12 +75,11 @@ namespace xtd {
       /// @param offset The shadow offset point in pixels.
       /// @param radius The shadow blurring radius.
       /// @param color The shadow color.
-      shadow(const xtd::drawing::point& offset, int32 radius, const xtd::drawing::color& color);
+      shadow(const xtd::drawing::point& offset, xtd::int32 radius, const xtd::drawing::color& color);
       /// @}
       
       /// @cond
       shadow(const shadow&);
-      shadow(shadow&&) = default;
       shadow& operator =(const shadow&);
       /// @endcond
       
@@ -89,39 +88,43 @@ namespace xtd {
       /// @{
       /// @brief Gets the shadow color.
       /// @return The shadow color.
-      const xtd::drawing::color& color() const noexcept;
+      [[nodiscard]] auto color() const noexcept -> const xtd::drawing::color&;
       /// @brief Sets the shadow color.
       /// @param value The shadow color.
       /// @return This current instance.
-      shadow& color(const xtd::drawing::color& value) noexcept;
+      auto color(const xtd::drawing::color& value) noexcept -> shadow&;
+      
       /// @brief Gets the shadow offset in pixels.
       /// @return The shadow offset.
-      const xtd::drawing::point& offset() const noexcept;
+      [[nodiscard]] auto offset() const noexcept -> const xtd::drawing::point&;
       /// @brief Sets the shadow offset point in pixels.
       /// @param value The shadow offset point.
       /// @return This current instance.
-      shadow& offset(const xtd::drawing::point& value) noexcept;
+      auto offset(const xtd::drawing::point& value) noexcept -> shadow&;
+      
       /// @brief Gets the shadow blurring radius in pixels.
       /// @return The shadow blurring radius.
-      int32 radius() const noexcept;
+      [[nodiscard]] auto radius() const noexcept -> xtd::int32;
       /// @brief Sets the shadow blurring radius in pixels.
       /// @param value The shadow blurring radius.
       /// @return This current instance.
-      shadow& radius(int32 value) noexcept;
+      auto radius(xtd::int32 value) noexcept -> shadow&;
+      
       /// @brief Gets the shadow offset x in pixels.
       /// @return The shadow offset x.
-      int32 x() const noexcept;
+      [[nodiscard]] auto x() const noexcept -> xtd::int32;
       /// @brief Sets the shadow offset x in pixels.
       /// @param value The shadow offset x.
       /// @return This current instance.
-      shadow& x(int32 value) noexcept;
+      auto x(xtd::int32 value) noexcept -> shadow&;
+      
       /// @brief Gets the shadow offset y in pixels.
       /// @return The shadow offset y.
-      int32 y() const noexcept;
+      [[nodiscard]] auto y() const noexcept -> xtd::int32;
       /// @brief Sets the shadow offset y in pixels.
       /// @param value The shadow offset y.
       /// @return This current instance.
-      shadow& y(int32 value) noexcept;
+      auto y(xtd::int32 value) noexcept -> shadow&;
       /// @}
       
       /// @name Public Methods
@@ -130,15 +133,15 @@ namespace xtd {
       /// @brief Determines whether the specified object is equal to the current object.
       /// @param obj The object to compare with the current object.
       /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-      bool equals(const xtd::object& obj) const noexcept override;
+      [[nodiscard]] auto equals(const xtd::object& obj) const noexcept -> bool override;
       /// @brief Determines whether the specified object is equal to the current object.
       /// @param other The object to compare with the current object.
       /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-      bool equals(const shadow& other) const noexcept override;
+      [[nodiscard]] auto equals(const shadow& other) const noexcept -> bool override;
       
       /// @brief Serves as a hash function for a particular type.
       /// @return A hash code for the current object.
-      xtd::usize get_hash_code() const noexcept override;
+      [[nodiscard]] auto get_hash_code() const noexcept -> xtd::usize override;
       /// @}
       
     private:
