@@ -22,13 +22,8 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms events
     /// @remarks The xtd::forms::status_bar::draw_item event occurs when a visual aspect of an owner-drawn xtd::forms::status_bar_panel changes. A xtd::forms::status_bar_draw_item_event_args specifies the xtd::drawing::graphics object to use to draw the panel, the xtd::drawing::rectangle object in which to draw the panel, the panel identification number, state information about the panel, and the panel to draw. You can use the data provided by this class in an event handler for the xtd::forms::status_bar::draw_item event to create custom-drawn panels in your application's xtd::forms::status_bar control.
-    class status_bar_draw_item_event_args : public draw_item_event_args {
+    class status_bar_draw_item_event_args : public xtd::forms::draw_item_event_args {
     public:
-      /// @cond
-      status_bar_draw_item_event_args(const status_bar_draw_item_event_args&) = default;
-      status_bar_draw_item_event_args& operator =(const status_bar_draw_item_event_args&) = default;
-      /// @endcond
-      
       /// @name Public Constructors
       
       /// @{
@@ -73,16 +68,16 @@ namespace xtd {
       /// @{
       /// @brief Gets the xtd::forms::tool_bar_panel to draw.
       /// @return The xtd::forms::tool_bar_panel to draw.
-      const xtd::forms::status_bar_panel& panel() const noexcept {return panel_;}
+      [[nodiscard]] auto panel() const noexcept -> const xtd::forms::status_bar_panel& {return panel_;}
       
       /// @brief Gets internal handle.
       /// @return Internal handle.
-      intptr handle() const noexcept {return handle_;}
+      [[nodiscard]] auto handle() const noexcept -> xtd::intptr {return handle_;}
       /// @}
       
     private:
       xtd::forms::status_bar_panel panel_;
-      intptr handle_ = 0;
+      xtd::intptr handle_ = 0;
     };
   }
 }
