@@ -9,99 +9,102 @@ using namespace xtd::forms;
 using namespace xtd::forms::visual_styles;
 
 struct renderer::data {
-  xtd::string name;
-  xtd::forms::renderer::button_renderer button_renderer = xtd::forms::renderer::button_renderer(default_button_renderer);
-  xtd::forms::renderer::check_box_renderer check_box_renderer = xtd::forms::renderer::check_box_renderer(default_check_box_renderer);
-  xtd::forms::renderer::radio_button_renderer radio_button_renderer = xtd::forms::renderer::radio_button_renderer(default_radio_button_renderer);
+  string name;
+  renderer::button_renderer button_renderer = renderer::button_renderer(default_button_renderer);
+  renderer::check_box_renderer check_box_renderer = renderer::check_box_renderer(default_check_box_renderer);
+  renderer::radio_button_renderer radio_button_renderer = renderer::radio_button_renderer(default_radio_button_renderer);
 };
 
-renderer::renderer() : data_(xtd::new_sptr<data>()) {
+renderer::renderer() : data_(new_sptr<data>()) {
 }
 
-renderer::renderer(const xtd::string& name) : data_(xtd::new_sptr<data>()) {
+renderer::renderer(const string& name) : renderer() {
   data_->name = name;
 }
 
-renderer::renderer(const renderer& value) : data_(xtd::new_sptr<data>()) {
+renderer::renderer(const renderer& value) : renderer() {
   *data_ = *value.data_;
 }
 
-renderer& renderer::operator =(const renderer& value) {
+auto renderer::operator =(const renderer& value) -> renderer& {
   *data_ = *value.data_;
   return *this;
 }
 
-const xtd::string& renderer::name() const {
+auto renderer::name() const -> const string& {
   return data_->name;
 }
 
-renderer& renderer::name(const xtd::string& name) {
-  data_->name = name;
+auto renderer::name(const string& value) -> renderer& {
+  data_->name = value;
   return *this;
 }
 
-renderer::button_renderer renderer::button_render() const noexcept {
+auto renderer::button_render() const noexcept -> const button_renderer& {
   return data_->button_renderer;
 }
 
-void renderer::button_render(button_renderer button_renderer) {
-  data_->button_renderer = button_renderer;
+auto renderer::button_render(button_renderer value) -> renderer& {
+  data_->button_renderer = value;
+  return *this;
 }
 
-renderer::check_box_renderer renderer::check_box_render() const noexcept {
+auto renderer::check_box_render() const noexcept -> const check_box_renderer& {
   return data_->check_box_renderer;
 }
 
-void renderer::check_box_render(check_box_renderer check_box_renderer) {
-  data_->check_box_renderer = check_box_renderer;
+auto renderer::check_box_render(check_box_renderer value) -> renderer& {
+  data_->check_box_renderer = value;
+  return *this;
 }
 
-renderer::radio_button_renderer renderer::radio_button_render() const noexcept {
+auto renderer::radio_button_render() const noexcept -> const radio_button_renderer& {
   return data_->radio_button_renderer;
 }
 
-void renderer::radio_button_render(radio_button_renderer radio_button_renderer) {
-  data_->radio_button_renderer = radio_button_renderer;
+auto renderer::radio_button_render(radio_button_renderer value) -> renderer& {
+  data_->radio_button_renderer = value;
+  return *this;
 }
 
-void renderer::draw_button(xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, const xtd::string& text, const xtd::drawing::font& font, xtd::forms::text_format_flags flags, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::push_button_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
+auto renderer::draw_button(graphics g, const rectangle& bounds, const string& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, push_button_state state, const std::optional<color>& back_color, const std::optional<color>& fore_color) -> void {
   data_->button_renderer(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
 }
 
-void renderer::draw_check_box(xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, const xtd::string& text, const xtd::drawing::font& font, xtd::forms::text_format_flags flags, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::check_box_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
+auto renderer::draw_check_box(graphics g, const rectangle& bounds, const string& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused,check_box_state state, const std::optional<color>& back_color, const std::optional<color>& fore_color) -> void {
   data_->check_box_renderer(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
 }
 
-void renderer::draw_radio_button(xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, const xtd::string& text, const xtd::drawing::font& font, xtd::forms::text_format_flags flags, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::radio_button_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
+auto renderer::draw_radio_button(graphics g, const rectangle& bounds, const string& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, radio_button_state state, const std::optional<color>& back_color, const std::optional<color>& fore_color) -> void {
   data_->radio_button_renderer(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
 }
 
-bool renderer::equals(const object& obj) const noexcept {
+auto renderer::equals(const object& obj) const noexcept -> bool {
   return is<renderer>(obj) && equals(static_cast<const renderer&>(obj));
 }
 
-bool renderer::equals(const renderer& other) const noexcept {
+auto renderer::equals(const renderer& other) const noexcept -> bool {
   return data_->name == other.data_->name;
 }
 
-usize renderer::get_hash_code() const noexcept {
+auto renderer::get_hash_code() const noexcept -> usize {
   return hash_code::combine(data_->name);
 }
 
-xtd::string renderer::to_string() const noexcept {
-  if (!xtd::string::is_empty(data_->name)) return xtd::string::format("{}, name: {}", get_type().full_name(), data_->name);
-  return xtd::string::format(get_type().full_name());
+auto renderer::to_string() const noexcept -> string {
+  if (!string::is_empty(data_->name)) return string::format("{}, name: {}", get_type().full_name(), data_->name);
+  return string::format(get_type().full_name());
 }
 
-void renderer::default_button_renderer(xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, const xtd::string& text, const xtd::drawing::font& font, xtd::forms::text_format_flags flags, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::push_button_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
-  xtd::forms::button_renderer::draw_button(g, bounds, state, false, back_color, text, std::optional<content_alignment>(), fore_color, font, image, std::optional<xtd::forms::content_alignment>());
+auto renderer::default_button_renderer(graphics g, const rectangle& bounds, const string& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, visual_styles::push_button_state state, const std::optional<color>& back_color, const std::optional<color>& fore_color) -> void {
+  xtd::forms::button_renderer::draw_button(g, bounds, state, false, back_color, text, std::optional<content_alignment>(), fore_color, font, image, std::optional<content_alignment>());
   //xtd::forms::button_renderer::draw_button(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
 }
 
-void renderer::default_check_box_renderer(xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, const xtd::string& text, const xtd::drawing::font& font, xtd::forms::text_format_flags flags, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::check_box_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
+auto renderer::default_check_box_renderer(graphics g, const rectangle& bounds, const string& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, visual_styles::check_box_state state, const std::optional<color>& back_color, const std::optional<color>& fore_color) -> void {
   xtd::forms::check_box_renderer::draw_check_box(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
 }
 
-void renderer::default_radio_button_renderer(xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, const xtd::string& text, const xtd::drawing::font& font, xtd::forms::text_format_flags flags, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::radio_button_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {
+auto renderer::default_radio_button_renderer(graphics g, const rectangle& bounds, const string& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, visual_styles::radio_button_state state, const std::optional<color>& back_color, const std::optional<color>& fore_color) -> void {
   xtd::forms::radio_button_renderer::draw_radio_button(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
 }
