@@ -3,7 +3,6 @@
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "tab_page_ref.hpp"
-#include <xtd/object>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -19,7 +18,7 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms
-    struct tab_page_ref_less : public object {
+    struct tab_page_ref_less {
       /// @name Operators
       
       /// @{
@@ -27,7 +26,7 @@ namespace xtd {
       /// @param value1 The first value to compare.
       /// @param value2 The second value to compare.
       /// @return `true` if value1 < value2; otherwise `false`.
-      bool operator()(const tab_page_ref& value1, const tab_page_ref& value2) const {
+      [[nodiscard]] auto operator()(const xtd::forms::tab_page_ref& value1, const xtd::forms::tab_page_ref& value2) const -> bool {
         return &value1.get() < &value2.get();
       }
       /// @}
