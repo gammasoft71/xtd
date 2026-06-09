@@ -294,13 +294,13 @@ std::optional<form::status_bar_ref> form::status_bar() const noexcept {
 form& form::status_bar(const forms::status_bar& value) {
   if (data_->status_bar.has_value() && &data_->status_bar.value().get() == &value) return *this;
   data_->status_bar = const_cast<forms::status_bar&>(value);
-  data_->status_bar.value().get().is_system_status_bar(true);
+  data_->status_bar.value().get().system_status_bar(true);
   return *this;
 }
 
 form& form::status_bar(std::nullptr_t) {
   if (!data_->status_bar.has_value()) return *this;
-  data_->status_bar.value().get().is_system_status_bar(false);
+  data_->status_bar.value().get().system_status_bar(false);
   data_->status_bar.reset();
   return *this;
 }
