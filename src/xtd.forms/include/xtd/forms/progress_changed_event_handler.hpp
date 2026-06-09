@@ -11,7 +11,7 @@ namespace xtd {
   namespace forms {
     /// @brief Represents the method that will handle the xtd::forms::background_worker::progress_changed event. This class cannot be inherited.
     /// ```cpp
-    /// using progress_changed_event_handler = xtd::delegate<void(object& sender, const progress_changed_event_args& e)>;
+    /// using progress_changed_event_handler = xtd::delegate<void(xtd::object& sender, const xtd::forms::progress_changed_event_args& e)>;
     /// ```
     /// @param sender The source of the event.
     /// @param e A do_work_event_args that contains the event data.
