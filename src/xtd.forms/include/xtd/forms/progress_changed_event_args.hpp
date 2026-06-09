@@ -22,31 +22,28 @@ namespace xtd {
     /// @ingroup xtd_forms events
     class progress_changed_event_args : public xtd::event_args {
     public:
-      /// @cond
-      progress_changed_event_args(const progress_changed_event_args&) = default;
-      progress_changed_event_args& operator =(const progress_changed_event_args&) = default;
-      /// @endcond
-      
       /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the DoWorkEventArgs class.
       /// @param argument Specifies an argument for an asynchronous operation.
-      progress_changed_event_args(int32 progress_percentage, const xtd::any_object& user_state) : progress_percentage_(progress_percentage), user_state_(user_state) {}
+      progress_changed_event_args(xtd::int32 progress_percentage, const xtd::any_object& user_state) : progress_percentage_(progress_percentage), user_state_(user_state) {}
       /// @}
       
       /// @name Public Properties
       
       /// @{
-      int32 progress_percentage() const noexcept {return progress_percentage_;}
+      /// @brief Gets a value representing the progress percentage of an asynchronous operation.
+      /// @return The progress percentage of an asynchronous operation.
+      [[nodiscard]] auto progress_percentage() const noexcept -> xtd::int32 {return progress_percentage_;}
       
       /// @brief Gets a value that represents the argument of an asynchronous operation.
       /// @return An object representing the argument of an asynchronous operation.
-      xtd::any_object user_state() const noexcept {return user_state_;}
+      [[nodiscard]] auto user_state() const noexcept -> xtd::any_object {return user_state_;}
       /// @}
       
     private:
-      int32 progress_percentage_ = 0;
+      xtd::int32 progress_percentage_ = 0;
       xtd::any_object user_state_;
     };
   }
