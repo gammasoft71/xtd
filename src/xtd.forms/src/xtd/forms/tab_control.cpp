@@ -17,13 +17,6 @@ using namespace xtd;
 using namespace xtd::forms;
 using namespace xtd::helpers;
 
-tab_control::tab_page_collection::tab_page_collection(const tab_control::tab_page_collection::base& collection) : tab_control::tab_page_collection::base(collection) {}
-tab_control::tab_page_collection::tab_page_collection(const tab_control::tab_page_collection& collection) : tab_control::tab_page_collection::base(collection) {}
-tab_control::tab_page_collection& tab_control::tab_page_collection::operator =(const tab_control::tab_page_collection& collection) {
-  base::operator =(collection);
-  return *this;
-}
-
 void tab_control::tab_page_collection::add(const xtd::string& text) {
   add(text, string::empty_string);
 }
@@ -52,6 +45,14 @@ void tab_control::tab_page_collection::add(const wchar* text) {
   add(text, string::empty_string);
 }
 
+void tab_control::tab_page_collection::insert(xtd::usize index, const xtd::string& text) {
+  insert(index, text, string::empty_string);
+}
+
+void tab_control::tab_page_collection::insert(xtd::usize index, const xtd::string& text, const xtd::string& name) {
+  text_added(index, text, name);
+}
+
 tab_control::tab_page_collection::iterator tab_control::tab_page_collection::insert(const_iterator pos, const xtd::string& text) {
   return insert(pos, text, string::empty_string);
 }
@@ -61,11 +62,11 @@ tab_control::tab_page_collection::iterator tab_control::tab_page_collection::ins
 }
 
 void tab_control::tab_page_collection::insert_at(xtd::usize index, const xtd::string& text) {
-  return insert_at(index, text, string::empty_string);
+  insert(index, text, string::empty_string);
 }
 
 void tab_control::tab_page_collection::insert_at(xtd::usize index, const xtd::string& text, const xtd::string& name) {
-  text_added(index, text, name);
+  insert(index, text, name);
 }
 
 void tab_control::tab_page_collection::push_back(const xtd::string& text) {
