@@ -35,7 +35,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates the use of replace_dialog dialog.
     /// @include replace_dialog.cpp
-    class forms_export_ replace_dialog final : public component {
+    class forms_export_ replace_dialog final : public xtd::forms::component {
       struct data;
       
     public:
@@ -55,67 +55,67 @@ namespace xtd {
       /// @{
       /// @brief Gets the string to find.
       /// @return The string to find.
-      const xtd::string& find_string() const noexcept;
+      [[nodiscard]] auto find_string() const noexcept -> const xtd::string&;
       /// @brief Sets the string to find.
       /// @param value The string to find.
       /// @return Current replace_dialog instance.
-      replace_dialog& find_string(const xtd::string& value);
+      auto find_string(const xtd::string& value) -> replace_dialog&;
       
       /// @brief Gets the replaced string.
       /// @return The replaced string.
-      const xtd::string& replace_string() const noexcept;
+      [[nodiscard]] auto replace_string() const noexcept -> const xtd::string&;
       /// @brief Sets the replaced string.
       /// @param value The replaced string.
       /// @return Current replace_dialog instance.
-      replace_dialog& replace_string(const xtd::string& value);
+      auto replace_string(const xtd::string& value) -> replace_dialog&;
       
       /// @brief Gets the coordinates of the upper-left corner of the dialog relative to the upper-left corner of the screen.
       /// @return The point that represents the upper-left corner of the dialog relative to the upper-left corner of its screen.
-      xtd::drawing::point location() const noexcept;
+      [[nodiscard]] auto location() const noexcept -> xtd::drawing::point;
       /// @brief Sets the coordinates of the upper-left corner of the dialog relative to the upper-left corner of the screen.
       /// @param value The point that represents the upper-left corner of the dialog relative to the upper-left corner of its screen.
       /// @return Current replace_dialog instance.
-      replace_dialog& location(const xtd::drawing::point& value);
+      auto location(const xtd::drawing::point& value) -> replace_dialog&;
       
       /// @brief Gets the match case value.
       /// @return `true` if match case option selected; otherwise `false`. The default is `false`.
-      bool match_case() const noexcept;
+      [[nodiscard]] auto match_case() const noexcept -> bool;
       /// @brief Sets the match case value.
       /// @param value `true` if match case option selected; otherwise `false`. The default is `false`.
       /// @return Current replace_dialog instance.
-      replace_dialog& match_case(bool value);
+      auto match_case(bool value) -> replace_dialog&;
       
       /// @brief Gets a value that indicates whether match case option is shown.
       /// @return `true` if match case option is shown; otherwise `false`. The default is `true`.
-      bool show_match_case() const noexcept;
+      [[nodiscard]] auto show_match_case() const noexcept -> bool;
       /// @brief Sets a value that indicates whether match case option is shown.
       /// @param value `true` if match case option is shown; otherwise `false`. The default is `true`.
       /// @return Current replace_dialog instance.
-      replace_dialog& show_match_case(bool value);
+      auto show_match_case(bool value) -> replace_dialog&;
       
       /// @brief Gets a value that indicates whether whole word option is shown.
       /// @return `true` if whole word option is shown; otherwise `false`. The default is `true`.
-      bool show_whole_word() const noexcept;
+      [[nodiscard]] auto show_whole_word() const noexcept -> bool;
       /// @brief Sets a value that indicates whether whole word option is shown.
       /// @param value `true` if whole word option is shown; otherwise `false`. The default is `true`.
       /// @return Current replace_dialog instance.
-      replace_dialog& show_whole_word(bool value);
+      auto show_whole_word(bool value) -> replace_dialog&;
       
       /// @brief Gets the find dialog title.
       /// @return The find dialog title.
-      const xtd::string& title() const noexcept;
+      [[nodiscard]] auto title() const noexcept -> const xtd::string&;
       /// @brief Sets the find dialog title.
       /// @param value The find dialog title.
       /// @return Current replace_dialog instance.
-      replace_dialog& title(const xtd::string& value);
+      auto title(const xtd::string& value) -> replace_dialog&;
       
       /// @brief Gets the whole word value.
       /// @return `true` if whole word option selected; otherwise `false`. The default is `false`.
-      bool whole_word() const noexcept;
+      [[nodiscard]] auto whole_word() const noexcept -> bool;
       /// @brief Sets the whole word value.
       /// @param value `true` if whole word option selected; otherwise `false`. The default is `false`.
       /// @return Current replace_dialog instance.
-      replace_dialog& whole_word(bool value);
+      auto whole_word(bool value) -> replace_dialog&;
       /// @}
       
       /// @name Public Events
@@ -144,7 +144,7 @@ namespace xtd {
       /// @{
       /// @brief Closes the find dialog box.
       /// @remarks If the find dialog box is already closed, this method does nothing.
-      void close();
+      auto close() -> void;
       
       /// @brief Resets all properties to default values.
       /// @remarks When you reset the xtd::forms::replace::dialog, the following read/write properties are set to initial values.
@@ -157,20 +157,20 @@ namespace xtd {
       /// | show_match_case  | `true`                             |
       /// | whole_word       | `false`                            |
       /// | match_case       | `false`                            |
-      void reset() noexcept;
+      auto reset() noexcept -> void;
       
       /// @brief Runs find dialog box.
       /// @remarks If the find dialog box is already displayed, this method does nothing.
-      void show(const iwin32_window& owner);
+      auto show(const iwin32_window& owner) -> void;
       /// @}
       
     private:
-      void create_handle();
-      void destroy_handle();
-      void recreate_handle();
-      void on_dialog_closed();
-      void on_dialog_find(const xtd::drawing::point& location, const string& find_string, const string& replace_string, bool whole_word, bool match_case);
-      void on_dialog_replace(const xtd::drawing::point& location, const string& find_string, const string& replace_string, bool replace_all, bool whole_word, bool match_case);
+      auto create_handle() -> void;
+      auto destroy_handle() -> void;
+      auto recreate_handle() -> void;
+      auto on_dialog_closed() -> void;
+      auto on_dialog_find(const xtd::drawing::point& location, const xtd::string& find_string, const xtd::string& replace_string, bool whole_word, bool match_case) -> void;
+      auto on_dialog_replace(const xtd::drawing::point& location, const xtd::string& find_string, const xtd::string& replace_string, bool replace_all, bool whole_word, bool match_case) -> void;
       
       xtd::sptr<data> data_;
     };
