@@ -168,7 +168,7 @@ Inheritance diagram for xtd::forms::progress_dialog:</div>
 <div class="line">    button_process.text(<span class="stringliteral">&quot;Process...&quot;</span>);</div>
 <div class="line">    button_process.click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">      <span class="keyword">auto</span> dialog = <a class="code hl_class" href="classxtd_1_1forms_1_1progress__dialog.html">progress_dialog</a> {};</div>
-<div class="line">      dialog.<a class="code hl_function" href="#af1cab23486bbcf9bc5c9a13e93bbf8d8">text</a>(<span class="stringliteral">&quot;Process running&quot;</span>);</div>
+<div class="line">      dialog.<a class="code hl_function" href="#a289ecd184dd45078c2ec602dc3a4d4a0">text</a>(<span class="stringliteral">&quot;Process running&quot;</span>);</div>
 <div class="line">      dialog.show_skip_button(<span class="keyword">true</span>);</div>
 <div class="line">      dialog.show_remaining_time(<span class="keyword">true</span>);</div>
 <div class="line">      dialog.show_dialog(*<span class="keyword">this</span>);</div>
@@ -210,7 +210,7 @@ Inheritance diagram for xtd::forms::progress_dialog:</div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1control_html_a77f74d2ddcec3606a4fd21cffc0948ad"><div class="ttname"><a href="classxtd_1_1forms_1_1control.html#a77f74d2ddcec3606a4fd21cffc0948ad">xtd::forms::control::text</a></div><div class="ttdeci">virtual auto text() const noexcept -&gt; const xtd::string &amp;</div><div class="ttdoc">Gets the text associated with this control.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html">xtd::forms::form</a></div><div class="ttdoc">Represents a window or dialog box that makes up an application&#39;s user interface.</div><div class="ttdef"><b>Definition</b> form.hpp:54</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1progress__dialog_html"><div class="ttname"><a href="classxtd_1_1forms_1_1progress__dialog.html">xtd::forms::progress_dialog</a></div><div class="ttdoc">Represents a common dialog box that displays progress dialog.</div><div class="ttdef"><b>Definition</b> progress_dialog.hpp:32</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1progress__dialog_html_af1cab23486bbcf9bc5c9a13e93bbf8d8"><div class="ttname"><a href="#af1cab23486bbcf9bc5c9a13e93bbf8d8">xtd::forms::progress_dialog::text</a></div><div class="ttdeci">const xtd::string &amp; text() const noexcept</div><div class="ttdoc">Gets the dialog title.</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1progress__dialog_html_a289ecd184dd45078c2ec602dc3a4d4a0"><div class="ttname"><a href="#a289ecd184dd45078c2ec602dc3a4d4a0">xtd::forms::progress_dialog::text</a></div><div class="ttdeci">auto text() const noexcept -&gt; const xtd::string &amp;</div><div class="ttdoc">Gets the dialog title.</div></div>
 <div class="ttc" id="agroup__format__parse_html_gab67eb80458cad40e22a5036b84c9a5c7"><div class="ttname"><a href="group__format__parse.html#gab67eb80458cad40e22a5036b84c9a5c7">xtd::basic_string&lt; char &gt;::format</a></div><div class="ttdeci">static auto format(const basic_string&lt; char &gt; &amp;fmt, args_t &amp;&amp;... args) -&gt; basic_string</div></div>
 <div class="ttc" id="agroup__keywords_html_gac0b0b1a17f583a897eb6b424f2475363"><div class="ttname"><a href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a></div><div class="ttdeci">#define delegate_</div><div class="ttdoc">The declaration of a delegate type is similar to a method signature. It has a return value and any nu...</div><div class="ttdef"><b>Definition</b> delegate.hpp:1018</div></div>
 <div class="ttc" id="agroup__style__sheets_html_ga902d7ba89795f62756de856e06822883"><div class="ttname"><a href="group__style__sheets.html#ga902d7ba89795f62756de856e06822883">xtd::forms::style_sheets::button</a></div><div class="ttdeci">xtd::forms::style_sheets::control button</div><div class="ttdoc">The buttton data allows you to specify the box of a button control.</div><div class="ttdef"><b>Definition</b> button.hpp:25</div></div>
@@ -223,95 +223,95 @@ Public Constructors</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Properties</h2></td></tr>
-<tr class="memitem:ac0d9f27bee682a47bfedba6dec58342f" id="r_ac0d9f27bee682a47bfedba6dec58342f"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ac0d9f27bee682a47bfedba6dec58342f">cancelled</a> () const</td></tr>
-<tr class="memdesc:ac0d9f27bee682a47bfedba6dec58342f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets whether user has clicked on cancel button.  <br /></td></tr>
-<tr class="memitem:a649a4e48303d8f73653d545b3384290f" id="r_a649a4e48303d8f73653d545b3384290f"><td class="memItemLeft"><a class="el" href="group__xtd__forms.html#ga5d307293383256b1361069a8e6c57316">xtd::forms::dialog_appearance</a>&#160;</td><td class="memItemRight"><a class="el" href="#a649a4e48303d8f73653d545b3384290f">dialog_appearance</a> () const noexcept</td></tr>
-<tr class="memdesc:a649a4e48303d8f73653d545b3384290f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the dialog appearance.  <br /></td></tr>
-<tr class="memitem:af2f51d57563addc3dc1992caa761620d" id="r_af2f51d57563addc3dc1992caa761620d"><td class="memItemLeft"><a class="el" href="#a92a6229ff2dd3e1c29bbb87e15756014">progress_dialog</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#af2f51d57563addc3dc1992caa761620d">dialog_appearance</a> (<a class="el" href="group__xtd__forms.html#ga5d307293383256b1361069a8e6c57316">xtd::forms::dialog_appearance</a> dialog_appearance<a class="el" href="group__xtd__forms.html#ga5d307293383256b1361069a8e6c57316">dialog_appearance</a>)</td></tr>
-<tr class="memdesc:af2f51d57563addc3dc1992caa761620d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the dialog appearance.  <br /></td></tr>
-<tr class="memitem:a2327c0599be42023af01a8c37f91a739" id="r_a2327c0599be42023af01a8c37f91a739"><td class="memItemLeft">const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &gt; &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a2327c0599be42023af01a8c37f91a739">informations</a> () const noexcept</td></tr>
-<tr class="memdesc:a2327c0599be42023af01a8c37f91a739"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the information texts.  <br /></td></tr>
-<tr class="memitem:a006a856f0c536eb6fd5e3d19e0e65fb6" id="r_a006a856f0c536eb6fd5e3d19e0e65fb6"><td class="memItemLeft"><a class="el" href="#a92a6229ff2dd3e1c29bbb87e15756014">progress_dialog</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a006a856f0c536eb6fd5e3d19e0e65fb6">informations</a> (const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &gt; &amp;informations)</td></tr>
-<tr class="memdesc:a006a856f0c536eb6fd5e3d19e0e65fb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the information texts.  <br /></td></tr>
-<tr class="memitem:abe4f386fb2b614fae044e0da2d4eae2e" id="r_abe4f386fb2b614fae044e0da2d4eae2e"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#abe4f386fb2b614fae044e0da2d4eae2e">marquee</a> () const noexcept</td></tr>
-<tr class="memdesc:abe4f386fb2b614fae044e0da2d4eae2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value that Indicates progress by continuously scrolling a block across a <a class="el" href="classxtd_1_1forms_1_1progress__bar.html" title="Represents a Windows progress bar control.">progress_bar</a> in a marquee fashion.  <br /></td></tr>
-<tr class="memitem:a11a044e6b29b520bf962fa63d47ee0cb" id="r_a11a044e6b29b520bf962fa63d47ee0cb"><td class="memItemLeft"><a class="el" href="#a92a6229ff2dd3e1c29bbb87e15756014">progress_dialog</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a11a044e6b29b520bf962fa63d47ee0cb">marquee</a> (bool marquee)</td></tr>
-<tr class="memdesc:a11a044e6b29b520bf962fa63d47ee0cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value that Indicates progress by continuously scrolling a block across a <a class="el" href="classxtd_1_1forms_1_1progress__bar.html" title="Represents a Windows progress bar control.">progress_bar</a> in a marquee fashion.  <br /></td></tr>
-<tr class="memitem:a7e7b82b99c69fb37f8f5969746e2f6b5" id="r_a7e7b82b99c69fb37f8f5969746e2f6b5"><td class="memItemLeft"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a>&#160;</td><td class="memItemRight"><a class="el" href="#a7e7b82b99c69fb37f8f5969746e2f6b5">marquee_animation_speed</a> () const noexcept</td></tr>
-<tr class="memdesc:a7e7b82b99c69fb37f8f5969746e2f6b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets he time period, in milliseconds, that it takes the progress block to scroll across the progress bar.  <br /></td></tr>
-<tr class="memitem:a5ef5676aab322272fce54cb1d7f0ad0a" id="r_a5ef5676aab322272fce54cb1d7f0ad0a"><td class="memItemLeft"><a class="el" href="#a92a6229ff2dd3e1c29bbb87e15756014">progress_dialog</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a5ef5676aab322272fce54cb1d7f0ad0a">marquee_animation_speed</a> (<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> marquee_animation_speed)</td></tr>
-<tr class="memdesc:a5ef5676aab322272fce54cb1d7f0ad0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the time period, in milliseconds, that it takes the progress block to scroll across the progress bar.  <br /></td></tr>
-<tr class="memitem:a10c29cf9c7b49870c153a66ec057a0bd" id="r_a10c29cf9c7b49870c153a66ec057a0bd"><td class="memItemLeft"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>&#160;</td><td class="memItemRight"><a class="el" href="#a10c29cf9c7b49870c153a66ec057a0bd">maximum</a> () const noexcept</td></tr>
-<tr class="memdesc:a10c29cf9c7b49870c153a66ec057a0bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the maximum value of the range of the control.  <br /></td></tr>
-<tr class="memitem:a51d2f9f2451bfc0fdbc54784f94cf8ff" id="r_a51d2f9f2451bfc0fdbc54784f94cf8ff"><td class="memItemLeft"><a class="el" href="#a92a6229ff2dd3e1c29bbb87e15756014">progress_dialog</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a51d2f9f2451bfc0fdbc54784f94cf8ff">maximum</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> maximum)</td></tr>
-<tr class="memdesc:a51d2f9f2451bfc0fdbc54784f94cf8ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the maximum value of the range of the control.  <br /></td></tr>
-<tr class="memitem:a00742721b4da82d2121b42fea15d6f67" id="r_a00742721b4da82d2121b42fea15d6f67"><td class="memItemLeft">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a00742721b4da82d2121b42fea15d6f67">message</a> () const noexcept</td></tr>
-<tr class="memdesc:a00742721b4da82d2121b42fea15d6f67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the message text.  <br /></td></tr>
-<tr class="memitem:a4499c49b3ba9be89c7e13de7362cd97b" id="r_a4499c49b3ba9be89c7e13de7362cd97b"><td class="memItemLeft"><a class="el" href="#a92a6229ff2dd3e1c29bbb87e15756014">progress_dialog</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a4499c49b3ba9be89c7e13de7362cd97b">message</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;message)</td></tr>
-<tr class="memdesc:a4499c49b3ba9be89c7e13de7362cd97b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the message text.  <br /></td></tr>
-<tr class="memitem:a8c75e74f309fdf4a806381afd50a12ec" id="r_a8c75e74f309fdf4a806381afd50a12ec"><td class="memItemLeft"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>&#160;</td><td class="memItemRight"><a class="el" href="#a8c75e74f309fdf4a806381afd50a12ec">minimum</a> () const noexcept</td></tr>
-<tr class="memdesc:a8c75e74f309fdf4a806381afd50a12ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the minimum value of the range of the control.  <br /></td></tr>
-<tr class="memitem:a6c230ba97b2f88d167975abc52834941" id="r_a6c230ba97b2f88d167975abc52834941"><td class="memItemLeft"><a class="el" href="#a92a6229ff2dd3e1c29bbb87e15756014">progress_dialog</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a6c230ba97b2f88d167975abc52834941">minimum</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> minimum)</td></tr>
-<tr class="memdesc:a6c230ba97b2f88d167975abc52834941"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the minimum value of the range of the control.  <br /></td></tr>
-<tr class="memitem:ae90304ec0b081346aebe5d32f3bc5a73" id="r_ae90304ec0b081346aebe5d32f3bc5a73"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ae90304ec0b081346aebe5d32f3bc5a73">show_cancel_button</a> () const noexcept</td></tr>
-<tr class="memdesc:ae90304ec0b081346aebe5d32f3bc5a73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value that indicates whether cancel button is shown.  <br /></td></tr>
-<tr class="memitem:a301c4bbc810c4484bd3eebc5daa1d16e" id="r_a301c4bbc810c4484bd3eebc5daa1d16e"><td class="memItemLeft"><a class="el" href="#a92a6229ff2dd3e1c29bbb87e15756014">progress_dialog</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a301c4bbc810c4484bd3eebc5daa1d16e">show_cancel_button</a> (bool show_cancel_button)</td></tr>
-<tr class="memdesc:a301c4bbc810c4484bd3eebc5daa1d16e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a value that indicates whether cancel button is shown.  <br /></td></tr>
-<tr class="memitem:a03381916f2458ea0ddbb2307003a1072" id="r_a03381916f2458ea0ddbb2307003a1072"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a03381916f2458ea0ddbb2307003a1072">show_elapsed_time</a> () const noexcept</td></tr>
-<tr class="memdesc:a03381916f2458ea0ddbb2307003a1072"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value that indicates whether elapsed time is shown.  <br /></td></tr>
-<tr class="memitem:a4eb54fe005d9f51bcafb928ac0fb3efa" id="r_a4eb54fe005d9f51bcafb928ac0fb3efa"><td class="memItemLeft"><a class="el" href="#a92a6229ff2dd3e1c29bbb87e15756014">progress_dialog</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a4eb54fe005d9f51bcafb928ac0fb3efa">show_elapsed_time</a> (bool show_elapsed_time)</td></tr>
-<tr class="memdesc:a4eb54fe005d9f51bcafb928ac0fb3efa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a value that indicates whether elapsed time is shown.  <br /></td></tr>
-<tr class="memitem:a79f3e6d895303b917b4b775489182b1b" id="r_a79f3e6d895303b917b4b775489182b1b"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a79f3e6d895303b917b4b775489182b1b">show_estimated_time</a> () const noexcept</td></tr>
-<tr class="memdesc:a79f3e6d895303b917b4b775489182b1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value that indicates whether estimated time is shown.  <br /></td></tr>
-<tr class="memitem:a908fa4906b26b2c0b4f49c5ac0b27a68" id="r_a908fa4906b26b2c0b4f49c5ac0b27a68"><td class="memItemLeft"><a class="el" href="#a92a6229ff2dd3e1c29bbb87e15756014">progress_dialog</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a908fa4906b26b2c0b4f49c5ac0b27a68">show_estimated_time</a> (bool show_estimated_time)</td></tr>
-<tr class="memdesc:a908fa4906b26b2c0b4f49c5ac0b27a68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a value that indicates whether estimated time is shown.  <br /></td></tr>
-<tr class="memitem:a380e786f8d801594fb9bfac3f0427d4b" id="r_a380e786f8d801594fb9bfac3f0427d4b"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a380e786f8d801594fb9bfac3f0427d4b">show_remaining_time</a> () const noexcept</td></tr>
-<tr class="memdesc:a380e786f8d801594fb9bfac3f0427d4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value that indicates whether remaining time is shown.  <br /></td></tr>
-<tr class="memitem:a529efba04a269efc02f4040b617c9123" id="r_a529efba04a269efc02f4040b617c9123"><td class="memItemLeft"><a class="el" href="#a92a6229ff2dd3e1c29bbb87e15756014">progress_dialog</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a529efba04a269efc02f4040b617c9123">show_remaining_time</a> (bool show_remaining_time)</td></tr>
-<tr class="memdesc:a529efba04a269efc02f4040b617c9123"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a value that indicates whether remaining time is shown.  <br /></td></tr>
-<tr class="memitem:acb28ecbaf1b991ab234759b289f2587f" id="r_acb28ecbaf1b991ab234759b289f2587f"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#acb28ecbaf1b991ab234759b289f2587f">show_skip_button</a> () const noexcept</td></tr>
-<tr class="memdesc:acb28ecbaf1b991ab234759b289f2587f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value that indicates whether skip button is shown.  <br /></td></tr>
-<tr class="memitem:a810ffc6376dbec94e75bdb8d74a1c421" id="r_a810ffc6376dbec94e75bdb8d74a1c421"><td class="memItemLeft"><a class="el" href="#a92a6229ff2dd3e1c29bbb87e15756014">progress_dialog</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a810ffc6376dbec94e75bdb8d74a1c421">show_skip_button</a> (bool show_skip_button)</td></tr>
-<tr class="memdesc:a810ffc6376dbec94e75bdb8d74a1c421"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a value that indicates whether skip button is shown.  <br /></td></tr>
-<tr class="memitem:a433e34f4a7e11ae414b31eca13dc8fac" id="r_a433e34f4a7e11ae414b31eca13dc8fac"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a433e34f4a7e11ae414b31eca13dc8fac">skipped</a> () const</td></tr>
-<tr class="memdesc:a433e34f4a7e11ae414b31eca13dc8fac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets whether user has clicked on skip button.  <br /></td></tr>
-<tr class="memitem:aebd9629c0e45d7b53a117ec7bd0c25b8" id="r_aebd9629c0e45d7b53a117ec7bd0c25b8"><td class="memItemLeft"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>&#160;</td><td class="memItemRight"><a class="el" href="#aebd9629c0e45d7b53a117ec7bd0c25b8">step</a> () const noexcept</td></tr>
-<tr class="memdesc:aebd9629c0e45d7b53a117ec7bd0c25b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the amount by which a call to the PerformStep() method increases the current position of the progress bar.  <br /></td></tr>
-<tr class="memitem:a7d82244acc7505572ba6cea48bca5123" id="r_a7d82244acc7505572ba6cea48bca5123"><td class="memItemLeft"><a class="el" href="#a92a6229ff2dd3e1c29bbb87e15756014">progress_dialog</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a7d82244acc7505572ba6cea48bca5123">step</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> step)</td></tr>
-<tr class="memdesc:a7d82244acc7505572ba6cea48bca5123"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the amount by which a call to the PerformStep() method increases the current position of the progress bar.  <br /></td></tr>
-<tr class="memitem:af1cab23486bbcf9bc5c9a13e93bbf8d8" id="r_af1cab23486bbcf9bc5c9a13e93bbf8d8"><td class="memItemLeft">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#af1cab23486bbcf9bc5c9a13e93bbf8d8">text</a> () const noexcept</td></tr>
-<tr class="memdesc:af1cab23486bbcf9bc5c9a13e93bbf8d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the dialog title.  <br /></td></tr>
-<tr class="memitem:a80124b95eaab97607464618530d43a0f" id="r_a80124b95eaab97607464618530d43a0f"><td class="memItemLeft"><a class="el" href="#a92a6229ff2dd3e1c29bbb87e15756014">progress_dialog</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a80124b95eaab97607464618530d43a0f">text</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text)</td></tr>
-<tr class="memdesc:a80124b95eaab97607464618530d43a0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the dialog title.  <br /></td></tr>
-<tr class="memitem:ae3f9b9a0f2879d998fd9a1590dc16501" id="r_ae3f9b9a0f2879d998fd9a1590dc16501"><td class="memItemLeft"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>&#160;</td><td class="memItemRight"><a class="el" href="#ae3f9b9a0f2879d998fd9a1590dc16501">value</a> () const noexcept</td></tr>
-<tr class="memdesc:ae3f9b9a0f2879d998fd9a1590dc16501"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the current position of the progress bar.  <br /></td></tr>
-<tr class="memitem:af9619bb8549d96cfd64702f2baad9392" id="r_af9619bb8549d96cfd64702f2baad9392"><td class="memItemLeft"><a class="el" href="#a92a6229ff2dd3e1c29bbb87e15756014">progress_dialog</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#af9619bb8549d96cfd64702f2baad9392">value</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> value)</td></tr>
-<tr class="memdesc:af9619bb8549d96cfd64702f2baad9392"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the current position of the progress bar.  <br /></td></tr>
+<tr class="memitem:aaa9e321b146e835bb257c88bb7aed86b" id="r_aaa9e321b146e835bb257c88bb7aed86b"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aaa9e321b146e835bb257c88bb7aed86b">cancelled</a> () const -&gt; bool</td></tr>
+<tr class="memdesc:aaa9e321b146e835bb257c88bb7aed86b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets whether user has clicked on cancel button.  <br /></td></tr>
+<tr class="memitem:adb1d786c6c8fdf427a58cbbc2a582bbd" id="r_adb1d786c6c8fdf427a58cbbc2a582bbd"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#adb1d786c6c8fdf427a58cbbc2a582bbd">dialog_appearance</a> () const noexcept -&gt; <a class="el" href="group__xtd__forms.html#ga5d307293383256b1361069a8e6c57316">xtd::forms::dialog_appearance</a></td></tr>
+<tr class="memdesc:adb1d786c6c8fdf427a58cbbc2a582bbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the dialog appearance.  <br /></td></tr>
+<tr class="memitem:a5bcbbbaa6a1d10fd7411d99535b76581" id="r_a5bcbbbaa6a1d10fd7411d99535b76581"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a5bcbbbaa6a1d10fd7411d99535b76581">dialog_appearance</a> (<a class="el" href="group__xtd__forms.html#ga5d307293383256b1361069a8e6c57316">xtd::forms::dialog_appearance</a> value) -&gt; <a class="el" href="#a92a6229ff2dd3e1c29bbb87e15756014">progress_dialog</a> &amp;</td></tr>
+<tr class="memdesc:a5bcbbbaa6a1d10fd7411d99535b76581"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the dialog appearance.  <br /></td></tr>
+<tr class="memitem:aded9650911519f1ed42854583a25f2b8" id="r_aded9650911519f1ed42854583a25f2b8"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aded9650911519f1ed42854583a25f2b8">informations</a> () const noexcept -&gt; const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &gt; &amp;</td></tr>
+<tr class="memdesc:aded9650911519f1ed42854583a25f2b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the information texts.  <br /></td></tr>
+<tr class="memitem:a76fc0b1199150b911cad28dc9287c39e" id="r_a76fc0b1199150b911cad28dc9287c39e"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a76fc0b1199150b911cad28dc9287c39e">informations</a> (const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &gt; &amp;value) -&gt; <a class="el" href="#a92a6229ff2dd3e1c29bbb87e15756014">progress_dialog</a> &amp;</td></tr>
+<tr class="memdesc:a76fc0b1199150b911cad28dc9287c39e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the information texts.  <br /></td></tr>
+<tr class="memitem:a4c93e0da43bb1dc1c52b6e2e2fdc9352" id="r_a4c93e0da43bb1dc1c52b6e2e2fdc9352"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a4c93e0da43bb1dc1c52b6e2e2fdc9352">marquee</a> () const noexcept -&gt; bool</td></tr>
+<tr class="memdesc:a4c93e0da43bb1dc1c52b6e2e2fdc9352"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value that Indicates progress by continuously scrolling a block across a <a class="el" href="classxtd_1_1forms_1_1progress__bar.html" title="Represents a Windows progress bar control.">progress_bar</a> in a marquee fashion.  <br /></td></tr>
+<tr class="memitem:a0abb2ece6aaa9f4a2258e7edee950ae8" id="r_a0abb2ece6aaa9f4a2258e7edee950ae8"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a0abb2ece6aaa9f4a2258e7edee950ae8">marquee</a> (bool value) -&gt; <a class="el" href="#a92a6229ff2dd3e1c29bbb87e15756014">progress_dialog</a> &amp;</td></tr>
+<tr class="memdesc:a0abb2ece6aaa9f4a2258e7edee950ae8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value that Indicates progress by continuously scrolling a block across a <a class="el" href="classxtd_1_1forms_1_1progress__bar.html" title="Represents a Windows progress bar control.">progress_bar</a> in a marquee fashion.  <br /></td></tr>
+<tr class="memitem:a12b5f677cf29ca104b86058dedfec29e" id="r_a12b5f677cf29ca104b86058dedfec29e"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a12b5f677cf29ca104b86058dedfec29e">marquee_animation_speed</a> () const noexcept -&gt; <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td></tr>
+<tr class="memdesc:a12b5f677cf29ca104b86058dedfec29e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets he time period, in milliseconds, that it takes the progress block to scroll across the progress bar.  <br /></td></tr>
+<tr class="memitem:a01228b25fcf2bc33728b3e866bf14741" id="r_a01228b25fcf2bc33728b3e866bf14741"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a01228b25fcf2bc33728b3e866bf14741">marquee_animation_speed</a> (<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> value) -&gt; <a class="el" href="#a92a6229ff2dd3e1c29bbb87e15756014">progress_dialog</a> &amp;</td></tr>
+<tr class="memdesc:a01228b25fcf2bc33728b3e866bf14741"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the time period, in milliseconds, that it takes the progress block to scroll across the progress bar.  <br /></td></tr>
+<tr class="memitem:a705d85b31c3c2453b6c2c59650459043" id="r_a705d85b31c3c2453b6c2c59650459043"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a705d85b31c3c2453b6c2c59650459043">maximum</a> () const noexcept -&gt; <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td></tr>
+<tr class="memdesc:a705d85b31c3c2453b6c2c59650459043"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the maximum value of the range of the control.  <br /></td></tr>
+<tr class="memitem:a32ad69345830827bcbe3e3c5bca34186" id="r_a32ad69345830827bcbe3e3c5bca34186"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a32ad69345830827bcbe3e3c5bca34186">maximum</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a> value) -&gt; <a class="el" href="#a92a6229ff2dd3e1c29bbb87e15756014">progress_dialog</a> &amp;</td></tr>
+<tr class="memdesc:a32ad69345830827bcbe3e3c5bca34186"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the maximum value of the range of the control.  <br /></td></tr>
+<tr class="memitem:aa6c3504f77c1e73b61df0eac1d9cbb77" id="r_aa6c3504f77c1e73b61df0eac1d9cbb77"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aa6c3504f77c1e73b61df0eac1d9cbb77">message</a> () const noexcept -&gt; const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td></tr>
+<tr class="memdesc:aa6c3504f77c1e73b61df0eac1d9cbb77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the message text.  <br /></td></tr>
+<tr class="memitem:abd4927b6752ec2c3741c420f76e503ff" id="r_abd4927b6752ec2c3741c420f76e503ff"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#abd4927b6752ec2c3741c420f76e503ff">message</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;value) -&gt; <a class="el" href="#a92a6229ff2dd3e1c29bbb87e15756014">progress_dialog</a> &amp;</td></tr>
+<tr class="memdesc:abd4927b6752ec2c3741c420f76e503ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the message text.  <br /></td></tr>
+<tr class="memitem:ad33f9297904ab92286a4bd0204182194" id="r_ad33f9297904ab92286a4bd0204182194"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ad33f9297904ab92286a4bd0204182194">minimum</a> () const noexcept -&gt; <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td></tr>
+<tr class="memdesc:ad33f9297904ab92286a4bd0204182194"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the minimum value of the range of the control.  <br /></td></tr>
+<tr class="memitem:aaa13d3c7a40fd909a40ad237f98374d5" id="r_aaa13d3c7a40fd909a40ad237f98374d5"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aaa13d3c7a40fd909a40ad237f98374d5">minimum</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a> value) -&gt; <a class="el" href="#a92a6229ff2dd3e1c29bbb87e15756014">progress_dialog</a> &amp;</td></tr>
+<tr class="memdesc:aaa13d3c7a40fd909a40ad237f98374d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the minimum value of the range of the control.  <br /></td></tr>
+<tr class="memitem:a438ded5eb72125502155d52bba7e8c68" id="r_a438ded5eb72125502155d52bba7e8c68"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a438ded5eb72125502155d52bba7e8c68">show_cancel_button</a> () const noexcept -&gt; bool</td></tr>
+<tr class="memdesc:a438ded5eb72125502155d52bba7e8c68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value that indicates whether cancel button is shown.  <br /></td></tr>
+<tr class="memitem:a1adcb5ea9fab461a36b009716ba8920e" id="r_a1adcb5ea9fab461a36b009716ba8920e"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a1adcb5ea9fab461a36b009716ba8920e">show_cancel_button</a> (bool value) -&gt; <a class="el" href="#a92a6229ff2dd3e1c29bbb87e15756014">progress_dialog</a> &amp;</td></tr>
+<tr class="memdesc:a1adcb5ea9fab461a36b009716ba8920e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a value that indicates whether cancel button is shown.  <br /></td></tr>
+<tr class="memitem:a15b9332e13f2ab02a9873a0786787ed9" id="r_a15b9332e13f2ab02a9873a0786787ed9"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a15b9332e13f2ab02a9873a0786787ed9">show_elapsed_time</a> () const noexcept -&gt; bool</td></tr>
+<tr class="memdesc:a15b9332e13f2ab02a9873a0786787ed9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value that indicates whether elapsed time is shown.  <br /></td></tr>
+<tr class="memitem:a9d1ed102e3362737679bc96dce80c5c6" id="r_a9d1ed102e3362737679bc96dce80c5c6"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a9d1ed102e3362737679bc96dce80c5c6">show_elapsed_time</a> (bool value) -&gt; <a class="el" href="#a92a6229ff2dd3e1c29bbb87e15756014">progress_dialog</a> &amp;</td></tr>
+<tr class="memdesc:a9d1ed102e3362737679bc96dce80c5c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a value that indicates whether elapsed time is shown.  <br /></td></tr>
+<tr class="memitem:aaa15d932c8efd659d5b13d05495b50e9" id="r_aaa15d932c8efd659d5b13d05495b50e9"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aaa15d932c8efd659d5b13d05495b50e9">show_estimated_time</a> () const noexcept -&gt; bool</td></tr>
+<tr class="memdesc:aaa15d932c8efd659d5b13d05495b50e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value that indicates whether estimated time is shown.  <br /></td></tr>
+<tr class="memitem:aff74ec0173fd1a0f23ea88589808d381" id="r_aff74ec0173fd1a0f23ea88589808d381"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aff74ec0173fd1a0f23ea88589808d381">show_estimated_time</a> (bool value) -&gt; <a class="el" href="#a92a6229ff2dd3e1c29bbb87e15756014">progress_dialog</a> &amp;</td></tr>
+<tr class="memdesc:aff74ec0173fd1a0f23ea88589808d381"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a value that indicates whether estimated time is shown.  <br /></td></tr>
+<tr class="memitem:a1065d6a29c13f1f92d530ac7f0c0df91" id="r_a1065d6a29c13f1f92d530ac7f0c0df91"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a1065d6a29c13f1f92d530ac7f0c0df91">show_remaining_time</a> () const noexcept -&gt; bool</td></tr>
+<tr class="memdesc:a1065d6a29c13f1f92d530ac7f0c0df91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value that indicates whether remaining time is shown.  <br /></td></tr>
+<tr class="memitem:ad10380e919af767c1cc0724081a1eae2" id="r_ad10380e919af767c1cc0724081a1eae2"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ad10380e919af767c1cc0724081a1eae2">show_remaining_time</a> (bool value) -&gt; <a class="el" href="#a92a6229ff2dd3e1c29bbb87e15756014">progress_dialog</a> &amp;</td></tr>
+<tr class="memdesc:ad10380e919af767c1cc0724081a1eae2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a value that indicates whether remaining time is shown.  <br /></td></tr>
+<tr class="memitem:a37b0c290aec46bd10be4cc2945f649f4" id="r_a37b0c290aec46bd10be4cc2945f649f4"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a37b0c290aec46bd10be4cc2945f649f4">show_skip_button</a> () const noexcept -&gt; bool</td></tr>
+<tr class="memdesc:a37b0c290aec46bd10be4cc2945f649f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value that indicates whether skip button is shown.  <br /></td></tr>
+<tr class="memitem:a6e1ecb185b234f4f457a26440760350a" id="r_a6e1ecb185b234f4f457a26440760350a"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a6e1ecb185b234f4f457a26440760350a">show_skip_button</a> (bool value) -&gt; <a class="el" href="#a92a6229ff2dd3e1c29bbb87e15756014">progress_dialog</a> &amp;</td></tr>
+<tr class="memdesc:a6e1ecb185b234f4f457a26440760350a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a value that indicates whether skip button is shown.  <br /></td></tr>
+<tr class="memitem:a92fe0634b8037c54f19f552747630419" id="r_a92fe0634b8037c54f19f552747630419"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a92fe0634b8037c54f19f552747630419">skipped</a> () const -&gt; bool</td></tr>
+<tr class="memdesc:a92fe0634b8037c54f19f552747630419"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets whether user has clicked on skip button.  <br /></td></tr>
+<tr class="memitem:a1f1baa7f510cc19741c8c3fc6df57f66" id="r_a1f1baa7f510cc19741c8c3fc6df57f66"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a1f1baa7f510cc19741c8c3fc6df57f66">step</a> () const noexcept -&gt; <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td></tr>
+<tr class="memdesc:a1f1baa7f510cc19741c8c3fc6df57f66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the amount by which a call to the PerformStep() method increases the current position of the progress bar.  <br /></td></tr>
+<tr class="memitem:ac81ae7f95549da8ee047f61956ad8d21" id="r_ac81ae7f95549da8ee047f61956ad8d21"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ac81ae7f95549da8ee047f61956ad8d21">step</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a> value) -&gt; <a class="el" href="#a92a6229ff2dd3e1c29bbb87e15756014">progress_dialog</a> &amp;</td></tr>
+<tr class="memdesc:ac81ae7f95549da8ee047f61956ad8d21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the amount by which a call to the PerformStep() method increases the current position of the progress bar.  <br /></td></tr>
+<tr class="memitem:a289ecd184dd45078c2ec602dc3a4d4a0" id="r_a289ecd184dd45078c2ec602dc3a4d4a0"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a289ecd184dd45078c2ec602dc3a4d4a0">text</a> () const noexcept -&gt; const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td></tr>
+<tr class="memdesc:a289ecd184dd45078c2ec602dc3a4d4a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the dialog title.  <br /></td></tr>
+<tr class="memitem:a109e122d30c18ddd5b7ddd5b4eb274c0" id="r_a109e122d30c18ddd5b7ddd5b4eb274c0"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a109e122d30c18ddd5b7ddd5b4eb274c0">text</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;value) -&gt; <a class="el" href="#a92a6229ff2dd3e1c29bbb87e15756014">progress_dialog</a> &amp;</td></tr>
+<tr class="memdesc:a109e122d30c18ddd5b7ddd5b4eb274c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the dialog title.  <br /></td></tr>
+<tr class="memitem:a9d3d027fab76cc7a65d035c58979ce67" id="r_a9d3d027fab76cc7a65d035c58979ce67"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a9d3d027fab76cc7a65d035c58979ce67">value</a> () const noexcept -&gt; <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td></tr>
+<tr class="memdesc:a9d3d027fab76cc7a65d035c58979ce67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the current position of the progress bar.  <br /></td></tr>
+<tr class="memitem:ab7d8b94edc074cd346b647699fe9c27b" id="r_ab7d8b94edc074cd346b647699fe9c27b"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ab7d8b94edc074cd346b647699fe9c27b">value</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a> value) -&gt; <a class="el" href="#a92a6229ff2dd3e1c29bbb87e15756014">progress_dialog</a> &amp;</td></tr>
+<tr class="memdesc:ab7d8b94edc074cd346b647699fe9c27b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the current position of the progress bar.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Methods</h2></td></tr>
-<tr class="memitem:a5c21b8df1cb6724a26e5c15089924153" id="r_a5c21b8df1cb6724a26e5c15089924153"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a5c21b8df1cb6724a26e5c15089924153">hide</a> ()</td></tr>
-<tr class="memdesc:a5c21b8df1cb6724a26e5c15089924153"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hides progress dialog box.  <br /></td></tr>
-<tr class="memitem:abe890187f6e9e1f078addd37161b70d7" id="r_abe890187f6e9e1f078addd37161b70d7"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#abe890187f6e9e1f078addd37161b70d7">increment</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> increment)</td></tr>
-<tr class="memdesc:abe890187f6e9e1f078addd37161b70d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Advances the current position of the progress bar by the specified amount.  <br /></td></tr>
-<tr class="memitem:a5f3ff9afc0132ff2c717d938c302d85e" id="r_a5f3ff9afc0132ff2c717d938c302d85e"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a5f3ff9afc0132ff2c717d938c302d85e">perform_step</a> ()</td></tr>
-<tr class="memdesc:a5f3ff9afc0132ff2c717d938c302d85e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Advances the current position of the progress bar by the amount of the Step property.  <br /></td></tr>
-<tr class="memitem:a7a49cc1326a0b148b48544b9757610fd" id="r_a7a49cc1326a0b148b48544b9757610fd"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a7a49cc1326a0b148b48544b9757610fd">reset</a> () noexcept</td></tr>
-<tr class="memdesc:a7a49cc1326a0b148b48544b9757610fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets all properties to empty string.  <br /></td></tr>
-<tr class="memitem:a73b3d9a9192484b286fc2457faad652a" id="r_a73b3d9a9192484b286fc2457faad652a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a73b3d9a9192484b286fc2457faad652a">resume</a> ()</td></tr>
-<tr class="memdesc:a73b3d9a9192484b286fc2457faad652a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resume progress dialog box after Abort button clicked.  <br /></td></tr>
-<tr class="memitem:aa14e0829a64b3f4aee034536f2e58d5e" id="r_aa14e0829a64b3f4aee034536f2e58d5e"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aa14e0829a64b3f4aee034536f2e58d5e">show</a> ()</td></tr>
-<tr class="memdesc:aa14e0829a64b3f4aee034536f2e58d5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs progress dialog box.  <br /></td></tr>
-<tr class="memitem:a42a6c14e519d3930280bdf1b6c3499d2" id="r_a42a6c14e519d3930280bdf1b6c3499d2"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a42a6c14e519d3930280bdf1b6c3499d2">show</a> (const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a> &amp;owner)</td></tr>
-<tr class="memdesc:a42a6c14e519d3930280bdf1b6c3499d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs progress dialog box.  <br /></td></tr>
-<tr class="memitem:a941be158cb3e500595d8622a7f2f54ee" id="r_a941be158cb3e500595d8622a7f2f54ee"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a941be158cb3e500595d8622a7f2f54ee">show_sheet</a> (const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a> &amp;owner)</td></tr>
-<tr class="memdesc:a941be158cb3e500595d8622a7f2f54ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs progress dialog box as sheet.  <br /></td></tr>
-<tr class="memitem:a575c4309d2d04a8344abdf6345ed6700" id="r_a575c4309d2d04a8344abdf6345ed6700"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a575c4309d2d04a8344abdf6345ed6700">show_dialog</a> ()</td></tr>
-<tr class="memdesc:a575c4309d2d04a8344abdf6345ed6700"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs progress dialog box.  <br /></td></tr>
-<tr class="memitem:a8bbebbfb148c136b50273233406b2d44" id="r_a8bbebbfb148c136b50273233406b2d44"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a8bbebbfb148c136b50273233406b2d44">show_dialog</a> (const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a> &amp;owner)</td></tr>
-<tr class="memdesc:a8bbebbfb148c136b50273233406b2d44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs progress dialog box.  <br /></td></tr>
-<tr class="memitem:a9d317a139c3ba493e4fceec2be0d5050" id="r_a9d317a139c3ba493e4fceec2be0d5050"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a9d317a139c3ba493e4fceec2be0d5050">show_sheet_dialog</a> (const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a> &amp;owner)</td></tr>
-<tr class="memdesc:a9d317a139c3ba493e4fceec2be0d5050"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs progress dialog box.  <br /></td></tr>
+<tr class="memitem:a6c6fc378a6636340e33f7d17c3a0338d" id="r_a6c6fc378a6636340e33f7d17c3a0338d"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a6c6fc378a6636340e33f7d17c3a0338d">hide</a> () -&gt; void</td></tr>
+<tr class="memdesc:a6c6fc378a6636340e33f7d17c3a0338d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hides progress dialog box.  <br /></td></tr>
+<tr class="memitem:af4342775cec11f42ea7668dbcd4bff2d" id="r_af4342775cec11f42ea7668dbcd4bff2d"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#af4342775cec11f42ea7668dbcd4bff2d">increment</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a> increment) -&gt; void</td></tr>
+<tr class="memdesc:af4342775cec11f42ea7668dbcd4bff2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Advances the current position of the progress bar by the specified amount.  <br /></td></tr>
+<tr class="memitem:a80a8506da8e2b791c229f5ce4bc1dd04" id="r_a80a8506da8e2b791c229f5ce4bc1dd04"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a80a8506da8e2b791c229f5ce4bc1dd04">perform_step</a> () -&gt; void</td></tr>
+<tr class="memdesc:a80a8506da8e2b791c229f5ce4bc1dd04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Advances the current position of the progress bar by the amount of the Step property.  <br /></td></tr>
+<tr class="memitem:aa8f82dc00dbae4dc342a9b8c8161dde6" id="r_aa8f82dc00dbae4dc342a9b8c8161dde6"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aa8f82dc00dbae4dc342a9b8c8161dde6">reset</a> () noexcept -&gt; void</td></tr>
+<tr class="memdesc:aa8f82dc00dbae4dc342a9b8c8161dde6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets all properties to empty string.  <br /></td></tr>
+<tr class="memitem:a1895856d3e9036932701b7ad6c4b6419" id="r_a1895856d3e9036932701b7ad6c4b6419"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a1895856d3e9036932701b7ad6c4b6419">resume</a> () -&gt; void</td></tr>
+<tr class="memdesc:a1895856d3e9036932701b7ad6c4b6419"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resume progress dialog box after Abort button clicked.  <br /></td></tr>
+<tr class="memitem:acbd8836612947e37c28d5da6a311a3c3" id="r_acbd8836612947e37c28d5da6a311a3c3"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#acbd8836612947e37c28d5da6a311a3c3">show</a> () -&gt; void</td></tr>
+<tr class="memdesc:acbd8836612947e37c28d5da6a311a3c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs progress dialog box.  <br /></td></tr>
+<tr class="memitem:adddbb414c2507c442bb507dba2f6c014" id="r_adddbb414c2507c442bb507dba2f6c014"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#adddbb414c2507c442bb507dba2f6c014">show</a> (const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;owner) -&gt; void</td></tr>
+<tr class="memdesc:adddbb414c2507c442bb507dba2f6c014"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs progress dialog box with specified owner.  <br /></td></tr>
+<tr class="memitem:a863afc9130c3fb20f50dc74e60120f23" id="r_a863afc9130c3fb20f50dc74e60120f23"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a863afc9130c3fb20f50dc74e60120f23">show_sheet</a> (const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;owner) -&gt; void</td></tr>
+<tr class="memdesc:a863afc9130c3fb20f50dc74e60120f23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs progress dialog box as sheet with specified owner.  <br /></td></tr>
+<tr class="memitem:a8b908371ffffee5780626a1c1817a6b2" id="r_a8b908371ffffee5780626a1c1817a6b2"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a8b908371ffffee5780626a1c1817a6b2">show_dialog</a> () -&gt; void</td></tr>
+<tr class="memdesc:a8b908371ffffee5780626a1c1817a6b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs progress dialog box.  <br /></td></tr>
+<tr class="memitem:a83dabfe8147c65771c3b9236e98f5d4f" id="r_a83dabfe8147c65771c3b9236e98f5d4f"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a83dabfe8147c65771c3b9236e98f5d4f">show_dialog</a> (const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;owner) -&gt; void</td></tr>
+<tr class="memdesc:a83dabfe8147c65771c3b9236e98f5d4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs progress dialog box with specified owner.  <br /></td></tr>
+<tr class="memitem:a7fea2442874b82ec3659ecf47cb25f64" id="r_a7fea2442874b82ec3659ecf47cb25f64"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a7fea2442874b82ec3659ecf47cb25f64">show_sheet_dialog</a> (const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;owner) -&gt; void</td></tr>
+<tr class="memdesc:a7fea2442874b82ec3659ecf47cb25f64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs progress dialog box with specified owner.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -362,28 +362,8 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="ac0d9f27bee682a47bfedba6dec58342f" name="ac0d9f27bee682a47bfedba6dec58342f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac0d9f27bee682a47bfedba6dec58342f">&#9670;&#160;</a></span>cancelled()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool xtd::forms::progress_dialog::cancelled </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Gets whether user has clicked on cancel button. </p>
-<dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span> if user has clicked on cancel button; otherwise <span class="tt">false</span>. </dd></dl>
-
-</div>
-</div>
-<a id="a649a4e48303d8f73653d545b3384290f" name="a649a4e48303d8f73653d545b3384290f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a649a4e48303d8f73653d545b3384290f">&#9670;&#160;</a></span>dialog_appearance() <span class="overload">[1/2]</span></h2>
+<a id="aaa9e321b146e835bb257c88bb7aed86b" name="aaa9e321b146e835bb257c88bb7aed86b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa9e321b146e835bb257c88bb7aed86b">&#9670;&#160;</a></span>cancelled()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -392,15 +372,43 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__xtd__forms.html#ga5d307293383256b1361069a8e6c57316">xtd::forms::dialog_appearance</a> xtd::forms::progress_dialog::dialog_appearance </td>
+          <td class="memname">auto xtd::forms::progress_dialog::cancelled </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets whether user has clicked on cancel button. </p>
+<dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span> if user has clicked on cancel button; otherwise <span class="tt">false</span>. </dd></dl>
+
+</div>
+</div>
+<a id="adb1d786c6c8fdf427a58cbbc2a582bbd" name="adb1d786c6c8fdf427a58cbbc2a582bbd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb1d786c6c8fdf427a58cbbc2a582bbd">&#9670;&#160;</a></span>dialog_appearance() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto xtd::forms::progress_dialog::dialog_appearance </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const -&gt;  <a class="el" href="group__xtd__forms.html#ga5d307293383256b1361069a8e6c57316">xtd::forms::dialog_appearance</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -410,17 +418,17 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="af2f51d57563addc3dc1992caa761620d" name="af2f51d57563addc3dc1992caa761620d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af2f51d57563addc3dc1992caa761620d">&#9670;&#160;</a></span>dialog_appearance() <span class="overload">[2/2]</span></h2>
+<a id="a5bcbbbaa6a1d10fd7411d99535b76581" name="a5bcbbbaa6a1d10fd7411d99535b76581"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5bcbbbaa6a1d10fd7411d99535b76581">&#9670;&#160;</a></span>dialog_appearance() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a92a6229ff2dd3e1c29bbb87e15756014">progress_dialog</a> &amp; xtd::forms::progress_dialog::dialog_appearance </td>
+          <td class="memname">auto xtd::forms::progress_dialog::dialog_appearance </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__xtd__forms.html#ga5d307293383256b1361069a8e6c57316">xtd::forms::dialog_appearance</a></td>          <td class="paramname"><span class="paramname"><em>dialog_appearance</em></span></td><td>)</td>
-          <td></td>
+          <td class="paramtype"><a class="el" href="group__xtd__forms.html#ga5d307293383256b1361069a8e6c57316">xtd::forms::dialog_appearance</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td> -&gt;  <a class="el" href="#a92a6229ff2dd3e1c29bbb87e15756014">progress_dialog</a> &amp;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -428,7 +436,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Sets the dialog appearance. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">dialog_appearance</td><td>One of the <a class="el" href="group__xtd__forms.html#ga051b5d5d6d75244cc5dafdfaf2554e2f" title="Specifies the appearance of a dialog.">xtd::forms::dialog_appearance</a> values. The default value is xtd::forms::dialog_appearance::standard. </td></tr>
+    <tr><td class="paramname">value</td><td>One of the <a class="el" href="group__xtd__forms.html#ga051b5d5d6d75244cc5dafdfaf2554e2f" title="Specifies the appearance of a dialog.">xtd::forms::dialog_appearance</a> values. The default value is xtd::forms::dialog_appearance::standard. </td></tr>
   </table>
   </dd>
 </dl>
@@ -436,8 +444,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a2327c0599be42023af01a8c37f91a739" name="a2327c0599be42023af01a8c37f91a739"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2327c0599be42023af01a8c37f91a739">&#9670;&#160;</a></span>informations() <span class="overload">[1/2]</span></h2>
+<a id="aded9650911519f1ed42854583a25f2b8" name="aded9650911519f1ed42854583a25f2b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aded9650911519f1ed42854583a25f2b8">&#9670;&#160;</a></span>informations() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -446,15 +454,15 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &gt; &amp; xtd::forms::progress_dialog::informations </td>
+          <td class="memname">auto xtd::forms::progress_dialog::informations </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &gt; &amp;</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -464,17 +472,17 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a006a856f0c536eb6fd5e3d19e0e65fb6" name="a006a856f0c536eb6fd5e3d19e0e65fb6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a006a856f0c536eb6fd5e3d19e0e65fb6">&#9670;&#160;</a></span>informations() <span class="overload">[2/2]</span></h2>
+<a id="a76fc0b1199150b911cad28dc9287c39e" name="a76fc0b1199150b911cad28dc9287c39e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76fc0b1199150b911cad28dc9287c39e">&#9670;&#160;</a></span>informations() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a92a6229ff2dd3e1c29bbb87e15756014">progress_dialog</a> &amp; xtd::forms::progress_dialog::informations </td>
+          <td class="memname">auto xtd::forms::progress_dialog::informations </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>informations</em></span></td><td>)</td>
-          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td> -&gt;  <a class="el" href="#a92a6229ff2dd3e1c29bbb87e15756014">progress_dialog</a> &amp;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -482,7 +490,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Sets the information texts. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">informations</td><td>The information texts. </td></tr>
+    <tr><td class="paramname">value</td><td>The information texts. </td></tr>
   </table>
   </dd>
 </dl>
@@ -490,8 +498,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="abe4f386fb2b614fae044e0da2d4eae2e" name="abe4f386fb2b614fae044e0da2d4eae2e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abe4f386fb2b614fae044e0da2d4eae2e">&#9670;&#160;</a></span>marquee() <span class="overload">[1/2]</span></h2>
+<a id="a4c93e0da43bb1dc1c52b6e2e2fdc9352" name="a4c93e0da43bb1dc1c52b6e2e2fdc9352"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c93e0da43bb1dc1c52b6e2e2fdc9352">&#9670;&#160;</a></span>marquee() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -500,15 +508,15 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::forms::progress_dialog::marquee </td>
+          <td class="memname">auto xtd::forms::progress_dialog::marquee </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -518,17 +526,17 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a11a044e6b29b520bf962fa63d47ee0cb" name="a11a044e6b29b520bf962fa63d47ee0cb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a11a044e6b29b520bf962fa63d47ee0cb">&#9670;&#160;</a></span>marquee() <span class="overload">[2/2]</span></h2>
+<a id="a0abb2ece6aaa9f4a2258e7edee950ae8" name="a0abb2ece6aaa9f4a2258e7edee950ae8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0abb2ece6aaa9f4a2258e7edee950ae8">&#9670;&#160;</a></span>marquee() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a92a6229ff2dd3e1c29bbb87e15756014">progress_dialog</a> &amp; xtd::forms::progress_dialog::marquee </td>
+          <td class="memname">auto xtd::forms::progress_dialog::marquee </td>
           <td>(</td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>marquee</em></span></td><td>)</td>
-          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td> -&gt;  <a class="el" href="#a92a6229ff2dd3e1c29bbb87e15756014">progress_dialog</a> &amp;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -536,7 +544,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Gets a value that Indicates progress by continuously scrolling a block across a <a class="el" href="classxtd_1_1forms_1_1progress__bar.html" title="Represents a Windows progress bar control.">progress_bar</a> in a marquee fashion. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">marquee</td><td>tree is marquee; otherwise <span class="tt">false</span>. The default is <span class="tt">false</span>. </td></tr>
+    <tr><td class="paramname">value</td><td>tree is marquee; otherwise <span class="tt">false</span>. The default is <span class="tt">false</span>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -544,8 +552,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a7e7b82b99c69fb37f8f5969746e2f6b5" name="a7e7b82b99c69fb37f8f5969746e2f6b5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7e7b82b99c69fb37f8f5969746e2f6b5">&#9670;&#160;</a></span>marquee_animation_speed() <span class="overload">[1/2]</span></h2>
+<a id="a12b5f677cf29ca104b86058dedfec29e" name="a12b5f677cf29ca104b86058dedfec29e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12b5f677cf29ca104b86058dedfec29e">&#9670;&#160;</a></span>marquee_animation_speed() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -554,15 +562,15 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> xtd::forms::progress_dialog::marquee_animation_speed </td>
+          <td class="memname">auto xtd::forms::progress_dialog::marquee_animation_speed </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -575,17 +583,17 @@ Since the marquee animation speed is a time period, setting the value to a highe
 
 </div>
 </div>
-<a id="a5ef5676aab322272fce54cb1d7f0ad0a" name="a5ef5676aab322272fce54cb1d7f0ad0a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5ef5676aab322272fce54cb1d7f0ad0a">&#9670;&#160;</a></span>marquee_animation_speed() <span class="overload">[2/2]</span></h2>
+<a id="a01228b25fcf2bc33728b3e866bf14741" name="a01228b25fcf2bc33728b3e866bf14741"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01228b25fcf2bc33728b3e866bf14741">&#9670;&#160;</a></span>marquee_animation_speed() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a92a6229ff2dd3e1c29bbb87e15756014">progress_dialog</a> &amp; xtd::forms::progress_dialog::marquee_animation_speed </td>
+          <td class="memname">auto xtd::forms::progress_dialog::marquee_animation_speed </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>marquee_animation_speed</em></span></td><td>)</td>
-          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td> -&gt;  <a class="el" href="#a92a6229ff2dd3e1c29bbb87e15756014">progress_dialog</a> &amp;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -593,7 +601,7 @@ Since the marquee animation speed is a time period, setting the value to a highe
 <p>Sets the time period, in milliseconds, that it takes the progress block to scroll across the progress bar. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">marquee_animation_speed</td><td>The time period, in milliseconds, that it takes the progress block to scroll across the progress bar. </td></tr>
+    <tr><td class="paramname">value</td><td>The time period, in milliseconds, that it takes the progress block to scroll across the progress bar. </td></tr>
   </table>
   </dd>
 </dl>
@@ -603,8 +611,8 @@ Since the marquee animation speed is a time period, setting the value to a highe
 
 </div>
 </div>
-<a id="a10c29cf9c7b49870c153a66ec057a0bd" name="a10c29cf9c7b49870c153a66ec057a0bd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a10c29cf9c7b49870c153a66ec057a0bd">&#9670;&#160;</a></span>maximum() <span class="overload">[1/2]</span></h2>
+<a id="a705d85b31c3c2453b6c2c59650459043" name="a705d85b31c3c2453b6c2c59650459043"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a705d85b31c3c2453b6c2c59650459043">&#9670;&#160;</a></span>maximum() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -613,15 +621,15 @@ Since the marquee animation speed is a time period, setting the value to a highe
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> xtd::forms::progress_dialog::maximum </td>
+          <td class="memname">auto xtd::forms::progress_dialog::maximum </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -634,17 +642,17 @@ You can use this property to specify a value to which the value property must be
 
 </div>
 </div>
-<a id="a51d2f9f2451bfc0fdbc54784f94cf8ff" name="a51d2f9f2451bfc0fdbc54784f94cf8ff"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a51d2f9f2451bfc0fdbc54784f94cf8ff">&#9670;&#160;</a></span>maximum() <span class="overload">[2/2]</span></h2>
+<a id="a32ad69345830827bcbe3e3c5bca34186" name="a32ad69345830827bcbe3e3c5bca34186"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32ad69345830827bcbe3e3c5bca34186">&#9670;&#160;</a></span>maximum() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a92a6229ff2dd3e1c29bbb87e15756014">progress_dialog</a> &amp; xtd::forms::progress_dialog::maximum </td>
+          <td class="memname">auto xtd::forms::progress_dialog::maximum </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>maximum</em></span></td><td>)</td>
-          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td> -&gt;  <a class="el" href="#a92a6229ff2dd3e1c29bbb87e15756014">progress_dialog</a> &amp;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -652,7 +660,7 @@ You can use this property to specify a value to which the value property must be
 <p>Sets the maximum value of the range of the control. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">maximum</td><td>The maximum value of the range. The default is 100. </td></tr>
+    <tr><td class="paramname">value</td><td>The maximum value of the range. The default is 100. </td></tr>
   </table>
   </dd>
 </dl>
@@ -662,8 +670,8 @@ You can use this property to specify a value to which the value property must be
 
 </div>
 </div>
-<a id="a00742721b4da82d2121b42fea15d6f67" name="a00742721b4da82d2121b42fea15d6f67"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a00742721b4da82d2121b42fea15d6f67">&#9670;&#160;</a></span>message() <span class="overload">[1/2]</span></h2>
+<a id="aa6c3504f77c1e73b61df0eac1d9cbb77" name="aa6c3504f77c1e73b61df0eac1d9cbb77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6c3504f77c1e73b61df0eac1d9cbb77">&#9670;&#160;</a></span>message() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -672,15 +680,15 @@ You can use this property to specify a value to which the value property must be
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp; xtd::forms::progress_dialog::message </td>
+          <td class="memname">auto xtd::forms::progress_dialog::message </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -690,17 +698,17 @@ You can use this property to specify a value to which the value property must be
 
 </div>
 </div>
-<a id="a4499c49b3ba9be89c7e13de7362cd97b" name="a4499c49b3ba9be89c7e13de7362cd97b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4499c49b3ba9be89c7e13de7362cd97b">&#9670;&#160;</a></span>message() <span class="overload">[2/2]</span></h2>
+<a id="abd4927b6752ec2c3741c420f76e503ff" name="abd4927b6752ec2c3741c420f76e503ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd4927b6752ec2c3741c420f76e503ff">&#9670;&#160;</a></span>message() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a92a6229ff2dd3e1c29bbb87e15756014">progress_dialog</a> &amp; xtd::forms::progress_dialog::message </td>
+          <td class="memname">auto xtd::forms::progress_dialog::message </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>message</em></span></td><td>)</td>
-          <td></td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td> -&gt;  <a class="el" href="#a92a6229ff2dd3e1c29bbb87e15756014">progress_dialog</a> &amp;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -708,7 +716,7 @@ You can use this property to specify a value to which the value property must be
 <p>Sets the message text. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">description</td><td>The message text. </td></tr>
+    <tr><td class="paramname">value</td><td>The message text. </td></tr>
   </table>
   </dd>
 </dl>
@@ -716,8 +724,8 @@ You can use this property to specify a value to which the value property must be
 
 </div>
 </div>
-<a id="a8c75e74f309fdf4a806381afd50a12ec" name="a8c75e74f309fdf4a806381afd50a12ec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8c75e74f309fdf4a806381afd50a12ec">&#9670;&#160;</a></span>minimum() <span class="overload">[1/2]</span></h2>
+<a id="ad33f9297904ab92286a4bd0204182194" name="ad33f9297904ab92286a4bd0204182194"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad33f9297904ab92286a4bd0204182194">&#9670;&#160;</a></span>minimum() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -726,15 +734,15 @@ You can use this property to specify a value to which the value property must be
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> xtd::forms::progress_dialog::minimum </td>
+          <td class="memname">auto xtd::forms::progress_dialog::minimum </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -745,17 +753,17 @@ You can use this property to specify a value to which the value property must be
 
 </div>
 </div>
-<a id="a6c230ba97b2f88d167975abc52834941" name="a6c230ba97b2f88d167975abc52834941"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6c230ba97b2f88d167975abc52834941">&#9670;&#160;</a></span>minimum() <span class="overload">[2/2]</span></h2>
+<a id="aaa13d3c7a40fd909a40ad237f98374d5" name="aaa13d3c7a40fd909a40ad237f98374d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa13d3c7a40fd909a40ad237f98374d5">&#9670;&#160;</a></span>minimum() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a92a6229ff2dd3e1c29bbb87e15756014">progress_dialog</a> &amp; xtd::forms::progress_dialog::minimum </td>
+          <td class="memname">auto xtd::forms::progress_dialog::minimum </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>minimum</em></span></td><td>)</td>
-          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td> -&gt;  <a class="el" href="#a92a6229ff2dd3e1c29bbb87e15756014">progress_dialog</a> &amp;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -763,7 +771,7 @@ You can use this property to specify a value to which the value property must be
 <p>Sets the minimum value of the range of the control. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">minimum</td><td>The minimum value of the range. The default is 0. </td></tr>
+    <tr><td class="paramname">value</td><td>The minimum value of the range. The default is 0. </td></tr>
   </table>
   </dd>
 </dl>
@@ -772,8 +780,8 @@ You can use this property to specify a value to which the value property must be
 
 </div>
 </div>
-<a id="ae90304ec0b081346aebe5d32f3bc5a73" name="ae90304ec0b081346aebe5d32f3bc5a73"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae90304ec0b081346aebe5d32f3bc5a73">&#9670;&#160;</a></span>show_cancel_button() <span class="overload">[1/2]</span></h2>
+<a id="a438ded5eb72125502155d52bba7e8c68" name="a438ded5eb72125502155d52bba7e8c68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a438ded5eb72125502155d52bba7e8c68">&#9670;&#160;</a></span>show_cancel_button() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -782,15 +790,15 @@ You can use this property to specify a value to which the value property must be
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::forms::progress_dialog::show_cancel_button </td>
+          <td class="memname">auto xtd::forms::progress_dialog::show_cancel_button </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -800,17 +808,17 @@ You can use this property to specify a value to which the value property must be
 
 </div>
 </div>
-<a id="a301c4bbc810c4484bd3eebc5daa1d16e" name="a301c4bbc810c4484bd3eebc5daa1d16e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a301c4bbc810c4484bd3eebc5daa1d16e">&#9670;&#160;</a></span>show_cancel_button() <span class="overload">[2/2]</span></h2>
+<a id="a1adcb5ea9fab461a36b009716ba8920e" name="a1adcb5ea9fab461a36b009716ba8920e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1adcb5ea9fab461a36b009716ba8920e">&#9670;&#160;</a></span>show_cancel_button() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a92a6229ff2dd3e1c29bbb87e15756014">progress_dialog</a> &amp; xtd::forms::progress_dialog::show_cancel_button </td>
+          <td class="memname">auto xtd::forms::progress_dialog::show_cancel_button </td>
           <td>(</td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>show_cancel_button</em></span></td><td>)</td>
-          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td> -&gt;  <a class="el" href="#a92a6229ff2dd3e1c29bbb87e15756014">progress_dialog</a> &amp;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -818,7 +826,7 @@ You can use this property to specify a value to which the value property must be
 <p>Sets a value that indicates whether cancel button is shown. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">show_cancel_button</td><td><span class="tt">true</span> if cancel button is shown; otherwise <span class="tt">false</span>. By default <span class="tt">false</span>. </td></tr>
+    <tr><td class="paramname">value</td><td><span class="tt">true</span> if cancel button is shown; otherwise <span class="tt">false</span>. By default <span class="tt">false</span>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -826,8 +834,8 @@ You can use this property to specify a value to which the value property must be
 
 </div>
 </div>
-<a id="a03381916f2458ea0ddbb2307003a1072" name="a03381916f2458ea0ddbb2307003a1072"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a03381916f2458ea0ddbb2307003a1072">&#9670;&#160;</a></span>show_elapsed_time() <span class="overload">[1/2]</span></h2>
+<a id="a15b9332e13f2ab02a9873a0786787ed9" name="a15b9332e13f2ab02a9873a0786787ed9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15b9332e13f2ab02a9873a0786787ed9">&#9670;&#160;</a></span>show_elapsed_time() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -836,15 +844,15 @@ You can use this property to specify a value to which the value property must be
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::forms::progress_dialog::show_elapsed_time </td>
+          <td class="memname">auto xtd::forms::progress_dialog::show_elapsed_time </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -854,17 +862,17 @@ You can use this property to specify a value to which the value property must be
 
 </div>
 </div>
-<a id="a4eb54fe005d9f51bcafb928ac0fb3efa" name="a4eb54fe005d9f51bcafb928ac0fb3efa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4eb54fe005d9f51bcafb928ac0fb3efa">&#9670;&#160;</a></span>show_elapsed_time() <span class="overload">[2/2]</span></h2>
+<a id="a9d1ed102e3362737679bc96dce80c5c6" name="a9d1ed102e3362737679bc96dce80c5c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d1ed102e3362737679bc96dce80c5c6">&#9670;&#160;</a></span>show_elapsed_time() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a92a6229ff2dd3e1c29bbb87e15756014">progress_dialog</a> &amp; xtd::forms::progress_dialog::show_elapsed_time </td>
+          <td class="memname">auto xtd::forms::progress_dialog::show_elapsed_time </td>
           <td>(</td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>show_elapsed_time</em></span></td><td>)</td>
-          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td> -&gt;  <a class="el" href="#a92a6229ff2dd3e1c29bbb87e15756014">progress_dialog</a> &amp;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -872,7 +880,7 @@ You can use this property to specify a value to which the value property must be
 <p>Sets a value that indicates whether elapsed time is shown. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">show_elapsed_time</td><td><span class="tt">true</span> if elapsed time is shown; otherwise <span class="tt">false</span>. By default <span class="tt">false</span>. </td></tr>
+    <tr><td class="paramname">value</td><td><span class="tt">true</span> if elapsed time is shown; otherwise <span class="tt">false</span>. By default <span class="tt">false</span>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -880,8 +888,8 @@ You can use this property to specify a value to which the value property must be
 
 </div>
 </div>
-<a id="a79f3e6d895303b917b4b775489182b1b" name="a79f3e6d895303b917b4b775489182b1b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a79f3e6d895303b917b4b775489182b1b">&#9670;&#160;</a></span>show_estimated_time() <span class="overload">[1/2]</span></h2>
+<a id="aaa15d932c8efd659d5b13d05495b50e9" name="aaa15d932c8efd659d5b13d05495b50e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa15d932c8efd659d5b13d05495b50e9">&#9670;&#160;</a></span>show_estimated_time() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -890,15 +898,15 @@ You can use this property to specify a value to which the value property must be
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::forms::progress_dialog::show_estimated_time </td>
+          <td class="memname">auto xtd::forms::progress_dialog::show_estimated_time </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -908,17 +916,17 @@ You can use this property to specify a value to which the value property must be
 
 </div>
 </div>
-<a id="a908fa4906b26b2c0b4f49c5ac0b27a68" name="a908fa4906b26b2c0b4f49c5ac0b27a68"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a908fa4906b26b2c0b4f49c5ac0b27a68">&#9670;&#160;</a></span>show_estimated_time() <span class="overload">[2/2]</span></h2>
+<a id="aff74ec0173fd1a0f23ea88589808d381" name="aff74ec0173fd1a0f23ea88589808d381"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff74ec0173fd1a0f23ea88589808d381">&#9670;&#160;</a></span>show_estimated_time() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a92a6229ff2dd3e1c29bbb87e15756014">progress_dialog</a> &amp; xtd::forms::progress_dialog::show_estimated_time </td>
+          <td class="memname">auto xtd::forms::progress_dialog::show_estimated_time </td>
           <td>(</td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>show_estimated_time</em></span></td><td>)</td>
-          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td> -&gt;  <a class="el" href="#a92a6229ff2dd3e1c29bbb87e15756014">progress_dialog</a> &amp;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -926,7 +934,7 @@ You can use this property to specify a value to which the value property must be
 <p>Sets a value that indicates whether estimated time is shown. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">show_estimated_time</td><td><span class="tt">true</span> if estimated time is shown; otherwise <span class="tt">false</span>. By default <span class="tt">false</span>. </td></tr>
+    <tr><td class="paramname">value</td><td><span class="tt">true</span> if estimated time is shown; otherwise <span class="tt">false</span>. By default <span class="tt">false</span>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -934,8 +942,8 @@ You can use this property to specify a value to which the value property must be
 
 </div>
 </div>
-<a id="a380e786f8d801594fb9bfac3f0427d4b" name="a380e786f8d801594fb9bfac3f0427d4b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a380e786f8d801594fb9bfac3f0427d4b">&#9670;&#160;</a></span>show_remaining_time() <span class="overload">[1/2]</span></h2>
+<a id="a1065d6a29c13f1f92d530ac7f0c0df91" name="a1065d6a29c13f1f92d530ac7f0c0df91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1065d6a29c13f1f92d530ac7f0c0df91">&#9670;&#160;</a></span>show_remaining_time() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -944,15 +952,15 @@ You can use this property to specify a value to which the value property must be
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::forms::progress_dialog::show_remaining_time </td>
+          <td class="memname">auto xtd::forms::progress_dialog::show_remaining_time </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -962,17 +970,17 @@ You can use this property to specify a value to which the value property must be
 
 </div>
 </div>
-<a id="a529efba04a269efc02f4040b617c9123" name="a529efba04a269efc02f4040b617c9123"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a529efba04a269efc02f4040b617c9123">&#9670;&#160;</a></span>show_remaining_time() <span class="overload">[2/2]</span></h2>
+<a id="ad10380e919af767c1cc0724081a1eae2" name="ad10380e919af767c1cc0724081a1eae2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad10380e919af767c1cc0724081a1eae2">&#9670;&#160;</a></span>show_remaining_time() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a92a6229ff2dd3e1c29bbb87e15756014">progress_dialog</a> &amp; xtd::forms::progress_dialog::show_remaining_time </td>
+          <td class="memname">auto xtd::forms::progress_dialog::show_remaining_time </td>
           <td>(</td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>show_remaining_time</em></span></td><td>)</td>
-          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td> -&gt;  <a class="el" href="#a92a6229ff2dd3e1c29bbb87e15756014">progress_dialog</a> &amp;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -980,7 +988,7 @@ You can use this property to specify a value to which the value property must be
 <p>Sets a value that indicates whether remaining time is shown. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">show_remaining_time</td><td><span class="tt">true</span> if remaining time is shown; otherwise <span class="tt">false</span>. By default <span class="tt">false</span>. </td></tr>
+    <tr><td class="paramname">value</td><td><span class="tt">true</span> if remaining time is shown; otherwise <span class="tt">false</span>. By default <span class="tt">false</span>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -988,8 +996,8 @@ You can use this property to specify a value to which the value property must be
 
 </div>
 </div>
-<a id="acb28ecbaf1b991ab234759b289f2587f" name="acb28ecbaf1b991ab234759b289f2587f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acb28ecbaf1b991ab234759b289f2587f">&#9670;&#160;</a></span>show_skip_button() <span class="overload">[1/2]</span></h2>
+<a id="a37b0c290aec46bd10be4cc2945f649f4" name="a37b0c290aec46bd10be4cc2945f649f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37b0c290aec46bd10be4cc2945f649f4">&#9670;&#160;</a></span>show_skip_button() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -998,15 +1006,15 @@ You can use this property to specify a value to which the value property must be
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::forms::progress_dialog::show_skip_button </td>
+          <td class="memname">auto xtd::forms::progress_dialog::show_skip_button </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1016,17 +1024,17 @@ You can use this property to specify a value to which the value property must be
 
 </div>
 </div>
-<a id="a810ffc6376dbec94e75bdb8d74a1c421" name="a810ffc6376dbec94e75bdb8d74a1c421"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a810ffc6376dbec94e75bdb8d74a1c421">&#9670;&#160;</a></span>show_skip_button() <span class="overload">[2/2]</span></h2>
+<a id="a6e1ecb185b234f4f457a26440760350a" name="a6e1ecb185b234f4f457a26440760350a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e1ecb185b234f4f457a26440760350a">&#9670;&#160;</a></span>show_skip_button() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a92a6229ff2dd3e1c29bbb87e15756014">progress_dialog</a> &amp; xtd::forms::progress_dialog::show_skip_button </td>
+          <td class="memname">auto xtd::forms::progress_dialog::show_skip_button </td>
           <td>(</td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>show_skip_button</em></span></td><td>)</td>
-          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td> -&gt;  <a class="el" href="#a92a6229ff2dd3e1c29bbb87e15756014">progress_dialog</a> &amp;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1034,7 +1042,7 @@ You can use this property to specify a value to which the value property must be
 <p>Sets a value that indicates whether skip button is shown. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">show_skip_button</td><td><span class="tt">true</span> if skip button is shown; otherwise <span class="tt">false</span>. By default <span class="tt">false</span>. </td></tr>
+    <tr><td class="paramname">value</td><td><span class="tt">true</span> if skip button is shown; otherwise <span class="tt">false</span>. By default <span class="tt">false</span>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1042,19 +1050,27 @@ You can use this property to specify a value to which the value property must be
 
 </div>
 </div>
-<a id="a433e34f4a7e11ae414b31eca13dc8fac" name="a433e34f4a7e11ae414b31eca13dc8fac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a433e34f4a7e11ae414b31eca13dc8fac">&#9670;&#160;</a></span>skipped()</h2>
+<a id="a92fe0634b8037c54f19f552747630419" name="a92fe0634b8037c54f19f552747630419"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92fe0634b8037c54f19f552747630419">&#9670;&#160;</a></span>skipped()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::forms::progress_dialog::skipped </td>
+          <td class="memname">auto xtd::forms::progress_dialog::skipped </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  bool</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Gets whether user has clicked on skip button. </p>
@@ -1062,8 +1078,8 @@ You can use this property to specify a value to which the value property must be
 
 </div>
 </div>
-<a id="aebd9629c0e45d7b53a117ec7bd0c25b8" name="aebd9629c0e45d7b53a117ec7bd0c25b8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aebd9629c0e45d7b53a117ec7bd0c25b8">&#9670;&#160;</a></span>step() <span class="overload">[1/2]</span></h2>
+<a id="a1f1baa7f510cc19741c8c3fc6df57f66" name="a1f1baa7f510cc19741c8c3fc6df57f66"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f1baa7f510cc19741c8c3fc6df57f66">&#9670;&#160;</a></span>step() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1072,36 +1088,36 @@ You can use this property to specify a value to which the value property must be
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> xtd::forms::progress_dialog::step </td>
+          <td class="memname">auto xtd::forms::progress_dialog::step </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>Gets the amount by which a call to the PerformStep() method increases the current position of the progress bar. </p>
-<dl class="section return"><dt>Returns</dt><dd>The amount by which to increment the progress bar with each call to the <a class="el" href="#a5f3ff9afc0132ff2c717d938c302d85e" title="Advances the current position of the progress bar by the amount of the Step property.">perform_step()</a> method. The default is 10. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The amount by which to increment the progress bar with each call to the <a class="el" href="#a80a8506da8e2b791c229f5ce4bc1dd04" title="Advances the current position of the progress bar by the amount of the Step property.">perform_step()</a> method. The default is 10. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>You can use the step property to specify the amount that each completed task in an operation changes the value of the progress bar. For example, if you are copying a group of files, you might want to set the value of the step property to 1 and the value of the maximum property to the total number of files to copy. When each file is copied, you can call the perform_step method to increment the progress bar by the value of the step property. If you want to have more flexible control of the value of the progress bar, you can use the increment method or set the value of the value property directly. </dd></dl>
 
 </div>
 </div>
-<a id="a7d82244acc7505572ba6cea48bca5123" name="a7d82244acc7505572ba6cea48bca5123"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7d82244acc7505572ba6cea48bca5123">&#9670;&#160;</a></span>step() <span class="overload">[2/2]</span></h2>
+<a id="ac81ae7f95549da8ee047f61956ad8d21" name="ac81ae7f95549da8ee047f61956ad8d21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac81ae7f95549da8ee047f61956ad8d21">&#9670;&#160;</a></span>step() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a92a6229ff2dd3e1c29bbb87e15756014">progress_dialog</a> &amp; xtd::forms::progress_dialog::step </td>
+          <td class="memname">auto xtd::forms::progress_dialog::step </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>step</em></span></td><td>)</td>
-          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td> -&gt;  <a class="el" href="#a92a6229ff2dd3e1c29bbb87e15756014">progress_dialog</a> &amp;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1109,7 +1125,7 @@ You can use this property to specify a value to which the value property must be
 <p>Sets the amount by which a call to the PerformStep() method increases the current position of the progress bar. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">step</td><td>The amount by which to increment the progress bar with each call to the <a class="el" href="#a5f3ff9afc0132ff2c717d938c302d85e" title="Advances the current position of the progress bar by the amount of the Step property.">perform_step()</a> method. The default is 10. </td></tr>
+    <tr><td class="paramname">value</td><td>The amount by which to increment the progress bar with each call to the <a class="el" href="#a80a8506da8e2b791c229f5ce4bc1dd04" title="Advances the current position of the progress bar by the amount of the Step property.">perform_step()</a> method. The default is 10. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1117,8 +1133,8 @@ You can use this property to specify a value to which the value property must be
 
 </div>
 </div>
-<a id="af1cab23486bbcf9bc5c9a13e93bbf8d8" name="af1cab23486bbcf9bc5c9a13e93bbf8d8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af1cab23486bbcf9bc5c9a13e93bbf8d8">&#9670;&#160;</a></span>text() <span class="overload">[1/2]</span></h2>
+<a id="a289ecd184dd45078c2ec602dc3a4d4a0" name="a289ecd184dd45078c2ec602dc3a4d4a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a289ecd184dd45078c2ec602dc3a4d4a0">&#9670;&#160;</a></span>text() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1127,15 +1143,15 @@ You can use this property to specify a value to which the value property must be
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp; xtd::forms::progress_dialog::text </td>
+          <td class="memname">auto xtd::forms::progress_dialog::text </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1145,17 +1161,17 @@ You can use this property to specify a value to which the value property must be
 
 </div>
 </div>
-<a id="a80124b95eaab97607464618530d43a0f" name="a80124b95eaab97607464618530d43a0f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a80124b95eaab97607464618530d43a0f">&#9670;&#160;</a></span>text() <span class="overload">[2/2]</span></h2>
+<a id="a109e122d30c18ddd5b7ddd5b4eb274c0" name="a109e122d30c18ddd5b7ddd5b4eb274c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a109e122d30c18ddd5b7ddd5b4eb274c0">&#9670;&#160;</a></span>text() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a92a6229ff2dd3e1c29bbb87e15756014">progress_dialog</a> &amp; xtd::forms::progress_dialog::text </td>
+          <td class="memname">auto xtd::forms::progress_dialog::text </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>text</em></span></td><td>)</td>
-          <td></td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td> -&gt;  <a class="el" href="#a92a6229ff2dd3e1c29bbb87e15756014">progress_dialog</a> &amp;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1163,7 +1179,7 @@ You can use this property to specify a value to which the value property must be
 <p>Sets the dialog title. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">copyright</td><td>The dialog title. </td></tr>
+    <tr><td class="paramname">value</td><td>The dialog title. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1171,8 +1187,8 @@ You can use this property to specify a value to which the value property must be
 
 </div>
 </div>
-<a id="ae3f9b9a0f2879d998fd9a1590dc16501" name="ae3f9b9a0f2879d998fd9a1590dc16501"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae3f9b9a0f2879d998fd9a1590dc16501">&#9670;&#160;</a></span>value() <span class="overload">[1/2]</span></h2>
+<a id="a9d3d027fab76cc7a65d035c58979ce67" name="a9d3d027fab76cc7a65d035c58979ce67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d3d027fab76cc7a65d035c58979ce67">&#9670;&#160;</a></span>value() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1181,15 +1197,15 @@ You can use this property to specify a value to which the value property must be
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> xtd::forms::progress_dialog::value </td>
+          <td class="memname">auto xtd::forms::progress_dialog::value </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1204,17 +1220,17 @@ The minimum and maximum values of the value property are specified by the minimu
 
 </div>
 </div>
-<a id="af9619bb8549d96cfd64702f2baad9392" name="af9619bb8549d96cfd64702f2baad9392"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af9619bb8549d96cfd64702f2baad9392">&#9670;&#160;</a></span>value() <span class="overload">[2/2]</span></h2>
+<a id="ab7d8b94edc074cd346b647699fe9c27b" name="ab7d8b94edc074cd346b647699fe9c27b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7d8b94edc074cd346b647699fe9c27b">&#9670;&#160;</a></span>value() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a92a6229ff2dd3e1c29bbb87e15756014">progress_dialog</a> &amp; xtd::forms::progress_dialog::value </td>
+          <td class="memname">auto xtd::forms::progress_dialog::value </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td> -&gt;  <a class="el" href="#a92a6229ff2dd3e1c29bbb87e15756014">progress_dialog</a> &amp;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1234,17 +1250,17 @@ The minimum and maximum values of the value property are specified by the minimu
 
 </div>
 </div>
-<a id="a5c21b8df1cb6724a26e5c15089924153" name="a5c21b8df1cb6724a26e5c15089924153"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5c21b8df1cb6724a26e5c15089924153">&#9670;&#160;</a></span>hide()</h2>
+<a id="a6c6fc378a6636340e33f7d17c3a0338d" name="a6c6fc378a6636340e33f7d17c3a0338d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c6fc378a6636340e33f7d17c3a0338d">&#9670;&#160;</a></span>hide()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::forms::progress_dialog::hide </td>
+          <td class="memname">auto xtd::forms::progress_dialog::hide </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1253,17 +1269,17 @@ The minimum and maximum values of the value property are specified by the minimu
 
 </div>
 </div>
-<a id="abe890187f6e9e1f078addd37161b70d7" name="abe890187f6e9e1f078addd37161b70d7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abe890187f6e9e1f078addd37161b70d7">&#9670;&#160;</a></span>increment()</h2>
+<a id="af4342775cec11f42ea7668dbcd4bff2d" name="af4342775cec11f42ea7668dbcd4bff2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4342775cec11f42ea7668dbcd4bff2d">&#9670;&#160;</a></span>increment()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::forms::progress_dialog::increment </td>
+          <td class="memname">auto xtd::forms::progress_dialog::increment </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>increment</em></span></td><td>)</td>
-          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td>          <td class="paramname"><span class="paramname"><em>increment</em></span></td><td>)</td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1281,17 +1297,17 @@ Because a <a class="el" href="classxtd_1_1forms_1_1progress__bar.html" title="Re
 
 </div>
 </div>
-<a id="a5f3ff9afc0132ff2c717d938c302d85e" name="a5f3ff9afc0132ff2c717d938c302d85e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5f3ff9afc0132ff2c717d938c302d85e">&#9670;&#160;</a></span>perform_step()</h2>
+<a id="a80a8506da8e2b791c229f5ce4bc1dd04" name="a80a8506da8e2b791c229f5ce4bc1dd04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80a8506da8e2b791c229f5ce4bc1dd04">&#9670;&#160;</a></span>perform_step()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::forms::progress_dialog::perform_step </td>
+          <td class="memname">auto xtd::forms::progress_dialog::perform_step </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1301,8 +1317,8 @@ Because a <a class="el" href="classxtd_1_1forms_1_1progress__bar.html" title="Re
 
 </div>
 </div>
-<a id="a7a49cc1326a0b148b48544b9757610fd" name="a7a49cc1326a0b148b48544b9757610fd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7a49cc1326a0b148b48544b9757610fd">&#9670;&#160;</a></span>reset()</h2>
+<a id="aa8f82dc00dbae4dc342a9b8c8161dde6" name="aa8f82dc00dbae4dc342a9b8c8161dde6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8f82dc00dbae4dc342a9b8c8161dde6">&#9670;&#160;</a></span>reset()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1311,10 +1327,10 @@ Because a <a class="el" href="classxtd_1_1forms_1_1progress__bar.html" title="Re
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::forms::progress_dialog::reset </td>
+          <td class="memname">auto xtd::forms::progress_dialog::reset </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -1328,17 +1344,17 @@ Because a <a class="el" href="classxtd_1_1forms_1_1progress__bar.html" title="Re
 
 </div>
 </div>
-<a id="a73b3d9a9192484b286fc2457faad652a" name="a73b3d9a9192484b286fc2457faad652a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a73b3d9a9192484b286fc2457faad652a">&#9670;&#160;</a></span>resume()</h2>
+<a id="a1895856d3e9036932701b7ad6c4b6419" name="a1895856d3e9036932701b7ad6c4b6419"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1895856d3e9036932701b7ad6c4b6419">&#9670;&#160;</a></span>resume()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::forms::progress_dialog::resume </td>
+          <td class="memname">auto xtd::forms::progress_dialog::resume </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1347,17 +1363,17 @@ Because a <a class="el" href="classxtd_1_1forms_1_1progress__bar.html" title="Re
 
 </div>
 </div>
-<a id="aa14e0829a64b3f4aee034536f2e58d5e" name="aa14e0829a64b3f4aee034536f2e58d5e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa14e0829a64b3f4aee034536f2e58d5e">&#9670;&#160;</a></span>show() <span class="overload">[1/2]</span></h2>
+<a id="acbd8836612947e37c28d5da6a311a3c3" name="acbd8836612947e37c28d5da6a311a3c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acbd8836612947e37c28d5da6a311a3c3">&#9670;&#160;</a></span>show() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::forms::progress_dialog::show </td>
+          <td class="memname">auto xtd::forms::progress_dialog::show </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1366,55 +1382,67 @@ Because a <a class="el" href="classxtd_1_1forms_1_1progress__bar.html" title="Re
 
 </div>
 </div>
-<a id="a42a6c14e519d3930280bdf1b6c3499d2" name="a42a6c14e519d3930280bdf1b6c3499d2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a42a6c14e519d3930280bdf1b6c3499d2">&#9670;&#160;</a></span>show() <span class="overload">[2/2]</span></h2>
+<a id="adddbb414c2507c442bb507dba2f6c014" name="adddbb414c2507c442bb507dba2f6c014"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adddbb414c2507c442bb507dba2f6c014">&#9670;&#160;</a></span>show() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::forms::progress_dialog::show </td>
+          <td class="memname">auto xtd::forms::progress_dialog::show </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>owner</em></span></td><td>)</td>
-          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>owner</em></span></td><td>)</td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Runs progress dialog box. </p>
+<p>Runs progress dialog box with specified owner. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">owner</td><td>The progress dialog owner. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
-<a id="a941be158cb3e500595d8622a7f2f54ee" name="a941be158cb3e500595d8622a7f2f54ee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a941be158cb3e500595d8622a7f2f54ee">&#9670;&#160;</a></span>show_sheet()</h2>
+<a id="a863afc9130c3fb20f50dc74e60120f23" name="a863afc9130c3fb20f50dc74e60120f23"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a863afc9130c3fb20f50dc74e60120f23">&#9670;&#160;</a></span>show_sheet()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::forms::progress_dialog::show_sheet </td>
+          <td class="memname">auto xtd::forms::progress_dialog::show_sheet </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>owner</em></span></td><td>)</td>
-          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>owner</em></span></td><td>)</td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Runs progress dialog box as sheet. </p>
+<p>Runs progress dialog box as sheet with specified owner. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">owner</td><td>The progress dialog owner. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
-<a id="a575c4309d2d04a8344abdf6345ed6700" name="a575c4309d2d04a8344abdf6345ed6700"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a575c4309d2d04a8344abdf6345ed6700">&#9670;&#160;</a></span>show_dialog() <span class="overload">[1/2]</span></h2>
+<a id="a8b908371ffffee5780626a1c1817a6b2" name="a8b908371ffffee5780626a1c1817a6b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b908371ffffee5780626a1c1817a6b2">&#9670;&#160;</a></span>show_dialog() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::forms::progress_dialog::show_dialog </td>
+          <td class="memname">auto xtd::forms::progress_dialog::show_dialog </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1423,41 +1451,53 @@ Because a <a class="el" href="classxtd_1_1forms_1_1progress__bar.html" title="Re
 
 </div>
 </div>
-<a id="a8bbebbfb148c136b50273233406b2d44" name="a8bbebbfb148c136b50273233406b2d44"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8bbebbfb148c136b50273233406b2d44">&#9670;&#160;</a></span>show_dialog() <span class="overload">[2/2]</span></h2>
+<a id="a83dabfe8147c65771c3b9236e98f5d4f" name="a83dabfe8147c65771c3b9236e98f5d4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83dabfe8147c65771c3b9236e98f5d4f">&#9670;&#160;</a></span>show_dialog() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::forms::progress_dialog::show_dialog </td>
+          <td class="memname">auto xtd::forms::progress_dialog::show_dialog </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>owner</em></span></td><td>)</td>
-          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>owner</em></span></td><td>)</td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Runs progress dialog box. </p>
+<p>Runs progress dialog box with specified owner. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">owner</td><td>The progress dialog owner. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
-<a id="a9d317a139c3ba493e4fceec2be0d5050" name="a9d317a139c3ba493e4fceec2be0d5050"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9d317a139c3ba493e4fceec2be0d5050">&#9670;&#160;</a></span>show_sheet_dialog()</h2>
+<a id="a7fea2442874b82ec3659ecf47cb25f64" name="a7fea2442874b82ec3659ecf47cb25f64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7fea2442874b82ec3659ecf47cb25f64">&#9670;&#160;</a></span>show_sheet_dialog()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::forms::progress_dialog::show_sheet_dialog </td>
+          <td class="memname">auto xtd::forms::progress_dialog::show_sheet_dialog </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">iwin32_window</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>owner</em></span></td><td>)</td>
-          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>owner</em></span></td><td>)</td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Runs progress dialog box. </p>
+<p>Runs progress dialog box with specified owner. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">owner</td><td>The progress dialog owner. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

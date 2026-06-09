@@ -169,7 +169,7 @@ Inheritance diagram for xtd::forms::save_file_box:</div>
 <div class="line">    .<a class="code hl_function" href="classxtd_1_1forms_1_1control.html#a77f74d2ddcec3606a4fd21cffc0948ad">text</a>(<span class="stringliteral">&quot;Save file&quot;</span>)</div>
 <div class="line">    .click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">      <span class="keyword">auto</span> file_name = <span class="stringliteral">&quot;MyFile.txt&quot;</span>_s;</div>
-<div class="line">      <span class="keyword">auto</span> res = <a class="code hl_function" href="#a9a6c20e840db70552d4fec94628d2ba9">save_file_box::show</a>(file_name, *<span class="keyword">this</span>, <span class="stringliteral">&quot;Save file as...&quot;</span>, environment::get_folder_path(environment::special_folder::my_documents), <span class="stringliteral">&quot;*.txt&quot;</span>);</div>
+<div class="line">      <span class="keyword">auto</span> res = <a class="code hl_function" href="#a2e722c79886e12e2e2ae12d47a6a1452">save_file_box::show</a>(file_name, *<span class="keyword">this</span>, <span class="stringliteral">&quot;Save file as...&quot;</span>, environment::get_folder_path(environment::special_folder::my_documents), <span class="stringliteral">&quot;*.txt&quot;</span>);</div>
 <div class="line">      <span class="keywordflow">if</span> (res == dialog_result::ok)</div>
 <div class="line">        <a class="code hl_function" href="classxtd_1_1forms_1_1message__box.html#a86f76dbd0bd3b8897c6d290e91bf2327">message_box::show</a>(string::format(<span class="stringliteral">&quot;File will be saved as:\n{}&quot;</span>, file_name));</div>
 <div class="line">    };</div>
@@ -188,45 +188,45 @@ Inheritance diagram for xtd::forms::save_file_box:</div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1control_html_aea3c09a223353a9c5c7afdda86882c45"><div class="ttname"><a href="classxtd_1_1forms_1_1control.html#aea3c09a223353a9c5c7afdda86882c45">xtd::forms::control::controls</a></div><div class="ttdeci">virtual auto controls() noexcept -&gt; control_collection &amp;</div><div class="ttdoc">Gets the collection of controls contained within the control.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html">xtd::forms::form</a></div><div class="ttdoc">Represents a window or dialog box that makes up an application&#39;s user interface.</div><div class="ttdef"><b>Definition</b> form.hpp:54</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1message__box_html_a86f76dbd0bd3b8897c6d290e91bf2327"><div class="ttname"><a href="classxtd_1_1forms_1_1message__box.html#a86f76dbd0bd3b8897c6d290e91bf2327">xtd::forms::message_box::show</a></div><div class="ttdeci">static auto show() -&gt; xtd::forms::dialog_result</div><div class="ttdoc">Displays a message box.</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1save__file__box_html_a9a6c20e840db70552d4fec94628d2ba9"><div class="ttname"><a href="#a9a6c20e840db70552d4fec94628d2ba9">xtd::forms::save_file_box::show</a></div><div class="ttdeci">static xtd::forms::dialog_result show(xtd::string &amp;file_name, const xtd::forms::iwin32_window &amp;owner)</div><div class="ttdoc">Displays a save file dialog box in front of a specified window.</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1save__file__box_html_a2e722c79886e12e2e2ae12d47a6a1452"><div class="ttname"><a href="#a2e722c79886e12e2e2ae12d47a6a1452">xtd::forms::save_file_box::show</a></div><div class="ttdeci">static auto show(xtd::string &amp;file_name, const xtd::forms::iwin32_window &amp;owner) -&gt; xtd::forms::dialog_result</div><div class="ttdoc">Displays a save file dialog box in front of a specified window.</div></div>
 <div class="ttc" id="agroup__keywords_html_gac0b0b1a17f583a897eb6b424f2475363"><div class="ttname"><a href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a></div><div class="ttdeci">#define delegate_</div><div class="ttdoc">The declaration of a delegate type is similar to a method signature. It has a return value and any nu...</div><div class="ttdef"><b>Definition</b> delegate.hpp:1018</div></div>
 <div class="ttc" id="agroup__style__sheets_html_ga902d7ba89795f62756de856e06822883"><div class="ttname"><a href="group__style__sheets.html#ga902d7ba89795f62756de856e06822883">xtd::forms::style_sheets::button</a></div><div class="ttdeci">xtd::forms::style_sheets::control button</div><div class="ttdoc">The buttton data allows you to specify the box of a button control.</div><div class="ttdef"><b>Definition</b> button.hpp:25</div></div>
 </div><!-- fragment --> </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Static Methods</h2></td></tr>
-<tr class="memitem:a9a6c20e840db70552d4fec94628d2ba9" id="r_a9a6c20e840db70552d4fec94628d2ba9"><td class="memItemLeft">static <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a>&#160;</td><td class="memItemRight"><a class="el" href="#a9a6c20e840db70552d4fec94628d2ba9">show</a> (<a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;file_name, const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;owner)</td></tr>
-<tr class="memdesc:a9a6c20e840db70552d4fec94628d2ba9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a save file dialog box in front of a specified window.  <br /></td></tr>
-<tr class="memitem:aef07c50b170df17e8e0a838c142c166d" id="r_aef07c50b170df17e8e0a838c142c166d"><td class="memItemLeft">static <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a>&#160;</td><td class="memItemRight"><a class="el" href="#aef07c50b170df17e8e0a838c142c166d">show</a> (<a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;file_name, const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;owner, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;title)</td></tr>
-<tr class="memdesc:aef07c50b170df17e8e0a838c142c166d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a save file dialog box in front of a specified window.  <br /></td></tr>
-<tr class="memitem:a9987d4a0b4c11f4200ebde24ee40eaa0" id="r_a9987d4a0b4c11f4200ebde24ee40eaa0"><td class="memItemLeft">static <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a>&#160;</td><td class="memItemRight"><a class="el" href="#a9987d4a0b4c11f4200ebde24ee40eaa0">show</a> (<a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;file_name, const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;owner, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;title, const <a class="el" href="group__xtd__forms.html#ga224d1c8c9a0c604f8ba0088a4b2cdd38">save_file_box_options</a> options)</td></tr>
-<tr class="memdesc:a9987d4a0b4c11f4200ebde24ee40eaa0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a save file dialog box in front of a specified window.  <br /></td></tr>
-<tr class="memitem:ad98a494f2b5792bac2118af42547095b" id="r_ad98a494f2b5792bac2118af42547095b"><td class="memItemLeft">static <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a>&#160;</td><td class="memItemRight"><a class="el" href="#ad98a494f2b5792bac2118af42547095b">show</a> (<a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;file_name, const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;owner, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;title, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;initial_directory)</td></tr>
-<tr class="memdesc:ad98a494f2b5792bac2118af42547095b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a save file dialog box in front of a specified window.  <br /></td></tr>
-<tr class="memitem:ac2cde5e4901f9a382aee45c8f7329d94" id="r_ac2cde5e4901f9a382aee45c8f7329d94"><td class="memItemLeft">static <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a>&#160;</td><td class="memItemRight"><a class="el" href="#ac2cde5e4901f9a382aee45c8f7329d94">show</a> (<a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;file_name, const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;owner, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;title, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;initial_directory, const <a class="el" href="group__xtd__forms.html#ga224d1c8c9a0c604f8ba0088a4b2cdd38">save_file_box_options</a> options)</td></tr>
-<tr class="memdesc:ac2cde5e4901f9a382aee45c8f7329d94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a save file dialog box in front of a specified window.  <br /></td></tr>
-<tr class="memitem:a3429ce11b2936c7c86ff9c88b47d895c" id="r_a3429ce11b2936c7c86ff9c88b47d895c"><td class="memItemLeft">static <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a>&#160;</td><td class="memItemRight"><a class="el" href="#a3429ce11b2936c7c86ff9c88b47d895c">show</a> (<a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;file_name, const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;owner, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;title, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;initial_directory, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;filter)</td></tr>
-<tr class="memdesc:a3429ce11b2936c7c86ff9c88b47d895c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a save file dialog box in front of a specified window.  <br /></td></tr>
-<tr class="memitem:a45f2ab82bbabbbee1a91790ad5e30d66" id="r_a45f2ab82bbabbbee1a91790ad5e30d66"><td class="memItemLeft">static <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a>&#160;</td><td class="memItemRight"><a class="el" href="#a45f2ab82bbabbbee1a91790ad5e30d66">show</a> (<a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;file_name, const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;owner, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;title, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;initial_directory, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;filter, const <a class="el" href="group__xtd__forms.html#ga224d1c8c9a0c604f8ba0088a4b2cdd38">save_file_box_options</a> options)</td></tr>
-<tr class="memdesc:a45f2ab82bbabbbee1a91790ad5e30d66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a save file dialog box in front of a specified window.  <br /></td></tr>
-<tr class="memitem:a075e2b95037f82afb4f03ce327e4f9b8" id="r_a075e2b95037f82afb4f03ce327e4f9b8"><td class="memItemLeft">static <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a>&#160;</td><td class="memItemRight"><a class="el" href="#a075e2b95037f82afb4f03ce327e4f9b8">show</a> (<a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;file_name)</td></tr>
-<tr class="memdesc:a075e2b95037f82afb4f03ce327e4f9b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a save file dialog box.  <br /></td></tr>
-<tr class="memitem:a60ef6e55645cbbfd1c3f41607ffd2212" id="r_a60ef6e55645cbbfd1c3f41607ffd2212"><td class="memItemLeft">static <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a>&#160;</td><td class="memItemRight"><a class="el" href="#a60ef6e55645cbbfd1c3f41607ffd2212">show</a> (<a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;file_name, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;title)</td></tr>
-<tr class="memdesc:a60ef6e55645cbbfd1c3f41607ffd2212"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a save file dialog box.  <br /></td></tr>
-<tr class="memitem:ac98ca6c584e87a7a2014eafc74e7a952" id="r_ac98ca6c584e87a7a2014eafc74e7a952"><td class="memItemLeft">static <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a>&#160;</td><td class="memItemRight"><a class="el" href="#ac98ca6c584e87a7a2014eafc74e7a952">show</a> (<a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;file_name, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;title, const <a class="el" href="group__xtd__forms.html#ga224d1c8c9a0c604f8ba0088a4b2cdd38">save_file_box_options</a> options)</td></tr>
-<tr class="memdesc:ac98ca6c584e87a7a2014eafc74e7a952"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a select file dialog box.  <br /></td></tr>
-<tr class="memitem:a679845ded1ec95d6a3a92488f63d5f62" id="r_a679845ded1ec95d6a3a92488f63d5f62"><td class="memItemLeft">static <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a>&#160;</td><td class="memItemRight"><a class="el" href="#a679845ded1ec95d6a3a92488f63d5f62">show</a> (<a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;file_name, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;title, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;initial_directory)</td></tr>
-<tr class="memdesc:a679845ded1ec95d6a3a92488f63d5f62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a save file dialog box.  <br /></td></tr>
-<tr class="memitem:a60f341b40928d8296404b002bab67022" id="r_a60f341b40928d8296404b002bab67022"><td class="memItemLeft">static <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a>&#160;</td><td class="memItemRight"><a class="el" href="#a60f341b40928d8296404b002bab67022">show</a> (<a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;file_name, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;title, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;initial_directory, const <a class="el" href="group__xtd__forms.html#ga224d1c8c9a0c604f8ba0088a4b2cdd38">save_file_box_options</a> options)</td></tr>
-<tr class="memdesc:a60f341b40928d8296404b002bab67022"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a save file dialog box.  <br /></td></tr>
-<tr class="memitem:a94b993f0f2bda31830bba6acd5e44813" id="r_a94b993f0f2bda31830bba6acd5e44813"><td class="memItemLeft">static <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a>&#160;</td><td class="memItemRight"><a class="el" href="#a94b993f0f2bda31830bba6acd5e44813">show</a> (<a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;file_name, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;title, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;initial_directory, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;filter)</td></tr>
-<tr class="memdesc:a94b993f0f2bda31830bba6acd5e44813"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a save file dialog box.  <br /></td></tr>
-<tr class="memitem:a9b2e77d3b567fdcfa412b89b023043ad" id="r_a9b2e77d3b567fdcfa412b89b023043ad"><td class="memItemLeft">static <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a>&#160;</td><td class="memItemRight"><a class="el" href="#a9b2e77d3b567fdcfa412b89b023043ad">show</a> (<a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;file_name, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;title, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;initial_directory, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;filter, const <a class="el" href="group__xtd__forms.html#ga224d1c8c9a0c604f8ba0088a4b2cdd38">save_file_box_options</a> options)</td></tr>
-<tr class="memdesc:a9b2e77d3b567fdcfa412b89b023043ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a save file dialog box.  <br /></td></tr>
+<tr class="memitem:a2e722c79886e12e2e2ae12d47a6a1452" id="r_a2e722c79886e12e2e2ae12d47a6a1452"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a2e722c79886e12e2e2ae12d47a6a1452">show</a> (<a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;file_name, const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;owner) -&gt; <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td></tr>
+<tr class="memdesc:a2e722c79886e12e2e2ae12d47a6a1452"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a save file dialog box in front of a specified window.  <br /></td></tr>
+<tr class="memitem:ac72c23b90a92fab7e662cc1ea52948bc" id="r_ac72c23b90a92fab7e662cc1ea52948bc"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ac72c23b90a92fab7e662cc1ea52948bc">show</a> (<a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;file_name, const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;owner, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;title) -&gt; <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td></tr>
+<tr class="memdesc:ac72c23b90a92fab7e662cc1ea52948bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a save file dialog box in front of a specified window.  <br /></td></tr>
+<tr class="memitem:a8308a8f656a802b7cfcb1fbf3192ea1a" id="r_a8308a8f656a802b7cfcb1fbf3192ea1a"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a8308a8f656a802b7cfcb1fbf3192ea1a">show</a> (<a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;file_name, const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;owner, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;title, const <a class="el" href="group__xtd__forms.html#ga224d1c8c9a0c604f8ba0088a4b2cdd38">xtd::forms::save_file_box_options</a> options) -&gt; <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td></tr>
+<tr class="memdesc:a8308a8f656a802b7cfcb1fbf3192ea1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a save file dialog box in front of a specified window.  <br /></td></tr>
+<tr class="memitem:a71c65990a553079cf8cecf77bfe1a30f" id="r_a71c65990a553079cf8cecf77bfe1a30f"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a71c65990a553079cf8cecf77bfe1a30f">show</a> (<a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;file_name, const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;owner, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;title, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;initial_directory) -&gt; <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td></tr>
+<tr class="memdesc:a71c65990a553079cf8cecf77bfe1a30f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a save file dialog box in front of a specified window.  <br /></td></tr>
+<tr class="memitem:a5e26c5dcbc0e60c9b6bbde85a0c2a229" id="r_a5e26c5dcbc0e60c9b6bbde85a0c2a229"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a5e26c5dcbc0e60c9b6bbde85a0c2a229">show</a> (<a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;file_name, const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;owner, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;title, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;initial_directory, const <a class="el" href="group__xtd__forms.html#ga224d1c8c9a0c604f8ba0088a4b2cdd38">xtd::forms::save_file_box_options</a> options) -&gt; <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td></tr>
+<tr class="memdesc:a5e26c5dcbc0e60c9b6bbde85a0c2a229"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a save file dialog box in front of a specified window.  <br /></td></tr>
+<tr class="memitem:a7920af6a3d75af426d9a92a9db496662" id="r_a7920af6a3d75af426d9a92a9db496662"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a7920af6a3d75af426d9a92a9db496662">show</a> (<a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;file_name, const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;owner, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;title, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;initial_directory, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;filter) -&gt; <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td></tr>
+<tr class="memdesc:a7920af6a3d75af426d9a92a9db496662"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a save file dialog box in front of a specified window.  <br /></td></tr>
+<tr class="memitem:adc0f0eabeef7fbdf5139b03f178acb8c" id="r_adc0f0eabeef7fbdf5139b03f178acb8c"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#adc0f0eabeef7fbdf5139b03f178acb8c">show</a> (<a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;file_name, const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;owner, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;title, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;initial_directory, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;filter, const <a class="el" href="group__xtd__forms.html#ga224d1c8c9a0c604f8ba0088a4b2cdd38">xtd::forms::save_file_box_options</a> options) -&gt; <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td></tr>
+<tr class="memdesc:adc0f0eabeef7fbdf5139b03f178acb8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a save file dialog box in front of a specified window.  <br /></td></tr>
+<tr class="memitem:a241a0b5b28167dd4cdf4e49038962bc2" id="r_a241a0b5b28167dd4cdf4e49038962bc2"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a241a0b5b28167dd4cdf4e49038962bc2">show</a> (<a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;file_name) -&gt; <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td></tr>
+<tr class="memdesc:a241a0b5b28167dd4cdf4e49038962bc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a save file dialog box.  <br /></td></tr>
+<tr class="memitem:a82801ab92e5a6222df8adc93b8ce97ad" id="r_a82801ab92e5a6222df8adc93b8ce97ad"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a82801ab92e5a6222df8adc93b8ce97ad">show</a> (<a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;file_name, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;title) -&gt; <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td></tr>
+<tr class="memdesc:a82801ab92e5a6222df8adc93b8ce97ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a save file dialog box.  <br /></td></tr>
+<tr class="memitem:a437bda289c4cc2d9519d6d06d30d26bc" id="r_a437bda289c4cc2d9519d6d06d30d26bc"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a437bda289c4cc2d9519d6d06d30d26bc">show</a> (<a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;file_name, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;title, const <a class="el" href="group__xtd__forms.html#ga224d1c8c9a0c604f8ba0088a4b2cdd38">xtd::forms::save_file_box_options</a> options) -&gt; <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td></tr>
+<tr class="memdesc:a437bda289c4cc2d9519d6d06d30d26bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a select file dialog box.  <br /></td></tr>
+<tr class="memitem:af998c887046e993ae8c8d867295de54b" id="r_af998c887046e993ae8c8d867295de54b"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#af998c887046e993ae8c8d867295de54b">show</a> (<a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;file_name, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;title, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;initial_directory) -&gt; <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td></tr>
+<tr class="memdesc:af998c887046e993ae8c8d867295de54b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a save file dialog box.  <br /></td></tr>
+<tr class="memitem:a853152067ce6fd55a6d5097d26bd8cd6" id="r_a853152067ce6fd55a6d5097d26bd8cd6"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a853152067ce6fd55a6d5097d26bd8cd6">show</a> (<a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;file_name, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;title, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;initial_directory, const <a class="el" href="group__xtd__forms.html#ga224d1c8c9a0c604f8ba0088a4b2cdd38">xtd::forms::save_file_box_options</a> options) -&gt; <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td></tr>
+<tr class="memdesc:a853152067ce6fd55a6d5097d26bd8cd6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a save file dialog box.  <br /></td></tr>
+<tr class="memitem:a391d3ce8ce4e4211b9a66da63031be09" id="r_a391d3ce8ce4e4211b9a66da63031be09"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a391d3ce8ce4e4211b9a66da63031be09">show</a> (<a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;file_name, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;title, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;initial_directory, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;filter) -&gt; <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td></tr>
+<tr class="memdesc:a391d3ce8ce4e4211b9a66da63031be09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a save file dialog box.  <br /></td></tr>
+<tr class="memitem:a3edf8021da845ef6f3cd17479f97c24a" id="r_a3edf8021da845ef6f3cd17479f97c24a"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a3edf8021da845ef6f3cd17479f97c24a">show</a> (<a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;file_name, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;title, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;initial_directory, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;filter, const <a class="el" href="group__xtd__forms.html#ga224d1c8c9a0c604f8ba0088a4b2cdd38">xtd::forms::save_file_box_options</a> options) -&gt; <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td></tr>
+<tr class="memdesc:a3edf8021da845ef6f3cd17479f97c24a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a save file dialog box.  <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a9a6c20e840db70552d4fec94628d2ba9" name="a9a6c20e840db70552d4fec94628d2ba9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9a6c20e840db70552d4fec94628d2ba9">&#9670;&#160;</a></span>show() <span class="overload">[1/14]</span></h2>
+<a id="a2e722c79886e12e2e2ae12d47a6a1452" name="a2e722c79886e12e2e2ae12d47a6a1452"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e722c79886e12e2e2ae12d47a6a1452">&#9670;&#160;</a></span>show() <span class="overload">[1/14]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -235,19 +235,19 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a> xtd::forms::save_file_box::show </td>
+          <td class="memname">auto xtd::forms::save_file_box::show </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>file_name</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>owner</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>owner</em></span>&#160;) -&gt;  <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -265,8 +265,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="aef07c50b170df17e8e0a838c142c166d" name="aef07c50b170df17e8e0a838c142c166d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aef07c50b170df17e8e0a838c142c166d">&#9670;&#160;</a></span>show() <span class="overload">[2/14]</span></h2>
+<a id="ac72c23b90a92fab7e662cc1ea52948bc" name="ac72c23b90a92fab7e662cc1ea52948bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac72c23b90a92fab7e662cc1ea52948bc">&#9670;&#160;</a></span>show() <span class="overload">[2/14]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -275,7 +275,7 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a> xtd::forms::save_file_box::show </td>
+          <td class="memname">auto xtd::forms::save_file_box::show </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>file_name</em></span>, </td>
         </tr>
@@ -287,12 +287,12 @@ Public Static Methods</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>title</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>title</em></span>&#160;) -&gt;  <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -311,8 +311,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="a9987d4a0b4c11f4200ebde24ee40eaa0" name="a9987d4a0b4c11f4200ebde24ee40eaa0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9987d4a0b4c11f4200ebde24ee40eaa0">&#9670;&#160;</a></span>show() <span class="overload">[3/14]</span></h2>
+<a id="a8308a8f656a802b7cfcb1fbf3192ea1a" name="a8308a8f656a802b7cfcb1fbf3192ea1a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8308a8f656a802b7cfcb1fbf3192ea1a">&#9670;&#160;</a></span>show() <span class="overload">[3/14]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -321,7 +321,7 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a> xtd::forms::save_file_box::show </td>
+          <td class="memname">auto xtd::forms::save_file_box::show </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>file_name</em></span>, </td>
         </tr>
@@ -338,12 +338,12 @@ Public Static Methods</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__xtd__forms.html#ga224d1c8c9a0c604f8ba0088a4b2cdd38">save_file_box_options</a></td>          <td class="paramname"><span class="paramname"><em>options</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="group__xtd__forms.html#ga224d1c8c9a0c604f8ba0088a4b2cdd38">xtd::forms::save_file_box_options</a></td>          <td class="paramname"><span class="paramname"><em>options</em></span>&#160;) -&gt;  <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -363,8 +363,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="ad98a494f2b5792bac2118af42547095b" name="ad98a494f2b5792bac2118af42547095b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad98a494f2b5792bac2118af42547095b">&#9670;&#160;</a></span>show() <span class="overload">[4/14]</span></h2>
+<a id="a71c65990a553079cf8cecf77bfe1a30f" name="a71c65990a553079cf8cecf77bfe1a30f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71c65990a553079cf8cecf77bfe1a30f">&#9670;&#160;</a></span>show() <span class="overload">[4/14]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -373,7 +373,7 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a> xtd::forms::save_file_box::show </td>
+          <td class="memname">auto xtd::forms::save_file_box::show </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>file_name</em></span>, </td>
         </tr>
@@ -390,12 +390,12 @@ Public Static Methods</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>initial_directory</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>initial_directory</em></span>&#160;) -&gt;  <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -415,8 +415,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="ac2cde5e4901f9a382aee45c8f7329d94" name="ac2cde5e4901f9a382aee45c8f7329d94"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac2cde5e4901f9a382aee45c8f7329d94">&#9670;&#160;</a></span>show() <span class="overload">[5/14]</span></h2>
+<a id="a5e26c5dcbc0e60c9b6bbde85a0c2a229" name="a5e26c5dcbc0e60c9b6bbde85a0c2a229"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e26c5dcbc0e60c9b6bbde85a0c2a229">&#9670;&#160;</a></span>show() <span class="overload">[5/14]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -425,7 +425,7 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a> xtd::forms::save_file_box::show </td>
+          <td class="memname">auto xtd::forms::save_file_box::show </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>file_name</em></span>, </td>
         </tr>
@@ -447,12 +447,12 @@ Public Static Methods</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__xtd__forms.html#ga224d1c8c9a0c604f8ba0088a4b2cdd38">save_file_box_options</a></td>          <td class="paramname"><span class="paramname"><em>options</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="group__xtd__forms.html#ga224d1c8c9a0c604f8ba0088a4b2cdd38">xtd::forms::save_file_box_options</a></td>          <td class="paramname"><span class="paramname"><em>options</em></span>&#160;) -&gt;  <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -473,8 +473,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="a3429ce11b2936c7c86ff9c88b47d895c" name="a3429ce11b2936c7c86ff9c88b47d895c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3429ce11b2936c7c86ff9c88b47d895c">&#9670;&#160;</a></span>show() <span class="overload">[6/14]</span></h2>
+<a id="a7920af6a3d75af426d9a92a9db496662" name="a7920af6a3d75af426d9a92a9db496662"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7920af6a3d75af426d9a92a9db496662">&#9670;&#160;</a></span>show() <span class="overload">[6/14]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -483,7 +483,7 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a> xtd::forms::save_file_box::show </td>
+          <td class="memname">auto xtd::forms::save_file_box::show </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>file_name</em></span>, </td>
         </tr>
@@ -505,12 +505,12 @@ Public Static Methods</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>filter</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>filter</em></span>&#160;) -&gt;  <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -531,8 +531,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="a45f2ab82bbabbbee1a91790ad5e30d66" name="a45f2ab82bbabbbee1a91790ad5e30d66"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a45f2ab82bbabbbee1a91790ad5e30d66">&#9670;&#160;</a></span>show() <span class="overload">[7/14]</span></h2>
+<a id="adc0f0eabeef7fbdf5139b03f178acb8c" name="adc0f0eabeef7fbdf5139b03f178acb8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc0f0eabeef7fbdf5139b03f178acb8c">&#9670;&#160;</a></span>show() <span class="overload">[7/14]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -541,7 +541,7 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a> xtd::forms::save_file_box::show </td>
+          <td class="memname">auto xtd::forms::save_file_box::show </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>file_name</em></span>, </td>
         </tr>
@@ -568,12 +568,12 @@ Public Static Methods</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__xtd__forms.html#ga224d1c8c9a0c604f8ba0088a4b2cdd38">save_file_box_options</a></td>          <td class="paramname"><span class="paramname"><em>options</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="group__xtd__forms.html#ga224d1c8c9a0c604f8ba0088a4b2cdd38">xtd::forms::save_file_box_options</a></td>          <td class="paramname"><span class="paramname"><em>options</em></span>&#160;) -&gt;  <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -595,8 +595,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="a075e2b95037f82afb4f03ce327e4f9b8" name="a075e2b95037f82afb4f03ce327e4f9b8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a075e2b95037f82afb4f03ce327e4f9b8">&#9670;&#160;</a></span>show() <span class="overload">[8/14]</span></h2>
+<a id="a241a0b5b28167dd4cdf4e49038962bc2" name="a241a0b5b28167dd4cdf4e49038962bc2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a241a0b5b28167dd4cdf4e49038962bc2">&#9670;&#160;</a></span>show() <span class="overload">[8/14]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -605,15 +605,15 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a> xtd::forms::save_file_box::show </td>
+          <td class="memname">auto xtd::forms::save_file_box::show </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>file_name</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -630,8 +630,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="a60ef6e55645cbbfd1c3f41607ffd2212" name="a60ef6e55645cbbfd1c3f41607ffd2212"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a60ef6e55645cbbfd1c3f41607ffd2212">&#9670;&#160;</a></span>show() <span class="overload">[9/14]</span></h2>
+<a id="a82801ab92e5a6222df8adc93b8ce97ad" name="a82801ab92e5a6222df8adc93b8ce97ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82801ab92e5a6222df8adc93b8ce97ad">&#9670;&#160;</a></span>show() <span class="overload">[9/14]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -640,19 +640,19 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a> xtd::forms::save_file_box::show </td>
+          <td class="memname">auto xtd::forms::save_file_box::show </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>file_name</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>title</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>title</em></span>&#160;) -&gt;  <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -670,8 +670,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="ac98ca6c584e87a7a2014eafc74e7a952" name="ac98ca6c584e87a7a2014eafc74e7a952"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac98ca6c584e87a7a2014eafc74e7a952">&#9670;&#160;</a></span>show() <span class="overload">[10/14]</span></h2>
+<a id="a437bda289c4cc2d9519d6d06d30d26bc" name="a437bda289c4cc2d9519d6d06d30d26bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a437bda289c4cc2d9519d6d06d30d26bc">&#9670;&#160;</a></span>show() <span class="overload">[10/14]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -680,7 +680,7 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a> xtd::forms::save_file_box::show </td>
+          <td class="memname">auto xtd::forms::save_file_box::show </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>file_name</em></span>, </td>
         </tr>
@@ -692,12 +692,12 @@ Public Static Methods</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__xtd__forms.html#ga224d1c8c9a0c604f8ba0088a4b2cdd38">save_file_box_options</a></td>          <td class="paramname"><span class="paramname"><em>options</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="group__xtd__forms.html#ga224d1c8c9a0c604f8ba0088a4b2cdd38">xtd::forms::save_file_box_options</a></td>          <td class="paramname"><span class="paramname"><em>options</em></span>&#160;) -&gt;  <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -716,8 +716,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="a679845ded1ec95d6a3a92488f63d5f62" name="a679845ded1ec95d6a3a92488f63d5f62"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a679845ded1ec95d6a3a92488f63d5f62">&#9670;&#160;</a></span>show() <span class="overload">[11/14]</span></h2>
+<a id="af998c887046e993ae8c8d867295de54b" name="af998c887046e993ae8c8d867295de54b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af998c887046e993ae8c8d867295de54b">&#9670;&#160;</a></span>show() <span class="overload">[11/14]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -726,7 +726,7 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a> xtd::forms::save_file_box::show </td>
+          <td class="memname">auto xtd::forms::save_file_box::show </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>file_name</em></span>, </td>
         </tr>
@@ -738,12 +738,12 @@ Public Static Methods</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>initial_directory</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>initial_directory</em></span>&#160;) -&gt;  <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -762,8 +762,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="a60f341b40928d8296404b002bab67022" name="a60f341b40928d8296404b002bab67022"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a60f341b40928d8296404b002bab67022">&#9670;&#160;</a></span>show() <span class="overload">[12/14]</span></h2>
+<a id="a853152067ce6fd55a6d5097d26bd8cd6" name="a853152067ce6fd55a6d5097d26bd8cd6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a853152067ce6fd55a6d5097d26bd8cd6">&#9670;&#160;</a></span>show() <span class="overload">[12/14]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -772,7 +772,7 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a> xtd::forms::save_file_box::show </td>
+          <td class="memname">auto xtd::forms::save_file_box::show </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>file_name</em></span>, </td>
         </tr>
@@ -789,12 +789,12 @@ Public Static Methods</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__xtd__forms.html#ga224d1c8c9a0c604f8ba0088a4b2cdd38">save_file_box_options</a></td>          <td class="paramname"><span class="paramname"><em>options</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="group__xtd__forms.html#ga224d1c8c9a0c604f8ba0088a4b2cdd38">xtd::forms::save_file_box_options</a></td>          <td class="paramname"><span class="paramname"><em>options</em></span>&#160;) -&gt;  <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -814,8 +814,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="a94b993f0f2bda31830bba6acd5e44813" name="a94b993f0f2bda31830bba6acd5e44813"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a94b993f0f2bda31830bba6acd5e44813">&#9670;&#160;</a></span>show() <span class="overload">[13/14]</span></h2>
+<a id="a391d3ce8ce4e4211b9a66da63031be09" name="a391d3ce8ce4e4211b9a66da63031be09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a391d3ce8ce4e4211b9a66da63031be09">&#9670;&#160;</a></span>show() <span class="overload">[13/14]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -824,7 +824,7 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a> xtd::forms::save_file_box::show </td>
+          <td class="memname">auto xtd::forms::save_file_box::show </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>file_name</em></span>, </td>
         </tr>
@@ -841,12 +841,12 @@ Public Static Methods</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>filter</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>filter</em></span>&#160;) -&gt;  <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -866,8 +866,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="a9b2e77d3b567fdcfa412b89b023043ad" name="a9b2e77d3b567fdcfa412b89b023043ad"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9b2e77d3b567fdcfa412b89b023043ad">&#9670;&#160;</a></span>show() <span class="overload">[14/14]</span></h2>
+<a id="a3edf8021da845ef6f3cd17479f97c24a" name="a3edf8021da845ef6f3cd17479f97c24a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3edf8021da845ef6f3cd17479f97c24a">&#9670;&#160;</a></span>show() <span class="overload">[14/14]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -876,7 +876,7 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a> xtd::forms::save_file_box::show </td>
+          <td class="memname">auto xtd::forms::save_file_box::show </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>file_name</em></span>, </td>
         </tr>
@@ -898,12 +898,12 @@ Public Static Methods</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__xtd__forms.html#ga224d1c8c9a0c604f8ba0088a4b2cdd38">save_file_box_options</a></td>          <td class="paramname"><span class="paramname"><em>options</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="group__xtd__forms.html#ga224d1c8c9a0c604f8ba0088a4b2cdd38">xtd::forms::save_file_box_options</a></td>          <td class="paramname"><span class="paramname"><em>options</em></span>&#160;) -&gt;  <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

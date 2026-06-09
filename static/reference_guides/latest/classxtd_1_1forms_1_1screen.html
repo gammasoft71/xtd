@@ -134,7 +134,7 @@ Inheritance diagram for xtd::forms::screen:</div>
 <dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of screen class. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <a class="code hl_struct" href="structxtd_1_1drawing_1_1rectangle.html">xtd::drawing::rectangle</a> area = <a class="code hl_function" href="#aab4139ada0e9bb8f1ad765dd5a1c0c61">screen::primary_screen</a>().working_area();</div>
+<div class="line">  <a class="code hl_struct" href="structxtd_1_1drawing_1_1rectangle.html">xtd::drawing::rectangle</a> area = <a class="code hl_function" href="#a2d2045047bf7306b2d552f9e24ed91f4">screen::primary_screen</a>().working_area();</div>
 <div class="line">  </div>
 <div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1form.html">form</a> form1;</div>
 <div class="line">  form1.<a class="code hl_function" href="classxtd_1_1forms_1_1form.html#a74fccc296d0eba9aa370f6cbcc052983">start_position</a>(<a class="code hl_enumvalue" href="group__xtd__forms.html#ggac490ea79fddd26e2c8354e1e58701019a3c78b35502b2693fefdfc51cba3a53a5">form_start_position::manual</a>);</div>
@@ -172,7 +172,7 @@ Inheritance diagram for xtd::forms::screen:</div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html">xtd::forms::form</a></div><div class="ttdoc">Represents a window or dialog box that makes up an application&#39;s user interface.</div><div class="ttdef"><b>Definition</b> form.hpp:54</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1form_html_a74fccc296d0eba9aa370f6cbcc052983"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html#a74fccc296d0eba9aa370f6cbcc052983">xtd::forms::form::start_position</a></div><div class="ttdeci">virtual auto start_position() const noexcept -&gt; xtd::forms::form_start_position</div><div class="ttdoc">Gets the starting position of the form at run time.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1form_html_ad7eb2dd191208e45d469be4c39b57056"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html#ad7eb2dd191208e45d469be4c39b57056">xtd::forms::form::visible</a></div><div class="ttdeci">auto visible(bool visible) -&gt; xtd::forms::control &amp;override</div><div class="ttdoc">Sets a value indicating whether the control and all its child controls are displayed.</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1screen_html_aab4139ada0e9bb8f1ad765dd5a1c0c61"><div class="ttname"><a href="#aab4139ada0e9bb8f1ad765dd5a1c0c61">xtd::forms::screen::primary_screen</a></div><div class="ttdeci">static screen primary_screen()</div><div class="ttdoc">Gets the primary display.</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1screen_html_a2d2045047bf7306b2d552f9e24ed91f4"><div class="ttname"><a href="#a2d2045047bf7306b2d552f9e24ed91f4">xtd::forms::screen::primary_screen</a></div><div class="ttdeci">static auto primary_screen() -&gt; screen</div><div class="ttdoc">Gets the primary display.</div></div>
 <div class="ttc" id="agroup__style__sheets_html_ga6b7a42f0d905d8325f9f5f4f627cb56a"><div class="ttname"><a href="group__style__sheets.html#ga6b7a42f0d905d8325f9f5f4f627cb56a">xtd::forms::style_sheets::form</a></div><div class="ttdeci">xtd::forms::style_sheets::control form</div><div class="ttdoc">The form data allows you to specify the box of a form control.</div><div class="ttdef"><b>Definition</b> form.hpp:23</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_ggac490ea79fddd26e2c8354e1e58701019a3c78b35502b2693fefdfc51cba3a53a5"><div class="ttname"><a href="group__xtd__forms.html#ggac490ea79fddd26e2c8354e1e58701019a3c78b35502b2693fefdfc51cba3a53a5">xtd::forms::form_start_position::manual</a></div><div class="ttdeci">@ manual</div><div class="ttdoc">The position of the form is determined by the Location property.</div><div class="ttdef"><b>Definition</b> form_start_position.hpp:24</div></div>
 <div class="ttc" id="astructxtd_1_1drawing_1_1rectangle_html"><div class="ttname"><a href="structxtd_1_1drawing_1_1rectangle.html">xtd::drawing::rectangle</a></div><div class="ttdoc">Stores a set of four integers that represent the location and size of a rectangle.</div><div class="ttdef"><b>Definition</b> rectangle.hpp:44</div></div>
@@ -194,20 +194,20 @@ Inheritance diagram for xtd::forms::screen:</div>
 <div class="line">    screen_informations_text_box.parent(*<span class="keyword">this</span>);</div>
 <div class="line">    screen_informations_text_box.read_only(<span class="keyword">true</span>);</div>
 <div class="line">    screen_informations_text_box.word_wrap(<span class="keyword">false</span>);</div>
-<div class="line">    screen_informations_text_box.append_text(<a class="code hl_function" href="group__format__parse.html#gab67eb80458cad40e22a5036b84c9a5c7">string::format</a>(<span class="stringliteral">&quot;Number of screens: {}{}&quot;</span>, <a class="code hl_function" href="#acedf84c3016f185f291cd4d02c546075">screen::all_screens</a>().<a class="code hl_function" href="namespacextd.html#a84689e2cdf94d64f7e5f33fe4a1be71a">length</a>(), <a class="code hl_function" href="classxtd_1_1environment.html#af15178dea424d7fcfcbd7cecc9675466">environment::new_line</a>()));</div>
-<div class="line">    screen_informations_text_box.append_text(<a class="code hl_function" href="group__format__parse.html#gab67eb80458cad40e22a5036b84c9a5c7">string::format</a>(<span class="stringliteral">&quot;Standard pixels per inch: {}{}&quot;</span>, <a class="code hl_function" href="#a3d160889c2ab64e7c7cce90ad3d56dc1">screen::get_standard_pixels_per_inch</a>(), <a class="code hl_function" href="classxtd_1_1environment.html#af15178dea424d7fcfcbd7cecc9675466">environment::new_line</a>()));</div>
+<div class="line">    screen_informations_text_box.append_text(<a class="code hl_function" href="group__format__parse.html#gab67eb80458cad40e22a5036b84c9a5c7">string::format</a>(<span class="stringliteral">&quot;Number of screens: {}{}&quot;</span>, <a class="code hl_function" href="#ad70d6d6636f469900f049016de2ee7b1">screen::all_screens</a>().<a class="code hl_function" href="namespacextd.html#a84689e2cdf94d64f7e5f33fe4a1be71a">length</a>(), <a class="code hl_function" href="classxtd_1_1environment.html#af15178dea424d7fcfcbd7cecc9675466">environment::new_line</a>()));</div>
+<div class="line">    screen_informations_text_box.append_text(<a class="code hl_function" href="group__format__parse.html#gab67eb80458cad40e22a5036b84c9a5c7">string::format</a>(<span class="stringliteral">&quot;Standard pixels per inch: {}{}&quot;</span>, <a class="code hl_function" href="#a54252ab08e31a9274a136bf5ec75cbc6">screen::get_standard_pixels_per_inch</a>(), <a class="code hl_function" href="classxtd_1_1environment.html#af15178dea424d7fcfcbd7cecc9675466">environment::new_line</a>()));</div>
 <div class="line">    <span class="keyword">auto</span> index = 0;</div>
-<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <a class="code hl_class" href="classxtd_1_1forms_1_1screen.html">screen</a> : <a class="code hl_function" href="#acedf84c3016f185f291cd4d02c546075">screen::all_screens</a>()) {</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <a class="code hl_class" href="classxtd_1_1forms_1_1screen.html">screen</a> : <a class="code hl_function" href="#ad70d6d6636f469900f049016de2ee7b1">screen::all_screens</a>()) {</div>
 <div class="line">      screen_informations_text_box.append_text(<a class="code hl_function" href="classxtd_1_1environment.html#af15178dea424d7fcfcbd7cecc9675466">environment::new_line</a>());</div>
 <div class="line">      screen_informations_text_box.append_text(<a class="code hl_function" href="group__format__parse.html#gab67eb80458cad40e22a5036b84c9a5c7">string::format</a>(<span class="stringliteral">&quot;Screen: {}\n&quot;</span>, ++index, <a class="code hl_function" href="classxtd_1_1environment.html#af15178dea424d7fcfcbd7cecc9675466">environment::new_line</a>()));</div>
-<div class="line">      screen_informations_text_box.append_text(<a class="code hl_function" href="group__format__parse.html#gab67eb80458cad40e22a5036b84c9a5c7">string::format</a>(<span class="stringliteral">&quot;   Device name: {}{}&quot;</span>, <a class="code hl_class" href="classxtd_1_1forms_1_1screen.html">screen</a>.<a class="code hl_function" href="#aede79f918c1a18098057081fff5e250e">device_name</a>(), <a class="code hl_function" href="classxtd_1_1environment.html#af15178dea424d7fcfcbd7cecc9675466">environment::new_line</a>()));</div>
-<div class="line">      screen_informations_text_box.append_text(<a class="code hl_function" href="group__format__parse.html#gab67eb80458cad40e22a5036b84c9a5c7">string::format</a>(<span class="stringliteral">&quot;   Bounds: {}{}&quot;</span>, <a class="code hl_class" href="classxtd_1_1forms_1_1screen.html">screen</a>.<a class="code hl_function" href="#a180bb0ad68186d5ac4e71e2fdaa213f1">bounds</a>(), <a class="code hl_function" href="classxtd_1_1environment.html#af15178dea424d7fcfcbd7cecc9675466">environment::new_line</a>()));</div>
-<div class="line">      screen_informations_text_box.append_text(<a class="code hl_function" href="group__format__parse.html#gab67eb80458cad40e22a5036b84c9a5c7">string::format</a>(<span class="stringliteral">&quot;   High resolution: {}{}&quot;</span>, <a class="code hl_class" href="classxtd_1_1forms_1_1screen.html">screen</a>.<a class="code hl_function" href="#a128e5f3b29fff416561e1ff80bd22982">high_resolution</a>(), <a class="code hl_function" href="classxtd_1_1environment.html#af15178dea424d7fcfcbd7cecc9675466">environment::new_line</a>()));</div>
-<div class="line">      screen_informations_text_box.append_text(<a class="code hl_function" href="group__format__parse.html#gab67eb80458cad40e22a5036b84c9a5c7">string::format</a>(<span class="stringliteral">&quot;   working area: {}{}&quot;</span>, <a class="code hl_class" href="classxtd_1_1forms_1_1screen.html">screen</a>.<a class="code hl_function" href="#a475f01848052b5f36f0c331eaa3ec280">working_area</a>(), <a class="code hl_function" href="classxtd_1_1environment.html#af15178dea424d7fcfcbd7cecc9675466">environment::new_line</a>()));</div>
-<div class="line">      screen_informations_text_box.append_text(<a class="code hl_function" href="group__format__parse.html#gab67eb80458cad40e22a5036b84c9a5c7">string::format</a>(<span class="stringliteral">&quot;   Primary: {}{}&quot;</span>, <a class="code hl_class" href="classxtd_1_1forms_1_1screen.html">screen</a>.<a class="code hl_function" href="#a8cec46396b240ae7e0a747ba2cb0abd6">primary</a>(), <a class="code hl_function" href="classxtd_1_1environment.html#af15178dea424d7fcfcbd7cecc9675466">environment::new_line</a>()));</div>
-<div class="line">      screen_informations_text_box.append_text(<a class="code hl_function" href="group__format__parse.html#gab67eb80458cad40e22a5036b84c9a5c7">string::format</a>(<span class="stringliteral">&quot;   Bits per pixels (Depth): {}{}&quot;</span>, <a class="code hl_class" href="classxtd_1_1forms_1_1screen.html">screen</a>.<a class="code hl_function" href="#a236a186c34176422cbb958b3755f687a">bits_per_pixel</a>(), <a class="code hl_function" href="classxtd_1_1environment.html#af15178dea424d7fcfcbd7cecc9675466">environment::new_line</a>()));</div>
-<div class="line">      screen_informations_text_box.append_text(<a class="code hl_function" href="group__format__parse.html#gab67eb80458cad40e22a5036b84c9a5c7">string::format</a>(<span class="stringliteral">&quot;   Pixels per Inch (PPI): {}{}&quot;</span>, <a class="code hl_class" href="classxtd_1_1forms_1_1screen.html">screen</a>.<a class="code hl_function" href="#a285f0b14a293a69164cb605a4f359068">pixels_per_inch</a>(), <a class="code hl_function" href="classxtd_1_1environment.html#af15178dea424d7fcfcbd7cecc9675466">environment::new_line</a>()));</div>
-<div class="line">      screen_informations_text_box.append_text(<a class="code hl_function" href="group__format__parse.html#gab67eb80458cad40e22a5036b84c9a5c7">string::format</a>(<span class="stringliteral">&quot;   Scale factor: {}{}&quot;</span>, <a class="code hl_class" href="classxtd_1_1forms_1_1screen.html">screen</a>.<a class="code hl_function" href="#a16a1e6d78314ff4224e52d9d0d9695b5">scale_factor</a>()));</div>
+<div class="line">      screen_informations_text_box.append_text(<a class="code hl_function" href="group__format__parse.html#gab67eb80458cad40e22a5036b84c9a5c7">string::format</a>(<span class="stringliteral">&quot;   Device name: {}{}&quot;</span>, <a class="code hl_class" href="classxtd_1_1forms_1_1screen.html">screen</a>.<a class="code hl_function" href="#a24d0e8d36f7c3685f954cf1ee3cc019d">device_name</a>(), <a class="code hl_function" href="classxtd_1_1environment.html#af15178dea424d7fcfcbd7cecc9675466">environment::new_line</a>()));</div>
+<div class="line">      screen_informations_text_box.append_text(<a class="code hl_function" href="group__format__parse.html#gab67eb80458cad40e22a5036b84c9a5c7">string::format</a>(<span class="stringliteral">&quot;   Bounds: {}{}&quot;</span>, <a class="code hl_class" href="classxtd_1_1forms_1_1screen.html">screen</a>.<a class="code hl_function" href="#aced82005fc592b19d3784c5c90fe45e7">bounds</a>(), <a class="code hl_function" href="classxtd_1_1environment.html#af15178dea424d7fcfcbd7cecc9675466">environment::new_line</a>()));</div>
+<div class="line">      screen_informations_text_box.append_text(<a class="code hl_function" href="group__format__parse.html#gab67eb80458cad40e22a5036b84c9a5c7">string::format</a>(<span class="stringliteral">&quot;   High resolution: {}{}&quot;</span>, <a class="code hl_class" href="classxtd_1_1forms_1_1screen.html">screen</a>.<a class="code hl_function" href="#a074d9ea6f8f2e65b8704cb5503b4f1bc">high_resolution</a>(), <a class="code hl_function" href="classxtd_1_1environment.html#af15178dea424d7fcfcbd7cecc9675466">environment::new_line</a>()));</div>
+<div class="line">      screen_informations_text_box.append_text(<a class="code hl_function" href="group__format__parse.html#gab67eb80458cad40e22a5036b84c9a5c7">string::format</a>(<span class="stringliteral">&quot;   working area: {}{}&quot;</span>, <a class="code hl_class" href="classxtd_1_1forms_1_1screen.html">screen</a>.<a class="code hl_function" href="#a5ad9530c6a16248bb2e1781813039d9b">working_area</a>(), <a class="code hl_function" href="classxtd_1_1environment.html#af15178dea424d7fcfcbd7cecc9675466">environment::new_line</a>()));</div>
+<div class="line">      screen_informations_text_box.append_text(<a class="code hl_function" href="group__format__parse.html#gab67eb80458cad40e22a5036b84c9a5c7">string::format</a>(<span class="stringliteral">&quot;   Primary: {}{}&quot;</span>, <a class="code hl_class" href="classxtd_1_1forms_1_1screen.html">screen</a>.<a class="code hl_function" href="#a830b0d58c1b434ff0e9e4ffe6280621e">primary</a>(), <a class="code hl_function" href="classxtd_1_1environment.html#af15178dea424d7fcfcbd7cecc9675466">environment::new_line</a>()));</div>
+<div class="line">      screen_informations_text_box.append_text(<a class="code hl_function" href="group__format__parse.html#gab67eb80458cad40e22a5036b84c9a5c7">string::format</a>(<span class="stringliteral">&quot;   Bits per pixels (Depth): {}{}&quot;</span>, <a class="code hl_class" href="classxtd_1_1forms_1_1screen.html">screen</a>.<a class="code hl_function" href="#a875900c120365a2a0a69673491341881">bits_per_pixel</a>(), <a class="code hl_function" href="classxtd_1_1environment.html#af15178dea424d7fcfcbd7cecc9675466">environment::new_line</a>()));</div>
+<div class="line">      screen_informations_text_box.append_text(<a class="code hl_function" href="group__format__parse.html#gab67eb80458cad40e22a5036b84c9a5c7">string::format</a>(<span class="stringliteral">&quot;   Pixels per Inch (PPI): {}{}&quot;</span>, <a class="code hl_class" href="classxtd_1_1forms_1_1screen.html">screen</a>.<a class="code hl_function" href="#ae0d32bf1a6cfe23fa841c50c0a19e78a">pixels_per_inch</a>(), <a class="code hl_function" href="classxtd_1_1environment.html#af15178dea424d7fcfcbd7cecc9675466">environment::new_line</a>()));</div>
+<div class="line">      screen_informations_text_box.append_text(<a class="code hl_function" href="group__format__parse.html#gab67eb80458cad40e22a5036b84c9a5c7">string::format</a>(<span class="stringliteral">&quot;   Scale factor: {}{}&quot;</span>, <a class="code hl_class" href="classxtd_1_1forms_1_1screen.html">screen</a>.<a class="code hl_function" href="#a704dd9a8147037aec754435a6bd5f652">scale_factor</a>()));</div>
 <div class="line">    }</div>
 <div class="line">  }</div>
 <div class="line">  </div>
@@ -224,16 +224,16 @@ Inheritance diagram for xtd::forms::screen:</div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1control_html_aadff72aa0169dd5b722dd855ef58133a"><div class="ttname"><a href="classxtd_1_1forms_1_1control.html#aadff72aa0169dd5b722dd855ef58133a">xtd::forms::control::fore_color</a></div><div class="ttdeci">virtual auto fore_color() const noexcept -&gt; xtd::drawing::color</div><div class="ttdoc">Gets the foreground color of the control.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1control_html_ad0b14fe3337045f69f81c2f8f12aca1d"><div class="ttname"><a href="classxtd_1_1forms_1_1control.html#ad0b14fe3337045f69f81c2f8f12aca1d">xtd::forms::control::client_size</a></div><div class="ttdeci">virtual auto client_size() const noexcept -&gt; const xtd::drawing::size &amp;</div><div class="ttdoc">Gets the height and width of the client area of the control.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1screen_html"><div class="ttname"><a href="classxtd_1_1forms_1_1screen.html">xtd::forms::screen</a></div><div class="ttdoc">Represents a display device or multiple display devices on a single system.</div><div class="ttdef"><b>Definition</b> screen.hpp:32</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1screen_html_a128e5f3b29fff416561e1ff80bd22982"><div class="ttname"><a href="#a128e5f3b29fff416561e1ff80bd22982">xtd::forms::screen::high_resolution</a></div><div class="ttdeci">bool high_resolution() const noexcept</div><div class="ttdoc">Gets a value indicating whether a particular display is high resolution.</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1screen_html_a16a1e6d78314ff4224e52d9d0d9695b5"><div class="ttname"><a href="#a16a1e6d78314ff4224e52d9d0d9695b5">xtd::forms::screen::scale_factor</a></div><div class="ttdeci">double scale_factor() const noexcept</div><div class="ttdoc">Gets the scale factor of the display.</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1screen_html_a180bb0ad68186d5ac4e71e2fdaa213f1"><div class="ttname"><a href="#a180bb0ad68186d5ac4e71e2fdaa213f1">xtd::forms::screen::bounds</a></div><div class="ttdeci">const drawing::rectangle &amp; bounds() const noexcept</div><div class="ttdoc">Gets the bounds of the display.</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1screen_html_a236a186c34176422cbb958b3755f687a"><div class="ttname"><a href="#a236a186c34176422cbb958b3755f687a">xtd::forms::screen::bits_per_pixel</a></div><div class="ttdeci">int32 bits_per_pixel() const noexcept</div><div class="ttdoc">Gets the number of bits of memory, associated with one pixel of data.</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1screen_html_a285f0b14a293a69164cb605a4f359068"><div class="ttname"><a href="#a285f0b14a293a69164cb605a4f359068">xtd::forms::screen::pixels_per_inch</a></div><div class="ttdeci">int32 pixels_per_inch() const noexcept</div><div class="ttdoc">Gets the number of pixels per inch of the display.</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1screen_html_a3d160889c2ab64e7c7cce90ad3d56dc1"><div class="ttname"><a href="#a3d160889c2ab64e7c7cce90ad3d56dc1">xtd::forms::screen::get_standard_pixels_per_inch</a></div><div class="ttdeci">static int32 get_standard_pixels_per_inch()</div><div class="ttdoc">Gets the the standard number of pixels per inch of the display.</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1screen_html_a475f01848052b5f36f0c331eaa3ec280"><div class="ttname"><a href="#a475f01848052b5f36f0c331eaa3ec280">xtd::forms::screen::working_area</a></div><div class="ttdeci">const drawing::rectangle &amp; working_area() const noexcept</div><div class="ttdoc">Gets the working area of the display. The working area is the desktop area of the display,...</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1screen_html_a8cec46396b240ae7e0a747ba2cb0abd6"><div class="ttname"><a href="#a8cec46396b240ae7e0a747ba2cb0abd6">xtd::forms::screen::primary</a></div><div class="ttdeci">bool primary() const noexcept</div><div class="ttdoc">Gets a value indicating whether a particular display is the primary device.</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1screen_html_acedf84c3016f185f291cd4d02c546075"><div class="ttname"><a href="#acedf84c3016f185f291cd4d02c546075">xtd::forms::screen::all_screens</a></div><div class="ttdeci">static xtd::array&lt; screen &gt; all_screens()</div><div class="ttdoc">Gets an array of all displays on the system.</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1screen_html_aede79f918c1a18098057081fff5e250e"><div class="ttname"><a href="#aede79f918c1a18098057081fff5e250e">xtd::forms::screen::device_name</a></div><div class="ttdeci">const xtd::string &amp; device_name() const</div><div class="ttdoc">Gets the device name associated with a display.</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1screen_html_a074d9ea6f8f2e65b8704cb5503b4f1bc"><div class="ttname"><a href="#a074d9ea6f8f2e65b8704cb5503b4f1bc">xtd::forms::screen::high_resolution</a></div><div class="ttdeci">auto high_resolution() const noexcept -&gt; bool</div><div class="ttdoc">Gets a value indicating whether a particular display is high resolution.</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1screen_html_a24d0e8d36f7c3685f954cf1ee3cc019d"><div class="ttname"><a href="#a24d0e8d36f7c3685f954cf1ee3cc019d">xtd::forms::screen::device_name</a></div><div class="ttdeci">auto device_name() const -&gt; const xtd::string &amp;</div><div class="ttdoc">Gets the device name associated with a display.</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1screen_html_a54252ab08e31a9274a136bf5ec75cbc6"><div class="ttname"><a href="#a54252ab08e31a9274a136bf5ec75cbc6">xtd::forms::screen::get_standard_pixels_per_inch</a></div><div class="ttdeci">static auto get_standard_pixels_per_inch() -&gt; xtd::int32</div><div class="ttdoc">Gets the the standard number of pixels per inch of the display.</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1screen_html_a5ad9530c6a16248bb2e1781813039d9b"><div class="ttname"><a href="#a5ad9530c6a16248bb2e1781813039d9b">xtd::forms::screen::working_area</a></div><div class="ttdeci">auto working_area() const noexcept -&gt; const xtd::drawing::rectangle &amp;</div><div class="ttdoc">Gets the working area of the display. The working area is the desktop area of the display,...</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1screen_html_a704dd9a8147037aec754435a6bd5f652"><div class="ttname"><a href="#a704dd9a8147037aec754435a6bd5f652">xtd::forms::screen::scale_factor</a></div><div class="ttdeci">auto scale_factor() const noexcept -&gt; double</div><div class="ttdoc">Gets the scale factor of the display.</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1screen_html_a830b0d58c1b434ff0e9e4ffe6280621e"><div class="ttname"><a href="#a830b0d58c1b434ff0e9e4ffe6280621e">xtd::forms::screen::primary</a></div><div class="ttdeci">auto primary() const noexcept -&gt; bool</div><div class="ttdoc">Gets a value indicating whether a particular display is the primary device.</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1screen_html_a875900c120365a2a0a69673491341881"><div class="ttname"><a href="#a875900c120365a2a0a69673491341881">xtd::forms::screen::bits_per_pixel</a></div><div class="ttdeci">auto bits_per_pixel() const noexcept -&gt; xtd::int32</div><div class="ttdoc">Gets the number of bits of memory, associated with one pixel of data.</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1screen_html_aced82005fc592b19d3784c5c90fe45e7"><div class="ttname"><a href="#aced82005fc592b19d3784c5c90fe45e7">xtd::forms::screen::bounds</a></div><div class="ttdeci">auto bounds() const noexcept -&gt; const xtd::drawing::rectangle &amp;</div><div class="ttdoc">Gets the bounds of the display.</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1screen_html_ad70d6d6636f469900f049016de2ee7b1"><div class="ttname"><a href="#ad70d6d6636f469900f049016de2ee7b1">xtd::forms::screen::all_screens</a></div><div class="ttdeci">static auto all_screens() -&gt; xtd::array&lt; screen &gt;</div><div class="ttdoc">Gets an array of all displays on the system.</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1screen_html_ae0d32bf1a6cfe23fa841c50c0a19e78a"><div class="ttname"><a href="#ae0d32bf1a6cfe23fa841c50c0a19e78a">xtd::forms::screen::pixels_per_inch</a></div><div class="ttdeci">auto pixels_per_inch() const noexcept -&gt; xtd::int32</div><div class="ttdoc">Gets the number of pixels per inch of the display.</div></div>
 <div class="ttc" id="agroup__format__parse_html_gab67eb80458cad40e22a5036b84c9a5c7"><div class="ttname"><a href="group__format__parse.html#gab67eb80458cad40e22a5036b84c9a5c7">xtd::basic_string&lt; char &gt;::format</a></div><div class="ttdeci">static auto format(const basic_string&lt; char &gt; &amp;fmt, args_t &amp;&amp;... args) -&gt; basic_string</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_ggaac8e45c70fc114a556d8f717b7ee7619aa552c74784b3a82177bca6c8adde0efb"><div class="ttname"><a href="group__xtd__forms.html#ggaac8e45c70fc114a556d8f717b7ee7619aa552c74784b3a82177bca6c8adde0efb">xtd::forms::dock_style::fill</a></div><div class="ttdeci">@ fill</div><div class="ttdoc">All the control&#39;s edges are docked to the all edges of its containing control and sized appropriately...</div><div class="ttdef"><b>Definition</b> dock_style.hpp:35</div></div>
 <div class="ttc" id="anamespacextd_html_a84689e2cdf94d64f7e5f33fe4a1be71a"><div class="ttname"><a href="namespacextd.html#a84689e2cdf94d64f7e5f33fe4a1be71a">xtd::length</a></div><div class="ttdeci">constexpr auto length() const noexcept -&gt; size_type</div><div class="ttdoc">Returns the length of the current read_only_span.</div><div class="ttdef"><b>Definition</b> read_only_span.hpp:213</div></div>
@@ -241,69 +241,69 @@ Inheritance diagram for xtd::forms::screen:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Properties</h2></td></tr>
-<tr class="memitem:a236a186c34176422cbb958b3755f687a" id="r_a236a186c34176422cbb958b3755f687a"><td class="memItemLeft"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>&#160;</td><td class="memItemRight"><a class="el" href="#a236a186c34176422cbb958b3755f687a">bits_per_pixel</a> () const noexcept</td></tr>
-<tr class="memdesc:a236a186c34176422cbb958b3755f687a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of bits of memory, associated with one pixel of data.  <br /></td></tr>
-<tr class="memitem:a180bb0ad68186d5ac4e71e2fdaa213f1" id="r_a180bb0ad68186d5ac4e71e2fdaa213f1"><td class="memItemLeft">const <a class="el" href="structxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a180bb0ad68186d5ac4e71e2fdaa213f1">bounds</a> () const noexcept</td></tr>
-<tr class="memdesc:a180bb0ad68186d5ac4e71e2fdaa213f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the bounds of the display.  <br /></td></tr>
-<tr class="memitem:aede79f918c1a18098057081fff5e250e" id="r_aede79f918c1a18098057081fff5e250e"><td class="memItemLeft">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#aede79f918c1a18098057081fff5e250e">device_name</a> () const</td></tr>
-<tr class="memdesc:aede79f918c1a18098057081fff5e250e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the device name associated with a display.  <br /></td></tr>
-<tr class="memitem:a128e5f3b29fff416561e1ff80bd22982" id="r_a128e5f3b29fff416561e1ff80bd22982"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a128e5f3b29fff416561e1ff80bd22982">high_resolution</a> () const noexcept</td></tr>
-<tr class="memdesc:a128e5f3b29fff416561e1ff80bd22982"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether a particular display is high resolution.  <br /></td></tr>
-<tr class="memitem:a285f0b14a293a69164cb605a4f359068" id="r_a285f0b14a293a69164cb605a4f359068"><td class="memItemLeft"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>&#160;</td><td class="memItemRight"><a class="el" href="#a285f0b14a293a69164cb605a4f359068">pixels_per_inch</a> () const noexcept</td></tr>
-<tr class="memdesc:a285f0b14a293a69164cb605a4f359068"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of pixels per inch of the display.  <br /></td></tr>
-<tr class="memitem:a8cec46396b240ae7e0a747ba2cb0abd6" id="r_a8cec46396b240ae7e0a747ba2cb0abd6"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a8cec46396b240ae7e0a747ba2cb0abd6">primary</a> () const noexcept</td></tr>
-<tr class="memdesc:a8cec46396b240ae7e0a747ba2cb0abd6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether a particular display is the primary device.  <br /></td></tr>
-<tr class="memitem:a16a1e6d78314ff4224e52d9d0d9695b5" id="r_a16a1e6d78314ff4224e52d9d0d9695b5"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#a16a1e6d78314ff4224e52d9d0d9695b5">scale_factor</a> () const noexcept</td></tr>
-<tr class="memdesc:a16a1e6d78314ff4224e52d9d0d9695b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the scale factor of the display.  <br /></td></tr>
-<tr class="memitem:a475f01848052b5f36f0c331eaa3ec280" id="r_a475f01848052b5f36f0c331eaa3ec280"><td class="memItemLeft">const <a class="el" href="structxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a475f01848052b5f36f0c331eaa3ec280">working_area</a> () const noexcept</td></tr>
-<tr class="memdesc:a475f01848052b5f36f0c331eaa3ec280"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the working area of the display. The working area is the desktop area of the display, excluding taskbars, docked windows, and docked tool bars.  <br /></td></tr>
+<tr class="memitem:a875900c120365a2a0a69673491341881" id="r_a875900c120365a2a0a69673491341881"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a875900c120365a2a0a69673491341881">bits_per_pixel</a> () const noexcept -&gt; <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td></tr>
+<tr class="memdesc:a875900c120365a2a0a69673491341881"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of bits of memory, associated with one pixel of data.  <br /></td></tr>
+<tr class="memitem:aced82005fc592b19d3784c5c90fe45e7" id="r_aced82005fc592b19d3784c5c90fe45e7"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aced82005fc592b19d3784c5c90fe45e7">bounds</a> () const noexcept -&gt; const <a class="el" href="structxtd_1_1drawing_1_1rectangle.html">xtd::drawing::rectangle</a> &amp;</td></tr>
+<tr class="memdesc:aced82005fc592b19d3784c5c90fe45e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the bounds of the display.  <br /></td></tr>
+<tr class="memitem:a24d0e8d36f7c3685f954cf1ee3cc019d" id="r_a24d0e8d36f7c3685f954cf1ee3cc019d"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a24d0e8d36f7c3685f954cf1ee3cc019d">device_name</a> () const -&gt; const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td></tr>
+<tr class="memdesc:a24d0e8d36f7c3685f954cf1ee3cc019d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the device name associated with a display.  <br /></td></tr>
+<tr class="memitem:a074d9ea6f8f2e65b8704cb5503b4f1bc" id="r_a074d9ea6f8f2e65b8704cb5503b4f1bc"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a074d9ea6f8f2e65b8704cb5503b4f1bc">high_resolution</a> () const noexcept -&gt; bool</td></tr>
+<tr class="memdesc:a074d9ea6f8f2e65b8704cb5503b4f1bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether a particular display is high resolution.  <br /></td></tr>
+<tr class="memitem:ae0d32bf1a6cfe23fa841c50c0a19e78a" id="r_ae0d32bf1a6cfe23fa841c50c0a19e78a"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ae0d32bf1a6cfe23fa841c50c0a19e78a">pixels_per_inch</a> () const noexcept -&gt; <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td></tr>
+<tr class="memdesc:ae0d32bf1a6cfe23fa841c50c0a19e78a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of pixels per inch of the display.  <br /></td></tr>
+<tr class="memitem:a830b0d58c1b434ff0e9e4ffe6280621e" id="r_a830b0d58c1b434ff0e9e4ffe6280621e"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a830b0d58c1b434ff0e9e4ffe6280621e">primary</a> () const noexcept -&gt; bool</td></tr>
+<tr class="memdesc:a830b0d58c1b434ff0e9e4ffe6280621e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether a particular display is the primary device.  <br /></td></tr>
+<tr class="memitem:a704dd9a8147037aec754435a6bd5f652" id="r_a704dd9a8147037aec754435a6bd5f652"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a704dd9a8147037aec754435a6bd5f652">scale_factor</a> () const noexcept -&gt; double</td></tr>
+<tr class="memdesc:a704dd9a8147037aec754435a6bd5f652"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the scale factor of the display.  <br /></td></tr>
+<tr class="memitem:a5ad9530c6a16248bb2e1781813039d9b" id="r_a5ad9530c6a16248bb2e1781813039d9b"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a5ad9530c6a16248bb2e1781813039d9b">working_area</a> () const noexcept -&gt; const <a class="el" href="structxtd_1_1drawing_1_1rectangle.html">xtd::drawing::rectangle</a> &amp;</td></tr>
+<tr class="memdesc:a5ad9530c6a16248bb2e1781813039d9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the working area of the display. The working area is the desktop area of the display, excluding taskbars, docked windows, and docked tool bars.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Methods</h2></td></tr>
-<tr class="memitem:accb09f403ac1600ae75cd27243d33668" id="r_accb09f403ac1600ae75cd27243d33668"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#accb09f403ac1600ae75cd27243d33668">equals</a> (const <a class="el" href="classxtd_1_1object.html">xtd::object</a> &amp;obj) const noexcept override</td></tr>
-<tr class="memdesc:accb09f403ac1600ae75cd27243d33668"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
-<tr class="memitem:ae4a878627d8a3f920aa8303dc8252d40" id="r_ae4a878627d8a3f920aa8303dc8252d40"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ae4a878627d8a3f920aa8303dc8252d40">equals</a> (const screen &amp;other) const noexcept override</td></tr>
-<tr class="memdesc:ae4a878627d8a3f920aa8303dc8252d40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
-<tr class="memitem:a7f1787d72a15309129d66555f6e3836a" id="r_a7f1787d72a15309129d66555f6e3836a"><td class="memItemLeft"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a>&#160;</td><td class="memItemRight"><a class="el" href="#a7f1787d72a15309129d66555f6e3836a">get_hash_code</a> () const noexcept override</td></tr>
-<tr class="memdesc:a7f1787d72a15309129d66555f6e3836a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a particular type.  <br /></td></tr>
+<tr class="memitem:a8cc1db150bc60c7b6a88106b553d2efc" id="r_a8cc1db150bc60c7b6a88106b553d2efc"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a8cc1db150bc60c7b6a88106b553d2efc">equals</a> (const <a class="el" href="classxtd_1_1object.html">xtd::object</a> &amp;obj) const noexcept -&gt; bool override</td></tr>
+<tr class="memdesc:a8cc1db150bc60c7b6a88106b553d2efc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
+<tr class="memitem:aa4f125d90558b27c927a8ed5aa5a19e1" id="r_aa4f125d90558b27c927a8ed5aa5a19e1"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aa4f125d90558b27c927a8ed5aa5a19e1">equals</a> (const screen &amp;other) const noexcept -&gt; bool override</td></tr>
+<tr class="memdesc:aa4f125d90558b27c927a8ed5aa5a19e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
+<tr class="memitem:a0a0ac798445b47ef98c572122d57c164" id="r_a0a0ac798445b47ef98c572122d57c164"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a0a0ac798445b47ef98c572122d57c164">get_hash_code</a> () const noexcept -&gt; <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> override</td></tr>
+<tr class="memdesc:a0a0ac798445b47ef98c572122d57c164"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a particular type.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Static Properties</h2></td></tr>
-<tr class="memitem:acedf84c3016f185f291cd4d02c546075" id="r_acedf84c3016f185f291cd4d02c546075"><td class="memItemLeft">static <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; screen &gt;&#160;</td><td class="memItemRight"><a class="el" href="#acedf84c3016f185f291cd4d02c546075">all_screens</a> ()</td></tr>
-<tr class="memdesc:acedf84c3016f185f291cd4d02c546075"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets an array of all displays on the system.  <br /></td></tr>
-<tr class="memitem:aab4139ada0e9bb8f1ad765dd5a1c0c61" id="r_aab4139ada0e9bb8f1ad765dd5a1c0c61"><td class="memItemLeft">static screen&#160;</td><td class="memItemRight"><a class="el" href="#aab4139ada0e9bb8f1ad765dd5a1c0c61">primary_screen</a> ()</td></tr>
-<tr class="memdesc:aab4139ada0e9bb8f1ad765dd5a1c0c61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the primary display.  <br /></td></tr>
+<tr class="memitem:ad70d6d6636f469900f049016de2ee7b1" id="r_ad70d6d6636f469900f049016de2ee7b1"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ad70d6d6636f469900f049016de2ee7b1">all_screens</a> () -&gt; <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; screen &gt;</td></tr>
+<tr class="memdesc:ad70d6d6636f469900f049016de2ee7b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets an array of all displays on the system.  <br /></td></tr>
+<tr class="memitem:a2d2045047bf7306b2d552f9e24ed91f4" id="r_a2d2045047bf7306b2d552f9e24ed91f4"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a2d2045047bf7306b2d552f9e24ed91f4">primary_screen</a> () -&gt; screen</td></tr>
+<tr class="memdesc:a2d2045047bf7306b2d552f9e24ed91f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the primary display.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Static Methods</h2></td></tr>
-<tr class="memitem:a6699dd3e468cae054a9e497f6ccf9a6b" id="r_a6699dd3e468cae054a9e497f6ccf9a6b"><td class="memItemLeft">static <a class="el" href="classxtd_1_1drawing_1_1graphics.html">drawing::graphics</a>&#160;</td><td class="memItemRight"><a class="el" href="#a6699dd3e468cae054a9e497f6ccf9a6b">create_graphics</a> ()</td></tr>
-<tr class="memdesc:a6699dd3e468cae054a9e497f6ccf9a6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the <a class="el" href="classxtd_1_1drawing_1_1graphics.html" title="Defines an object used to draw lines and curves. This class cannot be inherited.">xtd::drawing::graphics</a> for the screen.  <br /></td></tr>
-<tr class="memitem:abcf62e97fb13a66f1744cd80f99d568d" id="r_abcf62e97fb13a66f1744cd80f99d568d"><td class="memItemLeft">static screen&#160;</td><td class="memItemRight"><a class="el" href="#abcf62e97fb13a66f1744cd80f99d568d">from_control</a> (const control &amp;control)</td></tr>
-<tr class="memdesc:abcf62e97fb13a66f1744cd80f99d568d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves a screen for the display that contains the largest portion of the specified control.  <br /></td></tr>
-<tr class="memitem:a0bfe4b2facdbdabc470dbb6e86cb1aae" id="r_a0bfe4b2facdbdabc470dbb6e86cb1aae"><td class="memItemLeft">static screen&#160;</td><td class="memItemRight"><a class="el" href="#a0bfe4b2facdbdabc470dbb6e86cb1aae">from_handle</a> (<a class="el" href="group__types.html#ga4caacfecf928a301a87e8b7accd31f1f">intptr</a> handle)</td></tr>
-<tr class="memdesc:a0bfe4b2facdbdabc470dbb6e86cb1aae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves a screen for the display that contains the largest portion of the object referred to by the specified handle.  <br /></td></tr>
-<tr class="memitem:a00ab7f4e2cdb059ffad17cc5973b2bc9" id="r_a00ab7f4e2cdb059ffad17cc5973b2bc9"><td class="memItemLeft">static screen&#160;</td><td class="memItemRight"><a class="el" href="#a00ab7f4e2cdb059ffad17cc5973b2bc9">from_point</a> (const <a class="el" href="structxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;point)</td></tr>
-<tr class="memdesc:a00ab7f4e2cdb059ffad17cc5973b2bc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves a screen for the display that contains the specified point.  <br /></td></tr>
-<tr class="memitem:a9fda4be958ddc043388846dee2b8365b" id="r_a9fda4be958ddc043388846dee2b8365b"><td class="memItemLeft">static screen&#160;</td><td class="memItemRight"><a class="el" href="#a9fda4be958ddc043388846dee2b8365b">from_rectangle</a> (const <a class="el" href="structxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a> &amp;rect)</td></tr>
-<tr class="memdesc:a9fda4be958ddc043388846dee2b8365b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves a screen for the display that contains the largest portion of the rectangle.  <br /></td></tr>
-<tr class="memitem:a743b2c68c8d42ab644b18f5379e76e12" id="r_a743b2c68c8d42ab644b18f5379e76e12"><td class="memItemLeft">static <a class="el" href="structxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a>&#160;</td><td class="memItemRight"><a class="el" href="#a743b2c68c8d42ab644b18f5379e76e12">get_bounds</a> (const control &amp;control)</td></tr>
-<tr class="memdesc:a743b2c68c8d42ab644b18f5379e76e12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the bounds of the display that contains the largest portion of the specified control.  <br /></td></tr>
-<tr class="memitem:a49c088b68a7f983c76e0598ece62fa69" id="r_a49c088b68a7f983c76e0598ece62fa69"><td class="memItemLeft">static <a class="el" href="structxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a>&#160;</td><td class="memItemRight"><a class="el" href="#a49c088b68a7f983c76e0598ece62fa69">get_bounds</a> (<a class="el" href="group__types.html#ga4caacfecf928a301a87e8b7accd31f1f">intptr</a> handle)</td></tr>
-<tr class="memdesc:a49c088b68a7f983c76e0598ece62fa69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the bounds of the display that contains the largest portion of the specified handle.  <br /></td></tr>
-<tr class="memitem:a0bb1ee7b9f286b044e4bd4d1e73bba04" id="r_a0bb1ee7b9f286b044e4bd4d1e73bba04"><td class="memItemLeft">static <a class="el" href="structxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a>&#160;</td><td class="memItemRight"><a class="el" href="#a0bb1ee7b9f286b044e4bd4d1e73bba04">get_bounds</a> (const <a class="el" href="structxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;point)</td></tr>
-<tr class="memdesc:a0bb1ee7b9f286b044e4bd4d1e73bba04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the bounds of the display that contains the specified point.  <br /></td></tr>
-<tr class="memitem:a045eb17a209d04ff75147032763ab06b" id="r_a045eb17a209d04ff75147032763ab06b"><td class="memItemLeft">static <a class="el" href="structxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a>&#160;</td><td class="memItemRight"><a class="el" href="#a045eb17a209d04ff75147032763ab06b">get_bounds</a> (const <a class="el" href="structxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a> &amp;rect)</td></tr>
-<tr class="memdesc:a045eb17a209d04ff75147032763ab06b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the bounds of the display that contains the largest portion of the specified rectangle.  <br /></td></tr>
-<tr class="memitem:a3d160889c2ab64e7c7cce90ad3d56dc1" id="r_a3d160889c2ab64e7c7cce90ad3d56dc1"><td class="memItemLeft">static <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>&#160;</td><td class="memItemRight"><a class="el" href="#a3d160889c2ab64e7c7cce90ad3d56dc1">get_standard_pixels_per_inch</a> ()</td></tr>
-<tr class="memdesc:a3d160889c2ab64e7c7cce90ad3d56dc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the the standard number of pixels per inch of the display.  <br /></td></tr>
-<tr class="memitem:a49d2522890eabc2fb112888f980f82d2" id="r_a49d2522890eabc2fb112888f980f82d2"><td class="memItemLeft">static <a class="el" href="structxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a>&#160;</td><td class="memItemRight"><a class="el" href="#a49d2522890eabc2fb112888f980f82d2">get_working_area</a> (const control &amp;control)</td></tr>
-<tr class="memdesc:a49d2522890eabc2fb112888f980f82d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the working area for the display that contains the largest region of the specified control. The working area is the desktop area of the display, excluding taskbars, docked windows, and docked tool bars.  <br /></td></tr>
-<tr class="memitem:a5fe33d7c51fe74010210c81ec6647409" id="r_a5fe33d7c51fe74010210c81ec6647409"><td class="memItemLeft">static <a class="el" href="structxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a>&#160;</td><td class="memItemRight"><a class="el" href="#a5fe33d7c51fe74010210c81ec6647409">get_working_area</a> (<a class="el" href="group__types.html#ga4caacfecf928a301a87e8b7accd31f1f">intptr</a> handle)</td></tr>
-<tr class="memdesc:a5fe33d7c51fe74010210c81ec6647409"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the working area for the display that contains the largest region of the specified handle. The working area is the desktop area of the display, excluding taskbars, docked windows, and docked tool bars.  <br /></td></tr>
-<tr class="memitem:a0d15cd9f7cd995d0d0c680d09dd5d464" id="r_a0d15cd9f7cd995d0d0c680d09dd5d464"><td class="memItemLeft">static <a class="el" href="structxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a>&#160;</td><td class="memItemRight"><a class="el" href="#a0d15cd9f7cd995d0d0c680d09dd5d464">get_working_area</a> (const <a class="el" href="structxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;point)</td></tr>
-<tr class="memdesc:a0d15cd9f7cd995d0d0c680d09dd5d464"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the working area closest to the specified point. The working area is the desktop area of the display, excluding taskbars, docked windows, and docked tool bars.  <br /></td></tr>
-<tr class="memitem:aa6d48f9aceb5c311c2efbb61b63bce76" id="r_aa6d48f9aceb5c311c2efbb61b63bce76"><td class="memItemLeft">static <a class="el" href="structxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a>&#160;</td><td class="memItemRight"><a class="el" href="#aa6d48f9aceb5c311c2efbb61b63bce76">get_working_area</a> (const <a class="el" href="structxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a> &amp;rect)</td></tr>
-<tr class="memdesc:aa6d48f9aceb5c311c2efbb61b63bce76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the working area for the display that contains the largest portion of the specified rectangle. The working area is the desktop area of the display, excluding taskbars, docked windows, and docked tool bars.  <br /></td></tr>
+<tr class="memitem:a4b12aa75ae3792477dba7956ac28928b" id="r_a4b12aa75ae3792477dba7956ac28928b"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a4b12aa75ae3792477dba7956ac28928b">create_graphics</a> () -&gt; <a class="el" href="classxtd_1_1drawing_1_1graphics.html">xtd::drawing::graphics</a></td></tr>
+<tr class="memdesc:a4b12aa75ae3792477dba7956ac28928b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the <a class="el" href="classxtd_1_1drawing_1_1graphics.html" title="Defines an object used to draw lines and curves. This class cannot be inherited.">xtd::drawing::graphics</a> for the screen.  <br /></td></tr>
+<tr class="memitem:a6179eab8f0883ae4b86868e9cb13fff7" id="r_a6179eab8f0883ae4b86868e9cb13fff7"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a6179eab8f0883ae4b86868e9cb13fff7">from_control</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">xtd::forms::control</a> &amp;control) -&gt; screen</td></tr>
+<tr class="memdesc:a6179eab8f0883ae4b86868e9cb13fff7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves a screen for the display that contains the largest portion of the specified control.  <br /></td></tr>
+<tr class="memitem:aa2d67ba5f6dfa94c431201c738e463d8" id="r_aa2d67ba5f6dfa94c431201c738e463d8"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aa2d67ba5f6dfa94c431201c738e463d8">from_handle</a> (<a class="el" href="group__types.html#ga4caacfecf928a301a87e8b7accd31f1f">xtd::intptr</a> handle) -&gt; screen</td></tr>
+<tr class="memdesc:aa2d67ba5f6dfa94c431201c738e463d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves a screen for the display that contains the largest portion of the object referred to by the specified handle.  <br /></td></tr>
+<tr class="memitem:a375a933bde6c377bb2f4826f892c6b4e" id="r_a375a933bde6c377bb2f4826f892c6b4e"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a375a933bde6c377bb2f4826f892c6b4e">from_point</a> (const <a class="el" href="structxtd_1_1drawing_1_1point.html">xtd::drawing::point</a> &amp;point) -&gt; screen</td></tr>
+<tr class="memdesc:a375a933bde6c377bb2f4826f892c6b4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves a screen for the display that contains the specified point.  <br /></td></tr>
+<tr class="memitem:a7d85bd815666d3ea2a94d40eb9bc960f" id="r_a7d85bd815666d3ea2a94d40eb9bc960f"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a7d85bd815666d3ea2a94d40eb9bc960f">from_rectangle</a> (const <a class="el" href="structxtd_1_1drawing_1_1rectangle.html">xtd::drawing::rectangle</a> &amp;rect) -&gt; screen</td></tr>
+<tr class="memdesc:a7d85bd815666d3ea2a94d40eb9bc960f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves a screen for the display that contains the largest portion of the rectangle.  <br /></td></tr>
+<tr class="memitem:ab7884d4ff1db0b735e76a12efe7e1a8f" id="r_ab7884d4ff1db0b735e76a12efe7e1a8f"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ab7884d4ff1db0b735e76a12efe7e1a8f">get_bounds</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">xtd::forms::control</a> &amp;control) -&gt; <a class="el" href="structxtd_1_1drawing_1_1rectangle.html">xtd::drawing::rectangle</a></td></tr>
+<tr class="memdesc:ab7884d4ff1db0b735e76a12efe7e1a8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the bounds of the display that contains the largest portion of the specified control.  <br /></td></tr>
+<tr class="memitem:a885d18d0701b05528c123f52d65102ff" id="r_a885d18d0701b05528c123f52d65102ff"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a885d18d0701b05528c123f52d65102ff">get_bounds</a> (<a class="el" href="group__types.html#ga4caacfecf928a301a87e8b7accd31f1f">xtd::intptr</a> handle) -&gt; <a class="el" href="structxtd_1_1drawing_1_1rectangle.html">xtd::drawing::rectangle</a></td></tr>
+<tr class="memdesc:a885d18d0701b05528c123f52d65102ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the bounds of the display that contains the largest portion of the specified handle.  <br /></td></tr>
+<tr class="memitem:ac4c51fef937051ba312fad4ffbf69714" id="r_ac4c51fef937051ba312fad4ffbf69714"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ac4c51fef937051ba312fad4ffbf69714">get_bounds</a> (const <a class="el" href="structxtd_1_1drawing_1_1point.html">xtd::drawing::point</a> &amp;point) -&gt; <a class="el" href="structxtd_1_1drawing_1_1rectangle.html">xtd::drawing::rectangle</a></td></tr>
+<tr class="memdesc:ac4c51fef937051ba312fad4ffbf69714"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the bounds of the display that contains the specified point.  <br /></td></tr>
+<tr class="memitem:a47696099f50344759501501cb98eaff1" id="r_a47696099f50344759501501cb98eaff1"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a47696099f50344759501501cb98eaff1">get_bounds</a> (const <a class="el" href="structxtd_1_1drawing_1_1rectangle.html">xtd::drawing::rectangle</a> &amp;rect) -&gt; <a class="el" href="structxtd_1_1drawing_1_1rectangle.html">xtd::drawing::rectangle</a></td></tr>
+<tr class="memdesc:a47696099f50344759501501cb98eaff1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the bounds of the display that contains the largest portion of the specified rectangle.  <br /></td></tr>
+<tr class="memitem:a54252ab08e31a9274a136bf5ec75cbc6" id="r_a54252ab08e31a9274a136bf5ec75cbc6"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a54252ab08e31a9274a136bf5ec75cbc6">get_standard_pixels_per_inch</a> () -&gt; <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td></tr>
+<tr class="memdesc:a54252ab08e31a9274a136bf5ec75cbc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the the standard number of pixels per inch of the display.  <br /></td></tr>
+<tr class="memitem:af950a3c71d80368be21a5a29c140dcda" id="r_af950a3c71d80368be21a5a29c140dcda"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#af950a3c71d80368be21a5a29c140dcda">get_working_area</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">xtd::forms::control</a> &amp;control) -&gt; <a class="el" href="structxtd_1_1drawing_1_1rectangle.html">xtd::drawing::rectangle</a></td></tr>
+<tr class="memdesc:af950a3c71d80368be21a5a29c140dcda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the working area for the display that contains the largest region of the specified control. The working area is the desktop area of the display, excluding taskbars, docked windows, and docked tool bars.  <br /></td></tr>
+<tr class="memitem:a45fc75094dbc68f331166f391543491d" id="r_a45fc75094dbc68f331166f391543491d"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a45fc75094dbc68f331166f391543491d">get_working_area</a> (<a class="el" href="group__types.html#ga4caacfecf928a301a87e8b7accd31f1f">xtd::intptr</a> handle) -&gt; <a class="el" href="structxtd_1_1drawing_1_1rectangle.html">xtd::drawing::rectangle</a></td></tr>
+<tr class="memdesc:a45fc75094dbc68f331166f391543491d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the working area for the display that contains the largest region of the specified handle. The working area is the desktop area of the display, excluding taskbars, docked windows, and docked tool bars.  <br /></td></tr>
+<tr class="memitem:a8424c680ae67f73e13350d50b87a7132" id="r_a8424c680ae67f73e13350d50b87a7132"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a8424c680ae67f73e13350d50b87a7132">get_working_area</a> (const <a class="el" href="structxtd_1_1drawing_1_1point.html">xtd::drawing::point</a> &amp;point) -&gt; <a class="el" href="structxtd_1_1drawing_1_1rectangle.html">xtd::drawing::rectangle</a></td></tr>
+<tr class="memdesc:a8424c680ae67f73e13350d50b87a7132"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the working area closest to the specified point. The working area is the desktop area of the display, excluding taskbars, docked windows, and docked tool bars.  <br /></td></tr>
+<tr class="memitem:a6a990fae35e6084d90696d3a5e7b254c" id="r_a6a990fae35e6084d90696d3a5e7b254c"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a6a990fae35e6084d90696d3a5e7b254c">get_working_area</a> (const <a class="el" href="structxtd_1_1drawing_1_1rectangle.html">xtd::drawing::rectangle</a> &amp;rect) -&gt; <a class="el" href="structxtd_1_1drawing_1_1rectangle.html">xtd::drawing::rectangle</a></td></tr>
+<tr class="memdesc:a6a990fae35e6084d90696d3a5e7b254c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the working area for the display that contains the largest portion of the specified rectangle. The working area is the desktop area of the display, excluding taskbars, docked windows, and docked tool bars.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -326,8 +326,8 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memdesc:a7a5f3affd9a2d72f0a13659c2cb7e6a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object instances are the same instance.  <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a236a186c34176422cbb958b3755f687a" name="a236a186c34176422cbb958b3755f687a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a236a186c34176422cbb958b3755f687a">&#9670;&#160;</a></span>bits_per_pixel()</h2>
+<a id="a875900c120365a2a0a69673491341881" name="a875900c120365a2a0a69673491341881"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a875900c120365a2a0a69673491341881">&#9670;&#160;</a></span>bits_per_pixel()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -336,15 +336,15 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> xtd::forms::screen::bits_per_pixel </td>
+          <td class="memname">auto xtd::forms::screen::bits_per_pixel </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -355,8 +355,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a180bb0ad68186d5ac4e71e2fdaa213f1" name="a180bb0ad68186d5ac4e71e2fdaa213f1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a180bb0ad68186d5ac4e71e2fdaa213f1">&#9670;&#160;</a></span>bounds()</h2>
+<a id="aced82005fc592b19d3784c5c90fe45e7" name="aced82005fc592b19d3784c5c90fe45e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aced82005fc592b19d3784c5c90fe45e7">&#9670;&#160;</a></span>bounds()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -365,15 +365,15 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="structxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a> &amp; xtd::forms::screen::bounds </td>
+          <td class="memname">auto xtd::forms::screen::bounds </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  const <a class="el" href="structxtd_1_1drawing_1_1rectangle.html">xtd::drawing::rectangle</a> &amp;</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -383,29 +383,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="aede79f918c1a18098057081fff5e250e" name="aede79f918c1a18098057081fff5e250e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aede79f918c1a18098057081fff5e250e">&#9670;&#160;</a></span>device_name()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp; xtd::forms::screen::device_name </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Gets the device name associated with a display. </p>
-<dl class="section return"><dt>Returns</dt><dd>The device name associated with a display. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>This string may contain non-printable characters. </dd></dl>
-
-</div>
-</div>
-<a id="a128e5f3b29fff416561e1ff80bd22982" name="a128e5f3b29fff416561e1ff80bd22982"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a128e5f3b29fff416561e1ff80bd22982">&#9670;&#160;</a></span>high_resolution()</h2>
+<a id="a24d0e8d36f7c3685f954cf1ee3cc019d" name="a24d0e8d36f7c3685f954cf1ee3cc019d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24d0e8d36f7c3685f954cf1ee3cc019d">&#9670;&#160;</a></span>device_name()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -414,15 +393,44 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::forms::screen::high_resolution </td>
+          <td class="memname">auto xtd::forms::screen::device_name </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the device name associated with a display. </p>
+<dl class="section return"><dt>Returns</dt><dd>The device name associated with a display. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>This string may contain non-printable characters. </dd></dl>
+
+</div>
+</div>
+<a id="a074d9ea6f8f2e65b8704cb5503b4f1bc" name="a074d9ea6f8f2e65b8704cb5503b4f1bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a074d9ea6f8f2e65b8704cb5503b4f1bc">&#9670;&#160;</a></span>high_resolution()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto xtd::forms::screen::high_resolution </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const -&gt;  bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -432,8 +440,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a285f0b14a293a69164cb605a4f359068" name="a285f0b14a293a69164cb605a4f359068"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a285f0b14a293a69164cb605a4f359068">&#9670;&#160;</a></span>pixels_per_inch()</h2>
+<a id="ae0d32bf1a6cfe23fa841c50c0a19e78a" name="ae0d32bf1a6cfe23fa841c50c0a19e78a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0d32bf1a6cfe23fa841c50c0a19e78a">&#9670;&#160;</a></span>pixels_per_inch()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -442,27 +450,27 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> xtd::forms::screen::pixels_per_inch </td>
+          <td class="memname">auto xtd::forms::screen::pixels_per_inch </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>Gets the number of pixels per inch of the display. </p>
 <dl class="section return"><dt>Returns</dt><dd>The number of pixels per inch of the display. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>See <a class="el" href="#a3d160889c2ab64e7c7cce90ad3d56dc1" title="Gets the the standard number of pixels per inch of the display.">get_standard_pixels_per_inch()</a> for more informations. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>See <a class="el" href="#a54252ab08e31a9274a136bf5ec75cbc6" title="Gets the the standard number of pixels per inch of the display.">get_standard_pixels_per_inch()</a> for more informations. </dd></dl>
 
 </div>
 </div>
-<a id="a8cec46396b240ae7e0a747ba2cb0abd6" name="a8cec46396b240ae7e0a747ba2cb0abd6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8cec46396b240ae7e0a747ba2cb0abd6">&#9670;&#160;</a></span>primary()</h2>
+<a id="a830b0d58c1b434ff0e9e4ffe6280621e" name="a830b0d58c1b434ff0e9e4ffe6280621e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a830b0d58c1b434ff0e9e4ffe6280621e">&#9670;&#160;</a></span>primary()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -471,15 +479,15 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::forms::screen::primary </td>
+          <td class="memname">auto xtd::forms::screen::primary </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -489,8 +497,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a16a1e6d78314ff4224e52d9d0d9695b5" name="a16a1e6d78314ff4224e52d9d0d9695b5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a16a1e6d78314ff4224e52d9d0d9695b5">&#9670;&#160;</a></span>scale_factor()</h2>
+<a id="a704dd9a8147037aec754435a6bd5f652" name="a704dd9a8147037aec754435a6bd5f652"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a704dd9a8147037aec754435a6bd5f652">&#9670;&#160;</a></span>scale_factor()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -499,31 +507,31 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">double xtd::forms::screen::scale_factor </td>
+          <td class="memname">auto xtd::forms::screen::scale_factor </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  double</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>Gets the scale factor of the display. </p>
 <dl class="section return"><dt>Returns</dt><dd>The scale factor of the display. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>This value is computed from <a class="el" href="#a285f0b14a293a69164cb605a4f359068" title="Gets the number of pixels per inch of the display.">pixels_per_inch()</a> for the display divided by <a class="el" href="#a3d160889c2ab64e7c7cce90ad3d56dc1" title="Gets the the standard number of pixels per inch of the display.">get_standard_pixels_per_inch()</a>. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>This value is computed from <a class="el" href="#ae0d32bf1a6cfe23fa841c50c0a19e78a" title="Gets the number of pixels per inch of the display.">pixels_per_inch()</a> for the display divided by <a class="el" href="#a54252ab08e31a9274a136bf5ec75cbc6" title="Gets the the standard number of pixels per inch of the display.">get_standard_pixels_per_inch()</a>. </dd>
 <dd>
 If scale factor is equal to 1.0 is a standard display; greater than 1.0 is a high DPI display. </dd>
 <dd>
-See <a class="el" href="#a3d160889c2ab64e7c7cce90ad3d56dc1" title="Gets the the standard number of pixels per inch of the display.">get_standard_pixels_per_inch()</a> for more informations. </dd></dl>
+See <a class="el" href="#a54252ab08e31a9274a136bf5ec75cbc6" title="Gets the the standard number of pixels per inch of the display.">get_standard_pixels_per_inch()</a> for more informations. </dd></dl>
 
 </div>
 </div>
-<a id="a475f01848052b5f36f0c331eaa3ec280" name="a475f01848052b5f36f0c331eaa3ec280"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a475f01848052b5f36f0c331eaa3ec280">&#9670;&#160;</a></span>working_area()</h2>
+<a id="a5ad9530c6a16248bb2e1781813039d9b" name="a5ad9530c6a16248bb2e1781813039d9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ad9530c6a16248bb2e1781813039d9b">&#9670;&#160;</a></span>working_area()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -532,15 +540,15 @@ See <a class="el" href="#a3d160889c2ab64e7c7cce90ad3d56dc1" title="Gets the the 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="structxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a> &amp; xtd::forms::screen::working_area </td>
+          <td class="memname">auto xtd::forms::screen::working_area </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  const <a class="el" href="structxtd_1_1drawing_1_1rectangle.html">xtd::drawing::rectangle</a> &amp;</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -553,8 +561,8 @@ working_area will return the entire area of the screen if the Windows Taskbar is
 
 </div>
 </div>
-<a id="acedf84c3016f185f291cd4d02c546075" name="acedf84c3016f185f291cd4d02c546075"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acedf84c3016f185f291cd4d02c546075">&#9670;&#160;</a></span>all_screens()</h2>
+<a id="ad70d6d6636f469900f049016de2ee7b1" name="ad70d6d6636f469900f049016de2ee7b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad70d6d6636f469900f049016de2ee7b1">&#9670;&#160;</a></span>all_screens()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -563,15 +571,15 @@ working_area will return the entire area of the screen if the Windows Taskbar is
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; screen &gt; xtd::forms::screen::all_screens </td>
+          <td class="memname">auto xtd::forms::screen::all_screens </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; screen &gt;</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -581,8 +589,8 @@ working_area will return the entire area of the screen if the Windows Taskbar is
 
 </div>
 </div>
-<a id="aab4139ada0e9bb8f1ad765dd5a1c0c61" name="aab4139ada0e9bb8f1ad765dd5a1c0c61"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aab4139ada0e9bb8f1ad765dd5a1c0c61">&#9670;&#160;</a></span>primary_screen()</h2>
+<a id="a2d2045047bf7306b2d552f9e24ed91f4" name="a2d2045047bf7306b2d552f9e24ed91f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d2045047bf7306b2d552f9e24ed91f4">&#9670;&#160;</a></span>primary_screen()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -591,15 +599,15 @@ working_area will return the entire area of the screen if the Windows Taskbar is
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">screen xtd::forms::screen::primary_screen </td>
+          <td class="memname">auto xtd::forms::screen::primary_screen </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  screen</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -610,8 +618,8 @@ working_area will return the entire area of the screen if the Windows Taskbar is
 
 </div>
 </div>
-<a id="accb09f403ac1600ae75cd27243d33668" name="accb09f403ac1600ae75cd27243d33668"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#accb09f403ac1600ae75cd27243d33668">&#9670;&#160;</a></span>equals() <span class="overload">[1/2]</span></h2>
+<a id="a8cc1db150bc60c7b6a88106b553d2efc" name="a8cc1db150bc60c7b6a88106b553d2efc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8cc1db150bc60c7b6a88106b553d2efc">&#9670;&#160;</a></span>equals() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -620,15 +628,15 @@ working_area will return the entire area of the screen if the Windows Taskbar is
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::forms::screen::equals </td>
+          <td class="memname">auto xtd::forms::screen::equals </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1object.html">xtd::object</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -646,8 +654,8 @@ working_area will return the entire area of the screen if the Windows Taskbar is
 
 </div>
 </div>
-<a id="ae4a878627d8a3f920aa8303dc8252d40" name="ae4a878627d8a3f920aa8303dc8252d40"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae4a878627d8a3f920aa8303dc8252d40">&#9670;&#160;</a></span>equals() <span class="overload">[2/2]</span></h2>
+<a id="aa4f125d90558b27c927a8ed5aa5a19e1" name="aa4f125d90558b27c927a8ed5aa5a19e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4f125d90558b27c927a8ed5aa5a19e1">&#9670;&#160;</a></span>equals() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -656,15 +664,15 @@ working_area will return the entire area of the screen if the Windows Taskbar is
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::forms::screen::equals </td>
+          <td class="memname">auto xtd::forms::screen::equals </td>
           <td>(</td>
           <td class="paramtype">const screen &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -680,8 +688,8 @@ working_area will return the entire area of the screen if the Windows Taskbar is
 
 </div>
 </div>
-<a id="a7f1787d72a15309129d66555f6e3836a" name="a7f1787d72a15309129d66555f6e3836a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7f1787d72a15309129d66555f6e3836a">&#9670;&#160;</a></span>get_hash_code()</h2>
+<a id="a0a0ac798445b47ef98c572122d57c164" name="a0a0ac798445b47ef98c572122d57c164"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a0ac798445b47ef98c572122d57c164">&#9670;&#160;</a></span>get_hash_code()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -690,15 +698,15 @@ working_area will return the entire area of the screen if the Windows Taskbar is
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> xtd::forms::screen::get_hash_code </td>
+          <td class="memname">auto xtd::forms::screen::get_hash_code </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -710,8 +718,8 @@ working_area will return the entire area of the screen if the Windows Taskbar is
 
 </div>
 </div>
-<a id="a6699dd3e468cae054a9e497f6ccf9a6b" name="a6699dd3e468cae054a9e497f6ccf9a6b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6699dd3e468cae054a9e497f6ccf9a6b">&#9670;&#160;</a></span>create_graphics()</h2>
+<a id="a4b12aa75ae3792477dba7956ac28928b" name="a4b12aa75ae3792477dba7956ac28928b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b12aa75ae3792477dba7956ac28928b">&#9670;&#160;</a></span>create_graphics()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -720,15 +728,15 @@ working_area will return the entire area of the screen if the Windows Taskbar is
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1drawing_1_1graphics.html">drawing::graphics</a> xtd::forms::screen::create_graphics </td>
+          <td class="memname">auto xtd::forms::screen::create_graphics </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="classxtd_1_1drawing_1_1graphics.html">xtd::drawing::graphics</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -738,8 +746,8 @@ working_area will return the entire area of the screen if the Windows Taskbar is
 
 </div>
 </div>
-<a id="abcf62e97fb13a66f1744cd80f99d568d" name="abcf62e97fb13a66f1744cd80f99d568d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abcf62e97fb13a66f1744cd80f99d568d">&#9670;&#160;</a></span>from_control()</h2>
+<a id="a6179eab8f0883ae4b86868e9cb13fff7" name="a6179eab8f0883ae4b86868e9cb13fff7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6179eab8f0883ae4b86868e9cb13fff7">&#9670;&#160;</a></span>from_control()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -748,15 +756,15 @@ working_area will return the entire area of the screen if the Windows Taskbar is
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">screen xtd::forms::screen::from_control </td>
+          <td class="memname">auto xtd::forms::screen::from_control </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>control</em></span></td><td>)</td>
-          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1control.html">xtd::forms::control</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>control</em></span></td><td>)</td>
+          <td> -&gt;  screen</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -772,8 +780,8 @@ working_area will return the entire area of the screen if the Windows Taskbar is
 
 </div>
 </div>
-<a id="a0bfe4b2facdbdabc470dbb6e86cb1aae" name="a0bfe4b2facdbdabc470dbb6e86cb1aae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0bfe4b2facdbdabc470dbb6e86cb1aae">&#9670;&#160;</a></span>from_handle()</h2>
+<a id="aa2d67ba5f6dfa94c431201c738e463d8" name="aa2d67ba5f6dfa94c431201c738e463d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2d67ba5f6dfa94c431201c738e463d8">&#9670;&#160;</a></span>from_handle()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -782,15 +790,15 @@ working_area will return the entire area of the screen if the Windows Taskbar is
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">screen xtd::forms::screen::from_handle </td>
+          <td class="memname">auto xtd::forms::screen::from_handle </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga4caacfecf928a301a87e8b7accd31f1f">intptr</a></td>          <td class="paramname"><span class="paramname"><em>handle</em></span></td><td>)</td>
-          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga4caacfecf928a301a87e8b7accd31f1f">xtd::intptr</a></td>          <td class="paramname"><span class="paramname"><em>handle</em></span></td><td>)</td>
+          <td> -&gt;  screen</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -806,8 +814,8 @@ working_area will return the entire area of the screen if the Windows Taskbar is
 
 </div>
 </div>
-<a id="a00ab7f4e2cdb059ffad17cc5973b2bc9" name="a00ab7f4e2cdb059ffad17cc5973b2bc9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a00ab7f4e2cdb059ffad17cc5973b2bc9">&#9670;&#160;</a></span>from_point()</h2>
+<a id="a375a933bde6c377bb2f4826f892c6b4e" name="a375a933bde6c377bb2f4826f892c6b4e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a375a933bde6c377bb2f4826f892c6b4e">&#9670;&#160;</a></span>from_point()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -816,15 +824,15 @@ working_area will return the entire area of the screen if the Windows Taskbar is
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">screen xtd::forms::screen::from_point </td>
+          <td class="memname">auto xtd::forms::screen::from_point </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>point</em></span></td><td>)</td>
-          <td></td>
+          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1point.html">xtd::drawing::point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>point</em></span></td><td>)</td>
+          <td> -&gt;  screen</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -840,8 +848,8 @@ working_area will return the entire area of the screen if the Windows Taskbar is
 
 </div>
 </div>
-<a id="a9fda4be958ddc043388846dee2b8365b" name="a9fda4be958ddc043388846dee2b8365b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9fda4be958ddc043388846dee2b8365b">&#9670;&#160;</a></span>from_rectangle()</h2>
+<a id="a7d85bd815666d3ea2a94d40eb9bc960f" name="a7d85bd815666d3ea2a94d40eb9bc960f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d85bd815666d3ea2a94d40eb9bc960f">&#9670;&#160;</a></span>from_rectangle()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -850,15 +858,15 @@ working_area will return the entire area of the screen if the Windows Taskbar is
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">screen xtd::forms::screen::from_rectangle </td>
+          <td class="memname">auto xtd::forms::screen::from_rectangle </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>rect</em></span></td><td>)</td>
-          <td></td>
+          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1rectangle.html">xtd::drawing::rectangle</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>rect</em></span></td><td>)</td>
+          <td> -&gt;  screen</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -874,8 +882,8 @@ working_area will return the entire area of the screen if the Windows Taskbar is
 
 </div>
 </div>
-<a id="a743b2c68c8d42ab644b18f5379e76e12" name="a743b2c68c8d42ab644b18f5379e76e12"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a743b2c68c8d42ab644b18f5379e76e12">&#9670;&#160;</a></span>get_bounds() <span class="overload">[1/4]</span></h2>
+<a id="ab7884d4ff1db0b735e76a12efe7e1a8f" name="ab7884d4ff1db0b735e76a12efe7e1a8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7884d4ff1db0b735e76a12efe7e1a8f">&#9670;&#160;</a></span>get_bounds() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -884,15 +892,15 @@ working_area will return the entire area of the screen if the Windows Taskbar is
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a> xtd::forms::screen::get_bounds </td>
+          <td class="memname">auto xtd::forms::screen::get_bounds </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>control</em></span></td><td>)</td>
-          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1control.html">xtd::forms::control</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>control</em></span></td><td>)</td>
+          <td> -&gt;  <a class="el" href="structxtd_1_1drawing_1_1rectangle.html">xtd::drawing::rectangle</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -908,8 +916,8 @@ working_area will return the entire area of the screen if the Windows Taskbar is
 
 </div>
 </div>
-<a id="a49c088b68a7f983c76e0598ece62fa69" name="a49c088b68a7f983c76e0598ece62fa69"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a49c088b68a7f983c76e0598ece62fa69">&#9670;&#160;</a></span>get_bounds() <span class="overload">[2/4]</span></h2>
+<a id="a885d18d0701b05528c123f52d65102ff" name="a885d18d0701b05528c123f52d65102ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a885d18d0701b05528c123f52d65102ff">&#9670;&#160;</a></span>get_bounds() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -918,15 +926,15 @@ working_area will return the entire area of the screen if the Windows Taskbar is
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a> xtd::forms::screen::get_bounds </td>
+          <td class="memname">auto xtd::forms::screen::get_bounds </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga4caacfecf928a301a87e8b7accd31f1f">intptr</a></td>          <td class="paramname"><span class="paramname"><em>handle</em></span></td><td>)</td>
-          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga4caacfecf928a301a87e8b7accd31f1f">xtd::intptr</a></td>          <td class="paramname"><span class="paramname"><em>handle</em></span></td><td>)</td>
+          <td> -&gt;  <a class="el" href="structxtd_1_1drawing_1_1rectangle.html">xtd::drawing::rectangle</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -942,8 +950,8 @@ working_area will return the entire area of the screen if the Windows Taskbar is
 
 </div>
 </div>
-<a id="a0bb1ee7b9f286b044e4bd4d1e73bba04" name="a0bb1ee7b9f286b044e4bd4d1e73bba04"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0bb1ee7b9f286b044e4bd4d1e73bba04">&#9670;&#160;</a></span>get_bounds() <span class="overload">[3/4]</span></h2>
+<a id="ac4c51fef937051ba312fad4ffbf69714" name="ac4c51fef937051ba312fad4ffbf69714"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4c51fef937051ba312fad4ffbf69714">&#9670;&#160;</a></span>get_bounds() <span class="overload">[3/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -952,15 +960,15 @@ working_area will return the entire area of the screen if the Windows Taskbar is
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a> xtd::forms::screen::get_bounds </td>
+          <td class="memname">auto xtd::forms::screen::get_bounds </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>point</em></span></td><td>)</td>
-          <td></td>
+          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1point.html">xtd::drawing::point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>point</em></span></td><td>)</td>
+          <td> -&gt;  <a class="el" href="structxtd_1_1drawing_1_1rectangle.html">xtd::drawing::rectangle</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -976,8 +984,8 @@ working_area will return the entire area of the screen if the Windows Taskbar is
 
 </div>
 </div>
-<a id="a045eb17a209d04ff75147032763ab06b" name="a045eb17a209d04ff75147032763ab06b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a045eb17a209d04ff75147032763ab06b">&#9670;&#160;</a></span>get_bounds() <span class="overload">[4/4]</span></h2>
+<a id="a47696099f50344759501501cb98eaff1" name="a47696099f50344759501501cb98eaff1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47696099f50344759501501cb98eaff1">&#9670;&#160;</a></span>get_bounds() <span class="overload">[4/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -986,15 +994,15 @@ working_area will return the entire area of the screen if the Windows Taskbar is
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a> xtd::forms::screen::get_bounds </td>
+          <td class="memname">auto xtd::forms::screen::get_bounds </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>rect</em></span></td><td>)</td>
-          <td></td>
+          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1rectangle.html">xtd::drawing::rectangle</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>rect</em></span></td><td>)</td>
+          <td> -&gt;  <a class="el" href="structxtd_1_1drawing_1_1rectangle.html">xtd::drawing::rectangle</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1010,8 +1018,8 @@ working_area will return the entire area of the screen if the Windows Taskbar is
 
 </div>
 </div>
-<a id="a3d160889c2ab64e7c7cce90ad3d56dc1" name="a3d160889c2ab64e7c7cce90ad3d56dc1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3d160889c2ab64e7c7cce90ad3d56dc1">&#9670;&#160;</a></span>get_standard_pixels_per_inch()</h2>
+<a id="a54252ab08e31a9274a136bf5ec75cbc6" name="a54252ab08e31a9274a136bf5ec75cbc6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54252ab08e31a9274a136bf5ec75cbc6">&#9670;&#160;</a></span>get_standard_pixels_per_inch()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1020,15 +1028,15 @@ working_area will return the entire area of the screen if the Windows Taskbar is
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> xtd::forms::screen::get_standard_pixels_per_inch </td>
+          <td class="memname">auto xtd::forms::screen::get_standard_pixels_per_inch </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1051,8 +1059,8 @@ The following table shows the standard values by operating system : <table class
 
 </div>
 </div>
-<a id="a49d2522890eabc2fb112888f980f82d2" name="a49d2522890eabc2fb112888f980f82d2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a49d2522890eabc2fb112888f980f82d2">&#9670;&#160;</a></span>get_working_area() <span class="overload">[1/4]</span></h2>
+<a id="af950a3c71d80368be21a5a29c140dcda" name="af950a3c71d80368be21a5a29c140dcda"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af950a3c71d80368be21a5a29c140dcda">&#9670;&#160;</a></span>get_working_area() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1061,15 +1069,15 @@ The following table shows the standard values by operating system : <table class
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a> xtd::forms::screen::get_working_area </td>
+          <td class="memname">auto xtd::forms::screen::get_working_area </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>control</em></span></td><td>)</td>
-          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1control.html">xtd::forms::control</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>control</em></span></td><td>)</td>
+          <td> -&gt;  <a class="el" href="structxtd_1_1drawing_1_1rectangle.html">xtd::drawing::rectangle</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1085,8 +1093,8 @@ The following table shows the standard values by operating system : <table class
 
 </div>
 </div>
-<a id="a5fe33d7c51fe74010210c81ec6647409" name="a5fe33d7c51fe74010210c81ec6647409"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5fe33d7c51fe74010210c81ec6647409">&#9670;&#160;</a></span>get_working_area() <span class="overload">[2/4]</span></h2>
+<a id="a45fc75094dbc68f331166f391543491d" name="a45fc75094dbc68f331166f391543491d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45fc75094dbc68f331166f391543491d">&#9670;&#160;</a></span>get_working_area() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1095,15 +1103,15 @@ The following table shows the standard values by operating system : <table class
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a> xtd::forms::screen::get_working_area </td>
+          <td class="memname">auto xtd::forms::screen::get_working_area </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga4caacfecf928a301a87e8b7accd31f1f">intptr</a></td>          <td class="paramname"><span class="paramname"><em>handle</em></span></td><td>)</td>
-          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga4caacfecf928a301a87e8b7accd31f1f">xtd::intptr</a></td>          <td class="paramname"><span class="paramname"><em>handle</em></span></td><td>)</td>
+          <td> -&gt;  <a class="el" href="structxtd_1_1drawing_1_1rectangle.html">xtd::drawing::rectangle</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1119,8 +1127,8 @@ The following table shows the standard values by operating system : <table class
 
 </div>
 </div>
-<a id="a0d15cd9f7cd995d0d0c680d09dd5d464" name="a0d15cd9f7cd995d0d0c680d09dd5d464"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0d15cd9f7cd995d0d0c680d09dd5d464">&#9670;&#160;</a></span>get_working_area() <span class="overload">[3/4]</span></h2>
+<a id="a8424c680ae67f73e13350d50b87a7132" name="a8424c680ae67f73e13350d50b87a7132"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8424c680ae67f73e13350d50b87a7132">&#9670;&#160;</a></span>get_working_area() <span class="overload">[3/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1129,15 +1137,15 @@ The following table shows the standard values by operating system : <table class
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a> xtd::forms::screen::get_working_area </td>
+          <td class="memname">auto xtd::forms::screen::get_working_area </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>point</em></span></td><td>)</td>
-          <td></td>
+          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1point.html">xtd::drawing::point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>point</em></span></td><td>)</td>
+          <td> -&gt;  <a class="el" href="structxtd_1_1drawing_1_1rectangle.html">xtd::drawing::rectangle</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1153,8 +1161,8 @@ The following table shows the standard values by operating system : <table class
 
 </div>
 </div>
-<a id="aa6d48f9aceb5c311c2efbb61b63bce76" name="aa6d48f9aceb5c311c2efbb61b63bce76"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa6d48f9aceb5c311c2efbb61b63bce76">&#9670;&#160;</a></span>get_working_area() <span class="overload">[4/4]</span></h2>
+<a id="a6a990fae35e6084d90696d3a5e7b254c" name="a6a990fae35e6084d90696d3a5e7b254c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a990fae35e6084d90696d3a5e7b254c">&#9670;&#160;</a></span>get_working_area() <span class="overload">[4/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1163,15 +1171,15 @@ The following table shows the standard values by operating system : <table class
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a> xtd::forms::screen::get_working_area </td>
+          <td class="memname">auto xtd::forms::screen::get_working_area </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>rect</em></span></td><td>)</td>
-          <td></td>
+          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1rectangle.html">xtd::drawing::rectangle</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>rect</em></span></td><td>)</td>
+          <td> -&gt;  <a class="el" href="structxtd_1_1drawing_1_1rectangle.html">xtd::drawing::rectangle</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
