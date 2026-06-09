@@ -35,7 +35,7 @@ namespace xtd {
     /// }
     /// ```
     /// @remarks The xtd::forms::selection_range is the date or dates selected and highlighted on the xtd::forms::month_calendar control. If only one date is selected, the xtd::forms::selection_range::start and xtd::forms::selection_range::end property values will be equal. The xtd::forms::selection_range can be changed by the user clicking a date while dragging the mouse pointer across the desired dates, or you can set the range in code. For example, you might want to have the user enter a date range into two xtd::forms::text_box controls or two xtd::forms::date_time_picker controls and set the xtd::forms::selection_range based on those dates.
-    struct forms_export_ selection_range : object {
+    struct forms_export_ selection_range : xtd::object {
       /// @name Public Constructors
       
       /// @{
@@ -46,15 +46,8 @@ namespace xtd {
       /// @param start The starting date in the xtd::forms::selection_range.
       /// @param end The ending date in the xtd::forms::selection_range.
       /// @remarks If the lower xtd::dateTime value is greater than the upper xtd::date_time value, the lower value will be assigned to the xtd::forms::selection_range::end property instead of the xtd::forms::selection_range::start property.
-      selection_range(date_time start, date_time end);
+      selection_range(xtd::date_time start, xtd::date_time end);
       /// @}
-      
-      /// @cond
-      selection_range(const selection_range&) = default;
-      selection_range(selection_range&&) = default;
-      selection_range& operator =(const selection_range&) = default;
-      /// @endcond
-      
       
       /// @name Public Properties
       
@@ -62,17 +55,17 @@ namespace xtd {
       /// @brief Gets or sets the ending date and time of the selection range.
       /// @param end The ending xtd::date_time value of the range.
       /// @return This current instance.
-      date_time end;
+      xtd::date_time end;
       
       /// @brief Gets or sets the starting date and time of the selection range.
       /// @param start The starting xtd::date_time value of the range.
       /// @return This current instance.
-      date_time start;
+      xtd::date_time start;
       /// @}
       
       /// @name Public Methods
       /// @{
-      xtd::string to_string() const noexcept override;
+      [[nodiscard]] auto to_string() const noexcept -> xtd::string override;
       /// @}
     };
   }
