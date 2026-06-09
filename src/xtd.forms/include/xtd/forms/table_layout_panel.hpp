@@ -22,7 +22,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates the use of table_layout_panel container.
     /// @include table_layout_panel.cpp
-    class table_layout_panel : public panel {
+    class table_layout_panel : public xtd::forms::panel {
     public:
       /// @name Public Constructors
       
@@ -36,51 +36,51 @@ namespace xtd {
       /// @{
       /// @brief A factory to create an xtd::forms::table_layout_panel.
       /// @return New xtd::forms::table_layout_panel created.
-      static table_layout_panel create();
+      [[nodiscard]] static auto create() -> table_layout_panel;
       /// @brief A factory to create an xtd::forms::table_layout_panel with specified location.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::table_layout_panel.
       /// @return New xtd::forms::table_layout_panel created.
-      static table_layout_panel create(const drawing::point& location);
+      [[nodiscard]] static auto create(const xtd::drawing::point& location) -> table_layout_panel;
       /// @brief A factory to create an xtd::forms::table_layout_panel with specified location, and size.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::table_layout_panel.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::table_layout_panel.
       /// @return New xtd::forms::table_layout_panel created.
-      static table_layout_panel create(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto create(const xtd::drawing::point& location, const xtd::drawing::size& size) -> table_layout_panel;
       /// @brief A factory to create an xtd::forms::table_layout_panel with specified location, size, and name.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::table_layout_panel.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::table_layout_panel.
       /// @param name The name of the xtd::forms::table_layout_panel.
       /// @return New xtd::forms::table_layout_panel created.
-      static table_layout_panel create(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto create(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> table_layout_panel;
       /// @brief A factory to create an xtd::forms::table_layout_panel with specified parent.
       /// @param parent The parent that contains the new created xtd::forms::table_layout_panel.
       /// @return New xtd::forms::table_layout_panel created.
-      static table_layout_panel create(const control& parent);
+      [[nodiscard]] static auto create(const xtd::forms::control& parent) -> table_layout_panel;
       /// @brief A factory to create an xtd::forms::table_layout_panel with specified parent, and location.
       /// @param parent The parent that contains the new created xtd::forms::table_layout_panel.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::table_layout_panel.
       /// @return New xtd::forms::table_layout_panel created.
-      static table_layout_panel create(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto create(const xtd::forms::control& parent, const xtd::drawing::point& location) -> table_layout_panel;
       /// @brief A factory to create an xtd::forms::table_layout_panel with specified parent, location, and size.
       /// @param parent The parent that contains the new created xtd::forms::table_layout_panel.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::table_layout_panel.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::table_layout_panel.
       /// @return New xtd::forms::table_layout_panel created.
-      static table_layout_panel create(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto create(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> table_layout_panel;
       /// @brief A factory to create an xtd::forms::table_layout_panel with specified parent, location, size, and name.
       /// @param parent The parent that contains the new created xtd::forms::table_layout_panel.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::table_layout_panel.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::table_layout_panel.
       /// @param name The name of the xtd::forms::table_layout_panel.
       /// @return New xtd::forms::table_layout_panel created.
-      static table_layout_panel create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto create(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> table_layout_panel;
       /// @}
       
     protected:
       /// @name Protected Methods
       
       /// @{
-      void on_layout(const xtd::event_args& e) override;
+      auto on_layout(const xtd::event_args& e) -> void override;
       /// @}
     };
   }
