@@ -29,7 +29,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates the use of seven segment display control.
     /// @include seven_segment_display.cpp
-    class seven_segment_display : public control {
+    class seven_segment_display : public xtd::forms::control {
       struct data;
       
     public:
@@ -46,53 +46,53 @@ namespace xtd {
       /// @brief Gets background segment color.
       /// @return A xtd::drawing color that represent the background segment color.
       /// @remarks Do not confuse back_segment_color and back_color. Background segment color is the color when segment is off.
-      virtual drawing::color back_segment_color() const noexcept;
+      virtual auto back_segment_color() const noexcept -> xtd::drawing::color;
       /// @brief Sets background segment color.
       /// @param value A xtd::drawing color that represent the background segment color.
       /// @return Current seven_segment_display.
       /// @remarks Do not confuse back_segment_color and back_color. Background segment color is the color when segment is off.
-      virtual seven_segment_display& back_segment_color(const drawing::color& value);
+      virtual auto back_segment_color(const xtd::drawing::color& value) -> seven_segment_display&;
       
       /// @brief Gets the background segment opacity.
       /// @return A double-precision value between 0.0 and 1.0 that represent the background segment opacity.
-      virtual double back_segment_opacity() const noexcept;
+      virtual auto back_segment_opacity() const noexcept -> double;
       /// @brief Sets the background segment opacity.
       /// @param value A double-precision value between 0.0 and 1.0 that represent the background segment opacity.
       /// @exception xtd::argument_out_of_range_exception if value less than 0.0 or greater than 1.0.
       /// @return Current seven_segment_display.
-      virtual seven_segment_display& back_segment_opacity(double value);
+      virtual auto back_segment_opacity(double value) -> seven_segment_display&;
       
       /// @brief Gets a value indicate if background segments are shown.
       /// @return `true` if background segments are shown; otherwise `false`
-      virtual bool show_back_segment() const noexcept;
+      virtual auto show_back_segment() const noexcept -> bool;
       /// @brief Sets a value indicate if background segments are shown.
       /// @param value `true` if background segments are shown; otherwise `false`
       /// @return Current seven_segment_display.
-      virtual seven_segment_display& show_back_segment(bool value);
+      virtual auto show_back_segment(bool value) -> seven_segment_display&;
       
       /// @brief Gets segment style.
       /// @return One of xtd::forms::segment_style values. The default is xtd::forms::segment_style::standard.
-      virtual forms::segment_style segment_style() const noexcept;
+      virtual auto segment_style() const noexcept -> xtd::forms::segment_style;
       /// @brief Sets segment style.
       /// @param value One of xtd::forms::segment_style values. The default is xtd::forms::segment_style::standard.
       /// @return Current seven_segment_display.
-      virtual seven_segment_display& segment_style(forms::segment_style value);
+      virtual auto segment_style(xtd::forms::segment_style value) -> seven_segment_display&;
       
       /// @brief Gets thickness of segment.
       /// @return A int32 that represent the segment thickness.
-      virtual int32 thickness() const noexcept;
+      virtual auto thickness() const noexcept -> xtd::int32;
       /// @brief Sets thickness of segment.
       /// @param value A int32 that represent the segment thickness.
       /// @return Current seven_segment_display.
-      virtual seven_segment_display& thickness(int32 value);
+      virtual auto thickness(xtd::int32 value) -> seven_segment_display&;
       
       /// @brief Gets seven_segment_display value.
       /// @return A xtd::forms::segments combination that represent seven_segment_display.
-      virtual forms::segments value() const noexcept;
+      virtual auto value() const noexcept -> xtd::forms::segments;
       /// @brief Sets seven_segment_display value.
       /// @param value A xtd::forms::segments combination that represent seven_segment_display.
       /// @return Current seven_segment_display.
-      virtual seven_segment_display& value(forms::segments value);
+      virtual auto value(xtd::forms::segments value) -> seven_segment_display&;
       /// @}
       
       /// @name Public Methods
@@ -100,11 +100,11 @@ namespace xtd {
       /// @{
       /// @brief Gets if specified xtd::forms::segments combination is on.
       /// @return `true` if xtd::forms::segments combination is on; otherwise `false`.
-      virtual bool get_segments(forms::segments segment) const noexcept;
+      virtual auto get_segments(xtd::forms::segments segment) const noexcept -> bool;
       /// @brief Sets specified xtd::forms::segments combination to on.
       /// @param segment A xtd::forms::segments combination to set.
       /// @param on `true` to set to on; otherwise `false`.
-      virtual void set_segments(forms::segments segment, bool value);
+      virtual auto set_segments(xtd::forms::segments segment, bool value) -> void;
       /// @}
       
       /// @name Public Static Methods
@@ -112,62 +112,62 @@ namespace xtd {
       /// @{
       /// @brief A factory to create an xtd::forms::seven_segment_display.
       /// @return New xtd::forms::seven_segment_display created.
-      static seven_segment_display create();
+      [[nodiscard]] static auto create() -> seven_segment_display;
       /// @brief A factory to create an xtd::forms::seven_segment_display with specified location.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::seven_segment_display.
       /// @return New xtd::forms::seven_segment_display created.
-      static seven_segment_display create(const drawing::point& location);
+      [[nodiscard]] static auto create(const drawing::point& location) -> seven_segment_display;
       /// @brief A factory to create an xtd::forms::seven_segment_display with specified location, and size.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::seven_segment_display.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::seven_segment_display.
       /// @return New xtd::forms::seven_segment_display created.
-      static seven_segment_display create(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto create(const drawing::point& location, const drawing::size& size) -> seven_segment_display;
       /// @brief A factory to create an xtd::forms::seven_segment_display with specified location, size, and name.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::seven_segment_display.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::seven_segment_display.
       /// @param name The name of the xtd::forms::seven_segment_display.
       /// @return New xtd::forms::seven_segment_display created.
-      static seven_segment_display create(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto create(const drawing::point& location, const drawing::size& size, const xtd::string& name) -> seven_segment_display;
       /// @brief A factory to create an xtd::forms::seven_segment_display with specified segments.
       /// @param segments A dots_collection that represent all dots status.
       /// @return New xtd::forms::seven_segment_display created.
-      static seven_segment_display create(xtd::forms::segments segments);
+      [[nodiscard]] static auto create(xtd::forms::segments segments) -> seven_segment_display;
       /// @brief A factory to create an xtd::forms::seven_segment_display with specified segments, and location.
       /// @param segments A dots_collection that represent all dots status.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::seven_segment_display.
       /// @return New xtd::forms::seven_segment_display created.
-      static seven_segment_display create(xtd::forms::segments segments, const drawing::point& location);
+      [[nodiscard]] static auto create(xtd::forms::segments segments, const drawing::point& location) -> seven_segment_display;
       /// @brief A factory to create an xtd::forms::seven_segment_display with specified segments, location, and size.
       /// @param segments A dots_collection that represent all dots status.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::seven_segment_display.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::seven_segment_display.
       /// @return New xtd::forms::seven_segment_display created.
-      static seven_segment_display create(xtd::forms::segments segments, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto create(xtd::forms::segments segments, const drawing::point& location, const drawing::size& size) -> seven_segment_display;
       /// @brief A factory to create an xtd::forms::seven_segment_display with specified segments, location, size, and name.
       /// @param segments A dots_collection that represent all dots status.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::seven_segment_display.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::seven_segment_display.
       /// @param name The name of the xtd::forms::seven_segment_display.
       /// @return New xtd::forms::seven_segment_display created.
-      static seven_segment_display create(xtd::forms::segments segments, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto create(xtd::forms::segments segments, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> seven_segment_display;
       /// @brief A factory to create an xtd::forms::seven_segment_display with specified segments, and back_segment visibility.
       /// @param segments A dots_collection that represent all dots status.
       /// @param show_back_segment `true` if background segments are shown; otherwise `false`
       /// @return New xtd::forms::seven_segment_display created.
-      static seven_segment_display create(xtd::forms::segments segments, bool show_back_segment);
+      [[nodiscard]] static auto create(xtd::forms::segments segments, bool show_back_segment) -> seven_segment_display;
       /// @brief A factory to create an xtd::forms::seven_segment_display with specified segments, back_segment visibility, and location.
       /// @param segments A dots_collection that represent all dots status.
       /// @param show_back_segment `true` if background segments are shown; otherwise `false`
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::seven_segment_display.
       /// @return New xtd::forms::seven_segment_display created.
-      static seven_segment_display create(xtd::forms::segments segments, bool show_back_segment, const drawing::point& location);
+      [[nodiscard]] static auto create(xtd::forms::segments segments, bool show_back_segment, const drawing::point& location) -> seven_segment_display;
       /// @brief A factory to create an xtd::forms::seven_segment_display with specified segments, back_segment visibility, location, and size.
       /// @param segments A dots_collection that represent all dots status.
       /// @param show_back_segment `true` if background segments are shown; otherwise `false`
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::seven_segment_display.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::seven_segment_display.
       /// @return New xtd::forms::seven_segment_display created.
-      static seven_segment_display create(xtd::forms::segments segments, bool show_back_segment, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto create(xtd::forms::segments segments, bool show_back_segment, const drawing::point& location, const drawing::size& size) -> seven_segment_display;
       /// @brief A factory to create an xtd::forms::seven_segment_display with specified segments, back_segment visibility, location, size, and name.
       /// @param segments A dots_collection that represent all dots status.
       /// @param show_back_segment `true` if background segments are shown; otherwise `false`
@@ -175,47 +175,47 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::seven_segment_display.
       /// @param name The name of the xtd::forms::seven_segment_display.
       /// @return New xtd::forms::seven_segment_display created.
-      static seven_segment_display create(xtd::forms::segments segments, bool show_back_segment, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto create(xtd::forms::segments segments, bool show_back_segment, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> seven_segment_display;
       /// @brief A factory to create an xtd::forms::seven_segment_display with specified parent.
       /// @param parent The parent that contains the new created xtd::forms::seven_segment_display.
       /// @return New xtd::forms::seven_segment_display created.
-      static seven_segment_display create(const control& parent);
+      [[nodiscard]] static auto create(const control& parent) -> seven_segment_display;
       /// @brief A factory to create an xtd::forms::seven_segment_display with specified parent, and location.
       /// @param parent The parent that contains the new created xtd::forms::seven_segment_display.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::seven_segment_display.
       /// @return New xtd::forms::seven_segment_display created.
-      static seven_segment_display create(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto create(const control& parent, const drawing::point& location) -> seven_segment_display;
       /// @brief A factory to create an xtd::forms::seven_segment_display with specified parent, location, and size.
       /// @param parent The parent that contains the new created xtd::forms::seven_segment_display.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::seven_segment_display.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::seven_segment_display.
       /// @return New xtd::forms::seven_segment_display created.
-      static seven_segment_display create(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto create(const control& parent, const drawing::point& location, const drawing::size& size) -> seven_segment_display;
       /// @brief A factory to create an xtd::forms::seven_segment_display with specified parent, location, size, and name.
       /// @param parent The parent that contains the new created xtd::forms::seven_segment_display.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::seven_segment_display.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::seven_segment_display.
       /// @param name The name of the xtd::forms::seven_segment_display.
       /// @return New xtd::forms::seven_segment_display created.
-      static seven_segment_display create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> seven_segment_display;
       /// @brief A factory to create an xtd::forms::seven_segment_display with specified parent, segments.
       /// @param parent The parent that contains the new created xtd::forms::seven_segment_display.
       /// @param segments A xtd::forms::segments combination that represent seven_segment_display.
       /// @return New xtd::forms::seven_segment_display created.
-      static seven_segment_display create(const control& parent, xtd::forms::segments segments);
+      [[nodiscard]] static auto create(const control& parent, xtd::forms::segments segments) -> seven_segment_display;
       /// @brief A factory to create an xtd::forms::seven_segment_display with specified parent, segments, and location.
       /// @param parent The parent that contains the new created xtd::forms::seven_segment_display.
       /// @param segments A xtd::forms::segments combination that represent seven_segment_display.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::seven_segment_display.
       /// @return New xtd::forms::seven_segment_display created.
-      static seven_segment_display create(const control& parent, xtd::forms::segments segments, const drawing::point& location);
+      [[nodiscard]] static auto create(const control& parent, xtd::forms::segments segments, const drawing::point& location) -> seven_segment_display;
       /// @brief A factory to create an xtd::forms::seven_segment_display with specified parent, segments, location, and size.
       /// @param parent The parent that contains the new created xtd::forms::seven_segment_display.
       /// @param segments A xtd::forms::segments combination that represent seven_segment_display.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::seven_segment_display.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::seven_segment_display.
       /// @return New xtd::forms::seven_segment_display created.
-      static seven_segment_display create(const control& parent, xtd::forms::segments segments, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto create(const control& parent, xtd::forms::segments segments, const drawing::point& location, const drawing::size& size) -> seven_segment_display;
       /// @brief A factory to create an xtd::forms::seven_segment_display with specified parent, segments, location, size, and name.
       /// @param parent The parent that contains the new created xtd::forms::seven_segment_display.
       /// @param segments A xtd::forms::segments combination that represent seven_segment_display.
@@ -223,20 +223,20 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::seven_segment_display.
       /// @param name The name of the xtd::forms::seven_segment_display.
       /// @return New xtd::forms::seven_segment_display created.
-      static seven_segment_display create(const control& parent, xtd::forms::segments segments, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto create(const control& parent, xtd::forms::segments segments, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> seven_segment_display;
       /// @brief A factory to create an xtd::forms::seven_segment_display with specified parent, segments, and back_segment visibility.
       /// @param parent The parent that contains the new created xtd::forms::seven_segment_display.
       /// @param segments A xtd::forms::segments combination that represent seven_segment_display.
       /// @param show_back_segment `true` if background segments are shown; otherwise `false`
       /// @return New xtd::forms::seven_segment_display created.
-      static seven_segment_display create(const control& parent, xtd::forms::segments segments, bool show_back_segment);
+      [[nodiscard]] static auto create(const control& parent, xtd::forms::segments segments, bool show_back_segment) -> seven_segment_display;
       /// @brief A factory to create an xtd::forms::seven_segment_display with specified parent, segments, back_segment visibility, and location.
       /// @param parent The parent that contains the new created xtd::forms::seven_segment_display.
       /// @param segments A xtd::forms::segments combination that represent seven_segment_display.
       /// @param show_back_segment `true` if background segments are shown; otherwise `false`
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::seven_segment_display.
       /// @return New xtd::forms::seven_segment_display created.
-      static seven_segment_display create(const control& parent, xtd::forms::segments segments, bool show_back_segment, const drawing::point& location);
+      [[nodiscard]] static auto create(const control& parent, xtd::forms::segments segments, bool show_back_segment, const drawing::point& location) -> seven_segment_display;
       /// @brief A factory to create an xtd::forms::seven_segment_display with specified parent, segments, back_segment visibility, location, and size.
       /// @param parent The parent that contains the new created xtd::forms::seven_segment_display.
       /// @param segments A xtd::forms::segments combination that represent seven_segment_display.
@@ -244,7 +244,7 @@ namespace xtd {
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::seven_segment_display.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::seven_segment_display.
       /// @return New xtd::forms::seven_segment_display created.
-      static seven_segment_display create(const control& parent, xtd::forms::segments segments, bool show_back_segment, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto create(const control& parent, xtd::forms::segments segments, bool show_back_segment, const drawing::point& location, const drawing::size& size) -> seven_segment_display;
       /// @brief A factory to create an xtd::forms::seven_segment_display with specified parent, segments, back_segment visibility, location, size, and name.
       /// @param parent The parent that contains the new created xtd::forms::seven_segment_display.
       /// @param segments A xtd::forms::segments combination that represent seven_segment_display.
@@ -253,14 +253,14 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::seven_segment_display.
       /// @param name The name of the xtd::forms::seven_segment_display.
       /// @return New xtd::forms::seven_segment_display created.
-      static seven_segment_display create(const control& parent, xtd::forms::segments segments, bool show_back_segment, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto create(const control& parent, xtd::forms::segments segments, bool show_back_segment, const drawing::point& location, const drawing::size& size, const xtd::string& name) -> seven_segment_display;
       /// @}
       
     protected:
       /// @name Protected Properties
       
       /// @{
-      drawing::size default_size() const noexcept override;
+      [[nodiscard]] auto default_size() const noexcept -> xtd::drawing::size override;
       /// @}
       
       /// @name Protected Methods
@@ -268,68 +268,68 @@ namespace xtd {
       /// @{
       /// @brief Draw all background digit on specified graphics.
       /// @param graphics A xtd::drawing::graphics from on_paint method.
-      virtual void draw_back_digit(drawing::graphics& graphics);
+      virtual auto draw_back_digit(xtd::drawing::graphics& graphics) -> void;
       
       /// @brief Draw segment a on specified graphics with specified color.
       /// @param graphics A xtd::drawing::graphics from on_paint method.
       /// @param color A xtd::drawing::color used to draw segment.
-      virtual void draw_segment_a(drawing::graphics& graphics, const drawing::color& color);
+      virtual auto draw_segment_a(xtd::drawing::graphics& graphics, const xtd::drawing::color& color) -> void;
       
       /// @brief Draw segment b on specified graphics with specified color.
       /// @param graphics A xtd::drawing::graphics from on_paint method.
       /// @param color A xtd::drawing::color used to draw segment.
-      virtual void draw_segment_b(drawing::graphics& graphics, const drawing::color& color);
+      virtual auto draw_segment_b(xtd::drawing::graphics& graphics, const xtd::drawing::color& color) -> void;
       
       /// @brief Draw segment c on specified graphics with specified color.
       /// @param graphics A xtd::drawing::graphics from on_paint method.
       /// @param color A xtd::drawing::color used to draw segment.
-      virtual void draw_segment_c(drawing::graphics& graphics, const drawing::color& color);
+      virtual auto draw_segment_c(xtd::drawing::graphics& graphics, const xtd::drawing::color& color) -> void;
       
       /// @brief Draw segment d on specified graphics with specified color.
       /// @param graphics A xtd::drawing::graphics from on_paint method.
       /// @param color A xtd::drawing::color used to draw segment.
-      virtual void draw_segment_d(drawing::graphics& graphics, const drawing::color& color);
+      virtual auto draw_segment_d(xtd::drawing::graphics& graphics, const xtd::drawing::color& color) -> void;
       
       /// @brief Draw segment e on specified graphics with specified color.
       /// @param graphics A xtd::drawing::graphics from on_paint method.
       /// @param color A xtd::drawing::color used to draw segment.
-      virtual void draw_segment_e(drawing::graphics& graphics, const drawing::color& color);
+      virtual auto draw_segment_e(xtd::drawing::graphics& graphics, const xtd::drawing::color& color) -> void;
       
       /// @brief Draw segment f on specified graphics with specified color.
       /// @param graphics A xtd::drawing::graphics from on_paint method.
       /// @param color A xtd::drawing::color used to draw segment.
-      virtual void draw_segment_f(drawing::graphics& graphics, const drawing::color& color);
+      virtual auto draw_segment_f(xtd::drawing::graphics& graphics, const xtd::drawing::color& color) -> void;
       
       /// @brief Draw segment g on specified graphics with specified color.
       /// @param graphics A xtd::drawing::graphics from on_paint method.
       /// @param color A xtd::drawing::color used to draw segment.
-      virtual void draw_segment_g(drawing::graphics& graphics, const drawing::color& color);
+      virtual auto draw_segment_g(xtd::drawing::graphics& graphics, const xtd::drawing::color& color) -> void;
       
       /// @brief Draw segment dot point on specified graphics with specified color.
       /// @param graphics A xtd::drawing::graphics from on_paint method.
       /// @param color A xtd::drawing::color used to draw segment.
-      virtual void draw_dp(drawing::graphics& graphics, const drawing::color& color);
+      virtual auto draw_dp(xtd::drawing::graphics& graphics, const xtd::drawing::color& color) -> void;
       
       /// @brief Draw segment punctuation colon on specified graphics with specified color.
       /// @param graphics A xtd::drawing::graphics from on_paint method.
       /// @param color A xtd::drawing::color used to draw segment.
-      virtual void draw_pc(drawing::graphics& graphics, const drawing::color& color);
+      virtual auto draw_pc(xtd::drawing::graphics& graphics, const xtd::drawing::color& color) -> void;
       
-      void on_back_color_changed(const event_args& e) override;
+      auto on_back_color_changed(const xtd::event_args& e) -> void override;
       
-      void on_enabled_changed(const event_args& e) override;
+      auto on_enabled_changed(const xtd::event_args& e) -> void override;
       
-      void on_fore_color_changed(const event_args& e) override;
+      auto on_fore_color_changed(const xtd::event_args& e) -> void override;
       
-      void on_paint(paint_event_args& e) override;
+      auto on_paint(xtd::forms::paint_event_args& e) -> void override;
       
-      void on_parent_enabled_changed(const event_args& e) override;
+      auto on_parent_enabled_changed(const xtd::event_args& e) -> void override;
       
-      drawing::size measure_control() const noexcept override;
+      [[nodiscard]] auto measure_control() const noexcept -> xtd::drawing::size override;
       
-      void set_bounds_core(int32 x, int32 y, int32 width, int32 height, bounds_specified specified) override;
+      auto set_bounds_core(xtd::int32 x, xtd::int32 y, xtd::int32 width, xtd::int32 height, xtd::forms::bounds_specified specified) -> void override;
       
-      void set_client_size_core(int32 width, int32 height) override;
+      auto set_client_size_core(xtd::int32 width, xtd::int32 height) -> void override;
       /// @}
       
     private:
