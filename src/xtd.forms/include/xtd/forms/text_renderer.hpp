@@ -41,16 +41,16 @@ namespace xtd {
       /// @param text The xtd::string text to draw.
       /// @param data The xtd::forms::style_sheets::itext_model class wish contains informations about how to draw the the text.
       /// @param box xtd::forms::style_sheets::ibox_model class that contains the background color of the control.
-      static void draw_shadow_text(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, const xtd::string& text, const xtd::forms::style_sheets::itext_model& data, const xtd::forms::style_sheets::ibox_model& box);
+      static auto draw_shadow_text(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, const xtd::string& text, const xtd::forms::style_sheets::itext_model& data, const xtd::forms::style_sheets::ibox_model& box) -> void;
       /// @brief Draws text.
       /// @param graphics The xtd::drawing::graphics used to draw text.
       /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the text.
       /// @param text The xtd::string text to draw.
       /// @param data The xtd::forms::style_sheets::itext_model class wish contains informations about how to draw the the text.
-      static void draw_text(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, const xtd::string& text, const xtd::forms::style_sheets::itext_model& data);
+      static auto draw_text(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, const xtd::string& text, const xtd::forms::style_sheets::itext_model& data) -> void;
       
-      static void draw_shadow_text_and_links(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, const xtd::string& text, const xtd::forms::style_sheets::itext_model& data, const xtd::forms::style_sheets::ibox_model& box);
-      static void draw_text_and_links(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, const xtd::string& text, const xtd::forms::style_sheets::itext_model& data);
+      static auto draw_shadow_text_and_links(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, const xtd::string& text, const xtd::forms::style_sheets::itext_model& data, const xtd::forms::style_sheets::ibox_model& box) -> void;
+      static auto draw_text_and_links(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, const xtd::string& text, const xtd::forms::style_sheets::itext_model& data) -> void;
       /// @}
     };
   }
