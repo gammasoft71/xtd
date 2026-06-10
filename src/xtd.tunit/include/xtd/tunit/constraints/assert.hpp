@@ -20,7 +20,7 @@ namespace xtd {
   namespace tunit {
     /// @brief The constraints namespace contains the constraint-based assert model.
     namespace constraints {
-      inline auto assert() {return xtd::tunit::constraints::assert_value(constraints::assert_type::assert);}
+      [[nodiscard]] inline auto assert() {return xtd::tunit::constraints::assert_value(constraints::assert_type::assert);}
     }
   }
 }
