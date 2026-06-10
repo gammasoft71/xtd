@@ -30,7 +30,7 @@ namespace xtd {
       /// @{
       /// @brief Gets current class test.
       /// @return Current class test.
-      const xtd::tunit::test_class& test_class() const noexcept {return tc_;}
+      [[nodiscard]] auto test_class() const noexcept -> const xtd::tunit::test_class& {return tc_;}
       /// @}
       
     private:
