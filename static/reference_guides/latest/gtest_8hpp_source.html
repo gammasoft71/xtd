@@ -120,8 +120,8 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">namespace </span>testing {</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>  <span class="keywordtype">void</span> InitGoogleTest() {<a class="code hl_function" href="classxtd_1_1tunit_1_1settings.html#a86e820878670883f9fa02fe1c0a80075">xtd::tunit::settings::default_settings</a>().<a class="code hl_function" href="classxtd_1_1tunit_1_1settings.html#af17a5673cab59ee9434d7c1cfb7987aa">gtest_compatibility</a>(<span class="keyword">true</span>);}</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>  <span class="keywordtype">void</span> InitGoogleTest(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>* argv[]) {InitGoogleTest();}</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>  <span class="keyword">auto</span> InitGoogleTest() -&gt; <span class="keywordtype">void</span> {<a class="code hl_function" href="classxtd_1_1tunit_1_1settings.html#a53803131c3cbc0da78183ffb747a4856">xtd::tunit::settings::default_settings</a>().gtest_compatibility(<span class="keyword">true</span>);}</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>  <span class="keyword">auto</span> InitGoogleTest(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>* argv[]) -&gt; <span class="keywordtype">void</span> {InitGoogleTest();}</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>}</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#define ASSERT_EQ(val1, val2) xtd::tunit::assert::are_equal(val1, val2)</span></div>
@@ -147,8 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">  }; \</span></div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">  void __##class_name##method_name()</span></div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span></div>
-<div class="ttc" id="aclassxtd_1_1tunit_1_1settings_html_a86e820878670883f9fa02fe1c0a80075"><div class="ttname"><a href="classxtd_1_1tunit_1_1settings.html#a86e820878670883f9fa02fe1c0a80075">xtd::tunit::settings::default_settings</a></div><div class="ttdeci">static xtd::tunit::settings &amp; default_settings() noexcept</div><div class="ttdoc">Gets default settings instance.</div></div>
-<div class="ttc" id="aclassxtd_1_1tunit_1_1settings_html_af17a5673cab59ee9434d7c1cfb7987aa"><div class="ttname"><a href="classxtd_1_1tunit_1_1settings.html#af17a5673cab59ee9434d7c1cfb7987aa">xtd::tunit::settings::gtest_compatibility</a></div><div class="ttdeci">bool gtest_compatibility() const noexcept</div><div class="ttdoc">Gets google test comaptibility.</div></div>
+<div class="ttc" id="aclassxtd_1_1tunit_1_1settings_html_a53803131c3cbc0da78183ffb747a4856"><div class="ttname"><a href="classxtd_1_1tunit_1_1settings.html#a53803131c3cbc0da78183ffb747a4856">xtd::tunit::settings::default_settings</a></div><div class="ttdeci">static auto default_settings() noexcept -&gt; xtd::tunit::settings &amp;</div><div class="ttdoc">Gets default settings instance.</div></div>
 <div class="ttc" id="axtd_8tunit_8hpp_html"><div class="ttname"><a href="xtd_8tunit_8hpp.html">xtd.tunit.hpp</a></div><div class="ttdoc">Contains xtd.tunit library headers.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->

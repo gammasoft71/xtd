@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a> {</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  <span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd_1_1tunit.html">tunit</a> {</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd_1_1tunit_1_1constraints.html">constraints</a> {</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>      <span class="keyword">inline</span> <span class="keyword">auto</span> assert() {<span class="keywordflow">return</span> xtd::tunit::constraints::assert_value(constraints::assert_type::assert);}</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>      [[nodiscard]] <span class="keyword">inline</span> <span class="keyword">auto</span> assert() {<span class="keywordflow">return</span> xtd::tunit::constraints::assert_value(constraints::assert_type::assert);}</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    }</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  }</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>}</div>

@@ -141,15 +141,15 @@ Each method may be called without a message, with a simple text message or with 
 <div class="line">  <span class="comment">// The class test must be declared with test_class_ helper.</span></div>
 <div class="line">  <span class="keyword">class </span>test_class_(test) {</div>
 <div class="line">    <span class="keywordtype">void</span> <a class="code hl_define" href="group__tunit.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a>(test_case1) {</div>
-<div class="line">      <a class="code hl_function" href="#af5132d8107b34acf7b2d36abc765670a">directory_assert::exists</a>(<a class="code hl_function" href="classxtd_1_1io_1_1path.html#aa0c4b143e1d360dbecbbd78cf4623a1c">path::get_temp_path</a>());</div>
+<div class="line">      <a class="code hl_function" href="#aa463ee50944d28db6a76cbcd4768a16c">directory_assert::exists</a>(<a class="code hl_function" href="classxtd_1_1io_1_1path.html#aa0c4b143e1d360dbecbbd78cf4623a1c">path::get_temp_path</a>());</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordtype">void</span> <a class="code hl_define" href="group__tunit.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a>(test_case2) {</div>
-<div class="line">      <a class="code hl_function" href="#af5132d8107b34acf7b2d36abc765670a">directory_assert::exists</a>(<a class="code hl_function" href="classxtd_1_1io_1_1path.html#abe61d4c79aa4c48f1ab4fe2da72c1f66">path::combine</a>(<span class="stringliteral">&quot;unknown root folder&quot;</span>, <span class="stringliteral">&quot;unknown sub folder&quot;</span>, <span class="stringliteral">&quot;unknown xtd example folder&quot;</span>));</div>
+<div class="line">      <a class="code hl_function" href="#aa463ee50944d28db6a76cbcd4768a16c">directory_assert::exists</a>(<a class="code hl_function" href="classxtd_1_1io_1_1path.html#abe61d4c79aa4c48f1ab4fe2da72c1f66">path::combine</a>(<span class="stringliteral">&quot;unknown root folder&quot;</span>, <span class="stringliteral">&quot;unknown sub folder&quot;</span>, <span class="stringliteral">&quot;unknown xtd example folder&quot;</span>));</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordtype">void</span> <a class="code hl_define" href="group__tunit.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a>(test_case3) {</div>
-<div class="line">      <a class="code hl_function" href="#a01ee7fa57d39f11580179f2fa7d96193">directory_assert::are_equal</a>(<a class="code hl_class" href="classxtd_1_1io_1_1directory__info.html">directory_info</a> {<a class="code hl_function" href="classxtd_1_1environment.html#aecae02977991ca63077b48ad5b1228c2">environment::get_folder_path</a>(<a class="code hl_enumvalue" href="classxtd_1_1environment.html#a2fb2b59eded52f8745b88b44ae9e7057a769ff5ccce4e60dc31f9ce53fcc91042">environment::special_folder::my_music</a>)}, <a class="code hl_class" href="classxtd_1_1io_1_1directory__info.html">directory_info</a> {<a class="code hl_function" href="classxtd_1_1environment.html#aecae02977991ca63077b48ad5b1228c2">environment::get_folder_path</a>(<a class="code hl_enumvalue" href="classxtd_1_1environment.html#a2fb2b59eded52f8745b88b44ae9e7057af723731251d49accfe0bbc23c0b53183">environment::special_folder::my_videos</a>)});</div>
+<div class="line">      <a class="code hl_function" href="#a1a723072782b2cac247aff7bb6697164">directory_assert::are_equal</a>(<a class="code hl_class" href="classxtd_1_1io_1_1directory__info.html">directory_info</a> {<a class="code hl_function" href="classxtd_1_1environment.html#aecae02977991ca63077b48ad5b1228c2">environment::get_folder_path</a>(<a class="code hl_enumvalue" href="classxtd_1_1environment.html#a2fb2b59eded52f8745b88b44ae9e7057a769ff5ccce4e60dc31f9ce53fcc91042">environment::special_folder::my_music</a>)}, <a class="code hl_class" href="classxtd_1_1io_1_1directory__info.html">directory_info</a> {<a class="code hl_function" href="classxtd_1_1environment.html#aecae02977991ca63077b48ad5b1228c2">environment::get_folder_path</a>(<a class="code hl_enumvalue" href="classxtd_1_1environment.html#a2fb2b59eded52f8745b88b44ae9e7057af723731251d49accfe0bbc23c0b53183">environment::special_folder::my_videos</a>)});</div>
 <div class="line">    }</div>
 <div class="line">  };</div>
 <div class="line">}</div>
@@ -182,8 +182,8 @@ Each method may be called without a message, with a simple text message or with 
 <div class="ttc" id="aclassxtd_1_1io_1_1directory__info_html"><div class="ttname"><a href="classxtd_1_1io_1_1directory__info.html">xtd::io::directory_info</a></div><div class="ttdoc">Exposes instance methods for creating, moving, and enumerating through directories and subdirectories...</div><div class="ttdef"><b>Definition</b> directory_info.hpp:130</div></div>
 <div class="ttc" id="aclassxtd_1_1io_1_1path_html_aa0c4b143e1d360dbecbbd78cf4623a1c"><div class="ttname"><a href="classxtd_1_1io_1_1path.html#aa0c4b143e1d360dbecbbd78cf4623a1c">xtd::io::path::get_temp_path</a></div><div class="ttdeci">static auto get_temp_path() noexcept -&gt; xtd::string</div><div class="ttdoc">Returns the path of the current user&#39;s temporary folder.</div></div>
 <div class="ttc" id="aclassxtd_1_1io_1_1path_html_abe61d4c79aa4c48f1ab4fe2da72c1f66"><div class="ttname"><a href="classxtd_1_1io_1_1path.html#abe61d4c79aa4c48f1ab4fe2da72c1f66">xtd::io::path::combine</a></div><div class="ttdeci">static auto combine(const xtd::string &amp;path1, const xtd::string &amp;path2) -&gt; xtd::string</div><div class="ttdoc">Combines two path strings.</div></div>
-<div class="ttc" id="aclassxtd_1_1tunit_1_1directory__assert_html_a01ee7fa57d39f11580179f2fa7d96193"><div class="ttname"><a href="#a01ee7fa57d39f11580179f2fa7d96193">xtd::tunit::directory_assert::are_equal</a></div><div class="ttdeci">static void are_equal(const std::filesystem::directory_entry &amp;expected, const std::filesystem::directory_entry &amp;actual, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Asserts that two std::filesystem::directory_entry are equal.</div></div>
-<div class="ttc" id="aclassxtd_1_1tunit_1_1directory__assert_html_af5132d8107b34acf7b2d36abc765670a"><div class="ttname"><a href="#af5132d8107b34acf7b2d36abc765670a">xtd::tunit::directory_assert::exists</a></div><div class="ttdeci">static void exists(const std::filesystem::directory_entry &amp;directory, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Asserts that directory exists.</div></div>
+<div class="ttc" id="aclassxtd_1_1tunit_1_1directory__assert_html_a1a723072782b2cac247aff7bb6697164"><div class="ttname"><a href="#a1a723072782b2cac247aff7bb6697164">xtd::tunit::directory_assert::are_equal</a></div><div class="ttdeci">static auto are_equal(const std::filesystem::directory_entry &amp;expected, const std::filesystem::directory_entry &amp;actual, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current()) -&gt; void</div><div class="ttdoc">Asserts that two std::filesystem::directory_entry are equal.</div></div>
+<div class="ttc" id="aclassxtd_1_1tunit_1_1directory__assert_html_aa463ee50944d28db6a76cbcd4768a16c"><div class="ttname"><a href="#aa463ee50944d28db6a76cbcd4768a16c">xtd::tunit::directory_assert::exists</a></div><div class="ttdeci">static auto exists(const std::filesystem::directory_entry &amp;directory, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current()) -&gt; void</div><div class="ttdoc">Asserts that directory exists.</div></div>
 <div class="ttc" id="agroup__tunit_html_ga1fa6dc01b83d00ce9e92402c9694c6af"><div class="ttname"><a href="group__tunit.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a></div><div class="ttdeci">#define test_method_(method_name)</div><div class="ttdoc">Add test method to class test.</div><div class="ttdef"><b>Definition</b> test_method_attribute.hpp:72</div></div>
 <div class="ttc" id="anamespacextd_1_1io_html"><div class="ttname"><a href="namespacextd_1_1io.html">xtd::io</a></div><div class="ttdoc">The xtd::io namespace contains types that allow reading and writing to files and data streams,...</div><div class="ttdef"><b>Definition</b> binary_reader.hpp:17</div></div>
 <div class="ttc" id="anamespacextd_1_1tunit_html"><div class="ttname"><a href="namespacextd_1_1tunit.html">xtd::tunit</a></div><div class="ttdoc">The tunit namespace contains a unit test library.</div><div class="ttdef"><b>Definition</b> abort_error.hpp:10</div></div>
@@ -192,54 +192,54 @@ Each method may be called without a message, with a simple text message or with 
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Static Methods</h2></td></tr>
-<tr class="memitem:a01ee7fa57d39f11580179f2fa7d96193" id="r_a01ee7fa57d39f11580179f2fa7d96193"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a01ee7fa57d39f11580179f2fa7d96193">are_equal</a> (const std::filesystem::directory_entry &amp;expected, const std::filesystem::directory_entry &amp;actual, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>())</td></tr>
-<tr class="memdesc:a01ee7fa57d39f11580179f2fa7d96193"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asserts that two std::filesystem::directory_entry are equal.  <br /></td></tr>
-<tr class="memitem:a8daa7cf567092d486c56845e5ed3d215" id="r_a8daa7cf567092d486c56845e5ed3d215"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a8daa7cf567092d486c56845e5ed3d215">are_equal</a> (const std::filesystem::directory_entry &amp;expected, const std::filesystem::directory_entry &amp;actual, const std::string &amp;message, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>())</td></tr>
-<tr class="memdesc:a8daa7cf567092d486c56845e5ed3d215"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asserts that two std::filesystem::directory_entry are equal.  <br /></td></tr>
-<tr class="memitem:aaacdb768cc24bedc9bc69302816437be" id="r_aaacdb768cc24bedc9bc69302816437be"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#aaacdb768cc24bedc9bc69302816437be">are_equal</a> (const <a class="el" href="classxtd_1_1io_1_1directory__info.html">xtd::io::directory_info</a> &amp;expected, const <a class="el" href="classxtd_1_1io_1_1directory__info.html">xtd::io::directory_info</a> &amp;actual, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>())</td></tr>
-<tr class="memdesc:aaacdb768cc24bedc9bc69302816437be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asserts that two <a class="el" href="classxtd_1_1io_1_1directory__info.html" title="Exposes instance methods for creating, moving, and enumerating through directories and subdirectories...">xtd::io::directory_info</a> are equal.  <br /></td></tr>
-<tr class="memitem:a08ea330773b8eb79593aaa8cff395c34" id="r_a08ea330773b8eb79593aaa8cff395c34"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a08ea330773b8eb79593aaa8cff395c34">are_equal</a> (const <a class="el" href="classxtd_1_1io_1_1directory__info.html">xtd::io::directory_info</a> &amp;expected, const <a class="el" href="classxtd_1_1io_1_1directory__info.html">xtd::io::directory_info</a> &amp;actual, const std::string &amp;message, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>())</td></tr>
-<tr class="memdesc:a08ea330773b8eb79593aaa8cff395c34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asserts that two <a class="el" href="classxtd_1_1io_1_1directory__info.html" title="Exposes instance methods for creating, moving, and enumerating through directories and subdirectories...">xtd::io::directory_info</a> are equal.  <br /></td></tr>
-<tr class="memitem:afeba8d4de29a7ee22f0a9bb5d9323cf7" id="r_afeba8d4de29a7ee22f0a9bb5d9323cf7"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#afeba8d4de29a7ee22f0a9bb5d9323cf7">are_not_equal</a> (const std::filesystem::directory_entry &amp;expected, const std::filesystem::directory_entry &amp;actual, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>())</td></tr>
-<tr class="memdesc:afeba8d4de29a7ee22f0a9bb5d9323cf7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asserts that two std::filesystem::directory_entry are not equal.  <br /></td></tr>
-<tr class="memitem:a6bb83739e62f521ee5903a8e3fce29ff" id="r_a6bb83739e62f521ee5903a8e3fce29ff"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a6bb83739e62f521ee5903a8e3fce29ff">are_not_equal</a> (const std::filesystem::directory_entry &amp;expected, const std::filesystem::directory_entry &amp;actual, const std::string &amp;message, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>())</td></tr>
-<tr class="memdesc:a6bb83739e62f521ee5903a8e3fce29ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asserts that two std::filesystem::directory_entry are not equal.  <br /></td></tr>
-<tr class="memitem:aa3f02ec6106e50890b02c0f1ee831519" id="r_aa3f02ec6106e50890b02c0f1ee831519"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#aa3f02ec6106e50890b02c0f1ee831519">are_not_equal</a> (const <a class="el" href="classxtd_1_1io_1_1directory__info.html">xtd::io::directory_info</a> &amp;expected, const <a class="el" href="classxtd_1_1io_1_1directory__info.html">xtd::io::directory_info</a> &amp;actual, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>())</td></tr>
-<tr class="memdesc:aa3f02ec6106e50890b02c0f1ee831519"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asserts that two <a class="el" href="classxtd_1_1io_1_1directory__info.html" title="Exposes instance methods for creating, moving, and enumerating through directories and subdirectories...">xtd::io::directory_info</a> are not equal.  <br /></td></tr>
-<tr class="memitem:a091b145945a125f837576cd83d397de6" id="r_a091b145945a125f837576cd83d397de6"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a091b145945a125f837576cd83d397de6">are_not_equal</a> (const <a class="el" href="classxtd_1_1io_1_1directory__info.html">xtd::io::directory_info</a> &amp;expected, const <a class="el" href="classxtd_1_1io_1_1directory__info.html">xtd::io::directory_info</a> &amp;actual, const std::string &amp;message, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>())</td></tr>
-<tr class="memdesc:a091b145945a125f837576cd83d397de6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asserts that two <a class="el" href="classxtd_1_1io_1_1directory__info.html" title="Exposes instance methods for creating, moving, and enumerating through directories and subdirectories...">xtd::io::directory_info</a> are not equal.  <br /></td></tr>
-<tr class="memitem:a8d30cd1f8da3fbf1cae9f473b465fe2d" id="r_a8d30cd1f8da3fbf1cae9f473b465fe2d"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a8d30cd1f8da3fbf1cae9f473b465fe2d">does_not_exist</a> (const std::filesystem::directory_entry &amp;directory, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>())</td></tr>
-<tr class="memdesc:a8d30cd1f8da3fbf1cae9f473b465fe2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asserts that directory not exists.  <br /></td></tr>
-<tr class="memitem:a7b8e7c3a0b02b2b0e9b51ba5fa92f196" id="r_a7b8e7c3a0b02b2b0e9b51ba5fa92f196"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a7b8e7c3a0b02b2b0e9b51ba5fa92f196">does_not_exist</a> (const std::filesystem::directory_entry &amp;directory, const std::string &amp;message, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>())</td></tr>
-<tr class="memdesc:a7b8e7c3a0b02b2b0e9b51ba5fa92f196"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asserts that directory not exists.  <br /></td></tr>
-<tr class="memitem:afde7f4c714004dea692d5426756ac93a" id="r_afde7f4c714004dea692d5426756ac93a"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#afde7f4c714004dea692d5426756ac93a">does_not_exist</a> (const <a class="el" href="classxtd_1_1io_1_1directory__info.html">xtd::io::directory_info</a> &amp;directory, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>())</td></tr>
-<tr class="memdesc:afde7f4c714004dea692d5426756ac93a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asserts that directory not exists.  <br /></td></tr>
-<tr class="memitem:acf48e0d44f1cab17333bb49270c88b45" id="r_acf48e0d44f1cab17333bb49270c88b45"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#acf48e0d44f1cab17333bb49270c88b45">does_not_exist</a> (const <a class="el" href="classxtd_1_1io_1_1directory__info.html">xtd::io::directory_info</a> &amp;directory, const std::string &amp;message, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>())</td></tr>
-<tr class="memdesc:acf48e0d44f1cab17333bb49270c88b45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asserts that directory not exists.  <br /></td></tr>
-<tr class="memitem:a3f03e05f7b7e526a25dc4b03fa65f0da" id="r_a3f03e05f7b7e526a25dc4b03fa65f0da"><td class="memTemplParams" colspan="2">template&lt;typename char_t&gt; </td></tr>
-<tr class="memitem:a3f03e05f7b7e526a25dc4b03fa65f0da template"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a3f03e05f7b7e526a25dc4b03fa65f0da">does_not_exist</a> (const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;directory, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>())</td></tr>
-<tr class="memdesc:a3f03e05f7b7e526a25dc4b03fa65f0da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asserts that directory not exists.  <br /></td></tr>
-<tr class="memitem:a1a5a5e4fbd6d4abc8ce0b9c4659d861d" id="r_a1a5a5e4fbd6d4abc8ce0b9c4659d861d"><td class="memTemplParams" colspan="2">template&lt;typename char_t&gt; </td></tr>
-<tr class="memitem:a1a5a5e4fbd6d4abc8ce0b9c4659d861d template"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a1a5a5e4fbd6d4abc8ce0b9c4659d861d">does_not_exist</a> (const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;directory, const std::string &amp;message, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>())</td></tr>
-<tr class="memdesc:a1a5a5e4fbd6d4abc8ce0b9c4659d861d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asserts that directory not exists.  <br /></td></tr>
-<tr class="memitem:af5132d8107b34acf7b2d36abc765670a" id="r_af5132d8107b34acf7b2d36abc765670a"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#af5132d8107b34acf7b2d36abc765670a">exists</a> (const std::filesystem::directory_entry &amp;directory, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>())</td></tr>
-<tr class="memdesc:af5132d8107b34acf7b2d36abc765670a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asserts that directory exists.  <br /></td></tr>
-<tr class="memitem:a72495e76d815247dc7833f673597430c" id="r_a72495e76d815247dc7833f673597430c"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a72495e76d815247dc7833f673597430c">exists</a> (const std::filesystem::directory_entry &amp;directory, const std::string &amp;message, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>())</td></tr>
-<tr class="memdesc:a72495e76d815247dc7833f673597430c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asserts that directory exists.  <br /></td></tr>
-<tr class="memitem:a33d28b208b5efb1ffe3320eb6272eb20" id="r_a33d28b208b5efb1ffe3320eb6272eb20"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a33d28b208b5efb1ffe3320eb6272eb20">exists</a> (const <a class="el" href="classxtd_1_1io_1_1directory__info.html">xtd::io::directory_info</a> &amp;directory, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>())</td></tr>
-<tr class="memdesc:a33d28b208b5efb1ffe3320eb6272eb20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asserts that directory exists.  <br /></td></tr>
-<tr class="memitem:a96dbd07f57ef15ada83055bf87d0cd03" id="r_a96dbd07f57ef15ada83055bf87d0cd03"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a96dbd07f57ef15ada83055bf87d0cd03">exists</a> (const <a class="el" href="classxtd_1_1io_1_1directory__info.html">xtd::io::directory_info</a> &amp;directory, const std::string &amp;message, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>())</td></tr>
-<tr class="memdesc:a96dbd07f57ef15ada83055bf87d0cd03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asserts that directory exists.  <br /></td></tr>
-<tr class="memitem:a701443bbc84446ab5e2b43fbe3db8eec" id="r_a701443bbc84446ab5e2b43fbe3db8eec"><td class="memTemplParams" colspan="2">template&lt;typename char_t&gt; </td></tr>
-<tr class="memitem:a701443bbc84446ab5e2b43fbe3db8eec template"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a701443bbc84446ab5e2b43fbe3db8eec">exists</a> (const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;directory, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>())</td></tr>
-<tr class="memdesc:a701443bbc84446ab5e2b43fbe3db8eec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asserts that directory exists.  <br /></td></tr>
-<tr class="memitem:a421e006143973c9699e3c2607c3d6a6d" id="r_a421e006143973c9699e3c2607c3d6a6d"><td class="memTemplParams" colspan="2">template&lt;typename char_t&gt; </td></tr>
-<tr class="memitem:a421e006143973c9699e3c2607c3d6a6d template"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a421e006143973c9699e3c2607c3d6a6d">exists</a> (const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;directory, const std::string &amp;message, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>())</td></tr>
-<tr class="memdesc:a421e006143973c9699e3c2607c3d6a6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asserts that directory exists.  <br /></td></tr>
+<tr class="memitem:a1a723072782b2cac247aff7bb6697164" id="r_a1a723072782b2cac247aff7bb6697164"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a1a723072782b2cac247aff7bb6697164">are_equal</a> (const std::filesystem::directory_entry &amp;expected, const std::filesystem::directory_entry &amp;actual, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()) -&gt; void</td></tr>
+<tr class="memdesc:a1a723072782b2cac247aff7bb6697164"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asserts that two std::filesystem::directory_entry are equal.  <br /></td></tr>
+<tr class="memitem:ac528a81f6fbc60eb98dc97f699345757" id="r_ac528a81f6fbc60eb98dc97f699345757"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ac528a81f6fbc60eb98dc97f699345757">are_equal</a> (const std::filesystem::directory_entry &amp;expected, const std::filesystem::directory_entry &amp;actual, const std::string &amp;message, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()) -&gt; void</td></tr>
+<tr class="memdesc:ac528a81f6fbc60eb98dc97f699345757"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asserts that two std::filesystem::directory_entry are equal.  <br /></td></tr>
+<tr class="memitem:a023b54b0daa581a0655b0536461ae257" id="r_a023b54b0daa581a0655b0536461ae257"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a023b54b0daa581a0655b0536461ae257">are_equal</a> (const <a class="el" href="classxtd_1_1io_1_1directory__info.html">xtd::io::directory_info</a> &amp;expected, const <a class="el" href="classxtd_1_1io_1_1directory__info.html">xtd::io::directory_info</a> &amp;actual, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()) -&gt; void</td></tr>
+<tr class="memdesc:a023b54b0daa581a0655b0536461ae257"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asserts that two <a class="el" href="classxtd_1_1io_1_1directory__info.html" title="Exposes instance methods for creating, moving, and enumerating through directories and subdirectories...">xtd::io::directory_info</a> are equal.  <br /></td></tr>
+<tr class="memitem:ace512ffc02c93be50fa83c32e1dc2340" id="r_ace512ffc02c93be50fa83c32e1dc2340"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ace512ffc02c93be50fa83c32e1dc2340">are_equal</a> (const <a class="el" href="classxtd_1_1io_1_1directory__info.html">xtd::io::directory_info</a> &amp;expected, const <a class="el" href="classxtd_1_1io_1_1directory__info.html">xtd::io::directory_info</a> &amp;actual, const std::string &amp;message, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()) -&gt; void</td></tr>
+<tr class="memdesc:ace512ffc02c93be50fa83c32e1dc2340"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asserts that two <a class="el" href="classxtd_1_1io_1_1directory__info.html" title="Exposes instance methods for creating, moving, and enumerating through directories and subdirectories...">xtd::io::directory_info</a> are equal.  <br /></td></tr>
+<tr class="memitem:aa96dd2715c47522cd121d597ff494c98" id="r_aa96dd2715c47522cd121d597ff494c98"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aa96dd2715c47522cd121d597ff494c98">are_not_equal</a> (const std::filesystem::directory_entry &amp;expected, const std::filesystem::directory_entry &amp;actual, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()) -&gt; void</td></tr>
+<tr class="memdesc:aa96dd2715c47522cd121d597ff494c98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asserts that two std::filesystem::directory_entry are not equal.  <br /></td></tr>
+<tr class="memitem:a8aa48badead2ca361fd8ac586a77df2b" id="r_a8aa48badead2ca361fd8ac586a77df2b"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a8aa48badead2ca361fd8ac586a77df2b">are_not_equal</a> (const std::filesystem::directory_entry &amp;expected, const std::filesystem::directory_entry &amp;actual, const std::string &amp;message, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()) -&gt; void</td></tr>
+<tr class="memdesc:a8aa48badead2ca361fd8ac586a77df2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asserts that two std::filesystem::directory_entry are not equal.  <br /></td></tr>
+<tr class="memitem:af28d13aa89840276b32dac63d4ed7433" id="r_af28d13aa89840276b32dac63d4ed7433"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#af28d13aa89840276b32dac63d4ed7433">are_not_equal</a> (const <a class="el" href="classxtd_1_1io_1_1directory__info.html">xtd::io::directory_info</a> &amp;expected, const <a class="el" href="classxtd_1_1io_1_1directory__info.html">xtd::io::directory_info</a> &amp;actual, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()) -&gt; void</td></tr>
+<tr class="memdesc:af28d13aa89840276b32dac63d4ed7433"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asserts that two <a class="el" href="classxtd_1_1io_1_1directory__info.html" title="Exposes instance methods for creating, moving, and enumerating through directories and subdirectories...">xtd::io::directory_info</a> are not equal.  <br /></td></tr>
+<tr class="memitem:a9e19357525372211637527f2b4a53f01" id="r_a9e19357525372211637527f2b4a53f01"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a9e19357525372211637527f2b4a53f01">are_not_equal</a> (const <a class="el" href="classxtd_1_1io_1_1directory__info.html">xtd::io::directory_info</a> &amp;expected, const <a class="el" href="classxtd_1_1io_1_1directory__info.html">xtd::io::directory_info</a> &amp;actual, const std::string &amp;message, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()) -&gt; void</td></tr>
+<tr class="memdesc:a9e19357525372211637527f2b4a53f01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asserts that two <a class="el" href="classxtd_1_1io_1_1directory__info.html" title="Exposes instance methods for creating, moving, and enumerating through directories and subdirectories...">xtd::io::directory_info</a> are not equal.  <br /></td></tr>
+<tr class="memitem:ab87f24ce8bc367a943dd946c6e2e30fb" id="r_ab87f24ce8bc367a943dd946c6e2e30fb"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ab87f24ce8bc367a943dd946c6e2e30fb">does_not_exist</a> (const std::filesystem::directory_entry &amp;directory, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()) -&gt; void</td></tr>
+<tr class="memdesc:ab87f24ce8bc367a943dd946c6e2e30fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asserts that directory not exists.  <br /></td></tr>
+<tr class="memitem:aa0e027649426c3d00a0b633b0da95a2d" id="r_aa0e027649426c3d00a0b633b0da95a2d"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aa0e027649426c3d00a0b633b0da95a2d">does_not_exist</a> (const std::filesystem::directory_entry &amp;directory, const std::string &amp;message, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()) -&gt; void</td></tr>
+<tr class="memdesc:aa0e027649426c3d00a0b633b0da95a2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asserts that directory not exists.  <br /></td></tr>
+<tr class="memitem:a98e96f23fafe09a375bb4c37654240ca" id="r_a98e96f23fafe09a375bb4c37654240ca"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a98e96f23fafe09a375bb4c37654240ca">does_not_exist</a> (const <a class="el" href="classxtd_1_1io_1_1directory__info.html">xtd::io::directory_info</a> &amp;directory, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()) -&gt; void</td></tr>
+<tr class="memdesc:a98e96f23fafe09a375bb4c37654240ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asserts that directory not exists.  <br /></td></tr>
+<tr class="memitem:ac46d531814eed7b3f84464186ac9a6ff" id="r_ac46d531814eed7b3f84464186ac9a6ff"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ac46d531814eed7b3f84464186ac9a6ff">does_not_exist</a> (const <a class="el" href="classxtd_1_1io_1_1directory__info.html">xtd::io::directory_info</a> &amp;directory, const std::string &amp;message, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()) -&gt; void</td></tr>
+<tr class="memdesc:ac46d531814eed7b3f84464186ac9a6ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asserts that directory not exists.  <br /></td></tr>
+<tr class="memitem:a42de0fea5847f3e1f6d2c39b635e124a" id="r_a42de0fea5847f3e1f6d2c39b635e124a"><td class="memTemplParams" colspan="2">template&lt;typename char_t&gt; </td></tr>
+<tr class="memitem:a42de0fea5847f3e1f6d2c39b635e124a template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a42de0fea5847f3e1f6d2c39b635e124a">does_not_exist</a> (const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;directory, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()) -&gt; void</td></tr>
+<tr class="memdesc:a42de0fea5847f3e1f6d2c39b635e124a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asserts that directory not exists.  <br /></td></tr>
+<tr class="memitem:a44c1164a012998ded0c86a9761722570" id="r_a44c1164a012998ded0c86a9761722570"><td class="memTemplParams" colspan="2">template&lt;typename char_t&gt; </td></tr>
+<tr class="memitem:a44c1164a012998ded0c86a9761722570 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a44c1164a012998ded0c86a9761722570">does_not_exist</a> (const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;directory, const std::string &amp;message, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()) -&gt; void</td></tr>
+<tr class="memdesc:a44c1164a012998ded0c86a9761722570"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asserts that directory not exists.  <br /></td></tr>
+<tr class="memitem:aa463ee50944d28db6a76cbcd4768a16c" id="r_aa463ee50944d28db6a76cbcd4768a16c"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aa463ee50944d28db6a76cbcd4768a16c">exists</a> (const std::filesystem::directory_entry &amp;directory, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()) -&gt; void</td></tr>
+<tr class="memdesc:aa463ee50944d28db6a76cbcd4768a16c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asserts that directory exists.  <br /></td></tr>
+<tr class="memitem:aeb20ada66edccbe3dd0ec6dee7cb4308" id="r_aeb20ada66edccbe3dd0ec6dee7cb4308"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aeb20ada66edccbe3dd0ec6dee7cb4308">exists</a> (const std::filesystem::directory_entry &amp;directory, const std::string &amp;message, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()) -&gt; void</td></tr>
+<tr class="memdesc:aeb20ada66edccbe3dd0ec6dee7cb4308"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asserts that directory exists.  <br /></td></tr>
+<tr class="memitem:acc84a7cf33518b16a3f7bc24c99e5413" id="r_acc84a7cf33518b16a3f7bc24c99e5413"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#acc84a7cf33518b16a3f7bc24c99e5413">exists</a> (const <a class="el" href="classxtd_1_1io_1_1directory__info.html">xtd::io::directory_info</a> &amp;directory, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()) -&gt; void</td></tr>
+<tr class="memdesc:acc84a7cf33518b16a3f7bc24c99e5413"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asserts that directory exists.  <br /></td></tr>
+<tr class="memitem:a238a86ccd9ccddd00c3a2bb0516ec6d0" id="r_a238a86ccd9ccddd00c3a2bb0516ec6d0"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a238a86ccd9ccddd00c3a2bb0516ec6d0">exists</a> (const <a class="el" href="classxtd_1_1io_1_1directory__info.html">xtd::io::directory_info</a> &amp;directory, const std::string &amp;message, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()) -&gt; void</td></tr>
+<tr class="memdesc:a238a86ccd9ccddd00c3a2bb0516ec6d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asserts that directory exists.  <br /></td></tr>
+<tr class="memitem:a000e4cdf1983f56eab1f8c9c7a67bed4" id="r_a000e4cdf1983f56eab1f8c9c7a67bed4"><td class="memTemplParams" colspan="2">template&lt;typename char_t&gt; </td></tr>
+<tr class="memitem:a000e4cdf1983f56eab1f8c9c7a67bed4 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a000e4cdf1983f56eab1f8c9c7a67bed4">exists</a> (const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;directory, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()) -&gt; void</td></tr>
+<tr class="memdesc:a000e4cdf1983f56eab1f8c9c7a67bed4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asserts that directory exists.  <br /></td></tr>
+<tr class="memitem:aae5342a0096c3ae2dc01533e119ae7fe" id="r_aae5342a0096c3ae2dc01533e119ae7fe"><td class="memTemplParams" colspan="2">template&lt;typename char_t&gt; </td></tr>
+<tr class="memitem:aae5342a0096c3ae2dc01533e119ae7fe template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aae5342a0096c3ae2dc01533e119ae7fe">exists</a> (const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;directory, const std::string &amp;message, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()) -&gt; void</td></tr>
+<tr class="memdesc:aae5342a0096c3ae2dc01533e119ae7fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asserts that directory exists.  <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a01ee7fa57d39f11580179f2fa7d96193" name="a01ee7fa57d39f11580179f2fa7d96193"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a01ee7fa57d39f11580179f2fa7d96193">&#9670;&#160;</a></span>are_equal() <span class="overload">[1/4]</span></h2>
+<a id="a1a723072782b2cac247aff7bb6697164" name="a1a723072782b2cac247aff7bb6697164"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a723072782b2cac247aff7bb6697164">&#9670;&#160;</a></span>are_equal() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -248,7 +248,7 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::tunit::directory_assert::are_equal </td>
+          <td class="memname">auto xtd::tunit::directory_assert::are_equal </td>
           <td>(</td>
           <td class="paramtype">const std::filesystem::directory_entry &amp;</td>          <td class="paramname"><span class="paramname"><em>expected</em></span>, </td>
         </tr>
@@ -260,7 +260,7 @@ Public Static Methods</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;) -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -288,8 +288,8 @@ Public Static Methods</h2></td></tr>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line">std::filesystem::directory_entry <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>(std::filesystem::path(<span class="stringliteral">&quot;.&quot;</span>));</div>
 <div class="line">std::filesystem::directory_entry <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ab25b0651e4b6e887e5194135d3692631">d2</a>(std::filesystem::path(<span class="stringliteral">&quot;.&quot;</span>));</div>
 <div class="line">std::filesystem::directory_entry <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae53125275854402400f74fd6ab3f7659">d3</a>(std::filesystem::path(<span class="stringliteral">&quot;..&quot;</span>));</div>
-<div class="line"><a class="code hl_function" href="#a01ee7fa57d39f11580179f2fa7d96193">xtd::tunit::directory_assert::are_equal</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ab25b0651e4b6e887e5194135d3692631">d2</a>); <span class="comment">// test ok.</span></div>
-<div class="line"><a class="code hl_function" href="#a01ee7fa57d39f11580179f2fa7d96193">xtd::tunit::directory_assert::are_equal</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae53125275854402400f74fd6ab3f7659">d3</a>); <span class="comment">// test throws an assert_error exception.</span></div>
+<div class="line"><a class="code hl_function" href="#a1a723072782b2cac247aff7bb6697164">xtd::tunit::directory_assert::are_equal</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ab25b0651e4b6e887e5194135d3692631">d2</a>); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_function" href="#a1a723072782b2cac247aff7bb6697164">xtd::tunit::directory_assert::are_equal</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae53125275854402400f74fd6ab3f7659">d3</a>); <span class="comment">// test throws an assert_error exception.</span></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">xtd::console_key::d1</a></div><div class="ttdeci">@ d1</div><div class="ttdoc">The 1 key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:70</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2ab25b0651e4b6e887e5194135d3692631"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ab25b0651e4b6e887e5194135d3692631">xtd::console_key::d2</a></div><div class="ttdeci">@ d2</div><div class="ttdoc">The 2 key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:72</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2ae53125275854402400f74fd6ab3f7659"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae53125275854402400f74fd6ab3f7659">xtd::console_key::d3</a></div><div class="ttdeci">@ d3</div><div class="ttdoc">The 3 key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:74</div></div>
@@ -299,8 +299,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="a8daa7cf567092d486c56845e5ed3d215" name="a8daa7cf567092d486c56845e5ed3d215"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8daa7cf567092d486c56845e5ed3d215">&#9670;&#160;</a></span>are_equal() <span class="overload">[2/4]</span></h2>
+<a id="ac528a81f6fbc60eb98dc97f699345757" name="ac528a81f6fbc60eb98dc97f699345757"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac528a81f6fbc60eb98dc97f699345757">&#9670;&#160;</a></span>are_equal() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -309,7 +309,7 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::tunit::directory_assert::are_equal </td>
+          <td class="memname">auto xtd::tunit::directory_assert::are_equal </td>
           <td>(</td>
           <td class="paramtype">const std::filesystem::directory_entry &amp;</td>          <td class="paramname"><span class="paramname"><em>expected</em></span>, </td>
         </tr>
@@ -326,7 +326,7 @@ Public Static Methods</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;) -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -355,14 +355,14 @@ Public Static Methods</h2></td></tr>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line">std::filesystem::directory_entry <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>(std::filesystem::path(<span class="stringliteral">&quot;.&quot;</span>));</div>
 <div class="line">std::filesystem::directory_entry <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ab25b0651e4b6e887e5194135d3692631">d2</a>(std::filesystem::path(<span class="stringliteral">&quot;.&quot;</span>));</div>
 <div class="line">std::filesystem::directory_entry <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae53125275854402400f74fd6ab3f7659">d3</a>(std::filesystem::path(<span class="stringliteral">&quot;..&quot;</span>));</div>
-<div class="line"><a class="code hl_function" href="#a01ee7fa57d39f11580179f2fa7d96193">xtd::tunit::directory_assert::are_equal</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ab25b0651e4b6e887e5194135d3692631">d2</a>, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
-<div class="line"><a class="code hl_function" href="#a01ee7fa57d39f11580179f2fa7d96193">xtd::tunit::directory_assert::are_equal</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae53125275854402400f74fd6ab3f7659">d3</a>, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test throws an assert_error exception.</span></div>
+<div class="line"><a class="code hl_function" href="#a1a723072782b2cac247aff7bb6697164">xtd::tunit::directory_assert::are_equal</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ab25b0651e4b6e887e5194135d3692631">d2</a>, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_function" href="#a1a723072782b2cac247aff7bb6697164">xtd::tunit::directory_assert::are_equal</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae53125275854402400f74fd6ab3f7659">d3</a>, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test throws an assert_error exception.</span></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
-<a id="aaacdb768cc24bedc9bc69302816437be" name="aaacdb768cc24bedc9bc69302816437be"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaacdb768cc24bedc9bc69302816437be">&#9670;&#160;</a></span>are_equal() <span class="overload">[3/4]</span></h2>
+<a id="a023b54b0daa581a0655b0536461ae257" name="a023b54b0daa581a0655b0536461ae257"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a023b54b0daa581a0655b0536461ae257">&#9670;&#160;</a></span>are_equal() <span class="overload">[3/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -371,7 +371,7 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::tunit::directory_assert::are_equal </td>
+          <td class="memname">auto xtd::tunit::directory_assert::are_equal </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1io_1_1directory__info.html">xtd::io::directory_info</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>expected</em></span>, </td>
         </tr>
@@ -383,7 +383,7 @@ Public Static Methods</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;) -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -411,15 +411,15 @@ Public Static Methods</h2></td></tr>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_class" href="classxtd_1_1io_1_1directory__info.html">xtd::io::directory_info</a> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>(<span class="stringliteral">&quot;.&quot;</span>);</div>
 <div class="line"><a class="code hl_class" href="classxtd_1_1io_1_1directory__info.html">xtd::io::directory_info</a> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ab25b0651e4b6e887e5194135d3692631">d2</a>(<span class="stringliteral">&quot;.&quot;</span>)</div>
 <div class="line"><a class="code hl_namespace" href="namespacextd.html">xtd</a>::<a class="code hl_namespace" href="namespacextd_1_1io.html">io</a>::directory_info <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae53125275854402400f74fd6ab3f7659">d3</a>(<span class="stringliteral">&quot;..&quot;</span>)</div>
-<div class="line"><a class="code hl_namespace" href="namespacextd.html">xtd</a>::<a class="code hl_namespace" href="namespacextd_1_1tunit.html">tunit</a>::<a class="code hl_class" href="classxtd_1_1tunit_1_1directory__assert.html">directory_assert</a>::<a class="code hl_function" href="#a01ee7fa57d39f11580179f2fa7d96193">are_equal</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ab25b0651e4b6e887e5194135d3692631">d2</a>); <span class="comment">// test ok.</span></div>
-<div class="line"><a class="code hl_namespace" href="namespacextd.html">xtd</a>::<a class="code hl_namespace" href="namespacextd_1_1tunit.html">tunit</a>::<a class="code hl_class" href="classxtd_1_1tunit_1_1directory__assert.html">directory_assert</a>::<a class="code hl_function" href="#a01ee7fa57d39f11580179f2fa7d96193">are_equal</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae53125275854402400f74fd6ab3f7659">d3</a>); <span class="comment">// test throws an assert_error exception.</span></div>
+<div class="line"><a class="code hl_namespace" href="namespacextd.html">xtd</a>::<a class="code hl_namespace" href="namespacextd_1_1tunit.html">tunit</a>::<a class="code hl_class" href="classxtd_1_1tunit_1_1directory__assert.html">directory_assert</a>::<a class="code hl_function" href="#a1a723072782b2cac247aff7bb6697164">are_equal</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ab25b0651e4b6e887e5194135d3692631">d2</a>); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_namespace" href="namespacextd.html">xtd</a>::<a class="code hl_namespace" href="namespacextd_1_1tunit.html">tunit</a>::<a class="code hl_class" href="classxtd_1_1tunit_1_1directory__assert.html">directory_assert</a>::<a class="code hl_function" href="#a1a723072782b2cac247aff7bb6697164">are_equal</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae53125275854402400f74fd6ab3f7659">d3</a>); <span class="comment">// test throws an assert_error exception.</span></div>
 <div class="ttc" id="aclassxtd_1_1tunit_1_1directory__assert_html"><div class="ttname"><a href="classxtd_1_1tunit_1_1directory__assert.html">xtd::tunit::directory_assert</a></div><div class="ttdoc">The directory_assert class contains a collection of static methods that implement the most directory ...</div><div class="ttdef"><b>Definition</b> directory_assert.hpp:29</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
-<a id="a08ea330773b8eb79593aaa8cff395c34" name="a08ea330773b8eb79593aaa8cff395c34"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a08ea330773b8eb79593aaa8cff395c34">&#9670;&#160;</a></span>are_equal() <span class="overload">[4/4]</span></h2>
+<a id="ace512ffc02c93be50fa83c32e1dc2340" name="ace512ffc02c93be50fa83c32e1dc2340"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace512ffc02c93be50fa83c32e1dc2340">&#9670;&#160;</a></span>are_equal() <span class="overload">[4/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -428,7 +428,7 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::tunit::directory_assert::are_equal </td>
+          <td class="memname">auto xtd::tunit::directory_assert::are_equal </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1io_1_1directory__info.html">xtd::io::directory_info</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>expected</em></span>, </td>
         </tr>
@@ -445,7 +445,7 @@ Public Static Methods</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;) -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -474,14 +474,14 @@ Public Static Methods</h2></td></tr>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_class" href="classxtd_1_1io_1_1directory__info.html">xtd::io::directory_info</a> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>(<span class="stringliteral">&quot;.&quot;</span>);</div>
 <div class="line"><a class="code hl_class" href="classxtd_1_1io_1_1directory__info.html">xtd::io::directory_info</a> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ab25b0651e4b6e887e5194135d3692631">d2</a>(<span class="stringliteral">&quot;.&quot;</span>)</div>
 <div class="line"><a class="code hl_namespace" href="namespacextd.html">xtd</a>::<a class="code hl_namespace" href="namespacextd_1_1io.html">io</a>::directory_info <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae53125275854402400f74fd6ab3f7659">d3</a>(<span class="stringliteral">&quot;..&quot;</span>)</div>
-<div class="line"><a class="code hl_namespace" href="namespacextd.html">xtd</a>::<a class="code hl_namespace" href="namespacextd_1_1tunit.html">tunit</a>::<a class="code hl_class" href="classxtd_1_1tunit_1_1directory__assert.html">directory_assert</a>::<a class="code hl_function" href="#a01ee7fa57d39f11580179f2fa7d96193">are_equal</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ab25b0651e4b6e887e5194135d3692631">d2</a>, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
-<div class="line"><a class="code hl_namespace" href="namespacextd.html">xtd</a>::<a class="code hl_namespace" href="namespacextd_1_1tunit.html">tunit</a>::<a class="code hl_class" href="classxtd_1_1tunit_1_1directory__assert.html">directory_assert</a>::<a class="code hl_function" href="#a01ee7fa57d39f11580179f2fa7d96193">are_equal</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae53125275854402400f74fd6ab3f7659">d3</a>, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test throws an assert_error exception.</span></div>
+<div class="line"><a class="code hl_namespace" href="namespacextd.html">xtd</a>::<a class="code hl_namespace" href="namespacextd_1_1tunit.html">tunit</a>::<a class="code hl_class" href="classxtd_1_1tunit_1_1directory__assert.html">directory_assert</a>::<a class="code hl_function" href="#a1a723072782b2cac247aff7bb6697164">are_equal</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ab25b0651e4b6e887e5194135d3692631">d2</a>, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_namespace" href="namespacextd.html">xtd</a>::<a class="code hl_namespace" href="namespacextd_1_1tunit.html">tunit</a>::<a class="code hl_class" href="classxtd_1_1tunit_1_1directory__assert.html">directory_assert</a>::<a class="code hl_function" href="#a1a723072782b2cac247aff7bb6697164">are_equal</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae53125275854402400f74fd6ab3f7659">d3</a>, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test throws an assert_error exception.</span></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
-<a id="afeba8d4de29a7ee22f0a9bb5d9323cf7" name="afeba8d4de29a7ee22f0a9bb5d9323cf7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afeba8d4de29a7ee22f0a9bb5d9323cf7">&#9670;&#160;</a></span>are_not_equal() <span class="overload">[1/4]</span></h2>
+<a id="aa96dd2715c47522cd121d597ff494c98" name="aa96dd2715c47522cd121d597ff494c98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa96dd2715c47522cd121d597ff494c98">&#9670;&#160;</a></span>are_not_equal() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -490,7 +490,7 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::tunit::directory_assert::are_not_equal </td>
+          <td class="memname">auto xtd::tunit::directory_assert::are_not_equal </td>
           <td>(</td>
           <td class="paramtype">const std::filesystem::directory_entry &amp;</td>          <td class="paramname"><span class="paramname"><em>expected</em></span>, </td>
         </tr>
@@ -502,7 +502,7 @@ Public Static Methods</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;) -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -530,17 +530,17 @@ Public Static Methods</h2></td></tr>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line">std::filesystem::directory_entry <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>(std::filesystem::path(<span class="stringliteral">&quot;.&quot;</span>));</div>
 <div class="line">std::filesystem::directory_entry <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ab25b0651e4b6e887e5194135d3692631">d2</a>(std::filesystem::path(<span class="stringliteral">&quot;.&quot;</span>));</div>
 <div class="line">std::filesystem::directory_entry <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae53125275854402400f74fd6ab3f7659">d3</a>(std::filesystem::path(<span class="stringliteral">&quot;..&quot;</span>));</div>
-<div class="line"><a class="code hl_function" href="#afeba8d4de29a7ee22f0a9bb5d9323cf7">xtd::tunit::directory_assert::are_not_equal</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae53125275854402400f74fd6ab3f7659">d3</a>, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
-<div class="line"><a class="code hl_function" href="#afeba8d4de29a7ee22f0a9bb5d9323cf7">xtd::tunit::directory_assert::are_not_equal</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ab25b0651e4b6e887e5194135d3692631">d2</a>, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test throws an assert_error exception.</span></div>
-<div class="ttc" id="aclassxtd_1_1tunit_1_1directory__assert_html_afeba8d4de29a7ee22f0a9bb5d9323cf7"><div class="ttname"><a href="#afeba8d4de29a7ee22f0a9bb5d9323cf7">xtd::tunit::directory_assert::are_not_equal</a></div><div class="ttdeci">static void are_not_equal(const std::filesystem::directory_entry &amp;expected, const std::filesystem::directory_entry &amp;actual, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Asserts that two std::filesystem::directory_entry are not equal.</div></div>
+<div class="line"><a class="code hl_function" href="#aa96dd2715c47522cd121d597ff494c98">xtd::tunit::directory_assert::are_not_equal</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae53125275854402400f74fd6ab3f7659">d3</a>, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_function" href="#aa96dd2715c47522cd121d597ff494c98">xtd::tunit::directory_assert::are_not_equal</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ab25b0651e4b6e887e5194135d3692631">d2</a>, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test throws an assert_error exception.</span></div>
+<div class="ttc" id="aclassxtd_1_1tunit_1_1directory__assert_html_aa96dd2715c47522cd121d597ff494c98"><div class="ttname"><a href="#aa96dd2715c47522cd121d597ff494c98">xtd::tunit::directory_assert::are_not_equal</a></div><div class="ttdeci">static auto are_not_equal(const std::filesystem::directory_entry &amp;expected, const std::filesystem::directory_entry &amp;actual, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current()) -&gt; void</div><div class="ttdoc">Asserts that two std::filesystem::directory_entry are not equal.</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="directory_assert_are_not_equal_8cpp-example.html#_a4">directory_assert_are_not_equal.cpp</a>.</dd>
 </dl>
 
 </div>
 </div>
-<a id="a6bb83739e62f521ee5903a8e3fce29ff" name="a6bb83739e62f521ee5903a8e3fce29ff"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6bb83739e62f521ee5903a8e3fce29ff">&#9670;&#160;</a></span>are_not_equal() <span class="overload">[2/4]</span></h2>
+<a id="a8aa48badead2ca361fd8ac586a77df2b" name="a8aa48badead2ca361fd8ac586a77df2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8aa48badead2ca361fd8ac586a77df2b">&#9670;&#160;</a></span>are_not_equal() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -549,7 +549,7 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::tunit::directory_assert::are_not_equal </td>
+          <td class="memname">auto xtd::tunit::directory_assert::are_not_equal </td>
           <td>(</td>
           <td class="paramtype">const std::filesystem::directory_entry &amp;</td>          <td class="paramname"><span class="paramname"><em>expected</em></span>, </td>
         </tr>
@@ -566,7 +566,7 @@ Public Static Methods</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;) -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -595,14 +595,14 @@ Public Static Methods</h2></td></tr>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line">std::filesystem::directory_entry <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>(std::filesystem::path(<span class="stringliteral">&quot;.&quot;</span>));</div>
 <div class="line">std::filesystem::directory_entry <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ab25b0651e4b6e887e5194135d3692631">d2</a>(std::filesystem::path(<span class="stringliteral">&quot;.&quot;</span>));</div>
 <div class="line">std::filesystem::directory_entry <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae53125275854402400f74fd6ab3f7659">d3</a>(std::filesystem::path(<span class="stringliteral">&quot;..&quot;</span>));</div>
-<div class="line"><a class="code hl_function" href="#afeba8d4de29a7ee22f0a9bb5d9323cf7">xtd::tunit::directory_assert::are_not_equal</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae53125275854402400f74fd6ab3f7659">d3</a>, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
-<div class="line"><a class="code hl_function" href="#afeba8d4de29a7ee22f0a9bb5d9323cf7">xtd::tunit::directory_assert::are_not_equal</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ab25b0651e4b6e887e5194135d3692631">d2</a>, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test throws an assert_error exception.</span></div>
+<div class="line"><a class="code hl_function" href="#aa96dd2715c47522cd121d597ff494c98">xtd::tunit::directory_assert::are_not_equal</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae53125275854402400f74fd6ab3f7659">d3</a>, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_function" href="#aa96dd2715c47522cd121d597ff494c98">xtd::tunit::directory_assert::are_not_equal</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ab25b0651e4b6e887e5194135d3692631">d2</a>, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test throws an assert_error exception.</span></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
-<a id="aa3f02ec6106e50890b02c0f1ee831519" name="aa3f02ec6106e50890b02c0f1ee831519"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa3f02ec6106e50890b02c0f1ee831519">&#9670;&#160;</a></span>are_not_equal() <span class="overload">[3/4]</span></h2>
+<a id="af28d13aa89840276b32dac63d4ed7433" name="af28d13aa89840276b32dac63d4ed7433"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af28d13aa89840276b32dac63d4ed7433">&#9670;&#160;</a></span>are_not_equal() <span class="overload">[3/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -611,7 +611,7 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::tunit::directory_assert::are_not_equal </td>
+          <td class="memname">auto xtd::tunit::directory_assert::are_not_equal </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1io_1_1directory__info.html">xtd::io::directory_info</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>expected</em></span>, </td>
         </tr>
@@ -623,7 +623,7 @@ Public Static Methods</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;) -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -651,14 +651,14 @@ Public Static Methods</h2></td></tr>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_class" href="classxtd_1_1io_1_1directory__info.html">xtd::io::directory_info</a> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>(<span class="stringliteral">&quot;.&quot;</span>);</div>
 <div class="line"><a class="code hl_class" href="classxtd_1_1io_1_1directory__info.html">xtd::io::directory_info</a> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ab25b0651e4b6e887e5194135d3692631">d2</a>(<span class="stringliteral">&quot;.&quot;</span>)</div>
 <div class="line"><a class="code hl_namespace" href="namespacextd.html">xtd</a>::<a class="code hl_namespace" href="namespacextd_1_1io.html">io</a>::directory_info <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae53125275854402400f74fd6ab3f7659">d3</a>(<span class="stringliteral">&quot;..&quot;</span>)</div>
-<div class="line"><a class="code hl_namespace" href="namespacextd.html">xtd</a>::<a class="code hl_namespace" href="namespacextd_1_1tunit.html">tunit</a>::<a class="code hl_class" href="classxtd_1_1tunit_1_1directory__assert.html">directory_assert</a>::<a class="code hl_function" href="#afeba8d4de29a7ee22f0a9bb5d9323cf7">are_not_equal</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae53125275854402400f74fd6ab3f7659">d3</a>, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
-<div class="line"><a class="code hl_namespace" href="namespacextd.html">xtd</a>::<a class="code hl_namespace" href="namespacextd_1_1tunit.html">tunit</a>::<a class="code hl_class" href="classxtd_1_1tunit_1_1directory__assert.html">directory_assert</a>::<a class="code hl_function" href="#afeba8d4de29a7ee22f0a9bb5d9323cf7">are_not_equal</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ab25b0651e4b6e887e5194135d3692631">d2</a>, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test throws an assert_error exception.</span></div>
+<div class="line"><a class="code hl_namespace" href="namespacextd.html">xtd</a>::<a class="code hl_namespace" href="namespacextd_1_1tunit.html">tunit</a>::<a class="code hl_class" href="classxtd_1_1tunit_1_1directory__assert.html">directory_assert</a>::<a class="code hl_function" href="#aa96dd2715c47522cd121d597ff494c98">are_not_equal</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae53125275854402400f74fd6ab3f7659">d3</a>, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_namespace" href="namespacextd.html">xtd</a>::<a class="code hl_namespace" href="namespacextd_1_1tunit.html">tunit</a>::<a class="code hl_class" href="classxtd_1_1tunit_1_1directory__assert.html">directory_assert</a>::<a class="code hl_function" href="#aa96dd2715c47522cd121d597ff494c98">are_not_equal</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ab25b0651e4b6e887e5194135d3692631">d2</a>, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test throws an assert_error exception.</span></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
-<a id="a091b145945a125f837576cd83d397de6" name="a091b145945a125f837576cd83d397de6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a091b145945a125f837576cd83d397de6">&#9670;&#160;</a></span>are_not_equal() <span class="overload">[4/4]</span></h2>
+<a id="a9e19357525372211637527f2b4a53f01" name="a9e19357525372211637527f2b4a53f01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e19357525372211637527f2b4a53f01">&#9670;&#160;</a></span>are_not_equal() <span class="overload">[4/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -667,7 +667,7 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::tunit::directory_assert::are_not_equal </td>
+          <td class="memname">auto xtd::tunit::directory_assert::are_not_equal </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1io_1_1directory__info.html">xtd::io::directory_info</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>expected</em></span>, </td>
         </tr>
@@ -684,7 +684,7 @@ Public Static Methods</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;) -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -713,14 +713,14 @@ Public Static Methods</h2></td></tr>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_class" href="classxtd_1_1io_1_1directory__info.html">xtd::io::directory_info</a> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>(<span class="stringliteral">&quot;.&quot;</span>);</div>
 <div class="line"><a class="code hl_class" href="classxtd_1_1io_1_1directory__info.html">xtd::io::directory_info</a> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ab25b0651e4b6e887e5194135d3692631">d2</a>(<span class="stringliteral">&quot;.&quot;</span>)</div>
 <div class="line"><a class="code hl_namespace" href="namespacextd.html">xtd</a>::<a class="code hl_namespace" href="namespacextd_1_1io.html">io</a>::directory_info <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae53125275854402400f74fd6ab3f7659">d3</a>(<span class="stringliteral">&quot;..&quot;</span>)</div>
-<div class="line"><a class="code hl_namespace" href="namespacextd.html">xtd</a>::<a class="code hl_namespace" href="namespacextd_1_1tunit.html">tunit</a>::<a class="code hl_class" href="classxtd_1_1tunit_1_1directory__assert.html">directory_assert</a>::<a class="code hl_function" href="#afeba8d4de29a7ee22f0a9bb5d9323cf7">are_not_equal</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae53125275854402400f74fd6ab3f7659">d3</a>, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
-<div class="line"><a class="code hl_namespace" href="namespacextd.html">xtd</a>::<a class="code hl_namespace" href="namespacextd_1_1tunit.html">tunit</a>::<a class="code hl_class" href="classxtd_1_1tunit_1_1directory__assert.html">directory_assert</a>::<a class="code hl_function" href="#afeba8d4de29a7ee22f0a9bb5d9323cf7">are_not_equal</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ab25b0651e4b6e887e5194135d3692631">d2</a>, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test throws an assert_error exception.</span></div>
+<div class="line"><a class="code hl_namespace" href="namespacextd.html">xtd</a>::<a class="code hl_namespace" href="namespacextd_1_1tunit.html">tunit</a>::<a class="code hl_class" href="classxtd_1_1tunit_1_1directory__assert.html">directory_assert</a>::<a class="code hl_function" href="#aa96dd2715c47522cd121d597ff494c98">are_not_equal</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae53125275854402400f74fd6ab3f7659">d3</a>, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_namespace" href="namespacextd.html">xtd</a>::<a class="code hl_namespace" href="namespacextd_1_1tunit.html">tunit</a>::<a class="code hl_class" href="classxtd_1_1tunit_1_1directory__assert.html">directory_assert</a>::<a class="code hl_function" href="#aa96dd2715c47522cd121d597ff494c98">are_not_equal</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ab25b0651e4b6e887e5194135d3692631">d2</a>, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test throws an assert_error exception.</span></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
-<a id="a8d30cd1f8da3fbf1cae9f473b465fe2d" name="a8d30cd1f8da3fbf1cae9f473b465fe2d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8d30cd1f8da3fbf1cae9f473b465fe2d">&#9670;&#160;</a></span>does_not_exist() <span class="overload">[1/6]</span></h2>
+<a id="ab87f24ce8bc367a943dd946c6e2e30fb" name="ab87f24ce8bc367a943dd946c6e2e30fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab87f24ce8bc367a943dd946c6e2e30fb">&#9670;&#160;</a></span>does_not_exist() <span class="overload">[1/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -729,14 +729,14 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::tunit::directory_assert::does_not_exist </td>
+          <td class="memname">auto xtd::tunit::directory_assert::does_not_exist </td>
           <td>(</td>
           <td class="paramtype">const std::filesystem::directory_entry &amp;</td>          <td class="paramname"><span class="paramname"><em>directory</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;) -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -763,18 +763,18 @@ Public Static Methods</h2></td></tr>
 </dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_class" href="classxtd_1_1io_1_1directory__info.html">xtd::io::directory_info</a> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>(std::filesystem::directory_entry <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>(std::filesystem::path(<a class="code hl_function" href="classxtd_1_1environment.html#aecae02977991ca63077b48ad5b1228c2">environment::get_folder_path</a>(<a class="code hl_enumvalue" href="classxtd_1_1environment.html#a2fb2b59eded52f8745b88b44ae9e7057a28fca2067b6e4faa9044847b7abd0957">environment::special_folder::common_application_data</a>)));</div>
 <div class="line"><a class="code hl_class" href="classxtd_1_1io_1_1directory__info.html">xtd::io::directory_info</a> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ab25b0651e4b6e887e5194135d3692631">d2</a>(std::filesystem::directory_entry <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>(std::filesystem::path(<a class="code hl_function" href="classxtd_1_1io_1_1path.html#abe61d4c79aa4c48f1ab4fe2da72c1f66">xtd::io::path::combine</a>(<a class="code hl_function" href="classxtd_1_1environment.html#aecae02977991ca63077b48ad5b1228c2">environment::get_folder_path</a>(<a class="code hl_enumvalue" href="classxtd_1_1environment.html#a2fb2b59eded52f8745b88b44ae9e7057a28fca2067b6e4faa9044847b7abd0957">environment::special_folder::common_application_data</a>)) / <span class="stringliteral">&quot;__xtd_test_directory_not_found__&quot;</span>);</div>
-<div class="line"><a class="code hl_function" href="#a8d30cd1f8da3fbf1cae9f473b465fe2d">xtd::tunit::directory_assert::does_not_exist</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ab25b0651e4b6e887e5194135d3692631">d2</a>); <span class="comment">// test ok.</span></div>
-<div class="line"><a class="code hl_function" href="#a8d30cd1f8da3fbf1cae9f473b465fe2d">xtd::tunit::directory_assert::does_not_exist</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>); <span class="comment">// test throws an assert_error exception.</span></div>
+<div class="line"><a class="code hl_function" href="#ab87f24ce8bc367a943dd946c6e2e30fb">xtd::tunit::directory_assert::does_not_exist</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ab25b0651e4b6e887e5194135d3692631">d2</a>); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_function" href="#ab87f24ce8bc367a943dd946c6e2e30fb">xtd::tunit::directory_assert::does_not_exist</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>); <span class="comment">// test throws an assert_error exception.</span></div>
 <div class="ttc" id="aclassxtd_1_1environment_html_a2fb2b59eded52f8745b88b44ae9e7057a28fca2067b6e4faa9044847b7abd0957"><div class="ttname"><a href="classxtd_1_1environment.html#a2fb2b59eded52f8745b88b44ae9e7057a28fca2067b6e4faa9044847b7abd0957">xtd::environment::special_folder::common_application_data</a></div><div class="ttdeci">@ common_application_data</div><div class="ttdoc">The directory that serves as a common repository for application-specific data that is used by all us...</div><div class="ttdef"><b>Definition</b> environment.hpp:201</div></div>
-<div class="ttc" id="aclassxtd_1_1tunit_1_1directory__assert_html_a8d30cd1f8da3fbf1cae9f473b465fe2d"><div class="ttname"><a href="#a8d30cd1f8da3fbf1cae9f473b465fe2d">xtd::tunit::directory_assert::does_not_exist</a></div><div class="ttdeci">static void does_not_exist(const std::filesystem::directory_entry &amp;directory, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Asserts that directory not exists.</div></div>
+<div class="ttc" id="aclassxtd_1_1tunit_1_1directory__assert_html_ab87f24ce8bc367a943dd946c6e2e30fb"><div class="ttname"><a href="#ab87f24ce8bc367a943dd946c6e2e30fb">xtd::tunit::directory_assert::does_not_exist</a></div><div class="ttdeci">static auto does_not_exist(const std::filesystem::directory_entry &amp;directory, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current()) -&gt; void</div><div class="ttdoc">Asserts that directory not exists.</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="directory_assert_does_not_exist_8cpp-example.html#_a3">directory_assert_does_not_exist.cpp</a>.</dd>
 </dl>
 
 </div>
 </div>
-<a id="a7b8e7c3a0b02b2b0e9b51ba5fa92f196" name="a7b8e7c3a0b02b2b0e9b51ba5fa92f196"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7b8e7c3a0b02b2b0e9b51ba5fa92f196">&#9670;&#160;</a></span>does_not_exist() <span class="overload">[2/6]</span></h2>
+<a id="aa0e027649426c3d00a0b633b0da95a2d" name="aa0e027649426c3d00a0b633b0da95a2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0e027649426c3d00a0b633b0da95a2d">&#9670;&#160;</a></span>does_not_exist() <span class="overload">[2/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -783,7 +783,7 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::tunit::directory_assert::does_not_exist </td>
+          <td class="memname">auto xtd::tunit::directory_assert::does_not_exist </td>
           <td>(</td>
           <td class="paramtype">const std::filesystem::directory_entry &amp;</td>          <td class="paramname"><span class="paramname"><em>directory</em></span>, </td>
         </tr>
@@ -795,7 +795,7 @@ Public Static Methods</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;) -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -823,14 +823,14 @@ Public Static Methods</h2></td></tr>
 </dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_class" href="classxtd_1_1io_1_1directory__info.html">xtd::io::directory_info</a> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>(std::filesystem::directory_entry <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>(std::filesystem::path(<a class="code hl_function" href="classxtd_1_1environment.html#aecae02977991ca63077b48ad5b1228c2">environment::get_folder_path</a>(<a class="code hl_enumvalue" href="classxtd_1_1environment.html#a2fb2b59eded52f8745b88b44ae9e7057a28fca2067b6e4faa9044847b7abd0957">environment::special_folder::common_application_data</a>)));</div>
 <div class="line"><a class="code hl_class" href="classxtd_1_1io_1_1directory__info.html">xtd::io::directory_info</a> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ab25b0651e4b6e887e5194135d3692631">d2</a>(std::filesystem::directory_entry <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>(std::filesystem::path(<a class="code hl_function" href="classxtd_1_1io_1_1path.html#abe61d4c79aa4c48f1ab4fe2da72c1f66">xtd::io::path::combine</a>(<a class="code hl_function" href="classxtd_1_1environment.html#aecae02977991ca63077b48ad5b1228c2">environment::get_folder_path</a>(<a class="code hl_enumvalue" href="classxtd_1_1environment.html#a2fb2b59eded52f8745b88b44ae9e7057a28fca2067b6e4faa9044847b7abd0957">environment::special_folder::common_application_data</a>)) / <span class="stringliteral">&quot;__xtd_test_directory_not_found__&quot;</span>);</div>
-<div class="line"><a class="code hl_function" href="#a8d30cd1f8da3fbf1cae9f473b465fe2d">xtd::tunit::directory_assert::does_not_exist</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ab25b0651e4b6e887e5194135d3692631">d2</a>); <span class="comment">// test ok.</span></div>
-<div class="line"><a class="code hl_function" href="#a8d30cd1f8da3fbf1cae9f473b465fe2d">xtd::tunit::directory_assert::does_not_exist</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>); <span class="comment">// test throws an assert_error exception.</span></div>
+<div class="line"><a class="code hl_function" href="#ab87f24ce8bc367a943dd946c6e2e30fb">xtd::tunit::directory_assert::does_not_exist</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ab25b0651e4b6e887e5194135d3692631">d2</a>); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_function" href="#ab87f24ce8bc367a943dd946c6e2e30fb">xtd::tunit::directory_assert::does_not_exist</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>); <span class="comment">// test throws an assert_error exception.</span></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
-<a id="afde7f4c714004dea692d5426756ac93a" name="afde7f4c714004dea692d5426756ac93a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afde7f4c714004dea692d5426756ac93a">&#9670;&#160;</a></span>does_not_exist() <span class="overload">[3/6]</span></h2>
+<a id="a98e96f23fafe09a375bb4c37654240ca" name="a98e96f23fafe09a375bb4c37654240ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98e96f23fafe09a375bb4c37654240ca">&#9670;&#160;</a></span>does_not_exist() <span class="overload">[3/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -839,14 +839,14 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::tunit::directory_assert::does_not_exist </td>
+          <td class="memname">auto xtd::tunit::directory_assert::does_not_exist </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1io_1_1directory__info.html">xtd::io::directory_info</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>directory</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;) -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -873,14 +873,14 @@ Public Static Methods</h2></td></tr>
 </dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_class" href="classxtd_1_1io_1_1directory__info.html">xtd::io::directory_info</a> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>(<a class="code hl_function" href="classxtd_1_1environment.html#aecae02977991ca63077b48ad5b1228c2">environment::get_folder_path</a>(<a class="code hl_enumvalue" href="classxtd_1_1environment.html#a2fb2b59eded52f8745b88b44ae9e7057a28fca2067b6e4faa9044847b7abd0957">environment::special_folder::common_application_data</a>));</div>
 <div class="line"><a class="code hl_class" href="classxtd_1_1io_1_1directory__info.html">xtd::io::directory_info</a> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ab25b0651e4b6e887e5194135d3692631">d2</a>(<a class="code hl_function" href="classxtd_1_1io_1_1path.html#abe61d4c79aa4c48f1ab4fe2da72c1f66">xtd::io::path::combine</a>(<a class="code hl_function" href="classxtd_1_1environment.html#aecae02977991ca63077b48ad5b1228c2">environment::get_folder_path</a>(<a class="code hl_enumvalue" href="classxtd_1_1environment.html#a2fb2b59eded52f8745b88b44ae9e7057a28fca2067b6e4faa9044847b7abd0957">environment::special_folder::common_application_data</a>), <span class="stringliteral">&quot;__xtd_test_directory_not_found__&quot;</span>));</div>
-<div class="line"><a class="code hl_function" href="#a8d30cd1f8da3fbf1cae9f473b465fe2d">xtd::tunit::directory_assert::does_not_exist</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ab25b0651e4b6e887e5194135d3692631">d2</a>); <span class="comment">// test ok.</span></div>
-<div class="line"><a class="code hl_function" href="#a8d30cd1f8da3fbf1cae9f473b465fe2d">xtd::tunit::directory_assert::does_not_exist</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>); <span class="comment">// test throws an assert_error exception.</span></div>
+<div class="line"><a class="code hl_function" href="#ab87f24ce8bc367a943dd946c6e2e30fb">xtd::tunit::directory_assert::does_not_exist</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ab25b0651e4b6e887e5194135d3692631">d2</a>); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_function" href="#ab87f24ce8bc367a943dd946c6e2e30fb">xtd::tunit::directory_assert::does_not_exist</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>); <span class="comment">// test throws an assert_error exception.</span></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
-<a id="acf48e0d44f1cab17333bb49270c88b45" name="acf48e0d44f1cab17333bb49270c88b45"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acf48e0d44f1cab17333bb49270c88b45">&#9670;&#160;</a></span>does_not_exist() <span class="overload">[4/6]</span></h2>
+<a id="ac46d531814eed7b3f84464186ac9a6ff" name="ac46d531814eed7b3f84464186ac9a6ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac46d531814eed7b3f84464186ac9a6ff">&#9670;&#160;</a></span>does_not_exist() <span class="overload">[4/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -889,7 +889,7 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::tunit::directory_assert::does_not_exist </td>
+          <td class="memname">auto xtd::tunit::directory_assert::does_not_exist </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1io_1_1directory__info.html">xtd::io::directory_info</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>directory</em></span>, </td>
         </tr>
@@ -901,7 +901,7 @@ Public Static Methods</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;) -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -929,14 +929,14 @@ Public Static Methods</h2></td></tr>
 </dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_class" href="classxtd_1_1io_1_1directory__info.html">xtd::io::directory_info</a> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>(<a class="code hl_function" href="classxtd_1_1environment.html#aecae02977991ca63077b48ad5b1228c2">environment::get_folder_path</a>(<a class="code hl_enumvalue" href="classxtd_1_1environment.html#a2fb2b59eded52f8745b88b44ae9e7057a28fca2067b6e4faa9044847b7abd0957">environment::special_folder::common_application_data</a>));</div>
 <div class="line"><a class="code hl_class" href="classxtd_1_1io_1_1directory__info.html">xtd::io::directory_info</a> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ab25b0651e4b6e887e5194135d3692631">d2</a>(<a class="code hl_function" href="classxtd_1_1io_1_1path.html#abe61d4c79aa4c48f1ab4fe2da72c1f66">xtd::io::path::combine</a>(<a class="code hl_function" href="classxtd_1_1environment.html#aecae02977991ca63077b48ad5b1228c2">environment::get_folder_path</a>(<a class="code hl_enumvalue" href="classxtd_1_1environment.html#a2fb2b59eded52f8745b88b44ae9e7057a28fca2067b6e4faa9044847b7abd0957">environment::special_folder::common_application_data</a>), <span class="stringliteral">&quot;__xtd_test_directory_not_found__&quot;</span>));</div>
-<div class="line"><a class="code hl_function" href="#a8d30cd1f8da3fbf1cae9f473b465fe2d">xtd::tunit::directory_assert::does_not_exist</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ab25b0651e4b6e887e5194135d3692631">d2</a>); <span class="comment">// test ok.</span></div>
-<div class="line"><a class="code hl_function" href="#a8d30cd1f8da3fbf1cae9f473b465fe2d">xtd::tunit::directory_assert::does_not_exist</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>); <span class="comment">// test throws an assert_error exception.</span></div>
+<div class="line"><a class="code hl_function" href="#ab87f24ce8bc367a943dd946c6e2e30fb">xtd::tunit::directory_assert::does_not_exist</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ab25b0651e4b6e887e5194135d3692631">d2</a>); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_function" href="#ab87f24ce8bc367a943dd946c6e2e30fb">xtd::tunit::directory_assert::does_not_exist</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>); <span class="comment">// test throws an assert_error exception.</span></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
-<a id="a3f03e05f7b7e526a25dc4b03fa65f0da" name="a3f03e05f7b7e526a25dc4b03fa65f0da"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3f03e05f7b7e526a25dc4b03fa65f0da">&#9670;&#160;</a></span>does_not_exist() <span class="overload">[5/6]</span></h2>
+<a id="a42de0fea5847f3e1f6d2c39b635e124a" name="a42de0fea5847f3e1f6d2c39b635e124a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42de0fea5847f3e1f6d2c39b635e124a">&#9670;&#160;</a></span>does_not_exist() <span class="overload">[5/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -947,14 +947,14 @@ template&lt;typename char_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::tunit::directory_assert::does_not_exist </td>
+          <td class="memname">auto xtd::tunit::directory_assert::does_not_exist </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>directory</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;) -&gt; void</td>
         </tr>
       </table>
   </td>
@@ -981,15 +981,15 @@ template&lt;typename char_t&gt; </div>
 </dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_typedef" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a> = <a class="code hl_function" href="classxtd_1_1environment.html#aecae02977991ca63077b48ad5b1228c2">environment::get_folder_path</a>(<a class="code hl_enumvalue" href="classxtd_1_1environment.html#a2fb2b59eded52f8745b88b44ae9e7057a28fca2067b6e4faa9044847b7abd0957">environment::special_folder::common_application_data</a>);</div>
 <div class="line">xtd::utring <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ab25b0651e4b6e887e5194135d3692631">d2</a> = <a class="code hl_function" href="classxtd_1_1io_1_1path.html#abe61d4c79aa4c48f1ab4fe2da72c1f66">xtd::io::path::combine</a>(<a class="code hl_function" href="classxtd_1_1environment.html#aecae02977991ca63077b48ad5b1228c2">environment::get_folder_path</a>(<a class="code hl_enumvalue" href="classxtd_1_1environment.html#a2fb2b59eded52f8745b88b44ae9e7057a28fca2067b6e4faa9044847b7abd0957">environment::special_folder::common_application_data</a>), <span class="stringliteral">&quot;__xtd_test_directory_not_found__&quot;</span>);</div>
-<div class="line"><a class="code hl_function" href="#a8d30cd1f8da3fbf1cae9f473b465fe2d">xtd::tunit::directory_assert::does_not_exist</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ab25b0651e4b6e887e5194135d3692631">d2</a>); <span class="comment">// test ok.</span></div>
-<div class="line"><a class="code hl_function" href="#a8d30cd1f8da3fbf1cae9f473b465fe2d">xtd::tunit::directory_assert::does_not_exist</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>); <span class="comment">// test throws an assert_error exception.</span></div>
+<div class="line"><a class="code hl_function" href="#ab87f24ce8bc367a943dd946c6e2e30fb">xtd::tunit::directory_assert::does_not_exist</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ab25b0651e4b6e887e5194135d3692631">d2</a>); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_function" href="#ab87f24ce8bc367a943dd946c6e2e30fb">xtd::tunit::directory_assert::does_not_exist</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>); <span class="comment">// test throws an assert_error exception.</span></div>
 <div class="ttc" id="agroup__strings_html_ga60154d7201cef3f8d0d5e241ef54b25e"><div class="ttname"><a href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></div><div class="ttdeci">xtd::basic_string&lt; char &gt; string</div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> __string_definitions.hpp:43</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
-<a id="a1a5a5e4fbd6d4abc8ce0b9c4659d861d" name="a1a5a5e4fbd6d4abc8ce0b9c4659d861d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1a5a5e4fbd6d4abc8ce0b9c4659d861d">&#9670;&#160;</a></span>does_not_exist() <span class="overload">[6/6]</span></h2>
+<a id="a44c1164a012998ded0c86a9761722570" name="a44c1164a012998ded0c86a9761722570"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44c1164a012998ded0c86a9761722570">&#9670;&#160;</a></span>does_not_exist() <span class="overload">[6/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1000,7 +1000,7 @@ template&lt;typename char_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::tunit::directory_assert::does_not_exist </td>
+          <td class="memname">auto xtd::tunit::directory_assert::does_not_exist </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>directory</em></span>, </td>
         </tr>
@@ -1012,7 +1012,7 @@ template&lt;typename char_t&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;) -&gt; void</td>
         </tr>
       </table>
   </td>
@@ -1040,14 +1040,14 @@ template&lt;typename char_t&gt; </div>
 </dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_typedef" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a> = <a class="code hl_function" href="classxtd_1_1environment.html#aecae02977991ca63077b48ad5b1228c2">environment::get_folder_path</a>(<a class="code hl_enumvalue" href="classxtd_1_1environment.html#a2fb2b59eded52f8745b88b44ae9e7057a28fca2067b6e4faa9044847b7abd0957">environment::special_folder::common_application_data</a>);</div>
 <div class="line">xtd::utring <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ab25b0651e4b6e887e5194135d3692631">d2</a> = <a class="code hl_function" href="classxtd_1_1io_1_1path.html#abe61d4c79aa4c48f1ab4fe2da72c1f66">xtd::io::path::combine</a>(<a class="code hl_function" href="classxtd_1_1environment.html#aecae02977991ca63077b48ad5b1228c2">environment::get_folder_path</a>(<a class="code hl_enumvalue" href="classxtd_1_1environment.html#a2fb2b59eded52f8745b88b44ae9e7057a28fca2067b6e4faa9044847b7abd0957">environment::special_folder::common_application_data</a>), <span class="stringliteral">&quot;__xtd_test_directory_not_found__&quot;</span>);</div>
-<div class="line"><a class="code hl_function" href="#a8d30cd1f8da3fbf1cae9f473b465fe2d">xtd::tunit::directory_assert::does_not_exist</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ab25b0651e4b6e887e5194135d3692631">d2</a>); <span class="comment">// test ok.</span></div>
-<div class="line"><a class="code hl_function" href="#a8d30cd1f8da3fbf1cae9f473b465fe2d">xtd::tunit::directory_assert::does_not_exist</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>); <span class="comment">// test throws an assert_error exception.</span></div>
+<div class="line"><a class="code hl_function" href="#ab87f24ce8bc367a943dd946c6e2e30fb">xtd::tunit::directory_assert::does_not_exist</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ab25b0651e4b6e887e5194135d3692631">d2</a>); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_function" href="#ab87f24ce8bc367a943dd946c6e2e30fb">xtd::tunit::directory_assert::does_not_exist</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>); <span class="comment">// test throws an assert_error exception.</span></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
-<a id="af5132d8107b34acf7b2d36abc765670a" name="af5132d8107b34acf7b2d36abc765670a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af5132d8107b34acf7b2d36abc765670a">&#9670;&#160;</a></span>exists() <span class="overload">[1/6]</span></h2>
+<a id="aa463ee50944d28db6a76cbcd4768a16c" name="aa463ee50944d28db6a76cbcd4768a16c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa463ee50944d28db6a76cbcd4768a16c">&#9670;&#160;</a></span>exists() <span class="overload">[1/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1056,14 +1056,14 @@ template&lt;typename char_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::tunit::directory_assert::exists </td>
+          <td class="memname">auto xtd::tunit::directory_assert::exists </td>
           <td>(</td>
           <td class="paramtype">const std::filesystem::directory_entry &amp;</td>          <td class="paramname"><span class="paramname"><em>directory</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;) -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -1090,16 +1090,16 @@ template&lt;typename char_t&gt; </div>
 </dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_class" href="classxtd_1_1io_1_1directory__info.html">xtd::io::directory_info</a> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>(std::filesystem::directory_entry <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>(std::filesystem::path(<a class="code hl_function" href="classxtd_1_1environment.html#aecae02977991ca63077b48ad5b1228c2">environment::get_folder_path</a>(<a class="code hl_enumvalue" href="classxtd_1_1environment.html#a2fb2b59eded52f8745b88b44ae9e7057a28fca2067b6e4faa9044847b7abd0957">environment::special_folder::common_application_data</a>)));</div>
 <div class="line"><a class="code hl_class" href="classxtd_1_1io_1_1directory__info.html">xtd::io::directory_info</a> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ab25b0651e4b6e887e5194135d3692631">d2</a>(std::filesystem::directory_entry <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>(std::filesystem::path(<a class="code hl_function" href="classxtd_1_1io_1_1path.html#abe61d4c79aa4c48f1ab4fe2da72c1f66">xtd::io::path::combine</a>(<a class="code hl_function" href="classxtd_1_1environment.html#aecae02977991ca63077b48ad5b1228c2">environment::get_folder_path</a>(<a class="code hl_enumvalue" href="classxtd_1_1environment.html#a2fb2b59eded52f8745b88b44ae9e7057a28fca2067b6e4faa9044847b7abd0957">environment::special_folder::common_application_data</a>)) / <span class="stringliteral">&quot;__xtd_test_directory_not_found__&quot;</span>);</div>
-<div class="line"><a class="code hl_function" href="#af5132d8107b34acf7b2d36abc765670a">xtd::tunit::directory_assert::exists</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>); <span class="comment">// test ok.</span></div>
-<div class="line"><a class="code hl_function" href="#af5132d8107b34acf7b2d36abc765670a">xtd::tunit::directory_assert::exists</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ab25b0651e4b6e887e5194135d3692631">d2</a>); <span class="comment">// test throws an assert_error exception.</span></div>
+<div class="line"><a class="code hl_function" href="#aa463ee50944d28db6a76cbcd4768a16c">xtd::tunit::directory_assert::exists</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_function" href="#aa463ee50944d28db6a76cbcd4768a16c">xtd::tunit::directory_assert::exists</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ab25b0651e4b6e887e5194135d3692631">d2</a>); <span class="comment">// test throws an assert_error exception.</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="directory_assert_8cpp-example.html#_a1">directory_assert.cpp</a>, and <a class="el" href="directory_assert_exists_8cpp-example.html#_a3">directory_assert_exists.cpp</a>.</dd>
 </dl>
 
 </div>
 </div>
-<a id="a72495e76d815247dc7833f673597430c" name="a72495e76d815247dc7833f673597430c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a72495e76d815247dc7833f673597430c">&#9670;&#160;</a></span>exists() <span class="overload">[2/6]</span></h2>
+<a id="aeb20ada66edccbe3dd0ec6dee7cb4308" name="aeb20ada66edccbe3dd0ec6dee7cb4308"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb20ada66edccbe3dd0ec6dee7cb4308">&#9670;&#160;</a></span>exists() <span class="overload">[2/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1108,7 +1108,7 @@ template&lt;typename char_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::tunit::directory_assert::exists </td>
+          <td class="memname">auto xtd::tunit::directory_assert::exists </td>
           <td>(</td>
           <td class="paramtype">const std::filesystem::directory_entry &amp;</td>          <td class="paramname"><span class="paramname"><em>directory</em></span>, </td>
         </tr>
@@ -1120,7 +1120,7 @@ template&lt;typename char_t&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;) -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -1148,14 +1148,14 @@ template&lt;typename char_t&gt; </div>
 </dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_class" href="classxtd_1_1io_1_1directory__info.html">xtd::io::directory_info</a> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>(std::filesystem::directory_entry <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>(std::filesystem::path(<a class="code hl_function" href="classxtd_1_1environment.html#aecae02977991ca63077b48ad5b1228c2">environment::get_folder_path</a>(<a class="code hl_enumvalue" href="classxtd_1_1environment.html#a2fb2b59eded52f8745b88b44ae9e7057a28fca2067b6e4faa9044847b7abd0957">environment::special_folder::common_application_data</a>)));</div>
 <div class="line"><a class="code hl_class" href="classxtd_1_1io_1_1directory__info.html">xtd::io::directory_info</a> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ab25b0651e4b6e887e5194135d3692631">d2</a>(std::filesystem::directory_entry <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>(std::filesystem::path(<a class="code hl_function" href="classxtd_1_1io_1_1path.html#abe61d4c79aa4c48f1ab4fe2da72c1f66">xtd::io::path::combine</a>(<a class="code hl_function" href="classxtd_1_1environment.html#aecae02977991ca63077b48ad5b1228c2">environment::get_folder_path</a>(<a class="code hl_enumvalue" href="classxtd_1_1environment.html#a2fb2b59eded52f8745b88b44ae9e7057a28fca2067b6e4faa9044847b7abd0957">environment::special_folder::common_application_data</a>)) / <span class="stringliteral">&quot;__xtd_test_directory_not_found__&quot;</span>);</div>
-<div class="line"><a class="code hl_function" href="#af5132d8107b34acf7b2d36abc765670a">xtd::tunit::directory_assert::exists</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>); <span class="comment">// test ok.</span></div>
-<div class="line"><a class="code hl_function" href="#af5132d8107b34acf7b2d36abc765670a">xtd::tunit::directory_assert::exists</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ab25b0651e4b6e887e5194135d3692631">d2</a>); <span class="comment">// test throws an assert_error exception.</span></div>
+<div class="line"><a class="code hl_function" href="#aa463ee50944d28db6a76cbcd4768a16c">xtd::tunit::directory_assert::exists</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_function" href="#aa463ee50944d28db6a76cbcd4768a16c">xtd::tunit::directory_assert::exists</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ab25b0651e4b6e887e5194135d3692631">d2</a>); <span class="comment">// test throws an assert_error exception.</span></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
-<a id="a33d28b208b5efb1ffe3320eb6272eb20" name="a33d28b208b5efb1ffe3320eb6272eb20"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a33d28b208b5efb1ffe3320eb6272eb20">&#9670;&#160;</a></span>exists() <span class="overload">[3/6]</span></h2>
+<a id="acc84a7cf33518b16a3f7bc24c99e5413" name="acc84a7cf33518b16a3f7bc24c99e5413"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc84a7cf33518b16a3f7bc24c99e5413">&#9670;&#160;</a></span>exists() <span class="overload">[3/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1164,14 +1164,14 @@ template&lt;typename char_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::tunit::directory_assert::exists </td>
+          <td class="memname">auto xtd::tunit::directory_assert::exists </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1io_1_1directory__info.html">xtd::io::directory_info</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>directory</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;) -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -1198,14 +1198,14 @@ template&lt;typename char_t&gt; </div>
 </dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_typedef" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a> = <a class="code hl_function" href="classxtd_1_1environment.html#aecae02977991ca63077b48ad5b1228c2">environment::get_folder_path</a>(<a class="code hl_enumvalue" href="classxtd_1_1environment.html#a2fb2b59eded52f8745b88b44ae9e7057a28fca2067b6e4faa9044847b7abd0957">environment::special_folder::common_application_data</a>);</div>
 <div class="line">xtd::utring <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ab25b0651e4b6e887e5194135d3692631">d2</a> = <a class="code hl_function" href="classxtd_1_1io_1_1path.html#abe61d4c79aa4c48f1ab4fe2da72c1f66">xtd::io::path::combine</a>(<a class="code hl_function" href="classxtd_1_1environment.html#aecae02977991ca63077b48ad5b1228c2">environment::get_folder_path</a>(<a class="code hl_enumvalue" href="classxtd_1_1environment.html#a2fb2b59eded52f8745b88b44ae9e7057a28fca2067b6e4faa9044847b7abd0957">environment::special_folder::common_application_data</a>), <span class="stringliteral">&quot;__xtd_test_directory_not_found__&quot;</span>);</div>
-<div class="line"><a class="code hl_function" href="#af5132d8107b34acf7b2d36abc765670a">xtd::tunit::directory_assert::exists</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>); <span class="comment">// test ok.</span></div>
-<div class="line"><a class="code hl_function" href="#af5132d8107b34acf7b2d36abc765670a">xtd::tunit::directory_assert::exists</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ab25b0651e4b6e887e5194135d3692631">d2</a>); <span class="comment">// test throws an assert_error exception.</span></div>
+<div class="line"><a class="code hl_function" href="#aa463ee50944d28db6a76cbcd4768a16c">xtd::tunit::directory_assert::exists</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_function" href="#aa463ee50944d28db6a76cbcd4768a16c">xtd::tunit::directory_assert::exists</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ab25b0651e4b6e887e5194135d3692631">d2</a>); <span class="comment">// test throws an assert_error exception.</span></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
-<a id="a96dbd07f57ef15ada83055bf87d0cd03" name="a96dbd07f57ef15ada83055bf87d0cd03"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a96dbd07f57ef15ada83055bf87d0cd03">&#9670;&#160;</a></span>exists() <span class="overload">[4/6]</span></h2>
+<a id="a238a86ccd9ccddd00c3a2bb0516ec6d0" name="a238a86ccd9ccddd00c3a2bb0516ec6d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a238a86ccd9ccddd00c3a2bb0516ec6d0">&#9670;&#160;</a></span>exists() <span class="overload">[4/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1214,7 +1214,7 @@ template&lt;typename char_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::tunit::directory_assert::exists </td>
+          <td class="memname">auto xtd::tunit::directory_assert::exists </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1io_1_1directory__info.html">xtd::io::directory_info</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>directory</em></span>, </td>
         </tr>
@@ -1226,7 +1226,7 @@ template&lt;typename char_t&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;) -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -1254,14 +1254,14 @@ template&lt;typename char_t&gt; </div>
 </dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_typedef" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a> = <a class="code hl_function" href="classxtd_1_1environment.html#aecae02977991ca63077b48ad5b1228c2">environment::get_folder_path</a>(<a class="code hl_enumvalue" href="classxtd_1_1environment.html#a2fb2b59eded52f8745b88b44ae9e7057a28fca2067b6e4faa9044847b7abd0957">environment::special_folder::common_application_data</a>);</div>
 <div class="line">xtd::utring <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ab25b0651e4b6e887e5194135d3692631">d2</a> = <a class="code hl_function" href="classxtd_1_1io_1_1path.html#abe61d4c79aa4c48f1ab4fe2da72c1f66">xtd::io::path::combine</a>(<a class="code hl_function" href="classxtd_1_1environment.html#aecae02977991ca63077b48ad5b1228c2">environment::get_folder_path</a>(<a class="code hl_enumvalue" href="classxtd_1_1environment.html#a2fb2b59eded52f8745b88b44ae9e7057a28fca2067b6e4faa9044847b7abd0957">environment::special_folder::common_application_data</a>), <span class="stringliteral">&quot;__xtd_test_directory_not_found__&quot;</span>);</div>
-<div class="line"><a class="code hl_function" href="#af5132d8107b34acf7b2d36abc765670a">xtd::tunit::directory_assert::exists</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>); <span class="comment">// test ok.</span></div>
-<div class="line"><a class="code hl_function" href="#af5132d8107b34acf7b2d36abc765670a">xtd::tunit::directory_assert::exists</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ab25b0651e4b6e887e5194135d3692631">d2</a>); <span class="comment">// test throws an assert_error exception.</span></div>
+<div class="line"><a class="code hl_function" href="#aa463ee50944d28db6a76cbcd4768a16c">xtd::tunit::directory_assert::exists</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_function" href="#aa463ee50944d28db6a76cbcd4768a16c">xtd::tunit::directory_assert::exists</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ab25b0651e4b6e887e5194135d3692631">d2</a>); <span class="comment">// test throws an assert_error exception.</span></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
-<a id="a701443bbc84446ab5e2b43fbe3db8eec" name="a701443bbc84446ab5e2b43fbe3db8eec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a701443bbc84446ab5e2b43fbe3db8eec">&#9670;&#160;</a></span>exists() <span class="overload">[5/6]</span></h2>
+<a id="a000e4cdf1983f56eab1f8c9c7a67bed4" name="a000e4cdf1983f56eab1f8c9c7a67bed4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a000e4cdf1983f56eab1f8c9c7a67bed4">&#9670;&#160;</a></span>exists() <span class="overload">[5/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1272,14 +1272,14 @@ template&lt;typename char_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::tunit::directory_assert::exists </td>
+          <td class="memname">auto xtd::tunit::directory_assert::exists </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>directory</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;) -&gt; void</td>
         </tr>
       </table>
   </td>
@@ -1306,14 +1306,14 @@ template&lt;typename char_t&gt; </div>
 </dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_typedef" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a> = <a class="code hl_function" href="classxtd_1_1environment.html#aecae02977991ca63077b48ad5b1228c2">environment::get_folder_path</a>(<a class="code hl_enumvalue" href="classxtd_1_1environment.html#a2fb2b59eded52f8745b88b44ae9e7057a28fca2067b6e4faa9044847b7abd0957">environment::special_folder::common_application_data</a>);</div>
 <div class="line">xtd::utring <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ab25b0651e4b6e887e5194135d3692631">d2</a> = <a class="code hl_function" href="classxtd_1_1io_1_1path.html#abe61d4c79aa4c48f1ab4fe2da72c1f66">xtd::io::path::combine</a>(<a class="code hl_function" href="classxtd_1_1environment.html#aecae02977991ca63077b48ad5b1228c2">environment::get_folder_path</a>(<a class="code hl_enumvalue" href="classxtd_1_1environment.html#a2fb2b59eded52f8745b88b44ae9e7057a28fca2067b6e4faa9044847b7abd0957">environment::special_folder::common_application_data</a>), <span class="stringliteral">&quot;__xtd_test_directory_not_found__&quot;</span>);</div>
-<div class="line"><a class="code hl_function" href="#af5132d8107b34acf7b2d36abc765670a">xtd::tunit::directory_assert::exists</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>); <span class="comment">// test ok.</span></div>
-<div class="line"><a class="code hl_function" href="#af5132d8107b34acf7b2d36abc765670a">xtd::tunit::directory_assert::exists</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ab25b0651e4b6e887e5194135d3692631">d2</a>); <span class="comment">// test throws an assert_error exception.</span></div>
+<div class="line"><a class="code hl_function" href="#aa463ee50944d28db6a76cbcd4768a16c">xtd::tunit::directory_assert::exists</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_function" href="#aa463ee50944d28db6a76cbcd4768a16c">xtd::tunit::directory_assert::exists</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ab25b0651e4b6e887e5194135d3692631">d2</a>); <span class="comment">// test throws an assert_error exception.</span></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
-<a id="a421e006143973c9699e3c2607c3d6a6d" name="a421e006143973c9699e3c2607c3d6a6d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a421e006143973c9699e3c2607c3d6a6d">&#9670;&#160;</a></span>exists() <span class="overload">[6/6]</span></h2>
+<a id="aae5342a0096c3ae2dc01533e119ae7fe" name="aae5342a0096c3ae2dc01533e119ae7fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae5342a0096c3ae2dc01533e119ae7fe">&#9670;&#160;</a></span>exists() <span class="overload">[6/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1324,7 +1324,7 @@ template&lt;typename char_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::tunit::directory_assert::exists </td>
+          <td class="memname">auto xtd::tunit::directory_assert::exists </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>directory</em></span>, </td>
         </tr>
@@ -1336,7 +1336,7 @@ template&lt;typename char_t&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;) -&gt; void</td>
         </tr>
       </table>
   </td>
@@ -1364,8 +1364,8 @@ template&lt;typename char_t&gt; </div>
 </dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_typedef" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a> = <a class="code hl_function" href="classxtd_1_1environment.html#aecae02977991ca63077b48ad5b1228c2">environment::get_folder_path</a>(<a class="code hl_enumvalue" href="classxtd_1_1environment.html#a2fb2b59eded52f8745b88b44ae9e7057a28fca2067b6e4faa9044847b7abd0957">environment::special_folder::common_application_data</a>);</div>
 <div class="line">xtd::utring <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ab25b0651e4b6e887e5194135d3692631">d2</a> = <a class="code hl_function" href="classxtd_1_1io_1_1path.html#abe61d4c79aa4c48f1ab4fe2da72c1f66">xtd::io::path::combine</a>(<a class="code hl_function" href="classxtd_1_1environment.html#aecae02977991ca63077b48ad5b1228c2">environment::get_folder_path</a>(<a class="code hl_enumvalue" href="classxtd_1_1environment.html#a2fb2b59eded52f8745b88b44ae9e7057a28fca2067b6e4faa9044847b7abd0957">environment::special_folder::common_application_data</a>), <span class="stringliteral">&quot;__xtd_test_directory_not_found__&quot;</span>);</div>
-<div class="line"><a class="code hl_function" href="#af5132d8107b34acf7b2d36abc765670a">xtd::tunit::directory_assert::exists</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>); <span class="comment">// test ok.</span></div>
-<div class="line"><a class="code hl_function" href="#af5132d8107b34acf7b2d36abc765670a">xtd::tunit::directory_assert::exists</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ab25b0651e4b6e887e5194135d3692631">d2</a>); <span class="comment">// test throws an assert_error exception.</span></div>
+<div class="line"><a class="code hl_function" href="#aa463ee50944d28db6a76cbcd4768a16c">xtd::tunit::directory_assert::exists</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_function" href="#aa463ee50944d28db6a76cbcd4768a16c">xtd::tunit::directory_assert::exists</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ab25b0651e4b6e887e5194135d3692631">d2</a>); <span class="comment">// test throws an assert_error exception.</span></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>

@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
   <div class="headertitle"><div class="title">directory_valid_does_not_exist.cpp</div></div>
 </div><!--header-->
 <div class="contents">
-<p>Shows how to use <a class="el" href="classxtd_1_1tunit_1_1directory__assert.html#a8d30cd1f8da3fbf1cae9f473b465fe2d" title="Asserts that directory not exists.">xtd::tunit::directory_assert::does_not_exist</a> method.</p>
+<p>Shows how to use <a class="el" href="classxtd_1_1tunit_1_1directory__assert.html#ab87f24ce8bc367a943dd946c6e2e30fb" title="Asserts that directory not exists.">xtd::tunit::directory_assert::does_not_exist</a> method.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd.tunit&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1io.html">xtd::io</a>;</div>
@@ -116,18 +116,18 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line">  <span class="keyword">class </span>test_class_(test) {</div>
 <div class="line">    <span class="keywordtype">void</span> <a id="a0" name="a0"></a><a class="code hl_define" href="group__tunit.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a>(test_case_succeed) {</div>
 <div class="line">      <span class="keyword">auto</span> di = <a id="_a1" name="_a1"></a><a class="code hl_class" href="classxtd_1_1io_1_1directory__info.html">directory_info</a> {<a id="_a2" name="_a2"></a><a class="code hl_function" href="classxtd_1_1io_1_1path.html#abe61d4c79aa4c48f1ab4fe2da72c1f66">path::combine</a>(<span class="stringliteral">&quot;unknown folder 1&quot;</span>, <span class="stringliteral">&quot;unknown folder 2&quot;</span>, <span class="stringliteral">&quot;unknown folder 3&quot;</span>)};</div>
-<div class="line">      <a id="_a3" name="_a3"></a><a class="code hl_function" href="classxtd_1_1tunit_1_1directory__valid.html#a713bfc4e9afc4bcb1050c23f4ded5a85">directory_valid::does_not_exist</a>(di);</div>
+<div class="line">      <a id="_a3" name="_a3"></a><a class="code hl_function" href="classxtd_1_1tunit_1_1directory__valid.html#ab9ae906b418429955d3a5be4b3abe063">directory_valid::does_not_exist</a>(di);</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordtype">void</span> <a class="code hl_define" href="group__tunit.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a>(test_case_failed) {</div>
 <div class="line">      <span class="keyword">auto</span> di = <a class="code hl_class" href="classxtd_1_1io_1_1directory__info.html">directory_info</a> {<a id="_a4" name="_a4"></a><a class="code hl_function" href="classxtd_1_1io_1_1path.html#aa0c4b143e1d360dbecbbd78cf4623a1c">path::get_temp_path</a>()};</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1tunit_1_1directory__valid.html#a713bfc4e9afc4bcb1050c23f4ded5a85">directory_valid::does_not_exist</a>(di);</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1tunit_1_1directory__valid.html#ab9ae906b418429955d3a5be4b3abe063">directory_valid::does_not_exist</a>(di);</div>
 <div class="line">    }</div>
 <div class="line">  };</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keywordflow">return</span> <a id="_a5" name="_a5"></a><a class="code hl_class" href="classxtd_1_1tunit_1_1console__unit__test.html">console_unit_test</a>().<a id="a6" name="a6"></a><a class="code hl_function" href="classxtd_1_1tunit_1_1console__unit__test.html#a9f9e45c6fd7d0fb5367788444031b552">run</a>();</div>
+<div class="line">  <span class="keywordflow">return</span> <a id="_a5" name="_a5"></a><a class="code hl_class" href="classxtd_1_1tunit_1_1console__unit__test.html">console_unit_test</a>().<a id="a6" name="a6"></a><a class="code hl_function" href="classxtd_1_1tunit_1_1console__unit__test.html#a68e54f7c09728250df9671cfe11a5cf7">run</a>();</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
@@ -148,8 +148,8 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="ttc" id="aclassxtd_1_1io_1_1path_html_aa0c4b143e1d360dbecbbd78cf4623a1c"><div class="ttname"><a href="classxtd_1_1io_1_1path.html#aa0c4b143e1d360dbecbbd78cf4623a1c">xtd::io::path::get_temp_path</a></div><div class="ttdeci">static auto get_temp_path() noexcept -&gt; xtd::string</div><div class="ttdoc">Returns the path of the current user&#39;s temporary folder.</div></div>
 <div class="ttc" id="aclassxtd_1_1io_1_1path_html_abe61d4c79aa4c48f1ab4fe2da72c1f66"><div class="ttname"><a href="classxtd_1_1io_1_1path.html#abe61d4c79aa4c48f1ab4fe2da72c1f66">xtd::io::path::combine</a></div><div class="ttdeci">static auto combine(const xtd::string &amp;path1, const xtd::string &amp;path2) -&gt; xtd::string</div><div class="ttdoc">Combines two path strings.</div></div>
 <div class="ttc" id="aclassxtd_1_1tunit_1_1console__unit__test_html"><div class="ttname"><a href="classxtd_1_1tunit_1_1console__unit__test.html">xtd::tunit::console_unit_test</a></div><div class="ttdoc">The console_unit_test class is console unit test interface.</div><div class="ttdef"><b>Definition</b> console_unit_test.hpp:23</div></div>
-<div class="ttc" id="aclassxtd_1_1tunit_1_1console__unit__test_html_a9f9e45c6fd7d0fb5367788444031b552"><div class="ttname"><a href="classxtd_1_1tunit_1_1console__unit__test.html#a9f9e45c6fd7d0fb5367788444031b552">xtd::tunit::console_unit_test::run</a></div><div class="ttdeci">int32 run() noexcept</div><div class="ttdoc">Runs all tests in this unit_test object and prints the result.</div></div>
-<div class="ttc" id="aclassxtd_1_1tunit_1_1directory__valid_html_a713bfc4e9afc4bcb1050c23f4ded5a85"><div class="ttname"><a href="classxtd_1_1tunit_1_1directory__valid.html#a713bfc4e9afc4bcb1050c23f4ded5a85">xtd::tunit::directory_valid::does_not_exist</a></div><div class="ttdeci">static void does_not_exist(const std::filesystem::directory_entry &amp;directory, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Validates that directory not exists.</div></div>
+<div class="ttc" id="aclassxtd_1_1tunit_1_1console__unit__test_html_a68e54f7c09728250df9671cfe11a5cf7"><div class="ttname"><a href="classxtd_1_1tunit_1_1console__unit__test.html#a68e54f7c09728250df9671cfe11a5cf7">xtd::tunit::console_unit_test::run</a></div><div class="ttdeci">auto run() noexcept -&gt; xtd::int32</div><div class="ttdoc">Runs all tests in this unit_test object and prints the result.</div></div>
+<div class="ttc" id="aclassxtd_1_1tunit_1_1directory__valid_html_ab9ae906b418429955d3a5be4b3abe063"><div class="ttname"><a href="classxtd_1_1tunit_1_1directory__valid.html#ab9ae906b418429955d3a5be4b3abe063">xtd::tunit::directory_valid::does_not_exist</a></div><div class="ttdeci">static auto does_not_exist(const std::filesystem::directory_entry &amp;directory, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current()) -&gt; void</div><div class="ttdoc">Validates that directory not exists.</div></div>
 <div class="ttc" id="agroup__tunit_html_ga1fa6dc01b83d00ce9e92402c9694c6af"><div class="ttname"><a href="group__tunit.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a></div><div class="ttdeci">#define test_method_(method_name)</div><div class="ttdoc">Add test method to class test.</div><div class="ttdef"><b>Definition</b> test_method_attribute.hpp:72</div></div>
 <div class="ttc" id="anamespacextd_1_1io_html"><div class="ttname"><a href="namespacextd_1_1io.html">xtd::io</a></div><div class="ttdoc">The xtd::io namespace contains types that allow reading and writing to files and data streams,...</div><div class="ttdef"><b>Definition</b> binary_reader.hpp:17</div></div>
 <div class="ttc" id="anamespacextd_1_1tunit_html"><div class="ttname"><a href="namespacextd_1_1tunit.html">xtd::tunit</a></div><div class="ttdoc">The tunit namespace contains a unit test library.</div><div class="ttdef"><b>Definition</b> abort_error.hpp:10</div></div>

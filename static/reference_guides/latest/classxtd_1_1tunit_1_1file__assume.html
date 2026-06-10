@@ -137,19 +137,19 @@ Inheritance diagram for xtd::tunit::file_assume:</div>
 <div class="line">  <span class="keyword">class </span>test_class_(test) {</div>
 <div class="line">    <span class="keywordtype">void</span> <a class="code hl_define" href="group__tunit.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a>(test_case1) {</div>
 <div class="line">      <span class="keyword">auto</span> fn = <a class="code hl_function" href="classxtd_1_1io_1_1path.html#a215d1e158bd017585c72c67fd03a3d31">path::get_temp_file_name</a>();</div>
-<div class="line">      <a class="code hl_function" href="#a8479f32003e663bf664cb934ea291b84">file_assume::exists</a>(fn);</div>
+<div class="line">      <a class="code hl_function" href="#a2f7952f433a72d5e64575f723fa44314">file_assume::exists</a>(fn);</div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1io_1_1file.html#af1f6b61992c57e7442f84ae447d416de">file::remove</a>(fn);</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordtype">void</span> <a class="code hl_define" href="group__tunit.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a>(test_case2) {</div>
 <div class="line">      <span class="keyword">auto</span> fn = <a class="code hl_function" href="classxtd_1_1io_1_1path.html#ad0c72dd91db2224d3ccb30cacdfca0ec">path::get_random_file_name</a>();</div>
-<div class="line">      <a class="code hl_function" href="#a8479f32003e663bf664cb934ea291b84">file_assume::exists</a>(fn);</div>
+<div class="line">      <a class="code hl_function" href="#a2f7952f433a72d5e64575f723fa44314">file_assume::exists</a>(fn);</div>
 <div class="line">      <span class="comment">// No need to remove fn because the file does not exist.</span></div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordtype">void</span> <a class="code hl_define" href="group__tunit.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a>(test_case3) {</div>
 <div class="line">      <span class="keyword">auto</span> <a class="code hl_function" href="group__xtd__core.html#ga59b26eda7fb7d0dc8c9968f4a2f78984">is</a> = std::istringstream {<span class="stringliteral">&quot;xtd::tunit::file_assume::are_equal example.&quot;</span>};</div>
-<div class="line">      <a class="code hl_function" href="#aa1b5ed8a57a253f424719554c6bf50a6">file_assume::are_equal</a>(std::istringstream {<span class="stringliteral">&quot;xtd::tunit::file_assume::are_equel example.&quot;</span>}, <a class="code hl_function" href="group__xtd__core.html#ga59b26eda7fb7d0dc8c9968f4a2f78984">is</a>);</div>
+<div class="line">      <a class="code hl_function" href="#ab96739b4dcbe78ec4f50593e8cd889a7">file_assume::are_equal</a>(std::istringstream {<span class="stringliteral">&quot;xtd::tunit::file_assume::are_equel example.&quot;</span>}, <a class="code hl_function" href="group__xtd__core.html#ga59b26eda7fb7d0dc8c9968f4a2f78984">is</a>);</div>
 <div class="line">    }</div>
 <div class="line">  };</div>
 <div class="line">}</div>
@@ -181,8 +181,8 @@ Inheritance diagram for xtd::tunit::file_assume:</div>
 <div class="ttc" id="aclassxtd_1_1io_1_1file_html_af1f6b61992c57e7442f84ae447d416de"><div class="ttname"><a href="classxtd_1_1io_1_1file.html#af1f6b61992c57e7442f84ae447d416de">xtd::io::file::remove</a></div><div class="ttdeci">static auto remove(const xtd::string &amp;path) -&gt; void</div><div class="ttdoc">Deletes the specified file.</div></div>
 <div class="ttc" id="aclassxtd_1_1io_1_1path_html_a215d1e158bd017585c72c67fd03a3d31"><div class="ttname"><a href="classxtd_1_1io_1_1path.html#a215d1e158bd017585c72c67fd03a3d31">xtd::io::path::get_temp_file_name</a></div><div class="ttdeci">static auto get_temp_file_name() -&gt; xtd::string</div><div class="ttdoc">Creates a uniquely named, zero-byte temporary file on disk and returns the full path of that file.</div></div>
 <div class="ttc" id="aclassxtd_1_1io_1_1path_html_ad0c72dd91db2224d3ccb30cacdfca0ec"><div class="ttname"><a href="classxtd_1_1io_1_1path.html#ad0c72dd91db2224d3ccb30cacdfca0ec">xtd::io::path::get_random_file_name</a></div><div class="ttdeci">static auto get_random_file_name() -&gt; xtd::string</div><div class="ttdoc">Returns a random folder name or file name.</div></div>
-<div class="ttc" id="aclassxtd_1_1tunit_1_1file__assume_html_a8479f32003e663bf664cb934ea291b84"><div class="ttname"><a href="#a8479f32003e663bf664cb934ea291b84">xtd::tunit::file_assume::exists</a></div><div class="ttdeci">static void exists(const xtd::basic_string&lt; char_t &gt; &amp;file, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Assumes that file exists.</div><div class="ttdef"><b>Definition</b> file_assume.hpp:295</div></div>
-<div class="ttc" id="aclassxtd_1_1tunit_1_1file__assume_html_aa1b5ed8a57a253f424719554c6bf50a6"><div class="ttname"><a href="#aa1b5ed8a57a253f424719554c6bf50a6">xtd::tunit::file_assume::are_equal</a></div><div class="ttdeci">static void are_equal(const std::basic_istream&lt; char_t &gt; &amp;expected, const std::basic_istream&lt; char_t &gt; &amp;actual, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Assumes that two files are equal.</div><div class="ttdef"><b>Definition</b> file_assume.hpp:50</div></div>
+<div class="ttc" id="aclassxtd_1_1tunit_1_1file__assume_html_a2f7952f433a72d5e64575f723fa44314"><div class="ttname"><a href="#a2f7952f433a72d5e64575f723fa44314">xtd::tunit::file_assume::exists</a></div><div class="ttdeci">static auto exists(const xtd::basic_string&lt; char_t &gt; &amp;file, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current()) -&gt; void</div><div class="ttdoc">Assumes that file exists.</div><div class="ttdef"><b>Definition</b> file_assume.hpp:295</div></div>
+<div class="ttc" id="aclassxtd_1_1tunit_1_1file__assume_html_ab96739b4dcbe78ec4f50593e8cd889a7"><div class="ttname"><a href="#ab96739b4dcbe78ec4f50593e8cd889a7">xtd::tunit::file_assume::are_equal</a></div><div class="ttdeci">static auto are_equal(const std::basic_istream&lt; char_t &gt; &amp;expected, const std::basic_istream&lt; char_t &gt; &amp;actual, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current()) -&gt; void</div><div class="ttdoc">Assumes that two files are equal.</div><div class="ttdef"><b>Definition</b> file_assume.hpp:50</div></div>
 <div class="ttc" id="agroup__tunit_html_ga1fa6dc01b83d00ce9e92402c9694c6af"><div class="ttname"><a href="group__tunit.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a></div><div class="ttdeci">#define test_method_(method_name)</div><div class="ttdoc">Add test method to class test.</div><div class="ttdef"><b>Definition</b> test_method_attribute.hpp:72</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ga59b26eda7fb7d0dc8c9968f4a2f78984"><div class="ttname"><a href="group__xtd__core.html#ga59b26eda7fb7d0dc8c9968f4a2f78984">xtd::is</a></div><div class="ttdeci">auto is(xtd::any value) -&gt; bool</div><div class="ttdoc">Checks if the result of an expression is compatible with a given type.</div><div class="ttdef"><b>Definition</b> is.hpp:485</div></div>
 <div class="ttc" id="anamespacextd_1_1io_html"><div class="ttname"><a href="namespacextd_1_1io.html">xtd::io</a></div><div class="ttdoc">The xtd::io namespace contains types that allow reading and writing to files and data streams,...</div><div class="ttdef"><b>Definition</b> binary_reader.hpp:17</div></div>
@@ -191,46 +191,46 @@ Inheritance diagram for xtd::tunit::file_assume:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Static Methods</h2></td></tr>
-<tr class="memitem:aa1b5ed8a57a253f424719554c6bf50a6" id="r_aa1b5ed8a57a253f424719554c6bf50a6"><td class="memTemplParams" colspan="2">template&lt;typename char_t&gt; </td></tr>
-<tr class="memitem:aa1b5ed8a57a253f424719554c6bf50a6 template"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#aa1b5ed8a57a253f424719554c6bf50a6">are_equal</a> (const std::basic_istream&lt; char_t &gt; &amp;expected, const std::basic_istream&lt; char_t &gt; &amp;actual, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>())</td></tr>
-<tr class="memdesc:aa1b5ed8a57a253f424719554c6bf50a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assumes that two files are equal.  <br /></td></tr>
-<tr class="memitem:a22ff507a6574ea5ce90a2093c4b7d8c9" id="r_a22ff507a6574ea5ce90a2093c4b7d8c9"><td class="memTemplParams" colspan="2">template&lt;typename char_t&gt; </td></tr>
-<tr class="memitem:a22ff507a6574ea5ce90a2093c4b7d8c9 template"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a22ff507a6574ea5ce90a2093c4b7d8c9">are_equal</a> (const std::basic_istream&lt; char_t &gt; &amp;expected, const std::basic_istream&lt; char_t &gt; &amp;actual, const std::string &amp;message, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>())</td></tr>
-<tr class="memdesc:a22ff507a6574ea5ce90a2093c4b7d8c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assumes that two files are equal.  <br /></td></tr>
-<tr class="memitem:a4fe2899d664f1834897f8a3e51cc7271" id="r_a4fe2899d664f1834897f8a3e51cc7271"><td class="memTemplParams" colspan="2">template&lt;typename char_t&gt; </td></tr>
-<tr class="memitem:a4fe2899d664f1834897f8a3e51cc7271 template"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a4fe2899d664f1834897f8a3e51cc7271">are_equal</a> (const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;expected, const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;actual, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>())</td></tr>
-<tr class="memdesc:a4fe2899d664f1834897f8a3e51cc7271"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assumes that two files are equal.  <br /></td></tr>
-<tr class="memitem:a496123dc44c0f32411f116bb62c3eac9" id="r_a496123dc44c0f32411f116bb62c3eac9"><td class="memTemplParams" colspan="2">template&lt;typename char_t&gt; </td></tr>
-<tr class="memitem:a496123dc44c0f32411f116bb62c3eac9 template"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a496123dc44c0f32411f116bb62c3eac9">are_equal</a> (const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;expected, const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;actual, const std::string &amp;message, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>())</td></tr>
-<tr class="memdesc:a496123dc44c0f32411f116bb62c3eac9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assumes that two files are equal.  <br /></td></tr>
-<tr class="memitem:a9bfd9d15ca131d5b1dc019d511b32837" id="r_a9bfd9d15ca131d5b1dc019d511b32837"><td class="memTemplParams" colspan="2">template&lt;typename char_t&gt; </td></tr>
-<tr class="memitem:a9bfd9d15ca131d5b1dc019d511b32837 template"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a9bfd9d15ca131d5b1dc019d511b32837">are_not_equal</a> (const std::basic_istream&lt; char_t &gt; &amp;expected, const std::basic_istream&lt; char_t &gt; &amp;actual, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>())</td></tr>
-<tr class="memdesc:a9bfd9d15ca131d5b1dc019d511b32837"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assumes that two files are not equal.  <br /></td></tr>
-<tr class="memitem:a2c7958ea26e1fd2ee65035a7979f5a5f" id="r_a2c7958ea26e1fd2ee65035a7979f5a5f"><td class="memTemplParams" colspan="2">template&lt;typename char_t&gt; </td></tr>
-<tr class="memitem:a2c7958ea26e1fd2ee65035a7979f5a5f template"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a2c7958ea26e1fd2ee65035a7979f5a5f">are_not_equal</a> (const std::basic_istream&lt; char_t &gt; &amp;expected, const std::basic_istream&lt; char_t &gt; &amp;actual, const std::string &amp;message, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>())</td></tr>
-<tr class="memdesc:a2c7958ea26e1fd2ee65035a7979f5a5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assumes that two files are not equal.  <br /></td></tr>
-<tr class="memitem:a2f7b81c7e528170d90b56580b15caf37" id="r_a2f7b81c7e528170d90b56580b15caf37"><td class="memTemplParams" colspan="2">template&lt;typename char_t&gt; </td></tr>
-<tr class="memitem:a2f7b81c7e528170d90b56580b15caf37 template"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a2f7b81c7e528170d90b56580b15caf37">are_not_equal</a> (const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;expected, const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;actual, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>())</td></tr>
-<tr class="memdesc:a2f7b81c7e528170d90b56580b15caf37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assumes that two files are not equal.  <br /></td></tr>
-<tr class="memitem:af6fb437672502e7e002bf0144d4ac0fa" id="r_af6fb437672502e7e002bf0144d4ac0fa"><td class="memTemplParams" colspan="2">template&lt;typename char_t&gt; </td></tr>
-<tr class="memitem:af6fb437672502e7e002bf0144d4ac0fa template"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#af6fb437672502e7e002bf0144d4ac0fa">are_not_equal</a> (const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;expected, const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;actual, const std::string &amp;message, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>())</td></tr>
-<tr class="memdesc:af6fb437672502e7e002bf0144d4ac0fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assumes that two files are not equal.  <br /></td></tr>
-<tr class="memitem:a8b101c5fbc1faca4dcc254551757f538" id="r_a8b101c5fbc1faca4dcc254551757f538"><td class="memTemplParams" colspan="2">template&lt;typename char_t&gt; </td></tr>
-<tr class="memitem:a8b101c5fbc1faca4dcc254551757f538 template"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a8b101c5fbc1faca4dcc254551757f538">does_not_exist</a> (const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;file, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>())</td></tr>
-<tr class="memdesc:a8b101c5fbc1faca4dcc254551757f538"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assumes that file not exists.  <br /></td></tr>
-<tr class="memitem:ae642485c6307884bd111944ee9b4279d" id="r_ae642485c6307884bd111944ee9b4279d"><td class="memTemplParams" colspan="2">template&lt;typename char_t&gt; </td></tr>
-<tr class="memitem:ae642485c6307884bd111944ee9b4279d template"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#ae642485c6307884bd111944ee9b4279d">does_not_exist</a> (const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;file, const std::string &amp;message, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>())</td></tr>
-<tr class="memdesc:ae642485c6307884bd111944ee9b4279d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assumes that file not exists.  <br /></td></tr>
-<tr class="memitem:a8479f32003e663bf664cb934ea291b84" id="r_a8479f32003e663bf664cb934ea291b84"><td class="memTemplParams" colspan="2">template&lt;typename char_t&gt; </td></tr>
-<tr class="memitem:a8479f32003e663bf664cb934ea291b84 template"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a8479f32003e663bf664cb934ea291b84">exists</a> (const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;file, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>())</td></tr>
-<tr class="memdesc:a8479f32003e663bf664cb934ea291b84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assumes that file exists.  <br /></td></tr>
-<tr class="memitem:ae354e36faba4a70dd8c3084125455096" id="r_ae354e36faba4a70dd8c3084125455096"><td class="memTemplParams" colspan="2">template&lt;typename char_t&gt; </td></tr>
-<tr class="memitem:ae354e36faba4a70dd8c3084125455096 template"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#ae354e36faba4a70dd8c3084125455096">exists</a> (const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;file, const std::string &amp;message, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>())</td></tr>
-<tr class="memdesc:ae354e36faba4a70dd8c3084125455096"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assumes that file exists.  <br /></td></tr>
+<tr class="memitem:ab96739b4dcbe78ec4f50593e8cd889a7" id="r_ab96739b4dcbe78ec4f50593e8cd889a7"><td class="memTemplParams" colspan="2">template&lt;typename char_t&gt; </td></tr>
+<tr class="memitem:ab96739b4dcbe78ec4f50593e8cd889a7 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ab96739b4dcbe78ec4f50593e8cd889a7">are_equal</a> (const std::basic_istream&lt; char_t &gt; &amp;expected, const std::basic_istream&lt; char_t &gt; &amp;actual, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()) -&gt; void</td></tr>
+<tr class="memdesc:ab96739b4dcbe78ec4f50593e8cd889a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assumes that two files are equal.  <br /></td></tr>
+<tr class="memitem:a4e9a26e499f6503db85bd7687008e61c" id="r_a4e9a26e499f6503db85bd7687008e61c"><td class="memTemplParams" colspan="2">template&lt;typename char_t&gt; </td></tr>
+<tr class="memitem:a4e9a26e499f6503db85bd7687008e61c template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a4e9a26e499f6503db85bd7687008e61c">are_equal</a> (const std::basic_istream&lt; char_t &gt; &amp;expected, const std::basic_istream&lt; char_t &gt; &amp;actual, const std::string &amp;message, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()) -&gt; void</td></tr>
+<tr class="memdesc:a4e9a26e499f6503db85bd7687008e61c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assumes that two files are equal.  <br /></td></tr>
+<tr class="memitem:ad40ea2e07ea0d5a73bc0c949387f43a0" id="r_ad40ea2e07ea0d5a73bc0c949387f43a0"><td class="memTemplParams" colspan="2">template&lt;typename char_t&gt; </td></tr>
+<tr class="memitem:ad40ea2e07ea0d5a73bc0c949387f43a0 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ad40ea2e07ea0d5a73bc0c949387f43a0">are_equal</a> (const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;expected, const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;actual, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()) -&gt; void</td></tr>
+<tr class="memdesc:ad40ea2e07ea0d5a73bc0c949387f43a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assumes that two files are equal.  <br /></td></tr>
+<tr class="memitem:acb7cc7ef4995765bb88cdde2a9c3e1e1" id="r_acb7cc7ef4995765bb88cdde2a9c3e1e1"><td class="memTemplParams" colspan="2">template&lt;typename char_t&gt; </td></tr>
+<tr class="memitem:acb7cc7ef4995765bb88cdde2a9c3e1e1 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#acb7cc7ef4995765bb88cdde2a9c3e1e1">are_equal</a> (const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;expected, const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;actual, const std::string &amp;message, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()) -&gt; void</td></tr>
+<tr class="memdesc:acb7cc7ef4995765bb88cdde2a9c3e1e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assumes that two files are equal.  <br /></td></tr>
+<tr class="memitem:ab433b5f3c8bbd3803b13517dfe45345b" id="r_ab433b5f3c8bbd3803b13517dfe45345b"><td class="memTemplParams" colspan="2">template&lt;typename char_t&gt; </td></tr>
+<tr class="memitem:ab433b5f3c8bbd3803b13517dfe45345b template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ab433b5f3c8bbd3803b13517dfe45345b">are_not_equal</a> (const std::basic_istream&lt; char_t &gt; &amp;expected, const std::basic_istream&lt; char_t &gt; &amp;actual, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()) -&gt; void</td></tr>
+<tr class="memdesc:ab433b5f3c8bbd3803b13517dfe45345b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assumes that two files are not equal.  <br /></td></tr>
+<tr class="memitem:af6cd4967832681c3e05fe600d4f0a2fe" id="r_af6cd4967832681c3e05fe600d4f0a2fe"><td class="memTemplParams" colspan="2">template&lt;typename char_t&gt; </td></tr>
+<tr class="memitem:af6cd4967832681c3e05fe600d4f0a2fe template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#af6cd4967832681c3e05fe600d4f0a2fe">are_not_equal</a> (const std::basic_istream&lt; char_t &gt; &amp;expected, const std::basic_istream&lt; char_t &gt; &amp;actual, const std::string &amp;message, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()) -&gt; void</td></tr>
+<tr class="memdesc:af6cd4967832681c3e05fe600d4f0a2fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assumes that two files are not equal.  <br /></td></tr>
+<tr class="memitem:a068367ff0f58fc5028411afe3d22b6dc" id="r_a068367ff0f58fc5028411afe3d22b6dc"><td class="memTemplParams" colspan="2">template&lt;typename char_t&gt; </td></tr>
+<tr class="memitem:a068367ff0f58fc5028411afe3d22b6dc template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a068367ff0f58fc5028411afe3d22b6dc">are_not_equal</a> (const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;expected, const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;actual, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()) -&gt; void</td></tr>
+<tr class="memdesc:a068367ff0f58fc5028411afe3d22b6dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assumes that two files are not equal.  <br /></td></tr>
+<tr class="memitem:a4dbbc14fe051e09af11956633b6af79a" id="r_a4dbbc14fe051e09af11956633b6af79a"><td class="memTemplParams" colspan="2">template&lt;typename char_t&gt; </td></tr>
+<tr class="memitem:a4dbbc14fe051e09af11956633b6af79a template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a4dbbc14fe051e09af11956633b6af79a">are_not_equal</a> (const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;expected, const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;actual, const std::string &amp;message, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()) -&gt; void</td></tr>
+<tr class="memdesc:a4dbbc14fe051e09af11956633b6af79a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assumes that two files are not equal.  <br /></td></tr>
+<tr class="memitem:a014ee2ed53682d0ab6ed36d6ac7f358b" id="r_a014ee2ed53682d0ab6ed36d6ac7f358b"><td class="memTemplParams" colspan="2">template&lt;typename char_t&gt; </td></tr>
+<tr class="memitem:a014ee2ed53682d0ab6ed36d6ac7f358b template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a014ee2ed53682d0ab6ed36d6ac7f358b">does_not_exist</a> (const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;file, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()) -&gt; void</td></tr>
+<tr class="memdesc:a014ee2ed53682d0ab6ed36d6ac7f358b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assumes that file not exists.  <br /></td></tr>
+<tr class="memitem:a6c90b9889fedaea33b9b63524e4ce176" id="r_a6c90b9889fedaea33b9b63524e4ce176"><td class="memTemplParams" colspan="2">template&lt;typename char_t&gt; </td></tr>
+<tr class="memitem:a6c90b9889fedaea33b9b63524e4ce176 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a6c90b9889fedaea33b9b63524e4ce176">does_not_exist</a> (const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;file, const std::string &amp;message, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()) -&gt; void</td></tr>
+<tr class="memdesc:a6c90b9889fedaea33b9b63524e4ce176"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assumes that file not exists.  <br /></td></tr>
+<tr class="memitem:a2f7952f433a72d5e64575f723fa44314" id="r_a2f7952f433a72d5e64575f723fa44314"><td class="memTemplParams" colspan="2">template&lt;typename char_t&gt; </td></tr>
+<tr class="memitem:a2f7952f433a72d5e64575f723fa44314 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a2f7952f433a72d5e64575f723fa44314">exists</a> (const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;file, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()) -&gt; void</td></tr>
+<tr class="memdesc:a2f7952f433a72d5e64575f723fa44314"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assumes that file exists.  <br /></td></tr>
+<tr class="memitem:a620cbb20202ca13e6e6c70dcf500785d" id="r_a620cbb20202ca13e6e6c70dcf500785d"><td class="memTemplParams" colspan="2">template&lt;typename char_t&gt; </td></tr>
+<tr class="memitem:a620cbb20202ca13e6e6c70dcf500785d template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a620cbb20202ca13e6e6c70dcf500785d">exists</a> (const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;file, const std::string &amp;message, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()) -&gt; void</td></tr>
+<tr class="memdesc:a620cbb20202ca13e6e6c70dcf500785d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assumes that file exists.  <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="aa1b5ed8a57a253f424719554c6bf50a6" name="aa1b5ed8a57a253f424719554c6bf50a6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa1b5ed8a57a253f424719554c6bf50a6">&#9670;&#160;</a></span>are_equal() <span class="overload">[1/4]</span></h2>
+<a id="ab96739b4dcbe78ec4f50593e8cd889a7" name="ab96739b4dcbe78ec4f50593e8cd889a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab96739b4dcbe78ec4f50593e8cd889a7">&#9670;&#160;</a></span>are_equal() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -241,7 +241,7 @@ template&lt;typename char_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::tunit::file_assume::are_equal </td>
+          <td class="memname">auto xtd::tunit::file_assume::are_equal </td>
           <td>(</td>
           <td class="paramtype">const std::basic_istream&lt; char_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>expected</em></span>, </td>
         </tr>
@@ -253,7 +253,7 @@ template&lt;typename char_t&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;) -&gt; void</td>
         </tr>
       </table>
   </td>
@@ -284,18 +284,18 @@ template&lt;typename char_t&gt; </div>
 <div class="line">std::stringstream s2;</div>
 <div class="line">s2 &lt;&lt; <span class="stringliteral">&quot;Test&quot;</span>;</div>
 <div class="line">s2.seekg(0, std::ios::beg);</div>
-<div class="line"><a class="code hl_function" href="#aa1b5ed8a57a253f424719554c6bf50a6">xtd::tunit::file_assume::are_equal</a>(s2, s1); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_function" href="#ab96739b4dcbe78ec4f50593e8cd889a7">xtd::tunit::file_assume::are_equal</a>(s2, s1); <span class="comment">// test ok.</span></div>
 <div class="line">s2 &lt;&lt; <span class="stringliteral">&quot;Test2&quot;</span>;</div>
 <div class="line">s2.seekg(0, std::ios::beg);</div>
-<div class="line"><a class="code hl_function" href="#aa1b5ed8a57a253f424719554c6bf50a6">xtd::tunit::file_assume::are_equal</a>(s2, s1);<span class="comment">// test throws an abort_error exception.</span></div>
+<div class="line"><a class="code hl_function" href="#ab96739b4dcbe78ec4f50593e8cd889a7">xtd::tunit::file_assume::are_equal</a>(s2, s1);<span class="comment">// test throws an abort_error exception.</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="file_assume_8cpp-example.html#_a6">file_assume.cpp</a>, and <a class="el" href="file_assume_are_equal_8cpp-example.html#_a2">file_assume_are_equal.cpp</a>.</dd>
 </dl>
 
 </div>
 </div>
-<a id="a22ff507a6574ea5ce90a2093c4b7d8c9" name="a22ff507a6574ea5ce90a2093c4b7d8c9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a22ff507a6574ea5ce90a2093c4b7d8c9">&#9670;&#160;</a></span>are_equal() <span class="overload">[2/4]</span></h2>
+<a id="a4e9a26e499f6503db85bd7687008e61c" name="a4e9a26e499f6503db85bd7687008e61c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e9a26e499f6503db85bd7687008e61c">&#9670;&#160;</a></span>are_equal() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -306,7 +306,7 @@ template&lt;typename char_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::tunit::file_assume::are_equal </td>
+          <td class="memname">auto xtd::tunit::file_assume::are_equal </td>
           <td>(</td>
           <td class="paramtype">const std::basic_istream&lt; char_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>expected</em></span>, </td>
         </tr>
@@ -323,7 +323,7 @@ template&lt;typename char_t&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;) -&gt; void</td>
         </tr>
       </table>
   </td>
@@ -355,16 +355,16 @@ template&lt;typename char_t&gt; </div>
 <div class="line">std::stringstream s2;</div>
 <div class="line">s2 &lt;&lt; <span class="stringliteral">&quot;Test&quot;</span>;</div>
 <div class="line">s2.seekg(0, std::ios::beg);</div>
-<div class="line"><a class="code hl_function" href="#aa1b5ed8a57a253f424719554c6bf50a6">xtd::tunit::file_assume::are_equal</a>(s2, s1, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_function" href="#ab96739b4dcbe78ec4f50593e8cd889a7">xtd::tunit::file_assume::are_equal</a>(s2, s1, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
 <div class="line">s2 &lt;&lt; <span class="stringliteral">&quot;Test2&quot;</span>;</div>
 <div class="line">s2.seekg(0, std::ios::beg);</div>
-<div class="line"><a class="code hl_function" href="#aa1b5ed8a57a253f424719554c6bf50a6">xtd::tunit::file_assume::are_equal</a>(s2, s1, <span class="stringliteral">&quot;User message...&quot;</span>);<span class="comment">// test throws an abort_error exception.</span></div>
+<div class="line"><a class="code hl_function" href="#ab96739b4dcbe78ec4f50593e8cd889a7">xtd::tunit::file_assume::are_equal</a>(s2, s1, <span class="stringliteral">&quot;User message...&quot;</span>);<span class="comment">// test throws an abort_error exception.</span></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
-<a id="a4fe2899d664f1834897f8a3e51cc7271" name="a4fe2899d664f1834897f8a3e51cc7271"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4fe2899d664f1834897f8a3e51cc7271">&#9670;&#160;</a></span>are_equal() <span class="overload">[3/4]</span></h2>
+<a id="ad40ea2e07ea0d5a73bc0c949387f43a0" name="ad40ea2e07ea0d5a73bc0c949387f43a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad40ea2e07ea0d5a73bc0c949387f43a0">&#9670;&#160;</a></span>are_equal() <span class="overload">[3/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -375,7 +375,7 @@ template&lt;typename char_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::tunit::file_assume::are_equal </td>
+          <td class="memname">auto xtd::tunit::file_assume::are_equal </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>expected</em></span>, </td>
         </tr>
@@ -387,7 +387,7 @@ template&lt;typename char_t&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;) -&gt; void</td>
         </tr>
       </table>
   </td>
@@ -418,16 +418,16 @@ template&lt;typename char_t&gt; </div>
 <div class="line">std::stringstream s2;</div>
 <div class="line">s2 &lt;&lt; <span class="stringliteral">&quot;Test&quot;</span>;</div>
 <div class="line">s2.seekg(0, std::ios::beg);</div>
-<div class="line"><a class="code hl_function" href="#aa1b5ed8a57a253f424719554c6bf50a6">xtd::tunit::file_assume::are_equal</a>(s2, s1); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_function" href="#ab96739b4dcbe78ec4f50593e8cd889a7">xtd::tunit::file_assume::are_equal</a>(s2, s1); <span class="comment">// test ok.</span></div>
 <div class="line">s2 &lt;&lt; <span class="stringliteral">&quot;Test2&quot;</span>;</div>
 <div class="line">s2.seekg(0, std::ios::beg);</div>
-<div class="line"><a class="code hl_function" href="#aa1b5ed8a57a253f424719554c6bf50a6">xtd::tunit::file_assume::are_equal</a>(s2, s1);<span class="comment">// test throws an abort_error exception.</span></div>
+<div class="line"><a class="code hl_function" href="#ab96739b4dcbe78ec4f50593e8cd889a7">xtd::tunit::file_assume::are_equal</a>(s2, s1);<span class="comment">// test throws an abort_error exception.</span></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
-<a id="a496123dc44c0f32411f116bb62c3eac9" name="a496123dc44c0f32411f116bb62c3eac9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a496123dc44c0f32411f116bb62c3eac9">&#9670;&#160;</a></span>are_equal() <span class="overload">[4/4]</span></h2>
+<a id="acb7cc7ef4995765bb88cdde2a9c3e1e1" name="acb7cc7ef4995765bb88cdde2a9c3e1e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb7cc7ef4995765bb88cdde2a9c3e1e1">&#9670;&#160;</a></span>are_equal() <span class="overload">[4/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -438,7 +438,7 @@ template&lt;typename char_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::tunit::file_assume::are_equal </td>
+          <td class="memname">auto xtd::tunit::file_assume::are_equal </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>expected</em></span>, </td>
         </tr>
@@ -455,7 +455,7 @@ template&lt;typename char_t&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;) -&gt; void</td>
         </tr>
       </table>
   </td>
@@ -487,16 +487,16 @@ template&lt;typename char_t&gt; </div>
 <div class="line">std::stringstream s2;</div>
 <div class="line">s2 &lt;&lt; <span class="stringliteral">&quot;Test&quot;</span>;</div>
 <div class="line">s2.seekg(0, std::ios::beg);</div>
-<div class="line"><a class="code hl_function" href="#aa1b5ed8a57a253f424719554c6bf50a6">xtd::tunit::file_assume::are_equal</a>(s2, s1, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_function" href="#ab96739b4dcbe78ec4f50593e8cd889a7">xtd::tunit::file_assume::are_equal</a>(s2, s1, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
 <div class="line">s2 &lt;&lt; <span class="stringliteral">&quot;Test2&quot;</span>;</div>
 <div class="line">s2.seekg(0, std::ios::beg);</div>
-<div class="line"><a class="code hl_function" href="#aa1b5ed8a57a253f424719554c6bf50a6">xtd::tunit::file_assume::are_equal</a>(s2, s1, <span class="stringliteral">&quot;User message...&quot;</span>);<span class="comment">// test throws an abort_error exception.</span></div>
+<div class="line"><a class="code hl_function" href="#ab96739b4dcbe78ec4f50593e8cd889a7">xtd::tunit::file_assume::are_equal</a>(s2, s1, <span class="stringliteral">&quot;User message...&quot;</span>);<span class="comment">// test throws an abort_error exception.</span></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
-<a id="a9bfd9d15ca131d5b1dc019d511b32837" name="a9bfd9d15ca131d5b1dc019d511b32837"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9bfd9d15ca131d5b1dc019d511b32837">&#9670;&#160;</a></span>are_not_equal() <span class="overload">[1/4]</span></h2>
+<a id="ab433b5f3c8bbd3803b13517dfe45345b" name="ab433b5f3c8bbd3803b13517dfe45345b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab433b5f3c8bbd3803b13517dfe45345b">&#9670;&#160;</a></span>are_not_equal() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -507,7 +507,7 @@ template&lt;typename char_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::tunit::file_assume::are_not_equal </td>
+          <td class="memname">auto xtd::tunit::file_assume::are_not_equal </td>
           <td>(</td>
           <td class="paramtype">const std::basic_istream&lt; char_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>expected</em></span>, </td>
         </tr>
@@ -519,7 +519,7 @@ template&lt;typename char_t&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;) -&gt; void</td>
         </tr>
       </table>
   </td>
@@ -550,19 +550,19 @@ template&lt;typename char_t&gt; </div>
 <div class="line">std::stringstream s2;</div>
 <div class="line">s2 &lt;&lt; <span class="stringliteral">&quot;Test2&quot;</span>;</div>
 <div class="line">s2.seekg(0, std::ios::beg);</div>
-<div class="line"><a class="code hl_function" href="#a9bfd9d15ca131d5b1dc019d511b32837">xtd::tunit::file_assume::are_not_equal</a>(s2, s1); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_function" href="#ab433b5f3c8bbd3803b13517dfe45345b">xtd::tunit::file_assume::are_not_equal</a>(s2, s1); <span class="comment">// test ok.</span></div>
 <div class="line">s2 &lt;&lt; <span class="stringliteral">&quot;Test&quot;</span>;</div>
 <div class="line">s2.seekg(0, std::ios::beg);</div>
-<div class="line"><a class="code hl_function" href="#a9bfd9d15ca131d5b1dc019d511b32837">xtd::tunit::file_assume::are_not_equal</a>(s2, s1);<span class="comment">// test throws an abort_error exception.</span></div>
-<div class="ttc" id="aclassxtd_1_1tunit_1_1file__assume_html_a9bfd9d15ca131d5b1dc019d511b32837"><div class="ttname"><a href="#a9bfd9d15ca131d5b1dc019d511b32837">xtd::tunit::file_assume::are_not_equal</a></div><div class="ttdeci">static void are_not_equal(const std::basic_istream&lt; char_t &gt; &amp;expected, const std::basic_istream&lt; char_t &gt; &amp;actual, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Assumes that two files are not equal.</div><div class="ttdef"><b>Definition</b> file_assume.hpp:154</div></div>
+<div class="line"><a class="code hl_function" href="#ab433b5f3c8bbd3803b13517dfe45345b">xtd::tunit::file_assume::are_not_equal</a>(s2, s1);<span class="comment">// test throws an abort_error exception.</span></div>
+<div class="ttc" id="aclassxtd_1_1tunit_1_1file__assume_html_ab433b5f3c8bbd3803b13517dfe45345b"><div class="ttname"><a href="#ab433b5f3c8bbd3803b13517dfe45345b">xtd::tunit::file_assume::are_not_equal</a></div><div class="ttdeci">static auto are_not_equal(const std::basic_istream&lt; char_t &gt; &amp;expected, const std::basic_istream&lt; char_t &gt; &amp;actual, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current()) -&gt; void</div><div class="ttdoc">Assumes that two files are not equal.</div><div class="ttdef"><b>Definition</b> file_assume.hpp:154</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="file_assume_are_not_equal_8cpp-example.html#_a2">file_assume_are_not_equal.cpp</a>.</dd>
 </dl>
 
 </div>
 </div>
-<a id="a2c7958ea26e1fd2ee65035a7979f5a5f" name="a2c7958ea26e1fd2ee65035a7979f5a5f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2c7958ea26e1fd2ee65035a7979f5a5f">&#9670;&#160;</a></span>are_not_equal() <span class="overload">[2/4]</span></h2>
+<a id="af6cd4967832681c3e05fe600d4f0a2fe" name="af6cd4967832681c3e05fe600d4f0a2fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6cd4967832681c3e05fe600d4f0a2fe">&#9670;&#160;</a></span>are_not_equal() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -573,7 +573,7 @@ template&lt;typename char_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::tunit::file_assume::are_not_equal </td>
+          <td class="memname">auto xtd::tunit::file_assume::are_not_equal </td>
           <td>(</td>
           <td class="paramtype">const std::basic_istream&lt; char_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>expected</em></span>, </td>
         </tr>
@@ -590,7 +590,7 @@ template&lt;typename char_t&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;) -&gt; void</td>
         </tr>
       </table>
   </td>
@@ -622,16 +622,16 @@ template&lt;typename char_t&gt; </div>
 <div class="line">std::stringstream s2;</div>
 <div class="line">s2 &lt;&lt; <span class="stringliteral">&quot;Test2&quot;</span>;</div>
 <div class="line">s2.seekg(0, std::ios::beg);</div>
-<div class="line"><a class="code hl_function" href="#a9bfd9d15ca131d5b1dc019d511b32837">xtd::tunit::file_assume::are_not_equal</a>(s2, s1, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_function" href="#ab433b5f3c8bbd3803b13517dfe45345b">xtd::tunit::file_assume::are_not_equal</a>(s2, s1, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
 <div class="line">s2 &lt;&lt; <span class="stringliteral">&quot;Test&quot;</span>;</div>
 <div class="line">s2.seekg(0, std::ios::beg);</div>
-<div class="line"><a class="code hl_function" href="#a9bfd9d15ca131d5b1dc019d511b32837">xtd::tunit::file_assume::are_not_equal</a>(s2, s1, <span class="stringliteral">&quot;User message...&quot;</span>);<span class="comment">// test throws an abort_error exception.</span></div>
+<div class="line"><a class="code hl_function" href="#ab433b5f3c8bbd3803b13517dfe45345b">xtd::tunit::file_assume::are_not_equal</a>(s2, s1, <span class="stringliteral">&quot;User message...&quot;</span>);<span class="comment">// test throws an abort_error exception.</span></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
-<a id="a2f7b81c7e528170d90b56580b15caf37" name="a2f7b81c7e528170d90b56580b15caf37"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2f7b81c7e528170d90b56580b15caf37">&#9670;&#160;</a></span>are_not_equal() <span class="overload">[3/4]</span></h2>
+<a id="a068367ff0f58fc5028411afe3d22b6dc" name="a068367ff0f58fc5028411afe3d22b6dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a068367ff0f58fc5028411afe3d22b6dc">&#9670;&#160;</a></span>are_not_equal() <span class="overload">[3/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -642,7 +642,7 @@ template&lt;typename char_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::tunit::file_assume::are_not_equal </td>
+          <td class="memname">auto xtd::tunit::file_assume::are_not_equal </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>expected</em></span>, </td>
         </tr>
@@ -654,7 +654,7 @@ template&lt;typename char_t&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;) -&gt; void</td>
         </tr>
       </table>
   </td>
@@ -685,16 +685,16 @@ template&lt;typename char_t&gt; </div>
 <div class="line">std::stringstream s2;</div>
 <div class="line">s2 &lt;&lt; <span class="stringliteral">&quot;Test2&quot;</span>;</div>
 <div class="line">s2.seekg(0, std::ios::beg);</div>
-<div class="line"><a class="code hl_function" href="#a9bfd9d15ca131d5b1dc019d511b32837">xtd::tunit::file_assume::are_not_equal</a>(s2, s1); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_function" href="#ab433b5f3c8bbd3803b13517dfe45345b">xtd::tunit::file_assume::are_not_equal</a>(s2, s1); <span class="comment">// test ok.</span></div>
 <div class="line">s2 &lt;&lt; <span class="stringliteral">&quot;Test&quot;</span>;</div>
 <div class="line">s2.seekg(0, std::ios::beg);</div>
-<div class="line"><a class="code hl_function" href="#a9bfd9d15ca131d5b1dc019d511b32837">xtd::tunit::file_assume::are_not_equal</a>(s2, s1);<span class="comment">// test throws an abort_error exception.</span></div>
+<div class="line"><a class="code hl_function" href="#ab433b5f3c8bbd3803b13517dfe45345b">xtd::tunit::file_assume::are_not_equal</a>(s2, s1);<span class="comment">// test throws an abort_error exception.</span></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
-<a id="af6fb437672502e7e002bf0144d4ac0fa" name="af6fb437672502e7e002bf0144d4ac0fa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af6fb437672502e7e002bf0144d4ac0fa">&#9670;&#160;</a></span>are_not_equal() <span class="overload">[4/4]</span></h2>
+<a id="a4dbbc14fe051e09af11956633b6af79a" name="a4dbbc14fe051e09af11956633b6af79a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4dbbc14fe051e09af11956633b6af79a">&#9670;&#160;</a></span>are_not_equal() <span class="overload">[4/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -705,7 +705,7 @@ template&lt;typename char_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::tunit::file_assume::are_not_equal </td>
+          <td class="memname">auto xtd::tunit::file_assume::are_not_equal </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>expected</em></span>, </td>
         </tr>
@@ -722,7 +722,7 @@ template&lt;typename char_t&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;) -&gt; void</td>
         </tr>
       </table>
   </td>
@@ -754,16 +754,16 @@ template&lt;typename char_t&gt; </div>
 <div class="line">std::stringstream s2;</div>
 <div class="line">s2 &lt;&lt; <span class="stringliteral">&quot;Test2&quot;</span>;</div>
 <div class="line">s2.seekg(0, std::ios::beg);</div>
-<div class="line"><a class="code hl_function" href="#a9bfd9d15ca131d5b1dc019d511b32837">xtd::tunit::file_assume::are_not_equal</a>(s2, s1, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_function" href="#ab433b5f3c8bbd3803b13517dfe45345b">xtd::tunit::file_assume::are_not_equal</a>(s2, s1, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
 <div class="line">s2 &lt;&lt; <span class="stringliteral">&quot;Test&quot;</span>;</div>
 <div class="line">s2.seekg(0, std::ios::beg);</div>
-<div class="line"><a class="code hl_function" href="#a9bfd9d15ca131d5b1dc019d511b32837">xtd::tunit::file_assume::are_not_equal</a>(s2, s1, <span class="stringliteral">&quot;User message...&quot;</span>);<span class="comment">// test throws an abort_error exception.</span></div>
+<div class="line"><a class="code hl_function" href="#ab433b5f3c8bbd3803b13517dfe45345b">xtd::tunit::file_assume::are_not_equal</a>(s2, s1, <span class="stringliteral">&quot;User message...&quot;</span>);<span class="comment">// test throws an abort_error exception.</span></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
-<a id="a8b101c5fbc1faca4dcc254551757f538" name="a8b101c5fbc1faca4dcc254551757f538"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8b101c5fbc1faca4dcc254551757f538">&#9670;&#160;</a></span>does_not_exist() <span class="overload">[1/2]</span></h2>
+<a id="a014ee2ed53682d0ab6ed36d6ac7f358b" name="a014ee2ed53682d0ab6ed36d6ac7f358b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a014ee2ed53682d0ab6ed36d6ac7f358b">&#9670;&#160;</a></span>does_not_exist() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -774,14 +774,14 @@ template&lt;typename char_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::tunit::file_assume::does_not_exist </td>
+          <td class="memname">auto xtd::tunit::file_assume::does_not_exist </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>file</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;) -&gt; void</td>
         </tr>
       </table>
   </td>
@@ -808,9 +808,9 @@ template&lt;typename char_t&gt; </div>
 </dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line">std::ifstream <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2abd19836ddb62c11c55ab251ccaca5645">f1</a>(<span class="stringliteral">&quot;Test1.txt&quot;</span>);</div>
 <div class="line"><a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2abd19836ddb62c11c55ab251ccaca5645">f1</a>.close();</div>
-<div class="line"><a class="code hl_function" href="#a8b101c5fbc1faca4dcc254551757f538">xtd::tunit::file_assume::does_not_exist</a>(<span class="stringliteral">&quot;Test2.txt&quot;</span>); <span class="comment">// test ok.</span></div>
-<div class="line"><a class="code hl_function" href="#a8b101c5fbc1faca4dcc254551757f538">xtd::tunit::file_assume::does_not_exist</a>(<span class="stringliteral">&quot;Test1.txt&quot;</span>);<span class="comment">// test throws an abort_error exception.</span></div>
-<div class="ttc" id="aclassxtd_1_1tunit_1_1file__assume_html_a8b101c5fbc1faca4dcc254551757f538"><div class="ttname"><a href="#a8b101c5fbc1faca4dcc254551757f538">xtd::tunit::file_assume::does_not_exist</a></div><div class="ttdeci">static void does_not_exist(const xtd::basic_string&lt; char_t &gt; &amp;file, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Assumes that file not exists.</div><div class="ttdef"><b>Definition</b> file_assume.hpp:252</div></div>
+<div class="line"><a class="code hl_function" href="#a014ee2ed53682d0ab6ed36d6ac7f358b">xtd::tunit::file_assume::does_not_exist</a>(<span class="stringliteral">&quot;Test2.txt&quot;</span>); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_function" href="#a014ee2ed53682d0ab6ed36d6ac7f358b">xtd::tunit::file_assume::does_not_exist</a>(<span class="stringliteral">&quot;Test1.txt&quot;</span>);<span class="comment">// test throws an abort_error exception.</span></div>
+<div class="ttc" id="aclassxtd_1_1tunit_1_1file__assume_html_a014ee2ed53682d0ab6ed36d6ac7f358b"><div class="ttname"><a href="#a014ee2ed53682d0ab6ed36d6ac7f358b">xtd::tunit::file_assume::does_not_exist</a></div><div class="ttdeci">static auto does_not_exist(const xtd::basic_string&lt; char_t &gt; &amp;file, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current()) -&gt; void</div><div class="ttdoc">Assumes that file not exists.</div><div class="ttdef"><b>Definition</b> file_assume.hpp:252</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2abd19836ddb62c11c55ab251ccaca5645"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2abd19836ddb62c11c55ab251ccaca5645">xtd::console_key::f1</a></div><div class="ttdeci">@ f1</div><div class="ttdoc">The F1 key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:180</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="file_assume_does_not_exist_8cpp-example.html#_a3">file_assume_does_not_exist.cpp</a>.</dd>
@@ -818,8 +818,8 @@ template&lt;typename char_t&gt; </div>
 
 </div>
 </div>
-<a id="ae642485c6307884bd111944ee9b4279d" name="ae642485c6307884bd111944ee9b4279d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae642485c6307884bd111944ee9b4279d">&#9670;&#160;</a></span>does_not_exist() <span class="overload">[2/2]</span></h2>
+<a id="a6c90b9889fedaea33b9b63524e4ce176" name="a6c90b9889fedaea33b9b63524e4ce176"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c90b9889fedaea33b9b63524e4ce176">&#9670;&#160;</a></span>does_not_exist() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -830,7 +830,7 @@ template&lt;typename char_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::tunit::file_assume::does_not_exist </td>
+          <td class="memname">auto xtd::tunit::file_assume::does_not_exist </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>file</em></span>, </td>
         </tr>
@@ -842,7 +842,7 @@ template&lt;typename char_t&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;) -&gt; void</td>
         </tr>
       </table>
   </td>
@@ -870,14 +870,14 @@ template&lt;typename char_t&gt; </div>
 </dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line">std::ifstream <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2abd19836ddb62c11c55ab251ccaca5645">f1</a>(<span class="stringliteral">&quot;Test1.txt&quot;</span>);</div>
 <div class="line"><a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2abd19836ddb62c11c55ab251ccaca5645">f1</a>.close();</div>
-<div class="line"><a class="code hl_function" href="#a8b101c5fbc1faca4dcc254551757f538">xtd::tunit::file_assume::does_not_exist</a>(<span class="stringliteral">&quot;Test2.txt&quot;</span> <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
-<div class="line"><a class="code hl_function" href="#a8b101c5fbc1faca4dcc254551757f538">xtd::tunit::file_assume::does_not_exist</a>(<span class="stringliteral">&quot;Test1.txt&quot;</span>, <span class="stringliteral">&quot;User message...&quot;</span>);<span class="comment">// test throws an abort_error exception.</span></div>
+<div class="line"><a class="code hl_function" href="#a014ee2ed53682d0ab6ed36d6ac7f358b">xtd::tunit::file_assume::does_not_exist</a>(<span class="stringliteral">&quot;Test2.txt&quot;</span> <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_function" href="#a014ee2ed53682d0ab6ed36d6ac7f358b">xtd::tunit::file_assume::does_not_exist</a>(<span class="stringliteral">&quot;Test1.txt&quot;</span>, <span class="stringliteral">&quot;User message...&quot;</span>);<span class="comment">// test throws an abort_error exception.</span></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
-<a id="a8479f32003e663bf664cb934ea291b84" name="a8479f32003e663bf664cb934ea291b84"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8479f32003e663bf664cb934ea291b84">&#9670;&#160;</a></span>exists() <span class="overload">[1/2]</span></h2>
+<a id="a2f7952f433a72d5e64575f723fa44314" name="a2f7952f433a72d5e64575f723fa44314"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f7952f433a72d5e64575f723fa44314">&#9670;&#160;</a></span>exists() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -888,14 +888,14 @@ template&lt;typename char_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::tunit::file_assume::exists </td>
+          <td class="memname">auto xtd::tunit::file_assume::exists </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>file</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;) -&gt; void</td>
         </tr>
       </table>
   </td>
@@ -922,16 +922,16 @@ template&lt;typename char_t&gt; </div>
 </dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line">std::ifstream <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2abd19836ddb62c11c55ab251ccaca5645">f1</a>(<span class="stringliteral">&quot;Test1.txt&quot;</span>);</div>
 <div class="line"><a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2abd19836ddb62c11c55ab251ccaca5645">f1</a>.close();</div>
-<div class="line"><a class="code hl_function" href="#a8479f32003e663bf664cb934ea291b84">xtd::tunit::file_assume::exists</a>(<span class="stringliteral">&quot;Test1.txt&quot;</span>); <span class="comment">// test ok.</span></div>
-<div class="line"><a class="code hl_function" href="#a8479f32003e663bf664cb934ea291b84">xtd::tunit::file_assume::exists</a>(<span class="stringliteral">&quot;Test2.txt&quot;</span>);<span class="comment">// test throws an abort_error exception.</span></div>
+<div class="line"><a class="code hl_function" href="#a2f7952f433a72d5e64575f723fa44314">xtd::tunit::file_assume::exists</a>(<span class="stringliteral">&quot;Test1.txt&quot;</span>); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_function" href="#a2f7952f433a72d5e64575f723fa44314">xtd::tunit::file_assume::exists</a>(<span class="stringliteral">&quot;Test2.txt&quot;</span>);<span class="comment">// test throws an abort_error exception.</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="file_assume_8cpp-example.html#_a2">file_assume.cpp</a>, and <a class="el" href="file_assume_exists_8cpp-example.html#_a2">file_assume_exists.cpp</a>.</dd>
 </dl>
 
 </div>
 </div>
-<a id="ae354e36faba4a70dd8c3084125455096" name="ae354e36faba4a70dd8c3084125455096"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae354e36faba4a70dd8c3084125455096">&#9670;&#160;</a></span>exists() <span class="overload">[2/2]</span></h2>
+<a id="a620cbb20202ca13e6e6c70dcf500785d" name="a620cbb20202ca13e6e6c70dcf500785d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a620cbb20202ca13e6e6c70dcf500785d">&#9670;&#160;</a></span>exists() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -942,7 +942,7 @@ template&lt;typename char_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::tunit::file_assume::exists </td>
+          <td class="memname">auto xtd::tunit::file_assume::exists </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>file</em></span>, </td>
         </tr>
@@ -954,7 +954,7 @@ template&lt;typename char_t&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;) -&gt; void</td>
         </tr>
       </table>
   </td>
@@ -982,8 +982,8 @@ template&lt;typename char_t&gt; </div>
 </dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line">std::ifstream <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2abd19836ddb62c11c55ab251ccaca5645">f1</a>(<span class="stringliteral">&quot;Test1.txt&quot;</span>);</div>
 <div class="line"><a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2abd19836ddb62c11c55ab251ccaca5645">f1</a>.close();</div>
-<div class="line"><a class="code hl_function" href="#a8479f32003e663bf664cb934ea291b84">xtd::tunit::file_assume::exists</a>(<span class="stringliteral">&quot;Test1.txt&quot;</span> <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
-<div class="line"><a class="code hl_function" href="#a8479f32003e663bf664cb934ea291b84">xtd::tunit::file_assume::exists</a>(<span class="stringliteral">&quot;Test2.txt&quot;</span>, <span class="stringliteral">&quot;User message...&quot;</span>);<span class="comment">// test throws an abort_error exception.</span></div>
+<div class="line"><a class="code hl_function" href="#a2f7952f433a72d5e64575f723fa44314">xtd::tunit::file_assume::exists</a>(<span class="stringliteral">&quot;Test1.txt&quot;</span> <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_function" href="#a2f7952f433a72d5e64575f723fa44314">xtd::tunit::file_assume::exists</a>(<span class="stringliteral">&quot;Test2.txt&quot;</span>, <span class="stringliteral">&quot;User message...&quot;</span>);<span class="comment">// test throws an abort_error exception.</span></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>

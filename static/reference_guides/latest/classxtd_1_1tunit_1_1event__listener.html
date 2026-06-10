@@ -134,8 +134,8 @@ Inheritance diagram for xtd::tunit::event_listener:</div>
 <div class="line"><span class="comment">// Simulate gtest event listener test output</span></div>
 <div class="line"><span class="keyword">class </span>gtest_event_listener final : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1tunit_1_1event__listener.html">event_listener</a> {</div>
 <div class="line"><span class="keyword">private</span>:</div>
-<div class="line">  <span class="keywordtype">void</span> <a class="code hl_function" href="#ab4d58210bf4b49b8f43987a9336b3517">on_unit_test_start</a>(<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1tunit_1_1tunit__event__args.html">xtd::tunit::tunit_event_args</a>&amp; e)<span class="keyword"> const override </span>{</div>
-<div class="line">    <a class="code hl_function" href="#ab4d58210bf4b49b8f43987a9336b3517">event_listener::on_unit_test_start</a>(e);</div>
+<div class="line">  <span class="keywordtype">void</span> <a class="code hl_function" href="#a2d8dd32ed6f24bb9f2038190e8d4450a">on_unit_test_start</a>(<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1tunit_1_1tunit__event__args.html">xtd::tunit::tunit_event_args</a>&amp; e)<span class="keyword"> const override </span>{</div>
+<div class="line">    <a class="code hl_function" href="#a2d8dd32ed6f24bb9f2038190e8d4450a">event_listener::on_unit_test_start</a>(e);</div>
 <div class="line">    <a class="code hl_variable" href="classxtd_1_1console.html#a923837ac84baf01726703e0474ca4888">console::out</a> &lt;&lt; <span class="stringliteral">&quot;[==========] Running &quot;</span> &lt;&lt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.unit_test().test_count() &lt;&lt; <span class="stringliteral">&quot; tests from &quot;</span> &lt;&lt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.unit_test().test_cases_count() &lt;&lt; <span class="stringliteral">&quot; test case.&quot;</span> &lt;&lt; <a class="code hl_function" href="classxtd_1_1environment.html#af15178dea424d7fcfcbd7cecc9675466">environment::new_line</a>;</div>
 <div class="line">  }</div>
 <div class="line">  </div>
@@ -143,13 +143,13 @@ Inheritance diagram for xtd::tunit::event_listener:</div>
 <div class="line">  <span class="comment">//  event_listener::on_unit_test_initialize_start(e);</span></div>
 <div class="line">  <span class="comment">//}</span></div>
 <div class="line">  </div>
-<div class="line">  <span class="keywordtype">void</span> <a class="code hl_function" href="#af5d94496fce3e08b139d77866a353366">on_unit_test_initialize_end</a>(<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1tunit_1_1tunit__event__args.html">xtd::tunit::tunit_event_args</a>&amp; e)<span class="keyword"> const override </span>{</div>
-<div class="line">    <a class="code hl_function" href="#af5d94496fce3e08b139d77866a353366">event_listener::on_unit_test_initialize_end</a>(e);</div>
+<div class="line">  <span class="keywordtype">void</span> <a class="code hl_function" href="#a75e382a2d8939a7ea47e5fba757a9dfa">on_unit_test_initialize_end</a>(<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1tunit_1_1tunit__event__args.html">xtd::tunit::tunit_event_args</a>&amp; e)<span class="keyword"> const override </span>{</div>
+<div class="line">    <a class="code hl_function" href="#a75e382a2d8939a7ea47e5fba757a9dfa">event_listener::on_unit_test_initialize_end</a>(e);</div>
 <div class="line">    <a class="code hl_variable" href="classxtd_1_1console.html#a923837ac84baf01726703e0474ca4888">console::out</a> &lt;&lt; <span class="stringliteral">&quot;[----------] Global test environment set-up.&quot;</span> &lt;&lt; <a class="code hl_function" href="classxtd_1_1environment.html#af15178dea424d7fcfcbd7cecc9675466">environment::new_line</a>;</div>
 <div class="line">  }</div>
 <div class="line">  </div>
-<div class="line">  <span class="keywordtype">void</span> <a class="code hl_function" href="#a76b6650d580a7c582ebb44599cee7906">on_class_start</a>(<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1tunit_1_1class__event__args.html">xtd::tunit::class_event_args</a>&amp; e)<span class="keyword"> const override </span>{</div>
-<div class="line">    <a class="code hl_function" href="#a76b6650d580a7c582ebb44599cee7906">event_listener::on_class_start</a>(e);</div>
+<div class="line">  <span class="keywordtype">void</span> <a class="code hl_function" href="#ad3db0c072ea458621b9028d1c22e1a40">on_class_start</a>(<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1tunit_1_1class__event__args.html">xtd::tunit::class_event_args</a>&amp; e)<span class="keyword"> const override </span>{</div>
+<div class="line">    <a class="code hl_function" href="#ad3db0c072ea458621b9028d1c22e1a40">event_listener::on_class_start</a>(e);</div>
 <div class="line">    <a class="code hl_variable" href="classxtd_1_1console.html#a923837ac84baf01726703e0474ca4888">console::out</a> &lt;&lt; <span class="stringliteral">&quot;[----------] &quot;</span> &lt;&lt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.test_class().test_count() &lt;&lt; <span class="stringliteral">&quot; tests from &quot;</span> &lt;&lt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.test_class().name() &lt;&lt; <a class="code hl_function" href="classxtd_1_1environment.html#af15178dea424d7fcfcbd7cecc9675466">environment::new_line</a>;</div>
 <div class="line">  }</div>
 <div class="line">  </div>
@@ -169,13 +169,13 @@ Inheritance diagram for xtd::tunit::event_listener:</div>
 <div class="line">  <span class="comment">//  event_listener::on_test_initialize_end(e);</span></div>
 <div class="line">  <span class="comment">//}</span></div>
 <div class="line">  </div>
-<div class="line">  <span class="keywordtype">void</span> <a class="code hl_function" href="#ab57442ac644fd6b8d1760e0fbceb43df">on_test_start</a>(<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1tunit_1_1test__event__args.html">xtd::tunit::test_event_args</a>&amp; e)<span class="keyword"> const override </span>{</div>
-<div class="line">    <a class="code hl_function" href="#ab57442ac644fd6b8d1760e0fbceb43df">event_listener::on_test_start</a>(e);</div>
+<div class="line">  <span class="keywordtype">void</span> <a class="code hl_function" href="#a95d9efc12cfb026c1ed57431f79c6203">on_test_start</a>(<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1tunit_1_1test__event__args.html">xtd::tunit::test_event_args</a>&amp; e)<span class="keyword"> const override </span>{</div>
+<div class="line">    <a class="code hl_function" href="#a95d9efc12cfb026c1ed57431f79c6203">event_listener::on_test_start</a>(e);</div>
 <div class="line">    <a class="code hl_variable" href="classxtd_1_1console.html#a923837ac84baf01726703e0474ca4888">console::out</a> &lt;&lt; <span class="stringliteral">&quot;[ RUN      ] &quot;</span> &lt;&lt; e.test_class().name() &lt;&lt; <span class="stringliteral">&quot;.&quot;</span> &lt;&lt; e.test().name() &lt;&lt; <a class="code hl_function" href="classxtd_1_1environment.html#af15178dea424d7fcfcbd7cecc9675466">environment::new_line</a>;</div>
 <div class="line">  }</div>
 <div class="line">  </div>
-<div class="line">  <span class="keywordtype">void</span> <a class="code hl_function" href="#a9e57ffd862c0f85bd2640525387da5c6">on_test_succeed</a>(<span class="keyword">const</span> xtd::tunit::test_event_args&amp; e)<span class="keyword"> const override </span>{</div>
-<div class="line">    <a class="code hl_function" href="#a9e57ffd862c0f85bd2640525387da5c6">event_listener::on_test_succeed</a>(e);</div>
+<div class="line">  <span class="keywordtype">void</span> <a class="code hl_function" href="#a9b122f4ebada78b855359d7630285255">on_test_succeed</a>(<span class="keyword">const</span> xtd::tunit::test_event_args&amp; e)<span class="keyword"> const override </span>{</div>
+<div class="line">    <a class="code hl_function" href="#a9b122f4ebada78b855359d7630285255">event_listener::on_test_succeed</a>(e);</div>
 <div class="line">    console::out &lt;&lt; <span class="stringliteral">&quot;[       OK ] &quot;</span> &lt;&lt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.test_class().name() &lt;&lt; <span class="stringliteral">&quot;.&quot;</span> &lt;&lt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.test().name() &lt;&lt; <span class="stringliteral">&quot; (&quot;</span> &lt;&lt; <a class="code hl_function" href="group__xtd__core.html#ga58028bb08924d84602be7ccdeffb8225">as&lt;int&gt;</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.test().elapsed_time().total_microseconds()) &lt;&lt; <span class="stringliteral">&quot; ms)&quot;</span> &lt;&lt; environment::new_line;</div>
 <div class="line">  }</div>
 <div class="line">  </div>
@@ -183,8 +183,8 @@ Inheritance diagram for xtd::tunit::event_listener:</div>
 <div class="line">  <span class="comment">//  event_listener::on_test_aborted(e);</span></div>
 <div class="line">  <span class="comment">//}</span></div>
 <div class="line">  </div>
-<div class="line">  <span class="keywordtype">void</span> <a class="code hl_function" href="#ae95fdce3e3337ce19c9d7f14667634d4">on_test_failed</a>(<span class="keyword">const</span> xtd::tunit::test_event_args&amp; e)<span class="keyword"> const override </span>{</div>
-<div class="line">    <a class="code hl_function" href="#ae95fdce3e3337ce19c9d7f14667634d4">event_listener::on_test_failed</a>(e);</div>
+<div class="line">  <span class="keywordtype">void</span> <a class="code hl_function" href="#abf8122f4247e311c99d2eeeb3310d387">on_test_failed</a>(<span class="keyword">const</span> xtd::tunit::test_event_args&amp; e)<span class="keyword"> const override </span>{</div>
+<div class="line">    <a class="code hl_function" href="#abf8122f4247e311c99d2eeeb3310d387">event_listener::on_test_failed</a>(e);</div>
 <div class="line">    console::out &lt;&lt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.test().stack_frame().get_file_name() &lt;&lt; <span class="stringliteral">&quot;:&quot;</span> &lt;&lt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.test().stack_frame().get_file_line_number() &lt;&lt; <span class="stringliteral">&quot;: Failure&quot;</span> &lt;&lt; environment::new_line;</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.test().actual() != <span class="stringliteral">&quot;&quot;</span>) console::out &lt;&lt; <span class="stringliteral">&quot;  Actual: &quot;</span> &lt;&lt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.test().actual() &lt;&lt; environment::new_line;</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.test().expect() != <span class="stringliteral">&quot;&quot;</span>) console::out &lt;&lt; <span class="stringliteral">&quot;Expected: &quot;</span> &lt;&lt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.test().expect() &lt;&lt; environment::new_line;</div>
@@ -216,8 +216,8 @@ Inheritance diagram for xtd::tunit::event_listener:</div>
 <div class="line">  <span class="comment">//  event_listener::on_class_cleanup_end(e);</span></div>
 <div class="line">  <span class="comment">//}</span></div>
 <div class="line">  </div>
-<div class="line">  <span class="keywordtype">void</span> <a class="code hl_function" href="#ad86252b18c2288859d011a8a674dc53f">on_class_end</a>(<span class="keyword">const</span> xtd::tunit::class_event_args&amp; e)<span class="keyword"> const override </span>{</div>
-<div class="line">    <a class="code hl_function" href="#ad86252b18c2288859d011a8a674dc53f">event_listener::on_class_end</a>(e);</div>
+<div class="line">  <span class="keywordtype">void</span> <a class="code hl_function" href="#ab51c5addf8bc4cd32cd1fece70bed590">on_class_end</a>(<span class="keyword">const</span> xtd::tunit::class_event_args&amp; e)<span class="keyword"> const override </span>{</div>
+<div class="line">    <a class="code hl_function" href="#ab51c5addf8bc4cd32cd1fece70bed590">event_listener::on_class_end</a>(e);</div>
 <div class="line">    console::out &lt;&lt; <span class="stringliteral">&quot;[----------] &quot;</span> &lt;&lt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.test_class().test_count() &lt;&lt; <span class="stringliteral">&quot; tests from &quot;</span> &lt;&lt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.test_class().name() &lt;&lt; <span class="stringliteral">&quot; (&quot;</span> &lt;&lt; <a class="code hl_function" href="group__xtd__core.html#ga58028bb08924d84602be7ccdeffb8225">as&lt;int&gt;</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.test_class().elapsed_time().total_milliseconds()) &lt;&lt; <span class="stringliteral">&quot; ms)&quot;</span> &lt;&lt; environment::new_line;</div>
 <div class="line">  }</div>
 <div class="line">  </div>
@@ -225,13 +225,13 @@ Inheritance diagram for xtd::tunit::event_listener:</div>
 <div class="line">  <span class="comment">//  event_listener::on_unit_test_cleanup_start(e);</span></div>
 <div class="line">  <span class="comment">//}</span></div>
 <div class="line">  </div>
-<div class="line">  <span class="keywordtype">void</span> <a class="code hl_function" href="#ac2d542218abb7fe9549a542f97ccf09b">on_unit_test_cleanup_end</a>(<span class="keyword">const</span> xtd::tunit::tunit_event_args&amp; e)<span class="keyword"> const override </span>{</div>
-<div class="line">    <a class="code hl_function" href="#ac2d542218abb7fe9549a542f97ccf09b">event_listener::on_unit_test_cleanup_end</a>(e);</div>
+<div class="line">  <span class="keywordtype">void</span> <a class="code hl_function" href="#ac1bac28080df5243ad7926560c6cc57a">on_unit_test_cleanup_end</a>(<span class="keyword">const</span> xtd::tunit::tunit_event_args&amp; e)<span class="keyword"> const override </span>{</div>
+<div class="line">    <a class="code hl_function" href="#ac1bac28080df5243ad7926560c6cc57a">event_listener::on_unit_test_cleanup_end</a>(e);</div>
 <div class="line">    console::out &lt;&lt; environment::new_line &lt;&lt; <span class="stringliteral">&quot;[----------] Global test environment tear-down&quot;</span> &lt;&lt; environment::new_line;</div>
 <div class="line">  }</div>
 <div class="line">  </div>
-<div class="line">  <span class="keywordtype">void</span> <a class="code hl_function" href="#ab9be4f42bf8eaac4bec66bc1618f50ff">on_unit_test_end</a>(<span class="keyword">const</span> xtd::tunit::tunit_event_args&amp; e)<span class="keyword"> const override </span>{</div>
-<div class="line">    <a class="code hl_function" href="#ab9be4f42bf8eaac4bec66bc1618f50ff">event_listener::on_unit_test_end</a>(e);</div>
+<div class="line">  <span class="keywordtype">void</span> <a class="code hl_function" href="#a0c096245cbc61a4c54e5d6c02a9ffaf4">on_unit_test_end</a>(<span class="keyword">const</span> xtd::tunit::tunit_event_args&amp; e)<span class="keyword"> const override </span>{</div>
+<div class="line">    <a class="code hl_function" href="#a0c096245cbc61a4c54e5d6c02a9ffaf4">event_listener::on_unit_test_end</a>(e);</div>
 <div class="line">    console::out &lt;&lt; <span class="stringliteral">&quot;[==========] &quot;</span> &lt;&lt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.unit_test().test_count() &lt;&lt; <span class="stringliteral">&quot; tests from &quot;</span> &lt;&lt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.unit_test().test_cases_count() &lt;&lt; <span class="stringliteral">&quot; test case ran. (&quot;</span> &lt;&lt; <a class="code hl_function" href="group__xtd__core.html#ga58028bb08924d84602be7ccdeffb8225">as&lt;int&gt;</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.unit_test().elapsed_time().total_milliseconds()) &lt;&lt; <span class="stringliteral">&quot; ms total)&quot;</span> &lt;&lt; environment::new_line;</div>
 <div class="line">    console::out &lt;&lt; <span class="stringliteral">&quot;[  PASSED  ] &quot;</span> &lt;&lt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.unit_test().succeed_test_count() &lt;&lt; <span class="stringliteral">&quot; tests.&quot;</span> &lt;&lt; environment::new_line;</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.unit_test().failed_test_count()) {</div>
@@ -304,15 +304,15 @@ Inheritance diagram for xtd::tunit::event_listener:</div>
 <div class="ttc" id="aclassxtd_1_1environment_html_af15178dea424d7fcfcbd7cecc9675466"><div class="ttname"><a href="classxtd_1_1environment.html#af15178dea424d7fcfcbd7cecc9675466">xtd::environment::new_line</a></div><div class="ttdeci">static auto new_line() noexcept -&gt; xtd::string</div><div class="ttdoc">Gets the newline string defined for this environment.</div></div>
 <div class="ttc" id="aclassxtd_1_1tunit_1_1class__event__args_html"><div class="ttname"><a href="classxtd_1_1tunit_1_1class__event__args.html">xtd::tunit::class_event_args</a></div><div class="ttdoc">Provides data for the xtd::tunit::class_test events.</div><div class="ttdef"><b>Definition</b> class_event_args.hpp:18</div></div>
 <div class="ttc" id="aclassxtd_1_1tunit_1_1event__listener_html"><div class="ttname"><a href="classxtd_1_1tunit_1_1event__listener.html">xtd::tunit::event_listener</a></div><div class="ttdoc">Represent the event listener class. Unit test call theses events when unit tests are processing.</div><div class="ttdef"><b>Definition</b> event_listener.hpp:23</div></div>
-<div class="ttc" id="aclassxtd_1_1tunit_1_1event__listener_html_a76b6650d580a7c582ebb44599cee7906"><div class="ttname"><a href="#a76b6650d580a7c582ebb44599cee7906">xtd::tunit::event_listener::on_class_start</a></div><div class="ttdeci">virtual void on_class_start(const xtd::tunit::class_event_args &amp;e) const</div><div class="ttdoc">Occurs when class is started.</div><div class="ttdef"><b>Definition</b> event_listener.hpp:54</div></div>
-<div class="ttc" id="aclassxtd_1_1tunit_1_1event__listener_html_a9e57ffd862c0f85bd2640525387da5c6"><div class="ttname"><a href="#a9e57ffd862c0f85bd2640525387da5c6">xtd::tunit::event_listener::on_test_succeed</a></div><div class="ttdeci">virtual void on_test_succeed(const xtd::tunit::test_event_args &amp;e) const</div><div class="ttdoc">Occurs when test is succeed.</div><div class="ttdef"><b>Definition</b> event_listener.hpp:94</div></div>
-<div class="ttc" id="aclassxtd_1_1tunit_1_1event__listener_html_ab4d58210bf4b49b8f43987a9336b3517"><div class="ttname"><a href="#ab4d58210bf4b49b8f43987a9336b3517">xtd::tunit::event_listener::on_unit_test_start</a></div><div class="ttdeci">virtual void on_unit_test_start(const xtd::tunit::tunit_event_args &amp;e) const</div><div class="ttdoc">Occurs when unit test cleanup is started.</div><div class="ttdef"><b>Definition</b> event_listener.hpp:118</div></div>
-<div class="ttc" id="aclassxtd_1_1tunit_1_1event__listener_html_ab57442ac644fd6b8d1760e0fbceb43df"><div class="ttname"><a href="#ab57442ac644fd6b8d1760e0fbceb43df">xtd::tunit::event_listener::on_test_start</a></div><div class="ttdeci">virtual void on_test_start(const xtd::tunit::test_event_args &amp;e) const</div><div class="ttdoc">Occurs when test initialize is started.</div><div class="ttdef"><b>Definition</b> event_listener.hpp:90</div></div>
-<div class="ttc" id="aclassxtd_1_1tunit_1_1event__listener_html_ab9be4f42bf8eaac4bec66bc1618f50ff"><div class="ttname"><a href="#ab9be4f42bf8eaac4bec66bc1618f50ff">xtd::tunit::event_listener::on_unit_test_end</a></div><div class="ttdeci">virtual void on_unit_test_end(const xtd::tunit::tunit_event_args &amp;e) const</div><div class="ttdoc">Occurs when unit test is ended.</div><div class="ttdef"><b>Definition</b> event_listener.hpp:106</div></div>
-<div class="ttc" id="aclassxtd_1_1tunit_1_1event__listener_html_ac2d542218abb7fe9549a542f97ccf09b"><div class="ttname"><a href="#ac2d542218abb7fe9549a542f97ccf09b">xtd::tunit::event_listener::on_unit_test_cleanup_end</a></div><div class="ttdeci">virtual void on_unit_test_cleanup_end(const xtd::tunit::tunit_event_args &amp;e) const</div><div class="ttdoc">Occurs when unit test cleanup is ended.</div><div class="ttdef"><b>Definition</b> event_listener.hpp:98</div></div>
-<div class="ttc" id="aclassxtd_1_1tunit_1_1event__listener_html_ad86252b18c2288859d011a8a674dc53f"><div class="ttname"><a href="#ad86252b18c2288859d011a8a674dc53f">xtd::tunit::event_listener::on_class_end</a></div><div class="ttdeci">virtual void on_class_end(const xtd::tunit::class_event_args &amp;e) const</div><div class="ttdoc">Occurs when class is ended.</div><div class="ttdef"><b>Definition</b> event_listener.hpp:42</div></div>
-<div class="ttc" id="aclassxtd_1_1tunit_1_1event__listener_html_ae95fdce3e3337ce19c9d7f14667634d4"><div class="ttname"><a href="#ae95fdce3e3337ce19c9d7f14667634d4">xtd::tunit::event_listener::on_test_failed</a></div><div class="ttdeci">virtual void on_test_failed(const xtd::tunit::test_event_args &amp;e) const</div><div class="ttdoc">Occurs when test is failed.</div><div class="ttdef"><b>Definition</b> event_listener.hpp:86</div></div>
-<div class="ttc" id="aclassxtd_1_1tunit_1_1event__listener_html_af5d94496fce3e08b139d77866a353366"><div class="ttname"><a href="#af5d94496fce3e08b139d77866a353366">xtd::tunit::event_listener::on_unit_test_initialize_end</a></div><div class="ttdeci">virtual void on_unit_test_initialize_end(const xtd::tunit::tunit_event_args &amp;e) const</div><div class="ttdoc">Occurs when unit test initialize is ended.</div><div class="ttdef"><b>Definition</b> event_listener.hpp:110</div></div>
+<div class="ttc" id="aclassxtd_1_1tunit_1_1event__listener_html_a0c096245cbc61a4c54e5d6c02a9ffaf4"><div class="ttname"><a href="#a0c096245cbc61a4c54e5d6c02a9ffaf4">xtd::tunit::event_listener::on_unit_test_end</a></div><div class="ttdeci">virtual auto on_unit_test_end(const xtd::tunit::tunit_event_args &amp;e) const -&gt; void</div><div class="ttdoc">Occurs when unit test is ended.</div><div class="ttdef"><b>Definition</b> event_listener.hpp:106</div></div>
+<div class="ttc" id="aclassxtd_1_1tunit_1_1event__listener_html_a2d8dd32ed6f24bb9f2038190e8d4450a"><div class="ttname"><a href="#a2d8dd32ed6f24bb9f2038190e8d4450a">xtd::tunit::event_listener::on_unit_test_start</a></div><div class="ttdeci">virtual auto on_unit_test_start(const xtd::tunit::tunit_event_args &amp;e) const -&gt; void</div><div class="ttdoc">Occurs when unit test cleanup is started.</div><div class="ttdef"><b>Definition</b> event_listener.hpp:118</div></div>
+<div class="ttc" id="aclassxtd_1_1tunit_1_1event__listener_html_a75e382a2d8939a7ea47e5fba757a9dfa"><div class="ttname"><a href="#a75e382a2d8939a7ea47e5fba757a9dfa">xtd::tunit::event_listener::on_unit_test_initialize_end</a></div><div class="ttdeci">virtual auto on_unit_test_initialize_end(const xtd::tunit::tunit_event_args &amp;e) const -&gt; void</div><div class="ttdoc">Occurs when unit test initialize is ended.</div><div class="ttdef"><b>Definition</b> event_listener.hpp:110</div></div>
+<div class="ttc" id="aclassxtd_1_1tunit_1_1event__listener_html_a95d9efc12cfb026c1ed57431f79c6203"><div class="ttname"><a href="#a95d9efc12cfb026c1ed57431f79c6203">xtd::tunit::event_listener::on_test_start</a></div><div class="ttdeci">virtual auto on_test_start(const xtd::tunit::test_event_args &amp;e) const -&gt; void</div><div class="ttdoc">Occurs when test initialize is started.</div><div class="ttdef"><b>Definition</b> event_listener.hpp:90</div></div>
+<div class="ttc" id="aclassxtd_1_1tunit_1_1event__listener_html_a9b122f4ebada78b855359d7630285255"><div class="ttname"><a href="#a9b122f4ebada78b855359d7630285255">xtd::tunit::event_listener::on_test_succeed</a></div><div class="ttdeci">virtual auto on_test_succeed(const xtd::tunit::test_event_args &amp;e) const -&gt; void</div><div class="ttdoc">Occurs when test is succeed.</div><div class="ttdef"><b>Definition</b> event_listener.hpp:94</div></div>
+<div class="ttc" id="aclassxtd_1_1tunit_1_1event__listener_html_ab51c5addf8bc4cd32cd1fece70bed590"><div class="ttname"><a href="#ab51c5addf8bc4cd32cd1fece70bed590">xtd::tunit::event_listener::on_class_end</a></div><div class="ttdeci">virtual auto on_class_end(const xtd::tunit::class_event_args &amp;e) const -&gt; void</div><div class="ttdoc">Occurs when class is ended.</div><div class="ttdef"><b>Definition</b> event_listener.hpp:42</div></div>
+<div class="ttc" id="aclassxtd_1_1tunit_1_1event__listener_html_abf8122f4247e311c99d2eeeb3310d387"><div class="ttname"><a href="#abf8122f4247e311c99d2eeeb3310d387">xtd::tunit::event_listener::on_test_failed</a></div><div class="ttdeci">virtual auto on_test_failed(const xtd::tunit::test_event_args &amp;e) const -&gt; void</div><div class="ttdoc">Occurs when test is failed.</div><div class="ttdef"><b>Definition</b> event_listener.hpp:86</div></div>
+<div class="ttc" id="aclassxtd_1_1tunit_1_1event__listener_html_ac1bac28080df5243ad7926560c6cc57a"><div class="ttname"><a href="#ac1bac28080df5243ad7926560c6cc57a">xtd::tunit::event_listener::on_unit_test_cleanup_end</a></div><div class="ttdeci">virtual auto on_unit_test_cleanup_end(const xtd::tunit::tunit_event_args &amp;e) const -&gt; void</div><div class="ttdoc">Occurs when unit test cleanup is ended.</div><div class="ttdef"><b>Definition</b> event_listener.hpp:98</div></div>
+<div class="ttc" id="aclassxtd_1_1tunit_1_1event__listener_html_ad3db0c072ea458621b9028d1c22e1a40"><div class="ttname"><a href="#ad3db0c072ea458621b9028d1c22e1a40">xtd::tunit::event_listener::on_class_start</a></div><div class="ttdeci">virtual auto on_class_start(const xtd::tunit::class_event_args &amp;e) const -&gt; void</div><div class="ttdoc">Occurs when class is started.</div><div class="ttdef"><b>Definition</b> event_listener.hpp:54</div></div>
 <div class="ttc" id="aclassxtd_1_1tunit_1_1test__event__args_html"><div class="ttname"><a href="classxtd_1_1tunit_1_1test__event__args.html">xtd::tunit::test_event_args</a></div><div class="ttdoc">Provides data for the xtd::tunit::test events.</div><div class="ttdef"><b>Definition</b> test_event_args.hpp:19</div></div>
 <div class="ttc" id="aclassxtd_1_1tunit_1_1tunit__event__args_html"><div class="ttname"><a href="classxtd_1_1tunit_1_1tunit__event__args.html">xtd::tunit::tunit_event_args</a></div><div class="ttdoc">tunit_event_args is the base class for classes containing event data.</div><div class="ttdef"><b>Definition</b> tunit_event_args.hpp:19</div></div>
 <div class="ttc" id="aclassxtd_1_1tunit_1_1unit__test_html"><div class="ttname"><a href="classxtd_1_1tunit_1_1unit__test.html">xtd::tunit::unit_test</a></div><div class="ttdoc">The unit_test class is unit test base interface.</div><div class="ttdef"><b>Definition</b> unit_test.hpp:30</div></div>
@@ -330,54 +330,54 @@ Inheritance diagram for xtd::tunit::event_listener:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Methods</h2></td></tr>
-<tr class="memitem:a040c8310da02bdb024bb38ff5acdef35" id="r_a040c8310da02bdb024bb38ff5acdef35"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#a040c8310da02bdb024bb38ff5acdef35">on_class_cleanup_end</a> (const <a class="el" href="classxtd_1_1tunit_1_1class__event__args.html">xtd::tunit::class_event_args</a> &amp;e) const</td></tr>
-<tr class="memdesc:a040c8310da02bdb024bb38ff5acdef35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Occurs when class cleanup is ended.  <br /></td></tr>
-<tr class="memitem:a3b6ef67669deb6980bbec8a45e09f6c5" id="r_a3b6ef67669deb6980bbec8a45e09f6c5"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#a3b6ef67669deb6980bbec8a45e09f6c5">on_class_cleanup_start</a> (const <a class="el" href="classxtd_1_1tunit_1_1class__event__args.html">xtd::tunit::class_event_args</a> &amp;e) const</td></tr>
-<tr class="memdesc:a3b6ef67669deb6980bbec8a45e09f6c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Occurs when class cleanup is started.  <br /></td></tr>
-<tr class="memitem:ad86252b18c2288859d011a8a674dc53f" id="r_ad86252b18c2288859d011a8a674dc53f"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#ad86252b18c2288859d011a8a674dc53f">on_class_end</a> (const <a class="el" href="classxtd_1_1tunit_1_1class__event__args.html">xtd::tunit::class_event_args</a> &amp;e) const</td></tr>
-<tr class="memdesc:ad86252b18c2288859d011a8a674dc53f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Occurs when class is ended.  <br /></td></tr>
-<tr class="memitem:a22015b1909421a640f6006538d7f27a2" id="r_a22015b1909421a640f6006538d7f27a2"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#a22015b1909421a640f6006538d7f27a2">on_class_initialize_end</a> (const <a class="el" href="classxtd_1_1tunit_1_1class__event__args.html">xtd::tunit::class_event_args</a> &amp;e) const</td></tr>
-<tr class="memdesc:a22015b1909421a640f6006538d7f27a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Occurs when class initialize is ended.  <br /></td></tr>
-<tr class="memitem:a598a70d4279aae1902392b5c7771c9d3" id="r_a598a70d4279aae1902392b5c7771c9d3"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#a598a70d4279aae1902392b5c7771c9d3">on_class_initialize_start</a> (const <a class="el" href="classxtd_1_1tunit_1_1class__event__args.html">xtd::tunit::class_event_args</a> &amp;e) const</td></tr>
-<tr class="memdesc:a598a70d4279aae1902392b5c7771c9d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Occurs when class initialize is started.  <br /></td></tr>
-<tr class="memitem:a76b6650d580a7c582ebb44599cee7906" id="r_a76b6650d580a7c582ebb44599cee7906"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#a76b6650d580a7c582ebb44599cee7906">on_class_start</a> (const <a class="el" href="classxtd_1_1tunit_1_1class__event__args.html">xtd::tunit::class_event_args</a> &amp;e) const</td></tr>
-<tr class="memdesc:a76b6650d580a7c582ebb44599cee7906"><td class="mdescLeft">&#160;</td><td class="mdescRight">Occurs when class is started.  <br /></td></tr>
-<tr class="memitem:a0311abe90ddfc97d8b1ed2e327423fac" id="r_a0311abe90ddfc97d8b1ed2e327423fac"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#a0311abe90ddfc97d8b1ed2e327423fac">on_test_cleanup_end</a> (const <a class="el" href="classxtd_1_1tunit_1_1test__event__args.html">xtd::tunit::test_event_args</a> &amp;e) const</td></tr>
-<tr class="memdesc:a0311abe90ddfc97d8b1ed2e327423fac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Occurs when test cleanup is ended.  <br /></td></tr>
-<tr class="memitem:ab54eb393bd919ba9a8400ea584d69632" id="r_ab54eb393bd919ba9a8400ea584d69632"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#ab54eb393bd919ba9a8400ea584d69632">on_test_cleanup_start</a> (const <a class="el" href="classxtd_1_1tunit_1_1test__event__args.html">xtd::tunit::test_event_args</a> &amp;e) const</td></tr>
-<tr class="memdesc:ab54eb393bd919ba9a8400ea584d69632"><td class="mdescLeft">&#160;</td><td class="mdescRight">Occurs when test cleanup is started.  <br /></td></tr>
-<tr class="memitem:a8ebab2630358c03acc28ed44253336f3" id="r_a8ebab2630358c03acc28ed44253336f3"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#a8ebab2630358c03acc28ed44253336f3">on_test_initialize_end</a> (const <a class="el" href="classxtd_1_1tunit_1_1test__event__args.html">xtd::tunit::test_event_args</a> &amp;e) const</td></tr>
-<tr class="memdesc:a8ebab2630358c03acc28ed44253336f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Occurs when test initialize is ended.  <br /></td></tr>
-<tr class="memitem:af6fd200caf8650afb31dd7cb18dda7ec" id="r_af6fd200caf8650afb31dd7cb18dda7ec"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#af6fd200caf8650afb31dd7cb18dda7ec">on_test_initialize_start</a> (const <a class="el" href="classxtd_1_1tunit_1_1test__event__args.html">xtd::tunit::test_event_args</a> &amp;e) const</td></tr>
-<tr class="memdesc:af6fd200caf8650afb31dd7cb18dda7ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Occurs when test initialize is ended.  <br /></td></tr>
-<tr class="memitem:a0945bb9bc70d5e4fa62201cfbb293e8a" id="r_a0945bb9bc70d5e4fa62201cfbb293e8a"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#a0945bb9bc70d5e4fa62201cfbb293e8a">on_test_aborted</a> (const <a class="el" href="classxtd_1_1tunit_1_1test__event__args.html">xtd::tunit::test_event_args</a> &amp;e) const</td></tr>
-<tr class="memdesc:a0945bb9bc70d5e4fa62201cfbb293e8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Occurs when test is aborted.  <br /></td></tr>
-<tr class="memitem:a193bc7e69045492ac105d4fd48a32a2a" id="r_a193bc7e69045492ac105d4fd48a32a2a"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#a193bc7e69045492ac105d4fd48a32a2a">on_test_end</a> (const <a class="el" href="classxtd_1_1tunit_1_1test__event__args.html">xtd::tunit::test_event_args</a> &amp;e) const</td></tr>
-<tr class="memdesc:a193bc7e69045492ac105d4fd48a32a2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Occurs when test is ended.  <br /></td></tr>
-<tr class="memitem:ac65b5228fd02cb32fa94c4f1d86c2a71" id="r_ac65b5228fd02cb32fa94c4f1d86c2a71"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#ac65b5228fd02cb32fa94c4f1d86c2a71">on_test_ignored</a> (const <a class="el" href="classxtd_1_1tunit_1_1test__event__args.html">xtd::tunit::test_event_args</a> &amp;e) const</td></tr>
-<tr class="memdesc:ac65b5228fd02cb32fa94c4f1d86c2a71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Occurs when test is ignored.  <br /></td></tr>
-<tr class="memitem:ae95fdce3e3337ce19c9d7f14667634d4" id="r_ae95fdce3e3337ce19c9d7f14667634d4"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#ae95fdce3e3337ce19c9d7f14667634d4">on_test_failed</a> (const <a class="el" href="classxtd_1_1tunit_1_1test__event__args.html">xtd::tunit::test_event_args</a> &amp;e) const</td></tr>
-<tr class="memdesc:ae95fdce3e3337ce19c9d7f14667634d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Occurs when test is failed.  <br /></td></tr>
-<tr class="memitem:ab57442ac644fd6b8d1760e0fbceb43df" id="r_ab57442ac644fd6b8d1760e0fbceb43df"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#ab57442ac644fd6b8d1760e0fbceb43df">on_test_start</a> (const <a class="el" href="classxtd_1_1tunit_1_1test__event__args.html">xtd::tunit::test_event_args</a> &amp;e) const</td></tr>
-<tr class="memdesc:ab57442ac644fd6b8d1760e0fbceb43df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Occurs when test initialize is started.  <br /></td></tr>
-<tr class="memitem:a9e57ffd862c0f85bd2640525387da5c6" id="r_a9e57ffd862c0f85bd2640525387da5c6"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#a9e57ffd862c0f85bd2640525387da5c6">on_test_succeed</a> (const <a class="el" href="classxtd_1_1tunit_1_1test__event__args.html">xtd::tunit::test_event_args</a> &amp;e) const</td></tr>
-<tr class="memdesc:a9e57ffd862c0f85bd2640525387da5c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Occurs when test is succeed.  <br /></td></tr>
-<tr class="memitem:ac2d542218abb7fe9549a542f97ccf09b" id="r_ac2d542218abb7fe9549a542f97ccf09b"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#ac2d542218abb7fe9549a542f97ccf09b">on_unit_test_cleanup_end</a> (const <a class="el" href="classxtd_1_1tunit_1_1tunit__event__args.html">xtd::tunit::tunit_event_args</a> &amp;e) const</td></tr>
-<tr class="memdesc:ac2d542218abb7fe9549a542f97ccf09b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Occurs when unit test cleanup is ended.  <br /></td></tr>
-<tr class="memitem:aaf529b0375f0e31d408921ca5a7e9932" id="r_aaf529b0375f0e31d408921ca5a7e9932"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#aaf529b0375f0e31d408921ca5a7e9932">on_unit_test_cleanup_start</a> (const <a class="el" href="classxtd_1_1tunit_1_1tunit__event__args.html">xtd::tunit::tunit_event_args</a> &amp;e) const</td></tr>
-<tr class="memdesc:aaf529b0375f0e31d408921ca5a7e9932"><td class="mdescLeft">&#160;</td><td class="mdescRight">Occurs when unit test is started.  <br /></td></tr>
-<tr class="memitem:ab9be4f42bf8eaac4bec66bc1618f50ff" id="r_ab9be4f42bf8eaac4bec66bc1618f50ff"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#ab9be4f42bf8eaac4bec66bc1618f50ff">on_unit_test_end</a> (const <a class="el" href="classxtd_1_1tunit_1_1tunit__event__args.html">xtd::tunit::tunit_event_args</a> &amp;e) const</td></tr>
-<tr class="memdesc:ab9be4f42bf8eaac4bec66bc1618f50ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Occurs when unit test is ended.  <br /></td></tr>
-<tr class="memitem:af5d94496fce3e08b139d77866a353366" id="r_af5d94496fce3e08b139d77866a353366"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#af5d94496fce3e08b139d77866a353366">on_unit_test_initialize_end</a> (const <a class="el" href="classxtd_1_1tunit_1_1tunit__event__args.html">xtd::tunit::tunit_event_args</a> &amp;e) const</td></tr>
-<tr class="memdesc:af5d94496fce3e08b139d77866a353366"><td class="mdescLeft">&#160;</td><td class="mdescRight">Occurs when unit test initialize is ended.  <br /></td></tr>
-<tr class="memitem:a2daf2abff200e1f8c21ace9d9a95808b" id="r_a2daf2abff200e1f8c21ace9d9a95808b"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#a2daf2abff200e1f8c21ace9d9a95808b">on_unit_test_initialize_start</a> (const <a class="el" href="classxtd_1_1tunit_1_1tunit__event__args.html">xtd::tunit::tunit_event_args</a> &amp;e) const</td></tr>
-<tr class="memdesc:a2daf2abff200e1f8c21ace9d9a95808b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Occurs when unit test initialize is started.  <br /></td></tr>
-<tr class="memitem:ab4d58210bf4b49b8f43987a9336b3517" id="r_ab4d58210bf4b49b8f43987a9336b3517"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#ab4d58210bf4b49b8f43987a9336b3517">on_unit_test_start</a> (const <a class="el" href="classxtd_1_1tunit_1_1tunit__event__args.html">xtd::tunit::tunit_event_args</a> &amp;e) const</td></tr>
-<tr class="memdesc:ab4d58210bf4b49b8f43987a9336b3517"><td class="mdescLeft">&#160;</td><td class="mdescRight">Occurs when unit test cleanup is started.  <br /></td></tr>
+<tr class="memitem:afd88d77c720e863d8b12a8bfd375ad58" id="r_afd88d77c720e863d8b12a8bfd375ad58"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#afd88d77c720e863d8b12a8bfd375ad58">on_class_cleanup_end</a> (const <a class="el" href="classxtd_1_1tunit_1_1class__event__args.html">xtd::tunit::class_event_args</a> &amp;e) const -&gt; void</td></tr>
+<tr class="memdesc:afd88d77c720e863d8b12a8bfd375ad58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Occurs when class cleanup is ended.  <br /></td></tr>
+<tr class="memitem:ad7cb05011c939cc53244b983f6d6eb1d" id="r_ad7cb05011c939cc53244b983f6d6eb1d"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#ad7cb05011c939cc53244b983f6d6eb1d">on_class_cleanup_start</a> (const <a class="el" href="classxtd_1_1tunit_1_1class__event__args.html">xtd::tunit::class_event_args</a> &amp;e) const -&gt; void</td></tr>
+<tr class="memdesc:ad7cb05011c939cc53244b983f6d6eb1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Occurs when class cleanup is started.  <br /></td></tr>
+<tr class="memitem:ab51c5addf8bc4cd32cd1fece70bed590" id="r_ab51c5addf8bc4cd32cd1fece70bed590"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#ab51c5addf8bc4cd32cd1fece70bed590">on_class_end</a> (const <a class="el" href="classxtd_1_1tunit_1_1class__event__args.html">xtd::tunit::class_event_args</a> &amp;e) const -&gt; void</td></tr>
+<tr class="memdesc:ab51c5addf8bc4cd32cd1fece70bed590"><td class="mdescLeft">&#160;</td><td class="mdescRight">Occurs when class is ended.  <br /></td></tr>
+<tr class="memitem:ad44508999ccbb8c464480936219f848d" id="r_ad44508999ccbb8c464480936219f848d"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#ad44508999ccbb8c464480936219f848d">on_class_initialize_end</a> (const <a class="el" href="classxtd_1_1tunit_1_1class__event__args.html">xtd::tunit::class_event_args</a> &amp;e) const -&gt; void</td></tr>
+<tr class="memdesc:ad44508999ccbb8c464480936219f848d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Occurs when class initialize is ended.  <br /></td></tr>
+<tr class="memitem:aaca81ed5677c6195b9e6acd12cb5fd1c" id="r_aaca81ed5677c6195b9e6acd12cb5fd1c"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#aaca81ed5677c6195b9e6acd12cb5fd1c">on_class_initialize_start</a> (const <a class="el" href="classxtd_1_1tunit_1_1class__event__args.html">xtd::tunit::class_event_args</a> &amp;e) const -&gt; void</td></tr>
+<tr class="memdesc:aaca81ed5677c6195b9e6acd12cb5fd1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Occurs when class initialize is started.  <br /></td></tr>
+<tr class="memitem:ad3db0c072ea458621b9028d1c22e1a40" id="r_ad3db0c072ea458621b9028d1c22e1a40"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#ad3db0c072ea458621b9028d1c22e1a40">on_class_start</a> (const <a class="el" href="classxtd_1_1tunit_1_1class__event__args.html">xtd::tunit::class_event_args</a> &amp;e) const -&gt; void</td></tr>
+<tr class="memdesc:ad3db0c072ea458621b9028d1c22e1a40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Occurs when class is started.  <br /></td></tr>
+<tr class="memitem:a7b729eeb524349be6ddb0af3097e642b" id="r_a7b729eeb524349be6ddb0af3097e642b"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#a7b729eeb524349be6ddb0af3097e642b">on_test_cleanup_end</a> (const <a class="el" href="classxtd_1_1tunit_1_1test__event__args.html">xtd::tunit::test_event_args</a> &amp;e) const -&gt; void</td></tr>
+<tr class="memdesc:a7b729eeb524349be6ddb0af3097e642b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Occurs when test cleanup is ended.  <br /></td></tr>
+<tr class="memitem:a14037edeeb2e888edefc966e97d1dc72" id="r_a14037edeeb2e888edefc966e97d1dc72"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#a14037edeeb2e888edefc966e97d1dc72">on_test_cleanup_start</a> (const <a class="el" href="classxtd_1_1tunit_1_1test__event__args.html">xtd::tunit::test_event_args</a> &amp;e) const -&gt; void</td></tr>
+<tr class="memdesc:a14037edeeb2e888edefc966e97d1dc72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Occurs when test cleanup is started.  <br /></td></tr>
+<tr class="memitem:ad29ab15b42fe30170c6b01e838d5cbc2" id="r_ad29ab15b42fe30170c6b01e838d5cbc2"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#ad29ab15b42fe30170c6b01e838d5cbc2">on_test_initialize_end</a> (const <a class="el" href="classxtd_1_1tunit_1_1test__event__args.html">xtd::tunit::test_event_args</a> &amp;e) const -&gt; void</td></tr>
+<tr class="memdesc:ad29ab15b42fe30170c6b01e838d5cbc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Occurs when test initialize is ended.  <br /></td></tr>
+<tr class="memitem:ab4e770d44a1608e403888a4713d89123" id="r_ab4e770d44a1608e403888a4713d89123"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#ab4e770d44a1608e403888a4713d89123">on_test_initialize_start</a> (const <a class="el" href="classxtd_1_1tunit_1_1test__event__args.html">xtd::tunit::test_event_args</a> &amp;e) const -&gt; void</td></tr>
+<tr class="memdesc:ab4e770d44a1608e403888a4713d89123"><td class="mdescLeft">&#160;</td><td class="mdescRight">Occurs when test initialize is ended.  <br /></td></tr>
+<tr class="memitem:a807bf8107e1d7e3605297f17bdfc6c32" id="r_a807bf8107e1d7e3605297f17bdfc6c32"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#a807bf8107e1d7e3605297f17bdfc6c32">on_test_aborted</a> (const <a class="el" href="classxtd_1_1tunit_1_1test__event__args.html">xtd::tunit::test_event_args</a> &amp;e) const -&gt; void</td></tr>
+<tr class="memdesc:a807bf8107e1d7e3605297f17bdfc6c32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Occurs when test is aborted.  <br /></td></tr>
+<tr class="memitem:a2e554c440bec761b0fcf7d6f51d162b4" id="r_a2e554c440bec761b0fcf7d6f51d162b4"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#a2e554c440bec761b0fcf7d6f51d162b4">on_test_end</a> (const <a class="el" href="classxtd_1_1tunit_1_1test__event__args.html">xtd::tunit::test_event_args</a> &amp;e) const -&gt; void</td></tr>
+<tr class="memdesc:a2e554c440bec761b0fcf7d6f51d162b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Occurs when test is ended.  <br /></td></tr>
+<tr class="memitem:ad28457eb0e55238c07df3c826bc00d07" id="r_ad28457eb0e55238c07df3c826bc00d07"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#ad28457eb0e55238c07df3c826bc00d07">on_test_ignored</a> (const <a class="el" href="classxtd_1_1tunit_1_1test__event__args.html">xtd::tunit::test_event_args</a> &amp;e) const -&gt; void</td></tr>
+<tr class="memdesc:ad28457eb0e55238c07df3c826bc00d07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Occurs when test is ignored.  <br /></td></tr>
+<tr class="memitem:abf8122f4247e311c99d2eeeb3310d387" id="r_abf8122f4247e311c99d2eeeb3310d387"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#abf8122f4247e311c99d2eeeb3310d387">on_test_failed</a> (const <a class="el" href="classxtd_1_1tunit_1_1test__event__args.html">xtd::tunit::test_event_args</a> &amp;e) const -&gt; void</td></tr>
+<tr class="memdesc:abf8122f4247e311c99d2eeeb3310d387"><td class="mdescLeft">&#160;</td><td class="mdescRight">Occurs when test is failed.  <br /></td></tr>
+<tr class="memitem:a95d9efc12cfb026c1ed57431f79c6203" id="r_a95d9efc12cfb026c1ed57431f79c6203"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#a95d9efc12cfb026c1ed57431f79c6203">on_test_start</a> (const <a class="el" href="classxtd_1_1tunit_1_1test__event__args.html">xtd::tunit::test_event_args</a> &amp;e) const -&gt; void</td></tr>
+<tr class="memdesc:a95d9efc12cfb026c1ed57431f79c6203"><td class="mdescLeft">&#160;</td><td class="mdescRight">Occurs when test initialize is started.  <br /></td></tr>
+<tr class="memitem:a9b122f4ebada78b855359d7630285255" id="r_a9b122f4ebada78b855359d7630285255"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#a9b122f4ebada78b855359d7630285255">on_test_succeed</a> (const <a class="el" href="classxtd_1_1tunit_1_1test__event__args.html">xtd::tunit::test_event_args</a> &amp;e) const -&gt; void</td></tr>
+<tr class="memdesc:a9b122f4ebada78b855359d7630285255"><td class="mdescLeft">&#160;</td><td class="mdescRight">Occurs when test is succeed.  <br /></td></tr>
+<tr class="memitem:ac1bac28080df5243ad7926560c6cc57a" id="r_ac1bac28080df5243ad7926560c6cc57a"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#ac1bac28080df5243ad7926560c6cc57a">on_unit_test_cleanup_end</a> (const <a class="el" href="classxtd_1_1tunit_1_1tunit__event__args.html">xtd::tunit::tunit_event_args</a> &amp;e) const -&gt; void</td></tr>
+<tr class="memdesc:ac1bac28080df5243ad7926560c6cc57a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Occurs when unit test cleanup is ended.  <br /></td></tr>
+<tr class="memitem:a1e59b1267c22c969981fcb7e926e22fe" id="r_a1e59b1267c22c969981fcb7e926e22fe"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#a1e59b1267c22c969981fcb7e926e22fe">on_unit_test_cleanup_start</a> (const <a class="el" href="classxtd_1_1tunit_1_1tunit__event__args.html">xtd::tunit::tunit_event_args</a> &amp;e) const -&gt; void</td></tr>
+<tr class="memdesc:a1e59b1267c22c969981fcb7e926e22fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Occurs when unit test is started.  <br /></td></tr>
+<tr class="memitem:a0c096245cbc61a4c54e5d6c02a9ffaf4" id="r_a0c096245cbc61a4c54e5d6c02a9ffaf4"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#a0c096245cbc61a4c54e5d6c02a9ffaf4">on_unit_test_end</a> (const <a class="el" href="classxtd_1_1tunit_1_1tunit__event__args.html">xtd::tunit::tunit_event_args</a> &amp;e) const -&gt; void</td></tr>
+<tr class="memdesc:a0c096245cbc61a4c54e5d6c02a9ffaf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Occurs when unit test is ended.  <br /></td></tr>
+<tr class="memitem:a75e382a2d8939a7ea47e5fba757a9dfa" id="r_a75e382a2d8939a7ea47e5fba757a9dfa"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#a75e382a2d8939a7ea47e5fba757a9dfa">on_unit_test_initialize_end</a> (const <a class="el" href="classxtd_1_1tunit_1_1tunit__event__args.html">xtd::tunit::tunit_event_args</a> &amp;e) const -&gt; void</td></tr>
+<tr class="memdesc:a75e382a2d8939a7ea47e5fba757a9dfa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Occurs when unit test initialize is ended.  <br /></td></tr>
+<tr class="memitem:a9e4a1786cc08baeda6720622bf913539" id="r_a9e4a1786cc08baeda6720622bf913539"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#a9e4a1786cc08baeda6720622bf913539">on_unit_test_initialize_start</a> (const <a class="el" href="classxtd_1_1tunit_1_1tunit__event__args.html">xtd::tunit::tunit_event_args</a> &amp;e) const -&gt; void</td></tr>
+<tr class="memdesc:a9e4a1786cc08baeda6720622bf913539"><td class="mdescLeft">&#160;</td><td class="mdescRight">Occurs when unit test initialize is started.  <br /></td></tr>
+<tr class="memitem:a2d8dd32ed6f24bb9f2038190e8d4450a" id="r_a2d8dd32ed6f24bb9f2038190e8d4450a"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#a2d8dd32ed6f24bb9f2038190e8d4450a">on_unit_test_start</a> (const <a class="el" href="classxtd_1_1tunit_1_1tunit__event__args.html">xtd::tunit::tunit_event_args</a> &amp;e) const -&gt; void</td></tr>
+<tr class="memdesc:a2d8dd32ed6f24bb9f2038190e8d4450a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Occurs when unit test cleanup is started.  <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a040c8310da02bdb024bb38ff5acdef35" name="a040c8310da02bdb024bb38ff5acdef35"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a040c8310da02bdb024bb38ff5acdef35">&#9670;&#160;</a></span>on_class_cleanup_end()</h2>
+<a id="afd88d77c720e863d8b12a8bfd375ad58" name="afd88d77c720e863d8b12a8bfd375ad58"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd88d77c720e863d8b12a8bfd375ad58">&#9670;&#160;</a></span>on_class_cleanup_end()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -386,10 +386,10 @@ Public Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void xtd::tunit::event_listener::on_class_cleanup_end </td>
+          <td class="memname">virtual auto xtd::tunit::event_listener::on_class_cleanup_end </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1tunit_1_1class__event__args.html">xtd::tunit::class_event_args</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>e</em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; void</td>
         </tr>
       </table>
   </td>
@@ -409,8 +409,8 @@ Public Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="a3b6ef67669deb6980bbec8a45e09f6c5" name="a3b6ef67669deb6980bbec8a45e09f6c5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3b6ef67669deb6980bbec8a45e09f6c5">&#9670;&#160;</a></span>on_class_cleanup_start()</h2>
+<a id="ad7cb05011c939cc53244b983f6d6eb1d" name="ad7cb05011c939cc53244b983f6d6eb1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7cb05011c939cc53244b983f6d6eb1d">&#9670;&#160;</a></span>on_class_cleanup_start()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -419,10 +419,10 @@ Public Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void xtd::tunit::event_listener::on_class_cleanup_start </td>
+          <td class="memname">virtual auto xtd::tunit::event_listener::on_class_cleanup_start </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1tunit_1_1class__event__args.html">xtd::tunit::class_event_args</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>e</em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; void</td>
         </tr>
       </table>
   </td>
@@ -442,8 +442,8 @@ Public Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="ad86252b18c2288859d011a8a674dc53f" name="ad86252b18c2288859d011a8a674dc53f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad86252b18c2288859d011a8a674dc53f">&#9670;&#160;</a></span>on_class_end()</h2>
+<a id="ab51c5addf8bc4cd32cd1fece70bed590" name="ab51c5addf8bc4cd32cd1fece70bed590"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab51c5addf8bc4cd32cd1fece70bed590">&#9670;&#160;</a></span>on_class_end()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -452,10 +452,10 @@ Public Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void xtd::tunit::event_listener::on_class_end </td>
+          <td class="memname">virtual auto xtd::tunit::event_listener::on_class_end </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1tunit_1_1class__event__args.html">xtd::tunit::class_event_args</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>e</em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; void</td>
         </tr>
       </table>
   </td>
@@ -473,14 +473,14 @@ Public Methods</h2></td></tr>
   </dd>
 </dl>
 
-<p>Reimplemented in <a class="el" href="classxtd_1_1tunit_1_1ostream__event__listener.html#a0a94b07d8f5418a50c6857f6db21c01c">xtd::tunit::ostream_event_listener</a>.</p>
+<p>Reimplemented in <a class="el" href="classxtd_1_1tunit_1_1ostream__event__listener.html#a738a601be6955a48b42adeec3535a0d6">xtd::tunit::ostream_event_listener</a>.</p>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="create_gtest_like_event_listener_8cpp-example.html#_a13">create_gtest_like_event_listener.cpp</a>.</dd>
 </dl>
 
 </div>
 </div>
-<a id="a22015b1909421a640f6006538d7f27a2" name="a22015b1909421a640f6006538d7f27a2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a22015b1909421a640f6006538d7f27a2">&#9670;&#160;</a></span>on_class_initialize_end()</h2>
+<a id="ad44508999ccbb8c464480936219f848d" name="ad44508999ccbb8c464480936219f848d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad44508999ccbb8c464480936219f848d">&#9670;&#160;</a></span>on_class_initialize_end()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -489,10 +489,10 @@ Public Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void xtd::tunit::event_listener::on_class_initialize_end </td>
+          <td class="memname">virtual auto xtd::tunit::event_listener::on_class_initialize_end </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1tunit_1_1class__event__args.html">xtd::tunit::class_event_args</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>e</em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; void</td>
         </tr>
       </table>
   </td>
@@ -512,8 +512,8 @@ Public Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="a598a70d4279aae1902392b5c7771c9d3" name="a598a70d4279aae1902392b5c7771c9d3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a598a70d4279aae1902392b5c7771c9d3">&#9670;&#160;</a></span>on_class_initialize_start()</h2>
+<a id="aaca81ed5677c6195b9e6acd12cb5fd1c" name="aaca81ed5677c6195b9e6acd12cb5fd1c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaca81ed5677c6195b9e6acd12cb5fd1c">&#9670;&#160;</a></span>on_class_initialize_start()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -522,10 +522,10 @@ Public Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void xtd::tunit::event_listener::on_class_initialize_start </td>
+          <td class="memname">virtual auto xtd::tunit::event_listener::on_class_initialize_start </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1tunit_1_1class__event__args.html">xtd::tunit::class_event_args</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>e</em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; void</td>
         </tr>
       </table>
   </td>
@@ -545,8 +545,8 @@ Public Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="a76b6650d580a7c582ebb44599cee7906" name="a76b6650d580a7c582ebb44599cee7906"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a76b6650d580a7c582ebb44599cee7906">&#9670;&#160;</a></span>on_class_start()</h2>
+<a id="ad3db0c072ea458621b9028d1c22e1a40" name="ad3db0c072ea458621b9028d1c22e1a40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3db0c072ea458621b9028d1c22e1a40">&#9670;&#160;</a></span>on_class_start()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -555,10 +555,10 @@ Public Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void xtd::tunit::event_listener::on_class_start </td>
+          <td class="memname">virtual auto xtd::tunit::event_listener::on_class_start </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1tunit_1_1class__event__args.html">xtd::tunit::class_event_args</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>e</em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; void</td>
         </tr>
       </table>
   </td>
@@ -576,14 +576,14 @@ Public Methods</h2></td></tr>
   </dd>
 </dl>
 
-<p>Reimplemented in <a class="el" href="classxtd_1_1tunit_1_1ostream__event__listener.html#a1c6f514952fa8a3487db18cab38176d8">xtd::tunit::ostream_event_listener</a>.</p>
+<p>Reimplemented in <a class="el" href="classxtd_1_1tunit_1_1ostream__event__listener.html#ab7292b9631947d8b369b3a32003dd091">xtd::tunit::ostream_event_listener</a>.</p>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="create_gtest_like_event_listener_8cpp-example.html#_a7">create_gtest_like_event_listener.cpp</a>.</dd>
 </dl>
 
 </div>
 </div>
-<a id="a0311abe90ddfc97d8b1ed2e327423fac" name="a0311abe90ddfc97d8b1ed2e327423fac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0311abe90ddfc97d8b1ed2e327423fac">&#9670;&#160;</a></span>on_test_cleanup_end()</h2>
+<a id="a7b729eeb524349be6ddb0af3097e642b" name="a7b729eeb524349be6ddb0af3097e642b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b729eeb524349be6ddb0af3097e642b">&#9670;&#160;</a></span>on_test_cleanup_end()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -592,10 +592,10 @@ Public Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void xtd::tunit::event_listener::on_test_cleanup_end </td>
+          <td class="memname">virtual auto xtd::tunit::event_listener::on_test_cleanup_end </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1tunit_1_1test__event__args.html">xtd::tunit::test_event_args</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>e</em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; void</td>
         </tr>
       </table>
   </td>
@@ -615,8 +615,8 @@ Public Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="ab54eb393bd919ba9a8400ea584d69632" name="ab54eb393bd919ba9a8400ea584d69632"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab54eb393bd919ba9a8400ea584d69632">&#9670;&#160;</a></span>on_test_cleanup_start()</h2>
+<a id="a14037edeeb2e888edefc966e97d1dc72" name="a14037edeeb2e888edefc966e97d1dc72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14037edeeb2e888edefc966e97d1dc72">&#9670;&#160;</a></span>on_test_cleanup_start()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -625,10 +625,10 @@ Public Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void xtd::tunit::event_listener::on_test_cleanup_start </td>
+          <td class="memname">virtual auto xtd::tunit::event_listener::on_test_cleanup_start </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1tunit_1_1test__event__args.html">xtd::tunit::test_event_args</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>e</em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; void</td>
         </tr>
       </table>
   </td>
@@ -648,8 +648,8 @@ Public Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="a8ebab2630358c03acc28ed44253336f3" name="a8ebab2630358c03acc28ed44253336f3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8ebab2630358c03acc28ed44253336f3">&#9670;&#160;</a></span>on_test_initialize_end()</h2>
+<a id="ad29ab15b42fe30170c6b01e838d5cbc2" name="ad29ab15b42fe30170c6b01e838d5cbc2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad29ab15b42fe30170c6b01e838d5cbc2">&#9670;&#160;</a></span>on_test_initialize_end()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -658,10 +658,10 @@ Public Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void xtd::tunit::event_listener::on_test_initialize_end </td>
+          <td class="memname">virtual auto xtd::tunit::event_listener::on_test_initialize_end </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1tunit_1_1test__event__args.html">xtd::tunit::test_event_args</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>e</em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; void</td>
         </tr>
       </table>
   </td>
@@ -681,8 +681,8 @@ Public Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="af6fd200caf8650afb31dd7cb18dda7ec" name="af6fd200caf8650afb31dd7cb18dda7ec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af6fd200caf8650afb31dd7cb18dda7ec">&#9670;&#160;</a></span>on_test_initialize_start()</h2>
+<a id="ab4e770d44a1608e403888a4713d89123" name="ab4e770d44a1608e403888a4713d89123"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4e770d44a1608e403888a4713d89123">&#9670;&#160;</a></span>on_test_initialize_start()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -691,10 +691,10 @@ Public Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void xtd::tunit::event_listener::on_test_initialize_start </td>
+          <td class="memname">virtual auto xtd::tunit::event_listener::on_test_initialize_start </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1tunit_1_1test__event__args.html">xtd::tunit::test_event_args</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>e</em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; void</td>
         </tr>
       </table>
   </td>
@@ -714,8 +714,8 @@ Public Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="a0945bb9bc70d5e4fa62201cfbb293e8a" name="a0945bb9bc70d5e4fa62201cfbb293e8a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0945bb9bc70d5e4fa62201cfbb293e8a">&#9670;&#160;</a></span>on_test_aborted()</h2>
+<a id="a807bf8107e1d7e3605297f17bdfc6c32" name="a807bf8107e1d7e3605297f17bdfc6c32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a807bf8107e1d7e3605297f17bdfc6c32">&#9670;&#160;</a></span>on_test_aborted()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -724,10 +724,10 @@ Public Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void xtd::tunit::event_listener::on_test_aborted </td>
+          <td class="memname">virtual auto xtd::tunit::event_listener::on_test_aborted </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1tunit_1_1test__event__args.html">xtd::tunit::test_event_args</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>e</em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; void</td>
         </tr>
       </table>
   </td>
@@ -745,12 +745,12 @@ Public Methods</h2></td></tr>
   </dd>
 </dl>
 
-<p>Reimplemented in <a class="el" href="classxtd_1_1tunit_1_1ostream__event__listener.html#a6d6fbb94c5fdbf0a7084c5d5da130404">xtd::tunit::ostream_event_listener</a>.</p>
+<p>Reimplemented in <a class="el" href="classxtd_1_1tunit_1_1ostream__event__listener.html#ab5f12aa852026fa6e9dc08d76445a306">xtd::tunit::ostream_event_listener</a>.</p>
 
 </div>
 </div>
-<a id="a193bc7e69045492ac105d4fd48a32a2a" name="a193bc7e69045492ac105d4fd48a32a2a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a193bc7e69045492ac105d4fd48a32a2a">&#9670;&#160;</a></span>on_test_end()</h2>
+<a id="a2e554c440bec761b0fcf7d6f51d162b4" name="a2e554c440bec761b0fcf7d6f51d162b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e554c440bec761b0fcf7d6f51d162b4">&#9670;&#160;</a></span>on_test_end()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -759,10 +759,10 @@ Public Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void xtd::tunit::event_listener::on_test_end </td>
+          <td class="memname">virtual auto xtd::tunit::event_listener::on_test_end </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1tunit_1_1test__event__args.html">xtd::tunit::test_event_args</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>e</em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; void</td>
         </tr>
       </table>
   </td>
@@ -782,8 +782,8 @@ Public Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="ac65b5228fd02cb32fa94c4f1d86c2a71" name="ac65b5228fd02cb32fa94c4f1d86c2a71"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac65b5228fd02cb32fa94c4f1d86c2a71">&#9670;&#160;</a></span>on_test_ignored()</h2>
+<a id="ad28457eb0e55238c07df3c826bc00d07" name="ad28457eb0e55238c07df3c826bc00d07"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad28457eb0e55238c07df3c826bc00d07">&#9670;&#160;</a></span>on_test_ignored()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -792,10 +792,10 @@ Public Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void xtd::tunit::event_listener::on_test_ignored </td>
+          <td class="memname">virtual auto xtd::tunit::event_listener::on_test_ignored </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1tunit_1_1test__event__args.html">xtd::tunit::test_event_args</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>e</em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; void</td>
         </tr>
       </table>
   </td>
@@ -813,12 +813,12 @@ Public Methods</h2></td></tr>
   </dd>
 </dl>
 
-<p>Reimplemented in <a class="el" href="classxtd_1_1tunit_1_1ostream__event__listener.html#aec3434b60b486e674fccd36875e31147">xtd::tunit::ostream_event_listener</a>.</p>
+<p>Reimplemented in <a class="el" href="classxtd_1_1tunit_1_1ostream__event__listener.html#a1263f2af958c31c3f66a7645b7f550ba">xtd::tunit::ostream_event_listener</a>.</p>
 
 </div>
 </div>
-<a id="ae95fdce3e3337ce19c9d7f14667634d4" name="ae95fdce3e3337ce19c9d7f14667634d4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae95fdce3e3337ce19c9d7f14667634d4">&#9670;&#160;</a></span>on_test_failed()</h2>
+<a id="abf8122f4247e311c99d2eeeb3310d387" name="abf8122f4247e311c99d2eeeb3310d387"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf8122f4247e311c99d2eeeb3310d387">&#9670;&#160;</a></span>on_test_failed()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -827,10 +827,10 @@ Public Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void xtd::tunit::event_listener::on_test_failed </td>
+          <td class="memname">virtual auto xtd::tunit::event_listener::on_test_failed </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1tunit_1_1test__event__args.html">xtd::tunit::test_event_args</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>e</em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; void</td>
         </tr>
       </table>
   </td>
@@ -848,14 +848,14 @@ Public Methods</h2></td></tr>
   </dd>
 </dl>
 
-<p>Reimplemented in <a class="el" href="classxtd_1_1tunit_1_1ostream__event__listener.html#a91643b43dabdb051858d83c39b1e2fbc">xtd::tunit::ostream_event_listener</a>.</p>
+<p>Reimplemented in <a class="el" href="classxtd_1_1tunit_1_1ostream__event__listener.html#af1e93450c6392dfc74b5bf40e86d2650">xtd::tunit::ostream_event_listener</a>.</p>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="create_gtest_like_event_listener_8cpp-example.html#_a12">create_gtest_like_event_listener.cpp</a>.</dd>
 </dl>
 
 </div>
 </div>
-<a id="ab57442ac644fd6b8d1760e0fbceb43df" name="ab57442ac644fd6b8d1760e0fbceb43df"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab57442ac644fd6b8d1760e0fbceb43df">&#9670;&#160;</a></span>on_test_start()</h2>
+<a id="a95d9efc12cfb026c1ed57431f79c6203" name="a95d9efc12cfb026c1ed57431f79c6203"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95d9efc12cfb026c1ed57431f79c6203">&#9670;&#160;</a></span>on_test_start()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -864,10 +864,10 @@ Public Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void xtd::tunit::event_listener::on_test_start </td>
+          <td class="memname">virtual auto xtd::tunit::event_listener::on_test_start </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1tunit_1_1test__event__args.html">xtd::tunit::test_event_args</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>e</em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; void</td>
         </tr>
       </table>
   </td>
@@ -885,14 +885,14 @@ Public Methods</h2></td></tr>
   </dd>
 </dl>
 
-<p>Reimplemented in <a class="el" href="classxtd_1_1tunit_1_1ostream__event__listener.html#a4ef40b89c7abd0069935ce5670a41dac">xtd::tunit::ostream_event_listener</a>.</p>
+<p>Reimplemented in <a class="el" href="classxtd_1_1tunit_1_1ostream__event__listener.html#ad27856ae8a41cfe2bc59989d092d84d2">xtd::tunit::ostream_event_listener</a>.</p>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="create_gtest_like_event_listener_8cpp-example.html#_a9">create_gtest_like_event_listener.cpp</a>.</dd>
 </dl>
 
 </div>
 </div>
-<a id="a9e57ffd862c0f85bd2640525387da5c6" name="a9e57ffd862c0f85bd2640525387da5c6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9e57ffd862c0f85bd2640525387da5c6">&#9670;&#160;</a></span>on_test_succeed()</h2>
+<a id="a9b122f4ebada78b855359d7630285255" name="a9b122f4ebada78b855359d7630285255"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b122f4ebada78b855359d7630285255">&#9670;&#160;</a></span>on_test_succeed()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -901,10 +901,10 @@ Public Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void xtd::tunit::event_listener::on_test_succeed </td>
+          <td class="memname">virtual auto xtd::tunit::event_listener::on_test_succeed </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1tunit_1_1test__event__args.html">xtd::tunit::test_event_args</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>e</em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; void</td>
         </tr>
       </table>
   </td>
@@ -922,14 +922,14 @@ Public Methods</h2></td></tr>
   </dd>
 </dl>
 
-<p>Reimplemented in <a class="el" href="classxtd_1_1tunit_1_1ostream__event__listener.html#af03155973500e52ecc515c33df829038">xtd::tunit::ostream_event_listener</a>.</p>
+<p>Reimplemented in <a class="el" href="classxtd_1_1tunit_1_1ostream__event__listener.html#a95fa6bea0946870f779181a79e9e1dae">xtd::tunit::ostream_event_listener</a>.</p>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="create_gtest_like_event_listener_8cpp-example.html#_a10">create_gtest_like_event_listener.cpp</a>.</dd>
 </dl>
 
 </div>
 </div>
-<a id="ac2d542218abb7fe9549a542f97ccf09b" name="ac2d542218abb7fe9549a542f97ccf09b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac2d542218abb7fe9549a542f97ccf09b">&#9670;&#160;</a></span>on_unit_test_cleanup_end()</h2>
+<a id="ac1bac28080df5243ad7926560c6cc57a" name="ac1bac28080df5243ad7926560c6cc57a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1bac28080df5243ad7926560c6cc57a">&#9670;&#160;</a></span>on_unit_test_cleanup_end()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -938,10 +938,10 @@ Public Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void xtd::tunit::event_listener::on_unit_test_cleanup_end </td>
+          <td class="memname">virtual auto xtd::tunit::event_listener::on_unit_test_cleanup_end </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1tunit_1_1tunit__event__args.html">xtd::tunit::tunit_event_args</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>e</em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; void</td>
         </tr>
       </table>
   </td>
@@ -963,8 +963,8 @@ Public Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="aaf529b0375f0e31d408921ca5a7e9932" name="aaf529b0375f0e31d408921ca5a7e9932"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaf529b0375f0e31d408921ca5a7e9932">&#9670;&#160;</a></span>on_unit_test_cleanup_start()</h2>
+<a id="a1e59b1267c22c969981fcb7e926e22fe" name="a1e59b1267c22c969981fcb7e926e22fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e59b1267c22c969981fcb7e926e22fe">&#9670;&#160;</a></span>on_unit_test_cleanup_start()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -973,10 +973,10 @@ Public Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void xtd::tunit::event_listener::on_unit_test_cleanup_start </td>
+          <td class="memname">virtual auto xtd::tunit::event_listener::on_unit_test_cleanup_start </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1tunit_1_1tunit__event__args.html">xtd::tunit::tunit_event_args</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>e</em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; void</td>
         </tr>
       </table>
   </td>
@@ -994,12 +994,12 @@ Public Methods</h2></td></tr>
   </dd>
 </dl>
 
-<p>Reimplemented in <a class="el" href="classxtd_1_1tunit_1_1ostream__event__listener.html#aa1813d66ee0707f560f2f86fa93ef49d">xtd::tunit::ostream_event_listener</a>.</p>
+<p>Reimplemented in <a class="el" href="classxtd_1_1tunit_1_1ostream__event__listener.html#a35a2e4005b2038771fccc53ab879e4b0">xtd::tunit::ostream_event_listener</a>.</p>
 
 </div>
 </div>
-<a id="ab9be4f42bf8eaac4bec66bc1618f50ff" name="ab9be4f42bf8eaac4bec66bc1618f50ff"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab9be4f42bf8eaac4bec66bc1618f50ff">&#9670;&#160;</a></span>on_unit_test_end()</h2>
+<a id="a0c096245cbc61a4c54e5d6c02a9ffaf4" name="a0c096245cbc61a4c54e5d6c02a9ffaf4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c096245cbc61a4c54e5d6c02a9ffaf4">&#9670;&#160;</a></span>on_unit_test_end()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1008,10 +1008,10 @@ Public Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void xtd::tunit::event_listener::on_unit_test_end </td>
+          <td class="memname">virtual auto xtd::tunit::event_listener::on_unit_test_end </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1tunit_1_1tunit__event__args.html">xtd::tunit::tunit_event_args</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>e</em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; void</td>
         </tr>
       </table>
   </td>
@@ -1029,14 +1029,14 @@ Public Methods</h2></td></tr>
   </dd>
 </dl>
 
-<p>Reimplemented in <a class="el" href="classxtd_1_1tunit_1_1ostream__event__listener.html#a7586dec619071f468e13def1b50a90aa">xtd::tunit::ostream_event_listener</a>.</p>
+<p>Reimplemented in <a class="el" href="classxtd_1_1tunit_1_1ostream__event__listener.html#aab68b2e2ce4b88c51cd2c917853a348f">xtd::tunit::ostream_event_listener</a>.</p>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="create_gtest_like_event_listener_8cpp-example.html#_a15">create_gtest_like_event_listener.cpp</a>.</dd>
 </dl>
 
 </div>
 </div>
-<a id="af5d94496fce3e08b139d77866a353366" name="af5d94496fce3e08b139d77866a353366"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af5d94496fce3e08b139d77866a353366">&#9670;&#160;</a></span>on_unit_test_initialize_end()</h2>
+<a id="a75e382a2d8939a7ea47e5fba757a9dfa" name="a75e382a2d8939a7ea47e5fba757a9dfa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75e382a2d8939a7ea47e5fba757a9dfa">&#9670;&#160;</a></span>on_unit_test_initialize_end()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1045,10 +1045,10 @@ Public Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void xtd::tunit::event_listener::on_unit_test_initialize_end </td>
+          <td class="memname">virtual auto xtd::tunit::event_listener::on_unit_test_initialize_end </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1tunit_1_1tunit__event__args.html">xtd::tunit::tunit_event_args</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>e</em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; void</td>
         </tr>
       </table>
   </td>
@@ -1070,8 +1070,8 @@ Public Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="a2daf2abff200e1f8c21ace9d9a95808b" name="a2daf2abff200e1f8c21ace9d9a95808b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2daf2abff200e1f8c21ace9d9a95808b">&#9670;&#160;</a></span>on_unit_test_initialize_start()</h2>
+<a id="a9e4a1786cc08baeda6720622bf913539" name="a9e4a1786cc08baeda6720622bf913539"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e4a1786cc08baeda6720622bf913539">&#9670;&#160;</a></span>on_unit_test_initialize_start()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1080,10 +1080,10 @@ Public Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void xtd::tunit::event_listener::on_unit_test_initialize_start </td>
+          <td class="memname">virtual auto xtd::tunit::event_listener::on_unit_test_initialize_start </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1tunit_1_1tunit__event__args.html">xtd::tunit::tunit_event_args</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>e</em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; void</td>
         </tr>
       </table>
   </td>
@@ -1101,12 +1101,12 @@ Public Methods</h2></td></tr>
   </dd>
 </dl>
 
-<p>Reimplemented in <a class="el" href="classxtd_1_1tunit_1_1ostream__event__listener.html#a2d4ca0ab7b932569e39037c7aa2324a5">xtd::tunit::ostream_event_listener</a>.</p>
+<p>Reimplemented in <a class="el" href="classxtd_1_1tunit_1_1ostream__event__listener.html#a4503429786012a33993861daaa4a2017">xtd::tunit::ostream_event_listener</a>.</p>
 
 </div>
 </div>
-<a id="ab4d58210bf4b49b8f43987a9336b3517" name="ab4d58210bf4b49b8f43987a9336b3517"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab4d58210bf4b49b8f43987a9336b3517">&#9670;&#160;</a></span>on_unit_test_start()</h2>
+<a id="a2d8dd32ed6f24bb9f2038190e8d4450a" name="a2d8dd32ed6f24bb9f2038190e8d4450a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d8dd32ed6f24bb9f2038190e8d4450a">&#9670;&#160;</a></span>on_unit_test_start()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1115,10 +1115,10 @@ Public Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void xtd::tunit::event_listener::on_unit_test_start </td>
+          <td class="memname">virtual auto xtd::tunit::event_listener::on_unit_test_start </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1tunit_1_1tunit__event__args.html">xtd::tunit::tunit_event_args</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>e</em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; void</td>
         </tr>
       </table>
   </td>
@@ -1136,7 +1136,7 @@ Public Methods</h2></td></tr>
   </dd>
 </dl>
 
-<p>Reimplemented in <a class="el" href="classxtd_1_1tunit_1_1ostream__event__listener.html#af5c5893414747baa7ccd64f9d9bd9228">xtd::tunit::ostream_event_listener</a>.</p>
+<p>Reimplemented in <a class="el" href="classxtd_1_1tunit_1_1ostream__event__listener.html#a52d9bab2a960367500874cf3b63f496a">xtd::tunit::ostream_event_listener</a>.</p>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="create_gtest_like_event_listener_8cpp-example.html#_a2">create_gtest_like_event_listener.cpp</a>.</dd>
 </dl>
 

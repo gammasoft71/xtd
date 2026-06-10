@@ -320,7 +320,7 @@ var searchData=
   ['grow_5fand_5fshrink_317',['grow_and_shrink',['../group__xtd__forms.html#gga988a6abd919c15254f45a0bf9c2dcb17a7553d32e6fa9da02fbc9c28923ccd9be',1,'xtd::forms']]],
   ['grow_5fonly_318',['grow_only',['../group__xtd__forms.html#gga988a6abd919c15254f45a0bf9c2dcb17a1577f0074cb0104cc21cf26608c81eb9',1,'xtd::forms']]],
   ['growing_5fheart_319',['growing_heart',['../classxtd_1_1forms_1_1emoticons.html#ab1daeef1833f7577e681c2ff36b79775',1,'xtd::forms::emoticons']]],
-  ['gtest_5fcompatibility_320',['gtest_compatibility',['../classxtd_1_1tunit_1_1settings.html#af17a5673cab59ee9434d7c1cfb7987aa',1,'xtd::tunit::settings::gtest_compatibility() const noexcept'],['../classxtd_1_1tunit_1_1settings.html#ae4fcac69c5b46cbe8ff95e41525023b3',1,'xtd::tunit::settings::gtest_compatibility(bool gtest_compatibility) noexcept']]],
+  ['gtest_5fcompatibility_320',['gtest_compatibility',['../classxtd_1_1tunit_1_1settings.html#afe4be2717f73fb2e8122bfc6c07c1710',1,'xtd::tunit::settings::gtest_compatibility() const noexcept -&gt; bool'],['../classxtd_1_1tunit_1_1settings.html#a2b8cdc9533e6f6ddb15cd1302459e67d',1,'xtd::tunit::settings::gtest_compatibility(bool value) noexcept -&gt; settings &amp;']]],
   ['guadeloupe_321',['guadeloupe',['../classxtd_1_1forms_1_1countries.html#a20bb03d7b159601a14ee7344c62ed250',1,'xtd::forms::countries']]],
   ['guam_322',['guam',['../classxtd_1_1forms_1_1countries.html#a17966c7866328c18ead346ff231b69fa',1,'xtd::forms::countries']]],
   ['guardsman_323',['guardsman',['../classxtd_1_1forms_1_1emoticons.html#a4550793880ba6e114d773f8b5690bb17',1,'xtd::forms::emoticons']]],

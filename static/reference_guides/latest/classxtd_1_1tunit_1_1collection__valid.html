@@ -137,11 +137,11 @@ If a validation fails, he test can be continued to the end or to an assertion is
 <div class="line">  <span class="comment">// The class test must be declared with test_class_ helper.</span></div>
 <div class="line">  <span class="keyword">class </span>test_class_(test) {</div>
 <div class="line">    <span class="keywordtype">void</span> <a class="code hl_define" href="group__tunit.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a>(test_case1) {</div>
-<div class="line">      <a class="code hl_function" href="#a52e127eea29e0b6e61e795f889fcb630">collection_valid::is_empty</a>(<a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1list.html">list&lt;int&gt;</a> {});</div>
+<div class="line">      <a class="code hl_function" href="#a73f3d402cabdf6f26d338054fb2cf856">collection_valid::is_empty</a>(<a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1list.html">list&lt;int&gt;</a> {});</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordtype">void</span> <a class="code hl_define" href="group__tunit.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a>(test_case2) {</div>
-<div class="line">      <a class="code hl_function" href="#a52e127eea29e0b6e61e795f889fcb630">collection_valid::is_empty</a>(<a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1list.html">list</a> {1, 2, 3});</div>
+<div class="line">      <a class="code hl_function" href="#a73f3d402cabdf6f26d338054fb2cf856">collection_valid::is_empty</a>(<a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1list.html">list</a> {1, 2, 3});</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordtype">void</span> <a class="code hl_define" href="group__tunit.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a>(test_case3) {</div>
@@ -173,7 +173,7 @@ If a validation fails, he test can be continued to the end or to an assertion is
 <div class="line"><span class="comment">//   FAILED  2 tests.</span></div>
 <div class="line"><span class="comment">// End 3 tests from 1 test case ran. (0 ms total)</span></div>
 <div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a></div><div class="ttdoc">Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...</div><div class="ttdef"><b>Definition</b> list.hpp:80</div></div>
-<div class="ttc" id="aclassxtd_1_1tunit_1_1collection__valid_html_a52e127eea29e0b6e61e795f889fcb630"><div class="ttname"><a href="#a52e127eea29e0b6e61e795f889fcb630">xtd::tunit::collection_valid::is_empty</a></div><div class="ttdeci">static void is_empty(const value_t &amp;value, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Validates that collection contains an item.</div><div class="ttdef"><b>Definition</b> collection_valid.hpp:565</div></div>
+<div class="ttc" id="aclassxtd_1_1tunit_1_1collection__valid_html_a73f3d402cabdf6f26d338054fb2cf856"><div class="ttname"><a href="#a73f3d402cabdf6f26d338054fb2cf856">xtd::tunit::collection_valid::is_empty</a></div><div class="ttdeci">static auto is_empty(const value_t &amp;value, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current()) -&gt; void</div><div class="ttdoc">Validates that collection contains an item.</div><div class="ttdef"><b>Definition</b> collection_valid.hpp:565</div></div>
 <div class="ttc" id="agroup__tunit_html_ga1fa6dc01b83d00ce9e92402c9694c6af"><div class="ttname"><a href="group__tunit.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a></div><div class="ttdeci">#define test_method_(method_name)</div><div class="ttdoc">Add test method to class test.</div><div class="ttdef"><b>Definition</b> test_method_attribute.hpp:72</div></div>
 <div class="ttc" id="anamespacextd_1_1collections_1_1generic_html"><div class="ttname"><a href="namespacextd_1_1collections_1_1generic.html">xtd::collections::generic</a></div><div class="ttdoc">The xtd::collections::generic namespace contains interfaces and classes that define generic collectio...</div><div class="ttdef"><b>Definition</b> comparer.hpp:16</div></div>
 <div class="ttc" id="anamespacextd_1_1tunit_html"><div class="ttname"><a href="namespacextd_1_1tunit.html">xtd::tunit</a></div><div class="ttdoc">The tunit namespace contains a unit test library.</div><div class="ttdef"><b>Definition</b> abort_error.hpp:10</div></div>
@@ -181,82 +181,82 @@ If a validation fails, he test can be continued to the end or to an assertion is
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Static Methods</h2></td></tr>
-<tr class="memitem:aeadb5d3f53671f8ddab4988b62373412" id="r_aeadb5d3f53671f8ddab4988b62373412"><td class="memTemplParams" colspan="2">template&lt;typename expected_t, typename collection_t&gt; </td></tr>
-<tr class="memitem:aeadb5d3f53671f8ddab4988b62373412 template"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#aeadb5d3f53671f8ddab4988b62373412">all_items_are_instances_of</a> (const collection_t &amp;collection, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>())</td></tr>
-<tr class="memdesc:aeadb5d3f53671f8ddab4988b62373412"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validates that all collection items are of the type supplied or a derived type.  <br /></td></tr>
-<tr class="memitem:a2f44c6e8591c3e7e8ae79134349e014d" id="r_a2f44c6e8591c3e7e8ae79134349e014d"><td class="memTemplParams" colspan="2">template&lt;typename expected_t, typename collection_t&gt; </td></tr>
-<tr class="memitem:a2f44c6e8591c3e7e8ae79134349e014d template"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a2f44c6e8591c3e7e8ae79134349e014d">all_items_are_instances_of</a> (const collection_t &amp;collection, const std::string &amp;message, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>())</td></tr>
-<tr class="memdesc:a2f44c6e8591c3e7e8ae79134349e014d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validates that all collection items are of the type supplied or a derived type.  <br /></td></tr>
-<tr class="memitem:a0aa2f8fc878560bc55686b11e12ff0a9" id="r_a0aa2f8fc878560bc55686b11e12ff0a9"><td class="memTemplParams" colspan="2">template&lt;typename collection_t&gt; </td></tr>
-<tr class="memitem:a0aa2f8fc878560bc55686b11e12ff0a9 template"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a0aa2f8fc878560bc55686b11e12ff0a9">all_items_are_not_null</a> (const collection_t &amp;collection, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>())</td></tr>
-<tr class="memdesc:a0aa2f8fc878560bc55686b11e12ff0a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validates that all collection items are not null.  <br /></td></tr>
-<tr class="memitem:a896d9ac2dd7185984e73661156690bbc" id="r_a896d9ac2dd7185984e73661156690bbc"><td class="memTemplParams" colspan="2">template&lt;typename collection_t&gt; </td></tr>
-<tr class="memitem:a896d9ac2dd7185984e73661156690bbc template"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a896d9ac2dd7185984e73661156690bbc">all_items_are_not_null</a> (const collection_t &amp;collection, const std::string &amp;message, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>())</td></tr>
-<tr class="memdesc:a896d9ac2dd7185984e73661156690bbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validates that all collection items are not null.  <br /></td></tr>
-<tr class="memitem:aff8a9a93470f12937f6b7881bf858e3a" id="r_aff8a9a93470f12937f6b7881bf858e3a"><td class="memTemplParams" colspan="2">template&lt;typename collection_t&gt; </td></tr>
-<tr class="memitem:aff8a9a93470f12937f6b7881bf858e3a template"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#aff8a9a93470f12937f6b7881bf858e3a">all_items_are_unique</a> (const collection_t &amp;collection, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>())</td></tr>
-<tr class="memdesc:aff8a9a93470f12937f6b7881bf858e3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validates that all collection items are unique.  <br /></td></tr>
-<tr class="memitem:a651bf837824b4473d868552846bf92b2" id="r_a651bf837824b4473d868552846bf92b2"><td class="memTemplParams" colspan="2">template&lt;typename collection_t&gt; </td></tr>
-<tr class="memitem:a651bf837824b4473d868552846bf92b2 template"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a651bf837824b4473d868552846bf92b2">all_items_are_unique</a> (const collection_t &amp;collection, const std::string &amp;message, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>())</td></tr>
-<tr class="memdesc:a651bf837824b4473d868552846bf92b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validates that all collection items are unique.  <br /></td></tr>
-<tr class="memitem:a231025acfc4aa38a5f40602bea999854" id="r_a231025acfc4aa38a5f40602bea999854"><td class="memTemplParams" colspan="2">template&lt;typename expected_t, typename actual_t&gt; </td></tr>
-<tr class="memitem:a231025acfc4aa38a5f40602bea999854 template"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a231025acfc4aa38a5f40602bea999854">are_equal</a> (const expected_t &amp;expected, const actual_t &amp;actual, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>())</td></tr>
-<tr class="memdesc:a231025acfc4aa38a5f40602bea999854"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validates that all collection items are equal.  <br /></td></tr>
-<tr class="memitem:ab39c95b6a7b7e4eb43dd4f3abcd63cd1" id="r_ab39c95b6a7b7e4eb43dd4f3abcd63cd1"><td class="memTemplParams" colspan="2">template&lt;typename expected_t, typename actual_t&gt; </td></tr>
-<tr class="memitem:ab39c95b6a7b7e4eb43dd4f3abcd63cd1 template"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#ab39c95b6a7b7e4eb43dd4f3abcd63cd1">are_equal</a> (const expected_t &amp;expected, const actual_t &amp;actual, const std::string &amp;message, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>())</td></tr>
-<tr class="memdesc:ab39c95b6a7b7e4eb43dd4f3abcd63cd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validates that all collection items are equal.  <br /></td></tr>
-<tr class="memitem:a9bcbe275c66b105b77fa84db222bbef9" id="r_a9bcbe275c66b105b77fa84db222bbef9"><td class="memTemplParams" colspan="2">template&lt;typename expected_t, typename actual_t&gt; </td></tr>
-<tr class="memitem:a9bcbe275c66b105b77fa84db222bbef9 template"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a9bcbe275c66b105b77fa84db222bbef9">are_equivalent</a> (const expected_t &amp;expected, const actual_t &amp;actual, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>())</td></tr>
-<tr class="memdesc:a9bcbe275c66b105b77fa84db222bbef9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validates that all collection items are equivalent.  <br /></td></tr>
-<tr class="memitem:a71380aa9a83a5c7f2bbeeefb292852f3" id="r_a71380aa9a83a5c7f2bbeeefb292852f3"><td class="memTemplParams" colspan="2">template&lt;typename expected_t, typename actual_t&gt; </td></tr>
-<tr class="memitem:a71380aa9a83a5c7f2bbeeefb292852f3 template"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a71380aa9a83a5c7f2bbeeefb292852f3">are_equivalent</a> (const expected_t &amp;expected, const actual_t &amp;actual, const std::string &amp;message, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>())</td></tr>
-<tr class="memdesc:a71380aa9a83a5c7f2bbeeefb292852f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validates that all collection items are equivalent.  <br /></td></tr>
-<tr class="memitem:a761b466065bb4d154b1fc74128f75353" id="r_a761b466065bb4d154b1fc74128f75353"><td class="memTemplParams" colspan="2">template&lt;typename expected_t, typename actual_t&gt; </td></tr>
-<tr class="memitem:a761b466065bb4d154b1fc74128f75353 template"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a761b466065bb4d154b1fc74128f75353">are_not_equal</a> (const expected_t &amp;expected, const actual_t &amp;actual, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>())</td></tr>
-<tr class="memdesc:a761b466065bb4d154b1fc74128f75353"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validates that all collection items are not equal.  <br /></td></tr>
-<tr class="memitem:a82486872f004856f0436392672ae2376" id="r_a82486872f004856f0436392672ae2376"><td class="memTemplParams" colspan="2">template&lt;typename expected_t, typename actual_t&gt; </td></tr>
-<tr class="memitem:a82486872f004856f0436392672ae2376 template"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a82486872f004856f0436392672ae2376">are_not_equal</a> (const expected_t &amp;expected, const actual_t &amp;actual, const std::string &amp;message, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>())</td></tr>
-<tr class="memdesc:a82486872f004856f0436392672ae2376"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validates that all collection items are not equal.  <br /></td></tr>
-<tr class="memitem:a000f18606dfe4358ba7c5ba8445d6079" id="r_a000f18606dfe4358ba7c5ba8445d6079"><td class="memTemplParams" colspan="2">template&lt;typename expected_t, typename actual_t&gt; </td></tr>
-<tr class="memitem:a000f18606dfe4358ba7c5ba8445d6079 template"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a000f18606dfe4358ba7c5ba8445d6079">are_not_equivalent</a> (const expected_t &amp;expected, const actual_t &amp;actual, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>())</td></tr>
-<tr class="memdesc:a000f18606dfe4358ba7c5ba8445d6079"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validates that all collection items are not equivalent.  <br /></td></tr>
-<tr class="memitem:a908a16e244ec411fdcfbfab7725ad9eb" id="r_a908a16e244ec411fdcfbfab7725ad9eb"><td class="memTemplParams" colspan="2">template&lt;typename expected_t, typename actual_t&gt; </td></tr>
-<tr class="memitem:a908a16e244ec411fdcfbfab7725ad9eb template"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a908a16e244ec411fdcfbfab7725ad9eb">are_not_equivalent</a> (const expected_t &amp;expected, const actual_t &amp;actual, const std::string &amp;message, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>())</td></tr>
-<tr class="memdesc:a908a16e244ec411fdcfbfab7725ad9eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validates that all collection items are not equivalent.  <br /></td></tr>
-<tr class="memitem:add3d7b3b9ed75711623ec632ddd19063" id="r_add3d7b3b9ed75711623ec632ddd19063"><td class="memTemplParams" colspan="2">template&lt;typename expected_t, typename actual_t&gt; </td></tr>
-<tr class="memitem:add3d7b3b9ed75711623ec632ddd19063 template"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#add3d7b3b9ed75711623ec632ddd19063">contains</a> (const expected_t &amp;expected, const actual_t &amp;actual, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>())</td></tr>
-<tr class="memdesc:add3d7b3b9ed75711623ec632ddd19063"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validates that collection contains all items.  <br /></td></tr>
-<tr class="memitem:ad67724559756773832862f6c5cded595" id="r_ad67724559756773832862f6c5cded595"><td class="memTemplParams" colspan="2">template&lt;typename expected_t, typename actual_t&gt; </td></tr>
-<tr class="memitem:ad67724559756773832862f6c5cded595 template"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#ad67724559756773832862f6c5cded595">contains</a> (const expected_t &amp;expected, const actual_t &amp;actual, const std::string &amp;message, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>())</td></tr>
-<tr class="memdesc:ad67724559756773832862f6c5cded595"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validates that collection contains all items.  <br /></td></tr>
-<tr class="memitem:a4b588963244aadca79ed08f47b1886ec" id="r_a4b588963244aadca79ed08f47b1886ec"><td class="memTemplParams" colspan="2">template&lt;typename expected_t, typename actual_t&gt; </td></tr>
-<tr class="memitem:a4b588963244aadca79ed08f47b1886ec template"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a4b588963244aadca79ed08f47b1886ec">does_not_contain</a> (const expected_t &amp;expected, const actual_t &amp;actual, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>())</td></tr>
-<tr class="memdesc:a4b588963244aadca79ed08f47b1886ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validates that collection contains all items.  <br /></td></tr>
-<tr class="memitem:a045a0cd039d871d34b8230da6f4d4040" id="r_a045a0cd039d871d34b8230da6f4d4040"><td class="memTemplParams" colspan="2">template&lt;typename expected_t, typename actual_t&gt; </td></tr>
-<tr class="memitem:a045a0cd039d871d34b8230da6f4d4040 template"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a045a0cd039d871d34b8230da6f4d4040">does_not_contain</a> (const expected_t &amp;expected, const actual_t &amp;actual, const std::string &amp;message, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>())</td></tr>
-<tr class="memdesc:a045a0cd039d871d34b8230da6f4d4040"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validates that collection contains all items.  <br /></td></tr>
-<tr class="memitem:a52e127eea29e0b6e61e795f889fcb630" id="r_a52e127eea29e0b6e61e795f889fcb630"><td class="memTemplParams" colspan="2">template&lt;typename value_t&gt; </td></tr>
-<tr class="memitem:a52e127eea29e0b6e61e795f889fcb630 template"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a52e127eea29e0b6e61e795f889fcb630">is_empty</a> (const value_t &amp;value, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>())</td></tr>
-<tr class="memdesc:a52e127eea29e0b6e61e795f889fcb630"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validates that collection contains an item.  <br /></td></tr>
-<tr class="memitem:aa1ac923ada1397e59aa6a8bd91dd27ac" id="r_aa1ac923ada1397e59aa6a8bd91dd27ac"><td class="memTemplParams" colspan="2">template&lt;typename value_t&gt; </td></tr>
-<tr class="memitem:aa1ac923ada1397e59aa6a8bd91dd27ac template"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#aa1ac923ada1397e59aa6a8bd91dd27ac">is_empty</a> (const value_t &amp;value, const std::string &amp;message, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>())</td></tr>
-<tr class="memdesc:aa1ac923ada1397e59aa6a8bd91dd27ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validates that collection contains an item.  <br /></td></tr>
-<tr class="memitem:af788d6af2fc237b33692dac2113904d6" id="r_af788d6af2fc237b33692dac2113904d6"><td class="memTemplParams" colspan="2">template&lt;typename value_t&gt; </td></tr>
-<tr class="memitem:af788d6af2fc237b33692dac2113904d6 template"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#af788d6af2fc237b33692dac2113904d6">is_not_empty</a> (const value_t &amp;value, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>())</td></tr>
-<tr class="memdesc:af788d6af2fc237b33692dac2113904d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validates that collection or traits does not contain any item.  <br /></td></tr>
-<tr class="memitem:a1c75f8cee752f95b5cfe6f2dac5cd1b9" id="r_a1c75f8cee752f95b5cfe6f2dac5cd1b9"><td class="memTemplParams" colspan="2">template&lt;typename value_t&gt; </td></tr>
-<tr class="memitem:a1c75f8cee752f95b5cfe6f2dac5cd1b9 template"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a1c75f8cee752f95b5cfe6f2dac5cd1b9">is_not_empty</a> (const value_t &amp;value, const std::string &amp;message, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>())</td></tr>
-<tr class="memdesc:a1c75f8cee752f95b5cfe6f2dac5cd1b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validates that collection or traits does not contain any item.  <br /></td></tr>
-<tr class="memitem:a092db07c357304d7fcfef3c15b426b3e" id="r_a092db07c357304d7fcfef3c15b426b3e"><td class="memTemplParams" colspan="2">template&lt;typename value_t&gt; </td></tr>
-<tr class="memitem:a092db07c357304d7fcfef3c15b426b3e template"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a092db07c357304d7fcfef3c15b426b3e">is_ordered</a> (const value_t &amp;value, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>())</td></tr>
-<tr class="memdesc:a092db07c357304d7fcfef3c15b426b3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validates that collection is ordered.  <br /></td></tr>
-<tr class="memitem:a9bceff5f5b6be89e127c3f16813428ab" id="r_a9bceff5f5b6be89e127c3f16813428ab"><td class="memTemplParams" colspan="2">template&lt;typename value_t&gt; </td></tr>
-<tr class="memitem:a9bceff5f5b6be89e127c3f16813428ab template"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a9bceff5f5b6be89e127c3f16813428ab">is_ordered</a> (const value_t &amp;value, const std::string &amp;message, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>())</td></tr>
-<tr class="memdesc:a9bceff5f5b6be89e127c3f16813428ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validates that collection is ordered.  <br /></td></tr>
+<tr class="memitem:a78a1f845bd6aca171125308d6ae6be4c" id="r_a78a1f845bd6aca171125308d6ae6be4c"><td class="memTemplParams" colspan="2">template&lt;typename expected_t, typename collection_t&gt; </td></tr>
+<tr class="memitem:a78a1f845bd6aca171125308d6ae6be4c template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a78a1f845bd6aca171125308d6ae6be4c">all_items_are_instances_of</a> (const collection_t &amp;collection, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()) -&gt; void</td></tr>
+<tr class="memdesc:a78a1f845bd6aca171125308d6ae6be4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validates that all collection items are of the type supplied or a derived type.  <br /></td></tr>
+<tr class="memitem:a1c1d92ae5d6962e77b3a6f791883596c" id="r_a1c1d92ae5d6962e77b3a6f791883596c"><td class="memTemplParams" colspan="2">template&lt;typename expected_t, typename collection_t&gt; </td></tr>
+<tr class="memitem:a1c1d92ae5d6962e77b3a6f791883596c template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a1c1d92ae5d6962e77b3a6f791883596c">all_items_are_instances_of</a> (const collection_t &amp;collection, const std::string &amp;message, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()) -&gt; void</td></tr>
+<tr class="memdesc:a1c1d92ae5d6962e77b3a6f791883596c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validates that all collection items are of the type supplied or a derived type.  <br /></td></tr>
+<tr class="memitem:aa4ccef39be1318cd92c022ed92355890" id="r_aa4ccef39be1318cd92c022ed92355890"><td class="memTemplParams" colspan="2">template&lt;typename collection_t&gt; </td></tr>
+<tr class="memitem:aa4ccef39be1318cd92c022ed92355890 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aa4ccef39be1318cd92c022ed92355890">all_items_are_not_null</a> (const collection_t &amp;collection, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()) -&gt; void</td></tr>
+<tr class="memdesc:aa4ccef39be1318cd92c022ed92355890"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validates that all collection items are not null.  <br /></td></tr>
+<tr class="memitem:afc8bf03ace97fe9bea5a624219609ee8" id="r_afc8bf03ace97fe9bea5a624219609ee8"><td class="memTemplParams" colspan="2">template&lt;typename collection_t&gt; </td></tr>
+<tr class="memitem:afc8bf03ace97fe9bea5a624219609ee8 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#afc8bf03ace97fe9bea5a624219609ee8">all_items_are_not_null</a> (const collection_t &amp;collection, const std::string &amp;message, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()) -&gt; void</td></tr>
+<tr class="memdesc:afc8bf03ace97fe9bea5a624219609ee8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validates that all collection items are not null.  <br /></td></tr>
+<tr class="memitem:ae5c64ff4fa6bbf496f367064d4181709" id="r_ae5c64ff4fa6bbf496f367064d4181709"><td class="memTemplParams" colspan="2">template&lt;typename collection_t&gt; </td></tr>
+<tr class="memitem:ae5c64ff4fa6bbf496f367064d4181709 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ae5c64ff4fa6bbf496f367064d4181709">all_items_are_unique</a> (const collection_t &amp;collection, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()) -&gt; void</td></tr>
+<tr class="memdesc:ae5c64ff4fa6bbf496f367064d4181709"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validates that all collection items are unique.  <br /></td></tr>
+<tr class="memitem:acfecde05bce46343bc00ff637b75dad0" id="r_acfecde05bce46343bc00ff637b75dad0"><td class="memTemplParams" colspan="2">template&lt;typename collection_t&gt; </td></tr>
+<tr class="memitem:acfecde05bce46343bc00ff637b75dad0 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#acfecde05bce46343bc00ff637b75dad0">all_items_are_unique</a> (const collection_t &amp;collection, const std::string &amp;message, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()) -&gt; void</td></tr>
+<tr class="memdesc:acfecde05bce46343bc00ff637b75dad0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validates that all collection items are unique.  <br /></td></tr>
+<tr class="memitem:ab008ba47ae129845ac7ab34a0d302ee3" id="r_ab008ba47ae129845ac7ab34a0d302ee3"><td class="memTemplParams" colspan="2">template&lt;typename expected_t, typename actual_t&gt; </td></tr>
+<tr class="memitem:ab008ba47ae129845ac7ab34a0d302ee3 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ab008ba47ae129845ac7ab34a0d302ee3">are_equal</a> (const expected_t &amp;expected, const actual_t &amp;actual, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()) -&gt; void</td></tr>
+<tr class="memdesc:ab008ba47ae129845ac7ab34a0d302ee3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validates that all collection items are equal.  <br /></td></tr>
+<tr class="memitem:a4d0f3cddf53fd4ee759e1ee72b726f15" id="r_a4d0f3cddf53fd4ee759e1ee72b726f15"><td class="memTemplParams" colspan="2">template&lt;typename expected_t, typename actual_t&gt; </td></tr>
+<tr class="memitem:a4d0f3cddf53fd4ee759e1ee72b726f15 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a4d0f3cddf53fd4ee759e1ee72b726f15">are_equal</a> (const expected_t &amp;expected, const actual_t &amp;actual, const std::string &amp;message, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()) -&gt; void</td></tr>
+<tr class="memdesc:a4d0f3cddf53fd4ee759e1ee72b726f15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validates that all collection items are equal.  <br /></td></tr>
+<tr class="memitem:a2de1d7b9ca6fbbef96d8463a5869c32f" id="r_a2de1d7b9ca6fbbef96d8463a5869c32f"><td class="memTemplParams" colspan="2">template&lt;typename expected_t, typename actual_t&gt; </td></tr>
+<tr class="memitem:a2de1d7b9ca6fbbef96d8463a5869c32f template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a2de1d7b9ca6fbbef96d8463a5869c32f">are_equivalent</a> (const expected_t &amp;expected, const actual_t &amp;actual, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()) -&gt; void</td></tr>
+<tr class="memdesc:a2de1d7b9ca6fbbef96d8463a5869c32f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validates that all collection items are equivalent.  <br /></td></tr>
+<tr class="memitem:a662a9e70d6011a88c5c67bfedfe51c02" id="r_a662a9e70d6011a88c5c67bfedfe51c02"><td class="memTemplParams" colspan="2">template&lt;typename expected_t, typename actual_t&gt; </td></tr>
+<tr class="memitem:a662a9e70d6011a88c5c67bfedfe51c02 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a662a9e70d6011a88c5c67bfedfe51c02">are_equivalent</a> (const expected_t &amp;expected, const actual_t &amp;actual, const std::string &amp;message, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()) -&gt; void</td></tr>
+<tr class="memdesc:a662a9e70d6011a88c5c67bfedfe51c02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validates that all collection items are equivalent.  <br /></td></tr>
+<tr class="memitem:aecf728f5fbcc7c8d1f892e2ddd16d5da" id="r_aecf728f5fbcc7c8d1f892e2ddd16d5da"><td class="memTemplParams" colspan="2">template&lt;typename expected_t, typename actual_t&gt; </td></tr>
+<tr class="memitem:aecf728f5fbcc7c8d1f892e2ddd16d5da template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aecf728f5fbcc7c8d1f892e2ddd16d5da">are_not_equal</a> (const expected_t &amp;expected, const actual_t &amp;actual, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()) -&gt; void</td></tr>
+<tr class="memdesc:aecf728f5fbcc7c8d1f892e2ddd16d5da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validates that all collection items are not equal.  <br /></td></tr>
+<tr class="memitem:aa126d836f279dfccd9c76efe172937c4" id="r_aa126d836f279dfccd9c76efe172937c4"><td class="memTemplParams" colspan="2">template&lt;typename expected_t, typename actual_t&gt; </td></tr>
+<tr class="memitem:aa126d836f279dfccd9c76efe172937c4 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aa126d836f279dfccd9c76efe172937c4">are_not_equal</a> (const expected_t &amp;expected, const actual_t &amp;actual, const std::string &amp;message, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()) -&gt; void</td></tr>
+<tr class="memdesc:aa126d836f279dfccd9c76efe172937c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validates that all collection items are not equal.  <br /></td></tr>
+<tr class="memitem:aee36e901932ff237ad8b2a8a81bb4b20" id="r_aee36e901932ff237ad8b2a8a81bb4b20"><td class="memTemplParams" colspan="2">template&lt;typename expected_t, typename actual_t&gt; </td></tr>
+<tr class="memitem:aee36e901932ff237ad8b2a8a81bb4b20 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aee36e901932ff237ad8b2a8a81bb4b20">are_not_equivalent</a> (const expected_t &amp;expected, const actual_t &amp;actual, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()) -&gt; void</td></tr>
+<tr class="memdesc:aee36e901932ff237ad8b2a8a81bb4b20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validates that all collection items are not equivalent.  <br /></td></tr>
+<tr class="memitem:abf6bb6309969c26e95d8b20277026845" id="r_abf6bb6309969c26e95d8b20277026845"><td class="memTemplParams" colspan="2">template&lt;typename expected_t, typename actual_t&gt; </td></tr>
+<tr class="memitem:abf6bb6309969c26e95d8b20277026845 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#abf6bb6309969c26e95d8b20277026845">are_not_equivalent</a> (const expected_t &amp;expected, const actual_t &amp;actual, const std::string &amp;message, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()) -&gt; void</td></tr>
+<tr class="memdesc:abf6bb6309969c26e95d8b20277026845"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validates that all collection items are not equivalent.  <br /></td></tr>
+<tr class="memitem:aa4f45951e608ea1c93c5655b1c48eb4f" id="r_aa4f45951e608ea1c93c5655b1c48eb4f"><td class="memTemplParams" colspan="2">template&lt;typename expected_t, typename actual_t&gt; </td></tr>
+<tr class="memitem:aa4f45951e608ea1c93c5655b1c48eb4f template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aa4f45951e608ea1c93c5655b1c48eb4f">contains</a> (const expected_t &amp;expected, const actual_t &amp;actual, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()) -&gt; void</td></tr>
+<tr class="memdesc:aa4f45951e608ea1c93c5655b1c48eb4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validates that collection contains all items.  <br /></td></tr>
+<tr class="memitem:ac3789d3decbf650503f1c70158d50837" id="r_ac3789d3decbf650503f1c70158d50837"><td class="memTemplParams" colspan="2">template&lt;typename expected_t, typename actual_t&gt; </td></tr>
+<tr class="memitem:ac3789d3decbf650503f1c70158d50837 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ac3789d3decbf650503f1c70158d50837">contains</a> (const expected_t &amp;expected, const actual_t &amp;actual, const std::string &amp;message, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()) -&gt; void</td></tr>
+<tr class="memdesc:ac3789d3decbf650503f1c70158d50837"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validates that collection contains all items.  <br /></td></tr>
+<tr class="memitem:a62b673afd7984fc189d920fdb7290833" id="r_a62b673afd7984fc189d920fdb7290833"><td class="memTemplParams" colspan="2">template&lt;typename expected_t, typename actual_t&gt; </td></tr>
+<tr class="memitem:a62b673afd7984fc189d920fdb7290833 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a62b673afd7984fc189d920fdb7290833">does_not_contain</a> (const expected_t &amp;expected, const actual_t &amp;actual, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()) -&gt; void</td></tr>
+<tr class="memdesc:a62b673afd7984fc189d920fdb7290833"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validates that collection contains all items.  <br /></td></tr>
+<tr class="memitem:a3c19a1de9c185cb9ce1b8fcf6fd00b8a" id="r_a3c19a1de9c185cb9ce1b8fcf6fd00b8a"><td class="memTemplParams" colspan="2">template&lt;typename expected_t, typename actual_t&gt; </td></tr>
+<tr class="memitem:a3c19a1de9c185cb9ce1b8fcf6fd00b8a template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a3c19a1de9c185cb9ce1b8fcf6fd00b8a">does_not_contain</a> (const expected_t &amp;expected, const actual_t &amp;actual, const std::string &amp;message, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()) -&gt; void</td></tr>
+<tr class="memdesc:a3c19a1de9c185cb9ce1b8fcf6fd00b8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validates that collection contains all items.  <br /></td></tr>
+<tr class="memitem:a73f3d402cabdf6f26d338054fb2cf856" id="r_a73f3d402cabdf6f26d338054fb2cf856"><td class="memTemplParams" colspan="2">template&lt;typename value_t&gt; </td></tr>
+<tr class="memitem:a73f3d402cabdf6f26d338054fb2cf856 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a73f3d402cabdf6f26d338054fb2cf856">is_empty</a> (const value_t &amp;value, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()) -&gt; void</td></tr>
+<tr class="memdesc:a73f3d402cabdf6f26d338054fb2cf856"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validates that collection contains an item.  <br /></td></tr>
+<tr class="memitem:a9abc280bce301e0e444772125bb15d0b" id="r_a9abc280bce301e0e444772125bb15d0b"><td class="memTemplParams" colspan="2">template&lt;typename value_t&gt; </td></tr>
+<tr class="memitem:a9abc280bce301e0e444772125bb15d0b template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a9abc280bce301e0e444772125bb15d0b">is_empty</a> (const value_t &amp;value, const std::string &amp;message, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()) -&gt; void</td></tr>
+<tr class="memdesc:a9abc280bce301e0e444772125bb15d0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validates that collection contains an item.  <br /></td></tr>
+<tr class="memitem:af7446f7d8d53b4add86cc88829bfb8c6" id="r_af7446f7d8d53b4add86cc88829bfb8c6"><td class="memTemplParams" colspan="2">template&lt;typename value_t&gt; </td></tr>
+<tr class="memitem:af7446f7d8d53b4add86cc88829bfb8c6 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#af7446f7d8d53b4add86cc88829bfb8c6">is_not_empty</a> (const value_t &amp;value, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()) -&gt; void</td></tr>
+<tr class="memdesc:af7446f7d8d53b4add86cc88829bfb8c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validates that collection or traits does not contain any item.  <br /></td></tr>
+<tr class="memitem:a6e1e1943bb26bef6490f9bcc0e2be1e3" id="r_a6e1e1943bb26bef6490f9bcc0e2be1e3"><td class="memTemplParams" colspan="2">template&lt;typename value_t&gt; </td></tr>
+<tr class="memitem:a6e1e1943bb26bef6490f9bcc0e2be1e3 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a6e1e1943bb26bef6490f9bcc0e2be1e3">is_not_empty</a> (const value_t &amp;value, const std::string &amp;message, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()) -&gt; void</td></tr>
+<tr class="memdesc:a6e1e1943bb26bef6490f9bcc0e2be1e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validates that collection or traits does not contain any item.  <br /></td></tr>
+<tr class="memitem:a5ee7d73c382f6074755a233c080c36f9" id="r_a5ee7d73c382f6074755a233c080c36f9"><td class="memTemplParams" colspan="2">template&lt;typename value_t&gt; </td></tr>
+<tr class="memitem:a5ee7d73c382f6074755a233c080c36f9 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a5ee7d73c382f6074755a233c080c36f9">is_ordered</a> (const value_t &amp;value, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()) -&gt; void</td></tr>
+<tr class="memdesc:a5ee7d73c382f6074755a233c080c36f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validates that collection is ordered.  <br /></td></tr>
+<tr class="memitem:a604a8994808a16e693539fd3f1b9415c" id="r_a604a8994808a16e693539fd3f1b9415c"><td class="memTemplParams" colspan="2">template&lt;typename value_t&gt; </td></tr>
+<tr class="memitem:a604a8994808a16e693539fd3f1b9415c template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a604a8994808a16e693539fd3f1b9415c">is_ordered</a> (const value_t &amp;value, const std::string &amp;message, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()) -&gt; void</td></tr>
+<tr class="memdesc:a604a8994808a16e693539fd3f1b9415c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validates that collection is ordered.  <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="aeadb5d3f53671f8ddab4988b62373412" name="aeadb5d3f53671f8ddab4988b62373412"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeadb5d3f53671f8ddab4988b62373412">&#9670;&#160;</a></span>all_items_are_instances_of() <span class="overload">[1/2]</span></h2>
+<a id="a78a1f845bd6aca171125308d6ae6be4c" name="a78a1f845bd6aca171125308d6ae6be4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78a1f845bd6aca171125308d6ae6be4c">&#9670;&#160;</a></span>all_items_are_instances_of() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -267,14 +267,14 @@ template&lt;typename expected_t, typename collection_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::tunit::collection_valid::all_items_are_instances_of </td>
+          <td class="memname">auto xtd::tunit::collection_valid::all_items_are_instances_of </td>
           <td>(</td>
           <td class="paramtype">const collection_t &amp;</td>          <td class="paramname"><span class="paramname"><em>collection</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;) -&gt; void</td>
         </tr>
       </table>
   </td>
@@ -294,10 +294,10 @@ template&lt;typename expected_t, typename collection_t&gt; </div>
   </dd>
 </dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_class" href="classxtd_1_1array.html">xtd::array&lt;std::ios_base*&gt;</a> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a> = {&amp;std::cout, &amp;std::cerr, &amp;std::cin};</div>
-<div class="line"><a class="code hl_function" href="#aeadb5d3f53671f8ddab4988b62373412">xtd::tunit::collection_valid::all_items_are_instances_of&lt;std::ios_base*&gt;</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>); <span class="comment">// test ok.</span></div>
-<div class="line"><a class="code hl_function" href="#aeadb5d3f53671f8ddab4988b62373412">xtd::tunit::collection_valid::all_items_are_instances_of&lt;std::basic_ostream&lt;char&gt;</a>*&gt;(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>); <span class="comment">// test fails.</span></div>
+<div class="line"><a class="code hl_function" href="#a78a1f845bd6aca171125308d6ae6be4c">xtd::tunit::collection_valid::all_items_are_instances_of&lt;std::ios_base*&gt;</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_function" href="#a78a1f845bd6aca171125308d6ae6be4c">xtd::tunit::collection_valid::all_items_are_instances_of&lt;std::basic_ostream&lt;char&gt;</a>*&gt;(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>); <span class="comment">// test fails.</span></div>
 <div class="ttc" id="aclassxtd_1_1array_html"><div class="ttname"><a href="classxtd_1_1array.html">xtd::array</a></div><div class="ttdoc">Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...</div><div class="ttdef"><b>Definition</b> array.hpp:64</div></div>
-<div class="ttc" id="aclassxtd_1_1tunit_1_1collection__valid_html_aeadb5d3f53671f8ddab4988b62373412"><div class="ttname"><a href="#aeadb5d3f53671f8ddab4988b62373412">xtd::tunit::collection_valid::all_items_are_instances_of</a></div><div class="ttdeci">static void all_items_are_instances_of(const collection_t &amp;collection, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Validates that all collection items are of the type supplied or a derived type.</div><div class="ttdef"><b>Definition</b> collection_valid.hpp:43</div></div>
+<div class="ttc" id="aclassxtd_1_1tunit_1_1collection__valid_html_a78a1f845bd6aca171125308d6ae6be4c"><div class="ttname"><a href="#a78a1f845bd6aca171125308d6ae6be4c">xtd::tunit::collection_valid::all_items_are_instances_of</a></div><div class="ttdeci">static auto all_items_are_instances_of(const collection_t &amp;collection, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current()) -&gt; void</div><div class="ttdoc">Validates that all collection items are of the type supplied or a derived type.</div><div class="ttdef"><b>Definition</b> collection_valid.hpp:43</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">xtd::console_key::a</a></div><div class="ttdeci">@ a</div><div class="ttdoc">The A key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:88</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="collection_valid_all_items_are_instances_of_8cpp-example.html#_a5">collection_valid_all_items_are_instances_of.cpp</a>.</dd>
@@ -305,8 +305,8 @@ template&lt;typename expected_t, typename collection_t&gt; </div>
 
 </div>
 </div>
-<a id="a2f44c6e8591c3e7e8ae79134349e014d" name="a2f44c6e8591c3e7e8ae79134349e014d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2f44c6e8591c3e7e8ae79134349e014d">&#9670;&#160;</a></span>all_items_are_instances_of() <span class="overload">[2/2]</span></h2>
+<a id="a1c1d92ae5d6962e77b3a6f791883596c" name="a1c1d92ae5d6962e77b3a6f791883596c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c1d92ae5d6962e77b3a6f791883596c">&#9670;&#160;</a></span>all_items_are_instances_of() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -317,7 +317,7 @@ template&lt;typename expected_t, typename collection_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::tunit::collection_valid::all_items_are_instances_of </td>
+          <td class="memname">auto xtd::tunit::collection_valid::all_items_are_instances_of </td>
           <td>(</td>
           <td class="paramtype">const collection_t &amp;</td>          <td class="paramname"><span class="paramname"><em>collection</em></span>, </td>
         </tr>
@@ -329,7 +329,7 @@ template&lt;typename expected_t, typename collection_t&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;) -&gt; void</td>
         </tr>
       </table>
   </td>
@@ -349,14 +349,14 @@ template&lt;typename expected_t, typename collection_t&gt; </div>
   </dd>
 </dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_class" href="classxtd_1_1array.html">xtd::array&lt;std::ios_base*&gt;</a> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a> = {&amp;std::cout, &amp;std::cerr, &amp;std::cin};</div>
-<div class="line"><a class="code hl_function" href="#aeadb5d3f53671f8ddab4988b62373412">xtd::tunit::collection_valid::all_items_are_instances_of&lt;std::ios_base*&gt;</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
-<div class="line"><a class="code hl_function" href="#aeadb5d3f53671f8ddab4988b62373412">xtd::tunit::collection_valid::all_items_are_instances_of&lt;std::basic_ostream&lt;char&gt;</a>*&gt;(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test fails.</span></div>
+<div class="line"><a class="code hl_function" href="#a78a1f845bd6aca171125308d6ae6be4c">xtd::tunit::collection_valid::all_items_are_instances_of&lt;std::ios_base*&gt;</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_function" href="#a78a1f845bd6aca171125308d6ae6be4c">xtd::tunit::collection_valid::all_items_are_instances_of&lt;std::basic_ostream&lt;char&gt;</a>*&gt;(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test fails.</span></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
-<a id="a0aa2f8fc878560bc55686b11e12ff0a9" name="a0aa2f8fc878560bc55686b11e12ff0a9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0aa2f8fc878560bc55686b11e12ff0a9">&#9670;&#160;</a></span>all_items_are_not_null() <span class="overload">[1/2]</span></h2>
+<a id="aa4ccef39be1318cd92c022ed92355890" name="aa4ccef39be1318cd92c022ed92355890"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4ccef39be1318cd92c022ed92355890">&#9670;&#160;</a></span>all_items_are_not_null() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -367,14 +367,14 @@ template&lt;typename collection_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::tunit::collection_valid::all_items_are_not_null </td>
+          <td class="memname">auto xtd::tunit::collection_valid::all_items_are_not_null </td>
           <td>(</td>
           <td class="paramtype">const collection_t &amp;</td>          <td class="paramname"><span class="paramname"><em>collection</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;) -&gt; void</td>
         </tr>
       </table>
   </td>
@@ -395,18 +395,18 @@ template&lt;typename collection_t&gt; </div>
 </dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><span class="keywordtype">int</span> i1 = 0, i2 = 3;</div>
 <div class="line"><a class="code hl_class" href="classxtd_1_1array.html">xtd::array&lt;int*&gt;</a> a1 = {&amp;i1, &amp;i2};</div>
-<div class="line"><a class="code hl_function" href="#a0aa2f8fc878560bc55686b11e12ff0a9">xtd::tunit::collection_valid::all_items_are_not_null</a>(a1); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_function" href="#aa4ccef39be1318cd92c022ed92355890">xtd::tunit::collection_valid::all_items_are_not_null</a>(a1); <span class="comment">// test ok.</span></div>
 <div class="line"><a class="code hl_class" href="classxtd_1_1array.html">xtd::array&lt;int*&gt;</a> a2 = {&amp;i1, &amp;i2, <span class="keyword">nullptr</span>};</div>
-<div class="line"><a class="code hl_function" href="#a0aa2f8fc878560bc55686b11e12ff0a9">xtd::tunit::collection_valid::all_items_are_not_null</a>(a2); <span class="comment">// test fails.</span></div>
-<div class="ttc" id="aclassxtd_1_1tunit_1_1collection__valid_html_a0aa2f8fc878560bc55686b11e12ff0a9"><div class="ttname"><a href="#a0aa2f8fc878560bc55686b11e12ff0a9">xtd::tunit::collection_valid::all_items_are_not_null</a></div><div class="ttdeci">static void all_items_are_not_null(const collection_t &amp;collection, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Validates that all collection items are not null.</div><div class="ttdef"><b>Definition</b> collection_valid.hpp:89</div></div>
+<div class="line"><a class="code hl_function" href="#aa4ccef39be1318cd92c022ed92355890">xtd::tunit::collection_valid::all_items_are_not_null</a>(a2); <span class="comment">// test fails.</span></div>
+<div class="ttc" id="aclassxtd_1_1tunit_1_1collection__valid_html_aa4ccef39be1318cd92c022ed92355890"><div class="ttname"><a href="#aa4ccef39be1318cd92c022ed92355890">xtd::tunit::collection_valid::all_items_are_not_null</a></div><div class="ttdeci">static auto all_items_are_not_null(const collection_t &amp;collection, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current()) -&gt; void</div><div class="ttdoc">Validates that all collection items are not null.</div><div class="ttdef"><b>Definition</b> collection_valid.hpp:89</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="collection_valid_all_items_are_not_null_8cpp-example.html#_a2">collection_valid_all_items_are_not_null.cpp</a>.</dd>
 </dl>
 
 </div>
 </div>
-<a id="a896d9ac2dd7185984e73661156690bbc" name="a896d9ac2dd7185984e73661156690bbc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a896d9ac2dd7185984e73661156690bbc">&#9670;&#160;</a></span>all_items_are_not_null() <span class="overload">[2/2]</span></h2>
+<a id="afc8bf03ace97fe9bea5a624219609ee8" name="afc8bf03ace97fe9bea5a624219609ee8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc8bf03ace97fe9bea5a624219609ee8">&#9670;&#160;</a></span>all_items_are_not_null() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -417,7 +417,7 @@ template&lt;typename collection_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::tunit::collection_valid::all_items_are_not_null </td>
+          <td class="memname">auto xtd::tunit::collection_valid::all_items_are_not_null </td>
           <td>(</td>
           <td class="paramtype">const collection_t &amp;</td>          <td class="paramname"><span class="paramname"><em>collection</em></span>, </td>
         </tr>
@@ -429,7 +429,7 @@ template&lt;typename collection_t&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;) -&gt; void</td>
         </tr>
       </table>
   </td>
@@ -450,15 +450,15 @@ template&lt;typename collection_t&gt; </div>
 </dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><span class="keywordtype">int</span> i1 = 0, i2 = 3;</div>
 <div class="line"><a class="code hl_class" href="classxtd_1_1array.html">xtd::array&lt;int*&gt;</a> a1 = {&amp;i1, &amp;i2};</div>
-<div class="line"><a class="code hl_function" href="#a0aa2f8fc878560bc55686b11e12ff0a9">xtd::tunit::collection_valid::all_items_are_not_null</a>(a1, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_function" href="#aa4ccef39be1318cd92c022ed92355890">xtd::tunit::collection_valid::all_items_are_not_null</a>(a1, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
 <div class="line"><a class="code hl_class" href="classxtd_1_1array.html">xtd::array&lt;int*&gt;</a> a2 = {&amp;i1, &amp;i2, <span class="keyword">nullptr</span>};</div>
-<div class="line"><a class="code hl_function" href="#a0aa2f8fc878560bc55686b11e12ff0a9">xtd::tunit::collection_valid::all_items_are_not_null</a>(a2, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test fails.</span></div>
+<div class="line"><a class="code hl_function" href="#aa4ccef39be1318cd92c022ed92355890">xtd::tunit::collection_valid::all_items_are_not_null</a>(a2, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test fails.</span></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
-<a id="aff8a9a93470f12937f6b7881bf858e3a" name="aff8a9a93470f12937f6b7881bf858e3a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aff8a9a93470f12937f6b7881bf858e3a">&#9670;&#160;</a></span>all_items_are_unique() <span class="overload">[1/2]</span></h2>
+<a id="ae5c64ff4fa6bbf496f367064d4181709" name="ae5c64ff4fa6bbf496f367064d4181709"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5c64ff4fa6bbf496f367064d4181709">&#9670;&#160;</a></span>all_items_are_unique() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -469,14 +469,14 @@ template&lt;typename collection_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::tunit::collection_valid::all_items_are_unique </td>
+          <td class="memname">auto xtd::tunit::collection_valid::all_items_are_unique </td>
           <td>(</td>
           <td class="paramtype">const collection_t &amp;</td>          <td class="paramname"><span class="paramname"><em>collection</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;) -&gt; void</td>
         </tr>
       </table>
   </td>
@@ -496,18 +496,18 @@ template&lt;typename collection_t&gt; </div>
   </dd>
 </dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_class" href="classxtd_1_1array.html">xtd::array&lt;int&gt;</a> a1 = {1, 2, 3, 4};</div>
-<div class="line"><a class="code hl_function" href="#aff8a9a93470f12937f6b7881bf858e3a">xtd::tunit::collection_valid::all_items_are_unique</a>(a1); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_function" href="#ae5c64ff4fa6bbf496f367064d4181709">xtd::tunit::collection_valid::all_items_are_unique</a>(a1); <span class="comment">// test ok.</span></div>
 <div class="line"><a class="code hl_class" href="classxtd_1_1array.html">xtd::array&lt;int&gt;</a> a2 = {1, 2, 3, 4, 1};</div>
-<div class="line"><a class="code hl_function" href="#aff8a9a93470f12937f6b7881bf858e3a">xtd::tunit::collection_valid::all_items_are_unique</a>(a2); <span class="comment">// test fails.</span></div>
-<div class="ttc" id="aclassxtd_1_1tunit_1_1collection__valid_html_aff8a9a93470f12937f6b7881bf858e3a"><div class="ttname"><a href="#aff8a9a93470f12937f6b7881bf858e3a">xtd::tunit::collection_valid::all_items_are_unique</a></div><div class="ttdeci">static void all_items_are_unique(const collection_t &amp;collection, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Validates that all collection items are unique.</div><div class="ttdef"><b>Definition</b> collection_valid.hpp:136</div></div>
+<div class="line"><a class="code hl_function" href="#ae5c64ff4fa6bbf496f367064d4181709">xtd::tunit::collection_valid::all_items_are_unique</a>(a2); <span class="comment">// test fails.</span></div>
+<div class="ttc" id="aclassxtd_1_1tunit_1_1collection__valid_html_ae5c64ff4fa6bbf496f367064d4181709"><div class="ttname"><a href="#ae5c64ff4fa6bbf496f367064d4181709">xtd::tunit::collection_valid::all_items_are_unique</a></div><div class="ttdeci">static auto all_items_are_unique(const collection_t &amp;collection, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current()) -&gt; void</div><div class="ttdoc">Validates that all collection items are unique.</div><div class="ttdef"><b>Definition</b> collection_valid.hpp:136</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="collection_valid_all_items_are_unique_8cpp-example.html#_a2">collection_valid_all_items_are_unique.cpp</a>.</dd>
 </dl>
 
 </div>
 </div>
-<a id="a651bf837824b4473d868552846bf92b2" name="a651bf837824b4473d868552846bf92b2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a651bf837824b4473d868552846bf92b2">&#9670;&#160;</a></span>all_items_are_unique() <span class="overload">[2/2]</span></h2>
+<a id="acfecde05bce46343bc00ff637b75dad0" name="acfecde05bce46343bc00ff637b75dad0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acfecde05bce46343bc00ff637b75dad0">&#9670;&#160;</a></span>all_items_are_unique() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -518,7 +518,7 @@ template&lt;typename collection_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::tunit::collection_valid::all_items_are_unique </td>
+          <td class="memname">auto xtd::tunit::collection_valid::all_items_are_unique </td>
           <td>(</td>
           <td class="paramtype">const collection_t &amp;</td>          <td class="paramname"><span class="paramname"><em>collection</em></span>, </td>
         </tr>
@@ -530,7 +530,7 @@ template&lt;typename collection_t&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;) -&gt; void</td>
         </tr>
       </table>
   </td>
@@ -550,15 +550,15 @@ template&lt;typename collection_t&gt; </div>
   </dd>
 </dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_class" href="classxtd_1_1array.html">xtd::array&lt;int&gt;</a> a1 = {1, 2, 3, 4};</div>
-<div class="line"><a class="code hl_function" href="#aff8a9a93470f12937f6b7881bf858e3a">xtd::tunit::collection_valid::all_items_are_unique</a>(a1, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_function" href="#ae5c64ff4fa6bbf496f367064d4181709">xtd::tunit::collection_valid::all_items_are_unique</a>(a1, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
 <div class="line"><a class="code hl_class" href="classxtd_1_1array.html">xtd::array&lt;int&gt;</a> a2 = {1, 2, 3, 4, 1};</div>
-<div class="line"><a class="code hl_function" href="#aff8a9a93470f12937f6b7881bf858e3a">xtd::tunit::collection_valid::all_items_are_unique</a>(a2, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test fails.</span></div>
+<div class="line"><a class="code hl_function" href="#ae5c64ff4fa6bbf496f367064d4181709">xtd::tunit::collection_valid::all_items_are_unique</a>(a2, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test fails.</span></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
-<a id="a231025acfc4aa38a5f40602bea999854" name="a231025acfc4aa38a5f40602bea999854"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a231025acfc4aa38a5f40602bea999854">&#9670;&#160;</a></span>are_equal() <span class="overload">[1/2]</span></h2>
+<a id="ab008ba47ae129845ac7ab34a0d302ee3" name="ab008ba47ae129845ac7ab34a0d302ee3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab008ba47ae129845ac7ab34a0d302ee3">&#9670;&#160;</a></span>are_equal() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -569,7 +569,7 @@ template&lt;typename expected_t, typename actual_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::tunit::collection_valid::are_equal </td>
+          <td class="memname">auto xtd::tunit::collection_valid::are_equal </td>
           <td>(</td>
           <td class="paramtype">const expected_t &amp;</td>          <td class="paramname"><span class="paramname"><em>expected</em></span>, </td>
         </tr>
@@ -581,7 +581,7 @@ template&lt;typename expected_t, typename actual_t&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;) -&gt; void</td>
         </tr>
       </table>
   </td>
@@ -601,17 +601,17 @@ template&lt;typename expected_t, typename actual_t&gt; </div>
   </dd>
 </dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_class" href="classxtd_1_1array.html">xtd::array&lt;int&gt;</a> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a> = {1, 2, 3, 4};</div>
-<div class="line"><a class="code hl_function" href="#a231025acfc4aa38a5f40602bea999854">xtd::tunit::collection_valid::are_equal</a>({1, 2, 3, 4}, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>); <span class="comment">// test ok.</span></div>
-<div class="line"><a class="code hl_function" href="#a231025acfc4aa38a5f40602bea999854">xtd::tunit::collection_valid::are_equal</a>({4, 3, 2, 1}, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>); <span class="comment">// test fails.</span></div>
-<div class="ttc" id="aclassxtd_1_1tunit_1_1collection__valid_html_a231025acfc4aa38a5f40602bea999854"><div class="ttname"><a href="#a231025acfc4aa38a5f40602bea999854">xtd::tunit::collection_valid::are_equal</a></div><div class="ttdeci">static void are_equal(const expected_t &amp;expected, const actual_t &amp;actual, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Validates that all collection items are equal.</div><div class="ttdef"><b>Definition</b> collection_valid.hpp:181</div></div>
+<div class="line"><a class="code hl_function" href="#ab008ba47ae129845ac7ab34a0d302ee3">xtd::tunit::collection_valid::are_equal</a>({1, 2, 3, 4}, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_function" href="#ab008ba47ae129845ac7ab34a0d302ee3">xtd::tunit::collection_valid::are_equal</a>({4, 3, 2, 1}, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>); <span class="comment">// test fails.</span></div>
+<div class="ttc" id="aclassxtd_1_1tunit_1_1collection__valid_html_ab008ba47ae129845ac7ab34a0d302ee3"><div class="ttname"><a href="#ab008ba47ae129845ac7ab34a0d302ee3">xtd::tunit::collection_valid::are_equal</a></div><div class="ttdeci">static auto are_equal(const expected_t &amp;expected, const actual_t &amp;actual, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current()) -&gt; void</div><div class="ttdoc">Validates that all collection items are equal.</div><div class="ttdef"><b>Definition</b> collection_valid.hpp:181</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="collection_valid_are_equal_8cpp-example.html#_a2">collection_valid_are_equal.cpp</a>.</dd>
 </dl>
 
 </div>
 </div>
-<a id="ab39c95b6a7b7e4eb43dd4f3abcd63cd1" name="ab39c95b6a7b7e4eb43dd4f3abcd63cd1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab39c95b6a7b7e4eb43dd4f3abcd63cd1">&#9670;&#160;</a></span>are_equal() <span class="overload">[2/2]</span></h2>
+<a id="a4d0f3cddf53fd4ee759e1ee72b726f15" name="a4d0f3cddf53fd4ee759e1ee72b726f15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d0f3cddf53fd4ee759e1ee72b726f15">&#9670;&#160;</a></span>are_equal() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -622,7 +622,7 @@ template&lt;typename expected_t, typename actual_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::tunit::collection_valid::are_equal </td>
+          <td class="memname">auto xtd::tunit::collection_valid::are_equal </td>
           <td>(</td>
           <td class="paramtype">const expected_t &amp;</td>          <td class="paramname"><span class="paramname"><em>expected</em></span>, </td>
         </tr>
@@ -639,7 +639,7 @@ template&lt;typename expected_t, typename actual_t&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;) -&gt; void</td>
         </tr>
       </table>
   </td>
@@ -659,14 +659,14 @@ template&lt;typename expected_t, typename actual_t&gt; </div>
   </dd>
 </dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_class" href="classxtd_1_1array.html">xtd::array&lt;int&gt;</a> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a> = {1, 2, 3, 4};</div>
-<div class="line"><a class="code hl_function" href="#a231025acfc4aa38a5f40602bea999854">xtd::tunit::collection_valid::are_equal</a>({1, 2, 3, 4}, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
-<div class="line"><a class="code hl_function" href="#a231025acfc4aa38a5f40602bea999854">xtd::tunit::collection_valid::are_equal</a>({4, 3, 2, 1}, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test fails.</span></div>
+<div class="line"><a class="code hl_function" href="#ab008ba47ae129845ac7ab34a0d302ee3">xtd::tunit::collection_valid::are_equal</a>({1, 2, 3, 4}, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_function" href="#ab008ba47ae129845ac7ab34a0d302ee3">xtd::tunit::collection_valid::are_equal</a>({4, 3, 2, 1}, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test fails.</span></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
-<a id="a9bcbe275c66b105b77fa84db222bbef9" name="a9bcbe275c66b105b77fa84db222bbef9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9bcbe275c66b105b77fa84db222bbef9">&#9670;&#160;</a></span>are_equivalent() <span class="overload">[1/2]</span></h2>
+<a id="a2de1d7b9ca6fbbef96d8463a5869c32f" name="a2de1d7b9ca6fbbef96d8463a5869c32f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2de1d7b9ca6fbbef96d8463a5869c32f">&#9670;&#160;</a></span>are_equivalent() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -677,7 +677,7 @@ template&lt;typename expected_t, typename actual_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::tunit::collection_valid::are_equivalent </td>
+          <td class="memname">auto xtd::tunit::collection_valid::are_equivalent </td>
           <td>(</td>
           <td class="paramtype">const expected_t &amp;</td>          <td class="paramname"><span class="paramname"><em>expected</em></span>, </td>
         </tr>
@@ -689,7 +689,7 @@ template&lt;typename expected_t, typename actual_t&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;) -&gt; void</td>
         </tr>
       </table>
   </td>
@@ -709,17 +709,17 @@ template&lt;typename expected_t, typename actual_t&gt; </div>
   </dd>
 </dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_class" href="classxtd_1_1array.html">xtd::array&lt;int&gt;</a> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a> = {1, 2, 3, 4};</div>
-<div class="line"><a class="code hl_function" href="#a9bcbe275c66b105b77fa84db222bbef9">xtd::tunit::collection_valid::are_equivalent</a>({4, 3, 2, 1}, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>); <span class="comment">// test ok.</span></div>
-<div class="line"><a class="code hl_function" href="#a9bcbe275c66b105b77fa84db222bbef9">xtd::tunit::collection_valid::are_equivalent</a>({1, 2, 3, 5}, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>); <span class="comment">// test fails.</span></div>
-<div class="ttc" id="aclassxtd_1_1tunit_1_1collection__valid_html_a9bcbe275c66b105b77fa84db222bbef9"><div class="ttname"><a href="#a9bcbe275c66b105b77fa84db222bbef9">xtd::tunit::collection_valid::are_equivalent</a></div><div class="ttdeci">static void are_equivalent(const expected_t &amp;expected, const actual_t &amp;actual, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Validates that all collection items are equivalent.</div><div class="ttdef"><b>Definition</b> collection_valid.hpp:245</div></div>
+<div class="line"><a class="code hl_function" href="#a2de1d7b9ca6fbbef96d8463a5869c32f">xtd::tunit::collection_valid::are_equivalent</a>({4, 3, 2, 1}, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_function" href="#a2de1d7b9ca6fbbef96d8463a5869c32f">xtd::tunit::collection_valid::are_equivalent</a>({1, 2, 3, 5}, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>); <span class="comment">// test fails.</span></div>
+<div class="ttc" id="aclassxtd_1_1tunit_1_1collection__valid_html_a2de1d7b9ca6fbbef96d8463a5869c32f"><div class="ttname"><a href="#a2de1d7b9ca6fbbef96d8463a5869c32f">xtd::tunit::collection_valid::are_equivalent</a></div><div class="ttdeci">static auto are_equivalent(const expected_t &amp;expected, const actual_t &amp;actual, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current()) -&gt; void</div><div class="ttdoc">Validates that all collection items are equivalent.</div><div class="ttdef"><b>Definition</b> collection_valid.hpp:245</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="collection_valid_are_equivalent_8cpp-example.html#_a2">collection_valid_are_equivalent.cpp</a>.</dd>
 </dl>
 
 </div>
 </div>
-<a id="a71380aa9a83a5c7f2bbeeefb292852f3" name="a71380aa9a83a5c7f2bbeeefb292852f3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a71380aa9a83a5c7f2bbeeefb292852f3">&#9670;&#160;</a></span>are_equivalent() <span class="overload">[2/2]</span></h2>
+<a id="a662a9e70d6011a88c5c67bfedfe51c02" name="a662a9e70d6011a88c5c67bfedfe51c02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a662a9e70d6011a88c5c67bfedfe51c02">&#9670;&#160;</a></span>are_equivalent() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -730,7 +730,7 @@ template&lt;typename expected_t, typename actual_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::tunit::collection_valid::are_equivalent </td>
+          <td class="memname">auto xtd::tunit::collection_valid::are_equivalent </td>
           <td>(</td>
           <td class="paramtype">const expected_t &amp;</td>          <td class="paramname"><span class="paramname"><em>expected</em></span>, </td>
         </tr>
@@ -747,7 +747,7 @@ template&lt;typename expected_t, typename actual_t&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;) -&gt; void</td>
         </tr>
       </table>
   </td>
@@ -767,14 +767,14 @@ template&lt;typename expected_t, typename actual_t&gt; </div>
   </dd>
 </dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_class" href="classxtd_1_1array.html">xtd::array&lt;int&gt;</a> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a> = {1, 2, 3, 4};</div>
-<div class="line"><a class="code hl_function" href="#a9bcbe275c66b105b77fa84db222bbef9">xtd::tunit::collection_valid::are_equivalent</a>({4, 3, 2, 1}, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
-<div class="line"><a class="code hl_function" href="#a9bcbe275c66b105b77fa84db222bbef9">xtd::tunit::collection_valid::are_equivalent</a>({1, 2, 3, 5}, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test fails.</span></div>
+<div class="line"><a class="code hl_function" href="#a2de1d7b9ca6fbbef96d8463a5869c32f">xtd::tunit::collection_valid::are_equivalent</a>({4, 3, 2, 1}, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_function" href="#a2de1d7b9ca6fbbef96d8463a5869c32f">xtd::tunit::collection_valid::are_equivalent</a>({1, 2, 3, 5}, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test fails.</span></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
-<a id="a761b466065bb4d154b1fc74128f75353" name="a761b466065bb4d154b1fc74128f75353"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a761b466065bb4d154b1fc74128f75353">&#9670;&#160;</a></span>are_not_equal() <span class="overload">[1/2]</span></h2>
+<a id="aecf728f5fbcc7c8d1f892e2ddd16d5da" name="aecf728f5fbcc7c8d1f892e2ddd16d5da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aecf728f5fbcc7c8d1f892e2ddd16d5da">&#9670;&#160;</a></span>are_not_equal() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -785,7 +785,7 @@ template&lt;typename expected_t, typename actual_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::tunit::collection_valid::are_not_equal </td>
+          <td class="memname">auto xtd::tunit::collection_valid::are_not_equal </td>
           <td>(</td>
           <td class="paramtype">const expected_t &amp;</td>          <td class="paramname"><span class="paramname"><em>expected</em></span>, </td>
         </tr>
@@ -797,7 +797,7 @@ template&lt;typename expected_t, typename actual_t&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;) -&gt; void</td>
         </tr>
       </table>
   </td>
@@ -817,17 +817,17 @@ template&lt;typename expected_t, typename actual_t&gt; </div>
   </dd>
 </dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_class" href="classxtd_1_1array.html">xtd::array&lt;int&gt;</a> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a> = {1, 2, 3, 4};</div>
-<div class="line"><a class="code hl_function" href="#a761b466065bb4d154b1fc74128f75353">xtd::tunit::collection_valid::are_not_equal</a>({4, 3, 2, 1}, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>); <span class="comment">// test ok.</span></div>
-<div class="line"><a class="code hl_function" href="#a761b466065bb4d154b1fc74128f75353">xtd::tunit::collection_valid::are_not_equal</a>({1, 2, 3, 4}, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>); <span class="comment">// test fails.</span></div>
-<div class="ttc" id="aclassxtd_1_1tunit_1_1collection__valid_html_a761b466065bb4d154b1fc74128f75353"><div class="ttname"><a href="#a761b466065bb4d154b1fc74128f75353">xtd::tunit::collection_valid::are_not_equal</a></div><div class="ttdeci">static void are_not_equal(const expected_t &amp;expected, const actual_t &amp;actual, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Validates that all collection items are not equal.</div><div class="ttdef"><b>Definition</b> collection_valid.hpp:309</div></div>
+<div class="line"><a class="code hl_function" href="#aecf728f5fbcc7c8d1f892e2ddd16d5da">xtd::tunit::collection_valid::are_not_equal</a>({4, 3, 2, 1}, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_function" href="#aecf728f5fbcc7c8d1f892e2ddd16d5da">xtd::tunit::collection_valid::are_not_equal</a>({1, 2, 3, 4}, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>); <span class="comment">// test fails.</span></div>
+<div class="ttc" id="aclassxtd_1_1tunit_1_1collection__valid_html_aecf728f5fbcc7c8d1f892e2ddd16d5da"><div class="ttname"><a href="#aecf728f5fbcc7c8d1f892e2ddd16d5da">xtd::tunit::collection_valid::are_not_equal</a></div><div class="ttdeci">static auto are_not_equal(const expected_t &amp;expected, const actual_t &amp;actual, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current()) -&gt; void</div><div class="ttdoc">Validates that all collection items are not equal.</div><div class="ttdef"><b>Definition</b> collection_valid.hpp:309</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="collection_valid_are_not_equal_8cpp-example.html#_a2">collection_valid_are_not_equal.cpp</a>.</dd>
 </dl>
 
 </div>
 </div>
-<a id="a82486872f004856f0436392672ae2376" name="a82486872f004856f0436392672ae2376"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a82486872f004856f0436392672ae2376">&#9670;&#160;</a></span>are_not_equal() <span class="overload">[2/2]</span></h2>
+<a id="aa126d836f279dfccd9c76efe172937c4" name="aa126d836f279dfccd9c76efe172937c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa126d836f279dfccd9c76efe172937c4">&#9670;&#160;</a></span>are_not_equal() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -838,7 +838,7 @@ template&lt;typename expected_t, typename actual_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::tunit::collection_valid::are_not_equal </td>
+          <td class="memname">auto xtd::tunit::collection_valid::are_not_equal </td>
           <td>(</td>
           <td class="paramtype">const expected_t &amp;</td>          <td class="paramname"><span class="paramname"><em>expected</em></span>, </td>
         </tr>
@@ -855,7 +855,7 @@ template&lt;typename expected_t, typename actual_t&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;) -&gt; void</td>
         </tr>
       </table>
   </td>
@@ -875,14 +875,14 @@ template&lt;typename expected_t, typename actual_t&gt; </div>
   </dd>
 </dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_class" href="classxtd_1_1array.html">xtd::array&lt;int&gt;</a> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a> = {1, 2, 3, 4};</div>
-<div class="line"><a class="code hl_function" href="#a761b466065bb4d154b1fc74128f75353">xtd::tunit::collection_valid::are_not_equal</a>({4, 3, 2, 1}, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
-<div class="line"><a class="code hl_function" href="#a761b466065bb4d154b1fc74128f75353">xtd::tunit::collection_valid::are_not_equal</a>({1, 2, 3, 4}, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test fails.</span></div>
+<div class="line"><a class="code hl_function" href="#aecf728f5fbcc7c8d1f892e2ddd16d5da">xtd::tunit::collection_valid::are_not_equal</a>({4, 3, 2, 1}, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_function" href="#aecf728f5fbcc7c8d1f892e2ddd16d5da">xtd::tunit::collection_valid::are_not_equal</a>({1, 2, 3, 4}, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test fails.</span></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
-<a id="a000f18606dfe4358ba7c5ba8445d6079" name="a000f18606dfe4358ba7c5ba8445d6079"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a000f18606dfe4358ba7c5ba8445d6079">&#9670;&#160;</a></span>are_not_equivalent() <span class="overload">[1/2]</span></h2>
+<a id="aee36e901932ff237ad8b2a8a81bb4b20" name="aee36e901932ff237ad8b2a8a81bb4b20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee36e901932ff237ad8b2a8a81bb4b20">&#9670;&#160;</a></span>are_not_equivalent() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -893,7 +893,7 @@ template&lt;typename expected_t, typename actual_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::tunit::collection_valid::are_not_equivalent </td>
+          <td class="memname">auto xtd::tunit::collection_valid::are_not_equivalent </td>
           <td>(</td>
           <td class="paramtype">const expected_t &amp;</td>          <td class="paramname"><span class="paramname"><em>expected</em></span>, </td>
         </tr>
@@ -905,7 +905,7 @@ template&lt;typename expected_t, typename actual_t&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;) -&gt; void</td>
         </tr>
       </table>
   </td>
@@ -925,17 +925,17 @@ template&lt;typename expected_t, typename actual_t&gt; </div>
   </dd>
 </dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_class" href="classxtd_1_1array.html">xtd::array&lt;int&gt;</a> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a> = {1, 2, 3, 4};</div>
-<div class="line"><a class="code hl_function" href="#a000f18606dfe4358ba7c5ba8445d6079">xtd::tunit::collection_valid::are_not_equivalent</a>({1, 2, 3, 5}, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>); <span class="comment">// test ok.</span></div>
-<div class="line"><a class="code hl_function" href="#a000f18606dfe4358ba7c5ba8445d6079">xtd::tunit::collection_valid::are_not_equivalent</a>({4, 3, 2, 1}, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>); <span class="comment">// test fails.</span></div>
-<div class="ttc" id="aclassxtd_1_1tunit_1_1collection__valid_html_a000f18606dfe4358ba7c5ba8445d6079"><div class="ttname"><a href="#a000f18606dfe4358ba7c5ba8445d6079">xtd::tunit::collection_valid::are_not_equivalent</a></div><div class="ttdeci">static void are_not_equivalent(const expected_t &amp;expected, const actual_t &amp;actual, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Validates that all collection items are not equivalent.</div><div class="ttdef"><b>Definition</b> collection_valid.hpp:373</div></div>
+<div class="line"><a class="code hl_function" href="#aee36e901932ff237ad8b2a8a81bb4b20">xtd::tunit::collection_valid::are_not_equivalent</a>({1, 2, 3, 5}, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_function" href="#aee36e901932ff237ad8b2a8a81bb4b20">xtd::tunit::collection_valid::are_not_equivalent</a>({4, 3, 2, 1}, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>); <span class="comment">// test fails.</span></div>
+<div class="ttc" id="aclassxtd_1_1tunit_1_1collection__valid_html_aee36e901932ff237ad8b2a8a81bb4b20"><div class="ttname"><a href="#aee36e901932ff237ad8b2a8a81bb4b20">xtd::tunit::collection_valid::are_not_equivalent</a></div><div class="ttdeci">static auto are_not_equivalent(const expected_t &amp;expected, const actual_t &amp;actual, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current()) -&gt; void</div><div class="ttdoc">Validates that all collection items are not equivalent.</div><div class="ttdef"><b>Definition</b> collection_valid.hpp:373</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="collection_valid_are_not_equivalent_8cpp-example.html#_a2">collection_valid_are_not_equivalent.cpp</a>.</dd>
 </dl>
 
 </div>
 </div>
-<a id="a908a16e244ec411fdcfbfab7725ad9eb" name="a908a16e244ec411fdcfbfab7725ad9eb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a908a16e244ec411fdcfbfab7725ad9eb">&#9670;&#160;</a></span>are_not_equivalent() <span class="overload">[2/2]</span></h2>
+<a id="abf6bb6309969c26e95d8b20277026845" name="abf6bb6309969c26e95d8b20277026845"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf6bb6309969c26e95d8b20277026845">&#9670;&#160;</a></span>are_not_equivalent() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -946,7 +946,7 @@ template&lt;typename expected_t, typename actual_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::tunit::collection_valid::are_not_equivalent </td>
+          <td class="memname">auto xtd::tunit::collection_valid::are_not_equivalent </td>
           <td>(</td>
           <td class="paramtype">const expected_t &amp;</td>          <td class="paramname"><span class="paramname"><em>expected</em></span>, </td>
         </tr>
@@ -963,7 +963,7 @@ template&lt;typename expected_t, typename actual_t&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;) -&gt; void</td>
         </tr>
       </table>
   </td>
@@ -983,14 +983,14 @@ template&lt;typename expected_t, typename actual_t&gt; </div>
   </dd>
 </dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_class" href="classxtd_1_1array.html">xtd::array&lt;int&gt;</a> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a> = {1, 2, 3, 4};</div>
-<div class="line"><a class="code hl_function" href="#a000f18606dfe4358ba7c5ba8445d6079">xtd::tunit::collection_valid::are_not_equivalent</a>({1, 2, 3, 5}, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
-<div class="line"><a class="code hl_function" href="#a000f18606dfe4358ba7c5ba8445d6079">xtd::tunit::collection_valid::are_not_equivalent</a>({4, 3, 2, 1}, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test fails.</span></div>
+<div class="line"><a class="code hl_function" href="#aee36e901932ff237ad8b2a8a81bb4b20">xtd::tunit::collection_valid::are_not_equivalent</a>({1, 2, 3, 5}, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_function" href="#aee36e901932ff237ad8b2a8a81bb4b20">xtd::tunit::collection_valid::are_not_equivalent</a>({4, 3, 2, 1}, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test fails.</span></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
-<a id="add3d7b3b9ed75711623ec632ddd19063" name="add3d7b3b9ed75711623ec632ddd19063"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#add3d7b3b9ed75711623ec632ddd19063">&#9670;&#160;</a></span>contains() <span class="overload">[1/2]</span></h2>
+<a id="aa4f45951e608ea1c93c5655b1c48eb4f" name="aa4f45951e608ea1c93c5655b1c48eb4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4f45951e608ea1c93c5655b1c48eb4f">&#9670;&#160;</a></span>contains() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1001,7 +1001,7 @@ template&lt;typename expected_t, typename actual_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::tunit::collection_valid::contains </td>
+          <td class="memname">auto xtd::tunit::collection_valid::contains </td>
           <td>(</td>
           <td class="paramtype">const expected_t &amp;</td>          <td class="paramname"><span class="paramname"><em>expected</em></span>, </td>
         </tr>
@@ -1013,7 +1013,7 @@ template&lt;typename expected_t, typename actual_t&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;) -&gt; void</td>
         </tr>
       </table>
   </td>
@@ -1033,17 +1033,17 @@ template&lt;typename expected_t, typename actual_t&gt; </div>
   </dd>
 </dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_class" href="classxtd_1_1array.html">xtd::array&lt;int&gt;</a> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a> = {1, 2, 3, 4};</div>
-<div class="line"><a class="code hl_function" href="#add3d7b3b9ed75711623ec632ddd19063">xtd::tunit::collection_valid::contains</a>({1, 2}, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>); <span class="comment">// test ok.</span></div>
-<div class="line"><a class="code hl_function" href="#add3d7b3b9ed75711623ec632ddd19063">xtd::tunit::collection_valid::contains</a>({1, 2, 6}, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>); <span class="comment">// test fails.</span></div>
-<div class="ttc" id="aclassxtd_1_1tunit_1_1collection__valid_html_add3d7b3b9ed75711623ec632ddd19063"><div class="ttname"><a href="#add3d7b3b9ed75711623ec632ddd19063">xtd::tunit::collection_valid::contains</a></div><div class="ttdeci">static void contains(const expected_t &amp;expected, const actual_t &amp;actual, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Validates that collection contains all items.</div><div class="ttdef"><b>Definition</b> collection_valid.hpp:437</div></div>
+<div class="line"><a class="code hl_function" href="#aa4f45951e608ea1c93c5655b1c48eb4f">xtd::tunit::collection_valid::contains</a>({1, 2}, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_function" href="#aa4f45951e608ea1c93c5655b1c48eb4f">xtd::tunit::collection_valid::contains</a>({1, 2, 6}, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>); <span class="comment">// test fails.</span></div>
+<div class="ttc" id="aclassxtd_1_1tunit_1_1collection__valid_html_aa4f45951e608ea1c93c5655b1c48eb4f"><div class="ttname"><a href="#aa4f45951e608ea1c93c5655b1c48eb4f">xtd::tunit::collection_valid::contains</a></div><div class="ttdeci">static auto contains(const expected_t &amp;expected, const actual_t &amp;actual, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current()) -&gt; void</div><div class="ttdoc">Validates that collection contains all items.</div><div class="ttdef"><b>Definition</b> collection_valid.hpp:437</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="collection_valid_contains_8cpp-example.html#_a2">collection_valid_contains.cpp</a>.</dd>
 </dl>
 
 </div>
 </div>
-<a id="ad67724559756773832862f6c5cded595" name="ad67724559756773832862f6c5cded595"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad67724559756773832862f6c5cded595">&#9670;&#160;</a></span>contains() <span class="overload">[2/2]</span></h2>
+<a id="ac3789d3decbf650503f1c70158d50837" name="ac3789d3decbf650503f1c70158d50837"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3789d3decbf650503f1c70158d50837">&#9670;&#160;</a></span>contains() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1054,7 +1054,7 @@ template&lt;typename expected_t, typename actual_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::tunit::collection_valid::contains </td>
+          <td class="memname">auto xtd::tunit::collection_valid::contains </td>
           <td>(</td>
           <td class="paramtype">const expected_t &amp;</td>          <td class="paramname"><span class="paramname"><em>expected</em></span>, </td>
         </tr>
@@ -1071,7 +1071,7 @@ template&lt;typename expected_t, typename actual_t&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;) -&gt; void</td>
         </tr>
       </table>
   </td>
@@ -1091,14 +1091,14 @@ template&lt;typename expected_t, typename actual_t&gt; </div>
   </dd>
 </dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_class" href="classxtd_1_1array.html">xtd::array&lt;int&gt;</a> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a> = {1, 2, 3, 4};</div>
-<div class="line"><a class="code hl_function" href="#add3d7b3b9ed75711623ec632ddd19063">xtd::tunit::collection_valid::contains</a>({1, 2}, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
-<div class="line"><a class="code hl_function" href="#add3d7b3b9ed75711623ec632ddd19063">xtd::tunit::collection_valid::contains</a>({1, 2, 6}, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test fails.</span></div>
+<div class="line"><a class="code hl_function" href="#aa4f45951e608ea1c93c5655b1c48eb4f">xtd::tunit::collection_valid::contains</a>({1, 2}, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_function" href="#aa4f45951e608ea1c93c5655b1c48eb4f">xtd::tunit::collection_valid::contains</a>({1, 2, 6}, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test fails.</span></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
-<a id="a4b588963244aadca79ed08f47b1886ec" name="a4b588963244aadca79ed08f47b1886ec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4b588963244aadca79ed08f47b1886ec">&#9670;&#160;</a></span>does_not_contain() <span class="overload">[1/2]</span></h2>
+<a id="a62b673afd7984fc189d920fdb7290833" name="a62b673afd7984fc189d920fdb7290833"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62b673afd7984fc189d920fdb7290833">&#9670;&#160;</a></span>does_not_contain() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1109,7 +1109,7 @@ template&lt;typename expected_t, typename actual_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::tunit::collection_valid::does_not_contain </td>
+          <td class="memname">auto xtd::tunit::collection_valid::does_not_contain </td>
           <td>(</td>
           <td class="paramtype">const expected_t &amp;</td>          <td class="paramname"><span class="paramname"><em>expected</em></span>, </td>
         </tr>
@@ -1121,7 +1121,7 @@ template&lt;typename expected_t, typename actual_t&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;) -&gt; void</td>
         </tr>
       </table>
   </td>
@@ -1141,17 +1141,17 @@ template&lt;typename expected_t, typename actual_t&gt; </div>
   </dd>
 </dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_class" href="classxtd_1_1array.html">xtd::array&lt;int&gt;</a> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a> = {1, 2, 3, 4};</div>
-<div class="line"><a class="code hl_function" href="#a4b588963244aadca79ed08f47b1886ec">xtd::tunit::collection_valid::does_not_contain</a>({1, 2, 6}, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>); <span class="comment">// test ok.</span></div>
-<div class="line"><a class="code hl_function" href="#a4b588963244aadca79ed08f47b1886ec">xtd::tunit::collection_valid::does_not_contain</a>({1, 2}, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>); <span class="comment">// test fails.</span></div>
-<div class="ttc" id="aclassxtd_1_1tunit_1_1collection__valid_html_a4b588963244aadca79ed08f47b1886ec"><div class="ttname"><a href="#a4b588963244aadca79ed08f47b1886ec">xtd::tunit::collection_valid::does_not_contain</a></div><div class="ttdeci">static void does_not_contain(const expected_t &amp;expected, const actual_t &amp;actual, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Validates that collection contains all items.</div><div class="ttdef"><b>Definition</b> collection_valid.hpp:501</div></div>
+<div class="line"><a class="code hl_function" href="#a62b673afd7984fc189d920fdb7290833">xtd::tunit::collection_valid::does_not_contain</a>({1, 2, 6}, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_function" href="#a62b673afd7984fc189d920fdb7290833">xtd::tunit::collection_valid::does_not_contain</a>({1, 2}, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>); <span class="comment">// test fails.</span></div>
+<div class="ttc" id="aclassxtd_1_1tunit_1_1collection__valid_html_a62b673afd7984fc189d920fdb7290833"><div class="ttname"><a href="#a62b673afd7984fc189d920fdb7290833">xtd::tunit::collection_valid::does_not_contain</a></div><div class="ttdeci">static auto does_not_contain(const expected_t &amp;expected, const actual_t &amp;actual, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current()) -&gt; void</div><div class="ttdoc">Validates that collection contains all items.</div><div class="ttdef"><b>Definition</b> collection_valid.hpp:501</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="collection_valid_does_not_contain_8cpp-example.html#_a2">collection_valid_does_not_contain.cpp</a>.</dd>
 </dl>
 
 </div>
 </div>
-<a id="a045a0cd039d871d34b8230da6f4d4040" name="a045a0cd039d871d34b8230da6f4d4040"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a045a0cd039d871d34b8230da6f4d4040">&#9670;&#160;</a></span>does_not_contain() <span class="overload">[2/2]</span></h2>
+<a id="a3c19a1de9c185cb9ce1b8fcf6fd00b8a" name="a3c19a1de9c185cb9ce1b8fcf6fd00b8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c19a1de9c185cb9ce1b8fcf6fd00b8a">&#9670;&#160;</a></span>does_not_contain() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1162,7 +1162,7 @@ template&lt;typename expected_t, typename actual_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::tunit::collection_valid::does_not_contain </td>
+          <td class="memname">auto xtd::tunit::collection_valid::does_not_contain </td>
           <td>(</td>
           <td class="paramtype">const expected_t &amp;</td>          <td class="paramname"><span class="paramname"><em>expected</em></span>, </td>
         </tr>
@@ -1179,7 +1179,7 @@ template&lt;typename expected_t, typename actual_t&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;) -&gt; void</td>
         </tr>
       </table>
   </td>
@@ -1199,14 +1199,14 @@ template&lt;typename expected_t, typename actual_t&gt; </div>
   </dd>
 </dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_class" href="classxtd_1_1array.html">xtd::array&lt;int&gt;</a> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a> = {1, 2, 3, 4};</div>
-<div class="line"><a class="code hl_function" href="#a4b588963244aadca79ed08f47b1886ec">xtd::tunit::collection_valid::does_not_contain</a>({1, 2, 6}, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
-<div class="line"><a class="code hl_function" href="#a4b588963244aadca79ed08f47b1886ec">xtd::tunit::collection_valid::does_not_contain</a>({1, 2}, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test fails.</span></div>
+<div class="line"><a class="code hl_function" href="#a62b673afd7984fc189d920fdb7290833">xtd::tunit::collection_valid::does_not_contain</a>({1, 2, 6}, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_function" href="#a62b673afd7984fc189d920fdb7290833">xtd::tunit::collection_valid::does_not_contain</a>({1, 2}, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test fails.</span></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
-<a id="a52e127eea29e0b6e61e795f889fcb630" name="a52e127eea29e0b6e61e795f889fcb630"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a52e127eea29e0b6e61e795f889fcb630">&#9670;&#160;</a></span>is_empty() <span class="overload">[1/2]</span></h2>
+<a id="a73f3d402cabdf6f26d338054fb2cf856" name="a73f3d402cabdf6f26d338054fb2cf856"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73f3d402cabdf6f26d338054fb2cf856">&#9670;&#160;</a></span>is_empty() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1217,14 +1217,14 @@ template&lt;typename value_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::tunit::collection_valid::is_empty </td>
+          <td class="memname">auto xtd::tunit::collection_valid::is_empty </td>
           <td>(</td>
           <td class="paramtype">const value_t &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;) -&gt; void</td>
         </tr>
       </table>
   </td>
@@ -1254,8 +1254,8 @@ template&lt;typename value_t&gt; </div>
 
 </div>
 </div>
-<a id="aa1ac923ada1397e59aa6a8bd91dd27ac" name="aa1ac923ada1397e59aa6a8bd91dd27ac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa1ac923ada1397e59aa6a8bd91dd27ac">&#9670;&#160;</a></span>is_empty() <span class="overload">[2/2]</span></h2>
+<a id="a9abc280bce301e0e444772125bb15d0b" name="a9abc280bce301e0e444772125bb15d0b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9abc280bce301e0e444772125bb15d0b">&#9670;&#160;</a></span>is_empty() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1266,7 +1266,7 @@ template&lt;typename value_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::tunit::collection_valid::is_empty </td>
+          <td class="memname">auto xtd::tunit::collection_valid::is_empty </td>
           <td>(</td>
           <td class="paramtype">const value_t &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
         </tr>
@@ -1278,7 +1278,7 @@ template&lt;typename value_t&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;) -&gt; void</td>
         </tr>
       </table>
   </td>
@@ -1305,8 +1305,8 @@ template&lt;typename value_t&gt; </div>
 
 </div>
 </div>
-<a id="af788d6af2fc237b33692dac2113904d6" name="af788d6af2fc237b33692dac2113904d6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af788d6af2fc237b33692dac2113904d6">&#9670;&#160;</a></span>is_not_empty() <span class="overload">[1/2]</span></h2>
+<a id="af7446f7d8d53b4add86cc88829bfb8c6" name="af7446f7d8d53b4add86cc88829bfb8c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7446f7d8d53b4add86cc88829bfb8c6">&#9670;&#160;</a></span>is_not_empty() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1317,14 +1317,14 @@ template&lt;typename value_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::tunit::collection_valid::is_not_empty </td>
+          <td class="memname">auto xtd::tunit::collection_valid::is_not_empty </td>
           <td>(</td>
           <td class="paramtype">const value_t &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;) -&gt; void</td>
         </tr>
       </table>
   </td>
@@ -1344,17 +1344,17 @@ template&lt;typename value_t&gt; </div>
 </dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_class" href="classxtd_1_1array.html">xtd::array&lt;int&gt;</a> v1 = {0, 1, 2, 3};</div>
 <div class="line"><a class="code hl_class" href="classxtd_1_1array.html">xtd::array&lt;int&gt;</a> v2;</div>
-<div class="line"><a class="code hl_class" href="classxtd_1_1tunit_1_1collection__valid.html">xtd::tunit::collection_valid</a>:<a class="code hl_function" href="#af788d6af2fc237b33692dac2113904d6">is_not_empty</a>(v1); <span class="comment">// test ok.</span></div>
-<div class="line"><a class="code hl_class" href="classxtd_1_1tunit_1_1collection__valid.html">xtd::tunit::collection_valid</a>:<a class="code hl_function" href="#af788d6af2fc237b33692dac2113904d6">is_not_empty</a>(v2); <span class="comment">// test fails</span></div>
-<div class="ttc" id="aclassxtd_1_1tunit_1_1collection__valid_html_af788d6af2fc237b33692dac2113904d6"><div class="ttname"><a href="#af788d6af2fc237b33692dac2113904d6">xtd::tunit::collection_valid::is_not_empty</a></div><div class="ttdeci">static void is_not_empty(const value_t &amp;value, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Validates that collection or traits does not contain any item.</div><div class="ttdef"><b>Definition</b> collection_valid.hpp:610</div></div>
+<div class="line"><a class="code hl_class" href="classxtd_1_1tunit_1_1collection__valid.html">xtd::tunit::collection_valid</a>:<a class="code hl_function" href="#af7446f7d8d53b4add86cc88829bfb8c6">is_not_empty</a>(v1); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_class" href="classxtd_1_1tunit_1_1collection__valid.html">xtd::tunit::collection_valid</a>:<a class="code hl_function" href="#af7446f7d8d53b4add86cc88829bfb8c6">is_not_empty</a>(v2); <span class="comment">// test fails</span></div>
+<div class="ttc" id="aclassxtd_1_1tunit_1_1collection__valid_html_af7446f7d8d53b4add86cc88829bfb8c6"><div class="ttname"><a href="#af7446f7d8d53b4add86cc88829bfb8c6">xtd::tunit::collection_valid::is_not_empty</a></div><div class="ttdeci">static auto is_not_empty(const value_t &amp;value, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current()) -&gt; void</div><div class="ttdoc">Validates that collection or traits does not contain any item.</div><div class="ttdef"><b>Definition</b> collection_valid.hpp:610</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="collection_valid_is_not_empty_8cpp-example.html#_a2">collection_valid_is_not_empty.cpp</a>.</dd>
 </dl>
 
 </div>
 </div>
-<a id="a1c75f8cee752f95b5cfe6f2dac5cd1b9" name="a1c75f8cee752f95b5cfe6f2dac5cd1b9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1c75f8cee752f95b5cfe6f2dac5cd1b9">&#9670;&#160;</a></span>is_not_empty() <span class="overload">[2/2]</span></h2>
+<a id="a6e1e1943bb26bef6490f9bcc0e2be1e3" name="a6e1e1943bb26bef6490f9bcc0e2be1e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e1e1943bb26bef6490f9bcc0e2be1e3">&#9670;&#160;</a></span>is_not_empty() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1365,7 +1365,7 @@ template&lt;typename value_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::tunit::collection_valid::is_not_empty </td>
+          <td class="memname">auto xtd::tunit::collection_valid::is_not_empty </td>
           <td>(</td>
           <td class="paramtype">const value_t &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
         </tr>
@@ -1377,7 +1377,7 @@ template&lt;typename value_t&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;) -&gt; void</td>
         </tr>
       </table>
   </td>
@@ -1398,14 +1398,14 @@ template&lt;typename value_t&gt; </div>
 </dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_class" href="classxtd_1_1array.html">xtd::array&lt;int&gt;</a> v1 = {0, 1, 2, 3};</div>
 <div class="line"><a class="code hl_class" href="classxtd_1_1array.html">xtd::array&lt;int&gt;</a> v2;</div>
-<div class="line"><a class="code hl_class" href="classxtd_1_1tunit_1_1collection__valid.html">xtd::tunit::collection_valid</a>:<a class="code hl_function" href="#af788d6af2fc237b33692dac2113904d6">is_not_empty</a>(v1, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
-<div class="line"><a class="code hl_class" href="classxtd_1_1tunit_1_1collection__valid.html">xtd::tunit::collection_valid</a>:<a class="code hl_function" href="#af788d6af2fc237b33692dac2113904d6">is_not_empty</a>(v2, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test fails</span></div>
+<div class="line"><a class="code hl_class" href="classxtd_1_1tunit_1_1collection__valid.html">xtd::tunit::collection_valid</a>:<a class="code hl_function" href="#af7446f7d8d53b4add86cc88829bfb8c6">is_not_empty</a>(v1, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_class" href="classxtd_1_1tunit_1_1collection__valid.html">xtd::tunit::collection_valid</a>:<a class="code hl_function" href="#af7446f7d8d53b4add86cc88829bfb8c6">is_not_empty</a>(v2, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test fails</span></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
-<a id="a092db07c357304d7fcfef3c15b426b3e" name="a092db07c357304d7fcfef3c15b426b3e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a092db07c357304d7fcfef3c15b426b3e">&#9670;&#160;</a></span>is_ordered() <span class="overload">[1/2]</span></h2>
+<a id="a5ee7d73c382f6074755a233c080c36f9" name="a5ee7d73c382f6074755a233c080c36f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ee7d73c382f6074755a233c080c36f9">&#9670;&#160;</a></span>is_ordered() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1416,14 +1416,14 @@ template&lt;typename value_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::tunit::collection_valid::is_ordered </td>
+          <td class="memname">auto xtd::tunit::collection_valid::is_ordered </td>
           <td>(</td>
           <td class="paramtype">const value_t &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;) -&gt; void</td>
         </tr>
       </table>
   </td>
@@ -1443,17 +1443,17 @@ template&lt;typename value_t&gt; </div>
 </dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_class" href="classxtd_1_1array.html">xtd::array&lt;int&gt;</a> v1 = {1, 2, 3, 4};</div>
 <div class="line"><a class="code hl_class" href="classxtd_1_1array.html">xtd::array&lt;int&gt;</a> v2 = {1, 2, 4, 3};</div>
-<div class="line"><a class="code hl_class" href="classxtd_1_1tunit_1_1collection__valid.html">xtd::tunit::collection_valid</a>:<a class="code hl_function" href="#a092db07c357304d7fcfef3c15b426b3e">is_ordered</a>(v1); <span class="comment">// test ok.</span></div>
-<div class="line"><a class="code hl_class" href="classxtd_1_1tunit_1_1collection__valid.html">xtd::tunit::collection_valid</a>:<a class="code hl_function" href="#a092db07c357304d7fcfef3c15b426b3e">is_ordered</a>(v2); <span class="comment">// test fails</span></div>
-<div class="ttc" id="aclassxtd_1_1tunit_1_1collection__valid_html_a092db07c357304d7fcfef3c15b426b3e"><div class="ttname"><a href="#a092db07c357304d7fcfef3c15b426b3e">xtd::tunit::collection_valid::is_ordered</a></div><div class="ttdeci">static void is_ordered(const value_t &amp;value, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Validates that collection is ordered.</div><div class="ttdef"><b>Definition</b> collection_valid.hpp:655</div></div>
+<div class="line"><a class="code hl_class" href="classxtd_1_1tunit_1_1collection__valid.html">xtd::tunit::collection_valid</a>:<a class="code hl_function" href="#a5ee7d73c382f6074755a233c080c36f9">is_ordered</a>(v1); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_class" href="classxtd_1_1tunit_1_1collection__valid.html">xtd::tunit::collection_valid</a>:<a class="code hl_function" href="#a5ee7d73c382f6074755a233c080c36f9">is_ordered</a>(v2); <span class="comment">// test fails</span></div>
+<div class="ttc" id="aclassxtd_1_1tunit_1_1collection__valid_html_a5ee7d73c382f6074755a233c080c36f9"><div class="ttname"><a href="#a5ee7d73c382f6074755a233c080c36f9">xtd::tunit::collection_valid::is_ordered</a></div><div class="ttdeci">static auto is_ordered(const value_t &amp;value, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current()) -&gt; void</div><div class="ttdoc">Validates that collection is ordered.</div><div class="ttdef"><b>Definition</b> collection_valid.hpp:655</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="collection_valid_8cpp-example.html#_a3">collection_valid.cpp</a>, and <a class="el" href="collection_valid_is_ordered_8cpp-example.html#_a2">collection_valid_is_ordered.cpp</a>.</dd>
 </dl>
 
 </div>
 </div>
-<a id="a9bceff5f5b6be89e127c3f16813428ab" name="a9bceff5f5b6be89e127c3f16813428ab"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9bceff5f5b6be89e127c3f16813428ab">&#9670;&#160;</a></span>is_ordered() <span class="overload">[2/2]</span></h2>
+<a id="a604a8994808a16e693539fd3f1b9415c" name="a604a8994808a16e693539fd3f1b9415c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a604a8994808a16e693539fd3f1b9415c">&#9670;&#160;</a></span>is_ordered() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1464,7 +1464,7 @@ template&lt;typename value_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::tunit::collection_valid::is_ordered </td>
+          <td class="memname">auto xtd::tunit::collection_valid::is_ordered </td>
           <td>(</td>
           <td class="paramtype">const value_t &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
         </tr>
@@ -1476,7 +1476,7 @@ template&lt;typename value_t&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stack_frame</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ab0acb39aaf9a3f77703f678ec1f1f192">xtd::diagnostics::stack_frame::current</a>()</span>&#160;) -&gt; void</td>
         </tr>
       </table>
   </td>
@@ -1497,8 +1497,8 @@ template&lt;typename value_t&gt; </div>
 </dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_class" href="classxtd_1_1array.html">xtd::array&lt;int&gt;</a> v1 = {1, 2, 3, 4};</div>
 <div class="line"><a class="code hl_class" href="classxtd_1_1array.html">xtd::array&lt;int&gt;</a> v2 = {1, 2, 4, 3};</div>
-<div class="line"><a class="code hl_class" href="classxtd_1_1tunit_1_1collection__valid.html">xtd::tunit::collection_valid</a>:<a class="code hl_function" href="#a092db07c357304d7fcfef3c15b426b3e">is_ordered</a>(v1, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
-<div class="line"><a class="code hl_class" href="classxtd_1_1tunit_1_1collection__valid.html">xtd::tunit::collection_valid</a>:<a class="code hl_function" href="#a092db07c357304d7fcfef3c15b426b3e">is_ordered</a>(v2, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test fails</span></div>
+<div class="line"><a class="code hl_class" href="classxtd_1_1tunit_1_1collection__valid.html">xtd::tunit::collection_valid</a>:<a class="code hl_function" href="#a5ee7d73c382f6074755a233c080c36f9">is_ordered</a>(v1, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_class" href="classxtd_1_1tunit_1_1collection__valid.html">xtd::tunit::collection_valid</a>:<a class="code hl_function" href="#a5ee7d73c382f6074755a233c080c36f9">is_ordered</a>(v2, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test fails</span></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
