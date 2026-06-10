@@ -65,11 +65,11 @@ form::form() : data_(xtd::new_sptr<data>()) {
   create_control();
 }
 
-std::optional<form::ibutton_control_ref> form::accept_button() const noexcept {
+auto form::accept_button() const noexcept -> std::optional<form::ibutton_control_ref> {
   return data_->accept_button;
 }
 
-form& form::accept_button(const ibutton_control& accept_button) {
+auto form::accept_button(const ibutton_control& accept_button) -> form& {
   if (data_->accept_button.has_value() && &data_->accept_button.value().get() == &accept_button) return *this;
   if (data_->accept_button.has_value()) data_->accept_button.value().get().notify_default(false);
   data_->accept_button = const_cast<ibutton_control&>(accept_button);
@@ -77,276 +77,276 @@ form& form::accept_button(const ibutton_control& accept_button) {
   return *this;
 }
 
-form& form::accept_button(std::nullptr_t) {
+auto form::accept_button(std::nullptr_t) -> form& {
   if (data_->accept_button.has_value()) data_->accept_button.value().get().notify_default(false);
   data_->accept_button.reset();
   return *this;
 }
 
-std::optional<form_ref> form::active_form() noexcept {
+auto form::active_form() noexcept -> std::optional<form_ref> {
   return active_form_;
 }
 
-forms::auto_size_mode form::auto_size_mode() const noexcept {
+auto form::auto_size_mode() const noexcept -> xtd::forms::auto_size_mode {
   return get_auto_size_mode();
 }
 
-form& form::auto_size_mode(forms::auto_size_mode value) {
+auto form::auto_size_mode(xtd::forms::auto_size_mode value) -> form& {
   set_auto_size_mode(value);
   return *this;
 }
 
-std::optional<form::ibutton_control_ref> form::cancel_button() const noexcept {
+auto form::cancel_button() const noexcept -> std::optional<ibutton_control_ref> {
   return data_->cancel_button;
 }
 
-form& form::cancel_button(const ibutton_control& cancel_button) {
+auto form::cancel_button(const ibutton_control& cancel_button) -> form& {
   if (data_->cancel_button.has_value() && &data_->cancel_button.value().get() == &cancel_button) return *this;
   data_->cancel_button = const_cast<ibutton_control&>(cancel_button);
   return *this;
 }
 
-form& form::cancel_button(std::nullptr_t) {
+auto form::cancel_button(std::nullptr_t) -> form& {
   data_->cancel_button.reset();
   return *this;
 }
 
-bool form::close_box() const noexcept {
+auto form::close_box() const noexcept -> bool {
   return data_->close_box;
 }
 
-form& form::close_box(bool value) {
+auto form::close_box(bool value) -> form& {
   if (data_->close_box == value) return *this;
   data_->close_box = value;
   post_recreate_handle();
   return *this;
 }
 
-bool form::control_box() const noexcept {
+auto form::control_box() const noexcept -> bool {
   return data_->control_box;
 }
 
-form& form::control_box(bool value) {
+auto form::control_box(bool value) -> form& {
   if (data_->control_box == value) return *this;
   data_->control_box = value;
   post_recreate_handle();
   return *this;
 }
 
-forms::dialog_result form::dialog_result() const noexcept {
+auto form::dialog_result() const noexcept -> xtd::forms::dialog_result {
   return data_->dialog_result;
 }
 
-form& form::dialog_result(forms::dialog_result value) {
+auto form::dialog_result(xtd::forms::dialog_result value) -> form& {
   data_->dialog_result = value;
   return *this;
 }
 
-control& form::font(std::nullptr_t) {
+auto form::font(null_ptr) -> control& {
   return container_control::font(system_fonts::default_font());
 }
 
-forms::form_border_style form::form_border_style() const noexcept {
+auto form::form_border_style() const noexcept -> xtd::forms::form_border_style {
   return data_->form_border_style;
 }
 
-form& form::form_border_style(forms::form_border_style value) {
+auto form::form_border_style(forms::form_border_style value) -> form& {
   if (data_->form_border_style == value) return *this;
   data_->form_border_style = value;
   post_recreate_handle();
   return *this;
 }
 
-bool form::help_button() const {
+auto form::help_button() const -> bool {
   return data_->help_button;
 }
 
-form& form::help_button(bool value) {
+auto form::help_button(bool value) -> form& {
   if (data_->help_button == value) return *this;
   data_->help_button = value;
   post_recreate_handle();
   return *this;
 }
 
-const xtd::drawing::icon& form::icon() const noexcept {
+auto form::icon() const noexcept -> const xtd::drawing::icon& {
   return data_->icon;
 }
 
-form& form::icon(const xtd::drawing::icon& value) {
+auto form::icon(const xtd::drawing::icon& value) -> form& {
   if (data_->icon == value) return *this;
-  data_->icon = value != drawing::icon::empty ? value : system_icons::xtd_forms_logo();
+  data_->icon = value != xtd::drawing::icon::empty ? value : system_icons::xtd_forms_logo();
   if (is_handle_created() && data_->show_icon) native::form::icon(handle(), data_->icon);
   return *this;
 }
 
-bool form::maximize_box() const noexcept {
+auto form::maximize_box() const noexcept -> bool {
   return data_->maximize_box;
 }
 
-form& form::maximize_box(bool value) {
+auto form::maximize_box(bool value) -> form& {
   if (data_->maximize_box == value) return *this;
   data_->maximize_box = value;
   post_recreate_handle();
   return *this;
 }
 
-std::optional<form::main_menu_ref> form::menu() const noexcept {
+auto form::menu() const noexcept -> std::optional<main_menu_ref> {
   return data_->menu;
 }
 
-form& form::menu(const forms::main_menu& value) {
+auto form::menu(const xtd::forms::main_menu& value) -> form& {
   if (data_->menu.has_value() && &data_->menu.value().get() == &value) return *this;
   data_->menu = const_cast<forms::main_menu&>(value);
   if (is_handle_created()) create_system_menu();
   return *this;
 }
 
-form& form::menu(std::nullptr_t) {
+auto form::menu(null_ptr) -> form& {
   if (!data_->menu.has_value()) return *this;
   if (is_handle_created()) destroy_system_menu();
   data_->menu.reset();
   return *this;
 }
 
-bool form::minimize_box() const noexcept {
+auto form::minimize_box() const noexcept -> bool {
   return data_->minimize_box;
 }
 
-form& form::minimize_box(bool value) {
+auto form::minimize_box(bool value) -> form& {
   if (data_->minimize_box == value) return *this;
   data_->minimize_box = value;
   post_recreate_handle();
   return *this;
 }
 
-std::optional<control_ref> form::owner() const noexcept {
+auto form::owner() const noexcept -> std::optional<control_ref> {
   return data_->owner ? std::optional<control_ref>(control_ref(const_cast<control&>(*data_->owner))) : std::optional<control_ref>();
 }
 
-bool form::modal() const noexcept {
+auto form::modal() const noexcept -> bool {
   return get_state(state::modal);
 }
 
-double form::opacity() const noexcept {
+auto form::opacity() const noexcept -> double {
   return data_->opacity;
 }
 
-form& form::opacity(double opacity) {
+auto form::opacity(double opacity) -> form& {
   if (data_->opacity == opacity) return *this;
   data_->opacity = opacity;
   if (is_handle_created()) native::form::opacity(handle(), data_->opacity);
   return *this;
 }
 
-form& form::owner(const control& value) {
+auto form::owner(const control& value) -> form& {
   if (data_->owner && data_->owner->handle() == value.handle()) return *this;
   data_->owner = &value;
   post_recreate_handle();
   return *this;
 }
 
-form& form::owner(std::nullptr_t) {
+auto form::owner(null_ptr) -> form& {
   if (!data_->owner) return *this;
   data_->owner = nullptr;
   post_recreate_handle();
   return *this;
 }
 
-control& form::parent(const control& parent) {
+auto form::parent(const control& parent) -> control& {
   throw_helper::throws(exception_case::invalid_operation, "Top-level control cannot be added to a control.");
 }
 
-bool form::show_icon() const noexcept {
+auto form::show_icon() const noexcept -> bool {
   return data_->show_icon;
 }
 
-form& form::show_icon(bool value) {
+auto form::show_icon(bool value) -> form& {
   if (data_->show_icon == value) return *this;
   data_->show_icon = value;
   post_recreate_handle();
   return *this;
 }
 
-bool form::show_in_taskbar() const noexcept {
+auto form::show_in_taskbar() const noexcept -> bool {
   return data_->show_in_taskbar;
 }
 
-form& form::show_in_taskbar(bool value) {
+auto form::show_in_taskbar(bool value) -> form& {
   if (data_->show_in_taskbar == value) return *this;
   data_->show_in_taskbar = value;
   post_recreate_handle();
   return *this;
 }
 
-form_start_position form::start_position() const noexcept {
+auto form::start_position() const noexcept -> form_start_position {
   return data_->start_position;
 }
 
-form& form::start_position(form_start_position start_position) {
+auto form::start_position(form_start_position start_position) -> form& {
   data_->start_position = start_position;
   return *this;
 }
 
-std::optional<form::status_bar_ref> form::status_bar() const noexcept {
+auto form::status_bar() const noexcept -> std::optional<status_bar_ref> {
   return data_->status_bar;
 }
 
-form& form::status_bar(const forms::status_bar& value) {
+auto form::status_bar(const forms::status_bar& value) -> form& {
   if (data_->status_bar.has_value() && &data_->status_bar.value().get() == &value) return *this;
   data_->status_bar = const_cast<forms::status_bar&>(value);
   data_->status_bar.value().get().system_status_bar(true);
   return *this;
 }
 
-form& form::status_bar(std::nullptr_t) {
+auto form::status_bar(null_ptr) -> form& {
   if (!data_->status_bar.has_value()) return *this;
   data_->status_bar.value().get().system_status_bar(false);
   data_->status_bar.reset();
   return *this;
 }
 
-std::optional<form::tool_bar_ref> form::tool_bar() const noexcept {
+auto form::tool_bar() const noexcept -> std::optional<tool_bar_ref> {
   return data_->tool_bar;
 }
 
-form& form::tool_bar(const forms::tool_bar& value) {
+auto form::tool_bar(const forms::tool_bar& value) -> form& {
   if (data_->tool_bar.has_value() && &data_->tool_bar.value().get() == &value) return *this;
-  if (data_->tool_bar.has_value()) data_->tool_bar.value().get().is_system_tool_bar(false);
+  if (data_->tool_bar.has_value()) data_->tool_bar.value().get().system_tool_bar(false);
   data_->tool_bar = const_cast<forms::tool_bar&>(value);
-  data_->tool_bar.value().get().is_system_tool_bar(true);
+  data_->tool_bar.value().get().system_tool_bar(true);
   return *this;
 }
 
-form& form::tool_bar(std::nullptr_t) {
+auto form::tool_bar(null_ptr) -> form& {
   if (!data_->tool_bar.has_value()) return *this;
-  data_->tool_bar.value().get().is_system_tool_bar(false);
+  data_->tool_bar.value().get().system_tool_bar(false);
   data_->tool_bar.reset();
   return *this;
 }
 
-bool form::top_level() const noexcept {
+auto form::top_level() const noexcept -> bool {
   return get_state(state::top_level);
 }
 
-form& form::top_level(bool top_level) {
+auto form::top_level(bool top_level) -> form& {
   if (!get_state(state::top_level) == top_level) return *this;
   set_state(state::top_level, top_level);
   return *this;
 }
 
-bool form::top_most() const noexcept {
+auto form::top_most() const noexcept -> bool {
   return data_->top_most;
 }
 
-form& form::top_most(bool value) {
+auto form::top_most(bool value) -> form& {
   if (data_->top_most == value) return *this;
   data_->top_most = value;
   post_recreate_handle();
   return *this;
 }
 
-control& form::visible(bool visible) {
-  std::optional<forms::form_window_state> current_window_state;
+auto form::visible(bool visible) -> control& {
+  auto current_window_state = std::optional<forms::form_window_state> {};
   if (!data_->previous_screen) {
     current_window_state = data_->window_state;
     data_->previous_screen = xtd::new_sptr<screen>(screen::from_control(*this));
@@ -369,11 +369,11 @@ control& form::visible(bool visible) {
   return *this;
 }
 
-form_window_state form::window_state() const noexcept {
+auto form::window_state() const noexcept -> form_window_state {
   return data_->window_state;
 }
 
-form& form::window_state(form_window_state value) {
+auto form::window_state(form_window_state value) -> form& {
   if (data_->window_state != value) {
     data_->window_state = value;
     internal_set_window_state();
@@ -381,16 +381,16 @@ form& form::window_state(form_window_state value) {
   return *this;
 }
 
-void form::activate() {
+auto form::activate() -> void {
   if (is_handle_created()) native::form::activate(handle());
 }
 
-void form::bring_to_front() {
+auto form::bring_to_front() -> void {
   activate();
   control::focus();
 }
 
-void form::center_to_screen() {
+auto form::center_to_screen() -> void {
   if (!data_->previous_screen) start_position(form_start_position::center_screen);
   else {
     screen screen = screen::from_control(*this);
@@ -399,55 +399,55 @@ void form::center_to_screen() {
   }
 }
 
-void form::close() {
+auto form::close() -> void {
   if (is_handle_created() && data_->previous_screen) native::form::close(handle());
 }
 
-form form::create() {
+auto form::create() -> form {
   return form {};
 }
 
-form form::create(const xtd::string& text) {
+auto form::create(const xtd::string& text) -> form {
   auto result = form {};
   result.text(text);
   return result;
 }
 
-form form::create(const xtd::string& text, const drawing::point& location) {
-  auto result = form {};
-  result.text(text);
-  result.start_position(form_start_position::manual);
-  result.location(location);
-  return result;
-}
-
-form form::create(const xtd::string& text, const drawing::point& location, const drawing::size& size) {
+auto form::create(const xtd::string& text, const xtd::drawing::point& location) -> form {
   auto result = form {};
   result.text(text);
   result.start_position(form_start_position::manual);
   result.location(location);
-  result.size(size);
   return result;
 }
 
-form form::create(const xtd::string& text, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
+auto form::create(const xtd::string& text, const xtd::drawing::point& location, const xtd::drawing::size& size) -> form {
   auto result = form {};
   result.text(text);
   result.start_position(form_start_position::manual);
   result.location(location);
   result.size(size);
+  return result;
+}
+
+auto form::create(const xtd::string& text, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> form {
+  auto result = form {};
+  result.text(text);
+  result.start_position(form_start_position::manual);
+  result.location(location);
+  result.size(size);
   result.name(name);
   return result;
 }
 
-form form::create(const xtd::string& text, const drawing::size& size) {
+auto form::create(const xtd::string& text, const xtd::drawing::size& size) -> form {
   auto result = form {};
   result.text(text);
   result.size(size);
   return result;
 }
 
-form form::create(const xtd::string& text, const drawing::size& size, const xtd::string& name) {
+auto form::create(const xtd::string& text, const xtd::drawing::size& size, const xtd::string& name) -> form {
   auto result = form {};
   result.text(text);
   result.size(size);
@@ -455,14 +455,14 @@ form form::create(const xtd::string& text, const drawing::size& size, const xtd:
   return result;
 }
 
-form form::create(const xtd::string& text, form_start_position start_position) {
+auto form::create(const xtd::string& text, form_start_position start_position) -> form {
   auto result = form {};
   result.text(text);
   result.start_position(start_position);
   return result;
 }
 
-form form::create(const xtd::string& text, form_start_position start_position, const drawing::point& location) {
+auto form::create(const xtd::string& text, form_start_position start_position, const xtd::drawing::point& location) -> form {
   auto result = form {};
   result.text(text);
   result.start_position(start_position);
@@ -470,7 +470,7 @@ form form::create(const xtd::string& text, form_start_position start_position, c
   return result;
 }
 
-form form::create(const xtd::string& text, form_start_position start_position, const drawing::point& location, const drawing::size& size) {
+auto form::create(const xtd::string& text, form_start_position start_position, const xtd::drawing::point& location, const xtd::drawing::size& size) -> form {
   auto result = form {};
   result.text(text);
   result.start_position(start_position);
@@ -479,7 +479,7 @@ form form::create(const xtd::string& text, form_start_position start_position, c
   return result;
 }
 
-form form::create(const xtd::string& text, form_start_position start_position, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
+auto form::create(const xtd::string& text, form_start_position start_position, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> form {
   auto result = form {};
   result.text(text);
   result.start_position(start_position);
@@ -489,7 +489,7 @@ form form::create(const xtd::string& text, form_start_position start_position, c
   return result;
 }
 
-form form::create(const xtd::string& text, form_start_position start_position, const drawing::size& size) {
+auto form::create(const xtd::string& text, form_start_position start_position, const xtd::drawing::size& size) -> form {
   auto result = form {};
   result.text(text);
   result.start_position(start_position);
@@ -497,7 +497,7 @@ form form::create(const xtd::string& text, form_start_position start_position, c
   return result;
 }
 
-form form::create(const xtd::string& text, form_start_position start_position, const drawing::size& size, const xtd::string& name) {
+auto form::create(const xtd::string& text, form_start_position start_position, const xtd::drawing::size& size, const xtd::string& name) -> form {
   auto result = form {};
   result.text(text);
   result.start_position(start_position);
@@ -506,7 +506,7 @@ form form::create(const xtd::string& text, form_start_position start_position, c
   return result;
 }
 
-bool form::pre_process_message(const xtd::forms::message& message) {
+auto form::pre_process_message(const xtd::forms::message& message) -> bool {
   if (message.msg == WM_KEYUP) {
     auto key_event_args = forms::key_event_args {static_cast<keys>(message.wparam)};
     if (key_event_args.key_data() == keys::enter && data_->accept_button.has_value()) {
@@ -521,7 +521,7 @@ bool form::pre_process_message(const xtd::forms::message& message) {
   return container_control::pre_process_message(message);
 }
 
-forms::dialog_result form::show_dialog() {
+auto form::show_dialog() -> xtd::forms::dialog_result {
   data_->closed = false;
   set_state(state::modal, true);
   data_->previous_screen = xtd::new_sptr<screen>(screen::from_control(*this));
@@ -533,7 +533,7 @@ forms::dialog_result form::show_dialog() {
   return result;
 }
 
-forms::dialog_result form::show_dialog(const iwin32_window& owner) {
+auto form::show_dialog(const iwin32_window& owner) -> xtd::forms::dialog_result {
   data_->closed = false;
   data_->parent_before_show_dialog = parent().has_value() ? parent().value().get().handle() : 0;
   set_state(state::modal, true);
@@ -569,7 +569,7 @@ namespace {
   };
 }
 
-void form::show_sheet(const iwin32_window& owner) {
+auto form::show_sheet(const iwin32_window& owner) -> void {
   auto params_saver = show_sheet_params_saver {environment::os_version().is_macos_platform() ? nullptr : this};
   data_->closed = false;
   data_->parent_before_show_dialog = parent().has_value() ? parent().value().get().handle() : 0;
@@ -582,7 +582,7 @@ void form::show_sheet(const iwin32_window& owner) {
   if (is_handle_created()) native::form::show_sheet(handle());
 }
 
-forms::dialog_result form::show_sheet_dialog(const iwin32_window& owner) {
+auto form::show_sheet_dialog(const iwin32_window& owner) -> xtd::forms::dialog_result {
   auto params_saver = show_sheet_params_saver {this};
   data_->closed = false;
   data_->parent_before_show_dialog = parent().has_value() ? parent().value().get().handle() : 0;
@@ -595,7 +595,7 @@ forms::dialog_result form::show_sheet_dialog(const iwin32_window& owner) {
   return is_handle_created() ? static_cast<forms::dialog_result>(native::form::show_sheet_dialog(handle())) : dialog_result::cancel;
 }
 
-forms::create_params form::create_params() const noexcept {
+auto form::create_params() const noexcept -> xtd::forms::create_params {
   auto create_params = container_control::create_params();
   
   create_params.class_name("form");
@@ -639,28 +639,28 @@ forms::create_params form::create_params() const noexcept {
   return create_params;
 }
 
-drawing::size form::default_size() const noexcept {
+auto form::default_size() const noexcept -> xtd::drawing::size {
   return {300, 300};
 }
 
-void form::on_activated(const event_args& e) {
+auto form::on_activated(const event_args& e) -> void {
   if (!can_raise_events()) return;
   auto safe_activated = activated;
   if (safe_activated.is_empty()) return;
   safe_activated(*this, e);
 }
 
-void form::on_deactivate(const event_args& e) {
+auto form::on_deactivate(const event_args& e) -> void {
   if (!can_raise_events()) return;
   auto safe_deactivate = deactivate;
   if (safe_deactivate.is_empty()) return;
   safe_deactivate(*this, e);
 }
 
-void form::on_handle_created(const event_args& e) {
+auto form::on_handle_created(const event_args& e) -> void {
   control::top_level_controls_.add(self_);
   container_control::on_handle_created(e);
-  if (data_->show_icon && data_->icon != drawing::icon::empty) native::form::icon(handle(), data_->icon);
+  if (data_->show_icon && data_->icon != xtd::drawing::icon::empty) native::form::icon(handle(), data_->icon);
   if (data_->accept_button.has_value()) data_->accept_button.value().get().notify_default(true);
   if (data_->opacity != 1.0) native::form::opacity(handle(), data_->opacity);
   if (!region().is_empty() && !region().is_infinite()) native::form::set_region(handle(), region().handle());
@@ -668,13 +668,13 @@ void form::on_handle_created(const event_args& e) {
   if (data_->menu.has_value()) create_system_menu();
 }
 
-void form::on_handle_destroyed(const event_args& e) {
+auto form::on_handle_destroyed(const event_args& e) -> void {
   control::top_level_controls_.remove(self_);
   container_control::on_handle_destroyed(e);
   destroy_system_menu();
 }
 
-void form::on_form_closed(const form_closed_event_args& e) {
+auto form::on_form_closed(const form_closed_event_args& e) -> void {
   static auto closing = false;
   if (closing) return;
   closing = true;
@@ -685,35 +685,35 @@ void form::on_form_closed(const form_closed_event_args& e) {
   closing = false;
 }
 
-void form::on_form_closing(form_closing_event_args& e) {
+auto form::on_form_closing(form_closing_event_args& e) -> void {
   if (!can_raise_events()) return;
   auto safe_form_closing = form_closing;
   if (safe_form_closing.is_empty()) return;
   safe_form_closing(*this, e);
 }
 
-void form::on_layout(const event_args& e) {
+auto form::on_layout(const event_args& e) -> void {
   scrollable_control::on_layout(e);
   if (is_handle_created() && auto_scroll()) native::form::virtual_size(handle(), display_rectangle().size());
 }
 
-void form::on_location_changed(const event_args& e) {
+auto form::on_location_changed(const event_args& e) -> void {
   if (handle() && top() < screen::get_working_area(handle()).top()) top(screen::get_working_area(handle()).top());
   container_control::on_location_changed(e);
 }
 
-void form::on_paint(paint_event_args& e) {
+auto form::on_paint(paint_event_args& e) -> void {
   auto style = style_sheet() != style_sheets::style_sheet::empty ? style_sheet() : style_sheets::style_sheet::current_style_sheet();
   if (control_appearance() == forms::control_appearance::standard) form_renderer::draw_form(style, e.graphics(), e.clip_rectangle(), control_state(), back_color() != default_back_color() ? std::optional<drawing::color> {back_color()} : std::nullopt);
   container_control::on_paint(e);
 }
 
-void form::on_region_changed(const event_args& e) {
+auto form::on_region_changed(const event_args& e) -> void {
   native::form::set_region(handle(), region().handle());
   container_control::on_region_changed(e);
 }
 
-void form::on_resize(const event_args& e) {
+auto form::on_resize(const event_args& e) -> void {
   if (is_handle_created()) {
     if (native::form::minimize(handle()))
       data_->window_state = forms::form_window_state::minimized;
@@ -727,7 +727,7 @@ void form::on_resize(const event_args& e) {
   container_control::on_resize(e);
 }
 
-void form::wnd_proc(message& message) {
+auto form::wnd_proc(message& message) -> void {
   switch (message.msg) {
     case WM_ACTIVATE: wm_activate(message); break;
     case WM_CLOSE: wm_close(message); break;
@@ -738,11 +738,11 @@ void form::wnd_proc(message& message) {
   }
 }
 
-bool form::closed_() const noexcept {
+auto form::closed_() const noexcept -> bool {
   return data_->closed;
 }
 
-void form::internal_set_window_state() {
+auto form::internal_set_window_state() -> void {
   if (!data_->previous_screen)
     post_recreate_handle();
   else if (is_handle_created()) {
@@ -756,7 +756,7 @@ void form::internal_set_window_state() {
   }
 }
 
-void form::create_system_menu() {
+auto form::create_system_menu() -> void {
   if (!data_->menu.has_value()) return;
   
   // Workaround : Get client size because afer changing tool bar to system, the client size does not correct.
@@ -768,7 +768,7 @@ void form::create_system_menu() {
   client_size(prev_client_size);
 }
 
-void form::destroy_system_menu() {
+auto form::destroy_system_menu() -> void {
   if (!data_->menu) return;
   
   // Workaround : Get client size because afer changing tool bar to system, the client size does not correct.
@@ -780,7 +780,7 @@ void form::destroy_system_menu() {
   client_size(prev_client_size);
 }
 
-void form::fill_in_create_params_border_styles(xtd::forms::create_params& create_params) const {
+auto form::fill_in_create_params_border_styles(xtd::forms::create_params& create_params) const -> void {
   switch (data_->form_border_style) {
     case xtd::forms::form_border_style::none: break;
     case xtd::forms::form_border_style::fixed_single: create_params.style(create_params.style() | WS_BORDER); break;
@@ -804,41 +804,30 @@ void form::fill_in_create_params_border_styles(xtd::forms::create_params& create
   }
 }
 
-void form::fill_in_create_params_border_icons(xtd::forms::create_params& create_params) const {
+auto form::fill_in_create_params_border_icons(xtd::forms::create_params& create_params) const -> void {
   if (data_->form_border_style == xtd::forms::form_border_style::none)
     create_params.class_style(create_params.class_style() | CS_NOCLOSE);
   else {
-    if (!xtd::string::is_empty(text()))
-      create_params.style(create_params.style() | WS_CAPTION);
+    if (!xtd::string::is_empty(text())) create_params.style(create_params.style() | WS_CAPTION);
       
-    if (data_->control_box)
-      create_params.style(create_params.style() | WS_SYSMENU | WS_CAPTION);
-    else
-      create_params.style(create_params.style() & ~WS_SYSMENU);
+    if (data_->control_box) create_params.style(create_params.style() | WS_SYSMENU | WS_CAPTION);
+    else create_params.style(create_params.style() & ~WS_SYSMENU);
       
-    if (!data_->close_box)
-      create_params.class_style(create_params.class_style() | CS_NOCLOSE);
-    else
-      create_params.class_style(create_params.class_style() & ~CS_NOCLOSE);
+    if (!data_->close_box) create_params.class_style(create_params.class_style() | CS_NOCLOSE);
+    else create_params.class_style(create_params.class_style() & ~CS_NOCLOSE);
       
-    if (data_->maximize_box)
-      create_params.style(create_params.style() | WS_MAXIMIZEBOX);
-    else
-      create_params.style(create_params.style() & ~WS_MAXIMIZEBOX);
+    if (data_->maximize_box) create_params.style(create_params.style() | WS_MAXIMIZEBOX);
+    else create_params.style(create_params.style() & ~WS_MAXIMIZEBOX);
       
-    if (data_->minimize_box)
-      create_params.style(create_params.style() | WS_MINIMIZEBOX);
-    else
-      create_params.style(create_params.style() & ~WS_MINIMIZEBOX);
+    if (data_->minimize_box) create_params.style(create_params.style() | WS_MINIMIZEBOX);
+    else create_params.style(create_params.style() & ~WS_MINIMIZEBOX);
       
-    if (data_->help_button && !data_->maximize_box && !data_->minimize_box && data_->control_box)
-      create_params.ex_style(create_params.ex_style() | WS_EX_CONTEXTHELP);
-    else
-      create_params.ex_style(create_params.ex_style() & ~WS_EX_CONTEXTHELP);
+    if (data_->help_button && !data_->maximize_box && !data_->minimize_box && data_->control_box) create_params.ex_style(create_params.ex_style() | WS_EX_CONTEXTHELP);
+    else create_params.ex_style(create_params.ex_style() & ~WS_EX_CONTEXTHELP);
   }
 }
 
-void form::fill_in_create_params_start_position(xtd::forms::create_params& create_params) const {
+auto form::fill_in_create_params_start_position(xtd::forms::create_params& create_params) const -> void {
   static auto default_location = 0;
   if (default_location == 0)
     default_location = xtd::random().next(4, 20) * 10;
@@ -862,10 +851,8 @@ void form::fill_in_create_params_start_position(xtd::forms::create_params& creat
         create_params.size({data_->previous_screen->working_area().width / 4 * 3, data_->previous_screen->working_area().height / 4 * 3});
         break;
       case form_start_position::center_parent:
-        if (parent().has_value())
-          create_params.location({parent().value().get().left() + (parent().value().get().width() - width()) / 2, parent().value().get().top() + (parent().value().get().height() - height()) / 2});
-        else
-          create_params.location({default_location, default_location});
+        if (parent().has_value()) create_params.location({parent().value().get().left() + (parent().value().get().width() - width()) / 2, parent().value().get().top() + (parent().value().get().height() - height()) / 2});
+        else create_params.location({default_location, default_location});
         create_params.size(size());
         break;
     }
@@ -875,7 +862,7 @@ void form::fill_in_create_params_start_position(xtd::forms::create_params& creat
   }
 }
 
-void form::fill_in_create_params_window_state(xtd::forms::create_params& create_params) const {
+auto form::fill_in_create_params_window_state(xtd::forms::create_params& create_params) const -> void {
   switch (data_->window_state) {
     case form_window_state::maximized: create_params.style(create_params.style() | WS_MAXIMIZE); break;
     case form_window_state::minimized: create_params.style(create_params.style() | WS_MINIMIZE); break;
@@ -883,7 +870,7 @@ void form::fill_in_create_params_window_state(xtd::forms::create_params& create_
   }
 }
 
-void form::wm_activate(message& message) {
+auto form::wm_activate(message& message) -> void {
   if (message.lparam == WA_INACTIVE && active_form_.has_value() && &active_form_.value().get() == this) {
     active_form_.reset();
     on_deactivate(event_args::empty);
@@ -893,7 +880,7 @@ void form::wm_activate(message& message) {
   }
 }
 
-void form::wm_close(message& message) {
+auto form::wm_close(message& message) -> void {
   if (data_->closed) return;
   auto event_args = form_closing_event_args {};
   on_form_closing(event_args);
@@ -914,13 +901,13 @@ void form::wm_close(message& message) {
   }
 }
 
-void form::wm_recreate(message& message) {
+auto form::wm_recreate(message& message) -> void {
   auto current_location = location();
   recreate_handle();
   location(current_location);
 }
 
-void form::wm_syscolor_change(message& message) {
+auto form::wm_syscolor_change(message& message) -> void {
   def_wnd_proc(message);
   if (&application::open_forms()[0].get() == this) style_sheets::style_sheet::on_system_colors_changed(event_args::empty);
   on_system_colors_changed(event_args::empty);
