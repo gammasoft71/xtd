@@ -23,8 +23,8 @@ namespace xtd {
         /// @name Public Methods
         
         /// @{
-        auto does() {return does_value<actual_t>(self_);}
-        auto is() {return is_value<actual_t>(self_);}
+        [[nodiscard]] auto does() {return does_value<actual_t>(self_);}
+        [[nodiscard]] auto is() {return is_value<actual_t>(self_);}
         /// @}
         
       protected:
