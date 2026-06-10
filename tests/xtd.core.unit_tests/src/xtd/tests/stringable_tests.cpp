@@ -22,7 +22,7 @@ namespace xtd::tests {
     auto test_method_(with_object) {
       struct my_object_test : public object {};
       assert_that(stringable<my_object_test>).is().true_();
-      assert_that(stringable < my_object_test && >).is().true_();
+      assert_that(stringable<my_object_test &&>).is().true_();
       assert_that(stringable<my_object_test&>).is().true_();
       assert_that(stringable<const my_object_test&>).is().true_();
     }
@@ -32,7 +32,7 @@ namespace xtd::tests {
         auto to_string() const noexcept -> string override {return "";}
       };
       assert_that(stringable<my_istringable_test>).is().true_();
-      assert_that(stringable < my_istringable_test && >).is().true_();
+      assert_that(stringable<my_istringable_test &&>).is().true_();
       assert_that(stringable<my_istringable_test&>).is().true_();
       assert_that(stringable<const my_istringable_test&>).is().true_();
     }
