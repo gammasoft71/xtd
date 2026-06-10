@@ -24,11 +24,6 @@ namespace xtd {
     /// @remarks The event occurs whenever the user clicks on a button on a xtd::forms::tool_bar control. The xtd::forms::tool_bar_button_click_event_args::button property contains the xtd::forms::tool_bar_button with the information about the button that was clicked.
     class tool_bar_button_click_event_args : public xtd::event_args {
     public:
-      /// @cond
-      tool_bar_button_click_event_args(const tool_bar_button_click_event_args&) = default;
-      tool_bar_button_click_event_args& operator =(const tool_bar_button_click_event_args&) = default;
-      /// @endcond
-      
       /// @name Public Constructors
       
       /// @{
@@ -38,7 +33,7 @@ namespace xtd {
       /// @brief Initializes a new instance of the xtd::forms::tool_bar_button_click_event_args class.
       /// @param button The xtd::forms::tool_bar_button that was clicked.
       /// @param handle An internal handle.
-      tool_bar_button_click_event_args(const xtd::forms::tool_bar_button& button, intptr handle) : button_(button), handle_(handle) {}
+      tool_bar_button_click_event_args(const xtd::forms::tool_bar_button& button, xtd::intptr handle) : button_(button), handle_(handle) {}
       /// @}
       
       /// @name Public Properties
@@ -46,16 +41,16 @@ namespace xtd {
       /// @{
       /// @brief Gets the xtd::forms::tool_bar_button that was clicked.
       /// @return The xtd::forms::tool_bar_button that was clicked.
-      const xtd::forms::tool_bar_button& button() const noexcept {return button_;}
+      [[nodiscard]] auto button() const noexcept -> const xtd::forms::tool_bar_button& {return button_;}
       
       /// @brief Gets internal handle.
       /// @return Internal handle.
-      intptr handle() const noexcept {return handle_;}
+      [[nodiscard]] auto handle() const noexcept -> xtd::intptr {return handle_;}
       /// @}
       
     private:
       xtd::forms::tool_bar_button button_;
-      intptr handle_ = 0;
+      xtd::intptr handle_ = 0;
     };
   }
 }
