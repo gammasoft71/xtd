@@ -49,8 +49,10 @@ namespace xtd {
       /// @}
       
       /// @cond
-      timer(timer&&) = default;
       timer(const timer&) = delete;
+      timer& operator =(const timer&) = delete;
+      timer(timer&&) = default;
+      timer& operator =(timer&&) = default;
       ~timer();
       /// @endcond
       
@@ -60,27 +62,27 @@ namespace xtd {
       /// @brief Gets whether the timer is running.
       /// @return `true` if the timer is currently enabled; otherwise, `false`. The default is `false`.
       /// @remarks Calling the start method is the same as setting enabled to `true`. Likewise, calling the stop method is the same as setting enabled to `false`.
-      virtual bool enabled() const noexcept;
+      [[nodiscard]] virtual auto enabled() const noexcept -> bool;
       /// @brief Sets whether the timer is running.
-      /// @param enabled `true` if the timer is currently enabled; otherwise, `false`. The default is `false`.
+      /// @param value `true` if the timer is currently enabled; otherwise, `false`. The default is `false`.
       /// @remarks Calling the start method is the same as setting enabled to `true`. Likewise, calling the stop method is the same as setting enabled to `false`.
-      virtual timer& enabled(bool enabled);
+      virtual auto enabled(bool value) -> timer&;
       
       /// @brief Gets the time, in milliseconds, before the tick event is raised relative to the last occurrence of the tick event.
       /// @return An xtd::time_span specifying the interval before the tick event is raised relative to the last occurrence of the tick event. The value must be greater than zero.
-      virtual time_span interval() const noexcept;
+      [[nodiscard]] virtual auto interval() const noexcept -> xtd::time_span;
       /// @brief Sets the time, in milliseconds, before the tick event is raised relative to the last occurrence of the tick event.
-      /// @param interval An xtd::time_span specifying the interval before the tick event is raised relative to the last occurrence of the tick event. The value must be greater than zero.
-      timer& interval(const time_span& interval);
+      /// @param value An xtd::time_span specifying the interval before the tick event is raised relative to the last occurrence of the tick event. The value must be greater than zero.
+      virtual auto interval(const xtd::time_span& value) -> timer&;
       
       /// @brief Gets the time, in milliseconds, before the tick event is raised relative to the last occurrence of the tick event.
       /// @return An int32 specifying the number of milliseconds before the tick event is raised relative to the last occurrence of the tick event. The value cannot be less than one.
       /// @remarks To get the number of seconds in the interval, divide this number by 1,000.
-      virtual int32 interval_milliseconds() const noexcept;
+      [[nodiscard]] virtual auto interval_milliseconds() const noexcept -> xtd::int32;
       /// @brief Sets the time, in milliseconds, before the tick event is raised relative to the last occurrence of the tick event.
-      /// @param interval An int32 specifying the number of milliseconds before the tick event is raised relative to the last occurrence of the tick event. The value cannot be less than one.
+      /// @param value An int32 specifying the number of milliseconds before the tick event is raised relative to the last occurrence of the tick event. The value cannot be less than one.
       /// @remarks To get the number of seconds in the interval, divide this number by 1,000.
-      virtual timer& interval_milliseconds(int32 interval);
+      virtual auto interval_milliseconds(xtd::int32 value) -> timer&;
       /// @}
       
       /// @name Public Methods
@@ -88,11 +90,11 @@ namespace xtd {
       /// @{
       /// @brief Stops the timer.
       /// @remarks You can also stop the timer by setting the enabled property to `false`.
-      void start();
+      auto start() -> void;
       
       /// @brief Starts the timer.
       /// @remarks You can also start the timer by setting the enabled property to `true`.
-      void stop();
+      auto stop() -> void;
       /// @}
       
       /// @name Public Static Methods
@@ -100,25 +102,25 @@ namespace xtd {
       /// @{
       /// @brief A factory to create an xtd::forms::timer.
       /// @return New xtd::forms::timer created.
-      static timer create();
+      [[nodiscard]] static auto create() -> timer;
       /// @brief A factory to create an xtd::forms::timer with specified interval.
       /// @param interval An xtd::time_span specifying the interval before the tick event is raised relative to the last occurrence of the tick event. The value must be greater than zero.
       /// @return New xtd::forms::timer created.
-      static timer create(const time_span& interval);
+      [[nodiscard]] static auto create(const xtd::time_span& interval) -> timer;
       /// @brief A factory to create an xtd::forms::timer with specified interval, and enable values.
       /// @param interval An xtd::time_span specifying the interval before the tick event is raised relative to the last occurrence of the tick event. The value must be greater than zero.
       /// @param enabled `true` if the timer is currently enabled; otherwise, `false`. The default is `false`.
       /// @return New xtd::forms::timer created.
-      static timer create(const time_span& interval, bool enable);
+      [[nodiscard]] static auto create(const xtd::time_span& interval, bool enable) -> timer;
       /// @brief A factory to create an xtd::forms::timer with specified interval.
       /// @param interval_milliseconds An int32 specifying the number of milliseconds before the tick event is raised relative to the last occurrence of the tick event. The value cannot be less than one.
       /// @return New xtd::forms::timer created.
-      static timer create(int interval_milliseconds);
+      [[nodiscard]] static auto create(xtd::int32 interval_milliseconds) -> timer;
       /// @brief A factory to create an xtd::forms::timer with specified interval, and enable values.
       /// @param interval_milliseconds An int32 specifying the number of milliseconds before the tick event is raised relative to the last occurrence of the tick event. The value cannot be less than one.
       /// @param enabled `true` if the timer is currently enabled; otherwise, `false`. The default is `false`.
       /// @return New xtd::forms::timer created.
-      static timer create(int interval_milliseconds, bool enable);
+      [[nodiscard]] static auto create(xtd::int32 interval_milliseconds, bool enable) -> timer;
       /// @}
       
       /// @name Public Events
@@ -127,7 +129,7 @@ namespace xtd {
       /// @brief Occurs when the specified timer interval has elapsed and the timer is enabled.
       /// @remarks Calling the Assert method on the xtd::diagnostics::debug class from within the tick event may not behave as expected, as displaying the assertion dialog box may cause Windows to raise the tick event repeatedly. We recommend that you refrain from testing assertions within this event, and use the write, write_if, write_line, or write_line_if methods instead.
       /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
-      event<timer, event_handler> tick;
+      xtd::event<timer, xtd::event_handler> tick;
       /// @}
       
     protected:
@@ -136,11 +138,11 @@ namespace xtd {
       /// @{
       /// @brief Raises the xtd::forms::timer::tick event.
       /// @param e An event_args that contains the event data. This is always xtd::event_args::empty.
-      virtual void on_tick(const event_args& e);
+      virtual auto on_tick(const xtd::event_args& e) -> void;
       /// @}
       
     private:
-      void restart();
+      auto restart() -> void;
       
       xtd::sptr<data> data_;
     };
