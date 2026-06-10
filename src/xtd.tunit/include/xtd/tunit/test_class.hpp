@@ -56,8 +56,6 @@ namespace xtd {
       /// @}
       
       /// @cond
-      test_class(const test_class&) = default;
-      test_class& operator =(const test_class&) = default;
       virtual ~test_class() = default;
       /// @endcond
       
@@ -66,39 +64,39 @@ namespace xtd {
       /// @{
       /// @brief Gets the elapsed time of the test class.
       /// @return The elapsed time of the test class.
-      xtd::time_span elapsed_time() const noexcept;
+      [[nodiscard]] auto elapsed_time() const noexcept -> xtd::time_span;
       
       /// @brief Gets the name of the test class.
       /// @return The nzme of the test class.
-      xtd::string name() const noexcept;
+      [[nodiscard]] auto name() const noexcept -> xtd::string;
       
       /// @brief Gets the test count.
       /// @return The test count.
-      xtd::usize test_count() const noexcept;
+      [[nodiscard]] auto test_count() const noexcept -> xtd::usize;
       
       /// @brief Gets the aborted test count.
       /// @return The aborted test count.
-      xtd::usize aborted_test_count() const noexcept;
+      [[nodiscard]] auto aborted_test_count() const noexcept -> xtd::usize;
       
       /// @brief Gets the failed test count.
       /// @return The failed test count.
-      xtd::usize failed_test_count() const noexcept;
+      [[nodiscard]] auto failed_test_count() const noexcept -> xtd::usize;
       
       /// @brief Gets the ignored test count.
       /// @return The ignored test count.
-      xtd::usize ignored_test_count() const noexcept;
+      [[nodiscard]] auto ignored_test_count() const noexcept -> xtd::usize;
       
       /// @brief Gets the succeed test count.
       /// @return The succeed test count.
-      xtd::usize succeed_test_count() const noexcept;
+      [[nodiscard]] auto succeed_test_count() const noexcept -> xtd::usize;
       
       /// @brief Gets the start time of the test class.
       /// @return The start time of the test class.
-      const xtd::date_time& start_time() const noexcept;
+      [[nodiscard]] auto start_time() const noexcept -> const xtd::date_time&;
       
       /// @brief Gets the tests array of this test class.
       /// @return The tests array.
-      const test_collection& tests() const noexcept;
+      [[nodiscard]] auto tests() const noexcept -> const test_collection&;
       /// @}
       
     protected:
@@ -107,23 +105,23 @@ namespace xtd {
       /// @{
       /// @brief Adds the class cleanup method.
       /// @param class_cleanup The class cleanup method.
-      void add_class_cleanup(const xtd::tunit::test& class_cleanup) noexcept;
+      auto add_class_cleanup(const xtd::tunit::test& class_cleanup) noexcept -> void;
       
       /// @brief Adds the class initialize method.
       /// @param class_initialize The class initialize method.
-      void add_class_initialize(const xtd::tunit::test& class_initialize) noexcept;
+      auto add_class_initialize(const xtd::tunit::test& class_initialize) noexcept -> void;
       
       /// @brief Adds the test cleanup method.
       /// @param test_cleanup The test cleanup method.
-      void add_test_cleanup(const xtd::tunit::test& test_cleanup) noexcept;
+      auto add_test_cleanup(const xtd::tunit::test& test_cleanup) noexcept -> void;
       
       /// @brief Adds the test initialize method.
       /// @param test_initialize The test initialize method.
-      void add_test_initialize(const xtd::tunit::test& test_initialize) noexcept;
+      auto add_test_initialize(const xtd::tunit::test& test_initialize) noexcept -> void;
       
       /// @brief Adds a test method.
       /// @param test The a test method.
-      void add_test_method(const xtd::tunit::test& test) noexcept;
+      auto add_test_method(const xtd::tunit::test& test) noexcept -> void;
       /// @}
       
     private:
@@ -136,13 +134,13 @@ namespace xtd {
       friend class xtd::tunit::test_cleanup_attribute;
       friend class xtd::tunit::test_method_attribute;
       
-      const xtd::tunit::test& class_cleanup() const noexcept;
-      const xtd::tunit::test& class_initialize() const noexcept;
-      const xtd::tunit::test& test_cleanup() const noexcept;
-      const xtd::tunit::test& test_initialize() const noexcept;
-      const test_collection& test_methods() const noexcept;
+      [[nodiscard]] auto class_cleanup() const noexcept -> const xtd::tunit::test&;
+      [[nodiscard]] auto class_initialize() const noexcept -> const xtd::tunit::test&;
+      [[nodiscard]] auto test_cleanup() const noexcept -> const xtd::tunit::test&;
+      [[nodiscard]] auto test_initialize() const noexcept -> const xtd::tunit::test&;
+      [[nodiscard]] auto test_methods() const noexcept -> const test_collection&;
       
-      void run(const xtd::tunit::unit_test& unit_test);
+      auto run(const xtd::tunit::unit_test& unit_test) -> void;
       
       xtd::tunit::test class_cleanup_;
       xtd::tunit::test class_initialize_;
