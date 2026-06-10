@@ -24,7 +24,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates the use of user control.
     /// @include user_control.cpp
-    class forms_export_ user_control : public container_control {
+    class forms_export_ user_control : public xtd::forms::container_control {
       struct data;
       
     public:
@@ -40,33 +40,33 @@ namespace xtd {
       /// @{
       /// @brief Gets the mode by which the user_control automatically resizes itself.
       /// @return An auto_size_mode enumerated value. The default is grow_only.
-      virtual forms::auto_size_mode auto_size_mode() const noexcept;
+      [[nodiscard]] virtual auto auto_size_mode() const noexcept -> xtd::forms::auto_size_mode;
       /// @brief Sets the mode by which the panel automatically resizes itself.
       /// @param value An auto_size_mode enumerated value. The default is grow_only.
       /// @return Current user_control instance.
-      virtual user_control& auto_size_mode(forms::auto_size_mode value);
+      virtual auto auto_size_mode(xtd::forms::auto_size_mode value) -> user_control&;
       
       /// @brief Gets the border sides for the control.
       /// @return A bitwise combination of the A bitwise combination values. The default is border_style::all.
-      virtual forms::border_sides border_sides() const noexcept;
+      [[nodiscard]] virtual auto border_sides() const noexcept -> xtd::forms::border_sides;
       /// @brief Sets the border sides for the control.
-      /// @param border_style A bitwise combination of the border_sides values. The default is border_style::all.
-      virtual user_control& border_sides(forms::border_sides border_sides);
+      /// @param value A bitwise combination of the border_sides values. The default is border_style::all.
+      virtual auto border_sides(xtd::forms::border_sides value) -> user_control&;
       
       /// @brief Gets the border style for the control.
       /// @return One of the xtd::forms::border_style values. The default is xtd::forms::border_style::none.
       /// @remarks You can use this property to add a border to the control. This property is typically used to differentiate a label that labels another control from a label that displays the status of a process in an application.
-      virtual xtd::forms::border_style border_style() const noexcept;
+      [[nodiscard]] virtual auto border_style() const noexcept -> xtd::forms::border_style;
       /// @brief Sets the border style for the control.
-      /// @param border_style One of the xtd::forms::border_style values. The default is xtd::forms::border_style::none.
+      /// @param value One of the xtd::forms::border_style values. The default is xtd::forms::border_style::none.
       /// @return Current user_control instance.
       /// @remarks You can use this property to add a border to the control. This property is typically used to differentiate a label that labels another control from a label that displays the status of a process in an application.
-      virtual user_control& border_style(forms::border_style border_style);
+      virtual auto border_style(xtd::forms::border_style value) -> user_control&;
       /// @brief Resets the border style for the control.
-      /// @param border_style nullptr.
+      /// @param xtd::null.
       /// @return Current user_control instance.
       /// @remarks You can use this property to add a border to the control. This property is typically used to differentiate a label that labels another control from a label that displays the status of a process in an application.
-      virtual user_control& border_style(std::nullptr_t border_style);
+      virtual auto border_style(xtd::null_ptr) -> user_control&;
       /// @}
       
       /// @name Public Static Methods
@@ -74,58 +74,58 @@ namespace xtd {
       /// @{
       /// @brief A factory to create an xtd::forms::user_control.
       /// @return New xtd::forms::user_control created.
-      static user_control create();
+      [[nodiscard]] static auto create() -> user_control;
       /// @brief A factory to create an xtd::forms::user_control with specified location.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::user_control.
       /// @return New xtd::forms::user_control created.
-      static user_control create(const drawing::point& location);
+      [[nodiscard]] static auto create(const xtd::drawing::point& location) -> user_control;
       /// @brief A factory to create an xtd::forms::user_control with specified location, and size.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::user_control.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::user_control.
       /// @return New xtd::forms::user_control created.
-      static user_control create(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto create(const xtd::drawing::point& location, const xtd::drawing::size& size) -> user_control;
       /// @brief A factory to create an xtd::forms::user_control with specified location, size, and name.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::user_control.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::user_control.
       /// @param name The name of the xtd::forms::user_control.
       /// @return New xtd::forms::user_control created.
-      static user_control create(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto create(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> user_control;
       /// @brief A factory to create an xtd::forms::user_control with specified parent.
       /// @param parent The parent that contains the new created xtd::forms::user_control.
       /// @return New xtd::forms::user_control created.
-      static user_control create(const control& parent);
+      [[nodiscard]] static auto create(const xtd::forms::control& parent) -> user_control;
       /// @brief A factory to create an xtd::forms::user_control with specified parent, and location.
       /// @param parent The parent that contains the new created xtd::forms::user_control.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::user_control.
       /// @return New xtd::forms::user_control created.
-      static user_control create(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto create(const xtd::forms::control& parent, const xtd::drawing::point& location) -> user_control;
       /// @brief A factory to create an xtd::forms::user_control with specified parent, location, and size.
       /// @param parent The parent that contains the new created xtd::forms::user_control.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::user_control.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::user_control.
       /// @return New xtd::forms::user_control created.
-      static user_control create(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto create(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> user_control;
       /// @brief A factory to create an xtd::forms::user_control with specified parent, location, size, and name.
       /// @param parent The parent that contains the new created xtd::forms::user_control.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::user_control.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::user_control.
       /// @param name The name of the xtd::forms::user_control.
       /// @return New xtd::forms::user_control created.
-      static user_control create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto create(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> user_control;
       /// @}
       
     protected:
       /// @name Protected Properties
       
       /// @{
-      forms::create_params create_params() const noexcept override;
+      [[nodiscard]] auto create_params() const noexcept -> xtd::forms::create_params override;
       /// @}
       
       /// @name Protected methodds
       
       /// @{
-      void on_layout(const event_args& e) override;
-      void on_paint(paint_event_args& e) override;
+      auto on_layout(const xtd::event_args& e) -> void override;
+      auto on_paint(xtd::forms::paint_event_args& e) -> void override;
       /// @}
       
     private:
