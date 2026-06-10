@@ -25,17 +25,12 @@ namespace xtd {
       explicit tunit_event_args(const xtd::tunit::unit_test& unit_test) : ut_(unit_test) {};
       /// @}
       
-      /// @cond
-      tunit_event_args(const tunit_event_args&) = default;
-      tunit_event_args& operator =(const tunit_event_args&) = delete;
-      /// @endcond
-      
       /// @name Public Properties
       
       /// @{
       /// @brief Gets current unit test.
       /// @return Current unit test.
-      const xtd::tunit::unit_test& unit_test() const {return ut_;}
+      [[nodiscard]] auto unit_test() const -> const xtd::tunit::unit_test& {return ut_;}
       /// @}
       
     private:
