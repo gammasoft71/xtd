@@ -35,47 +35,47 @@ namespace xtd {
       /// @{
       /// @brief Occurs when class is ended.
       /// @param class_event_args Contains class event parameters.
-      void on_class_end(const xtd::tunit::class_event_args& e) const override;
+      auto on_class_end(const xtd::tunit::class_event_args& e) const -> void override;
       
       /// @brief Occurs when class cleanup is started.
       /// @param class_event_args Contains class event parameters.
-      void on_class_start(const xtd::tunit::class_event_args& e) const override;
+      auto on_class_start(const xtd::tunit::class_event_args& e) const -> void override;
       
       /// @brief Occurs when test is aborted.
       /// @param test_event_args Contains test event parameters.
-      void on_test_aborted(const xtd::tunit::test_event_args& e) const override;
+      auto on_test_aborted(const xtd::tunit::test_event_args& e) const -> void override;
       
       /// @brief Occurs when test initialize is started.
       /// @param test_event_args Contains test event parameters.
-      void on_unit_test_cleanup_start(const xtd::tunit::tunit_event_args& e) const override;
+      auto on_unit_test_cleanup_start(const xtd::tunit::tunit_event_args& e) const -> void override;
       
       /// @brief Occurs when unit test initialize is started.
       /// @param tunit_event_args Contains unit test event parameters.
-      void on_unit_test_initialize_start(const xtd::tunit::tunit_event_args& e) const override;
+      auto on_unit_test_initialize_start(const xtd::tunit::tunit_event_args& e) const -> void override;
       
       /// @brief Occurs when test is failed.
       /// @param test_event_args Contains test event parameters.
-      void on_test_failed(const xtd::tunit::test_event_args& e) const override;
+      auto on_test_failed(const xtd::tunit::test_event_args& e) const -> void override;
       
       /// @brief Occurs when test is ignored.
       /// @param test_event_args Contains test event parameters.
-      void on_test_ignored(const xtd::tunit::test_event_args& e) const override;
+      auto on_test_ignored(const xtd::tunit::test_event_args& e) const -> void override;
       
       /// @brief Occurs when test initialize is started.
       /// @param test_event_args Contains test event parameters.
-      void on_test_start(const xtd::tunit::test_event_args& e) const override;
+      auto on_test_start(const xtd::tunit::test_event_args& e) const -> void override;
       
       /// @brief Occurs when test is succeed.
       /// @param test_event_args Contains test event parameters.
-      void on_test_succeed(const xtd::tunit::test_event_args& e) const override;
+      auto on_test_succeed(const xtd::tunit::test_event_args& e) const -> void override;
       
       /// @brief Occurs when unit test is ended.
       /// @param tunit_event_args Contains unit test event parameters.
-      void on_unit_test_end(const xtd::tunit::tunit_event_args& e) const override;
+      auto on_unit_test_end(const xtd::tunit::tunit_event_args& e) const -> void override;
       
       /// @brief Occurs when unit test cleanup is started.
       /// @param tunit_event_args Contains unit test event parameters.
-      void on_unit_test_start(const xtd::tunit::tunit_event_args& e) const override;
+      auto on_unit_test_start(const xtd::tunit::tunit_event_args& e) const -> void override;
       /// @}
       
     private:
