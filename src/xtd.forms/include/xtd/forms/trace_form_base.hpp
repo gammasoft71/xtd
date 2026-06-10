@@ -8,8 +8,8 @@
 #include <xtd/date_time>
 
 /// @cond
-xtd::string& __xtd_forms_trace_form_base_default_form_name__() noexcept;
-xtd::string& __xtd_forms_trace_form_base_default_text_box_name__() noexcept;
+auto __xtd_forms_trace_form_base_default_form_name__() noexcept -> xtd::string&;
+auto __xtd_forms_trace_form_base_default_text_box_name__() noexcept -> xtd::string&;
 /// @endcond
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -34,33 +34,34 @@ namespace xtd {
       /// @name Public Properties
       
       /// @{
-      xtd::forms::control& dock(xtd::forms::dock_style dock) override;
+      using xtd::forms::form::dock;
+      auto dock(xtd::forms::dock_style dock) -> xtd::forms::control& override;
       
       /// @brief Gets the string used to separate date and/or time from trace text.
       /// @return A string that represent separator. By default is "|".
-      virtual const xtd::string& header_separator() const noexcept;
+      [[nodiscard]] virtual auto header_separator() const noexcept -> const xtd::string&;
       /// @brief Sets the string used to separate date and/or time from trace text.
-      /// @param header_separator A string that represent separator. By default is "|".
+      /// @param value A string that represent separator. By default is "|".
       /// @return Current trace_form_base.
-      virtual trace_form_base& header_separator(const xtd::string& header_separator);
+      virtual auto header_separator(const xtd::string& value) -> trace_form_base&;
       
-      const xtd::string& name() const noexcept override;
+      [[nodiscard]] auto name() const noexcept -> const xtd::string& override;
       
       /// @brief Gets a value indicate if date is showing before trace text.
       /// @return `true` is date showing; otherwise `false`. By default is `true`.
-      virtual bool show_date() const noexcept;
+      [[nodiscard]] virtual auto show_date() const noexcept -> bool;
       /// @brief Sets a value indicate if date is showing before trace text.
       /// @param value `true` is date showing; otherwise `false`. By default is `true`.
       /// @return Current trace_form_base.
-      virtual trace_form_base& show_date(bool value);
+      virtual auto show_date(bool value) -> trace_form_base&;
       
       /// @brief Gets a value indicate if time is showing before trace text.
       /// @return `true` is time showing; otherwise `false`. By default is `true`.
-      virtual  bool show_time() const noexcept;
+      [[nodiscard]] virtual auto show_time() const noexcept -> bool;
       /// @brief Sets a value indicate if time is showing before trace text.
       /// @param value `true` is time showing; otherwise `false`. By default is `true`.
       /// @return Current trace_form_base.
-      virtual trace_form_base& show_time(bool value);
+      virtual auto show_time(bool value) -> trace_form_base&;
       /// @}
       
     protected:
@@ -71,40 +72,44 @@ namespace xtd {
       /// @param text A string that represent the caption text oof the debug form.
       explicit trace_form_base(const xtd::string& text);
       /// @}
-      
-      /// @name Protected Methods
+ 
+      /// @name Protected Prperties
       
       /// @{
-      void on_back_color_changed(const xtd::event_args& e) override;
-      void on_fore_color_changed(const xtd::event_args& e) override;
-      
-      /// @brief Writes trace string to the multiline text.
-      /// @param trace A string to write.
-      virtual void write(const xtd::string& trace);
-      
-      /// @brief Writes trace string to the multiline text followed by a line terminator.
-      /// @param trace A string to write.
-      virtual void write_line(const xtd::string& trace);
-      
-      /// @brief Writes header, if needed. Writes date and/or time and header_separator.
-      /// @param trace A string to write.
-      virtual void write_header();
-      
       /// @brief Gets a value indicate if header need written.
       /// @return `true` if header needed; otherwise `false`.
       /// @remarks After each line terminator, header was needed.
-      virtual bool need_header() const;
+      [[nodiscard]] virtual auto need_header() const -> bool;
       /// @brief Sets a value indicate if header need written.
       /// @param value `true` if header needed; otherwise `false`.
       /// @remarks After each line terminator, header was needed.
       /// @return Current trace_form_base.
-      virtual trace_form_base& need_header(bool value);
+      virtual auto need_header(bool value) -> trace_form_base&;
+      /// @}
+
+      /// @name Protected Methods
+      
+      /// @{
+      auto on_back_color_changed(const xtd::event_args& e) -> void override;
+      auto on_fore_color_changed(const xtd::event_args& e) -> void override;
+      
+      /// @brief Writes trace string to the multiline text.
+      /// @param trace A string to write.
+      virtual auto write(const xtd::string& trace) -> void;
+      
+      /// @brief Writes trace string to the multiline text followed by a line terminator.
+      /// @param trace A string to write.
+      virtual auto write_line(const xtd::string& trace) -> void;
+      
+      /// @brief Writes header, if needed. Writes date and/or time and header_separator.
+      /// @param trace A string to write.
+      virtual auto write_header() -> void;
       /// @}
       
     private:
       using form::name;
       
-      void update_format();
+      auto update_format() -> void;
       
       xtd::sptr<data> data_;
     };
