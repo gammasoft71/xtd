@@ -36,7 +36,7 @@ var searchData=
   ['thumbs_5fdown_5fsign_33',['thumbs_down_sign',['../classxtd_1_1forms_1_1emoticons.html#a76bda483991ea4675501299f24e5c953',1,'xtd::forms::emoticons']]],
   ['thumbs_5fup_5fsign_34',['thumbs_up_sign',['../classxtd_1_1forms_1_1emoticons.html#ac68b9b953e1f8b44fc278980455a926e',1,'xtd::forms::emoticons']]],
   ['thunder_5fcloud_5fand_5frain_35',['thunder_cloud_and_rain',['../classxtd_1_1forms_1_1emoticons.html#ac8bd1e19a5a5c7029d14f7f3ea649b7c',1,'xtd::forms::emoticons']]],
-  ['tick_36',['tick',['../classxtd_1_1forms_1_1timer.html#afd416d4174c3a9a9103e4cbd53bd25bf',1,'xtd::forms::timer']]],
+  ['tick_36',['tick',['../classxtd_1_1forms_1_1timer.html#ae8ada78d3249d17ef266cbee362cb3f7',1,'xtd::forms::timer']]],
   ['ticket_37',['ticket',['../classxtd_1_1forms_1_1emoticons.html#abe1675442f98a14db769a7caae4d05d4',1,'xtd::forms::emoticons']]],
   ['ticks_5fper_5fday_38',['ticks_per_day',['../classxtd_1_1time__span.html#a152dcc852f11e742234fe22a97b90166',1,'xtd::time_span']]],
   ['ticks_5fper_5fhour_39',['ticks_per_hour',['../classxtd_1_1time__span.html#a6e25cd8065e04debe2d09bb76aba0312',1,'xtd::time_span']]],

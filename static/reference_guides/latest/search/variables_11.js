@@ -20,7 +20,7 @@ var searchData=
   ['ram_17',['ram',['../classxtd_1_1forms_1_1emoticons.html#a4de180d3612636d997b8046200a6a39e',1,'xtd::forms::emoticons']]],
   ['rat_18',['rat',['../classxtd_1_1forms_1_1emoticons.html#a0d31fd10712c53b2c6a31dff91fd0e11',1,'xtd::forms::emoticons']]],
   ['razor_19',['razor',['../classxtd_1_1forms_1_1emoticons.html#abd19b0248ec08e3dc123e63c5bc6c8f4',1,'xtd::forms::emoticons']]],
-  ['read_5fonly_5fchanged_20',['read_only_changed',['../classxtd_1_1forms_1_1text__box__base.html#aa084f71f5c83f9ea19c8cb56a1d23dfb',1,'xtd::forms::text_box_base']]],
+  ['read_5fonly_5fchanged_20',['read_only_changed',['../classxtd_1_1forms_1_1text__box__base.html#a9a07b0284333ae504cb6176aca85214c',1,'xtd::forms::text_box_base']]],
   ['rebecca_5fpurple_21',['rebecca_purple',['../classxtd_1_1drawing_1_1color.html#a4e75b99d1dc517da3b96418e663b9169',1,'xtd::drawing::color']]],
   ['receipt_22',['receipt',['../classxtd_1_1forms_1_1emoticons.html#a7efb6a9734a104a026592003f29ef6cc',1,'xtd::forms::emoticons']]],
   ['recreational_5fvehicle_23',['recreational_vehicle',['../classxtd_1_1forms_1_1emoticons.html#a94d6d0495b2620cb671873b29c357495',1,'xtd::forms::emoticons']]],

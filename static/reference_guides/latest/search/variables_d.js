@@ -92,7 +92,7 @@ var searchData=
   ['moyai_89',['moyai',['../classxtd_1_1forms_1_1emoticons.html#a1ff3b1207eaec7f852138d8d444d9183',1,'xtd::forms::emoticons']]],
   ['msee_5fe_5fassemblyloadinprogress_90',['MSEE_E_ASSEMBLYLOADINPROGRESS',['../classxtd_1_1h__result.html#a51c2aaf7dbb3e15f63e8b840c156f778',1,'xtd::h_result']]],
   ['msg_91',['msg',['../structxtd_1_1forms_1_1message.html#ad9437b0763095356353784267fff0e26',1,'xtd::forms::message']]],
-  ['multiline_5fchanged_92',['multiline_changed',['../classxtd_1_1forms_1_1text__box__base.html#a8aa0a10df2faa3927e245f25fccb25d4',1,'xtd::forms::text_box_base']]],
+  ['multiline_5fchanged_92',['multiline_changed',['../classxtd_1_1forms_1_1text__box__base.html#ad989d168fcf4a3374523c9a1d41d7d5b',1,'xtd::forms::text_box_base']]],
   ['multiple_5fmusical_5fnotes_93',['multiple_musical_notes',['../classxtd_1_1forms_1_1emoticons.html#a0e8ec152b11d4f0c3f1a2e59b59f804c',1,'xtd::forms::emoticons']]],
   ['mushroom_94',['mushroom',['../classxtd_1_1forms_1_1emoticons.html#aac7a8246bb54792db6782670df1cfe4a',1,'xtd::forms::emoticons']]],
   ['musical_5fkeyboard_95',['musical_keyboard',['../classxtd_1_1forms_1_1emoticons.html#a2decd09c9ffbd4991236fc433be6f295',1,'xtd::forms::emoticons']]],

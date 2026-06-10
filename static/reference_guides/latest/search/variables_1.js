@@ -2,8 +2,8 @@ var searchData=
 [
   ['a_0',['a',['../structxtd_1_1drawing_1_1argb.html#aa2d44a2d6f6bf4fc9eaa871668bc0ffb',1,'xtd::drawing::argb::a'],['../structxtd_1_1drawing_1_1helpers_1_1alpha.html#a58eaae241fbb47ce0c62700bcd7d039e',1,'xtd::drawing::helpers::alpha::a']]],
   ['abacus_1',['abacus',['../classxtd_1_1forms_1_1emoticons.html#a1b15f43fda61abcf357652037f022344',1,'xtd::forms::emoticons']]],
-  ['accepts_5freturn_5fchanged_2',['accepts_return_changed',['../classxtd_1_1forms_1_1text__box.html#aa6823893a1a61ba023cfcc34ef7f9836',1,'xtd::forms::text_box']]],
-  ['accepts_5ftab_5fchanged_3',['accepts_tab_changed',['../classxtd_1_1forms_1_1text__box__base.html#ac6c58524c3a8ed263a9d7a24c10dfab8',1,'xtd::forms::text_box_base']]],
+  ['accepts_5freturn_5fchanged_2',['accepts_return_changed',['../classxtd_1_1forms_1_1text__box.html#a749ac5302c1f7f2f322a43d9a22c023f',1,'xtd::forms::text_box']]],
+  ['accepts_5ftab_5fchanged_3',['accepts_tab_changed',['../classxtd_1_1forms_1_1text__box__base.html#a27bf20735f287f5ec6650c9f2a6a776d',1,'xtd::forms::text_box_base']]],
   ['activated_4',['activated',['../classxtd_1_1forms_1_1form.html#a0cc7da083f0ee63d47060ae96043ce1e',1,'xtd::forms::form']]],
   ['adhesive_5fbandage_5',['adhesive_bandage',['../classxtd_1_1forms_1_1emoticons.html#a6a1cb2aa1387f68c01239ee267611a67',1,'xtd::forms::emoticons']]],
   ['admission_5ftickets_6',['admission_tickets',['../classxtd_1_1forms_1_1emoticons.html#a27126ce7bb9fd026772a36fea05af966',1,'xtd::forms::emoticons']]],

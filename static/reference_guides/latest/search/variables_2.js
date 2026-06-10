@@ -104,7 +104,7 @@ var searchData=
   ['bookmark_101',['bookmark',['../classxtd_1_1forms_1_1emoticons.html#a85124a236e501c14a4f165288884b25a',1,'xtd::forms::emoticons']]],
   ['bookmark_5ftabs_102',['bookmark_tabs',['../classxtd_1_1forms_1_1emoticons.html#a549293dc21c5c44dad72288c216218e5',1,'xtd::forms::emoticons']]],
   ['books_103',['books',['../classxtd_1_1forms_1_1emoticons.html#a4a9f98dc8bfb2a5a2011e142ca665a93',1,'xtd::forms::emoticons']]],
-  ['border_5fstyle_5fchanged_104',['border_style_changed',['../classxtd_1_1forms_1_1text__box__base.html#a2c9a8fb2bcfa83eb159b6973fa4166f6',1,'xtd::forms::text_box_base']]],
+  ['border_5fstyle_5fchanged_104',['border_style_changed',['../classxtd_1_1forms_1_1text__box__base.html#afc7b4ab850cf1b64ffa7b2dd2b2711ed',1,'xtd::forms::text_box_base']]],
   ['bottle_5fwith_5fpopping_5fcork_105',['bottle_with_popping_cork',['../classxtd_1_1forms_1_1emoticons.html#ab26ef4f1d7674217c0ddee0cdc79f1ed',1,'xtd::forms::emoticons']]],
   ['bouquet_106',['bouquet',['../classxtd_1_1forms_1_1emoticons.html#a1d38671fc0de9ad0496aa968894ff57f',1,'xtd::forms::emoticons']]],
   ['bow_5fand_5farrow_107',['bow_and_arrow',['../classxtd_1_1forms_1_1emoticons.html#a06720d1e309de8cd2dbf50b9d4f4d981',1,'xtd::forms::emoticons']]],

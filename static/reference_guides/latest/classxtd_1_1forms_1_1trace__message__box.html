@@ -164,7 +164,7 @@ Inheritance diagram for xtd::forms::trace_message_box:</div>
 <div class="line">    button_.location({10, 10});</div>
 <div class="line">    button_.text(<span class="stringliteral">&quot;Error...&quot;</span>);</div>
 <div class="line">    button_.click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
-<div class="line">      <a class="code hl_function" href="#a1b5758b4ad0b1fdfeb21e6e99d22b415">trace_message_box::show</a>(*<span class="keyword">this</span>, <span class="stringliteral">&quot;An unknown process error occured.&quot;</span>);</div>
+<div class="line">      <a class="code hl_function" href="#a9e91f3eb0a165cff31f1dcdb719b305c">trace_message_box::show</a>(*<span class="keyword">this</span>, <span class="stringliteral">&quot;An unknown process error occured.&quot;</span>);</div>
 <div class="line">    };</div>
 <div class="line">  }</div>
 <div class="line">  </div>
@@ -180,7 +180,7 @@ Inheritance diagram for xtd::forms::trace_message_box:</div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1application_html_a5a5321d22db7d71a0baa993a7f1be327"><div class="ttname"><a href="classxtd_1_1forms_1_1application.html#a5a5321d22db7d71a0baa993a7f1be327">xtd::forms::application::run</a></div><div class="ttdeci">static auto run() -&gt; void</div><div class="ttdoc">Begins running a standard application message loop on the current thread, without a form.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html">xtd::forms::form</a></div><div class="ttdoc">Represents a window or dialog box that makes up an application&#39;s user interface.</div><div class="ttdef"><b>Definition</b> form.hpp:54</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1form_html_a424bf98cf1ea1ff0190ffecb0ddfd344"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html#a424bf98cf1ea1ff0190ffecb0ddfd344">xtd::forms::form::parent</a></div><div class="ttdeci">auto parent(const xtd::forms::control &amp;value) -&gt; xtd::forms::control &amp;override</div><div class="ttdoc">Sets the parent container of the control.</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1trace__message__box_html_a1b5758b4ad0b1fdfeb21e6e99d22b415"><div class="ttname"><a href="#a1b5758b4ad0b1fdfeb21e6e99d22b415">xtd::forms::trace_message_box::show</a></div><div class="ttdeci">static xtd::forms::dialog_result show(const xtd::string &amp;text)</div><div class="ttdoc">Displays a message box and write trace with specified text.</div><div class="ttdef"><b>Definition</b> trace_message_box.hpp:42</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1trace__message__box_html_a9e91f3eb0a165cff31f1dcdb719b305c"><div class="ttname"><a href="#a9e91f3eb0a165cff31f1dcdb719b305c">xtd::forms::trace_message_box::show</a></div><div class="ttdeci">static auto show(const xtd::string &amp;text) -&gt; xtd::forms::dialog_result</div><div class="ttdoc">Displays a message box and write trace with specified text.</div><div class="ttdef"><b>Definition</b> trace_message_box.hpp:42</div></div>
 <div class="ttc" id="agroup__keywords_html_gac0b0b1a17f583a897eb6b424f2475363"><div class="ttname"><a href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a></div><div class="ttdeci">#define delegate_</div><div class="ttdoc">The declaration of a delegate type is similar to a method signature. It has a return value and any nu...</div><div class="ttdef"><b>Definition</b> delegate.hpp:1018</div></div>
 <div class="ttc" id="agroup__keywords_html_gaeb9462ec721c9718cf689e93bf11bf56"><div class="ttname"><a href="group__keywords.html#gaeb9462ec721c9718cf689e93bf11bf56">startup_</a></div><div class="ttdeci">#define startup_(...)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:284</div></div>
 <div class="ttc" id="agroup__style__sheets_html_ga902d7ba89795f62756de856e06822883"><div class="ttname"><a href="group__style__sheets.html#ga902d7ba89795f62756de856e06822883">xtd::forms::style_sheets::button</a></div><div class="ttdeci">xtd::forms::style_sheets::control button</div><div class="ttdoc">The buttton data allows you to specify the box of a button control.</div><div class="ttdef"><b>Definition</b> button.hpp:25</div></div>
@@ -188,14 +188,14 @@ Inheritance diagram for xtd::forms::trace_message_box:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Static Methods</h2></td></tr>
-<tr class="memitem:a1b5758b4ad0b1fdfeb21e6e99d22b415" id="r_a1b5758b4ad0b1fdfeb21e6e99d22b415"><td class="memItemLeft">static <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a>&#160;</td><td class="memItemRight"><a class="el" href="#a1b5758b4ad0b1fdfeb21e6e99d22b415">show</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text)</td></tr>
-<tr class="memdesc:a1b5758b4ad0b1fdfeb21e6e99d22b415"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a message box and write trace with specified text.  <br /></td></tr>
-<tr class="memitem:a976a1c2bc48bf4350e6cf8c71b1f3e58" id="r_a976a1c2bc48bf4350e6cf8c71b1f3e58"><td class="memItemLeft">static <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a>&#160;</td><td class="memItemRight"><a class="el" href="#a976a1c2bc48bf4350e6cf8c71b1f3e58">show</a> (const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;owner, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text)</td></tr>
-<tr class="memdesc:a976a1c2bc48bf4350e6cf8c71b1f3e58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a message box in front of the specified window and write trace with specified text.  <br /></td></tr>
+<tr class="memitem:a9e91f3eb0a165cff31f1dcdb719b305c" id="r_a9e91f3eb0a165cff31f1dcdb719b305c"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a9e91f3eb0a165cff31f1dcdb719b305c">show</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text) -&gt; <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td></tr>
+<tr class="memdesc:a9e91f3eb0a165cff31f1dcdb719b305c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a message box and write trace with specified text.  <br /></td></tr>
+<tr class="memitem:a9c6583123b3fcc69ce1360548d69185a" id="r_a9c6583123b3fcc69ce1360548d69185a"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a9c6583123b3fcc69ce1360548d69185a">show</a> (const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;owner, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;text) -&gt; <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td></tr>
+<tr class="memdesc:a9c6583123b3fcc69ce1360548d69185a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a message box in front of the specified window and write trace with specified text.  <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a1b5758b4ad0b1fdfeb21e6e99d22b415" name="a1b5758b4ad0b1fdfeb21e6e99d22b415"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1b5758b4ad0b1fdfeb21e6e99d22b415">&#9670;&#160;</a></span>show() <span class="overload">[1/2]</span></h2>
+<a id="a9e91f3eb0a165cff31f1dcdb719b305c" name="a9e91f3eb0a165cff31f1dcdb719b305c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e91f3eb0a165cff31f1dcdb719b305c">&#9670;&#160;</a></span>show() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -204,10 +204,10 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a> xtd::forms::trace_message_box::show </td>
+          <td class="memname">auto xtd::forms::trace_message_box::show </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>text</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt; <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td>
         </tr>
       </table>
   </td>
@@ -227,8 +227,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="a976a1c2bc48bf4350e6cf8c71b1f3e58" name="a976a1c2bc48bf4350e6cf8c71b1f3e58"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a976a1c2bc48bf4350e6cf8c71b1f3e58">&#9670;&#160;</a></span>show() <span class="overload">[2/2]</span></h2>
+<a id="a9c6583123b3fcc69ce1360548d69185a" name="a9c6583123b3fcc69ce1360548d69185a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c6583123b3fcc69ce1360548d69185a">&#9670;&#160;</a></span>show() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -237,14 +237,14 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a> xtd::forms::trace_message_box::show </td>
+          <td class="memname">auto xtd::forms::trace_message_box::show </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>owner</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>text</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>text</em></span>&#160;) -&gt; <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525">xtd::forms::dialog_result</a></td>
         </tr>
       </table>
   </td>
