@@ -36,18 +36,18 @@ namespace xtd {
       /// @brief Gets the ostream used by this instance.
       /// @return The ostream used by this instance.
       /// @warning Used it only if you need to write specific user messages. If you change or redirect it when tests running, the unit test output result will be indeterminate.
-      std::ostream& ostream();
+      [[nodiscard]] auto ostream() -> std::ostream&;
       /// @}
       
       /// @name Public Methods
       
       /// @{
-      int count_tests(int32 count) override;
-      int list_tests(const xtd::array<xtd::string>& tests) override;
-      bool parse_arguments(const xtd::array<xtd::string>& args) override;
+      [[nodiscard]] auto count_tests(xtd::int32 count) -> xtd::int32 override;
+      [[nodiscard]] auto list_tests(const xtd::array<xtd::string>& tests) -> xtd::int32 override;
+      [[nodiscard]] auto parse_arguments(const xtd::array<xtd::string>& args) -> bool override;
       
       /// @brief Write usage help on the ostream of this instance.
-      void write_help();
+      auto write_help() -> void;
       /// @}
       
     private:
