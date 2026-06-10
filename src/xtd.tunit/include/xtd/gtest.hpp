@@ -11,8 +11,8 @@
 #endif
 
 namespace testing {
-  void InitGoogleTest() {xtd::tunit::settings::default_settings().gtest_compatibility(true);}
-  void InitGoogleTest(int argc, char* argv[]) {InitGoogleTest();}
+  auto InitGoogleTest() -> void {xtd::tunit::settings::default_settings().gtest_compatibility(true);}
+  auto InitGoogleTest(int argc, char* argv[]) -> void {InitGoogleTest();}
 }
 
 #define ASSERT_EQ(val1, val2) xtd::tunit::assert::are_equal(val1, val2)
