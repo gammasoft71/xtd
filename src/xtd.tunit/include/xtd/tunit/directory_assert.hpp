@@ -48,7 +48,7 @@ namespace xtd {
       /// xtd::tunit::directory_assert::are_equal(d1, d2); // test ok.
       /// xtd::tunit::directory_assert::are_equal(d1, d3); // test throws an assert_error exception.
       /// ```
-      static void are_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
+      static auto are_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) -> void;
       /// @brief Asserts that two std::filesystem::directory_entry are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -63,7 +63,7 @@ namespace xtd {
       /// xtd::tunit::directory_assert::are_equal(d1, d2, "User message..."); // test ok.
       /// xtd::tunit::directory_assert::are_equal(d1, d3, "User message..."); // test throws an assert_error exception.
       /// ```
-      static void are_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
+      static auto are_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) -> void;
       /// @brief Asserts that two xtd::io::directory_info are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -77,7 +77,7 @@ namespace xtd {
       /// xtd::tunit::directory_assert::are_equal(d1, d2); // test ok.
       /// xtd::tunit::directory_assert::are_equal(d1, d3); // test throws an assert_error exception.
       /// ```
-      static void are_equal(const xtd::io::directory_info& expected, const xtd::io::directory_info& actual, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
+      static auto are_equal(const xtd::io::directory_info& expected, const xtd::io::directory_info& actual, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) -> void;
       /// @brief Asserts that two xtd::io::directory_info are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -92,7 +92,7 @@ namespace xtd {
       /// xtd::tunit::directory_assert::are_equal(d1, d2, "User message..."); // test ok.
       /// xtd::tunit::directory_assert::are_equal(d1, d3, "User message..."); // test throws an assert_error exception.
       /// ```
-      static void are_equal(const xtd::io::directory_info& expected, const xtd::io::directory_info& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
+      static auto are_equal(const xtd::io::directory_info& expected, const xtd::io::directory_info& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) -> void;
       
       /// @brief Asserts that two std::filesystem::directory_entry are not equal.
       /// @param expected the expected value.
@@ -107,7 +107,7 @@ namespace xtd {
       /// xtd::tunit::directory_assert::are_not_equal(d1, d3, "User message..."); // test ok.
       /// xtd::tunit::directory_assert::are_not_equal(d1, d2, "User message..."); // test throws an assert_error exception.
       /// ```
-      static void are_not_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
+      static auto are_not_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) -> void;
       /// @brief Asserts that two std::filesystem::directory_entry are not equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -122,7 +122,7 @@ namespace xtd {
       /// xtd::tunit::directory_assert::are_not_equal(d1, d3, "User message..."); // test ok.
       /// xtd::tunit::directory_assert::are_not_equal(d1, d2, "User message..."); // test throws an assert_error exception.
       /// ```
-      static void are_not_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
+      static auto are_not_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) -> void;
       /// @brief Asserts that two xtd::io::directory_info are not equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -136,7 +136,7 @@ namespace xtd {
       /// xtd::tunit::directory_assert::are_not_equal(d1, d3, "User message..."); // test ok.
       /// xtd::tunit::directory_assert::are_not_equal(d1, d2, "User message..."); // test throws an assert_error exception.
       /// ```
-      static void are_not_equal(const xtd::io::directory_info& expected, const xtd::io::directory_info& actual, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
+      static auto are_not_equal(const xtd::io::directory_info& expected, const xtd::io::directory_info& actual, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) -> void;
       /// @brief Asserts that two xtd::io::directory_info are not equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -151,7 +151,7 @@ namespace xtd {
       /// xtd::tunit::directory_assert::are_not_equal(d1, d3, "User message..."); // test ok.
       /// xtd::tunit::directory_assert::are_not_equal(d1, d2, "User message..."); // test throws an assert_error exception.
       /// ```
-      static void are_not_equal(const xtd::io::directory_info& expected, const xtd::io::directory_info& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
+      static auto are_not_equal(const xtd::io::directory_info& expected, const xtd::io::directory_info& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) -> void;
       
       /// @brief Asserts that directory not exists.
       /// @param expected the expected value.
@@ -165,7 +165,7 @@ namespace xtd {
       /// xtd::tunit::directory_assert::does_not_exist(d2); // test ok.
       /// xtd::tunit::directory_assert::does_not_exist(d1); // test throws an assert_error exception.
       /// ```
-      static void does_not_exist(const std::filesystem::directory_entry& directory, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
+      static auto does_not_exist(const std::filesystem::directory_entry& directory, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) -> void;
       /// @brief Asserts that directory not exists.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -179,7 +179,7 @@ namespace xtd {
       /// xtd::tunit::directory_assert::does_not_exist(d2); // test ok.
       /// xtd::tunit::directory_assert::does_not_exist(d1); // test throws an assert_error exception.
       /// ```
-      static void does_not_exist(const std::filesystem::directory_entry& directory, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
+      static auto does_not_exist(const std::filesystem::directory_entry& directory, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) -> void;
       
       /// @brief Asserts that directory not exists.
       /// @param expected the expected value.
@@ -193,7 +193,7 @@ namespace xtd {
       /// xtd::tunit::directory_assert::does_not_exist(d2); // test ok.
       /// xtd::tunit::directory_assert::does_not_exist(d1); // test throws an assert_error exception.
       /// ```
-      static void does_not_exist(const xtd::io::directory_info& directory, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
+      static auto does_not_exist(const xtd::io::directory_info& directory, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) -> void;
       /// @brief Asserts that directory not exists.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -207,7 +207,7 @@ namespace xtd {
       /// xtd::tunit::directory_assert::does_not_exist(d2); // test ok.
       /// xtd::tunit::directory_assert::does_not_exist(d1); // test throws an assert_error exception.
       /// ```
-      static void does_not_exist(const xtd::io::directory_info& directory, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
+      static auto does_not_exist(const xtd::io::directory_info& directory, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) -> void;
       
       /// @brief Asserts that directory not exists.
       /// @param expected the expected value.
@@ -222,7 +222,7 @@ namespace xtd {
       /// xtd::tunit::directory_assert::does_not_exist(d1); // test throws an assert_error exception.
       /// ```
       template<typename char_t>
-      static void does_not_exist(const xtd::basic_string<char_t>& directory, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {does_not_exist(directory, xtd::string::empty_string, stack_frame);}
+      static auto does_not_exist(const xtd::basic_string<char_t>& directory, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) -> void {does_not_exist(directory, xtd::string::empty_string, stack_frame);}
       /// @brief Asserts that directory not exists.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -237,13 +237,13 @@ namespace xtd {
       /// xtd::tunit::directory_assert::does_not_exist(d1); // test throws an assert_error exception.
       /// ```
       template<typename char_t>
-      static void does_not_exist(const xtd::basic_string<char_t>& directory, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {does_not_exist(xtd::io::directory_info(directory), message, stack_frame);}
+      static auto does_not_exist(const xtd::basic_string<char_t>& directory, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) -> void {does_not_exist(xtd::io::directory_info(directory), message, stack_frame);}
       
       /// @cond
       template<typename char_t>
-      static void does_not_exist(const char_t* directory, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {does_not_exist(directory, xtd::string::empty_string, stack_frame);}
+      static auto does_not_exist(const char_t* directory, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) -> void {does_not_exist(directory, xtd::string::empty_string, stack_frame);}
       template<typename char_t>
-      static void does_not_exist(const char_t* directory, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {does_not_exist(xtd::basic_string<char_t>(directory), message, stack_frame);}
+      static auto does_not_exist(const char_t* directory, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) -> void {does_not_exist(xtd::basic_string<char_t>(directory), message, stack_frame);}
       /// @endcond
       
       /// @brief Asserts that directory exists.
@@ -258,7 +258,7 @@ namespace xtd {
       /// xtd::tunit::directory_assert::exists(d1); // test ok.
       /// xtd::tunit::directory_assert::exists(d2); // test throws an assert_error exception.
       /// ```
-      static void exists(const std::filesystem::directory_entry& directory, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
+      static auto exists(const std::filesystem::directory_entry& directory, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) -> void;
       /// @brief Asserts that directory exists.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -272,7 +272,7 @@ namespace xtd {
       /// xtd::tunit::directory_assert::exists(d1); // test ok.
       /// xtd::tunit::directory_assert::exists(d2); // test throws an assert_error exception.
       /// ```
-      static void exists(const std::filesystem::directory_entry& directory, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
+      static auto exists(const std::filesystem::directory_entry& directory, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) -> void;
       /// @brief Asserts that directory exists.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -285,7 +285,7 @@ namespace xtd {
       /// xtd::tunit::directory_assert::exists(d1); // test ok.
       /// xtd::tunit::directory_assert::exists(d2); // test throws an assert_error exception.
       /// ```
-      static void exists(const xtd::io::directory_info& directory, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
+      static auto exists(const xtd::io::directory_info& directory, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) -> void;
       /// @brief Asserts that directory exists.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -299,7 +299,7 @@ namespace xtd {
       /// xtd::tunit::directory_assert::exists(d1); // test ok.
       /// xtd::tunit::directory_assert::exists(d2); // test throws an assert_error exception.
       /// ```
-      static void exists(const xtd::io::directory_info& directory, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
+      static auto exists(const xtd::io::directory_info& directory, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) -> void;
       
       /// @brief Asserts that directory exists.
       /// @param expected the expected value.
@@ -314,7 +314,7 @@ namespace xtd {
       /// xtd::tunit::directory_assert::exists(d2); // test throws an assert_error exception.
       /// ```
       template<typename char_t>
-      static void exists(const xtd::basic_string<char_t>& directory, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {exists(directory, xtd::string::empty_string, stack_frame);}
+      static auto exists(const xtd::basic_string<char_t>& directory, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) -> void {exists(directory, xtd::string::empty_string, stack_frame);}
       /// @brief Asserts that directory exists.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -329,13 +329,13 @@ namespace xtd {
       /// xtd::tunit::directory_assert::exists(d2); // test throws an assert_error exception.
       /// ```
       template<typename char_t>
-      static void exists(const xtd::basic_string<char_t>& directory, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {exists(xtd::io::directory_info(directory), message, stack_frame);}
+      static auto exists(const xtd::basic_string<char_t>& directory, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) -> void {exists(xtd::io::directory_info(directory), message, stack_frame);}
       
       /// @cond
       template<typename char_t>
-      static void exists(const char_t* directory, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {exists(directory, xtd::string::empty_string, stack_frame);}
+      static auto exists(const char_t* directory, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) -> void {exists(directory, xtd::string::empty_string, stack_frame);}
       template<typename char_t>
-      static void exists(const char_t* directory, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {exists(xtd::basic_string<char_t>(directory), message, stack_frame);}
+      static auto exists(const char_t* directory, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) -> void {exists(xtd::basic_string<char_t>(directory), message, stack_frame);}
       /// @endcond
       /// @}
     };
