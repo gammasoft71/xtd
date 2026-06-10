@@ -22,6 +22,6 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms
-    using vertical_control_layout_style_collection = std::vector<xtd::collections::generic::key_value_pair<control_ref, vertical_control_layout_style>>;
+    using vertical_control_layout_style_collection = std::vector<xtd::collections::generic::key_value_pair<xtd::forms::control_ref, xtd::forms::vertical_control_layout_style>>;
   }
 }
