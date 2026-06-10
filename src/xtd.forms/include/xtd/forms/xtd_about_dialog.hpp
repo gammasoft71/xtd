@@ -27,7 +27,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates the use of xtd_about_dialog dialog.
     /// @include xtd_about_dialog.cpp
-    class forms_export_ xtd_about_dialog final : public component {
+    class forms_export_ xtd_about_dialog final : public xtd::forms::component {
       struct data;
       
     public:
@@ -42,9 +42,9 @@ namespace xtd {
       
       /// @{
       /// @brief Runs xtd about dialog box.
-      void show();
+      auto show() -> void;
       /// @brief Runs xtd about dialog box.
-      void show(const iwin32_window& owner);
+      auto show(const xtd::forms::iwin32_window& owner) -> void;
       /// @}
       
     private:
