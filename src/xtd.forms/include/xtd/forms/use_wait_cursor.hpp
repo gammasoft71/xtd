@@ -22,7 +22,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates the use of use_wait_cursor class.
     /// @include use_wait_cursor.cpp
-    class use_wait_cursor : public object {
+    class use_wait_cursor : public xtd::object {
     public:
       /// @name Public Constructors
       
