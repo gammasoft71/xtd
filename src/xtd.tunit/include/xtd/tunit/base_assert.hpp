@@ -42,7 +42,7 @@ namespace xtd {
       /// ```cpp
       /// xtd::tunit::assert::abort(); // test throws an abort_error exception.
       /// ```
-      static void abort(const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
+      static auto abort(const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) -> void;
       /// @brief Abort current test. This is used by the other assert functions.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param stack_frame Contains information about current file and current line.
@@ -50,7 +50,7 @@ namespace xtd {
       /// ```cpp
       /// xtd::tunit::assert::abort("User message..."); // test throws an abort_error exception.
       /// ```
-      static void abort(const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
+      static auto abort(const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) -> void;
       
       /// @brief Throws an xtd::tunit::assert_error exception. This is used by the other assert functions.
       /// @param stack_frame Contains information about current file and current line.
@@ -59,7 +59,7 @@ namespace xtd {
       /// ```cpp
       /// xtd::tunit::assert::fail(); // test throws an assert_error exception.
       /// ```
-      static void fail(const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
+      static auto fail(const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) -> void;
       /// @brief Throws an xtd::tunit::assert_error exception. This is used by the other assert functions.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param stack_frame Contains information about current file and current line.
@@ -68,7 +68,7 @@ namespace xtd {
       /// ```cpp
       /// xtd::tunit::assert::fail("User message..."); // test throws an assert_error exception.
       /// ```
-      static void fail(const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
+      static auto fail(const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) -> void;
       
       /// @brief Ignore current test. This is used by the other assert functions.
       /// @param stack_frame Contains information about current file and current line.
@@ -77,7 +77,7 @@ namespace xtd {
       /// ```cpp
       /// xtd::tunit::assert::ignore(); // test throws an ignore_error exception.
       /// ```
-      static void ignore(const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
+      static auto ignore(const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) -> void;
       /// @brief Ignore current test. This is used by the other assert functions.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param stack_frame Contains information about current file and current line.
@@ -85,7 +85,7 @@ namespace xtd {
       /// ```cpp
       /// xtd::tunit::assert::ignore("User message..."); // test throws an ignore_error exception.
       /// ```
-      static void ignore(const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
+      static auto ignore(const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) -> void;
       
       /// @brief Generates a success with a generic message. This is used by the other assert functions.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -93,7 +93,7 @@ namespace xtd {
       /// ```cpp
       /// xtd::tunit::assert::succeed(); // test ok.
       /// ```
-      static void succeed(const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
+      static auto succeed(const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) -> void;
       /// @brief Generates a success with a generic message. This is used by the other assert functions.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param stack_frame Contains information about current file and current line.
@@ -101,7 +101,7 @@ namespace xtd {
       /// ```cpp
       /// xtd::tunit::assert::succeed("User message..."); // test ok.
       /// ```
-      static void succeed(const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
+      static auto succeed(const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) -> void;
       /// @}
       
     protected:
@@ -114,21 +114,21 @@ namespace xtd {
       /// ```cpp
       /// xtd::tunit::assert::error(); // test throws an assert_error exception.
       /// ```
-      static void error();
+      static auto error() -> void;
       /// @brief Throws an xtd::tunit::assert_error exception. This is used by the other assert functions.
       /// @exception xtd::tunit::assert_error If bad assertion.
       /// @par Examples
       /// ```cpp
       /// xtd::tunit::assert::error("User message..."); // test throws an assert_error exception.
       /// ```
-      static void error(const xtd::string& message);
+      static auto error(const xtd::string& message) -> void;
       /// @brief Throws an xtd::tunit::assert_error exception. This is used by the other assert functions.
       /// @exception xtd::tunit::assert_error If bad assertion.
       /// @par Examples
       /// ```cpp
       /// xtd::tunit::assert::error(actual_str, expected_str, "User message..."); // test throws an assert_error exception.
       /// ```
-      static void error(const xtd::string& actual, const xtd::string& expected, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
+      static auto error(const xtd::string& actual, const xtd::string& expected, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) -> void;
       
       /// @brief Throws an xtd::tunit::assert_error exception. This is used by the other assert functions.
       /// @exception xtd::tunit::assert_error If bad assertion.
@@ -136,7 +136,7 @@ namespace xtd {
       /// ```cpp
       /// xtd::tunit::assert::fail(actual_str, expected_str, "User message..."); // test throws an assert_error exception.
       /// ```
-      static void fail(const xtd::string& actual, const xtd::string& expected, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
+      static auto fail(const xtd::string& actual, const xtd::string& expected, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) -> void {
         if (!test_fail(actual, expected, message, stack_frame) && xtd::environment::compiler_version().build_type() == build_type::debug) {
           auto msg = message != xtd::string {""} ? message : xtd::string {"assertion failed!"}; // Force asyle do not remove {}
           assert_(false, msg);
@@ -150,22 +150,22 @@ namespace xtd {
       /// @param value The value to convert to xtd::string.
       /// @return The xtd::string that contains the value.
       template<typename value_t>
-      static xtd::string to_string(const value_t& value) {return __tunit_to_string(value);}
+      static auto to_string(const value_t& value) -> xtd::string {return __tunit_to_string(value);}
       /// @brief Convert specified value to xtd::string.
       /// @param value The value to convert to xtd::string.
       /// @return The xtd::string that contains the value.
       template<typename value_t>
-      static xtd::string to_string(const value_t* value) {return __tunit_to_string(value);}
+      static auto to_string(const value_t* value) -> xtd::string {return __tunit_to_string(value);}
       
       /// @brief Join specified collection into xtd::string.
       /// @param collection The collection to join into xtd::string.
       /// @return The xtd::string that contains the joined collection.
       template<typename collection_t>
-      static xtd::string join_items(const collection_t& collection) {return __tunit_join__items(collection);}
+      static auto join_items(const collection_t& collection) -> xtd::string {return __tunit_join__items(collection);}
       /// @brief Join specified string into xtd::string.
       /// @param str The joined to join into xtd::string.
       /// @return The xtd::string that contains the joined string.
-      static xtd::string join_items(const xtd::string& str);
+      static auto join_items(const xtd::string& str) -> xtd::string;
       /// @}
       
       /// @name Protected Static Methods
@@ -176,7 +176,7 @@ namespace xtd {
       /// @param value_a The second value.
       /// @return `true` if `value_a` is equal to `value_b`; otherwise `false`.
       template<typename value_a_t, typename value_b_t>
-      static bool equals(const value_a_t& value_a, const value_b_t& value_b) {
+      [[nodiscard]] static auto equals(const value_a_t& value_a, const value_b_t& value_b) -> bool {
         return value_a == value_b;
       }
       /// @brief Determines if specified values are equal.
@@ -184,7 +184,7 @@ namespace xtd {
       /// @param value_a The second value.
       /// @return `true` if `value_a` is equal to `value_b`; otherwise `false`.
       template<typename char_t>
-      static bool equals(const char_t* value_a, const string& value_b) {
+      [[nodiscard]] static auto equals(const char_t* value_a, const string& value_b) -> bool {
         return xtd::string {value_a} == value_b;
       }
       /// @brief Determines if specified values are equal.
@@ -192,28 +192,28 @@ namespace xtd {
       /// @param value_a The second value.
       /// @return `true` if `value_a` is equal to `value_b`; otherwise `false`.
       template<typename char_t>
-      static bool equals(const string&  value_a, const char_t* value_b) {
+      [[nodiscard]] static auto equals(const string&  value_a, const char_t* value_b) -> bool {
         return value_a == xtd::string {value_b};
       }
       /// @brief Determines if specified values are equal.
       /// @param value_a The first value.
       /// @param value_a The second value.
       /// @return `true` if `value_a` is equal to `value_b`; otherwise `false`.
-      static bool equals(long double value_a, long double value_b) {
+      [[nodiscard]] static auto equals(long double value_a, long double value_b) -> bool {
         return equals(value_a, value_b, 0.0001l);
       }
       /// @brief Determines if specified values are equal.
       /// @param value_a The first value.
       /// @param value_a The second value.
       /// @return `true` if `value_a` is equal to `value_b`; otherwise `false`.
-      static bool equals(double value_a, double value_b) {
+      [[nodiscard]] static auto equals(double value_a, double value_b) -> bool {
         return equals(value_a, value_b, 0.0001);
       }
       /// @brief Determines if specified values are equal.
       /// @param value_a The first value.
       /// @param value_a The second value.
       /// @return `true` if `value_a` is equal to `value_b`; otherwise `false`.
-      static bool equals(float value_a, float value_b) {
+      [[nodiscard]] static auto equals(float value_a, float value_b) -> bool {
         return equals(value_a, value_b, 0.0001f);
       }
       /// @brief Determines if specified values are equal with tolerance.
@@ -221,7 +221,7 @@ namespace xtd {
       /// @param value_a The second value.
       /// @param tolerance Indicates a tolerance within which they will be considered as equal in percent. For example 0.0001l repsesent 0.01%.
       /// @return `true` if `value_a` is equal to `value_b`; otherwise `false`.
-      static bool equals(double value_a, double value_b, double tolerance) {
+      [[nodiscard]] static auto equals(double value_a, double value_b, double tolerance) -> bool {
         return value_a == value_b ? true : xtd::math::abs(value_a - value_b) <= (xtd::math::abs(tolerance) * xtd::math::max(xtd::math::abs(value_a), xtd::math::abs(value_b)));
       }
       /// @brief Determines if specified values are equal with tolerance.
@@ -229,7 +229,7 @@ namespace xtd {
       /// @param value_a The second value.
       /// @param tolerance Indicates a tolerance within which they will be considered as equal in percent. For example 0.0001 repsesent 0.01%.
       /// @return `true` if `value_a` is equal to `value_b`; otherwise `false`.
-      static bool equals(long double value_a, long double value_b, long double tolerance) {
+      [[nodiscard]] static auto equals(long double value_a, long double value_b, long double tolerance) -> bool {
         return value_a == value_b ? true : xtd::math::abs(value_a - value_b) <= (xtd::math::abs(tolerance) * xtd::math::max(xtd::math::abs(value_a), xtd::math::abs(value_b)));
       }
       /// @brief Determines if specified values are equal with tolerance.
@@ -237,13 +237,13 @@ namespace xtd {
       /// @param value_a The second value.
       /// @param tolerance Indicates a tolerance within which they will be considered as equal in percent. For example 0.0001f repsesent 0.01%.
       /// @return `true` if `value_a` is equal to `value_b`; otherwise `false`.
-      static bool equals(float value_a, float value_b, float tolerance) {
+      [[nodiscard]] static auto equals(float value_a, float value_b, float tolerance) -> bool {
         return value_a == value_b ? true : xtd::math::abs(value_a - value_b) <= (xtd::math::abs(tolerance) * xtd::math::max(xtd::math::abs(value_a), xtd::math::abs(value_b)));
       }
       /// @}
       
     private:
-      static bool test_fail(const xtd::string& expected, const xtd::string& actual, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame);
+      static auto test_fail(const xtd::string& expected, const xtd::string& actual, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame) -> bool;
     };
   }
 }
