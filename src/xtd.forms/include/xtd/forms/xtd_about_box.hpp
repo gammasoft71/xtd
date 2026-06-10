@@ -30,10 +30,10 @@ namespace xtd {
       /// @{
       /// @brief Displays the xtd about box in front of the specified window.
       /// @param owner A iwin32_window that represents the owner window of the xtd about box.
-      static void show(const iwin32_window& owner);
+      static auto show(const xtd::forms::iwin32_window& owner) -> void;
       
       /// @brief Displays the xtd about box.
-      static void show();
+      static auto show() -> void;
       /// @}
     };
   }
