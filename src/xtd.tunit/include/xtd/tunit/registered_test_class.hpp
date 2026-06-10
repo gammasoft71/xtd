@@ -34,7 +34,7 @@ namespace xtd {
     private:
       friend class xtd::tunit::unit_test;
       
-      const xtd::sptr<xtd::tunit::test_class>& test() const noexcept;
+      [[nodiscard]] auto test() const noexcept -> const xtd::sptr<xtd::tunit::test_class>&;
       
       xtd::sptr<xtd::tunit::test_class> tc_;
     };
