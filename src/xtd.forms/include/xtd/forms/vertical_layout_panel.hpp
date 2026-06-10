@@ -29,7 +29,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates the use of vertical_layout_panel container.
     /// @include vertical_layout_panel.cpp
-    class vertical_layout_panel : public panel {
+    class vertical_layout_panel : public xtd::forms::panel {
     public:
       /// @name Public Constructors
       
@@ -43,18 +43,18 @@ namespace xtd {
       /// @{
       /// @brief Gets vertical control layout style for all child controls.
       /// @return The vertical control layout style collection.
-      const vertical_control_layout_style_collection& control_layout_styles() const noexcept;
+      [[nodiscard]] auto control_layout_styles() const noexcept -> const vertical_control_layout_style_collection&;
       
       /// @brief Gets vertical control layout style for specified child controls.
       /// @param control The control to get vertical control layout style.
       /// @return The vertical control layout style for the specified control.
       /// @exception xtd::argument_exception container does not contains control.
-      const vertical_control_layout_style& control_layout_style(const control_ref& control) const;
+      [[nodiscard]] auto control_layout_style(const control_ref& control) const -> const vertical_control_layout_style&;
       /// @brief Sets vertical control layout style for specified child controls.
       /// @param control The control to get vertical control layout style.
       /// @param value The vertical control layout style for the specified control.
       /// @exception xtd::argument_exception container does not contains control.
-      vertical_layout_panel& control_layout_style(const control_ref& control, const vertical_control_layout_style& value);
+      auto control_layout_style(const control_ref& control, const vertical_control_layout_style& value) -> vertical_layout_panel&;
       /// @}
       
       /// @name Public Static Methods
@@ -62,53 +62,53 @@ namespace xtd {
       /// @{
       /// @brief A factory to create an xtd::forms::vertical_layout_panel.
       /// @return New xtd::forms::vertical_layout_panel created.
-      static vertical_layout_panel create();
+      [[nodiscard]] static auto create() -> vertical_layout_panel;
       /// @brief A factory to create an xtd::forms::vertical_layout_panel with specified location.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::vertical_layout_panel.
       /// @return New xtd::forms::vertical_layout_panel created.
-      static vertical_layout_panel create(const drawing::point& location);
+      [[nodiscard]] static auto create(const xtd::drawing::point& location) -> vertical_layout_panel;
       /// @brief A factory to create an xtd::forms::vertical_layout_panel with specified location, and size.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::vertical_layout_panel.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::vertical_layout_panel.
       /// @return New xtd::forms::vertical_layout_panel created.
-      static vertical_layout_panel create(const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto create(const xtd::drawing::point& location, const xtd::drawing::size& size) -> vertical_layout_panel;
       /// @brief A factory to create an xtd::forms::vertical_layout_panel with specified location, size, and name.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::vertical_layout_panel.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::vertical_layout_panel.
       /// @param name The name of the xtd::forms::vertical_layout_panel.
       /// @return New xtd::forms::vertical_layout_panel created.
-      static vertical_layout_panel create(const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto create(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> vertical_layout_panel;
       /// @brief A factory to create an xtd::forms::vertical_layout_panel with specified parent.
       /// @param parent The parent that contains the new created xtd::forms::vertical_layout_panel.
       /// @return New xtd::forms::vertical_layout_panel created.
-      static vertical_layout_panel create(const control& parent);
+      [[nodiscard]] static auto create(const xtd::forms::control& parent) -> vertical_layout_panel;
       /// @brief A factory to create an xtd::forms::vertical_layout_panel with specified parent, and location.
       /// @param parent The parent that contains the new created xtd::forms::vertical_layout_panel.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::vertical_layout_panel.
       /// @return New xtd::forms::vertical_layout_panel created.
-      static vertical_layout_panel create(const control& parent, const drawing::point& location);
+      [[nodiscard]] static auto create(const xtd::forms::control& parent, const xtd::drawing::point& location) -> vertical_layout_panel;
       /// @brief A factory to create an xtd::forms::vertical_layout_panel with specified parent, location, and size.
       /// @param parent The parent that contains the new created xtd::forms::vertical_layout_panel.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::vertical_layout_panel.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::vertical_layout_panel.
       /// @return New xtd::forms::vertical_layout_panel created.
-      static vertical_layout_panel create(const control& parent, const drawing::point& location, const drawing::size& size);
+      [[nodiscard]] static auto create(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size) -> vertical_layout_panel;
       /// @brief A factory to create an xtd::forms::vertical_layout_panel with specified parent, location, size, and name.
       /// @param parent The parent that contains the new created xtd::forms::vertical_layout_panel.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::vertical_layout_panel.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::vertical_layout_panel.
       /// @param name The name of the xtd::forms::vertical_layout_panel.
       /// @return New xtd::forms::vertical_layout_panel created.
-      static vertical_layout_panel create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
+      [[nodiscard]] static auto create(const xtd::forms::control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) -> vertical_layout_panel;
       /// @}
       
     protected:
       /// @name Protected Methods
       
       /// @{
-      void on_control_added(const xtd::forms::control_event_args& e) override;
-      void on_control_removed(const xtd::forms::control_event_args& e) override;
-      void on_layout(const xtd::event_args& e) override;
+      auto on_control_added(const xtd::forms::control_event_args& e) -> void override;
+      auto on_control_removed(const xtd::forms::control_event_args& e) -> void override;
+      auto on_layout(const xtd::event_args& e) -> void override;
       /// @}
       
     private:
