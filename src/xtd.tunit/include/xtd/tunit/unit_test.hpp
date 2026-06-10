@@ -47,61 +47,61 @@ namespace xtd {
       /// @{
       /// @brief Gets the repeat iteration number. A number between 0 and xtd::tunit::unit_test::repeat_iteration_count.
       /// @return The repeat iteration number.
-      int32 repeat_iteration() const noexcept;
+      [[nodiscard]] auto repeat_iteration() const noexcept -> xtd::int32;
       
       /// @brief Gets the repeat iteration count.
       /// @return The repeat iteration count.
       /// @remarks Is the xtd::tunit::settings::repeat_test for the current setting.
-      int32 repeat_iteration_count() const noexcept;
+      [[nodiscard]] auto repeat_iteration_count() const noexcept -> xtd::int32;
       
       /// @brief Gets a boolean indictaes if there is repeat tests.
       /// @return `true` is repart test; otherwise `false`.
       /// @remarks Returns `true` if xtd::tunit::unit_test::repeat_test_count greater than 0.
-      bool repeat_tests() const noexcept;
+      [[nodiscard]] auto repeat_tests() const noexcept -> bool;
       
       /// @brief Gets the test cases count.
       /// @return The test cases count.
-      xtd::usize test_cases_count() const noexcept;
+      [[nodiscard]] auto test_cases_count() const noexcept -> xtd::usize;
       
       /// @brief Gets the test count.
       /// @return The test count.
-      xtd::usize test_count() const noexcept;
+      [[nodiscard]] auto test_count() const noexcept -> xtd::usize;
       
       /// @brief Gets the aborted test count.
       /// @return The aborted test count.
-      xtd::usize aborted_test_count() const noexcept;
+      [[nodiscard]] auto aborted_test_count() const noexcept -> xtd::usize;
       
       /// @brief Gets the array of aborted test names.
       /// @return The array of aborted test names.
-      xtd::array<xtd::string> aborted_test_names() const noexcept;
+      [[nodiscard]] auto aborted_test_names() const noexcept -> xtd::array<xtd::string>;
       
       /// @brief Gets the elapsed time for the execution of all tests in the unit test.
       /// @return The elapsed time for the execution of all tests in the unit test.
-      xtd::time_span elapsed_time() const noexcept;
+      [[nodiscard]] auto elapsed_time() const noexcept -> xtd::time_span;
       
       /// @brief Gets the ignored test count.
       /// @return The ignored test count.
-      xtd::usize ignored_test_count() const noexcept;
+      [[nodiscard]] auto ignored_test_count() const noexcept -> xtd::usize;
       
       /// @brief Gets the array of ignored test names.
       /// @return The array of ignored test names.
-      xtd::array<xtd::string> ignored_test_names() const noexcept;
+      [[nodiscard]] auto ignored_test_names() const noexcept -> xtd::array<xtd::string>;
       
       /// @brief Gets the failed test count.
       /// @return The failed test count.
-      xtd::usize failed_test_count() const noexcept;
+      [[nodiscard]] auto failed_test_count() const noexcept -> xtd::usize;
       
       /// @brief Gets the array of failed test names.
       /// @return The array of failed test names.
-      xtd::array<xtd::string> failed_test_names() const noexcept;
+      [[nodiscard]] auto failed_test_names() const noexcept -> xtd::array<xtd::string>;
       
       /// @brief Gets the succeed test count.
       /// @return The succeed test count.
-      xtd::usize succeed_test_count() const noexcept;
+      [[nodiscard]] auto succeed_test_count() const noexcept -> xtd::usize;
       
       /// @brief Gets the array of succeed test names.
       /// @return The array of succeed test names.
-      xtd::array<xtd::string> succeed_test_names() const noexcept;
+      [[nodiscard]] auto succeed_test_names() const noexcept -> xtd::array<xtd::string>;
       /// @}
       
       /// @name Public Methods
@@ -109,7 +109,7 @@ namespace xtd {
       /// @{
       /// @brief Runs all tests in this unit_test object and prints the result.
       /// @return EXIT_SUCCESS (0) if succeed; otherwise return EXIT_FAILURE (1).
-      int32 run() noexcept;
+      auto run() noexcept -> xtd::int32;
       /// @}
       
       
@@ -122,20 +122,20 @@ namespace xtd {
       /// @return The xtd::tunit::settings::exit_status value.
       /// @remarks This method does nothing by default. The inheritor must overload this method to act as it wants when the unit_lest is asked for the test list.
       /// @remarks This method is typically used to display the list of tests in a stream, or whatever. It depends on the implementation chosen by the inheritor.
-      virtual int32 count_tests(int32 count);
+      [[nodiscard]] virtual auto count_tests(xtd::int32 count) -> xtd::int32;
       
       /// @brief Lists the test names contained in the specified tests.
       /// @param tests The list of test names.
       /// @return The xtd::tunit::settings::exit_status value.
       /// @remarks This method does nothing by default. The inheritor must overload this method to act as it wants when the unit_lest is asked for the test list.
       /// @remarks This method is typically used to display the list of tests in a stream, or whatever. It depends on the implementation chosen by the inheritor.
-      virtual int32 list_tests(const xtd::array<xtd::string>& tests);
+      [[nodiscard]] virtual auto list_tests(const xtd::array<xtd::string>& tests) -> xtd::int32;
       
       /// @brief Parses the specified arguments.
       /// @param The arguments to parse.
       /// @return `true` the execution process stops immediately after the analysis of the arguments; otherwise `false` the execution process continues its execution.
       /// @remarks This method can be overloaded by the heirs. It is typically in this method that the heirs can react to their own arguments. Like for example display a helper when the @p -help argument is passed.
-      virtual bool parse_arguments(const xtd::array<string>& args);
+      [[nodiscard]] virtual auto parse_arguments(const xtd::array<string>& args) -> bool;
       /// @}
       
     private:
@@ -145,24 +145,24 @@ namespace xtd {
       friend class xtd::tunit::test;
       friend class xtd::tunit::base_assert;
       
-      static void add(const xtd::tunit::registered_test_class& test_class);
-      static xtd::collections::generic::list<xtd::tunit::registered_test_class>& test_classes();
-      xtd::string get_filename(const xtd::string& path);
-      xtd::string cdata_message_to_xml_string(const xtd::tunit::test& test);
-      xtd::string escape_path_to_json_string(const xtd::string& path);
-      xtd::string escape_to_json_string(const xtd::string& str);
-      xtd::string escape_to_xml_string(const xtd::string& str);
-      xtd::string message_to_json_string(const xtd::tunit::test& test);
-      xtd::string message_to_xml_string(const xtd::tunit::test& test);
-      xtd::string name_to_string(const xtd::string& name);
-      xtd::string status_to_string(const xtd::tunit::test& test);
-      xtd::string to_string(const time_span& ms);
-      void unit_test_cleanup();
-      void unit_test_initialize();
-      void write_list_tests_json();
-      void write_list_tests_xml();
-      void write_tests_json();
-      void write_tests_xml();
+      static auto add(const xtd::tunit::registered_test_class& test_class) -> void;
+      [[nodiscard]] static xtd::collections::generic::list<xtd::tunit::registered_test_class>& test_classes();
+      [[nodiscard]] auto get_filename(const xtd::string& path) -> xtd::string;
+      [[nodiscard]] auto cdata_message_to_xml_string(const xtd::tunit::test& test) -> xtd::string;
+      [[nodiscard]] auto escape_path_to_json_string(const xtd::string& path) -> xtd::string;
+      [[nodiscard]] auto escape_to_json_string(const xtd::string& str) -> xtd::string;
+      [[nodiscard]] auto escape_to_xml_string(const xtd::string& str) -> xtd::string;
+      [[nodiscard]] auto message_to_json_string(const xtd::tunit::test& test) -> xtd::string;
+      [[nodiscard]] auto message_to_xml_string(const xtd::tunit::test& test) -> xtd::string;
+      [[nodiscard]] auto name_to_string(const xtd::string& name) -> xtd::string;
+      [[nodiscard]] auto status_to_string(const xtd::tunit::test& test) -> xtd::string;
+      [[nodiscard]] auto to_string(const time_span& ms) -> xtd::string;
+      auto unit_test_cleanup() -> void;
+      auto unit_test_initialize() -> void;
+      auto write_list_tests_json() -> void;
+      auto write_list_tests_xml() -> void;
+      auto write_tests_json() -> void;
+      auto write_tests_xml() -> void;
       
       xtd::array<string> arguments;
       xtd::string name_ = "AllTests";
