@@ -28,18 +28,18 @@ namespace xtd {
         /// @name Protected Properties
         
         /// @{
-        xtd::tunit::constraints::assert_type assert_type() const noexcept {return assert_type_;};
-        actual_value& type(xtd::tunit::constraints::assert_type assert_type) noexcept {
+        [[nodiscard]] auto assert_type() const noexcept -> xtd::tunit::constraints::assert_type {return assert_type_;};
+        [[nodiscard]] auto type(xtd::tunit::constraints::assert_type assert_type) noexcept -> actual_value& {
           assert_type_ = assert_type;
           return self_;
         };
         
-        auto is_assert() const noexcept {return assert_type() == xtd::tunit::constraints::assert_type::assert;}
-        auto is_valid() const noexcept {return assert_type() == xtd::tunit::constraints::assert_type::valid;}
-        auto is_assume() const noexcept {return assert_type() == xtd::tunit::constraints::assert_type::assume;}
+        [[nodiscard]] auto is_assert() const noexcept {return assert_type() == xtd::tunit::constraints::assert_type::assert;}
+        [[nodiscard]] auto is_valid() const noexcept {return assert_type() == xtd::tunit::constraints::assert_type::valid;}
+        [[nodiscard]] auto is_assume() const noexcept {return assert_type() == xtd::tunit::constraints::assert_type::assume;}
         
-        const actual_t& actual() const noexcept {return *actual_;}
-        actual_value& actual(const actual_t& actual) noexcept {
+        [[nodiscard]] const actual_t& actual() const noexcept {return *actual_;}
+        [[nodiscard]] actual_value& actual(const actual_t& actual) noexcept {
           actual_ = &actual;
           return self_;
         }
