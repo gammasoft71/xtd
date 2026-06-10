@@ -63,171 +63,152 @@ namespace xtd {
       /// @{
       /// @brief Gets also run ignored test.
       /// @return `true` if also run ignored test; otherwise `false`. The default value is `false`.
-      bool also_run_ignored_tests() const noexcept;
-      
+      [[nodiscard]] auto also_run_ignored_tests() const noexcept -> bool;
       /// @brief Sets also run ignored test.
-      /// @param also_run_ignored_tests `true` if also run ignored test; otherwise `false`. The default value is `false`.
-      void also_run_ignored_tests(bool also_run_ignored_tests) noexcept;
+      /// @param value `true` if also run ignored test; otherwise `false`. The default value is `false`.
+      auto also_run_ignored_tests(bool value) noexcept -> settings&;
       
       /// @brief Gets break immediatly on failure.
       /// @return `true` if break immediatly on failure; otherwise `false`. The default value is `false`.
-      bool break_on_failure() const noexcept;
-      
+      [[nodiscard]] auto break_on_failure() const noexcept -> bool;
       /// @brief Sets break immediatly on failure.
-      /// @param break_on_failure `true` if break immediatly on failure; otherwise `false`. The default value is `false`.
-      void break_on_failure(bool break_on_failure) noexcept;
+      /// @param value `true` if break immediatly on failure; otherwise `false`. The default value is `false`.
+      auto break_on_failure(bool value) noexcept -> settings&;
       
       /// @brief Gets brief.
       /// @return `true` if brief; otherwise `false`. The default value is `false`.
-      bool brief() const noexcept;
-      
+      [[nodiscard]] auto brief() const noexcept -> bool;
       /// @brief Sets brief.
-      /// @param brief `true` if brief; otherwise `false`. The default value is `false`.
-      void brief(bool brief) noexcept;
+      /// @param value `true` if brief; otherwise `false`. The default value is `false`.
+      auto brief(bool value) noexcept -> settings&;
       
       /// @brief Gets count tests.
       /// @return `true` if count tests; otherwise `false`. The default value is `false`.
-      bool count_tests() const noexcept;
-      
+      [[nodiscard]] auto count_tests() const noexcept -> bool;
       /// @brief Sets count tests.
-      /// @param count_tests `true` if count tests; otherwise `false`. The default value is `false`.
-      void count_tests(bool count_tests) noexcept;
+      /// @param value `true` if count tests; otherwise `false`. The default value is `false`.
+      auto count_tests(bool value) noexcept -> settings&;
       
       /// @brief Gets stack trace enabled.
       /// @return `true` if stack trace enabled; otherwise `false`. The default value is `false`.
       /// @warning If the valueur is set to `true`, unit test execution time will increase sharply.
-      bool enable_stack_trace() const noexcept;
-      
+      [[nodiscard]] auto enable_stack_trace() const noexcept -> bool;
       /// @brief Sets stack trace enabled.
-      /// @param enable_stack_trace `true` if stack trace enabled; otherwise `false`. The default value is `false`.
+      /// @param value `true` if stack trace enabled; otherwise `false`. The default value is `false`.
       /// @warning If the valueur is set to `true`, unit test execution time will increase sharply.
-      void enable_stack_trace(bool enable_stack_trace) noexcept;
+      auto enable_stack_trace(bool value) noexcept -> settings&;
       
       /// @brief Gets unit test end time.
       /// @return Unit test end time.
-      const xtd::date_time& end_time() const noexcept;
+      [[nodiscard]] auto end_time() const noexcept -> const xtd::date_time&;
       
       /// @brief Gets exit status.
       /// @return exit status. The value by default is `EXIT_SUCCESS`.
       /// @remarks When an error occurred in unit test the value is set to `EXIT_FAILURE`.
-      int32 exit_status() const noexcept;
-      
+      [[nodiscard]] auto exit_status() const noexcept -> xtd::int32;
       /// @brief Sets exit status.
-      /// @param exit_status exit status. The value by default is `EXIT_SUCCESS`.
+      /// @param value exit status. The value by default is `EXIT_SUCCESS`.
       /// @remarks When an error occurred in unit test the value is set to `EXIT_FAILURE`.
-      void exit_status(int32 exit_status) noexcept;
+      auto exit_status(xtd::int32 value) noexcept -> settings&;
       
       /// @brief Gets filter tests.
       /// @return filter tests. The value by default is `{"*.*"}`.
-      const xtd::array<string>& filter_tests() const noexcept;
-      
+      [[nodiscard]] auto filter_tests() const noexcept -> const xtd::array<xtd::string>&;
       /// @brief Sets filter tests.
-      /// @param filter_tests filter tests. The value by default is `{"*.*"}`.
-      void filter_tests(const xtd::array<string>& filter_tests) noexcept;
+      /// @param value filter tests. The value by default is `{"*.*"}`.
+      auto filter_tests(const xtd::array<xtd::string>& value) noexcept -> settings&;
       
       /// @brief Gets google test comaptibility.
       /// @return `true` if google test comaptibility; otherwise `false`. The default value is `false`.
-      bool gtest_compatibility() const noexcept;
-      
+      [[nodiscard]] auto gtest_compatibility() const noexcept -> bool;
       /// @brief Sets google test comaptibility.
-      /// @param gtest_compatibility `true` if google test comaptibility; otherwise `false`. The default value is `false`.
-      void gtest_compatibility(bool gtest_compatibility) noexcept;
+      /// @param value `true` if google test comaptibility; otherwise `false`. The default value is `false`.
+      auto gtest_compatibility(bool value) noexcept -> settings&;
       
       /// @brief Return `true` if a specified test class name and specified test name match with the current filter tests.
       /// @return return `true` if class name and test name match with the current filter tests; otherwise `false`.
-      bool is_match_test_name(const xtd::string& test_class_name, const xtd::string& test_name) const noexcept;
+      [[nodiscard]] auto is_match_test_name(const xtd::string& test_class_name, const xtd::string& test_name) const noexcept -> bool;
       
       /// @brief Gets list tests.
       /// @return `true` if list tests; otherwise `false`. The default value is `false`.
-      bool list_tests() const noexcept;
-      
+      [[nodiscard]] auto list_tests() const noexcept -> bool;
       /// @brief Sets list tests.
-      /// @param list_tests `true` if list tests; otherwise `false`. The default value is `false`.
-      void list_tests(bool list_tests) noexcept;
+      /// @param value `true` if list tests; otherwise `false`. The default value is `false`.
+      auto list_tests(bool value) noexcept -> settings&;
       
       /// @brief Gets output color.
       /// @return `true` for colored output; otherwise `false`. The default value is `true`.
-      bool output_color() const noexcept;
-      
+      [[nodiscard]] auto output_color() const noexcept -> bool;
       /// @brief Sets output color.
-      /// @param output_color `true` for colored output; otherwise `false`. The default value is `true`.
-      void output_color(bool output_color) noexcept;
+      /// @param value `true` for colored output; otherwise `false`. The default value is `true`.
+      auto output_color(bool value) noexcept -> settings&;
       
       /// @brief Gets output xml.
       /// @return `true` for generate xml report; otherwise `false`. The default value is `false`.
-      bool output_json() const noexcept;
-      
+      [[nodiscard]] auto output_json() const noexcept -> bool;
       /// @brief Sets output json.
-      /// @param output_json `true` for generate json report; otherwise `false`. The default value is `false`.
-      void output_json(bool output_json) noexcept;
+      /// @param value `true` for generate json report; otherwise `false`. The default value is `false`.
+      auto output_json(bool value) noexcept -> settings&;
       
       /// @brief Gets output json path.
       /// @return Output json path. The default value is xtd::string::empty_string ("").
-      xtd::string output_json_path() const noexcept;
-      
+      [[nodiscard]] auto output_json_path() const noexcept -> xtd::string;
       /// @brief Sets output sjon path.
-      /// @param output_jsonl_path Output json path. The default value is xtd::string::empty_string ("").
-      void output_json_path(const xtd::string& output_json_path) noexcept;
+      /// @param value Output json path. The default value is xtd::string::empty_string ("").
+      auto output_json_path(const xtd::string& value) noexcept -> settings&;
       
       /// @brief Gets output xml.
       /// @return `true` for generate xml report; otherwise `false`. The default value is `false`.
-      bool output_xml() const noexcept;
-      
+      [[nodiscard]] auto output_xml() const noexcept -> bool;
       /// @brief Sets output xml.
-      /// @param output_xml `true` for generate xml report; otherwise `false`. The default value is `false`.
-      void output_xml(bool output_xml) noexcept;
+      /// @param value `true` for generate xml report; otherwise `false`. The default value is `false`.
+      auto output_xml(bool value) noexcept -> settings&;
       
       /// @brief Gets output xml path.
       /// @return Output xml path. The default value is xtd::string::empty_string ("").
-      xtd::string output_xml_path() const noexcept;
-      
+      [[nodiscard]] auto output_xml_path() const noexcept -> xtd::string;
       /// @brief Sets output xml path.
-      /// @param output_xml_path Output xml path. The default value is xtd::string::empty_string ("").
-      void output_xml_path(const xtd::string& output_xml_path) noexcept;
+      /// @param value Output xml path. The default value is xtd::string::empty_string ("").
+      auto output_xml_path(const xtd::string& value) noexcept -> settings&;
       
       /// @brief Gets random seed value.
       /// @return Random seed value. The default value is `0` (no seed).
-      uint32 random_seed() const noexcept;
-      
+      [[nodiscard]] auto random_seed() const noexcept -> xtd::uint32;
       /// @brief Sets random seed value.
-      /// @param random_seed Random seed value. The default value is `0` (no seed).
-      void random_seed(uint32 random_seed) noexcept;
+      /// @param value Random seed value. The default value is `0` (no seed).
+      auto random_seed(xtd::uint32 value) noexcept -> settings&;
       
       /// @brief Gets repeat tests count.
       /// @return Repeat test count. The default value is `1` (no repeat).
-      int32 repeat_test() const noexcept;
-      
+      [[nodiscard]] auto repeat_test() const noexcept -> xtd::int32;
       /// @brief Sets repeat tests count.
-      /// @param repeat_tests Repeat test count. The default value is `1` (no repeat).
-      void repeat_tests(int32 repeat_tests) noexcept;
+      /// @param value Repeat test count. The default value is `1` (no repeat).
+      auto repeat_tests(xtd::int32 value) noexcept -> settings&;
       
       /// @brief Gets if show duration for each test.
       /// @return `true` if show duration for each test; otherwise `false`. The default value is `true`.
-      bool show_duration() const noexcept;
-      
+      [[nodiscard]] auto show_duration() const noexcept -> bool;
       /// @brief Sets if show duration for each test.
-      /// @param show_duration `true` if show duration for each test; otherwise `false`. The default value is `true`.
-      void show_duration(bool show_duration) noexcept;
+      /// @param value `true` if show duration for each test; otherwise `false`. The default value is `true`.
+      auto show_duration(bool value) noexcept -> settings&;
       
       /// @brief Gets shuffle tests.
       /// @return `true` if shuffle test; otherwise `false`. The default value is `false`.
-      bool shuffle_test() const noexcept;
-      
+      [[nodiscard]] auto shuffle_test() const noexcept -> bool;
       /// @brief Sets shuffle tests.
-      /// @param shuffle_test `true` if shuffle test; otherwise `false`. The default value is `false`.
-      void shuffle_test(bool shuffle_test) noexcept;
+      /// @param value `true` if shuffle test; otherwise `false`. The default value is `false`.
+      auto shuffle_test(bool value) noexcept -> settings&;
       
       /// @brief Gets unit test start time.
       /// @return Unit test start time.
-      const xtd::date_time& start_time() const noexcept;
+      [[nodiscard]] auto start_time() const noexcept -> const xtd::date_time&;
       
       /// @brief Gets throw on failure.
       /// @return `true` if throw on failure; otherwise `false`. The default value is `false`.
-      bool throw_on_failure() const noexcept;
-      
+      [[nodiscard]] auto throw_on_failure() const noexcept -> bool;
       /// @brief Sets throw on failure.
-      /// @param break_on_failure `true` if throw on failure; otherwise `false`. The default value is `false`.
-      void throw_on_failure(bool break_on_failure) noexcept;
+      /// @param value `true` if throw on failure; otherwise `false`. The default value is `false`.
+      auto throw_on_failure(bool value) noexcept -> settings&;
       /// @}
       
       /// @name Public Static Properties
@@ -258,7 +239,7 @@ namespace xtd {
       /// | show_duration          | `true`         |
       /// | shuffle_test           | `false`        |
       /// | throw_on_failure       | `false`        |
-      static xtd::tunit::settings& default_settings() noexcept;
+      [[nodiscard]] static auto default_settings() noexcept -> xtd::tunit::settings&;
       /// @}
       
     private:
@@ -266,8 +247,8 @@ namespace xtd {
       friend class xtd::tunit::ostream_unit_test;
       friend class xtd::tunit::unit_test;
       
-      void end_time(const xtd::date_time& end_time) noexcept;
-      void start_time(const xtd::date_time& start_time) noexcept;
+      auto end_time(const xtd::date_time& end_time) noexcept -> settings&;
+      auto start_time(const xtd::date_time& start_time) noexcept -> settings&;
       
       bool also_run_ignored_tests_ = false;
       bool break_on_failure_ = false;
@@ -275,7 +256,7 @@ namespace xtd {
       bool count_tests_ = false;
       bool enable_stack_trace_ = false;
       xtd::date_time end_time_;
-      int32 exit_status_ = 0;
+      xtd::int32 exit_status_ = 0;
       xtd::string file_name_ = xtd::io::path::get_full_path(xtd::reflection::assembly::get_executing_assembly().location());
       xtd::array<string> filter_tests_ = {"*.*"};
       bool gtest_compatibility_ = false;
@@ -285,8 +266,8 @@ namespace xtd {
       std::optional<xtd::string> output_json_path_;
       bool output_xml_ = false;
       std::optional<xtd::string> output_xml_path_;
-      uint32 random_seed_ = 0;
-      int32 repeat_tests_ = 1;
+      xtd::uint32 random_seed_ = 0;
+      xtd::int32 repeat_tests_ = 1;
       bool show_duration_ = true;
       bool shuffle_tests_ = false;
       xtd::date_time start_time_;
