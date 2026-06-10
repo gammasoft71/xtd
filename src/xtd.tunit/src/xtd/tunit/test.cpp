@@ -23,92 +23,92 @@ test::test(const string& name, const std::function<void()>& method, const diagno
 test::test(const string& name, const std::function<void()>& method, bool ignore, const diagnostics::stack_frame& stack_frame) noexcept : stack_frame_(stack_frame), method_(method), name_(name), status_(ignore ? test_status::ignored : test_status::not_started) {
 }
 
-bool test::aborted() const noexcept {
+auto test::aborted() const noexcept -> bool {
   return status_ == test_status::aborted;
 }
 
-const string& test::actual() const noexcept {
+auto test::actual() const noexcept -> const string& {
   return actual_;
 }
 
-time_span test::elapsed_time() const noexcept {
+auto test::elapsed_time() const noexcept -> time_span {
   if (start_time_.ticks() == 0 && end_time_point_.ticks() == 0) return 0_ms;
   if (end_time_point_.ticks() == 0) return date_time::now() - start_time_;
   return end_time_point_ - start_time_;
 }
 
-const string& test::expect() const noexcept {
+auto test::expect() const noexcept -> const string& {
   return expect_;
 }
 
-bool test::failed() const noexcept {
+auto test::failed() const noexcept -> bool {
   return status_ == test_status::failed;
 }
 
-bool test::ignored() const noexcept {
+auto test::ignored() const noexcept -> bool {
   return status_ == test_status::ignored;
 }
 
-bool test::not_started() const noexcept {
+auto test::not_started() const noexcept -> bool {
   return status_ == test_status::not_started;
 }
 
-bool test::succeed() const noexcept {
+auto test::succeed() const noexcept -> bool {
   return status_ == test_status::succeed;
 }
 
-const stack_frame test::stack_frame() const noexcept {
+auto test::stack_frame() const noexcept -> const xtd::diagnostics::stack_frame& {
   return stack_frame_;
 }
 
-const xtd::date_time& test::start_time() const noexcept {
+auto test::start_time() const noexcept -> const xtd::date_time& {
   return start_time_;
 }
 
-std::function<void()> test::method() const noexcept {
+auto test::method() const noexcept -> std::function<void()> {
   return method_;
 }
 
-const string& test::message() const noexcept {
+auto test::message() const noexcept -> const string& {
   return message_;
 }
 
-const string& test::name() const noexcept {
+auto test::name() const noexcept -> const string& {
   return name_;
 }
 
-const string& test::user_message() const noexcept {
+auto test::user_message() const noexcept -> const string& {
   return user_message_;
 }
 
-test& test::current_test() {
+auto test::current_test() -> test& {
   if (!has_current_test()) throw_helper::throws(exception_case::null_pointer);
   return *current_test_;
 }
 
-const test_class& test::current_test_class() {
+auto test::current_test_class() -> const test_class& {
   if (!has_current_test_class()) throw_helper::throws(exception_case::null_pointer);
   return *current_test_class_;
 }
 
-const unit_test& test::current_unit_test() {
+auto test::current_unit_test() -> const unit_test& {
   if (!has_current_unit_test()) throw_helper::throws(exception_case::null_pointer);
   return *current_unit_test_;
 }
 
-bool test::has_current_test() {
+auto test::has_current_test() -> bool {
   return current_test_ != nullptr;
 }
 
-bool test::has_current_test_class() {
+auto test::has_current_test_class() -> bool {
   return current_test_class_ != nullptr;
 }
 
-bool test::has_current_unit_test() {
+auto test::has_current_unit_test() -> bool {
   return current_unit_test_ != nullptr;
 }
 
-void test::run(const unit_test& unit_test, const test_class& test_class) {
+auto test::run(const unit_test& unit_test, const test_class& test_class) -> void {
   current_test_ = this;
   current_test_class_ = &test_class;
   current_unit_test_ = &unit_test;

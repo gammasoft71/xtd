@@ -66,59 +66,59 @@ namespace xtd {
       /// @{
       /// @brief Gets a value that represent an aborted test.
       /// @return `true` is the test is aborted; otherwise `false`.
-      bool aborted() const noexcept;
+      [[nodiscard]] auto aborted() const noexcept -> bool;
       
       /// @brief Gets the actual value string.
       /// @return The actual value string. Can be empty.
-      const xtd::string& actual() const noexcept;
+      [[nodiscard]] auto actual() const noexcept -> const xtd::string&;
       
       /// @brief Gets the elapsed time of the test method.
       /// @return The elapsed time of the test method.
-      xtd::time_span elapsed_time() const noexcept;
+      [[nodiscard]] auto elapsed_time() const noexcept -> xtd::time_span;
       
       /// @brief Gets the expect value string.
       /// @return The expect value string. Can be empty.
-      const xtd::string& expect() const noexcept;
+      [[nodiscard]] auto expect() const noexcept -> const xtd::string&;
       
       /// @brief Gest a value that represent an failed test.
       /// @return tru is the test is failed; otherwise `false`.
-      bool failed() const noexcept;
+      [[nodiscard]] auto failed() const noexcept -> bool;
       
       /// @brief Get a value that represent an ignored test.
       /// @return `true` is the test is ignored; otherwise `false`.
-      bool ignored() const noexcept;
+      [[nodiscard]] auto ignored() const noexcept -> bool;
       
       /// @brief Get a value that represent a not started test.
       /// @return `true` is the test is not started; otherwise `false`.
-      bool not_started() const noexcept;
+      [[nodiscard]] auto not_started() const noexcept -> bool;
       
       /// @brief Gets a value that represent an succeed test.
       /// @return `true` is the test is succeed; otherwise `false`.
-      bool succeed() const noexcept;
+      [[nodiscard]] auto succeed() const noexcept -> bool;
       
       /// @brief Gets the stack frame of the test method.
       /// @return The stack frame of the test method.
-      const xtd::diagnostics::stack_frame stack_frame() const noexcept;
+      [[nodiscard]] auto stack_frame() const noexcept -> const xtd::diagnostics::stack_frame&;
       
       /// @brief Gets the start time of the test method.
       /// @return The start time of the test method.
-      const xtd::date_time& start_time() const noexcept;
+      [[nodiscard]] auto start_time() const noexcept -> const xtd::date_time&;
       
       /// @brief Gets the test method.
       /// @return The test method.
-      std::function<void()> method() const noexcept;
+      [[nodiscard]] auto method() const noexcept -> std::function<void()>;
       
       /// @brief Gets the message.
       /// @return The message.
-      const xtd::string& message() const noexcept;
+      [[nodiscard]] auto message() const noexcept -> const xtd::string&;
       
       /// @brief Gets the name of the test method.
       /// @return The nzme of the test method.
-      const xtd::string& name() const noexcept;
+      [[nodiscard]] auto name() const noexcept -> const xtd::string&;
       
       /// @brief Gets the user message.
       /// @return The user message.
-      const xtd::string& user_message() const noexcept;
+      [[nodiscard]] auto user_message() const noexcept -> const xtd::string&;
       /// @}
       
       /// @cond
@@ -130,14 +130,14 @@ namespace xtd {
       friend class xtd::tunit::base_assert;
       friend class xtd::tunit::test_class;
       friend class xtd::tunit::valid;
-      static test& current_test();
-      static const test_class& current_test_class();
-      static const unit_test& current_unit_test();
-      static bool has_current_test();
-      static bool has_current_test_class();
-      static bool has_current_unit_test();
+      [[nodiscard]] static auto current_test() -> test&;
+      [[nodiscard]] static auto current_test_class() -> const test_class&;
+      [[nodiscard]] static auto current_unit_test() -> const unit_test&;
+      [[nodiscard]] static auto has_current_test() -> bool;
+      [[nodiscard]] static auto has_current_test_class() -> bool;
+      [[nodiscard]] static auto has_current_unit_test() -> bool;
       
-      void run(const xtd::tunit::unit_test& unit_test, const xtd::tunit::test_class& test_class);
+      auto run(const xtd::tunit::unit_test& unit_test, const xtd::tunit::test_class& test_class) -> void;
       
       xtd::date_time end_time_point_;
       static test* current_test_;
