@@ -80,11 +80,6 @@ namespace xtd {
       }
       /// @}
       
-      /// @cond
-      ignore_error(const ignore_error&) = default;
-      ignore_error& operator =(const ignore_error&) = default;
-      /// @endcond
-      
     private:
       [[nodiscard]] static auto default_message() noexcept -> const char* {return "Abort error.";}
     };
