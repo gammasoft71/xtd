@@ -60,7 +60,7 @@ namespace xtd {
       [[nodiscard]] auto trace_listener() const noexcept -> const xtd::diagnostics::trace_listener&;
       /// @brief Gets underlying trace listener.
       /// @return A xtd::diagnostics::trace_listener trace listener. In this case a xtd::forms::control_trace_listener.
-      [[nodiscard]] auto trace_listener() -> xtd::diagnostics::trace_listener&;
+      [[nodiscard]] auto trace_listener() noexcept -> xtd::diagnostics::trace_listener&;
       /// @}
       
       /// @name Public Methods

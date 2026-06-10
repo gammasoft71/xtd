@@ -13,7 +13,7 @@ const trace_listener& debug_form::trace_listener() const noexcept {
   return *listener_;
 }
 
-trace_listener& debug_form::trace_listener() {
+trace_listener& debug_form::trace_listener() noexcept {
   return *listener_;
 }
 
