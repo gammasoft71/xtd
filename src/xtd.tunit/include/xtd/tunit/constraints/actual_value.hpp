@@ -21,8 +21,6 @@ namespace xtd {
         
         /// @{
         actual_value() {}
-        actual_value(actual_value&&) = default;
-        actual_value(const actual_value&) = default;
         /// @}
         
         /// @name Protected Properties
