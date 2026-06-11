@@ -46,7 +46,7 @@ void tab_control::tab_page_collection::add(const wchar* text) {
 }
 
 void tab_control::tab_page_collection::insert(xtd::usize index, const xtd::string& text) {
-  insert(index, text, string::empty_string);
+  text_added(index, text, string::empty_string);
 }
 
 void tab_control::tab_page_collection::insert(xtd::usize index, const xtd::string& text, const xtd::string& name) {
@@ -54,7 +54,7 @@ void tab_control::tab_page_collection::insert(xtd::usize index, const xtd::strin
 }
 
 tab_control::tab_page_collection::iterator tab_control::tab_page_collection::insert(const_iterator pos, const xtd::string& text) {
-  return insert(pos, text, string::empty_string);
+  return text_inserted(pos, text, string::empty_string);
 }
 
 tab_control::tab_page_collection::iterator tab_control::tab_page_collection::insert(const_iterator pos, const xtd::string& text, const xtd::string& name) {
