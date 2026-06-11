@@ -103,27 +103,27 @@ control::control_collection& control::control_collection::operator = (const cont
 }
 
 control::control_collection::value_type control::control_collection::operator [](const string& name) const {
-  for (auto item : *this)
+  for (auto item : items())
     if (item.get().name() == name) return item;
   return {};
 }
 
 control::control_collection::value_type control::control_collection::operator [](const string& name) {
-  for (auto item : *this)
+  for (auto item : items())
     if (item.get().name() == name) return item;
   return std::nullopt;
 }
 
-void control::control_collection::insert(xtd::usize index, const control_ref& value) {
-  for (auto it = begin(); it != end(); ++it)
-    if (it->get() == value.get()) return;
-  base::insert(index, value);
+void control::control_collection::add(const control_ref& value) {
+  for (const auto& control : *this)
+    if (control.get() == value) return;
+  base::add(value);
 }
 
-void control::control_collection::add(const control_ref& value) {
-  for (auto it = begin(); it != end(); ++it)
-    if (it->get() == value.get()) return;
-  base::add(value);
+void control::control_collection::insert(xtd::usize index, const control_ref& value) {
+  for (const auto& control : *this)
+    if (control.get() == value) return;
+  base::insert(index, value);
 }
 
 struct control::data {
