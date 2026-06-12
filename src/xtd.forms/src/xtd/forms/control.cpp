@@ -115,14 +115,14 @@ control::control_collection::value_type control::control_collection::operator []
 }
 
 void control::control_collection::add(const control_ref& value) {
-  for (const auto& control : *this)
-    if (control.get() == value) return;
+  for (const auto& control : items())
+    if (control.get() == value.get()) return;
   base::add(value);
 }
 
 void control::control_collection::insert(xtd::usize index, const control_ref& value) {
-  for (const auto& control : *this)
-    if (control.get() == value) return;
+  for (const auto& control : items())
+    if (control.get() == value.get()) return;
   base::insert(index, value);
 }
 
