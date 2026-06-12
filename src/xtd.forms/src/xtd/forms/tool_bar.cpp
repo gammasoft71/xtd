@@ -565,7 +565,7 @@ auto tool_bar::fill() -> void {
     size({padding().left() + padding().right(), padding().top() + padding().bottom()});
   for (auto index = 0_z; index < data_->buttons.count(); ++index) {
     auto& button_item = data_->buttons[index].get();
-    auto control_handle = 0_z;
+    auto control_handle = xtd::intptr {};
     if (system_tool_bar()) {
       if (data_->buttons[index].get().style() == tool_bar_button_style::push_button || (!data_->drop_down_arrows && button_item.style() == tool_bar_button_style::drop_down_button))
         control_handle = native::tool_bar::add_tool_bar_button(handle(), button_item.text(), button_item.tool_tip_text(), button_item.image_index() < data_->image_list.images().count() ? data_->image_list.images()[button_item.image_index()] : image::empty, button_item.enabled(), button_item.visible());
