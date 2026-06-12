@@ -3,575 +3,577 @@
 using namespace xtd;
 using namespace xtd::drawing;
 
-pen pens::transparent() {
-  return pen {color::from_known_color(known_color::transparent), 1};
+auto pens::transparent(float width) -> pen {
+  return {color::transparent, width};
 }
 
-pen pens::alice_blue() {
-  return pen {color::from_known_color(known_color::alice_blue), 1};
+auto pens::alice_blue(float width) -> pen {
+  return {color::alice_blue, width};
 }
 
-pen pens::antique_white() {
-  return pen {color::from_known_color(known_color::antique_white), 1};
+auto pens::antique_white(float width) -> pen {
+  return {color::antique_white, width};
 }
 
-pen pens::aqua() {
-  return pen {color::from_known_color(known_color::aqua), 1};
+auto pens::aqua(float width) -> pen {
+  return {color::aqua, width};
 }
 
-pen pens::aquamarine() {
-  return pen {color::from_known_color(known_color::aquamarine), 1};
+auto pens::aquamarine(float width) -> pen {
+  return {color::aquamarine, width};
 }
 
-pen pens::azure() {
-  return pen {color::from_known_color(known_color::azure), 1};
+auto pens::azure(float width) -> pen {
+  return {color::azure, width};
 }
 
-pen pens::beige() {
-  return pen {color::from_known_color(known_color::beige), 1};
+auto pens::beige(float width) -> pen {
+  return {color::beige, width};
 }
 
-pen pens::bisque() {
-  return pen {color::from_known_color(known_color::bisque), 1};
+auto pens::bisque(float width) -> pen {
+  return {color::bisque, width};
 }
 
-pen pens::black() {
-  return pen {color::from_known_color(known_color::black), 1};
+auto pens::black(float width) -> pen {
+  return {color::black, width};
 }
 
-pen pens::blanched_almond() {
-  return pen {color::from_known_color(known_color::blanched_almond), 1};
+auto pens::blanched_almond(float width) -> pen {
+  return {color::blanched_almond, width};
 }
 
-pen pens::blue() {
-  return pen {color::from_known_color(known_color::blue), 1};
+auto pens::blue(float width) -> pen {
+  return {color::blue, width};
 }
 
-pen pens::blue_violet() {
-  return pen {color::from_known_color(known_color::blue_violet), 1};
+auto pens::blue_violet(float width) -> pen {
+  return {color::blue_violet, width};
 }
 
-pen pens::brown() {
-  return pen {color::from_known_color(known_color::brown), 1};
+auto pens::brown(float width) -> pen {
+  return {color::brown, width};
 }
 
-pen pens::burly_wood() {
-  return pen {color::from_known_color(known_color::burly_wood), 1};
+auto pens::burly_wood(float width) -> pen {
+  return {color::burly_wood, width};
 }
 
-pen pens::cadet_blue() {
-  return pen {color::from_known_color(known_color::cadet_blue), 1};
+auto pens::cadet_blue(float width) -> pen {
+  return {color::cadet_blue, width};
 }
 
-pen pens::chartreuse() {
-  return pen {color::from_known_color(known_color::chartreuse), 1};
+auto pens::chartreuse(float width) -> pen {
+  return {color::chartreuse, width};
 }
 
-pen pens::chocolate() {
-  return pen {color::from_known_color(known_color::chocolate), 1};
+auto pens::chocolate(float width) -> pen {
+  return {color::chocolate, width};
 }
 
-pen pens::coral() {
-  return pen {color::from_known_color(known_color::coral), 1};
+auto pens::coral(float width) -> pen {
+  return {color::coral, width};
 }
 
-pen pens::cornflower_blue() {
-  return pen {color::from_known_color(known_color::cornflower_blue), 1};
+auto pens::cornflower_blue(float width) -> pen {
+  return {color::cornflower_blue, width};
 }
 
-pen pens::cornsilk() {
-  return pen {color::from_known_color(known_color::cornsilk), 1};
+auto pens::cornsilk(float width) -> pen {
+  return {color::cornsilk, width};
 }
 
-pen pens::crimson() {
-  return pen {color::from_known_color(known_color::crimson), 1};
+auto pens::crimson(float width) -> pen {
+  return {color::crimson, width};
 }
 
-pen pens::cyan() {
-  return pen {color::from_known_color(known_color::cyan), 1};
+auto pens::cyan(float width) -> pen {
+  return {color::cyan, width};
 }
 
-pen pens::dark_blue() {
-  return pen {color::from_known_color(known_color::dark_blue), 1};
+auto pens::dark_blue(float width) -> pen {
+  return {color::dark_blue, width};
 }
 
-pen pens::dark_cyan() {
-  return pen {color::from_known_color(known_color::dark_cyan), 1};
+auto pens::dark_cyan(float width) -> pen {
+  return {color::dark_cyan, width};
 }
 
-pen pens::dark_goldenrod() {
-  return pen {color::from_known_color(known_color::dark_goldenrod), 1};
+auto pens::dark_goldenrod(float width) -> pen {
+  return {color::dark_goldenrod, width};
 }
 
-pen pens::dark_gray() {
-  return pen {color::from_known_color(known_color::dark_gray), 1};
+auto pens::dark_gray(float width) -> pen {
+  return {color::dark_gray, width};
 }
 
-pen pens::dark_green() {
-  return pen {color::from_known_color(known_color::dark_green), 1};
+auto pens::dark_green(float width) -> pen {
+  return {color::dark_green, width};
 }
 
-pen pens::dark_khaki() {
-  return pen {color::from_known_color(known_color::dark_khaki), 1};
+auto pens::dark_khaki(float width) -> pen {
+  return {color::dark_khaki, width};
 }
 
-pen pens::dark_magenta() {
-  return pen {color::from_known_color(known_color::dark_magenta), 1};
+auto pens::dark_magenta(float width) -> pen {
+  return {color::dark_magenta, width};
 }
 
-pen pens::dark_olive_green() {
-  return pen {color::from_known_color(known_color::dark_olive_green), 1};
+auto pens::dark_olive_green(float width) -> pen {
+  return {color::dark_olive_green, width};
 }
 
-pen pens::dark_orange() {
-  return pen {color::from_known_color(known_color::dark_orange), 1};
+auto pens::dark_orange(float width) -> pen {
+  return {color::dark_orange, width};
 }
 
-pen pens::dark_orchid() {
-  return pen {color::from_known_color(known_color::dark_orchid), 1};
+auto pens::dark_orchid(float width) -> pen {
+  return {color::dark_orchid, width};
 }
 
-pen pens::dark_red() {
-  return pen {color::from_known_color(known_color::dark_red), 1};
+auto pens::dark_red(float width) -> pen {
+  return {color::dark_red, width};
 }
 
-pen pens::dark_salmon() {
-  return pen {color::from_known_color(known_color::dark_salmon), 1};
+auto pens::dark_salmon(float width) -> pen {
+  return {color::dark_salmon, width};
 }
 
-pen pens::dark_sea_green() {
-  return pen {color::from_known_color(known_color::dark_sea_green), 1};
+auto pens::dark_sea_green(float width) -> pen {
+  return {color::dark_sea_green, width};
 }
 
-pen pens::dark_slate_blue() {
-  return pen {color::from_known_color(known_color::dark_slate_blue), 1};
+auto pens::dark_slate_blue(float width) -> pen {
+  return {color::dark_slate_blue, width};
 }
 
-pen pens::dark_slate_gray() {
-  return pen {color::from_known_color(known_color::dark_slate_gray), 1};
+auto pens::dark_slate_gray(float width) -> pen {
+  return {color::dark_slate_gray, width};
 }
 
-pen pens::dark_turquoise() {
-  return pen {color::from_known_color(known_color::dark_turquoise), 1};
+auto pens::dark_turquoise(float width) -> pen {
+  return {color::dark_turquoise, width};
 }
 
-pen pens::dark_violet() {
-  return pen {color::from_known_color(known_color::dark_violet), 1};
+auto pens::dark_violet(float width) -> pen {
+  return {color::dark_violet, width};
 }
 
-pen pens::deep_pink() {
-  return pen {color::from_known_color(known_color::deep_pink), 1};
+auto pens::deep_pink(float width) -> pen {
+  return {color::deep_pink, width};
 }
 
-pen pens::deep_sky_blue() {
-  return pen {color::from_known_color(known_color::deep_sky_blue), 1};
+auto pens::deep_sky_blue(float width) -> pen {
+  return {color::deep_sky_blue, width};
 }
 
-pen pens::dim_gray() {
-  return pen {color::from_known_color(known_color::dim_gray), 1};
+auto pens::dim_gray(float width) -> pen {
+  return {color::dim_gray, width};
 }
 
-pen pens::dodger_blue() {
-  return pen {color::from_known_color(known_color::dodger_blue), 1};
+auto pens::dodger_blue(float width) -> pen {
+  return {color::dodger_blue, width};
 }
 
-pen pens::firebrick() {
-  return pen {color::from_known_color(known_color::firebrick), 1};
+auto pens::firebrick(float width) -> pen {
+  return {color::firebrick, width};
 }
 
-pen pens::floral_white() {
-  return pen {color::from_known_color(known_color::floral_white), 1};
+auto pens::floral_white(float width) -> pen {
+  return {color::floral_white, width};
 }
 
-pen pens::forest_green() {
-  return pen {color::from_known_color(known_color::forest_green), 1};
+auto pens::forest_green(float width) -> pen {
+  return {color::forest_green, width};
 }
 
-pen pens::fuchsia() {
-  return pen {color::from_known_color(known_color::fuchsia), 1};
+auto pens::fuchsia(float width) -> pen {
+  return {color::fuchsia, width};
 }
 
-pen pens::gainsboro() {
-  return pen {color::from_known_color(known_color::gainsboro), 1};
+auto pens::gainsboro(float width) -> pen {
+  return {color::gainsboro, width};
 }
 
-pen pens::ghost_white() {
-  return pen {color::from_known_color(known_color::ghost_white), 1};
+auto pens::ghost_white(float width) -> pen {
+  return {color::ghost_white, width};
 }
 
-pen pens::gold() {
-  return pen {color::from_known_color(known_color::gold), 1};
+auto pens::gold(float width) -> pen {
+  return {color::gold, width};
 }
 
-pen pens::goldenrod() {
-  return pen {color::from_known_color(known_color::goldenrod), 1};
+auto pens::goldenrod(float width) -> pen {
+  return {color::goldenrod, width};
 }
 
-pen pens::gray() {
-  return pen {color::from_known_color(known_color::gray), 1};
+auto pens::gray(float width) -> pen {
+  return {color::gray, width};
 }
 
-pen pens::green() {
-  return pen {color::from_known_color(known_color::green), 1};
+auto pens::green(float width) -> pen {
+  return {color::green, width};
 }
 
-pen pens::green_yellow() {
-  return pen {color::from_known_color(known_color::green_yellow), 1};
+auto pens::green_yellow(float width) -> pen {
+  return {color::green_yellow, width};
 }
 
-pen pens::honeydew() {
-  return pen {color::from_known_color(known_color::honeydew), 1};
+auto pens::honeydew(float width) -> pen {
+  return {color::honeydew, width};
 }
 
-pen pens::hot_pink() {
-  return pen {color::from_known_color(known_color::hot_pink), 1};
+auto pens::hot_pink(float width) -> pen {
+  return {color::hot_pink, width};
 }
 
-pen pens::indian_red() {
-  return pen {color::from_known_color(known_color::indian_red), 1};
+auto pens::indian_red(float width) -> pen {
+  return {color::indian_red, width};
 }
 
-pen pens::indigo() {
-  return pen {color::from_known_color(known_color::indigo), 1};
+auto pens::indigo(float width) -> pen {
+  return {color::indigo, width};
 }
 
-pen pens::ivory() {
-  return pen {color::from_known_color(known_color::ivory), 1};
+auto pens::ivory(float width) -> pen {
+  return {color::ivory, width};
 }
 
-pen pens::khaki() {
-  return pen {color::from_known_color(known_color::khaki), 1};
+auto pens::khaki(float width) -> pen {
+  return {color::khaki, width};
 }
 
-pen pens::lavender() {
-  return pen {color::from_known_color(known_color::lavender), 1};
+auto pens::lavender(float width) -> pen {
+  return {color::lavender, width};
 }
 
-pen pens::lavender_blush() {
-  return pen {color::from_known_color(known_color::lavender_blush), 1};
+auto pens::lavender_blush(float width) -> pen {
+  return {color::lavender_blush, width};
 }
 
-pen pens::lawn_green() {
-  return pen {color::from_known_color(known_color::lawn_green), 1};
+auto pens::lawn_green(float width) -> pen {
+  return {color::lawn_green, width};
 }
 
-pen pens::lemon_chiffon() {
-  return pen {color::from_known_color(known_color::lemon_chiffon), 1};
+auto pens::lemon_chiffon(float width) -> pen {
+  return {color::lemon_chiffon, width};
 }
 
-pen pens::light_blue() {
-  return pen {color::from_known_color(known_color::light_blue), 1};
+auto pens::light_blue(float width) -> pen {
+  return {color::light_blue, width};
 }
 
-pen pens::light_coral() {
-  return pen {color::from_known_color(known_color::light_coral), 1};
+auto pens::light_coral(float width) -> pen {
+  return {color::light_coral, width};
 }
 
-pen pens::light_cyan() {
-  return pen {color::from_known_color(known_color::light_cyan), 1};
+auto pens::light_cyan(float width) -> pen {
+  return {color::light_cyan, width};
 }
 
-pen pens::light_goldenrod_yellow() {
-  return pen {color::from_known_color(known_color::light_goldenrod_yellow), 1};
+auto pens::light_goldenrod_yellow(float width) -> pen {
+  return {color::light_goldenrod_yellow, width};
 }
 
-pen pens::light_gray() {
-  return pen {color::from_known_color(known_color::light_gray), 1};
+auto pens::light_gray(float width) -> pen {
+  return {color::light_gray, width};
 }
 
-pen pens::light_green() {
-  return pen {color::from_known_color(known_color::light_green), 1};
+auto pens::light_green(float width) -> pen {
+  return {color::light_green, width};
 }
 
-pen pens::light_pink() {
-  return pen {color::from_known_color(known_color::light_pink), 1};
+auto pens::light_pink(float width) -> pen {
+  return {color::light_pink, width};
 }
 
-pen pens::light_salmon() {
-  return pen {color::from_known_color(known_color::light_salmon), 1};
+auto pens::light_salmon(float width) -> pen {
+  return {color::light_salmon, width};
 }
 
-pen pens::light_sea_green() {
-  return pen {color::from_known_color(known_color::light_sea_green), 1};
+auto pens::light_sea_green(float width) -> pen {
+  return {color::light_sea_green, width};
 }
 
-pen pens::light_sky_blue() {
-  return pen {color::from_known_color(known_color::light_sky_blue), 1};
+auto pens::light_sky_blue(float width) -> pen {
+  return {color::light_sky_blue, width};
 }
 
-pen pens::light_slate_gray() {
-  return pen {color::from_known_color(known_color::light_slate_gray), 1};
+auto pens::light_slate_gray(float width) -> pen {
+  return {color::light_slate_gray, width};
 }
 
-pen pens::light_steel_blue() {
-  return pen {color::from_known_color(known_color::light_steel_blue), 1};
+auto pens::light_steel_blue(float width) -> pen {
+  return {color::light_steel_blue, width};
 }
 
-pen pens::light_yellow() {
-  return pen {color::from_known_color(known_color::light_yellow), 1};
+auto pens::light_yellow(float width) -> pen {
+  return {color::light_yellow, width};
 }
 
-pen pens::lime() {
-  return pen {color::from_known_color(known_color::lime), 1};
+auto pens::lime(float width) -> pen {
+  return {color::lime, width};
 }
 
-pen pens::lime_green() {
-  return pen {color::from_known_color(known_color::lime_green), 1};
+auto pens::lime_green(float width) -> pen {
+  return {color::lime_green, width};
 }
 
-pen pens::linen() {
-  return pen {color::from_known_color(known_color::linen), 1};
+auto pens::linen(float width) -> pen {
+  return {color::linen, width};
 }
 
-pen pens::magenta() {
-  return pen {color::from_known_color(known_color::magenta), 1};
+auto pens::magenta(float width) -> pen {
+  return {color::magenta, width};
 }
 
-pen pens::maroon() {
-  return pen {color::from_known_color(known_color::maroon), 1};
+auto pens::maroon(float width) -> pen {
+  return {color::maroon, width};
 }
 
-pen pens::medium_aquamarine() {
-  return pen {color::from_known_color(known_color::medium_aquamarine), 1};
+auto pens::medium_aquamarine(float width) -> pen {
+  return {color::medium_aquamarine, width};
 }
 
-pen pens::medium_blue() {
-  return pen {color::from_known_color(known_color::medium_blue), 1};
+auto pens::medium_blue(float width) -> pen {
+  return {color::medium_blue, width};
 }
 
-pen pens::medium_orchid() {
-  return pen {color::from_known_color(known_color::medium_orchid), 1};
+auto pens::medium_orchid(float width) -> pen {
+  return {color::medium_orchid, width};
 }
 
-pen pens::medium_purple() {
-  return pen {color::from_known_color(known_color::medium_purple), 1};
+auto pens::medium_purple(float width) -> pen {
+  return {color::medium_purple, width};
 }
 
-pen pens::medium_sea_green() {
-  return pen {color::from_known_color(known_color::medium_sea_green), 1};
+auto pens::medium_sea_green(float width) -> pen {
+  return {color::medium_sea_green, width};
 }
 
-pen pens::medium_slate_blue() {
-  return pen {color::from_known_color(known_color::medium_slate_blue), 1};
+auto pens::medium_slate_blue(float width) -> pen {
+  return {color::medium_slate_blue, width};
 }
 
-pen pens::medium_spring_green() {
-  return pen {color::from_known_color(known_color::medium_spring_green), 1};
+auto pens::medium_spring_green(float width) -> pen {
+  return {color::medium_spring_green, width};
 }
 
-pen pens::medium_turquoise() {
-  return pen {color::from_known_color(known_color::medium_turquoise), 1};
+auto pens::medium_turquoise(float width) -> pen {
+  return {color::medium_turquoise, width};
 }
 
-pen pens::medium_violet_red() {
-  return pen {color::from_known_color(known_color::medium_violet_red), 1};
+auto pens::medium_violet_red(float width) -> pen {
+  return {color::medium_violet_red, width};
 }
 
-pen pens::midnight_blue() {
-  return pen {color::from_known_color(known_color::midnight_blue), 1};
+auto pens::midnight_blue(float width) -> pen {
+  return {color::midnight_blue, width};
 }
 
-pen pens::mint_cream() {
-  return pen {color::from_known_color(known_color::mint_cream), 1};
+auto pens::mint_cream(float width) -> pen {
+  return {color::mint_cream, width};
 }
 
-pen pens::misty_rose() {
-  return pen {color::from_known_color(known_color::misty_rose), 1};
+auto pens::misty_rose(float width) -> pen {
+  return {color::misty_rose, width};
 }
 
-pen pens::moccasin() {
-  return pen {color::from_known_color(known_color::moccasin), 1};
+auto pens::moccasin(float width) -> pen {
+  return {color::moccasin, width};
 }
 
-pen pens::navajo_white() {
-  return pen {color::from_known_color(known_color::navajo_white), 1};
+auto pens::navajo_white(float width) -> pen {
+  return {color::navajo_white, width};
 }
 
-pen pens::navy() {
-  return pen {color::from_known_color(known_color::navy), 1};
+auto pens::navy(float width) -> pen {
+  return {color::navy, width};
 }
 
-pen pens::old_lace() {
-  return pen {color::from_known_color(known_color::old_lace), 1};
+auto pens::old_lace(float width) -> pen {
+  return {color::old_lace, width};
 }
 
-pen pens::olive() {
-  return pen {color::from_known_color(known_color::olive), 1};
+auto pens::olive(float width) -> pen {
+  return {color::olive, width};
 }
 
-pen pens::olive_drab() {
-  return pen {color::from_known_color(known_color::olive_drab), 1};
+auto pens::olive_drab(float width) -> pen {
+  return {color::olive_drab, width};
 }
 
-pen pens::orange() {
-  return pen {color::from_known_color(known_color::orange), 1};
+auto pens::orange(float width) -> pen {
+  return {color::orange, width};
 }
 
-pen pens::orange_red() {
-  return pen {color::from_known_color(known_color::orange_red), 1};
+auto pens::orange_red(float width) -> pen {
+  return {color::orange_red, width};
 }
 
-pen pens::orchid() {
-  return pen {color::from_known_color(known_color::orchid), 1};
+auto pens::orchid(float width) -> pen {
+  return {color::orchid, width};
 }
 
-pen pens::pale_goldenrod() {
-  return pen {color::from_known_color(known_color::pale_goldenrod), 1};
+auto pens::pale_goldenrod(float width) -> pen {
+  return {color::pale_goldenrod, width};
 }
 
-pen pens::pale_green() {
-  return pen {color::from_known_color(known_color::pale_green), 1};
+auto pens::pale_green(float width) -> pen {
+  return {color::pale_green, width};
 }
 
-pen pens::pale_turquoise() {
-  return pen {color::from_known_color(known_color::pale_turquoise), 1};
+auto pens::pale_turquoise(float width) -> pen {
+  return {color::pale_turquoise, width};
 }
 
-pen pens::pale_violet_red() {
-  return pen {color::from_known_color(known_color::pale_violet_red), 1};
+auto pens::pale_violet_red(float width) -> pen {
+  return {color::pale_violet_red, width};
 }
 
-pen pens::papaya_whip() {
-  return pen {color::from_known_color(known_color::papaya_whip), 1};
+auto pens::papaya_whip(float width) -> pen {
+  return {color::papaya_whip, width};
 }
 
-pen pens::peach_puff() {
-  return pen {color::from_known_color(known_color::peach_puff), 1};
+auto pens::peach_puff(float width) -> pen {
+  return {color::peach_puff, width};
 }
 
-pen pens::peru() {
-  return pen {color::from_known_color(known_color::peru), 1};
+auto pens::peru(float width) -> pen {
+  return {color::peru, width};
 }
 
-pen pens::pink() {
-  return pen {color::from_known_color(known_color::pink), 1};
+auto pens::pink(float width) -> pen {
+  return {color::pink, width};
 }
 
-pen pens::plum() {
-  return pen {color::from_known_color(known_color::plum), 1};
+auto pens::plum(float width) -> pen {
+  return {color::plum, width};
 }
 
-pen pens::powder_blue() {
-  return pen {color::from_known_color(known_color::powder_blue), 1};
+auto pens::powder_blue(float width) -> pen {
+  return {color::powder_blue, width};
 }
 
-pen pens::purple() {
-  return pen {color::from_known_color(known_color::purple), 1};
+auto pens::purple(float width) -> pen {
+  return {color::purple, width};
 }
 
-pen pens::rebecca_purple() {
-  return pen {color::from_known_color(known_color::rebecca_purple), 1};
+auto pens::rebecca_purple(float width) -> pen {
+  return {color::rebecca_purple, width};
 }
 
-pen pens::red() {
-  return pen {color::from_known_color(known_color::red), 1};
+auto pens::red(float width) -> pen {
+  return {color::red, width};
 }
 
-pen pens::rosy_brown() {
-  return pen {color::from_known_color(known_color::rosy_brown), 1};
+auto pens::rosy_brown(float width) -> pen {
+  return {color::rosy_brown, width};
 }
 
-pen pens::royal_blue() {
-  return pen {color::from_known_color(known_color::royal_blue), 1};
+auto pens::royal_blue(float width) -> pen {
+  return {color::royal_blue, width};
 }
 
-pen pens::saddle_brown() {
-  return pen {color::from_known_color(known_color::saddle_brown), 1};
+auto pens::saddle_brown(float width) -> pen {
+  return {color::saddle_brown, width};
 }
 
-pen pens::salmon() {
-  return pen {color::from_known_color(known_color::salmon), 1};
+auto pens::salmon(float width) -> pen {
+  return {color::salmon, width};
 }
 
-pen pens::sandy_brown() {
-  return pen {color::from_known_color(known_color::sandy_brown), 1};
+auto pens::sandy_brown(float width) -> pen {
+  return {color::sandy_brown, width};
 }
 
-pen pens::sea_green() {
-  return pen {color::from_known_color(known_color::sea_green), 1};
+auto pens::sea_green(float width) -> pen {
+  return {color::sea_green, width};
 }
 
-pen pens::sea_shell() {
-  return pen {color::from_known_color(known_color::sea_shell), 1};
+auto pens::sea_shell(float width) -> pen {
+  return {color::sea_shell, width};
 }
 
-pen pens::sienna() {
-  return pen {color::from_known_color(known_color::sienna), 1};
+auto pens::sienna(float width) -> pen {
+  return {color::sienna, width};
 }
 
-pen pens::silver() {
-  return pen {color::from_known_color(known_color::silver), 1};
+auto pens::silver(float width) -> pen {
+  return {color::silver, width};
 }
 
-pen pens::sky_blue() {
-  return pen {color::from_known_color(known_color::sky_blue), 1};
+auto pens::sky_blue(float width) -> pen {
+  return {color::sky_blue, width};
 }
 
-pen pens::slate_blue() {
-  return pen {color::from_known_color(known_color::slate_blue), 1};
+auto pens::slate_blue(float width) -> pen {
+  return {color::slate_blue, width};
 }
 
-pen pens::slate_gray() {
-  return pen {color::from_known_color(known_color::slate_gray), 1};
+auto pens::slate_gray(float width) -> pen {
+  return {color::slate_gray, width};
 }
 
-pen pens::snow() {
-  return pen {color::from_known_color(known_color::snow), 1};
+auto pens::snow(float width) -> pen {
+  return {color::snow, width};
 }
 
-pen pens::spring_green() {
-  return pen {color::from_known_color(known_color::spring_green), 1};
+auto pens::spring_green(float width) -> pen {
+  return {color::spring_green, width};
 }
 
-pen pens::steel_blue() {
-  return pen {color::from_known_color(known_color::steel_blue), 1};
+auto pens::steel_blue(float width) -> pen {
+  return {color::steel_blue, width};
 }
 
-pen pens::tan() {
-  return pen {color::from_known_color(known_color::tan), 1};
+auto pens::tan(float width) -> pen {
+  return {color::tan, width};
 }
 
-pen pens::teal() {
-  return pen {color::from_known_color(known_color::teal), 1};
+auto pens::teal(float width) -> pen {
+  return {color::teal, width};
 }
 
-pen pens::thistle() {
-  return pen {color::from_known_color(known_color::thistle), 1};
+auto pens::thistle(float width) -> pen {
+  return {color::thistle, width};
 }
 
-pen pens::tomato() {
-  return pen {color::from_known_color(known_color::tomato), 1};
+auto pens::tomato(float width) -> pen {
+  return {color::tomato, width};
 }
 
-pen pens::turquoise() {
-  return pen {color::from_known_color(known_color::turquoise), 1};
+auto pens::turquoise(float width) -> pen {
+  return {color::turquoise, width};
 }
 
-pen pens::violet() {
-  return pen {color::from_known_color(known_color::violet), 1};
+auto pens::violet(float width) -> pen {
+  return {color::violet, width};
 }
 
-pen pens::wheat() {
-  return pen {color::from_known_color(known_color::wheat), 1};
+auto pens::wheat(float width) -> pen {
+  return {color::wheat, width};
 }
 
-pen pens::white() {
-  return pen {color::from_known_color(known_color::white), 1};
+auto pens::white(float width) -> pen {
+  return {color::white, width};
 }
 
-pen pens::white_smoke() {
-  return pen {color::from_known_color(known_color::white_smoke), 1};
+auto pens::white_smoke(float width) -> pen {
+  return {color::white_smoke, width};
 }
 
-pen pens::yellow() {
-  return pen {color::from_known_color(known_color::yellow), 1};
+auto pens::yellow(float width) -> pen {
+  return {color::yellow, width};
 }
 
-pen pens::yellow_green() {
-  return pen {color::from_known_color(known_color::yellow_green), 1};
+auto pens::yellow_green(float width) -> pen {
+  return {color::yellow_green, width};
 }
 
-const array<pen>& pens::get_pens() {
-  static auto pens = array {pens::transparent(), pens::alice_blue(), pens::antique_white(), pens::aqua(), pens::aquamarine(), pens::azure(), pens::beige(), pens::bisque(), pens::black(), pens::blanched_almond(), pens::blue(), pens::blue_violet(), pens::brown(), pens::burly_wood(), pens::cadet_blue(), pens::chartreuse(), pens::chocolate(), pens::coral(), pens::cornflower_blue(), pens::cornsilk(), pens::crimson(), pens::cyan(), pens::dark_blue(), pens::dark_cyan(), pens::dark_goldenrod(), pens::dark_gray(), pens::dark_green(), pens::dark_khaki(), pens::dark_magenta(), pens::dark_olive_green(), pens::dark_orange(), pens::dark_orchid(), pens::dark_red(), pens::dark_salmon(), pens::dark_sea_green(), pens::dark_slate_blue(), pens::dark_slate_gray(), pens::dark_turquoise(), pens::dark_violet(), pens::deep_pink(), pens::deep_sky_blue(), pens::dim_gray(), pens::dodger_blue(), pens::firebrick(), pens::floral_white(), pens::forest_green(), pens::fuchsia(), pens::gainsboro(), pens::ghost_white(), pens::gold(), pens::goldenrod(), pens::gray(), pens::green(), pens::green_yellow(), pens::honeydew(), pens::hot_pink(), pens::indian_red(), pens::indigo(), pens::ivory(), pens::khaki(), pens::lavender(), pens::lavender_blush(), pens::lawn_green(), pens::lemon_chiffon(), pens::light_blue(), pens::light_coral(), pens::light_cyan(), pens::light_goldenrod_yellow(), pens::light_gray(), pens::light_green(), pens::light_pink(), pens::light_salmon(), pens::light_sea_green(), pens::light_sky_blue(), pens::light_slate_gray(), pens::light_steel_blue(), pens::light_yellow(), pens::lime(), pens::lime_green(), pens::linen(), pens::magenta(), pens::maroon(), pens::medium_aquamarine(), pens::medium_blue(), pens::medium_orchid(), pens::medium_purple(), pens::medium_sea_green(), pens::medium_slate_blue(), pens::medium_spring_green(), pens::medium_turquoise(), pens::medium_violet_red(), pens::midnight_blue(), pens::mint_cream(), pens::misty_rose(), pens::moccasin(), pens::navajo_white(), pens::navy(), pens::old_lace(), pens::olive(), pens::olive_drab(), pens::orange(), pens::orange_red(), pens::orchid(), pens::pale_goldenrod(), pens::pale_green(), pens::pale_turquoise(), pens::pale_violet_red(), pens::papaya_whip(), pens::peach_puff(), pens::peru(), pens::pink(), pens::plum(), pens::powder_blue(), pens::purple(), pens::rebecca_purple(), pens::red(), pens::rosy_brown(), pens::royal_blue(), pens::saddle_brown(), pens::salmon(), pens::sandy_brown(), pens::sea_green(), pens::sea_shell(), pens::sienna(), pens::silver(), pens::sky_blue(), pens::slate_blue(), pens::slate_gray(), pens::snow(), pens::spring_green(), pens::steel_blue(), pens::tan(), pens::teal(), pens::thistle(), pens::tomato(), pens::turquoise(), pens::violet(), pens::wheat(), pens::white(), pens::white_smoke(), pens::yellow(), pens::yellow_green()};
+auto pens::get_pens(float width) -> const array<pen>& {
+  static auto pens = array<pen> {};
+  if (pens.empty() || pens[0].width() != width)
+    pens = array {pens::transparent(width), pens::alice_blue(width), pens::antique_white(width), pens::aqua(width), pens::aquamarine(width), pens::azure(width), pens::beige(width), pens::bisque(width), pens::black(width), pens::blanched_almond(width), pens::blue(width), pens::blue_violet(width), pens::brown(width), pens::burly_wood(width), pens::cadet_blue(width), pens::chartreuse(width), pens::chocolate(width), pens::coral(width), pens::cornflower_blue(width), pens::cornsilk(width), pens::crimson(width), pens::cyan(width), pens::dark_blue(width), pens::dark_cyan(width), pens::dark_goldenrod(width), pens::dark_gray(width), pens::dark_green(width), pens::dark_khaki(width), pens::dark_magenta(width), pens::dark_olive_green(width), pens::dark_orange(width), pens::dark_orchid(width), pens::dark_red(width), pens::dark_salmon(width), pens::dark_sea_green(width), pens::dark_slate_blue(width), pens::dark_slate_gray(width), pens::dark_turquoise(width), pens::dark_violet(width), pens::deep_pink(width), pens::deep_sky_blue(width), pens::dim_gray(width), pens::dodger_blue(width), pens::firebrick(width), pens::floral_white(width), pens::forest_green(width), pens::fuchsia(width), pens::gainsboro(width), pens::ghost_white(width), pens::gold(width), pens::goldenrod(width), pens::gray(width), pens::green(width), pens::green_yellow(width), pens::honeydew(width), pens::hot_pink(width), pens::indian_red(width), pens::indigo(width), pens::ivory(width), pens::khaki(width), pens::lavender(width), pens::lavender_blush(width), pens::lawn_green(width), pens::lemon_chiffon(width), pens::light_blue(width), pens::light_coral(width), pens::light_cyan(width), pens::light_goldenrod_yellow(width), pens::light_gray(width), pens::light_green(width), pens::light_pink(width), pens::light_salmon(width), pens::light_sea_green(width), pens::light_sky_blue(width), pens::light_slate_gray(width), pens::light_steel_blue(width), pens::light_yellow(width), pens::lime(width), pens::lime_green(width), pens::linen(width), pens::magenta(width), pens::maroon(width), pens::medium_aquamarine(width), pens::medium_blue(width), pens::medium_orchid(width), pens::medium_purple(width), pens::medium_sea_green(width), pens::medium_slate_blue(width), pens::medium_spring_green(width), pens::medium_turquoise(width), pens::medium_violet_red(width), pens::midnight_blue(width), pens::mint_cream(width), pens::misty_rose(width), pens::moccasin(width), pens::navajo_white(width), pens::navy(width), pens::old_lace(width), pens::olive(width), pens::olive_drab(width), pens::orange(width), pens::orange_red(width), pens::orchid(width), pens::pale_goldenrod(width), pens::pale_green(width), pens::pale_turquoise(width), pens::pale_violet_red(width), pens::papaya_whip(width), pens::peach_puff(width), pens::peru(width), pens::pink(width), pens::plum(width), pens::powder_blue(width), pens::purple(width), pens::rebecca_purple(width), pens::red(width), pens::rosy_brown(width), pens::royal_blue(width), pens::saddle_brown(width), pens::salmon(width), pens::sandy_brown(width), pens::sea_green(width), pens::sea_shell(width), pens::sienna(width), pens::silver(width), pens::sky_blue(width), pens::slate_blue(width), pens::slate_gray(width), pens::snow(width), pens::spring_green(width), pens::steel_blue(width), pens::tan(width), pens::teal(width), pens::thistle(width), pens::tomato(width), pens::turquoise(width), pens::violet(width), pens::wheat(width), pens::white(width), pens::white_smoke(width), pens::yellow(width), pens::yellow_green(width)};
   return pens;
 }
