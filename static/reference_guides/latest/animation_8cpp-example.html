@@ -136,29 +136,24 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line">  <span class="keyword">class </span>form1 : <span class="keyword">public</span> form {</div>
 <div class="line">  <span class="keyword">public</span>:</div>
 <div class="line">    form1() {</div>
-<div class="line">      back_color(basic_colors::teal());</div>
-<div class="line">      client_size({360, 280});</div>
-<div class="line">      controls().add(fish_animation);</div>
-<div class="line">      fore_color(basic_colors::aqua());</div>
-<div class="line">      text(<span class="stringliteral">&quot;Animation example&quot;</span>);</div>
+<div class="line">      text(<span class="stringliteral">&quot;Animation example&quot;</span>).client_size({800, 600}).controls().add(fish_animation);</div>
 <div class="line">      </div>
-<div class="line">      fish_animation.dock(dock_style::fill);</div>
-<div class="line">      fish_animation.frames_per_second(60);</div>
+<div class="line">      fish_animation.frames_per_second(60).dock(dock_style::fill);</div>
 <div class="line">      fish_animation.start();</div>
 <div class="line">      fish_animation.click += [&amp;] {fish_animation.running(!fish_animation.running());};</div>
-<div class="line">      fish_animation.updated += [](<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> animation_updated_event_args&amp; e){diagnostics::debug::write_line(string::format(<span class="stringliteral">&quot;frame_counter={}, elapsed={}&quot;</span>, e.frame_counter(), e.elapsed()));};</div>
+<div class="line">      fish_animation.updated += [](<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> animation_updated_event_args&amp; e){diagnostics::debug::write_line(<span class="stringliteral">&quot;frame_counter = {}, elapsed = {}&quot;</span>, e.frame_counter(), e.elapsed());};</div>
 <div class="line">      fish_animation.paint += [](<span class="keywordtype">object</span>&amp; sender, paint_event_args&amp; e) {</div>
-<div class="line">        e.graphics().clear(as&lt;animation&gt;(sender).back_color());</div>
-<div class="line">        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keyword">auto</span> fish_length = 16;</div>
+<div class="line">        e.graphics().clear(basic_colors::teal());</div>
+<div class="line">        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keyword">auto</span> fish_length = 15;</div>
 <div class="line">        <span class="keyword">auto</span> points = list&lt;point_f&gt; {};</div>
 <div class="line">        <span class="keywordflow">for</span> (<span class="keyword">auto</span> i = 0; i &lt; fish_length; ++i) {</div>
-<div class="line">          <span class="keyword">auto</span> radius = 100.0 + 10.0 * math::sin(as&lt;animation&gt;(sender).frame_counter() * 0.1 + i * 0.5);</div>
+<div class="line">          <span class="keyword">auto</span> radius = e.clip_rectangle().width / 4.0 + 10.0 * math::sin(as&lt;animation&gt;(sender).frame_counter() * 0.1 + i * 0.5);</div>
 <div class="line">          <span class="keyword">auto</span> x = as&lt;float&gt;(e.clip_rectangle().width / 2.0 + 1.5 * radius * sin(as&lt;animation&gt;(sender).frame_counter() * 0.02 + i * 0.12));</div>
 <div class="line">          <span class="keyword">auto</span> y = as&lt;float&gt;(e.clip_rectangle().height / 2.0 + 1.0 * radius * math::cos(as&lt;animation&gt;(sender).frame_counter() * 0.04 + i * 0.12f));</div>
-<div class="line">          e.graphics().fill_ellipse(solid_brush(as&lt;animation&gt;(sender).fore_color()), x - i, y - i, 2.0f + 2.0f * i, 2.0f + 2.0f * i);</div>
-<div class="line">          points.add({x, y});</div>
+<div class="line">          e.graphics().fill_ellipse(brushes::aqua(), x - i, y - i, 2.0f + 2.0f * i, 2.0f + 2.0f * i);</div>
+<div class="line">          points.add({x, y + 1});</div>
 <div class="line">        }</div>
-<div class="line">        e.graphics().draw_lines(pen(as&lt;animation&gt;(sender).fore_color(), 4), points.to_array());</div>
+<div class="line">        e.graphics().draw_lines(pens::aqua(4), points.to_array());</div>
 <div class="line">      };</div>
 <div class="line">    }</div>
 <div class="line">    </div>
@@ -168,9 +163,6 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="comment">//auto df = debug_form {};</span></div>
-<div class="line">  <span class="comment">//df.back_color(basic_colors::black());</span></div>
-<div class="line">  <span class="comment">//df.fore_color(basic_colors::lime());</span></div>
 <div class="line">  application::run(animation_example::form1 {});</div>
 <div class="line">}</div>
 </div><!-- fragment --> </div><!-- contents -->
