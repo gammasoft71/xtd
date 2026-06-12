@@ -140,20 +140,20 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line">      </div>
 <div class="line">      fish_animation.frames_per_second(60).dock(dock_style::fill);</div>
 <div class="line">      fish_animation.start();</div>
-<div class="line">      fish_animation.click += [&amp;] {fish_animation.running(!fish_animation.running());};</div>
+<div class="line">      fish_animation.click += [](<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> event_args&amp; e) {as&lt;animation&gt;(sender).running(!as&lt;animation&gt;(sender).running());};</div>
 <div class="line">      fish_animation.updated += [](<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> animation_updated_event_args&amp; e){diagnostics::debug::write_line(<span class="stringliteral">&quot;frame_counter = {}, elapsed = {}&quot;</span>, e.frame_counter(), e.elapsed());};</div>
 <div class="line">      fish_animation.paint += [](<span class="keywordtype">object</span>&amp; sender, paint_event_args&amp; e) {</div>
 <div class="line">        e.graphics().clear(basic_colors::teal());</div>
 <div class="line">        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keyword">auto</span> fish_length = 15;</div>
 <div class="line">        <span class="keyword">auto</span> points = list&lt;point_f&gt; {};</div>
-<div class="line">        <span class="keywordflow">for</span> (<span class="keyword">auto</span> i = 0; i &lt; fish_length; ++i) {</div>
-<div class="line">          <span class="keyword">auto</span> radius = e.clip_rectangle().width / 4.0 + 10.0 * math::sin(as&lt;animation&gt;(sender).frame_counter() * 0.1 + i * 0.5);</div>
-<div class="line">          <span class="keyword">auto</span> x = as&lt;float&gt;(e.clip_rectangle().width / 2.0 + 1.5 * radius * sin(as&lt;animation&gt;(sender).frame_counter() * 0.02 + i * 0.12));</div>
-<div class="line">          <span class="keyword">auto</span> y = as&lt;float&gt;(e.clip_rectangle().height / 2.0 + 1.0 * radius * math::cos(as&lt;animation&gt;(sender).frame_counter() * 0.04 + i * 0.12f));</div>
-<div class="line">          e.graphics().fill_ellipse(brushes::aqua(), x - i, y - i, 2.0f + 2.0f * i, 2.0f + 2.0f * i);</div>
-<div class="line">          points.add({x, y + 1});</div>
+<div class="line">        <span class="keywordflow">for</span> (<span class="keyword">auto</span> index = 0; index &lt; fish_length; ++index) {</div>
+<div class="line">          <span class="keyword">auto</span> radius = e.clip_rectangle().width / 4.0 + 10.0 * math::sin(as&lt;animation&gt;(sender).frame_counter() * 0.1 + index * 0.5);</div>
+<div class="line">          <span class="keyword">auto</span> x = as&lt;float&gt;(e.clip_rectangle().width / 2.0 + 1.5 * radius * math::sin(as&lt;animation&gt;(sender).frame_counter() * 0.02 + index * 0.12));</div>
+<div class="line">          <span class="keyword">auto</span> y = as&lt;float&gt;(e.clip_rectangle().height / 2.0 + 1.0 * radius * math::cos(as&lt;animation&gt;(sender).frame_counter() * 0.04 + index * 0.12f));</div>
+<div class="line">          e.graphics().fill_ellipse(brushes::aqua(), x - index, y - index, 2.0f + 2.0f * index, 2.0f + 2.0f * index);</div>
+<div class="line">          points.add({x, y});</div>
 <div class="line">        }</div>
-<div class="line">        e.graphics().draw_lines(pens::aqua(4), points.to_array());</div>
+<div class="line">        e.graphics().draw_beziers(pens::aqua(4), points.to_array());</div>
 <div class="line">      };</div>
 <div class="line">    }</div>
 <div class="line">    </div>
