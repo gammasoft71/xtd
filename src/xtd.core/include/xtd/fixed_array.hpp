@@ -9,6 +9,7 @@
 #include "string.hpp"
 #include "collections/generic/ienumerable.hpp"
 #include "helpers/throw_helper.hpp"
+#include <concepts>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -271,7 +272,7 @@ namespace xtd {
 
     /// @brief Copies the elements of the xtd::fixed_array <type_t> to a new array.
     /// @return An array containing copies of the elements of the xtd::fixed_array <type_t, xtd::usize>.
-    [[nodiscard]] virtual auto to_array() const noexcept -> xtd::array<value_type> {return size() ? xtd::array<value_type>(items_, items_ + len) : xtd::array<value_type> {};}
+    [[nodiscard]] auto to_array() const noexcept -> xtd::array<value_type> requires std::copy_constructible<value_type> {return size() ? xtd::array<value_type>(items_, items_ + len) : xtd::array<value_type> {};}
     
     /// @brief Returns a xtd::string that represents the current object.
     /// @return A string that represents the current object.
