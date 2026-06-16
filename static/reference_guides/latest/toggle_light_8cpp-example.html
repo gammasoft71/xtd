@@ -138,14 +138,13 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line">    toggle_light() = <span class="keywordflow">default</span>;</div>
 <div class="line">    </div>
 <div class="line">  <span class="keyword">protected</span>:</div>
-<div class="line">    <span class="keywordtype">void</span> on_mouse_enter(<span class="keyword">const</span> event_args&amp;)<span class="keyword"> override </span>{</div>
+<div class="line">    <span class="keyword">auto</span> on_mouse_enter(<span class="keyword">const</span> event_args&amp;) -&gt; <span class="keywordtype">void</span> <span class="keyword">override</span> {</div>
 <div class="line">      on = !on;</div>
-<div class="line">      refresh();</div>
+<div class="line">      invalidate();</div>
 <div class="line">    }</div>
 <div class="line">    </div>
-<div class="line">    <span class="keywordtype">void</span> on_paint(paint_event_args&amp; e)<span class="keyword"> override </span>{</div>
-<div class="line">      e.graphics().clear(back_color());</div>
-<div class="line">      <span class="keywordflow">if</span> (on) e.graphics().fill_ellipse(system_brushes::accent(), e.clip_rectangle());</div>
+<div class="line">    <span class="keyword">auto</span> on_paint(paint_event_args&amp; e) -&gt; <span class="keywordtype">void</span> <span class="keyword">override</span> {</div>
+<div class="line">      e.graphics().fill_ellipse(on ? system_brushes::accent() : system_brushes::control(), e.clip_rectangle());</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">  <span class="keyword">private</span>:</div>
@@ -157,30 +156,21 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line">    main_form() {</div>
 <div class="line">      text(<span class="stringliteral">&quot;Toggle light&quot;</span>);</div>
 <div class="line">      client_size({600, 600});</div>
-<div class="line">      </div>
-<div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> y = 0; y &lt; num_y; ++y)</div>
-<div class="line">        <span class="keywordflow">for</span> (<span class="keyword">auto</span> x = 0; x &lt; num_x; ++x)</div>
-<div class="line">          toggle_lights[x][y].parent(*<span class="keyword">this</span>);</div>
+<div class="line">      controls().add_range(toggle_lights);</div>
+<div class="line"> </div>
+<div class="line">      resize += [<span class="keyword">this</span>] {</div>
+<div class="line">        <span class="keyword">auto</span> step_x = as&lt;int&gt;(client_size().width / toggle_lights.get_length(0));</div>
+<div class="line">        <span class="keyword">auto</span> step_y = as&lt;int&gt;(client_size().height / toggle_lights.get_length(1));</div>
+<div class="line">        </div>
+<div class="line">        <span class="keywordflow">for</span> (<span class="keyword">auto</span> x = 0; x &lt; as&lt;int&gt;(toggle_lights.get_length(0)); ++x)</div>
+<div class="line">          <span class="keywordflow">for</span> (<span class="keyword">auto</span> y = 0; y &lt; as&lt;int&gt;(toggle_lights.get_length(1)); ++y)</div>
+<div class="line">            <span class="comment">// before C++23 : toggle_lights(x, y).bounds({x * step_x, y * step_y, step_x, step_y});</span></div>
+<div class="line">            toggle_lights[x, y].bounds({x * step_x, y * step_y, step_x, step_y});</div>
+<div class="line">      };</div>
 <div class="line">    }</div>
-<div class="line">    </div>
-<div class="line">    <span class="keyword">static</span> <span class="keywordtype">void</span> main() {</div>
-<div class="line">      application::run(main_form {});</div>
-<div class="line">    }</div>
-<div class="line">    </div>
-<div class="line">  <span class="keyword">protected</span>:</div>
-<div class="line">    <span class="keywordtype">void</span> on_resize(<span class="keyword">const</span> event_args&amp;)<span class="keyword"> override </span>{</div>
-<div class="line">      <span class="keyword">auto</span> step_x = client_size().width / num_x;</div>
-<div class="line">      <span class="keyword">auto</span> step_y = client_size().height / num_y;</div>
-<div class="line">      </div>
-<div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> y = 0; y &lt; num_y; ++y)</div>
-<div class="line">        <span class="keywordflow">for</span> (<span class="keyword">auto</span> x = 0; x &lt; num_x; ++x)</div>
-<div class="line">          toggle_lights[x][y].bounds({x * step_x, y * step_y, step_x, step_y});</div>
-<div class="line">    }</div>
-<div class="line">    </div>
+<div class="line">        </div>
 <div class="line">  <span class="keyword">private</span>:</div>
-<div class="line">    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> num_x = 20;</div>
-<div class="line">    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> num_y = 20;</div>
-<div class="line">    std::array&lt;std::array&lt;toggle_light, num_y&gt;, num_x&gt; toggle_lights;</div>
+<div class="line">    array&lt;toggle_light, 2&gt; toggle_lights = array&lt;&gt;::create_instance&lt;toggle_light&gt;(20, 20);</div>
 <div class="line">  };</div>
 <div class="line">}</div>
 <div class="line"> </div>
