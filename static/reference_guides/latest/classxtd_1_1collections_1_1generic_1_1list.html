@@ -334,7 +334,7 @@ The <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="
 <dd>
 The <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; class is the generic equivalent of the <a class="el" href="group__collections.html#ga83a0a06ecb97330626993339079ebbf6" title="Represents a collection of xtd::any_object.">xtd::collections::array_list</a> class. It implements the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ilist.html" title="Represents a collection of objects that can be individually accessed by index.">xtd::collections::generic::ilist</a> &lt;type_t&gt; generic interface by using an array whose size is dynamically increased as required. </dd>
 <dd>
-You can add items to a <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; by using the <a class="el" href="#a4ec4879f1070dc3da9a8413585d1ce2c" title="Adds an object to the end of the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::add</a> or <a class="el" href="#aae6fe026d949b1af983cb5c90b6f8b05" title="Adds copy of elements from the specified collection to the end of the xtd::collections::generic::list...">xtd::collections::generic::list::add_range</a> methods. </dd>
+You can add items to a <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; by using the <a class="el" href="#a4ec4879f1070dc3da9a8413585d1ce2c" title="Adds an object to the end of the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::add</a> or <a class="el" href="#a7defbea01b865e9b95f33699e6f087ba" title="Adds copy of elements from the specified collection to the end of the xtd::collections::generic::list...">xtd::collections::generic::list::add_range</a> methods. </dd>
 <dd>
 The <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; class uses both an equality comparer and an ordering comparer.<ul>
 <li>Methods such as <a class="el" href="#a9c5ef76f74aedc9fcfb2645bb9866586" title="Determines whether an element is in the xtd::colllections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::contains</a>, <a class="el" href="#a0c2669a8a080ef9dd544d103ca7e4ddc" title="Determines the index of a specific item in the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::index_of</a>, <a class="el" href="#a31b501b29236e4512465bdb90417fc73" title="Determines the last index of a specific item in the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::last_index_of</a>, and <a class="el" href="#a495e45f3c152a657154637c993e124a6" title="Removes the first occurrence of a specific object from the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::remove</a> use an equality comparer for the list elements. The default equality comparer for type <span class="tt">type_t</span> is determined as follows. If type <span class="tt">type_t</span> implements the <a class="el" href="classxtd_1_1iequatable.html" title="Defines a generalized method that a value type or class implements to create a type-specific method f...">xtd::iequatable</a> &lt;type_t&gt; generic interface, then the equality comparer is the <a class="el" href="classxtd_1_1iequatable.html#a3384503ae1dcbd8796549e4c04cbf1d9" title="Indicates whether the current object is equal to another object of the same type.">xtd::iequatable::equals</a> method of that interface; otherwise, if the <span class="tt">type_t</span>inherits of the <a class="el" href="classxtd_1_1object.html" title="Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....">xtd::object</a> class, the default equality comparer is <a class="el" href="classxtd_1_1object.html#a7d6bef3a3d8b4d071c801e9f74c2f6b2" title="Determines whether the specified object is equal to the current object.">xtd::object::equals</a>. If the <span class="tt">type_t</span> does not implement the xtd::iequality &lt;type_t&gt; interface and does not inherit from <a class="el" href="classxtd_1_1object.html" title="Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....">xtd::object</a>, the <span class="tt">type_t</span> must implement the euqality operator : <span class="tt">bool operator ==(const type_t&amp; rhs) const noexcept</span>.</li>
@@ -434,21 +434,22 @@ Public Constructors</h2></td></tr>
 <tr class="memdesc:a84c3e29f04a6474378357709ee06c800"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> class that is empty.  <br /></td></tr>
 <tr class="memitem:ababa0501a06fb3380f2516090325acb5" id="r_ababa0501a06fb3380f2516090325acb5"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ababa0501a06fb3380f2516090325acb5">list</a> (<a class="el" href="#a6363e6a82f26d41ac7cdfd35aaa42a99">size_type</a> capacity)</td></tr>
 <tr class="memdesc:ababa0501a06fb3380f2516090325acb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the container with specified count default-inserted instances of type_t. No copies are made.  <br /></td></tr>
-<tr class="memitem:abf76a427897703165261a8d8f01c11c9" id="r_abf76a427897703165261a8d8f01c11c9"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#abf76a427897703165261a8d8f01c11c9">list</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; type_t &gt; &amp;collection)</td></tr>
-<tr class="memdesc:abf76a427897703165261a8d8f01c11c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; class that contains elements copied from the specified collection and has sufficient capacity to accommodate the number of elements copied.  <br /></td></tr>
-<tr class="memitem:a7cf89b6404c9f19d905869f48e70eaf5" id="r_a7cf89b6404c9f19d905869f48e70eaf5"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a7cf89b6404c9f19d905869f48e70eaf5">list</a> (const list &amp;list)</td></tr>
-<tr class="memdesc:a7cf89b6404c9f19d905869f48e70eaf5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default copy constructor with specified list.  <br /></td></tr>
+<tr class="memitem:a9b14db48511efb51d5cd79349e54ddbd" id="r_a9b14db48511efb51d5cd79349e54ddbd"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a9b14db48511efb51d5cd79349e54ddbd">list</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; type_t &gt; &amp;collection)</td></tr>
+<tr class="memdesc:a9b14db48511efb51d5cd79349e54ddbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; class that contains elements copied from the specified collection and has sufficient capacity to accommodate the number of elements copied.  <br /></td></tr>
+<tr class="memitem:a85a4fe62705e040dcaa817e9a94dc335" id="r_a85a4fe62705e040dcaa817e9a94dc335"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a85a4fe62705e040dcaa817e9a94dc335">list</a> (const list &amp;list)</td></tr>
+<tr class="memdesc:a85a4fe62705e040dcaa817e9a94dc335"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default copy constructor with specified list.  <br /></td></tr>
 <tr class="memitem:aa4b1e4470c5e32cd2b8752e761e4dd44" id="r_aa4b1e4470c5e32cd2b8752e761e4dd44"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aa4b1e4470c5e32cd2b8752e761e4dd44">list</a> (list &amp;&amp;list)</td></tr>
 <tr class="memdesc:aa4b1e4470c5e32cd2b8752e761e4dd44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move constructor with specified list.  <br /></td></tr>
-<tr class="memitem:ad0ffd2a6a6c47408027fd4a9f618b50e" id="r_ad0ffd2a6a6c47408027fd4a9f618b50e"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ad0ffd2a6a6c47408027fd4a9f618b50e">list</a> (const <a class="el" href="#ababc8e876ca2f4f764344bbd83abc57d">base_type</a> &amp;list)</td></tr>
-<tr class="memdesc:ad0ffd2a6a6c47408027fd4a9f618b50e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor with specified base type list.  <br /></td></tr>
+<tr class="memitem:a9eeb39e3583dabb7b43058505b3119fa" id="r_a9eeb39e3583dabb7b43058505b3119fa"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a9eeb39e3583dabb7b43058505b3119fa">list</a> (const <a class="el" href="#ababc8e876ca2f4f764344bbd83abc57d">base_type</a> &amp;list)</td></tr>
+<tr class="memdesc:a9eeb39e3583dabb7b43058505b3119fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor with specified base type list.  <br /></td></tr>
 <tr class="memitem:a208c641873e0fcbb1d6a74e529ee7978" id="r_a208c641873e0fcbb1d6a74e529ee7978"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a208c641873e0fcbb1d6a74e529ee7978">list</a> (<a class="el" href="#ababc8e876ca2f4f764344bbd83abc57d">base_type</a> &amp;&amp;list)</td></tr>
 <tr class="memdesc:a208c641873e0fcbb1d6a74e529ee7978"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move constructor with specified base type list.  <br /></td></tr>
-<tr class="memitem:a6cf615ae10d3b3acbb1f9dd804894134" id="r_a6cf615ae10d3b3acbb1f9dd804894134"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a6cf615ae10d3b3acbb1f9dd804894134">list</a> (std::initializer_list&lt; type_t &gt; items)</td></tr>
-<tr class="memdesc:a6cf615ae10d3b3acbb1f9dd804894134"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the container with the contents of the specified initializer list, and allocator.  <br /></td></tr>
-<tr class="memitem:aa969c3ca10d421261d915f7089de51a4" id="r_aa969c3ca10d421261d915f7089de51a4"><td class="memTemplParams" colspan="2">template&lt;std::input_iterator input_iterator_t&gt; </td></tr>
-<tr class="memitem:aa969c3ca10d421261d915f7089de51a4 template"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aa969c3ca10d421261d915f7089de51a4">list</a> (input_iterator_t first, input_iterator_t last)</td></tr>
-<tr class="memdesc:aa969c3ca10d421261d915f7089de51a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the container with the contents of the range [first, last).  <br /></td></tr>
+<tr class="memitem:a05e3c6ab0787d870e0373ff83279fd5f" id="r_a05e3c6ab0787d870e0373ff83279fd5f"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a05e3c6ab0787d870e0373ff83279fd5f">list</a> (std::initializer_list&lt; type_t &gt; items)</td></tr>
+<tr class="memdesc:a05e3c6ab0787d870e0373ff83279fd5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the container with the contents of the specified initializer list, and allocator.  <br /></td></tr>
+<tr class="memitem:af9b717ca0e195ae0f1f3f510acc052c4" id="r_af9b717ca0e195ae0f1f3f510acc052c4"><td class="memTemplParams" colspan="2">template&lt;std::input_iterator input_iterator_t&gt; <br />
+requires std::copy_constructible&lt;type_t&gt;</td></tr>
+<tr class="memitem:af9b717ca0e195ae0f1f3f510acc052c4 template"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#af9b717ca0e195ae0f1f3f510acc052c4">list</a> (input_iterator_t first, input_iterator_t last)</td></tr>
+<tr class="memdesc:af9b717ca0e195ae0f1f3f510acc052c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the container with the contents of the range [first, last).  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Properties</h2></td></tr>
@@ -473,12 +474,12 @@ Public Methods</h2></td></tr>
 <tr class="memdesc:a4ec4879f1070dc3da9a8413585d1ce2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an object to the end of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt;.  <br /></td></tr>
 <tr class="memitem:afcefd58b05143ccc958e79eeb9d18263" id="r_afcefd58b05143ccc958e79eeb9d18263"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#afcefd58b05143ccc958e79eeb9d18263">add</a> (type_t &amp;&amp;item) -&gt; void</td></tr>
 <tr class="memdesc:afcefd58b05143ccc958e79eeb9d18263"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an object to the end of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt;.  <br /></td></tr>
-<tr class="memitem:aae6fe026d949b1af983cb5c90b6f8b05" id="r_aae6fe026d949b1af983cb5c90b6f8b05"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aae6fe026d949b1af983cb5c90b6f8b05">add_range</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; type_t &gt; &amp;enumerable) -&gt; void</td></tr>
-<tr class="memdesc:aae6fe026d949b1af983cb5c90b6f8b05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds copy of elements from the specified collection to the end of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt;.  <br /></td></tr>
-<tr class="memitem:a18590c7067994132c523bbec5b35cd3b" id="r_a18590c7067994132c523bbec5b35cd3b"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a18590c7067994132c523bbec5b35cd3b">add_range</a> (std::initializer_list&lt; type_t &gt; il) -&gt; void</td></tr>
-<tr class="memdesc:a18590c7067994132c523bbec5b35cd3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds copy of elements from the specified collection to the end of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt;.  <br /></td></tr>
-<tr class="memitem:a8d3a8d60c38b36a071f0f42f054baae9" id="r_a8d3a8d60c38b36a071f0f42f054baae9"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a8d3a8d60c38b36a071f0f42f054baae9">as_read_only</a> () const noexcept -&gt; <a class="el" href="#ae972471ee3a5ee221127efb60f126ea4">read_only_collection</a></td></tr>
-<tr class="memdesc:a8d3a8d60c38b36a071f0f42f054baae9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a read-only <a class="el" href="classxtd_1_1collections_1_1object__model_1_1read__only__collection.html" title="Provides the base class for a generic read-only collection.">xtd::collections::object_model::read_only_collection</a> &lt;type_t&gt; wrapper for the current collection.  <br /></td></tr>
+<tr class="memitem:a7defbea01b865e9b95f33699e6f087ba" id="r_a7defbea01b865e9b95f33699e6f087ba"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a7defbea01b865e9b95f33699e6f087ba">add_range</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; type_t &gt; &amp;enumerable) -&gt; void</td></tr>
+<tr class="memdesc:a7defbea01b865e9b95f33699e6f087ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds copy of elements from the specified collection to the end of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt;.  <br /></td></tr>
+<tr class="memitem:a9086da8c4c42df081a7b2de63dd3d731" id="r_a9086da8c4c42df081a7b2de63dd3d731"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a9086da8c4c42df081a7b2de63dd3d731">add_range</a> (std::initializer_list&lt; type_t &gt; il) -&gt; void</td></tr>
+<tr class="memdesc:a9086da8c4c42df081a7b2de63dd3d731"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds copy of elements from the specified collection to the end of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt;.  <br /></td></tr>
+<tr class="memitem:afc9c27e181c3f66b6ecb9b130f22c5a9" id="r_afc9c27e181c3f66b6ecb9b130f22c5a9"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#afc9c27e181c3f66b6ecb9b130f22c5a9">as_read_only</a> () const noexcept -&gt; <a class="el" href="#ae972471ee3a5ee221127efb60f126ea4">read_only_collection</a></td></tr>
+<tr class="memdesc:afc9c27e181c3f66b6ecb9b130f22c5a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a read-only <a class="el" href="classxtd_1_1collections_1_1object__model_1_1read__only__collection.html" title="Provides the base class for a generic read-only collection.">xtd::collections::object_model::read_only_collection</a> &lt;type_t&gt; wrapper for the current collection.  <br /></td></tr>
 <tr class="memitem:add81eb41ea471909e1ca3da3c6455433" id="r_add81eb41ea471909e1ca3da3c6455433"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#add81eb41ea471909e1ca3da3c6455433">binary_search</a> (const type_t &amp;item) const noexcept -&gt; <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td></tr>
 <tr class="memdesc:add81eb41ea471909e1ca3da3c6455433"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searches the entire sorted <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; for an element using the default comparer and returns the zero-based index of the element.  <br /></td></tr>
 <tr class="memitem:abcc31a6ff6af43b8314ba967f94fb841" id="r_abcc31a6ff6af43b8314ba967f94fb841"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#abcc31a6ff6af43b8314ba967f94fb841">binary_search</a> (const type_t &amp;item, const <a class="el" href="classxtd_1_1collections_1_1generic_1_1icomparer.html">xtd::collections::generic::icomparer</a>&lt; type_t &gt; &amp;comparer) const noexcept -&gt; <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td></tr>
@@ -492,12 +493,12 @@ Public Methods</h2></td></tr>
 <tr class="memitem:aee5601b1023666159dcd573eb1d44896" id="r_aee5601b1023666159dcd573eb1d44896"><td class="memTemplParams" colspan="2">template&lt;typename output_t, typename converter_t&gt; </td></tr>
 <tr class="memitem:aee5601b1023666159dcd573eb1d44896 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aee5601b1023666159dcd573eb1d44896">convert_all</a> (converter_t converter<a class="el" href="group__delegates.html#gaa65321588890f6f9d441562931072818">converter</a>) const -&gt; <a class="el" href="#a84c3e29f04a6474378357709ee06c800">list</a>&lt; output_t &gt;</td></tr>
 <tr class="memdesc:aee5601b1023666159dcd573eb1d44896"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the elements in the current xtd::colllections::generic::list &lt;type_t&gt; to another type, and returns a list containing the converted elements.  <br /></td></tr>
-<tr class="memitem:ad0e4b57527915bd3bc98b982b177c674" id="r_ad0e4b57527915bd3bc98b982b177c674"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ad0e4b57527915bd3bc98b982b177c674">copy_to</a> (<a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; type_t &gt; &amp;array) const -&gt; void</td></tr>
-<tr class="memdesc:ad0e4b57527915bd3bc98b982b177c674"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the entire <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; to a compatible one-dimensional array.  <br /></td></tr>
+<tr class="memitem:ab9caa6dd4a0926b81f8a60a3bb6bcd9b" id="r_ab9caa6dd4a0926b81f8a60a3bb6bcd9b"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ab9caa6dd4a0926b81f8a60a3bb6bcd9b">copy_to</a> (<a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; type_t &gt; &amp;array) const -&gt; void</td></tr>
+<tr class="memdesc:ab9caa6dd4a0926b81f8a60a3bb6bcd9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the entire <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; to a compatible one-dimensional array.  <br /></td></tr>
 <tr class="memitem:ab0b9682687a8e9a9e3b25eaa91ee9d6e" id="r_ab0b9682687a8e9a9e3b25eaa91ee9d6e"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ab0b9682687a8e9a9e3b25eaa91ee9d6e">copy_to</a> (<a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; type_t &gt; &amp;array, <a class="el" href="#a6363e6a82f26d41ac7cdfd35aaa42a99">size_type</a> array_index) const -&gt; void override</td></tr>
 <tr class="memdesc:ab0b9682687a8e9a9e3b25eaa91ee9d6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the entire xtd::colllections::generic::list &lt;type_t&gt; to a compatible one-dimensional array, starting at the specified index of the target array.  <br /></td></tr>
-<tr class="memitem:a82d7dec9eb1eded9d2372c4af569f747" id="r_a82d7dec9eb1eded9d2372c4af569f747"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a82d7dec9eb1eded9d2372c4af569f747">copy_to</a> (<a class="el" href="#a6363e6a82f26d41ac7cdfd35aaa42a99">size_type</a> index, <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; type_t &gt; &amp;array, <a class="el" href="#a6363e6a82f26d41ac7cdfd35aaa42a99">size_type</a> array_index, <a class="el" href="#a6363e6a82f26d41ac7cdfd35aaa42a99">size_type</a> count) const -&gt; void</td></tr>
-<tr class="memdesc:a82d7dec9eb1eded9d2372c4af569f747"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the entire <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; to a compatible one-dimensional array, starting at the specified index of the target array.  <br /></td></tr>
+<tr class="memitem:abfe45c4163015f65eb37cdae8d5fa35e" id="r_abfe45c4163015f65eb37cdae8d5fa35e"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#abfe45c4163015f65eb37cdae8d5fa35e">copy_to</a> (<a class="el" href="#a6363e6a82f26d41ac7cdfd35aaa42a99">size_type</a> index, <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; type_t &gt; &amp;array, <a class="el" href="#a6363e6a82f26d41ac7cdfd35aaa42a99">size_type</a> array_index, <a class="el" href="#a6363e6a82f26d41ac7cdfd35aaa42a99">size_type</a> count) const -&gt; void</td></tr>
+<tr class="memdesc:abfe45c4163015f65eb37cdae8d5fa35e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the entire <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; to a compatible one-dimensional array, starting at the specified index of the target array.  <br /></td></tr>
 <tr class="memitem:a48cff3bed8d5763da69685b07a2f0c05" id="r_a48cff3bed8d5763da69685b07a2f0c05"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a48cff3bed8d5763da69685b07a2f0c05">ensure_capacity</a> (<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> capacity) -&gt; <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td></tr>
 <tr class="memdesc:a48cff3bed8d5763da69685b07a2f0c05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ensures that the capacity of this list is at least the specified <span class="tt"><a class="el" href="#ac9ed6c7b1177cbe562ba3a1af1b228db" title="Gets the total number of elements the internal data structure can hold without resizing.">capacity</a></span>. If the current capacity is less than <span class="tt"><a class="el" href="#ac9ed6c7b1177cbe562ba3a1af1b228db" title="Gets the total number of elements the internal data structure can hold without resizing.">capacity</a></span>, it is increased to at least the specified <span class="tt"><a class="el" href="#ac9ed6c7b1177cbe562ba3a1af1b228db" title="Gets the total number of elements the internal data structure can hold without resizing.">capacity</a></span>.  <br /></td></tr>
 <tr class="memitem:a0ee20ee8460dbe3b7c3b9490ffa86d9d" id="r_a0ee20ee8460dbe3b7c3b9490ffa86d9d"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a0ee20ee8460dbe3b7c3b9490ffa86d9d">equals</a> (const <a class="el" href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">object</a> &amp;obj) const noexcept -&gt; bool override</td></tr>
@@ -572,12 +573,16 @@ Public Methods</h2></td></tr>
     @<a class="el" href="classxtd_1_1exception.html" title="Defines the base class for predefined exceptions in the xtd namespace.">exception</a> <a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">xtd::argument_out_of_range_exception</a> <a class="el" href="#ac9ed6c7b1177cbe562ba3a1af1b228db" title="Gets the total number of elements the internal data structure can hold without resizing.">xtd::collections::generic::list::capacity</a> <a class="el" href="group__xtd__core.html#ga59b26eda7fb7d0dc8c9968f4a2f78984" title="Checks if the result of an expression is compatible with a given type.">is</a> set to a value that <a class="el" href="group__xtd__core.html#ga59b26eda7fb7d0dc8c9968f4a2f78984" title="Checks if the result of an expression is compatible with a given type.">is</a> less than <a class="el" href="#a0168e83b95232afde2aa19da18350096" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::count</a>.
     @remarks If the current <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1collection__common.html#a146a032614f18c6e07841b515c78d8fe">size</a> <a class="el" href="group__xtd__core.html#ga59b26eda7fb7d0dc8c9968f4a2f78984" title="Checks if the result of an expression is compatible with a given type.">is</a> greater than </span>count<span class="tt">, the container <a class="el" href="group__xtd__core.html#ga59b26eda7fb7d0dc8c9968f4a2f78984" title="Checks if the result of an expression is compatible with a given type.">is</a> reduced to its <a class="el" href="namespacextd.html#a1b3b9846a6a691daf8be0fbbfc746604" title="Obtains a subspan consisting of the first count elements of the sequence.">first</a> </span>count<span class="tt"> elements.
     @remarks If the current <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1collection__common.html#a146a032614f18c6e07841b515c78d8fe">size</a> <a class="el" href="group__xtd__core.html#ga59b26eda7fb7d0dc8c9968f4a2f78984" title="Checks if the result of an expression is compatible with a given type.">is</a> less than </span>count<span class="tt">, additional default-inserted elements are appended. */
-virtual auto resize(size_type count) -&gt; void {resize(<a class="el" href="#a0168e83b95232afde2aa19da18350096" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">count</a>, <a class="el" href="structxtd_1_1value__type.html" title="Represents a value_type struct.">value_type</a> {});}
+virtual auto resize(size_type count) -&gt; void {
+  if constexpr (std::copy_constructible&lt;type_t&gt;) {
+    resize(<a class="el" href="#a0168e83b95232afde2aa19da18350096" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">count</a>, <a class="el" href="structxtd_1_1value__type.html" title="Represents a value_type struct.">value_type</a> {});
+  } else <a class="el" href="classxtd_1_1helpers_1_1throw__helper.html#a986c08b3b386fae3db9406136afd34b7" title="Throws an exption with specified exception case.">xtd::helpers::throw_helper::throws</a>(<a class="el" href="group__helpers.html#gga9449ffb8e13ad8c25c987085078568dcaf1203e404fb6b2467cd1884faa2c71c2" title="The operation is not valid.">xtd::helpers::exception_case::invalid_operation</a>, "<a class="el" href="structxtd_1_1value__type.html" title="Represents a value_type struct.">value_type</a> <a class="el" href="group__xtd__core.html#ga59b26eda7fb7d0dc8c9968f4a2f78984" title="Checks if the result of an expression is compatible with a given type.">is</a> not copy constructible.");
+}
 /** @brief Resizes the container to contain </span>count<span class="tt"> elements, does nothing if </span>count == <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1collection__common.html#a146a032614f18c6e07841b515c78d8fe">size()</a>.  <br /></td></tr>
 <tr class="memitem:ad7fcc83b5a8744d4971dcb7446dc9797" id="r_ad7fcc83b5a8744d4971dcb7446dc9797"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ad7fcc83b5a8744d4971dcb7446dc9797">reverse</a> (<a class="el" href="#a6363e6a82f26d41ac7cdfd35aaa42a99">size_type</a> index, <a class="el" href="#a6363e6a82f26d41ac7cdfd35aaa42a99">size_type</a> count) -&gt; <a class="el" href="#a84c3e29f04a6474378357709ee06c800">list</a>&lt; type_t &gt; &amp;</td></tr>
 <tr class="memdesc:ad7fcc83b5a8744d4971dcb7446dc9797"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reverses the order of the elements in the specified range.  <br /></td></tr>
-<tr class="memitem:ab0c244e190b8e6ce249e1164d7fc097d" id="r_ab0c244e190b8e6ce249e1164d7fc097d"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ab0c244e190b8e6ce249e1164d7fc097d">slice</a> (<a class="el" href="#a6363e6a82f26d41ac7cdfd35aaa42a99">size_type</a> start, <a class="el" href="#a6363e6a82f26d41ac7cdfd35aaa42a99">size_type</a> length) const -&gt; <a class="el" href="#a84c3e29f04a6474378357709ee06c800">list</a>&lt; type_t &gt;</td></tr>
-<tr class="memdesc:ab0c244e190b8e6ce249e1164d7fc097d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a shallow copy of a range of elements in the source <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt;.  <br /></td></tr>
+<tr class="memitem:a4e22c768f7935cda842a805212fdafcb" id="r_a4e22c768f7935cda842a805212fdafcb"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a4e22c768f7935cda842a805212fdafcb">slice</a> (<a class="el" href="#a6363e6a82f26d41ac7cdfd35aaa42a99">size_type</a> start, <a class="el" href="#a6363e6a82f26d41ac7cdfd35aaa42a99">size_type</a> length) const -&gt; <a class="el" href="#a84c3e29f04a6474378357709ee06c800">list</a>&lt; type_t &gt;</td></tr>
+<tr class="memdesc:a4e22c768f7935cda842a805212fdafcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a shallow copy of a range of elements in the source <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt;.  <br /></td></tr>
 <tr class="memitem:a20f55886f3702296928569b3e8e9d82b" id="r_a20f55886f3702296928569b3e8e9d82b"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a20f55886f3702296928569b3e8e9d82b">sort</a> () -&gt; <a class="el" href="#a84c3e29f04a6474378357709ee06c800">list</a>&lt; type_t &gt; &amp;</td></tr>
 <tr class="memdesc:a20f55886f3702296928569b3e8e9d82b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts the elements in the entire <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; using the default comparer.  <br /></td></tr>
 <tr class="memitem:a17a0debe13c5ce984c03f504eff94dc8" id="r_a17a0debe13c5ce984c03f504eff94dc8"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a17a0debe13c5ce984c03f504eff94dc8">sort</a> (<a class="el" href="group__delegates.html#ga6aa9a3d2680df2fc027c12383aa9e7cc">xtd::comparison</a>&lt; const type_t &amp; &gt; comparison<a class="el" href="group__delegates.html#ga6aa9a3d2680df2fc027c12383aa9e7cc">comparison</a>) -&gt; <a class="el" href="#a84c3e29f04a6474378357709ee06c800">list</a>&lt; type_t &gt; &amp;</td></tr>
@@ -586,8 +591,8 @@ virtual auto resize(size_type count) -&gt; void {resize(<a class="el" href="#a01
 <tr class="memdesc:aef43c66039c066ebf780234032dd3a3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts the elements in the entire <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; using the specified comparer.  <br /></td></tr>
 <tr class="memitem:a3a38d1254d164409bc2d4792543e41dd" id="r_a3a38d1254d164409bc2d4792543e41dd"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a3a38d1254d164409bc2d4792543e41dd">sort</a> (<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> index, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> count, const <a class="el" href="classxtd_1_1collections_1_1generic_1_1icomparer.html">xtd::collections::generic::icomparer</a>&lt; type_t &gt; &amp;comparer) -&gt; <a class="el" href="#a84c3e29f04a6474378357709ee06c800">list</a>&lt; type_t &gt; &amp;</td></tr>
 <tr class="memdesc:a3a38d1254d164409bc2d4792543e41dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts the elements in a range of elements in <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; using the specified comparer.  <br /></td></tr>
-<tr class="memitem:a8d28fbdb878849e7dc965405ffc21e99" id="r_a8d28fbdb878849e7dc965405ffc21e99"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a8d28fbdb878849e7dc965405ffc21e99">to_array</a> () const noexcept -&gt; <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="#aa29dee61f691c52c380fc92c868c311a">value_type</a> &gt;</td></tr>
-<tr class="memdesc:a8d28fbdb878849e7dc965405ffc21e99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the elements of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; to a new array.  <br /></td></tr>
+<tr class="memitem:a014c358c53b7398e7b2d71ce5854c4c6" id="r_a014c358c53b7398e7b2d71ce5854c4c6"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a014c358c53b7398e7b2d71ce5854c4c6">to_array</a> () const noexcept -&gt; <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="#aa29dee61f691c52c380fc92c868c311a">value_type</a> &gt;</td></tr>
+<tr class="memdesc:a014c358c53b7398e7b2d71ce5854c4c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the elements of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; to a new array.  <br /></td></tr>
 <tr class="memitem:a4cd322a914239a10ce6a0ca8d9cf9b6b" id="r_a4cd322a914239a10ce6a0ca8d9cf9b6b"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a4cd322a914239a10ce6a0ca8d9cf9b6b">to_string</a> () const noexcept -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> override</td></tr>
 <tr class="memdesc:a4cd322a914239a10ce6a0ca8d9cf9b6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> that represents the current object.  <br /></td></tr>
 <tr class="memitem:af4fcb550385f38f63d1f22e118369a1b" id="r_af4fcb550385f38f63d1f22e118369a1b"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#af4fcb550385f38f63d1f22e118369a1b">trim_excess</a> () -&gt; void</td></tr>
@@ -598,12 +603,12 @@ virtual auto resize(size_type count) -&gt; void {resize(<a class="el" href="#a01
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Operators</h2></td></tr>
-<tr class="memitem:ae4d2691d782620b5fc63f73c295f6cc9" id="r_ae4d2691d782620b5fc63f73c295f6cc9"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ae4d2691d782620b5fc63f73c295f6cc9">operator=</a> (const <a class="el" href="#a84c3e29f04a6474378357709ee06c800">list</a> &amp;other) -&gt; <a class="el" href="#a84c3e29f04a6474378357709ee06c800">list</a> &amp;=default</td></tr>
-<tr class="memdesc:ae4d2691d782620b5fc63f73c295f6cc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy assignment operator. Replaces the contents with a copy of the contents of other.  <br /></td></tr>
+<tr class="memitem:a0c18d612f4b66eb131fb936548324831" id="r_a0c18d612f4b66eb131fb936548324831"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a0c18d612f4b66eb131fb936548324831">operator=</a> (const <a class="el" href="#a84c3e29f04a6474378357709ee06c800">list</a> &amp;other) -&gt; <a class="el" href="#a84c3e29f04a6474378357709ee06c800">list</a> &amp;=default</td></tr>
+<tr class="memdesc:a0c18d612f4b66eb131fb936548324831"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy assignment operator. Replaces the contents with a copy of the contents of other.  <br /></td></tr>
 <tr class="memitem:ae01bec527510f30c710c48852d9b4e2c" id="r_ae01bec527510f30c710c48852d9b4e2c"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ae01bec527510f30c710c48852d9b4e2c">operator=</a> (<a class="el" href="#a84c3e29f04a6474378357709ee06c800">list</a> &amp;&amp;other) noexcept -&gt; <a class="el" href="#a84c3e29f04a6474378357709ee06c800">list</a> &amp;</td></tr>
 <tr class="memdesc:ae01bec527510f30c710c48852d9b4e2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move assignment operator. Replaces the contents with those of other using move semantics (i.e. the data in other is moved from other into this container). other is in a valid but unspecified state afterwards.  <br /></td></tr>
-<tr class="memitem:a333020496a935ddbc05e27dbe1c00c30" id="r_a333020496a935ddbc05e27dbe1c00c30"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a333020496a935ddbc05e27dbe1c00c30">operator=</a> (const std::initializer_list&lt; type_t &gt; &amp;items) -&gt; <a class="el" href="#a84c3e29f04a6474378357709ee06c800">list</a> &amp;</td></tr>
-<tr class="memdesc:a333020496a935ddbc05e27dbe1c00c30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replaces the contents with those identified by initializer list ilist.  <br /></td></tr>
+<tr class="memitem:a7fc019614ee0ac6a480e979193907c28" id="r_a7fc019614ee0ac6a480e979193907c28"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a7fc019614ee0ac6a480e979193907c28">operator=</a> (const std::initializer_list&lt; type_t &gt; &amp;items) -&gt; <a class="el" href="#a84c3e29f04a6474378357709ee06c800">list</a> &amp;</td></tr>
+<tr class="memdesc:a7fc019614ee0ac6a480e979193907c28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replaces the contents with those identified by initializer list ilist.  <br /></td></tr>
 <tr class="memitem:a183c99f268daf3cf197cc3befbb544ad" id="r_a183c99f268daf3cf197cc3befbb544ad"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a183c99f268daf3cf197cc3befbb544ad">operator[]</a> (<a class="el" href="#a6363e6a82f26d41ac7cdfd35aaa42a99">size_type</a> index) const -&gt; <a class="el" href="#a91e7d925cabbe6f5d705f3fe09f0d8f8">const_reference</a> override</td></tr>
 <tr class="memdesc:a183c99f268daf3cf197cc3befbb544ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a reference to the element at specified location index.  <br /></td></tr>
 <tr class="memitem:aeb4b71a1aa8eae9315efb6f37ddc2527" id="r_aeb4b71a1aa8eae9315efb6f37ddc2527"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aeb4b71a1aa8eae9315efb6f37ddc2527">operator[]</a> (<a class="el" href="#a6363e6a82f26d41ac7cdfd35aaa42a99">size_type</a> index) -&gt; <a class="el" href="#aac7c62a32fa0361f8b969d031d874109">reference</a> override</td></tr>
@@ -1156,8 +1161,8 @@ template&lt;typename type_t, typename allocator_t&gt; </div>
 
 </div>
 </div>
-<a id="abf76a427897703165261a8d8f01c11c9" name="abf76a427897703165261a8d8f01c11c9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abf76a427897703165261a8d8f01c11c9">&#9670;&#160;</a></span>list() <span class="overload">[3/9]</span></h2>
+<a id="a9b14db48511efb51d5cd79349e54ddbd" name="a9b14db48511efb51d5cd79349e54ddbd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b14db48511efb51d5cd79349e54ddbd">&#9670;&#160;</a></span>list() <span class="overload">[3/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1285,8 +1290,8 @@ This constructor is an O(<span class="tt">n</span>) operation, where <span class
 
 </div>
 </div>
-<a id="a7cf89b6404c9f19d905869f48e70eaf5" name="a7cf89b6404c9f19d905869f48e70eaf5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7cf89b6404c9f19d905869f48e70eaf5">&#9670;&#160;</a></span>list() <span class="overload">[4/9]</span></h2>
+<a id="a85a4fe62705e040dcaa817e9a94dc335" name="a85a4fe62705e040dcaa817e9a94dc335"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85a4fe62705e040dcaa817e9a94dc335">&#9670;&#160;</a></span>list() <span class="overload">[4/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1355,8 +1360,8 @@ template&lt;typename type_t, typename allocator_t&gt; </div>
 
 </div>
 </div>
-<a id="ad0ffd2a6a6c47408027fd4a9f618b50e" name="ad0ffd2a6a6c47408027fd4a9f618b50e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad0ffd2a6a6c47408027fd4a9f618b50e">&#9670;&#160;</a></span>list() <span class="overload">[6/9]</span></h2>
+<a id="a9eeb39e3583dabb7b43058505b3119fa" name="a9eeb39e3583dabb7b43058505b3119fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9eeb39e3583dabb7b43058505b3119fa">&#9670;&#160;</a></span>list() <span class="overload">[6/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1425,8 +1430,8 @@ template&lt;typename type_t, typename allocator_t&gt; </div>
 
 </div>
 </div>
-<a id="a6cf615ae10d3b3acbb1f9dd804894134" name="a6cf615ae10d3b3acbb1f9dd804894134"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6cf615ae10d3b3acbb1f9dd804894134">&#9670;&#160;</a></span>list() <span class="overload">[8/9]</span></h2>
+<a id="a05e3c6ab0787d870e0373ff83279fd5f" name="a05e3c6ab0787d870e0373ff83279fd5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05e3c6ab0787d870e0373ff83279fd5f">&#9670;&#160;</a></span>list() <span class="overload">[8/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1460,15 +1465,16 @@ template&lt;typename type_t, typename allocator_t&gt; </div>
 
 </div>
 </div>
-<a id="aa969c3ca10d421261d915f7089de51a4" name="aa969c3ca10d421261d915f7089de51a4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa969c3ca10d421261d915f7089de51a4">&#9670;&#160;</a></span>list() <span class="overload">[9/9]</span></h2>
+<a id="af9b717ca0e195ae0f1f3f510acc052c4" name="af9b717ca0e195ae0f1f3f510acc052c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9b717ca0e195ae0f1f3f510acc052c4">&#9670;&#160;</a></span>list() <span class="overload">[9/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename type_t, typename allocator_t&gt; </div>
 <div class="memtemplate">
-template&lt;std::input_iterator input_iterator_t&gt; </div>
+template&lt;std::input_iterator input_iterator_t&gt; <br />
+requires std::copy_constructible&lt;type_t&gt;</div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2771,8 +2777,8 @@ If <a class="el" href="#a0168e83b95232afde2aa19da18350096" title="Gets the numbe
 
 </div>
 </div>
-<a id="aae6fe026d949b1af983cb5c90b6f8b05" name="aae6fe026d949b1af983cb5c90b6f8b05"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aae6fe026d949b1af983cb5c90b6f8b05">&#9670;&#160;</a></span>add_range() <span class="overload">[1/2]</span></h2>
+<a id="a7defbea01b865e9b95f33699e6f087ba" name="a7defbea01b865e9b95f33699e6f087ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7defbea01b865e9b95f33699e6f087ba">&#9670;&#160;</a></span>add_range() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2900,8 +2906,8 @@ If the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" titl
 
 </div>
 </div>
-<a id="a18590c7067994132c523bbec5b35cd3b" name="a18590c7067994132c523bbec5b35cd3b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a18590c7067994132c523bbec5b35cd3b">&#9670;&#160;</a></span>add_range() <span class="overload">[2/2]</span></h2>
+<a id="a9086da8c4c42df081a7b2de63dd3d731" name="a9086da8c4c42df081a7b2de63dd3d731"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9086da8c4c42df081a7b2de63dd3d731">&#9670;&#160;</a></span>add_range() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3029,8 +3035,8 @@ If the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" titl
 
 </div>
 </div>
-<a id="a8d3a8d60c38b36a071f0f42f054baae9" name="a8d3a8d60c38b36a071f0f42f054baae9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8d3a8d60c38b36a071f0f42f054baae9">&#9670;&#160;</a></span>as_read_only()</h2>
+<a id="afc9c27e181c3f66b6ecb9b130f22c5a9" name="afc9c27e181c3f66b6ecb9b130f22c5a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc9c27e181c3f66b6ecb9b130f22c5a9">&#9670;&#160;</a></span>as_read_only()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3478,8 +3484,8 @@ template&lt;typename output_t, typename converter_t&gt; </div>
 
 </div>
 </div>
-<a id="ad0e4b57527915bd3bc98b982b177c674" name="ad0e4b57527915bd3bc98b982b177c674"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad0e4b57527915bd3bc98b982b177c674">&#9670;&#160;</a></span>copy_to() <span class="overload">[1/3]</span></h2>
+<a id="ab9caa6dd4a0926b81f8a60a3bb6bcd9b" name="ab9caa6dd4a0926b81f8a60a3bb6bcd9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9caa6dd4a0926b81f8a60a3bb6bcd9b">&#9670;&#160;</a></span>copy_to() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3578,8 +3584,8 @@ This method is an O(n) operation, where n is xtd::colllections::generic::list::c
 
 </div>
 </div>
-<a id="a82d7dec9eb1eded9d2372c4af569f747" name="a82d7dec9eb1eded9d2372c4af569f747"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a82d7dec9eb1eded9d2372c4af569f747">&#9670;&#160;</a></span>copy_to() <span class="overload">[3/3]</span></h2>
+<a id="abfe45c4163015f65eb37cdae8d5fa35e" name="abfe45c4163015f65eb37cdae8d5fa35e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abfe45c4163015f65eb37cdae8d5fa35e">&#9670;&#160;</a></span>copy_to() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -5721,7 +5727,11 @@ template&lt;typename type_t, typename allocator_t&gt; </div>
     @<a class="el" href="classxtd_1_1exception.html" title="Defines the base class for predefined exceptions in the xtd namespace.">exception</a> <a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">xtd::argument_out_of_range_exception</a> <a class="el" href="#ac9ed6c7b1177cbe562ba3a1af1b228db" title="Gets the total number of elements the internal data structure can hold without resizing.">xtd::collections::generic::list::capacity</a> <a class="el" href="group__xtd__core.html#ga59b26eda7fb7d0dc8c9968f4a2f78984" title="Checks if the result of an expression is compatible with a given type.">is</a> set to a value that <a class="el" href="group__xtd__core.html#ga59b26eda7fb7d0dc8c9968f4a2f78984" title="Checks if the result of an expression is compatible with a given type.">is</a> less than <a class="el" href="#a0168e83b95232afde2aa19da18350096" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::count</a>.
     @remarks If the current <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1collection__common.html#a146a032614f18c6e07841b515c78d8fe">size</a> <a class="el" href="group__xtd__core.html#ga59b26eda7fb7d0dc8c9968f4a2f78984" title="Checks if the result of an expression is compatible with a given type.">is</a> greater than </span>count<span class="tt">, the container <a class="el" href="group__xtd__core.html#ga59b26eda7fb7d0dc8c9968f4a2f78984" title="Checks if the result of an expression is compatible with a given type.">is</a> reduced to its <a class="el" href="namespacextd.html#a1b3b9846a6a691daf8be0fbbfc746604" title="Obtains a subspan consisting of the first count elements of the sequence.">first</a> </span>count<span class="tt"> elements.
     @remarks If the current <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1collection__common.html#a146a032614f18c6e07841b515c78d8fe">size</a> <a class="el" href="group__xtd__core.html#ga59b26eda7fb7d0dc8c9968f4a2f78984" title="Checks if the result of an expression is compatible with a given type.">is</a> less than </span>count<span class="tt">, additional default-inserted elements are appended. */
-virtual auto resize(size_type count) -&gt; void {resize(<a class="el" href="#a0168e83b95232afde2aa19da18350096" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">count</a>, <a class="el" href="structxtd_1_1value__type.html" title="Represents a value_type struct.">value_type</a> {});}
+virtual auto resize(size_type count) -&gt; void {
+  if constexpr (std::copy_constructible&lt;type_t&gt;) {
+    resize(<a class="el" href="#a0168e83b95232afde2aa19da18350096" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">count</a>, <a class="el" href="structxtd_1_1value__type.html" title="Represents a value_type struct.">value_type</a> {});
+  } else <a class="el" href="classxtd_1_1helpers_1_1throw__helper.html#a986c08b3b386fae3db9406136afd34b7" title="Throws an exption with specified exception case.">xtd::helpers::throw_helper::throws</a>(<a class="el" href="group__helpers.html#gga9449ffb8e13ad8c25c987085078568dcaf1203e404fb6b2467cd1884faa2c71c2" title="The operation is not valid.">xtd::helpers::exception_case::invalid_operation</a>, "<a class="el" href="structxtd_1_1value__type.html" title="Represents a value_type struct.">value_type</a> <a class="el" href="group__xtd__core.html#ga59b26eda7fb7d0dc8c9968f4a2f78984" title="Checks if the result of an expression is compatible with a given type.">is</a> not copy constructible.");
+}
 /** @brief Resizes the container to contain </span>count<span class="tt"> elements, does nothing if </span>count == <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1collection__common.html#a146a032614f18c6e07841b515c78d8fe">size()</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -5738,7 +5748,7 @@ virtual auto resize(size_type count) -&gt; void {resize(<a class="el" href="#a01
 </dl>
 <dl class="section remark"><dt>Remarks</dt><dd>If the current size is greater than <span class="tt"><a class="el" href="#a0168e83b95232afde2aa19da18350096" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">count</a></span>, the container is reduced to its first <span class="tt"><a class="el" href="#a0168e83b95232afde2aa19da18350096" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">count</a></span> elements. </dd>
 <dd>
-If the current size is less than <span class="tt"><a class="el" href="#a0168e83b95232afde2aa19da18350096" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">count</a></span>, additional copies of <span class="tt">value</span> are appended. */ virtual auto resize(size_type count, const value_type&amp; value) -&gt; void { if (count &gt; data_-&gt;items.max_size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::out_of_memory);; if (count == (*this) .<a class="el" href="classxtd_1_1collections_1_1generic_1_1ilist.html#a5c90e427ae4ee7522d0f3a09210ed235" title="Gets the number of elements contained in the xtd::collections::generic::icollection &lt;type_t&gt;.">count()</a>) return; data_-&gt;items.resize(count, value); }</dd></dl>
+If the current size is less than <span class="tt"><a class="el" href="#a0168e83b95232afde2aa19da18350096" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">count</a></span>, additional copies of <span class="tt">value</span> are appended. */ virtual auto resize(size_type count, const value_type&amp; value) -&gt; void { if constexpr (std::copy_constructible&lt;type_t&gt;) { if (count &gt; data_-&gt;items.max_size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::out_of_memory);; if (count == (*this) .<a class="el" href="classxtd_1_1collections_1_1generic_1_1ilist.html#a5c90e427ae4ee7522d0f3a09210ed235" title="Gets the number of elements contained in the xtd::collections::generic::icollection &lt;type_t&gt;.">count()</a>) return; data_-&gt;items.resize(count, value); } else <a class="el" href="classxtd_1_1helpers_1_1throw__helper.html#a986c08b3b386fae3db9406136afd34b7" title="Throws an exption with specified exception case.">xtd::helpers::throw_helper::throws</a>(<a class="el" href="group__helpers.html#gga9449ffb8e13ad8c25c987085078568dcaf1203e404fb6b2467cd1884faa2c71c2" title="The operation is not valid.">xtd::helpers::exception_case::invalid_operation</a>, "value_type is not copy constructible."); }</dd></dl>
 <p>/** Reverses the order of the elements in the entire <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt;. </p><dl class="section user"><dt>Examples</dt><dd>The following example demonstrates both overloads of the <a class="el" href="#a51c68b773bcb5caef39d5099be26c78c" title="Resizes the container to contain count elements, does nothing if count == size(). @param count The ne...">xtd::collections::generic::list::reverse</a> method. The example creates a <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; of strings and adds six strings. The <a class="el" href="#a51c68b773bcb5caef39d5099be26c78c" title="Resizes the container to contain count elements, does nothing if count == size(). @param count The ne...">xtd::collections::generic::list::reverse</a> () method overload is used to reverse the list, and then the <a class="el" href="#a51c68b773bcb5caef39d5099be26c78c" title="Resizes the container to contain count elements, does nothing if count == size(). @param count The ne...">xtd::collections::generic::list::reverse</a> (<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525" title="Represents an unsigned size of any object in bytes.">xtd::usize</a>, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525" title="Represents an unsigned size of any object in bytes.">xtd::usize</a>) method overload is used to reverse the middle of the list, beginning with element 1 and encompassing four elements. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">class </span>example {</div>
@@ -5910,8 +5920,8 @@ This method is an O(n) operation, where n is <a class="el" href="#a0168e83b95232
 
 </div>
 </div>
-<a id="ab0c244e190b8e6ce249e1164d7fc097d" name="ab0c244e190b8e6ce249e1164d7fc097d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab0c244e190b8e6ce249e1164d7fc097d">&#9670;&#160;</a></span>slice()</h2>
+<a id="a4e22c768f7935cda842a805212fdafcb" name="a4e22c768f7935cda842a805212fdafcb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e22c768f7935cda842a805212fdafcb">&#9670;&#160;</a></span>slice()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -6211,8 +6221,8 @@ On average, this method is an O(n log n) operation, where n is <a class="el" hre
 
 </div>
 </div>
-<a id="a8d28fbdb878849e7dc965405ffc21e99" name="a8d28fbdb878849e7dc965405ffc21e99"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8d28fbdb878849e7dc965405ffc21e99">&#9670;&#160;</a></span>to_array()</h2>
+<a id="a014c358c53b7398e7b2d71ce5854c4c6" name="a014c358c53b7398e7b2d71ce5854c4c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a014c358c53b7398e7b2d71ce5854c4c6">&#9670;&#160;</a></span>to_array()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -6703,8 +6713,8 @@ This method performs a linear search; therefore, this method is an O(n) operatio
 
 </div>
 </div>
-<a id="ae4d2691d782620b5fc63f73c295f6cc9" name="ae4d2691d782620b5fc63f73c295f6cc9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae4d2691d782620b5fc63f73c295f6cc9">&#9670;&#160;</a></span>operator=() <span class="overload">[1/3]</span></h2>
+<a id="a0c18d612f4b66eb131fb936548324831" name="a0c18d612f4b66eb131fb936548324831"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c18d612f4b66eb131fb936548324831">&#9670;&#160;</a></span>operator=() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -6775,8 +6785,8 @@ template&lt;typename type_t, typename allocator_t&gt; </div>
 
 </div>
 </div>
-<a id="a333020496a935ddbc05e27dbe1c00c30" name="a333020496a935ddbc05e27dbe1c00c30"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a333020496a935ddbc05e27dbe1c00c30">&#9670;&#160;</a></span>operator=() <span class="overload">[3/3]</span></h2>
+<a id="a7fc019614ee0ac6a480e979193907c28" name="a7fc019614ee0ac6a480e979193907c28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7fc019614ee0ac6a480e979193907c28">&#9670;&#160;</a></span>operator=() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
