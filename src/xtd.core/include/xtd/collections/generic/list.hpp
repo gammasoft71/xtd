@@ -128,10 +128,10 @@ namespace xtd {
         /// @include generic_list3.cpp
         /// @remarks The elements are copied onto the xtd::collections::generic::list <type_t> in the same order they are read by the enumerator of the collection.
         /// @remarks This constructor is an O(`n`) operation, where `n` is the number of elements in collection.
-        list(const xtd::collections::generic::ienumerable<type_t>& collection) {add_range(collection);}
+        list(const xtd::collections::generic::ienumerable<type_t>& collection) requires std::copy_constructible<type_t> {add_range(collection);}
         /// @brief Default copy constructor with specified list.
         /// @param list The xtd::collections::generic::list which elements will be inserted from.
-        list(const list& list) {*data_ = *list.data_;}
+        list(const list& list) requires std::copy_constructible<type_t> {*data_ = *list.data_;}
         /// @brief Move constructor with specified list.
         /// @param list The xtd::collections::generic::list which elements will be moved from.
         list(list&& list) {
@@ -140,18 +140,18 @@ namespace xtd {
         }
         /// @brief Copy constructor with specified base type list.
         /// @param list The xtd::collections::generic::list::base_type which elements will be inserted from.
-        list(const base_type& list) {data_->items = list;}
+        list(const base_type& list) requires std::copy_constructible<type_t> {data_->items = list;}
         /// @brief Move constructor with specified base type list.
         /// @param list The xtd::collections::generic::list::base_type which elements will be moved from.
         list(base_type&& list) {data_->items = std::move(list);}
         /// @brief Constructs the container with the contents of the specified initializer list, and allocator.
         /// @param items The initializer list to initialize the elements of the container with.
-        list(std::initializer_list<type_t> items) {add_range(items);}
+        list(std::initializer_list<type_t> items) requires std::copy_constructible<type_t> {add_range(items);}
         /// @brief Constructs the container with the contents of the range [first, last).
         /// @param first The first iterator the range to copy the elements from.
         /// @param last The last iterator the range to copy the elements from.
         template <std::input_iterator input_iterator_t>
-        list(input_iterator_t first, input_iterator_t last) {
+        list(input_iterator_t first, input_iterator_t last) requires std::copy_constructible<type_t> {
           for (auto iterator = first; iterator != last; ++iterator)
             add(*iterator);
         }
@@ -270,7 +270,10 @@ namespace xtd {
         /// @remarks xtd::collections::generic::list <type_t>  allows duplicate elements.
         /// @remarks If xtd::collections::generic::list::count already equals xtd::collections::generic::list::capacity, the capacity of the xtd::collections::generic::list <type_t> is increased by automatically reallocating the internal array, and the existing elements are copied to the new array before the new element is added.
         /// @remarks If xtd::collections::generic::list::count is less than xtd::collections::generic::list::capacity, this method is an O(1) operation. If the capacity needs to be increased to accommodate the new element, this method becomes an O(n) operation, where n is xtd::collections::generic::list::count.
-        auto add(const type_t& item) -> void override {data_->items.push_back(item);}
+        auto add(const type_t& item) -> void override {
+          if constexpr (std::copy_constructible<type_t>) data_->items.push_back(item);
+          else xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "value_type is not copy constructible.");
+        }
         /// @brief Adds an object to the end of the xtd::collections::generic::list <type_t>.
         /// @param item The object to be added to the end of the xtd::collections::generic::list <type_t>.
         /// @par Examples
@@ -284,7 +287,7 @@ namespace xtd {
         /// @remarks xtd::collections::generic::list <type_t>  allows duplicate elements.
         /// @remarks If xtd::collections::generic::list::count already equals xtd::collections::generic::list::capacity, the capacity of the xtd::collections::generic::list <type_t> is increased by automatically reallocating the internal array, and the existing elements are copied to the new array before the new element is added.
         /// @remarks If xtd::collections::generic::list::count is less than xtd::collections::generic::list::capacity, this method is an O(1) operation. If the capacity needs to be increased to accommodate the new element, this method becomes an O(n) operation, where n is xtd::collections::generic::list::count.
-        auto add(type_t&& item) -> void {data_->items.push_back(std::move(item));}
+        auto add(type_t&& item) -> void {data_->items.push_back(std::forward<type_t>(item));}
         
         /// @brief Adds copy of elements from the specified collection to the end of the xtd::collections::generic::list <type_t>.
         /// @param collection The collection whose elements should be added to the end of the xtd::collections::generic::list <type_t>.
@@ -294,7 +297,7 @@ namespace xtd {
         /// @remarks The order of the elements in the collection is preserved in the xtd::collections::generic::list <type_t>.
         /// @remarks If the new xtd::collections::generic::list::count (the current xtd::collections::generic::list::count plus the size of the collection) will be greater than xtd::collections::generic::list::capacity, the capacity of the xtd::collections::generic::list <type_t> is increased by automatically reallocating the internal array to accommodate the new elements, and the existing elements are copied to the new array before the new elements are added.
         /// @remarks If the xtd::collections::generic::list <type_t> can accommodate the new elements without increasing the xtd::collections::generic::list::capacity, this method is an O(`n`) operation, where `n` is the number of elements to be added. If the capacity needs to be increased to accommodate the new elements, this method becomes an O(n + m) operation, where n is the number of elements to be added and m is xtd::collections::generic::list::count.
-        auto add_range(const xtd::collections::generic::ienumerable<type_t>& enumerable) -> void {insert_range(count(), enumerable);}
+        auto add_range(const xtd::collections::generic::ienumerable<type_t>& enumerable) -> void requires std::copy_constructible<type_t> {insert_range(count(), enumerable);}
         
         /// @brief Adds copy of elements from the specified collection to the end of the xtd::collections::generic::list <type_t>.
         /// @param il The collection whose elements should be added to the end of the xtd::collections::generic::list <type_t>.
@@ -304,18 +307,18 @@ namespace xtd {
         /// @remarks The order of the elements in the collection is preserved in the xtd::collections::generic::list <type_t>.
         /// @remarks If the new xtd::collections::generic::list::count (the current xtd::collections::generic::list::count plus the size of the collection) will be greater than xtd::collections::generic::list::capacity, the capacity of the xtd::collections::generic::list <type_t> is increased by automatically reallocating the internal array to accommodate the new elements, and the existing elements are copied to the new array before the new elements are added.
         /// @remarks If the xtd::collections::generic::list <type_t> can accommodate the new elements without increasing the xtd::collections::generic::list::capacity, this method is an O(`n`) operation, where `n` is the number of elements to be added. If the capacity needs to be increased to accommodate the new elements, this method becomes an O(n + m) operation, where n is the number of elements to be added and m is xtd::collections::generic::list::count.
-        auto add_range(std::initializer_list<type_t> il) -> void {insert_range(count(), il);}
+        auto add_range(std::initializer_list<type_t> il) -> void requires std::copy_constructible<type_t> {insert_range(count(), il);}
         
         /// @cond
         template<typename enumerable_t>
-        auto add_range(const enumerable_t& enumerable) -> void {insert_range(count(), enumerable);}
+        auto add_range(const enumerable_t& enumerable) -> void requires std::copy_constructible<type_t> {insert_range(count(), enumerable);}
         /// @endcond
         
         /// @brief Returns a read-only xtd::collections::object_model::read_only_collection <type_t> wrapper for the current collection.
         /// @return An object that acts as a read-only wrapper around the current xtd::collections::generic::list <type_t>.
         /// @remarks To prevent any modifications to the xtd::collections::generic::list <type_t> object, expose it only through this wrapper. A xtd::collections::object_model::read_only_collection <type_t> object does not expose methods that modify the collection. However, if changes are made to the underlying xtd::collections::generic::list <type_t> object, the read-only collection reflects those changes.
         /// @remarks This method is an O(1) operation.
-        [[nodiscard]] auto as_read_only() const noexcept -> read_only_collection {return read_only_collection {self_};}
+        [[nodiscard]] auto as_read_only() const noexcept -> read_only_collection requires std::copy_constructible<type_t> {return read_only_collection {self_};}
         
         /// @brief Searches the entire sorted xtd::collections::generic::list <type_t> for an element using the default comparer and returns the zero-based index of the element.
         /// @param item The object to locate.
@@ -408,7 +411,7 @@ namespace xtd {
         /// @remarks TThis method uses xtd::array::copy to copy the elements.
         /// @remarks The elements are copied to the xtd::array in the same order in which the enumerator iterates through the xtd::collections::generic::list <type_t>.
         /// @remarks This method is an O(n) operation, where n is xtd::collections::generic::list::count.
-        auto copy_to(xtd::array<type_t>& array) const -> void {copy_to(0, array, 0, count());}
+        auto copy_to(xtd::array<type_t>& array) const -> void requires std::copy_constructible<type_t> {copy_to(0, array, 0, count());}
         /// @brief Copies the entire xtd::colllections::generic::list <type_t> to a compatible one-dimensional array, starting at the specified index of the target array.
         /// @param array The one-dimensional Array that is the destination of the elements copied from xtd::colllections::generic::list <type_t>. The Array must have zero-based indexing.
         /// @param array_index The zero-based index in array at which copying begins.
@@ -416,7 +419,10 @@ namespace xtd {
         /// @remarks This method uses xtd::array::copy to copy the elements.
         /// @remarks The elements are copied to the xtd::array in the same order in which the enumerator iterates through the xtd::colllections::generic::list <type_t>.
         /// @remarks This method is an O(n) operation, where n is xtd::colllections::generic::list::count.
-        auto copy_to(xtd::array<type_t>& array, size_type array_index) const -> void override {copy_to(0, array, array_index, count());}
+        auto copy_to(xtd::array<type_t>& array, size_type array_index) const -> void override {
+          if constexpr (std::copy_constructible<type_t>) copy_to(0, array, array_index, count());
+          else xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "value_type is not copy constructible.");
+        }
         /// @brief Copies the entire xtd::collections::generic::list <type_t> to a compatible one-dimensional array, starting at the specified index of the target array.
         /// @param index The zero-based index in the source xtd::collections::generic::list <type_t> at which copying begins.
         /// @param array The one-dimensional xtd::array that is the destination of the elements copied from ICollection. The xtd::array must have zero-based indexing.
@@ -430,7 +436,7 @@ namespace xtd {
         /// @remarks TThis method uses xtd::array::copy to copy the elements.
         /// @remarks The elements are copied to the xtd::array in the same order in which the enumerator iterates through the xtd::collections::generic::list <type_t>.
         /// @remarks This method is an O(n) operation, where n is xtd::collections::generic::list::count.
-        auto copy_to(size_type index, xtd::array<type_t>& array, size_type array_index, size_type count) const -> void {
+        auto copy_to(size_type index, xtd::array<type_t>& array, size_type array_index, size_type count) const -> void requires std::copy_constructible<type_t> {
           if (index + count > self_.count() || array_index + count > array.length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
           for (auto i = index; i < (index + count); ++i)
             array[array_index++] = self_[i];
@@ -695,8 +701,10 @@ namespace xtd {
         /// @exception xtd::argument_out_of_range_exception index is is greater than xtd::collections::generic::list::count.
         /// @remarks xtd::collections::generic::list <type_t> allows duplicate elements.
         auto insert(size_type index, const type_t& value) -> void override {
-          if (index > count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
-          data_->items.insert(data_->items.begin() + index, value);
+          if constexpr (std::copy_constructible<type_t>) {
+            if (index > count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+            data_->items.insert(data_->items.begin() + index, value);
+          } else xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "value_type is not copy constructible.");
         }
         /// @brief Inserts an element into the xtd::collections::generic::list <type_t> at the specified index.
         /// @param index The zero-based index at which the new element should be inserted.
@@ -705,7 +713,7 @@ namespace xtd {
         /// @remarks xtd::collections::generic::list <type_t> allows duplicate elements.
         auto insert(size_type index, type_t&& value) -> void {
           if (index > count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
-          data_->items.insert(data_->items.begin() + index, std::move(value));
+          data_->items.insert(data_->items.begin() + index, std::forward<type_t>(value));
         }
         
         /// @brief Inserts copy of elements from a collection into the xtd::collections::generic::list <type_t> at the specified index.
@@ -845,7 +853,11 @@ namespace xtd {
         /// @exception xtd::argument_out_of_range_exception xtd::collections::generic::list::capacity is set to a value that is less than xtd::collections::generic::list::count.
         /// @remarks If the current size is greater than `count`, the container is reduced to its first `count` elements.
         /// @remarks If the current size is less than `count`, additional default-inserted elements are appended.
-        virtual auto resize(size_type count) -> void {resize(count, value_type {});}
+        virtual auto resize(size_type count) -> void {
+          if constexpr (std::copy_constructible<type_t>) {
+            resize(count, value_type {});
+          } else xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "value_type is not copy constructible.");
+        }
         /// @brief Resizes the container to contain `count` elements, does nothing if `count == size().
         /// @param count The new size of the container.
         /// @param value The value to initialize the new elements with.
@@ -853,9 +865,11 @@ namespace xtd {
         /// @remarks If the current size is greater than `count`, the container is reduced to its first `count` elements.
         /// @remarks If the current size is less than `count`, additional copies of `value` are appended.
         virtual auto resize(size_type count, const value_type& value) -> void {
-          if (count > data_->items.max_size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::out_of_memory);;
-          if (count == self_.count()) return;
-          data_->items.resize(count, value);
+          if constexpr (std::copy_constructible<type_t>) {
+            if (count > data_->items.max_size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::out_of_memory);;
+            if (count == self_.count()) return;
+            data_->items.resize(count, value);
+          } else xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "value_type is not copy constructible.");
         }
         
         /// @brief Reverses the order of the elements in the entire xtd::collections::generic::list <type_t>.
@@ -886,7 +900,7 @@ namespace xtd {
         /// @param length The length of the range.
         /// @return A shallow copy of a range of elements in the source xtd::collections::generic::list <type_t>.
         /// @exception xt::argument_out_of_range_exception `start` and `length` do not denote a valid range of elements in the xtd::collections::generic::list <type_t>.
-        [[nodiscard]] auto slice(size_type start, size_type length) const -> list<type_t> {
+        [[nodiscard]] auto slice(size_type start, size_type length) const -> list<type_t> requires std::copy_constructible<type_t> {
           if (start + length > count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
           return list<type_t> {data_->items.begin() + start, data_->items.begin() + start + length};
         }
@@ -944,7 +958,7 @@ namespace xtd {
         /// @include generic_list3.cpp
         /// @remarks The elements are copied using xtd::array::copy, which is an O(n) operation, where n is xtd::collections::generic::list::count.
         /// @remarks This method is an O(n) operation, where n is xtd::collections::generic::list::count.
-        [[nodiscard]] auto to_array() const noexcept -> xtd::array<value_type> {return count() ? xtd::array<value_type>(data_->items.begin(), data_->items.end()) : xtd::array<value_type> {};}
+        [[nodiscard]] auto to_array() const noexcept -> xtd::array<value_type> requires std::copy_constructible<type_t> {return count() ? xtd::array<value_type>(data_->items.begin(), data_->items.end()) : xtd::array<value_type> {};}
         
         /// @brief Returns a xtd::string that represents the current object.
         /// @return A string that represents the current object.
@@ -998,7 +1012,7 @@ namespace xtd {
         /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of other.
         /// @param other Another container to use as data source.
         /// @return This current instance.
-        auto operator =(const list& other) -> list& = default;
+        auto operator =(const list& other) -> list& requires std::copy_constructible<type_t> = default;
         /// @brief Move assignment operator. Replaces the contents with those of other using move semantics (i.e. the data in other is moved from other into this container). other is in a valid but unspecified state afterwards.
         /// @param other Another base type container to use as data source.
         /// @return This current instance.
@@ -1009,7 +1023,7 @@ namespace xtd {
         /// @brief Replaces the contents with those identified by initializer list ilist.
         /// @param items Initializer list to use as data source
         /// @return This current instance.
-        auto operator =(const std::initializer_list<type_t>& items) -> list& {
+        auto operator =(const std::initializer_list<type_t>& items) -> list& requires std::copy_constructible<type_t> {
           data_->items = items;
           return self_;
         }

@@ -174,9 +174,8 @@ namespace xtd {
     /// @brief Copies the entire xtd::array <type_t> to a compatible one-dimensional array.
     /// @param array The one-dimensional xtd::array that is the destination of the elements copied from ICollection. The xtd::array must have zero-based indexing.
     /// @exception xtd::argument_exception  The number of elements in the source xtd::array <type_t> is greater than the number of elements that the destination array can contain.
-    auto copy_to(xtd::array<type_t>& array) const -> void {
-      if constexpr (std::copy_constructible<type_t>) copy_to(0, array, 0);
-      else xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "value_type is not copy constructible.");
+    auto copy_to(xtd::array<type_t>& array) const -> void requires std::copy_constructible<type_t> {
+      copy_to(0, array, 0);
     }
     
     /// @brief Copies the elements of the xtd::array <type_t> to an xtd::array, starting at a particular xtd::array index.
