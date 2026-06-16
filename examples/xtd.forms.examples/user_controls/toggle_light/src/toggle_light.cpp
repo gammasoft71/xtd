@@ -6,14 +6,13 @@ namespace toggle_light_example {
     toggle_light() = default;
     
   protected:
-    void on_mouse_enter(const event_args&) override {
+    auto on_mouse_enter(const event_args&) -> void override {
       on = !on;
-      refresh();
+      invalidate();
     }
     
-    void on_paint(paint_event_args& e) override {
-      e.graphics().clear(back_color());
-      if (on) e.graphics().fill_ellipse(system_brushes::accent(), e.clip_rectangle());
+    auto on_paint(paint_event_args& e) -> void override {
+      e.graphics().fill_ellipse(on ? system_brushes::accent() : system_brushes::control(), e.clip_rectangle());
     }
     
   private:
@@ -25,30 +24,21 @@ namespace toggle_light_example {
     main_form() {
       text("Toggle light");
       client_size({600, 600});
-      
-      for (auto y = 0; y < num_y; ++y)
-        for (auto x = 0; x < num_x; ++x)
-          toggle_lights[x][y].parent(*this);
+      controls().add_range(toggle_lights);
+
+      resize += [this] {
+        auto step_x = as<int>(client_size().width / toggle_lights.get_length(0));
+        auto step_y = as<int>(client_size().height / toggle_lights.get_length(1));
+        
+        for (auto x = 0; x < as<int>(toggle_lights.get_length(0)); ++x)
+          for (auto y = 0; y < as<int>(toggle_lights.get_length(1)); ++y)
+            // before C++23 : toggle_lights(x, y).bounds({x * step_x, y * step_y, step_x, step_y});
+            toggle_lights[x, y].bounds({x * step_x, y * step_y, step_x, step_y});
+      };
     }
-    
-    static void main() {
-      application::run(main_form {});
-    }
-    
-  protected:
-    void on_resize(const event_args&) override {
-      auto step_x = client_size().width / num_x;
-      auto step_y = client_size().height / num_y;
-      
-      for (auto y = 0; y < num_y; ++y)
-        for (auto x = 0; x < num_x; ++x)
-          toggle_lights[x][y].bounds({x * step_x, y * step_y, step_x, step_y});
-    }
-    
+        
   private:
-    static constexpr int num_x = 20;
-    static constexpr int num_y = 20;
-    std::array<std::array<toggle_light, num_y>, num_x> toggle_lights;
+    array<toggle_light, 2> toggle_lights = array<>::create_instance<toggle_light>(20, 20);
   };
 }
 
