@@ -59,7 +59,7 @@ namespace xtd {
     
     /// @cond
     basic_array(basic_array&& array) = default;
-    basic_array(const basic_array & array) { if (array.data_) *data_ = *array.data_;}
+    basic_array(const basic_array & array) requires std::copy_constructible<type_t> { if (array.data_) *data_ = *array.data_;}
     /// @endcond
     
     /// @name Public Properties
@@ -175,7 +175,8 @@ namespace xtd {
     /// @param array The one-dimensional xtd::array that is the destination of the elements copied from ICollection. The xtd::array must have zero-based indexing.
     /// @exception xtd::argument_exception  The number of elements in the source xtd::array <type_t> is greater than the number of elements that the destination array can contain.
     auto copy_to(xtd::array<type_t>& array) const -> void {
-      copy_to(0, array, 0);
+      if constexpr (std::copy_constructible<type_t>) copy_to(0, array, 0);
+      else xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "value_type is not copy constructible.");
     }
     
     /// @brief Copies the elements of the xtd::array <type_t> to an xtd::array, starting at a particular xtd::array index.
@@ -183,15 +184,16 @@ namespace xtd {
     /// @param array_index The zero-based index in `array` at which copying begins.
     /// @exception xtd::argument_exception The number of elements in the source xtd::array <type_t> is greater than the available space from `array_index` to the end of the destination `array`.
     auto copy_to(xtd::array<type_t>& array, size_type array_index) const -> void override {
-      return copy_to(0, array, array_index);
+      if constexpr (std::copy_constructible<type_t>) copy_to(0, array, array_index);
+      else xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "value_type is not copy constructible.");
     }
     /// @brief Copies the elements of the xtd::array <type_t> from a specified index to an xtd::array, starting at a particular xtd::array index.
     /// @param indexes The zero-based multi-dimentional indexes in the source array at which copying begins.
     /// @param array The one-dimensional xtd::array that is the destination of the elements copied from xtd::collections::generic::icollection <type_t>. The xtd::array must have zero-based indexing.
     /// @param array_index The zero-based index in `array` at which copying begins.
     /// @exception xtd::argument_exception The number of elements in the source xtd::array <type_t> is greater than the available space from `array_index` to the end of the destination `array`.
-    auto copy_to(const xtd::array<size_type>& indexes, xtd::array<type_t>& array, size_type array_index) const -> void {
-      return copy_to(compute_index(self_, indexes), array, array_index);
+    auto copy_to(const xtd::array<size_type>& indexes, xtd::array<type_t>& array, size_type array_index) const -> void requires std::copy_constructible<type_t> {
+      copy_to(compute_index(self_, indexes), array, array_index);
     }
     /// @brief Copies the elements of the xtd::array <type_t> from a specified index to an xtd::array, starting at a particular xtd::array index.
     /// @param indexes The zero-based multi-dimentional indexes in the source array at which copying begins.
@@ -199,16 +201,16 @@ namespace xtd {
     /// @param array_index The zero-based index in `array` at which copying begins.
     /// @param count The number of elements to copy.
     /// @exception xtd::argument_exception The number of elements in the source xtd::array <type_t> is greater than the available space from `array_index` to the end of the destination `array`.
-    auto copy_to(const xtd::array<size_type>& indexes, xtd::array<type_t>& array, size_type array_index, size_type count) const -> void {
-      return copy_to(compute_index(self_, indexes), array, array_index, count);
+    auto copy_to(const xtd::array<size_type>& indexes, xtd::array<type_t>& array, size_type array_index, size_type count) const -> void requires std::copy_constructible<type_t> {
+      copy_to(compute_index(self_, indexes), array, array_index, count);
     }
     /// @brief Copies the elements of the xtd::array <type_t> from a specified index to an xtd::array, starting at a particular xtd::array index.
     /// @param index The zero-based index in the source array at which copying begins.
     /// @param array The one-dimensional xtd::array that is the destination of the elements copied from xtd::collections::generic::icollection <type_t>. The xtd::array must have zero-based indexing.
     /// @param array_index The zero-based index in `array` at which copying begins.
     /// @exception xtd::argument_exception The number of elements in the source xtd::array <type_t> is greater than the available space from `array_index` to the end of the destination `array`.
-    auto copy_to(const size_type index, xtd::array<type_t>& array, size_type array_index) const -> void {
-      return copy_to(index, array, array_index, length() - index);
+    auto copy_to(const size_type index, xtd::array<type_t>& array, size_type array_index) const -> void requires std::copy_constructible<type_t> {
+      copy_to(index, array, array_index, length() - index);
     }
     /// @brief Copies the elements of the xtd::array <type_t> from a specified index to an xtd::array, starting at a particular xtd::array index.
     /// @param index The zero-based index in the source array at which copying begins.
@@ -216,7 +218,7 @@ namespace xtd {
     /// @param array_index The zero-based index in `array` at which copying begins.
     /// @param count The number of elements to copy.
     /// @exception xtd::argument_exception The number of elements in the source xtd::array <type_t> is greater than the available space from `array_index` to the end of the destination `array`.
-    auto copy_to(const size_type index, xtd::array<type_t>& array, size_type array_index, size_type count) const -> void {
+    auto copy_to(const size_type index, xtd::array<type_t>& array, size_type array_index, size_type count) const -> void requires std::copy_constructible<type_t> {
       if (array.rank() != 1) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
       if (index + count > self_.length() || array_index + count > array.length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
       for (auto i = index; i < (index + count); ++i)
@@ -241,12 +243,14 @@ namespace xtd {
     /// @brief Assigns the value to all elements in the container.
     /// @param value The value to assign to the elements.
     virtual auto fill(const value_type & value) noexcept -> void {
-      for (auto& item : data_->items)
-        item = value;
+      if constexpr (std::copy_constructible<value_type>)
+        for (auto& item : data_->items)
+          item = value;
+      else xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "value_type is not copy constructible.");
     }
     
     [[nodiscard]] auto get_enumerator() const noexcept -> xtd::collections::generic::enumerator<value_type> override {
-      struct basic_array_enumerator : public xtd::collections::generic::ienumerator < value_type > {
+      struct basic_array_enumerator : public xtd::collections::generic::ienumerator<value_type> {
         explicit basic_array_enumerator(const basic_array & items, size_type version) : items_(items), version_(version) {}
         
         [[nodiscard]] const value_type& current() const override {
@@ -270,7 +274,7 @@ namespace xtd {
         const basic_array& items_;
         size_type version_ = 0;
       };
-      return {new_ptr < basic_array_enumerator > (*this, data_->items.version())};
+      return {new_ptr<basic_array_enumerator>(*this, data_->items.version())};
     }
     
     /// @brief Gets the total number of elements in all the dimensions of the array.
@@ -293,7 +297,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates methods to get the length of an array.
     /// @include array_get_length.cpp
-    [[nodiscard]] constexpr auto get_long_length(size_type dimension) const -> xtd::int64 {return static_cast < xtd::int64 > (get_upper_bound(dimension) - get_lower_bound(dimension) + 1);}
+    [[nodiscard]] constexpr auto get_long_length(size_type dimension) const -> xtd::int64 {return static_cast<xtd::int64>(get_upper_bound(dimension) - get_lower_bound(dimension) + 1);}
     
     /// @brief Gets the lower bound of the specified dimension in the array.
     /// @param dimension A zero-based dimension of the array whose lower bound needs to be determined.
@@ -492,6 +496,24 @@ namespace xtd {
     /// The following code example shows how to use operator [] to list the elements of an array.
     /// @include array_array_operator_functor.cpp
     [[nodiscard]] auto operator()(const xtd::array<size_type>& indexes) const -> const type_t&;
+
+    /// @brief Gets the value at the specified position in the multidimensional array. The indexes are specified as a 32-bit integer array.
+    /// @param indexes An array that represents the multidimension index of the array element to get.
+    /// @return The value at the specified position in the multidimensional array.
+    /// @exception xtd::index_out_of_range_exception Either each index is outside the range of valid indexes for the corresponding dimension of the current array.
+    /// @par Examples
+    /// The following code example shows how to use operator [] to list the elements of an array.
+    /// @include array_array_operator_functor.cpp
+    [[nodiscard]] auto operator[](const xtd::array<size_type>& indexes) -> type_t&;
+    
+    /// @brief Gets the value at the specified position in the multidimensional array. The indexes are specified as a 32-bit integer array.
+    /// @param indexes An array that represents the multidimension index of the array element to get.
+    /// @return The value at the specified position in the multidimensional array.
+    /// @exception xtd::index_out_of_range_exception Either each index is outside the range of valid indexes for the corresponding dimension of the current array.
+    /// @par Examples
+    /// The following code example shows how to use operator [] to list the elements of an array.
+    /// @include array_array_operator_functor.cpp
+    [[nodiscard]] auto operator[](const xtd::array<size_type>& indexes) const -> const type_t&;
     /// @}
     
   private:
@@ -499,19 +521,19 @@ namespace xtd {
     friend class array;
     
     basic_array() = default;
-    explicit basic_array(const array < size_type, 1 >& lengths);
-    basic_array(const array < size_type, 1 >& lengths, const value_type & value);
-    basic_array(const_pointer array, size_type length) {
+    explicit basic_array(const array<size_type, 1>& lengths);
+    basic_array(const array<size_type, 1>& lengths, const value_type & value);
+    basic_array(const_pointer array, size_type length) requires std::copy_constructible<type_t> {
       if (array == null) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_null);
       data_->items = base_type {array, array + length};
       data_->upper_bound[0] = data_->items.size() - 1;
     }
-    explicit basic_array(const xtd::collections::generic::ienumerable < type_t >& enumerable) {
+    explicit basic_array(const xtd::collections::generic::ienumerable<type_t>& enumerable) requires std::copy_constructible<type_t> {
       for (const auto& value : enumerable)
         data_->items.push_back(value);
       data_->upper_bound[0] = data_->items.size() - 1;
     }
-    explicit basic_array(const xtd::collections::generic::ilist < type_t >& items) {
+    explicit basic_array(const xtd::collections::generic::ilist<type_t>& items) requires std::copy_constructible<type_t> {
       data_->items.reserve(items.count());
       for (const auto& value : items)
         data_->items.push_back(value);
@@ -519,27 +541,27 @@ namespace xtd {
     }
     
     template<typename input_iterator_t>
-    basic_array(input_iterator_t first, input_iterator_t last) {
+    basic_array(input_iterator_t first, input_iterator_t last) requires std::copy_constructible<type_t> {
       data_->items.assign(first, last);
       data_->upper_bound[0] = data_->items.size() - 1;
     }
     
-    basic_array(const std::vector < type_t >& items) {
+    basic_array(const std::vector<type_t>& items) requires std::copy_constructible<type_t> {
       data_->items.assign(items.begin(), items.end());
       data_->upper_bound[0] = data_->items.size() - 1;
     }
     
-    basic_array(const std::vector < std::vector < type_t>>& items)  {
-      for (const std::vector < type_t >& items1 : items)
+    basic_array(const std::vector<std::vector<type_t>>& items) requires std::copy_constructible<type_t>  {
+      for (const std::vector<type_t>& items1 : items)
         data_->items.insert(data_->items.end(), items1.begin(), items1.end());
       data_->upper_bound[0] = items.size() - 1;
       data_->lower_bound.push_back(0);
       data_->upper_bound.push_back((*items.begin()).size() - 1);
     }
     
-    basic_array(const std::vector < std::vector < std::vector<type_t>>>& items)  {
-      for (const std::vector < std::vector < type_t>>& items1 : items)
-        for (const std::vector < type_t >& items2 : items1)
+    basic_array(const std::vector<std::vector<std::vector<type_t>>>& items) requires std::copy_constructible<type_t>  {
+      for (const std::vector<std::vector<type_t>>& items1 : items)
+        for (const std::vector<type_t>& items2 : items1)
           data_->items.insert(data_->items.end(), items2.begin(), items2.end());
       data_->upper_bound[0] = items.size() - 1;
       data_->lower_bound.push_back(0);
@@ -548,22 +570,22 @@ namespace xtd {
       data_->upper_bound.push_back((*(*items.begin()).begin()).size() - 1);
     }
     
-    basic_array(std::initializer_list < type_t > il) {
+    basic_array(std::initializer_list<type_t> il) requires std::copy_constructible<type_t> {
       data_->items.assign(il.begin(), il.end());
       data_->upper_bound[0] = data_->items.size() - 1;
     }
     
-    basic_array(std::initializer_list < std::initializer_list < type_t>> il)  {
-      for (const std::initializer_list < type_t >& il1 : il)
+    basic_array(std::initializer_list<std::initializer_list<type_t>> il) requires std::copy_constructible<type_t> {
+      for (const std::initializer_list<type_t>& il1 : il)
         data_->items.insert(data_->items.end(), il1.begin(), il1.end());
       data_->upper_bound[0] = il.size() - 1;
       data_->lower_bound.push_back(0);
       data_->upper_bound.push_back((*il.begin()).size() - 1);
     }
     
-    basic_array(std::initializer_list < std::initializer_list < std::initializer_list<type_t>>> il)  {
-      for (const std::initializer_list < std::initializer_list < type_t>>& il1 : il)
-        for (const std::initializer_list < type_t >& il2 : il1)
+    basic_array(std::initializer_list<std::initializer_list<std::initializer_list<type_t>>> il) requires std::copy_constructible<type_t> {
+      for (const std::initializer_list<std::initializer_list<type_t>>& il1 : il)
+        for (const std::initializer_list<type_t>& il2 : il1)
           data_->items.insert(data_->items.end(), il2.begin(), il2.end());
       data_->upper_bound[0] = il.size() - 1;
       data_->lower_bound.push_back(0);
@@ -598,12 +620,12 @@ namespace xtd {
     [[nodiscard]] static auto to_string(const xtd::basic_array<value_t>& items, xtd::usize rank, xtd::usize base_index) -> xtd::string;
     
     struct array_data {
-      xtd::collections::generic::helpers::raw_array < value_type > items;
-      std::vector < size_type > lower_bound {0};
-      std::vector < size_type > upper_bound {std::numeric_limits < size_type >::max()};
+      xtd::collections::generic::helpers::raw_array<value_type> items;
+      std::vector<size_type> lower_bound {0};
+      std::vector<size_type> upper_bound {std::numeric_limits<size_type>::max()};
       object sync_root;
     };
     
-    xtd::ptr < array_data > data_ = xtd::new_ptr < array_data > ();
+    xtd::ptr<array_data> data_ = xtd::new_ptr<array_data> ();
   };
 }

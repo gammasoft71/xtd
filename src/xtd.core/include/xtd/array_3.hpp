@@ -81,13 +81,13 @@ namespace xtd {
     array() = default;
     /// @brief Copy constructor with specified array.
     /// @param array The xtd::array which elements will be inserted from.
-    array(const array& array) : basic_array<type_t, allocator_t>(array) {}
+    array(const array& array) requires std::copy_constructible<type_t> : basic_array<type_t, allocator_t>(array) {}
     /// @brief Move constructor with specified array.
     /// @param array The xtd::array which elements will be inserted from.
     array(array&& array) : basic_array<type_t, allocator_t>(std::move(array)) {}
     /// @brief Copy constructor with specified base type array.
     /// @param array The xtd::array::base_type which elements will be inserted from.
-    array(const base_type& array) : basic_array<type_t, allocator_t>(array) {}
+    array(const base_type& array) requires std::copy_constructible<type_t> : basic_array<type_t, allocator_t>(array) {}
     /// @brief Move constructor with specified base type array.
     /// @param array The xtd::array::base_type which elements will be moved from.
     array(base_type&& array) : basic_array<type_t, allocator_t>(std::move(array)) {}
@@ -109,7 +109,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates different methods to create an array.
     /// @include array_constructor.cpp
-    array(size_type length1, size_type length2, size_type length3, const value_type& value) : basic_array<type_t, allocator_t>(array<xtd::usize> {length1, length2, length3}, value) {}
+    array(size_type length1, size_type length2, size_type length3, const value_type& value) requires std::copy_constructible<type_t> : basic_array<type_t, allocator_t>(array<xtd::usize> {length1, length2, length3}, value) {}
     /// @brief Initializes a new instance of the array class with lengths for each rank specified.
     /// @param lengths the lengths for each rank.
     /// @remarks The array class is not thread safe.
@@ -123,14 +123,14 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates different methods to create an array.
     /// @include array_constructor.cpp
-    array(const array<xtd::usize, 1>& lengths, const value_type& value) : basic_array<type_t, allocator_t>(lengths, value) {}
+    array(const array<xtd::usize, 1>& lengths, const value_type& value) requires std::copy_constructible<type_t> : basic_array<type_t, allocator_t>(lengths, value) {}
     /// @brief Initializes a new instance of the array and copy array array specified.
     /// @param array the array to copy.
     /// @remarks The array class is not thread safe.
     /// @par Examples
     /// The following code example demonstrates different methods to create an array.
     /// @include array_constructor.cpp
-    explicit array(const xtd::collections::generic::ienumerable<type_t>& enumerable) : basic_array<type_t, allocator_t>(enumerable) {}
+    explicit array(const xtd::collections::generic::ienumerable<type_t>& enumerable) requires std::copy_constructible<type_t> : basic_array<type_t, allocator_t>(enumerable) {}
     /// @brief Initializes a new instance of the array and copy array array specified.
     /// @param array the array to copy.
     /// @remarks The array class is not thread safe.
@@ -142,13 +142,13 @@ namespace xtd {
     /// @param first The first iterator the range to copy the elements from.
     /// @param last The last iterator the range to copy the elements from.
     template<typename input_iterator_t>
-    array(input_iterator_t first, input_iterator_t last) : basic_array<type_t, allocator_t>(first, last) {}
+    array(input_iterator_t first, input_iterator_t last) requires std::copy_constructible<type_t> : basic_array<type_t, allocator_t>(first, last) {}
     /// @brief Constructs the container with the contents of the specified initializer list.
     /// @param items The std::vector to initialize the elements of the container with.
-    array(std::vector<std::vector<std::vector<type_t>>> items) : basic_array<type_t, allocator_t>(items) {}
+    array(std::vector<std::vector<std::vector<type_t>>> items) requires std::copy_constructible<type_t> : basic_array<type_t, allocator_t>(items) {}
     /// @brief Constructs the container with the contents of the specified initializer list.
     /// @param items The initializer list to initialize the elements of the container with.
-    array(std::initializer_list<std::initializer_list<std::initializer_list<type_t>>> items) : basic_array<type_t, allocator_t>(items) {}
+    array(std::initializer_list<std::initializer_list<std::initializer_list<type_t>>> items) requires std::copy_constructible<type_t> : basic_array<type_t, allocator_t>(items) {}
     /// @}
     
     /// @name Public Properties
@@ -224,6 +224,33 @@ namespace xtd {
     /// The following code example shows how to use operator () to list the elements of an array.
     /// @include ArrayArrayOperatorFunctor.cpp
     [[nodiscard]] auto operator()(size_type index1, size_type index2, size_type index3) const -> const value_type& {return xtd::basic_array<type_t, allocator_t>::operator()({index1, index2, index3});}
+    
+#if __cpp_multidimensional_subscript
+    using xtd::basic_array<type_t, allocator_t>::operator [];
+    /// @brief Sets a value to the element at the specified position in the one-dimensional Array. The index is specified as a 32-bit integer.
+    /// @param value The new value for the specified element.
+    /// @param index1 A xtd::usize that represents the position of the first rank of array element to set.
+    /// @param index2 A xtd::usize that represents the position of the second rank of array element to set.
+    /// @param index3 A xtd::usize that represents the position of the third rank of array element to set.
+    /// @exception xtd::argument_exception The current Array does not have exactly one dimension.
+    /// @exception xtd::index_out_of_range_exception index is outside the range of valid indexes for the current Array.
+    /// @par Examples
+    /// The following code example shows how to use operator () to list the elements of an array.
+    /// @include ArrayArrayOperatorFunctor.cpp
+    auto operator[](size_type index1, size_type index2, size_type index3) -> value_type& {return xtd::basic_array<type_t, allocator_t>::operator()({index1, index2, index3});}
+
+    /// @brief Gets the value at the specified position in the one-dimensional Array. The index is specified as a 32-bit integer.
+    /// @param index1 A xtd::usize that represents the position of the first rank of array element to set.
+    /// @param index2 A xtd::usize that represents the position of the second rank of array element to set.
+    /// @param index3 A xtd::usize that represents the position of the third rank of array element to set.
+    /// @return The value at the specified position in the one-dimensional Array.
+    /// @exception xtd::argument_exception The current Array does not have exactly one dimension.
+    /// @exception xtd::index_out_of_range_exception index is outside the range of valid indexes for the current Array.
+    /// @par Examples
+    /// The following code example shows how to use operator () to list the elements of an array.
+    /// @include ArrayArrayOperatorFunctor.cpp
+    auto operator[](size_type index1, size_type index2, size_type index3) const -> const value_type& {return xtd::basic_array<type_t, allocator_t>::operator()({index1, index2, index3});}
+#endif
     /// @}
   };
 }

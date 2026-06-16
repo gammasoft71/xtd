@@ -81,13 +81,13 @@ namespace xtd {
     array() = default;
     /// @brief Copy constructor with specified array.
     /// @param array The xtd::array which elements will be inserted from.
-    array(const array& array) : basic_array<type_t, allocator_t>(array) {}
+    array(const array& array) requires std::copy_constructible<type_t> : basic_array<type_t, allocator_t>(array) {}
     /// @brief Move constructor with specified array.
     /// @param array The xtd::array which elements will be inserted from.
     array(array&& array) : basic_array<type_t, allocator_t>(std::move(array)) {}
     /// @brief Copy constructor with specified base type array.
     /// @param array The xtd::array::base_type which elements will be inserted from.
-    array(const base_type& array) : basic_array<type_t, allocator_t>(array) {}
+    array(const base_type& array) requires std::copy_constructible<type_t> : basic_array<type_t, allocator_t>(array) {}
     /// @brief Move constructor with specified base type array.
     /// @param array The xtd::array::base_type which elements will be moved from.
     array(base_type&& array) : basic_array<type_t, allocator_t>(std::move(array)) {}
@@ -105,14 +105,14 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates different methods to create an array.
     /// @include array_constructor.cpp
-    array(size_type length, const value_type& value) : basic_array<type_t, allocator_t>(array<xtd::usize> {length}, value) {}
+    array(size_type length, const value_type& value) requires std::copy_constructible<type_t> : basic_array<type_t, allocator_t>(array<xtd::usize> {length}, value) {}
     /// @brief Initializes a new instance of the array class with lengths for each rank specified.
     /// @param lengths the lengths for each rank.
     /// @remarks The array class is not thread safe.
     /// @par Examples
     /// The following code example demonstrates different methods to create an array.
     /// @include array_constructor.cpp
-    array(const array<xtd::usize, 1>& lengths, const value_type& value) : basic_array<type_t, allocator_t>(lengths, value) {}
+    array(const array<xtd::usize, 1>& lengths, const value_type& value) requires std::copy_constructible<type_t> : basic_array<type_t, allocator_t>(lengths, value) {}
     /// @brief Initializes a new instance of the array and copy array[] type_t.
     /// @param array the array to copy.
     /// @remarks The array class is not thread safe.
@@ -120,7 +120,7 @@ namespace xtd {
     /// The following code example demonstrates different methods to create an array.
     /// @include array_constructor.cpp
     template<xtd::usize length>
-    array(const type_t(&array)[length]) : basic_array<type_t, allocator_t>(array, length) {}
+    array(const type_t(&array)[length]) requires std::copy_constructible<type_t> : basic_array<type_t, allocator_t>(array, length) {}
     /// @brief Initializes a new instance of the array and copy array[] type_t with length specified.
     /// @param array the array to copy.
     /// @param length length of the array.
@@ -128,29 +128,29 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates different methods to create an array.
     /// @include array_constructor.cpp
-    array(const type_t* array, size_type length) : basic_array<type_t, allocator_t>(array, length) {}
+    array(const type_t* array, size_type length) requires std::copy_constructible<type_t> : basic_array<type_t, allocator_t>(array, length) {}
     /// @brief Initializes a new instance of the array and copy array array specified.
     /// @param array the array to copy.
     /// @remarks The array class is not thread safe.
     /// @par Examples
     /// The following code example demonstrates different methods to create an array.
     /// @include array_constructor.cpp
-    explicit array(const xtd::collections::generic::ienumerable<type_t>& enumerable) : basic_array<type_t, allocator_t>(enumerable) {}
+    explicit array(const xtd::collections::generic::ienumerable<type_t>& enumerable) requires std::copy_constructible<type_t> : basic_array<type_t, allocator_t>(enumerable) {}
     /// @brief Initializes a new instance of the array and copy array array specified.
     /// @param array the array to copy.
     /// @remarks The array class is not thread safe.
     /// @par Examples
     /// The following code example demonstrates different methods to create an array.
     /// @include array_constructor.cpp
-    explicit array(const xtd::collections::generic::ilist<type_t>& list) : basic_array<type_t, allocator_t>(list) {}
+    explicit array(const xtd::collections::generic::ilist<type_t>& list) requires std::copy_constructible<type_t> : basic_array<type_t, allocator_t>(list) {}
     /// @brief Constructs the container with the contents of the range [first, last).
     /// @param first The first iterator the range to copy the elements from.
     /// @param last The last iterator the range to copy the elements from.
     template<typename input_iterator_t>
-    array(input_iterator_t first, input_iterator_t last) : basic_array<type_t, allocator_t>(first, last) {}
+    array(input_iterator_t first, input_iterator_t last) requires std::copy_constructible<type_t> : basic_array<type_t, allocator_t>(first, last) {}
     /// @brief Constructs the container with the contents of the specified initializer list.
     /// @param items The initializer list to initialize the elements of the container with.
-    array(std::initializer_list<type_t> items) : basic_array<type_t, allocator_t>(items) {}
+    array(std::initializer_list<type_t> items) requires std::copy_constructible<type_t> : basic_array<type_t, allocator_t>(items) {}
     /// @}
     
     /// @name Public Properties
@@ -182,7 +182,10 @@ namespace xtd {
     /// @par Examples
     /// The following code example shows how to copy an Array to another native Array.
     /// @include ArrayCopyTo.cpp
-    auto copy_to(xtd::array<type_t>& array, size_type index) const -> void override {basic_array<type_t, allocator_t>::copy_to(array, index);}
+    auto copy_to(xtd::array<type_t>& array, size_type index) const -> void override {
+      if constexpr (std::copy_constructible<type_t>) basic_array<type_t, allocator_t>::copy_to(array, index);
+      else xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "value_type is not copy constructible.");
+    }
     
     using xtd::basic_array<type_t, allocator_t>::get_value;
     /// @brief Gets the value at the specified position in the one-dimensional Array. The index is specified as a 32-bit integer.
@@ -198,7 +201,7 @@ namespace xtd {
     /// @param index The position of the Array element to set.
     /// @exception xtd::argument_exception The current Array does not have exactly one dimension.
     /// @exception xtd::index_out_of_range_exception index is outside the range of valid indexes for the current Array.
-    auto set_value(const value_type& value, size_type index) -> void {operator()(index) = value;}
+    auto set_value(const value_type& value, size_type index) -> void requires std::copy_constructible<type_t> {operator()(index) = value;}
     
     /// @brief Returns a xtd::string that represents the current object.
     /// @return A string that represents the current object.
@@ -211,7 +214,7 @@ namespace xtd {
     /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of other.
     /// @param other Another container to use as data source.
     /// @return This current instance.
-    auto operator=(const array&) -> array& = default;
+    auto operator=(const array&) -> array& requires std::copy_constructible<type_t> = default;
     /// @brief Move assignment operator. Replaces the contents with those of other using move semantics (i.e. the data in other is moved from other into this container). other is in a valid but unspecified state afterwards.
     /// @param other Another base type container to use as data source.
     /// @return This current instance.

@@ -91,7 +91,24 @@ inline const type_t& xtd::basic_array<type_t, allocator_t>::operator()(const xtd
 }
 
 template<typename type_t, typename allocator_t>
-inline xtd::basic_array<type_t, allocator_t>::basic_array(const array<size_type, 1>& lengths) : basic_array(lengths, value_type {}) {
+inline type_t& xtd::basic_array<type_t, allocator_t>::operator[](const xtd::array<xtd::usize>& indexes) {
+  return operator ()(indexes);
+}
+
+template<typename type_t, typename allocator_t>
+inline const type_t& xtd::basic_array<type_t, allocator_t>::operator[](const xtd::array<xtd::usize>& indexes) const {
+  return operator ()(indexes);
+}
+
+template<typename type_t, typename allocator_t>
+inline xtd::basic_array<type_t, allocator_t>::basic_array(const array<size_type, 1>& lengths) {
+  data_->items = base_type(lengths.aggregate([&](const size_type & accumulator, const size_type & value) {return accumulator * value;}));
+  data_->lower_bound.clear();
+  data_->upper_bound.clear();
+  for (auto length : lengths) {
+    data_->lower_bound.push_back(0);
+    data_->upper_bound.push_back(length - 1);
+  }
 }
 
 template<typename type_t, typename allocator_t>

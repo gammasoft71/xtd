@@ -105,7 +105,7 @@ namespace xtd {
     array() = default;
     /// @brief Copy constructor with specified array.
     /// @param array The xtd::array which elements will be inserted from.
-    array(const array& array) : xtd::basic_array<type_t, allocator_t>(array) {}
+    array(const array& array) requires std::copy_constructible<type_t> : xtd::basic_array<type_t, allocator_t>(array) {}
     /// @brief Move constructor with specified array.
     /// @param array The xtd::array which elements will be inserted from.
     array(array&& array) : xtd::basic_array<type_t, allocator_t>(std::move(array)) {}
@@ -122,7 +122,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates different methods to create an array.
     /// @include array_constructor.cpp
-    array(const array<xtd::usize, 1>& lengths, const type_t& value) : xtd::basic_array<type_t, allocator_t>(lengths, value) {}
+    array(const array<xtd::usize, 1>& lengths, const type_t& value) requires std::copy_constructible<type_t> : xtd::basic_array<type_t, allocator_t>(lengths, value) {}
     /// @brief Initializes a new instance of the array and copy array array specified.
     /// @param array the array to copy.
     /// @remarks The array class is not thread safe.
