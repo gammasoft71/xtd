@@ -7,7 +7,7 @@ struct foo1 : public object, public icomparable<foo1>, public iequatable<foo1> {
   auto to_string() const noexcept -> string override {return string::format("{}", value);}
   auto equals(const object& o) const noexcept -> bool override {return is<foo1>(o) && equals(static_cast<const foo1&>(o));}
   auto equals(const foo1& f) const noexcept -> bool override {return value == f.value;}
-  auto compare_to(const foo1& f) const noexcept -> int32 override {return value < f.value ? -1 : value > f.value ? 1 : 0;}
+  auto compare_to(const foo1& f) const noexcept -> int override {return value < f.value ? -1 : value > f.value ? 1 : 0;}
 };
 
 struct foo2 {
