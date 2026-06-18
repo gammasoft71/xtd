@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line">    </div>
 <div class="line">    <span class="keywordtype">double</span> value()<span class="keyword"> const </span>{</div>
 <div class="line">      <span class="keyword">auto</span> result = .0;</div>
-<div class="line">      try_parse(text(), result);</div>
+<div class="line">      [[maybe_unused]] <span class="keyword">auto</span> _ = try_parse(text(), result);</div>
 <div class="line">      <span class="keywordflow">return</span> result;</div>
 <div class="line">    }</div>
 <div class="line">    </div>

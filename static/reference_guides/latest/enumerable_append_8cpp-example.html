@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line">  <span class="keyword">auto</span> numbers = list {1, 2, 3, 4};</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Trying to append any value of the same type</span></div>
-<div class="line">  numbers.append(5);</div>
+<div class="line">  [[maybe_unused]] <span class="keyword">auto</span> _ = numbers.append(5);</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// It doesn&#39;t work because the original list has not been changed</span></div>
 <div class="line">  console::write_line(string::join(<span class="stringliteral">&quot;, &quot;</span>, numbers));</div>

@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line">    <span class="keywordtype">string</span> first_name;</div>
 <div class="line">    <span class="keywordtype">string</span> last_name;</div>
 <div class="line">    </div>
-<div class="line">    <span class="keyword">auto</span> compare_to(<span class="keyword">const</span> person&amp; o) <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; int32 <span class="keyword">override</span> {</div>
+<div class="line">    <span class="keyword">auto</span> compare_to(<span class="keyword">const</span> person&amp; o) <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; <span class="keywordtype">int</span> <span class="keyword">override</span> {</div>
 <div class="line">      <span class="keywordflow">if</span> (first_name == o.first_name &amp;&amp; last_name == o.last_name) <span class="keywordflow">return</span> 0;</div>
 <div class="line">      <span class="keywordflow">if</span> (first_name &gt; o.first_name || (first_name == o.first_name &amp;&amp; last_name &gt; o.last_name)) <span class="keywordflow">return</span> 1;</div>
 <div class="line">      <span class="keywordflow">return</span> -1;</div>

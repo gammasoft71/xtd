@@ -1054,7 +1054,7 @@ template&lt;typename source_t&gt; </div>
 <div class="line">  <span class="keyword">auto</span> numbers = <a class="code hl_typedef" href="#a4ff59be55b7be66d275f28741e2f1f0a">list</a> {1, 2, 3, 4};</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Trying to append any value of the same type</span></div>
-<div class="line">  numbers.append(5);</div>
+<div class="line">  [[maybe_unused]] <span class="keyword">auto</span> _ = numbers.append(5);</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// It doesn&#39;t work because the original list has not been changed</span></div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<a class="code hl_function" href="classxtd_1_1basic__string.html#a311796df207f48060b5c20b1553c5d0a">string::join</a>(<span class="stringliteral">&quot;, &quot;</span>, numbers));</div>
