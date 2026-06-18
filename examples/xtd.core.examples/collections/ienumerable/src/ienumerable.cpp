@@ -11,7 +11,7 @@ public:
     string first_name;
     string last_name;
 
-    auto compare_to(const person& o) const noexcept -> int32 override {
+    auto compare_to(const person& o) const noexcept -> int override {
       if (first_name == o.first_name && last_name == o.last_name) return 0;
       if (first_name > o.first_name || (first_name == o.first_name && last_name > o.last_name)) return 1;
       return -1;
