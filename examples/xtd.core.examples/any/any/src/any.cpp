@@ -26,7 +26,7 @@ auto main() -> int {
   a = date_time {1971, 1, 5};
   if (is<date_time>(a)) console::write_line("a = {} => {} ({})", a, as<date_time>(a).to_short_date_string(), type_of(as<date_time>(a)));
   a = 42;
-  if (is<int32>(a)) console::write_line("a = {} => {} ({})", a, as<int32>(a), type_of(as<int32>(a)));
+  if (is<int>(a)) console::write_line("a = {} => {} ({})", a, as<int>(a), type_of(as<int>(a)));
   a = .42;
   if (is<double>(a)) console::write_line("a = {} => {} ({})", a, as<double>(a), type_of(as<double>(a)));
   a = foo1 {42};
