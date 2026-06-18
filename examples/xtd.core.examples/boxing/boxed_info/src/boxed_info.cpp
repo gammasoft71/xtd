@@ -8,7 +8,7 @@ struct foo1 : icomparable<foo1>, iequatable<foo1>, istringable<foo1> {
   
   int value = 0;
   
-  auto compare_to(const foo1& other) const noexcept -> int32 override {return value - other.value;}
+  auto compare_to(const foo1& other) const noexcept -> int override {return value - other.value;}
   auto equals(const foo1& other) const noexcept -> bool override {return value == other.value;}
   auto to_string() const noexcept -> string override {return string::format("{}", value);}
 };
