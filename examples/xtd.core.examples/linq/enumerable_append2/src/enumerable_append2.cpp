@@ -5,7 +5,7 @@ auto main() -> int {
   auto numbers = list {1, 2, 3, 4};
   
   // Trying to append any value of the same type
-  enumerable::from(numbers.begin(), numbers.end()).append(5);
+  [[maybe_unused]] auto _ = enumerable::from(numbers.begin(), numbers.end()).append(5);
   
   // It doesn't work because the original list has not been changed
   console::write_line(string::join(", ", numbers));
