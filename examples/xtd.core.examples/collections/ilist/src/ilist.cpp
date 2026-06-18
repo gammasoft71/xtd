@@ -2,7 +2,7 @@
 
 class program {
 public:
-  static auto main() -> void {
+  static auto main() {
     auto test = simple_list();
     
     // Populate the List.
