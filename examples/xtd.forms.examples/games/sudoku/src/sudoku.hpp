@@ -1,10 +1,9 @@
-
 #pragma once
 #include <xtd/array>
 #include <xtd/istringable>
 #include <xtd/random>
-#include <xtd/expressions/division_expression>
-#include <xtd/expressions/multiplication_expression>
+#include <xtd/expressions/divide_expression>
+#include <xtd/expressions/multiply_expression>
 
 namespace sudoku {
   class sudoku : public xtd::istringable<sudoku> {
