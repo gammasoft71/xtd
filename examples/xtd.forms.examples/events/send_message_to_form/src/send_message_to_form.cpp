@@ -14,7 +14,7 @@ public:
   /// @brief Causes the something_ready event to be raised on the message loop of the thread which created this object.
   /// @remarks Can safely be called from any thread. Always returns immediately without waiting for the event to be handled.
   void notify_something_ready() {
-    synchronizer.begin_invoke({*this, &something_ready_notifier::on_something_ready});
+    [[maybe_unused]] auto _ = synchronizer.begin_invoke({*this, &something_ready_notifier::on_something_ready});
   }
   
 protected:
