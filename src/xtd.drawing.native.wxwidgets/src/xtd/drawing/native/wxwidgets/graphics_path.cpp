@@ -179,7 +179,6 @@ void graphics_path::reverse(intptr handle) {
 void graphics_path::start_figure(intptr handle) {
   if (!handle) return;
   figures::new_figure(reinterpret_cast<wxGraphicsPath*>(handle));
-  figures::start(reinterpret_cast<wxGraphicsPath*>(handle));
 }
 
 void graphics_path::get_bounds(intptr handle, float& x, float& y, float& width, float& height) {
