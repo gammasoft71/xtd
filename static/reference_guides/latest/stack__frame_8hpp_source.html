@@ -189,6 +189,17 @@ document.addEventListener('DOMContentLoaded', () => {
 </div>
 <div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>  }</div>
 <div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>}</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span></div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>[[deprecated(<span class="stringliteral">&quot;Use xtd::diagnostics::stack_frame::current() - Will be removed in version 1.2.0.&quot;</span>)]]</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>inline constexpr <span class="keywordtype">int</span> ___current_stack_frame_ = 0;</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span></div>
+<div class="foldopen" id="foldopen00283" data-start="" data-end="">
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno"><a class="line" href="group__keywords.html#gae15b54f63b03b198d02fc94bdd0479ee">  283</a></span><span class="preprocessor">#define current_stack_frame_ \</span></div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span><span class="preprocessor">  (void(___current_stack_frame_), xtd::diagnostics::stack_frame::current())</span></div>
+</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>  </div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span></div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno"><a class="line" href="group__keywords.html#gaf8b977f43d229f177b7b399c3b3a60a6">  297</a></span><span class="preprocessor">#define csf_ current_stack_frame_</span></div>
 <div class="ttc" id="a____string__definitions_8hpp_html"><div class="ttname"><a href="____string__definitions_8hpp.html">__string_definitions.hpp</a></div></div>
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1source__location_html"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1source__location.html">xtd::diagnostics::source_location</a></div><div class="ttdoc">The xtd::diagnostics::source_location class represents certain information about the source code,...</div><div class="ttdef"><b>Definition</b> source_location.hpp:33</div></div>
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1stack__frame_html"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a></div><div class="ttdoc">Provides information about a xtd::diagnostics::stack_frame, which represents a function call on the c...</div><div class="ttdef"><b>Definition</b> stack_frame.hpp:46</div></div>
