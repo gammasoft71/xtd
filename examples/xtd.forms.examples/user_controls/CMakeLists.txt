@@ -9,5 +9,6 @@ add_projects(
   line
   numeric_text_box
   owner_button
+  phylactery
   toggle_light
 )
