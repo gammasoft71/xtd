@@ -264,3 +264,34 @@ namespace xtd {
     };
   }
 }
+
+/// @cond
+[[deprecated("Use xtd::diagnostics::stack_frame::current() - Will be removed in version 1.2.0.")]]
+inline constexpr int ___current_stack_frame_ = 0;
+/// @endcond
+
+/// @brief Provides information about the current stack frame.
+/// @par Library
+/// xtd.core
+/// @ingroup xtd_core keywords
+/// @return Informations about the current stack frame.
+/// @par Examples
+/// The following example shows how to use the #current_stack_frame_.
+/// @include current_stack_frame.cpp
+/// @remarks same as #csf_
+/// @deprecated Use xtd::diagnostics::stack_frame::current() - Will be removed in version 1.2.0.
+#define current_stack_frame_ \
+  (void(___current_stack_frame_), xtd::diagnostics::stack_frame::current())
+  
+
+/// @brief Provides information about the current stack frame.
+/// @par Library
+/// xtd.core
+/// @ingroup xtd_core keywords
+/// @return Informations about the current stack frame.
+/// @par Examples
+/// The following example shows how to use the #csf_.
+/// @include csf.cpp
+/// @remarks same as #current_stack_frame_
+/// @deprecated Use xtd::diagnostics::stack_frame::current() - Will be removed in version 1.2.0.
+#define csf_ current_stack_frame_
