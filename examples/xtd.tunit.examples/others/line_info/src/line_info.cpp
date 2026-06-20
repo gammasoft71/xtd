@@ -1,10 +1,6 @@
-#include <xtd/xtd.tunit>
+#include <xtd/xtd>
 
-using namespace xtd;
-using namespace xtd::diagnostics;
-using namespace xtd::tunit;
-
-void trace_message(const string& message, const stack_frame& sf = stack_frame::current()) {
+auto trace_message(const string& message, const diagnostics::stack_frame& sf = diagnostics::stack_frame::current()) -> void {
   console::out << "message: " << message << environment::new_line;
   console::out << "member name: " << sf.get_method() << environment::new_line;
   console::out << "source file path: " << sf.get_file_name() << environment::new_line;
@@ -20,4 +16,4 @@ auto main() -> int {
 // message: Something happened.
 // member name: main
 // source file path: !---OMITTED---!/line_info/src/line_info.cpp
-// source line number: 16
+// source line number: 11
