@@ -1,13 +1,13 @@
 #include <xtd/xtd>
 
-struct my_formatable_string : public iformatable {
+struct my_formatable_string : iformatable {
   my_formatable_string(const string& value) : value {value} {}
   auto to_string(const string& format, const globalization::culture_info& culture) const noexcept -> string override {return value;}
   
   string value;
 };
 
-struct my_stringable_string : public istringable<my_stringable_string> {
+struct my_stringable_string : istringable<my_stringable_string> {
   my_stringable_string(const string& value) : value {value} {}
   auto to_string() const noexcept -> string override {return value;}
   
@@ -20,7 +20,7 @@ struct my_streamable_string {
   string value;
 };
 
-struct my_object_string : public object {
+struct my_object_string : object {
   my_object_string(const string& value) : value {value} {}
   auto to_string() const noexcept -> string override {return value;}
   
