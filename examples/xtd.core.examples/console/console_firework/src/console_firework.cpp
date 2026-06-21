@@ -4,14 +4,13 @@ namespace console_firework_example {
   class firework abstract_ {
   public:
     firework(int x, int y, console_color color, int delay_) : x_(x), y_(y), color_(color), delay_(delay_) {}
-    firework(const firework& firework) : x_(firework.x_), y_(firework.y_), color_(firework.color_), delay_(firework.delay_) {}
     
-    auto delay() -> int {return delay_;}
+    auto delay() const noexcept -> int {return delay_;}
     
-    virtual auto paint() const -> void = 0;
+    virtual auto paint() const noexcept -> void = 0;
     
   protected:
-    static auto write(int x, int y, const string& str) -> void {
+    static auto write(int x, int y, const string& str) noexcept -> void {
       console::set_cursor_position(x, y);
       console::write(str);
     }
@@ -25,9 +24,9 @@ namespace console_firework_example {
   class firework_start : public firework {
   public:
     firework_start(int x, int y, console_color color, int speed) : console_firework_example::firework(x, y, color, speed) {}
-    explicit firework_start(const firework& firework) : console_firework_example::firework(firework) {}
+    firework_start(const firework& firework) : console_firework_example::firework(firework) {}
     
-    auto paint() const -> void override {
+    auto paint() const noexcept -> void override {
       console::foreground_color(color_);
       write(x_, y_, "+");
     }
@@ -36,9 +35,9 @@ namespace console_firework_example {
   class firework_exploded : public firework {
   public:
     firework_exploded(int x, int y, console_color color, int speed) : console_firework_example::firework(x, y, color, speed) {}
-    explicit firework_exploded(const firework& firework) : console_firework_example::firework(firework) {}
+    firework_exploded(const firework& firework) : console_firework_example::firework(firework) {}
     
-    auto paint() const -> void override {
+    auto paint() const noexcept -> void override {
       console::foreground_color(color_);
       write(x_ - 1, y_ - 1, " - ");
       write(x_ - 1, y_, "-+-");
@@ -49,9 +48,9 @@ namespace console_firework_example {
   class firework_start_expanded1 : public firework {
   public:
     firework_start_expanded1(int x, int y, console_color color, int speed) : console_firework_example::firework(x, y, color, speed) {}
-    explicit firework_start_expanded1(const firework& firework) : console_firework_example::firework(firework) {}
+    firework_start_expanded1(const firework& firework) : console_firework_example::firework(firework) {}
     
-    auto paint() const -> void override {
+    auto paint() const noexcept -> void override {
       console::foreground_color(color_);
       write(x_ - 2, y_ - 2, " --- ");
       write(x_ - 2, y_ - 1, "-+++-");
@@ -64,9 +63,9 @@ namespace console_firework_example {
   class firework_start_expanded2 : public firework {
   public:
     firework_start_expanded2(int x, int y, console_color color, int speed) : console_firework_example::firework(x, y, color, speed) {}
-    explicit firework_start_expanded2(const firework& firework) : console_firework_example::firework(firework) {}
+    firework_start_expanded2(const firework& firework) : console_firework_example::firework(firework) {}
     
-    auto paint() const -> void override {
+    auto paint() const noexcept -> void override {
       console::foreground_color(color_);
       write(x_ - 2, y_ - 2, " +++ ");
       write(x_ - 2, y_ - 1, "++#++");
@@ -79,9 +78,9 @@ namespace console_firework_example {
   class firework_start_expanded3 : public firework {
   public:
     firework_start_expanded3(int x, int y, console_color color, int speed) : console_firework_example::firework(x, y, color, speed) {}
-    explicit firework_start_expanded3(const firework& firework) : console_firework_example::firework(firework) {}
+    firework_start_expanded3(const firework& firework) : console_firework_example::firework(firework) {}
     
-    auto paint() const -> void override {
+    auto paint() const noexcept -> void override {
       console::foreground_color(color_);
       write(x_ - 2, y_ - 2, "  #  ");
       write(x_ - 2, y_ - 1, "## ##");
@@ -94,9 +93,9 @@ namespace console_firework_example {
   class firework_start_expanded4 : public firework {
   public:
     firework_start_expanded4(int x, int y, console_color color, int speed) : console_firework_example::firework(x, y, color, speed) {}
-    explicit firework_start_expanded4(const firework& firework) : console_firework_example::firework(firework) {}
+    firework_start_expanded4(const firework& firework) : console_firework_example::firework(firework) {}
     
-    auto paint() const -> void override {
+    auto paint() const noexcept -> void override {
       console::foreground_color(color_);
       write(x_ - 2, y_ - 2, " # # ");
       write(x_ - 2, y_ - 1, "#   #");
@@ -109,9 +108,9 @@ namespace console_firework_example {
   class firework_end : public firework {
   public:
     firework_end(int x, int y, console_color color, int speed) : console_firework_example::firework(x, y, color, speed) {}
-    explicit firework_end(const firework& firework) : console_firework_example::firework(firework) {}
+    firework_end(const firework& firework) : console_firework_example::firework(firework) {}
     
-    auto paint() const -> void override {
+    auto paint() const noexcept -> void override {
       console::foreground_color(color_);
       write(x_ - 2, y_ - 2, "     ");
       write(x_ - 2, y_ - 1, "     ");
@@ -133,10 +132,10 @@ namespace console_firework_example {
       
       auto rand = xtd::random {};
       auto fireworks = list<ptr<firework>> {};
-      auto colors = list {console_color::blue, console_color::green, console_color::cyan, console_color::red, console_color::magenta, console_color::yellow, console_color::white};
+      auto colors = fixed_array {console_color::blue, console_color::green, console_color::cyan, console_color::red, console_color::magenta, console_color::yellow, console_color::white};
       
       while (!console::key_available()) {
-        fireworks.add(new_ptr<firework_start>(rand.next(2, console_width - 2), rand.next(2, console_height - 2), colors[rand.next(colors.count())], rand.next(1, 5)));
+        fireworks.add(new_ptr<firework_start>(rand.next(2, console_width - 2), rand.next(2, console_height - 2), colors[rand.next(colors.length())], rand.next(1, 5)));
         
         auto fireworks_to_removed = list<ptr<firework>> {};
         for (auto& firework : fireworks) {
@@ -156,7 +155,7 @@ namespace console_firework_example {
     }
 
   private:
-    static auto explode(ptr<firework>& firework) -> void {
+    static auto explode(ptr<firework>& firework) noexcept -> void {
       firework->paint();
       if (is<firework_start_expanded4>(firework)) firework = new_ptr<firework_end>(*firework);
       if (is<firework_start_expanded3>(firework)) firework = new_ptr<firework_start_expanded4>(*firework);
