@@ -1,7 +1,7 @@
 #include <xtd/xtd>
 
 auto main() -> int {
-  // Get an array with the values of console_color enumeration members.
+  // Get an initializer list with the values of console_color enumeration members.
   auto colors = {console_color::black, console_color::dark_blue, console_color::dark_green, console_color::dark_cyan, console_color::dark_red, console_color::dark_magenta, console_color::dark_yellow, console_color::gray, console_color::dark_gray, console_color::blue, console_color::green, console_color::cyan, console_color::red, console_color::magenta, console_color::yellow, console_color::white};
   
   // Save the current background and foreground colors.
@@ -26,7 +26,9 @@ auto main() -> int {
     if (color == current_foreground) continue;
     
     console::background_color(color);
-    console::write_line("   The background color is {}.", color);
+    console::write("   The background color is {}.", color);
+    console::background_color(current_background);
+    console::write_line();
   }
   
   // Restore the original console colors.
