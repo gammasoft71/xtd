@@ -1,9 +1,9 @@
 #include <xtd/xtd>
 
 auto main() -> int {
-  auto m0 = "This example increments the cursor size from 1% to 100%:\n";
-  auto m1 = "Cursor size = {0}%. (Press any key to continue...)";
-  auto sizes = { 1, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100 };
+  constexpr auto m0 = "This example increments the cursor size from 1% to 100%:\n";
+  constexpr auto m1 = "Cursor size = {0}%. (Press any key to continue...)";
+  auto sizes = {1, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100};
 
   auto save_cursor_size = console::cursor_size();
   console::write_line(m0);
