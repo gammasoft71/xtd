@@ -4,35 +4,26 @@ namespace console_clear_example {
   class program {
   public:
     // The main entry point for the application.
-    static auto main(const argument_collection& args) {
+    static auto main() {
       // Save colors so they can be restored when use finishes input.
       auto dft_fore_color = console::foreground_color();
       auto dft_back_color = console::background_color();
-      auto continue_flag = true;
-      console::clear();
       
       do {
         auto new_fore_color = console_color::white;
         auto new_back_color = console_color::black;
-        
-        auto fore_color_selection = get_key_press("Select Text Color (B for Blue, R for Red, Y for Yellow): ", list<char32_t> { 'B', 'R', 'Y' });
-        switch (fore_color_selection) {
-          case 'B':
-          case 'b': new_fore_color = console_color::dark_blue; break;
-          case 'R':
-          case 'r': new_fore_color = console_color::dark_red; break;
-          case 'Y':
-          case 'y': new_fore_color = console_color::dark_yellow; break;
+        console::clear();
+
+        switch (get_key_press("Select Text Color (B for Blue, R for Red, Y for Yellow): ", { 'B', 'R', 'Y' })) {
+          case 'B': new_fore_color = console_color::dark_blue; break;
+          case 'R': new_fore_color = console_color::dark_red; break;
+          case 'Y': new_fore_color = console_color::dark_yellow; break;
         }
         
-        auto back_color_selection = get_key_press("Select Background Color (W for White, G for Green, M for Magenta): ", list<char32_t> { 'W', 'G', 'M' });
-        switch (back_color_selection) {
-          case 'W':
-          case 'w': new_back_color = console_color::white; break;
-          case 'G':
-          case 'g': new_back_color = console_color::green; break;
-          case 'M':
-          case 'm': new_back_color = console_color::magenta; break;
+        switch (get_key_press("Select Background Color (W for White, G for Green, M for Magenta): ", { 'W', 'G', 'M' })) {
+          case 'W': new_back_color = console_color::white; break;
+          case 'G': new_back_color = console_color::green; break;
+          case 'M': new_back_color = console_color::magenta; break;
         }
         
         console::write_line();
@@ -42,31 +33,26 @@ namespace console_clear_example {
         console::foreground_color(new_fore_color);
         console::background_color(new_back_color);
         console::write_line(text_to_display);
-        console::write_line();
-        if (char32_object::to_upper(get_key_press("Display another message (Y/N): ", list<char32> {'Y', 'N'})) == 'N')
-          continue_flag = false;
-          
+
         // Restore the default settings and clear the screen.
         console::foreground_color(dft_fore_color);
         console::background_color(dft_back_color);
-        console::clear();
-      } while (continue_flag);
+        console::write_line();
+      } while (get_key_press("Display another message (Y/N): ", {'Y', 'N'}) == 'Y');
+      
+      console::clear();
     }
     
   private:
-    static auto get_key_press(const string& msg, const list<char32>& valid_chars) -> char32 {
-      auto key_pressed = console_key_info {};
-      auto valid = false;
-      
+    [[nodiscard]] static constexpr auto get_key_press(const string& msg, const array<char32>& valid_chars) noexcept -> char32 {
+      auto key = char32 {};
       console::write_line();
       do {
         console::write(msg);
-        key_pressed = console::read_key();
+        key = char32_object::to_upper(console::read_key().key_char());
         console::write_line();
-        if (std::find(valid_chars.begin(), valid_chars.end(), char32_object::to_upper(key_pressed.key_char())) != valid_chars.end())
-          valid = true;
-      } while (!valid);
-      return key_pressed.key_char();
+      } while (!valid_chars.contains(key));
+      return key;
     }
   };
 }
