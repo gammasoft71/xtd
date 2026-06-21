@@ -110,9 +110,9 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keyword">auto</span> m0 = <span class="stringliteral">&quot;This example increments the cursor size from 1% to 100%:\n&quot;</span>;</div>
-<div class="line">  <span class="keyword">auto</span> m1 = <span class="stringliteral">&quot;Cursor size = {0}%. (Press any key to continue...)&quot;</span>;</div>
-<div class="line">  <span class="keyword">auto</span> sizes = { 1, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100 };</div>
+<div class="line">  <span class="keyword">constexpr</span> <span class="keyword">auto</span> m0 = <span class="stringliteral">&quot;This example increments the cursor size from 1% to 100%:\n&quot;</span>;</div>
+<div class="line">  <span class="keyword">constexpr</span> <span class="keyword">auto</span> m1 = <span class="stringliteral">&quot;Cursor size = {0}%. (Press any key to continue...)&quot;</span>;</div>
+<div class="line">  <span class="keyword">auto</span> sizes = {1, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100};</div>
 <div class="line"> </div>
 <div class="line">  <span class="keyword">auto</span> save_cursor_size = console::cursor_size();</div>
 <div class="line">  console::write_line(m0);</div>

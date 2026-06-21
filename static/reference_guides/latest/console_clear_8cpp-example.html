@@ -113,35 +113,26 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line">  <span class="keyword">class </span>program {</div>
 <div class="line">  <span class="keyword">public</span>:</div>
 <div class="line">    <span class="comment">// The main entry point for the application.</span></div>
-<div class="line">    <span class="keyword">static</span> <span class="keyword">auto</span> main(<span class="keyword">const</span> argument_collection&amp; args) {</div>
+<div class="line">    <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
 <div class="line">      <span class="comment">// Save colors so they can be restored when use finishes input.</span></div>
 <div class="line">      <span class="keyword">auto</span> dft_fore_color = console::foreground_color();</div>
 <div class="line">      <span class="keyword">auto</span> dft_back_color = console::background_color();</div>
-<div class="line">      <span class="keyword">auto</span> continue_flag = <span class="keyword">true</span>;</div>
-<div class="line">      console::clear();</div>
 <div class="line">      </div>
 <div class="line">      <span class="keywordflow">do</span> {</div>
 <div class="line">        <span class="keyword">auto</span> new_fore_color = console_color::white;</div>
 <div class="line">        <span class="keyword">auto</span> new_back_color = console_color::black;</div>
-<div class="line">        </div>
-<div class="line">        <span class="keyword">auto</span> fore_color_selection = get_key_press(<span class="stringliteral">&quot;Select Text Color (B for Blue, R for Red, Y for Yellow): &quot;</span>, list&lt;char32_t&gt; { <span class="charliteral">&#39;B&#39;</span>, <span class="charliteral">&#39;R&#39;</span>, <span class="charliteral">&#39;Y&#39;</span> });</div>
-<div class="line">        <span class="keywordflow">switch</span> (fore_color_selection) {</div>
-<div class="line">          <span class="keywordflow">case</span> <span class="charliteral">&#39;B&#39;</span>:</div>
-<div class="line">          <span class="keywordflow">case</span> <span class="charliteral">&#39;b&#39;</span>: new_fore_color = console_color::dark_blue; <span class="keywordflow">break</span>;</div>
-<div class="line">          <span class="keywordflow">case</span> <span class="charliteral">&#39;R&#39;</span>:</div>
-<div class="line">          <span class="keywordflow">case</span> <span class="charliteral">&#39;r&#39;</span>: new_fore_color = console_color::dark_red; <span class="keywordflow">break</span>;</div>
-<div class="line">          <span class="keywordflow">case</span> <span class="charliteral">&#39;Y&#39;</span>:</div>
-<div class="line">          <span class="keywordflow">case</span> <span class="charliteral">&#39;y&#39;</span>: new_fore_color = console_color::dark_yellow; <span class="keywordflow">break</span>;</div>
+<div class="line">        console::clear();</div>
+<div class="line"> </div>
+<div class="line">        <span class="keywordflow">switch</span> (get_key_press(<span class="stringliteral">&quot;Select Text Color (B for Blue, R for Red, Y for Yellow): &quot;</span>, { <span class="charliteral">&#39;B&#39;</span>, <span class="charliteral">&#39;R&#39;</span>, <span class="charliteral">&#39;Y&#39;</span> })) {</div>
+<div class="line">          <span class="keywordflow">case</span> <span class="charliteral">&#39;B&#39;</span>: new_fore_color = console_color::dark_blue; <span class="keywordflow">break</span>;</div>
+<div class="line">          <span class="keywordflow">case</span> <span class="charliteral">&#39;R&#39;</span>: new_fore_color = console_color::dark_red; <span class="keywordflow">break</span>;</div>
+<div class="line">          <span class="keywordflow">case</span> <span class="charliteral">&#39;Y&#39;</span>: new_fore_color = console_color::dark_yellow; <span class="keywordflow">break</span>;</div>
 <div class="line">        }</div>
 <div class="line">        </div>
-<div class="line">        <span class="keyword">auto</span> back_color_selection = get_key_press(<span class="stringliteral">&quot;Select Background Color (W for White, G for Green, M for Magenta): &quot;</span>, list&lt;char32_t&gt; { <span class="charliteral">&#39;W&#39;</span>, <span class="charliteral">&#39;G&#39;</span>, <span class="charliteral">&#39;M&#39;</span> });</div>
-<div class="line">        <span class="keywordflow">switch</span> (back_color_selection) {</div>
-<div class="line">          <span class="keywordflow">case</span> <span class="charliteral">&#39;W&#39;</span>:</div>
-<div class="line">          <span class="keywordflow">case</span> <span class="charliteral">&#39;w&#39;</span>: new_back_color = console_color::white; <span class="keywordflow">break</span>;</div>
-<div class="line">          <span class="keywordflow">case</span> <span class="charliteral">&#39;G&#39;</span>:</div>
-<div class="line">          <span class="keywordflow">case</span> <span class="charliteral">&#39;g&#39;</span>: new_back_color = console_color::green; <span class="keywordflow">break</span>;</div>
-<div class="line">          <span class="keywordflow">case</span> <span class="charliteral">&#39;M&#39;</span>:</div>
-<div class="line">          <span class="keywordflow">case</span> <span class="charliteral">&#39;m&#39;</span>: new_back_color = console_color::magenta; <span class="keywordflow">break</span>;</div>
+<div class="line">        <span class="keywordflow">switch</span> (get_key_press(<span class="stringliteral">&quot;Select Background Color (W for White, G for Green, M for Magenta): &quot;</span>, { <span class="charliteral">&#39;W&#39;</span>, <span class="charliteral">&#39;G&#39;</span>, <span class="charliteral">&#39;M&#39;</span> })) {</div>
+<div class="line">          <span class="keywordflow">case</span> <span class="charliteral">&#39;W&#39;</span>: new_back_color = console_color::white; <span class="keywordflow">break</span>;</div>
+<div class="line">          <span class="keywordflow">case</span> <span class="charliteral">&#39;G&#39;</span>: new_back_color = console_color::green; <span class="keywordflow">break</span>;</div>
+<div class="line">          <span class="keywordflow">case</span> <span class="charliteral">&#39;M&#39;</span>: new_back_color = console_color::magenta; <span class="keywordflow">break</span>;</div>
 <div class="line">        }</div>
 <div class="line">        </div>
 <div class="line">        console::write_line();</div>
@@ -151,31 +142,26 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line">        console::foreground_color(new_fore_color);</div>
 <div class="line">        console::background_color(new_back_color);</div>
 <div class="line">        console::write_line(text_to_display);</div>
-<div class="line">        console::write_line();</div>
-<div class="line">        <span class="keywordflow">if</span> (char32_object::to_upper(get_key_press(<span class="stringliteral">&quot;Display another message (Y/N): &quot;</span>, list&lt;char32&gt; {<span class="charliteral">&#39;Y&#39;</span>, <span class="charliteral">&#39;N&#39;</span>})) == <span class="charliteral">&#39;N&#39;</span>)</div>
-<div class="line">          continue_flag = <span class="keyword">false</span>;</div>
-<div class="line">          </div>
+<div class="line"> </div>
 <div class="line">        <span class="comment">// Restore the default settings and clear the screen.</span></div>
 <div class="line">        console::foreground_color(dft_fore_color);</div>
 <div class="line">        console::background_color(dft_back_color);</div>
-<div class="line">        console::clear();</div>
-<div class="line">      } <span class="keywordflow">while</span> (continue_flag);</div>
+<div class="line">        console::write_line();</div>
+<div class="line">      } <span class="keywordflow">while</span> (get_key_press(<span class="stringliteral">&quot;Display another message (Y/N): &quot;</span>, {<span class="charliteral">&#39;Y&#39;</span>, <span class="charliteral">&#39;N&#39;</span>}) == <span class="charliteral">&#39;Y&#39;</span>);</div>
+<div class="line">      </div>
+<div class="line">      console::clear();</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">  <span class="keyword">private</span>:</div>
-<div class="line">    <span class="keyword">static</span> <span class="keyword">auto</span> get_key_press(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; msg, <span class="keyword">const</span> list&lt;char32&gt;&amp; valid_chars) -&gt; char32 {</div>
-<div class="line">      <span class="keyword">auto</span> key_pressed = console_key_info {};</div>
-<div class="line">      <span class="keyword">auto</span> valid = <span class="keyword">false</span>;</div>
-<div class="line">      </div>
+<div class="line">    [[nodiscard]] <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">auto</span> get_key_press(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; msg, <span class="keyword">const</span> array&lt;char32&gt;&amp; valid_chars) <span class="keyword">noexcept</span> -&gt; char32 {</div>
+<div class="line">      <span class="keyword">auto</span> key = char32 {};</div>
 <div class="line">      console::write_line();</div>
 <div class="line">      <span class="keywordflow">do</span> {</div>
 <div class="line">        console::write(msg);</div>
-<div class="line">        key_pressed = console::read_key();</div>
+<div class="line">        key = char32_object::to_upper(console::read_key().key_char());</div>
 <div class="line">        console::write_line();</div>
-<div class="line">        <span class="keywordflow">if</span> (std::find(valid_chars.begin(), valid_chars.end(), char32_object::to_upper(key_pressed.key_char())) != valid_chars.end())</div>
-<div class="line">          valid = <span class="keyword">true</span>;</div>
-<div class="line">      } <span class="keywordflow">while</span> (!valid);</div>
-<div class="line">      <span class="keywordflow">return</span> key_pressed.key_char();</div>
+<div class="line">      } <span class="keywordflow">while</span> (!valid_chars.contains(key));</div>
+<div class="line">      <span class="keywordflow">return</span> key;</div>
 <div class="line">    }</div>
 <div class="line">  };</div>
 <div class="line">}</div>

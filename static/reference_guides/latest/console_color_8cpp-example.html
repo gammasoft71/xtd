@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="comment">// Get an array with the values of console_color enumeration members.</span></div>
+<div class="line">  <span class="comment">// Get an initializer list with the values of console_color enumeration members.</span></div>
 <div class="line">  <span class="keyword">auto</span> colors = {console_color::black, console_color::dark_blue, console_color::dark_green, console_color::dark_cyan, console_color::dark_red, console_color::dark_magenta, console_color::dark_yellow, console_color::gray, console_color::dark_gray, console_color::blue, console_color::green, console_color::cyan, console_color::red, console_color::magenta, console_color::yellow, console_color::white};</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Save the current background and foreground colors.</span></div>
@@ -135,7 +135,9 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line">    <span class="keywordflow">if</span> (color == current_foreground) <span class="keywordflow">continue</span>;</div>
 <div class="line">    </div>
 <div class="line">    console::background_color(color);</div>
-<div class="line">    console::write_line(<span class="stringliteral">&quot;   The background color is {}.&quot;</span>, color);</div>
+<div class="line">    console::write(<span class="stringliteral">&quot;   The background color is {}.&quot;</span>, color);</div>
+<div class="line">    console::background_color(current_background);</div>
+<div class="line">    console::write_line();</div>
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Restore the original console colors.</span></div>

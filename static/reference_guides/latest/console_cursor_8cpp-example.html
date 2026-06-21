@@ -109,47 +109,57 @@ document.addEventListener('DOMContentLoaded', () => {
 <p>Shows how to use <a class="el" href="classxtd_1_1console.html#ab7c8227524a6b7aacbb66cce7a3dfac1" title="Sets the position of the cursor.">xtd::console::set_cursor_position</a>, <a class="el" href="classxtd_1_1console.html#aca8aa1751b62e7b95c38886af12e7444" title="Gets the row position of the cursor within the buffer area.">xtd::console::cursor_top</a> and <a class="el" href="classxtd_1_1console.html#ad4398a07dc26e99019e42c2ba6e0b5d5" title="Gets the column position of the cursor within the buffer area.">xtd::console::cursor_left</a> methods.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> orig_row = 0;</div>
-<div class="line"><span class="keyword">auto</span> orig_col = 0;</div>
+<div class="line"><span class="keyword">namespace </span>console_curosr_example {</div>
+<div class="line">  <span class="keyword">class </span>program {</div>
+<div class="line">  <span class="keyword">public</span>:</div>
+<div class="line">    <span class="comment">// The main entry point for the application.</span></div>
+<div class="line">    <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
+<div class="line">      <span class="comment">// Clear the screen, then save the top and left coordinates.</span></div>
+<div class="line">      console::clear();</div>
+<div class="line">      orig_row = console::cursor_top();</div>
+<div class="line">      orig_col = console::cursor_left();</div>
+<div class="line">      </div>
+<div class="line">      <span class="comment">// Draw the left side of a 5x5 rectangle, from top to bottom.</span></div>
+<div class="line">      write_at(<span class="stringliteral">&quot;+&quot;</span>, 0, 0);</div>
+<div class="line">      write_at(<span class="stringliteral">&quot;|&quot;</span>, 0, 1);</div>
+<div class="line">      write_at(<span class="stringliteral">&quot;|&quot;</span>, 0, 2);</div>
+<div class="line">      write_at(<span class="stringliteral">&quot;|&quot;</span>, 0, 3);</div>
+<div class="line">      write_at(<span class="stringliteral">&quot;+&quot;</span>, 0, 4);</div>
+<div class="line">      </div>
+<div class="line">      <span class="comment">// Draw the bottom side, from left to right.</span></div>
+<div class="line">      write_at(<span class="stringliteral">&quot;-&quot;</span>, 1, 4); <span class="comment">// shortcut: write_at(&quot;---&quot;, 1, 4)</span></div>
+<div class="line">      write_at(<span class="stringliteral">&quot;-&quot;</span>, 2, 4); <span class="comment">// ...</span></div>
+<div class="line">      write_at(<span class="stringliteral">&quot;-&quot;</span>, 3, 4); <span class="comment">// ...</span></div>
+<div class="line">      write_at(<span class="stringliteral">&quot;+&quot;</span>, 4, 4);</div>
+<div class="line">      </div>
+<div class="line">      <span class="comment">// Draw the right side, from bottom to top.</span></div>
+<div class="line">      write_at(<span class="stringliteral">&quot;|&quot;</span>, 4, 3);</div>
+<div class="line">      write_at(<span class="stringliteral">&quot;|&quot;</span>, 4, 2);</div>
+<div class="line">      write_at(<span class="stringliteral">&quot;|&quot;</span>, 4, 1);</div>
+<div class="line">      write_at(<span class="stringliteral">&quot;+&quot;</span>, 4, 0);</div>
+<div class="line">      </div>
+<div class="line">      <span class="comment">// Draw the top side, from right to left.</span></div>
+<div class="line">      write_at(<span class="stringliteral">&quot;-&quot;</span>, 3, 0); <span class="comment">// shortcut: write_at(&quot;---&quot;, 1, 0)</span></div>
+<div class="line">      write_at(<span class="stringliteral">&quot;-&quot;</span>, 2, 0); <span class="comment">// ...</span></div>
+<div class="line">      write_at(<span class="stringliteral">&quot;-&quot;</span>, 1, 0); <span class="comment">// ...</span></div>
+<div class="line">      <span class="comment">//</span></div>
+<div class="line">      write_at(<span class="stringliteral">&quot;All done!&quot;</span>, 0, 6);</div>
+<div class="line">      console::write_line();</div>
+<div class="line">    }</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> write_at(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; s, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y) {</div>
-<div class="line">  console::set_cursor_position(orig_col + x, orig_row + y);</div>
-<div class="line">  console::write(s);</div>
+<div class="line">  <span class="keyword">private</span>:</div>
+<div class="line">    <span class="keyword">static</span> <span class="keyword">auto</span> write_at(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; s, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y) <span class="keyword">noexcept</span> -&gt; <span class="keywordtype">void</span> {</div>
+<div class="line">      console::set_cursor_position(orig_col + x, orig_row + y);</div>
+<div class="line">      console::write(s);</div>
+<div class="line">    }</div>
+<div class="line">    </div>
+<div class="line">    <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keyword">auto</span> orig_row = 0;</div>
+<div class="line">    <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keyword">auto</span> orig_col = 0;</div>
+<div class="line">  };</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="comment">// Clear the screen, then save the top and left coordinates.</span></div>
-<div class="line">  console::clear();</div>
-<div class="line">  orig_row = console::cursor_top();</div>
-<div class="line">  orig_col = console::cursor_left();</div>
-<div class="line">  </div>
-<div class="line">  <span class="comment">// Draw the left side of a 5x5 rectangle, from top to bottom.</span></div>
-<div class="line">  write_at(<span class="stringliteral">&quot;+&quot;</span>, 0, 0);</div>
-<div class="line">  write_at(<span class="stringliteral">&quot;|&quot;</span>, 0, 1);</div>
-<div class="line">  write_at(<span class="stringliteral">&quot;|&quot;</span>, 0, 2);</div>
-<div class="line">  write_at(<span class="stringliteral">&quot;|&quot;</span>, 0, 3);</div>
-<div class="line">  write_at(<span class="stringliteral">&quot;+&quot;</span>, 0, 4);</div>
-<div class="line">  </div>
-<div class="line">  <span class="comment">// Draw the bottom side, from left to right.</span></div>
-<div class="line">  write_at(<span class="stringliteral">&quot;-&quot;</span>, 1, 4); <span class="comment">// shortcut: write_at(&quot;---&quot;, 1, 4)</span></div>
-<div class="line">  write_at(<span class="stringliteral">&quot;-&quot;</span>, 2, 4); <span class="comment">// ...</span></div>
-<div class="line">  write_at(<span class="stringliteral">&quot;-&quot;</span>, 3, 4); <span class="comment">// ...</span></div>
-<div class="line">  write_at(<span class="stringliteral">&quot;+&quot;</span>, 4, 4);</div>
-<div class="line">  </div>
-<div class="line">  <span class="comment">// Draw the right side, from bottom to top.</span></div>
-<div class="line">  write_at(<span class="stringliteral">&quot;|&quot;</span>, 4, 3);</div>
-<div class="line">  write_at(<span class="stringliteral">&quot;|&quot;</span>, 4, 2);</div>
-<div class="line">  write_at(<span class="stringliteral">&quot;|&quot;</span>, 4, 1);</div>
-<div class="line">  write_at(<span class="stringliteral">&quot;+&quot;</span>, 4, 0);</div>
-<div class="line">  </div>
-<div class="line">  <span class="comment">// Draw the top side, from right to left.</span></div>
-<div class="line">  write_at(<span class="stringliteral">&quot;-&quot;</span>, 3, 0); <span class="comment">// shortcut: write_at(&quot;---&quot;, 1, 0)</span></div>
-<div class="line">  write_at(<span class="stringliteral">&quot;-&quot;</span>, 2, 0); <span class="comment">// ...</span></div>
-<div class="line">  write_at(<span class="stringliteral">&quot;-&quot;</span>, 1, 0); <span class="comment">// ...</span></div>
-<div class="line">  <span class="comment">//</span></div>
-<div class="line">  write_at(<span class="stringliteral">&quot;All done!&quot;</span>, 0, 6);</div>
-<div class="line">  console::write_line();</div>
-<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><a id="a0" name="a0"></a><a class="code hl_define" href="group__keywords.html#gaeb9462ec721c9718cf689e93bf11bf56">startup_</a>(console_curosr_example::program::main);</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
@@ -160,6 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line"><span class="comment">// +---+</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// All done!</span></div>
+<div class="ttc" id="agroup__keywords_html_gaeb9462ec721c9718cf689e93bf11bf56"><div class="ttname"><a href="group__keywords.html#gaeb9462ec721c9718cf689e93bf11bf56">startup_</a></div><div class="ttdeci">#define startup_(...)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:284</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
