@@ -1,11 +1,10 @@
 #include <xtd/xtd>
 
 auto main() -> int {
-  auto m1 = "\nThe cursor is {0}.\nType any text then press Enter. "
+  constexpr auto message = "\nThe cursor is {0}.\nType any text then press Enter. "
   "Type '+' in the first column to show \n"
   "the cursor, '-' to hide the cursor, "
-  "or lowercase 'x' to quit:"_s;
-  auto s = string::empty_string;
+  "or lowercase 'x' to quit:";
 
   auto save_cursor_visibile = console::cursor_visible();
   auto save_cursor_size = console::cursor_size();
@@ -13,16 +12,12 @@ auto main() -> int {
   console::cursor_size(100);     // Emphasize the cursor.
   
   while (true) {
-    console::write_line(m1, ((console::cursor_visible() == true) ? "VISIBLE" : "HIDDEN"));
-    s = console::read_line();
-    if (string::is_empty(s) == false) {
-      if (s[0] == '+')
-        console::cursor_visible(true);
-      else if (s[0] == '-')
-        console::cursor_visible(false);
-      else if (s[0] == 'x')
-        break;
-    }
+    console::write_line(message, ((console::cursor_visible() == true) ? "VISIBLE" : "HIDDEN"));
+    auto s = console::read_line();
+    if (string::is_empty(s)) continue;
+    if (s[0] == '+') console::cursor_visible(true);
+    else if (s[0] == '-') console::cursor_visible(false);
+    else if (s[0] == 'x') break;
   }
   console::cursor_visible(save_cursor_visibile);
   console::cursor_size(save_cursor_size);
