@@ -77,18 +77,6 @@ auto trace::use_global_lock(bool use_global_lock) noexcept -> void {
   use_global_lock_ = use_global_lock;
 }
 
-auto trace::cassert(bool condition, const stack_frame& frame) -> void {
-  if (__should_aborted__(frame, condition, string::empty_string)) __xtd_debugbreak();
-}
-
-auto trace::cassert(bool condition, const string& message, const stack_frame& frame) -> void {
-  if (__should_aborted__(frame, condition, message)) __xtd_debugbreak();
-}
-
-auto trace::cassert(bool condition, const string& message, const string& detail_message, const stack_frame& frame) -> void {
-  if (__should_aborted__(frame, condition, message, detail_message)) __xtd_debugbreak();
-}
-
 auto trace::indent() noexcept -> void {
   indent_level(indent_level() + 1);
 }
