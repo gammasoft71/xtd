@@ -18,8 +18,8 @@ public:
     generate_debug_dassert_button.auto_size(true);
     generate_debug_dassert_button.location({10, 50});
     generate_debug_dassert_button.parent(*this);
-    generate_debug_dassert_button.text("Generate debug::cassert_");
-    generate_debug_dassert_button.click += event_handler(*this, &main_form::generate_debug_cassert);
+    generate_debug_dassert_button.text("Generate debug::assert_");
+    generate_debug_dassert_button.click += event_handler(*this, &main_form::generate_debug_assert);
     
     generate_debug_break_button.auto_size(true);
     generate_debug_break_button.location({10, 90});
@@ -49,9 +49,9 @@ private:
     assert_(index > 0, "Out of range", "Index must be greater than 0");
   }
   
-  void generate_debug_cassert() {
+  void generate_debug_assert() {
     auto index = 0;
-    diagnostics::debug::cassert(index > 0, "Out of range", "Index must be greater than 0");
+    diagnostics::debug::assert(index > 0, "Out of range", "Index must be greater than 0");
   }
   
   void generate_debug_break() {
