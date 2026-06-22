@@ -1,4 +1,4 @@
-#define TRACE 1 // Force to trace even if example is builded with -DNTRACE.
+// #define NTRACE // Uncomment this line or build with -DNTRACE to deactivate xtd::diagnostics::trace
 #include <xtd/xtd>
 
 class form1 : public form {
