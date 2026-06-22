@@ -4,7 +4,7 @@ class program {
 public:
   static auto main() {
     auto dec31 = date_time {2010, 12, 31};
-    for (auto ctr = 0u; ctr <= 10u; ctr++) {
+    for (auto ctr = 0u; ctr <= 10u; ++ctr) {
       auto date_to_display = dec31.add_years(ctr);
       console::write_line("{0:d}: day {1} of {2} {3}", date_to_display, date_to_display.day_of_year(), date_to_display.year(), date_time::is_leap_year(date_to_display.year()) ? "(Leap Year)" : "");
     }
