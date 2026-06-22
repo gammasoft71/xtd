@@ -8,7 +8,7 @@ auto main() -> int {
 
   auto index = 0;
   console::write_line("Start application");
-  diagnostics::debug::cassert(index > 0);
+  diagnostics::debug::assert(index > 0);
   console::write_line("End application");
 }
 
