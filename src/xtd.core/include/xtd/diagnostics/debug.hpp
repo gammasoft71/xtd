@@ -8,9 +8,17 @@
 #include "../static.hpp"
 #include "../string.hpp"
 #include "assert_dialog_result.hpp"
+#include "debug_break.hpp"
 #include "debugger.hpp"
 #include "stack_trace.hpp"
 #include "trace_listener_collection.hpp"
+#include <cassert>
+
+/// @cond
+#if defined(assert)
+#undef assert
+#endif
+/// @endcond
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -122,18 +130,64 @@ namespace xtd {
       /// @brief Checks for a condition; if the condition is `false`, displays a message box that shows the call stack.
       /// @param condition The conditional expression to evaluate. If the condition is `true`, a failure message is not sent and the message box is not displayed.
       /// @param stack_frame The (optional) stack frame corresponding to the generated assert.
-      static auto cassert(bool condition, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) -> void;
+      static auto assert(bool condition, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) -> void {
+        #if DEBUG
+        if (__should_aborted__(stack_frame, condition, string::empty_string)) debug_break_();
+        #endif
+      }
       /// @brief Checks for a condition; if the condition is `false`, displays a message box that shows the call stack.
       /// @param condition The conditional expression to evaluate. If the condition is `true`, a failure message is not sent and the message box is not displayed.
       /// @param message The message to send to the xtd::diagnostics::debug::listeners collection.
       /// @param stack_frame The (optional) stack frame corresponding to the generated assert.
-      static auto cassert(bool condition, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) -> void;
+      static auto assert(bool condition, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) -> void {
+        #if DEBUG
+        if (__should_aborted__(stack_frame, condition, message)) debug_break_();
+        #endif
+      }
       /// @brief Checks for a condition; if the condition is `false`, displays a message box that shows the call stack.
       /// @param condition The conditional expression to evaluate. If the condition is `true`, a failure message is not sent and the message box is not displayed.
       /// @param message The message to send to the xtd::diagnostics::debug::listeners collection.
       /// @param detail_message The detailed message to send to the xtd::diagnostics::debug::listeners collection.
       /// @param stack_frame The (optional) stack frame corresponding to the generated assert.
-      static auto cassert(bool condition, const xtd::string& message, const xtd::string& detail_message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) -> void;
+      static auto assert(bool condition, const xtd::string& message, const xtd::string& detail_message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) -> void {
+        #if DEBUG
+        if (__should_aborted__(stack_frame, condition, message, detail_message)) debug_break_();
+        #endif
+      }
+
+      /// @brief Checks for a condition; if the condition is `false`, displays a message box that shows the call stack.
+      /// @param condition The conditional expression to evaluate. If the condition is `true`, a failure message is not sent and the message box is not displayed.
+      /// @param stack_frame The (optional) stack frame corresponding to the generated assert.
+      /// @deprecated Use xtd::diagnostics::debug::assert method - Will be removed in version 1.2.0.
+      [[deprecated("Use xtd::diagnostics::debug::assert method - Will be removed in version 1.2.0.)")]]
+      static auto cassert(bool condition, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) -> void {
+        #if DEBUG
+        if (__should_aborted__(stack_frame, condition, string::empty_string)) debug_break_();
+        #endif
+      }
+      /// @brief Checks for a condition; if the condition is `false`, displays a message box that shows the call stack.
+      /// @param condition The conditional expression to evaluate. If the condition is `true`, a failure message is not sent and the message box is not displayed.
+      /// @param message The message to send to the xtd::diagnostics::debug::listeners collection.
+      /// @param stack_frame The (optional) stack frame corresponding to the generated assert.
+      /// @deprecated Use xtd::diagnostics::debug::assert method - Will be removed in version 1.2.0.
+      [[deprecated("Use xtd::diagnostics::debug::assert method - Will be removed in version 1.2.0.)")]]
+      static auto cassert(bool condition, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) -> void {
+        #if DEBUG
+        if (__should_aborted__(stack_frame, condition, message)) debug_break_();
+        #endif
+      }
+      /// @brief Checks for a condition; if the condition is `false`, displays a message box that shows the call stack.
+      /// @param condition The conditional expression to evaluate. If the condition is `true`, a failure message is not sent and the message box is not displayed.
+      /// @param message The message to send to the xtd::diagnostics::debug::listeners collection.
+      /// @param detail_message The detailed message to send to the xtd::diagnostics::debug::listeners collection.
+      /// @param stack_frame The (optional) stack frame corresponding to the generated assert.
+      /// @deprecated Use xtd::diagnostics::debug::assert method - Will be removed in version 1.2.0.
+      [[deprecated("Use xtd::diagnostics::debug::assert method - Will be removed in version 1.2.0.)")]]
+      static auto cassert(bool condition, const xtd::string& message, const xtd::string& detail_message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) -> void {
+        #if DEBUG
+        if (__should_aborted__(stack_frame, condition, message, detail_message)) debug_break_();
+        #endif
+      }
       
       /// @brief Emits the specified error message.
       /// @param message A message to emit.
@@ -449,14 +503,14 @@ namespace xtd {
       /// @{
       /// @brief Gets a value indicating whether the assert dialog should be show.
       /// @return `true` if assert dialog is to be shown; otherwise, `false`. The default is `true`.
-      /// @remarks The show assert dialog is used when xtd::diagnostics::debug::cassert or xtd::diagnostics::trace::cassert or assert_ is called to ask user to ignore, continue or retry the assert.
+      /// @remarks The show assert dialog is used when xtd::diagnostics::debug::assert or xtd::diagnostics::trace::assert or assert_ is called to ask user to ignore, continue or retry the assert.
       /// @note The xtd::diagnostics::debug::show_assert_dialog boolean is shared by both the xtd::diagnostics::debug and the xtd::diagnostics::trace classes; updating the boolean to either class modify the show assert dialog to both.
       /// @deprecated Replaced by xtd::diagnostics::default_trace_listener::assert_ui_enabled - Will be removed in version 1.2.0.
       [[deprecated("Replaced by xtd::diagnostics::default_trace_listener::assert_ui_enabled - Will be removed in version 1.2.0.")]]
       [[nodiscard]] static auto show_assert_dialog() noexcept -> bool;
       /// @brief Sets a value indicating whether the assert dialog should be show.
       /// @param show_assert_dialog `true` if assert dialog is to be shown; otherwise, `false`. The default is `true`.
-      /// @remarks The show assert dialog is used when xtd::diagnostics::debug::cassert or xtd::diagnostics::trace::cassert or assert_ is called to ask user to ignore, continue or retry the assert.
+      /// @remarks The show assert dialog is used when xtd::diagnostics::debug::assert or xtd::diagnostics::trace::assert or assert_ is called to ask user to ignore, continue or retry the assert.
       /// @note The xtd::diagnostics::debug::show_assert_dialog boolean is shared by both the xtd::diagnostics::debug and the xtd::diagnostics::trace classes; updating the boolean to either class modify the show assert dialog to both.
       /// @deprecated Replaced by xtd::diagnostics::default_trace_listener::assert_ui_enabled - Will be removed in version 1.2.0.
       [[deprecated("Replaced by xtd::diagnostics::default_trace_listener::assert_ui_enabled - Will be removed in version 1.2.0.")]]

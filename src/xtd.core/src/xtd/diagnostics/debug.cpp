@@ -80,18 +80,6 @@ auto debug::use_global_lock(bool use_global_lock) noexcept -> void {
   use_global_lock_ = use_global_lock;
 }
 
-auto debug::cassert(bool condition, const xtd::diagnostics::stack_frame& stack_frame) -> void {
-  if (__should_aborted__(stack_frame, condition, string::empty_string)) debug_break_();
-}
-
-auto debug::cassert(bool condition, const string& message, const xtd::diagnostics::stack_frame& stack_frame) -> void {
-  if (__should_aborted__(stack_frame, condition, message)) debug_break_();
-}
-
-auto debug::cassert(bool condition, const string& message, const string& detail_message, const xtd::diagnostics::stack_frame& stack_frame) -> void {
-  if (__should_aborted__(stack_frame, condition, message, detail_message)) debug_break_();
-}
-
 auto debug::indent() noexcept -> void {
   indent_level(indent_level() + 1);
 }
