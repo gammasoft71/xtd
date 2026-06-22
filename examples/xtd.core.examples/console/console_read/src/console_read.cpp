@@ -1,10 +1,10 @@
 #include <xtd/xtd>
 
 auto main() -> int {
-  auto m1 = "\nType a string of text then press Enter. "
+  constexpr auto m1 = "\nType a string of text then press Enter. "
   "Type '+' anywhere in the text to quit:\n";
-  auto m2 = "Character '{0}' is hexadecimal 0x{1:x4}.";
-  auto m3 = "Character     is hexadecimal 0x{0:x4}.";
+  constexpr auto m2 = "Character '{0}' is hexadecimal 0x{1:x4}.";
+  constexpr auto m3 = "Character     is hexadecimal 0x{0:x4}.";
   auto ch = U'0';
   //
   console::write_line(m1);
