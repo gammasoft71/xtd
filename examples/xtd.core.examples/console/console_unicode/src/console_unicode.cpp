@@ -4,12 +4,8 @@ auto main() -> int {
   // Change current code page to UTF-8.
   console::output_code_page(65001);
   
-  // Create a Char array for the modern Cyrillic alphabet, from U+0410 to U+044F.
-  constexpr auto nchars = 0x044F - 0x0410 + 1;
-  auto chars = array<char32>(nchars);
-  auto code_point = U'\U00000410';
-  for (auto& ch : chars)
-    ch = code_point++;
+  // Create a char32 array for the modern Cyrillic alphabet, from U+0410 to U+044F.
+  auto chars = enumerable::range(0x0410, 0x044F - 0x0410 + 1).cast<char32>();
   
   console::write_line("Current code page: {}\n", console::output_code_page());
   // Display the characters.
