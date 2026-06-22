@@ -3,9 +3,9 @@
 auto main() -> int {
   auto orig_width = 0, width = 0;
   auto orig_height = 0, height = 0;
-  auto m1 = "The current window width is {0}, and the current window height is {1}.";
-  auto m2 = "The new window width is {0}, and the new window height is {1}.";
-  auto m4 = "  (Press any key to continue...)";
+  constexpr auto m1 = "The current window width is {0}, and the current window height is {1}.";
+  constexpr auto m2 = "The new window width is {0}, and the new window height is {1}.";
+  constexpr auto m4 = "  (Press any key to continue...)";
   //
   // Step 1: Get the current window dimensions.
   //
