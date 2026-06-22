@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "base_assert.hpp"
+#include <cassert>
 #include <functional>
 
 /// @cond
