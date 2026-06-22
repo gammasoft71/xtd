@@ -18,26 +18,36 @@ xtdc run
 ## Output
 
 ```
-background_color = black
-foreground_color = white
-buffer_height = 24
-buffer_width = 80
-caps_lock = false
-cursor_left = 0
-cursor_size = 100
-cursor_top = 0
-cursor_visible = true
-foreground_color = white
-is_rrror_redirected = false
-is_input_redirected = false
-is_output_redirected = false
-key_available = false
-largest_window_height = 1000
-largest_window_width = 1000
-title =
-treat_control_c_as_input = false
-window_height = 24
-window_left = 0
-window_top = 0
-window_width = 80
+Streams:
+  Is error redirected = false
+  Is input redirected = false
+  Is output redirected = false
+
+Input:
+  Key available = false
+  Caps lock = false
+  Number lock = true
+  Treat control-c as input = false
+  Input code page = 65001
+
+Output:
+  Background color = default_color
+  Foreground color = default_color
+  Cursor left = 0
+  Cursor top = 18
+  Cursor size = 100%
+  Cursor visible = true
+  Auto flush out = true
+  Autput code page = 65001
+
+Window:
+  Title = 
+  Window left = 0
+  Window top = 0
+  Window width = 120
+  Window height = 30
+  Largest window width = 1000
+  Largest window height = 1000
+  Buffer width = 120
+  Buffer height = 30
 ```
