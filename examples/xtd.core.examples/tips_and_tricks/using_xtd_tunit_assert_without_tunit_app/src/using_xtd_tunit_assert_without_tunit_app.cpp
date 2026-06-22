@@ -7,7 +7,7 @@ public:
     
     tunit::assert::is_greater_or_equal(items.count(), 4, "The items count is less than 4");
     // Same as two following lines
-    //diagnostics::debug::cassert(items.count() >= 4, "The items count is less than 4");
+    //diagnostics::debug::assert(items.count() >= 4, "The items count is less than 4");
     //assert_(items.count() >= 4, "The items count is less than 4");
     println(items[3]);
   }
