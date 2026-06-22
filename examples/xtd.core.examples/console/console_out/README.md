@@ -21,7 +21,7 @@ xtdc run
 Hello, World!
 Value = 42
 Value (Hex) = 0x2A
-Current date = Tue Jul  4 15:30:02 2023
-DayOfWeek = monday
+Current date = 6/22/2026 10:47:09 AM
+Day of week = monday
 Duration = 23:05:24
 ```
