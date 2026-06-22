@@ -1,6 +1,4 @@
-#include <xtd/console>
-#include <xtd/date_time>
-#include <xtd/startup>
+#include <xtd/xtd>
 #include <chrono>
 
 class program {
