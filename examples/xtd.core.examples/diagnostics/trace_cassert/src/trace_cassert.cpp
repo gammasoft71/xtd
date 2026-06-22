@@ -1,4 +1,4 @@
-#define TRACE 1 // Force to trace even if example is builded with -DNTRACE.
+// #define NTRACE // Uncomment this line or build with -DNTRACE to deactivate xtd::diagnostics::trace
 #include <xtd/xtd>
 
 auto main() -> int {
@@ -9,7 +9,7 @@ auto main() -> int {
 
   auto index = 0;
   console::write_line("Start application");
-  diagnostics::trace::cassert(index > 0, "index must be greater than 0");
+  diagnostics::trace::assert(index > 0, "index must be greater than 0");
   console::write_line("End application");
 }
 
