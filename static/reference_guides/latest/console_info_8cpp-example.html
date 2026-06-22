@@ -110,54 +110,74 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;background_color = {}&quot;</span>, console::background_color());</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;foreground_color = {}&quot;</span>, console::foreground_color());</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;buffer_height = {}&quot;</span>, console::buffer_height());</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;buffer_width = {}&quot;</span>, console::buffer_width());</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;caps_lock = {}&quot;</span>, console::caps_lock());</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;cursor_left = {}&quot;</span>, console::cursor_left());</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;cursor_size = {}&quot;</span>, console::cursor_size());</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;cursor_top = {}&quot;</span>, console::cursor_top());</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;cursor_visible = {}&quot;</span>, console::cursor_visible());</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;foreground_color = {}&quot;</span>, console::foreground_color());</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;is_rrror_redirected = {}&quot;</span>, console::is_error_redirected());</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;is_input_redirected = {}&quot;</span>, console::is_input_redirected());</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;is_output_redirected = {}&quot;</span>, console::is_output_redirected());</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;key_available = {}&quot;</span>, console::key_available());</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;largest_window_height = {}&quot;</span>, console::largest_window_height());</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;largest_window_width = {}&quot;</span>, console::largest_window_width());</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;title = {}&quot;</span>, console::title());</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;treat_control_c_as_input = {}&quot;</span>, console::treat_control_c_as_input());</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;window_height = {}&quot;</span>, console::window_height());</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;window_left = {}&quot;</span>, console::window_left());</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;window_top = {}&quot;</span>, console::window_top());</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;window_width = {}&quot;</span>, console::window_width());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;Streams:&quot;</span>);</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;  Is error redirected = {}&quot;</span>, console::is_error_redirected());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;  Is input redirected = {}&quot;</span>, console::is_input_redirected());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;  Is output redirected = {}&quot;</span>, console::is_output_redirected());</div>
+<div class="line">  console::write_line();</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;Input:&quot;</span>);</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;  Key available = {}&quot;</span>, console::key_available());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;  Caps lock = {}&quot;</span>, console::caps_lock());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;  Number lock = {}&quot;</span>, console::number_lock());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;  Treat control-c as input = {}&quot;</span>, console::treat_control_c_as_input());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;  Input code page = {}&quot;</span>, console::input_code_page());</div>
+<div class="line">  console::write_line();</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;Output:&quot;</span>);</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;  Background color = {}&quot;</span>, console::background_color());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;  Foreground color = {}&quot;</span>, console::foreground_color());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;  Cursor left = {}&quot;</span>, console::cursor_left());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;  Cursor top = {}&quot;</span>, console::cursor_top());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;  Cursor size = {}%&quot;</span>, console::cursor_size());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;  Cursor visible = {}&quot;</span>, console::cursor_visible());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;  Auto flush out = {}&quot;</span>, console::auto_flush_out());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;  Autput code page = {}&quot;</span>, console::output_code_page());</div>
+<div class="line">  console::write_line();</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;Window:&quot;</span>);</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;  Title = {}&quot;</span>, console::title());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;  Window left = {}&quot;</span>, console::window_left());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;  Window top = {}&quot;</span>, console::window_top());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;  Window width = {}&quot;</span>, console::window_width());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;  Window height = {}&quot;</span>, console::window_height());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;  Largest window width = {}&quot;</span>, console::largest_window_width());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;  Largest window height = {}&quot;</span>, console::largest_window_height());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;  Buffer width = {}&quot;</span>, console::buffer_width());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;  Buffer height = {}&quot;</span>, console::buffer_height());</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code can produce the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// background_color = black</span></div>
-<div class="line"><span class="comment">// foreground_color = white</span></div>
-<div class="line"><span class="comment">// buffer_height = 24</span></div>
-<div class="line"><span class="comment">// buffer_width = 80</span></div>
-<div class="line"><span class="comment">// caps_lock = false</span></div>
-<div class="line"><span class="comment">// cursor_left = 0</span></div>
-<div class="line"><span class="comment">// cursor_size = 100</span></div>
-<div class="line"><span class="comment">// cursor_top = 0</span></div>
-<div class="line"><span class="comment">// cursor_visible = true</span></div>
-<div class="line"><span class="comment">// foreground_color = white</span></div>
-<div class="line"><span class="comment">// is_rrror_redirected = false</span></div>
-<div class="line"><span class="comment">// is_input_redirected = false</span></div>
-<div class="line"><span class="comment">// is_output_redirected = false</span></div>
-<div class="line"><span class="comment">// key_available = false</span></div>
-<div class="line"><span class="comment">// largest_window_height = 1000</span></div>
-<div class="line"><span class="comment">// largest_window_width = 1000</span></div>
-<div class="line"><span class="comment">// title =</span></div>
-<div class="line"><span class="comment">// treat_control_c_as_input = false</span></div>
-<div class="line"><span class="comment">// window_height = 24</span></div>
-<div class="line"><span class="comment">// window_left = 0</span></div>
-<div class="line"><span class="comment">// window_top = 0</span></div>
-<div class="line"><span class="comment">// window_width = 80</span></div>
+<div class="line"><span class="comment">// Streams:</span></div>
+<div class="line"><span class="comment">//   Is error redirected = false</span></div>
+<div class="line"><span class="comment">//   Is input redirected = false</span></div>
+<div class="line"><span class="comment">//   Is output redirected = false</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Input:</span></div>
+<div class="line"><span class="comment">//   Key available = false</span></div>
+<div class="line"><span class="comment">//   Caps lock = false</span></div>
+<div class="line"><span class="comment">//   Number lock = true</span></div>
+<div class="line"><span class="comment">//   Treat control-c as input = false</span></div>
+<div class="line"><span class="comment">//   Input code page = 65001</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Output:</span></div>
+<div class="line"><span class="comment">//   Background color = default_color</span></div>
+<div class="line"><span class="comment">//   Foreground color = default_color</span></div>
+<div class="line"><span class="comment">//   Cursor left = 0</span></div>
+<div class="line"><span class="comment">//   Cursor top = 18</span></div>
+<div class="line"><span class="comment">//   Cursor size = 100%</span></div>
+<div class="line"><span class="comment">//   Cursor visible = true</span></div>
+<div class="line"><span class="comment">//   Auto flush out = true</span></div>
+<div class="line"><span class="comment">//   Output code page = 65001</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Window:</span></div>
+<div class="line"><span class="comment">//   Title =</span></div>
+<div class="line"><span class="comment">//   Window left = 0</span></div>
+<div class="line"><span class="comment">//   Window top = 0</span></div>
+<div class="line"><span class="comment">//   Window width = 120</span></div>
+<div class="line"><span class="comment">//   Window height = 30</span></div>
+<div class="line"><span class="comment">//   Largest window width = 1000</span></div>
+<div class="line"><span class="comment">//   Largest window height = 1000</span></div>
+<div class="line"><span class="comment">//   Buffer width = 120</span></div>
+<div class="line"><span class="comment">//   Buffer height = 30</span></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->

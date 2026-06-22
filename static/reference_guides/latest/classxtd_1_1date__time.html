@@ -523,7 +523,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
 <div class="line">    <span class="comment">// Instead of using the implicit, default &quot;G&quot; date and time format string, we</span></div>
 <div class="line">    <span class="comment">// use a custom format string that aligns the results and inserts leading zeroes.</span></div>
-<div class="line">    <span class="keyword">auto</span> <a class="code hl_function" href="group__format__parse.html#gab742c10192ef06aa7ca460264da512d1">format</a> = <span class="stringliteral">&quot;{0}) The {1} date and time is {2:MM/dd/yyyy HH::mm:ss}&quot;</span>;</div>
+<div class="line">    <span class="keyword">constexpr</span> <span class="keyword">auto</span> <a class="code hl_function" href="group__format__parse.html#gab742c10192ef06aa7ca460264da512d1">format</a> = <span class="stringliteral">&quot;{0}) The {1} date and time is {2:MM/dd/yyyy HH::mm:ss}&quot;</span>;</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// Create a DateTime for the maximum date and time using ticks.</span></div>
 <div class="line">    <span class="keyword">auto</span> dt1 = <a class="code hl_function" href="#a9af33e7a4b6e3f10f19133e026c1bc0e">date_time</a> {<a class="code hl_variable" href="#af86fd0f8e3f55ca8f3ffa6daeb7187bb">date_time::max_value</a>.ticks()};</div>
@@ -603,7 +603,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
 <div class="line">    <span class="comment">// Instead of using the implicit, default &quot;G&quot; date and time format string, we</span></div>
 <div class="line">    <span class="comment">// use a custom format string that aligns the results and inserts leading zeroes.</span></div>
-<div class="line">    <span class="keyword">auto</span> <a class="code hl_function" href="group__format__parse.html#gab742c10192ef06aa7ca460264da512d1">format</a> = <span class="stringliteral">&quot;{0}) The {1} date and time is {2:MM/dd/yyyy HH::mm:ss}&quot;</span>;</div>
+<div class="line">    <span class="keyword">constexpr</span> <span class="keyword">auto</span> <a class="code hl_function" href="group__format__parse.html#gab742c10192ef06aa7ca460264da512d1">format</a> = <span class="stringliteral">&quot;{0}) The {1} date and time is {2:MM/dd/yyyy HH::mm:ss}&quot;</span>;</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// Create a DateTime for the maximum date and time using ticks.</span></div>
 <div class="line">    <span class="keyword">auto</span> dt1 = <a class="code hl_function" href="#a9af33e7a4b6e3f10f19133e026c1bc0e">date_time</a> {<a class="code hl_variable" href="#af86fd0f8e3f55ca8f3ffa6daeb7187bb">date_time::max_value</a>.ticks()};</div>
@@ -1358,7 +1358,7 @@ The <a class="el" href="#a318f7bbae7cfaa8c588508cf537635d5" title="Gets the day 
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
 <div class="line">    <span class="keyword">auto</span> dec31 = <a class="code hl_function" href="#a9af33e7a4b6e3f10f19133e026c1bc0e">date_time</a> {2010, 12, 31};</div>
-<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> ctr = 0u; ctr &lt;= 10u; ctr++) {</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> ctr = 0u; ctr &lt;= 10u; ++ctr) {</div>
 <div class="line">      <span class="keyword">auto</span> date_to_display = dec31.add_years(ctr);</div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;{0:d}: day {1} of {2} {3}&quot;</span>, date_to_display, date_to_display.day_of_year(), date_to_display.year(), <a class="code hl_function" href="#a8c3f80efc4f30a7c61b5e45fe22938f3">date_time::is_leap_year</a>(date_to_display.year()) ? <span class="stringliteral">&quot;(Leap Year)&quot;</span> : <span class="stringliteral">&quot;&quot;</span>);</div>
 <div class="line">    }</div>
@@ -2059,9 +2059,7 @@ If you want to display the time of day or retrieve the string representation of 
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates the <a class="el" href="#af4415581a6480c3c37a9ba76c25cb79c" title="Returns a new xtd::date_time that adds the value of the specified xtd::time_span to the value of this...">xtd::date_time::add</a> method. It calculates the day of the week that is 36 days (864 hours) from this moment. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/date_time&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates the <a class="el" href="#af4415581a6480c3c37a9ba76c25cb79c" title="Returns a new xtd::date_time that adds the value of the specified xtd::time_span to the value of this...">xtd::date_time::add</a> method. It calculates the day of the week that is 36 days (864 hours) from this moment. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;chrono&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">class </span>program {</div>
@@ -2128,9 +2126,7 @@ This method does not change the value of this <a class="el" href="classxtd_1_1da
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example uses the <a class="el" href="#a94823caed8b9d5982411c8adef727c50" title="Returns a new xtd::date_time that adds the specified number of days to the value of this instance.">xtd::date_time::add_days</a> method to determine the day of the week 36 days after the current date. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/date_time&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example uses the <a class="el" href="#a94823caed8b9d5982411c8adef727c50" title="Returns a new xtd::date_time that adds the specified number of days to the value of this instance.">xtd::date_time::add_days</a> method to determine the day of the week 36 days after the current date. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">class </span>program {</div>
 <div class="line"><span class="keyword">public</span>:</div>
@@ -2399,7 +2395,7 @@ months is less than -120,000 or greater than 120,000. </td></tr>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
 <div class="line">    <span class="keyword">auto</span> <a class="code hl_function" href="#a250fb00077e93d6424e96fe20fbb29f6">date</a> = <a class="code hl_function" href="#a9af33e7a4b6e3f10f19133e026c1bc0e">date_time</a> {2015, 12, 31};</div>
-<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> ctr = 0; ctr &lt;= 15; ctr++)</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> ctr = 0; ctr &lt;= 15; ++ctr)</div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(date.add_months(ctr).to_string(<span class="stringliteral">&quot;d&quot;</span>));</div>
 <div class="line">  }</div>
 <div class="line">};</div>
@@ -5067,7 +5063,7 @@ year is less than 1 or greater than 9999. </td></tr>
 <div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;{0,-10}{1,-15}{2,4}\n&quot;</span>, <span class="stringliteral">&quot;Year&quot;</span>, <span class="stringliteral">&quot;Month&quot;</span>, <span class="stringliteral">&quot;Days&quot;</span>);</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> year : years) {</div>
-<div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> ctr = 1u; ctr &lt;= 12u; ctr++)</div>
+<div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> ctr = 1u; ctr &lt;= 12u; ++ctr)</div>
 <div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;{0,-10}{1,-15}{2,4}&quot;</span>, year, <a class="code hl_function" href="group__xtd__core.html#ga58028bb08924d84602be7ccdeffb8225">as&lt;month_of_year&gt;</a>(ctr), <a class="code hl_function" href="#a74d18c498fa1171e6883ad4a41aee602">date_time::days_in_month</a>(year, ctr));</div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>();</div>
 <div class="line">    }</div>
@@ -5198,7 +5194,7 @@ year is less than 1 or greater than 9999. </td></tr>
 <div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;{0,-10}{1,-15}{2,4}\n&quot;</span>, <span class="stringliteral">&quot;Year&quot;</span>, <span class="stringliteral">&quot;Month&quot;</span>, <span class="stringliteral">&quot;Days&quot;</span>);</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> year : years) {</div>
-<div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> ctr = 1u; ctr &lt;= 12u; ctr++)</div>
+<div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> ctr = 1u; ctr &lt;= 12u; ++ctr)</div>
 <div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;{0,-10}{1,-15}{2,4}&quot;</span>, year, <a class="code hl_function" href="group__xtd__core.html#ga58028bb08924d84602be7ccdeffb8225">as&lt;month_of_year&gt;</a>(ctr), <a class="code hl_function" href="#a74d18c498fa1171e6883ad4a41aee602">date_time::days_in_month</a>(year, ctr));</div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>();</div>
 <div class="line">    }</div>

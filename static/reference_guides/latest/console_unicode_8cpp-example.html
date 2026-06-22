@@ -113,12 +113,8 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line">  <span class="comment">// Change current code page to UTF-8.</span></div>
 <div class="line">  console::output_code_page(65001);</div>
 <div class="line">  </div>
-<div class="line">  <span class="comment">// Create a Char array for the modern Cyrillic alphabet, from U+0410 to U+044F.</span></div>
-<div class="line">  <span class="keyword">constexpr</span> <span class="keyword">auto</span> nchars = 0x044F - 0x0410 + 1;</div>
-<div class="line">  <span class="keyword">auto</span> chars = array&lt;char32&gt;(nchars);</div>
-<div class="line">  <span class="keyword">auto</span> code_point = U<span class="stringliteral">&#39;\U00000410&#39;</span>;</div>
-<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; ch : chars)</div>
-<div class="line">    ch = code_point++;</div>
+<div class="line">  <span class="comment">// Create a char32 array for the modern Cyrillic alphabet, from U+0410 to U+044F.</span></div>
+<div class="line">  <span class="keyword">auto</span> chars = enumerable::range(0x0410, 0x044F - 0x0410 + 1).cast&lt;char32&gt;();</div>
 <div class="line">  </div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;Current code page: {}\n&quot;</span>, console::output_code_page());</div>
 <div class="line">  <span class="comment">// Display the characters.</span></div>

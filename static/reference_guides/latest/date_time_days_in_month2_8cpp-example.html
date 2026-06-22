@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line">    console::write_line(<span class="stringliteral">&quot;{0,-10}{1,-15}{2,4}\n&quot;</span>, <span class="stringliteral">&quot;Year&quot;</span>, <span class="stringliteral">&quot;Month&quot;</span>, <span class="stringliteral">&quot;Days&quot;</span>);</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> year : years) {</div>
-<div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> ctr = 1u; ctr &lt;= 12u; ctr++)</div>
+<div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> ctr = 1u; ctr &lt;= 12u; ++ctr)</div>
 <div class="line">        console::write_line(<span class="stringliteral">&quot;{0,-10}{1,-15}{2,4}&quot;</span>, year, as&lt;month_of_year&gt;(ctr), date_time::days_in_month(year, ctr));</div>
 <div class="line">      console::write_line();</div>
 <div class="line">    }</div>

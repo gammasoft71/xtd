@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
 <div class="line">    <span class="keyword">auto</span> dec31 = date_time {2010, 12, 31};</div>
-<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> ctr = 0u; ctr &lt;= 10u; ctr++) {</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> ctr = 0u; ctr &lt;= 10u; ++ctr) {</div>
 <div class="line">      <span class="keyword">auto</span> date_to_display = dec31.add_years(ctr);</div>
 <div class="line">      console::write_line(<span class="stringliteral">&quot;{0:d}: day {1} of {2} {3}&quot;</span>, date_to_display, date_to_display.day_of_year(), date_to_display.year(), date_time::is_leap_year(date_to_display.year()) ? <span class="stringliteral">&quot;(Leap Year)&quot;</span> : <span class="stringliteral">&quot;&quot;</span>);</div>
 <div class="line">    }</div>

@@ -110,10 +110,10 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keyword">auto</span> m1 = <span class="stringliteral">&quot;\nType a string of text then press Enter. &quot;</span></div>
+<div class="line">  <span class="keyword">constexpr</span> <span class="keyword">auto</span> m1 = <span class="stringliteral">&quot;\nType a string of text then press Enter. &quot;</span></div>
 <div class="line">  <span class="stringliteral">&quot;Type &#39;+&#39; anywhere in the text to quit:\n&quot;</span>;</div>
-<div class="line">  <span class="keyword">auto</span> m2 = <span class="stringliteral">&quot;Character &#39;{0}&#39; is hexadecimal 0x{1:x4}.&quot;</span>;</div>
-<div class="line">  <span class="keyword">auto</span> m3 = <span class="stringliteral">&quot;Character     is hexadecimal 0x{0:x4}.&quot;</span>;</div>
+<div class="line">  <span class="keyword">constexpr</span> <span class="keyword">auto</span> m2 = <span class="stringliteral">&quot;Character &#39;{0}&#39; is hexadecimal 0x{1:x4}.&quot;</span>;</div>
+<div class="line">  <span class="keyword">constexpr</span> <span class="keyword">auto</span> m3 = <span class="stringliteral">&quot;Character     is hexadecimal 0x{0:x4}.&quot;</span>;</div>
 <div class="line">  <span class="keyword">auto</span> ch = U<span class="charliteral">&#39;0&#39;</span>;</div>
 <div class="line">  <span class="comment">//</span></div>
 <div class="line">  console::write_line(m1);</div>

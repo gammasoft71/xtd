@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <img src="enable_debug_gd.png" alt=""/>
 </div>
 </dd></dl>
-<div class="fragment"><div class="line"><span class="preprocessor">#define DEBUG 1 </span><span class="comment">// Force debug mode even if example is builded in release.</span></div>
+<div class="fragment"><div class="line"><span class="comment">// #define NDEBUG // Uncomment this line or build with -DNDEBUG to deactivate xtd::diagnostics::debug</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">class </span>form1 : <span class="keyword">public</span> form {</div>

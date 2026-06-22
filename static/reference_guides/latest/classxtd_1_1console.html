@@ -3127,10 +3127,10 @@ such as a text file, that has an actual end-of-file character. </dd></dl>
 <dl class="section user"><dt>Example</dt><dd>The following example demonstrates the Read method. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keyword">auto</span> m1 = <span class="stringliteral">&quot;\nType a string of text then press Enter. &quot;</span></div>
+<div class="line">  <span class="keyword">constexpr</span> <span class="keyword">auto</span> m1 = <span class="stringliteral">&quot;\nType a string of text then press Enter. &quot;</span></div>
 <div class="line">  <span class="stringliteral">&quot;Type &#39;+&#39; anywhere in the text to quit:\n&quot;</span>;</div>
-<div class="line">  <span class="keyword">auto</span> m2 = <span class="stringliteral">&quot;Character &#39;{0}&#39; is hexadecimal 0x{1:x4}.&quot;</span>;</div>
-<div class="line">  <span class="keyword">auto</span> m3 = <span class="stringliteral">&quot;Character     is hexadecimal 0x{0:x4}.&quot;</span>;</div>
+<div class="line">  <span class="keyword">constexpr</span> <span class="keyword">auto</span> m2 = <span class="stringliteral">&quot;Character &#39;{0}&#39; is hexadecimal 0x{1:x4}.&quot;</span>;</div>
+<div class="line">  <span class="keyword">constexpr</span> <span class="keyword">auto</span> m3 = <span class="stringliteral">&quot;Character     is hexadecimal 0x{0:x4}.&quot;</span>;</div>
 <div class="line">  <span class="keyword">auto</span> ch = U<span class="charliteral">&#39;0&#39;</span>;</div>
 <div class="line">  <span class="comment">//</span></div>
 <div class="line">  <a class="code hl_function" href="#ae600c08b996905be13225bba0f253a63">console::write_line</a>(m1);</div>
@@ -3756,9 +3756,9 @@ width or height is greater than the largest possible window width or height for 
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> orig_width = 0, width = 0;</div>
 <div class="line">  <span class="keyword">auto</span> orig_height = 0, height = 0;</div>
-<div class="line">  <span class="keyword">auto</span> m1 = <span class="stringliteral">&quot;The current window width is {0}, and the current window height is {1}.&quot;</span>;</div>
-<div class="line">  <span class="keyword">auto</span> m2 = <span class="stringliteral">&quot;The new window width is {0}, and the new window height is {1}.&quot;</span>;</div>
-<div class="line">  <span class="keyword">auto</span> m4 = <span class="stringliteral">&quot;  (Press any key to continue...)&quot;</span>;</div>
+<div class="line">  <span class="keyword">constexpr</span> <span class="keyword">auto</span> m1 = <span class="stringliteral">&quot;The current window width is {0}, and the current window height is {1}.&quot;</span>;</div>
+<div class="line">  <span class="keyword">constexpr</span> <span class="keyword">auto</span> m2 = <span class="stringliteral">&quot;The new window width is {0}, and the new window height is {1}.&quot;</span>;</div>
+<div class="line">  <span class="keyword">constexpr</span> <span class="keyword">auto</span> m4 = <span class="stringliteral">&quot;  (Press any key to continue...)&quot;</span>;</div>
 <div class="line">  <span class="comment">//</span></div>
 <div class="line">  <span class="comment">// Step 1: Get the current window dimensions.</span></div>
 <div class="line">  <span class="comment">//</span></div>

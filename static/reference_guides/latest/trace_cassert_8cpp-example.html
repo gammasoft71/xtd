@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
 </div><!--header-->
 <div class="contents">
 <p>Shows how to use trace::cassert_ method.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#define TRACE 1 </span><span class="comment">// Force to trace even if example is builded with -DNTRACE.</span></div>
+<div class="fragment"><div class="line"><span class="comment">// #define NTRACE // Uncomment this line or build with -DNTRACE to deactivate xtd::diagnostics::trace</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line"> </div>
 <div class="line">  <span class="keyword">auto</span> index = 0;</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;Start application&quot;</span>);</div>
-<div class="line">  diagnostics::trace::cassert(index &gt; 0, <span class="stringliteral">&quot;index must be greater than 0&quot;</span>);</div>
+<div class="line">  diagnostics::trace::assert(index &gt; 0, <span class="stringliteral">&quot;index must be greater than 0&quot;</span>);</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;End application&quot;</span>);</div>
 <div class="line">}</div>
 <div class="line"> </div>

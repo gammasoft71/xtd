@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
 </div><!--header-->
 <div class="contents">
 <p>Shows how to use xtd::delegate class.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#define TRACE 1 </span><span class="comment">// Force to trace even if example is builded with -DNTRACE.</span></div>
+<div class="fragment"><div class="line"><span class="comment">// #define NTRACE // Uncomment this line or build with -DNTRACE to deactivate xtd::diagnostics::trace</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using </span>writer = delegate&lt;void(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; str)&gt;;</div>

@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
 <div class="line">    <span class="comment">// Instead of using the implicit, default &quot;G&quot; date and time format string, we</span></div>
 <div class="line">    <span class="comment">// use a custom format string that aligns the results and inserts leading zeroes.</span></div>
-<div class="line">    <span class="keyword">auto</span> format = <span class="stringliteral">&quot;{0}) The {1} date and time is {2:MM/dd/yyyy HH::mm:ss}&quot;</span>;</div>
+<div class="line">    <span class="keyword">constexpr</span> <span class="keyword">auto</span> format = <span class="stringliteral">&quot;{0}) The {1} date and time is {2:MM/dd/yyyy HH::mm:ss}&quot;</span>;</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// Create a DateTime for the maximum date and time using ticks.</span></div>
 <div class="line">    <span class="keyword">auto</span> dt1 = date_time {date_time::max_value.ticks()};</div>

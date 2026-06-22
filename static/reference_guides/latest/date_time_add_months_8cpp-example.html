@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
 <div class="line">    <span class="keyword">auto</span> date = date_time {2015, 12, 31};</div>
-<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> ctr = 0; ctr &lt;= 15; ctr++)</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> ctr = 0; ctr &lt;= 15; ++ctr)</div>
 <div class="line">      console::write_line(date.add_months(ctr).to_string(<span class="stringliteral">&quot;d&quot;</span>));</div>
 <div class="line">  }</div>
 <div class="line">};</div>
