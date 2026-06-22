@@ -1,4 +1,4 @@
-#define DEBUG 1 // Force debug mode even if example is builded in release.
+// #define NDEBUG // Uncomment this line or build with -DNDEBUG to deactivate xtd::diagnostics::debug
 #include <xtd/xtd>
 
 auto main() -> int {
