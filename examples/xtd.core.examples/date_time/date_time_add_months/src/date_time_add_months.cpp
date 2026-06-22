@@ -4,7 +4,7 @@ class program {
 public:
   static auto main() {
     auto date = date_time {2015, 12, 31};
-    for (auto ctr = 0; ctr <= 15; ctr++)
+    for (auto ctr = 0; ctr <= 15; ++ctr)
       console::write_line(date.add_months(ctr).to_string("d"));
   }
 };
