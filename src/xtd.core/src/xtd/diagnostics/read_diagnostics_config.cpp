@@ -6,6 +6,7 @@
 #include "../../../include/xtd/diagnostics/trace_listener_collection.hpp"
 #include "../../../include/xtd/helpers/throw_helper.hpp"
 #include "../../../include/xtd/reflection/assembly.hpp"
+#include "../../../include/xtd/boolean_object.hpp"
 #include "../../../include/xtd/call_once.hpp"
 #include "../../../include/xtd/environment.hpp"
 
@@ -44,20 +45,21 @@ namespace {
     "#                              Options must be separated by a comma (,).",
     "#",
     "# default listener specific options:",
-    "#   log=file_path            : add log file path",
+    "#   assertuienabled=true/false : enable or disable the assert message box",
+    "#   log=file_path              : add log file path",
     "#",
     "# console listener specific options:",
-    "#   error_stream=true/false  : use stderr instead of stdout",
+    "#   error_stream=true/false    : use stderr instead of stdout",
     "#",
     "# file listener specific options:",
-    "#   append=true/false        : append to file (default=true)",
-    "#   path=file_path           : add log file path",
+    "#   append=true/false          : append to file (default=true)",
+    "#   path=file_path             : add log file path",
     "#",
     "# Examples:",
     "# [listeners]",
     "# console_listener = \"type=console;error_stream=true\"",
-    "# file_listener = \"type=file;path=app.log;append=true;\"",
-    "# default = \"type=default;log=default.log\"",
+    "# file_listener = \"type=file;path=app.log;append=true\"",
+    "# default = \"type=default;assertuienabled=false\"",
     "# --------------------------------------------------------------------------",
     "",
     "[listeners]",
@@ -115,9 +117,11 @@ auto __xtd___read_diagnostics_config__() -> const __xtd__diagnostics_config__& {
         }
         if (!sub_key_values.contains_key("type")) throw_helper::throws(xtd::helpers::exception_case::format);
         auto listener = ptr<trace_listener> {};
-        if (sub_key_values["type"] == "default")
-          listener = new_ptr<default_trace_listener>(sub_key_values.contains_key("log") ? sub_key_values["log"] : "");
-        else if (sub_key_values["type"] == "console")
+        if (sub_key_values["type"] == "default") {
+          auto assertuienabled = true;
+          if (!sub_key_values.contains_key("assertuienabled") || !boolean_object::try_parse(sub_key_values["assertuienabled"], assertuienabled)) assertuienabled = true;
+          listener = new_ptr<default_trace_listener>(sub_key_values.contains_key("log") ? sub_key_values["log"] : "", assertuienabled);
+        } else if (sub_key_values["type"] == "console")
           listener = new_ptr<console_trace_listener>(sub_key_values.contains_key("error_stream") ? as<bool>(sub_key_values["error_stream"]) : false);
         else if (sub_key_values["type"] == "file" && sub_key_values.contains_key("path")) {
           auto stream = file::open_write(sub_key_values["path"]);
