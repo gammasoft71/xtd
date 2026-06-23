@@ -2,7 +2,7 @@
 #include <xtd/xtd>
 
 auto main() -> int {
-  // Uncomment following line to remove assert dialog
+  // Uncomment following line to remove assert dialog or set literner default assertuienabled to false in "${application_data}/${company_name}/${product_name}.diagnostics.config".
   //diagnostics::debug::listeners().for_each([](auto listener) {if (is<diagnostics::default_trace_listener>(listener)) as<diagnostics::default_trace_listener>(listener)->assert_ui_enabled(false);});
 
   auto index = 0;
