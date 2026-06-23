@@ -1,10 +1,9 @@
+// #define NDEBUG // Uncomment this line or build with -DNDEBUG to deactivate xtd::diagnostics::debug
 #include <xtd/xtd>
 
 auto main() -> int {
-  // Uncomment following lines to remove assert dialog
-  //for (auto listener : debug::listeners())
-  //  if (is<default_trace_listener>(listener))
-  //    as<default_trace_listener>(listener)->assert_ui_enabled(false);
+  // Uncomment following line to remove assert dialog
+  //diagnostics::debug::listeners().for_each([](auto listener) {if (is<diagnostics::default_trace_listener>(listener)) as<diagnostics::default_trace_listener>(listener)->assert_ui_enabled(false);});
 
   auto index = 0;
   console::write_line("Start application");
@@ -19,7 +18,7 @@ auto main() -> int {
 //
 // > If user clicks assert dialog 'Retry' button:
 // Start application
-// > Break the debugger on file assert_.cpp line 11.
+// > Break the debugger on file assert_.cpp line 10.
 // > If user choose continue running after break.
 // End application
 //
