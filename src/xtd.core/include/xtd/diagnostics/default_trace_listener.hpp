@@ -54,6 +54,10 @@ namespace xtd {
       /// @brief Initializes a new instance of the default_trace_listener class with "default" as its xtd::diagnostics::default_trace_listener::name property value.
       /// @param log_file_name The name of a log file to write trace or debug messages to.
       default_trace_listener(const xtd::string log_file_name);
+      /// @brief Initializes a new instance of the default_trace_listener class with "default" as its xtd::diagnostics::default_trace_listener::name property value.
+      /// @param log_file_name The name of a log file to write trace or debug messages to.
+      /// @param assert_ui_enabled The value indicating whether the application is running in user-interface mode.
+      default_trace_listener(const xtd::string log_file_name, bool assert_ui_enabled);
       /// @cond
       ~default_trace_listener();
       /// @endcond

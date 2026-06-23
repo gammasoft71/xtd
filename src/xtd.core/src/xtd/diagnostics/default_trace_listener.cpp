@@ -7,10 +7,13 @@
 using namespace xtd;
 using namespace xtd::diagnostics;
 
-default_trace_listener::default_trace_listener() : default_trace_listener("") {
+default_trace_listener::default_trace_listener() : default_trace_listener {"", true} {
 }
 
-default_trace_listener::default_trace_listener(const string log_file_name) : trace_listener("default"), log_file_name_ {log_file_name} {
+default_trace_listener::default_trace_listener(const string log_file_name) : default_trace_listener {log_file_name, true} {
+}
+
+default_trace_listener::default_trace_listener(const string log_file_name, bool assert_ui_enabled) : trace_listener {"default"}, assert_ui_enabled_ {assert_ui_enabled} {
 }
 
 default_trace_listener::~default_trace_listener() {
