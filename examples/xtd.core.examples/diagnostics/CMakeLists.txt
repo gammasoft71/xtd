@@ -8,7 +8,7 @@ add_projects(
   assert_with_message
   console_trace_listener
   debug
-  debug_cassert
+  debug_assert
   default_trace_listener
   source_location_invoked_directly
   stack_frame
@@ -17,5 +17,5 @@ add_projects(
   stopwatch
   stopwatch_constructor
   trace
-  trace_cassert
+  trace_assert
 )

@@ -1,10 +1,10 @@
-# trace_cassert_message
+# trace_assert_message
 
-Shows how to use [trace::cassert_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__debug.html#gab8e6aea91a39c5e05d514044aa2b2ddf) method.
+Shows how to use [trace::assert_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__debug.html#gab8e6aea91a39c5e05d514044aa2b2ddf) method.
 
 ## Sources
 
-* [src/trace_cassert.cpp](src/trace_cassert.cpp)
+* [src/trace_assert.cpp](src/trace_assert.cpp)
 * [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
@@ -23,7 +23,7 @@ Start application
 
 > If user clicks assert dialog 'Retry' button:
 Start application
-> Break the debugger on file trace_cassert.cpp line 13.
+> Break the debugger on file trace_assert.cpp line 13.
 > If user choose continue running after break.
 End application
 
