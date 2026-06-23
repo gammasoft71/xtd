@@ -107,13 +107,12 @@ document.addEventListener('DOMContentLoaded', () => {
 </div><!--header-->
 <div class="contents">
 <p>Shows how to use debug::cassert method.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="fragment"><div class="line"><span class="comment">// #define NDEBUG // Uncomment this line or build with -DNDEBUG to deactivate xtd::diagnostics::debug</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="comment">// Uncomment following lines to remove assert dialog</span></div>
-<div class="line">  <span class="comment">//for (auto listener : diagnostics::debug::listeners())</span></div>
-<div class="line">  <span class="comment">//  if (is&lt;diagnostics::default_trace_listener&gt;(listener))</span></div>
-<div class="line">  <span class="comment">//    as&lt;diagnostics::default_trace_listener&gt;(listener)-&gt;assert_ui_enabled(false);</span></div>
+<div class="line">  <span class="comment">// Uncomment following line to remove assert dialog</span></div>
+<div class="line">  <span class="comment">//diagnostics::debug::listeners().for_each([](auto listener) {if (is&lt;diagnostics::default_trace_listener&gt;(listener)) as&lt;diagnostics::default_trace_listener&gt;(listener)-&gt;assert_ui_enabled(false);});</span></div>
 <div class="line"> </div>
 <div class="line">  <span class="keyword">auto</span> index = 0;</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;Start application&quot;</span>);</div>
@@ -128,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// &gt; If user clicks assert dialog &#39;Retry&#39; button:</span></div>
 <div class="line"><span class="comment">// Start application</span></div>
-<div class="line"><span class="comment">// &gt; Break the debugger on file debug_cassert.cpp line 12.</span></div>
+<div class="line"><span class="comment">// &gt; Break the debugger on file debug_cassert.cpp line 9.</span></div>
 <div class="line"><span class="comment">// &gt; If user choose continue running after break.</span></div>
 <div class="line"><span class="comment">// End application</span></div>
 <div class="line"><span class="comment">//</span></div>
