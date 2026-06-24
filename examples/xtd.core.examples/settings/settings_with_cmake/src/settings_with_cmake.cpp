@@ -103,8 +103,7 @@ namespace settings_with_cmake {
     }
     
     static auto write_screen() -> void {
-      for (auto index = 0; index < console::window_height() - 1; ++index)
-        write_at(0, index, string(' ', console::window_width()));
+      console::clear();
       auto y = 2;
       write_at(2, y++, "Select follwing keys :");
       write_at(4, y++, "• B : Change background color");
