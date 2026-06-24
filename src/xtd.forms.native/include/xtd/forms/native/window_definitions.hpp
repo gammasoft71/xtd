@@ -38,7 +38,7 @@ struct HELPINFO {
   return static_cast<xtd::uint16>((static_cast<xtd::uint16>((static_cast<xtd::uint32>(a)) & 0xff)) | (static_cast<xtd::uint16>(static_cast <xtd::uint16>((static_cast<xtd::uint32>(b)) & 0xff))) << 8);
 }
 
-[[nodiscard]] auto MAKELONG(auto a, auto b) -> xtd::uint16 {
+[[nodiscard]] auto MAKELONG(auto a, auto b) -> xtd::uint32 {
   return static_cast<xtd::uint32>((static_cast<xtd::uint16>((static_cast<xtd::uint32>(a)) & 0xffff)) | (static_cast<xtd::uint32>(static_cast<xtd::uint16>((static_cast<xtd::uint32>(b)) & 0xffff))) << 16);
 }
 
