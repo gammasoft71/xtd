@@ -47,6 +47,7 @@
 * [Processes](xtd.core.examples/processes/README.md) contains process examples.
 * [Random](xtd.core.examples/random/README.md) contains random examples.
 * [Ranges](xtd.core.examples/ranges/README.md) contains ranges examples.
+* [Settings](xtd.core.examples/settings/README.md) contains settings examples.
 * [Span](xtd.core.examples/span/README.md) contains span examples.
 * [Sprintf](xtd.core.examples/sprintf/README.md) contains sprintf examples.
 * [Startups](xtd.core.examples/startups/README.md) contains startups examples.

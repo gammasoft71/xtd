@@ -450,6 +450,11 @@
 * [ranges_views_where](ranges/ranges_views_where/README.md) shows how to use [xtd::ranges::views::where_view](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1ranges_1_1views_1_1where__view.html) class.
 * [ranges_views_where2](ranges/ranges_views_where2/README.md) shows how to use [xtd::ranges::views::where_view](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1ranges_1_1views_1_1where__view.html) class.
 
+## [Settings](settings/README.md)
+
+* [settings_with_cmake](settings/settings_with_cmake/README.md) shows how to use [xtd::configuration::settingd](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1configuration_1_1settings.html) with CMake commands.
+* [settings_without_cmake](settings/settings_without_cmake/README.md) shows how to use [xtd::configuration::settingd](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1configuration_1_1settings.html) directly without CMake commands.
+
 ## [Span](span/README.md)
 
 * [span_from_memory](span/span_from_memory/README.md) Create a [xtd::span](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1span.html) from memory.
