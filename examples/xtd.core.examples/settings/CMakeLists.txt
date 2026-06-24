@@ -5,6 +5,6 @@ find_package(xtd REQUIRED)
 
 add_projects(
   settings_with_cmake
-  #settings_without_cmake
+  settings_without_cmake
 )
 
