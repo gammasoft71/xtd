@@ -4,6 +4,9 @@ namespace settings_with_cmake {
   class program {
   public:
     static auto main() {
+      console::output_code_page(65001);
+      console::cursor_visible(false);
+      console::clear();
       reload();
       while (true) {
         switch (auto key_char = char32_object::to_upper(console::read_key(true).key_char())) {
@@ -12,6 +15,7 @@ namespace settings_with_cmake {
           case 'L': write_status(reload()); break;
           case 'R': write_status(reset()); break;
           case 'S': write_status(save()); break;
+          case 'U': write_status(update_screen()); break;
           case 'Q': quit();
           default: write_status(string::format("The key '{}`, is not a valid key...", key_char)); break;
         }
@@ -21,13 +25,13 @@ namespace settings_with_cmake {
   private:
     static auto change_background() -> string {
       console::background_color(color_selector(console::background_color(), console::foreground_color()));
-      write_sscreen();
+      write_screen();
       return string::format("Color background is set to {}", console::background_color());
     }
     
     static auto change_foreground() -> string {
       console::foreground_color(color_selector(console::foreground_color(), console::background_color()));
-      write_sscreen();
+      write_screen();
       return string::format("Color foreground is set to {}", console::foreground_color());
     }
 
@@ -55,7 +59,7 @@ namespace settings_with_cmake {
       console::window_width(settings.read("window_width", 80));
       console::window_height(settings.read("window_height", 25));
       console::title("Settings example");
-      write_sscreen();
+      write_screen();
       return "Settings is reload";
     }
     
@@ -73,8 +77,13 @@ namespace settings_with_cmake {
       settings.write("window_width", console::window_width());
       settings.write("window_height", console::window_height());
       settings.save();
-      write_sscreen();
+      write_screen();
       return "Settings is save";
+    }
+    
+    static auto update_screen() -> string {
+      write_screen();
+      return "Screen updated";
     }
 
     static auto write_at(uint32 x, uint32 y, const string& text) -> void {
@@ -93,10 +102,9 @@ namespace settings_with_cmake {
       console::foreground_color(fwd_color);
     }
     
-    static auto write_sscreen() -> void {
-      console::cursor_visible(false);
-      console::clear();
-
+    static auto write_screen() -> void {
+      for (auto index = 0; index < console::window_height() - 1; ++index)
+        write_at(0, index, string(' ', console::window_width()));
       auto y = 2;
       write_at(2, y++, "Select follwing keys :");
       write_at(4, y++, "• B : Change background color");
@@ -104,6 +112,7 @@ namespace settings_with_cmake {
       write_at(4, y++, "• L : Reload settings");
       write_at(4, y++, "• R : Reset settings");
       write_at(4, y++, "• S : Save settings");
+      write_at(4, y++, "• U : Update screen");
       write_at(4, y++, "• Q : Quit");
       write_status("");
     }
@@ -123,8 +132,8 @@ startup_(settings_with_cmake::program::main);
 //     • L : Reload settings
 //     • R : Reset settings
 //     • S : Save settings
+//     • U : Update screen
 //     • Q : Quit
-//
 //
 //
 //
