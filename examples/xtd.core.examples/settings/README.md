@@ -1,9 +1,9 @@
-# Span examples
+# Settings examples
 
-[This folder](.) contains random examples used by [Reference Guide](https://gammasoft71.github.io/xtd/reference_guides/latest/) and more.
+[This folder](.) contains settings examples used by [Reference Guide](https://gammasoft71.github.io/xtd/reference_guides/latest/) and more.
 
-* [span_from_memory](span_from_memory/README.md) Create a [xtd::span](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1span.html) from memory.
-* [span_over_array](span_over_array/README.md) Create a [xtd::span](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1span.html) over an array.
+* [settings_with_cmake](settings_with_cmake/README.md) shows how to use [xtd::configuration::settingd](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1configuration_1_1settings.html) with CMake commands.
+* [settings_without_cmake](settings_without_cmake/README.md) shows how to use [xtd::configuration::settingd](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1configuration_1_1settings.html) directly without CMake commands.
 
 ## Build and run any project
 

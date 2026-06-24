@@ -115,6 +115,7 @@ startup_(settings_with_cmake::program::main);
 // This code produces the following output :
 //
 //
+//
 //   Select follwing keys :
 //     • B : Change background color
 //     • F : Change foreground color

@@ -1,10 +1,11 @@
-# span_from_memory
+# settings_with_cmake
 
-Create a [xtd::span](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1span.html) from memory.
+Shows how to use [xtd::configuration::settingd](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1configuration_1_1settings.html) with CMake commands.
 
 ## Sources
 
-* [src/span_from_memory.cpp](src/span_from_memory.cpp)
+* [src/settings_with_cmake.cpp](src/settings_with_cmake.cpp)
+* [properties/settings.cmake](properties/settings.cmake)
 * [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
@@ -18,5 +19,29 @@ xtdc run
 ## Output
 
 ```
-The sum is 4950
+
+
+  Select follwing keys :
+    • B : Change background color
+    • F : Change foreground color
+    • L : Reload settings
+    • R : Reset settings
+    • S : Save settings
+    • Q : Quit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Select key |
 ```
