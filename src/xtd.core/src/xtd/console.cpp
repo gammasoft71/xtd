@@ -362,8 +362,8 @@ bool console::reset_color() {
 
 void console::set_cursor_position(int32 left, int32 top) {
   register_cancel_key_press(); // Must be first...
-  if (left < 0 || left >= buffer_width()) throw_helper::throws(exception_case::argument_out_of_range);
-  if (top < 0 || top >= buffer_height()) throw_helper::throws(exception_case::argument_out_of_range);
+  if (left < 0 || left > window_width()) throw_helper::throws(exception_case::argument_out_of_range);
+  if (top < 0 || top > window_height()) throw_helper::throws(exception_case::argument_out_of_range);
   native::console::set_cursor_position(left, top);
 }
 
