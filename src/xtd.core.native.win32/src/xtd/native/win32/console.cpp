@@ -97,6 +97,10 @@ namespace {
   };
   
   terminal terminal::terminal_;
+
+  bool is_windows_terminal() {
+    return std::getenv("WT_SESSION") != nullptr;
+  }
 }
 
 int32_t console::background_color() {
@@ -353,6 +357,7 @@ int32_t console::window_height() {
 
 bool console::window_height(int32_t height) {
   ::window_height = height;
+  if (is_windows_terminal()) return true;
   auto csbi = CONSOLE_SCREEN_BUFFER_INFO {};
   GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
   csbi.srWindow.Bottom = static_cast<int16_t>(csbi.srWindow.Top + height - 1);
@@ -367,6 +372,7 @@ int32_t console::window_left() {
 
 bool console::window_left(int32_t left) {
   ::window_left = left;
+  if (is_windows_terminal()) return true;
   auto csbi = CONSOLE_SCREEN_BUFFER_INFO {};
   GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
   csbi.srWindow.Left = static_cast<int16_t>(left);
@@ -383,6 +389,7 @@ int32_t console::window_top() {
 
 bool console::window_top(int32_t top) {
   ::window_top = top;
+  if (is_windows_terminal()) return true;
   auto csbi = CONSOLE_SCREEN_BUFFER_INFO {};
   GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
   csbi.srWindow.Top = static_cast<int16_t>(top);
@@ -398,6 +405,7 @@ int32_t console::window_width() {
 
 bool console::window_width(int32_t width) {
   ::window_width = width;
+  if (is_windows_terminal()) return true;
   auto csbi = CONSOLE_SCREEN_BUFFER_INFO {};
   GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
   csbi.srWindow.Right = static_cast<int16_t>(csbi.srWindow.Left + width - 1);
