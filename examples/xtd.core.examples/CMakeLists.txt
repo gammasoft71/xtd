@@ -43,6 +43,7 @@ add_projects(
   processes
   random
   ranges
+  settings
   span
   specialized_collections
   sprintf
