@@ -96,6 +96,8 @@ public:
     quit_button_
       .text("Quit")
       .bounds({425, 240, 120, 32})
+      .back_color(color::black)
+      .fore_color(color::white)
       .anchor(anchor_styles::right | anchor_styles::bottom)
       .click += {*this, &form::close};
   }
