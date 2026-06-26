@@ -6,7 +6,7 @@ auto main() -> int {
   diagnostics::debug::write_line("Begin");
   diagnostics::debug::indent();
   /// Simulate work...
-  for (auto step = 1; step <= 10; step++) {
+  for (auto step = 1; step <= 10; ++step) {
     diagnostics::debug::write_line("working step {}...", step);
     thread::sleep(300_ms);
   }
