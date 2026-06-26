@@ -43,6 +43,8 @@ namespace {
       if (func.Contains("wxClientDCImpl::DoGetSize") && cond.Contains("m_window") && msg.Contains("wxClientDCImpl without a window?")) return;
       // Workaround : wxWidgets generates an assert if wxPaintDC is not call in paint event.
       if (func.Contains("wxTextMeasure::BeginMeasuring") && cond.Contains("m_hdc") && msg.Contains("Must not be used with non-native wxDCs")) return;
+      // Workaround : wxWidgets generates an assert if wxPaintDC is call outside of a paint event.
+      if (func.Contains("wxPaintDCImpl") && cond.Contains("paintStack.empty()") && msg.Contains("wxPaintDC can't be created outside wxEVT_PAINT handler")) return;
       // Workaround : wxWidgets generates an assert if wxPaintDC is not call with the window being repainted.
       if (func.Contains("wxPaintDCImpl") && cond.Contains("paintStack.top().window == window") && msg.Contains("wxPaintDC must be associated with the window being repainted")) return;
       // Workaround : Call wxClientDCImpl without a window.
