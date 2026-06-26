@@ -433,6 +433,10 @@ namespace xtd {
     /// @remarks The foreground and background colors are restored to the colors that existed when the current process began. For more information, see the foreground_color and background_color properties.
     static auto reset_color() -> bool;
     
+    /// @brief Resets terminale mode to default.
+    /// @remarks This method must be used for example if you use xtd::console::key_availlableor xtd::console::read_key and you want to usud std::cin or scanf or other input than xtd.
+    static auto reset_terminal_mode() -> void;
+
     /// @brief Sets the position of the cursor.
     /// @param left The column position of the cursor. Columns are numbered from left to right starting at 0.
     /// @param top The row position of the cursor. Rows are numbered from top to bottom starting at 0.

@@ -341,16 +341,17 @@ string console::read_line(const string& text) {
 }
 
 string console::read_line(const string& text, bool intercept) {
+  reset_terminal_mode();
   write(text);
-  struct echo_on {
-    echo_on(bool intercept) : intercept(intercept) {if (!is_input_redirected()) native::console::echo(!intercept);}
-    ~echo_on() {
+  struct echo_off {
+    echo_off(bool intercept) : intercept(intercept) {if (!is_input_redirected()) native::console::echo(!intercept);}
+    ~echo_off() {
       if (is_input_redirected()) return;
       native::console::echo(false);
       if (intercept) write_line();
     }
     bool intercept = false;
-  } echo_on {intercept};
+  } echo_off {intercept};
   out.flush();
   return stream_reader {in}.read_line();
 }
@@ -358,6 +359,10 @@ string console::read_line(const string& text, bool intercept) {
 bool console::reset_color() {
   register_cancel_key_press(); // Must be first...
   return native::console::reset_color();
+}
+
+void console::reset_terminal_mode() {
+  native::console::reset_terminal_mode();
 }
 
 void console::set_cursor_position(int32 left, int32 top) {
