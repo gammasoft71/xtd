@@ -1,6 +1,6 @@
 #include <xtd/xtd>
 
-void print_this_file_name() {
+auto print_this_file_name() {
   auto location = diagnostics::source_location::current();
   console::write_line("File: {}", path::get_file_name(location.file_name()));
 }
