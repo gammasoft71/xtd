@@ -142,7 +142,7 @@ Inheritance diagram for xtd::diagnostics::console_trace_listener:</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1diagnostics_1_1debug.html#a8c1a6e6022aaaef6a491b22b30b0882e">diagnostics::debug::listeners</a>({<a class="code hl_function" href="group__xtd__core.html#ga90ae49206646bf4444fa4f2e57990d08">new_ptr&lt;diagnostics::console_trace_listener&gt;</a>()});</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1diagnostics_1_1debug.html#a36c589c895e4ae6a4f1e5be406d40140">diagnostics::debug::write_line</a>(<span class="stringliteral">&quot;Begin&quot;</span>);</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1diagnostics_1_1debug.html#adbc21cc797c15f6aede675f5dcd3fecc">diagnostics::debug::indent</a>();</div>
-<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> step = 1; step &lt;= 10; step++) {</div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> step = 1; step &lt;= 10; ++step) {</div>
 <div class="line">    <a class="code hl_function" href="classxtd_1_1diagnostics_1_1debug.html#a36c589c895e4ae6a4f1e5be406d40140">diagnostics::debug::write_line</a>(<span class="stringliteral">&quot;working step {}...&quot;</span>, step);</div>
 <div class="line">    thread::sleep(300_ms);</div>
 <div class="line">  }</div>

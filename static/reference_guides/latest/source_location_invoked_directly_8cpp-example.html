@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <p>Shows how to use xtd::source_location class.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> print_this_file_name() {</div>
+<div class="line"><span class="keyword">auto</span> print_this_file_name() {</div>
 <div class="line">  <span class="keyword">auto</span> location = diagnostics::source_location::current();</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;File: {}&quot;</span>, path::get_file_name(location.file_name()));</div>
 <div class="line">}</div>

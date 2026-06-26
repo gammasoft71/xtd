@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line">  diagnostics::debug::listeners({new_ptr&lt;diagnostics::console_trace_listener&gt;()});</div>
 <div class="line">  diagnostics::debug::write_line(<span class="stringliteral">&quot;Begin&quot;</span>);</div>
 <div class="line">  diagnostics::debug::indent();</div>
-<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> step = 1; step &lt;= 10; step++) {</div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> step = 1; step &lt;= 10; ++step) {</div>
 <div class="line">    diagnostics::debug::write_line(<span class="stringliteral">&quot;working step {}...&quot;</span>, step);</div>
 <div class="line">    thread::sleep(300_ms);</div>
 <div class="line">  }</div>
