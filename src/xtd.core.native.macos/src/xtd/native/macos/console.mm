@@ -8,6 +8,8 @@
 #include <iostream>
 #include <list>
 #include <map>
+#include <memory>
+#include <queue>
 #include <sstream>
 #include <thread>
 #include <vector>
@@ -35,7 +37,7 @@ namespace {
         ::signal(signal.first, SIG_DFL);
     }
     
-    static void signal_handler(std::int32_t signal) {
+    static auto signal_handler(std::int32_t signal) -> void {
       ::signal(signal, console_intercept_signals::signal_handler);
       if (treat_control_c_as_input) signal_couter_.push_back(signal_keys_[signal]);
       else if (user_cancel_callback && user_cancel_callback(signal_keys_[signal]) == false) exit(EXIT_FAILURE);
@@ -48,9 +50,52 @@ namespace {
   
   console_intercept_signals console_intercept_signals::console_intercept_signals_;
   
+  struct terminal_mode {
+    terminal_mode() {
+      tcgetattr(0, &status_backup_);
+      auto status = termios {};
+      tcgetattr(0, &status);
+      status.c_lflag &= ~ECHO;
+      status.c_lflag &= ~ICANON;
+      status.c_cc[VMIN] = 0;
+      status.c_cc[VTIME] = 0;
+      tcsetattr(0, TCSANOW, &status);
+    }
+    ~terminal_mode() {
+      tcsetattr(0, TCSANOW, &status_backup_);
+    }
+
+  private:
+    termios status_backup_;
+  };
+
   class terminal final {
   public:
-    bool echo(bool on) {
+    static auto getch() -> std::int32_t {
+      if (!terminal_mode_) terminal_mode_ = std::make_shared<terminal_mode>();
+      if (peek_characters_.empty()) {
+        auto character = '\0';
+        while (read(0, &character, 1) != 1);
+        return character;
+      }
+      
+      auto peek_character = '\0';
+      peek_character = peek_characters_.front();
+      peek_characters_.pop();
+      return peek_character;
+    }
+    
+    static auto key_available() -> bool {
+      if (!terminal_mode_) terminal_mode_ = std::make_shared<terminal_mode>();
+      auto peek_character = std::int8_t {-1};
+      while (read(0, &peek_character, 1) != -1 && peek_character != -1) {
+        peek_characters_.push(peek_character);
+        peek_character = -1;
+      }
+      return !peek_characters_.empty();
+    }
+    
+    static auto echo(bool on) -> bool {
       auto status = termios {};
       tcgetattr(0, &status);
       if (on) status.c_lflag |= ECHO;
@@ -58,101 +103,19 @@ namespace {
       return tcsetattr(0, TCSANOW, &status) == 0;
     }
     
-    bool icanon(bool on) {
-      auto status = termios {};
-      tcgetattr(0, &status);
-      if (on) status.c_lflag |= ICANON;
-      else status.c_lflag &= ~ICANON;
-      status.c_cc[VMIN] = on ? 1 : 0;
-      status.c_cc[VTIME] = 0; // Can be discarded.
-      return tcsetattr(0, TCSANOW, &status) == 0;
-    }
-    
-    std::int32_t getch() {
-      if (peek_character != -1) {
-        auto character = peek_character;
-        peek_character = -1;
-        return character;
-      }
-      
-      push_status();
-      echo(false);
-      icanon(false);
-      
-      auto character = '\0';
-      while (read(0, &character, 1) != 1);
-      
-      pop_status();
-      return character;
-    }
-    
-    bool key_available() {
-      if (peek_character != -1)
-        return true;
-        
-      push_status();
-      echo(false);
-      icanon(false);
-      
-      if (read(0, &peek_character, 1) == -1) {
-        pop_status();
-        return false;
-      }
-      
-      pop_status();
-      return peek_character != -1;
-    }
-    
-    static bool is_ansi_supported() {
+    static auto is_ansi_supported() -> bool {
       static auto terminal = std::string {getenv("TERM") == nullptr ? "" : getenv("TERM")};
       return isatty(fileno(stdout)) && (terminal == "xterm" || terminal == "xterm-color" || terminal == "xterm-256color" || terminal == "screen" || terminal == "screen-256color" || terminal == "linux" || terminal == "cygwin");
     }
     
-    void reset_terminal_mode() {
-      pop_status();
-      reset_colors_and_attributes();
+    static auto reset_terminal_mode() -> void {
+      terminal_mode_.reset();
     }
-    
-    static terminal terminal_;
-    
+
   private:
-    terminal() {
-      push_status();
-      echo(false);
-      icanon(true);
-    }
-    ~terminal() {
-      reset_terminal_mode();
-    }
-    
-    void reset_colors_and_attributes() {
-      if (is_ansi_supported()) std::cout << "\x1b]0;\x7" << std::flush;
-    }
-    
-    termios push_status() {
-      auto status = termios {};
-      tcgetattr(0, &status);
-      statuses.push_back(status);
-      return status;
-    }
-    
-    termios pop_status() {
-      if (statuses.size() == 0) {
-        auto status = termios {};
-        tcgetattr(0, &status);
-        return status;
-      }
-      auto status = statuses.back();
-      statuses.pop_back();
-      tcsetattr(0, TCSANOW, &status);
-      return status;
-    }
-    
-    std::int8_t peek_character {-1};
-    std::vector<termios> statuses;
+    inline static std::shared_ptr<terminal_mode> terminal_mode_;
+    inline static std::queue<std::int8_t> peek_characters_;
   };
-  
-  terminal terminal::terminal_;
   
   class key_info {
   public:
@@ -232,7 +195,7 @@ namespace {
       return *this;
     }
     
-    static bool key_available() {return !signal_couter_.empty() || !inputs.is_empty() || terminal::terminal_.key_available();}
+    static bool key_available() {return !signal_couter_.empty() || !inputs.is_empty() || terminal::key_available();}
     
     static key_info read() {
       if (!signal_couter_.empty()) {
@@ -248,8 +211,8 @@ namespace {
       
       do {
         std::this_thread::yield();
-        inputs.add(terminal::terminal_.getch());
-      } while (terminal::terminal_.key_available());
+        inputs.add(terminal::getch());
+      } while (terminal::key_available());
       
       auto it = key_info::keys.find(inputs.to_string());
       if (it != key_info::keys.end()) {
@@ -747,11 +710,11 @@ bool console::clear() {
 int32_t console::cursor_left() {
   if (!terminal::is_ansi_supported()) return ::cursor_left;
   std::cout << "\x1b[6n" << std::flush;
-  terminal::terminal_.getch();
-  terminal::terminal_.getch();
-  for (char c = terminal::terminal_.getch(); c != ';'; c = terminal::terminal_.getch());
+  terminal::getch();
+  terminal::getch();
+  for (char c = terminal::getch(); c != ';'; c = terminal::getch());
   std::string left;
-  for (char c = terminal::terminal_.getch(); c != 'R'; c = terminal::terminal_.getch())
+  for (char c = terminal::getch(); c != 'R'; c = terminal::getch())
     left.push_back(c);
   ::cursor_left = atoi(left.c_str()) - 1;
   return ::cursor_left;
@@ -772,12 +735,12 @@ bool console::cursor_size(std::int32_t size) {
 int32_t console::cursor_top() {
   if (!terminal::is_ansi_supported()) return ::cursor_top;
   std::cout << "\x1b[6n" << std::flush;
-  terminal::terminal_.getch();
-  terminal::terminal_.getch();
+  terminal::getch();
+  terminal::getch();
   auto top = std::string {};
-  for (char c = terminal::terminal_.getch(); c != ';'; c = terminal::terminal_.getch())
+  for (char c = terminal::getch(); c != ';'; c = terminal::getch())
     top.push_back(c);
-  for (char c = terminal::terminal_.getch(); c != 'R'; c = terminal::terminal_.getch());
+  for (char c = terminal::getch(); c != 'R'; c = terminal::getch());
   ::cursor_top = atoi(top.c_str()) - 1;
   return ::cursor_top;
 }
@@ -792,13 +755,13 @@ bool console::cursor_visible(bool visible) {
   return true;
 }
 
-int32_t console::foreground_color() {
-  return ::foreground_color;
-}
-
 bool console::echo(bool on) {
   if (!terminal::is_ansi_supported()) return false;
-  return terminal::terminal_.echo(on);
+  return terminal::echo(on);
+}
+
+int32_t console::foreground_color() {
+  return ::foreground_color;
 }
 
 bool console::foreground_color(std::int32_t color) {
@@ -871,8 +834,12 @@ bool console::reset_color() {
 }
 
 bool console::reset_console() {
-  terminal::terminal_.reset_terminal_mode();
-  return console::background_color(CONSOLE_COLOR_DEFAULT) && console::foreground_color(CONSOLE_COLOR_DEFAULT);
+  reset_terminal_mode();
+  return reset_color();
+}
+
+void console::reset_terminal_mode() {
+  terminal::reset_terminal_mode();
 }
 
 bool console::set_cursor_position(std::int32_t left, std::int32_t top) {
@@ -887,10 +854,10 @@ std::string console::title() {
   /** Didn't work correctly!
    std::cout << "\x1b[21t" << std::endl;
   
-   if (!terminal.key_available()) return ::title;
+   if (!terminal::key_available()) return ::title;
   
    std::string title;
-   for (auto c = terminal.getch(); terminal::terminal_.key_available(); c = terminal::terminal_.getch())
+   for (auto c = terminal::getch(); terminal::key_available(); c = terminal::getch())
      title.push_back(static_cast<char>(c));
    return title;
    */

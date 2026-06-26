@@ -70,34 +70,6 @@ namespace {
   auto window_top = 0;
   auto window_width = -1;
   
-  class terminal final {
-  public:
-    void force_compiler_optimizer_to_create_object() {
-    }
-    
-    void reset_terminal_mode() {
-      auto csbi = CONSOLE_SCREEN_BUFFER_INFO {};
-      GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
-      
-      csbi.wAttributes &= 0xFF0F;
-      csbi.wAttributes |= ((int32_t)background_color_ << 4) | (int32_t)foreground_color_;
-      SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), csbi.wAttributes);
-    }
-    
-    static terminal terminal_;
-    
-  private:
-    terminal() = default;
-    ~terminal() {
-      reset_terminal_mode();
-    }
-    
-    int32_t background_color_ = __default_background_color();
-    int32_t foreground_color_ = __default_foreground_color();
-  };
-  
-  terminal terminal::terminal_;
-
   bool is_windows_terminal() {
     return std::getenv("WT_SESSION") != nullptr;
   }
@@ -109,7 +81,6 @@ int32_t console::background_color() {
 
 bool console::background_color(int32_t color) {
   ::background_color = color;
-  terminal::terminal_.force_compiler_optimizer_to_create_object();
   auto csbi = CONSOLE_SCREEN_BUFFER_INFO {};
   GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
   
@@ -234,7 +205,6 @@ int32_t console::foreground_color() {
 
 bool console::foreground_color(int32_t color) {
   ::foreground_color = color;
-  terminal::terminal_.force_compiler_optimizer_to_create_object();
   auto csbi = CONSOLE_SCREEN_BUFFER_INFO {};
   GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
   
@@ -309,8 +279,11 @@ bool console::reset_color() {
 }
 
 bool console::reset_console() {
-  terminal::terminal_.reset_terminal_mode();
   return console::background_color(CONSOLE_COLOR_DEFAULT) && console::foreground_color(CONSOLE_COLOR_DEFAULT);
+}
+
+void console::reset_terminal_mode() {
+  // Nothing on Windows
 }
 
 bool console::set_cursor_position(int32_t left, int32_t top) {
