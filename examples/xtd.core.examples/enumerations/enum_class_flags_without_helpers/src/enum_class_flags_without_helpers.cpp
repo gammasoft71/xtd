@@ -8,7 +8,7 @@ enum class text_attribute {
   strikeout = 0b1000
 };
 
-text_attribute operator|(text_attribute lhs, text_attribute rhs) {return static_cast<text_attribute>(static_cast<std::underlying_type<text_attribute>::type>(lhs) | static_cast<std::underlying_type<text_attribute>::type>(rhs));}
+auto operator |(text_attribute lhs, text_attribute rhs) -> text_attribute {return static_cast<text_attribute>(static_cast<std::underlying_type<text_attribute>::type>(lhs) | static_cast<std::underlying_type<text_attribute>::type>(rhs));}
 
 template<> struct xtd::enum_set_attribute<text_attribute> {
   static auto attribute() noexcept {return xtd::enum_attribute::flags;}
