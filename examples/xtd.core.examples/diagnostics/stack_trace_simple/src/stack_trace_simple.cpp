@@ -2,12 +2,12 @@
 
 class stack_trace_sample {
 public:
-  void my_public_method() {
+  auto my_public_method() -> void {
     my_protected_method();
   }
   
 protected:
-  void my_protected_method() {
+  auto my_protected_method() -> void {
     auto mic = my_internal_class {};
     mic.throws_exception();
   }
@@ -15,7 +15,7 @@ protected:
 private:
   class my_internal_class {
   public:
-    void throws_exception() {
+    auto throws_exception() -> void {
       try {
         throw system_exception("A problem was encountered.");
       } catch (const system_exception&) {
@@ -44,7 +44,7 @@ auto main() -> int {
   } catch (const system_exception&) {
     // Create a xtd::diagnostics::stack_trace that captures filename, line number, and column information for the current thread.
     auto st = diagnostics::stack_trace {true};
-    for (auto i = 0ul; i < st.frame_count(); i++) {
+    for (auto i = 0ul; i < st.frame_count(); ++i) {
       // Note that high up the call stack, there is only one stack frame.
       auto sf = st.get_frame(i);
       console::write_line();
