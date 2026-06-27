@@ -3,7 +3,7 @@
 
 class operations_timer {
 public:
-  static void display_timer_properties() {
+  static auto display_timer_properties() -> void {
     // Display the timer frequency and resolution.
     if (diagnostics::stopwatch::is_high_resolution())
       console::write_line("Operations timed using the system's high-resolution performance counter.");
@@ -16,7 +16,7 @@ public:
     console::write_line("  Timer is accurate within {0} nanoseconds", nanosec_per_tick);
   }
   
-  static void time_operations() {
+  static auto time_operations() -> void {
     auto nanosec_per_tick = (1000l * 1000l * 1000l) / diagnostics::stopwatch::frequency();
     constexpr auto num_iterations = 10000;
     
@@ -41,7 +41,7 @@ public:
       // Run the current operation 10001 times.
       // The first execution time will be tossed out, since it can skew the average time.
       
-      for (auto i = 0; i <= num_iterations; i++) {
+      for (auto i = 0; i <= num_iterations; ++i) {
         auto ticks_this_time = 0l;
         auto input_num = 0;
         auto time_per_parse = diagnostics::stopwatch {};
