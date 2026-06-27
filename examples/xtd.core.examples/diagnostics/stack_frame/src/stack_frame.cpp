@@ -1,6 +1,6 @@
 #include <xtd/xtd>
 
-void method2(int count) {
+auto method2(int count) {
   try {
     if (count < 5)
       throw argument_exception("count too large", "count");
@@ -13,7 +13,7 @@ void method2(int count) {
   }
 }
 
-void method1() {
+auto method1() {
   try {
     method2(4);
   } catch (const system_exception&) {
