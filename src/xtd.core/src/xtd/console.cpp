@@ -342,7 +342,6 @@ string console::read_line(const string& text) {
 
 string console::read_line(const string& text, bool intercept) {
   reset_terminal_mode();
-  write(text);
   struct echo_off {
     echo_off(bool intercept) : intercept(intercept) {if (!is_input_redirected()) native::console::echo(!intercept);}
     ~echo_off() {
@@ -352,6 +351,7 @@ string console::read_line(const string& text, bool intercept) {
     }
     bool intercept = false;
   } echo_off {intercept};
+  write(text);
   out.flush();
   return stream_reader {in}.read_line();
 }
