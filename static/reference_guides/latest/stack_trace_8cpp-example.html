@@ -113,19 +113,19 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line">  <span class="keyword">class </span>main_class {</div>
 <div class="line">    <span class="keyword">static</span> <span class="keywordtype">void</span> method3() {</div>
 <div class="line">      console::write_line(<span class="stringliteral">&quot;stack_trace :&quot;</span>);</div>
-<div class="line">      console::write_line(diagnostics::stack_trace {});</div>
+<div class="line">      console::write_line(diagnostics::stack_trace {<span class="keyword">true</span>});</div>
 <div class="line">    }</div>
 <div class="line">    </div>
-<div class="line">    <span class="keyword">static</span> <span class="keywordtype">void</span> method2() {</div>
+<div class="line">    <span class="keyword">static</span> <span class="keyword">auto</span> method2() {</div>
 <div class="line">      method3();</div>
 <div class="line">    }</div>
 <div class="line">    </div>
-<div class="line">    <span class="keyword">static</span> <span class="keywordtype">void</span> method1() {</div>
+<div class="line">    <span class="keyword">static</span> <span class="keyword">auto</span> method1() {</div>
 <div class="line">      method2();</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">  <span class="keyword">public</span>:</div>
-<div class="line">    <span class="keyword">static</span> <span class="keywordtype">void</span> main() {</div>
+<div class="line">    <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
 <div class="line">      method1();</div>
 <div class="line">    }</div>
 <div class="line">  };</div>
@@ -133,7 +133,17 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line"> </div>
 <div class="line"><a id="a0" name="a0"></a><a class="code hl_define" href="group__keywords.html#gaeb9462ec721c9718cf689e93bf11bf56">startup_</a>(stack_trace_example::main_class::main);</div>
 <div class="line"> </div>
-<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">// This code produces the following output if stack_trace consructor has true parameter :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// stack_trace :</span></div>
+<div class="line"><span class="comment">//    at stack_trace_example::main_class::method3() in stack_trace.cpp:line 7</span></div>
+<div class="line"><span class="comment">//    at stack_trace_example::main_class::method2() in stack_trace.cpp:line 12</span></div>
+<div class="line"><span class="comment">//    at stack_trace_example::main_class::method1() in stack_trace.cpp:line 15</span></div>
+<div class="line"><span class="comment">//    at stack_trace_example::main_class::main() in stack_trace.cpp:line 20</span></div>
+<div class="line"><span class="comment">//    at main in stack_trace.cpp:line 25</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// This code produces the following output if stack_trace consructor has no or false parameter  :</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// stack_trace :</span></div>
 <div class="line"><span class="comment">//    at stack_trace_example::main_class::method3()</span></div>

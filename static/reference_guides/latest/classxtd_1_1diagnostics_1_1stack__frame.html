@@ -140,7 +140,7 @@ Inheritance diagram for xtd::diagnostics::stack_frame:</div>
 <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html" title="Provides information about a xtd::diagnostics::stack_frame, which represents a function call on the c...">xtd::diagnostics::stack_frame</a> information will be most informative with Debug build configurations. By default, Debug builds include debug symbols, while Release builds do not. The debug symbols contain most of the file, method name, line number, and column information used in constructing <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html" title="Provides information about a xtd::diagnostics::stack_frame, which represents a function call on the c...">xtd::diagnostics::stack_frame</a> objects. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example demonstrates the use of the <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html" title="Provides information about a xtd::diagnostics::stack_frame, which represents a function call on the c...">xtd::diagnostics::stack_frame</a> class to provide the stack frame information for a stack trace. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> method2(<span class="keywordtype">int</span> count) {</div>
+<div class="line"><span class="keyword">auto</span> method2(<span class="keywordtype">int</span> count) {</div>
 <div class="line">  <span class="keywordflow">try</span> {</div>
 <div class="line">    <span class="keywordflow">if</span> (count &lt; 5)</div>
 <div class="line">      <span class="keywordflow">throw</span> <a class="code hl_class" href="classxtd_1_1argument__exception.html">argument_exception</a>(<span class="stringliteral">&quot;count too large&quot;</span>, <span class="stringliteral">&quot;count&quot;</span>);</div>
@@ -153,7 +153,7 @@ Inheritance diagram for xtd::diagnostics::stack_frame:</div>
 <div class="line">  }</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> method1() {</div>
+<div class="line"><span class="keyword">auto</span> method1() {</div>
 <div class="line">  <span class="keywordflow">try</span> {</div>
 <div class="line">    method2(4);</div>
 <div class="line">  } <span class="keywordflow">catch</span> (<span class="keyword">const</span> system_exception&amp;) {</div>

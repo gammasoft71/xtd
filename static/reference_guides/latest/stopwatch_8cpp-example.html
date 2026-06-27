@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line"> </div>
 <div class="line"><span class="keyword">class </span>operations_timer {</div>
 <div class="line"><span class="keyword">public</span>:</div>
-<div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> display_timer_properties() {</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> display_timer_properties() -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">    <span class="comment">// Display the timer frequency and resolution.</span></div>
 <div class="line">    <span class="keywordflow">if</span> (diagnostics::stopwatch::is_high_resolution())</div>
 <div class="line">      console::write_line(<span class="stringliteral">&quot;Operations timed using the system&#39;s high-resolution performance counter.&quot;</span>);</div>
@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line">    console::write_line(<span class="stringliteral">&quot;  Timer is accurate within {0} nanoseconds&quot;</span>, nanosec_per_tick);</div>
 <div class="line">  }</div>
 <div class="line">  </div>
-<div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> time_operations() {</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> time_operations() -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">    <span class="keyword">auto</span> nanosec_per_tick = (1000l * 1000l * 1000l) / diagnostics::stopwatch::frequency();</div>
 <div class="line">    <span class="keyword">constexpr</span> <span class="keyword">auto</span> num_iterations = 10000;</div>
 <div class="line">    </div>
@@ -150,7 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line">      <span class="comment">// Run the current operation 10001 times.</span></div>
 <div class="line">      <span class="comment">// The first execution time will be tossed out, since it can skew the average time.</span></div>
 <div class="line">      </div>
-<div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> i = 0; i &lt;= num_iterations; i++) {</div>
+<div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> i = 0; i &lt;= num_iterations; ++i) {</div>
 <div class="line">        <span class="keyword">auto</span> ticks_this_time = 0l;</div>
 <div class="line">        <span class="keyword">auto</span> input_num = 0;</div>
 <div class="line">        <span class="keyword">auto</span> time_per_parse = diagnostics::stopwatch {};</div>

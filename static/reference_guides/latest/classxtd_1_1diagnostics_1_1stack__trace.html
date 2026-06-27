@@ -137,12 +137,12 @@ Inheritance diagram for xtd::diagnostics::stack_trace:</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">class </span>stack_trace_sample {</div>
 <div class="line"><span class="keyword">public</span>:</div>
-<div class="line">  <span class="keywordtype">void</span> my_public_method() {</div>
+<div class="line">  <span class="keyword">auto</span> my_public_method() -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">    my_protected_method();</div>
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line"><span class="keyword">protected</span>:</div>
-<div class="line">  <span class="keywordtype">void</span> my_protected_method() {</div>
+<div class="line">  <span class="keyword">auto</span> my_protected_method() -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">    <span class="keyword">auto</span> mic = my_internal_class {};</div>
 <div class="line">    mic.throws_exception();</div>
 <div class="line">  }</div>
@@ -150,7 +150,7 @@ Inheritance diagram for xtd::diagnostics::stack_trace:</div>
 <div class="line"><span class="keyword">private</span>:</div>
 <div class="line">  <span class="keyword">class </span>my_internal_class {</div>
 <div class="line">  <span class="keyword">public</span>:</div>
-<div class="line">    <span class="keywordtype">void</span> throws_exception() {</div>
+<div class="line">    <span class="keyword">auto</span> throws_exception() -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">      <span class="keywordflow">try</span> {</div>
 <div class="line">        <span class="keywordflow">throw</span> system_exception(<span class="stringliteral">&quot;A problem was encountered.&quot;</span>);</div>
 <div class="line">      } <span class="keywordflow">catch</span> (<span class="keyword">const</span> system_exception&amp;) {</div>
@@ -179,7 +179,7 @@ Inheritance diagram for xtd::diagnostics::stack_trace:</div>
 <div class="line">  } <span class="keywordflow">catch</span> (<span class="keyword">const</span> system_exception&amp;) {</div>
 <div class="line">    <span class="comment">// Create a xtd::diagnostics::stack_trace that captures filename, line number, and column information for the current thread.</span></div>
 <div class="line">    <span class="keyword">auto</span> st = diagnostics::stack_trace {<span class="keyword">true</span>};</div>
-<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> i = 0ul; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> &lt; st.frame_count(); <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>++) {</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> i = 0ul; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> &lt; st.frame_count(); ++<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>) {</div>
 <div class="line">      <span class="comment">// Note that high up the call stack, there is only one stack frame.</span></div>
 <div class="line">      <span class="keyword">auto</span> sf = st.get_frame(i);</div>
 <div class="line">      console::write_line();</div>

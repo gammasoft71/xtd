@@ -144,17 +144,17 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line">    }</div>
 <div class="line"> </div>
 <div class="line">  <span class="keyword">private</span>:</div>
-<div class="line">    <span class="keyword">static</span> <span class="keywordtype">void</span> exit() {</div>
+<div class="line">    [[noreturn]] <span class="keyword">static</span> <span class="keyword">auto</span> exit() -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">      console::write_line(<span class="stringliteral">&quot;Exit&quot;</span>);</div>
 <div class="line">      environment::exit(exit_status::success);</div>
 <div class="line">    }</div>
 <div class="line">    </div>
-<div class="line">    <span class="keyword">static</span> <span class="keywordtype">void</span> generate_signal(<a id="_a2" name="_a2"></a><a class="code hl_enumeration" href="group__xtd__core.html#ga437764d898631d282f7d95b573328c72">xtd::signal</a> signal) {</div>
+<div class="line">    <span class="keyword">static</span> <span class="keyword">auto</span> generate_signal(<a id="_a2" name="_a2"></a><a class="code hl_enumeration" href="group__xtd__core.html#ga437764d898631d282f7d95b573328c72">xtd::signal</a> signal) -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">      console::write_line(<span class="stringliteral">&quot;Generate {} signal&quot;</span>, signal);</div>
 <div class="line">      environment::raise(signal);</div>
 <div class="line">    }</div>
 <div class="line"> </div>
-<div class="line">    <span class="keyword">static</span> <span class="keywordtype">void</span> show_help() {</div>
+<div class="line">    <span class="keyword">static</span> <span class="keyword">auto</span> show_help() -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">      console::clear();</div>
 <div class="line">      console::write_line(<span class="stringliteral">&quot;Select a key :&quot;</span>);</div>
 <div class="line">      console::write_line(<span class="stringliteral">&quot;  a : Generate abort signal&quot;</span>);</div>
