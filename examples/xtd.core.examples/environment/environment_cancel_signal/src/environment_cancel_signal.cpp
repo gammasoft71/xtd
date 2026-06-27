@@ -35,17 +35,17 @@ namespace environment_cancel_sgnal_example {
     }
 
   private:
-    static void exit() {
+    [[noreturn]] static auto exit() -> void {
       console::write_line("Exit");
       environment::exit(exit_status::success);
     }
     
-    static void generate_signal(xtd::signal signal) {
+    static auto generate_signal(xtd::signal signal) -> void {
       console::write_line("Generate {} signal", signal);
       environment::raise(signal);
     }
 
-    static void show_help() {
+    static auto show_help() -> void {
       console::clear();
       console::write_line("Select a key :");
       console::write_line("  a : Generate abort signal");
