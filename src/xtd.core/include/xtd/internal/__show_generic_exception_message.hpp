@@ -23,6 +23,6 @@ inline auto __show_generic_exception_message__(const std::exception& e) -> void 
 inline auto __show_generic_exception_message__() -> void {xtd::forms::application::main_form().has_value() ? xtd::forms::exception_box::show(xtd::forms::application::main_form().value().get(), xtd::forms::application::product_name()) : xtd::forms::exception_box::show(xtd::forms::application::product_name());}
 #else
 inline auto __show_generic_exception_message__(const std::exception& e) -> void {std::cerr << std::endl << xtd::string::format("Unhandled exception: {}", dynamic_cast<const xtd::exception*>(&e) ? static_cast<const xtd::exception&>(e).to_string() : e.what()) << std::endl;}
-inline auto __show_generic_exception_message__() -> void { std::cerr << std::endl << xtd::string::format("Unhandled exception: Unknown exception occurred") << std::endl;}
+inline auto __show_generic_exception_message__() -> void {std::cerr << std::endl << xtd::string::format("Unhandled exception: Unknown exception occurred") << std::endl;}
 #endif
 /// @endcond
