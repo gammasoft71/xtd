@@ -167,7 +167,7 @@ auto throw_helper::throws(enum exception_case exception_case, const xtd::type& t
   throws(exception_case, string::format("The `{0}` type does not inherit from `xtd::iformat` or the specialisation for the `{0}` type in the `xtd::to_string` specialisation method does not exist.", typeof_(type).full_name()).chars().c_str(), location);
 }
 
-auto throw_helper::throws(xtd::helpers::exception_case exception_case, const xtd::net::sockets::socket_error& error, const source_location& location) -> void {
+auto throw_helper::throws(xtd::helpers::exception_case exception_case, const socket_error& error, const source_location& location) -> void {
   if (exception_case != exception_case::socket) throw argument_exception {"This overload can only be used with the xtd::helpers::exception_case::socket value."};
   throw socket_exception(error, to_stack_frame(location));
 }
