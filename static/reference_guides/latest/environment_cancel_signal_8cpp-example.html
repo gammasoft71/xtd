@@ -116,6 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line">    <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
 <div class="line">      environment::cancel_signal += <a id="a1" name="a1"></a><a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a>(signal_cancel_event_args&amp; e) {</div>
 <div class="line">        console::write_line(<span class="stringliteral">&quot;A {} signal occured!&quot;</span>, e.signal());</div>
+<div class="line">        <span class="keywordflow">if</span> (e.signal() ==signal::segmentation_violation &amp;&amp; cancel == <span class="keyword">true</span>)  console::write_line(<span class="stringliteral">&quot;  The user&#39;s cancellation will be ignored with the {} signal!&quot;</span>, e.signal());</div>
 <div class="line">        e.cancel(cancel);</div>
 <div class="line">      };</div>
 <div class="line"> </div>
