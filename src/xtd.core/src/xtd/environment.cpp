@@ -125,11 +125,12 @@ private:
     std::signal(signal, signal_catcher::on_segmentation_violation_occured);
     auto e = signal_cancel_event_args {xtd::signal::segmentation_violation};
     environment::on_cancel_signal(e);
-    if (!e.cancel()) {
+    // If you try to cancel an xtd::signal::segmentation_violation, the system may enter an infinite loop. This is why xtd ignores the cancellation requested by the user.
+    //if (!e.cancel()) {
       last_signal_ = signal;
       console::__internal_rstc__(); // reset terminal mode
       throw_helper::throws(exception_case::access_violation); //exit(128 + signal);
-    }
+    //}
   }
   
   static void on_software_termination_occured(int32 signal) {

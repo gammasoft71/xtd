@@ -530,6 +530,7 @@ namespace xtd {
     /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
     /// @warning The xtd::signal::interrupt and xtd::console_special_key::control_c use the same signal ([SIGINT](https://en.cppreference.com/w/cpp/utility/program/signal)).
     /// @warning The xtd::signal::interrupt and xtd::console_special_key::control_c can be cancelled with xtd::environment::cancel_signal event or xtd::console::cancel_key_press event. Both of these events are called when [SIGINT](https://en.cppreference.com/w/cpp/utility/program/signal) is raised.
+    /// @warning If you try to cancel an xtd::signal::segmentation_violation, the system may enter an infinite loop. This is why xtd ignores the cancellation requested by the user.
     static event<environment, signal_cancel_event_handler> cancel_signal;
     
     /// @brief Occurs when the terminates normally (via xtd::environment::exit or returning from the main function).
