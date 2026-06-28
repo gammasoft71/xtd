@@ -13,12 +13,16 @@
 #include "../../../include/xtd/argument_exception.hpp"
 #include "../../../include/xtd/as.hpp"
 #include "../../../include/xtd/environment.hpp"
+#include "../../../include/xtd/finally.hpp"
 #include "../../../include/xtd/int32_object.hpp"
 #include "../../../include/xtd/invalid_handle.hpp"
 #include "../../../include/xtd/invalid_operation_exception.hpp"
 #include "../../../include/xtd/not_implemented_exception.hpp"
 #include "../../../include/xtd/as.hpp"
 #include "../../../include/xtd/using.hpp"
+#define __XTD_CORE_INTERNAL__
+#include "../../../include/xtd/internal/__show_generic_exception_message.hpp"
+#undef __XTD_CORE_INTERNAL__
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/types>
 #include <xtd/native/thread>
@@ -565,29 +569,40 @@ bool thread::join_all_ptr(const array<thread*>& threads, int32 milliseconds_time
 }
 
 void thread::thread_proc() {
-  if (data_->thread_id == invalid_thread_id) data_->thread_id = get_current_thread_id();
-  if (data_->handle == invalid_handle) data_->handle = get_current_thread_handle();
-  if (!xtd::string::is_empty(data_->name)) native::thread::set_current_thread_name(data_->name);
-  if (data_->priority != thread_priority::normal) native::thread::set_priority(data_->handle, as<int32>(data_->priority));
-  if (data_->processor_affinity.length() != 0) native::thread::set_processor_affinity(data_->handle, data_->processor_affinity.items());
-  
-  if (!data_->thread_start.is_empty()) data_->thread_start();
-  else if (!data_->parameterized_thread_start.is_empty()) data_->parameterized_thread_start(data_->parameter);
-  else throw_helper::throws(exception_case::invalid_operation);
-  
-  if (is_aborted()) throw_helper::throws(exception_case::thread_abort);
-  if (is_aborted()) throw_helper::throws(exception_case::thread_interrupted);
-  
-  if (!data_) return; // Only if thread destroyed before joined
-  data_->state |= threading::thread_state::stopped;
-  data_->end_thread_event.set();
-  
-  if (!is_background()) return;
-  auto lock = std::lock_guard<std::recursive_mutex> {get_static_data().threads_mutex};
-  auto index = get_static_data().threads.find_index(xtd::predicate<const sptr<thread>&> {[&](const auto & value) {return value->data_ ? value->data_->managed_thread_id == data_->managed_thread_id : false;}});
-  if (index == get_static_data().threads.npos) return;
-  get_static_data().threads[index]->data_.reset();
-  get_static_data().threads.remove_at(index);
+  try {
+    if (data_->thread_id == invalid_thread_id) data_->thread_id = get_current_thread_id();
+    if (data_->handle == invalid_handle) data_->handle = get_current_thread_handle();
+    if (!xtd::string::is_empty(data_->name)) native::thread::set_current_thread_name(data_->name);
+    if (data_->priority != thread_priority::normal) native::thread::set_priority(data_->handle, as<int32>(data_->priority));
+    if (data_->processor_affinity.length() != 0) native::thread::set_processor_affinity(data_->handle, data_->processor_affinity.items());
+    
+    if (!data_->thread_start.is_empty()) data_->thread_start();
+    else if (!data_->parameterized_thread_start.is_empty()) data_->parameterized_thread_start(data_->parameter);
+    else throw_helper::throws(exception_case::invalid_operation);
+    
+    if (is_aborted()) throw_helper::throws(exception_case::thread_abort);
+    if (is_aborted()) throw_helper::throws(exception_case::thread_interrupted);
+  } catch (const std::exception& e) {
+    __show_generic_exception_message__(e);
+    data_->state |= threading::thread_state::stopped;
+    data_->end_thread_event.set();
+  } catch (...) {
+    \
+    __show_generic_exception_message__();
+    data_->state |= threading::thread_state::stopped;
+    data_->end_thread_event.set();
+  } finally_  {
+    if (!data_) return; // Only if thread destroyed before joined
+    data_->state |= threading::thread_state::stopped;
+    data_->end_thread_event.set();
+    
+    if (!is_background()) return;
+    auto lock = std::lock_guard<std::recursive_mutex> {get_static_data().threads_mutex};
+    auto index = get_static_data().threads.find_index(xtd::predicate<const sptr<thread>&> {[&](const auto & value) {return value->data_ ? value->data_->managed_thread_id == data_->managed_thread_id : false;}});
+    if (index == get_static_data().threads.npos) return;
+    get_static_data().threads[index]->data_.reset();
+    get_static_data().threads.remove_at(index);
+  };
 }
 
 thread& thread::unmanaged_thread() {
