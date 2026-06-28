@@ -7,6 +7,7 @@ namespace environment_cancel_sgnal_example {
     static auto main() {
       environment::cancel_signal += delegate_(signal_cancel_event_args& e) {
         console::write_line("A {} signal occured!", e.signal());
+        if (e.signal() ==signal::segmentation_violation && cancel == true)  console::write_line("  The user's cancellation will be ignored with the {} signal!", e.signal());
         e.cancel(cancel);
       };
 
