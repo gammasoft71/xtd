@@ -14,6 +14,11 @@
 #include <exception>
 #include <system_error>
 
+/// @cond
+struct __xtd_exception_gui__;
+auto __xtd_load_exception_gui__() -> void;
+/// @endcond
+
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @cond
@@ -131,16 +136,40 @@ namespace xtd {
     /// @brief Sets if the generation of the stack trace is enabled.
     /// @paran enable triue if stack trace enabled; otherwise `false`.
     static auto enable_stack_trace(bool enable) noexcept -> void;
-    /// @}
     
+    /// @brief Shows speciefied exception with xtd::forms::exception_dialog or xtd::console.
+    /// @param e The exceptio to show.
+    /// @remarks Use xtd::forms::exception_dialog with GUI application; otherwise use xtd::console.
+    static auto show_exception(const std::exception& e) -> xtd::int32 {
+      load_exception_gui();
+      return show_exception_(e);
+    }
+    /// @brief Shows unspecified exception with xtd::forms::exception_dialog or xtd::console.
+    /// @remarks Use xtd::forms::exception_dialog with GUI application; otherwise use xtd::console.
+    static auto show_exception() -> xtd::int32 {
+      load_exception_gui();
+      return show_exception_();
+    }
+    /// @}
+
   private:
+    friend struct ::__xtd_exception_gui__;
     exception(const xtd::optional<xtd::string>& message, xtd::uptr<xtd::exception>&& inner_exception, const xtd::diagnostics::stack_frame& stack_frame, bool);
     [[nodiscard]] auto stack_trace_to_string() const noexcept -> xtd::string;
     
     [[nodiscard]] auto get_name() const noexcept -> const xtd::string&;
-    
+    static auto load_exception_gui() -> void {
+#if __XTD_CURRENT_TARGET_ID__ == __XTD_TARGET_ID_GUI_APPLICATION__ || __XTD_CURRENT_TARGET_ID__ == __XTD_TARGET_ID_UNKNOWN__
+      __xtd_load_exception_gui__();
+#endif
+    }
+    static auto show_exception_(const std::exception& e) -> xtd::int32;
+    static auto show_exception_() -> xtd::int32;
+
     struct data;
     xtd::ptr<data> data_;
     static bool enable_stack_trace_;
+    static xtd::intptr show_exception_gui_with_exception;
+    static xtd::intptr show_exception_gui;
   };
 }

@@ -8,12 +8,9 @@
 #include "core_export.hpp"
 #include "delegate.hpp"
 #include "environment.hpp"
+#include "exception.hpp"
 #include "optional.hpp"
 #include "static.hpp"
-#include <exception>
-#define __XTD_CORE_INTERNAL__
-#include "internal/__show_generic_exception_message.hpp"
-#undef __XTD_CORE_INTERNAL__
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -163,12 +160,9 @@ namespace xtd {
         end_run();
         return exit_code;
       } catch (const std::exception& e) {
-        __show_generic_exception_message__(e);
-        return EXIT_FAILURE;
+        return xtd::exception::show_exception(e);
       } catch (...) {
-        \
-        __show_generic_exception_message__();
-        return EXIT_FAILURE;
+        return xtd::exception::show_exception();
       }
     }
     

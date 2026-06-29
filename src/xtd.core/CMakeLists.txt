@@ -1160,7 +1160,6 @@ add_sources(
   "include/xtd/internal/__numeric_formatter.hpp"
   "include/xtd/internal/__parse.hpp"
   "include/xtd/internal/__print.hpp"
-  "include/xtd/internal/__show_generic_exception_message.hpp"
   "include/xtd/internal/__sprintf.hpp"
   "include/xtd/internal/__string_definitions.hpp"
   "include/xtd/internal/__unique_ptr_object_definition.hpp"

@@ -29,6 +29,30 @@ using namespace xtd::threading;
 
 extern std::optional<xtd::toolkit> __xtd_toolkit__;
 
+namespace {
+  auto show_exception_dialog_box(const std::exception& e) -> dialog_result {
+    return application::main_form().has_value() ? exception_box::show(application::main_form().value().get(), e, application::product_name()) : exception_box::show(e, application::product_name());
+  }
+  
+  auto show_exception_dialog_box() -> dialog_result {
+    return application::main_form().has_value() ? exception_box::show(application::main_form().value().get(), application::product_name()) : exception_box::show(application::product_name());
+  }
+}
+
+struct __xtd_exception_gui__ {
+  static auto load() -> void {
+    exception::show_exception_gui_with_exception = reinterpret_cast<intptr>(&show_exception_with_exception);
+    exception::show_exception_gui = reinterpret_cast<intptr>(&show_exception);
+  }
+
+  inline static delegate<void(const std::exception& e)> show_exception_with_exception = [](const std::exception& e) {show_exception_dialog_box(e);};
+  inline static delegate<void()> show_exception = []() {show_exception_dialog_box();};
+};
+
+auto __xtd_load_exception_gui__() -> void {
+  __xtd_exception_gui__::load();
+}
+  
 auto application::__opaque_crt_prv_msg__(intptr hwnd, int32 msg, intptr wparam, intptr lparam, intptr result, intptr handle) noexcept {
   return xtd::forms::message(hwnd, msg, wparam, lparam, result, handle);
 }
@@ -399,6 +423,8 @@ void application::run() {
 }
 
 void application::run(xtd::forms::application_context& context) {
+  __xtd_load_exception_gui__();
+
   if (application::application::message_loop_ == true) throw_helper::throws(exception_case::invalid_operation, "Application already running");
   if (control::check_for_illegal_cross_thread_calls() && !thread::current_thread().is_main_thread()) throw_helper::throws(exception_case::invalid_operation, xtd::string::format("Cross-thread operation not valid: {}", typeof_<application>().full_name()).chars().c_str());
   
@@ -452,7 +478,7 @@ bool application::on_app_thread_exception() {
 
 bool application::on_thread_exception(const threading::thread_exception_event_args& e) {
   auto safe_thread_exception = thread_exception;
-  if (safe_thread_exception.is_empty()) return (main_form().has_value() ? exception_box::show(main_form().value().get(), e.exception(), product_name()) : exception_box::show(e.exception(), product_name())) == dialog_result::ok;
+  if (safe_thread_exception.is_empty()) return show_exception_dialog_box(e.exception()) == dialog_result::ok;
   auto obj = object {};
   safe_thread_exception(obj, e);
   return true;

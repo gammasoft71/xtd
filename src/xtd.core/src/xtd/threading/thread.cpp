@@ -20,9 +20,6 @@
 #include "../../../include/xtd/not_implemented_exception.hpp"
 #include "../../../include/xtd/as.hpp"
 #include "../../../include/xtd/using.hpp"
-#define __XTD_CORE_INTERNAL__
-#include "../../../include/xtd/internal/__show_generic_exception_message.hpp"
-#undef __XTD_CORE_INTERNAL__
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/types>
 #include <xtd/native/thread>
@@ -583,12 +580,11 @@ void thread::thread_proc() {
     if (is_aborted()) throw_helper::throws(exception_case::thread_abort);
     if (is_aborted()) throw_helper::throws(exception_case::thread_interrupted);
   } catch (const std::exception& e) {
-    __show_generic_exception_message__(e);
+    xtd::exception::show_exception(e);
     data_->state |= threading::thread_state::stopped;
     data_->end_thread_event.set();
   } catch (...) {
-    \
-    __show_generic_exception_message__();
+    xtd::exception::show_exception();
     data_->state |= threading::thread_state::stopped;
     data_->end_thread_event.set();
   } finally_  {

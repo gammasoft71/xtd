@@ -7,12 +7,17 @@
 #include "../../include/xtd/diagnostics/stack_trace.hpp"
 #include "../../include/xtd/io/path.hpp"
 #include "../../include/xtd/reflection/assembly.hpp"
+#include "../../include/xtd/threading/thread.hpp"
 
 using namespace xtd;
+using namespace xtd::threading;
 
 bool exception::enable_stack_trace_ = true;
+intptr exception::show_exception_gui_with_exception = 0;
+intptr exception::show_exception_gui = 0;
 
 struct exception::data {
+  friend struct __show_exception_gui__;
   data(const std::optional<string>& message, uptr<exception>&& inner_exception, const diagnostics::stack_frame& stack_frame) : message {message}, inner_exception {std::move(inner_exception)}, stack_frame {stack_frame} {}
   data(const std::optional<string>& message, const string& help_link, const diagnostics::stack_frame& stack_frame) : message {message}, help_link {help_link}, stack_frame {stack_frame} {}
   data(const std::optional<string>& message, const std::error_code& error, const string& help_link, const diagnostics::stack_frame& stack_frame) : message {message}, error {error}, help_link {help_link}, stack_frame {stack_frame} {}
@@ -108,6 +113,18 @@ string exception::to_string() const noexcept {
 
 const char* exception::what() const noexcept {
   return xtd::string::is_empty(message()) ? get_name().chars().c_str() : message().chars().c_str();
+}
+
+auto exception::show_exception_(const std::exception& e) -> int32 {
+  if (thread::current_thread().is_main_thread() && show_exception_gui_with_exception) (*reinterpret_cast<delegate<void(const std::exception& e)>*>(show_exception_gui_with_exception))(e);
+  else xtd::console::write_line("{}Unhandled exception: {}", environment::new_line(), dynamic_cast<const xtd::exception*>(&e) ? static_cast<const xtd::exception&>(e).to_string() : e.what());
+  return EXIT_FAILURE;
+}
+
+auto exception::show_exception_() -> int32 {
+  if (thread::current_thread().is_main_thread() && show_exception_gui) (*reinterpret_cast<delegate<void()>*>(show_exception_gui))();
+  else xtd::console::write_line("{}Unhandled exception: Unknown exception occurred", environment::new_line());
+  return EXIT_FAILURE;
 }
 
 string exception::stack_trace_to_string() const noexcept {
