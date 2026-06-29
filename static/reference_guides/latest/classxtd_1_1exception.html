@@ -225,6 +225,10 @@ Public Static Methods</h2></td></tr>
 <tr class="memdesc:a3df0332536237da1e62a6f635ef97ff7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets if the generation of the stack trace is enabled.  <br /></td></tr>
 <tr class="memitem:a7e259c958d26eaa9803e7e06ab29dd04" id="r_a7e259c958d26eaa9803e7e06ab29dd04"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a7e259c958d26eaa9803e7e06ab29dd04">enable_stack_trace</a> (bool enable) noexcept -&gt; void</td></tr>
 <tr class="memdesc:a7e259c958d26eaa9803e7e06ab29dd04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets if the generation of the stack trace is enabled. @paran enable triue if stack trace enabled; otherwise <span class="tt">false</span>.  <br /></td></tr>
+<tr class="memitem:a605f0a0a68ce5fafc5f77f0af62a62c2" id="r_a605f0a0a68ce5fafc5f77f0af62a62c2"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a605f0a0a68ce5fafc5f77f0af62a62c2">show_exception</a> (const std::exception &amp;e) -&gt; <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td></tr>
+<tr class="memdesc:a605f0a0a68ce5fafc5f77f0af62a62c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shows speciefied exception with <a class="el" href="classxtd_1_1forms_1_1exception__dialog.html" title="Represents a common dialog box that displays exception dialog.">xtd::forms::exception_dialog</a> or <a class="el" href="classxtd_1_1console.html" title="Represents the standard input, output, and error streams for console applications.">xtd::console</a>.  <br /></td></tr>
+<tr class="memitem:a3460640c85f07fd5bd3135389a626eb0" id="r_a3460640c85f07fd5bd3135389a626eb0"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a3460640c85f07fd5bd3135389a626eb0">show_exception</a> () -&gt; <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td></tr>
+<tr class="memdesc:a3460640c85f07fd5bd3135389a626eb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shows unspecified exception with <a class="el" href="classxtd_1_1forms_1_1exception__dialog.html" title="Represents a common dialog box that displays exception dialog.">xtd::forms::exception_dialog</a> or <a class="el" href="classxtd_1_1console.html" title="Represents the standard input, output, and error streams for console applications.">xtd::console</a>.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -848,6 +852,68 @@ template&lt;typename exception_t&gt; </div>
 </div><div class="memdoc">
 
 <p>Sets if the generation of the stack trace is enabled. @paran enable triue if stack trace enabled; otherwise <span class="tt">false</span>. </p>
+
+</div>
+</div>
+<a id="a605f0a0a68ce5fafc5f77f0af62a62c2" name="a605f0a0a68ce5fafc5f77f0af62a62c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a605f0a0a68ce5fafc5f77f0af62a62c2">&#9670;&#160;</a></span>show_exception() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto xtd::exception::show_exception </td>
+          <td>(</td>
+          <td class="paramtype">const std::exception &amp;</td>          <td class="paramname"><span class="paramname"><em>e</em></span></td><td>)</td>
+          <td> -&gt; <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Shows speciefied exception with <a class="el" href="classxtd_1_1forms_1_1exception__dialog.html" title="Represents a common dialog box that displays exception dialog.">xtd::forms::exception_dialog</a> or <a class="el" href="classxtd_1_1console.html" title="Represents the standard input, output, and error streams for console applications.">xtd::console</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">e</td><td>The exceptio to show. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Use <a class="el" href="classxtd_1_1forms_1_1exception__dialog.html" title="Represents a common dialog box that displays exception dialog.">xtd::forms::exception_dialog</a> with GUI application; otherwise use <a class="el" href="classxtd_1_1console.html" title="Represents the standard input, output, and error streams for console applications.">xtd::console</a>. </dd></dl>
+
+</div>
+</div>
+<a id="a3460640c85f07fd5bd3135389a626eb0" name="a3460640c85f07fd5bd3135389a626eb0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3460640c85f07fd5bd3135389a626eb0">&#9670;&#160;</a></span>show_exception() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto xtd::exception::show_exception </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> -&gt; <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Shows unspecified exception with <a class="el" href="classxtd_1_1forms_1_1exception__dialog.html" title="Represents a common dialog box that displays exception dialog.">xtd::forms::exception_dialog</a> or <a class="el" href="classxtd_1_1console.html" title="Represents the standard input, output, and error streams for console applications.">xtd::console</a>. </p>
+<dl class="section remark"><dt>Remarks</dt><dd>Use <a class="el" href="classxtd_1_1forms_1_1exception__dialog.html" title="Represents a common dialog box that displays exception dialog.">xtd::forms::exception_dialog</a> with GUI application; otherwise use <a class="el" href="classxtd_1_1console.html" title="Represents the standard input, output, and error streams for console applications.">xtd::console</a>. </dd></dl>
 
 </div>
 </div>
