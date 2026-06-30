@@ -98,7 +98,7 @@ startup_(environment_example::program::main);
 // user_domain_name: !---OMITTED---!
 // user_interactive: true
 // user_name: !---OMITTED---!
-// version: 0.2.0
+// version: 1.0.0
 // working_set: 0
 // expand_environment_variables:
 // My home folder is /Users/!---OMITTED---! and user is !---OMITTED---!
