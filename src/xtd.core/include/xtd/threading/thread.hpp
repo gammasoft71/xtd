@@ -345,8 +345,10 @@ namespace xtd {
       template<typename collection_t>
       static auto join_all(const collection_t& threads, int32 milliseconds_timeout) -> bool {
         auto thread_pointers = xtd::array<thread*> {};
-        for (auto& item : threads)
+        for (auto& item : threads) {
+          if (item.thread_id() == get_current_thread_id()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
           thread_pointers.resize(thread_pointers.length() + 1, const_cast<thread*>(&item));
+        }
         return join_all_ptr(thread_pointers, milliseconds_timeout);
       }
       /// @brief Blocks the calling thread until all specified joinable threads collection terminate or the specified time elapses, while continuing.
@@ -388,8 +390,10 @@ namespace xtd {
       template<typename item_t>
       static auto join_all(const std::initializer_list<item_t>& threads, int32 milliseconds_timeout) -> bool {
         auto thread_pointers = xtd::array<thread*> {};
-        for (auto& item : threads)
+        for (auto& item : threads) {
+          if (item.thread_id() == get_current_thread_id()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
           thread_pointers.resize(thread_pointers.length() + 1, const_cast<thread*>(&item));
+        }
         return join_all_ptr(thread_pointers, milliseconds_timeout);
       }
       template<typename item_t>

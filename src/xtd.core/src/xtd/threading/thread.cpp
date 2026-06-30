@@ -393,8 +393,10 @@ bool thread::join_all(const std::initializer_list<sptr<thread>>& threads) {
 
 bool thread::join_all(const std::initializer_list<sptr<thread>>& threads, int32 milliseconds_timeout) {
   auto thread_pointers = list<thread*> {};
-  for (auto& thread : threads)
+  for (auto& thread : threads) {
+    if (thread->thread_id() == get_current_thread_id()) throw_helper::throws(exception_case::argument);
     thread_pointers.add(thread.get());
+  }
   return join_all_ptr(thread_pointers.to_array(), milliseconds_timeout);
 }
 
