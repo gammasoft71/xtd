@@ -1,6 +1,7 @@
 #include "../../include/xtd/io/directory.hpp"
 #include "../../include/xtd/io/path.hpp"
 //#include "../../include/xtd/threading/thread_abort_exception"
+#include "../../include/xtd/threading/thread"
 #include "../../include/xtd/access_violation_exception.hpp"
 #include "../../include/xtd/threading/thread.hpp"
 #include "../../include/xtd/as.hpp"
@@ -318,6 +319,7 @@ void environment::exit() {
 }
 
 void environment::exit(int32 exit_code) {
+  xtd::threading::thread::join_all();
   std::exit(exit_code);
 }
 
