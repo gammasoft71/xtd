@@ -18,6 +18,7 @@ xtdc run
 ## Output
 
 ```
+
 expand_environment_variables:
-  My system drive is C: and my system root is C:\windows
+  My user name is "gammasoft71" and the temp path is "/var/folders/xg/4utgf5o735j2lqi2mhtoxps00000ba/T/"
 ```
