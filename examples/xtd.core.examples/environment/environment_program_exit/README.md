@@ -21,5 +21,5 @@ xtdc run
 Start
 ..................................................
 End
-The program is stopped!
+The program is stopped normally!
 ```

@@ -4,22 +4,21 @@ namespace environment_program_exit_example {
   class program static_ {
   public:
     // The main entry point for the application.
-    static auto main(const argument_collection& args) {
-      environment::program_exit += delegate_(auto e) {
+    static auto main(const argument_collection& args) async_ {
+      environment::program_exit += delegate_(const program_exit_event_args& e) {
         console::write_line("The program is stopped {}ly!", e.exit_mode());
       };
       
       console::write_line("Start");
       // Do something...
-      auto do_something_thread = thread{[] {
+      auto do_something = task<>::run([] {
         for (auto step = 0; step < 50; ++step) {
           console::write('.');
-          threading::thread::sleep(100_ms);
+          thread::sleep(100_ms);
         }
         console::write_line();
-      }};
-      do_something_thread.start();
-      do_something_thread.join();
+      });
+      co_await do_something;
       console::write_line("End");
       
       if (args.length() == 1 && args[0] == "exit") {
@@ -39,8 +38,24 @@ startup_(environment_program_exit_example::program::main);
 
 // This code produces the following output :
 //
+// >environment_program_exit
 // Start
 // ..................................................
 // End
-// The program is stopped!
+// The program is stopped normally!
+//
+// >environment_program_exit exit
+// Start
+// ..................................................
+// End
+// Before environment::exit
+// The program is stopped normally!
+
+//
+// >environment_program_exit quick_exit
+// Start
+// ..................................................
+// End
+// Before environment::quick_exit
+// The program is stopped quickly!
 
