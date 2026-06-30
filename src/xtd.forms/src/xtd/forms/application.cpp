@@ -18,6 +18,7 @@
 #include <xtd/reflection/assembly>
 #include <xtd/environment>
 #include <xtd/invalid_operation_exception>
+#include <xtd/threading/thread>
 #include <xtd/globalization/translator>
 
 using namespace xtd;
@@ -384,10 +385,11 @@ void application::exit() {
 
 void application::exit(cancel_event_args& e) {
   e.cancel(!close_open_forms());
-  if (!e.cancel()) native::application::exit();
+  if (!e.cancel()) exit_thread();
 }
 
 void application::exit_thread() {
+  thread::join_all();
   native::application::exit();
 }
 
