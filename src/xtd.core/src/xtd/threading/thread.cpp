@@ -448,7 +448,7 @@ bool thread::join_all(const array<uptr<thread>>& threads, const time_span& timeo
 }
 
 void thread::close() {
-  if (is_main_thread() || is_unmanaged_thread()) return;
+  if (is_main_thread() || is_unmanaged_thread() || thread_id() == get_current_thread_id()) return;
   if (data_ && data_->joinable) join();
   if (data_ && !is_unstarted() && !is_stopped()) native::thread::cancel(handle());
 }
@@ -552,7 +552,7 @@ bool thread::join_all_ptr(const array<thread*>& threads, int32 milliseconds_time
   thread::yield();
   if (milliseconds_timeout == timeout::infinite) {
     for (auto thread : threads) {
-      if (thread->joinable()) thread->join();
+      if (thread->thread_id() != get_current_thread_id() && thread->joinable()) thread->join();
       thread::yield();
     }
     return true;
