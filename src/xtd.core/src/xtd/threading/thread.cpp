@@ -252,7 +252,7 @@ void thread::join() {
 
 bool thread::join(int32 milliseconds_timeout) {
   if (is_unstarted()) throw_helper::throws(exception_case::thread_state);
-  if (thread_id() == get_current_thread_id()) throw_helper::throws(exception_case::synchronization_lock);
+  if (thread_id() == get_current_thread_id()) throw_helper::throws(exception_case::thread_state);
   if (milliseconds_timeout < timeout::infinite) throw_helper::throws(exception_case::argument);
   
   if (data_->interrupted == true) interrupt_internal();
