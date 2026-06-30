@@ -181,10 +181,8 @@ void application::enable_visual_style(bool value) {
 }
 
 void application::exit() {
-  if (wxTheApp)
-    wxTheApp->ExitMainLoop();
-  else
-    ::exit(EXIT_SUCCESS);
+  if (wxTheApp) wxTheApp->ExitMainLoop();
+  else environment::exit(EXIT_SUCCESS);
 }
 
 void application::initialize() {
