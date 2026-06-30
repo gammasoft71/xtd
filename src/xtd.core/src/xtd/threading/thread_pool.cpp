@@ -66,8 +66,15 @@ void thread_pool::join_all() {
 }
 
 bool thread_pool::join_all(int32 milliseconds_timeout) {
+  static_data_.close_threads_manual_reset_event.set();
   auto result = join_all_threads(milliseconds_timeout);
-  if (result) result = join_all_asynchronous_io_threads(milliseconds_timeout);
+  static_data_.close_threads_manual_reset_event.reset();
+  if (result) {
+    static_data_.close_asynchronous_io_threads_manual_reset_event.set();
+    result = join_all_asynchronous_io_threads(milliseconds_timeout);
+    static_data_.close_asynchronous_io_threads_manual_reset_event.reset();
+  }
+  
   return result;
 }
 
