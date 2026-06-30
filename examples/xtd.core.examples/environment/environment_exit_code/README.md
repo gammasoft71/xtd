@@ -18,5 +18,16 @@ xtdc run
 ## Output
 
 ```
-Directory entry:   /!---OMITTED---!/Desktop/.
+>environment_exit_code
+>Program ended with exit code: 89
+
+>environment_exit_code xtd
+>Program ended with exit code: 22
+
+>environment_exit_code 2147483648
+>Program ended with exit code: 34
+
+>environment_exit_code 2142
+Result: 4284
+>Program ended with exit code: 0
 ```
