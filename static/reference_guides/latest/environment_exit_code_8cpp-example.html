@@ -115,18 +115,11 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line">    <span class="comment">// The main entry point for the application.</span></div>
 <div class="line">    <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
 <div class="line">      <span class="keyword">auto</span> args = environment::get_command_line_args();</div>
-<div class="line">      <span class="keywordflow">if</span> (args.length() == 1)</div>
-<div class="line">        environment::exit_code(ECANCELED);</div>
-<div class="line">      <span class="keywordflow">else</span> {</div>
-<div class="line">        <span class="keyword">auto</span> value = 0;</div>
-<div class="line">        <span class="keywordflow">if</span> (try_parse(args[1], value))</div>
-<div class="line">          <span class="keywordflow">if</span> (value &lt;= int32_object::min_value || value &gt;= int32_object::max_value)</div>
-<div class="line">            environment::exit_code(ERANGE);</div>
-<div class="line">          <span class="keywordflow">else</span></div>
-<div class="line">            console::write_line(<span class="stringliteral">&quot;Result: {0}&quot;</span>, value * 2);</div>
-<div class="line">        <span class="keywordflow">else</span></div>
-<div class="line">          environment::exit_code(EINVAL);</div>
-<div class="line">      }</div>
+<div class="line">      <span class="keyword">auto</span> value = 0;</div>
+<div class="line">      <span class="keywordflow">if</span> (args.length() == 1) environment::exit_code(ECANCELED);</div>
+<div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!try_parse(args[1], value)) environment::exit_code(EINVAL);</div>
+<div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (value &lt;= int32_object::min_value || value &gt;= int32_object::max_value) environment::exit_code(ERANGE);</div>
+<div class="line">      <span class="keywordflow">else</span> console::write_line(<span class="stringliteral">&quot;Result: {0}&quot;</span>, value * 2);</div>
 <div class="line">    }</div>
 <div class="line">  };</div>
 <div class="line">}</div>
@@ -135,6 +128,18 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// &gt;environment_exit_code</span></div>
+<div class="line"><span class="comment">// &gt;Program ended with exit code: 89</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// &gt;environment_exit_code xtd</span></div>
+<div class="line"><span class="comment">// &gt;Program ended with exit code: 22</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// &gt;environment_exit_code 2147483648</span></div>
+<div class="line"><span class="comment">// &gt;Program ended with exit code: 34</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// &gt;environment_exit_code 2142</span></div>
+<div class="line"><span class="comment">// Result: 4284</span></div>
+<div class="line"><span class="comment">// &gt;Program ended with exit code: 0</span></div>
 <div class="ttc" id="agroup__keywords_html_gaeb9462ec721c9718cf689e93bf11bf56"><div class="ttname"><a href="group__keywords.html#gaeb9462ec721c9718cf689e93bf11bf56">startup_</a></div><div class="ttdeci">#define startup_(...)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:278</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->

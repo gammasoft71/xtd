@@ -115,15 +115,16 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line">  </div>
 <div class="line">  console::write_line();</div>
 <div class="line">  <span class="comment">//  &lt;-- Keep this information secure! --&gt;</span></div>
-<div class="line">  <span class="keyword">auto</span> query = <span class="stringliteral">&quot;My system drive is %SystemDrive% and my system root is %SystemRoot%&quot;</span>;</div>
-<div class="line">  str = environment::expand_environment_variables(query);</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;expand_environment_variables: {0}  {1}&quot;</span>, nl, str);</div>
+<div class="line">  <span class="keyword">auto</span> query = environment::os_version().is_windows_platform() ? R<span class="stringliteral">&quot;(&quot;My user name is &quot;%USERNAME%&quot; and the temp path is &quot;%TEMP%&quot;)&quot; : R</span><span class="stringliteral">&quot;(My user name is &quot;%USER%&quot; and the temp path is &quot;%TMPDIR%&quot;)&quot;;</span></div>
+<div class="line"><span class="stringliteral">  str = environment::expand_environment_variables(query);</span></div>
+<div class="line"><span class="stringliteral">  console::write_line(</span><span class="stringliteral">&quot;expand_environment_variables: {0}  {1}&quot;</span>, nl, str);</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// expand_environment_variables:</span></div>
-<div class="line"><span class="comment">//   My system drive is C: and my system root is C:\windows</span></div>
+<div class="line"><span class="comment">//   My user name is &quot;gammasoft71&quot; and the temp path is &quot;/var/folders/xg/4utgf5o735j2lqi2mhtoxps00000ba/T/&quot;</span></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
