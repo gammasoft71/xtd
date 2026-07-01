@@ -49,7 +49,6 @@ startup_(environment_program_exit_example::program::main);
 // End
 // Before environment::exit
 // The program is stopped normally!
-
 //
 // >environment_program_exit quick_exit
 // Start
