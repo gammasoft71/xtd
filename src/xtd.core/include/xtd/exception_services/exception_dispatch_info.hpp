@@ -31,10 +31,6 @@ namespace xtd {
     public:
       /// @cond
       exception_dispatch_info() = default;
-      exception_dispatch_info(exception_dispatch_info&&) = default;
-      exception_dispatch_info(const exception_dispatch_info&) = default;
-      auto operator =(exception_dispatch_info&&) -> exception_dispatch_info& = default;
-      auto operator =(const exception_dispatch_info&) -> exception_dispatch_info& = default;
       /// @endcond
       
       /// @name Public Properties
@@ -42,7 +38,7 @@ namespace xtd {
       /// @{
       /// @brief Gets a value indicating whether the exception is caught or not.
       /// @return `true` if the exception is captured; otherwise `false`.
-      [[nodiscard]] auto exception_captured() const noexcept -> bool {return exception_ptr_ ? true : false;}
+      [[nodiscard]] auto captured() const noexcept -> bool {return exception_ptr_ ? true : false;}
       
       /// @brief Gets the exception that's represented by the current instance.
       /// @return The exception that's represented by the current instance.
@@ -72,7 +68,7 @@ namespace xtd {
       }
 
       /// @brief Rethrows the exception that's represented by the current xtd::exception_services::exception_dispatch_info object, after restoring the state that was saved when the exception was captured.
-      auto rethrow() -> void {if (exception_captured()) std::rethrow_exception(exception_ptr_);}
+      auto rethrow() -> void {if (captured()) std::rethrow_exception(exception_ptr_);}
       /// @brief Rehrows the source exception, maintaining the original stack trace information.
       template<typename exception_t>
       static auto rethrow(const exception_t& source) -> void {exception_dispatch_info {source}.rethrow();}
@@ -83,7 +79,7 @@ namespace xtd {
       /// @{
       /// @brief Convert to boolean operator.
       /// @return `true` if exception is captured; otherwise `false`.
-      explicit operator bool () const noexcept {return exception_captured();}
+      explicit operator bool () const noexcept {return captured();}
       operator const std::exception_ptr& () const noexcept {return exception_ptr_;}
       operator std::exception_ptr () noexcept {return exception_ptr_;}
       /// @}
@@ -91,8 +87,8 @@ namespace xtd {
     private:
       template<typename exception_t>
       requires std::derived_from<exception_t, xtd::exception>
-      exception_dispatch_info(const exception_t& source) : source_ {source.template memberwise_clone<exception_t>().release()}, exception_ptr_ {std::make_exception_ptr(source)} {}
-      exception_dispatch_info(const std::exception_ptr& exception_ptr) : exception_ptr_ {exception_ptr} {}
+      explicit exception_dispatch_info(const exception_t& source) : source_ {source.template memberwise_clone<exception_t>().release()}, exception_ptr_ {std::make_exception_ptr(source)} {}
+      explicit exception_dispatch_info(const std::exception_ptr& exception_ptr) : exception_ptr_ {exception_ptr} {}
 
       xtd::ptr<xtd::exception> source_;
       std::exception_ptr exception_ptr_;

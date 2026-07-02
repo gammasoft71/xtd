@@ -10,13 +10,13 @@ namespace xtd::exception_services::tests {
   class test_class_(exception_dispatch_info_tests) {
     auto test_method_(default_constructor) {
       assert::is_false(exception_dispatch_info {} ? true : false);
-      assert::is_false(exception_dispatch_info {}.exception_captured());
+      assert::is_false(exception_dispatch_info {}.captured());
       assert::is_null(exception_dispatch_info {}.source_exception());
     }
     
-    auto test_method_(exception_captured) {
-      assert::is_false(exception_dispatch_info {}.exception_captured());
-      assert::is_true(exception_dispatch_info::capture(exception {}).exception_captured());
+    auto test_method_(captured) {
+      assert::is_false(exception_dispatch_info {}.captured());
+      assert::is_true(exception_dispatch_info::capture(exception {}).captured());
     }
     
     auto test_method_(source_exception) {
