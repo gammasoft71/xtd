@@ -299,12 +299,9 @@ template<typename type_t, typename allocator_t>
 template<typename type_t, typename container_t>
 [[nodiscard]] inline auto xtd::to_string(const std::queue<type_t, container_t>& values, const xtd::string& fmt, const std::locale& loc) -> xtd::string {
   struct std_queue : public std::queue<type_t> {
-    std_queue(const std::queue<type_t>& queue) : ptr {reinterpret_cast<const std_queue*>(&queue)} {}
-    auto begin() const {return ptr->c.begin();}
-    auto end() const {return ptr->c.end();}
-    const std_queue* ptr;
+    [[nodiscard]] static auto underlying_container() {return &std_queue::c;}
   };
-  auto items = std_queue {values};
+  const auto& items = values.*std_queue::underlying_container();
   return __xtd_sequence_container_to_string(items.begin(), items.end(), fmt, loc);
 }
 
@@ -323,13 +320,10 @@ template<typename type_t, typename container_t>
 template<typename type_t, typename container_t>
 [[nodiscard]] inline auto xtd::to_string(const std::stack<type_t, container_t>& values, const xtd::string& fmt, const std::locale& loc) -> xtd::string {
   struct std_stack : public std::stack<type_t> {
-    std_stack(const std::stack<type_t>& queue) : ptr {reinterpret_cast<const std_stack*>(&queue)} {}
-    auto begin() const {return ptr->c.begin();}
-    auto end() const {return ptr->c.end();}
-    const std_stack* ptr;
+    [[nodiscard]] static auto underlying_container() {return &std_stack::c;}
   };
-  auto items = std_stack {values};
-  return __xtd_sequence_container_to_string(items.begin(), items.end(), fmt, loc);
+  const auto& items = values.*std_stack::underlying_container();
+  return __xtd_sequence_container_to_string(items.rbegin(), items.rend(), fmt, loc);
 }
 
 template<typename type_t>
