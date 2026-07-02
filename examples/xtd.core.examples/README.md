@@ -191,6 +191,7 @@
 
 ## [Exceptions](exceptions/README.md)
 
+* [exception_dispatch_info](exceptions/exception_dispatch_info/README.md) shows how to use [xtd::exception_services::exception_dispatch_info](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1exception__services_1_1exception__dispatch__info.html) class.
 * [argument_exception](exceptions/argument_exception/README.md) shows how to use [xtd::argument_exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1argument__exception.html) exception.
 * [exception_ptr](exceptions/exception_ptr/README.md) shows how to use std::exception_ptr and [invalid_operation_exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1invalid__operation__exception.html) exception.
 * [system_exception](exceptions/system_exception/README.md) shows how to use [xtd::system_exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1system__exception.html) exception.
