@@ -166,11 +166,11 @@ Inheritance diagram for xtd::system_exception:</div>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example demonstrates how to throw and catch an <a class="el" href="classxtd_1_1system__exception.html" title="The exception that is thrown when a method call is invalid for the object&#39;s current state.">system_exception</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">long</span> create_handle() {</div>
-<div class="line">  <span class="keywordflow">return</span> <span class="keyword">reinterpret_cast&lt;</span><span class="keywordtype">long</span><span class="keyword">&gt;</span>(<span class="keyword">new</span> <a class="code hl_class" href="classxtd_1_1guid.html">guid</a>());</div>
+<div class="line"><span class="keyword">auto</span> create_handle() -&gt; <a class="code hl_typedef" href="group__types.html#ga4caacfecf928a301a87e8b7accd31f1f">intptr</a> {</div>
+<div class="line">  <span class="keywordflow">return</span> <span class="keyword">reinterpret_cast&lt;</span><a class="code hl_typedef" href="group__types.html#ga4caacfecf928a301a87e8b7accd31f1f">intptr</a><span class="keyword">&gt;</span>(<span class="keyword">new</span> <a class="code hl_class" href="classxtd_1_1guid.html">guid</a>());</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> destroy_handle(<span class="keywordtype">long</span> handle) {</div>
+<div class="line"><span class="keyword">auto</span> destroy_handle(<a class="code hl_typedef" href="group__types.html#ga4caacfecf928a301a87e8b7accd31f1f">intptr</a> handle) -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">  <span class="keywordflow">if</span> (handle == 0) <span class="keywordflow">throw</span> <a class="code hl_class" href="classxtd_1_1system__exception.html">system_exception</a>(<span class="stringliteral">&quot;The handle is null&quot;</span>);</div>
 <div class="line">  <span class="keyword">delete</span> <span class="keyword">reinterpret_cast&lt;</span><span class="keywordtype">object</span>*<span class="keyword">&gt;</span>(handle);</div>
 <div class="line">}</div>
@@ -194,10 +194,12 @@ Inheritance diagram for xtd::system_exception:</div>
 <div class="line"><span class="comment">// Exception occured :</span></div>
 <div class="line"><span class="comment">// -------------------</span></div>
 <div class="line"><span class="comment">// xtd::system_exception : The handle is null</span></div>
-<div class="line"><span class="comment">//    at destroy_handle(long) [0x00004B20] in /|---OMITTED---|/system_exception/src/system_exception.cpp:line 10</span></div>
-<div class="line"><span class="comment">//    at main [0x00004DD0] in /|---OMITTED---|/system_exception/Debug/system_exception:line 0</span></div>
+<div class="line"><span class="comment">//    at xtd::system_exception::system_exception(std::__1::optional&lt;xtd::basic_string&lt;char, std::__1::char_traits&lt;char&gt;, std::__1::allocator&lt;char&gt;&gt;&gt; const&amp;, xtd::diagnostics::stack_frame const&amp;) in system_exception.cpp:line 12</span></div>
+<div class="line"><span class="comment">//    at destroy_handle(long) in system_exception.cpp:line 8</span></div>
+<div class="line"><span class="comment">//    at main in system_exception.cpp:line 18</span></div>
 <div class="ttc" id="aclassxtd_1_1guid_html"><div class="ttname"><a href="classxtd_1_1guid.html">xtd::guid</a></div><div class="ttdoc">Represents a globally unique identifier (GUID). A GUID is a 128-bit integer (16 bytes) that can be us...</div><div class="ttdef"><b>Definition</b> guid.hpp:23</div></div>
 <div class="ttc" id="aclassxtd_1_1system__exception_html"><div class="ttname"><a href="classxtd_1_1system__exception.html">xtd::system_exception</a></div><div class="ttdoc">The exception that is thrown when a method call is invalid for the object&#39;s current state.</div><div class="ttdef"><b>Definition</b> system_exception.hpp:18</div></div>
+<div class="ttc" id="agroup__types_html_ga4caacfecf928a301a87e8b7accd31f1f"><div class="ttname"><a href="group__types.html#ga4caacfecf928a301a87e8b7accd31f1f">xtd::intptr</a></div><div class="ttdeci">std::intmax_t intptr</div><div class="ttdoc">Represent a pointer or a handle.</div><div class="ttdef"><b>Definition</b> intptr.hpp:23</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="enum_class_parse_8cpp-example.html#_a1">enum_class_parse.cpp</a>, <a class="el" href="exception_box_8cpp-example.html#_a1">exception_box.cpp</a>, <a class="el" href="exception_dialog_8cpp-example.html#_a1">exception_dialog.cpp</a>, <a class="el" href="parse_floating_point_8cpp-example.html#_a8">parse_floating_point.cpp</a>, and <a class="el" href="parse_numeric_8cpp-example.html#_a11">parse_numeric.cpp</a>.</dd>
 </dl>

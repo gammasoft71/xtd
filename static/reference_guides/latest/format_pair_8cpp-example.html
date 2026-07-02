@@ -111,10 +111,14 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line"><span class="preprocessor">#include &lt;utility&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;{}&quot;</span>, key_value_pair(1, <span class="stringliteral">&quot;one&quot;</span>)) &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; environment::new_line;</div>
 <div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;{}&quot;</span>, std::make_pair(1, <span class="stringliteral">&quot;one&quot;</span>)) &lt;&lt; environment::new_line;</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// (1, one)</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// (1, one)</span></div>
 </div><!-- fragment --> </div><!-- contents -->

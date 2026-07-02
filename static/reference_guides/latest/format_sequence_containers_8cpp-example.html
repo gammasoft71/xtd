@@ -111,24 +111,34 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;{}&quot;</span>, array&lt;int&gt; {1, 2, 3, 4}) &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;{}&quot;</span>, array&lt;int, 2&gt; {{1, 2, 3, 4}, {5, 6, 7, 8}}) &lt;&lt; environment::new_line;</div>
 <div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;{}&quot;</span>, fixed_array&lt;int, 4&gt; {1, 2, 3, 4}) &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;{}&quot;</span>, linked_list&lt;int&gt; {1, 2, 3, 4}) &lt;&lt; environment::new_line;</div>
 <div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;{}&quot;</span>, list&lt;int&gt; {1, 2, 3, 4}) &lt;&lt; environment::new_line;</div>
 <div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;{}&quot;</span>, collections::array_list {1, 2, 3, 4}) &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;{}&quot;</span>, queue&lt;int&gt; {1, 2, 3, 4}) &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;{}&quot;</span>, stack&lt;int&gt; {1, 2, 3, 4}) &lt;&lt; environment::new_line;</div>
 <div class="line">  console::out &lt;&lt; environment::new_line;</div>
 <div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;{}&quot;</span>, std::initializer_list&lt;int&gt; {1, 2, 3, 4}) &lt;&lt; environment::new_line;</div>
 <div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;{}&quot;</span>, std::array&lt;int, 4&gt; {1, 2, 3, 4}) &lt;&lt; environment::new_line;</div>
 <div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;{}&quot;</span>, std::forward_list&lt;int&gt; {1, 2, 3, 4}) &lt;&lt; environment::new_line;</div>
 <div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;{}&quot;</span>, std::list&lt;int&gt; {1, 2, 3, 4}) &lt;&lt; environment::new_line;</div>
-<div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;{}&quot;</span>, std::deque&lt;int&gt; {1, 2, 3, 4}) &lt;&lt; environment::new_line;</div>
 <div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;{}&quot;</span>, std::vector&lt;int&gt; {1, 2, 3, 4}) &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;{}&quot;</span>, std::deque&lt;int&gt; {1, 2, 3, 4}) &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;{}&quot;</span>, std::queue&lt;int&gt; {std::deque&lt;int&gt; {1, 2, 3, 4}}) &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;{}&quot;</span>, std::stack&lt;int&gt; {std::deque&lt;int&gt; {1, 2, 3, 4}}) &lt;&lt; environment::new_line;</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// [1, 2, 3, 4]</span></div>
+<div class="line"><span class="comment">// [[1, 2, 3, 4], [5, 6, 7, 8]]</span></div>
 <div class="line"><span class="comment">// [1, 2, 3, 4]</span></div>
 <div class="line"><span class="comment">// [1, 2, 3, 4]</span></div>
 <div class="line"><span class="comment">// [1, 2, 3, 4]</span></div>
+<div class="line"><span class="comment">// [1, 2, 3, 4]</span></div>
+<div class="line"><span class="comment">// [1, 2, 3, 4]</span></div>
+<div class="line"><span class="comment">// [4, 3, 2, 1]</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// [1, 2, 3, 4]</span></div>
 <div class="line"><span class="comment">// [1, 2, 3, 4]</span></div>
@@ -136,6 +146,8 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line"><span class="comment">// [1, 2, 3, 4]</span></div>
 <div class="line"><span class="comment">// [1, 2, 3, 4]</span></div>
 <div class="line"><span class="comment">// [1, 2, 3, 4]</span></div>
+<div class="line"><span class="comment">// [1, 2, 3, 4]</span></div>
+<div class="line"><span class="comment">// [4, 3, 2, 1]</span></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->

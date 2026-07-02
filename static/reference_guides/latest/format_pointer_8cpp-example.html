@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keyword">auto</span> ptr = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span>*<span class="keyword">&gt;</span>(<span class="keyword">nullptr</span>);</div>
+<div class="line">  <span class="keyword">auto</span> ptr = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span>*<span class="keyword">&gt;</span>(null);</div>
 <div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;{}&quot;</span>, ptr) &lt;&lt; environment::new_line;</div>
 <div class="line">  ptr = <span class="keyword">new</span> int(42);</div>
 <div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;0x{:x}&quot;</span>, ptr) &lt;&lt; environment::new_line;</div>
@@ -118,15 +118,15 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line">  <span class="keyword">delete</span> ptr;</div>
 <div class="line">  </div>
 <div class="line">  <span class="keyword">auto</span> sptr = <a id="_a0" name="_a0"></a><a class="code hl_typedef" href="group__types.html#ga25ad7ded61d1d55ea98a57f5316b786b">xtd::sptr&lt;int&gt;</a> {};</div>
-<div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;{}&quot;</span>, sptr) &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;{}&quot;</span>, sptr.get()) &lt;&lt; environment::new_line;</div>
 <div class="line">  sptr = new_sptr&lt;int&gt;(42);</div>
-<div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;0x{:x}&quot;</span>, sptr) &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;0x{:x}&quot;</span>, sptr.get()) &lt;&lt; environment::new_line;</div>
 <div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;{}&quot;</span>, *sptr) &lt;&lt; environment::new_line;</div>
 <div class="line">  </div>
 <div class="line">  <span class="keyword">auto</span> uptr = <a id="_a1" name="_a1"></a><a class="code hl_typedef" href="group__types.html#ga6c0a708a117d3b2967d6767f96b82baf">xtd::uptr&lt;int&gt;</a> {};</div>
-<div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;{}&quot;</span>, uptr) &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;{}&quot;</span>, uptr.get()) &lt;&lt; environment::new_line;</div>
 <div class="line">  uptr = new_uptr&lt;int&gt;(42);</div>
-<div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;0x{:x}&quot;</span>, uptr) &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;0x{:x}&quot;</span>, uptr.get()) &lt;&lt; environment::new_line;</div>
 <div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;{}&quot;</span>, *uptr) &lt;&lt; environment::new_line;</div>
 <div class="line">}</div>
 <div class="line"> </div>
