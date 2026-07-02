@@ -371,34 +371,25 @@ namespace xtd {
       template<typename source_t, typename container_t>
       static auto as_enumerable(std::queue<source_t, container_t> source) noexcept {
         struct std_queue : public std::queue<source_t> {
-          std_queue(const std::queue<source_t>& queue) : ptr {reinterpret_cast<const std_queue*>(&queue)} {}
-          auto begin() const {return ptr->c.begin();}
-          auto end() const {return ptr->c.end();}
-          const std_queue* ptr;
+          [[nodiscard]] static auto underlying_container() {return &std_queue::c;}
         };
-        auto items = std_queue {source};
+        const auto& items = source.*std_queue::underlying_container();
         return as_enumerable(items.begin(), items.end());
       }
       template<typename source_t, typename container_t>
       [[nodiscard]] static auto as_enumerable(std::priority_queue<source_t, container_t> source) noexcept {
-        struct std_priority_queue : public std::priority_queue<source_t> {
-          std_priority_queue(const std::priority_queue<source_t>& queue) : ptr {reinterpret_cast<const std_priority_queue*>(&queue)} {}
-          auto begin() const {return ptr->c.begin();}
-          auto end() const {return ptr->c.end();}
-          const std_priority_queue* ptr;
+        struct std_priority_queue : public std::queue<source_t> {
+          [[nodiscard]] static auto underlying_container() {return &std_priority_queue::c;}
         };
-        auto items = std_priority_queue {source};
+        const auto& items = source.*std_priority_queue::underlying_container();
         return as_enumerable(items.begin(), items.end());
       }
       template<typename source_t, typename container_t>
       [[nodiscard]] static auto as_enumerable(std::stack<source_t, container_t> source) noexcept {
         struct std_stack : public std::stack<source_t> {
-          std_stack(const std::stack<source_t>& stack) : ptr {reinterpret_cast<const std_stack*>(&stack)} {}
-          auto begin() const {return ptr->c.begin();}
-          auto end() const {return ptr->c.end();}
-          const std_stack* ptr;
+          [[nodiscard]] static auto underlying_container() {return &std_stack::c;}
         };
-        auto items = std_stack {source};
+        const auto& items = source.*std_stack::underlying_container();
         return as_enumerable(items.begin(), items.end());
       }
       /// @endcond
