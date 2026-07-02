@@ -1,10 +1,10 @@
 #include <xtd/xtd>
 
-long create_handle() {
-  return reinterpret_cast<long>(new guid());
+auto create_handle() -> intptr {
+  return reinterpret_cast<intptr>(new guid());
 }
 
-void destroy_handle(long handle) {
+auto destroy_handle(intptr handle) -> void {
   if (handle == 0) throw system_exception("The handle is null");
   delete reinterpret_cast<object*>(handle);
 }
@@ -28,5 +28,6 @@ auto main() -> int {
 // Exception occured :
 // -------------------
 // xtd::system_exception : The handle is null
-//    at destroy_handle(long) [0x00004B20] in /|---OMITTED---|/system_exception/src/system_exception.cpp:line 10
-//    at main [0x00004DD0] in /|---OMITTED---|/system_exception/Debug/system_exception:line 0
+//    at xtd::system_exception::system_exception(std::__1::optional<xtd::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>> const&, xtd::diagnostics::stack_frame const&) in system_exception.cpp:line 12
+//    at destroy_handle(long) in system_exception.cpp:line 8
+//    at main in system_exception.cpp:line 18
