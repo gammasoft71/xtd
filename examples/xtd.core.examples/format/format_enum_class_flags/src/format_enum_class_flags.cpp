@@ -45,10 +45,8 @@ auto print_text_styles(const string& text, text_styles value, cap c) {
   console::out << "│ " << text.pad_right(45) << " │ {:X}       │ " << format("{:X}", value).pad_right(32) << " │" << environment::new_line;
   console::out << "│ " << text.pad_right(45) << " │ {:X2}      │ " << format("{:X2}", value).pad_right(32) << " │" << environment::new_line;
   
-  if (c != cap::end)
-    console::out << "├───────────────────────────────────────────────┼────────────┼──────────────────────────────────┤" << environment::new_line;
-  else
-    console::out << "└───────────────────────────────────────────────┴────────────┴──────────────────────────────────┘" << environment::new_line;
+  if (c != cap::end) console::out << "├───────────────────────────────────────────────┼────────────┼──────────────────────────────────┤" << environment::new_line;
+  else console::out << "└───────────────────────────────────────────────┴────────────┴──────────────────────────────────┘" << environment::new_line;
 }
 
 auto main() -> int {
