@@ -18,10 +18,8 @@ auto print_character(const u32string& text, char32 value, cap c) {
   console::out <<  "│ " << text.pad_right(9) << " │ {:X}       │ " << format(U"{:X}", value).pad_right(32) << " │" << environment::new_line;
   console::out <<  "│ " << text.pad_right(9) << " │ {:ANY_FMT} │ " << format(U"{:ANY_FMT}", value).pad_right(32) << " │" << environment::new_line;
 
-  if (c != cap::end)
-    console::out << "├───────────┼────────────┼──────────────────────────────────┤" << environment::new_line;
-  else
-    console::out << "└───────────┴────────────┴──────────────────────────────────┘" << environment::new_line;
+  if (c != cap::end) console::out << "├───────────┼────────────┼──────────────────────────────────┤" << environment::new_line;
+  else console::out << "└───────────┴────────────┴──────────────────────────────────┘" << environment::new_line;
 }
 
 auto main() -> int {
