@@ -30,10 +30,8 @@ auto print_floating_point(const string& text, number_t value, cap c) {
   console::out << "│ " << text.pad_right(35) << " │ {:x}       │ " << format("{:x}", value).pad_right(64) << " │" << environment::new_line;
   console::out << "│ " << text.pad_right(35) << " │ {:X}       │ " << format("{:X}", value).pad_right(64) << " │" << environment::new_line;
 
-  if (c != cap::end)
-    console::out << "├─────────────────────────────────────┼────────────┼──────────────────────────────────────────────────────────────────┤" << environment::new_line;
-  else
-    console::out << "└─────────────────────────────────────┴────────────┴──────────────────────────────────────────────────────────────────┘" << environment::new_line;
+  if (c != cap::end) console::out << "├─────────────────────────────────────┼────────────┼──────────────────────────────────────────────────────────────────┤" << environment::new_line;
+  else console::out << "└─────────────────────────────────────┴────────────┴──────────────────────────────────────────────────────────────────┘" << environment::new_line;
 }
 
 auto main() -> int {
