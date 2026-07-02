@@ -44,10 +44,8 @@ auto print_number(const string& text, number_t value, cap c) {
   console::out << "│ " << text.pad_right(25) << " │ {:X}       │ " << format("{:X}", value).pad_right(32) << " │" << environment::new_line;
   console::out << "│ " << text.pad_right(25) << " │ {:X16}     │ " << format("{:X16}", value).pad_right(32) << " │" << environment::new_line;
 
-  if (c != cap::end)
-    console::out << "├───────────────────────────┼────────────┼──────────────────────────────────┤" << environment::new_line;
-  else
-    console::out << "└───────────────────────────┴────────────┴──────────────────────────────────┘" << environment::new_line;
+  if (c != cap::end) console::out << "├───────────────────────────┼────────────┼──────────────────────────────────┤" << environment::new_line;
+  else console::out << "└───────────────────────────┴────────────┴──────────────────────────────────┘" << environment::new_line;
 }
 
 auto main() -> int {
