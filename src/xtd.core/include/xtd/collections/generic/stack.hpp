@@ -95,12 +95,9 @@ namespace xtd {
         /// @param stack The std::stack <type_t> which elements will be inserted from.
         stack(const std::stack<type_t>& stack) {
           struct std_stack : public std::stack<type_t> {
-            std_stack(const std::stack<type_t>& stack) : ptr {reinterpret_cast<const std_stack*>(&stack)} {}
-            auto begin() const {return ptr->c.begin();}
-            auto end() const {return ptr->c.end();}
-            const std_stack* ptr;
+            [[nodiscard]] static auto underlying_container() {return &std_stack::c;}
           };
-          auto items = std_stack {stack};
+          const auto& items = stack.*std_stack::underlying_container();
           data_->items = base_type(items.begin(), items.end());
           ensure_capacity(count());
         }
