@@ -1,21 +1,21 @@
 #include <xtd/xtd>
 
 auto main() -> int {
-  auto exception_pointer = std::exception_ptr {};
+  auto capture_exception = std::exception_ptr {};
   
   auto thread1 = thread::start_new([&] {
     try {
       throw invalid_operation_exception("Ouch there are an exception !");
     } catch (...) {
-      exception_pointer = std::current_exception();
+      capture_exception = std::current_exception();
     }
   });
   thread1.join();
   
-  if (exception_pointer) {
+  if (capture_exception) {
     try {
       console::write_line("Rethrow the captured exception :");
-      rethrow_exception(exception_pointer);
+      std::rethrow_exception(capture_exception);
     } catch (const exception& e) {
       console::write_line(e);
     }
