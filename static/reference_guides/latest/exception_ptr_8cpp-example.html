@@ -112,14 +112,13 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> capture_exception = std::exception_ptr {};</div>
 <div class="line">  </div>
-<div class="line">  <span class="keyword">auto</span> thread1 = thread::start_new([&amp;] {</div>
+<div class="line">  thread::start_new([&amp;] {</div>
 <div class="line">    <span class="keywordflow">try</span> {</div>
 <div class="line">      <span class="keywordflow">throw</span> invalid_operation_exception(<span class="stringliteral">&quot;Ouch there are an exception !&quot;</span>);</div>
 <div class="line">    } <span class="keywordflow">catch</span> (...) {</div>
 <div class="line">      capture_exception = std::current_exception();</div>
 <div class="line">    }</div>
-<div class="line">  });</div>
-<div class="line">  thread1.join();</div>
+<div class="line">  }).join();</div>
 <div class="line">  </div>
 <div class="line">  <span class="keywordflow">if</span> (capture_exception) {</div>
 <div class="line">    <span class="keywordflow">try</span> {</div>
