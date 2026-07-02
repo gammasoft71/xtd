@@ -88,7 +88,7 @@ namespace xtd::tests {
     
     auto test_method_(cursor_left_with_invalid_values) {
       assert::throws<argument_out_of_range_exception>([] {console::cursor_left(-1);});
-      assert::throws<argument_out_of_range_exception>([] {console::cursor_left(console::buffer_width());});
+      assert::throws<argument_out_of_range_exception>([] {console::cursor_left(console::buffer_width() + 1);});
     }
     
     auto test_method_(cursor_size) {
@@ -114,7 +114,7 @@ namespace xtd::tests {
     
     auto test_method_(cursor_top_with_invalid_values) {
       assert::throws<argument_out_of_range_exception>([] {console::cursor_top(-1);});
-      assert::throws<argument_out_of_range_exception>([] {console::cursor_top(console::buffer_height());});
+      assert::throws<argument_out_of_range_exception>([] {console::cursor_top(console::buffer_height() + 1);});
     }
     
     auto test_method_(cursor_visible) {
@@ -359,9 +359,9 @@ namespace xtd::tests {
     
     auto test_method_(set_cursor_position_with_invalid_values) {
       assert::throws<argument_out_of_range_exception>([] {console::set_cursor_position(-1, 0);});
-      assert::throws<argument_out_of_range_exception>([] {console::set_cursor_position(console::buffer_width(), 0);});
+      assert::throws<argument_out_of_range_exception>([] {console::set_cursor_position(console::buffer_width() + 1, 0);});
       assert::throws<argument_out_of_range_exception>([] {console::set_cursor_position(0, -1);});
-      assert::throws<argument_out_of_range_exception>([] {console::set_cursor_position(0, console::buffer_height());});
+      assert::throws<argument_out_of_range_exception>([] {console::set_cursor_position(0, console::buffer_height() + 1);});
     }
     
     auto test_method_(set_error) {
