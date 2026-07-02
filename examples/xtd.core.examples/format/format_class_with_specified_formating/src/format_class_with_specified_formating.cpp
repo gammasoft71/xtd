@@ -7,11 +7,11 @@ public:
   persona() = default;
   persona(const string& name, const string& rank) noexcept : name_(name), rank_(rank) {}
   
-  const string& name() const noexcept {return name_;}
-  const string& rank() const noexcept {return rank_;}
+  auto name() const noexcept -> const string& {return name_;}
+  auto rank() const noexcept -> const string& {return rank_;}
   
-  string to_string() const noexcept {return to_string("", culture_info::current_culture());}
-  string to_string(const string& format, const culture_info& culture) const override {
+  auto to_string() const noexcept -> string {return to_string("", culture_info::current_culture());}
+  auto to_string(const string& format, const culture_info& culture) const -> string override {
     auto fmt = string::is_empty(format) ? "F" : format;
     if (fmt == "F") return name_ + " (" + rank_ + ")";
     if (fmt == "N") return name_;
@@ -38,10 +38,8 @@ auto print_character(const string& text, const persona& value, cap c) {
   console::out <<  "│ " << text.pad_right(45) << " │ {:N}       │ " << format("{:N}", value).pad_right(40) << " │" << environment::new_line;
   console::out <<  "│ " << text.pad_right(45) << " │ {:R}       │ " << format("{:R}", value).pad_right(40) << " │" << environment::new_line;
 
-  if (c != cap::end)
-    console::out << "├───────────────────────────────────────────────┼────────────┼──────────────────────────────────────────┤" << environment::new_line;
-  else
-    console::out << "└───────────────────────────────────────────────┴────────────┴──────────────────────────────────────────┘" << environment::new_line;
+  if (c != cap::end) console::out << "├───────────────────────────────────────────────┼────────────┼──────────────────────────────────────────┤" << environment::new_line;
+  else console::out << "└───────────────────────────────────────────────┴────────────┴──────────────────────────────────────────┘" << environment::new_line;
 }
 
 auto main() -> int {
