@@ -133,7 +133,7 @@ Inheritance diagram for xtd::argument_exception:</div>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example demonstrates how to throw and catch an <a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">argument_exception</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">int</span> divide_by_two(<span class="keywordtype">int</span> num) {</div>
+<div class="line"><span class="keyword">auto</span> divide_by_two(<span class="keywordtype">int</span> num) -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="comment">// If num is an odd number, throw an argument_exception.</span></div>
 <div class="line">  <span class="keywordflow">if</span> ((num &amp; 1) == 1) <span class="keywordflow">throw</span> <a class="code hl_function" href="#a4c0a0845499b84135edb625d794b0799">argument_exception</a>(<span class="stringliteral">&quot;Number must be even&quot;</span>);</div>
 <div class="line">  </div>
@@ -155,8 +155,6 @@ Inheritance diagram for xtd::argument_exception:</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// Exception occured :</span></div>
-<div class="line"><span class="comment">// -------------------</span></div>
 <div class="line"><span class="comment">// 10 divided by 2 is 5</span></div>
 <div class="line"><span class="comment">// 7 is not divided by 2 integrally.</span></div>
 <div class="ttc" id="aclassxtd_1_1argument__exception_html_a4c0a0845499b84135edb625d794b0799"><div class="ttname"><a href="#a4c0a0845499b84135edb625d794b0799">xtd::argument_exception::argument_exception</a></div><div class="ttdeci">argument_exception(const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Create a new instance of class argument_exception.</div><div class="ttdef"><b>Definition</b> argument_exception.hpp:31</div></div>

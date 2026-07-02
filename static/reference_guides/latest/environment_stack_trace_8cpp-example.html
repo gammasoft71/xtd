@@ -109,16 +109,16 @@ document.addEventListener('DOMContentLoaded', () => {
 <p>Shows how to use <a class="el" href="classxtd_1_1environment.html" title="The environment class.">xtd::environment</a> class.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> test3() {</div>
+<div class="line"><span class="keyword">auto</span> test3() {</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;environment::stack_trace:&quot;</span>);</div>
 <div class="line">  console::write_line(environment::stack_trace());</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> test2() {</div>
+<div class="line"><span class="keyword">auto</span> test2() {</div>
 <div class="line">  test3();</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> test1() {</div>
+<div class="line"><span class="keyword">auto</span> test1() {</div>
 <div class="line">  test2();</div>
 <div class="line">}</div>
 <div class="line"> </div>
@@ -129,7 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// environment::stack_trace:</span></div>
-<div class="line"><span class="comment">//    at xtd::environment::stack_trace() [0x00002C20] in !---OMITTED---!/environment.cpp:line 255</span></div>
+<div class="line"><span class="comment">//    at xtd::environment::stack_trace() [0x00002C20] in !---OMITTED---!/environment.cpp:line 264</span></div>
 <div class="line"><span class="comment">//    at test3() [0x00002B40] in !---OMITTED---!/environment_stack_trace.cpp:line 5</span></div>
 <div class="line"><span class="comment">//    at test2() [0x00002CA0] in !---OMITTED---!/environment_stack_trace.cpp:line 9</span></div>
 <div class="line"><span class="comment">//    at test1() [0x00002CB0] in !---OMITTED---!/environment_stack_trace.cpp:line 13</span></div>
