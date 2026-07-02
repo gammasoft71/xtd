@@ -1,15 +1,15 @@
 #include <xtd/xtd>
 
-void test3() {
+auto test3() {
   console::write_line("environment::stack_trace:");
   console::write_line(environment::stack_trace());
 }
 
-void test2() {
+auto test2() {
   test3();
 }
 
-void test1() {
+auto test1() {
   test2();
 }
 
@@ -20,7 +20,7 @@ auto main() -> int {
 // This code produces the following output :
 //
 // environment::stack_trace:
-//    at xtd::environment::stack_trace() [0x00002C20] in !---OMITTED---!/environment.cpp:line 255
+//    at xtd::environment::stack_trace() [0x00002C20] in !---OMITTED---!/environment.cpp:line 264
 //    at test3() [0x00002B40] in !---OMITTED---!/environment_stack_trace.cpp:line 5
 //    at test2() [0x00002CA0] in !---OMITTED---!/environment_stack_trace.cpp:line 9
 //    at test1() [0x00002CB0] in !---OMITTED---!/environment_stack_trace.cpp:line 13
