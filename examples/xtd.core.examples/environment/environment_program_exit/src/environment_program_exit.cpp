@@ -11,14 +11,13 @@ namespace environment_program_exit_example {
       
       console::write_line("Start");
       // Do something...
-      auto do_something = task<>::run([] {
+      co_await task<>::run([] {
         for (auto step = 0; step < 50; ++step) {
           console::write('.');
           thread::sleep(100_ms);
         }
         console::write_line();
       });
-      co_await do_something;
       console::write_line("End");
       
       if (args.length() == 1 && args[0] == "exit") {
