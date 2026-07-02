@@ -3,14 +3,13 @@
 auto main() -> int {
   auto capture_exception = std::exception_ptr {};
   
-  auto thread1 = thread::start_new([&] {
+  thread::start_new([&] {
     try {
       throw invalid_operation_exception("Ouch there are an exception !");
     } catch (...) {
       capture_exception = std::current_exception();
     }
-  });
-  thread1.join();
+  }).join();
   
   if (capture_exception) {
     try {
