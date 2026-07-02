@@ -1,6 +1,6 @@
 #include <xtd/xtd>
 
-int divide_by_two(int num) {
+auto divide_by_two(int num) -> int {
   // If num is an odd number, throw an argument_exception.
   if ((num & 1) == 1) throw argument_exception("Number must be even");
   
@@ -22,7 +22,5 @@ auto main() -> int {
 
 // This code produces the following output :
 //
-// Exception occured :
-// -------------------
 // 10 divided by 2 is 5
 // 7 is not divided by 2 integrally.
