@@ -43,7 +43,7 @@ namespace xtd {
       /// @brief Gets the exception that's represented by the current instance.
       /// @return The exception that's represented by the current instance.
       /// @remarks This property is used by the Task Parallel Library, for example, to combine multiple exceptions in an xtd::aggregate_exception object. It's not intended to be used by application code. Use the xtd::exception_services::exception_dispatch_info::rethrow method to restore the state of the captured exception and throw it.
-      [[nodiscard]] auto source_exception() const noexcept -> xtd::ptr<xtd::exception> {return source_;}
+      [[nodiscard]] auto source_exception() const noexcept -> xtd::ptr<std::exception> {return source_;}
       /// @}
       
       /// @name Public Properties
@@ -55,7 +55,6 @@ namespace xtd {
       /// @remarks You can use the xtd::exception_services::exception_dispatch_info object that's returned by this method at another time and possibly on another thread to rethrow the specified exception, as if the exception had flowed from the point where it was captured to the point where it's rethrown.
       /// @remarks If the exception is active when it's captured, the current stack trace information that's contained in the exception is stored. If it's inactive, that is, if it has not been thrown, it doesn't have any stack trace information.
       template<typename exception_t>
-      requires std::derived_from<exception_t, xtd::exception>
       [[nodiscard]] static auto capture(const exception_t& source) -> exception_dispatch_info {
         return exception_dispatch_info {source};
       }
@@ -86,11 +85,10 @@ namespace xtd {
       
     private:
       template<typename exception_t>
-      requires std::derived_from<exception_t, xtd::exception>
-      explicit exception_dispatch_info(const exception_t& source) : source_ {source.template memberwise_clone<exception_t>().release()}, exception_ptr_ {std::make_exception_ptr(source)} {}
+      explicit exception_dispatch_info(const exception_t& source) : source_ {xtd::new_ptr<exception_t>(source)}, exception_ptr_ {std::make_exception_ptr(source)} {}
       explicit exception_dispatch_info(const std::exception_ptr& exception_ptr) : exception_ptr_ {exception_ptr} {}
 
-      xtd::ptr<xtd::exception> source_;
+      xtd::ptr<std::exception> source_;
       std::exception_ptr exception_ptr_;
     };
   }
