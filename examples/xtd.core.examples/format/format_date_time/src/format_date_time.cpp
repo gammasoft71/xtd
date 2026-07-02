@@ -36,10 +36,8 @@ auto print_date_time(const string& text, const date_time& value, cap c) {
   console::out <<  "│ " << text.pad_right(37) << " │ {:\\Mon\\t\\h\\: M}     │ " << format("{:\\Mon\\t\\h\\: M}", value).pad_right(40) << " │" << environment::new_line;
   console::out <<  "│ " << text.pad_right(37) << " │ {:HH:mm:ss.ffffzzz} │ " << format("{:HH:mm:ss.ffffzzz}", value).pad_right(40) << " │" << environment::new_line;
 
-  if (c != cap::end)
-    console::out << "├───────────────────────────────────────┼─────────────────────┼──────────────────────────────────────────┤" << environment::new_line;
-  else
-    console::out << "└───────────────────────────────────────┴─────────────────────┴──────────────────────────────────────────┘" << environment::new_line;
+  if (c != cap::end) console::out << "├───────────────────────────────────────┼─────────────────────┼──────────────────────────────────────────┤" << environment::new_line;
+  else console::out << "└───────────────────────────────────────┴─────────────────────┴──────────────────────────────────────────┘" << environment::new_line;
 }
 
 auto main() -> int {
