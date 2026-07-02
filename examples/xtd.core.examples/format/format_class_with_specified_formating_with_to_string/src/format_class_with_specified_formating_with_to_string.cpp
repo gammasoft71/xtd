@@ -7,11 +7,11 @@ public:
   persona() = default;
   persona(const string& name, const string& rank) noexcept : name_(name), rank_(rank) {}
   
-  const string& name() const noexcept {return name_;}
-  const string& rank() const noexcept {return rank_;}
+  auto name() const noexcept -> const string& {return name_;}
+  auto rank() const noexcept -> const string& {return rank_;}
   
-  string to_string() const noexcept {return to_string("", culture_info::current_culture());}
-  string to_string(const string& format, const std::locale& loc) const {
+  auto to_string() const noexcept -> string {return to_string("", culture_info::current_culture());}
+  auto to_string(const string& format, const std::locale& loc) const -> string {
     auto fmt = string::is_empty(format) ? "F" : format;
     if (fmt == "F") return name_ + " (" + rank_ + ")";
     if (fmt == "N") return name_;
@@ -25,7 +25,7 @@ private:
 };
 
 template<>
-string xtd::to_string(const persona& value, const string& fmt, const std::locale& loc) {return value.to_string(fmt, loc);}
+auto xtd::to_string(const persona& value, const string& fmt, const std::locale& loc) -> string {return value.to_string(fmt, loc);}
 
 enum class cap {title, middle, end};
 
