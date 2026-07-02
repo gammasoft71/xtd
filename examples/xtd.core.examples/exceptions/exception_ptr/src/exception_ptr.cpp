@@ -3,21 +3,20 @@
 auto main() -> int {
   auto exception_pointer = std::exception_ptr {};
   
-  auto thread1 = thread {[&] {
+  auto thread1 = thread::start_new([&] {
     try {
       throw invalid_operation_exception("Ouch there are an exception !");
     } catch (...) {
       exception_pointer = std::current_exception();
     }
-  }};
-  
-  thread1.start();
+  });
   thread1.join();
   
   if (exception_pointer) {
     try {
+      console::write_line("Rethrow the captured exception :");
       rethrow_exception(exception_pointer);
-    } catch (const system_exception& e) {
+    } catch (const exception& e) {
       console::write_line(e);
     }
   }
@@ -25,9 +24,13 @@ auto main() -> int {
 
 // This code can produce the following output :
 //
+// Rethrow the captured exception :
 // xtd::invalid_operation_exception : Ouch there are an exception !
-//    at main::$_0::operator()() const [0x0000C1F0] in /|---OMITTED---|/exception_ptr/src/exception_ptr.cpp:line 13
-//    at decltype(std::forward<main::$_0>(fp)()) std::__invoke<main::$_0>(main::$_0&&) [0x0000C180] in /|---OMITTED---|/exception_ptr/Debug/exception_ptr:line 0
-//    at void std::__thread_execute<std::unique_ptr<std::__thread_struct, std::default_delete<std::__thread_struct> >, main::$_0>(std::tuple<std::unique_ptr<std::__thread_struct, std::default_delete<std::__thread_struct> >, main::$_0>&, std::__tuple_indices<>) [0x0000C0E0] in /|---OMITTED---|/exception_ptr/Debug/exception_ptr:line 0
-//    at void* std::__thread_proxy<std::tuple<std::unique_ptr<std::__thread_struct, std::default_delete<std::__thread_struct> >, main::$_0> >(void*) [0x0000B8E0] in /|---OMITTED---|/exception_ptr/Debug/exception_ptr:line 0
-//    at _pthread_start [0x000060D8] in /usr/lib/system/introspection/libsystem_pthread.dylib:line 0
+//    at xtd::invalid_operation_exception::invalid_operation_exception(std::__1::optional<xtd::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>> const&, xtd::diagnostics::stack_frame const&) in invalid_operation_exception.cpp:line 10
+//    at main::$_0::operator()() const in exception_ptr.cpp:line 8
+//    at xtd::threading::thread::thread_proc() in thread.cpp:line 579
+//    at xtd::threading::thread::start()::$_0::operator()(long) const in thread.cpp:line 350
+//    at xtd::native::thread::create(std::__1::function<void (long)>, long, int, bool, long&)::$_0::operator()(void*) const in thread.mm:line 22
+//    at xtd::native::thread::create(std::__1::function<void (long)>, long, int, bool, long&)::$_0::__invoke(void*) in thread.mm:line 19
+//    at _pthread_start
+//    at thread_start
