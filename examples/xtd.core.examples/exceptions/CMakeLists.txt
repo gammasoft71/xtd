@@ -5,6 +5,7 @@ find_package(xtd REQUIRED)
 
 add_projects(
   argument_exception
+  exception_dispatch_info
   exception_ptr
   system_exception
   user_defined_exception
