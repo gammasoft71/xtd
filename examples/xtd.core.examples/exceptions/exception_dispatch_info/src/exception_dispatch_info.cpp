@@ -3,14 +3,13 @@
 auto main() -> int {
   auto capture_exception = exception_services::exception_dispatch_info {};
   
-  auto thread1 = thread::start_new([&] {
+  thread::start_new([&] {
     try {
       throw invalid_operation_exception("Ouch there are an exception !");
     } catch (...) {
       capture_exception = exception_services::exception_dispatch_info::capture();
     }
-  });
-  thread1.join();
+  }).join();
   
   if (capture_exception) {
     try {
