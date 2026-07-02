@@ -32,10 +32,8 @@ auto print_duration(const string& text, const std::chrono::duration<type_t, peri
   console::out <<  "│ " << text.pad_right(50) << " │ {:t}       │ " << format("{:t}", value).pad_right(26) << " │" << environment::new_line;
   console::out <<  "│ " << text.pad_right(50) << " │ {:T}       │ " << format("{:T}", value).pad_right(26) << " │" << environment::new_line;
   
-  if (c != cap::end)
-    console::out << "├────────────────────────────────────────────────────┼────────────┼────────────────────────────┤" << environment::new_line;
-  else
-    console::out << "└────────────────────────────────────────────────────┴────────────┴────────────────────────────┘" << environment::new_line;
+  if (c != cap::end) console::out << "├────────────────────────────────────────────────────┼────────────┼────────────────────────────┤" << environment::new_line;
+  else console::out << "└────────────────────────────────────────────────────┴────────────┴────────────────────────────┘" << environment::new_line;
 }
 
 auto main() -> int {
