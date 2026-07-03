@@ -108,6 +108,14 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="contents">
 <p>Show how to use format <a class="el" href="group__format__parse.html#gab742c10192ef06aa7ca460264da512d1" title="Writes the text representation of the specified arguments list, to string using the specified format ...">xtd::format</a> class with sequence containers.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;array&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;deque&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;forward_list&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;initializer_list&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;list&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;queue&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;stack&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;{}&quot;</span>, array&lt;int&gt; {1, 2, 3, 4}) &lt;&lt; environment::new_line;</div>

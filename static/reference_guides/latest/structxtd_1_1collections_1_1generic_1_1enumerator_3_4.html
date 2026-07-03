@@ -260,7 +260,7 @@ template&lt;typename collection_t, typename version_t = std::nullptr_t&gt; </div
 <div class="line"> </div>
 <div class="line"><span class="keyword">class </span>program {</div>
 <div class="line"><span class="keyword">public</span>:</div>
-<div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() -&gt; <span class="keywordtype">void</span> {</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
 <div class="line">    <span class="keyword">auto</span> boxes = box_collection {{10, 20, 30}, {20, 5, 10}, {12, 3, 7}};</div>
 <div class="line">    </div>
 <div class="line">    <span class="keyword">auto</span> enumerator = boxes.get_enumerator();</div>
@@ -284,15 +284,15 @@ template&lt;typename collection_t, typename version_t = std::nullptr_t&gt; </div
 <div class="line">    <span class="keywordtype">int</span> <a class="code hl_enumvalue" href="group__xtd__forms.html#gga475781e3c7baa300a81ab16d22b16962aeaae26a6fb20ed3ef54fb23bfa0b1fcc">width</a> = 0;</div>
 <div class="line">    <span class="keywordtype">int</span> <a class="code hl_enumvalue" href="group__xtd__forms.html#gga475781e3c7baa300a81ab16d22b16962ab435e227d5dd201e1768b2bcb2e0aa81">height</a> = 0;</div>
 <div class="line">    </div>
-<div class="line">    <span class="keywordtype">bool</span> <a class="code hl_function" href="namespacextd.html#a678a2218785aaad9e6c107a34b486369">equals</a>(<span class="keyword">const</span> program::box&amp; o) <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> <a class="code hl_function" href="namespacextd.html#a84689e2cdf94d64f7e5f33fe4a1be71a">length</a> == <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ad95679752134a2d9eb61dbd7b91c4bcc">o</a>.length &amp;&amp; <a class="code hl_enumvalue" href="group__xtd__forms.html#gga475781e3c7baa300a81ab16d22b16962aeaae26a6fb20ed3ef54fb23bfa0b1fcc">width</a> == <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ad95679752134a2d9eb61dbd7b91c4bcc">o</a>.width &amp;&amp; <a class="code hl_enumvalue" href="group__xtd__forms.html#gga475781e3c7baa300a81ab16d22b16962ab435e227d5dd201e1768b2bcb2e0aa81">height</a> == <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ad95679752134a2d9eb61dbd7b91c4bcc">o</a>.height;}</div>
-<div class="line">    <span class="keywordtype">string</span> <a class="code hl_function" href="namespacextd.html#a35d0d55a78eddf3d056a0db05fbf8b16">to_string</a>() const noexcept {<span class="keywordflow">return</span> string::format(<span class="stringliteral">&quot;box [length={}, width={}, height={}]&quot;</span>, length, width, height);}</div>
+<div class="line">    <span class="keyword">auto</span> <a class="code hl_function" href="namespacextd.html#a678a2218785aaad9e6c107a34b486369">equals</a>(<span class="keyword">const</span> program::box&amp; o) <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; <span class="keywordtype">bool</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> <a class="code hl_function" href="namespacextd.html#a84689e2cdf94d64f7e5f33fe4a1be71a">length</a> == <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ad95679752134a2d9eb61dbd7b91c4bcc">o</a>.length &amp;&amp; <a class="code hl_enumvalue" href="group__xtd__forms.html#gga475781e3c7baa300a81ab16d22b16962aeaae26a6fb20ed3ef54fb23bfa0b1fcc">width</a> == <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ad95679752134a2d9eb61dbd7b91c4bcc">o</a>.width &amp;&amp; <a class="code hl_enumvalue" href="group__xtd__forms.html#gga475781e3c7baa300a81ab16d22b16962ab435e227d5dd201e1768b2bcb2e0aa81">height</a> == <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ad95679752134a2d9eb61dbd7b91c4bcc">o</a>.height;}</div>
+<div class="line">    <span class="keyword">auto</span> <a class="code hl_function" href="namespacextd.html#a35d0d55a78eddf3d056a0db05fbf8b16">to_string</a>() const noexcept -&gt; <span class="keywordtype">string</span> {<span class="keywordflow">return</span> string::format(<span class="stringliteral">&quot;box [length={}, width={}, height={}]&quot;</span>, length, width, height);}</div>
 <div class="line">  };</div>
 <div class="line">  </div>
 <div class="line">  <span class="keyword">class </span>box_collection : <span class="keyword">public</span> <a class="code hl_typedef" href="group__collections.html#gaf8650b6defaa46086307019cf98a5248">ienumerable</a>&lt;program::box&gt; {</div>
 <div class="line">  <span class="keyword">public</span>:</div>
 <div class="line">    box_collection(<span class="keyword">const</span> std::initializer_list&lt;program::box&gt;&amp; boxes) : boxes_(boxes) {}</div>
 <div class="line">    </div>
-<div class="line">    enumerator&lt;program::box&gt; get_enumerator()<span class="keyword"> const override </span>{</div>
+<div class="line">    <span class="keyword">auto</span> get_enumerator() const -&gt; enumerator&lt;program::box&gt;<span class="keyword"> override </span>{</div>
 <div class="line">      <span class="keywordflow">return</span> enumerator&lt;&gt;::create(boxes_);</div>
 <div class="line">    }</div>
 <div class="line">    </div>

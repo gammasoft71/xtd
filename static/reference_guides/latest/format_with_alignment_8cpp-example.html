@@ -113,6 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;[{,10}]&quot;</span>, 42) &lt;&lt; environment::new_line;</div>
 <div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;[{,-10}]&quot;</span>, 42) &lt;&lt; environment::new_line;</div>
 <div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;[{:D10}]&quot;</span>, 42) &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;[{,10:D5}]&quot;</span>, 42) &lt;&lt; environment::new_line;</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
@@ -120,6 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line"><span class="comment">// [        42]</span></div>
 <div class="line"><span class="comment">// [42        ]</span></div>
 <div class="line"><span class="comment">// [0000000042]</span></div>
+<div class="line"><span class="comment">// [     00042]</span></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->

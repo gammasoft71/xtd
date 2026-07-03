@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line"> </div>
 <div class="line"><span class="keyword">class </span>example {</div>
 <div class="line"><span class="keyword">public</span>:</div>
-<div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() -&gt; <span class="keywordtype">void</span> {</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
 <div class="line">    <span class="comment">// Create a new linked_list_node of type string and displays its properties.</span></div>
 <div class="line">    <span class="keyword">auto</span> lln = linked_list_node&lt;string&gt; {<span class="stringliteral">&quot;orange&quot;</span>};</div>
 <div class="line">    console::write_line(<span class="stringliteral">&quot;After creating the node ....&quot;</span>);</div>
@@ -135,23 +135,18 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line">    display_properties(lln);</div>
 <div class="line">  }</div>
 <div class="line"> </div>
-<div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> display_properties(<span class="keyword">const</span> linked_list_node&lt;string&gt;&amp; lln )  {</div>
-<div class="line">    <span class="keywordflow">if</span> (lln.list().is_empty())</div>
-<div class="line">      console::write_line(<span class="stringliteral">&quot;   Node is not linked.&quot;</span>);</div>
-<div class="line">    <span class="keywordflow">else</span></div>
-<div class="line">      console::write_line(<span class="stringliteral">&quot;   Node belongs to a linked list with {0} elements.&quot;</span>, lln.list().get().count());</div>
+<div class="line"><span class="keyword">private</span>:</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> display_properties(<span class="keyword">const</span> linked_list_node&lt;string&gt;&amp; lln) -&gt; <span class="keywordtype">void</span> {</div>
+<div class="line">    <span class="keywordflow">if</span> (lln.list().is_empty()) console::write_line(<span class="stringliteral">&quot;   Node is not linked.&quot;</span>);</div>
+<div class="line">    <span class="keywordflow">else</span> console::write_line(<span class="stringliteral">&quot;   Node belongs to a linked list with {0} elements.&quot;</span>, lln.list().get().count());</div>
 <div class="line">    </div>
-<div class="line">    <span class="keywordflow">if</span> (lln.previous() == nullopt)</div>
-<div class="line">      console::write_line(<span class="stringliteral">&quot;   Previous node is null.&quot;</span>);</div>
-<div class="line">    <span class="keywordflow">else</span></div>
-<div class="line">      console::write_line(<span class="stringliteral">&quot;   Value of previous node: {0}&quot;</span>, lln.previous()-&gt;value());</div>
+<div class="line">    <span class="keywordflow">if</span> (lln.previous() == nullopt) console::write_line(<span class="stringliteral">&quot;   Previous node is null.&quot;</span>);</div>
+<div class="line">    <span class="keywordflow">else</span> console::write_line(<span class="stringliteral">&quot;   Value of previous node: {0}&quot;</span>, lln.previous()-&gt;value());</div>
 <div class="line">    </div>
 <div class="line">    console::write_line(<span class="stringliteral">&quot;   Value of current node:  {0}&quot;</span>, lln.value());</div>
 <div class="line">    </div>
-<div class="line">    <span class="keywordflow">if</span> (lln.next() == nullopt)</div>
-<div class="line">      console::write_line(<span class="stringliteral">&quot;   Next node is null.&quot;</span>);</div>
-<div class="line">    <span class="keywordflow">else</span></div>
-<div class="line">      console::write_line(<span class="stringliteral">&quot;   Value of next node:     {0}&quot;</span>, lln.next()-&gt;value());</div>
+<div class="line">    <span class="keywordflow">if</span> (lln.next() == nullopt) console::write_line(<span class="stringliteral">&quot;   Next node is null.&quot;</span>);</div>
+<div class="line">    <span class="keywordflow">else</span> console::write_line(<span class="stringliteral">&quot;   Value of next node:     {0}&quot;</span>, lln.next()-&gt;value());</div>
 <div class="line">    </div>
 <div class="line">    console::write_line();</div>
 <div class="line">  }</div>

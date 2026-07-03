@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line"> </div>
 <div class="line"><span class="keyword">class </span>example {</div>
 <div class="line"><span class="keyword">public</span>:</div>
-<div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() -&gt; <span class="keywordtype">void</span> {</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
 <div class="line">    <span class="comment">// Create the link list.</span></div>
 <div class="line">    <span class="keyword">auto</span> sentence = linked_list&lt;string&gt; { <span class="stringliteral">&quot;the&quot;</span>, <span class="stringliteral">&quot;fox&quot;</span>, <span class="stringliteral">&quot;jumps&quot;</span>, <span class="stringliteral">&quot;over&quot;</span>, <span class="stringliteral">&quot;the&quot;</span>, <span class="stringliteral">&quot;dog&quot;</span> };</div>
 <div class="line">    display(sentence, <span class="stringliteral">&quot;The linked list values:&quot;</span>);</div>
@@ -216,7 +216,8 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line">    console::write_line(<span class="stringliteral">&quot;Test 18: Cleared linked list Contains &#39;jumps&#39; = {0}&quot;</span>, sentence.contains(<span class="stringliteral">&quot;jumps&quot;</span>));</div>
 <div class="line">  }</div>
 <div class="line">  </div>
-<div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> display(<span class="keyword">const</span> linked_list&lt;string&gt;&amp; words, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; test) {</div>
+<div class="line"><span class="keyword">private</span>:</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> display(<span class="keyword">const</span> linked_list&lt;string&gt;&amp; words, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; test) -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">    console::write_line(test);</div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> word : words)</div>
 <div class="line">      console::write(word + <span class="stringliteral">&quot; &quot;</span>);</div>
@@ -224,7 +225,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line">    console::write_line();</div>
 <div class="line">  }</div>
 <div class="line">  </div>
-<div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> indicate_node(<span class="keyword">const</span> linked_list_node&lt;string&gt;&amp; node, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; test) {</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> indicate_node(<span class="keyword">const</span> linked_list_node&lt;string&gt;&amp; node, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; test) -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">    console::write_line(test);</div>
 <div class="line">    <span class="keyword">auto</span> l = node.list();</div>
 <div class="line">    <span class="keywordflow">if</span> (!l) {</div>

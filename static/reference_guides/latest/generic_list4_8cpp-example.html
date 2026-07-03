@@ -119,17 +119,17 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line">  part() = <span class="keywordflow">default</span>;</div>
 <div class="line">  part(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; name, <span class="keywordtype">int</span> <span class="keywordtype">id</span>) : part_name {name}, part_id {<span class="keywordtype">id</span>} {}</div>
 <div class="line"> </div>
-<div class="line">  <span class="keywordtype">string</span> to_string() <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> string::format(<span class="stringliteral">&quot;ID: {}   Name: {}&quot;</span>, part_id, part_name);}</div>
+<div class="line">  <span class="keyword">auto</span> to_string() <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; <span class="keywordtype">string</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> string::format(<span class="stringliteral">&quot;ID: {}   Name: {}&quot;</span>, part_id, part_name);}</div>
 <div class="line">  </div>
-<div class="line">  <span class="keywordtype">bool</span> equals(<span class="keyword">const</span> <span class="keywordtype">object</span>&amp; obj) <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> is&lt;part&gt;(obj) &amp;&amp; equals(as&lt;part&gt;(obj));}</div>
-<div class="line">  <span class="keywordtype">bool</span> equals(<span class="keyword">const</span> part&amp; other) <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> part_id == other.part_id;}</div>
+<div class="line">  <span class="keyword">auto</span> equals(<span class="keyword">const</span> <span class="keywordtype">object</span>&amp; obj) <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; <span class="keywordtype">bool</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> is&lt;part&gt;(obj) &amp;&amp; equals(as&lt;part&gt;(obj));}</div>
+<div class="line">  <span class="keyword">auto</span> equals(<span class="keyword">const</span> part&amp; other) <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; <span class="keywordtype">bool</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> part_id == other.part_id;}</div>
 <div class="line"> </div>
-<div class="line">  usize get_hash_code() <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> part_id;}</div>
+<div class="line">  <span class="keyword">auto</span> get_hash_code() <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; usize <span class="keyword">override</span> {<span class="keywordflow">return</span> part_id;}</div>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">class </span>example {</div>
 <div class="line"><span class="keyword">public</span>:</div>
-<div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() -&gt; <span class="keywordtype">void</span> {</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
 <div class="line">    <span class="comment">// Create a list of parts.</span></div>
 <div class="line">    <span class="keyword">auto</span> parts = list&lt;part&gt;();</div>
 <div class="line">    </div>

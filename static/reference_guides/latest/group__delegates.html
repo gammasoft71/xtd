@@ -231,28 +231,30 @@ template&lt;typename output_t, typename input_t&gt; </div>
 <dl class="section remark"><dt>Remarks</dt><dd>This delegate is used by the xtd::array::convert_all method of the <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> class and the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#aee5601b1023666159dcd573eb1d44896" title="Converts the elements in the current xtd::colllections::generic::list &lt;type_t&gt; to another type,...">xtd::collections::generic::list::convert_all</a> method of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; class to convert each element of the collection from one type to another. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example defines a method named <span class="tt">point_f_to_point</span> that converts a <a class="el" href="structxtd_1_1drawing_1_1point__f.html" title="Represents an ordered pair of floating-point x- and y-coordinates that defines a point in a two-dimen...">xtd::drawing::point_f</a> structure to a <a class="el" href="structxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> structure. The example then creates a <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; of <a class="el" href="structxtd_1_1drawing_1_1point__f.html" title="Represents an ordered pair of floating-point x- and y-coordinates that defines a point in a two-dimen...">xtd::drawing::point_f</a> structures, creates a <a class="el" href="#gaa65321588890f6f9d441562931072818" title="Represents a method that converts an object from one type to another type.">xtd::converter</a> &lt;point_f, point&gt; delegate to represent the <span class="tt">point_f_to_point</span> method, and passes the delegate to the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#aee5601b1023666159dcd573eb1d44896" title="Converts the elements in the current xtd::colllections::generic::list &lt;type_t&gt; to another type,...">xtd::collections::generic::list::convert_all</a> method. The <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#aee5601b1023666159dcd573eb1d44896" title="Converts the elements in the current xtd::colllections::generic::list &lt;type_t&gt; to another type,...">xtd::collections::generic::list::convert_all</a> method passes each element of the input list to the <span class="tt">point_f_to_point</span> method and puts the converted elements into a new list of Point structures. Both lists are displayed. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1drawing.html">xtd::drawing</a>;</div>
+<div class="line"> </div>
 <div class="line"><span class="keyword">class </span>example {</div>
 <div class="line"><span class="keyword">public</span>:</div>
-<div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() -&gt; <span class="keywordtype">void</span> {</div>
-<div class="line">    <span class="keyword">auto</span> lpf = list&lt;drawing::point_f&gt; {};</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
+<div class="line">    <span class="keyword">auto</span> lpf = list&lt;point_f&gt; {};</div>
 <div class="line">    </div>
-<div class="line">    lpf.add(drawing::point_f {27.8f, 32.62f});</div>
-<div class="line">    lpf.add(drawing::point_f {99.3f, 147.273f});</div>
-<div class="line">    lpf.add(drawing::point_f {7.5f, 1412.2f});</div>
+<div class="line">    lpf.add(<a class="code hl_struct" href="structxtd_1_1drawing_1_1point__f.html">point_f</a> {27.8f, 32.62f});</div>
+<div class="line">    lpf.add(point_f {99.3f, 147.273f});</div>
+<div class="line">    lpf.add(point_f {7.5f, 1412.2f});</div>
 <div class="line">    </div>
 <div class="line">    console::write_line();</div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; p : lpf)</div>
 <div class="line">      console::write_line(p);</div>
 <div class="line">    </div>
-<div class="line">    list&lt;drawing::point&gt; lp = lpf.convert_all&lt;drawing::point&gt;(converter&lt;drawing::point, const drawing::point_f&amp;&gt; {point_f_to_point});</div>
+<div class="line">    list&lt;point&gt; lp = lpf.convert_all&lt;<a class="code hl_enumvalue" href="group__xtd__drawing.html#gga35e450ae5d06c5a8ef29e54c607add86a78ee54aa8f813885fe2fe20d232518b9">point</a>&gt;(converter&lt;point, const point_f&amp;&gt; {point_f_to_point});</div>
 <div class="line">    </div>
 <div class="line">    console::write_line();</div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; p : lp)</div>
 <div class="line">      console::write_line(p);</div>
 <div class="line">  }</div>
 <div class="line"> </div>
-<div class="line">  <span class="keyword">static</span> drawing::point point_f_to_point(<span class="keyword">const</span> drawing::point_f&amp; pf) {</div>
-<div class="line">    <span class="keywordflow">return</span> {as&lt;int&gt;(pf.x), as&lt;int&gt;(pf.y)};</div>
+<div class="line">  <span class="keyword">static</span> <a class="code hl_enumvalue" href="group__xtd__drawing.html#gga35e450ae5d06c5a8ef29e54c607add86a78ee54aa8f813885fe2fe20d232518b9">point</a> point_f_to_point(<span class="keyword">const</span> point_f&amp; pf) {</div>
+<div class="line">    <span class="keywordflow">return</span> {as&lt;int&gt;(pf.<a class="code hl_variable" href="structxtd_1_1drawing_1_1point__f.html#a5a0285cbf6466477006c0fd1c0403501">x</a>), as&lt;int&gt;(pf.<a class="code hl_variable" href="structxtd_1_1drawing_1_1point__f.html#abfdb46ed1d51844b0cee9a3dd66c6d44">y</a>)};</div>
 <div class="line">  }</div>
 <div class="line">};</div>
 <div class="line"> </div>
@@ -269,7 +271,14 @@ template&lt;typename output_t, typename input_t&gt; </div>
 <div class="line"><span class="comment">// {x=99, y=147}</span></div>
 <div class="line"><span class="comment">// {x=8, y=1412}</span></div>
 <div class="ttc" id="agroup__keywords_html_gaeb9462ec721c9718cf689e93bf11bf56"><div class="ttname"><a href="group__keywords.html#gaeb9462ec721c9718cf689e93bf11bf56">startup_</a></div><div class="ttdeci">#define startup_(...)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:278</div></div>
+<div class="ttc" id="agroup__xtd__drawing_html_gga35e450ae5d06c5a8ef29e54c607add86a78ee54aa8f813885fe2fe20d232518b9"><div class="ttname"><a href="group__xtd__drawing.html#gga35e450ae5d06c5a8ef29e54c607add86a78ee54aa8f813885fe2fe20d232518b9">xtd::drawing::graphics_unit::point</a></div><div class="ttdeci">@ point</div><div class="ttdoc">Specifies a printer&#39;s point (1/72 inch) as the unit of measure.</div><div class="ttdef"><b>Definition</b> graphics_unit.hpp:25</div></div>
+<div class="ttc" id="anamespacextd_1_1drawing_html"><div class="ttname"><a href="namespacextd_1_1drawing.html">xtd::drawing</a></div><div class="ttdoc">The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functi...</div><div class="ttdef"><b>Definition</b> actions_system_images.hpp:10</div></div>
+<div class="ttc" id="astructxtd_1_1drawing_1_1point__f_html"><div class="ttname"><a href="structxtd_1_1drawing_1_1point__f.html">xtd::drawing::point_f</a></div><div class="ttdoc">Represents an ordered pair of floating-point x- and y-coordinates that defines a point in a two-dimen...</div><div class="ttdef"><b>Definition</b> point_f.hpp:35</div></div>
+<div class="ttc" id="astructxtd_1_1drawing_1_1point__f_html_a5a0285cbf6466477006c0fd1c0403501"><div class="ttname"><a href="structxtd_1_1drawing_1_1point__f.html#a5a0285cbf6466477006c0fd1c0403501">xtd::drawing::point_f::x</a></div><div class="ttdeci">float x</div><div class="ttdoc">Gets or sets the x-coordinate of this xtd::drawing::point_f.</div><div class="ttdef"><b>Definition</b> point_f.hpp:67</div></div>
+<div class="ttc" id="astructxtd_1_1drawing_1_1point__f_html_abfdb46ed1d51844b0cee9a3dd66c6d44"><div class="ttname"><a href="structxtd_1_1drawing_1_1point__f.html#abfdb46ed1d51844b0cee9a3dd66c6d44">xtd::drawing::point_f::y</a></div><div class="ttdeci">float y</div><div class="ttdoc">Gets or sets the y-coordinate of this xtd::drawing::point_f.</div><div class="ttdef"><b>Definition</b> point_f.hpp:71</div></div>
 </div><!-- fragment --> </dd></dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="generic_list_convert_all_8cpp-example.html#_a3">generic_list_convert_all.cpp</a>.</dd>
+</dl>
 
 </div>
 </div>

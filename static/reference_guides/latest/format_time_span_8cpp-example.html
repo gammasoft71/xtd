@@ -137,10 +137,8 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line">  console::out &lt;&lt;  <span class="stringliteral">&quot;│ &quot;</span> &lt;&lt; text.pad_right(40) &lt;&lt; <span class="stringliteral">&quot; │ {:t}       │ &quot;</span> &lt;&lt; string::format(<span class="stringliteral">&quot;{:t}&quot;</span>, value).pad_right(40) &lt;&lt; <span class="stringliteral">&quot; │&quot;</span> &lt;&lt; environment::new_line;</div>
 <div class="line">  console::out &lt;&lt;  <span class="stringliteral">&quot;│ &quot;</span> &lt;&lt; text.pad_right(40) &lt;&lt; <span class="stringliteral">&quot; │ {:T}       │ &quot;</span> &lt;&lt; string::format(<span class="stringliteral">&quot;{:T}&quot;</span>, value).pad_right(40) &lt;&lt; <span class="stringliteral">&quot; │&quot;</span> &lt;&lt; environment::new_line;</div>
 <div class="line">  </div>
-<div class="line">  <span class="keywordflow">if</span> (c != cap::end)</div>
-<div class="line">    console::out &lt;&lt; <span class="stringliteral">&quot;├──────────────────────────────────────────┼────────────┼──────────────────────────────────────────┤&quot;</span> &lt;&lt; environment::new_line;</div>
-<div class="line">  <span class="keywordflow">else</span></div>
-<div class="line">    console::out &lt;&lt; <span class="stringliteral">&quot;└──────────────────────────────────────────┴────────────┴──────────────────────────────────────────┘&quot;</span> &lt;&lt; environment::new_line;</div>
+<div class="line">  <span class="keywordflow">if</span> (c != cap::end) console::out &lt;&lt; <span class="stringliteral">&quot;├──────────────────────────────────────────┼────────────┼──────────────────────────────────────────┤&quot;</span> &lt;&lt; environment::new_line;</div>
+<div class="line">  <span class="keywordflow">else</span> console::out &lt;&lt; <span class="stringliteral">&quot;└──────────────────────────────────────────┴────────────┴──────────────────────────────────────────┘&quot;</span> &lt;&lt; environment::new_line;</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>

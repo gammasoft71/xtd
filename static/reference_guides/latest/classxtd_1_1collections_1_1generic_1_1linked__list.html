@@ -147,7 +147,7 @@ class xtd::collections::generic::linked_list&lt; type_t, allocator_t &gt;</div><
 <div class="line"> </div>
 <div class="line"><span class="keyword">class </span>example {</div>
 <div class="line"><span class="keyword">public</span>:</div>
-<div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() -&gt; <span class="keywordtype">void</span> {</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
 <div class="line">    <span class="comment">// Create the link list.</span></div>
 <div class="line">    <span class="keyword">auto</span> sentence = <a class="code hl_function" href="#a0b991936506920e5c0ed7d6b09819859">linked_list&lt;string&gt;</a> { <span class="stringliteral">&quot;the&quot;</span>, <span class="stringliteral">&quot;fox&quot;</span>, <span class="stringliteral">&quot;jumps&quot;</span>, <span class="stringliteral">&quot;over&quot;</span>, <span class="stringliteral">&quot;the&quot;</span>, <span class="stringliteral">&quot;dog&quot;</span> };</div>
 <div class="line">    display(sentence, <span class="stringliteral">&quot;The linked list values:&quot;</span>);</div>
@@ -250,7 +250,8 @@ class xtd::collections::generic::linked_list&lt; type_t, allocator_t &gt;</div><
 <div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;Test 18: Cleared linked list Contains &#39;jumps&#39; = {0}&quot;</span>, sentence.contains(<span class="stringliteral">&quot;jumps&quot;</span>));</div>
 <div class="line">  }</div>
 <div class="line">  </div>
-<div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> display(<span class="keyword">const</span> linked_list&lt;string&gt;&amp; words, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; test) {</div>
+<div class="line"><span class="keyword">private</span>:</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> display(<span class="keyword">const</span> linked_list&lt;string&gt;&amp; words, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; test) -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(test);</div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> word : words)</div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#abd86463570c9aa0ca88ce4bb118aef7d">console::write</a>(word + <span class="stringliteral">&quot; &quot;</span>);</div>
@@ -258,7 +259,7 @@ class xtd::collections::generic::linked_list&lt; type_t, allocator_t &gt;</div><
 <div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>();</div>
 <div class="line">  }</div>
 <div class="line">  </div>
-<div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> indicate_node(<span class="keyword">const</span> linked_list_node&lt;string&gt;&amp; node, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; test) {</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> indicate_node(<span class="keyword">const</span> linked_list_node&lt;string&gt;&amp; node, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; test) -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(test);</div>
 <div class="line">    <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a2db95e8e1a9267b7a1188556b2013b33">l</a> = node.list();</div>
 <div class="line">    <span class="keywordflow">if</span> (!l) {</div>

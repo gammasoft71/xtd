@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line"> </div>
 <div class="line"><span class="keyword">class </span>program {</div>
 <div class="line"><span class="keyword">public</span>:</div>
-<div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() -&gt; <span class="keywordtype">void</span> {</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
 <div class="line">    <span class="keyword">auto</span> boxes = box_collection {{10, 20, 30}, {20, 5, 10}, {12, 3, 7}};</div>
 <div class="line">    </div>
 <div class="line">    <span class="keyword">auto</span> enumerator = boxes.get_enumerator();</div>
@@ -135,15 +135,15 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line">    <span class="keywordtype">int</span> width = 0;</div>
 <div class="line">    <span class="keywordtype">int</span> height = 0;</div>
 <div class="line">    </div>
-<div class="line">    <span class="keywordtype">bool</span> equals(<span class="keyword">const</span> program::box&amp; o) <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> length == o.length &amp;&amp; width == o.width &amp;&amp; height == o.height;}</div>
-<div class="line">    <span class="keywordtype">string</span> to_string() <span class="keyword">const</span> <span class="keyword">noexcept</span> {<span class="keywordflow">return</span> string::format(<span class="stringliteral">&quot;box [length={}, width={}, height={}]&quot;</span>, length, width, height);}</div>
+<div class="line">    <span class="keyword">auto</span> equals(<span class="keyword">const</span> program::box&amp; o) <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; <span class="keywordtype">bool</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> length == o.length &amp;&amp; width == o.width &amp;&amp; height == o.height;}</div>
+<div class="line">    <span class="keyword">auto</span> to_string() <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; <span class="keywordtype">string</span> {<span class="keywordflow">return</span> string::format(<span class="stringliteral">&quot;box [length={}, width={}, height={}]&quot;</span>, length, width, height);}</div>
 <div class="line">  };</div>
 <div class="line">  </div>
 <div class="line">  <span class="keyword">class </span>box_collection : <span class="keyword">public</span> ienumerable&lt;program::box&gt; {</div>
 <div class="line">  <span class="keyword">public</span>:</div>
 <div class="line">    box_collection(<span class="keyword">const</span> std::initializer_list&lt;program::box&gt;&amp; boxes) : boxes_(boxes) {}</div>
 <div class="line">    </div>
-<div class="line">    enumerator&lt;program::box&gt; get_enumerator()<span class="keyword"> const override </span>{</div>
+<div class="line">    <span class="keyword">auto</span> get_enumerator() <span class="keyword">const</span> -&gt; enumerator&lt;program::box&gt; <span class="keyword">override</span> {</div>
 <div class="line">      <span class="keywordflow">return</span> enumerator&lt;&gt;::create(boxes_);</div>
 <div class="line">    }</div>
 <div class="line">    </div>

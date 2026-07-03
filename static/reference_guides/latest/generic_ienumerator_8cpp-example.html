@@ -117,9 +117,9 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line">  <span class="keywordtype">int</span> width = 0;</div>
 <div class="line">  <span class="keywordtype">int</span> height = 0;</div>
 <div class="line">  </div>
-<div class="line">  int32 compare_to(const ::box&amp; o) <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> 0;}</div>
-<div class="line">  <span class="keywordtype">bool</span> equals(const ::box&amp; o) <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> length == o.length &amp;&amp; width == o.width &amp;&amp; height == o.height;}</div>
-<div class="line">  <span class="keywordtype">string</span> to_string() <span class="keyword">const</span> <span class="keyword">noexcept</span> {<span class="keywordflow">return</span> string::format(<span class="stringliteral">&quot;box [length={}, width={}, height={}]&quot;</span>, length, width, height);}</div>
+<div class="line">  <span class="keyword">auto</span> compare_to(const ::box&amp; o) <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; int32 <span class="keyword">override</span> {<span class="keywordflow">return</span> 0;}</div>
+<div class="line">  <span class="keyword">auto</span> equals(const ::box&amp; o) <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; <span class="keywordtype">bool</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> length == o.length &amp;&amp; width == o.width &amp;&amp; height == o.height;}</div>
+<div class="line">  <span class="keyword">auto</span> to_string() <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; <span class="keywordtype">string</span> {<span class="keywordflow">return</span> string::format(<span class="stringliteral">&quot;box [length={}, width={}, height={}]&quot;</span>, length, width, height);}</div>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using </span>box_collection = list&lt;::box&gt;;</div>
@@ -128,9 +128,9 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">explicit</span> box_enumerator(<span class="keyword">const</span> box_collection&amp; boxes) : boxes {boxes} {}</div>
 <div class="line">  </div>
-<div class="line">  const ::box&amp; <a class="code hl_enumvalue" href="group__xtd__core.html#gga7a589c8f2da82ae9a6f693b968cb7afca43b5c9175984c071f30b873fdce0a000">current</a>()<span class="keyword"> const override </span>{<span class="keywordflow">return</span> boxes[cur_index];}</div>
-<div class="line">  <span class="keywordtype">bool</span> move_next()<span class="keyword"> override </span>{<span class="keywordflow">return</span> ++cur_index &lt; boxes.count();}</div>
-<div class="line">  <span class="keywordtype">void</span> reset()<span class="keyword"> override </span>{cur_index = box_integer&lt;usize&gt;::max_value;}</div>
+<div class="line">  <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#gga7a589c8f2da82ae9a6f693b968cb7afca43b5c9175984c071f30b873fdce0a000">current</a>() const -&gt; const ::box&amp;<span class="keyword"> override </span>{<span class="keywordflow">return</span> boxes[cur_index];}</div>
+<div class="line">  <span class="keyword">auto</span> move_next() -&gt; <span class="keywordtype">bool</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> ++cur_index &lt; boxes.count();}</div>
+<div class="line">  <span class="keyword">auto</span> reset() -&gt; <span class="keywordtype">void</span> <span class="keyword">override</span> {cur_index = box_integer&lt;usize&gt;::max_value;}</div>
 <div class="line">  </div>
 <div class="line"><span class="keyword">private</span>:</div>
 <div class="line">  <span class="keyword">const</span> box_collection&amp; boxes;</div>

@@ -110,8 +110,14 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">class </span>example {</div>
+<div class="line">  <span class="comment">// Predicate to determine vehicle &#39;coolness&#39;.</span></div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> is_not_super_cool(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; vehicle) {</div>
+<div class="line">    <span class="keywordtype">bool</span> super_cool = (vehicle == <span class="stringliteral">&quot;Helicopters&quot;</span>) || (vehicle == <span class="stringliteral">&quot;Motorcycles&quot;</span>);</div>
+<div class="line">    <span class="keywordflow">return</span> !super_cool;</div>
+<div class="line">  }</div>
+<div class="line"> </div>
 <div class="line"><span class="keyword">public</span>:</div>
-<div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> main() {</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
 <div class="line">    <span class="keyword">auto</span> all_vehicles = hash_set&lt;string&gt;(string_comparer::ordinal_ignore_case());</div>
 <div class="line">    <span class="keyword">auto</span> some_vehicles = list&lt;string&gt; {};</div>
 <div class="line">    </div>
@@ -159,12 +165,6 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line">    console::write_line(<span class="stringliteral">&quot;\nThe super cool vehicles are:\n&quot;</span>);</div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> vehicle : all_vehicles)</div>
 <div class="line">      console::write_line(vehicle);</div>
-<div class="line">  }</div>
-<div class="line"> </div>
-<div class="line">  <span class="comment">// Predicate to determine vehicle &#39;coolness&#39;.</span></div>
-<div class="line">  <span class="keyword">static</span> <span class="keywordtype">bool</span> is_not_super_cool(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; vehicle) {</div>
-<div class="line">    <span class="keywordtype">bool</span> super_cool = (vehicle == <span class="stringliteral">&quot;Helicopters&quot;</span>) || (vehicle == <span class="stringliteral">&quot;Motorcycles&quot;</span>);</div>
-<div class="line">    <span class="keywordflow">return</span> !super_cool;</div>
 <div class="line">  }</div>
 <div class="line">};</div>
 <div class="line"> </div>

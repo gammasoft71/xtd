@@ -111,8 +111,15 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line"> </div>
 <div class="line"><span class="keyword">namespace </span>examples {</div>
 <div class="line">  <span class="keyword">class </span>program {</div>
+<div class="line">    <span class="keyword">static</span> <span class="keyword">auto</span> display_set(<span class="keyword">const</span> hash_set&lt;int&gt;&amp; collection) {</div>
+<div class="line">      console::write(<span class="stringliteral">&quot;{&quot;</span>);</div>
+<div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> i : collection)</div>
+<div class="line">        console::write(<span class="stringliteral">&quot; {}&quot;</span>, i);</div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot; }&quot;</span>);</div>
+<div class="line">    }</div>
+<div class="line"> </div>
 <div class="line">  <span class="keyword">public</span>:</div>
-<div class="line">    <span class="keyword">static</span> <span class="keywordtype">void</span> main() {</div>
+<div class="line">    <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
 <div class="line">      <span class="keyword">auto</span> even_numbers = hash_set&lt;int&gt; {};</div>
 <div class="line">      <span class="keyword">auto</span> odd_numbers = hash_set&lt;int&gt; {};</div>
 <div class="line">      </div>
@@ -136,14 +143,6 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line">      </div>
 <div class="line">      console::write(<span class="stringliteral">&quot;numbers contains {} elements: &quot;</span>, numbers.count());</div>
 <div class="line">      display_set(numbers);</div>
-<div class="line">    }</div>
-<div class="line"> </div>
-<div class="line">  <span class="keyword">private</span>:</div>
-<div class="line">    <span class="keyword">static</span> <span class="keywordtype">void</span> display_set(<span class="keyword">const</span> hash_set&lt;int&gt;&amp; collection) {</div>
-<div class="line">      console::write(<span class="stringliteral">&quot;{&quot;</span>);</div>
-<div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> i : collection)</div>
-<div class="line">        console::write(<span class="stringliteral">&quot; {}&quot;</span>, i);</div>
-<div class="line">      console::write_line(<span class="stringliteral">&quot; }&quot;</span>);</div>
 <div class="line">    }</div>
 <div class="line">  };</div>
 <div class="line">}</div>
