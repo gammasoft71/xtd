@@ -298,11 +298,9 @@ template<typename type_t, typename allocator_t>
 
 template<typename type_t, typename container_t>
 [[nodiscard]] inline auto xtd::to_string(const std::queue<type_t, container_t>& values, const xtd::string& fmt, const std::locale& loc) -> xtd::string {
-  struct std_queue : public std::queue<type_t> {
-    [[nodiscard]] static auto underlying_container() {return &std_queue::c;}
-  };
-  const auto& items = values.*std_queue::underlying_container();
-  return __xtd_sequence_container_to_string(items.begin(), items.end(), fmt, loc);
+  struct accessor : public std::queue<type_t> {static auto get() {return &accessor::c;}};
+  const auto& underlying_items = values.*accessor::get();
+  return __xtd_sequence_container_to_string(underlying_items.begin(), underlying_items.end(), fmt, loc);
 }
 
 template<typename type_t, typename container_t>
@@ -319,11 +317,9 @@ template<typename type_t, typename container_t>
 
 template<typename type_t, typename container_t>
 [[nodiscard]] inline auto xtd::to_string(const std::stack<type_t, container_t>& values, const xtd::string& fmt, const std::locale& loc) -> xtd::string {
-  struct std_stack : public std::stack<type_t> {
-    [[nodiscard]] static auto underlying_container() {return &std_stack::c;}
-  };
-  const auto& items = values.*std_stack::underlying_container();
-  return __xtd_sequence_container_to_string(items.rbegin(), items.rend(), fmt, loc);
+  struct accessor : public std::stack<type_t> {static auto get() {return &accessor::c;}};
+  const auto& underlying_items = values.*accessor::get();
+  return __xtd_sequence_container_to_string(underlying_items.rbegin(), underlying_items.rend(), fmt, loc);
 }
 
 template<typename type_t>
