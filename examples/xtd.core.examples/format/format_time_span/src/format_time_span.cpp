@@ -28,10 +28,8 @@ auto print_time_span(const string& text, const time_span& value, cap c) {
   console::out <<  "│ " << text.pad_right(40) << " │ {:t}       │ " << string::format("{:t}", value).pad_right(40) << " │" << environment::new_line;
   console::out <<  "│ " << text.pad_right(40) << " │ {:T}       │ " << string::format("{:T}", value).pad_right(40) << " │" << environment::new_line;
   
-  if (c != cap::end)
-    console::out << "├──────────────────────────────────────────┼────────────┼──────────────────────────────────────────┤" << environment::new_line;
-  else
-    console::out << "└──────────────────────────────────────────┴────────────┴──────────────────────────────────────────┘" << environment::new_line;
+  if (c != cap::end) console::out << "├──────────────────────────────────────────┼────────────┼──────────────────────────────────────────┤" << environment::new_line;
+  else console::out << "└──────────────────────────────────────────┴────────────┴──────────────────────────────────────────┘" << environment::new_line;
 }
 
 auto main() -> int {
