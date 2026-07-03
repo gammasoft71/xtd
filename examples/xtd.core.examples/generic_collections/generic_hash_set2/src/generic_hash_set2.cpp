@@ -1,8 +1,14 @@
 #include <xtd/xtd>
 
 class example {
+  // Predicate to determine vehicle 'coolness'.
+  static auto is_not_super_cool(const string& vehicle) {
+    bool super_cool = (vehicle == "Helicopters") || (vehicle == "Motorcycles");
+    return !super_cool;
+  }
+
 public:
-  static void main() {
+  static auto main() {
     auto all_vehicles = hash_set<string>(string_comparer::ordinal_ignore_case());
     auto some_vehicles = list<string> {};
     
@@ -50,12 +56,6 @@ public:
     console::write_line("\nThe super cool vehicles are:\n");
     for (auto vehicle : all_vehicles)
       console::write_line(vehicle);
-  }
-
-  // Predicate to determine vehicle 'coolness'.
-  static bool is_not_super_cool(const string& vehicle) {
-    bool super_cool = (vehicle == "Helicopters") || (vehicle == "Motorcycles");
-    return !super_cool;
   }
 };
 
