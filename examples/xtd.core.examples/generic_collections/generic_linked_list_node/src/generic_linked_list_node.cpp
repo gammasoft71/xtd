@@ -4,7 +4,7 @@ using namespace text;
 
 class example {
 public:
-  static auto main() -> void {
+  static auto main() {
     // Create a new linked_list_node of type string and displays its properties.
     auto lln = linked_list_node<string> {"orange"};
     console::write_line("After creating the node ....");
@@ -26,23 +26,18 @@ public:
     display_properties(lln);
   }
 
-  static void display_properties(const linked_list_node<string>& lln )  {
-    if (lln.list().is_empty())
-      console::write_line("   Node is not linked.");
-    else
-      console::write_line("   Node belongs to a linked list with {0} elements.", lln.list().get().count());
+private:
+  static auto display_properties(const linked_list_node<string>& lln) -> void {
+    if (lln.list().is_empty()) console::write_line("   Node is not linked.");
+    else console::write_line("   Node belongs to a linked list with {0} elements.", lln.list().get().count());
     
-    if (lln.previous() == nullopt)
-      console::write_line("   Previous node is null.");
-    else
-      console::write_line("   Value of previous node: {0}", lln.previous()->value());
+    if (lln.previous() == nullopt) console::write_line("   Previous node is null.");
+    else console::write_line("   Value of previous node: {0}", lln.previous()->value());
     
     console::write_line("   Value of current node:  {0}", lln.value());
     
-    if (lln.next() == nullopt)
-      console::write_line("   Next node is null.");
-    else
-      console::write_line("   Value of next node:     {0}", lln.next()->value());
+    if (lln.next() == nullopt) console::write_line("   Next node is null.");
+    else console::write_line("   Value of next node:     {0}", lln.next()->value());
     
     console::write_line();
   }
