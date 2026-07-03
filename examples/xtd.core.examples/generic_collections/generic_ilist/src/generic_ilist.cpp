@@ -2,7 +2,7 @@
 
 class program {
 public:
-  static auto main() -> void {
+  static auto main() {
     auto boxes = box_collection {};
     
     boxes.add(program::box {10, 4, 6});
@@ -27,6 +27,7 @@ public:
     console::write_line("Contains {}x{}x{} by volume: {}", box_check.height, box_check.length, box_check.width, boxes.contains(box_check, box_same_volume {}));
   }
   
+private:
   struct box : public object, public iequatable<program::box> {
     // Public Constructors :
     box() = default;
@@ -38,8 +39,8 @@ public:
     int width = 0;
     
     // Public Methods :
-    bool equals(const object& o) const noexcept override {return is<program::box>(o) && equals(as<program::box>(o));}
-    bool equals(const program::box& o) const noexcept override {return box_same_dimensions {}.equals(*this, o);}
+    auto equals(const object& o) const noexcept -> bool override {return is<program::box>(o) && equals(as<program::box>(o));}
+    auto equals(const program::box& o) const noexcept -> bool override {return box_same_dimensions {}.equals(*this, o);}
   };
   
   class box_collection : public ilist<program::box> {
@@ -48,61 +49,59 @@ public:
     box_collection(const std::initializer_list<program::box>& boxes) : boxes_(boxes) {}
     
     // Public Properties :
-    usize count() const noexcept override {return boxes_.count();}
+    auto count() const noexcept -> usize override {return boxes_.count();}
     
-    bool is_fixed_size() const noexcept override {return false;}
-    bool is_read_only() const noexcept override {return false;}
-    bool is_synchronized() const noexcept override {return false;}
+    auto is_fixed_size() const noexcept -> bool override {return false;}
+    auto is_read_only() const noexcept -> bool override {return false;}
+    auto is_synchronized() const noexcept -> bool override {return false;}
     
-    const object& sync_root() const noexcept override {return sync_root_;}
+    auto sync_root() const noexcept -> const object& override {return sync_root_;}
     
     // Public Methods :
-    void add(const program::box& item) override {
-      if (!contains(item))
-        boxes_.add(item);
-      else
-        console::write_line("A box with {}x{}x{} dimensions was already added to the collection.", item.height, item.length, item.width);
+    auto add(const program::box& item) -> void override {
+      if (!contains(item)) boxes_.add(item);
+      else console::write_line("A box with {}x{}x{} dimensions was already added to the collection.", item.height, item.length, item.width);
     }
     
-    void clear() override {boxes_.clear();}
+    auto clear() -> void override {boxes_.clear();}
     
-    bool contains(const program::box& item) const noexcept override {return index_of(item) != npos;}
+    auto contains(const program::box& item) const noexcept -> bool override {return index_of(item) != npos;}
     
-    bool contains(const program::box& item, const iequality_comparer<program::box>& comparer) const noexcept {
+    auto contains(const program::box& item, const iequality_comparer<program::box>& comparer) const noexcept -> bool {
       for (auto box : boxes_)
         if (comparer.equals(box, item)) return true;
       return false;
     }
     
-    void copy_to(array<program::box>& array, usize array_index) const override {boxes_.copy_to(array, array_index);}
+    auto copy_to(array<program::box>& array, usize array_index) const -> void override {boxes_.copy_to(array, array_index);}
     
-    enumerator<program::box> get_enumerator() const override {return {new_ptr<box_enumerator>(boxes_)};}
+    auto get_enumerator() const -> enumerator<program::box> override {return {new_ptr<box_enumerator>(boxes_)};}
     
-    usize index_of(const program::box& item) const noexcept override {
+    auto index_of(const program::box& item) const noexcept -> usize override {
       for (auto index = 0_z; index  < count(); ++index)
         if (boxes_[index] == item) return index;
       return npos;
     }
     
-    void insert(usize index, const program::box& item) override {
+    auto insert(usize index, const program::box& item) -> void override {
       if (index >= count()) throw argument_out_of_range_exception {};
       boxes_.insert(index, item);
     }
     
-    bool remove(const program::box& item) override {return boxes_.remove(item);}
+    auto remove(const program::box& item) -> bool override {return boxes_.remove(item);}
     
-    void remove_at(usize index) override {
+    auto remove_at(usize index) -> void override {
       if (index >= count()) throw argument_out_of_range_exception {};
       boxes_.remove_at(index);
     }
     
     // Public Operators :
-    const program::box& operator [](usize index) const override {
+    auto operator [](usize index) const -> const program::box& override {
       if (index >= count()) throw argument_out_of_range_exception {};
       return boxes_[index];
     }
     
-    program::box& operator [](usize index) override {
+    auto operator [](usize index) -> program::box& override {
       if (index >= count()) throw argument_out_of_range_exception {};
       return boxes_[index];
     }
@@ -118,11 +117,11 @@ public:
     explicit box_enumerator(const list<program::box>& items) : items_(items) {}
     
     // Public Properties :
-    const program::box& current() const override {return items_[index_];}
+    auto current() const -> const program::box& override {return items_[index_];}
     
     // Public Methods :
-    bool move_next() override {return ++index_ < items_.count();}
-    void reset() override {index_ = usize_object::max_value;}
+    auto move_next() -> bool override {return ++index_ < items_.count();}
+    auto reset() -> void override {index_ = usize_object::max_value;}
     
   protected:
     const list<program::box>& items_;
@@ -133,25 +132,25 @@ public:
   class box_same_dimensions : public iequality_comparer<program::box> {
   public:
     // Public Methods :
-    bool equals(const program::box& b1, const program::box& b2) const noexcept override {return b1.height == b2.height && b1.length == b2.length && b1.width == b2.width;}
+    auto equals(const program::box& b1, const program::box& b2) const noexcept -> bool override {return b1.height == b2.height && b1.length == b2.length && b1.width == b2.width;}
     
-    usize get_hash_code(const program::box& box) const noexcept override {return hash_code::combine(box.height, box.length, box.width);}
+    auto get_hash_code(const program::box& box) const noexcept -> usize override {return hash_code::combine(box.height, box.length, box.width);}
   };
   
   // Defines two boxes as equal if they have the same volume.
   class box_same_volume : public iequality_comparer<program::box> {
   public:
     // Public Methods :
-    bool equals(const program::box& b1, const program::box& b2) const noexcept override {return b1.height * b1.length * b1.width == b2.height * b2.length * b2.width;}
+    auto equals(const program::box& b1, const program::box& b2) const noexcept -> bool override {return b1.height * b1.length * b1.width == b2.height * b2.length * b2.width;}
     
-    usize get_hash_code(const program::box& box) const noexcept override {
+    auto get_hash_code(const program::box& box) const noexcept -> usize override {
       auto hash_code = hash_code::combine(box.height, box.length, box.width);
       console::write_line("HC: {}", hash_code);
       return hash_code;
     }
   };
   
-  static void display(const box_collection& boxes) {
+  static auto display(const box_collection& boxes) -> void {
     console::write_line("\nheight  length  width   hash code");
     for (auto index = 0_z; index < boxes.count(); ++index)
       console::write_line("{,-6}  {,-6}  {,-6}  {}", boxes[index].height, boxes[index].length, boxes[index].width, boxes[index].get_hash_code());
