@@ -1,4 +1,12 @@
 #include <xtd/xtd>
+#include <array>
+#include <deque>
+#include <forward_list>
+#include <initializer_list>
+#include <list>
+#include <queue>
+#include <stack>
+#include <vector>
 
 auto main() -> int {
   console::out << string::format("{}", array<int> {1, 2, 3, 4}) << environment::new_line;
