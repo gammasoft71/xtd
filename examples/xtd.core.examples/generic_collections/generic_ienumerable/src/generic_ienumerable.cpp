@@ -2,13 +2,24 @@
 
 class program {
 public:
-  static auto main() -> void {
+  static auto main() {
+    create_temp_file_text();
     test_stream_reader_enumerable();
     console::write_line("---");
     test_reading_file();
+    remove_temp_file_text();
   }
   
-  static void test_stream_reader_enumerable() {
+private:
+  static auto create_temp_file_text() -> void {
+    file::write_all_lines(path::combine(path::get_temp_path(), "temp_file.txt"), {"line 1", "string to search for", "line 3", "line 4", "line 5", "line 6", "line 7", "line 8", "line 9", "line 10", "string to search for", "line 12"});
+  }
+
+  static auto remove_temp_file_text() -> void {
+    file::remove(path::combine(path::get_temp_path(), "temp_file.txt"));
+  }
+
+  static auto test_stream_reader_enumerable() -> void {
     // Check the memory before the iterator is used.
     auto memory_before = memory_information::get_used_process_memory();
     auto strings_found = list<string> {};
@@ -27,9 +38,8 @@ public:
     console::write_line("Memory Used With Iterator = \t{} kb", (memory_after - memory_before) / 1024);
   }
 
-  static void test_reading_file() {
-    usize memory_before = memory_information::get_used_process_memory();
-
+  static auto test_reading_file() -> void {
+    auto memory_before = memory_information::get_used_process_memory();
     auto file_contents = list<string> {};
     try {
       auto sr = stream_reader {path::combine(path::get_temp_path(), "temp_file.txt")};
@@ -62,7 +72,7 @@ public:
     stream_reader_enumerable(const string& file_path) : file_path_ {file_path} {}
     
     // Must implement get_enumerator, which returns a new stream_reader_enumerator.
-    enumerator<string> get_enumerator() const override {return {new_ptr<stream_reader_enumerator>(file_path_)};}
+    auto get_enumerator() const -> enumerator<string> override {return {new_ptr<stream_reader_enumerator>(file_path_)};}
   };
   
   // When you implement xtd::collections::generic::ienumerable <type_t>, you must also implement xtd::collections::generic::ienumerator <type_t>, which will walk through the contents of the file one line at a time.
@@ -76,18 +86,18 @@ public:
     ~stream_reader_enumerator() {sr_.close();}
 
     // Implement current, move_next and reset, which are required by ienumerator.
-    const string& current() const override {
+    auto current() const -> const string& override {
       if (!current_.has_value()) throw invalid_operation_exception {};
       return current_.value();
     }
         
-    bool move_next() override {
+    auto move_next() -> bool override {
       if (sr_.end_of_stream()) current_.reset();
       else current_ = sr_.read_line();
       return current_.has_value();
     }
     
-    void reset() override {
+    auto reset() -> void override {
       sr_.base_stream()->get().seekg(0, std::ios_base::beg);
       current_.reset();
     }
