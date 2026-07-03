@@ -4,7 +4,7 @@ using namespace text;
 
 class example {
 public:
-  static auto main() -> void {
+  static auto main() {
     // Create the link list.
     auto sentence = linked_list<string> { "the", "fox", "jumps", "over", "the", "dog" };
     display(sentence, "The linked list values:");
@@ -107,7 +107,8 @@ public:
     console::write_line("Test 18: Cleared linked list Contains 'jumps' = {0}", sentence.contains("jumps"));
   }
   
-  static void display(const linked_list<string>& words, const string& test) {
+private:
+  static auto display(const linked_list<string>& words, const string& test) -> void {
     console::write_line(test);
     for (auto word : words)
       console::write(word + " ");
@@ -115,7 +116,7 @@ public:
     console::write_line();
   }
   
-  static void indicate_node(const linked_list_node<string>& node, const string& test) {
+  static auto indicate_node(const linked_list_node<string>& node, const string& test) -> void {
     console::write_line(test);
     auto l = node.list();
     if (!l) {
