@@ -2,7 +2,7 @@
 
 class example {
 public:
-  static auto main() -> void {
+  static auto main() {
     auto input = array<string> {"Brachiosaurus", "Amargasaurus", "Mamenchisaurus"};
     
     auto dinosaurs = list<string>(input);
