@@ -70,10 +70,8 @@ auto print_tm(const string& text, const std::tm& value, cap c) {
   console::out <<  "│ " << text.pad_right(32) << " │ {:z}       │ " << string::format("{:z}", value).pad_right(40) << " │" << environment::new_line;
   console::out <<  "│ " << text.pad_right(32) << " │ {:Z}       │ " << string::format("{:Z}", value).pad_right(40) << " │" << environment::new_line;
 
-  if (c != cap::end)
-    console::out << "├──────────────────────────────────┼────────────┼──────────────────────────────────────────┤" << environment::new_line;
-  else
-    console::out << "└──────────────────────────────────┴────────────┴──────────────────────────────────────────┘" << environment::new_line;
+  if (c != cap::end) console::out << "├──────────────────────────────────┼────────────┼──────────────────────────────────────────┤" << environment::new_line;
+  else console::out << "└──────────────────────────────────┴────────────┴──────────────────────────────────────────┘" << environment::new_line;
 }
 
 auto main() -> int {
