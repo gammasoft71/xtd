@@ -18,9 +18,12 @@ xtdc run
 # Output (with colors)
 
 ```
-{1, 2, 3, 4}
-{1, 2, 3, 4}
-{(1, one), (2, two), (3, three), (4, four)}
-{(1, one), (2, two), (3, three), (4, four)}
+{4, 3, 2, 1}
+{(4, four), (3, three), (2, two), (1, one)}
+
+{4, 3, 2, 1}
+{4, 3, 2, 1}
+{(4, four), (3, three), (2, two), (1, one)}
+{(4, four), (3, three), (2, two), (1, one)}
 ```
 
