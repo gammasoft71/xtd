@@ -370,27 +370,21 @@ namespace xtd {
       [[nodiscard]] static auto as_enumerable(std::bitset<size_> source); // defined in xtd/collections/bit_array.hpp
       template<typename source_t, typename container_t>
       static auto as_enumerable(std::queue<source_t, container_t> source) noexcept {
-        struct std_queue : public std::queue<source_t> {
-          [[nodiscard]] static auto underlying_container() {return &std_queue::c;}
-        };
-        const auto& items = source.*std_queue::underlying_container();
-        return as_enumerable(items.begin(), items.end());
+        struct accessor : public std::queue<source_t> {static auto get() {return &accessor::c;}};
+        const auto& underlying_items = source.*accessor::get();
+        return as_enumerable(underlying_items.begin(), underlying_items.end());
       }
       template<typename source_t, typename container_t>
       [[nodiscard]] static auto as_enumerable(std::priority_queue<source_t, container_t> source) noexcept {
-        struct std_priority_queue : public std::queue<source_t> {
-          [[nodiscard]] static auto underlying_container() {return &std_priority_queue::c;}
-        };
-        const auto& items = source.*std_priority_queue::underlying_container();
-        return as_enumerable(items.begin(), items.end());
+        struct accessor : public std::priority_queue<source_t> {static auto get() {return &accessor::c;}};
+        const auto& underlying_items = source.*accessor::get();
+        return as_enumerable(underlying_items.begin(), underlying_items.end());
       }
       template<typename source_t, typename container_t>
       [[nodiscard]] static auto as_enumerable(std::stack<source_t, container_t> source) noexcept {
-        struct std_stack : public std::stack<source_t> {
-          [[nodiscard]] static auto underlying_container() {return &std_stack::c;}
-        };
-        const auto& items = source.*std_stack::underlying_container();
-        return as_enumerable(items.begin(), items.end());
+        struct accessor : public std::stack<source_t> {static auto get() {return &accessor::c;}};
+        const auto& underlying_items = source.*accessor::get();
+        return as_enumerable(underlying_items.begin(), underlying_items.end());
       }
       /// @endcond
       
