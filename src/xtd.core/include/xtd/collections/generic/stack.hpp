@@ -94,11 +94,9 @@ namespace xtd {
         /// @brief Default copy constructor with specified stack.
         /// @param stack The std::stack <type_t> which elements will be inserted from.
         stack(const std::stack<type_t>& stack) {
-          struct std_stack : public std::stack<type_t> {
-            [[nodiscard]] static auto underlying_container() {return &std_stack::c;}
-          };
-          const auto& items = stack.*std_stack::underlying_container();
-          data_->items = base_type(items.begin(), items.end());
+          struct accessor : public std::stack<type_t> {static auto get() {return &accessor::c;}};
+          const auto& underlying_items = stack.*accessor::get();
+          data_->items = base_type(underlying_items.begin(), underlying_items.end());
           ensure_capacity(count());
         }
         /// @brief Initializes a new instance of the xtd::collections::generic::stack <type_t> class that contains elements copied from the specified collection and has sufficient capacity to accommodate the number of elements copied.
