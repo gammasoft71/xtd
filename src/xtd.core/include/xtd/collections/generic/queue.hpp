@@ -87,11 +87,9 @@ namespace xtd {
         /// @brief Default copy constructor with specified queue.
         /// @param queue The std::queue <type_t> which elements will be inserted from.
         queue(const std::queue<type_t>& queue) {
-          struct std_queue : public std::queue<type_t> {
-            [[nodiscard]] static auto underlying_container() {return &std_queue::c;}
-          };
-          const auto& items = queue.*std_queue::underlying_container();
-          data_->items = base_type(items.begin(), items.end());
+          struct accessor : public std::queue<type_t> {static auto get() {return &accessor::c;}};
+          const auto& underlying_items = queue.*accessor::get();
+          data_->items = base_type(underlying_items.begin(), underlying_items.end());
           ensure_capacity(count());
         }
         /// @brief Initializes a new instance of the xtd::collections::generic::queue <type_t> class that contains elements copied from the specified collection and has sufficient capacity to accommodate the number of elements copied.
