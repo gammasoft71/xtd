@@ -2,8 +2,15 @@
 
 namespace examples {
   class program {
+    static auto display_set(const hash_set<int>& collection) {
+      console::write("{");
+      for (auto i : collection)
+        console::write(" {}", i);
+      console::write_line(" }");
+    }
+
   public:
-    static void main() {
+    static auto main() {
       auto even_numbers = hash_set<int> {};
       auto odd_numbers = hash_set<int> {};
       
@@ -27,14 +34,6 @@ namespace examples {
       
       console::write("numbers contains {} elements: ", numbers.count());
       display_set(numbers);
-    }
-
-  private:
-    static void display_set(const hash_set<int>& collection) {
-      console::write("{");
-      for (auto i : collection)
-        console::write(" {}", i);
-      console::write_line(" }");
     }
   };
 }
