@@ -8,9 +8,9 @@ struct box : public iequatable<::box>, public icomparable<::box> {
   int width = 0;
   int height = 0;
   
-  int32 compare_to(const ::box& o) const noexcept override {return 0;}
-  bool equals(const ::box& o) const noexcept override {return length == o.length && width == o.width && height == o.height;}
-  string to_string() const noexcept {return string::format("box [length={}, width={}, height={}]", length, width, height);}
+  auto compare_to(const ::box& o) const noexcept -> int32 override {return 0;}
+  auto equals(const ::box& o) const noexcept -> bool override {return length == o.length && width == o.width && height == o.height;}
+  auto to_string() const noexcept -> string {return string::format("box [length={}, width={}, height={}]", length, width, height);}
 };
 
 using box_collection = list<::box>;
@@ -19,9 +19,9 @@ class box_enumerator : public ienumerator<::box> {
 public:
   explicit box_enumerator(const box_collection& boxes) : boxes {boxes} {}
   
-  const ::box& current() const override {return boxes[cur_index];}
-  bool move_next() override {return ++cur_index < boxes.count();}
-  void reset() override {cur_index = box_integer<usize>::max_value;}
+  auto current() const -> const ::box& override {return boxes[cur_index];}
+  auto move_next() -> bool override {return ++cur_index < boxes.count();}
+  auto reset() -> void override {cur_index = box_integer<usize>::max_value;}
   
 private:
   const box_collection& boxes;
