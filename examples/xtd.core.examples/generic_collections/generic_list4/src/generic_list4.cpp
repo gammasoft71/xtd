@@ -10,17 +10,17 @@ public:
   part() = default;
   part(const string& name, int id) : part_name {name}, part_id {id} {}
 
-  string to_string() const noexcept override {return string::format("ID: {}   Name: {}", part_id, part_name);}
+  auto to_string() const noexcept -> string override {return string::format("ID: {}   Name: {}", part_id, part_name);}
   
-  bool equals(const object& obj) const noexcept override {return is<part>(obj) && equals(as<part>(obj));}
-  bool equals(const part& other) const noexcept override {return part_id == other.part_id;}
+  auto equals(const object& obj) const noexcept -> bool override {return is<part>(obj) && equals(as<part>(obj));}
+  auto equals(const part& other) const noexcept -> bool override {return part_id == other.part_id;}
 
-  usize get_hash_code() const noexcept override {return part_id;}
+  auto get_hash_code() const noexcept -> usize override {return part_id;}
 };
 
 class example {
 public:
-  static auto main() -> void {
+  static auto main() {
     // Create a list of parts.
     auto parts = list<part>();
     
