@@ -2,7 +2,7 @@
 
 class example {
 public:
-  static auto main() -> void {
+  static auto main() {
     auto names = list<string> {};
     names.add("Bruce");
     names.add("Alfred");
