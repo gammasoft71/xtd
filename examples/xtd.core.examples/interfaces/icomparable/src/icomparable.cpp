@@ -4,7 +4,7 @@ class foo : public icomparable<foo> {
 public:
   explicit foo(int value) : value_ {value} {}
 
-  int compare_to(const foo& value) const noexcept override {
+  auto compare_to(const foo& value) const noexcept -> int override {
     if (value_ < value.value_) return -1;
     if (value_ > value.value_) return 1;
     return 0;
