@@ -3,7 +3,7 @@
 class async_demo {
 public:
   // The method to be executed asynchronously.
-  string test_method(int call_duration, int* thread_id) {
+  auto test_method(int call_duration, int* thread_id) -> string {
     console::write_line("Test method begins.");
     thread::sleep(call_duration);
     *thread_id = thread::current_thread().managed_thread_id();
