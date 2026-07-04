@@ -4,9 +4,9 @@ class foo : public object, public iclonable {
 public:
   explicit foo(int value) : value_ {value} {}
 
-  uptr<object> clone() const override {return new_uptr<foo>(value_);}
+  auto clone() const -> uptr<object> override {return new_uptr<foo>(value_);}
 
-  string to_string() const noexcept override {return string::format("{}", value_);}
+  auto to_string() const noexcept -> string override {return string::format("{}", value_);}
 
 private:
   int value_ = 0;
