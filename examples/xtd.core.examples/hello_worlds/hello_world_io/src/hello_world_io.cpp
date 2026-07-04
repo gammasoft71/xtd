@@ -1,6 +1,6 @@
 #include <xtd/xtd>
 
-auto main(int argc, char* argv[]) -> int {
+auto main() -> int {
   auto file_name = path::combine(path::get_temp_path(), "hello_world.txt");
   
   file::write_all_text(file_name, "Hello, World!");
