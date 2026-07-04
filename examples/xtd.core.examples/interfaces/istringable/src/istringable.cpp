@@ -4,10 +4,10 @@ class persona : public istringable<persona> {
 public:
   persona(const string& name, const string& rank) noexcept : name_(name), rank_(rank) {}
   
-  const string& name() const noexcept {return name_;}
-  const string& rank() const noexcept {return rank_;}
+  auto name() const noexcept -> const string& {return name_;}
+  auto rank() const noexcept -> const string& {return rank_;}
   
-  string to_string() const noexcept override {return name_ + " (" + rank_ + ")";}
+  auto to_string() const noexcept -> string override {return name_ + " (" + rank_ + ")";}
   
 private:
   string name_;
