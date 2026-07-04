@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line"> </div>
 <div class="line"><span class="keyword">class </span>example {</div>
 <div class="line"><span class="keyword">public</span>:</div>
-<div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() -&gt; <span class="keywordtype">void</span> {</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
 <div class="line">    <span class="comment">// Creates and initializes a ordered_dictionary.</span></div>
 <div class="line">    <span class="keyword">auto</span> my_ordered_dictionary = ordered_dictionary&lt;string, string&gt; {};</div>
 <div class="line">    my_ordered_dictionary.add(<span class="stringliteral">&quot;test_key1&quot;</span>, <span class="stringliteral">&quot;test_value1&quot;</span>);</div>
@@ -154,6 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line">    display_enumerator(my_enumerator);</div>
 <div class="line">  }</div>
 <div class="line">  </div>
+<div class="line"><span class="keyword">private</span>:</div>
 <div class="line">  <span class="comment">// Displays the contents of the ordered_dictionary from its keys and values</span></div>
 <div class="line">  <span class="keyword">template</span>&lt;<span class="keyword">typename</span> key_t, <span class="keyword">typename</span> value_t&gt;</div>
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> display_contents(<span class="keyword">const</span> icollection&lt;key_t&gt;&amp; key_collection, <span class="keyword">const</span> icollection&lt;value_t&gt;&amp; value_collection, usize dictionary_size) -&gt; <span class="keywordtype">void</span> {</div>

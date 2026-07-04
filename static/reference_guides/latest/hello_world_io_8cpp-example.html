@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <p>The classic first application "Hello, World!" with <a class="el" href="classxtd_1_1io_1_1file.html" title="Provides static methods for the creation, copying, deletion, moving, and opening of files,...">xtd::io::file</a> and <a class="el" href="classxtd_1_1io_1_1path.html" title="Performs operations on std::basic_string instances that contain file or directory path information....">xtd::io::path</a> classes.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>* argv[]) -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> file_name = path::combine(path::get_temp_path(), <span class="stringliteral">&quot;hello_world.txt&quot;</span>);</div>
 <div class="line">  </div>
 <div class="line">  file::write_all_text(file_name, <span class="stringliteral">&quot;Hello, World!&quot;</span>);</div>

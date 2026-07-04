@@ -246,11 +246,12 @@ var searchData=
   ['curling_5fstone_243',['curling_stone',['../classxtd_1_1forms_1_1emoticons.html#a429365ee29a2e9ee74c2819b1de44996',1,'xtd::forms::emoticons']]],
   ['curly_5floop_244',['curly_loop',['../classxtd_1_1forms_1_1emoticons.html#abb0c84f12875cdfa52f6f2957fda7747',1,'xtd::forms::emoticons']]],
   ['currency_5fexchange_245',['currency_exchange',['../classxtd_1_1forms_1_1emoticons.html#ad249edf4c65cc75ff00f83a9189c7a55',1,'xtd::forms::emoticons']]],
-  ['curry_5fand_5frice_246',['curry_and_rice',['../classxtd_1_1forms_1_1emoticons.html#a34f18926486c80fcffaf859e7fe0e222',1,'xtd::forms::emoticons']]],
-  ['cursor_5fchanged_247',['cursor_changed',['../classxtd_1_1forms_1_1control.html#a58d09542c8e17377b90cad12f8658ee2',1,'xtd::forms::control']]],
-  ['custard_248',['custard',['../classxtd_1_1forms_1_1emoticons.html#a03466730585469cd3f9eeef888835c3f',1,'xtd::forms::emoticons']]],
-  ['customs_249',['customs',['../classxtd_1_1forms_1_1emoticons.html#a96bda1f0311b742ed52c36f757f05d0c',1,'xtd::forms::emoticons']]],
-  ['cut_5fof_5fmeat_250',['cut_of_meat',['../classxtd_1_1forms_1_1emoticons.html#ae7250d9a8563bb4888d6c979f8ffcdb3',1,'xtd::forms::emoticons']]],
-  ['cyan_251',['cyan',['../structxtd_1_1drawing_1_1cmyk.html#af5ecb78a95a95dd8497aca283a81f6f6',1,'xtd::drawing::cmyk::cyan'],['../classxtd_1_1drawing_1_1color.html#ace922e8f61ba93ef4bac04d657013c11',1,'xtd::drawing::color::cyan']]],
-  ['cyclone_252',['cyclone',['../classxtd_1_1forms_1_1emoticons.html#a6046f768c31ae00d14612273e6beab79',1,'xtd::forms::emoticons']]]
+  ['current_5fvalue_246',['current_value',['../structxtd_1_1collections_1_1generic_1_1enumerable__generator_1_1promise__type.html#a5a451196870b77f0b0fd7bc78ca9e042',1,'xtd::collections::generic::enumerable_generator::promise_type']]],
+  ['curry_5fand_5frice_247',['curry_and_rice',['../classxtd_1_1forms_1_1emoticons.html#a34f18926486c80fcffaf859e7fe0e222',1,'xtd::forms::emoticons']]],
+  ['cursor_5fchanged_248',['cursor_changed',['../classxtd_1_1forms_1_1control.html#a58d09542c8e17377b90cad12f8658ee2',1,'xtd::forms::control']]],
+  ['custard_249',['custard',['../classxtd_1_1forms_1_1emoticons.html#a03466730585469cd3f9eeef888835c3f',1,'xtd::forms::emoticons']]],
+  ['customs_250',['customs',['../classxtd_1_1forms_1_1emoticons.html#a96bda1f0311b742ed52c36f757f05d0c',1,'xtd::forms::emoticons']]],
+  ['cut_5fof_5fmeat_251',['cut_of_meat',['../classxtd_1_1forms_1_1emoticons.html#ae7250d9a8563bb4888d6c979f8ffcdb3',1,'xtd::forms::emoticons']]],
+  ['cyan_252',['cyan',['../structxtd_1_1drawing_1_1cmyk.html#af5ecb78a95a95dd8497aca283a81f6f6',1,'xtd::drawing::cmyk::cyan'],['../classxtd_1_1drawing_1_1color.html#ace922e8f61ba93ef4bac04d657013c11',1,'xtd::drawing::color::cyan']]],
+  ['cyclone_253',['cyclone',['../classxtd_1_1forms_1_1emoticons.html#a6046f768c31ae00d14612273e6beab79',1,'xtd::forms::emoticons']]]
 ];

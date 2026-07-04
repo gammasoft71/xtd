@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line"><span class="keyword">class </span>async_demo {</div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="comment">// The method to be executed asynchronously.</span></div>
-<div class="line">  <span class="keywordtype">string</span> test_method(<span class="keywordtype">int</span> call_duration, <span class="keywordtype">int</span>* thread_id) {</div>
+<div class="line">  <span class="keyword">auto</span> test_method(<span class="keywordtype">int</span> call_duration, <span class="keywordtype">int</span>* thread_id) -&gt; <span class="keywordtype">string</span> {</div>
 <div class="line">    console::write_line(<span class="stringliteral">&quot;Test method begins.&quot;</span>);</div>
 <div class="line">    thread::sleep(call_duration);</div>
 <div class="line">    *thread_id = thread::current_thread().managed_thread_id();</div>

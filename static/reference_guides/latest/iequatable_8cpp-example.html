@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">explicit</span> foo(<span class="keywordtype">int</span> value) : value_ {value} {}</div>
 <div class="line"> </div>
-<div class="line">  <span class="keywordtype">bool</span> equals(<span class="keyword">const</span> foo&amp; value) <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> value_ == value.value_;}</div>
+<div class="line">  <span class="keyword">auto</span> equals(<span class="keyword">const</span> foo&amp; value) <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; <span class="keywordtype">bool</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> value_ == value.value_;}</div>
 <div class="line">  </div>
 <div class="line"><span class="keyword">private</span>:</div>
 <div class="line">  <span class="keywordtype">int</span> value_ = 0;</div>

@@ -133,10 +133,10 @@ class xtd::istringable&lt; type_t &gt;</div><p>Provides a way to represent the c
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  persona(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; name, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; rank) noexcept : name_(name), rank_(rank) {}</div>
 <div class="line">  </div>
-<div class="line">  <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; name() const noexcept {<span class="keywordflow">return</span> name_;}</div>
-<div class="line">  <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; rank() const noexcept {<span class="keywordflow">return</span> rank_;}</div>
+<div class="line">  <span class="keyword">auto</span> name() const noexcept -&gt; const <span class="keywordtype">string</span>&amp; {<span class="keywordflow">return</span> name_;}</div>
+<div class="line">  <span class="keyword">auto</span> rank() const noexcept -&gt; const <span class="keywordtype">string</span>&amp; {<span class="keywordflow">return</span> rank_;}</div>
 <div class="line">  </div>
-<div class="line">  <span class="keywordtype">string</span> <a class="code hl_function" href="#a56dbc0f8e9f54e41ef885b1f92048c04">to_string</a>() const noexcept<span class="keyword"> override </span>{<span class="keywordflow">return</span> name_ + <span class="stringliteral">&quot; (&quot;</span> + rank_ + <span class="stringliteral">&quot;)&quot;</span>;}</div>
+<div class="line">  <span class="keyword">auto</span> <a class="code hl_function" href="#a56dbc0f8e9f54e41ef885b1f92048c04">to_string</a>() const noexcept -&gt; <span class="keywordtype">string</span><span class="keyword"> override </span>{<span class="keywordflow">return</span> name_ + <span class="stringliteral">&quot; (&quot;</span> + rank_ + <span class="stringliteral">&quot;)&quot;</span>;}</div>
 <div class="line">  </div>
 <div class="line"><span class="keyword">private</span>:</div>
 <div class="line">  <span class="keywordtype">string</span> name_;</div>

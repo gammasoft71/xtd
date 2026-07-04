@@ -133,9 +133,9 @@ Inheritance diagram for xtd::iclonable:</div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">explicit</span> foo(<span class="keywordtype">int</span> value) : value_ {value} {}</div>
 <div class="line"> </div>
-<div class="line">  <a class="code hl_typedef" href="group__types.html#ga6c0a708a117d3b2967d6767f96b82baf">uptr&lt;object&gt;</a> <a class="code hl_function" href="#a2e4820ac1a74316a4002b618940f80ac">clone</a>()<span class="keyword"> const override </span>{<span class="keywordflow">return</span> <a class="code hl_function" href="group__xtd__core.html#ga58b3bd7439b8f4e2d266fbb718405919">new_uptr&lt;foo&gt;</a>(value_);}</div>
+<div class="line">  <span class="keyword">auto</span> <a class="code hl_function" href="#a2e4820ac1a74316a4002b618940f80ac">clone</a>() const -&gt; <a class="code hl_typedef" href="group__types.html#ga6c0a708a117d3b2967d6767f96b82baf">uptr</a>&lt;<span class="keywordtype">object</span>&gt;<span class="keyword"> override </span>{<span class="keywordflow">return</span> <a class="code hl_function" href="group__xtd__core.html#ga58b3bd7439b8f4e2d266fbb718405919">new_uptr&lt;foo&gt;</a>(value_);}</div>
 <div class="line"> </div>
-<div class="line">  <span class="keywordtype">string</span> <a class="code hl_function" href="classxtd_1_1object.html#a4a2f2b475b43f587551ec12d10f1715d">to_string</a>() const noexcept<span class="keyword"> override </span>{<span class="keywordflow">return</span> <a class="code hl_function" href="group__format__parse.html#gab67eb80458cad40e22a5036b84c9a5c7">string::format</a>(<span class="stringliteral">&quot;{}&quot;</span>, value_);}</div>
+<div class="line">  <span class="keyword">auto</span> <a class="code hl_function" href="classxtd_1_1object.html#a4a2f2b475b43f587551ec12d10f1715d">to_string</a>() const noexcept -&gt; <span class="keywordtype">string</span><span class="keyword"> override </span>{<span class="keywordflow">return</span> <a class="code hl_function" href="group__format__parse.html#gab67eb80458cad40e22a5036b84c9a5c7">string::format</a>(<span class="stringliteral">&quot;{}&quot;</span>, value_);}</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">private</span>:</div>
 <div class="line">  <span class="keywordtype">int</span> value_ = 0;</div>

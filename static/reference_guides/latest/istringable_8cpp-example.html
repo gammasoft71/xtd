@@ -113,10 +113,10 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  persona(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; name, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; rank) noexcept : name_(name), rank_(rank) {}</div>
 <div class="line">  </div>
-<div class="line">  <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; name() <span class="keyword">const</span> <span class="keyword">noexcept</span> {<span class="keywordflow">return</span> name_;}</div>
-<div class="line">  <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; rank() <span class="keyword">const</span> <span class="keyword">noexcept</span> {<span class="keywordflow">return</span> rank_;}</div>
+<div class="line">  <span class="keyword">auto</span> name() <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; {<span class="keywordflow">return</span> name_;}</div>
+<div class="line">  <span class="keyword">auto</span> rank() <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; {<span class="keywordflow">return</span> rank_;}</div>
 <div class="line">  </div>
-<div class="line">  <span class="keywordtype">string</span> to_string() <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> name_ + <span class="stringliteral">&quot; (&quot;</span> + rank_ + <span class="stringliteral">&quot;)&quot;</span>;}</div>
+<div class="line">  <span class="keyword">auto</span> to_string() <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; <span class="keywordtype">string</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> name_ + <span class="stringliteral">&quot; (&quot;</span> + rank_ + <span class="stringliteral">&quot;)&quot;</span>;}</div>
 <div class="line">  </div>
 <div class="line"><span class="keyword">private</span>:</div>
 <div class="line">  <span class="keywordtype">string</span> name_;</div>

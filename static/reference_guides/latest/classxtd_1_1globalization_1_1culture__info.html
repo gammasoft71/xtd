@@ -526,11 +526,7 @@ LCIDs are being deprecated, and implementers are strongly encouraged to use newe
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> current = <a class="code hl_function" href="#a48c94995bdba5c2e977dd717f413507c">culture_info::current_culture</a>();</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;The current culture is {}&quot;</span>, current.name());</div>
-<div class="line">  <span class="keyword">auto</span> new_culture = <a class="code hl_function" href="#ab6650b7f1523d0e92fc1fd3b31bd37af">culture_info</a> {};</div>
-<div class="line">  <span class="keywordflow">if</span> (current.name().equals(<span class="stringliteral">&quot;fr-FR&quot;</span>))</div>
-<div class="line">    new_culture = <a class="code hl_class" href="classxtd_1_1globalization_1_1culture__info.html">culture_info</a> {<span class="stringliteral">&quot;fr-LU&quot;</span>};</div>
-<div class="line">  <span class="keywordflow">else</span></div>
-<div class="line">    new_culture = <a class="code hl_class" href="classxtd_1_1globalization_1_1culture__info.html">culture_info</a> {<span class="stringliteral">&quot;fr-FR&quot;</span>};</div>
+<div class="line">  <span class="keyword">auto</span> new_culture = <a class="code hl_function" href="#ab6650b7f1523d0e92fc1fd3b31bd37af">culture_info</a> {current.name().equals(<span class="stringliteral">&quot;fr-FR&quot;</span>) ? <span class="stringliteral">&quot;fr-LU&quot;</span> : <span class="stringliteral">&quot;fr-FR&quot;</span>};</div>
 <div class="line">  </div>
 <div class="line">  <a class="code hl_function" href="#a48c94995bdba5c2e977dd717f413507c">culture_info::current_culture</a>(new_culture);</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;The current culture is now {}&quot;</span>, <a class="code hl_function" href="#a48c94995bdba5c2e977dd717f413507c">culture_info::current_culture</a>().name());</div>
@@ -542,7 +538,6 @@ LCIDs are being deprecated, and implementers are strongly encouraged to use newe
 <div class="line"><span class="comment">// The current culture is now fr-FR</span></div>
 <div class="line"> </div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae600c08b996905be13225bba0f253a63"><div class="ttname"><a href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">xtd::console::write_line</a></div><div class="ttdeci">static auto write_line() -&gt; void</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
-<div class="ttc" id="aclassxtd_1_1globalization_1_1culture__info_html"><div class="ttname"><a href="classxtd_1_1globalization_1_1culture__info.html">xtd::globalization::culture_info</a></div><div class="ttdoc">Provides information about a specific culture (called a locale for unmanaged code development)....</div><div class="ttdef"><b>Definition</b> culture_info.hpp:42</div></div>
 <div class="ttc" id="aclassxtd_1_1globalization_1_1culture__info_html_a48c94995bdba5c2e977dd717f413507c"><div class="ttname"><a href="#a48c94995bdba5c2e977dd717f413507c">xtd::globalization::culture_info::current_culture</a></div><div class="ttdeci">static auto current_culture() noexcept -&gt; xtd::globalization::culture_info</div><div class="ttdoc">Gets the xtd::globalization::culture_info object that represents the culture used by the current appl...</div></div>
 <div class="ttc" id="anamespacextd_1_1globalization_html"><div class="ttname"><a href="namespacextd_1_1globalization.html">xtd::globalization</a></div><div class="ttdoc">Contains classes that define culture-related information, including language, country/region,...</div><div class="ttdef"><b>Definition</b> culture_info.hpp:19</div></div>
 </div><!-- fragment --> </dd></dl>
@@ -597,11 +592,7 @@ For example, suppose that Arabic (Saudi Arabia) is the current Windows culture a
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> current = <a class="code hl_function" href="#a48c94995bdba5c2e977dd717f413507c">culture_info::current_culture</a>();</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;The current culture is {}&quot;</span>, current.name());</div>
-<div class="line">  <span class="keyword">auto</span> new_culture = <a class="code hl_function" href="#ab6650b7f1523d0e92fc1fd3b31bd37af">culture_info</a> {};</div>
-<div class="line">  <span class="keywordflow">if</span> (current.name().equals(<span class="stringliteral">&quot;fr-FR&quot;</span>))</div>
-<div class="line">    new_culture = <a class="code hl_class" href="classxtd_1_1globalization_1_1culture__info.html">culture_info</a> {<span class="stringliteral">&quot;fr-LU&quot;</span>};</div>
-<div class="line">  <span class="keywordflow">else</span></div>
-<div class="line">    new_culture = <a class="code hl_class" href="classxtd_1_1globalization_1_1culture__info.html">culture_info</a> {<span class="stringliteral">&quot;fr-FR&quot;</span>};</div>
+<div class="line">  <span class="keyword">auto</span> new_culture = <a class="code hl_function" href="#ab6650b7f1523d0e92fc1fd3b31bd37af">culture_info</a> {current.name().equals(<span class="stringliteral">&quot;fr-FR&quot;</span>) ? <span class="stringliteral">&quot;fr-LU&quot;</span> : <span class="stringliteral">&quot;fr-FR&quot;</span>};</div>
 <div class="line">  </div>
 <div class="line">  <a class="code hl_function" href="#a48c94995bdba5c2e977dd717f413507c">culture_info::current_culture</a>(new_culture);</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;The current culture is now {}&quot;</span>, <a class="code hl_function" href="#a48c94995bdba5c2e977dd717f413507c">culture_info::current_culture</a>().name());</div>
@@ -757,6 +748,7 @@ For example, suppose that Arabic (Saudi Arabia) is the current Windows culture a
 <div class="line"><span class="comment">// dtfi.date_separator         /                -                -                .</span></div>
 <div class="line"><span class="comment">// nfi.currency_symbol         $                USD              USD              usd</span></div>
 <div class="line"><span class="comment">// nfi.number_decimal_digits   2                4                4                3</span></div>
+<div class="ttc" id="aclassxtd_1_1globalization_1_1culture__info_html"><div class="ttname"><a href="classxtd_1_1globalization_1_1culture__info.html">xtd::globalization::culture_info</a></div><div class="ttdoc">Provides information about a specific culture (called a locale for unmanaged code development)....</div><div class="ttdef"><b>Definition</b> culture_info.hpp:42</div></div>
 <div class="ttc" id="aclassxtd_1_1globalization_1_1culture__info_html_acef40d4ad64543196ee698d5b68d9d46"><div class="ttname"><a href="#acef40d4ad64543196ee698d5b68d9d46">xtd::globalization::culture_info::date_time_format</a></div><div class="ttdeci">auto date_time_format() const -&gt; const xtd::globalization::date_time_format_info &amp;</div><div class="ttdoc">Gets or sets a xtd::globalization::date_time_format_info that defines the culturally appropriate form...</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="culture_info_date_time_format_8cpp-example.html#a1">culture_info_date_time_format.cpp</a>.</dd>
@@ -1084,15 +1076,8 @@ The value of this property is the same, regardless of the language version of th
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="comment">// Lists the cultures that use the Chinese language and determines if each is a neutral culture.</span></div>
-<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> ci : <a class="code hl_function" href="#a714f23f75de6271ca4776fde793b6b7c">culture_info::get_cultures</a>(<a class="code hl_enumvalue" href="group__globalization.html#gga27becfc96240a075bb60e6f45f8071e6a7b305fa3207bc7aeb6422063924f269d">culture_types::all_cultures</a>)) {</div>
-<div class="line">    <span class="keywordflow">if</span> (ci.two_letter_iso_language_name() == <span class="stringliteral">&quot;zh&quot;</span>) {</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#abd86463570c9aa0ca88ce4bb118aef7d">console::write</a>(<span class="stringliteral">&quot;{,-11} {,-40}&quot;</span>, ci.name(), ci.english_name());</div>
-<div class="line">      <span class="keywordflow">if</span> (ci.is_neutral_culture())</div>
-<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;: neutral&quot;</span>);</div>
-<div class="line">      <span class="keywordflow">else</span></div>
-<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;: specific&quot;</span>);</div>
-<div class="line">    }</div>
-<div class="line">  }</div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> ci : <a class="code hl_function" href="#a714f23f75de6271ca4776fde793b6b7c">culture_info::get_cultures</a>(<a class="code hl_enumvalue" href="group__globalization.html#gga27becfc96240a075bb60e6f45f8071e6a7b305fa3207bc7aeb6422063924f269d">culture_types::all_cultures</a>).where([](<span class="keyword">auto</span> ci) {<span class="keywordflow">return</span> ci.two_letter_iso_language_name() == <span class="stringliteral">&quot;zh&quot;</span>;}))</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;{,-11} {,-40} {}&quot;</span>, ci.name(), ci.english_name(), ci.is_neutral_culture() ? <span class="stringliteral">&quot;: neutral&quot;</span> : <span class="stringliteral">&quot;: specific&quot;</span>);</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
@@ -1309,15 +1294,8 @@ The value of this property is the same, regardless of the language version of th
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="comment">// Lists the cultures that use the Chinese language and determines if each is a neutral culture.</span></div>
-<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> ci : <a class="code hl_function" href="#a714f23f75de6271ca4776fde793b6b7c">culture_info::get_cultures</a>(<a class="code hl_enumvalue" href="group__globalization.html#gga27becfc96240a075bb60e6f45f8071e6a7b305fa3207bc7aeb6422063924f269d">culture_types::all_cultures</a>)) {</div>
-<div class="line">    <span class="keywordflow">if</span> (ci.two_letter_iso_language_name() == <span class="stringliteral">&quot;zh&quot;</span>) {</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#abd86463570c9aa0ca88ce4bb118aef7d">console::write</a>(<span class="stringliteral">&quot;{,-11} {,-40}&quot;</span>, ci.name(), ci.english_name());</div>
-<div class="line">      <span class="keywordflow">if</span> (ci.is_neutral_culture())</div>
-<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;: neutral&quot;</span>);</div>
-<div class="line">      <span class="keywordflow">else</span></div>
-<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;: specific&quot;</span>);</div>
-<div class="line">    }</div>
-<div class="line">  }</div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> ci : <a class="code hl_function" href="#a714f23f75de6271ca4776fde793b6b7c">culture_info::get_cultures</a>(<a class="code hl_enumvalue" href="group__globalization.html#gga27becfc96240a075bb60e6f45f8071e6a7b305fa3207bc7aeb6422063924f269d">culture_types::all_cultures</a>).where([](<span class="keyword">auto</span> ci) {<span class="keywordflow">return</span> ci.two_letter_iso_language_name() == <span class="stringliteral">&quot;zh&quot;</span>;}))</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;{,-11} {,-40} {}&quot;</span>, ci.name(), ci.english_name(), ci.is_neutral_culture() ? <span class="stringliteral">&quot;: neutral&quot;</span> : <span class="stringliteral">&quot;: specific&quot;</span>);</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
@@ -1458,11 +1436,9 @@ The value of this property is the same, regardless of the language version of th
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1globalization.html">xtd::globalization</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> ci : <a class="code hl_function" href="#a714f23f75de6271ca4776fde793b6b7c">culture_info::get_cultures</a>(<a class="code hl_enumvalue" href="group__globalization.html#gga27becfc96240a075bb60e6f45f8071e6a0bfcfc8f41e5ee1d585b0ca075307541">culture_types::specific_cultures</a>)) {</div>
-<div class="line">    <span class="keywordflow">if</span> (ci.two_letter_iso_language_name() == <span class="stringliteral">&quot;zh&quot;</span>) {</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#abd86463570c9aa0ca88ce4bb118aef7d">console::write</a>(<span class="stringliteral">&quot;0x{:X4} {} {,-40}&quot;</span>, ci.lcid(), ci.name(), ci.english_name());</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;0x{:X4} {} {}&quot;</span>, ci.parent().lcid(), ci.parent().name(), ci.parent().english_name());</div>
-<div class="line">    }</div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> ci : <a class="code hl_function" href="#a714f23f75de6271ca4776fde793b6b7c">culture_info::get_cultures</a>(<a class="code hl_enumvalue" href="group__globalization.html#gga27becfc96240a075bb60e6f45f8071e6a0bfcfc8f41e5ee1d585b0ca075307541">culture_types::specific_cultures</a>).where([](<span class="keyword">auto</span> ci) {<span class="keywordflow">return</span> ci.two_letter_iso_language_name() == <span class="stringliteral">&quot;zh&quot;</span>;})) {</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#abd86463570c9aa0ca88ce4bb118aef7d">console::write</a>(<span class="stringliteral">&quot;0x{:X4} {} {,-40}&quot;</span>, ci.lcid(), ci.name(), ci.english_name());</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;0x{:X4} {} {}&quot;</span>, ci.parent().lcid(), ci.parent().name(), ci.parent().english_name());</div>
 <div class="line">  }</div>
 <div class="line">}</div>
 <div class="line"> </div>
@@ -1518,15 +1494,8 @@ If the language/respurces for the specific culture are not available in the syst
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="comment">// Lists the cultures that use the Chinese language and determines if each is a neutral culture.</span></div>
-<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> ci : <a class="code hl_function" href="#a714f23f75de6271ca4776fde793b6b7c">culture_info::get_cultures</a>(<a class="code hl_enumvalue" href="group__globalization.html#gga27becfc96240a075bb60e6f45f8071e6a7b305fa3207bc7aeb6422063924f269d">culture_types::all_cultures</a>)) {</div>
-<div class="line">    <span class="keywordflow">if</span> (ci.two_letter_iso_language_name() == <span class="stringliteral">&quot;zh&quot;</span>) {</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#abd86463570c9aa0ca88ce4bb118aef7d">console::write</a>(<span class="stringliteral">&quot;{,-11} {,-40}&quot;</span>, ci.name(), ci.english_name());</div>
-<div class="line">      <span class="keywordflow">if</span> (ci.is_neutral_culture())</div>
-<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;: neutral&quot;</span>);</div>
-<div class="line">      <span class="keywordflow">else</span></div>
-<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;: specific&quot;</span>);</div>
-<div class="line">    }</div>
-<div class="line">  }</div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> ci : <a class="code hl_function" href="#a714f23f75de6271ca4776fde793b6b7c">culture_info::get_cultures</a>(<a class="code hl_enumvalue" href="group__globalization.html#gga27becfc96240a075bb60e6f45f8071e6a7b305fa3207bc7aeb6422063924f269d">culture_types::all_cultures</a>).where([](<span class="keyword">auto</span> ci) {<span class="keywordflow">return</span> ci.two_letter_iso_language_name() == <span class="stringliteral">&quot;zh&quot;</span>;}))</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;{,-11} {,-40} {}&quot;</span>, ci.name(), ci.english_name(), ci.is_neutral_culture() ? <span class="stringliteral">&quot;: neutral&quot;</span> : <span class="stringliteral">&quot;: specific&quot;</span>);</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
@@ -1582,15 +1551,8 @@ If the language/respurces for the specific culture are not available in the syst
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="comment">// Lists the cultures that use the Chinese language and determines if each is a neutral culture.</span></div>
-<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> ci : <a class="code hl_function" href="#a714f23f75de6271ca4776fde793b6b7c">culture_info::get_cultures</a>(<a class="code hl_enumvalue" href="group__globalization.html#gga27becfc96240a075bb60e6f45f8071e6a7b305fa3207bc7aeb6422063924f269d">culture_types::all_cultures</a>)) {</div>
-<div class="line">    <span class="keywordflow">if</span> (ci.two_letter_iso_language_name() == <span class="stringliteral">&quot;zh&quot;</span>) {</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#abd86463570c9aa0ca88ce4bb118aef7d">console::write</a>(<span class="stringliteral">&quot;{,-11} {,-40}&quot;</span>, ci.name(), ci.english_name());</div>
-<div class="line">      <span class="keywordflow">if</span> (ci.is_neutral_culture())</div>
-<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;: neutral&quot;</span>);</div>
-<div class="line">      <span class="keywordflow">else</span></div>
-<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;: specific&quot;</span>);</div>
-<div class="line">    }</div>
-<div class="line">  }</div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> ci : <a class="code hl_function" href="#a714f23f75de6271ca4776fde793b6b7c">culture_info::get_cultures</a>(<a class="code hl_enumvalue" href="group__globalization.html#gga27becfc96240a075bb60e6f45f8071e6a7b305fa3207bc7aeb6422063924f269d">culture_types::all_cultures</a>).where([](<span class="keyword">auto</span> ci) {<span class="keywordflow">return</span> ci.two_letter_iso_language_name() == <span class="stringliteral">&quot;zh&quot;</span>;}))</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;{,-11} {,-40} {}&quot;</span>, ci.name(), ci.english_name(), ci.is_neutral_culture() ? <span class="stringliteral">&quot;: neutral&quot;</span> : <span class="stringliteral">&quot;: specific&quot;</span>);</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
@@ -1645,15 +1607,8 @@ If the language/respurces for the specific culture are not available in the syst
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="comment">// Lists the cultures that use the Chinese language and determines if each is a neutral culture.</span></div>
-<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> ci : <a class="code hl_function" href="#a714f23f75de6271ca4776fde793b6b7c">culture_info::get_cultures</a>(<a class="code hl_enumvalue" href="group__globalization.html#gga27becfc96240a075bb60e6f45f8071e6a7b305fa3207bc7aeb6422063924f269d">culture_types::all_cultures</a>)) {</div>
-<div class="line">    <span class="keywordflow">if</span> (ci.two_letter_iso_language_name() == <span class="stringliteral">&quot;zh&quot;</span>) {</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#abd86463570c9aa0ca88ce4bb118aef7d">console::write</a>(<span class="stringliteral">&quot;{,-11} {,-40}&quot;</span>, ci.name(), ci.english_name());</div>
-<div class="line">      <span class="keywordflow">if</span> (ci.is_neutral_culture())</div>
-<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;: neutral&quot;</span>);</div>
-<div class="line">      <span class="keywordflow">else</span></div>
-<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;: specific&quot;</span>);</div>
-<div class="line">    }</div>
-<div class="line">  }</div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> ci : <a class="code hl_function" href="#a714f23f75de6271ca4776fde793b6b7c">culture_info::get_cultures</a>(<a class="code hl_enumvalue" href="group__globalization.html#gga27becfc96240a075bb60e6f45f8071e6a7b305fa3207bc7aeb6422063924f269d">culture_types::all_cultures</a>).where([](<span class="keyword">auto</span> ci) {<span class="keywordflow">return</span> ci.two_letter_iso_language_name() == <span class="stringliteral">&quot;zh&quot;</span>;}))</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;{,-11} {,-40} {}&quot;</span>, ci.name(), ci.english_name(), ci.is_neutral_culture() ? <span class="stringliteral">&quot;: neutral&quot;</span> : <span class="stringliteral">&quot;: specific&quot;</span>);</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
@@ -2314,15 +2269,8 @@ If <span class="tt">culture</span> is the locale identifier of the current cultu
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="comment">// Lists the cultures that use the Chinese language and determines if each is a neutral culture.</span></div>
-<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> ci : <a class="code hl_function" href="#a714f23f75de6271ca4776fde793b6b7c">culture_info::get_cultures</a>(<a class="code hl_enumvalue" href="group__globalization.html#gga27becfc96240a075bb60e6f45f8071e6a7b305fa3207bc7aeb6422063924f269d">culture_types::all_cultures</a>)) {</div>
-<div class="line">    <span class="keywordflow">if</span> (ci.two_letter_iso_language_name() == <span class="stringliteral">&quot;zh&quot;</span>) {</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#abd86463570c9aa0ca88ce4bb118aef7d">console::write</a>(<span class="stringliteral">&quot;{,-11} {,-40}&quot;</span>, ci.name(), ci.english_name());</div>
-<div class="line">      <span class="keywordflow">if</span> (ci.is_neutral_culture())</div>
-<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;: neutral&quot;</span>);</div>
-<div class="line">      <span class="keywordflow">else</span></div>
-<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;: specific&quot;</span>);</div>
-<div class="line">    }</div>
-<div class="line">  }</div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> ci : <a class="code hl_function" href="#a714f23f75de6271ca4776fde793b6b7c">culture_info::get_cultures</a>(<a class="code hl_enumvalue" href="group__globalization.html#gga27becfc96240a075bb60e6f45f8071e6a7b305fa3207bc7aeb6422063924f269d">culture_types::all_cultures</a>).where([](<span class="keyword">auto</span> ci) {<span class="keywordflow">return</span> ci.two_letter_iso_language_name() == <span class="stringliteral">&quot;zh&quot;</span>;}))</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;{,-11} {,-40} {}&quot;</span>, ci.name(), ci.english_name(), ci.is_neutral_culture() ? <span class="stringliteral">&quot;: neutral&quot;</span> : <span class="stringliteral">&quot;: specific&quot;</span>);</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>

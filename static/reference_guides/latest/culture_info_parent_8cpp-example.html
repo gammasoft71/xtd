@@ -112,11 +112,9 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1globalization.html">xtd::globalization</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> ci : <a id="_a0" name="_a0"></a><a class="code hl_function" href="classxtd_1_1globalization_1_1culture__info.html#a714f23f75de6271ca4776fde793b6b7c">culture_info::get_cultures</a>(<a id="_a1" name="_a1"></a><a class="code hl_enumvalue" href="group__globalization.html#gga27becfc96240a075bb60e6f45f8071e6a0bfcfc8f41e5ee1d585b0ca075307541">culture_types::specific_cultures</a>)) {</div>
-<div class="line">    <span class="keywordflow">if</span> (ci.two_letter_iso_language_name() == <span class="stringliteral">&quot;zh&quot;</span>) {</div>
-<div class="line">      <a id="_a2" name="_a2"></a><a class="code hl_function" href="classxtd_1_1console.html#abd86463570c9aa0ca88ce4bb118aef7d">console::write</a>(<span class="stringliteral">&quot;0x{:X4} {} {,-40}&quot;</span>, ci.lcid(), ci.name(), ci.english_name());</div>
-<div class="line">      <a id="_a3" name="_a3"></a><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;0x{:X4} {} {}&quot;</span>, ci.parent().lcid(), ci.parent().name(), ci.parent().english_name());</div>
-<div class="line">    }</div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> ci : <a id="_a0" name="_a0"></a><a class="code hl_function" href="classxtd_1_1globalization_1_1culture__info.html#a714f23f75de6271ca4776fde793b6b7c">culture_info::get_cultures</a>(<a id="_a1" name="_a1"></a><a class="code hl_enumvalue" href="group__globalization.html#gga27becfc96240a075bb60e6f45f8071e6a0bfcfc8f41e5ee1d585b0ca075307541">culture_types::specific_cultures</a>).where([](<span class="keyword">auto</span> ci) {<span class="keywordflow">return</span> ci.two_letter_iso_language_name() == <span class="stringliteral">&quot;zh&quot;</span>;})) {</div>
+<div class="line">    <a id="_a2" name="_a2"></a><a class="code hl_function" href="classxtd_1_1console.html#abd86463570c9aa0ca88ce4bb118aef7d">console::write</a>(<span class="stringliteral">&quot;0x{:X4} {} {,-40}&quot;</span>, ci.lcid(), ci.name(), ci.english_name());</div>
+<div class="line">    <a id="_a3" name="_a3"></a><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;0x{:X4} {} {}&quot;</span>, ci.parent().lcid(), ci.parent().name(), ci.parent().english_name());</div>
 <div class="line">  }</div>
 <div class="line">}</div>
 <div class="line"> </div>

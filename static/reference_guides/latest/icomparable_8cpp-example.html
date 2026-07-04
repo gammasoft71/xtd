@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">explicit</span> foo(<span class="keywordtype">int</span> value) : value_ {value} {}</div>
 <div class="line"> </div>
-<div class="line">  <span class="keywordtype">int</span> compare_to(<span class="keyword">const</span> foo&amp; value) <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {</div>
+<div class="line">  <span class="keyword">auto</span> compare_to(<span class="keyword">const</span> foo&amp; value) <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; <span class="keywordtype">int</span> <span class="keyword">override</span> {</div>
 <div class="line">    <span class="keywordflow">if</span> (value_ &lt; value.value_) <span class="keywordflow">return</span> -1;</div>
 <div class="line">    <span class="keywordflow">if</span> (value_ &gt; value.value_) <span class="keywordflow">return</span> 1;</div>
 <div class="line">    <span class="keywordflow">return</span> 0;</div>

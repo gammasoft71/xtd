@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line">    value(val);</div>
 <div class="line">  }</div>
 <div class="line">  </div>
-<div class="line">  <span class="keywordtype">int</span> maximum() <span class="keyword">const</span> <span class="keyword">noexcept</span> {<span class="keywordflow">return</span> maximum_;}</div>
+<div class="line">  <span class="keyword">auto</span> maximum() <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; <span class="keywordtype">int</span> {<span class="keywordflow">return</span> maximum_;}</div>
 <div class="line">  generic_progress&amp; maximum(<span class="keywordtype">int</span> maximum) <span class="keyword">noexcept</span> {</div>
 <div class="line">    maximum_ = maximum;</div>
 <div class="line">    minimum_ = math::min(minimum(), maximum);</div>
@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line">    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line">  }</div>
 <div class="line">  </div>
-<div class="line">  <span class="keywordtype">int</span> minimum() <span class="keyword">const</span> <span class="keyword">noexcept</span> {<span class="keywordflow">return</span> minimum_;}</div>
+<div class="line">  <span class="keyword">auto</span> minimum() <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; <span class="keywordtype">int</span> {<span class="keywordflow">return</span> minimum_;}</div>
 <div class="line">  generic_progress&amp; minimum(<span class="keywordtype">int</span> minimum) <span class="keyword">noexcept</span> {</div>
 <div class="line">    minimum_ = minimum;</div>
 <div class="line">    maximum_ = math::max(maximum(), minimum);</div>
@@ -134,32 +134,32 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line">    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line">  }</div>
 <div class="line">  </div>
-<div class="line">  <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; message() <span class="keyword">const</span> <span class="keyword">noexcept</span> {<span class="keywordflow">return</span> message_;}</div>
+<div class="line">  <span class="keyword">auto</span> message() <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; {<span class="keywordflow">return</span> message_;}</div>
 <div class="line">  generic_progress&amp; message(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; message) <span class="keyword">noexcept</span> {</div>
 <div class="line">    message_ = message;</div>
 <div class="line">    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line">  }</div>
 <div class="line">  </div>
-<div class="line">  <span class="keywordtype">float</span> percent() <span class="keyword">const</span> <span class="keyword">noexcept</span> {<span class="keywordflow">return</span> maximum_ - minimum_ ? as&lt;float&gt;(value() - minimum()) / (maximum() - minimum()) : 1;}</div>
+<div class="line">  <span class="keyword">auto</span> percent() <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; <span class="keywordtype">float</span> {<span class="keywordflow">return</span> maximum_ - minimum_ ? as&lt;float&gt;(value() - minimum()) / (maximum() - minimum()) : 1;}</div>
 <div class="line">  </div>
-<div class="line">  generic_progress&amp; increment(<span class="keywordtype">int</span> increment) <span class="keyword">noexcept</span> {</div>
+<div class="line">  <span class="keyword">auto</span> increment(<span class="keywordtype">int</span> increment) <span class="keyword">noexcept</span> -&gt; generic_progress&amp; {</div>
 <div class="line">    value(value() + increment);</div>
 <div class="line">    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line">  }</div>
 <div class="line">  </div>
-<div class="line">  generic_progress&amp; perform_step() <span class="keyword">noexcept</span> {<span class="keywordflow">return</span> increment(step());}</div>
-<div class="line">  generic_progress&amp; perform_step(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; message) <span class="keyword">noexcept</span> {</div>
+<div class="line">  <span class="keyword">auto</span> perform_step() <span class="keyword">noexcept</span> -&gt; generic_progress&amp; {<span class="keywordflow">return</span> increment(step());}</div>
+<div class="line">  <span class="keyword">auto</span> perform_step(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; message) <span class="keyword">noexcept</span> -&gt; generic_progress&amp; {</div>
 <div class="line">    message_ = message;</div>
 <div class="line">    <span class="keywordflow">return</span> perform_step();</div>
 <div class="line">  }</div>
 <div class="line">  </div>
-<div class="line">  <span class="keywordtype">int</span> value() <span class="keyword">const</span> <span class="keyword">noexcept</span> {<span class="keywordflow">return</span> value_;}</div>
+<div class="line">  <span class="keyword">auto</span> value() <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; <span class="keywordtype">int</span> {<span class="keywordflow">return</span> value_;}</div>
 <div class="line">  generic_progress&amp; value(<span class="keywordtype">int</span> value) <span class="keyword">noexcept</span> {</div>
 <div class="line">    value_ = math::clamp(value, minimum(), maximum());</div>
 <div class="line">    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line">  }</div>
 <div class="line">  </div>
-<div class="line">  <span class="keywordtype">int</span> step() <span class="keyword">const</span> <span class="keyword">noexcept</span> {<span class="keywordflow">return</span> step_;}</div>
+<div class="line">  <span class="keyword">auto</span> step() <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; <span class="keywordtype">int</span> {<span class="keywordflow">return</span> step_;}</div>
 <div class="line">  generic_progress&amp; step(<span class="keywordtype">int</span> step) <span class="keyword">noexcept</span> {</div>
 <div class="line">    step_ = step;</div>
 <div class="line">    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
@@ -177,7 +177,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  print_generic_progress() = <span class="keywordflow">default</span>;</div>
 <div class="line">  </div>
-<div class="line">  <span class="keywordtype">void</span> report(<span class="keyword">const</span> generic_progress&amp; value) <span class="keyword">noexcept</span> <span class="keyword">override</span> {</div>
+<div class="line">  <span class="keyword">auto</span> report(<span class="keyword">const</span> generic_progress&amp; value) <span class="keyword">noexcept</span> -&gt; <span class="keywordtype">void</span> <span class="keyword">override</span> {</div>
 <div class="line">    console::write_line(<span class="stringliteral">&quot;completion={,3}%, message=\&quot;{}\&quot;&quot;</span>, as&lt;int&gt;(value.percent() * 100), value.message());</div>
 <div class="line">  }</div>
 <div class="line">};</div>

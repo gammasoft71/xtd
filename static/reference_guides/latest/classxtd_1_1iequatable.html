@@ -188,7 +188,7 @@ The <a class="el" href="classxtd_1_1icomparable.html" title="Defines a generaliz
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">explicit</span> foo(<span class="keywordtype">int</span> value) : value_ {value} {}</div>
 <div class="line"> </div>
-<div class="line">  <span class="keywordtype">bool</span> <a class="code hl_function" href="#a3384503ae1dcbd8796549e4c04cbf1d9">equals</a>(<span class="keyword">const</span> foo&amp; value) <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> value_ == value.value_;}</div>
+<div class="line">  <span class="keyword">auto</span> <a class="code hl_function" href="#a3384503ae1dcbd8796549e4c04cbf1d9">equals</a>(<span class="keyword">const</span> foo&amp; value) <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; <span class="keywordtype">bool</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> value_ == value.value_;}</div>
 <div class="line">  </div>
 <div class="line"><span class="keyword">private</span>:</div>
 <div class="line">  <span class="keywordtype">int</span> value_ = 0;</div>

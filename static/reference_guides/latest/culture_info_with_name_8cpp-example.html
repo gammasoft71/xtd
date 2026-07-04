@@ -114,11 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> current = <a id="_a0" name="_a0"></a><a class="code hl_function" href="classxtd_1_1globalization_1_1culture__info.html#a48c94995bdba5c2e977dd717f413507c">culture_info::current_culture</a>();</div>
 <div class="line">  <a id="_a1" name="_a1"></a><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;The current culture is {}&quot;</span>, current.name());</div>
-<div class="line">  <span class="keyword">auto</span> new_culture = <a id="_a2" name="_a2"></a><a class="code hl_class" href="classxtd_1_1globalization_1_1culture__info.html">culture_info</a> {};</div>
-<div class="line">  <span class="keywordflow">if</span> (current.name().equals(<span class="stringliteral">&quot;fr-FR&quot;</span>))</div>
-<div class="line">    new_culture = <a class="code hl_class" href="classxtd_1_1globalization_1_1culture__info.html">culture_info</a> {<span class="stringliteral">&quot;fr-LU&quot;</span>};</div>
-<div class="line">  <span class="keywordflow">else</span></div>
-<div class="line">    new_culture = <a class="code hl_class" href="classxtd_1_1globalization_1_1culture__info.html">culture_info</a> {<span class="stringliteral">&quot;fr-FR&quot;</span>};</div>
+<div class="line">  <span class="keyword">auto</span> new_culture = <a id="_a2" name="_a2"></a><a class="code hl_class" href="classxtd_1_1globalization_1_1culture__info.html">culture_info</a> {current.name().equals(<span class="stringliteral">&quot;fr-FR&quot;</span>) ? <span class="stringliteral">&quot;fr-LU&quot;</span> : <span class="stringliteral">&quot;fr-FR&quot;</span>};</div>
 <div class="line">  </div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1globalization_1_1culture__info.html#a48c94995bdba5c2e977dd717f413507c">culture_info::current_culture</a>(new_culture);</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;The current culture is now {}&quot;</span>, <a class="code hl_function" href="classxtd_1_1globalization_1_1culture__info.html#a48c94995bdba5c2e977dd717f413507c">culture_info::current_culture</a>().name());</div>
