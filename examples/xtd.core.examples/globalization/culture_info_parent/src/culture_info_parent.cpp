@@ -4,11 +4,9 @@ using namespace xtd::globalization;
 
 auto main() -> int {
   /// Determines the specific cultures that use the Chinese language, and displays the parent culture.
-  for (auto ci : culture_info::get_cultures(culture_types::specific_cultures)) {
-    if (ci.two_letter_iso_language_name() == "zh") {
-      console::write("0x{:X4} {} {,-40}", ci.lcid(), ci.name(), ci.english_name());
-      console::write_line("0x{:X4} {} {}", ci.parent().lcid(), ci.parent().name(), ci.parent().english_name());
-    }
+  for (auto ci : culture_info::get_cultures(culture_types::specific_cultures).where([](auto ci) {return ci.two_letter_iso_language_name() == "zh";})) {
+    console::write("0x{:X4} {} {,-40}", ci.lcid(), ci.name(), ci.english_name());
+    console::write_line("0x{:X4} {} {}", ci.parent().lcid(), ci.parent().name(), ci.parent().english_name());
   }
 }
 
