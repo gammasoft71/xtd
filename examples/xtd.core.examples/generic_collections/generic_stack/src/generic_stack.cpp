@@ -3,7 +3,7 @@
 namespace examples {
   class program {
   public:
-    static auto main() -> void {
+    static auto main() {
       auto numbers = stack<string> {};
       numbers.push("one");
       numbers.push("two");
