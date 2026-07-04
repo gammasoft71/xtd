@@ -3,7 +3,7 @@
 namespace examples {
   class program {
   public:
-    static void main() {
+    static auto main() {
       auto numbers = queue<string> {};
       numbers.enqueue("one");
       numbers.enqueue("two");
