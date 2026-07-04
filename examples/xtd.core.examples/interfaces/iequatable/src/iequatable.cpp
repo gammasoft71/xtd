@@ -4,7 +4,7 @@ class foo : public iequatable<foo> {
 public:
   explicit foo(int value) : value_ {value} {}
 
-  bool equals(const foo& value) const noexcept override {return value_ == value.value_;}
+  auto equals(const foo& value) const noexcept -> bool override {return value_ == value.value_;}
   
 private:
   int value_ = 0;
