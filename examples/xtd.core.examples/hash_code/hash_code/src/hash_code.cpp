@@ -5,13 +5,13 @@ public:
   order_order_line() = default;
   order_order_line(int order_id, int order_line_id) : order_id_ {order_id}, order_line_id_ {order_line_id} {}
   
-  int order_id() const noexcept {return order_id_;}
-  int order_line_id() const noexcept {return order_line_id_;}
+  auto order_id() const noexcept -> int {return order_id_;}
+  auto order_line_id() const noexcept -> int {return order_line_id_;}
   
-  bool equals(const object& obj) const noexcept override {return is<order_order_line>(obj) && equals(as<order_order_line>(obj));}
-  bool equals(const order_order_line& other) const noexcept override {return order_id_ == other.order_id_ && order_line_id_ == other.order_line_id_;}
+  auto equals(const object& obj) const noexcept -> bool override {return is<order_order_line>(obj) && equals(as<order_order_line>(obj));}
+  auto equals(const order_order_line& other) const noexcept -> bool override {return order_id_ == other.order_id_ && order_line_id_ == other.order_line_id_;}
   
-  usize get_hash_code() const noexcept override {return hash_code::combine(order_id_, order_line_id_);}
+  auto get_hash_code() const noexcept -> usize override {return hash_code::combine(order_id_, order_line_id_);}
   
 private:
   int order_id_ = 0;
