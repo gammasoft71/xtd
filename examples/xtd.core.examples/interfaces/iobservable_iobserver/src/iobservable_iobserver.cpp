@@ -4,8 +4,8 @@ struct location {
 public:
   location(double latitude, double longitude) : latitutde_(latitude), longitude_(longitude) {}
   
-  double latitude() const noexcept {return latitutde_;}
-  double longitude() const noexcept {return longitude_;}
+  auto latitude() const noexcept -> double {return latitutde_;}
+  auto longitude() const noexcept -> double {return longitude_;}
   
 private:
   double latitutde_ = .0;
@@ -21,17 +21,17 @@ class location_tracker : public iobservable<location> {
 public:
   location_tracker() = default;
   
-  void subscribe(iobserver<location>& observer) noexcept override {
+  auto subscribe(iobserver<location>& observer) noexcept -> void override {
     if (!observers_.exists([&](auto item) {return item == &observer;}))
       observers_.add(&observer);
   }
   
-  void unsubscribe(iobserver<location>& observer) noexcept override {
+  auto unsubscribe(iobserver<location>& observer) noexcept -> void override {
     if (observers_.exists([&](auto item) {return item == &observer;}))
       observers_.remove(&observer);
   }
   
-  void track_location(std::optional<location> loc) {
+  auto track_location(std::optional<location> loc) -> void {
     for (auto observer : observers_) {
       if (!loc.has_value())
         observer->on_error(location_unknown_exception());
@@ -40,7 +40,7 @@ public:
     }
   }
   
-  void end_transmission() {
+  auto end_transmission() -> void {
     for (auto observer : observers_)
       observer->on_completed();
     observers_.clear();
@@ -55,27 +55,27 @@ public:
   location_reporter(string name) : name_(name) {}
   virtual ~location_reporter() {unsubscribe();}
   
-  string name() const noexcept {return name_;}
+  auto name() const noexcept -> string {return name_;}
   
-  virtual void subscribe(iobservable<location>& provider) {
+  virtual auto subscribe(iobservable<location>& provider) -> void {
     provider_ = &provider;
     provider_->subscribe(*this);
   }
   
-  void on_completed() noexcept override {
+  auto on_completed() noexcept -> void override {
     console::write_line("The location Tracker has completed transmitting data to {}.", name());
     unsubscribe();
   }
   
-  void on_error(const std::exception& e) noexcept override {
+  auto on_error(const std::exception& e) noexcept -> void override {
     console::write_line("{}: The location cannot be determined.", name());
   }
   
-  void on_next(const location& value) noexcept override {
+  auto on_next(const location& value) noexcept -> void override {
     console::write_line("{}: The current location is {}, {}", name(), value.latitude(), value.longitude());
   }
   
-  virtual void unsubscribe() {
+  virtual auto unsubscribe() -> void {
     if (provider_ != nullptr) provider_->unsubscribe(*this);
     provider_ = nullptr;
   }
