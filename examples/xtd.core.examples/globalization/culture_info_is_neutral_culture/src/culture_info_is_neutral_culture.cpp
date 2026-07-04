@@ -4,15 +4,8 @@ using namespace xtd::globalization;
 
 auto main() -> int {
   // Lists the cultures that use the Chinese language and determines if each is a neutral culture.
-  for (auto ci : culture_info::get_cultures(culture_types::all_cultures)) {
-    if (ci.two_letter_iso_language_name() == "zh") {
-      console::write("{,-11} {,-40}", ci.name(), ci.english_name());
-      if (ci.is_neutral_culture())
-        console::write_line(": neutral");
-      else
-        console::write_line(": specific");
-    }
-  }
+  for (auto ci : culture_info::get_cultures(culture_types::all_cultures).where([](auto ci) {return ci.two_letter_iso_language_name() == "zh";}))
+    console::write_line("{,-11} {,-40} {}", ci.name(), ci.english_name(), ci.is_neutral_culture() ? ": neutral" : ": specific");
 }
 
 // This code produces the following output :
