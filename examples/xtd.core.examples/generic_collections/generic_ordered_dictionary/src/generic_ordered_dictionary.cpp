@@ -2,7 +2,7 @@
 
 class example {
 public:
-  static auto main() -> void {
+  static auto main() {
     // Creates and initializes a ordered_dictionary.
     auto my_ordered_dictionary = ordered_dictionary<string, string> {};
     my_ordered_dictionary.add("test_key1", "test_value1");
@@ -45,6 +45,7 @@ public:
     display_enumerator(my_enumerator);
   }
   
+private:
   // Displays the contents of the ordered_dictionary from its keys and values
   template<typename key_t, typename value_t>
   static auto display_contents(const icollection<key_t>& key_collection, const icollection<value_t>& value_collection, usize dictionary_size) -> void {
