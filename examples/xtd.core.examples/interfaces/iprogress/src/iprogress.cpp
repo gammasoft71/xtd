@@ -9,7 +9,7 @@ public:
     value(val);
   }
   
-  int maximum() const noexcept {return maximum_;}
+  auto maximum() const noexcept -> int {return maximum_;}
   generic_progress& maximum(int maximum) noexcept {
     maximum_ = maximum;
     minimum_ = math::min(minimum(), maximum);
@@ -17,7 +17,7 @@ public:
     return *this;
   }
   
-  int minimum() const noexcept {return minimum_;}
+  auto minimum() const noexcept -> int {return minimum_;}
   generic_progress& minimum(int minimum) noexcept {
     minimum_ = minimum;
     maximum_ = math::max(maximum(), minimum);
@@ -25,32 +25,32 @@ public:
     return *this;
   }
   
-  const string& message() const noexcept {return message_;}
+  auto message() const noexcept -> const string& {return message_;}
   generic_progress& message(const string& message) noexcept {
     message_ = message;
     return *this;
   }
   
-  float percent() const noexcept {return maximum_ - minimum_ ? as<float>(value() - minimum()) / (maximum() - minimum()) : 1;}
+  auto percent() const noexcept -> float {return maximum_ - minimum_ ? as<float>(value() - minimum()) / (maximum() - minimum()) : 1;}
   
-  generic_progress& increment(int increment) noexcept {
+  auto increment(int increment) noexcept -> generic_progress& {
     value(value() + increment);
     return *this;
   }
   
-  generic_progress& perform_step() noexcept {return increment(step());}
-  generic_progress& perform_step(const string& message) noexcept {
+  auto perform_step() noexcept -> generic_progress& {return increment(step());}
+  auto perform_step(const string& message) noexcept -> generic_progress& {
     message_ = message;
     return perform_step();
   }
   
-  int value() const noexcept {return value_;}
+  auto value() const noexcept -> int {return value_;}
   generic_progress& value(int value) noexcept {
     value_ = math::clamp(value, minimum(), maximum());
     return *this;
   }
   
-  int step() const noexcept {return step_;}
+  auto step() const noexcept -> int {return step_;}
   generic_progress& step(int step) noexcept {
     step_ = step;
     return *this;
@@ -68,7 +68,7 @@ class print_generic_progress : public iprogress<generic_progress> {
 public:
   print_generic_progress() = default;
   
-  void report(const generic_progress& value) noexcept override {
+  auto report(const generic_progress& value) noexcept -> void override {
     console::write_line("completion={,3}%, message=\"{}\"", as<int>(value.percent() * 100), value.message());
   }
 };
