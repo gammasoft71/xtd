@@ -19,4 +19,7 @@ add_projects(
   static_object
   typeof
   using
+  unused
 )
+
+mais pour le C++20 et suivants.
