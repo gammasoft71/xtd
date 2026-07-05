@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line">  <span class="keywordtype">void</span> notify_something_ready() {</div>
-<div class="line">    [[maybe_unused]] <span class="keyword">auto</span> _ = synchronizer.begin_invoke({*<span class="keyword">this</span>, &amp;something_ready_notifier::on_something_ready});</div>
+<div class="line">    <span class="keyword">auto</span> __ = synchronizer.begin_invoke({*<span class="keyword">this</span>, &amp;something_ready_notifier::on_something_ready});</div>
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line"><span class="keyword">protected</span>:</div>

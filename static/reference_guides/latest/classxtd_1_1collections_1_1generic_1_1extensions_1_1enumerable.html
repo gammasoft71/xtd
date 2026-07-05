@@ -217,6 +217,22 @@ Public Static Methods</h2></td></tr>
 <tr class="memdesc:a8433958437ae23f4272db71f201ddfee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the first element of the sequence that satisfies a condition or a default value if no such element is found.  <br /></td></tr>
 <tr class="memitem:af15bac736758f4963624d6682a5c6d92" id="r_af15bac736758f4963624d6682a5c6d92"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#af15bac736758f4963624d6682a5c6d92">first_or_default</a> () const noexcept -&gt; source_t</td></tr>
 <tr class="memdesc:af15bac736758f4963624d6682a5c6d92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the first element of the sequence that satisfies a condition or a default value if no such element is found.  <br /></td></tr>
+<tr class="memitem:a61d8af8de3cc7e12c5c9932012d1e385" id="r_a61d8af8de3cc7e12c5c9932012d1e385"><td class="memTemplParams" colspan="2"><a id="a61d8af8de3cc7e12c5c9932012d1e385" name="a61d8af8de3cc7e12c5c9932012d1e385"></a>
+template&lt;typename result_t&gt; <br />
+requires <a class="el" href="structxtd_1_1numeric.html">xtd::numeric</a>&lt;result_t&gt;</td></tr>
+<tr class="memitem:a61d8af8de3cc7e12c5c9932012d1e385 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><b>max</b> (auto &amp;&amp;selector) const</td></tr>
+<tr class="memitem:a72d3998c095bfb582b915e02e71adb77" id="r_a72d3998c095bfb582b915e02e71adb77"><td class="memItemLeft"><a id="a72d3998c095bfb582b915e02e71adb77" name="a72d3998c095bfb582b915e02e71adb77"></a>
+auto&#160;</td><td class="memItemRight"><b>max</b> (auto &amp;&amp;selector) const</td></tr>
+<tr class="memitem:a49a83d5d496f862b881caffed0c21440" id="r_a49a83d5d496f862b881caffed0c21440"><td class="memItemLeft"><a id="a49a83d5d496f862b881caffed0c21440" name="a49a83d5d496f862b881caffed0c21440"></a>
+auto&#160;</td><td class="memItemRight"><b>max</b> () const</td></tr>
+<tr class="memitem:a8cd5e9a30390c9c0e9ac25fabd0a21c9" id="r_a8cd5e9a30390c9c0e9ac25fabd0a21c9"><td class="memTemplParams" colspan="2"><a id="a8cd5e9a30390c9c0e9ac25fabd0a21c9" name="a8cd5e9a30390c9c0e9ac25fabd0a21c9"></a>
+template&lt;typename result_t&gt; <br />
+requires <a class="el" href="structxtd_1_1numeric.html">xtd::numeric</a>&lt;result_t&gt;</td></tr>
+<tr class="memitem:a8cd5e9a30390c9c0e9ac25fabd0a21c9 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><b>min</b> (auto &amp;&amp;selector) const</td></tr>
+<tr class="memitem:a26b736ff2ec4c17e384b915bbbde1045" id="r_a26b736ff2ec4c17e384b915bbbde1045"><td class="memItemLeft"><a id="a26b736ff2ec4c17e384b915bbbde1045" name="a26b736ff2ec4c17e384b915bbbde1045"></a>
+auto&#160;</td><td class="memItemRight"><b>min</b> (auto &amp;&amp;selector) const</td></tr>
+<tr class="memitem:aaee01ab949352ca95976dfaafbf857b8" id="r_aaee01ab949352ca95976dfaafbf857b8"><td class="memItemLeft"><a id="aaee01ab949352ca95976dfaafbf857b8" name="aaee01ab949352ca95976dfaafbf857b8"></a>
+auto&#160;</td><td class="memItemRight"><b>min</b> () const</td></tr>
 <tr class="memitem:a516e2dec63526a1b0a5a050bd1458b88" id="r_a516e2dec63526a1b0a5a050bd1458b88"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a516e2dec63526a1b0a5a050bd1458b88">order</a> () const</td></tr>
 <tr class="memdesc:a516e2dec63526a1b0a5a050bd1458b88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts the elements of a sequence in ascending order.  <br /></td></tr>
 <tr class="memitem:ad2e8a12ecd453b9c4f5da7b4178b54ca" id="r_ad2e8a12ecd453b9c4f5da7b4178b54ca"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ad2e8a12ecd453b9c4f5da7b4178b54ca">order</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1icomparer.html">xtd::collections::generic::icomparer</a>&lt; source_t &gt; &amp;comparer) const</td></tr>
@@ -842,7 +858,7 @@ template&lt;typename enumerable_t, typename source_t&gt; </div>
 <div class="line">  <span class="keyword">auto</span> numbers = <a class="code hl_typedef" href="#a417e4adb1792949e9a54516bee2ca3d2">list</a> {1, 2, 3, 4};</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Trying to append any value of the same type</span></div>
-<div class="line">  [[maybe_unused]] <span class="keyword">auto</span> _ = numbers.append(5);</div>
+<div class="line">  <span class="keyword">auto</span> __ = numbers.append(5);</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// It doesn&#39;t work because the original list has not been changed</span></div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<a class="code hl_function" href="classxtd_1_1basic__string.html#a311796df207f48060b5c20b1553c5d0a">string::join</a>(<span class="stringliteral">&quot;, &quot;</span>, numbers));</div>
@@ -2144,7 +2160,7 @@ template&lt;typename enumerable_t, typename source_t&gt; </div>
 <div class="line"><span class="comment">// 5</span></div>
 <div class="line"><span class="comment">// 10</span></div>
 <div class="ttc" id="aclassxtd_1_1basic__string_html_a4d8c4c95a122844c62de3feb62a5fa74"><div class="ttname"><a href="classxtd_1_1basic__string.html#a4d8c4c95a122844c62de3feb62a5fa74">xtd::basic_string&lt; char &gt;::length</a></div><div class="ttdeci">virtual auto length() const noexcept -&gt; size_type</div><div class="ttdef"><b>Definition</b> basic_string.hpp:383</div></div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable_html_a8e6fb1439ffb7dd8d5ea76b3b06b1c65"><div class="ttname"><a href="#a8e6fb1439ffb7dd8d5ea76b3b06b1c65">xtd::collections::generic::extensions::enumerable::select</a></div><div class="ttdeci">auto select(auto &amp;&amp;selector) const</div><div class="ttdoc">Projects each element of a sequence into a new form.</div><div class="ttdef"><b>Definition</b> enumerable.hpp:368</div></div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable_html_a8e6fb1439ffb7dd8d5ea76b3b06b1c65"><div class="ttname"><a href="#a8e6fb1439ffb7dd8d5ea76b3b06b1c65">xtd::collections::generic::extensions::enumerable::select</a></div><div class="ttdeci">auto select(auto &amp;&amp;selector) const</div><div class="ttdoc">Projects each element of a sequence into a new form.</div><div class="ttdef"><b>Definition</b> enumerable.hpp:392</div></div>
 <div class="ttc" id="agroup__types_html_gae60f5a861761019d824a87291f85d525"><div class="ttname"><a href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></div><div class="ttdeci">std::size_t usize</div><div class="ttdoc">Represents an unsigned size of any object in bytes.</div><div class="ttdef"><b>Definition</b> usize.hpp:22</div></div>
 <div class="ttc" id="anamespacextd_html_a84689e2cdf94d64f7e5f33fe4a1be71a"><div class="ttname"><a href="namespacextd.html#a84689e2cdf94d64f7e5f33fe4a1be71a">xtd::length</a></div><div class="ttdeci">constexpr auto length() const noexcept -&gt; size_type</div><div class="ttdoc">Returns the length of the current read_only_span.</div><div class="ttdef"><b>Definition</b> read_only_span.hpp:213</div></div>
 </div><!-- fragment --> </dd></dl>

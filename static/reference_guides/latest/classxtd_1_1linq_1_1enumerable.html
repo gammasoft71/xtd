@@ -125,7 +125,7 @@ Inheritance diagram for xtd::linq::enumerable:</div>
 <div class="textblock"><p>Provides a set of static methods for querying objects that implement ienumerable &lt;type_t&gt;. </p>
 <dl class="section user"><dt>Definition</dt><dd><div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> type_t&gt;</div>
 <div class="line"><span class="keyword">class </span><a class="code hl_class" href="classxtd_1_1linq_1_1enumerable.html">enumerable</a> : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1static__object.html">xtd::static_object</a>;</div>
-<div class="ttc" id="aclassxtd_1_1linq_1_1enumerable_html"><div class="ttname"><a href="classxtd_1_1linq_1_1enumerable.html">xtd::linq::enumerable</a></div><div class="ttdoc">Provides a set of static methods for querying objects that implement ienumerable &lt;type_t&gt;.</div><div class="ttdef"><b>Definition</b> enumerable.hpp:67</div></div>
+<div class="ttc" id="aclassxtd_1_1linq_1_1enumerable_html"><div class="ttname"><a href="classxtd_1_1linq_1_1enumerable.html">xtd::linq::enumerable</a></div><div class="ttdoc">Provides a set of static methods for querying objects that implement ienumerable &lt;type_t&gt;.</div><div class="ttdef"><b>Definition</b> enumerable.hpp:68</div></div>
 <div class="ttc" id="aclassxtd_1_1static__object_html"><div class="ttname"><a href="classxtd_1_1static__object.html">xtd::static_object</a></div><div class="ttdoc">Represent a static object. A static class can&#39;t be instantiated (constructors are deleted).</div><div class="ttdef"><b>Definition</b> static.hpp:20</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/linq/enumerable&gt;</span></div>
@@ -290,6 +290,30 @@ Public Static Methods</h2></td></tr>
 <tr class="memitem:a348b7154bf4fbc6ddfa03f9bf8de4a1f" id="r_a348b7154bf4fbc6ddfa03f9bf8de4a1f"><td class="memTemplParams" colspan="2">template&lt;typename source_t, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> length&gt; </td></tr>
 <tr class="memitem:a348b7154bf4fbc6ddfa03f9bf8de4a1f template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a348b7154bf4fbc6ddfa03f9bf8de4a1f">from</a> (const source_t(&amp;array)[<a class="el" href="namespacextd.html#a84689e2cdf94d64f7e5f33fe4a1be71a">length</a>]) noexcept</td></tr>
 <tr class="memdesc:a348b7154bf4fbc6ddfa03f9bf8de4a1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the input typed as <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt;.  <br /></td></tr>
+<tr class="memitem:aab5b31f0f897c323915ffe0b8557ee37" id="r_aab5b31f0f897c323915ffe0b8557ee37"><td class="memTemplParams" colspan="2"><a id="aab5b31f0f897c323915ffe0b8557ee37" name="aab5b31f0f897c323915ffe0b8557ee37"></a>
+template&lt;typename result_t, typename source_t&gt; <br />
+requires <a class="el" href="structxtd_1_1numeric.html">xtd::numeric</a>&lt;result_t&gt;</td></tr>
+<tr class="memitem:aab5b31f0f897c323915ffe0b8557ee37 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><b>max</b> (const <a class="el" href="#a2bd1889dc1967c50ef692411dc2c4b92">ienumerable</a>&lt; source_t &gt; &amp;source, auto &amp;&amp;selector)</td></tr>
+<tr class="memitem:ab8d87b3200ad92e295014275c52b3af5" id="r_ab8d87b3200ad92e295014275c52b3af5"><td class="memTemplParams" colspan="2"><a id="ab8d87b3200ad92e295014275c52b3af5" name="ab8d87b3200ad92e295014275c52b3af5"></a>
+template&lt;typename source_t&gt; <br />
+requires <a class="el" href="structxtd_1_1numeric.html">xtd::numeric</a>&lt;source_t&gt;</td></tr>
+<tr class="memitem:ab8d87b3200ad92e295014275c52b3af5 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><b>max</b> (const <a class="el" href="#a2bd1889dc1967c50ef692411dc2c4b92">ienumerable</a>&lt; source_t &gt; &amp;source, auto &amp;&amp;selector)</td></tr>
+<tr class="memitem:ab709904486a632fd1fffb3e33d7ef520" id="r_ab709904486a632fd1fffb3e33d7ef520"><td class="memTemplParams" colspan="2"><a id="ab709904486a632fd1fffb3e33d7ef520" name="ab709904486a632fd1fffb3e33d7ef520"></a>
+template&lt;typename source_t&gt; <br />
+requires <a class="el" href="structxtd_1_1numeric.html">xtd::numeric</a>&lt;source_t&gt;</td></tr>
+<tr class="memitem:ab709904486a632fd1fffb3e33d7ef520 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><b>max</b> (const <a class="el" href="#a2bd1889dc1967c50ef692411dc2c4b92">ienumerable</a>&lt; source_t &gt; &amp;source)</td></tr>
+<tr class="memitem:ab6ee16e4688af9acfbfabee444f7c919" id="r_ab6ee16e4688af9acfbfabee444f7c919"><td class="memTemplParams" colspan="2"><a id="ab6ee16e4688af9acfbfabee444f7c919" name="ab6ee16e4688af9acfbfabee444f7c919"></a>
+template&lt;typename result_t, typename source_t&gt; <br />
+requires <a class="el" href="structxtd_1_1numeric.html">xtd::numeric</a>&lt;result_t&gt;</td></tr>
+<tr class="memitem:ab6ee16e4688af9acfbfabee444f7c919 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><b>min</b> (const <a class="el" href="#a2bd1889dc1967c50ef692411dc2c4b92">ienumerable</a>&lt; source_t &gt; &amp;source, auto &amp;&amp;selector)</td></tr>
+<tr class="memitem:a8764ffff3695973b8f1430c736177ddc" id="r_a8764ffff3695973b8f1430c736177ddc"><td class="memTemplParams" colspan="2"><a id="a8764ffff3695973b8f1430c736177ddc" name="a8764ffff3695973b8f1430c736177ddc"></a>
+template&lt;typename source_t&gt; <br />
+requires <a class="el" href="structxtd_1_1numeric.html">xtd::numeric</a>&lt;source_t&gt;</td></tr>
+<tr class="memitem:a8764ffff3695973b8f1430c736177ddc template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><b>min</b> (const <a class="el" href="#a2bd1889dc1967c50ef692411dc2c4b92">ienumerable</a>&lt; source_t &gt; &amp;source, auto &amp;&amp;selector)</td></tr>
+<tr class="memitem:a978c14188005ba813ffb940e5e9ad0be" id="r_a978c14188005ba813ffb940e5e9ad0be"><td class="memTemplParams" colspan="2"><a id="a978c14188005ba813ffb940e5e9ad0be" name="a978c14188005ba813ffb940e5e9ad0be"></a>
+template&lt;typename source_t&gt; <br />
+requires <a class="el" href="structxtd_1_1numeric.html">xtd::numeric</a>&lt;source_t&gt;</td></tr>
+<tr class="memitem:a978c14188005ba813ffb940e5e9ad0be template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><b>min</b> (const <a class="el" href="#a2bd1889dc1967c50ef692411dc2c4b92">ienumerable</a>&lt; source_t &gt; &amp;source)</td></tr>
 <tr class="memitem:abcc98a9efd0ecbea09db00f30e09dbf8" id="r_abcc98a9efd0ecbea09db00f30e09dbf8"><td class="memTemplParams" colspan="2">template&lt;typename source_t&gt; </td></tr>
 <tr class="memitem:abcc98a9efd0ecbea09db00f30e09dbf8 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#abcc98a9efd0ecbea09db00f30e09dbf8">order</a> (const <a class="el" href="#a2bd1889dc1967c50ef692411dc2c4b92">ienumerable</a>&lt; source_t &gt; &amp;source)</td></tr>
 <tr class="memdesc:abcc98a9efd0ecbea09db00f30e09dbf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts the elements of a sequence in ascending order.  <br /></td></tr>
@@ -921,7 +945,7 @@ template&lt;typename source_t&gt; </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// The list is not empty.</span></div>
-<div class="ttc" id="aclassxtd_1_1linq_1_1enumerable_html_a4ff59be55b7be66d275f28741e2f1f0a"><div class="ttname"><a href="#a4ff59be55b7be66d275f28741e2f1f0a">xtd::linq::enumerable::list</a></div><div class="ttdeci">typename xtd::collections::generic::list&lt; type_t &gt; list</div><div class="ttdoc">Represents the list value type.</div><div class="ttdef"><b>Definition</b> enumerable.hpp:86</div></div>
+<div class="ttc" id="aclassxtd_1_1linq_1_1enumerable_html_a4ff59be55b7be66d275f28741e2f1f0a"><div class="ttname"><a href="#a4ff59be55b7be66d275f28741e2f1f0a">xtd::linq::enumerable::list</a></div><div class="ttdeci">typename xtd::collections::generic::list&lt; type_t &gt; list</div><div class="ttdoc">Represents the list value type.</div><div class="ttdef"><b>Definition</b> enumerable.hpp:87</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -1054,7 +1078,7 @@ template&lt;typename source_t&gt; </div>
 <div class="line">  <span class="keyword">auto</span> numbers = <a class="code hl_typedef" href="#a4ff59be55b7be66d275f28741e2f1f0a">list</a> {1, 2, 3, 4};</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Trying to append any value of the same type</span></div>
-<div class="line">  [[maybe_unused]] <span class="keyword">auto</span> _ = numbers.append(5);</div>
+<div class="line">  <span class="keyword">auto</span> __ = numbers.append(5);</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// It doesn&#39;t work because the original list has not been changed</span></div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<a class="code hl_function" href="classxtd_1_1basic__string.html#a311796df207f48060b5c20b1553c5d0a">string::join</a>(<span class="stringliteral">&quot;, &quot;</span>, numbers));</div>
@@ -3437,7 +3461,7 @@ template&lt;typename type_t&gt; </div>
 <div class="line"><span class="comment">// 64</span></div>
 <div class="line"><span class="comment">// 81</span></div>
 <div class="line"><span class="comment">// 100</span></div>
-<div class="ttc" id="aclassxtd_1_1linq_1_1enumerable_html_ad3f2b197a8f9e4e52710edcdd59870e9"><div class="ttname"><a href="#ad3f2b197a8f9e4e52710edcdd59870e9">xtd::linq::enumerable::range</a></div><div class="ttdeci">static auto range(type_t count)</div><div class="ttdoc">Generates a sequence of integral numbers within a specified range.</div><div class="ttdef"><b>Definition</b> enumerable.hpp:847</div></div>
+<div class="ttc" id="aclassxtd_1_1linq_1_1enumerable_html_ad3f2b197a8f9e4e52710edcdd59870e9"><div class="ttname"><a href="#ad3f2b197a8f9e4e52710edcdd59870e9">xtd::linq::enumerable::range</a></div><div class="ttdeci">static auto range(type_t count)</div><div class="ttdoc">Generates a sequence of integral numbers within a specified range.</div><div class="ttdef"><b>Definition</b> enumerable.hpp:910</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -3810,7 +3834,7 @@ template&lt;typename source_t&gt; </div>
 <div class="line"><span class="comment">// 5</span></div>
 <div class="line"><span class="comment">// 10</span></div>
 <div class="ttc" id="aclassxtd_1_1basic__string_html_a4d8c4c95a122844c62de3feb62a5fa74"><div class="ttname"><a href="classxtd_1_1basic__string.html#a4d8c4c95a122844c62de3feb62a5fa74">xtd::basic_string&lt; char &gt;::length</a></div><div class="ttdeci">virtual auto length() const noexcept -&gt; size_type</div><div class="ttdef"><b>Definition</b> basic_string.hpp:383</div></div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable_html_a8e6fb1439ffb7dd8d5ea76b3b06b1c65"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a8e6fb1439ffb7dd8d5ea76b3b06b1c65">xtd::collections::generic::extensions::enumerable::select</a></div><div class="ttdeci">auto select(auto &amp;&amp;selector) const</div><div class="ttdoc">Projects each element of a sequence into a new form.</div><div class="ttdef"><b>Definition</b> enumerable.hpp:368</div></div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable_html_a8e6fb1439ffb7dd8d5ea76b3b06b1c65"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a8e6fb1439ffb7dd8d5ea76b3b06b1c65">xtd::collections::generic::extensions::enumerable::select</a></div><div class="ttdeci">auto select(auto &amp;&amp;selector) const</div><div class="ttdoc">Projects each element of a sequence into a new form.</div><div class="ttdef"><b>Definition</b> enumerable.hpp:392</div></div>
 <div class="ttc" id="agroup__types_html_gae60f5a861761019d824a87291f85d525"><div class="ttname"><a href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></div><div class="ttdeci">std::size_t usize</div><div class="ttdoc">Represents an unsigned size of any object in bytes.</div><div class="ttdef"><b>Definition</b> usize.hpp:22</div></div>
 <div class="ttc" id="anamespacextd_html_a84689e2cdf94d64f7e5f33fe4a1be71a"><div class="ttname"><a href="namespacextd.html#a84689e2cdf94d64f7e5f33fe4a1be71a">xtd::length</a></div><div class="ttdeci">constexpr auto length() const noexcept -&gt; size_type</div><div class="ttdoc">Returns the length of the current read_only_span.</div><div class="ttdef"><b>Definition</b> read_only_span.hpp:213</div></div>
 </div><!-- fragment --> </dd></dl>

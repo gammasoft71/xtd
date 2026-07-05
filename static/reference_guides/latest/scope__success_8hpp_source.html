@@ -112,27 +112,37 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="contents">
 <a href="scope__success_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;utility&gt;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#define __XTD_CORE_INTERNAL__</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="____xtd__scope_8hpp.html">internal/__xtd_scope.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#undef __XTD_CORE_INTERNAL__</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a> {</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="structxtd_1_1scope__success.html">   65</a></span>  <span class="keyword">struct </span><a class="code hl_struct" href="structxtd_1_1scope__success.html">scope_success</a> { };</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  </div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  <span class="keyword">template</span>&lt;<span class="keyword">typename</span> function_t&gt;</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  <span class="keyword">auto</span> operator+(<a class="code hl_struct" href="structxtd_1_1scope__success.html">scope_success</a>, function_t&amp;&amp; function) {</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="keywordflow">return</span> __xtd_scope_success_object__&lt;function_t&gt; {std::forward&lt;function_t&gt;(function)};</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>  }</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>}</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span></div>
-<div class="foldopen" id="foldopen00128" data-start="" data-end="">
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno"><a class="line" href="group__keywords.html#gab71821f492432825aca0b3eaa727b8db">  128</a></span><span class="preprocessor">#define scope_success_ \</span></div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span><span class="preprocessor">  [[maybe_unused]] auto __xtd_scope_id__(__xtd__scope_success__, __LINE__) = xtd::scope_success{} + [&amp;]</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="unused_8hpp.html">unused.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;exception&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;utility&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a> {</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="structxtd_1_1scope__success.html">   64</a></span>  <span class="keyword">struct </span><a class="code hl_struct" href="structxtd_1_1scope__success.html">scope_success</a> { };</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  <span class="keyword">template</span>&lt;<span class="keyword">typename</span> function_t&gt;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  <span class="keyword">struct </span>__xtd_scope_success_object__ {</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    __xtd_scope_success_object__(function_t&amp;&amp; f) : function(std::forward&lt;function_t&gt;(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8fa14cdd754f91cc6554c9e71929cce7">f</a>)) {}</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    ~__xtd_scope_success_object__() noexcept {<span class="keywordflow">if</span> (std::uncaught_exceptions() == exceptions_on_enter) function();}</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keywordtype">int</span> exceptions_on_enter = std::uncaught_exceptions();</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    function_t <a class="code hl_enumvalue" href="group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970deac1c425268e68385d1ab5074c17a94f14">function</a>;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  };</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  <span class="keyword">template</span>&lt;<span class="keyword">typename</span> function_t&gt;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  <span class="keyword">auto</span> <a class="code hl_function" href="group__expressions.html#gafe385831307729957441102457d9115c">operator+</a>(<a class="code hl_struct" href="structxtd_1_1scope__success.html">scope_success</a>, function_t&amp;&amp; function) {</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="keywordflow">return</span> __xtd_scope_success_object__&lt;function_t&gt; {std::forward&lt;function_t&gt;(function)};</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  }</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>}</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span></div>
+<div class="foldopen" id="foldopen00135" data-start="" data-end="">
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno"><a class="line" href="group__keywords.html#gab71821f492432825aca0b3eaa727b8db">  135</a></span><span class="preprocessor">#define scope_success_ \</span></div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span><span class="preprocessor">  auto __ = xtd::scope_success{} + [&amp;]</span></div>
 </div>
-<div class="ttc" id="a____xtd__scope_8hpp_html"><div class="ttname"><a href="____xtd__scope_8hpp.html">__xtd_scope.hpp</a></div></div>
+<div class="ttc" id="agroup__expressions_html_gafe385831307729957441102457d9115c"><div class="ttname"><a href="group__expressions.html#gafe385831307729957441102457d9115c">xtd::expressions::operator+</a></div><div class="ttdeci">constexpr auto operator+(left_t left, right_t right)</div><div class="ttdoc">Add the specified left and right operands.</div><div class="ttdef"><b>Definition</b> add_expression.hpp:121</div></div>
+<div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a8fa14cdd754f91cc6554c9e71929cce7"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8fa14cdd754f91cc6554c9e71929cce7">xtd::console_key::f</a></div><div class="ttdeci">@ f</div><div class="ttdoc">The F key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:98</div></div>
+<div class="ttc" id="agroup__xtd__forms_html_gga2f00c1ad108efaddc951106e768970deac1c425268e68385d1ab5074c17a94f14"><div class="ttname"><a href="group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970deac1c425268e68385d1ab5074c17a94f14">xtd::forms::keys::function</a></div><div class="ttdeci">@ function</div><div class="ttdoc">The FUNCTION modifier key.</div><div class="ttdef"><b>Definition</b> keys.hpp:480</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
-<div class="ttc" id="astructxtd_1_1scope__success_html"><div class="ttname"><a href="structxtd_1_1scope__success.html">xtd::scope_success</a></div><div class="ttdoc">Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...</div><div class="ttdef"><b>Definition</b> scope_success.hpp:65</div></div>
+<div class="ttc" id="astructxtd_1_1scope__success_html"><div class="ttname"><a href="structxtd_1_1scope__success.html">xtd::scope_success</a></div><div class="ttdoc">Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...</div><div class="ttdef"><b>Definition</b> scope_success.hpp:64</div></div>
+<div class="ttc" id="aunused_8hpp_html"><div class="ttname"><a href="unused_8hpp.html">unused.hpp</a></div><div class="ttdoc">Contains __ and unused_ keywords.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
