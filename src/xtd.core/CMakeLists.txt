@@ -720,6 +720,8 @@ add_sources(
   "include/xtd/unregister_any_stringer"
   "include/xtd/unsafe.hpp"
   "include/xtd/unsafe"
+  "include/xtd/unused.hpp"
+  "include/xtd/unused"
   "include/xtd/unsigned_integer.hpp"
   "include/xtd/unsigned_integer_.hpp"
   "include/xtd/unsigned_integer"

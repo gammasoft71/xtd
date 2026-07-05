@@ -46,6 +46,7 @@
 #include "uintptr.hpp"
 #include "ulong.hpp"
 #include "uptr.hpp"
+#include "unused.hpp"
 #include "usize.hpp"
 #include "wchar.hpp"
 #include "wptr.hpp"
