@@ -306,6 +306,30 @@ namespace xtd {
             return xtd::linq::enumerable::first_or_default(self());
           }
           
+          template<typename result_t>
+          requires xtd::numeric<result_t>
+          [[nodiscard]] auto max(auto&& selector) const {
+            return xtd::linq::enumerable::max<result_t, source_t>(self(), selector);
+          }
+          [[nodiscard]] auto max(auto&& selector) const requires xtd::numeric<source_t> {
+            return xtd::linq::enumerable::max(self(), selector);
+          }
+          [[nodiscard]] auto max() const requires xtd::numeric<source_t> {
+            return xtd::linq::enumerable::max(self());
+          }
+
+          template<typename result_t>
+          requires xtd::numeric<result_t>
+          [[nodiscard]] auto min(auto&& selector) const {
+            return xtd::linq::enumerable::min<result_t, source_t>(self(), selector);
+          }
+          [[nodiscard]] auto min(auto&& selector) const requires xtd::numeric<source_t> {
+            return xtd::linq::enumerable::min(self(), selector);
+          }
+          [[nodiscard]] auto min() const requires xtd::numeric<source_t> {
+            return xtd::linq::enumerable::min(self());
+          }
+
           /// @brief Sorts the elements of a sequence in ascending order.
           /// @param source A sequence of values to order.
           /// @return An xtd::collections::generic::ienumerable <source_t> whose elements are sorted.

@@ -21,6 +21,7 @@
 #include "../iequatable.hpp"
 #include "../int32.hpp"
 #include "../int64.hpp"
+#include "../numeric.hpp"
 #include "../optional.hpp"
 #include "../static.hpp"
 #include "../usize.hpp"
@@ -756,6 +757,68 @@ namespace xtd {
       }
       ///@endcond
       
+      template<typename result_t, typename source_t>
+      requires xtd::numeric<result_t>
+      [[nodiscard]] static auto max(const ienumerable<source_t>& source, auto&& selector) {
+        auto result = std::optional<result_t> {};
+        for (const auto& item : source) {
+          auto val = selector(item);
+          if (!result || val > result) result = val;
+        }
+        return result.value_or(result_t {});
+      }
+      
+      template<typename source_t>
+      requires xtd::numeric<source_t>
+      [[nodiscard]] static auto max(const ienumerable<source_t>& source, auto&& selector) {
+        auto result = std::optional<source_t> {};
+        for (const auto& item : source) {
+          auto val = selector(item);
+          if (!result || val > result) result = val;
+        }
+        return result.value_or(source_t {});
+      }
+      
+      template<typename source_t>
+      requires xtd::numeric<source_t>
+      [[nodiscard]] static auto max(const ienumerable<source_t>& source) {
+        auto result = std::optional<source_t> {};
+        for (const auto& item : source)
+          if (!result || item > result) result = item;
+        return result.value_or(source_t {});
+      }
+
+      template<typename result_t, typename source_t>
+      requires xtd::numeric<result_t>
+      [[nodiscard]] static auto min(const ienumerable<source_t>& source, auto&& selector) {
+        auto result = std::optional<result_t> {};
+        for (const auto& item : source) {
+          auto val = selector(item);
+          if (!result || val < result) result = val;
+        }
+        return result.value_or(result_t {});
+      }
+
+      template<typename source_t>
+      requires xtd::numeric<source_t>
+      [[nodiscard]] static auto min(const ienumerable<source_t>& source, auto&& selector) {
+        auto result = std::optional<source_t> {};
+        for (const auto& item : source) {
+          auto val = selector(item);
+          if (!result || val < result) result = val;
+        }
+        return result.value_or(source_t {});
+      }
+
+      template<typename source_t>
+      requires xtd::numeric<source_t>
+      [[nodiscard]] static auto min(const ienumerable<source_t>& source) {
+        auto result = std::optional<source_t> {};
+        for (const auto& item : source)
+          if (!result || item < result) result = item;
+        return result.value_or(source_t {});
+      }
+
       /// @brief Sorts the elements of a sequence in ascending order.
       /// @param source A sequence of values to order.
       /// @return An xtd::collections::generic::ienumerable <source_t> whose elements are sorted.
