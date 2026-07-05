@@ -69,40 +69,40 @@ namespace {
 }
 
 intptr icon::create(const string& filename) {
-  [[maybe_unused]] auto _ = toolkit::initialize(); // Must be first
+  auto __ = toolkit::initialize(); // Must be first
   return reinterpret_cast<intptr>(new wxIconBundle(wxString(convert_string::to_wstring(filename))));
 }
 
 intptr icon::create(const xtd::string& filename, int32 width, int32 height) {
-  [[maybe_unused]] auto _ = toolkit::initialize(); // Must be first
+  auto __ = toolkit::initialize(); // Must be first
   //return reinterpret_cast<intptr>(new wxIconBundle(wxIcon(wxString(convert_string::to_wstring(filename)), wxICON_DEFAULT_TYPE, width, height)));
   return reinterpret_cast<intptr>(new wxIconBundle(wxIconBundle(wxString(convert_string::to_wstring(filename))).GetIcon({width, height})));
 }
 
 intptr icon::create(std::istream& stream) {
-  [[maybe_unused]] auto _ = toolkit::initialize(); // Must be first
+  auto __ = toolkit::initialize(); // Must be first
   StdInputStreamAdapter std_stream(stream);
   return reinterpret_cast<intptr>(new wxIconBundle(std_stream));
 }
 
 intptr icon::create(std::istream& stream, int32 width, int32 height) {
-  [[maybe_unused]] auto _ = toolkit::initialize(); // Must be first
+  auto __ = toolkit::initialize(); // Must be first
   StdInputStreamAdapter std_stream(stream);
   return reinterpret_cast<intptr>(new wxIconBundle(wxIconBundle(std_stream).GetIcon({width, height})));
 }
 
 intptr icon::create(const char* const* bits) {
-  [[maybe_unused]] auto _ = toolkit::initialize(); // Must be first
+  auto __ = toolkit::initialize(); // Must be first
   return reinterpret_cast<intptr>(new wxIconBundle(wxIcon(bits)));
 }
 
 intptr icon::create(const char* const* bits, int32 width, int32 height) {
-  [[maybe_unused]] auto _ = toolkit::initialize(); // Must be first
+  auto __ = toolkit::initialize(); // Must be first
   return reinterpret_cast<intptr>(new wxIconBundle(wxIconBundle(wxIcon(bits)).GetIcon({width, height})));
 }
 
 intptr icon::create(intptr image) {
-  [[maybe_unused]] auto _ = toolkit::initialize(); // Must be first
+  auto __ = toolkit::initialize(); // Must be first
   if (image == 0) return 0;
   wxIconBundle* result = new wxIconBundle;
   wxIcon icon;
@@ -112,7 +112,7 @@ intptr icon::create(intptr image) {
 }
 
 intptr icon::create(intptr icon, int32 width, int32 height) {
-  [[maybe_unused]] auto _ = toolkit::initialize(); // Must be first
+  auto __ = toolkit::initialize(); // Must be first
   if (icon == 0) return 0;
   wxIconBundle* result = new wxIconBundle(reinterpret_cast<wxIconBundle*>(icon)->GetIcon({width, height}));
   return reinterpret_cast<intptr>(result);

@@ -2,10 +2,9 @@
 /// @brief Contains #finally_ keyword.
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
+#include "unused.hpp"
+#include <exception>
 #include <utility>
-#define __XTD_CORE_INTERNAL__
-#include "internal/__xtd_scope.hpp"
-#undef __XTD_CORE_INTERNAL__
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -66,6 +65,13 @@ namespace xtd {
   
   /// @cond
   template<typename function_t>
+  struct __xtd_finally_object__ {
+    __xtd_finally_object__(function_t&& f) : function(std::forward<function_t>(f)) {}
+    ~__xtd_finally_object__() { function(); }
+    function_t function;
+  };
+  
+  template<typename function_t>
   auto operator +(finally, function_t&& function) {
     return __xtd_finally_object__<function_t> {std::forward<function_t>(function)};
   }
@@ -115,4 +121,4 @@ namespace xtd {
 /// // always (finally)
 /// ```
 #define finally_ \
-  [[maybe_unused]] auto __xtd_finally_id__(__xtd__finally__, __LINE__) = xtd::finally {} + [&]
+  auto __ = xtd::finally {} + [&]

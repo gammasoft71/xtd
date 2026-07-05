@@ -2,10 +2,9 @@
 /// @brief Contains #scope_exit_ keyword.
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
+#include "unused.hpp"
+#include <exception>
 #include <utility>
-#define __XTD_CORE_INTERNAL__
-#include "internal/__xtd_scope.hpp"
-#undef __XTD_CORE_INTERNAL__
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -65,6 +64,13 @@ namespace xtd {
   struct scope_exit {};
   
   /// @cond
+  template<typename function_t>
+  struct __xtd_scope_exit_object__ {
+    __xtd_scope_exit_object__(function_t&& f) : function(std::forward<function_t>(f)) {}
+    ~__xtd_scope_exit_object__() { function(); }
+    function_t function;
+  };
+  
   template<typename function_t>
   auto operator +(scope_exit, function_t&& function) {
     return __xtd_scope_exit_object__<function_t> {std::forward<function_t>(function)};
@@ -126,4 +132,4 @@ namespace xtd {
 /// // caught exception!
 /// ```
 #define scope_exit_ \
-  [[maybe_unused]] auto __xtd_scope_id__(__xtd__scope_exit__, __LINE__) = xtd::scope_exit {} + [&]
+  auto __ = xtd::scope_exit {} + [&]

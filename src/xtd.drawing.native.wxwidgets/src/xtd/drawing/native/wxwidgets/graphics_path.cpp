@@ -62,7 +62,7 @@ namespace {
 }
 
 intptr graphics_path::create() {
-  [[maybe_unused]] auto _ = toolkit::initialize(); // Must be first
+  auto __ = toolkit::initialize(); // Must be first
   static wxBitmap bmp(1, 1);
   wxMemoryDC mdc(bmp);
   wxGraphicsContext* mgc = wxGraphicsContext::Create(mdc);

@@ -306,7 +306,7 @@ namespace xtd::tests {
     
     auto test_method_(parse_with_invalid_enum) {
       assert::are_equal(as<enum_object_with_registered_enum_test>(5), enum_object<>::parse<enum_object_with_registered_enum_test>("5"));
-      assert::throws<format_exception>([] {[[maybe_unused]] auto _ = enum_object<>::parse<enum_object_with_registered_enum_test>("five");});
+      assert::throws<format_exception>([] {auto __ = enum_object<>::parse<enum_object_with_registered_enum_test>("five");});
     }
     
     auto test_method_(to_byte) {

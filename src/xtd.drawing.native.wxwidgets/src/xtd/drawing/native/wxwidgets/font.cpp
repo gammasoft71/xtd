@@ -42,7 +42,7 @@ namespace {
 }
 
 intptr font::create(const string& name, float em_size, bool bold, bool italic, bool underline, bool strikeout, xtd::byte gdi_char_set, bool gdi_vertical_font) {
-  [[maybe_unused]] auto _ = toolkit::initialize(); // Must be first
+  auto __ = toolkit::initialize(); // Must be first
   wxFont* font = new wxFont(points_to_native_font_size_correction(em_size), wxFontFamily::wxFONTFAMILY_DEFAULT, italic ? wxFontStyle::wxFONTSTYLE_ITALIC : wxFontStyle::wxFONTSTYLE_NORMAL, bold ? wxFontWeight::wxFONTWEIGHT_BOLD : wxFontWeight::wxFONTWEIGHT_NORMAL, underline, name == ".AppleSystemUIFont" ? L"" : convert_string::to_wstring(name).chars().c_str());
   font->SetPointSize(points_to_native_font_size_correction(em_size));
   font->SetStrikethrough(strikeout);
@@ -50,12 +50,12 @@ intptr font::create(const string& name, float em_size, bool bold, bool italic, b
 }
 
 intptr font::create_from_hdc(intptr hdc) {
-  [[maybe_unused]] auto _ = toolkit::initialize(); // Must be first
+  auto __ = toolkit::initialize(); // Must be first
   return reinterpret_cast<intptr>(new wxFont(reinterpret_cast<wxDC*>(hdc)->GetFont()));
 }
 
 intptr font::create_from_hfont(intptr hfont) {
-  [[maybe_unused]] auto _ = toolkit::initialize(); // Must be first
+  auto __ = toolkit::initialize(); // Must be first
   return reinterpret_cast<intptr>(new wxFont(*reinterpret_cast<wxFont*>(hfont)));
 }
 
@@ -64,12 +64,12 @@ void font::destroy(intptr font) {
 }
 
 int32 font::dpi() {
-  [[maybe_unused]] auto _ = toolkit::initialize(); // Must be first
+  auto __ = toolkit::initialize(); // Must be first
   return ::dpi();
 }
 
 void font::get_information(intptr font, string& name, float& em_size, bool& bold, bool& italic, bool& underline, bool& strikeout, xtd::byte& gdi_char_set, bool& gdi_vertical_font) {
-  [[maybe_unused]] auto _ = toolkit::initialize(); // Must be first
+  auto __ = toolkit::initialize(); // Must be first
   wxFont* wx_font = reinterpret_cast<wxFont*>(font);
   name = wx_font->GetFaceName().c_str().AsWChar();
   em_size = native_font_size_correction_to_points(static_cast<float>(wx_font->GetPointSize()));
@@ -82,7 +82,7 @@ void font::get_information(intptr font, string& name, float& em_size, bool& bold
 }
 
 float font::height(intptr font) {
-  [[maybe_unused]] auto _ = toolkit::initialize(); // Must be first
+  auto __ = toolkit::initialize(); // Must be first
   if (!wxTheApp) return reinterpret_cast<wxFont*>(font)->GetPixelSize().GetHeight();
   wxScreenDC hdc;
   wxFont current_font = hdc.GetFont();
@@ -93,7 +93,7 @@ float font::height(intptr font) {
 }
 
 float font::height(intptr font, intptr hdc) {
-  [[maybe_unused]] auto _ = toolkit::initialize(); // Must be first
+  auto __ = toolkit::initialize(); // Must be first
   if (!wxTheApp) return reinterpret_cast<wxFont*>(font)->GetPixelSize().GetHeight();
   wxFont current_font = reinterpret_cast<wxDC*>(hdc)->GetFont();
   reinterpret_cast<wxDC*>(hdc)->SetFont(*reinterpret_cast<wxFont*>(font));

@@ -439,7 +439,7 @@ void application::run(xtd::forms::application_context& context) {
   application::message_loop_ = true;
   if (context.main_form().has_value()) context.main_form().value().get().show();
   native::application::run();
-  [[maybe_unused]] auto _ = close_open_forms();
+  auto __ = close_open_forms();
   context.thread_exit -= application::on_app_thread_exit;
   application::message_loop_ = false;
   internal_context_.main_form(nullptr);

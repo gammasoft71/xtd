@@ -8,7 +8,7 @@ namespace numeric_tex_box_example {
     
     double value() const {
       auto result = .0;
-      [[maybe_unused]] auto _ = try_parse(text(), result);
+      auto __ = try_parse(text(), result);
       return result;
     }
     

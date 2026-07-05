@@ -115,7 +115,7 @@ namespace xtd::text::tests {
     auto test_method_(constructor_with_basic_string_and_index_and_count) {
       assert::are_equal("str", basic_string_builder<type_t>(basic_string_builder<type_t>("A test string"), 7, 3).to_string());
       assert::are_equal("string", basic_string_builder<type_t>(basic_string_builder<type_t>("A test string"), 7, 6).to_string());
-      assert::throws<argument_out_of_range_exception>([] {[[maybe_unused]] auto _ = basic_string_builder<type_t>(basic_string_builder<type_t>("A test string"), 7, 7).to_string();});
+      assert::throws<argument_out_of_range_exception>([] {auto __ = basic_string_builder<type_t>(basic_string_builder<type_t>("A test string"), 7, 7).to_string();});
     }
     
     auto test_method_(move_constructor_with_basic_string) {
@@ -240,7 +240,7 @@ namespace xtd::text::tests {
       auto s = basic_string_builder<type_t> {"A test string"};
       auto iterator = s.cend();
       // Attempting to access cend results in undefined behaviour in Windows.
-      if (!environment::os_version().is_windows()) assert::does_not_throw([&] { [[maybe_unused]] auto v = *iterator;});
+      if (!environment::os_version().is_windows()) assert::does_not_throw([&] {auto __ = *iterator;});
     }
     
     auto test_method_(data_const) {
@@ -268,7 +268,7 @@ namespace xtd::text::tests {
       auto s = basic_string_builder<type_t> {"A test string"};
       auto iterator = s.end();
       // Attempting to access end results in undefined behaviour in Windows.
-      if (!environment::os_version().is_windows()) assert::does_not_throw([&] { [[maybe_unused]] auto v = *iterator;});
+      if (!environment::os_version().is_windows()) assert::does_not_throw([&] {auto __ = *iterator;});
     }
     
     auto test_method_(length_const) {

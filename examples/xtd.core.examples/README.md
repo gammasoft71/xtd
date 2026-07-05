@@ -328,6 +328,7 @@
 * [static](keywords/static/README.md) shows how to use [static_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#ga28796443ec37b938df7072c79595e3f6) keyword.
 * [static_object](keywords/static_object/README.md) shows how to use [static_object_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#gadf2fc01c525cce1b8255c8308b2fb004) keyword.
 * [typeof](keywords/typeof/README.md) shows how to use [typeof_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#gafa2ffd9b4a6568b57ab2731bec095d99) keyword.
+* [unused](keywords/unused/README.md) shows how to use [__](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#ga0ee680d2ff7ec14c0dc73da3bb2e5c91) and [unused_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#ga0ee680d2ff7ec14c0dc73da3bb2e5c91) and [unused_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#ga0ee680d2ff7ec14c0dc73da3bb2e5c91) keywords.
 * [using](keywords/using/README.md) shows how to use [using_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#ga73249a3d4ad48e36724bccf5f3e48f2f) keyword.
 
 ## [Linq](linq/README.md)

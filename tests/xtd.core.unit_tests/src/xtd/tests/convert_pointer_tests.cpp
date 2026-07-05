@@ -38,7 +38,7 @@ namespace xtd::tests {
     auto test_method_(const_object_to_invalid_other_ptr) {
       const guid* g = new guid();
       
-      assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto _ = convert_pointer::to_ptr<string>(*g);});
+      assert::throws<invalid_cast_exception>([&] {auto __ = convert_pointer::to_ptr<string>(*g);});
       delete g;
     }
     
@@ -53,7 +53,7 @@ namespace xtd::tests {
     auto test_method_(object_to_invalid_other_ptr) {
       guid* g = new guid();
       
-      assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto _ = convert_pointer::to_ptr<string>(*g);});
+      assert::throws<invalid_cast_exception>([&] {auto __ = convert_pointer::to_ptr<string>(*g);});
       delete g;
     }
     
@@ -105,7 +105,7 @@ namespace xtd::tests {
     auto test_method_(const_ptr_to_invalid_other_ptr) {
       const guid* g = new guid();
       
-      assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto _ = convert_pointer::to_ptr<string>(g);});
+      assert::throws<invalid_cast_exception>([&] {auto __ = convert_pointer::to_ptr<string>(g);});
       delete g;
     }
     
@@ -127,7 +127,7 @@ namespace xtd::tests {
     auto test_method_(ptr_to_invalid_other_ptr) {
       guid* g = new guid();
       
-      assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto _ = convert_pointer::to_ptr<string>(g);});
+      assert::throws<invalid_cast_exception>([&] {auto __ = convert_pointer::to_ptr<string>(g);});
       delete g;
     }
     
@@ -158,7 +158,7 @@ namespace xtd::tests {
     auto test_method_(const_object_to_invalid_other_ref) {
       const guid* g = new guid();
       
-      assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto _ = convert_pointer::to_ref<string>(*g);});
+      assert::throws<invalid_cast_exception>([&] {auto __ = convert_pointer::to_ref<string>(*g);});
       delete g;
     }
     
@@ -173,7 +173,7 @@ namespace xtd::tests {
     auto test_method_(object_to_invalid_other_ref) {
       guid* g = new guid();
       
-      assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto _ = convert_pointer::to_ref<string>(*g);});
+      assert::throws<invalid_cast_exception>([&] {auto __ = convert_pointer::to_ref<string>(*g);});
       delete g;
     }
     
@@ -186,7 +186,7 @@ namespace xtd::tests {
     
     auto test_method_(const_null_pointer_to_ref) {
       const guid* g1 = null;
-      assert::throws<argument_null_exception>([&] {[[maybe_unused]] auto _ = convert_pointer::to_ref<guid>(g1);});
+      assert::throws<argument_null_exception>([&] {auto __ = convert_pointer::to_ref<guid>(g1);});
     }
     
     auto test_method_(pointer_to_ref) {
@@ -198,7 +198,7 @@ namespace xtd::tests {
     
     auto test_method_(null_pointer_to_ref) {
       guid* g = null;
-      assert::throws<argument_null_exception>([&] {[[maybe_unused]] auto _ = convert_pointer::to_ref<guid>(g);});
+      assert::throws<argument_null_exception>([&] {auto __ = convert_pointer::to_ref<guid>(g);});
     }
     
     auto test_method_(const_pointer_to_other_ref) {
@@ -210,12 +210,12 @@ namespace xtd::tests {
     
     auto test_method_(const_null_pointer_to_other_ref) {
       const guid* g = null;
-      assert::throws<argument_null_exception>([&] {[[maybe_unused]] auto _ = convert_pointer::to_ref<object>(g);});
+      assert::throws<argument_null_exception>([&] {auto __ = convert_pointer::to_ref<object>(g);});
     }
     
     auto test_method_(const_pointer_to_invalid_other_ref) {
       const guid* g = new guid();
-      assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto _ = convert_pointer::to_ref<string>(g);});
+      assert::throws<invalid_cast_exception>([&] {auto __ = convert_pointer::to_ref<string>(g);});
       delete g;
     }
     
@@ -228,12 +228,12 @@ namespace xtd::tests {
     
     auto test_method_(null_pointer_to_other_ref) {
       guid* g = null;
-      assert::throws<argument_null_exception>([&] {[[maybe_unused]] auto _ = convert_pointer::to_ref<object>(g);});
+      assert::throws<argument_null_exception>([&] {auto __ = convert_pointer::to_ref<object>(g);});
     }
     
     auto test_method_(pointer_to_invalid_other_ref) {
       guid* g = new guid();
-      assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto _ = convert_pointer::to_ref<string>(g);});
+      assert::throws<invalid_cast_exception>([&] {auto __ = convert_pointer::to_ref<string>(g);});
       delete g;
     }
     
@@ -247,7 +247,7 @@ namespace xtd::tests {
     
     auto test_method_(to_unique_ptr_invalid) {
       xtd::uptr<guid> g = xtd::new_uptr<guid>();
-      assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto _ = convert_pointer::to_unique_ptr<string>(g);});
+      assert::throws<invalid_cast_exception>([&] {auto __ = convert_pointer::to_unique_ptr<string>(g);});
     }
     
     auto test_method_(move_to_unique_ptr) {
@@ -256,7 +256,7 @@ namespace xtd::tests {
     }
     
     auto test_method_(move_to_unique_ptr_invalid) {
-      assert::throws<invalid_cast_exception>([] {[[maybe_unused]] auto _ = convert_pointer::to_unique_ptr<string>(xtd::new_uptr<guid>());});
+      assert::throws<invalid_cast_exception>([] {auto __ = convert_pointer::to_unique_ptr<string>(xtd::new_uptr<guid>());});
     }
     
     auto test_method_(to_shared_ptr) {
@@ -267,7 +267,7 @@ namespace xtd::tests {
     
     auto test_method_(to_shared_ptr_invalid) {
       xtd::sptr<guid> g = xtd::new_sptr<guid>();
-      assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto _ = convert_pointer::to_shared_ptr<string>(g);});
+      assert::throws<invalid_cast_exception>([&] {auto __ = convert_pointer::to_shared_ptr<string>(g);});
     }
     
     auto test_method_(const_to_shared_ptr) {
@@ -278,7 +278,7 @@ namespace xtd::tests {
     
     auto test_method_(const_to_shared_ptr_invalid) {
       const xtd::sptr<guid> g = xtd::new_sptr<guid>();
-      assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto _ = convert_pointer::to_shared_ptr<string>(g);});
+      assert::throws<invalid_cast_exception>([&] {auto __ = convert_pointer::to_shared_ptr<string>(g);});
     }
     
     auto test_method_(move_to_shared_ptr) {
@@ -287,7 +287,7 @@ namespace xtd::tests {
     }
     
     auto test_method_(move_to_shared_ptr_invalid) {
-      assert::throws<invalid_cast_exception>([] {[[maybe_unused]] auto _ = convert_pointer::to_shared_ptr<string>(xtd::new_sptr<guid>());});
+      assert::throws<invalid_cast_exception>([] {auto __ = convert_pointer::to_shared_ptr<string>(xtd::new_sptr<guid>());});
     }
   };
 }

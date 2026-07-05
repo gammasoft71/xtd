@@ -171,7 +171,7 @@ namespace xtd::collections::tests {
     auto test_method_(get_enumerator) {
       auto items = concurrent_bag<int> {1, 2, 3, 4, 5};
       auto enumeator = items.get_enumerator();
-      assert::throws<invalid_operation_exception>([&] {[[maybe_unused]] auto _ = enumeator.current();});
+      assert::throws<invalid_operation_exception>([&] {auto __ = enumeator.current();});
       assert::is_true(enumeator.move_next());
       assert::are_equal(1, enumeator.current());
       assert::is_true(enumeator.move_next());
@@ -183,7 +183,7 @@ namespace xtd::collections::tests {
       assert::is_true(enumeator.move_next());
       assert::are_equal(5, enumeator.current());
       assert::is_false(enumeator.move_next());
-      assert::throws<invalid_operation_exception>([&] {[[maybe_unused]] auto _ = enumeator.current();});
+      assert::throws<invalid_operation_exception>([&] {auto __ = enumeator.current();});
     }
     
     auto test_method_(to_array) {

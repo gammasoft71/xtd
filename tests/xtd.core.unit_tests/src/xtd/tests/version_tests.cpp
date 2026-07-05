@@ -111,7 +111,7 @@ namespace xtd::tests {
     }
     
     auto test_method_(parse_version_with_major) {
-      assert::throws<argument_exception>([] {[[maybe_unused]] auto _ = version::parse("1");});
+      assert::throws<argument_exception>([] {auto __ = version::parse("1");});
     }
     
     auto test_method_(parse_version_with_major_and_minor) {
@@ -119,7 +119,7 @@ namespace xtd::tests {
     }
     
     auto test_method_(parse_version_with_bad_major_and_minor) {
-      assert::throws<format_exception>([] {[[maybe_unused]] auto _ = version::parse("one.2");});
+      assert::throws<format_exception>([] {auto __ = version::parse("one.2");});
     }
     
     auto test_method_(parse_version_with_major_minor_and_build) {
@@ -133,12 +133,12 @@ namespace xtd::tests {
     }
     
     auto test_method_(parse_version_with_major_minor_build_revision_and_bad_value) {
-      assert::throws<argument_exception>([] {[[maybe_unused]] auto _ = version::parse("1.2.3.4.5");});
-      assert::throws<argument_exception>([] {[[maybe_unused]] auto _ = version::parse("01.02.03.04.05");});
+      assert::throws<argument_exception>([] {auto __ = version::parse("1.2.3.4.5");});
+      assert::throws<argument_exception>([] {auto __ = version::parse("01.02.03.04.05");});
     }
     
     auto test_method_(parse_version_with_bad_value) {
-      assert::throws<argument_exception>([] {[[maybe_unused]] auto _ = version::parse("one");});
+      assert::throws<argument_exception>([] {auto __ = version::parse("one");});
     }
     
     auto test_method_(try_parse_version_with_good_string_value) {
@@ -194,7 +194,7 @@ namespace xtd::tests {
     }
     
     auto test_method_(to_string_field_3_with_empty_version) {
-      assert::throws<argument_exception>([] {[[maybe_unused]] auto _ = version().to_string(3);});
+      assert::throws<argument_exception>([] {auto __ = version().to_string(3);});
     }
     
     auto test_method_(to_string_field_3_with_full_version) {
@@ -202,7 +202,7 @@ namespace xtd::tests {
     }
     
     auto test_method_(to_string_field_4_with_empty_version) {
-      assert::throws<argument_exception>([] {[[maybe_unused]] auto _ = version().to_string(4);});
+      assert::throws<argument_exception>([] {auto __ = version().to_string(4);});
     }
     
     auto test_method_(to_string_field_4_with_full_version) {
@@ -210,7 +210,7 @@ namespace xtd::tests {
     }
     
     auto test_method_(to_string_field_greater_than_4) {
-      assert::throws<argument_exception>([] {[[maybe_unused]] auto _ = version().to_string(5);});
+      assert::throws<argument_exception>([] {auto __ = version().to_string(5);});
     }
   };
 }

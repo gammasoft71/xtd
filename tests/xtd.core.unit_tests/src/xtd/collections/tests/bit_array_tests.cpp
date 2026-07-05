@@ -206,8 +206,8 @@ namespace xtd::collections::tests {
     auto test_method_(and_) {
       auto bits = bit_array {true, true, false, false};
       collection_assert::are_equal({true, false, false, false}, bits.and_({true, false, true, false}));
-      assert::throws<argument_exception>([&] {[[maybe_unused]] auto _ = bits.and_({true, false, true});});
-      assert::throws<argument_exception>([&] {[[maybe_unused]] auto _ = bits.and_({true, false, true, false, true});});
+      assert::throws<argument_exception>([&] {auto __ = bits.and_({true, false, true});});
+      assert::throws<argument_exception>([&] {auto __ = bits.and_({true, false, true, false, true});});
     }
     
     auto test_method_(clone) {
@@ -243,7 +243,7 @@ namespace xtd::collections::tests {
       assert::is_true(bits.get(1));
       assert::is_false(bits.get(2));
       assert::is_false(bits.get(3));
-      assert::throws<argument_out_of_range_exception>([&] {[[maybe_unused]] auto _ = bits.get(4);});
+      assert::throws<argument_out_of_range_exception>([&] {auto __ = bits.get(4);});
       
       bits.get(0) = false;
       assert::is_false(bits.get(0));
@@ -258,7 +258,7 @@ namespace xtd::collections::tests {
       assert::is_true(bits.get(1));
       assert::is_false(bits.get(2));
       assert::is_false(bits.get(3));
-      assert::throws<argument_out_of_range_exception>([&] {[[maybe_unused]] auto _ = bits.get(4);});
+      assert::throws<argument_out_of_range_exception>([&] {auto __ = bits.get(4);});
     }
     
     auto test_method_(get_enumerator) {
@@ -285,8 +285,8 @@ namespace xtd::collections::tests {
     auto test_method_(or_) {
       auto bits = bit_array {true, true, false, false};
       collection_assert::are_equal({true, true, true, false}, bits.or_({true, false, true, false}));
-      assert::throws<argument_exception>([&] {[[maybe_unused]] auto _ = bits.or_({true, false, true});});
-      assert::throws<argument_exception>([&] {[[maybe_unused]] auto _ = bits.or_({true, false, true, false, true});});
+      assert::throws<argument_exception>([&] {auto __ = bits.or_({true, false, true});});
+      assert::throws<argument_exception>([&] {auto __ = bits.or_({true, false, true, false, true});});
     }
     
     auto test_method_(set) {
@@ -319,8 +319,8 @@ namespace xtd::collections::tests {
     auto test_method_(xor_) {
       auto bits = bit_array {true, true, false, false};
       collection_assert::are_equal({false, true, true, false}, bits.xor_({true, false, true, false}));
-      assert::throws<argument_exception>([&] {[[maybe_unused]] auto _ = bits.xor_({true, false, true});});
-      assert::throws<argument_exception>([&] {[[maybe_unused]] auto _ = bits.xor_({true, false, true, false, true});});
+      assert::throws<argument_exception>([&] {auto __ = bits.xor_({true, false, true});});
+      assert::throws<argument_exception>([&] {auto __ = bits.xor_({true, false, true, false, true});});
     }
     
     auto test_method_(equal_to_operator) {

@@ -59,7 +59,7 @@ namespace xtd::tests {
     
     auto test_method_(parse_with_invalid_enum) {
       assert::are_equal(as < unregistered_enum_struct_flags_test > (16), string::parse<unregistered_enum_struct_flags_test> ("16"));
-      assert::throws <format_exception>([] {[[maybe_unused]] auto _ = string::parse<unregistered_enum_struct_flags_test> ("one");});
+      assert::throws <format_exception>([] {auto __ = string::parse<unregistered_enum_struct_flags_test> ("one");});
     }
   };
 }

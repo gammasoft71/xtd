@@ -88,13 +88,13 @@ namespace xtd::tests {
     }
     
     auto test_method_(format_with_none_and_alignment_invalid) {
-      assert::throws<format_exception>([] {[[maybe_unused]] auto _ = format(u"{,a}", date_time {2019, 1, 2, 3, 4, 5});});
-      assert::throws<format_exception>([] {[[maybe_unused]] auto _ = format(u"{, }", date_time {2019, 1, 2, 3, 4, 5});});
+      assert::throws<format_exception>([] {auto __ = format(u"{,a}", date_time {2019, 1, 2, 3, 4, 5});});
+      assert::throws<format_exception>([] {auto __ = format(u"{, }", date_time {2019, 1, 2, 3, 4, 5});});
     }
     
     auto test_method_(format_with_sequence_number_and_alignment_invalid) {
-      assert::throws<format_exception>([] {[[maybe_unused]] auto _ = format(u"{0,a}", date_time {2019, 1, 2, 3, 4, 5});});
-      assert::throws<format_exception>([] {[[maybe_unused]] auto _ = format(u"{0, }", date_time {2019, 1, 2, 3, 4, 5});});
+      assert::throws<format_exception>([] {auto __ = format(u"{0,a}", date_time {2019, 1, 2, 3, 4, 5});});
+      assert::throws<format_exception>([] {auto __ = format(u"{0, }", date_time {2019, 1, 2, 3, 4, 5});});
     }
     
     auto test_method_(format_short_date_with_none) {

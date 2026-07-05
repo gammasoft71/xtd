@@ -229,12 +229,12 @@ namespace xtd::collections::generic::helpers::tests {
     
     auto test_method_(const_back) {
       assert::are_equal(21, raw_array {84, 42, 21}.back());
-      assert::throws<std::out_of_range>([] {[[maybe_unused]] auto _ = raw_array<int> {}.back();});
+      assert::throws<std::out_of_range>([] {auto __ = raw_array<int> {}.back();});
     }
     
     auto test_method_(const_back_with_bool) {
       assert::are_equal(true, raw_array {true, false, true}.back());
-      assert::throws<std::out_of_range>([] {[[maybe_unused]] auto _ = raw_array<bool> {}.back();});
+      assert::throws<std::out_of_range>([] {auto __ = raw_array<bool> {}.back();});
     }
     
     auto test_method_(back) {
@@ -430,13 +430,13 @@ namespace xtd::collections::generic::helpers::tests {
     auto test_method_(front_const) {
       auto items = raw_array {84, 42, 21};
       assert::are_equal(84, items.front());
-      assert::throws<std::out_of_range>([&] {[[maybe_unused]] auto _ = raw_array<int> {}.front();});
+      assert::throws<std::out_of_range>([&] {auto __ = raw_array<int> {}.front();});
     }
     
     auto test_method_(front_const_with_bool) {
       auto items = raw_array {true, false, true};
       assert::are_equal(true, items.front());
-      assert::throws<std::out_of_range>([&] {[[maybe_unused]] auto _ = raw_array<bool> {}.front();});
+      assert::throws<std::out_of_range>([&] {auto __ = raw_array<bool> {}.front();});
     }
     
     auto test_method_(front) {
@@ -611,7 +611,7 @@ namespace xtd::collections::generic::helpers::tests {
       assert::are_equal(84, items.at(0));
       assert::are_equal(42, items.at(1));
       assert::are_equal(21, items.at(2));
-      assert::throws<std::out_of_range>([&] {[[maybe_unused]] auto _ = items.at(3);});
+      assert::throws<std::out_of_range>([&] {auto __ = items.at(3);});
       
       items.at(0) = 63;
       items.at(1) = 31;
@@ -627,7 +627,7 @@ namespace xtd::collections::generic::helpers::tests {
       assert::are_equal(true, items.at(0));
       assert::are_equal(false, items.at(1));
       assert::are_equal(true, items.at(2));
-      assert::throws<std::out_of_range>([&] {[[maybe_unused]] auto _ = items.at(3);});
+      assert::throws<std::out_of_range>([&] {auto __ = items.at(3);});
       
       items.at(0) = false;
       items.at(1) = true;
@@ -931,7 +931,7 @@ namespace xtd::collections::generic::helpers::tests {
       assert::are_equal(84, items[0]);
       assert::are_equal(42, items[1]);
       assert::are_equal(21, items[2]);
-      //assert::throws<std::out_of_range>([&] {[[maybe_unused]] auto _ = items[3];});
+      //assert::throws<std::out_of_range>([&] {auto __ = items[3];});
       
       items[0] = 63;
       items[1] = 31;
@@ -965,7 +965,7 @@ namespace xtd::collections::generic::helpers::tests {
       assert::are_equal(true, items[0]);
       assert::are_equal(false, items[1]);
       assert::are_equal(true, items[2]);
-      //assert::throws<std::out_of_range>([&] {[[maybe_unused]] auto _ = items[3];});
+      //assert::throws<std::out_of_range>([&] {auto __ = items[3];});
       
       items[0] = false;
       items[1] = true;

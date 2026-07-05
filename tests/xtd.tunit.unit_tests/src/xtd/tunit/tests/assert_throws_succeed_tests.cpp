@@ -10,7 +10,7 @@ namespace xtd::tunit::tests {
   public:
     auto test_method_(test_case_succeed) {
       auto a = array {1, 2, 3, 4};
-      xtd::tunit::assert::throws<xtd::index_out_of_range_exception>([&] {[[maybe_unused]] auto _ = a[5];});
+      xtd::tunit::assert::throws<xtd::index_out_of_range_exception>([&] {auto __ = a[5];});
     }
   };
   

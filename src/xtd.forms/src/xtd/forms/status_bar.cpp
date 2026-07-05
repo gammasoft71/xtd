@@ -353,7 +353,7 @@ void status_bar::on_handle_created(const event_args& e) {
 
 void status_bar::on_handle_destroyed(const event_args& e) {
   if (system_status_bar()) {
-    [[maybe_unused]] auto _ = native::status_bar::set_system_status_bar(parent().value().get().handle(), 0);
+    auto __ = native::status_bar::set_system_status_bar(parent().value().get().handle(), 0);
     data_->system_status_bar_panel_handles.clear();
   }
   control::on_handle_destroyed(e);

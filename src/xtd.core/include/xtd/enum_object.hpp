@@ -317,8 +317,8 @@ namespace xtd {
     };
     
     static auto init() noexcept -> void {
-      [[maybe_unused]] auto a = attribute();
-      [[maybe_unused]] auto e = entries();
+      auto __ = attribute();
+      auto __ = entries();
     }
     
     inline static std::optional<xtd::enum_attribute> attribute_;

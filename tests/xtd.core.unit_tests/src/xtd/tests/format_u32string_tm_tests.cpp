@@ -157,13 +157,13 @@ namespace xtd::tests {
     }
     
     auto test_method_(format_with_none_and_alignment_invalid) {
-      assert::throws<format_exception>([] {[[maybe_unused]] auto _ = format("{,a}", make_time<type_t>(2019, 1, 2, 3, 4, 5));});
-      assert::throws<format_exception>([] {[[maybe_unused]] auto _ = format("{, }", make_time<type_t>(2019, 1, 2, 3, 4, 5));});
+      assert::throws<format_exception>([] {auto __ = format("{,a}", make_time<type_t>(2019, 1, 2, 3, 4, 5));});
+      assert::throws<format_exception>([] {auto __ = format("{, }", make_time<type_t>(2019, 1, 2, 3, 4, 5));});
     }
     
     auto test_method_(format_with_sequence_number_and_alignment_invalid) {
-      assert::throws<format_exception>([] {[[maybe_unused]] auto _ = format("{0,a}", make_time<type_t>(2019, 1, 2, 3, 4, 5));});
-      assert::throws<format_exception>([] {[[maybe_unused]] auto _ = format("{0, }", make_time<type_t>(2019, 1, 2, 3, 4, 5));});
+      assert::throws<format_exception>([] {auto __ = format("{0,a}", make_time<type_t>(2019, 1, 2, 3, 4, 5));});
+      assert::throws<format_exception>([] {auto __ = format("{0, }", make_time<type_t>(2019, 1, 2, 3, 4, 5));});
     }
     
     auto test_method_(format_short_date_with_none) {
