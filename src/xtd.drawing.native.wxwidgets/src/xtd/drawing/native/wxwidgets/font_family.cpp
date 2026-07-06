@@ -33,7 +33,7 @@ namespace {
 }
 
 intptr font_family::create(const string& name) {
-  auto __ = toolkit::initialize(); // Must be first
+  [[maybe_unused]] auto __ = toolkit::initialize(); // Must be first
   if (name == ".AppleSystemUIFont") return reinterpret_cast<intptr>(new string(name));
   return wxFontEnumerator::IsValidFacename(name.chars()) ? reinterpret_cast<intptr>(new string(name)) : 0;
 }
@@ -43,7 +43,7 @@ void font_family::destroy(intptr font_family) {
 }
 
 string font_family::generic_serif_name() {
-  auto __ = toolkit::initialize(); // Must be first
+  [[maybe_unused]] auto __ = toolkit::initialize(); // Must be first
   /*
   wxFontInfo font_info;
   font_info.Family(wxFONTFAMILY_ROMAN);
@@ -62,7 +62,7 @@ string font_family::generic_serif_name() {
 }
 
 string font_family::generic_sans_serif_name() {
-  auto __ = toolkit::initialize(); // Must be first
+  [[maybe_unused]] auto __ = toolkit::initialize(); // Must be first
   /*
   wxFontInfo font_info;
   font_info.Family(wxFONTFAMILY_SWISS);
@@ -81,7 +81,7 @@ string font_family::generic_sans_serif_name() {
 }
 
 string font_family::generic_monospace_name() {
-  auto __ = toolkit::initialize(); // Must be first
+  [[maybe_unused]] auto __ = toolkit::initialize(); // Must be first
   /*
   wxFontInfo font_info;
   font_info.Family(wxFONTFAMILY_TELETYPE);
@@ -100,7 +100,7 @@ string font_family::generic_monospace_name() {
 }
 
 array<string> font_family::installed_font_families() {
-  auto __ = toolkit::initialize(); // Must be first
+  [[maybe_unused]] auto __ = toolkit::initialize(); // Must be first
   std::vector<string> families;
   for (const wxString& name : wxFontEnumerator::GetFacenames())
     if (name[0] != '@') families.push_back(name.c_str().AsWChar());
@@ -109,7 +109,7 @@ array<string> font_family::installed_font_families() {
 }
 
 int32 font_family::get_cell_ascent(intptr font_family, int32 em_height, bool bold, bool italic, bool underline, bool strikeout) {
-  auto __ = toolkit::initialize(); // Must be first
+  [[maybe_unused]] auto __ = toolkit::initialize(); // Must be first
   if (!wxTheApp) return em_height;
   wxScreenDC hdc;
   wxFont font(pixel_to_native_font_graphics_untit(em_height), wxFontFamily::wxFONTFAMILY_DEFAULT, italic ? wxFontStyle::wxFONTSTYLE_ITALIC : wxFontStyle::wxFONTSTYLE_NORMAL, bold ? wxFontWeight::wxFONTWEIGHT_BOLD : wxFontWeight::wxFONTWEIGHT_NORMAL, underline, convert_string::to_wstring(*reinterpret_cast<string*>(font_family)).chars().c_str());
@@ -122,7 +122,7 @@ int32 font_family::get_cell_ascent(intptr font_family, int32 em_height, bool bol
 }
 
 int32 font_family::get_cell_descent(intptr font_family, int32 em_height, bool bold, bool italic, bool underline, bool strikeout) {
-  auto __ = toolkit::initialize(); // Must be first
+  [[maybe_unused]] auto __ = toolkit::initialize(); // Must be first
   if (!wxTheApp) return 0;
   wxScreenDC hdc;
   wxFont font(pixel_to_native_font_graphics_untit(em_height), wxFontFamily::wxFONTFAMILY_DEFAULT, italic ? wxFontStyle::wxFONTSTYLE_ITALIC : wxFontStyle::wxFONTSTYLE_NORMAL, bold ? wxFontWeight::wxFONTWEIGHT_BOLD : wxFontWeight::wxFONTWEIGHT_NORMAL, underline, convert_string::to_wstring(*reinterpret_cast<string*>(font_family)).chars().c_str());
@@ -135,7 +135,7 @@ int32 font_family::get_cell_descent(intptr font_family, int32 em_height, bool bo
 }
 
 int32 font_family::get_line_spacing(intptr font_family, int32 em_height, bool bold, bool italic, bool underline, bool strikeout) {
-  auto __ = toolkit::initialize(); // Must be first
+  [[maybe_unused]] auto __ = toolkit::initialize(); // Must be first
   if (!wxTheApp) return em_height;
   wxScreenDC hdc;
   wxFont font(pixel_to_native_font_graphics_untit(em_height), wxFontFamily::wxFONTFAMILY_DEFAULT, italic ? wxFontStyle::wxFONTSTYLE_ITALIC : wxFontStyle::wxFONTSTYLE_NORMAL, bold ? wxFontWeight::wxFONTWEIGHT_BOLD : wxFontWeight::wxFONTWEIGHT_NORMAL, underline, convert_string::to_wstring(*reinterpret_cast<string*>(font_family)).chars().c_str());
@@ -148,11 +148,11 @@ int32 font_family::get_line_spacing(intptr font_family, int32 em_height, bool bo
 }
 
 string font_family::get_name(intptr font_family, int32 language) {
-  auto __ = toolkit::initialize(); // Must be first
+  [[maybe_unused]] auto __ = toolkit::initialize(); // Must be first
   return *reinterpret_cast<string*>(font_family);
 }
 
 bool font_family::is_style_available(intptr font_family, bool bold, bool italic, bool underline, bool strikeout) {
-  auto __ = toolkit::initialize(); // Must be first
+  [[maybe_unused]] auto __ = toolkit::initialize(); // Must be first
   return true;
 }

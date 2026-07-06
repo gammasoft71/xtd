@@ -114,7 +114,7 @@ auto path::get_temp_file_name() -> string {
   do
     temp_file_name = combine(get_temp_path(), string::format("tmp{:X4}.tmp", rand.next<uint16>()));
   while (file::exists(temp_file_name));
-  auto __ = file::create(temp_file_name);
+  [[maybe_unused]] auto __ = file::create(temp_file_name);
   return temp_file_name;
 }
 

@@ -15,7 +15,7 @@ using namespace xtd;
 using namespace xtd::drawing::native;
 
 intptr pen::create() {
-  auto __ = toolkit::initialize(); // Must be first
+  [[maybe_unused]] auto __ = toolkit::initialize(); // Must be first
   return reinterpret_cast<intptr>(new wx_pen());
 }
 
@@ -84,7 +84,7 @@ void pen::destroy(intptr pen) {
 
 /*
 intptr pen::create() {
-  auto __ = toolkit::initialize(); // Must be first
+  [[maybe_unused]] auto __ = toolkit::initialize(); // Must be first
   auto pen = new wx_pen();
   pen->SetQuality(wxPenQuality::wxPEN_QUALITY_HIGH);
   pen->SetCap(wxPenCap::wxCAP_BUTT);
@@ -92,18 +92,18 @@ intptr pen::create() {
 }
 
 void pen::color(intptr pen, xtd::byte a, xtd::byte r, xtd::byte g, xtd::byte b) {
-  auto __ = toolkit::initialize(); // Must be first
+  [[maybe_unused]] auto __ = toolkit::initialize(); // Must be first
   reinterpret_cast<wxPen*>(pen)->SetColour(wxColour(r, g, b, a));
 }
 
 void pen::image(intptr pen, intptr image) {
-  auto __ = toolkit::initialize(); // Must be first
+  [[maybe_unused]] auto __ = toolkit::initialize(); // Must be first
   reinterpret_cast<wx_pen*>(pen)->SetStyle(wxPenStyle::wxPENSTYLE_STIPPLE);
   reinterpret_cast<wx_pen*>(pen)->SetStipple(*reinterpret_cast<wxImage*>(image));
 }
 
 void pen::dash_pattern(intptr pen, std::vector<float> dash_pattern) {
-  auto __ = toolkit::initialize(); // Must be first
+  [[maybe_unused]] auto __ = toolkit::initialize(); // Must be first
   reinterpret_cast<wx_pen*>(pen)->dashes.clear();
   for (auto dash : dash_pattern)
     reinterpret_cast<wx_pen*>(pen)->dashes.push_back(static_cast<wxDash>(dash));
@@ -111,7 +111,7 @@ void pen::dash_pattern(intptr pen, std::vector<float> dash_pattern) {
 }
 
 void pen::dash_style(intptr pen, uint32 dash_style) {
-  auto __ = toolkit::initialize(); // Must be first
+  [[maybe_unused]] auto __ = toolkit::initialize(); // Must be first
   reinterpret_cast<wx_pen*>(pen)->SetStyle(wxPENSTYLE_USER_DASH);
   switch (dash_style) {
     case 0: reinterpret_cast<wx_pen*>(pen)->dashes = {1}; break;
@@ -125,7 +125,7 @@ void pen::dash_style(intptr pen, uint32 dash_style) {
 }
 
 void pen::width(intptr pen, float width) {
-  auto __ = toolkit::initialize(); // Must be first
+  [[maybe_unused]] auto __ = toolkit::initialize(); // Must be first
   reinterpret_cast<wxPen*>(pen)->SetWidth(static_cast<int32>(width));
 }
 

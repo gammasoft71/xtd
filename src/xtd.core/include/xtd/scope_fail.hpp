@@ -133,4 +133,4 @@ namespace xtd {
 /// // caught exception!
 /// ```
 #define scope_fail_ \
-  auto __ = xtd::scope_fail{} + [&]
+  [[maybe_unused]] auto __ = xtd::scope_fail{} + [&]

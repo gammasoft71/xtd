@@ -14,7 +14,7 @@ using namespace xtd::drawing::native;
 using namespace xtd::helpers;
 
 intptr brush::create() {
-  auto __ = toolkit::initialize(); // Must be first
+  [[maybe_unused]] auto __ = toolkit::initialize(); // Must be first
   return reinterpret_cast<intptr>(new wx_brush());
 }
 

@@ -21,7 +21,7 @@ auto file::append_text(const string& path) -> std::ofstream {
   if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != string::npos) throw_helper::throws(exception_case::argument);
   if (xtd::string::is_empty(path) || xtd::string::is_empty(path.trim(' '))) throw_helper::throws(exception_case::argument);
   if (native::file_system::is_path_too_long(path)) throw_helper::throws(exception_case::path_too_long);
-  if (!exists(path)) auto __ = create_text(path);
+  if (!exists(path)) [[maybe_unused]] auto __ = create_text(path);
   if ((get_attributes(path) & file_attributes::read_only) == file_attributes::read_only) throw_helper::throws(exception_case::unauthorized_access);
   
   auto stream = std::ofstream {path, std::ios::out | std::ios::app};

@@ -352,7 +352,7 @@ namespace xtd::configuration::tests {
     auto test_method_(read_invalid_key) {
       auto fs = file_settings {};
       fs.from_string("key1=value1\n");
-      assert::throws<format_exception>([&] {auto __ = fs.read("key1", 42);});
+      assert::throws<format_exception>([&] {[[maybe_unused]] auto __ = fs.read("key1", 42);});
     }
     
     auto test_method_(remove) {

@@ -216,7 +216,7 @@ void image::color_palette(intptr image, array<std::tuple<xtd::byte, xtd::byte, x
 }
 
 intptr image::create(const string& filename, bool use_icm, std::map<xtd::usize, xtd::usize>& frame_resolutions) {
-  auto __ = toolkit::initialize(); // Must be first
+  [[maybe_unused]] auto __ = toolkit::initialize(); // Must be first
   auto extension = xtd::io::path::get_extension(filename).to_lower();
   auto bitmap_type = wxBitmapType::wxBITMAP_TYPE_ANY;
   if (extension == ".ani") bitmap_type = wxBitmapType::wxBITMAP_TYPE_ANI;
@@ -254,7 +254,7 @@ intptr image::create(const string& filename, bool use_icm, std::map<xtd::usize, 
 }
 
 intptr image::create(std::istream& stream, bool use_icm, std::map<xtd::usize, xtd::usize>& frame_resolutions) {
-  auto __ = toolkit::initialize(); // Must be first
+  [[maybe_unused]] auto __ = toolkit::initialize(); // Must be first
   StdInputStreamAdapter std_stream(stream);
   auto img = new wxImage(std_stream);
   if (!img->IsOk()) {
@@ -268,7 +268,7 @@ intptr image::create(std::istream& stream, bool use_icm, std::map<xtd::usize, xt
 }
 
 intptr image::create(const char* const* bits, std::map<xtd::usize, xtd::usize>& frame_resolutions) {
-  auto __ = toolkit::initialize(); // Must be first
+  [[maybe_unused]] auto __ = toolkit::initialize(); // Must be first
   auto img = new wxImage(bits);
   if (!img->IsOk()) {
     delete img;
@@ -280,7 +280,7 @@ intptr image::create(const char* const* bits, std::map<xtd::usize, xtd::usize>& 
 }
 
 intptr image::create(const unsigned char* bits, int32 width, int32 height, std::map<xtd::usize, xtd::usize>& frame_resolutions) {
-  auto __ = toolkit::initialize(); // Must be first
+  [[maybe_unused]] auto __ = toolkit::initialize(); // Must be first
   auto img = new wxImage(wxBitmap(reinterpret_cast<const char*>(bits), width, height).ConvertToImage());
   if (!img->IsOk()) {
     delete img;
@@ -292,7 +292,7 @@ intptr image::create(const unsigned char* bits, int32 width, int32 height, std::
 }
 
 intptr image::create(int32 width, int32 height) {
-  auto __ = toolkit::initialize(); // Must be first
+  [[maybe_unused]] auto __ = toolkit::initialize(); // Must be first
   wxImage* img = new wxImage(width, height);
   if (!img->IsOk()) {
     delete img;
@@ -304,7 +304,7 @@ intptr image::create(int32 width, int32 height) {
 }
 
 intptr image::create(int32 width, int32 height, float horizontal_resolution, float vertical_resolution) {
-  auto __ = toolkit::initialize(); // Must be first
+  [[maybe_unused]] auto __ = toolkit::initialize(); // Must be first
   wxImage* img = new wxImage(width, height);
   if (!img->IsOk()) {
     delete img;
@@ -317,7 +317,7 @@ intptr image::create(int32 width, int32 height, float horizontal_resolution, flo
 }
 
 intptr image::create(int32 width, int32 height, int32 format) {
-  auto __ = toolkit::initialize(); // Must be first
+  [[maybe_unused]] auto __ = toolkit::initialize(); // Must be first
   wxImage* img = new wxImage(width, height);
   if (!img->IsOk()) {
     delete img;
@@ -330,7 +330,7 @@ intptr image::create(int32 width, int32 height, int32 format) {
 }
 
 intptr image::create(int32 width, int32 height, int32 stride, int32 format, intptr scan0) {
-  auto __ = toolkit::initialize(); // Must be first
+  [[maybe_unused]] auto __ = toolkit::initialize(); // Must be first
   wxImage* img = new wxImage(width, height);
   if (!img->IsOk()) {
     delete img;
@@ -355,7 +355,7 @@ xtd::usize image::flags(intptr image) {
 }
 
 intptr image::from_hicon(intptr icon) {
-  auto __ = toolkit::initialize(); // Must be first
+  [[maybe_unused]] auto __ = toolkit::initialize(); // Must be first
   wxBitmap bitmap;
   bitmap.CopyFromIcon(*reinterpret_cast<wxIcon*>(icon));
   wxImage* img = new wxImage(bitmap.ConvertToImage());
@@ -390,7 +390,7 @@ intptr image::get_hbitmap(intptr image, xtd::byte a, xtd::byte r, xtd::byte g, x
 }
 
 intptr image::get_hicon(intptr image) {
-  auto __ = toolkit::initialize(); // Must be first
+  [[maybe_unused]] auto __ = toolkit::initialize(); // Must be first
   if (image == 0) return 0;
   wxIconBundle* result = new wxIconBundle;
   wxIcon icon;

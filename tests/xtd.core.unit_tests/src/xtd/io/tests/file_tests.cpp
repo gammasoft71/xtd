@@ -173,7 +173,7 @@ namespace xtd::io::tests {
     }
     
     auto test_method_(open_mode_in_without_existing_file) {
-      assert::throws<file_not_found_exception>([] {auto __ = file::open(test_file_name, std::ios::in);});
+      assert::throws<file_not_found_exception>([] {[[maybe_unused]] auto __ = file::open(test_file_name, std::ios::in);});
     }
     
     auto test_method_(open_mode_out) {
@@ -205,7 +205,7 @@ namespace xtd::io::tests {
     }
     
     auto test_method_(open_read_without_existing_file) {
-      assert::throws<file_not_found_exception>([] {auto __ = file::open_read(test_file_name);});
+      assert::throws<file_not_found_exception>([] {[[maybe_unused]] auto __ = file::open_read(test_file_name);});
     }
     
     auto test_method_(open_text_with_existing_file) {
@@ -217,7 +217,7 @@ namespace xtd::io::tests {
     }
     
     auto test_method_(open_text_without_existing_file) {
-      assert::throws<file_not_found_exception>([] {auto __ = file::open_text(test_file_name);});
+      assert::throws<file_not_found_exception>([] {[[maybe_unused]] auto __ = file::open_text(test_file_name);});
     }
     
     auto test_method_(open_write) {
@@ -241,7 +241,7 @@ namespace xtd::io::tests {
     }
     
     auto test_method_(read_all_bytes_with_unexisting_file) {
-      assert::throws<file_not_found_exception>([] {auto __ = file::read_all_bytes(test_file_name);});
+      assert::throws<file_not_found_exception>([] {[[maybe_unused]] auto __ = file::read_all_bytes(test_file_name);});
     }
     
     auto test_method_(read_all_lines) {
@@ -256,7 +256,7 @@ namespace xtd::io::tests {
     }
     
     auto test_method_(read_all_lines_with_unexisting_file) {
-      assert::throws<file_not_found_exception>([] {auto __ = file::read_all_lines(test_file_name);});
+      assert::throws<file_not_found_exception>([] {[[maybe_unused]] auto __ = file::read_all_lines(test_file_name);});
     }
     
     auto test_method_(read_all_text) {
@@ -268,7 +268,7 @@ namespace xtd::io::tests {
     }
     
     auto test_method_(read_all_text_with_unexisting_file) {
-      assert::throws<file_not_found_exception>([] {auto __ = file::read_all_text(test_file_name);});
+      assert::throws<file_not_found_exception>([] {[[maybe_unused]] auto __ = file::read_all_text(test_file_name);});
     }
     
     auto test_method_(remove) {

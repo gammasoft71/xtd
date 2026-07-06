@@ -121,4 +121,4 @@ namespace xtd {
 /// // always (finally)
 /// ```
 #define finally_ \
-  auto __ = xtd::finally {} + [&]
+  [[maybe_unused]] auto __ = xtd::finally {} + [&]

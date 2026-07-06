@@ -249,7 +249,7 @@ namespace xtd {
     template<typename new_type, typename current_type>
     [[nodiscard]] static auto to_shared_ptr(const xtd::sptr<current_type>& value) -> xtd::sptr<new_type> {
       try {
-        auto __ = dynamic_cast<new_type&>(*value.get());
+        [[maybe_unused]] auto __ = dynamic_cast<new_type&>(*value.get());
       } catch (const std::exception& e) {
         xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
       }

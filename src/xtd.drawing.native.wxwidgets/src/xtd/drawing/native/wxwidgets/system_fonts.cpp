@@ -26,7 +26,7 @@ namespace {
 #endif
 
 intptr system_fonts::caption_font() {
-  auto __ = toolkit::initialize(); // Must be first
+  [[maybe_unused]] auto __ = toolkit::initialize(); // Must be first
   #if defined(__WXOSX__)
   return reinterpret_cast<intptr>(new wxFont(wxOSXSystemFont::wxOSX_SYSTEM_FONT_NORMAL));
   #else
@@ -35,7 +35,7 @@ intptr system_fonts::caption_font() {
 }
 
 intptr system_fonts::default_font() {
-  auto __ = toolkit::initialize(); // Must be first
+  [[maybe_unused]] auto __ = toolkit::initialize(); // Must be first
   #if defined(__WXOSX__)
   return reinterpret_cast<intptr>(new wxFont(wxOSXSystemFont::wxOSX_SYSTEM_FONT_NORMAL));
   #else
@@ -44,7 +44,7 @@ intptr system_fonts::default_font() {
 }
 
 intptr system_fonts::dialog_font() {
-  auto __ = toolkit::initialize(); // Must be first
+  [[maybe_unused]] auto __ = toolkit::initialize(); // Must be first
   #if defined(__WXOSX__)
   return reinterpret_cast<intptr>(new wxFont(wxOSXSystemFont::wxOSX_SYSTEM_FONT_NORMAL));
   #else
@@ -53,7 +53,7 @@ intptr system_fonts::dialog_font() {
 }
 
 intptr system_fonts::icon_title_font() {
-  auto __ = toolkit::initialize(); // Must be first
+  [[maybe_unused]] auto __ = toolkit::initialize(); // Must be first
   #if defined(__WXOSX__)
   return reinterpret_cast<intptr>(new wxFont(wxOSXSystemFont::wxOSX_SYSTEM_FONT_NORMAL));
   #else
@@ -62,7 +62,7 @@ intptr system_fonts::icon_title_font() {
 }
 
 intptr system_fonts::menu_font() {
-  auto __ = toolkit::initialize(); // Must be first
+  [[maybe_unused]] auto __ = toolkit::initialize(); // Must be first
   #if defined(__WXOSX__)
   return reinterpret_cast<intptr>(new wxFont(wxOSXSystemFont::wxOSX_SYSTEM_FONT_NORMAL));
   #else
@@ -71,7 +71,7 @@ intptr system_fonts::menu_font() {
 }
 
 intptr system_fonts::message_box_font() {
-  auto __ = toolkit::initialize(); // Must be first
+  [[maybe_unused]] auto __ = toolkit::initialize(); // Must be first
   #if defined(__WXOSX__)
   return reinterpret_cast<intptr>(new wxFont(wxOSXSystemFont::wxOSX_SYSTEM_FONT_NORMAL));
   #else
@@ -80,7 +80,7 @@ intptr system_fonts::message_box_font() {
 }
 
 intptr system_fonts::small_caption_font() {
-  auto __ = toolkit::initialize(); // Must be first
+  [[maybe_unused]] auto __ = toolkit::initialize(); // Must be first
   #if defined(__WXOSX__)
   return reinterpret_cast<intptr>(new wxFont(wxOSXSystemFont::wxOSX_SYSTEM_FONT_NORMAL));
   #else
@@ -89,7 +89,7 @@ intptr system_fonts::small_caption_font() {
 }
 
 intptr system_fonts::status_font() {
-  auto __ = toolkit::initialize(); // Must be first
+  [[maybe_unused]] auto __ = toolkit::initialize(); // Must be first
   #if defined(__WXOSX__)
   return reinterpret_cast<intptr>(new wxFont(wxOSXSystemFont::wxOSX_SYSTEM_FONT_SMALL));
   #else
@@ -98,7 +98,7 @@ intptr system_fonts::status_font() {
 }
 
 intptr system_fonts::tool_font() {
-  auto __ = toolkit::initialize(); // Must be first
+  [[maybe_unused]] auto __ = toolkit::initialize(); // Must be first
   #if defined(__WXOSX__)
   return reinterpret_cast<intptr>(new wxFont(wxOSXSystemFont::wxOSX_SYSTEM_FONT_SMALL));
   #else

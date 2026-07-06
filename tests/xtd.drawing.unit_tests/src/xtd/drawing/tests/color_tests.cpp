@@ -217,7 +217,7 @@ namespace xtd::drawing::tests {
     }
     
     auto test_method_(create_from_know_color_invalid) {
-      assert::throws<argument_exception>([] {auto __ = color::from_known_color((known_color)7654);});
+      assert::throws<argument_exception>([] {[[maybe_unused]] auto __ = color::from_known_color((known_color)7654);});
     }
     
     auto test_method_(create_from_know_color_transparent) {

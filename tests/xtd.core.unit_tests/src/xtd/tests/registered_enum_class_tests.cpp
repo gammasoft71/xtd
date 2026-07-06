@@ -59,7 +59,7 @@ namespace xtd::tests {
     
     auto test_method_(parse_with_invalid_enum) {
       assert::are_equal(as<registered_enum_class_test>(5), string::parse<registered_enum_class_test>("5"));
-      assert::throws<format_exception>([] {auto __ = string::parse<registered_enum_class_test>("five");});
+      assert::throws<format_exception>([] {[[maybe_unused]] auto __ = string::parse<registered_enum_class_test>("five");});
     }
   };
 }

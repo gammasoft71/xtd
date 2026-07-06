@@ -356,8 +356,8 @@ namespace xtd::tests {
     }
     
     auto test_method_(divide_by_zero_exception) {
-      assert::throws<divided_by_zero_exception>([] {auto __ = time_span {42}.divide(time_span {0});});
-      assert::throws<divided_by_zero_exception>([] {auto __ = time_span {42}.divide(.0);});
+      assert::throws<divided_by_zero_exception>([] {[[maybe_unused]] auto __ = time_span {42}.divide(time_span {0});});
+      assert::throws<divided_by_zero_exception>([] {[[maybe_unused]] auto __ = time_span {42}.divide(.0);});
     }
     
     auto test_method_(duration) {
@@ -497,16 +497,16 @@ namespace xtd::tests {
     }
     
     auto test_method_(parse_with_overflow_exception) {
-      assert::throws<overflow_exception>([] {auto __ = time_span::parse("25:12:00");});
-      assert::throws<overflow_exception>([] {auto __ = time_span::parse("6:61:00");});
-      assert::throws<overflow_exception>([] {auto __ = time_span::parse("6:00:61");});
+      assert::throws<overflow_exception>([] {[[maybe_unused]] auto __ = time_span::parse("25:12:00");});
+      assert::throws<overflow_exception>([] {[[maybe_unused]] auto __ = time_span::parse("6:61:00");});
+      assert::throws<overflow_exception>([] {[[maybe_unused]] auto __ = time_span::parse("6:00:61");});
     }
     
     auto test_method_(parse_with_format_exception) {
-      assert::throws<format_exception>([] {auto __ = time_span::parse("6.12:14:45.344");});
-      assert::throws<format_exception>([] {auto __ = time_span::parse("6.12:14:45.344000");});
-      assert::throws<format_exception>([] {auto __ = time_span::parse("6.12:14:45.34400000");});
-      assert::throws<format_exception>([] {auto __ = time_span::parse("6.2:12:14:45.3440000");});
+      assert::throws<format_exception>([] {[[maybe_unused]] auto __ = time_span::parse("6.12:14:45.344");});
+      assert::throws<format_exception>([] {[[maybe_unused]] auto __ = time_span::parse("6.12:14:45.344000");});
+      assert::throws<format_exception>([] {[[maybe_unused]] auto __ = time_span::parse("6.12:14:45.34400000");});
+      assert::throws<format_exception>([] {[[maybe_unused]] auto __ = time_span::parse("6.2:12:14:45.3440000");});
     }
     
     auto test_method_(subtract) {

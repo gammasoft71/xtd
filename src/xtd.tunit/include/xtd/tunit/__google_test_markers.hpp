@@ -28,13 +28,13 @@ inline static const char* __google_test_executable_markers__[] = {
 };
 
 inline void __unused_google_test_markers__() {
-  auto __ = __test_body_signature__;
-  auto __ = __parameterized_test_marker__;
-  auto __ = __typed_test_marker__;
-  auto __ = __google_test_dll_marker__;
-  auto __ = __google_test_dll_marker_debug__;
-  auto __ = __google_test_main_dll_marker__;
-  auto __ = __google_test_main_dll_marker_debug__;
-  auto __ = __google_test_executable_markers__;
+  [[maybe_unused]] auto __ = __test_body_signature__;
+  [[maybe_unused]] auto __ = __parameterized_test_marker__;
+  [[maybe_unused]] auto __ = __typed_test_marker__;
+  [[maybe_unused]] auto __ = __google_test_dll_marker__;
+  [[maybe_unused]] auto __ = __google_test_dll_marker_debug__;
+  [[maybe_unused]] auto __ = __google_test_main_dll_marker__;
+  [[maybe_unused]] auto __ = __google_test_main_dll_marker_debug__;
+  [[maybe_unused]] auto __ = __google_test_executable_markers__;
 }
 /// @endcond

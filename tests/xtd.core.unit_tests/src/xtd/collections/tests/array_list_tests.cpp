@@ -319,7 +319,7 @@ namespace xtd::collections::tests {
       assert::are_equal("Tyrannosaurus", items[0]);
       assert::are_equal(42, items[1]);
       assert::are_equal(64.5, items[2]);
-      assert::throws<index_out_of_range_exception>([&] {auto __ = items[3];});
+      assert::throws<index_out_of_range_exception>([&] {[[maybe_unused]] auto __ = items[3];});
       
       items[0] = 24;
       items[1] = "Deinonychus";

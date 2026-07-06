@@ -36,12 +36,12 @@ namespace {
 }
 
 intptr region::create() {
-  auto __ = toolkit::initialize(); // Must be first
+  [[maybe_unused]] auto __ = toolkit::initialize(); // Must be first
   return reinterpret_cast<intptr>(new wxRegion(min_value, min_value, max_value, max_value));
 }
 
 intptr region::create_from_rect(float x, float y, float width, float height) {
-  auto __ = toolkit::initialize(); // Must be first
+  [[maybe_unused]] auto __ = toolkit::initialize(); // Must be first
   return reinterpret_cast<intptr>(new wxRegion(as<int32>(x), as<int32>(y), as<int32>(width), as<int32>(height)));
 }
 

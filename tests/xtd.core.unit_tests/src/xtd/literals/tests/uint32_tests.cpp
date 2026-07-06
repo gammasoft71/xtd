@@ -25,7 +25,7 @@ namespace xtd {
         }
         
         auto test_method_(_u32_operator_on_unsigned_long_long_with_overflow) {
-          assert::throws<xtd::overflow_exception>([] {auto __ = 4294967296_u32;});
+          assert::throws<xtd::overflow_exception>([] {[[maybe_unused]] auto __ = 4294967296_u32;});
         }
         
         auto test_method_(_u32_operator_on_char_ptr) {
@@ -35,7 +35,7 @@ namespace xtd {
         }
         
         auto test_method_(_u32_operator_on_invalid_char_ptr) {
-          assert::throws<xtd::format_exception>([] {auto __ = "42str"_u32;});
+          assert::throws<xtd::format_exception>([] {[[maybe_unused]] auto __ = "42str"_u32;});
         }
         
         auto test_method_(_u32_operator_on_char8_ptr) {
@@ -45,7 +45,7 @@ namespace xtd {
         }
         
         auto test_method_(_u32_operator_on_invalid_char8_ptr) {
-          assert::throws<xtd::format_exception>([] {auto __ = u8"42str"_u32;});
+          assert::throws<xtd::format_exception>([] {[[maybe_unused]] auto __ = u8"42str"_u32;});
         }
         
         auto test_method_(_u32_operator_on_char16_ptr) {
@@ -55,7 +55,7 @@ namespace xtd {
         }
         
         auto test_method_(_u32_operator_on_invalid_char16_ptr) {
-          assert::throws<xtd::format_exception>([] {auto __ = u"42str"_u32;});
+          assert::throws<xtd::format_exception>([] {[[maybe_unused]] auto __ = u"42str"_u32;});
         }
         
         auto test_method_(_u32_operator_on_char32_ptr) {
@@ -65,7 +65,7 @@ namespace xtd {
         }
         
         auto test_method_(_u32_operator_on_invalid_char32_ptr) {
-          assert::throws<xtd::format_exception>([] {auto __ = U"42str"_u32;});
+          assert::throws<xtd::format_exception>([] {[[maybe_unused]] auto __ = U"42str"_u32;});
         }
         
         auto test_method_(_u32_operator_on_wchar_ptr) {
@@ -75,7 +75,7 @@ namespace xtd {
         }
         
         auto test_method_(_u32_operator_on_invalid_wchar_ptr) {
-          assert::throws<xtd::format_exception>([] {auto __ = L"42str"_u32;});
+          assert::throws<xtd::format_exception>([] {[[maybe_unused]] auto __ = L"42str"_u32;});
         }
       };
     }

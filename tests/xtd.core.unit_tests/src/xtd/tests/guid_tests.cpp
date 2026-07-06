@@ -58,8 +58,8 @@ namespace xtd::tests {
     }
     
     auto test_method_(to_string) {
-      assert::throws<format_exception>([] {auto __ = guid::empty.to_string("A");});
-      assert::throws<format_exception>([] {auto __ = guid::empty.to_string("ND");});
+      assert::throws<format_exception>([] {[[maybe_unused]] auto __ = guid::empty.to_string("A");});
+      assert::throws<format_exception>([] {[[maybe_unused]] auto __ = guid::empty.to_string("ND");});
       
       assert::are_equal("00000000-0000-0000-0000-000000000000", guid::empty.to_string());
       assert::are_equal("00000000-0000-0000-0000-000000000000", guid::empty.to_string(""));

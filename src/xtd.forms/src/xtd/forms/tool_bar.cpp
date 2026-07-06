@@ -516,7 +516,7 @@ auto tool_bar::on_handle_created(const event_args& e) -> void {
 
 auto tool_bar::on_handle_destroyed(const event_args& e) -> void {
   if (system_tool_bar()) {
-    auto __ = native::tool_bar::set_system_tool_bar(parent().value().get().handle(), 0);
+    [[maybe_unused]] auto __ = native::tool_bar::set_system_tool_bar(parent().value().get().handle(), 0);
     data_->system_tool_bar_button_handles.clear();
   }
   control::on_handle_destroyed(e);
@@ -638,7 +638,7 @@ auto tool_bar::fill() -> void {
 
   if (system_tool_bar()) {
     auto pcsg = parent_client_size_guard {*this}; // Workaround : Get client size because after changing tool bar to system, the client size does not correct.
-    auto __ = native::tool_bar::set_system_tool_bar(parent().value().get().handle(), handle());
+    [[maybe_unused]] auto __ = native::tool_bar::set_system_tool_bar(parent().value().get().handle(), handle());
   }
   
   resume_layout();

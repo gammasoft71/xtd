@@ -243,9 +243,9 @@ namespace xtd::collections::generic::tests {
       assert::are_equal(84, node.value());
       assert::are_equal(21, last_node.value());
       list.add_after(node, 12);
-      assert::throws<invalid_operation_exception>([&] {auto __ = first_node.value();});
-      assert::throws<invalid_operation_exception>([&] {auto __ = node.value();});
-      assert::throws<invalid_operation_exception>([&] {auto __ = last_node.value();});
+      assert::throws<invalid_operation_exception>([&] {[[maybe_unused]] auto __ = first_node.value();});
+      assert::throws<invalid_operation_exception>([&] {[[maybe_unused]] auto __ = node.value();});
+      assert::throws<invalid_operation_exception>([&] {[[maybe_unused]] auto __ = last_node.value();});
     }
     
     auto test_method_(add_before_value_on_empty_list) {
@@ -314,9 +314,9 @@ namespace xtd::collections::generic::tests {
       assert::are_equal(84, node.value());
       assert::are_equal(12, last_node.value());
       list.add_before(node, 21);
-      assert::throws<invalid_operation_exception>([&] {auto __ = first_node.value();});
-      assert::throws<invalid_operation_exception>([&] {auto __ = node.value();});
-      assert::throws<invalid_operation_exception>([&] {auto __ = last_node.value();});
+      assert::throws<invalid_operation_exception>([&] {[[maybe_unused]] auto __ = first_node.value();});
+      assert::throws<invalid_operation_exception>([&] {[[maybe_unused]] auto __ = node.value();});
+      assert::throws<invalid_operation_exception>([&] {[[maybe_unused]] auto __ = last_node.value();});
     }
     
     auto test_method_(add_first_value_on_empty_list) {
@@ -381,9 +381,9 @@ namespace xtd::collections::generic::tests {
       assert::are_equal(21, node.value());
       assert::are_equal(12, last_node.value());
       list.add_first(42);
-      assert::throws<invalid_operation_exception>([&] {auto __ = first_node.value();});
-      assert::throws<invalid_operation_exception>([&] {auto __ = node.value();});
-      assert::throws<invalid_operation_exception>([&] {auto __ = last_node.value();});
+      assert::throws<invalid_operation_exception>([&] {[[maybe_unused]] auto __ = first_node.value();});
+      assert::throws<invalid_operation_exception>([&] {[[maybe_unused]] auto __ = node.value();});
+      assert::throws<invalid_operation_exception>([&] {[[maybe_unused]] auto __ = last_node.value();});
     }
     
     auto test_method_(add_last_value_on_empty_list) {
@@ -448,9 +448,9 @@ namespace xtd::collections::generic::tests {
       assert::are_equal(84, node.value());
       assert::are_equal(21, last_node.value());
       list.add_last(12);
-      assert::throws<invalid_operation_exception>([&] {auto __ = first_node.value();});
-      assert::throws<invalid_operation_exception>([&] {auto __ = node.value();});
-      assert::throws<invalid_operation_exception>([&] {auto __ = last_node.value();});
+      assert::throws<invalid_operation_exception>([&] {[[maybe_unused]] auto __ = first_node.value();});
+      assert::throws<invalid_operation_exception>([&] {[[maybe_unused]] auto __ = node.value();});
+      assert::throws<invalid_operation_exception>([&] {[[maybe_unused]] auto __ = last_node.value();});
     }
     
     auto test_method_(clear_empty_list) {
@@ -474,9 +474,9 @@ namespace xtd::collections::generic::tests {
       assert::are_equal(84, node.value());
       assert::are_equal(21, last_node.value());
       list.clear();
-      assert::throws<invalid_operation_exception>([&] {auto __ = first_node.value();});
-      assert::throws<invalid_operation_exception>([&] {auto __ = node.value();});
-      assert::throws<invalid_operation_exception>([&] {auto __ = last_node.value();});
+      assert::throws<invalid_operation_exception>([&] {[[maybe_unused]] auto __ = first_node.value();});
+      assert::throws<invalid_operation_exception>([&] {[[maybe_unused]] auto __ = node.value();});
+      assert::throws<invalid_operation_exception>([&] {[[maybe_unused]] auto __ = last_node.value();});
     }
     
     auto test_method_(contains_empty_list) {
@@ -559,15 +559,15 @@ namespace xtd::collections::generic::tests {
     auto test_method_(get_enumerator_on_empty_list) {
       auto list = linked_list<int> {};
       auto enumerator = list.get_enumerator();
-      assert::throws<invalid_operation_exception>([&] {auto __ = enumerator.current();});
+      assert::throws<invalid_operation_exception>([&] {[[maybe_unused]] auto __ = enumerator.current();});
       assert::is_false(enumerator.move_next());
-      assert::throws<invalid_operation_exception>([&] {auto __ = enumerator.current();});
+      assert::throws<invalid_operation_exception>([&] {[[maybe_unused]] auto __ = enumerator.current();});
     }
     
     auto test_method_(get_enumerator_on_not_empty_list) {
       auto list = linked_list {42, 84, 21};
       auto enumerator = list.get_enumerator();
-      assert::throws<invalid_operation_exception>([&] {auto __ = enumerator.current();});
+      assert::throws<invalid_operation_exception>([&] {[[maybe_unused]] auto __ = enumerator.current();});
       assert::is_true(enumerator.move_next());
       assert::are_equal(42, enumerator.current());
       assert::is_true(enumerator.move_next());
@@ -575,14 +575,14 @@ namespace xtd::collections::generic::tests {
       assert::is_true(enumerator.move_next());
       assert::are_equal(21, enumerator.current());
       assert::is_false(enumerator.move_next());
-      assert::throws<invalid_operation_exception>([&] {auto __ = enumerator.current();});
+      assert::throws<invalid_operation_exception>([&] {[[maybe_unused]] auto __ = enumerator.current();});
     }
     
     auto test_method_(iterator_on_empty_list) {
       auto list = linked_list<int> {};
       auto iterator = list.begin();
       assert::are_equal(list.end(), iterator);
-      assert::throws<invalid_operation_exception>([&] {auto __ = *iterator;});
+      assert::throws<invalid_operation_exception>([&] {[[maybe_unused]] auto __ = *iterator;});
     }
     
     auto test_method_(iterator_on_not_empty_list) {
@@ -595,7 +595,7 @@ namespace xtd::collections::generic::tests {
       assert::are_not_equal(list.end(), ++iterator);
       assert::are_equal(21, *iterator);
       assert::are_equal(list.end(), ++iterator);
-      assert::throws<invalid_operation_exception>([&] {auto __ = *iterator;});
+      assert::throws<invalid_operation_exception>([&] {[[maybe_unused]] auto __ = *iterator;});
     }
     
     auto test_method_(remove_value_on_empty_list) {

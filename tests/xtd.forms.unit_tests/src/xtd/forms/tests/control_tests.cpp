@@ -1446,7 +1446,7 @@ namespace xtd::forms::tests {
     
     auto test_method_(create_graphics_without_parent) {
       control_for_test control;
-      assert::throws<invalid_operation_exception>([&] {auto __ = control.create_graphics();});
+      assert::throws<invalid_operation_exception>([&] {[[maybe_unused]] auto __ = control.create_graphics();});
     }
     
     auto test_method_(create_graphics_with_parent) {

@@ -664,7 +664,7 @@ void month_calendar::on_handle_created(const event_args& e) {
   native::month_calendar::title_fore_color(handle(), title_fore_color());
   native::month_calendar::trailing_fore_color(handle(), trailing_fore_color());
   update_bolded_dates();
-  auto __ = single_month_size();
+  [[maybe_unused]] auto __ = single_month_size();
 }
 
 void month_calendar::wnd_proc(message& message) {

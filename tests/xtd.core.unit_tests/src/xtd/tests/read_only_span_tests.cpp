@@ -602,9 +602,9 @@ namespace xtd::tests {
       assert::are_equal(a.data() + 1, s2.data());
       assert::are_equal(3_z, s2.length());
       
-      assert::throws<argument_out_of_range_exception>([&] {auto __ = s.slice<6, 0>();});
-      assert::throws<argument_out_of_range_exception>([&] {auto __ = s.slice<0, 6>();});
-      assert::throws<argument_out_of_range_exception>([&] {auto __ = s.slice<2, 4>();});
+      assert::throws<argument_out_of_range_exception>([&] {[[maybe_unused]] auto __ = s.slice<6, 0>();});
+      assert::throws<argument_out_of_range_exception>([&] {[[maybe_unused]] auto __ = s.slice<0, 6>();});
+      assert::throws<argument_out_of_range_exception>([&] {[[maybe_unused]] auto __ = s.slice<2, 4>();});
     }
     
     auto test_method_(slice_with_start) {
@@ -615,7 +615,7 @@ namespace xtd::tests {
       assert::are_equal(a.data() + 1, s2.data());
       assert::are_equal(4_z, s2.length());
       
-      assert::throws<argument_out_of_range_exception>([&] {auto __ = s.slice(6);});
+      assert::throws<argument_out_of_range_exception>([&] {[[maybe_unused]] auto __ = s.slice(6);});
     }
     
     auto test_method_(slice_with_start_and_length) {
@@ -626,9 +626,9 @@ namespace xtd::tests {
       assert::are_equal(a.data() + 1, s2.data());
       assert::are_equal(3_z, s2.length());
       
-      assert::throws<argument_out_of_range_exception>([&] {auto __ = s.slice(6, 0);});
-      assert::throws<argument_out_of_range_exception>([&] {auto __ = s.slice(0, 6);});
-      assert::throws<argument_out_of_range_exception>([&] {auto __ = s.slice(2, 4);});
+      assert::throws<argument_out_of_range_exception>([&] {[[maybe_unused]] auto __ = s.slice(6, 0);});
+      assert::throws<argument_out_of_range_exception>([&] {[[maybe_unused]] auto __ = s.slice(0, 6);});
+      assert::throws<argument_out_of_range_exception>([&] {[[maybe_unused]] auto __ = s.slice(2, 4);});
     }
     
     auto test_method_(subspan) {
@@ -639,9 +639,9 @@ namespace xtd::tests {
       assert::are_equal(a.data() + 1, s2.data());
       assert::are_equal(3_z, s2.length());
       
-      assert::throws<argument_out_of_range_exception>([&] {auto __ = s.slice(6, 0);});
-      assert::throws<argument_out_of_range_exception>([&] {auto __ = s.slice(0, 6);});
-      assert::throws<argument_out_of_range_exception>([&] {auto __ = s.slice(2, 4);});
+      assert::throws<argument_out_of_range_exception>([&] {[[maybe_unused]] auto __ = s.slice(6, 0);});
+      assert::throws<argument_out_of_range_exception>([&] {[[maybe_unused]] auto __ = s.slice(0, 6);});
+      assert::throws<argument_out_of_range_exception>([&] {[[maybe_unused]] auto __ = s.slice(2, 4);});
     }
     
     auto test_method_(subspan_with_offset_and_count) {
@@ -652,9 +652,9 @@ namespace xtd::tests {
       assert::are_equal(a.data() + 1, s2.data());
       assert::are_equal(3_z, s2.length());
       
-      assert::throws<argument_out_of_range_exception>([&] {auto __ = s.slice(6, 0);});
-      assert::throws<argument_out_of_range_exception>([&] {auto __ = s.slice(0, 6);});
-      assert::throws<argument_out_of_range_exception>([&] {auto __ = s.slice(2, 4);});
+      assert::throws<argument_out_of_range_exception>([&] {[[maybe_unused]] auto __ = s.slice(6, 0);});
+      assert::throws<argument_out_of_range_exception>([&] {[[maybe_unused]] auto __ = s.slice(0, 6);});
+      assert::throws<argument_out_of_range_exception>([&] {[[maybe_unused]] auto __ = s.slice(2, 4);});
     }
     
     auto test_method_(to_array) {

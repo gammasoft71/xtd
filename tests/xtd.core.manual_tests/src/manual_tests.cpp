@@ -1,26 +1,17 @@
 #include <xtd/xtd>
 
+#undef unused_
+#  define unused_ \
+  __xtd_unused_concat_(__xtd_no_name_, xtd_unique_id_)
+
+
 auto main() -> int {
-#if __cplusplus > 202302L
-  // Since C++26
-  auto _ = 42;
-  auto _ = "value string";
-  auto _ = diagnostics::stopwatch::start_new();
-  auto _ = date_time::now();
-  // println("value {}", _); // does not build
-#else
-  // Since C++20 with xtd
-  auto __ = 42;
-  auto __ = "value string";
-  auto __ = diagnostics::stopwatch::start_new();
-  auto __ = date_time::now();
-  // or
-  auto unused_ = 42;
-  auto unused_ = "value string";
-  auto unused_ = diagnostics::stopwatch::start_new();
-  auto unused_ = date_time::now();
-  // println("value {}", __); // does not build
-#endif
+  [[maybe_unused]] auto __ = 42;
+  [[maybe_unused]] auto __ = "value string";
+  [[maybe_unused]] auto __ = diagnostics::stopwatch::start_new();
+  [[maybe_unused]] auto __ = date_time::now();
+  
+  auto [a, __, b, __] = std::make_tuple(42, "value string", diagnostics::stopwatch::start_new(), date_time::now());
 }
 
 // This code produces the following output :

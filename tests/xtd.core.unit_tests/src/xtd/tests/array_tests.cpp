@@ -250,7 +250,7 @@ namespace xtd::tests {
       assert::are_equal(21, inners[2]);
       
       // Attempting to access index that exceeds size() results in undefined behaviour.
-      //assert::throws<index_out_of_range_exception>([&]{auto __ = inners[3];});
+      //assert::throws<index_out_of_range_exception>([&]{[[maybe_unused]] auto __ = inners[3];});
       
       inners[0] = 63;
       inners[1] = 31;
@@ -370,25 +370,25 @@ namespace xtd::tests {
     auto test_method_(get_length) {
       auto items = array {84, 42, 21};
       assert::are_equal(3_z, items.get_length(0));
-      assert::throws<argument_out_of_range_exception>([&] {auto __ = items.get_length(1);});
+      assert::throws<argument_out_of_range_exception>([&] {[[maybe_unused]] auto __ = items.get_length(1);});
     }
     
     auto test_method_(get_long_length) {
       auto items = array {84, 42, 21};
       assert::are_equal(3, items.get_long_length(0));
-      assert::throws<argument_out_of_range_exception>([&] {auto __ = items.get_long_length(1);});
+      assert::throws<argument_out_of_range_exception>([&] {[[maybe_unused]] auto __ = items.get_long_length(1);});
     }
     
     auto test_method_(get_lower_bound) {
       auto items = array {84, 42, 21};
       assert::is_zero(items.get_lower_bound(0));
-      assert::throws<argument_out_of_range_exception>([&] {auto __ = items.get_lower_bound(1);});
+      assert::throws<argument_out_of_range_exception>([&] {[[maybe_unused]] auto __ = items.get_lower_bound(1);});
     }
     
     auto test_method_(get_upper_bound) {
       auto items = array {84, 42, 21};
       assert::are_equal(2_z, items.get_upper_bound(0));
-      assert::throws<argument_out_of_range_exception>([&] {auto __ = items.get_upper_bound(1);});
+      assert::throws<argument_out_of_range_exception>([&] {[[maybe_unused]] auto __ = items.get_upper_bound(1);});
     }
     
     auto test_method_(get_value_with_index) {
@@ -398,7 +398,7 @@ namespace xtd::tests {
       assert::are_equal(3, items.get_value(2));
       assert::are_equal(4, items.get_value(3));
       assert::are_equal(5, items.get_value(4));
-      assert::throws<index_out_of_range_exception>([&] {auto __ = items.get_value(5);});
+      assert::throws<index_out_of_range_exception>([&] {[[maybe_unused]] auto __ = items.get_value(5);});
     }
     
     auto test_method_(get_value_with_indexes_array) {
@@ -408,7 +408,7 @@ namespace xtd::tests {
       assert::are_equal(3, items.get_value(array {2_z}));
       assert::are_equal(4, items.get_value(array {3_z}));
       assert::are_equal(5, items.get_value(array {4_z}));
-      assert::throws<index_out_of_range_exception>([&] {auto __ = items.get_value(array {5_z});});
+      assert::throws<index_out_of_range_exception>([&] {[[maybe_unused]] auto __ = items.get_value(array {5_z});});
     }
     
     auto test_method_(index_of_with_value_type) {
@@ -515,23 +515,23 @@ namespace xtd::tests {
     
     auto test_method_(index_of_with_array_value_type_and_index) {
       assert::are_equal(array<int>::npos, array<>::index_of(array<int> {}, 42, 0));
-      assert::throws<argument_out_of_range_exception>([&] {auto __ = array<>::index_of(array<int> {}, 42, 1);});
+      assert::throws<argument_out_of_range_exception>([&] {[[maybe_unused]] auto __ = array<>::index_of(array<int> {}, 42, 1);});
       assert::are_equal(1_z, array<>::index_of(array {84, 42, 21, 42}, 42, 0));
       assert::are_equal(3_z, array<>::index_of(array {84, 42, 21, 42}, 42, 2));
       assert::are_equal(array<int>::npos, array<>::index_of(array {84, 42, 21, 42}, 42, 4));
-      assert::throws<argument_out_of_range_exception>([&] {auto __ = array<>::index_of(array<int> {84, 42, 21, 42}, 42, 5);});
+      assert::throws<argument_out_of_range_exception>([&] {[[maybe_unused]] auto __ = array<>::index_of(array<int> {84, 42, 21, 42}, 42, 5);});
       assert::are_equal(array<int>::npos, array<>::index_of(array {84, 42, 21, 42}, 0, 0));
     }
     
     auto test_method_(index_of_with_array_value_type_index_and_count) {
       assert::are_equal(array<int>::npos, array<>::index_of(array<int> {}, 42, 0, 0));
-      assert::throws<argument_out_of_range_exception>([&] {auto __ = array<>::index_of(array<int> {}, 42, 1, 0);});
-      assert::throws<argument_out_of_range_exception>([&] {auto __ = array<>::index_of(array<int> {}, 42, 0, 1);});
+      assert::throws<argument_out_of_range_exception>([&] {[[maybe_unused]] auto __ = array<>::index_of(array<int> {}, 42, 1, 0);});
+      assert::throws<argument_out_of_range_exception>([&] {[[maybe_unused]] auto __ = array<>::index_of(array<int> {}, 42, 0, 1);});
       assert::are_equal(1_z, array<>::index_of(array {84, 42, 21, 42}, 42, 0, 4));
       assert::are_equal(3_z, array<>::index_of(array {84, 42, 21, 42}, 42, 2, 2));
       assert::are_equal(array<int>::npos, array<>::index_of(array {84, 42, 21, 42}, 42, 4, 0));
-      assert::throws<argument_out_of_range_exception>([&] {auto __ = array<>::index_of(array<int> {84, 42, 21, 42}, 42, 4, 1);});
-      assert::throws<argument_out_of_range_exception>([&] {auto __ = array<>::index_of(array<int> {84, 42, 21, 42}, 42, 5, 0);});
+      assert::throws<argument_out_of_range_exception>([&] {[[maybe_unused]] auto __ = array<>::index_of(array<int> {84, 42, 21, 42}, 42, 4, 1);});
+      assert::throws<argument_out_of_range_exception>([&] {[[maybe_unused]] auto __ = array<>::index_of(array<int> {84, 42, 21, 42}, 42, 5, 0);});
       assert::are_equal(array<int>::npos, array<>::index_of(array {84, 42, 21, 42}, 0, 0, 4));
     }
     
@@ -582,7 +582,7 @@ namespace xtd::tests {
       assert::are_equal(84, items[0]);
       assert::are_equal(42, items[1]);
       assert::are_equal(21, items[2]);
-      assert::throws<index_out_of_range_exception>([&] {auto __ = items[3];});
+      assert::throws<index_out_of_range_exception>([&] {[[maybe_unused]] auto __ = items[3];});
       
       items[0] = 63;
       items[1] = 31;
@@ -616,7 +616,7 @@ namespace xtd::tests {
       assert::are_equal(84, items(0));
       assert::are_equal(42, items(1));
       assert::are_equal(21, items(2));
-      assert::throws<index_out_of_range_exception>([&] {auto __ = items(3);});
+      assert::throws<index_out_of_range_exception>([&] {[[maybe_unused]] auto __ = items(3);});
       
       items(0) = 63;
       items(1) = 31;
@@ -650,7 +650,7 @@ namespace xtd::tests {
       assert::are_equal(84, items(array {0_z}));
       assert::are_equal(42, items(array {1_z}));
       assert::are_equal(21, items(array {2_z}));
-      assert::throws<index_out_of_range_exception>([&] {auto __ = items(array {3_z});});
+      assert::throws<index_out_of_range_exception>([&] {[[maybe_unused]] auto __ = items(array {3_z});});
       
       items(array {0_z}) = 63;
       items(array {1_z}) = 31;

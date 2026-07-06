@@ -22,7 +22,7 @@ namespace xtd::collections::generic::tests {
       auto enumerable = numbers_generator();
       auto enumerator = enumerable.get_enumerator();
       assert::throws<not_supported_exception>([&] {enumerator.reset();});
-      assert::throws<invalid_operation_exception>([&] {auto __ = enumerator.current();});
+      assert::throws<invalid_operation_exception>([&] {[[maybe_unused]] auto __ = enumerator.current();});
       assert::is_true(enumerator.move_next());
       assert::are_equal(10, enumerator.current());
       assert::is_true(enumerator.move_next());
