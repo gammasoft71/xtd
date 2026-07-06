@@ -67,6 +67,18 @@
 /// @example ilist.cpp
 /// Shows how to use xtd::collections::ilist interface.
 ///
+/// @example comparable.cpp
+/// Shows how to use xtd::comparable concept.
+///
+/// @example enumerable.cpp
+/// Shows how to use xtd::collections::generic::enumerable concept.
+///
+/// @example forward_iterable.cpp
+/// Shows how to use xtd::collections::generic::enumerable concept.
+///
+/// @example stringable.cpp
+/// Shows how to use xtd::stringable concept.
+///
 /// @example file_settings.cpp
 /// Shows how to use xtd::consiguration::file_settings object.
 ///
@@ -147,6 +159,33 @@
 ///
 /// @example to_string.cpp
 /// Shows how to use xtd::convert::to_string method and xtd::convert_string class.
+///
+/// @example unsafe_as.cpp
+/// Shows how to use xtd::unsafe::as operator.
+///
+/// @example variant.cpp
+/// Shows how to use xtd::as operator with std::variant.
+///
+/// @example as_string.cpp
+/// Shows how to use xtd::as operator.
+///
+/// @example convert_string.cpp
+/// Shows how to use xtd::as operator.
+///
+/// @example string_to_string.cpp
+/// Shows how to use xtd::as operator.
+///
+/// @example coroutine_delegate.cpp
+/// Shows how to use coroutine with delegate and task.
+///
+/// @example coroutine_lambda.cpp
+/// Shows how to use coroutine with lambda expression and task.
+///
+/// @example coroutine_method.cpp
+/// Shows how to use coroutine with method and task.
+///
+/// @example coroutine_task.cpp
+/// Shows how to use coroutine with task.
 ///
 /// @example date_time.cpp
 /// Shows how to use xtd::date_time class.
@@ -271,8 +310,8 @@
 /// @example debug.cpp
 /// Shows how to use debug class.
 ///
-/// @example debug_cassert.cpp
-/// Shows how to use debug::cassert method.
+/// @example debug_assert.cpp
+/// Shows how to use debug::assert method.
 ///
 /// @example default_trace_listener.cpp
 /// Shows how to use xtd::diagnostics::default_trace_listener class.
@@ -298,8 +337,8 @@
 /// @example trace.cpp
 /// Shows how to use trace class.
 ///
-/// @example trace_cassert.cpp
-/// Shows how to use trace::cassert_ method.
+/// @example trace_assert.cpp
+/// Shows how to use trace::assert_ method.
 ///
 /// @example enum.cpp
 /// * Shows how to use xtd::enum_object class and enum_ helper.
@@ -367,6 +406,9 @@
 /// @example argument_exception.cpp
 /// Shows how to use argument_exception exception.
 ///
+/// @example exception_dispatch_info.cpp
+/// Shows how to use xtd::exception_services::exception_dispatch_info class.
+///
 /// @example exception_ptr.cpp
 /// Shows how to use std::exception_ptr and invalid_operation_exception exception.
 ///
@@ -375,6 +417,12 @@
 ///
 /// @example user_defined_exception.cpp
 /// Shows how to use xtd::exception exception.
+///
+/// @example add_expression.cpp
+/// Shows how to use xtd::expressions::operator + expression.
+///
+/// @example division_expression.cpp
+/// Shows how to use xtd::expressions::operator / expression.
 ///
 /// @example format.cpp
 /// Show how to use format xtd::format class.
@@ -475,6 +523,12 @@
 /// @example generic_dictionary_constructor_with_idicationary.cpp
 /// Shows how to use xtd::collections::generic::dictionary class.
 ///
+/// @example generic_enumerable_generator.cpp
+/// Shows how to use xtd::collections::generic::enumerable_generator generator.
+///
+/// @example generic_enumerable_generator2.cpp
+/// Shows how to use xtd::collections::generic::enumerable_generator generator.
+///
 /// @example generic_hash_set.cpp
 /// Shows how to use xtd::collections::generic::hash_set class.
 ///
@@ -547,6 +601,9 @@
 /// @example generic_queue.cpp
 /// Shows how to use xtd::collections::generic::queue class.
 ///
+/// @example generic_stack.cpp
+/// Shows how to use xtd::collections::generic::stack class.
+///
 /// @example mix_generic_list_and_std_vector_api.cpp
 /// Shows how to use xtd::collections::generic::list class.
 ///
@@ -585,6 +642,9 @@
 ///
 /// @example hello_world_console.cpp
 /// The classic first application "Hello, World!" with xtd::console class.
+///
+/// @example hello_world_coroutine.cpp
+/// The classic first application "Hello, World!" with coroutine and task.
 ///
 /// @example hello_world_diagnostics.cpp
 /// The classic first application "Hello, World!" with xtd::diagnostics::trace class.
@@ -712,11 +772,14 @@
 /// @example static_object.cpp
 /// Shows how to use static_object_ keyword.
 ///
-/// @example static_object2.cpp
-/// Shows how to use xtd::static class.
-///
 /// @example typeof.cpp
 /// Shows how to use typeof_ keyword.
+///
+/// @example unused.cpp
+/// Shows how to use __ keyword.
+///
+/// @example unused2.cpp
+/// Shows how to use unused_ keyword.
 ///
 /// @example using.cpp
 /// Shows how to use xtd::using class.
@@ -1027,17 +1090,17 @@
 /// @example ranges_views_where2.cpp
 /// Shows how to use xtd::ranges::views::where_view class.
 ///
+/// @example settings_with_cmake.cpp
+/// Shows how to use xtd::configuration::settingd with CMake commands.
+///
+/// @example settings_without_cmake.cpp
+/// Shows how to use xtd::configuration::settingd directly without CMake commands.
+///
 /// @example span_from_memory.cpp
 /// Create a xtd::span from memory.
 ///
 /// @example span_over_array.cpp
 /// Create a xtd::span over an array.
-///
-/// @example generic_dictionary.cpp
-/// Shows how to use xtd::collections::generic::dictionary class.
-///
-/// @example ordered_dictionary.cpp
-/// Shows how to use xtd::collections::generic::dictionary class.
 ///
 /// @example specialized_ordered_dictionary.cpp
 /// Shows how to use xtd::collections::specialized::ordered_dictionary class.
@@ -1132,6 +1195,18 @@
 /// @example strings.cpp
 /// Shows how to use xtd::basic_string constructors.
 ///
+/// @example task.cpp
+/// Shows how to use xtd::threading::tasks:task class.
+///
+/// @example task_completion_source.cpp
+/// Shows how to use xtd::threading::tasks:task_completion_source class.
+///
+/// @example task_delay.cpp
+/// Shows how to use xtd::threading::tasks:task::delay method.
+///
+/// @example tasks.cpp
+/// Shows how to use xtd::threading::tasks:task class.
+///
 /// @example test_console.cpp
 /// Shows how to set target startup with cmake xtd::console.
 ///
@@ -1192,7 +1267,13 @@
 /// @example thread.cpp
 /// Shows how to use xtd::threading::thread class.
 ///
+/// @example thread2.cpp
+/// Shows how to use xtd::threading::thread class.
+///
 /// @example thread_pool.cpp
+/// Shows how to use xtd::threading::thread_pool class.
+///
+/// @example thread_pool2.cpp
 /// Shows how to use xtd::threading::thread_pool class.
 ///
 /// @example timeout.cpp
