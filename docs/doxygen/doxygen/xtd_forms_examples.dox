@@ -2251,6 +2251,21 @@
 /// <br>
 /// @image html minesweeper_gd.png
 ///
+/// @example sudoku.cpp
+/// The Game of Life is not your typical computer game. It is a 'cellular automaton', and was invented by Cambridge mathematician John Conway.
+/// @par Windows
+/// @image html sudoku_w.png
+/// <br>
+/// @image html sudoku_wd.png
+/// @par macOS
+/// @image html sudoku_m.png
+/// <br>
+/// @image html sudoku_md.png
+/// @par Gnome
+/// @image html sudoku_g.png
+/// <br>
+/// @image html sudoku_gd.png
+///
 /// @example tetris.cpp
 /// The Tetris game is one of the most popular computer games ever created. 
 /// @par Windows
@@ -3645,6 +3660,21 @@
 /// @image html owner_button_g.png
 /// <br>
 /// @image html owner_button_gd.png
+///
+/// @example phylactery.cpp
+/// demonstrates how to create a custom control with xtd::forms::user_control control.
+/// @par Windows
+/// @image html phylactery_w.png
+/// <br>
+/// @image html phylactery_wd.png
+/// @par macOS
+/// @image html phylactery_m.png
+/// <br>
+/// @image html phylactery_md.png
+/// @par Gnome
+/// @image html phylactery_g.png
+/// <br>
+/// @image html phylactery_gd.png
 ///
 /// @example toggle_light.cpp
 /// demonstrates how to create a custom control with xtd::forms::user_control control.
