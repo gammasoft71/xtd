@@ -18,8 +18,7 @@ add_projects(
   static
   static_object
   typeof
-  using
   unused
+  unused2
+  using
 )
-
-mais pour le C++20 et suivants.

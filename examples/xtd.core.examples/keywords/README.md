@@ -16,7 +16,8 @@
 * [static](static/README.md) shows how to use [static_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#ga28796443ec37b938df7072c79595e3f6) keyword.
 * [static_object](static_object/README.md) shows how to use [static_object_](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1static__object.html) keyword.
 * [typeof](typeof/README.md) shows how to use [typeof_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#gafa2ffd9b4a6568b57ab2731bec095d99) keyword.
-* [unused](unused/README.md) shows how to use [__](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#ga0ee680d2ff7ec14c0dc73da3bb2e5c91) and [unused_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#ga0ee680d2ff7ec14c0dc73da3bb2e5c91) and [unused_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#ga0ee680d2ff7ec14c0dc73da3bb2e5c91) keywords.
+* [unused](unused/README.md) shows how to use [__](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#ga0ee680d2ff7ec14c0dc73da3bb2e5c91) keyword.
+* [unused](unused2/README.md) shows how to use [unused_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#ga0ee680d2ff7ec14c0dc73da3bb2e5c91) keyword.
 * [using](using/README.md) shows how to use [using_](https://gammasoft71.github.io/xtd/reference_guides/latest/using_8h.html) method.
 
 ## Build and run any project

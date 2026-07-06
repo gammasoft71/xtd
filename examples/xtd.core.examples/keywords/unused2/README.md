@@ -1,10 +1,10 @@
-# unused
+# unused2
 
-Shows how to use [__](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#ga0ee680d2ff7ec14c0dc73da3bb2e5c91) keyword.
+Shows how to use [unused_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#ga0ee680d2ff7ec14c0dc73da3bb2e5c91) keyword.
 
 ## Sources
 
-* [src/unused.cpp](src/unused.cpp)
+* [src/unused2.cpp](src/unused2.cpp)
 * [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
