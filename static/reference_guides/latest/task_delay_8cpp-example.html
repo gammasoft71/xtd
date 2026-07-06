@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 		<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-		<title>xtd: debug_cassert.cpp</title>
+		<title>xtd: task_delay.cpp</title>
     <link href="favicon.png" rel="shortcut icon" type="image/png"/>
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
@@ -103,11 +103,32 @@ document.addEventListener('DOMContentLoaded', () => {
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">debug_cassert.cpp</div></div>
+  <div class="headertitle"><div class="title">task_delay.cpp</div></div>
 </div><!--header-->
 <div class="contents">
-<p>Shows how to use debug::cassert method.</p>
-<div class="fragment"></div><!-- fragment --> </div><!-- contents -->
+<p>Shows how to use <a class="el" href="namespacextd_1_1threading_1_1tasks.html" title="The xtd::threading::tasks namespace provides types that simplify the work of writing concurrent and a...">xtd::threading::tasks</a>:task::delay method.</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">class </span>example {</div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() async_ {</div>
+<div class="line">    <span class="keyword">auto</span> t = task&lt;int&gt;::run(<a id="_a0" name="_a0"></a><a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
+<div class="line">      task&lt;&gt;::delay(time_span::from_seconds(1.5)).wait();</div>
+<div class="line">      <span class="keywordflow">return</span> 42;</div>
+<div class="line">    });</div>
+<div class="line">    <span class="keyword">co_await</span> t;</div>
+<div class="line">    console::write_line(<span class="stringliteral">&quot;Task t status: {}, result: {}&quot;</span>, t.status(), t.result());</div>
+<div class="line">  }</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><a id="a1" name="a1"></a><a class="code hl_define" href="group__keywords.html#gaeb9462ec721c9718cf689e93bf11bf56">startup_</a>(example::main);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Task t status: ran_to_completion, result: 42</span></div>
+<div class="ttc" id="agroup__keywords_html_gac0b0b1a17f583a897eb6b424f2475363"><div class="ttname"><a href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a></div><div class="ttdeci">#define delegate_</div><div class="ttdoc">The declaration of a delegate type is similar to a method signature. It has a return value and any nu...</div><div class="ttdef"><b>Definition</b> delegate.hpp:1018</div></div>
+<div class="ttc" id="agroup__keywords_html_gaeb9462ec721c9718cf689e93bf11bf56"><div class="ttname"><a href="group__keywords.html#gaeb9462ec721c9718cf689e93bf11bf56">startup_</a></div><div class="ttdeci">#define startup_(...)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:278</div></div>
+</div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

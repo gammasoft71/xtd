@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 		<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-		<title>xtd: static_object2.cpp</title>
+		<title>xtd: hello_world_coroutine.cpp</title>
     <link href="favicon.png" rel="shortcut icon" type="image/png"/>
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
@@ -103,11 +103,46 @@ document.addEventListener('DOMContentLoaded', () => {
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">static_object2.cpp</div></div>
+  <div class="headertitle"><div class="title">hello_world_coroutine.cpp</div></div>
 </div><!--header-->
 <div class="contents">
-<p>Shows how to use xtd::static class.</p>
-<div class="fragment"></div><!-- fragment --> </div><!-- contents -->
+<p>The classic first application "Hello, World!" with coroutine and task.</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">class </span>example {</div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() async_ {</div>
+<div class="line">    println(<span class="stringliteral">&quot;[main], thread {}] -&gt; start&quot;</span>, thread::current_thread().managed_thread_id());</div>
+<div class="line">    </div>
+<div class="line">    <span class="keyword">auto</span> message = <span class="keyword">co_await</span> get_message();</div>
+<div class="line">    <span class="keyword">auto</span> length = <span class="keyword">co_await</span> get_size(message);</div>
+<div class="line">    </div>
+<div class="line">    println(<span class="stringliteral">&quot;length : {}&quot;</span>, length);</div>
+<div class="line">    println(<span class="stringliteral">&quot;[main, thread {}] -&gt; end&quot;</span>, thread::current_thread().managed_thread_id());</div>
+<div class="line">  }</div>
+<div class="line">  </div>
+<div class="line"><span class="keyword">private</span>:</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> get_message() -&gt; task&lt;string&gt; {</div>
+<div class="line">    <span class="keyword">co_return</span> <span class="stringliteral">&quot;Hello, World!&quot;</span>;</div>
+<div class="line">  }</div>
+<div class="line">  </div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> get_size(<span class="keyword">auto</span> message) -&gt; task&lt;usize&gt; {</div>
+<div class="line">    <span class="keyword">co_return</span> message.length();</div>
+<div class="line">  }</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><a id="a0" name="a0"></a><a class="code hl_define" href="group__keywords.html#gaeb9462ec721c9718cf689e93bf11bf56">startup_</a>(example::main);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output with colors :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// [main], thread 1] -&gt; start</span></div>
+<div class="line"><span class="comment">// message : Hello, World!</span></div>
+<div class="line"><span class="comment">// length  : 13</span></div>
+<div class="line"><span class="comment">// [main, thread 3] -&gt; end</span></div>
+<div class="ttc" id="agroup__keywords_html_gaeb9462ec721c9718cf689e93bf11bf56"><div class="ttname"><a href="group__keywords.html#gaeb9462ec721c9718cf689e93bf11bf56">startup_</a></div><div class="ttdeci">#define startup_(...)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:278</div></div>
+</div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

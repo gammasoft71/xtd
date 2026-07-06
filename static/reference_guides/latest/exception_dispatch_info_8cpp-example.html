@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 		<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-		<title>xtd: trace_cassert.cpp</title>
+		<title>xtd: exception_dispatch_info.cpp</title>
     <link href="favicon.png" rel="shortcut icon" type="image/png"/>
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
@@ -103,11 +103,46 @@ document.addEventListener('DOMContentLoaded', () => {
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">trace_cassert.cpp</div></div>
+  <div class="headertitle"><div class="title">exception_dispatch_info.cpp</div></div>
 </div><!--header-->
 <div class="contents">
-<p>Shows how to use trace::cassert_ method.</p>
-<div class="fragment"></div><!-- fragment --> </div><!-- contents -->
+<p>Shows how to use <a class="el" href="classxtd_1_1exception__services_1_1exception__dispatch__info.html" title="Represents an exception whose state is captured at a certain point in code.">xtd::exception_services::exception_dispatch_info</a> class.</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="keyword">auto</span> capture_exception = exception_services::exception_dispatch_info {};</div>
+<div class="line">  </div>
+<div class="line">  thread::start_new([&amp;] {</div>
+<div class="line">    <span class="keywordflow">try</span> {</div>
+<div class="line">      <span class="keywordflow">throw</span> invalid_operation_exception(<span class="stringliteral">&quot;Ouch there are an exception !&quot;</span>);</div>
+<div class="line">    } <span class="keywordflow">catch</span> (...) {</div>
+<div class="line">      capture_exception = exception_services::exception_dispatch_info::capture();</div>
+<div class="line">    }</div>
+<div class="line">  }).join();</div>
+<div class="line">  </div>
+<div class="line">  <span class="keywordflow">if</span> (capture_exception) {</div>
+<div class="line">    <span class="keywordflow">try</span> {</div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot;Rethrow the captured exception :&quot;</span>);</div>
+<div class="line">      capture_exception.rethrow();</div>
+<div class="line">    } <span class="keywordflow">catch</span> (<span class="keyword">const</span> exception&amp; e) {</div>
+<div class="line">      console::write_line(e);</div>
+<div class="line">    }</div>
+<div class="line">  }</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code can produce the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Rethrow the captured exception :</span></div>
+<div class="line"><span class="comment">// xtd::invalid_operation_exception : Ouch there are an exception !</span></div>
+<div class="line"><span class="comment">//    at xtd::invalid_operation_exception::invalid_operation_exception(std::__1::optional&lt;xtd::basic_string&lt;char, std::__1::char_traits&lt;char&gt;, std::__1::allocator&lt;char&gt;&gt;&gt; const&amp;, xtd::diagnostics::stack_frame const&amp;) in invalid_operation_exception.cpp:line 10</span></div>
+<div class="line"><span class="comment">//    at main::$_0::operator()() const in exception_dispatch_info.cpp:line 8</span></div>
+<div class="line"><span class="comment">//    at xtd::threading::thread::thread_proc() in thread.cpp:line 579</span></div>
+<div class="line"><span class="comment">//    at xtd::threading::thread::start()::$_0::operator()(long) const in thread.cpp:line 350</span></div>
+<div class="line"><span class="comment">//    at xtd::native::thread::create(std::__1::function&lt;void (long)&gt;, long, int, bool, long&amp;)::$_0::operator()(void*) const in thread.mm:line 22</span></div>
+<div class="line"><span class="comment">//    at xtd::native::thread::create(std::__1::function&lt;void (long)&gt;, long, int, bool, long&amp;)::$_0::__invoke(void*) in thread.mm:line 19</span></div>
+<div class="line"><span class="comment">//    at _pthread_start</span></div>
+<div class="line"><span class="comment">//    at thread_start</span></div>
+</div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
