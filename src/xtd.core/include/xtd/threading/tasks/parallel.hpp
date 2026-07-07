@@ -30,24 +30,54 @@ namespace xtd {
         /// @remarks No guarantees are made about the order in which the operations execute or whether they execute in parallel. This method does not return until each of the provided operations has completed, regardless of whether completion occurs due to normal or exceptional termination.
         /// @par Examples
         /// This example demonstrates how to use the Invokemethod with other methods, anonymous delegates, and lambda expressions.
-        /// @include ParallelInvoke.cpp
-        static auto invoke(const xtd::array<xtd::action<>>& actions) -> void {
+        /// @include parallel_invoke.cpp
+        static auto invoke(xtd::array<xtd::action<>>&& actions) -> void {
+          task<>::wait_all(invoke_async(actions));
+        }
+        /// @brief Executes each of the provided actions, possibly in parallel.
+        /// @par Library
+        /// Switch.Core
+        /// @ingroup SwitchCore
+        /// @param An array of Action to execute.
+        /// @remarks This method can be used to execute a set of operations, potentially in parallel.
+        /// @remarks No guarantees are made about the order in which the operations execute or whether they execute in parallel. This method does not return until each of the provided operations has completed, regardless of whether completion occurs due to normal or exceptional termination.
+        /// @par Examples
+        /// This example demonstrates how to use the Invokemethod with other methods, anonymous delegates, and lambda expressions.
+        /// @include parallel_invoke.cpp
+        template<typename collection_t>
+        static auto invoke(collection_t&& actions) -> void {
+          task<>::wait_all(invoke_async(actions));
+        }
+        /// @brief Executes each of the provided actions, possibly in parallel.
+        /// @par Library
+        /// Switch.Core
+        /// @ingroup SwitchCore
+        /// @param An array of Action to execute.
+        /// @remarks This method can be used to execute a set of operations, potentially in parallel.
+        /// @remarks No guarantees are made about the order in which the operations execute or whether they execute in parallel. This method does not return until each of the provided operations has completed, regardless of whether completion occurs due to normal or exceptional termination.
+        /// @par Examples
+        /// This example demonstrates how to use the Invokemethod with other methods, anonymous delegates, and lambda expressions.
+        /// @include parallel_invoke.cpp
+        template<typename ...args_t>
+        static auto invoke(args_t&&... args) -> void {invoke(xtd::array<xtd::action<>> {xtd::action<> {std::forward<args_t>(args)}...});}
+
+        static auto invoke_async(xtd::array<xtd::action<>>&& actions) -> xtd::array<xtd::threading::tasks::task<>> {
           xtd::collections::generic::list<xtd::threading::tasks::task<>> tasks;
           for (const auto& action : actions)
             tasks.add(xtd::threading::tasks::task<>::factory().start_new(action));
-          task<>::wait_all(tasks);
+          return tasks.to_array();
         }
         
         template<typename collection_t>
-        static auto invoke(const collection_t& actions) -> void {
+        static auto invoke_async(collection_t&& actions) -> xtd::array<xtd::threading::tasks::task<>> {
           xtd::collections::generic::list<xtd::threading::tasks::task<>> tasks;
           for (const auto& action : actions)
             tasks.add(xtd::threading::tasks::task<>::factory().start_new(action));
-          task<>::wait_all(tasks);
+          return tasks.to_array();
         }
-
+        
         template<typename ...args_t>
-        static auto invoke(args_t... args) -> void {invoke(xtd::array<xtd::action<>> {xtd::action<> {std::forward<args_t>(args)}...});}
+        static auto invoke_async(args_t&&... args) -> xtd::array<xtd::threading::tasks::task<>> {return invoke_async(xtd::array<xtd::action<>> {xtd::action<> {std::forward<args_t>(args)}...});}
       };
     }
   }
