@@ -126,6 +126,7 @@ namespace xtd {
         
         /// @brief Returns an enumerator that iterates through a collection.
         /// @return An xtd::collections::generic::enumerator object that can be used to iterate through the collection.
+        /// @todo : use enumerator with a snapshot of the collection instead reference : enumerator {items_, enumerator_mode::snapshot};
         [[nodiscard]] auto get_enumerator() const -> xtd::collections::generic::enumerator<value_type> override {
           static thread_local auto items = xtd::array<value_type> {};
           items = to_array();
