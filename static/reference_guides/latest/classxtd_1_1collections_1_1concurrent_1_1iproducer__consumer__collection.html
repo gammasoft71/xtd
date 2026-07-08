@@ -125,7 +125,8 @@ Inheritance diagram for xtd::collections::concurrent::iproducer_consumer_collect
 <area href="classxtd_1_1collections_1_1generic_1_1ienumerable__abstract.html" title="Abstract object that represent ienumerable." alt="xtd::collections::generic::ienumerable_abstract" shape="rect" coords="674,0,1338,24"/>
 <area href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html" alt="xtd::collections::generic::extensions::enumerable_iterators&lt; type_t, xtd::collections::generic::ienumerable&lt; type_t &gt; &gt;" shape="rect" coords="1348,0,2012,24"/>
 <area href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html" alt="xtd::collections::generic::extensions::enumerable&lt; ienumerable&lt; type_t &gt;, type_t &gt;" shape="rect" coords="2022,0,2686,24"/>
-<area href="classxtd_1_1collections_1_1concurrent_1_1concurrent__bag.html" title="Represents a thread-safe, unordered collection of objects." alt="xtd::collections::concurrent::concurrent_bag&lt; type_t &gt;" shape="rect" coords="1348,224,2012,248"/>
+<area href="classxtd_1_1collections_1_1concurrent_1_1concurrent__bag.html" title="Represents a thread-safe, unordered collection of objects." alt="xtd::collections::concurrent::concurrent_bag&lt; type_t &gt;" shape="rect" coords="1011,224,1675,248"/>
+<area href="classxtd_1_1collections_1_1concurrent_1_1concurrent__queue.html" title="Represents a thread-safe first in-first out (FIFO) collection." alt="xtd::collections::concurrent::concurrent_queue&lt; type_t &gt;" shape="rect" coords="1685,224,2349,248"/>
   </map>
 </div></div>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Definition</h2>
@@ -295,7 +296,7 @@ template&lt;typename type_t&gt; </div>
 
 <p>Implements <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html#a96b07ac7ee1943ec2b694480b81e0808">xtd::collections::generic::icollection&lt; type_t &gt;</a>.</p>
 
-<p>Implemented in <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__bag.html#a46b7084045fce6981d17917528abc92e">xtd::collections::concurrent::concurrent_bag&lt; type_t &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__bag.html#a46b7084045fce6981d17917528abc92e">xtd::collections::concurrent::concurrent_bag&lt; type_t &gt;</a>, and <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__queue.html#a4e54044ca6cedd232b8422ff05343758">xtd::collections::concurrent::concurrent_queue&lt; type_t &gt;</a>.</p>
 
 </div>
 </div>
@@ -345,7 +346,7 @@ The following code example shows how to lock the collection using the <a class="
 
 <p>Implements <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html#a5c88a1707dd47a4b7a9b6ddd84552cc5">xtd::collections::generic::icollection&lt; type_t &gt;</a>.</p>
 
-<p>Implemented in <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__bag.html#a028f24e52cb7e1986aab7127822262c5">xtd::collections::concurrent::concurrent_bag&lt; type_t &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__bag.html#a028f24e52cb7e1986aab7127822262c5">xtd::collections::concurrent::concurrent_bag&lt; type_t &gt;</a>, and <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__queue.html#a0121d283feb36ae3e736fb5aab9a7d7f">xtd::collections::concurrent::concurrent_queue&lt; type_t &gt;</a>.</p>
 
 </div>
 </div>
@@ -484,7 +485,7 @@ template&lt;typename type_t&gt; </div>
 
 <p>Implements <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html#a5a776cc6f5383ca7cf895294bb0a89fd">xtd::collections::generic::icollection&lt; type_t &gt;</a>.</p>
 
-<p>Implemented in <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__bag.html#a31d077706a9850dade7fb1777583aa75">xtd::collections::concurrent::concurrent_bag&lt; type_t &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__bag.html#a31d077706a9850dade7fb1777583aa75">xtd::collections::concurrent::concurrent_bag&lt; type_t &gt;</a>, and <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__queue.html#a703297b04cfedd6a4bd80bc250d6a264">xtd::collections::concurrent::concurrent_queue&lt; type_t &gt;</a>.</p>
 
 </div>
 </div>
@@ -517,7 +518,7 @@ template&lt;typename type_t&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>A new array containing the elements copied from the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1iproducer__consumer__collection.html" title="Defines methods to manipulate thread-safe collections intended for producer/consumer usage....">xtd::collections::concurrent::iproducer_consumer_collection</a> &lt;type_t. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The method provides a snapshot of the underlying collection. It is possible for other threads to add or remove items immediately after the array is made. </dd></dl>
 
-<p>Implemented in <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__bag.html#adb954079c7bcc99b5ca1de1824f893f0">xtd::collections::concurrent::concurrent_bag&lt; type_t &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__bag.html#adb954079c7bcc99b5ca1de1824f893f0">xtd::collections::concurrent::concurrent_bag&lt; type_t &gt;</a>, and <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__queue.html#ab52f627ac26f52d1769606c0ee645939">xtd::collections::concurrent::concurrent_queue&lt; type_t &gt;</a>.</p>
 
 </div>
 </div>

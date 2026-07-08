@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 		<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-		<title>xtd: xtd::collections::concurrent::concurrent_bag&lt; type_t &gt; Class Template Reference</title>
+		<title>xtd: xtd::collections::concurrent::concurrent_queue&lt; type_t &gt; Class Template Reference</title>
     <link href="favicon.png" rel="shortcut icon" type="image/png"/>
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
@@ -102,22 +102,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a href="namespacextd.html">xtd</a></li><li class="navelem"><a href="namespacextd_1_1collections.html">collections</a></li><li class="navelem"><a href="namespacextd_1_1collections_1_1concurrent.html">concurrent</a></li><li class="navelem"><a href="classxtd_1_1collections_1_1concurrent_1_1concurrent__bag.html">concurrent_bag</a></li>  </ul>
+<li class="navelem"><a href="namespacextd.html">xtd</a></li><li class="navelem"><a href="namespacextd_1_1collections.html">collections</a></li><li class="navelem"><a href="namespacextd_1_1collections_1_1concurrent.html">concurrent</a></li><li class="navelem"><a href="classxtd_1_1collections_1_1concurrent_1_1concurrent__queue.html">concurrent_queue</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="classxtd_1_1collections_1_1concurrent_1_1concurrent__bag-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">xtd::collections::concurrent::concurrent_bag&lt; type_t &gt; Class Template Reference<div class="ingroups"><a class="el" href="group__libraries.html">﹡ libraries</a> &raquo; <a class="el" href="group__xtd__core.html">xtd.core</a> &#124; <a class="el" href="group__system.html">system</a> &raquo; <a class="el" href="group__collections.html">collections</a> &raquo; <a class="el" href="group__concurrent__collections.html">concurrent</a></div></div></div>
+<a href="classxtd_1_1collections_1_1concurrent_1_1concurrent__queue-members.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">xtd::collections::concurrent::concurrent_queue&lt; type_t &gt; Class Template Reference<div class="ingroups"><a class="el" href="group__libraries.html">﹡ libraries</a> &raquo; <a class="el" href="group__xtd__core.html">xtd.core</a> &#124; <a class="el" href="group__system.html">system</a> &raquo; <a class="el" href="group__collections.html">collections</a> &raquo; <a class="el" href="group__concurrent__collections.html">concurrent</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 <div class="dynheader">
-Inheritance diagram for xtd::collections::concurrent::concurrent_bag&lt; type_t &gt;:</div>
+Inheritance diagram for xtd::collections::concurrent::concurrent_queue&lt; type_t &gt;:</div>
 <div class="dyncontent">
  <div class="center">
-  <img src="classxtd_1_1collections_1_1concurrent_1_1concurrent__bag.png" usemap="#xtd_3A_3Acollections_3A_3Aconcurrent_3A_3Aconcurrent_5Fbag_3C_20type_5Ft_20_3E_map" alt=""/>
-  <map id="xtd_3A_3Acollections_3A_3Aconcurrent_3A_3Aconcurrent_5Fbag_3C_20type_5Ft_20_3E_map" name="xtd_3A_3Acollections_3A_3Aconcurrent_3A_3Aconcurrent_5Fbag_3C_20type_5Ft_20_3E_map">
+  <img src="classxtd_1_1collections_1_1concurrent_1_1concurrent__queue.png" usemap="#xtd_3A_3Acollections_3A_3Aconcurrent_3A_3Aconcurrent_5Fqueue_3C_20type_5Ft_20_3E_map" alt=""/>
+  <map id="xtd_3A_3Acollections_3A_3Aconcurrent_3A_3Aconcurrent_5Fqueue_3C_20type_5Ft_20_3E_map" name="xtd_3A_3Acollections_3A_3Aconcurrent_3A_3Aconcurrent_5Fqueue_3C_20type_5Ft_20_3E_map">
 <area href="classxtd_1_1object.html" title="Supports all classes in the xtd class hierarchy and provides low-level services to derived classes...." alt="xtd::object" shape="rect" coords="0,168,664,192"/>
 <area href="classxtd_1_1collections_1_1concurrent_1_1iproducer__consumer__collection.html" title="Defines methods to manipulate thread-safe collections intended for producer/consumer usage...." alt="xtd::collections::concurrent::iproducer_consumer_collection&lt; type_t &gt;" shape="rect" coords="1348,168,2012,192"/>
 <area href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections." alt="xtd::collections::generic::icollection&lt; type_t &gt;" shape="rect" coords="1348,112,2012,136"/>
@@ -131,10 +131,10 @@ Inheritance diagram for xtd::collections::concurrent::concurrent_bag&lt; type_t 
 </div></div>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Definition</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename type_t&gt;<br />
-class xtd::collections::concurrent::concurrent_bag&lt; type_t &gt;</div><p>Represents a thread-safe, unordered collection of objects. </p>
+class xtd::collections::concurrent::concurrent_queue&lt; type_t &gt;</div><p>Represents a thread-safe first in-first out (FIFO) collection. </p>
 <dl class="section user"><dt>Definition</dt><dd><div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> type_t&gt;</div>
-<div class="line"><span class="keyword">class </span><a class="code hl_function" href="#adafe932da1e0b55c2f52f6b804a1ccd3">concurrent_bag</a> : pulic <a class="code hl_class" href="classxtd_1_1object.html">xtd::object</a>, <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1collections_1_1concurrent_1_1iproducer__consumer__collection.html">xtd::collections::concurrent::iproducer_consumer_collection</a> &lt;type_t&gt;</div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1concurrent_1_1concurrent__bag_html_adafe932da1e0b55c2f52f6b804a1ccd3"><div class="ttname"><a href="#adafe932da1e0b55c2f52f6b804a1ccd3">xtd::collections::concurrent::concurrent_bag::concurrent_bag</a></div><div class="ttdeci">concurrent_bag()=default</div><div class="ttdoc">Initializes a new instance of the xtd::collections::concurrent::concurrent_bag &lt;type_t&gt; class.</div></div>
+<div class="line"><span class="keyword">class </span><a class="code hl_function" href="#afb229a2563da547a47ed5af6a0d1d4b5">concurrent_queue</a> : pulic <a class="code hl_class" href="classxtd_1_1object.html">xtd::object</a>, <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1collections_1_1concurrent_1_1iproducer__consumer__collection.html">xtd::collections::concurrent::iproducer_consumer_collection</a> &lt;type_t&gt;</div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1concurrent_1_1concurrent__queue_html_afb229a2563da547a47ed5af6a0d1d4b5"><div class="ttname"><a href="#afb229a2563da547a47ed5af6a0d1d4b5">xtd::collections::concurrent::concurrent_queue::concurrent_queue</a></div><div class="ttdeci">concurrent_queue()=default</div><div class="ttdoc">Initializes a new instance of the xtd::collections::concurrent::concurrent_queue &lt;type_t&gt; class.</div></div>
 <div class="ttc" id="aclassxtd_1_1collections_1_1concurrent_1_1iproducer__consumer__collection_html"><div class="ttname"><a href="classxtd_1_1collections_1_1concurrent_1_1iproducer__consumer__collection.html">xtd::collections::concurrent::iproducer_consumer_collection</a></div><div class="ttdoc">Defines methods to manipulate thread-safe collections intended for producer/consumer usage....</div><div class="ttdef"><b>Definition</b> iproducer_consumer_collection.hpp:30</div></div>
 <div class="ttc" id="aclassxtd_1_1object_html"><div class="ttname"><a href="classxtd_1_1object.html">xtd::object</a></div><div class="ttdoc">Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....</div><div class="ttdef"><b>Definition</b> object.hpp:45</div></div>
 </div><!-- fragment --> </dd></dl>
@@ -145,57 +145,51 @@ class xtd::collections::concurrent::concurrent_bag&lt; type_t &gt;</div><p>Repre
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Aliases</h2></td></tr>
-<tr class="memitem:a87a49e609113fa181e7a0cddeb935f76" id="r_a87a49e609113fa181e7a0cddeb935f76"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a87a49e609113fa181e7a0cddeb935f76">value_type</a></td></tr>
-<tr class="memdesc:a87a49e609113fa181e7a0cddeb935f76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the concurrent bag value type.  <br /></td></tr>
-<tr class="memitem:afffd2f6e34ef71e61b5817cd13d845f9" id="r_afffd2f6e34ef71e61b5817cd13d845f9"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#afffd2f6e34ef71e61b5817cd13d845f9">reference</a></td></tr>
-<tr class="memdesc:afffd2f6e34ef71e61b5817cd13d845f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the reference of list value type.  <br /></td></tr>
-<tr class="memitem:ad18d7668209747ae3820892ec6a6ca66" id="r_ad18d7668209747ae3820892ec6a6ca66"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#ad18d7668209747ae3820892ec6a6ca66">const_reference</a></td></tr>
-<tr class="memdesc:ad18d7668209747ae3820892ec6a6ca66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the const reference of list value type.  <br /></td></tr>
-<tr class="memitem:abfd4c37f990ae902b24e82a02f6c28ae" id="r_abfd4c37f990ae902b24e82a02f6c28ae"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#abfd4c37f990ae902b24e82a02f6c28ae">collection_type</a></td></tr>
-<tr class="memdesc:abfd4c37f990ae902b24e82a02f6c28ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the concurrent bag collection type.  <br /></td></tr>
-<tr class="memitem:ada4d273b66a1ac2e053a0a59f55ce9dc" id="r_ada4d273b66a1ac2e053a0a59f55ce9dc"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#ada4d273b66a1ac2e053a0a59f55ce9dc">local_storage_type</a></td></tr>
-<tr class="memdesc:ada4d273b66a1ac2e053a0a59f55ce9dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the concurrent bag collection type.  <br /></td></tr>
-<tr class="memitem:a458282905987a4d9d3bde79c1b89dd4e" id="r_a458282905987a4d9d3bde79c1b89dd4e"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a458282905987a4d9d3bde79c1b89dd4e">storage_type</a></td></tr>
-<tr class="memdesc:a458282905987a4d9d3bde79c1b89dd4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the concurrent bag collection type.  <br /></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
-Public Methods</h2></td></tr>
-<tr class="memitem:a472bb58dc33ea82850789a9177c06ebe" id="r_a472bb58dc33ea82850789a9177c06ebe"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a472bb58dc33ea82850789a9177c06ebe">add</a> (<a class="el" href="#ad18d7668209747ae3820892ec6a6ca66">const_reference</a> item) -&gt; void override</td></tr>
-<tr class="memdesc:a472bb58dc33ea82850789a9177c06ebe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an item to the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__bag.html" title="Represents a thread-safe, unordered collection of objects.">xtd::collections::concurrent::concurrent_bag</a> &lt;type_t&gt;.  <br /></td></tr>
-<tr class="memitem:af5bdc2672ec61c05286714cc2d0b3e7f" id="r_af5bdc2672ec61c05286714cc2d0b3e7f"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#af5bdc2672ec61c05286714cc2d0b3e7f">copy_to</a> (<a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="#a87a49e609113fa181e7a0cddeb935f76">value_type</a> &gt; &amp;array, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> array_index) const -&gt; void override</td></tr>
-<tr class="memdesc:af5bdc2672ec61c05286714cc2d0b3e7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the elements of the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__bag.html" title="Represents a thread-safe, unordered collection of objects.">xtd::collections::concurrent::concurrent_bag</a> &lt;type_t&gt; to an <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a>, starting at a particular <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> index.  <br /></td></tr>
-<tr class="memitem:a31d077706a9850dade7fb1777583aa75" id="r_a31d077706a9850dade7fb1777583aa75"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a31d077706a9850dade7fb1777583aa75">get_enumerator</a> () const -&gt; <a class="el" href="structxtd_1_1collections_1_1generic_1_1enumerator.html">xtd::collections::generic::enumerator</a>&lt; <a class="el" href="#a87a49e609113fa181e7a0cddeb935f76">value_type</a> &gt; override</td></tr>
-<tr class="memdesc:a31d077706a9850dade7fb1777583aa75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an enumerator that iterates through a collection.  <br /></td></tr>
-<tr class="memitem:adb954079c7bcc99b5ca1de1824f893f0" id="r_adb954079c7bcc99b5ca1de1824f893f0"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#adb954079c7bcc99b5ca1de1824f893f0">to_array</a> () const -&gt; <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="#a87a49e609113fa181e7a0cddeb935f76">value_type</a> &gt; override</td></tr>
-<tr class="memdesc:adb954079c7bcc99b5ca1de1824f893f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the elements contained in the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__bag.html" title="Represents a thread-safe, unordered collection of objects.">xtd::collections::concurrent::concurrent_bag</a> &lt;type_t&gt; to a new array.  <br /></td></tr>
-<tr class="memitem:a683d1cde2b019d0a7fe4cffc71cd4835" id="r_a683d1cde2b019d0a7fe4cffc71cd4835"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a683d1cde2b019d0a7fe4cffc71cd4835">to_string</a> () const noexcept -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> override</td></tr>
-<tr class="memdesc:a683d1cde2b019d0a7fe4cffc71cd4835"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> that represents the current object.  <br /></td></tr>
-<tr class="memitem:a4a8b83490b8ed6a8e74a3d037db04a69" id="r_a4a8b83490b8ed6a8e74a3d037db04a69"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a4a8b83490b8ed6a8e74a3d037db04a69">try_add</a> (<a class="el" href="#ad18d7668209747ae3820892ec6a6ca66">const_reference</a> item) -&gt; bool override</td></tr>
-<tr class="memdesc:a4a8b83490b8ed6a8e74a3d037db04a69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempts to add an object to the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__bag.html" title="Represents a thread-safe, unordered collection of objects.">xtd::collections::concurrent::concurrent_bag</a> &lt;type_t&gt;.  <br /></td></tr>
-<tr class="memitem:ae256abd10bdeaccf7bf7c7c27d1619d3" id="r_ae256abd10bdeaccf7bf7c7c27d1619d3"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ae256abd10bdeaccf7bf7c7c27d1619d3">try_peek</a> (<a class="el" href="#afffd2f6e34ef71e61b5817cd13d845f9">reference</a> item) const -&gt; bool</td></tr>
-<tr class="memdesc:ae256abd10bdeaccf7bf7c7c27d1619d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempts to return an object from the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__bag.html" title="Represents a thread-safe, unordered collection of objects.">xtd::collections::concurrent::concurrent_bag</a> &lt;type_t&gt; without removing it.  <br /></td></tr>
-<tr class="memitem:af988cb94e870c7d0e9e77fa9813b4b46" id="r_af988cb94e870c7d0e9e77fa9813b4b46"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#af988cb94e870c7d0e9e77fa9813b4b46">try_take</a> (<a class="el" href="#afffd2f6e34ef71e61b5817cd13d845f9">reference</a> item) -&gt; bool override</td></tr>
-<tr class="memdesc:af988cb94e870c7d0e9e77fa9813b4b46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempts to remove and return an object from the xtd::collections::concurrent::concurrent &lt;type_t&gt;.  <br /></td></tr>
+<tr class="memitem:a3e3f3dff9d3ebcae51fa9efeea42b6ac" id="r_a3e3f3dff9d3ebcae51fa9efeea42b6ac"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a3e3f3dff9d3ebcae51fa9efeea42b6ac">value_type</a></td></tr>
+<tr class="memdesc:a3e3f3dff9d3ebcae51fa9efeea42b6ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the concurrent bag value type.  <br /></td></tr>
+<tr class="memitem:a19d657a8fe94223e2fad718e327758d1" id="r_a19d657a8fe94223e2fad718e327758d1"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a19d657a8fe94223e2fad718e327758d1">reference</a></td></tr>
+<tr class="memdesc:a19d657a8fe94223e2fad718e327758d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the reference of list value type.  <br /></td></tr>
+<tr class="memitem:a0c0a4cf61b593feda8a70df2d0af4749" id="r_a0c0a4cf61b593feda8a70df2d0af4749"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a0c0a4cf61b593feda8a70df2d0af4749">const_reference</a></td></tr>
+<tr class="memdesc:a0c0a4cf61b593feda8a70df2d0af4749"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the const reference of list value type.  <br /></td></tr>
+<tr class="memitem:a68c0057514fbb250733c86eba7cf4085" id="r_a68c0057514fbb250733c86eba7cf4085"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a68c0057514fbb250733c86eba7cf4085">collection_type</a></td></tr>
+<tr class="memdesc:a68c0057514fbb250733c86eba7cf4085"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the concurrent bag collection type.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Conctructors</h2></td></tr>
-<tr class="memitem:adafe932da1e0b55c2f52f6b804a1ccd3" id="r_adafe932da1e0b55c2f52f6b804a1ccd3"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#adafe932da1e0b55c2f52f6b804a1ccd3">concurrent_bag</a> ()=default</td></tr>
-<tr class="memdesc:adafe932da1e0b55c2f52f6b804a1ccd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__bag.html" title="Represents a thread-safe, unordered collection of objects.">xtd::collections::concurrent::concurrent_bag</a> &lt;type_t&gt; class.  <br /></td></tr>
-<tr class="memitem:ac7d97f919d2819073cb169675a76c051" id="r_ac7d97f919d2819073cb169675a76c051"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ac7d97f919d2819073cb169675a76c051">concurrent_bag</a> (std::initializer_list&lt; type_t &gt; items)</td></tr>
-<tr class="memdesc:ac7d97f919d2819073cb169675a76c051"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the container with the contents of the specified initializer list, and allocator.  <br /></td></tr>
-<tr class="memitem:ad692a7bb1f39ba469428bb17f663c6ec" id="r_ad692a7bb1f39ba469428bb17f663c6ec"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ad692a7bb1f39ba469428bb17f663c6ec">concurrent_bag</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; <a class="el" href="#a87a49e609113fa181e7a0cddeb935f76">value_type</a> &gt; &amp;collection)</td></tr>
-<tr class="memdesc:ad692a7bb1f39ba469428bb17f663c6ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__bag.html" title="Represents a thread-safe, unordered collection of objects.">xtd::collections::concurrent::concurrent_bag</a> &lt;type_t&gt; class that contains elements copied from the specified collection.  <br /></td></tr>
+<tr class="memitem:afb229a2563da547a47ed5af6a0d1d4b5" id="r_afb229a2563da547a47ed5af6a0d1d4b5"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#afb229a2563da547a47ed5af6a0d1d4b5">concurrent_queue</a> ()=default</td></tr>
+<tr class="memdesc:afb229a2563da547a47ed5af6a0d1d4b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__queue.html" title="Represents a thread-safe first in-first out (FIFO) collection.">xtd::collections::concurrent::concurrent_queue</a> &lt;type_t&gt; class.  <br /></td></tr>
+<tr class="memitem:a896e8cbe3c757f98e6b39a25ca5e3f98" id="r_a896e8cbe3c757f98e6b39a25ca5e3f98"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a896e8cbe3c757f98e6b39a25ca5e3f98">concurrent_queue</a> (std::initializer_list&lt; type_t &gt; items)</td></tr>
+<tr class="memdesc:a896e8cbe3c757f98e6b39a25ca5e3f98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the container with the contents of the specified initializer list, and allocator.  <br /></td></tr>
+<tr class="memitem:a9f72bbc394bd642812f4954ad6e8a4bf" id="r_a9f72bbc394bd642812f4954ad6e8a4bf"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a9f72bbc394bd642812f4954ad6e8a4bf">concurrent_queue</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; <a class="el" href="#a3e3f3dff9d3ebcae51fa9efeea42b6ac">value_type</a> &gt; &amp;collection)</td></tr>
+<tr class="memdesc:a9f72bbc394bd642812f4954ad6e8a4bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__queue.html" title="Represents a thread-safe first in-first out (FIFO) collection.">xtd::collections::concurrent::concurrent_queue</a> &lt;type_t&gt; class that contains elements copied from the specified collection.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Properties</h2></td></tr>
-<tr class="memitem:a46b7084045fce6981d17917528abc92e" id="r_a46b7084045fce6981d17917528abc92e"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a46b7084045fce6981d17917528abc92e">count</a> () const noexcept -&gt; <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> override</td></tr>
-<tr class="memdesc:a46b7084045fce6981d17917528abc92e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of elements contained in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a>.  <br /></td></tr>
-<tr class="memitem:a66e552a6c721dc994666b4df3e5966f0" id="r_a66e552a6c721dc994666b4df3e5966f0"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a66e552a6c721dc994666b4df3e5966f0">is_empty</a> () const noexcept -&gt; bool</td></tr>
-<tr class="memdesc:a66e552a6c721dc994666b4df3e5966f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__bag.html" title="Represents a thread-safe, unordered collection of objects.">xtd::collections::concurrent::concurrent_bag</a> &lt;type_t&gt; is emtpy.  <br /></td></tr>
-<tr class="memitem:a72e1eaef3484217a88e18faa2e50fd8d" id="r_a72e1eaef3484217a88e18faa2e50fd8d"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a72e1eaef3484217a88e18faa2e50fd8d">is_read_only</a> () const noexcept -&gt; bool override</td></tr>
-<tr class="memdesc:a72e1eaef3484217a88e18faa2e50fd8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__bag.html" title="Represents a thread-safe, unordered collection of objects.">xtd::collections::concurrent::concurrent_bag</a> &lt;type_t&gt; is read-only.  <br /></td></tr>
-<tr class="memitem:a028f24e52cb7e1986aab7127822262c5" id="r_a028f24e52cb7e1986aab7127822262c5"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a028f24e52cb7e1986aab7127822262c5">is_synchronized</a> () const noexcept -&gt; bool override</td></tr>
-<tr class="memdesc:a028f24e52cb7e1986aab7127822262c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether access to the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__bag.html" title="Represents a thread-safe, unordered collection of objects.">xtd::collections::concurrent::concurrent_bag</a> &lt;type_t&gt; is synchronized (thread safe).  <br /></td></tr>
+<tr class="memitem:a4e54044ca6cedd232b8422ff05343758" id="r_a4e54044ca6cedd232b8422ff05343758"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a4e54044ca6cedd232b8422ff05343758">count</a> () const noexcept -&gt; <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> override</td></tr>
+<tr class="memdesc:a4e54044ca6cedd232b8422ff05343758"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of elements contained in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a>.  <br /></td></tr>
+<tr class="memitem:a286fbd939eb6706bd68128cf89002940" id="r_a286fbd939eb6706bd68128cf89002940"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a286fbd939eb6706bd68128cf89002940">is_read_only</a> () const noexcept -&gt; bool override</td></tr>
+<tr class="memdesc:a286fbd939eb6706bd68128cf89002940"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__queue.html" title="Represents a thread-safe first in-first out (FIFO) collection.">xtd::collections::concurrent::concurrent_queue</a> &lt;type_t&gt; is read-only.  <br /></td></tr>
+<tr class="memitem:a0121d283feb36ae3e736fb5aab9a7d7f" id="r_a0121d283feb36ae3e736fb5aab9a7d7f"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a0121d283feb36ae3e736fb5aab9a7d7f">is_synchronized</a> () const noexcept -&gt; bool override</td></tr>
+<tr class="memdesc:a0121d283feb36ae3e736fb5aab9a7d7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether access to the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__queue.html" title="Represents a thread-safe first in-first out (FIFO) collection.">xtd::collections::concurrent::concurrent_queue</a> &lt;type_t&gt; is synchronized (thread safe).  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
+Public Methods</h2></td></tr>
+<tr class="memitem:ae44811af449f875de6d77c3ece51dc56" id="r_ae44811af449f875de6d77c3ece51dc56"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ae44811af449f875de6d77c3ece51dc56">clear</a> () -&gt; void override</td></tr>
+<tr class="memdesc:ae44811af449f875de6d77c3ece51dc56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes all items from the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt;.  <br /></td></tr>
+<tr class="memitem:aee6ead44e9c913b65f9b890f847d0527" id="r_aee6ead44e9c913b65f9b890f847d0527"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aee6ead44e9c913b65f9b890f847d0527">copy_to</a> (<a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="#a3e3f3dff9d3ebcae51fa9efeea42b6ac">value_type</a> &gt; &amp;array, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> array_index) const -&gt; void override</td></tr>
+<tr class="memdesc:aee6ead44e9c913b65f9b890f847d0527"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the elements of the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__queue.html" title="Represents a thread-safe first in-first out (FIFO) collection.">xtd::collections::concurrent::concurrent_queue</a> &lt;type_t&gt; to an <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a>, starting at a particular <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> index.  <br /></td></tr>
+<tr class="memitem:ab76b4be088a58d9d0066e29a9bf0d30a" id="r_ab76b4be088a58d9d0066e29a9bf0d30a"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#ab76b4be088a58d9d0066e29a9bf0d30a">enqueue</a> (<a class="el" href="#a0c0a4cf61b593feda8a70df2d0af4749">const_reference</a> item) -&gt; void</td></tr>
+<tr class="memdesc:ab76b4be088a58d9d0066e29a9bf0d30a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an item to the end of the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__queue.html" title="Represents a thread-safe first in-first out (FIFO) collection.">xtd::collections::concurrent::concurrent_queue</a> &lt;type_t&gt;.  <br /></td></tr>
+<tr class="memitem:a703297b04cfedd6a4bd80bc250d6a264" id="r_a703297b04cfedd6a4bd80bc250d6a264"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a703297b04cfedd6a4bd80bc250d6a264">get_enumerator</a> () const -&gt; <a class="el" href="structxtd_1_1collections_1_1generic_1_1enumerator.html">xtd::collections::generic::enumerator</a>&lt; <a class="el" href="#a3e3f3dff9d3ebcae51fa9efeea42b6ac">value_type</a> &gt; override</td></tr>
+<tr class="memdesc:a703297b04cfedd6a4bd80bc250d6a264"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an enumerator that iterates through a collection.  <br /></td></tr>
+<tr class="memitem:ab52f627ac26f52d1769606c0ee645939" id="r_ab52f627ac26f52d1769606c0ee645939"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ab52f627ac26f52d1769606c0ee645939">to_array</a> () const -&gt; <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="#a3e3f3dff9d3ebcae51fa9efeea42b6ac">value_type</a> &gt; override</td></tr>
+<tr class="memdesc:ab52f627ac26f52d1769606c0ee645939"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the elements contained in the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__queue.html" title="Represents a thread-safe first in-first out (FIFO) collection.">xtd::collections::concurrent::concurrent_queue</a> &lt;type_t&gt; to a new array.  <br /></td></tr>
+<tr class="memitem:a88f65785286adda955c2a2b89fbf5bdb" id="r_a88f65785286adda955c2a2b89fbf5bdb"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a88f65785286adda955c2a2b89fbf5bdb">to_string</a> () const noexcept -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> override</td></tr>
+<tr class="memdesc:a88f65785286adda955c2a2b89fbf5bdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> that represents the current object.  <br /></td></tr>
+<tr class="memitem:ae05085c8be23bd6ab9bdc90cdaf088d5" id="r_ae05085c8be23bd6ab9bdc90cdaf088d5"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#ae05085c8be23bd6ab9bdc90cdaf088d5">try_dequeue</a> (<a class="el" href="#a19d657a8fe94223e2fad718e327758d1">reference</a> result) -&gt; bool</td></tr>
+<tr class="memdesc:ae05085c8be23bd6ab9bdc90cdaf088d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tries to remove and return the object at the beginning of the concurrent queue.  <br /></td></tr>
+<tr class="memitem:a0ab7158bd35af339755d8f2f426994e3" id="r_a0ab7158bd35af339755d8f2f426994e3"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a0ab7158bd35af339755d8f2f426994e3">try_peek</a> (<a class="el" href="#a19d657a8fe94223e2fad718e327758d1">reference</a> result) const -&gt; bool</td></tr>
+<tr class="memdesc:a0ab7158bd35af339755d8f2f426994e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tries to return an object from the beginning of the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__queue.html" title="Represents a thread-safe first in-first out (FIFO) collection.">xtd::collections::concurrent::concurrent_queue</a> &lt;type_t&gt; without removing it.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -318,8 +312,8 @@ auto&#160;</td><td class="memItemRight"><b>min</b> (auto &amp;&amp;selector) con
 <tr class="memdesc:a647b6797f4d1a429c43db4d4125895ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts source iterator to target iterator.  <br /></td></tr>
 </table>
 <a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Member Typedef Documentation</h2>
-<a id="a87a49e609113fa181e7a0cddeb935f76" name="a87a49e609113fa181e7a0cddeb935f76"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a87a49e609113fa181e7a0cddeb935f76">&#9670;&#160;</a></span>value_type</h2>
+<a id="a3e3f3dff9d3ebcae51fa9efeea42b6ac" name="a3e3f3dff9d3ebcae51fa9efeea42b6ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e3f3dff9d3ebcae51fa9efeea42b6ac">&#9670;&#160;</a></span>value_type</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -327,7 +321,7 @@ auto&#160;</td><td class="memItemRight"><b>min</b> (auto &amp;&amp;selector) con
 template&lt;typename type_t&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__bag.html">xtd::collections::concurrent::concurrent_bag</a>&lt; type_t &gt;::value_type</td>
+          <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__queue.html">xtd::collections::concurrent::concurrent_queue</a>&lt; type_t &gt;::value_type</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -336,8 +330,8 @@ template&lt;typename type_t&gt; </div>
 
 </div>
 </div>
-<a id="afffd2f6e34ef71e61b5817cd13d845f9" name="afffd2f6e34ef71e61b5817cd13d845f9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afffd2f6e34ef71e61b5817cd13d845f9">&#9670;&#160;</a></span>reference</h2>
+<a id="a19d657a8fe94223e2fad718e327758d1" name="a19d657a8fe94223e2fad718e327758d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19d657a8fe94223e2fad718e327758d1">&#9670;&#160;</a></span>reference</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -345,7 +339,7 @@ template&lt;typename type_t&gt; </div>
 template&lt;typename type_t&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__bag.html">xtd::collections::concurrent::concurrent_bag</a>&lt; type_t &gt;::reference</td>
+          <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__queue.html">xtd::collections::concurrent::concurrent_queue</a>&lt; type_t &gt;::reference</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -354,8 +348,8 @@ template&lt;typename type_t&gt; </div>
 
 </div>
 </div>
-<a id="ad18d7668209747ae3820892ec6a6ca66" name="ad18d7668209747ae3820892ec6a6ca66"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad18d7668209747ae3820892ec6a6ca66">&#9670;&#160;</a></span>const_reference</h2>
+<a id="a0c0a4cf61b593feda8a70df2d0af4749" name="a0c0a4cf61b593feda8a70df2d0af4749"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c0a4cf61b593feda8a70df2d0af4749">&#9670;&#160;</a></span>const_reference</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -363,7 +357,7 @@ template&lt;typename type_t&gt; </div>
 template&lt;typename type_t&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__bag.html">xtd::collections::concurrent::concurrent_bag</a>&lt; type_t &gt;::const_reference</td>
+          <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__queue.html">xtd::collections::concurrent::concurrent_queue</a>&lt; type_t &gt;::const_reference</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -372,8 +366,8 @@ template&lt;typename type_t&gt; </div>
 
 </div>
 </div>
-<a id="abfd4c37f990ae902b24e82a02f6c28ae" name="abfd4c37f990ae902b24e82a02f6c28ae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abfd4c37f990ae902b24e82a02f6c28ae">&#9670;&#160;</a></span>collection_type</h2>
+<a id="a68c0057514fbb250733c86eba7cf4085" name="a68c0057514fbb250733c86eba7cf4085"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68c0057514fbb250733c86eba7cf4085">&#9670;&#160;</a></span>collection_type</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -381,43 +375,7 @@ template&lt;typename type_t&gt; </div>
 template&lt;typename type_t&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__bag.html">xtd::collections::concurrent::concurrent_bag</a>&lt; type_t &gt;::collection_type</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Represents the concurrent bag collection type. </p>
-
-</div>
-</div>
-<a id="ada4d273b66a1ac2e053a0a59f55ce9dc" name="ada4d273b66a1ac2e053a0a59f55ce9dc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ada4d273b66a1ac2e053a0a59f55ce9dc">&#9670;&#160;</a></span>local_storage_type</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename type_t&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__bag.html">xtd::collections::concurrent::concurrent_bag</a>&lt; type_t &gt;::local_storage_type</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Represents the concurrent bag collection type. </p>
-
-</div>
-</div>
-<a id="a458282905987a4d9d3bde79c1b89dd4e" name="a458282905987a4d9d3bde79c1b89dd4e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a458282905987a4d9d3bde79c1b89dd4e">&#9670;&#160;</a></span>storage_type</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename type_t&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__bag.html">xtd::collections::concurrent::concurrent_bag</a>&lt; type_t &gt;::storage_type</td>
+          <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__queue.html">xtd::collections::concurrent::concurrent_queue</a>&lt; type_t &gt;::collection_type</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -427,8 +385,8 @@ template&lt;typename type_t&gt; </div>
 </div>
 </div>
 <a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="adafe932da1e0b55c2f52f6b804a1ccd3" name="adafe932da1e0b55c2f52f6b804a1ccd3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adafe932da1e0b55c2f52f6b804a1ccd3">&#9670;&#160;</a></span>concurrent_bag() <span class="overload">[1/3]</span></h2>
+<a id="afb229a2563da547a47ed5af6a0d1d4b5" name="afb229a2563da547a47ed5af6a0d1d4b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb229a2563da547a47ed5af6a0d1d4b5">&#9670;&#160;</a></span>concurrent_queue() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -439,7 +397,7 @@ template&lt;typename type_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__bag.html">xtd::collections::concurrent::concurrent_bag</a>&lt; type_t &gt;::concurrent_bag </td>
+          <td class="memname"><a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__queue.html">xtd::collections::concurrent::concurrent_queue</a>&lt; type_t &gt;::concurrent_queue </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -452,12 +410,12 @@ template&lt;typename type_t&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__bag.html" title="Represents a thread-safe, unordered collection of objects.">xtd::collections::concurrent::concurrent_bag</a> &lt;type_t&gt; class. </p>
+<p>Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__queue.html" title="Represents a thread-safe first in-first out (FIFO) collection.">xtd::collections::concurrent::concurrent_queue</a> &lt;type_t&gt; class. </p>
 
 </div>
 </div>
-<a id="ac7d97f919d2819073cb169675a76c051" name="ac7d97f919d2819073cb169675a76c051"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac7d97f919d2819073cb169675a76c051">&#9670;&#160;</a></span>concurrent_bag() <span class="overload">[2/3]</span></h2>
+<a id="a896e8cbe3c757f98e6b39a25ca5e3f98" name="a896e8cbe3c757f98e6b39a25ca5e3f98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a896e8cbe3c757f98e6b39a25ca5e3f98">&#9670;&#160;</a></span>concurrent_queue() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -468,7 +426,7 @@ template&lt;typename type_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__bag.html">xtd::collections::concurrent::concurrent_bag</a>&lt; type_t &gt;::concurrent_bag </td>
+          <td class="memname"><a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__queue.html">xtd::collections::concurrent::concurrent_queue</a>&lt; type_t &gt;::concurrent_queue </td>
           <td>(</td>
           <td class="paramtype">std::initializer_list&lt; type_t &gt;</td>          <td class="paramname"><span class="paramname"><em>items</em></span></td><td>)</td>
           <td></td>
@@ -491,8 +449,8 @@ template&lt;typename type_t&gt; </div>
 
 </div>
 </div>
-<a id="ad692a7bb1f39ba469428bb17f663c6ec" name="ad692a7bb1f39ba469428bb17f663c6ec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad692a7bb1f39ba469428bb17f663c6ec">&#9670;&#160;</a></span>concurrent_bag() <span class="overload">[3/3]</span></h2>
+<a id="a9f72bbc394bd642812f4954ad6e8a4bf" name="a9f72bbc394bd642812f4954ad6e8a4bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f72bbc394bd642812f4954ad6e8a4bf">&#9670;&#160;</a></span>concurrent_queue() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -503,9 +461,9 @@ template&lt;typename type_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__bag.html">xtd::collections::concurrent::concurrent_bag</a>&lt; type_t &gt;::concurrent_bag </td>
+          <td class="memname"><a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__queue.html">xtd::collections::concurrent::concurrent_queue</a>&lt; type_t &gt;::concurrent_queue </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; <a class="el" href="#a87a49e609113fa181e7a0cddeb935f76">value_type</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>collection</em></span></td><td>)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; <a class="el" href="#a3e3f3dff9d3ebcae51fa9efeea42b6ac">value_type</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>collection</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -516,13 +474,13 @@ template&lt;typename type_t&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__bag.html" title="Represents a thread-safe, unordered collection of objects.">xtd::collections::concurrent::concurrent_bag</a> &lt;type_t&gt; class that contains elements copied from the specified collection. </p>
+<p>Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__queue.html" title="Represents a thread-safe first in-first out (FIFO) collection.">xtd::collections::concurrent::concurrent_queue</a> &lt;type_t&gt; class that contains elements copied from the specified collection. </p>
 
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a46b7084045fce6981d17917528abc92e" name="a46b7084045fce6981d17917528abc92e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a46b7084045fce6981d17917528abc92e">&#9670;&#160;</a></span>count()</h2>
+<a id="a4e54044ca6cedd232b8422ff05343758" name="a4e54044ca6cedd232b8422ff05343758"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e54044ca6cedd232b8422ff05343758">&#9670;&#160;</a></span>count()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -533,7 +491,7 @@ template&lt;typename type_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__bag.html">xtd::collections::concurrent::concurrent_bag</a>&lt; type_t &gt;::count </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__queue.html">xtd::collections::concurrent::concurrent_queue</a>&lt; type_t &gt;::count </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const -&gt; <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>
@@ -553,8 +511,8 @@ template&lt;typename type_t&gt; </div>
 
 </div>
 </div>
-<a id="a66e552a6c721dc994666b4df3e5966f0" name="a66e552a6c721dc994666b4df3e5966f0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a66e552a6c721dc994666b4df3e5966f0">&#9670;&#160;</a></span>is_empty()</h2>
+<a id="a286fbd939eb6706bd68128cf89002940" name="a286fbd939eb6706bd68128cf89002940"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a286fbd939eb6706bd68128cf89002940">&#9670;&#160;</a></span>is_read_only()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -565,37 +523,7 @@ template&lt;typename type_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__bag.html">xtd::collections::concurrent::concurrent_bag</a>&lt; type_t &gt;::is_empty </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const -&gt; bool</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Gets a value indicating whether the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__bag.html" title="Represents a thread-safe, unordered collection of objects.">xtd::collections::concurrent::concurrent_bag</a> &lt;type_t&gt; is emtpy. </p>
-<dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span> if the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__bag.html" title="Represents a thread-safe, unordered collection of objects.">xtd::collections::concurrent::concurrent_bag</a> &lt;type_t&gt; is empty; otherwise, <span class="tt">false</span>. </dd></dl>
-
-</div>
-</div>
-<a id="a72e1eaef3484217a88e18faa2e50fd8d" name="a72e1eaef3484217a88e18faa2e50fd8d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a72e1eaef3484217a88e18faa2e50fd8d">&#9670;&#160;</a></span>is_read_only()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename type_t&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__bag.html">xtd::collections::concurrent::concurrent_bag</a>&lt; type_t &gt;::is_read_only </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__queue.html">xtd::collections::concurrent::concurrent_queue</a>&lt; type_t &gt;::is_read_only </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const -&gt; bool</td>
@@ -608,16 +536,16 @@ template&lt;typename type_t&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Gets a value indicating whether the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__bag.html" title="Represents a thread-safe, unordered collection of objects.">xtd::collections::concurrent::concurrent_bag</a> &lt;type_t&gt; is read-only. </p>
-<dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span> if the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__bag.html" title="Represents a thread-safe, unordered collection of objects.">xtd::collections::concurrent::concurrent_bag</a> &lt;type_t&gt; is read-only; otherwise, <span class="tt">false</span>. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>A collection that is read-only does not allow the addition or removal of elements after the collection is created. Note that read-only in this context does not indicate whether individual elements of the collection can be modified, since the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__bag.html" title="Represents a thread-safe, unordered collection of objects.">xtd::collections::concurrent::concurrent_bag</a> &lt;type_t&gt; interface only supports addition and removal operations. For example, the <a class="el" href="#a72e1eaef3484217a88e18faa2e50fd8d" title="Gets a value indicating whether the xtd::collections::concurrent::concurrent_bag &lt;type_t&gt; is read-onl...">xtd::collections::concurrent::concurrent_bag::is_read_only</a> property of an array that is cast or converted to an <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__bag.html" title="Represents a thread-safe, unordered collection of objects.">xtd::collections::concurrent::concurrent_bag</a> &lt;type_t&gt; object returns <span class="tt">true</span>, even though individual array elements can be modified. </dd></dl>
+<p>Gets a value indicating whether the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__queue.html" title="Represents a thread-safe first in-first out (FIFO) collection.">xtd::collections::concurrent::concurrent_queue</a> &lt;type_t&gt; is read-only. </p>
+<dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span> if the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__queue.html" title="Represents a thread-safe first in-first out (FIFO) collection.">xtd::collections::concurrent::concurrent_queue</a> &lt;type_t&gt; is read-only; otherwise, <span class="tt">false</span>. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>A collection that is read-only does not allow the addition or removal of elements after the collection is created. Note that read-only in this context does not indicate whether individual elements of the collection can be modified, since the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__queue.html" title="Represents a thread-safe first in-first out (FIFO) collection.">xtd::collections::concurrent::concurrent_queue</a> &lt;type_t&gt; interface only supports addition and removal operations. For example, the <a class="el" href="#a286fbd939eb6706bd68128cf89002940" title="Gets a value indicating whether the xtd::collections::concurrent::concurrent_queue &lt;type_t&gt; is read-o...">xtd::collections::concurrent::concurrent_queue::is_read_only</a> property of an array that is cast or converted to an <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__queue.html" title="Represents a thread-safe first in-first out (FIFO) collection.">xtd::collections::concurrent::concurrent_queue</a> &lt;type_t&gt; object returns <span class="tt">true</span>, even though individual array elements can be modified. </dd></dl>
 
 <p>Implements <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html#abb7152db0c26d18e04304be98b4d9526">xtd::collections::generic::icollection&lt; type_t &gt;</a>.</p>
 
 </div>
 </div>
-<a id="a028f24e52cb7e1986aab7127822262c5" name="a028f24e52cb7e1986aab7127822262c5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a028f24e52cb7e1986aab7127822262c5">&#9670;&#160;</a></span>is_synchronized()</h2>
+<a id="a0121d283feb36ae3e736fb5aab9a7d7f" name="a0121d283feb36ae3e736fb5aab9a7d7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0121d283feb36ae3e736fb5aab9a7d7f">&#9670;&#160;</a></span>is_synchronized()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -628,7 +556,7 @@ template&lt;typename type_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__bag.html">xtd::collections::concurrent::concurrent_bag</a>&lt; type_t &gt;::is_synchronized </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__queue.html">xtd::collections::concurrent::concurrent_queue</a>&lt; type_t &gt;::is_synchronized </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const -&gt; bool</td>
@@ -641,7 +569,7 @@ template&lt;typename type_t&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Gets a value indicating whether access to the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__bag.html" title="Represents a thread-safe, unordered collection of objects.">xtd::collections::concurrent::concurrent_bag</a> &lt;type_t&gt; is synchronized (thread safe). </p>
+<p>Gets a value indicating whether access to the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__queue.html" title="Represents a thread-safe first in-first out (FIFO) collection.">xtd::collections::concurrent::concurrent_queue</a> &lt;type_t&gt; is synchronized (thread safe). </p>
 <dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span> if access to the ICollection is synchronized (thread safe); otherwise, <span class="tt">false</span>. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd><a class="el" href="classxtd_1_1collections_1_1concurrent_1_1iproducer__consumer__collection.html#a59012c22f4da931bf0bf2b5cd9bf8b6a" title="Gets an object that can be used to synchronize access to the the xtd::collections::generic::icollecti...">xtd::collections::concurrent::iproducer_consumer_collection::sync_root</a> returns an object, which can be used to synchronize access to the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a>. </dd>
 <dd>
@@ -663,8 +591,8 @@ The following code example shows how to lock the collection using the <a class="
 
 </div>
 </div>
-<a id="a472bb58dc33ea82850789a9177c06ebe" name="a472bb58dc33ea82850789a9177c06ebe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a472bb58dc33ea82850789a9177c06ebe">&#9670;&#160;</a></span>add()</h2>
+<a id="ae44811af449f875de6d77c3ece51dc56" name="ae44811af449f875de6d77c3ece51dc56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae44811af449f875de6d77c3ece51dc56">&#9670;&#160;</a></span>clear()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -675,37 +603,34 @@ template&lt;typename type_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__bag.html">xtd::collections::concurrent::concurrent_bag</a>&lt; type_t &gt;::add </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__queue.html">xtd::collections::concurrent::concurrent_queue</a>&lt; type_t &gt;::clear </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="#ad18d7668209747ae3820892ec6a6ca66">const_reference</a></td>          <td class="paramname"><span class="paramname"><em>item</em></span></td><td>)</td>
-          <td> -&gt; void</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel override">override</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Adds an item to the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__bag.html" title="Represents a thread-safe, unordered collection of objects.">xtd::collections::concurrent::concurrent_bag</a> &lt;type_t&gt;. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">item</td><td>The object to add to the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__bag.html" title="Represents a thread-safe, unordered collection of objects.">xtd::collections::concurrent::concurrent_bag</a> &lt;type_t&gt;. </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Removes all items from the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt;. </p>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">xtd::not_supported_exception</td><td>The <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__bag.html" title="Represents a thread-safe, unordered collection of objects.">xtd::collections::concurrent::concurrent_bag</a> &lt;type_t&gt; is read-only. </td></tr>
+    <tr><td class="paramname">xtd::not_supported_exception</td><td>The <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt; is read-only. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section remark"><dt>Remarks</dt><dd><a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html#a96b07ac7ee1943ec2b694480b81e0808">xtd::collections::generic::icollection::count</a> must be set to 0, and references to other objects from elements of the collection must be released. </dd></dl>
+
+<p>Implements <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html#a3e3ee80f03a13a57e1b5f6c4395b5714">xtd::collections::generic::icollection&lt; type_t &gt;</a>.</p>
 
 </div>
 </div>
-<a id="af5bdc2672ec61c05286714cc2d0b3e7f" name="af5bdc2672ec61c05286714cc2d0b3e7f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af5bdc2672ec61c05286714cc2d0b3e7f">&#9670;&#160;</a></span>copy_to()</h2>
+<a id="aee6ead44e9c913b65f9b890f847d0527" name="aee6ead44e9c913b65f9b890f847d0527"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee6ead44e9c913b65f9b890f847d0527">&#9670;&#160;</a></span>copy_to()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -716,9 +641,9 @@ template&lt;typename type_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__bag.html">xtd::collections::concurrent::concurrent_bag</a>&lt; type_t &gt;::copy_to </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__queue.html">xtd::collections::concurrent::concurrent_queue</a>&lt; type_t &gt;::copy_to </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="#a87a49e609113fa181e7a0cddeb935f76">value_type</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>array</em></span>, </td>
+          <td class="paramtype"><a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="#a3e3f3dff9d3ebcae51fa9efeea42b6ac">value_type</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>array</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -733,25 +658,25 @@ template&lt;typename type_t&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Copies the elements of the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__bag.html" title="Represents a thread-safe, unordered collection of objects.">xtd::collections::concurrent::concurrent_bag</a> &lt;type_t&gt; to an <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a>, starting at a particular <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> index. </p>
+<p>Copies the elements of the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__queue.html" title="Represents a thread-safe first in-first out (FIFO) collection.">xtd::collections::concurrent::concurrent_queue</a> &lt;type_t&gt; to an <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a>, starting at a particular <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> index. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">array</td><td>The one-dimensional <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> that is the destination of the elements copied from <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__bag.html" title="Represents a thread-safe, unordered collection of objects.">xtd::collections::concurrent::concurrent_bag</a> &lt;type_t&gt;. The <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> must have zero-based indexing. </td></tr>
+    <tr><td class="paramname">array</td><td>The one-dimensional <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> that is the destination of the elements copied from <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__queue.html" title="Represents a thread-safe first in-first out (FIFO) collection.">xtd::collections::concurrent::concurrent_queue</a> &lt;type_t&gt;. The <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> must have zero-based indexing. </td></tr>
     <tr><td class="paramname">array_index</td><td>The zero-based index in <span class="tt"><a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">array</a></span> at which copying begins. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">xtd::argument_exception</td><td>The number of elements in the source <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__bag.html" title="Represents a thread-safe, unordered collection of objects.">xtd::collections::concurrent::concurrent_bag</a> &lt;type_t&gt; is greater than the available space from `array_index` to the end of the destination `array`. </td></tr>
+    <tr><td class="paramname">xtd::argument_exception</td><td>The number of elements in the source <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__queue.html" title="Represents a thread-safe first in-first out (FIFO) collection.">xtd::collections::concurrent::concurrent_queue</a> &lt;type_t&gt; is greater than the available space from `array_index` to the end of the destination `array`. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="a31d077706a9850dade7fb1777583aa75" name="a31d077706a9850dade7fb1777583aa75"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a31d077706a9850dade7fb1777583aa75">&#9670;&#160;</a></span>get_enumerator()</h2>
+<a id="ab76b4be088a58d9d0066e29a9bf0d30a" name="ab76b4be088a58d9d0066e29a9bf0d30a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab76b4be088a58d9d0066e29a9bf0d30a">&#9670;&#160;</a></span>enqueue()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -762,10 +687,51 @@ template&lt;typename type_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__bag.html">xtd::collections::concurrent::concurrent_bag</a>&lt; type_t &gt;::get_enumerator </td>
+          <td class="memname">virtual auto <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__queue.html">xtd::collections::concurrent::concurrent_queue</a>&lt; type_t &gt;::enqueue </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a0c0a4cf61b593feda8a70df2d0af4749">const_reference</a></td>          <td class="paramname"><span class="paramname"><em>item</em></span></td><td>)</td>
+          <td> -&gt; void</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adds an item to the end of the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__queue.html" title="Represents a thread-safe first in-first out (FIFO) collection.">xtd::collections::concurrent::concurrent_queue</a> &lt;type_t&gt;. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">item</td><td>The object to add to the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__queue.html" title="Represents a thread-safe first in-first out (FIFO) collection.">xtd::collections::concurrent::concurrent_queue</a> &lt;type_t&gt;. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">xtd::not_supported_exception</td><td>The <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__queue.html" title="Represents a thread-safe first in-first out (FIFO) collection.">xtd::collections::concurrent::concurrent_queue</a> &lt;type_t&gt; is read-only. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a703297b04cfedd6a4bd80bc250d6a264" name="a703297b04cfedd6a4bd80bc250d6a264"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a703297b04cfedd6a4bd80bc250d6a264">&#9670;&#160;</a></span>get_enumerator()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename type_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__queue.html">xtd::collections::concurrent::concurrent_queue</a>&lt; type_t &gt;::get_enumerator </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const -&gt; <a class="el" href="structxtd_1_1collections_1_1generic_1_1enumerator.html">xtd::collections::generic::enumerator</a>&lt; <a class="el" href="#a87a49e609113fa181e7a0cddeb935f76">value_type</a> &gt;</td>
+          <td> const -&gt; <a class="el" href="structxtd_1_1collections_1_1generic_1_1enumerator.html">xtd::collections::generic::enumerator</a>&lt; <a class="el" href="#a3e3f3dff9d3ebcae51fa9efeea42b6ac">value_type</a> &gt;</td>
         </tr>
       </table>
   </td>
@@ -777,14 +743,14 @@ template&lt;typename type_t&gt; </div>
 
 <p>Returns an enumerator that iterates through a collection. </p>
 <dl class="section return"><dt>Returns</dt><dd>An <a class="el" href="structxtd_1_1collections_1_1generic_1_1enumerator.html" title="Supports a simple iteration over a generic collection.">xtd::collections::generic::enumerator</a> object that can be used to iterate through the collection.</dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000019">Todo</a></b></dt><dd>: use enumerator with a snapshot of the collection instead reference : enumerator {items_, enumerator_mode::snapshot}; </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000020">Todo</a></b></dt><dd>: use enumerator with a snapshot of the collection instead reference : enumerator {items_, enumerator_mode::snapshot}; </dd></dl>
 
 <p>Implements <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1iproducer__consumer__collection.html#abbe7dc42ca19b8e43cb1aa8125872f10">xtd::collections::concurrent::iproducer_consumer_collection&lt; type_t &gt;</a>.</p>
 
 </div>
 </div>
-<a id="adb954079c7bcc99b5ca1de1824f893f0" name="adb954079c7bcc99b5ca1de1824f893f0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adb954079c7bcc99b5ca1de1824f893f0">&#9670;&#160;</a></span>to_array()</h2>
+<a id="ab52f627ac26f52d1769606c0ee645939" name="ab52f627ac26f52d1769606c0ee645939"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab52f627ac26f52d1769606c0ee645939">&#9670;&#160;</a></span>to_array()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -795,10 +761,10 @@ template&lt;typename type_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__bag.html">xtd::collections::concurrent::concurrent_bag</a>&lt; type_t &gt;::to_array </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__queue.html">xtd::collections::concurrent::concurrent_queue</a>&lt; type_t &gt;::to_array </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const -&gt; <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="#a87a49e609113fa181e7a0cddeb935f76">value_type</a> &gt;</td>
+          <td> const -&gt; <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="#a3e3f3dff9d3ebcae51fa9efeea42b6ac">value_type</a> &gt;</td>
         </tr>
       </table>
   </td>
@@ -808,7 +774,7 @@ template&lt;typename type_t&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Copies the elements contained in the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__bag.html" title="Represents a thread-safe, unordered collection of objects.">xtd::collections::concurrent::concurrent_bag</a> &lt;type_t&gt; to a new array. </p>
+<p>Copies the elements contained in the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__queue.html" title="Represents a thread-safe first in-first out (FIFO) collection.">xtd::collections::concurrent::concurrent_queue</a> &lt;type_t&gt; to a new array. </p>
 <dl class="section return"><dt>Returns</dt><dd>A new array containing the elements copied from the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1iproducer__consumer__collection.html" title="Defines methods to manipulate thread-safe collections intended for producer/consumer usage....">xtd::collections::concurrent::iproducer_consumer_collection</a> &lt;type_t. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The method provides a snapshot of the underlying collection. It is possible for other threads to add or remove items immediately after the array is made. </dd></dl>
 
@@ -816,8 +782,8 @@ template&lt;typename type_t&gt; </div>
 
 </div>
 </div>
-<a id="a683d1cde2b019d0a7fe4cffc71cd4835" name="a683d1cde2b019d0a7fe4cffc71cd4835"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a683d1cde2b019d0a7fe4cffc71cd4835">&#9670;&#160;</a></span>to_string()</h2>
+<a id="a88f65785286adda955c2a2b89fbf5bdb" name="a88f65785286adda955c2a2b89fbf5bdb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88f65785286adda955c2a2b89fbf5bdb">&#9670;&#160;</a></span>to_string()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -828,7 +794,7 @@ template&lt;typename type_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__bag.html">xtd::collections::concurrent::concurrent_bag</a>&lt; type_t &gt;::to_string </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__queue.html">xtd::collections::concurrent::concurrent_queue</a>&lt; type_t &gt;::to_string </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td>
@@ -848,8 +814,8 @@ template&lt;typename type_t&gt; </div>
 
 </div>
 </div>
-<a id="a4a8b83490b8ed6a8e74a3d037db04a69" name="a4a8b83490b8ed6a8e74a3d037db04a69"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4a8b83490b8ed6a8e74a3d037db04a69">&#9670;&#160;</a></span>try_add()</h2>
+<a id="ae05085c8be23bd6ab9bdc90cdaf088d5" name="ae05085c8be23bd6ab9bdc90cdaf088d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae05085c8be23bd6ab9bdc90cdaf088d5">&#9670;&#160;</a></span>try_dequeue()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -860,32 +826,32 @@ template&lt;typename type_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__bag.html">xtd::collections::concurrent::concurrent_bag</a>&lt; type_t &gt;::try_add </td>
+          <td class="memname">virtual auto <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__queue.html">xtd::collections::concurrent::concurrent_queue</a>&lt; type_t &gt;::try_dequeue </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="#ad18d7668209747ae3820892ec6a6ca66">const_reference</a></td>          <td class="paramname"><span class="paramname"><em>item</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="#a19d657a8fe94223e2fad718e327758d1">reference</a></td>          <td class="paramname"><span class="paramname"><em>result</em></span></td><td>)</td>
           <td> -&gt; bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel override">override</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Attempts to add an object to the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__bag.html" title="Represents a thread-safe, unordered collection of objects.">xtd::collections::concurrent::concurrent_bag</a> &lt;type_t&gt;. </p>
+<p>Tries to remove and return the object at the beginning of the concurrent queue. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">item</td><td>The object to add to the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1iproducer__consumer__collection.html" title="Defines methods to manipulate thread-safe collections intended for producer/consumer usage....">xtd::collections::concurrent::iproducer_consumer_collection</a> &lt;type_t&gt;. </td></tr>
+    <tr><td class="paramname">item</td><td>When this method returns, if the operation was successful, result contains the object removed. If no object was available to be removed, the value is unspecified. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span> if the object was added successfully; otherwise, <span class="tt">false</span>. @exceprion <a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::argument_exception</a> The item was invalid for this collection. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span> if an element was removed and returned from the beginning of the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__queue.html" title="Represents a thread-safe first in-first out (FIFO) collection.">xtd::collections::concurrent::concurrent_queue</a> &lt;type_t&gt; successfully; otherwise, <span class="tt">false</span>. </dd></dl>
 
 </div>
 </div>
-<a id="ae256abd10bdeaccf7bf7c7c27d1619d3" name="ae256abd10bdeaccf7bf7c7c27d1619d3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae256abd10bdeaccf7bf7c7c27d1619d3">&#9670;&#160;</a></span>try_peek()</h2>
+<a id="a0ab7158bd35af339755d8f2f426994e3" name="a0ab7158bd35af339755d8f2f426994e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ab7158bd35af339755d8f2f426994e3">&#9670;&#160;</a></span>try_peek()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -896,9 +862,9 @@ template&lt;typename type_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__bag.html">xtd::collections::concurrent::concurrent_bag</a>&lt; type_t &gt;::try_peek </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__queue.html">xtd::collections::concurrent::concurrent_queue</a>&lt; type_t &gt;::try_peek </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="#afffd2f6e34ef71e61b5817cd13d845f9">reference</a></td>          <td class="paramname"><span class="paramname"><em>item</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="#a19d657a8fe94223e2fad718e327758d1">reference</a></td>          <td class="paramname"><span class="paramname"><em>result</em></span></td><td>)</td>
           <td> const -&gt; bool</td>
         </tr>
       </table>
@@ -909,10 +875,10 @@ template&lt;typename type_t&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Attempts to return an object from the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__bag.html" title="Represents a thread-safe, unordered collection of objects.">xtd::collections::concurrent::concurrent_bag</a> &lt;type_t&gt; without removing it. </p>
+<p>Tries to return an object from the beginning of the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__queue.html" title="Represents a thread-safe first in-first out (FIFO) collection.">xtd::collections::concurrent::concurrent_queue</a> &lt;type_t&gt; without removing it. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">item</td><td>When this method returns, result contains an object from the ConcurrentBag&lt;T&gt; or the default value of T if the operation failed. </td></tr>
+    <tr><td class="paramname">result</td><td>When this method returns, result contains an object from the beginning of the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__queue.html" title="Represents a thread-safe first in-first out (FIFO) collection.">xtd::collections::concurrent::concurrent_queue</a> &lt;type_t&gt; or an unspecified value if the operation failed. </td></tr>
   </table>
   </dd>
 </dl>
@@ -920,44 +886,8 @@ template&lt;typename type_t&gt; </div>
 
 </div>
 </div>
-<a id="af988cb94e870c7d0e9e77fa9813b4b46" name="af988cb94e870c7d0e9e77fa9813b4b46"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af988cb94e870c7d0e9e77fa9813b4b46">&#9670;&#160;</a></span>try_take()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename type_t&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__bag.html">xtd::collections::concurrent::concurrent_bag</a>&lt; type_t &gt;::try_take </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="#afffd2f6e34ef71e61b5817cd13d845f9">reference</a></td>          <td class="paramname"><span class="paramname"><em>item</em></span></td><td>)</td>
-          <td> -&gt; bool</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel override">override</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Attempts to remove and return an object from the xtd::collections::concurrent::concurrent &lt;type_t&gt;. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">item</td><td>When this method returns, if the object was removed and returned successfully, item contains the removed object. If no object was available to be removed, the value is unspecified. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span> if an object was removed and returned successfully; otherwise, <span class="tt">false</span>. </dd></dl>
-
-</div>
-</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>xtd.core/include/xtd/collections/concurrent/<a class="el" href="concurrent__bag_8hpp_source.html">concurrent_bag.hpp</a></li>
+<li>xtd.core/include/xtd/collections/concurrent/<a class="el" href="concurrent__queue_8hpp_source.html">concurrent_queue.hpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->

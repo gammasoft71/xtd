@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 		<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-		<title>xtd: concurrent</title>
+		<title>xtd: xtd.core/include/xtd/collections/concurrent/concurrent_queue.hpp File Reference</title>
     <link href="favicon.png" rel="shortcut icon" type="image/png"/>
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
@@ -79,8 +79,6 @@ document.addEventListener('DOMContentLoaded', () => {
     </li>
   </ul>
 </div><!-- main-nav -->
-</div><!-- top -->
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -102,23 +100,44 @@ document.addEventListener('DOMContentLoaded', () => {
 </div>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><b>xtd.core</b></li><li class="navelem"><b>include</b></li><li class="navelem"><b>xtd</b></li><li class="navelem"><b>collections</b></li><li class="navelem"><b>concurrent</b></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
-  <div class="headertitle"><div class="title">concurrent <div class="ingroups"><a class="el" href="group__system.html">system</a> &raquo; <a class="el" href="group__collections.html">collections</a></div></div></div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#namespaces">Namespaces</a>  </div>
+  <div class="headertitle"><div class="title">concurrent_queue.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Definition</h2>
-<div class="textblock"><p>Contains concurrent collections definitions. </p>
-</div><table class="memberdecls">
+<div class="textblock"><code>#include &quot;<a class="el" href="iproducer__consumer__collection_8hpp_source.html">iproducer_consumer_collection.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="generic_2queue_8hpp_source.html">../generic/queue.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="threading_2lock__guard_8hpp_source.html">../../threading/lock_guard.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="object_8hpp_source.html">../../object.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="unused_8hpp_source.html">../../unused.hpp</a>&quot;</code><br />
+</div><a name="details" id="details"></a><h2 id="header-details" class="groupheader">Definition</h2>
+<div class="textblock"><p>Contains <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__queue.html" title="Represents a thread-safe first in-first out (FIFO) collection.">xtd::collections::concurrent::concurrent_queue</a> &lt;type_t&gt; class. </p>
+<dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2026 Gammasoft. All rights reserved. </dd></dl>
+</div>
+<p><a href="concurrent__queue_8hpp_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:xtd_3A_3Acollections_3A_3Aconcurrent_3A_3Aconcurrent_5Fbag_3C_20type_5Ft_20_3E" id="r_xtd_3A_3Acollections_3A_3Aconcurrent_3A_3Aconcurrent_5Fbag_3C_20type_5Ft_20_3E"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__bag.html">xtd::collections::concurrent::concurrent_bag&lt; type_t &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a thread-safe, unordered collection of objects.  <a href="classxtd_1_1collections_1_1concurrent_1_1concurrent__bag.html#details">More...</a><br /></td></tr>
 <tr class="memitem:xtd_3A_3Acollections_3A_3Aconcurrent_3A_3Aconcurrent_5Fqueue_3C_20type_5Ft_20_3E" id="r_xtd_3A_3Acollections_3A_3Aconcurrent_3A_3Aconcurrent_5Fqueue_3C_20type_5Ft_20_3E"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__queue.html">xtd::collections::concurrent::concurrent_queue&lt; type_t &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a thread-safe first in-first out (FIFO) collection.  <a href="classxtd_1_1collections_1_1concurrent_1_1concurrent__queue.html#details">More...</a><br /></td></tr>
-<tr class="memitem:xtd_3A_3Acollections_3A_3Aconcurrent_3A_3Aiproducer_5Fconsumer_5Fcollection_3C_20type_5Ft_20_3E" id="r_xtd_3A_3Acollections_3A_3Aconcurrent_3A_3Aiproducer_5Fconsumer_5Fcollection_3C_20type_5Ft_20_3E"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1collections_1_1concurrent_1_1iproducer__consumer__collection.html">xtd::collections::concurrent::iproducer_consumer_collection&lt; type_t &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines methods to manipulate thread-safe collections intended for producer/consumer usage. This interface provides a unified representation for producer/consumer collections so that higher level abstractions such as xtd::collections::concurrent::blocking_collection &lt;type_t&gt; can use the collection as the underlying storage mechanism.  <a href="classxtd_1_1collections_1_1concurrent_1_1iproducer__consumer__collection.html#details">More...</a><br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:xtd" id="r_xtd"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="namespacextd.html">xtd</a></td></tr>
+<tr class="memdesc:namespacextd"><td class="mdescLeft">&#160;</td><td class="mdescRight">The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more. <br /></td></tr>
+<tr class="memitem:xtd_3A_3Acollections" id="r_xtd_3A_3Acollections"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="namespacextd_1_1collections.html">xtd::collections</a></td></tr>
+<tr class="memdesc:namespacextd_1_1collections"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="namespacextd_1_1collections.html" title="The xtd::collections namespace contains interfaces and classes that define various collections of obj...">xtd::collections</a> namespace contains interfaces and classes that define various collections of objects, such as lists, queues, bit arrays, hash tables and dictionaries. <br /></td></tr>
+<tr class="memitem:xtd_3A_3Acollections_3A_3Aconcurrent" id="r_xtd_3A_3Acollections_3A_3Aconcurrent"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="namespacextd_1_1collections_1_1concurrent.html">xtd::collections::concurrent</a></td></tr>
+<tr class="memdesc:namespacextd_1_1collections_1_1concurrent"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides several thread-safe collection classes that should be used in place of the corresponding types in the <a class="el" href="namespacextd_1_1collections.html" title="The xtd::collections namespace contains interfaces and classes that define various collections of obj...">xtd::collections</a> and <a class="el" href="namespacextd_1_1collections_1_1generic.html" title="The xtd::collections::generic namespace contains interfaces and classes that define generic collectio...">xtd::collections::generic</a> namespaces whenever multiple threads are accessing the collection concurrently.<br  />
+ However, access to elements of a collection object through extension methods or through explicit interface implementations are not guaranteed to be thread-safe and may need to be synchronized by the caller. <br /></td></tr>
 </table>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
