@@ -141,7 +141,7 @@ class xtd::collections::generic::enumerable_generator&lt; type_t &gt;</div><p>Re
 <div class="line"> </div>
 <div class="line">[[nodiscard]] <span class="keyword">auto</span> odd_numbers_generator(<span class="keywordtype">int</span> <a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#ab382411ea7fea61caee72efd5d052f20">count</a> = 100, <span class="keywordtype">int</span> min_value = 0, <span class="keywordtype">int</span> max_value = 100) -&gt; enumerable_generator&lt;int&gt; {</div>
 <div class="line">  <span class="keyword">auto</span> rnd = <a class="code hl_class" href="classxtd_1_1random.html">xtd::random</a> {};</div>
-<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> _ : range(count))</div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> __ : range(count))</div>
 <div class="line">    <span class="keyword">co_yield</span> rnd.<a class="code hl_function" href="classxtd_1_1random.html#a565fba72ee5fa860f4b283b02975aa7a">next</a>(min_value, max_value) | 1;</div>
 <div class="line">}</div>
 <div class="line"> </div>
