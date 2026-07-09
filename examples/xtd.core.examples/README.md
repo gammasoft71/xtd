@@ -53,6 +53,10 @@
 * [forward_iterable](concepts/forward_iterable/README.md) shows how to use how to use [xtd:: forward_iterable](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1 forward__iterable.html) concept.
 * [stringable](concepts/stringable/README.md) shows how to use how to use [xtd::stringable](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1stringable.html) concept.
 
+## [concurrent_collections](concurrent_collections/README.md)
+
+* [concurrent_queue](concurrent_collections/concurrent_queue/README.md) shows how to use [xtd::collections::concurrent::concurrent_queue](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1concurrent_1_1concurrent__queue.html) class.
+
 ## [Configuration](configuration/README.md)
 
 * [file_settings](configuration/file_settings/README.md) shows how to use [xtd::consiguration::file_settings](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1configuration_1_1file__settings.html) object.

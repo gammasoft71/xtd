@@ -11,6 +11,7 @@ add_projects(
   boxing
   collections
   concepts
+  concurrent_collections
   configuration
   console
   convert
