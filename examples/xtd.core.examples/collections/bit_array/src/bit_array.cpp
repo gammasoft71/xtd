@@ -2,7 +2,7 @@
 
 class program {
 public:
-  static auto main() -> void {
+  static auto main() {
     // Creates and initializes several bit_arrays.
     auto my_ba1 = collections::bit_array(5_z);
     

@@ -40,7 +40,7 @@ public:
     }
   };
   
-  static auto main() -> void {
+  static auto main() {
     auto people_array = collections::array_list {
       person {"John", "Smith"},
       person {"Jim", "Johnson"},

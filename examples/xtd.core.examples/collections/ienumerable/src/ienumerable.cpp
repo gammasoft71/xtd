@@ -61,7 +61,7 @@ public:
     }
   };
 
-  static auto main() -> void {
+  static auto main() {
     auto people_array = xtd::array<person> {
       person {"John", "Smith"},
       person {"Jim", "Johnson"},

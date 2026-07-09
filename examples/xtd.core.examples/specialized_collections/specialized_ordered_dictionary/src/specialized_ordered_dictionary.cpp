@@ -2,7 +2,7 @@
 
 class example {
 public:
-  static auto main() -> void {
+  static auto main() {
     // Creates and initializes a ordered_dictionary.
     auto my_ordered_dictionary = xtd::collections::specialized::ordered_dictionary {};
     my_ordered_dictionary.add("test_key1", "test_value1");
