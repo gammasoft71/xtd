@@ -2,7 +2,7 @@
 
 class example {
 public:
-  static auto main() -> void {
+  static auto main() {
     // Create a new sorted dictionary of strings, with string keys.
     auto open_with = sorted_dictionary<string, string> {};
     
