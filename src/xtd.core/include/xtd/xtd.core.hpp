@@ -386,6 +386,7 @@
 #include "byte.hpp"
 #include "byte_object.hpp"
 #include "call_once.hpp"
+#include "callable.hpp"
 #include "cdebug.hpp"
 #include "char.hpp"
 #include "char16.hpp"
