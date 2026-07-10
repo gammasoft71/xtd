@@ -500,6 +500,7 @@
 #include "invalid_handle.hpp"
 #include "invalid_operation_exception.hpp"
 #include "invalid_program_exception.hpp"
+#include "invocable.hpp"
 #include "iobservable.hpp"
 #include "iobserver.hpp"
 #include "iprogress.hpp"

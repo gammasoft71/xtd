@@ -84,7 +84,7 @@
 🟢   |    |    |- xtd::multipliable
 🟢   |    |    |- xtd::subtractable
 🟢   |    |- xtd::modable
-🔴   |- xtd::callable = invokable
+🟢   |- xtd::callable = invokable
 🔴   |- xtd::clonable
 🟢   |- xtd::decrementable (&&)
 🟢   |    |- xtd::post_decrementable
@@ -99,7 +99,7 @@
 🟢   |- xtd::incrementable (&&)
 🟢   |    |- xtd::post_incrementable
 🟢   |    |- xtd::pre_incrementable
-🔴   |- xtd::invokable
+🔴   |- xtd::invocable = callable
 🔴   |- xtd::nullable
 🔴   |- xtd::observable
 🔴   |- xtd::random_access_iterable (&&)
