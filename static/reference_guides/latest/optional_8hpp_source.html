@@ -123,10 +123,27 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  <span class="keyword">template</span>&lt;<span class="keyword">typename</span> type_t&gt;</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="group__types.html#gac3e508084ce85854c55799f802c7e7ce">   26</a></span>  <span class="keyword">using </span><a class="code hl_typedef" href="group__types.html#gac3e508084ce85854c55799f802c7e7ce">optional</a> = std::optional&lt;type_t&gt;;</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>}</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> optional_t, <span class="keyword">typename</span> default_value_t&gt;</div>
+<div class="foldopen" id="foldopen00034" data-start="{" data-end="}">
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="optional_8hpp.html#a322c8d2a5995a2c0450ee33448158571">   34</a></span>optional_t <a class="code hl_function" href="optional_8hpp.html#a322c8d2a5995a2c0450ee33448158571">operator |</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="group__types.html#gac3e508084ce85854c55799f802c7e7ce">xtd::optional&lt;optional_t&gt;</a>&amp; optional, default_value_t&amp;&amp; default_value) {</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  <span class="keywordflow">return</span> optional.value_or(std::forward&lt;default_value_t&gt;(default_value));</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>}</div>
+</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> optional_t, <span class="keyword">typename</span> default_value_t&gt;</div>
+<div class="foldopen" id="foldopen00043" data-start="{" data-end="}">
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="optional_8hpp.html#a26819680b83c0a787f6adbb9ae4ab061">   43</a></span><a class="code hl_typedef" href="group__types.html#gac3e508084ce85854c55799f802c7e7ce">xtd::optional&lt;optional_t&gt;</a>&amp; <a class="code hl_function" href="optional_8hpp.html#a26819680b83c0a787f6adbb9ae4ab061">operator |=</a>(<a class="code hl_typedef" href="group__types.html#gac3e508084ce85854c55799f802c7e7ce">xtd::optional&lt;optional_t&gt;</a>&amp; optional, default_value_t&amp;&amp; default_value) {</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  <span class="keywordflow">if</span> (!optional) optional = std::forward&lt;default_value_t&gt;(default_value);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  <span class="keywordflow">return</span> optional;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>}</div>
+</div>
 <div class="ttc" id="a____xtd__std__version_8hpp_html"><div class="ttname"><a href="____xtd__std__version_8hpp.html">__xtd_std_version.hpp</a></div></div>
 <div class="ttc" id="ageneric__stream__output_8hpp_html"><div class="ttname"><a href="generic__stream__output_8hpp.html">generic_stream_output.hpp</a></div><div class="ttdoc">Contains generic stream output methods.</div></div>
 <div class="ttc" id="agroup__types_html_gac3e508084ce85854c55799f802c7e7ce"><div class="ttname"><a href="group__types.html#gac3e508084ce85854c55799f802c7e7ce">xtd::optional</a></div><div class="ttdeci">std::optional&lt; type_t &gt; optional</div><div class="ttdoc">Represents the optional alias on std::optional.</div><div class="ttdef"><b>Definition</b> optional.hpp:26</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
+<div class="ttc" id="aoptional_8hpp_html_a26819680b83c0a787f6adbb9ae4ab061"><div class="ttname"><a href="optional_8hpp.html#a26819680b83c0a787f6adbb9ae4ab061">operator|=</a></div><div class="ttdeci">xtd::optional&lt; optional_t &gt; &amp; operator|=(xtd::optional&lt; optional_t &gt; &amp;optional, default_value_t &amp;&amp;default_value)</div><div class="ttdoc">Sets the default value if the contained value of specified optional i empty (equal to xtd::nullopt)....</div><div class="ttdef"><b>Definition</b> optional.hpp:43</div></div>
+<div class="ttc" id="aoptional_8hpp_html_a322c8d2a5995a2c0450ee33448158571"><div class="ttname"><a href="optional_8hpp.html#a322c8d2a5995a2c0450ee33448158571">operator|</a></div><div class="ttdeci">optional_t operator|(const xtd::optional&lt; optional_t &gt; &amp;optional, default_value_t &amp;&amp;default_value)</div><div class="ttdoc">Gets the contained value of specified optional if available; otherwhise the specified default_value.</div><div class="ttdef"><b>Definition</b> optional.hpp:34</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->

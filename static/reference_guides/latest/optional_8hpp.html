@@ -109,7 +109,8 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="header">
   <div class="summary">
 <a href="#namespaces">Namespaces</a> &#124;
-<a href="#typedef-members">Typedefs</a>  </div>
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">optional.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -130,7 +131,85 @@ Typedefs</h2></td></tr>
 <tr class="memitem:gac3e508084ce85854c55799f802c7e7ce" id="r_gac3e508084ce85854c55799f802c7e7ce"><td class="memTemplParams" colspan="2">template&lt;typename type_t&gt; </td></tr>
 <tr class="memitem:gac3e508084ce85854c55799f802c7e7ce template"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="group__types.html#gac3e508084ce85854c55799f802c7e7ce">xtd::optional</a></td></tr>
 <tr class="memdesc:gac3e508084ce85854c55799f802c7e7ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the optional alias on <a href="https://en.cppreference.com/w/cpp/utility/optional">std::optional</a>.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a322c8d2a5995a2c0450ee33448158571" id="r_a322c8d2a5995a2c0450ee33448158571"><td class="memTemplParams" colspan="2">template&lt;typename optional_t, typename default_value_t&gt; </td></tr>
+<tr class="memitem:a322c8d2a5995a2c0450ee33448158571 template"><td class="memItemLeft">optional_t&#160;</td><td class="memItemRight"><a class="el" href="#a322c8d2a5995a2c0450ee33448158571">operator|</a> (const <a class="el" href="group__types.html#gac3e508084ce85854c55799f802c7e7ce">xtd::optional</a>&lt; optional_t &gt; &amp;optional, default_value_t &amp;&amp;default_value)</td></tr>
+<tr class="memdesc:a322c8d2a5995a2c0450ee33448158571"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the contained value of specified optional if available; otherwhise the specified default_value.  <br /></td></tr>
+<tr class="memitem:a26819680b83c0a787f6adbb9ae4ab061" id="r_a26819680b83c0a787f6adbb9ae4ab061"><td class="memTemplParams" colspan="2">template&lt;typename optional_t, typename default_value_t&gt; </td></tr>
+<tr class="memitem:a26819680b83c0a787f6adbb9ae4ab061 template"><td class="memItemLeft"><a class="el" href="group__types.html#gac3e508084ce85854c55799f802c7e7ce">xtd::optional</a>&lt; optional_t &gt; &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a26819680b83c0a787f6adbb9ae4ab061">operator|=</a> (<a class="el" href="group__types.html#gac3e508084ce85854c55799f802c7e7ce">xtd::optional</a>&lt; optional_t &gt; &amp;optional, default_value_t &amp;&amp;default_value)</td></tr>
+<tr class="memdesc:a26819680b83c0a787f6adbb9ae4ab061"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the default value if the contained value of specified optional i empty (equal to <a class="el" href="group__types.html#gaf0620df1fd6c165eaad955c07e15097d" title="Represents a nullopt value. Used to indicate that an std::optional does not contain a value.">xtd::nullopt</a>)..  <br /></td></tr>
 </table>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
+<a id="a322c8d2a5995a2c0450ee33448158571" name="a322c8d2a5995a2c0450ee33448158571"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a322c8d2a5995a2c0450ee33448158571">&#9670;&#160;</a></span>operator|()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename optional_t, typename default_value_t&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">optional_t operator| </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__types.html#gac3e508084ce85854c55799f802c7e7ce">xtd::optional</a>&lt; optional_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>optional</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">default_value_t &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>default_value</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the contained value of specified optional if available; otherwhise the specified default_value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">optional</td><td>The optional to gets the value. </td></tr>
+    <tr><td class="paramname">default_value</td><td>The default value if optioanl is empty. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The contained value of optional if available; otherwise the default value. </dd></dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="enum_class_flags_without_helpers_8cpp-example.html#a0">enum_class_flags_without_helpers.cpp</a>, and <a class="el" href="format_enum_class_flags_without_helper_8cpp-example.html#a0">format_enum_class_flags_without_helper.cpp</a>.</dd>
+</dl>
+
+</div>
+</div>
+<a id="a26819680b83c0a787f6adbb9ae4ab061" name="a26819680b83c0a787f6adbb9ae4ab061"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26819680b83c0a787f6adbb9ae4ab061">&#9670;&#160;</a></span>operator|=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename optional_t, typename default_value_t&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__types.html#gac3e508084ce85854c55799f802c7e7ce">xtd::optional</a>&lt; optional_t &gt; &amp; operator|= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gac3e508084ce85854c55799f802c7e7ce">xtd::optional</a>&lt; optional_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>optional</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">default_value_t &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>default_value</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the default value if the contained value of specified optional i empty (equal to <a class="el" href="group__types.html#gaf0620df1fd6c165eaad955c07e15097d" title="Represents a nullopt value. Used to indicate that an std::optional does not contain a value.">xtd::nullopt</a>).. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">optional</td><td>The optional to sets the value. </td></tr>
+    <tr><td class="paramname">default_value</td><td>The default value to set t optional if optioanl is empty. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The optional updated if empty otherwise; option not updated. </dd></dl>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
