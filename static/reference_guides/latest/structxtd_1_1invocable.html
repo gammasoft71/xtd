@@ -114,8 +114,8 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="textblock"><div class="compoundTemplParams">template&lt;class function_t, class result_t = void, class... args_t&gt;<br />
 struct xtd::invocable&lt; function_t, result_t, args_t &gt;</div><p>Represents the invocable (function, method, xtd::delegate, <a class="el" href="classxtd_1_1event.html" title="Represents an event.">xtd::event</a>, std::functional) concept. </p>
 <dl class="section user"><dt>Definition</dt><dd><div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">class </span>function_t, <span class="keyword">class </span>result_t = void, <span class="keyword">class</span>... args_t&gt;</div>
-<div class="line"><span class="keyword">concept </span><a class="code hl_concept" href="conceptxtd_1_1invocable.html">invocable</a> = std::invocable&lt;function_t, args_t...&gt; &amp;&amp; (std::is_void_v&lt;result_t&gt; || std::convertible_to&lt;std::invoke_result_t&lt;function_t, args_t...&gt;, result_t&gt;);</div>
-<div class="ttc" id="aconceptxtd_1_1invocable_html"><div class="ttname"><a href="conceptxtd_1_1invocable.html">xtd::invocable</a></div><div class="ttdef"><b>Definition</b> invocable.hpp:10</div></div>
+<div class="line"><span class="keyword">concept </span><a class="code hl_struct" href="structxtd_1_1invocable.html">invocable</a> = std::invocable&lt;function_t, args_t...&gt; &amp;&amp; (std::is_void_v&lt;result_t&gt; || std::convertible_to&lt;std::invoke_result_t&lt;function_t, args_t...&gt;, result_t&gt;);</div>
+<div class="ttc" id="astructxtd_1_1invocable_html"><div class="ttname"><a href="structxtd_1_1invocable.html">xtd::invocable</a></div><div class="ttdoc">Represents the invocable (function, method, xtd::delegate, xtd::event, std::functional) concept.</div><div class="ttdef"><b>Definition</b> invocable_.hpp:47</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/invocable&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
@@ -124,7 +124,7 @@ struct xtd::invocable&lt; function_t, result_t, args_t &gt;</div><p>Represents t
 <dl class="section user"><dt>Examples</dt><dd>The following code shows how to use <a class="el" href="structxtd_1_1arithmeticable.html" title="Represents the arithmeticable concept.">xtd::arithmeticable</a> concept <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span> value_t&gt;</div>
-<div class="line"><span class="keyword">auto</span> sort_with(<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1array.html">array&lt;value_t&gt;</a>&amp; items, <a class="code hl_concept" href="conceptxtd_1_1invocable.html">invocable&lt;int, value_t, value_t&gt;</a> <span class="keyword">auto</span> fct) -&gt; <a class="code hl_class" href="classxtd_1_1array.html">array&lt;value_t&gt;</a> {</div>
+<div class="line"><span class="keyword">auto</span> sort_with(<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1array.html">array&lt;value_t&gt;</a>&amp; items, <a class="code hl_struct" href="structxtd_1_1invocable.html">invocable&lt;int, value_t, value_t&gt;</a> <span class="keyword">auto</span> fct) -&gt; <a class="code hl_class" href="classxtd_1_1array.html">array&lt;value_t&gt;</a> {</div>
 <div class="line">  <span class="keyword">auto</span> result = items;</div>
 <div class="line">  result.sort(fct);</div>
 <div class="line">  <span class="keywordflow">return</span> result;</div>

@@ -6,6 +6,5 @@ var searchData=
   ['integer_5f32_3',['integer_32',['../conceptxtd_1_1integer__32.html',1,'xtd']]],
   ['integer_5f64_4',['integer_64',['../conceptxtd_1_1integer__64.html',1,'xtd']]],
   ['integer_5f8_5',['integer_8',['../conceptxtd_1_1integer__8.html',1,'xtd']]],
-  ['integer_5farithmeticable_6',['integer_arithmeticable',['../conceptxtd_1_1integer__arithmeticable.html',1,'xtd']]],
-  ['invocable_7',['invocable',['../conceptxtd_1_1invocable.html',1,'xtd']]]
+  ['integer_5farithmeticable_6',['integer_arithmeticable',['../conceptxtd_1_1integer__arithmeticable.html',1,'xtd']]]
 ];
