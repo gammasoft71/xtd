@@ -113,7 +113,7 @@ array<string> unit_test::succeed_test_names() const noexcept {
 }
 
 int32 unit_test::run() noexcept {
-  return startup::run(delegate<int()>([this] {
+  return startup::run([this] -> int {
     if (parse_arguments(arguments))
       return settings::default_settings().exit_status();
       
@@ -179,7 +179,7 @@ int32 unit_test::run() noexcept {
     if (settings::default_settings().output_xml()) write_tests_xml();
     
     return settings::default_settings().exit_status();
-  }));
+  });
 }
 
 int32 unit_test::count_tests(int32 count) {
