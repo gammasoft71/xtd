@@ -464,6 +464,7 @@
 #include "forward_iterable.hpp"
 #include "forward_iterable_value_type.hpp"
 #include "func.hpp"
+#include "func_callable.hpp"
 #include "generic_stream_output.hpp"
 #include "get_err_rdbuf.hpp"
 #include "get_in_rdbuf.hpp"
