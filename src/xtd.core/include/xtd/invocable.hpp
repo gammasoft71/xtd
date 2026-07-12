@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains invocable concept.
+/// @brief Contains xtd::invocable concept.
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #pragma once
