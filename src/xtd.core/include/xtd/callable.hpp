@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains callable concept.
+/// @brief Contains xtd::callable concept.
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "invocable.hpp"
