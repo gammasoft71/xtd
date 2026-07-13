@@ -30,6 +30,12 @@ template<typename value_t>
   } else xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
 }
 
+template<class value_t>
+requires(requires(const xtd::raw_type<value_t>& value) {{value.to_string()} -> xtd::textual;})
+[[nodiscard]] inline auto xtd::to_string(const value_t& value, const xtd::string& fmt, const std::locale& loc) -> xtd::string {
+  return value.to_string();
+}
+
 template<>
 [[nodiscard]] inline auto xtd::to_string(const bool& value, const xtd::string& fmt, const std::locale& loc) -> xtd::string {
   return __boolean_formatter(fmt.chars(), value, loc);

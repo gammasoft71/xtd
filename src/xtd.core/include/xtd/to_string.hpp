@@ -23,12 +23,19 @@
 /// @endcond
 #include "generic_stream_output.hpp"
 #include "register_any_stringer.hpp"
+#include "textual.hpp"
 #include "types.hpp"
 #include "string.hpp"
 #include <filesystem>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
+  /// @cond
+  template<class value_t>
+  requires(requires(const xtd::raw_type<value_t>& value) {{value.to_string()} -> xtd::textual;})
+  inline auto to_string(const value_t& value, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
+  /// @endcond
+
   /// @brief Convert a specified value into a string with specified format and locale.
   /// @par Namespace
   /// xtd
