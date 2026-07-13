@@ -5,6 +5,8 @@
 #include "stream_insertable.hpp"
 #include "iformatable.hpp"
 #include "raw_type.hpp"
+#include "string_view.hpp"
+#include "textual.hpp"
 #include <concepts>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -13,5 +15,6 @@ namespace xtd {
   template<typename value_t>
   concept formatable =
   std::derived_from<xtd::raw_type<value_t>, xtd::iformatable> ||
+  requires(const xtd::raw_type<value_t>& value, xtd::string_view format) {{value.to_string(format)} -> xtd::textual;} ||
   xtd::stream_insertable<xtd::raw_type<value_t>>;
 }
