@@ -554,6 +554,7 @@
 #include "pre_decrementable.hpp"
 #include "pre_incrementable.hpp"
 #include "predicate.hpp"
+#include "predicate_callable.hpp"
 #include "print.hpp"
 #include "println.hpp"
 #include "processor.hpp"
