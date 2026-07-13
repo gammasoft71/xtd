@@ -43,5 +43,6 @@ var searchData=
   ['formatter_40',['formatter',['../structxtd_1_1formatter.html',1,'xtd']]],
   ['forward_5fiterable_41',['forward_iterable',['../structxtd_1_1forward__iterable.html',1,'xtd']]],
   ['fourteen_5fsegment_5fdisplay_42',['fourteen_segment_display',['../classxtd_1_1forms_1_1fourteen__segment__display.html',1,'xtd::forms']]],
-  ['frame_5fdimension_43',['frame_dimension',['../classxtd_1_1drawing_1_1imaging_1_1frame__dimension.html',1,'xtd::drawing::imaging']]]
+  ['frame_5fdimension_43',['frame_dimension',['../classxtd_1_1drawing_1_1imaging_1_1frame__dimension.html',1,'xtd::drawing::imaging']]],
+  ['func_5fcallable_44',['func_callable',['../structxtd_1_1func__callable.html',1,'xtd']]]
 ];

@@ -212,9 +212,9 @@ Public Properties</h2></td></tr>
 Public Methods</h2></td></tr>
 <tr class="memitem:a7d46c68dc5d300fa5e77cc3549e14059" id="r_a7d46c68dc5d300fa5e77cc3549e14059"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a7d46c68dc5d300fa5e77cc3549e14059">begin_invoke</a> (arguments_t &amp;&amp;... arguments) -&gt; <a class="el" href="group__xtd__core.html#ga080226bd5ac480da97fe5cb486e6971d">async_result</a></td></tr>
 <tr class="memdesc:a7d46c68dc5d300fa5e77cc3549e14059"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes the method represented by the current delegate asynchronously on the thread that the control's underlying handle was created on.  <br /></td></tr>
-<tr class="memitem:ae384862ade6e7ba6620831082f90c5f1" id="r_ae384862ade6e7ba6620831082f90c5f1"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ae384862ade6e7ba6620831082f90c5f1">begin_invoke</a> (<a class="el" href="group__delegates.html#gac1b0c46b56f76e46835af785a4165b0a">xtd::async_callback</a> async_callback<a class="el" href="group__delegates.html#gac1b0c46b56f76e46835af785a4165b0a">async_callback</a>, arguments_t &amp;&amp;... arguments) -&gt; <a class="el" href="group__xtd__core.html#ga080226bd5ac480da97fe5cb486e6971d">async_result</a></td></tr>
+<tr class="memitem:ae384862ade6e7ba6620831082f90c5f1" id="r_ae384862ade6e7ba6620831082f90c5f1"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ae384862ade6e7ba6620831082f90c5f1">begin_invoke</a> (<a class="el" href="group__delegates.html#gaa922792e7b8c65aa9b128d41945f1d37">xtd::async_callback</a> async_callback<a class="el" href="group__delegates.html#gaa922792e7b8c65aa9b128d41945f1d37">async_callback</a>, arguments_t &amp;&amp;... arguments) -&gt; <a class="el" href="group__xtd__core.html#ga080226bd5ac480da97fe5cb486e6971d">async_result</a></td></tr>
 <tr class="memdesc:ae384862ade6e7ba6620831082f90c5f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes the method represented by the current delegate asynchronously on the thread that the control's underlying handle was created on.  <br /></td></tr>
-<tr class="memitem:a4a42fa3a007266369b338484a2826c85" id="r_a4a42fa3a007266369b338484a2826c85"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a4a42fa3a007266369b338484a2826c85">begin_invoke</a> (<a class="el" href="group__delegates.html#gac1b0c46b56f76e46835af785a4165b0a">xtd::async_callback</a> async_callback<a class="el" href="group__delegates.html#gac1b0c46b56f76e46835af785a4165b0a">async_callback</a>, const <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> &amp;async_state, arguments_t &amp;&amp;... arguments) -&gt; <a class="el" href="group__xtd__core.html#ga080226bd5ac480da97fe5cb486e6971d">async_result</a></td></tr>
+<tr class="memitem:a4a42fa3a007266369b338484a2826c85" id="r_a4a42fa3a007266369b338484a2826c85"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a4a42fa3a007266369b338484a2826c85">begin_invoke</a> (<a class="el" href="group__delegates.html#gaa922792e7b8c65aa9b128d41945f1d37">xtd::async_callback</a> async_callback<a class="el" href="group__delegates.html#gaa922792e7b8c65aa9b128d41945f1d37">async_callback</a>, const <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> &amp;async_state, arguments_t &amp;&amp;... arguments) -&gt; <a class="el" href="group__xtd__core.html#ga080226bd5ac480da97fe5cb486e6971d">async_result</a></td></tr>
 <tr class="memdesc:a4a42fa3a007266369b338484a2826c85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes the method represented by the current delegate asynchronously on the thread that the control's underlying handle was created on.  <br /></td></tr>
 <tr class="memitem:a72e406b238d3ca66eedfb17f55ca8a6a" id="r_a72e406b238d3ca66eedfb17f55ca8a6a"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a72e406b238d3ca66eedfb17f55ca8a6a">end_invoke</a> (<a class="el" href="group__xtd__core.html#ga080226bd5ac480da97fe5cb486e6971d">async_result</a> async) -&gt; result_t</td></tr>
 <tr class="memdesc:a72e406b238d3ca66eedfb17f55ca8a6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the return value of the asynchronous operation represented by the async_result_invoke passed.  <br /></td></tr>
@@ -714,7 +714,7 @@ template&lt;class result_t, typename ... arguments_t&gt; </div>
         <tr>
           <td class="memname">auto xtd::delegate&lt; result_t(arguments_t...)&gt;::begin_invoke </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__delegates.html#gac1b0c46b56f76e46835af785a4165b0a">xtd::async_callback</a></td>          <td class="paramname"><span class="paramname"><em>async_callback</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__delegates.html#gaa922792e7b8c65aa9b128d41945f1d37">xtd::async_callback</a></td>          <td class="paramname"><span class="paramname"><em>async_callback</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -775,7 +775,7 @@ template&lt;class result_t, typename ... arguments_t&gt; </div>
         <tr>
           <td class="memname">auto xtd::delegate&lt; result_t(arguments_t...)&gt;::begin_invoke </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__delegates.html#gac1b0c46b56f76e46835af785a4165b0a">xtd::async_callback</a></td>          <td class="paramname"><span class="paramname"><em>async_callback</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__delegates.html#gaa922792e7b8c65aa9b128d41945f1d37">xtd::async_callback</a></td>          <td class="paramname"><span class="paramname"><em>async_callback</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>

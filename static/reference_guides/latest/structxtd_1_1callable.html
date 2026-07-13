@@ -113,7 +113,6 @@ document.addEventListener('DOMContentLoaded', () => {
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Definition</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;class function_t, class result_t = void, class... args_t&gt;<br />
 struct xtd::callable&lt; function_t, result_t, args_t &gt;</div><p>Represents the callable (function, method, xtd::delegate, <a class="el" href="classxtd_1_1event.html" title="Represents an event.">xtd::event</a>, std::functional) concept. </p>
-<p>Represents the func callable (function, method, xtd::delegate, <a class="el" href="classxtd_1_1event.html" title="Represents an event.">xtd::event</a>, std::functional) concept.</p>
 <dl class="section user"><dt>Definition</dt><dd><div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">class </span>function_t, <span class="keyword">class </span>result_t = void, <span class="keyword">class</span>... args_t&gt;</div>
 <div class="line"><span class="keyword">concept </span><a class="code hl_concept" href="conceptxtd_1_1callable.html">callable</a> = std::invocable&lt;function_t, args_t...&gt; &amp;&amp; (std::is_void_v&lt;result_t&gt; || std::convertible_to&lt;std::invoke_result_t&lt;function_t, args_t...&gt;, result_t&gt;);</div>
 <div class="ttc" id="aconceptxtd_1_1callable_html"><div class="ttname"><a href="conceptxtd_1_1callable.html">xtd::callable</a></div><div class="ttdef"><b>Definition</b> callable.hpp:10</div></div>
@@ -143,16 +142,7 @@ struct xtd::callable&lt; function_t, result_t, args_t &gt;</div><p>Represents th
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">xtd::console_key::a</a></div><div class="ttdeci">@ a</div><div class="ttdoc">The A key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:88</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">xtd::console_key::b</a></div><div class="ttdeci">@ b</div><div class="ttdoc">The B key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:90</div></div>
 <div class="ttc" id="anamespacextd_html_a9482c5e9fb1d60c658bbe28bfbb17353"><div class="ttname"><a href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">xtd::println</a></div><div class="ttdeci">auto println(FILE *file) -&gt; void</div><div class="ttdoc">Writes the current line terminator to the file output stream using the specified format information.</div><div class="ttdef"><b>Definition</b> println.hpp:14</div></div>
-</div><!-- fragment --></dd></dl>
-<dl class="section user"><dt>Definition</dt><dd><div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">class </span>function_t, <span class="keyword">class </span>result_t = void, <span class="keyword">class</span>... args_t&gt;</div>
-<div class="line"><span class="keyword">concept </span>concept <a class="code hl_concept" href="conceptxtd_1_1func__callable.html">func_callable</a> = <a class="code hl_struct" href="structxtd_1_1invocable.html">xtd::invocable</a>&lt;function_t, result_t, args_t...&gt;;</div>
-<div class="ttc" id="aconceptxtd_1_1func__callable_html"><div class="ttname"><a href="conceptxtd_1_1func__callable.html">xtd::func_callable</a></div><div class="ttdef"><b>Definition</b> func_callable.hpp:10</div></div>
-<div class="ttc" id="astructxtd_1_1invocable_html"><div class="ttname"><a href="structxtd_1_1invocable.html">xtd::invocable</a></div><div class="ttdoc">Represents the invocable (function, method, xtd::delegate, xtd::event, std::functional) concept.</div><div class="ttdef"><b>Definition</b> invocable_.hpp:47</div></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/func_callable&gt;</span></div>
-</div><!-- fragment --> </dd></dl>
-<dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
-<dl class="section user"><dt>Library</dt><dd>xtd.core </dd></dl>
 </div><hr/>The documentation for this struct was generated from the following file:<ul>
 <li>xtd.core/include/xtd/<a class="el" href="callable___8hpp_source.html">callable_.hpp</a></li>
 </ul>
