@@ -85,13 +85,13 @@
 🟢   |    |    |- xtd::subtractable
 🟢   |    |- xtd::modable
 🟢   |- xtd::callable (||)
-🔴   |    |- xtd::action_callable
+🟢   |    |- xtd::action_callable
 🔴   |    |- xtd::async_callback_callable
 🔴   |    |- xtd::comparison_callable
 🔴   |    |- xtd::converter_callable
-🔴   |    |- xtd::func_callable
+🟢   |    |- xtd::func_callable
 🟢   |    |- xtd::invocable
-🔴   |    |- xtd::predicate_callable
+🟢   |    |- xtd::predicate_callable
 🔴   |    |- xtd::startup_callable
 🔴   |    |- xtd::forms::message_loop_callback_callable
 🔴   |    |- xtd::threading::parameterized_thread_start_callable
