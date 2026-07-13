@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 		<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-		<title>xtd: xtd.core/include/xtd/callable.hpp File Reference</title>
+		<title>xtd: xtd.core/include/xtd/func_callable.hpp Source File</title>
     <link href="favicon.png" rel="shortcut icon" type="image/png"/>
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
@@ -107,24 +107,22 @@ document.addEventListener('DOMContentLoaded', () => {
 </div><!-- top -->
 <div id="doc-content">
 <div class="header">
-  <div class="summary">
-<a href="#namespaces">Namespaces</a>  </div>
-  <div class="headertitle"><div class="title">callable.hpp File Reference</div></div>
+  <div class="headertitle"><div class="title">func_callable.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="invocable_8hpp_source.html">invocable.hpp</a>&quot;</code><br />
-</div><a name="details" id="details"></a><h2 id="header-details" class="groupheader">Definition</h2>
-<div class="textblock"><p>Contains <a class="el" href="structxtd_1_1callable.html" title="Represents the callable (function, method, xtd::delegate, xtd::event, std::functional) concept.">xtd::callable</a> concept. </p>
-<dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2026 Gammasoft. All rights reserved. </dd></dl>
-</div>
-<p><a href="callable_8hpp_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
-Namespaces</h2></td></tr>
-<tr class="memitem:xtd" id="r_xtd"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="namespacextd.html">xtd</a></td></tr>
-<tr class="memdesc:namespacextd"><td class="mdescLeft">&#160;</td><td class="mdescRight">The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more. <br /></td></tr>
-</table>
-</div><!-- contents -->
+<a href="func__callable_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="invocable_8hpp.html">invocable.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a> {</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>  <span class="keyword">template</span>&lt;<span class="keyword">class </span>function_t, <span class="keyword">class </span>result_t = void, <span class="keyword">class</span>... args_t&gt;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="conceptxtd_1_1func__callable.html">   10</a></span>  <span class="keyword">concept </span><a class="code hl_concept" href="conceptxtd_1_1func__callable.html">func_callable</a> = <a class="code hl_struct" href="structxtd_1_1invocable.html">xtd::invocable</a>&lt;function_t, result_t, args_t...&gt;;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>}</div>
+<div class="ttc" id="aconceptxtd_1_1func__callable_html"><div class="ttname"><a href="conceptxtd_1_1func__callable.html">xtd::func_callable</a></div><div class="ttdef"><b>Definition</b> func_callable.hpp:10</div></div>
+<div class="ttc" id="ainvocable_8hpp_html"><div class="ttname"><a href="invocable_8hpp.html">invocable.hpp</a></div><div class="ttdoc">Contains xtd::invocable concept.</div></div>
+<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
+<div class="ttc" id="astructxtd_1_1invocable_html"><div class="ttname"><a href="structxtd_1_1invocable.html">xtd::invocable</a></div><div class="ttdoc">Represents the invocable (function, method, xtd::delegate, xtd::event, std::functional) concept.</div><div class="ttdef"><b>Definition</b> invocable_.hpp:47</div></div>
+</div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
