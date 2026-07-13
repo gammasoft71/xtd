@@ -3,6 +3,15 @@
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "../string.hpp"
+#include "../string_view.hpp"
+#include "../u16string.hpp"
+#include "../u16string_view.hpp"
+#include "../u32string.hpp"
+#include "../u32string_view.hpp"
+#include "../u8string.hpp"
+#include "../u8string_view.hpp"
+#include "../wstring.hpp"
+#include "../wstring_view.hpp"
 #define __XTD_CORE_INTERNAL__
 #include "../internal/__string_definitions.hpp"
 #undef __XTD_CORE_INTERNAL__
@@ -286,6 +295,71 @@ namespace xtd {
     /// xtd::console::out << s << xtd::environment::new_line;
     /// ```
     [[nodiscard]] auto operator""_sd(unsigned long long s) -> xtd::string;
+    
+    /// @brief Used to convert specified value into xtd::string.
+    /// @par Namespace
+    /// xtd
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core literals
+    /// @par Examples
+    /// ```cpp
+    /// xtd::string s = "This is a "_s + "simple test"_s;
+    /// xtd::console::out << s << xtd::environment::new_line;
+    /// ```
+    [[nodiscard]] auto operator""_sv(const char* s, xtd::usize n) -> xtd::string_view;
+    
+    /// @brief Used to convert specified value into xtd::string.
+    /// @par Namespace
+    /// xtd
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core literals
+    /// @par Examples
+    /// ```cpp
+    /// xtd::string s = u8"This is a "_s + u8"simple test"_s;
+    /// xtd::console::out << s << xtd::environment::new_line;
+    /// ```
+    [[nodiscard]] auto operator""_sv(const char8* s, xtd::usize n) -> xtd::u8string_view;
+    
+    /// @brief Used to convert specified value into xtd::string.
+    /// @par Namespace
+    /// xtd
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core literals
+    /// @par Examples
+    /// ```cpp
+    /// xtd::string s = U"This is a "_s + U"simple test"_s;
+    /// xtd::console::out << s << xtd::environment::new_line;
+    /// ```
+    [[nodiscard]] auto operator""_sv(const char16* s, xtd::usize n) -> xtd::u16string_view;
+    
+    /// @brief Used to convert specified value into xtd::string.
+    /// @par Namespace
+    /// xtd
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core literals
+    /// @par Examples
+    /// ```cpp
+    /// xtd::string s = u"This is a "_s + u"simple test"_s;
+    /// xtd::console::out << s << xtd::environment::new_line;
+    /// ```
+    [[nodiscard]] auto operator""_sv(const char32* s, xtd::usize n) -> xtd::u32string_view;
+    
+    /// @brief Used to convert specified value into xtd::string.
+    /// @par Namespace
+    /// xtd
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core literals
+    /// @par Examples
+    /// ```cpp
+    /// xtd::string s = L"This is a "_s + L"simple test"_s;
+    /// xtd::console::out << s << xtd::environment::new_line;
+    /// ```
+    [[nodiscard]] auto operator""_sv(const wchar* s, xtd::usize n) -> xtd::wstring_view;
     
     /// @brief Used to convert specified value into xtd::string.
     /// @par Namespace
