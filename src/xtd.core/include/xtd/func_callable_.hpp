@@ -23,5 +23,5 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core concepts
   template<class function_t, class result_t = void, class... args_t>
-  struct callable;
+  struct func_callable;
 }
