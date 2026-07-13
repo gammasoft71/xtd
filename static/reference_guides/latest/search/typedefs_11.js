@@ -50,11 +50,12 @@ var searchData=
   ['string_5fmap_47',['string_map',['../group__specialized__collections.html#gad6edadf6723b3286f18b75cdc609de7d',1,'xtd::collections::specialized']]],
   ['string_5fpair_48',['string_pair',['../group__specialized__collections.html#gaeef2ee69b902f72ee3a4016d04525b65',1,'xtd::collections::specialized']]],
   ['string_5fvector_49',['string_vector',['../group__specialized__collections.html#gae7daee1e7504d661131d0f2a3f14b73b',1,'xtd::collections::specialized']]],
-  ['style_5fsheet_5fnames_5ft_50',['style_sheet_names_t',['../classxtd_1_1forms_1_1style__sheets_1_1style__sheet.html#a3d178fd489e94d1d89363054fe8300c3',1,'xtd::forms::style_sheets::style_sheet']]],
-  ['style_5fsheets_5ft_51',['style_sheets_t',['../classxtd_1_1forms_1_1style__sheets_1_1style__sheet.html#a3d3851260e8765a01259b71955844ad9',1,'xtd::forms::style_sheets::style_sheet']]],
-  ['system_5fcolor_5fcollection_52',['system_color_collection',['../classxtd_1_1system__report.html#abad3614994bf2343dee19fc143619c8a',1,'xtd::system_report']]],
-  ['system_5ffont_5fcollection_53',['system_font_collection',['../classxtd_1_1system__report.html#aaf86018a4be5307a5334868289ab1876',1,'xtd::system_report']]],
-  ['system_5ffont_5ffamily_5fcollection_54',['system_font_family_collection',['../classxtd_1_1system__report.html#acc890205100ee58225761a854c2fbe8c',1,'xtd::system_report']]],
-  ['system_5finformation_5fcollection_55',['system_information_collection',['../classxtd_1_1system__report.html#a21d606eb93712834c54a0c748b73c35b',1,'xtd::system_report']]],
-  ['system_5ftexts_56',['system_texts',['../namespacextd_1_1forms.html#a96fa0af166b0f257c3c63f16e13a0435',1,'xtd::forms']]]
+  ['string_5fview_50',['string_view',['../group__strings.html#ga3af0f129d5aecb98beb0996ebf9e5019',1,'xtd']]],
+  ['style_5fsheet_5fnames_5ft_51',['style_sheet_names_t',['../classxtd_1_1forms_1_1style__sheets_1_1style__sheet.html#a3d178fd489e94d1d89363054fe8300c3',1,'xtd::forms::style_sheets::style_sheet']]],
+  ['style_5fsheets_5ft_52',['style_sheets_t',['../classxtd_1_1forms_1_1style__sheets_1_1style__sheet.html#a3d3851260e8765a01259b71955844ad9',1,'xtd::forms::style_sheets::style_sheet']]],
+  ['system_5fcolor_5fcollection_53',['system_color_collection',['../classxtd_1_1system__report.html#abad3614994bf2343dee19fc143619c8a',1,'xtd::system_report']]],
+  ['system_5ffont_5fcollection_54',['system_font_collection',['../classxtd_1_1system__report.html#aaf86018a4be5307a5334868289ab1876',1,'xtd::system_report']]],
+  ['system_5ffont_5ffamily_5fcollection_55',['system_font_family_collection',['../classxtd_1_1system__report.html#acc890205100ee58225761a854c2fbe8c',1,'xtd::system_report']]],
+  ['system_5finformation_5fcollection_56',['system_information_collection',['../classxtd_1_1system__report.html#a21d606eb93712834c54a0c748b73c35b',1,'xtd::system_report']]],
+  ['system_5ftexts_57',['system_texts',['../namespacextd_1_1forms.html#a96fa0af166b0f257c3c63f16e13a0435',1,'xtd::forms']]]
 ];
