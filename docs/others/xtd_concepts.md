@@ -72,7 +72,7 @@
 | enum class         | enum class                         | ❌            | ❌            | ❌            | ❌                   | ❌                     | ❌         | ❌              | ❌            | ✅                |
 | enum struct        | enum struct                        | ❌            | ❌            | ❌            | ❌                   | ❌                     | ❌         | ❌              | ❌            | ✅                |
 | xtd::object        | /                                  | ❌            | ❌            | ❌            | ❌                   | ❌                     | ❌         | ❌              | ❌            | ❌                |
-| user type          | /                                  | ❌            | ❌            | ❌            | ❌                   | ❌                     | ❌         | ❌              | ❌            | ❌                |
+| other type         | /                                  | ❌            | ❌            | ❌            | ❌                   | ❌                     | ❌         | ❌              | ❌            | ❌                |
 
 ## Abilities
 
