@@ -10,6 +10,7 @@
 #include "istringable.hpp"
 #include "object.hpp"
 #include "raw_type.hpp"
+#include "textual.hpp"
 #include <concepts>
 #if defined(__xtd__cpp_lib_ranges)
 #include <ranges>
@@ -23,6 +24,7 @@ namespace xtd {
     std::derived_from<xtd::raw_type<value_t>, xtd::object> ||
     std::derived_from<xtd::raw_type<value_t>, xtd::istringable<xtd::raw_type<value_t>>> ||
     std::derived_from<xtd::raw_type<value_t>, xtd::iformatable> ||
+    requires(const xtd::raw_type<value_t>& value) {{value.to_string()} -> xtd::textual;} ||
     std::derived_from<xtd::raw_type<value_t>, std::exception> ||
     std::is_enum_v<xtd::raw_type<value_t>> ||
     #if defined(__xtd__cpp_lib_ranges)
