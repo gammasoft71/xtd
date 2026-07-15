@@ -2,13 +2,11 @@
 /// @brief Contains xtd::textual concept.
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
-#include "string.hpp"
+#define __XTD_CORE_INTERNAL__
+#include "internal/__string_definitions.hpp"
+#undef __XTD_CORE_INTERNAL__
 #include "raw_type.hpp"
 #include "textual_literal.hpp"
-#include "u16string.hpp"
-#include "u32string.hpp"
-#include "u8string.hpp"
-#include "wstring.hpp"
 #include <concepts>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
