@@ -1262,6 +1262,7 @@ add_sources(
   "include/xtd/io/text_writer"
   "include/xtd/linq/enumerable.hpp"
   "include/xtd/linq/enumerable"
+  "include/xtd/linq/enumerable_.hpp"
   "include/xtd/linq/from.hpp"
   "include/xtd/linq/from"
   "include/xtd/literals/byte.hpp"

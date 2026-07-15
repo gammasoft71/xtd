@@ -2,7 +2,7 @@
 /// @brief Contains xtd::collections::generic::extensions::enumerable <type_t> class.
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
-#include "../../../linq/enumerable.hpp"
+#include "../../../linq/enumerable_.hpp"
 #include "../../../foreach.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -56,18 +56,8 @@ namespace xtd {
           /// @par Examples
           /// The following code example demonstrates how to reverse the order of words in a string by using enumerable::aggregate.
           /// @include enumerable_aggregate.cpp
-          [[nodiscard]] auto aggregate(const std::function<source_t(const source_t&, const source_t&)>& func) const -> source_t {
+          [[nodiscard]] auto aggregate(xtd::func_callable<source_t, source_t, source_t> auto&& func) const -> source_t {
             return xtd::linq::enumerable::aggregate(self(), func);
-          }
-          /// @brief Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value.
-          /// @param seed The initial accumulator value.
-          /// @param func An accumulator function to be invoked on each element.
-          /// @return The final accumulator value.
-          /// @par Examples
-          /// The following code example demonstrates how to use xtd::linq::enumerable::aggregate to apply an accumulator function and use a seed value.
-          /// @include enumerable_aggregate2.cpp
-          [[nodiscard]] auto aggregate(const source_t& seed, const std::function<source_t(const source_t&, const source_t&)>& func) const -> source_t {
-            return xtd::linq::enumerable::aggregate(self(), seed, func);
           }
           /// @brief Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value.
           /// @tparam accumulate_t The type of the accumulator value.
@@ -78,19 +68,8 @@ namespace xtd {
           /// The following code example demonstrates how to use xtd::linq::enumerable::aggregate to apply an accumulator function and use a seed value.
           /// @include enumerable_aggregate2.cpp
           template<typename accumulate_t>
-          [[nodiscard]] auto aggregate(const accumulate_t& seed, const std::function<accumulate_t(const accumulate_t&, const source_t&)>& func) const -> accumulate_t {
-            return xtd::linq::enumerable::aggregate(self(), seed, func);
-          }
-          /// @brief Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value, and the specified function is used to select the result value.
-          /// @param seed The initial accumulator value.
-          /// @param func An accumulator function to be invoked on each element.
-          /// @param result_Selector A function to transform the final accumulator value into the result value.
-          /// @return The transformed final accumulator value.
-          /// @par Examples
-          /// The following code example demonstrates how to use xtd::linq::enumerable::aggregate to apply an accumulator function and use a seed value.
-          /// @include enumerable_aggregate3.cpp
-          [[nodiscard]] auto aggregate(const source_t& seed, const std::function<source_t(const source_t&, const source_t&)>& func, const std::function<source_t(const source_t&)>& result_selector) const -> source_t {
-            return xtd::linq::enumerable::aggregate(self(), seed, func, result_selector);
+          [[nodiscard]] auto aggregate(accumulate_t&& seed, xtd::func_callable<accumulate_t, accumulate_t, source_t> auto&& func) const -> accumulate_t {
+            return xtd::linq::enumerable::aggregate(self(), std::forward<accumulate_t>(seed), func);
           }
           /// @brief Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value, and the specified function is used to select the result value.
           /// @tparam result_t The type of the resulting value.
@@ -103,8 +82,8 @@ namespace xtd {
           /// The following code example demonstrates how to use xtd::linq::enumerable::aggregate to apply an accumulator function and use a seed value.
           /// @include enumerable_aggregate3.cpp
           template<typename result_t, typename accumulate_t>
-          [[nodiscard]] auto aggregate(const accumulate_t& seed, const std::function<accumulate_t(const accumulate_t&, const source_t&)>& func, const std::function<result_t(const accumulate_t&)>& result_selector) const -> result_t {
-            return xtd::linq::enumerable::aggregate(self(), seed, func, result_selector);
+          [[nodiscard]] auto aggregate(accumulate_t&& seed, xtd::func_callable<accumulate_t, accumulate_t, source_t> auto&& func, xtd::func_callable<result_t, source_t> auto&& result_selector) const -> result_t {
+            return xtd::linq::enumerable::aggregate(self(), std::forward<accumulate_t>(seed), func, result_selector);
           }
           
           /// @brief Determines whether all elements of a sequence satisfy a condition.
@@ -113,7 +92,7 @@ namespace xtd {
           /// @par Examples
           /// The following code example demonstrates how to use xtd::linq::enumerable::all <source_t> to determine whether all the elements in a sequence satisfy a condition. Variable all_start_with_B is `true` if all the pet names start with "B" or if the pets array is empty.
           /// @include enumerable_all.cpp
-          [[nodiscard]] auto all(const std::function<bool(const source_t&)>& predicate) const -> bool {
+          [[nodiscard]] auto all(xtd::predicate_callable<source_t> auto&& predicate) const -> bool {
             return xtd::linq::enumerable::all(self(), predicate);
           }
           
@@ -131,7 +110,7 @@ namespace xtd {
           /// @par Examples
           /// The following code example demonstrates how to use xtd::linq::enumerable::all <source_t> to determine whether all the elements in a sequence satisfy a condition. Variable all_start_with_B is `true` if all the pet names start with "B" or if the pets array is empty.
           /// @include enumerable_any.cpp
-          [[nodiscard]] auto any(const std::function<bool(const source_t&)>& predicate) const -> bool {
+          [[nodiscard]] auto any(xtd::predicate_callable<source_t> auto&& predicate) const -> bool {
             return xtd::linq::enumerable::any(self(), predicate);
           }
           
@@ -141,8 +120,8 @@ namespace xtd {
           /// @par Examples
           /// The following code example demonstrates how to use Append to append a value to the end of the sequence.
           /// @include enumerable_append.cpp
-          [[nodiscard]] auto append(const source_t& element) const noexcept {
-            return xtd::linq::enumerable::append(self(), element);
+          [[nodiscard]] auto append(source_t&& element) const noexcept {
+            return xtd::linq::enumerable::append(self(), std::forward<source_t>(element));
           }
           
           /// @brief Returns the input typed as xtd::collections::generic::ienumerable <type_t>.
