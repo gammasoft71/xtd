@@ -69,7 +69,7 @@ namespace xtd {
           /// @include enumerable_aggregate2.cpp
           template<typename accumulate_t>
           [[nodiscard]] auto aggregate(accumulate_t&& seed, xtd::func_callable<accumulate_t, accumulate_t, source_t> auto&& func) const -> accumulate_t {
-            return xtd::linq::enumerable::aggregate(self(), std::forward<accumulate_t>(seed), func);
+            return xtd::linq::enumerable::aggregate(self(), std::move(seed), func);
           }
           /// @brief Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value, and the specified function is used to select the result value.
           /// @tparam result_t The type of the resulting value.
@@ -83,7 +83,7 @@ namespace xtd {
           /// @include enumerable_aggregate3.cpp
           template<typename result_t, typename accumulate_t>
           [[nodiscard]] auto aggregate(accumulate_t&& seed, xtd::func_callable<accumulate_t, accumulate_t, source_t> auto&& func, xtd::func_callable<result_t, source_t> auto&& result_selector) const -> result_t {
-            return xtd::linq::enumerable::aggregate(self(), std::forward<accumulate_t>(seed), func, result_selector);
+            return xtd::linq::enumerable::aggregate(self(), std::move(seed), func, result_selector);
           }
           
           /// @brief Determines whether all elements of a sequence satisfy a condition.
@@ -120,8 +120,8 @@ namespace xtd {
           /// @par Examples
           /// The following code example demonstrates how to use Append to append a value to the end of the sequence.
           /// @include enumerable_append.cpp
-          [[nodiscard]] auto append(source_t&& element) const noexcept {
-            return xtd::linq::enumerable::append(self(), std::forward<source_t>(element));
+          [[nodiscard]] auto append(auto&& element) const noexcept {
+            return xtd::linq::enumerable::append(self(), std::move(element));
           }
           
           /// @brief Returns the input typed as xtd::collections::generic::ienumerable <type_t>.

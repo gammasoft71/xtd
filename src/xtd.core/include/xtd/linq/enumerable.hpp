@@ -56,5 +56,5 @@ template<xtd::forward_iterable source_t>
 auto xtd::linq::enumerable::append(source_t&& source, typename xtd::raw_type<source_t>::value_type&& element) noexcept -> xtd::collections::generic::enumerable_generator<typename xtd::raw_type<source_t>::value_type> {
   for (const auto& item : source)
     co_yield item;
-  co_yield std::forward<typename xtd::raw_type<source_t>::value_type>(element);
+  co_yield std::move(element);
 }
