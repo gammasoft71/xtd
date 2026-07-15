@@ -18,11 +18,13 @@
 #include "../internal/__list_definition.hpp"
 #undef  __XTD_CORE_INTERNAL__
 #include "../decimal.hpp"
+#include "../func_callable.hpp"
 #include "../iequatable.hpp"
 #include "../int32.hpp"
 #include "../int64.hpp"
 #include "../numeric.hpp"
 #include "../optional.hpp"
+#include "../predicate_callable.hpp"
 #include "../static.hpp"
 #include "../usize.hpp"
 #include <algorithm>
