@@ -125,7 +125,7 @@ Inheritance diagram for xtd::linq::enumerable:</div>
 <div class="textblock"><p>Provides a set of static methods for querying objects that implement ienumerable &lt;type_t&gt;. </p>
 <dl class="section user"><dt>Definition</dt><dd><div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> type_t&gt;</div>
 <div class="line"><span class="keyword">class </span><a class="code hl_class" href="classxtd_1_1linq_1_1enumerable.html">enumerable</a> : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1static__object.html">xtd::static_object</a>;</div>
-<div class="ttc" id="aclassxtd_1_1linq_1_1enumerable_html"><div class="ttname"><a href="classxtd_1_1linq_1_1enumerable.html">xtd::linq::enumerable</a></div><div class="ttdoc">Provides a set of static methods for querying objects that implement ienumerable &lt;type_t&gt;.</div><div class="ttdef"><b>Definition</b> enumerable.hpp:70</div></div>
+<div class="ttc" id="aclassxtd_1_1linq_1_1enumerable_html"><div class="ttname"><a href="classxtd_1_1linq_1_1enumerable.html">xtd::linq::enumerable</a></div><div class="ttdoc">Provides a set of static methods for querying objects that implement ienumerable &lt;type_t&gt;.</div><div class="ttdef"><b>Definition</b> enumerable_.hpp:71</div></div>
 <div class="ttc" id="aclassxtd_1_1static__object_html"><div class="ttname"><a href="classxtd_1_1static__object.html">xtd::static_object</a></div><div class="ttdoc">Represent a static object. A static class can&#39;t be instantiated (constructors are deleted).</div><div class="ttdef"><b>Definition</b> static.hpp:20</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/linq/enumerable&gt;</span></div>
@@ -153,33 +153,27 @@ Public Aliases</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Static Methods</h2></td></tr>
-<tr class="memitem:a4b7e2e2f627896aa0b7e841b7fcf3ec2" id="r_a4b7e2e2f627896aa0b7e841b7fcf3ec2"><td class="memTemplParams" colspan="2">template&lt;typename source_t&gt; </td></tr>
-<tr class="memitem:a4b7e2e2f627896aa0b7e841b7fcf3ec2 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a4b7e2e2f627896aa0b7e841b7fcf3ec2">aggregate</a> (const <a class="el" href="#a2bd1889dc1967c50ef692411dc2c4b92">ienumerable</a>&lt; source_t &gt; &amp;source, const std::function&lt; source_t(const source_t &amp;, const source_t &amp;)&gt; &amp;func<a class="el" href="group__delegates.html#ga17814178399a734d83f7c7ee1ca15365">func</a>) -&gt; source_t</td></tr>
-<tr class="memdesc:a4b7e2e2f627896aa0b7e841b7fcf3ec2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies an accumulator function over a sequence.  <br /></td></tr>
-<tr class="memitem:abbc1157f063f091c09e9f86f359d5f8b" id="r_abbc1157f063f091c09e9f86f359d5f8b"><td class="memTemplParams" colspan="2">template&lt;typename source_t&gt; </td></tr>
-<tr class="memitem:abbc1157f063f091c09e9f86f359d5f8b template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#abbc1157f063f091c09e9f86f359d5f8b">aggregate</a> (const <a class="el" href="#a2bd1889dc1967c50ef692411dc2c4b92">ienumerable</a>&lt; source_t &gt; &amp;source, const source_t &amp;seed, const std::function&lt; source_t(const source_t &amp;, const source_t &amp;)&gt; &amp;func<a class="el" href="group__delegates.html#ga17814178399a734d83f7c7ee1ca15365">func</a>) -&gt; source_t</td></tr>
-<tr class="memdesc:abbc1157f063f091c09e9f86f359d5f8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value.  <br /></td></tr>
-<tr class="memitem:a26c2970f7c860d09c12ba24c707561ef" id="r_a26c2970f7c860d09c12ba24c707561ef"><td class="memTemplParams" colspan="2">template&lt;typename accumulate_t, typename source_t&gt; </td></tr>
-<tr class="memitem:a26c2970f7c860d09c12ba24c707561ef template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a26c2970f7c860d09c12ba24c707561ef">aggregate</a> (const <a class="el" href="#a2bd1889dc1967c50ef692411dc2c4b92">ienumerable</a>&lt; source_t &gt; &amp;source, const accumulate_t &amp;seed, const std::function&lt; accumulate_t(const accumulate_t &amp;, const source_t &amp;)&gt; &amp;func<a class="el" href="group__delegates.html#ga17814178399a734d83f7c7ee1ca15365">func</a>) -&gt; accumulate_t</td></tr>
-<tr class="memdesc:a26c2970f7c860d09c12ba24c707561ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value.  <br /></td></tr>
-<tr class="memitem:a42b8cb98d7f4a4e28c8dac9efe95b72d" id="r_a42b8cb98d7f4a4e28c8dac9efe95b72d"><td class="memTemplParams" colspan="2">template&lt;typename source_t&gt; </td></tr>
-<tr class="memitem:a42b8cb98d7f4a4e28c8dac9efe95b72d template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a42b8cb98d7f4a4e28c8dac9efe95b72d">aggregate</a> (const <a class="el" href="#a2bd1889dc1967c50ef692411dc2c4b92">ienumerable</a>&lt; source_t &gt; &amp;source, const source_t &amp;seed, const std::function&lt; source_t(const source_t &amp;, const source_t &amp;)&gt; &amp;func<a class="el" href="group__delegates.html#ga17814178399a734d83f7c7ee1ca15365">func</a>, const std::function&lt; source_t(const source_t &amp;)&gt; &amp;result_selector) -&gt; source_t</td></tr>
-<tr class="memdesc:a42b8cb98d7f4a4e28c8dac9efe95b72d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value, and the specified function is used to select the result value.  <br /></td></tr>
-<tr class="memitem:a90ad4085e70ce9fb707082866ad2f20a" id="r_a90ad4085e70ce9fb707082866ad2f20a"><td class="memTemplParams" colspan="2">template&lt;typename result_t, typename accumulate_t, typename source_t&gt; </td></tr>
-<tr class="memitem:a90ad4085e70ce9fb707082866ad2f20a template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a90ad4085e70ce9fb707082866ad2f20a">aggregate</a> (const <a class="el" href="#a2bd1889dc1967c50ef692411dc2c4b92">ienumerable</a>&lt; source_t &gt; &amp;source, const accumulate_t &amp;seed, const std::function&lt; accumulate_t(const accumulate_t &amp;, const source_t &amp;)&gt; &amp;func<a class="el" href="group__delegates.html#ga17814178399a734d83f7c7ee1ca15365">func</a>, const std::function&lt; result_t(const accumulate_t &amp;)&gt; &amp;result_selector) -&gt; result_t</td></tr>
-<tr class="memdesc:a90ad4085e70ce9fb707082866ad2f20a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value, and the specified function is used to select the result value.  <br /></td></tr>
-<tr class="memitem:a67cab924ee48a3561a2817bf7012c734" id="r_a67cab924ee48a3561a2817bf7012c734"><td class="memTemplParams" colspan="2">template&lt;typename source_t&gt; </td></tr>
-<tr class="memitem:a67cab924ee48a3561a2817bf7012c734 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a67cab924ee48a3561a2817bf7012c734">all</a> (const <a class="el" href="#a2bd1889dc1967c50ef692411dc2c4b92">ienumerable</a>&lt; source_t &gt; &amp;source, const std::function&lt; bool(const source_t &amp;)&gt; &amp;predicate<a class="el" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab">predicate</a>) -&gt; bool</td></tr>
-<tr class="memdesc:a67cab924ee48a3561a2817bf7012c734"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether all elements of a sequence satisfy a condition.  <br /></td></tr>
-<tr class="memitem:a28300c4ed210bac70007266fbe25a17e" id="r_a28300c4ed210bac70007266fbe25a17e"><td class="memTemplParams" colspan="2">template&lt;typename source_t&gt; </td></tr>
-<tr class="memitem:a28300c4ed210bac70007266fbe25a17e template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a28300c4ed210bac70007266fbe25a17e">any</a> (const <a class="el" href="#a2bd1889dc1967c50ef692411dc2c4b92">ienumerable</a>&lt; source_t &gt; &amp;source) noexcept -&gt; bool</td></tr>
-<tr class="memdesc:a28300c4ed210bac70007266fbe25a17e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether a sequence contains any elements.  <br /></td></tr>
-<tr class="memitem:ad900a920abefe15c03990a6820f9ffaa" id="r_ad900a920abefe15c03990a6820f9ffaa"><td class="memTemplParams" colspan="2">template&lt;typename source_t&gt; </td></tr>
-<tr class="memitem:ad900a920abefe15c03990a6820f9ffaa template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ad900a920abefe15c03990a6820f9ffaa">any</a> (const <a class="el" href="#a2bd1889dc1967c50ef692411dc2c4b92">ienumerable</a>&lt; source_t &gt; &amp;source, const std::function&lt; bool(const source_t &amp;)&gt; &amp;predicate<a class="el" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab">predicate</a>) -&gt; bool</td></tr>
-<tr class="memdesc:ad900a920abefe15c03990a6820f9ffaa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether any element of a sequence satisfies a condition.  <br /></td></tr>
-<tr class="memitem:a16290a393e0688753e2e56ad70780909" id="r_a16290a393e0688753e2e56ad70780909"><td class="memTemplParams" colspan="2">template&lt;typename source_t&gt; </td></tr>
-<tr class="memitem:a16290a393e0688753e2e56ad70780909 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a16290a393e0688753e2e56ad70780909">append</a> (const <a class="el" href="#a2bd1889dc1967c50ef692411dc2c4b92">ienumerable</a>&lt; source_t &gt; &amp;source, const source_t &amp;element) noexcept</td></tr>
-<tr class="memdesc:a16290a393e0688753e2e56ad70780909"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends a value to the end of the sequence.  <br /></td></tr>
+<tr class="memitem:aa1cc33b59fdc5a432cf5dbc5795cff53" id="r_aa1cc33b59fdc5a432cf5dbc5795cff53"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t, <a class="el" href="structxtd_1_1func__callable.html">xtd::func_callable</a>&lt; typename <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt; source_t &gt;<a class="el" href="structxtd_1_1value__type.html">::value_type</a>, typename <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt; source_t &gt;<a class="el" href="structxtd_1_1value__type.html">::value_type</a>, typename <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt; source_t &gt;<a class="el" href="structxtd_1_1value__type.html">::value_type</a> &gt; func_t&gt; </td></tr>
+<tr class="memitem:aa1cc33b59fdc5a432cf5dbc5795cff53 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aa1cc33b59fdc5a432cf5dbc5795cff53">aggregate</a> (source_t &amp;&amp;source, func_t &amp;&amp;func<a class="el" href="group__delegates.html#ga17814178399a734d83f7c7ee1ca15365">func</a>) -&gt; typename <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt; source_t &gt;<a class="el" href="structxtd_1_1value__type.html">::value_type</a></td></tr>
+<tr class="memdesc:aa1cc33b59fdc5a432cf5dbc5795cff53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies an accumulator function over a sequence.  <br /></td></tr>
+<tr class="memitem:a5a63758b53cf47e7756fa7f2bca1557e" id="r_a5a63758b53cf47e7756fa7f2bca1557e"><td class="memTemplParams" colspan="2">template&lt;typename accumulate_t, <a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t, <a class="el" href="structxtd_1_1func__callable.html">xtd::func_callable</a>&lt; accumulate_t, accumulate_t, typename <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt; source_t &gt;<a class="el" href="structxtd_1_1value__type.html">::value_type</a> &gt; func_t&gt; </td></tr>
+<tr class="memitem:a5a63758b53cf47e7756fa7f2bca1557e template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a5a63758b53cf47e7756fa7f2bca1557e">aggregate</a> (source_t &amp;&amp;source, accumulate_t &amp;&amp;seed, func_t &amp;&amp;func<a class="el" href="group__delegates.html#ga17814178399a734d83f7c7ee1ca15365">func</a>) -&gt; accumulate_t</td></tr>
+<tr class="memdesc:a5a63758b53cf47e7756fa7f2bca1557e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value.  <br /></td></tr>
+<tr class="memitem:a5bb2c384479107d5e48b21c51b750d1f" id="r_a5bb2c384479107d5e48b21c51b750d1f"><td class="memTemplParams" colspan="2">template&lt;typename result_t, typename accumulate_t, <a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t, <a class="el" href="structxtd_1_1func__callable.html">xtd::func_callable</a>&lt; accumulate_t, accumulate_t, typename <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt; source_t &gt;<a class="el" href="structxtd_1_1value__type.html">::value_type</a> &gt; func_t, <a class="el" href="structxtd_1_1func__callable.html">xtd::func_callable</a>&lt; result_t, accumulate_t &gt; result_selector_t&gt; </td></tr>
+<tr class="memitem:a5bb2c384479107d5e48b21c51b750d1f template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a5bb2c384479107d5e48b21c51b750d1f">aggregate</a> (source_t &amp;&amp;source, accumulate_t &amp;&amp;seed, func_t &amp;&amp;func<a class="el" href="group__delegates.html#ga17814178399a734d83f7c7ee1ca15365">func</a>, result_selector_t &amp;&amp;result_selector) -&gt; result_t</td></tr>
+<tr class="memdesc:a5bb2c384479107d5e48b21c51b750d1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value, and the specified function is used to select the result value.  <br /></td></tr>
+<tr class="memitem:a7269f06db2819ef3d05c031e103ca324" id="r_a7269f06db2819ef3d05c031e103ca324"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t, <a class="el" href="structxtd_1_1predicate__callable.html">xtd::predicate_callable</a>&lt; typename <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt; source_t &gt;<a class="el" href="structxtd_1_1value__type.html">::value_type</a> &gt; predicate_t&gt; </td></tr>
+<tr class="memitem:a7269f06db2819ef3d05c031e103ca324 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a7269f06db2819ef3d05c031e103ca324">all</a> (source_t &amp;&amp;source, predicate_t &amp;&amp;predicate<a class="el" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab">predicate</a>) -&gt; bool</td></tr>
+<tr class="memdesc:a7269f06db2819ef3d05c031e103ca324"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether all elements of a sequence satisfy a condition.  <br /></td></tr>
+<tr class="memitem:aeef91d811309c77a3db2abdc56af2dbc" id="r_aeef91d811309c77a3db2abdc56af2dbc"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t&gt; </td></tr>
+<tr class="memitem:aeef91d811309c77a3db2abdc56af2dbc template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aeef91d811309c77a3db2abdc56af2dbc">any</a> (source_t &amp;&amp;source) noexcept -&gt; bool</td></tr>
+<tr class="memdesc:aeef91d811309c77a3db2abdc56af2dbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether a sequence contains any elements.  <br /></td></tr>
+<tr class="memitem:aa8a64d79bcb473e22c8717e5da650928" id="r_aa8a64d79bcb473e22c8717e5da650928"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t, <a class="el" href="structxtd_1_1predicate__callable.html">xtd::predicate_callable</a>&lt; typename <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt; source_t &gt;<a class="el" href="structxtd_1_1value__type.html">::value_type</a> &gt; predicate_t&gt; </td></tr>
+<tr class="memitem:aa8a64d79bcb473e22c8717e5da650928 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aa8a64d79bcb473e22c8717e5da650928">any</a> (source_t &amp;&amp;source, predicate_t &amp;&amp;predicate<a class="el" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab">predicate</a>) -&gt; bool</td></tr>
+<tr class="memdesc:aa8a64d79bcb473e22c8717e5da650928"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether any element of a sequence satisfies a condition.  <br /></td></tr>
+<tr class="memitem:af00ebdc5017e70612a7f6a8efd009350" id="r_af00ebdc5017e70612a7f6a8efd009350"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t&gt; </td></tr>
+<tr class="memitem:af00ebdc5017e70612a7f6a8efd009350 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#af00ebdc5017e70612a7f6a8efd009350">append</a> (source_t &amp;&amp;source, typename <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt; source_t &gt;<a class="el" href="structxtd_1_1value__type.html">::value_type</a> &amp;&amp;element) noexcept -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; typename <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt; source_t &gt;<a class="el" href="structxtd_1_1value__type.html">::value_type</a> &gt;</td></tr>
+<tr class="memdesc:af00ebdc5017e70612a7f6a8efd009350"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends a value to the end of the sequence.  <br /></td></tr>
 <tr class="memitem:a4742ce7a6c1be25c31ee80f9d8c442e9" id="r_a4742ce7a6c1be25c31ee80f9d8c442e9"><td class="memTemplParams" colspan="2">template&lt;typename source_t&gt; </td></tr>
 <tr class="memitem:a4742ce7a6c1be25c31ee80f9d8c442e9 template"><td class="memItemLeft">static const auto &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a4742ce7a6c1be25c31ee80f9d8c442e9">as_enumerable</a> (const <a class="el" href="#a2bd1889dc1967c50ef692411dc2c4b92">ienumerable</a>&lt; source_t &gt; &amp;source) noexcept</td></tr>
 <tr class="memdesc:a4742ce7a6c1be25c31ee80f9d8c442e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the input typed as <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt;.  <br /></td></tr>
@@ -449,13 +443,13 @@ template&lt;typename key_t, typename value_t&gt; </div>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a4b7e2e2f627896aa0b7e841b7fcf3ec2" name="a4b7e2e2f627896aa0b7e841b7fcf3ec2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4b7e2e2f627896aa0b7e841b7fcf3ec2">&#9670;&#160;</a></span>aggregate() <span class="overload">[1/5]</span></h2>
+<a id="aa1cc33b59fdc5a432cf5dbc5795cff53" name="aa1cc33b59fdc5a432cf5dbc5795cff53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1cc33b59fdc5a432cf5dbc5795cff53">&#9670;&#160;</a></span>aggregate() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename source_t&gt; </div>
+template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t, <a class="el" href="structxtd_1_1func__callable.html">xtd::func_callable</a>&lt; typename <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt; source_t &gt;<a class="el" href="structxtd_1_1value__type.html">::value_type</a>, typename <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt; source_t &gt;<a class="el" href="structxtd_1_1value__type.html">::value_type</a>, typename <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt; source_t &gt;<a class="el" href="structxtd_1_1value__type.html">::value_type</a> &gt; func_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -463,17 +457,17 @@ template&lt;typename source_t&gt; </div>
         <tr>
           <td class="memname">auto xtd::linq::enumerable::aggregate </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="#a2bd1889dc1967c50ef692411dc2c4b92">ienumerable</a>&lt; source_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>source</em></span>, </td>
+          <td class="paramtype">source_t &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>source</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::function&lt; source_t(const source_t &amp;, const source_t &amp;)&gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>func</em></span>&#160;) -&gt; source_t</td>
+          <td class="paramtype">func_t &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>func</em></span>&#160;) -&gt;  typename <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt; source_t &gt;<a class="el" href="structxtd_1_1value__type.html">::value_type</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -493,7 +487,7 @@ template&lt;typename source_t&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The final accumulator value. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to reverse the order of words in a string by using <a class="el" href="#a4b7e2e2f627896aa0b7e841b7fcf3ec2" title="Applies an accumulator function over a sequence.">enumerable::aggregate</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to reverse the order of words in a string by using <a class="el" href="#aa1cc33b59fdc5a432cf5dbc5795cff53" title="Applies an accumulator function over a sequence.">enumerable::aggregate</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> sentence = <span class="stringliteral">&quot;the quick brown fox jumps over the lazy dog&quot;</span>_s;</div>
@@ -515,13 +509,13 @@ template&lt;typename source_t&gt; </div>
 
 </div>
 </div>
-<a id="abbc1157f063f091c09e9f86f359d5f8b" name="abbc1157f063f091c09e9f86f359d5f8b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abbc1157f063f091c09e9f86f359d5f8b">&#9670;&#160;</a></span>aggregate() <span class="overload">[2/5]</span></h2>
+<a id="a5a63758b53cf47e7756fa7f2bca1557e" name="a5a63758b53cf47e7756fa7f2bca1557e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a63758b53cf47e7756fa7f2bca1557e">&#9670;&#160;</a></span>aggregate() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename source_t&gt; </div>
+template&lt;typename accumulate_t, <a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t, <a class="el" href="structxtd_1_1func__callable.html">xtd::func_callable</a>&lt; accumulate_t, accumulate_t, typename <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt; source_t &gt;<a class="el" href="structxtd_1_1value__type.html">::value_type</a> &gt; func_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -529,94 +523,22 @@ template&lt;typename source_t&gt; </div>
         <tr>
           <td class="memname">auto xtd::linq::enumerable::aggregate </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="#a2bd1889dc1967c50ef692411dc2c4b92">ienumerable</a>&lt; source_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>source</em></span>, </td>
+          <td class="paramtype">source_t &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>source</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const source_t &amp;</td>          <td class="paramname"><span class="paramname"><em>seed</em></span>, </td>
+          <td class="paramtype">accumulate_t &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>seed</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::function&lt; source_t(const source_t &amp;, const source_t &amp;)&gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>func</em></span>&#160;) -&gt; source_t</td>
+          <td class="paramtype">func_t &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>func</em></span>&#160;) -&gt;  accumulate_t</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">source_t</td><td>The type of the elements of source. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">source</td><td>An <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt; to aggregate over. </td></tr>
-    <tr><td class="paramname">seed</td><td>The initial accumulator value. </td></tr>
-    <tr><td class="paramname">func</td><td>An accumulator function to be invoked on each element. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The final accumulator value. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to use <a class="el" href="#a4b7e2e2f627896aa0b7e841b7fcf3ec2" title="Applies an accumulator function over a sequence.">xtd::linq::enumerable::aggregate</a> to apply an accumulator function and use a seed value. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keyword">auto</span> ints = <a class="code hl_class" href="classxtd_1_1array.html">array</a> {4, 8, 8, 3, 9, 0, 7, 8, 2};</div>
-<div class="line">  </div>
-<div class="line">  <span class="comment">// Count the even numbers in the array, using a seed value of 0.</span></div>
-<div class="line">  <span class="keyword">auto</span> num_even = ints.<a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a7ebcce5da7a657d84c60f5c1628537f7">aggregate</a>(0, [](<span class="keyword">auto</span>&amp;&amp; total, <span class="keyword">auto</span>&amp;&amp; next) {</div>
-<div class="line">    <span class="keywordflow">return</span> next % 2 == 0 ? total + 1 : total;</div>
-<div class="line">  });</div>
-<div class="line"> </div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;The number of even integers is: {}&quot;</span>, num_even);</div>
-<div class="line">}</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// This code produces the following output :</span></div>
-<div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// The number of even integers is: 6</span></div>
-<div class="ttc" id="aclassxtd_1_1array_html"><div class="ttname"><a href="classxtd_1_1array.html">xtd::array</a></div><div class="ttdoc">Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...</div><div class="ttdef"><b>Definition</b> array.hpp:64</div></div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable_html_a7ebcce5da7a657d84c60f5c1628537f7"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a7ebcce5da7a657d84c60f5c1628537f7">xtd::collections::generic::extensions::enumerable::aggregate</a></div><div class="ttdeci">auto aggregate(const std::function&lt; source_t(const source_t &amp;, const source_t &amp;)&gt; &amp;func) const -&gt; source_t</div><div class="ttdoc">Applies an accumulator function over a sequence.</div><div class="ttdef"><b>Definition</b> enumerable.hpp:59</div></div>
-</div><!-- fragment --> </dd></dl>
-
-</div>
-</div>
-<a id="a26c2970f7c860d09c12ba24c707561ef" name="a26c2970f7c860d09c12ba24c707561ef"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a26c2970f7c860d09c12ba24c707561ef">&#9670;&#160;</a></span>aggregate() <span class="overload">[3/5]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename accumulate_t, typename source_t&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto xtd::linq::enumerable::aggregate </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="#a2bd1889dc1967c50ef692411dc2c4b92">ienumerable</a>&lt; source_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>source</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const accumulate_t &amp;</td>          <td class="paramname"><span class="paramname"><em>seed</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::function&lt; accumulate_t(const accumulate_t &amp;, const source_t &amp;)&gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>func</em></span>&#160;) -&gt; accumulate_t</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -638,13 +560,13 @@ template&lt;typename accumulate_t, typename source_t&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The final accumulator value. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to use <a class="el" href="#a4b7e2e2f627896aa0b7e841b7fcf3ec2" title="Applies an accumulator function over a sequence.">xtd::linq::enumerable::aggregate</a> to apply an accumulator function and use a seed value. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to use <a class="el" href="#aa1cc33b59fdc5a432cf5dbc5795cff53" title="Applies an accumulator function over a sequence.">xtd::linq::enumerable::aggregate</a> to apply an accumulator function and use a seed value. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> ints = <a class="code hl_class" href="classxtd_1_1array.html">array</a> {4, 8, 8, 3, 9, 0, 7, 8, 2};</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Count the even numbers in the array, using a seed value of 0.</span></div>
-<div class="line">  <span class="keyword">auto</span> num_even = ints.<a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a7ebcce5da7a657d84c60f5c1628537f7">aggregate</a>(0, [](<span class="keyword">auto</span>&amp;&amp; total, <span class="keyword">auto</span>&amp;&amp; next) {</div>
+<div class="line">  <span class="keyword">auto</span> num_even = ints.<a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a849de57f270800614d70e77f7364335d">aggregate</a>(0, [](<span class="keyword">auto</span>&amp;&amp; total, <span class="keyword">auto</span>&amp;&amp; next) {</div>
 <div class="line">    <span class="keywordflow">return</span> next % 2 == 0 ? total + 1 : total;</div>
 <div class="line">  });</div>
 <div class="line"> </div>
@@ -654,17 +576,19 @@ template&lt;typename accumulate_t, typename source_t&gt; </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// The number of even integers is: 6</span></div>
+<div class="ttc" id="aclassxtd_1_1array_html"><div class="ttname"><a href="classxtd_1_1array.html">xtd::array</a></div><div class="ttdoc">Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...</div><div class="ttdef"><b>Definition</b> array.hpp:64</div></div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable_html_a849de57f270800614d70e77f7364335d"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a849de57f270800614d70e77f7364335d">xtd::collections::generic::extensions::enumerable::aggregate</a></div><div class="ttdeci">auto aggregate(xtd::func_callable&lt; source_t, source_t, source_t &gt; auto &amp;&amp;func) const -&gt; source_t</div><div class="ttdoc">Applies an accumulator function over a sequence.</div><div class="ttdef"><b>Definition</b> enumerable.hpp:59</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
-<a id="a42b8cb98d7f4a4e28c8dac9efe95b72d" name="a42b8cb98d7f4a4e28c8dac9efe95b72d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a42b8cb98d7f4a4e28c8dac9efe95b72d">&#9670;&#160;</a></span>aggregate() <span class="overload">[4/5]</span></h2>
+<a id="a5bb2c384479107d5e48b21c51b750d1f" name="a5bb2c384479107d5e48b21c51b750d1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5bb2c384479107d5e48b21c51b750d1f">&#9670;&#160;</a></span>aggregate() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename source_t&gt; </div>
+template&lt;typename result_t, typename accumulate_t, <a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t, <a class="el" href="structxtd_1_1func__callable.html">xtd::func_callable</a>&lt; accumulate_t, accumulate_t, typename <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt; source_t &gt;<a class="el" href="structxtd_1_1value__type.html">::value_type</a> &gt; func_t, <a class="el" href="structxtd_1_1func__callable.html">xtd::func_callable</a>&lt; result_t, accumulate_t &gt; result_selector_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -672,104 +596,27 @@ template&lt;typename source_t&gt; </div>
         <tr>
           <td class="memname">auto xtd::linq::enumerable::aggregate </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="#a2bd1889dc1967c50ef692411dc2c4b92">ienumerable</a>&lt; source_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>source</em></span>, </td>
+          <td class="paramtype">source_t &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>source</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const source_t &amp;</td>          <td class="paramname"><span class="paramname"><em>seed</em></span>, </td>
+          <td class="paramtype">accumulate_t &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>seed</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::function&lt; source_t(const source_t &amp;, const source_t &amp;)&gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>func</em></span>, </td>
+          <td class="paramtype">func_t &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>func</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::function&lt; source_t(const source_t &amp;)&gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>result_selector</em></span>&#160;) -&gt; source_t</td>
+          <td class="paramtype">result_selector_t &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>result_selector</em></span>&#160;) -&gt;  result_t</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value, and the specified function is used to select the result value. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">source_t</td><td>The type of the elements of source. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">source</td><td>An <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt; to aggregate over. </td></tr>
-    <tr><td class="paramname">seed</td><td>The initial accumulator value. </td></tr>
-    <tr><td class="paramname">func</td><td>An accumulator function to be invoked on each element. </td></tr>
-    <tr><td class="paramname">result_Selector</td><td>A function to transform the final accumulator value into the result value. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The transformed final accumulator value. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to use <a class="el" href="#a4b7e2e2f627896aa0b7e841b7fcf3ec2" title="Applies an accumulator function over a sequence.">xtd::linq::enumerable::aggregate</a> to apply an accumulator function and use a seed value. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keyword">auto</span> fruits = <a class="code hl_class" href="classxtd_1_1array.html">array&lt;string&gt;</a> {<span class="stringliteral">&quot;apple&quot;</span>, <span class="stringliteral">&quot;mango&quot;</span>, <span class="stringliteral">&quot;orange&quot;</span>, <span class="stringliteral">&quot;passionfruit&quot;</span>, <span class="stringliteral">&quot;grape&quot;</span>};</div>
-<div class="line">  </div>
-<div class="line">  <span class="comment">// Determine whether any string in the array is longer than &quot;banana&quot;.</span></div>
-<div class="line">  <span class="keyword">auto</span> longest_name = fruits.<a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a7ebcce5da7a657d84c60f5c1628537f7">aggregate</a>(<span class="stringliteral">&quot;bananas&quot;</span>,</div>
-<div class="line">     [](<span class="keyword">auto</span>&amp;&amp; longest, <span class="keyword">auto</span>&amp;&amp; next) {<span class="keywordflow">return</span> next.length() &gt; longest.length() ? next : longest;},</div>
-<div class="line">     <span class="comment">// Return the final result as an upper case string.</span></div>
-<div class="line">     [](<span class="keyword">auto</span>&amp;&amp; fruit) {<span class="keywordflow">return</span> fruit.to_upper();});</div>
-<div class="line"> </div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;The fruit with the longest name is {}&quot;</span>, longest_name);</div>
-<div class="line">}</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// This code produces the following output :</span></div>
-<div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// The fruit with the longest name is PASSIONFRUIT</span></div>
-</div><!-- fragment --> </dd></dl>
-
-</div>
-</div>
-<a id="a90ad4085e70ce9fb707082866ad2f20a" name="a90ad4085e70ce9fb707082866ad2f20a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a90ad4085e70ce9fb707082866ad2f20a">&#9670;&#160;</a></span>aggregate() <span class="overload">[5/5]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename result_t, typename accumulate_t, typename source_t&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto xtd::linq::enumerable::aggregate </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="#a2bd1889dc1967c50ef692411dc2c4b92">ienumerable</a>&lt; source_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>source</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const accumulate_t &amp;</td>          <td class="paramname"><span class="paramname"><em>seed</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::function&lt; accumulate_t(const accumulate_t &amp;, const source_t &amp;)&gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>func</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::function&lt; result_t(const accumulate_t &amp;)&gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>result_selector</em></span>&#160;) -&gt; result_t</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -793,13 +640,13 @@ template&lt;typename result_t, typename accumulate_t, typename source_t&gt; </di
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The transformed final accumulator value. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to use <a class="el" href="#a4b7e2e2f627896aa0b7e841b7fcf3ec2" title="Applies an accumulator function over a sequence.">xtd::linq::enumerable::aggregate</a> to apply an accumulator function and use a seed value. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to use <a class="el" href="#aa1cc33b59fdc5a432cf5dbc5795cff53" title="Applies an accumulator function over a sequence.">xtd::linq::enumerable::aggregate</a> to apply an accumulator function and use a seed value. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> fruits = <a class="code hl_class" href="classxtd_1_1array.html">array&lt;string&gt;</a> {<span class="stringliteral">&quot;apple&quot;</span>, <span class="stringliteral">&quot;mango&quot;</span>, <span class="stringliteral">&quot;orange&quot;</span>, <span class="stringliteral">&quot;passionfruit&quot;</span>, <span class="stringliteral">&quot;grape&quot;</span>};</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Determine whether any string in the array is longer than &quot;banana&quot;.</span></div>
-<div class="line">  <span class="keyword">auto</span> longest_name = fruits.<a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a7ebcce5da7a657d84c60f5c1628537f7">aggregate</a>(<span class="stringliteral">&quot;bananas&quot;</span>,</div>
+<div class="line">  <span class="keyword">auto</span> longest_name = fruits.<a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a849de57f270800614d70e77f7364335d">aggregate</a>(<span class="stringliteral">&quot;bananas&quot;</span>,</div>
 <div class="line">     [](<span class="keyword">auto</span>&amp;&amp; longest, <span class="keyword">auto</span>&amp;&amp; next) {<span class="keywordflow">return</span> next.length() &gt; longest.length() ? next : longest;},</div>
 <div class="line">     <span class="comment">// Return the final result as an upper case string.</span></div>
 <div class="line">     [](<span class="keyword">auto</span>&amp;&amp; fruit) {<span class="keywordflow">return</span> fruit.to_upper();});</div>
@@ -814,13 +661,13 @@ template&lt;typename result_t, typename accumulate_t, typename source_t&gt; </di
 
 </div>
 </div>
-<a id="a67cab924ee48a3561a2817bf7012c734" name="a67cab924ee48a3561a2817bf7012c734"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a67cab924ee48a3561a2817bf7012c734">&#9670;&#160;</a></span>all()</h2>
+<a id="a7269f06db2819ef3d05c031e103ca324" name="a7269f06db2819ef3d05c031e103ca324"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7269f06db2819ef3d05c031e103ca324">&#9670;&#160;</a></span>all()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename source_t&gt; </div>
+template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t, <a class="el" href="structxtd_1_1predicate__callable.html">xtd::predicate_callable</a>&lt; typename <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt; source_t &gt;<a class="el" href="structxtd_1_1value__type.html">::value_type</a> &gt; predicate_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -828,17 +675,17 @@ template&lt;typename source_t&gt; </div>
         <tr>
           <td class="memname">auto xtd::linq::enumerable::all </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="#a2bd1889dc1967c50ef692411dc2c4b92">ienumerable</a>&lt; source_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>source</em></span>, </td>
+          <td class="paramtype">source_t &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>source</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::function&lt; bool(const source_t &amp;)&gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>predicate</em></span>&#160;) -&gt; bool</td>
+          <td class="paramtype">predicate_t &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>predicate</em></span>&#160;) -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -858,7 +705,7 @@ template&lt;typename source_t&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span> if every element of the source sequence passes the test in the specified predicate, or if the sequence is empty; otherwise, <span class="tt">false</span>. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to use <a class="el" href="#a67cab924ee48a3561a2817bf7012c734" title="Determines whether all elements of a sequence satisfy a condition.">xtd::linq::enumerable::all</a> &lt;source_t&gt; to determine whether all the elements in a sequence satisfy a condition. Variable all_start_with_B is <span class="tt">true</span> if all the pet names start with "B" or if the pets array is empty. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to use <a class="el" href="#a7269f06db2819ef3d05c031e103ca324" title="Determines whether all elements of a sequence satisfy a condition.">xtd::linq::enumerable::all</a> &lt;source_t&gt; to determine whether all the elements in a sequence satisfy a condition. Variable all_start_with_B is <span class="tt">true</span> if all the pet names start with "B" or if the pets array is empty. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">struct </span>pet : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1object.html">object</a> {</div>
@@ -877,7 +724,7 @@ template&lt;typename source_t&gt; </div>
 <div class="line">  };</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Determine whether all pet names in the array start with &#39;B&#39;.</span></div>
-<div class="line">  <span class="keywordtype">bool</span> all_start_with_b = pets.<a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a2c87271020284f4837a1c2bca5ba7b1a">all</a>([](<span class="keyword">auto</span>&amp;&amp; pet) {</div>
+<div class="line">  <span class="keywordtype">bool</span> all_start_with_b = pets.<a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a0d2dcbada6e3d928bf4c7071e59ffa93">all</a>([](<span class="keyword">auto</span>&amp;&amp; pet) {</div>
 <div class="line">    <span class="keywordflow">return</span> pet.name.starts_with(<span class="stringliteral">&quot;B&quot;</span>);</div>
 <div class="line">  });</div>
 <div class="line">  </div>
@@ -887,19 +734,19 @@ template&lt;typename source_t&gt; </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// Not all pet names start with &#39;B&#39;.</span></div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable_html_a2c87271020284f4837a1c2bca5ba7b1a"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a2c87271020284f4837a1c2bca5ba7b1a">xtd::collections::generic::extensions::enumerable::all</a></div><div class="ttdeci">auto all(const std::function&lt; bool(const source_t &amp;)&gt; &amp;predicate) const -&gt; bool</div><div class="ttdoc">Determines whether all elements of a sequence satisfy a condition.</div><div class="ttdef"><b>Definition</b> enumerable.hpp:116</div></div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable_html_a0d2dcbada6e3d928bf4c7071e59ffa93"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a0d2dcbada6e3d928bf4c7071e59ffa93">xtd::collections::generic::extensions::enumerable::all</a></div><div class="ttdeci">auto all(xtd::predicate_callable&lt; source_t &gt; auto &amp;&amp;predicate) const -&gt; bool</div><div class="ttdoc">Determines whether all elements of a sequence satisfy a condition.</div><div class="ttdef"><b>Definition</b> enumerable.hpp:95</div></div>
 <div class="ttc" id="aclassxtd_1_1object_html"><div class="ttname"><a href="classxtd_1_1object.html">xtd::object</a></div><div class="ttdoc">Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....</div><div class="ttdef"><b>Definition</b> object.hpp:45</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
-<a id="a28300c4ed210bac70007266fbe25a17e" name="a28300c4ed210bac70007266fbe25a17e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a28300c4ed210bac70007266fbe25a17e">&#9670;&#160;</a></span>any() <span class="overload">[1/2]</span></h2>
+<a id="aeef91d811309c77a3db2abdc56af2dbc" name="aeef91d811309c77a3db2abdc56af2dbc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeef91d811309c77a3db2abdc56af2dbc">&#9670;&#160;</a></span>any() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename source_t&gt; </div>
+template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -907,13 +754,13 @@ template&lt;typename source_t&gt; </div>
         <tr>
           <td class="memname">auto xtd::linq::enumerable::any </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="#a2bd1889dc1967c50ef692411dc2c4b92">ienumerable</a>&lt; source_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>source</em></span></td><td>)</td>
-          <td> -&gt; bool</td>
+          <td class="paramtype">source_t &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>source</em></span></td><td>)</td>
+          <td> -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -945,18 +792,18 @@ template&lt;typename source_t&gt; </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// The list is not empty.</span></div>
-<div class="ttc" id="aclassxtd_1_1linq_1_1enumerable_html_a4ff59be55b7be66d275f28741e2f1f0a"><div class="ttname"><a href="#a4ff59be55b7be66d275f28741e2f1f0a">xtd::linq::enumerable::list</a></div><div class="ttdeci">typename xtd::collections::generic::list&lt; type_t &gt; list</div><div class="ttdoc">Represents the list value type.</div><div class="ttdef"><b>Definition</b> enumerable.hpp:89</div></div>
+<div class="ttc" id="aclassxtd_1_1linq_1_1enumerable_html_a4ff59be55b7be66d275f28741e2f1f0a"><div class="ttname"><a href="#a4ff59be55b7be66d275f28741e2f1f0a">xtd::linq::enumerable::list</a></div><div class="ttdeci">typename xtd::collections::generic::list&lt; type_t &gt; list</div><div class="ttdoc">Represents the list value type.</div><div class="ttdef"><b>Definition</b> enumerable_.hpp:90</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
-<a id="ad900a920abefe15c03990a6820f9ffaa" name="ad900a920abefe15c03990a6820f9ffaa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad900a920abefe15c03990a6820f9ffaa">&#9670;&#160;</a></span>any() <span class="overload">[2/2]</span></h2>
+<a id="aa8a64d79bcb473e22c8717e5da650928" name="aa8a64d79bcb473e22c8717e5da650928"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8a64d79bcb473e22c8717e5da650928">&#9670;&#160;</a></span>any() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename source_t&gt; </div>
+template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t, <a class="el" href="structxtd_1_1predicate__callable.html">xtd::predicate_callable</a>&lt; typename <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt; source_t &gt;<a class="el" href="structxtd_1_1value__type.html">::value_type</a> &gt; predicate_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -964,17 +811,17 @@ template&lt;typename source_t&gt; </div>
         <tr>
           <td class="memname">auto xtd::linq::enumerable::any </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="#a2bd1889dc1967c50ef692411dc2c4b92">ienumerable</a>&lt; source_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>source</em></span>, </td>
+          <td class="paramtype">source_t &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>source</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::function&lt; bool(const source_t &amp;)&gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>predicate</em></span>&#160;) -&gt; bool</td>
+          <td class="paramtype">predicate_t &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>predicate</em></span>&#160;) -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -994,7 +841,7 @@ template&lt;typename source_t&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span> if every element of the source sequence passes the test in the specified predicate, or if the sequence is empty; otherwise, <span class="tt">false</span>. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to use <a class="el" href="#a67cab924ee48a3561a2817bf7012c734" title="Determines whether all elements of a sequence satisfy a condition.">xtd::linq::enumerable::all</a> &lt;source_t&gt; to determine whether all the elements in a sequence satisfy a condition. Variable all_start_with_B is <span class="tt">true</span> if all the pet names start with "B" or if the pets array is empty. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to use <a class="el" href="#a7269f06db2819ef3d05c031e103ca324" title="Determines whether all elements of a sequence satisfy a condition.">xtd::linq::enumerable::all</a> &lt;source_t&gt; to determine whether all the elements in a sequence satisfy a condition. Variable all_start_with_B is <span class="tt">true</span> if all the pet names start with "B" or if the pets array is empty. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">struct </span>pet : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1object.html">object</a> {</div>
@@ -1013,7 +860,7 @@ template&lt;typename source_t&gt; </div>
 <div class="line">  };</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Determine whether all pet names in the array start with &#39;B&#39;.</span></div>
-<div class="line">  <span class="keywordtype">bool</span> all_start_with_b = pets.<a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a2c87271020284f4837a1c2bca5ba7b1a">all</a>([](<span class="keyword">auto</span>&amp;&amp; pet) {</div>
+<div class="line">  <span class="keywordtype">bool</span> all_start_with_b = pets.<a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a0d2dcbada6e3d928bf4c7071e59ffa93">all</a>([](<span class="keyword">auto</span>&amp;&amp; pet) {</div>
 <div class="line">    <span class="keywordflow">return</span> pet.name.starts_with(<span class="stringliteral">&quot;B&quot;</span>);</div>
 <div class="line">  });</div>
 <div class="line">  </div>
@@ -1027,13 +874,13 @@ template&lt;typename source_t&gt; </div>
 
 </div>
 </div>
-<a id="a16290a393e0688753e2e56ad70780909" name="a16290a393e0688753e2e56ad70780909"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a16290a393e0688753e2e56ad70780909">&#9670;&#160;</a></span>append()</h2>
+<a id="af00ebdc5017e70612a7f6a8efd009350" name="af00ebdc5017e70612a7f6a8efd009350"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af00ebdc5017e70612a7f6a8efd009350">&#9670;&#160;</a></span>append()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename source_t&gt; </div>
+template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1041,17 +888,17 @@ template&lt;typename source_t&gt; </div>
         <tr>
           <td class="memname">auto xtd::linq::enumerable::append </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="#a2bd1889dc1967c50ef692411dc2c4b92">ienumerable</a>&lt; source_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>source</em></span>, </td>
+          <td class="paramtype">source_t &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>source</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const source_t &amp;</td>          <td class="paramname"><span class="paramname"><em>element</em></span>&#160;)</td>
+          <td class="paramtype">typename <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt; source_t &gt;<a class="el" href="structxtd_1_1value__type.html">::value_type</a> &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>element</em></span>&#160;) -&gt;  <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; typename <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt; source_t &gt;<a class="el" href="structxtd_1_1value__type.html">::value_type</a> &gt;</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -3461,7 +3308,7 @@ template&lt;typename type_t&gt; </div>
 <div class="line"><span class="comment">// 64</span></div>
 <div class="line"><span class="comment">// 81</span></div>
 <div class="line"><span class="comment">// 100</span></div>
-<div class="ttc" id="aclassxtd_1_1linq_1_1enumerable_html_ad3f2b197a8f9e4e52710edcdd59870e9"><div class="ttname"><a href="#ad3f2b197a8f9e4e52710edcdd59870e9">xtd::linq::enumerable::range</a></div><div class="ttdeci">static auto range(type_t count)</div><div class="ttdoc">Generates a sequence of integral numbers within a specified range.</div><div class="ttdef"><b>Definition</b> enumerable.hpp:912</div></div>
+<div class="ttc" id="aclassxtd_1_1linq_1_1enumerable_html_ad3f2b197a8f9e4e52710edcdd59870e9"><div class="ttname"><a href="#ad3f2b197a8f9e4e52710edcdd59870e9">xtd::linq::enumerable::range</a></div><div class="ttdeci">static auto range(type_t count)</div><div class="ttdoc">Generates a sequence of integral numbers within a specified range.</div><div class="ttdef"><b>Definition</b> enumerable_.hpp:806</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -3834,7 +3681,7 @@ template&lt;typename source_t&gt; </div>
 <div class="line"><span class="comment">// 5</span></div>
 <div class="line"><span class="comment">// 10</span></div>
 <div class="ttc" id="aclassxtd_1_1basic__string_html_a4d8c4c95a122844c62de3feb62a5fa74"><div class="ttname"><a href="classxtd_1_1basic__string.html#a4d8c4c95a122844c62de3feb62a5fa74">xtd::basic_string&lt; char &gt;::length</a></div><div class="ttdeci">virtual auto length() const noexcept -&gt; size_type</div><div class="ttdef"><b>Definition</b> basic_string.hpp:383</div></div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable_html_a8e6fb1439ffb7dd8d5ea76b3b06b1c65"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a8e6fb1439ffb7dd8d5ea76b3b06b1c65">xtd::collections::generic::extensions::enumerable::select</a></div><div class="ttdeci">auto select(auto &amp;&amp;selector) const</div><div class="ttdoc">Projects each element of a sequence into a new form.</div><div class="ttdef"><b>Definition</b> enumerable.hpp:392</div></div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable_html_a8e6fb1439ffb7dd8d5ea76b3b06b1c65"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a8e6fb1439ffb7dd8d5ea76b3b06b1c65">xtd::collections::generic::extensions::enumerable::select</a></div><div class="ttdeci">auto select(auto &amp;&amp;selector) const</div><div class="ttdoc">Projects each element of a sequence into a new form.</div><div class="ttdef"><b>Definition</b> enumerable.hpp:371</div></div>
 <div class="ttc" id="agroup__types_html_gae60f5a861761019d824a87291f85d525"><div class="ttname"><a href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></div><div class="ttdeci">std::size_t usize</div><div class="ttdoc">Represents an unsigned size of any object in bytes.</div><div class="ttdef"><b>Definition</b> usize.hpp:22</div></div>
 <div class="ttc" id="anamespacextd_html_a84689e2cdf94d64f7e5f33fe4a1be71a"><div class="ttname"><a href="namespacextd.html#a84689e2cdf94d64f7e5f33fe4a1be71a">xtd::length</a></div><div class="ttdeci">constexpr auto length() const noexcept -&gt; size_type</div><div class="ttdoc">Returns the length of the current read_only_span.</div><div class="ttdef"><b>Definition</b> read_only_span.hpp:213</div></div>
 </div><!-- fragment --> </dd></dl>
@@ -3925,7 +3772,7 @@ template&lt;typename source_t&gt; </div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>xtd.core/include/xtd/linq/<a class="el" href="linq_2enumerable_8hpp_source.html">enumerable.hpp</a></li>
+<li>xtd.core/include/xtd/linq/<a class="el" href="linq_2enumerable___8hpp_source.html">enumerable_.hpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
