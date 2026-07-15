@@ -48,7 +48,7 @@ namespace xtd {
     /// @param format The format to use <br>-or-<br> A xtd::string::empty_string ("") to use the default format defined for the type of the xtd::iformattable implementation.
     /// @param culture An xtd::globalization::culture_info object that contains culture information.
     /// @return The value of the current instance in the specified format.
-    [[nodiscard]] virtual auto to_string(const xtd::string& format, const globalization::culture_info& culture) const -> xtd::string = 0;
+    [[nodiscard]] virtual auto to_string(const xtd::string& format, const xtd::globalization::culture_info& culture) const -> xtd::string = 0;
     /// @}
   };
 }
