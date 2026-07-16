@@ -6,6 +6,7 @@
 #include "internal/__string_definitions.hpp"
 #undef __XTD_CORE_INTERNAL__
 #include "basic_string.hpp"
+#include "collections/generic/enumerable_generator.hpp"
 #include "collections/generic/key_value_pair.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -86,6 +87,20 @@ namespace xtd {
   [[nodiscard]] inline auto to_ustring(type_t val) -> xtd::string {
     return to_string(val);
   }
+
+  /// @cond
+  namespace collections {
+    namespace generic {
+      template<typename type_t>
+      auto enumerable_generator<type_t>::to_string() const noexcept -> xtd::string {
+        auto result = xtd::string {"["};
+        for (auto item : self_)
+          result += xtd::string::format("{}{}", result != "[" ? ", " : "", item);
+        return result + "]";
+      }
+    }
+  }
+  /// @endcond
 }
 
 /*

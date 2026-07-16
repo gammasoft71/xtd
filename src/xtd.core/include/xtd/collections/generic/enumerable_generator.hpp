@@ -4,7 +4,12 @@
 #pragma once
 #include "ienumerable.hpp"
 #include "ienumerator.hpp"
+#define __XTD_CORE_INTERNAL__
+#include "../../internal/__string_definitions.hpp"
+#undef __XTD_CORE_INTERNAL__
 #include "../../helpers/throw_helper.hpp"
+#include "../../object.hpp"
+//#include "../../string.hpp"
 #include <coroutine>
 #include <exception>
 
@@ -36,7 +41,7 @@ namespace xtd {
       /// @remarks Because it wraps an ephemeral coroutine frame state, an xtd::collections::generic::enumerable_generator <type_t> is a **single-pass** stream. It cannot be copied, only moved. Multiple iterators active at the same time on the same generator will advance and consume the exact same underlying state stream.
       /// @remarks Tenting to invoke the xtd::collections::generic::ienumerator::reset method on a generator's enumerator will systematically throw an xtd::not_supported_exception, as coroutine execution states cannot be rewound.
       template<typename type_t>
-      class enumerable_generator : public xtd::collections::generic::ienumerable<type_t> {
+      class enumerable_generator : public xtd::object, public xtd::collections::generic::ienumerable<type_t> {
       public:
         /// @brief The promise type required by the C++20 coroutine standard to manage the state and lifecycle of the enumerable_generator.
         /// @remarks This structure acts as the internal bridge between the compiler's coroutine mechanics and the public xtd::collections::generic::enumerable_generator instance.
@@ -114,6 +119,10 @@ namespace xtd {
           
           return {new_ptr<generator_enumerator>(handle_)};
         }
+        
+        /// @brief Returns a xtd::string that represents the current object.
+        /// @return A string that represents the current object.
+        [[nodiscard]] auto to_string() const noexcept -> xtd::string override; // Defined in xtd/string.hpp
         /// @}
         
       private:
