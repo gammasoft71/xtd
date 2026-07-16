@@ -184,10 +184,8 @@ namespace xtd {
       /// @par Example
       /// The following code example demonstrates how to use as_enumerable <source_t>(ienumerable <source_t>) to hide a type's custom Where method when the standard query operator implementation is desired.
       /// @include enumerable_as_enumerable.cpp
-      template<typename source_t>
-      [[nodiscard]] static const auto& as_enumerable(const ienumerable<source_t>& source) noexcept {
-        return source;
-      }
+      template<xtd::forward_iterable source_t>
+      [[nodiscard]] static auto as_enumerable(source_t&& source) noexcept -> xtd::collections::generic::enumerable_generator<typename xtd::raw_type<source_t>::value_type>;
       /// @brief Returns the input typed as xtd::collections::generic::ienumerable <type_t>.
       /// @tparam source_t The type of the elements of source.
       /// @param source A sequence of values.
@@ -195,32 +193,8 @@ namespace xtd {
       /// @par Example
       /// The following code example demonstrates how to use as_enumerable <source_t>(ienumerable <source_t>) to hide a type's custom Where method when the standard query operator implementation is desired.
       /// @include enumerable_as_enumerable.cpp
-      template<typename source_t>
-      [[nodiscard]] static auto as_enumerable(std::initializer_list<source_t> source) noexcept {
-        auto result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
-        for (const auto& item : source)
-          result.items.push_back(item);
-        return result;
-      }
-      /// @brief Returns the input typed as xtd::collections::generic::ienumerable <type_t>.
-      /// @tparam collection_t The type of the source.
-      /// @param source A sequence of values.
-      /// @return The input sequence typed as xtd::collections::generic::ienumerable <type_t>.
-      /// @par Example
-      /// The following code example demonstrates how to use as_enumerable <source_t>(ienumerable <source_t>) to hide a type's custom Where method when the standard query operator implementation is desired.
-      /// @include enumerable_as_enumerable.cpp
-      template<typename collection_t>
-      [[nodiscard]] static auto as_enumerable(collection_t&& source) noexcept {
-#if defined(__xtd__cpp_lib_ranges)
-        using source_t = std::ranges::range_value_t<collection_t>;
-#else
-        using source_t = typename collection_t::value_type;
-#endif
-        auto result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
-        for (auto&& item : source)
-          result.items.push_back(item);
-        return result;
-      }
+      template<typename value_t>
+      [[nodiscard]] static auto as_enumerable(std::initializer_list<value_t> source) noexcept -> xtd::collections::generic::enumerable_generator<value_t>;
       /// @brief Returns the input typed as xtd::collections::generic::ienumerable <type_t>.
       /// @tparam input_iterator_t The type of the source iterators.
       /// @param first The first iterator.
@@ -229,14 +203,7 @@ namespace xtd {
       /// @par Example
       /// The following code example demonstrates how to use as_enumerable <source_t>(ienumerable <source_t>) to hide a type's custom Where method when the standard query operator implementation is desired.
       /// @include enumerable_as_enumerable2.cpp
-      template<typename input_iterator_t>
-      [[nodiscard]] static auto as_enumerable(input_iterator_t first, input_iterator_t last) noexcept {
-        using source_t = typename std::decay<decltype(*first)>::type;
-        auto result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
-        for (auto iterator = first; iterator != last; ++iterator)
-          result.items.push_back(*iterator);
-        return result;
-      }
+      [[nodiscard]] static auto as_enumerable(std::forward_iterator auto first, std::forward_iterator auto last) noexcept -> xtd::collections::generic::enumerable_generator<typename std::decay<decltype(*first)>::type>;
       /// @brief Returns the input typed as xtd::collections::generic::ienumerable <type_t>.
       /// @tparam input_iterator_t The type of the source iterators.
       /// @param iterator The iterator.
@@ -245,10 +212,7 @@ namespace xtd {
       /// @par Example
       /// The following code example demonstrates how to use as_enumerable <source_t>(ienumerable <source_t>) to hide a type's custom Where method when the standard query operator implementation is desired.
       /// @include enumerable_as_enumerable2.cpp
-      template<typename input_iterator_t>
-      [[nodiscard]] static auto as_enumerable(input_iterator_t iterator, xtd::usize length) noexcept {
-        return as_enumerable(iterator, iterator + length);
-      }
+      [[nodiscard]] static auto as_enumerable(std::forward_iterator auto iterator, xtd::usize length) noexcept -> xtd::collections::generic::enumerable_generator<typename std::decay<decltype(*iterator)>::type>;
       /// @brief Returns the input typed as xtd::collections::generic::ienumerable <type_t>.
       /// @tparam source_t The type of the source array.
       /// @param array The native array.
@@ -257,32 +221,18 @@ namespace xtd {
       /// @par Example
       /// The following code example demonstrates how to use as_enumerable <source_t>(ienumerable <source_t>) to hide a type's custom Where method when the standard query operator implementation is desired.
       /// @include enumerable_as_enumerable.cpp
-      template<typename source_t, xtd::usize length>
-      [[nodiscard]] static auto as_enumerable(const source_t (&array)[length]) noexcept {
-        return as_enumerable(array, array + length);
-      }
+      template<typename value_t, xtd::usize length>
+      [[nodiscard]] static auto as_enumerable(const value_t (&array)[length]) noexcept -> xtd::collections::generic::enumerable_generator<value_t>;
       
       /// @cond
       template<xtd::usize size_>
-      [[nodiscard]] static auto as_enumerable(std::bitset<size_> source); // defined in xtd/collections/bit_array.hpp
-      template<typename source_t, typename container_t>
-      static auto as_enumerable(std::queue<source_t, container_t> source) noexcept {
-        struct accessor : public std::queue<source_t> {static auto get() {return &accessor::c;}};
-        const auto& underlying_items = source.*accessor::get();
-        return as_enumerable(underlying_items.begin(), underlying_items.end());
-      }
-      template<typename source_t, typename container_t>
-      [[nodiscard]] static auto as_enumerable(std::priority_queue<source_t, container_t> source) noexcept {
-        struct accessor : public std::priority_queue<source_t> {static auto get() {return &accessor::c;}};
-        const auto& underlying_items = source.*accessor::get();
-        return as_enumerable(underlying_items.begin(), underlying_items.end());
-      }
-      template<typename source_t, typename container_t>
-      [[nodiscard]] static auto as_enumerable(std::stack<source_t, container_t> source) noexcept {
-        struct accessor : public std::stack<source_t> {static auto get() {return &accessor::c;}};
-        const auto& underlying_items = source.*accessor::get();
-        return as_enumerable(underlying_items.begin(), underlying_items.end());
-      }
+      [[nodiscard]] static auto as_enumerable(std::bitset<size_> source) -> xtd::collections::generic::enumerable_generator<bool>; // defined in xtd/collections/bit_array.hpp
+      template<typename value_t, typename container_t>
+      static auto as_enumerable(std::queue<value_t, container_t> source) noexcept -> xtd::collections::generic::enumerable_generator<value_t>;
+      template<typename value_t, typename container_t>
+      [[nodiscard]] static auto as_enumerable(std::priority_queue<value_t, container_t> source) noexcept -> xtd::collections::generic::enumerable_generator<value_t>;
+      template<typename value_t, typename container_t>
+      [[nodiscard]] static auto as_enumerable(std::stack<value_t, container_t> source) noexcept -> xtd::collections::generic::enumerable_generator<value_t>;
       /// @endcond
       
       /// @brief Computes the average of a sequence of xtd::decimal values.

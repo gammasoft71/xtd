@@ -25,30 +25,18 @@ namespace xtd {
     /// @include linq_from3.cpp
     /// @see xtd::linq::enumerable::from methods for all overloads of xtd::linq::from.
     template<typename collection_t>
-    [[nodiscard]] auto from(collection_t&& source) noexcept {
-      return enumerable::as_enumerable(source);
-    }
+    [[nodiscard]] auto from(collection_t&& source) noexcept {return enumerable::as_enumerable(source);}
     /// @cond
     template<typename input_iterator_t>
-    [[nodiscard]] auto from(input_iterator_t first, input_iterator_t last) noexcept {
-      return enumerable::as_enumerable(first, last);
-    }
+    [[nodiscard]] auto from(input_iterator_t first, input_iterator_t last) noexcept {return enumerable::as_enumerable(first, last);}
     template<typename source_t>
-    [[nodiscard]] auto from(const xtd::collections::generic::ienumerable<source_t>& source) noexcept {
-      return enumerable::as_enumerable(source);
-    }
+    [[nodiscard]] auto from(const xtd::collections::generic::ienumerable<source_t>& source) noexcept {return enumerable::as_enumerable(source);}
     template<typename source_t>
-    [[nodiscard]] auto from(const std::initializer_list<source_t>& source) noexcept {
-      return enumerable::as_enumerable(source);
-    }
+    [[nodiscard]] auto from(const std::initializer_list<source_t>& source) noexcept {return enumerable::as_enumerable(source);}
     template<typename input_iterator_t>
-    [[nodiscard]] auto from(input_iterator_t iterator, xtd::usize length) noexcept {
-      return enumerable::as_enumerable(iterator, iterator + length);
-    }
+    [[nodiscard]] auto from(input_iterator_t iterator, xtd::usize length) noexcept {return enumerable::as_enumerable(iterator, iterator + length);}
     template<typename source_t, xtd::usize length>
-    [[nodiscard]] auto from(const source_t (&array)[length]) noexcept {
-      return enumerable::as_enumerable(array, array + length);
-    }
+    [[nodiscard]] auto from(const source_t (&array)[length]) noexcept {return enumerable::as_enumerable(array, array + length);}
     /// @endcond
   }
 }

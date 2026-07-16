@@ -58,3 +58,48 @@ auto xtd::linq::enumerable::append(source_t&& source, typename xtd::raw_type<sou
     co_yield item;
   co_yield std::move(element);
 }
+
+template<xtd::forward_iterable source_t>
+auto xtd::linq::enumerable::as_enumerable(source_t&& source) noexcept -> xtd::collections::generic::enumerable_generator<typename xtd::raw_type<source_t>::value_type> {
+  for (const auto& item : source)
+    co_yield item;
+}
+
+template<typename value_t>
+auto xtd::linq::enumerable::as_enumerable(std::initializer_list<value_t> source) noexcept -> xtd::collections::generic::enumerable_generator<value_t> {
+  for (const auto& item : source)
+    co_yield item;
+}
+
+auto xtd::linq::enumerable::as_enumerable(std::forward_iterator auto first, std::forward_iterator auto last) noexcept -> xtd::collections::generic::enumerable_generator<typename std::decay<decltype(*first)>::type> {
+  for (auto iterator = first; iterator != last; ++iterator)
+    co_yield *iterator;
+}
+
+auto xtd::linq::enumerable::as_enumerable(std::forward_iterator auto iterator, xtd::usize length) noexcept -> xtd::collections::generic::enumerable_generator<typename std::decay<decltype(*iterator)>::type> {
+  return as_enumerable(iterator, iterator + length);
+}
+
+template<typename value_t, xtd::usize length>
+auto xtd::linq::enumerable::as_enumerable(const value_t (&array)[length]) noexcept -> xtd::collections::generic::enumerable_generator<value_t> {
+  return as_enumerable(array, array + length);
+}
+
+template<typename value_t, typename container_t>
+auto xtd::linq::enumerable::as_enumerable(std::queue<value_t, container_t> source) noexcept -> xtd::collections::generic::enumerable_generator<value_t> {
+  struct accessor : public std::queue<value_t> {static auto get() {return &accessor::c;}};
+  const auto& underlying_items = source.*accessor::get();
+  return as_enumerable(underlying_items.begin(), underlying_items.end());
+}
+template<typename value_t, typename container_t>
+auto xtd::linq::enumerable::as_enumerable(std::priority_queue<value_t, container_t> source) noexcept -> xtd::collections::generic::enumerable_generator<value_t> {
+  struct accessor : public std::priority_queue<value_t> {static auto get() {return &accessor::c;}};
+  const auto& underlying_items = source.*accessor::get();
+  return as_enumerable(underlying_items.begin(), underlying_items.end());
+}
+template<typename value_t, typename container_t>
+auto xtd::linq::enumerable::as_enumerable(std::stack<value_t, container_t> source) noexcept -> xtd::collections::generic::enumerable_generator<value_t> {
+  struct accessor : public std::stack<value_t> {static auto get() {return &accessor::c;}};
+  const auto& underlying_items = source.*accessor::get();
+  return as_enumerable(underlying_items.begin(), underlying_items.end());
+}
