@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line">  </div>
 <div class="line">  <span class="keyword">static</span> contact_info get_contact_info(<span class="keyword">const</span> <span class="keyword">auto</span>&amp; contact_list, <span class="keywordtype">int</span> <span class="keywordtype">id</span>) <span class="keyword">noexcept</span> {</div>
 <div class="line">    contact_info cinfo =</div>
-<div class="line">      <a class="code hl_function" href="group__linq.html#gadc7d892fb90f8792e83260f40bf21c75">from</a>(contact_list)</div>
+<div class="line">      <a class="code hl_function" href="group__linq.html#ga51ce7f468e039aae97162ec46d247dad">from</a>(contact_list)</div>
 <div class="line">      .where([&amp;](<span class="keyword">const</span> <span class="keyword">auto</span>&amp; value) {<span class="keywordflow">return</span> <a class="code hl_enumvalue" href="group__expressions.html#gga418395dc9383e37eb269a52b25b74683a2063c1608d6e0baf80249c42e2be5804">value</a>.id == id;})</div>
 <div class="line">      .first_or_default();</div>
 <div class="line">    <span class="keywordflow">return</span> cinfo;</div>
@@ -164,7 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Produce a filtered sequence of unmodified students.</span></div>
 <div class="line">  <span class="keyword">const</span> ienumerable&lt;student&gt;&amp; student_query1 =</div>
-<div class="line">    <a class="code hl_function" href="group__linq.html#gadc7d892fb90f8792e83260f40bf21c75">from</a>(students)</div>
+<div class="line">    <a class="code hl_function" href="group__linq.html#ga51ce7f468e039aae97162ec46d247dad">from</a>(students)</div>
 <div class="line">    .where(_*<a class="code hl_function" href="group__expressions.html#ga582c6dbb71dfc746f9e4b69ba90ed2b6">member</a>(&amp;student::id) &gt; 111)</div>
 <div class="line">    .select(_);</div>
 <div class="line"> </div>
@@ -174,7 +174,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Produce a filtered sequence of elements that contain only one property of each student.</span></div>
 <div class="line">  <span class="keyword">const</span> ienumerable&lt;string&gt;&amp; student_query2 =</div>
-<div class="line">    <a class="code hl_function" href="group__linq.html#gadc7d892fb90f8792e83260f40bf21c75">from</a>(students)</div>
+<div class="line">    <a class="code hl_function" href="group__linq.html#ga51ce7f468e039aae97162ec46d247dad">from</a>(students)</div>
 <div class="line">    .where(_*<a class="code hl_function" href="group__expressions.html#ga582c6dbb71dfc746f9e4b69ba90ed2b6">member</a>(&amp;student::id) &gt; 111)</div>
 <div class="line">    .select&lt;<span class="keywordtype">string</span>&gt;(<a class="code hl_variable" href="group__expressions.html#ga130423906ed7125e321bf42e00dafae9">_</a>*<a class="code hl_function" href="group__expressions.html#ga582c6dbb71dfc746f9e4b69ba90ed2b6">member</a>(&amp;student::last));</div>
 <div class="line">  </div>
@@ -185,7 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Produce a filtered sequence of objects created by a method call on each student.</span></div>
 <div class="line">  <span class="keyword">const</span> ienumerable&lt;contact_info&gt;&amp; student_query3 =</div>
-<div class="line">    <a class="code hl_function" href="group__linq.html#gadc7d892fb90f8792e83260f40bf21c75">from</a>(students)</div>
+<div class="line">    <a class="code hl_function" href="group__linq.html#ga51ce7f468e039aae97162ec46d247dad">from</a>(students)</div>
 <div class="line">    .where(_*<a class="code hl_function" href="group__expressions.html#ga582c6dbb71dfc746f9e4b69ba90ed2b6">member</a>(&amp;student::id) &gt; 111)</div>
 <div class="line">    .select&lt;contact_info&gt;([&amp;](<span class="keyword">auto</span>&amp;&amp; student) {<span class="keywordflow">return</span> student.get_contact_info(contact_list, student.id);});</div>
 <div class="line">  </div>
@@ -196,7 +196,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Produce a filtered sequence of ints from the internal array inside each student.</span></div>
 <div class="line">  <span class="keyword">const</span> ienumerable&lt;int&gt;&amp; student_query4 =</div>
-<div class="line">    <a class="code hl_function" href="group__linq.html#gadc7d892fb90f8792e83260f40bf21c75">from</a>(students)</div>
+<div class="line">    <a class="code hl_function" href="group__linq.html#ga51ce7f468e039aae97162ec46d247dad">from</a>(students)</div>
 <div class="line">    .where(_*<a class="code hl_function" href="group__expressions.html#ga582c6dbb71dfc746f9e4b69ba90ed2b6">member</a>(&amp;student::id) &gt; 111)</div>
 <div class="line">    .select&lt;<span class="keywordtype">int</span>&gt;([](<span class="keyword">auto</span>&amp;&amp; student) {<span class="keywordflow">return</span> student.scores[0];});</div>
 <div class="line">  </div>
@@ -207,7 +207,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Produce a filtered sequence of doubles that are the result of an expression.</span></div>
 <div class="line">  <span class="keyword">const</span> ienumerable&lt;double&gt;&amp; student_query5 =</div>
-<div class="line">    <a class="code hl_function" href="group__linq.html#gadc7d892fb90f8792e83260f40bf21c75">from</a>(students)</div>
+<div class="line">    <a class="code hl_function" href="group__linq.html#ga51ce7f468e039aae97162ec46d247dad">from</a>(students)</div>
 <div class="line">    .where(_*<a class="code hl_function" href="group__expressions.html#ga582c6dbb71dfc746f9e4b69ba90ed2b6">member</a>(&amp;student::id) &gt; 111)</div>
 <div class="line">    .select&lt;<span class="keywordtype">double</span>&gt;([](<span class="keyword">auto</span>&amp;&amp; student) {<span class="keywordflow">return</span> student.scores[0] * 1.1;});</div>
 <div class="line">  </div>
@@ -218,7 +218,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Produce a filtered sequence of doubles that are the result of a method call.</span></div>
 <div class="line">  <span class="keyword">const</span> ienumerable&lt;double&gt;&amp; student_query6 =</div>
-<div class="line">    <a class="code hl_function" href="group__linq.html#gadc7d892fb90f8792e83260f40bf21c75">from</a>(students)</div>
+<div class="line">    <a class="code hl_function" href="group__linq.html#ga51ce7f468e039aae97162ec46d247dad">from</a>(students)</div>
 <div class="line">    .where(_*<a class="code hl_function" href="group__expressions.html#ga582c6dbb71dfc746f9e4b69ba90ed2b6">member</a>(&amp;student::id) &gt; 111)</div>
 <div class="line">    .select&lt;<span class="keywordtype">double</span>&gt;([](<span class="keyword">auto</span>&amp;&amp; student) {<span class="keywordflow">return</span> student.scores.average();});</div>
 <div class="line">  </div>
@@ -229,7 +229,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Produce a filtered sequence of tuple type that contain only two properties from each student.</span></div>
 <div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span>&amp; student_query7 =</div>
-<div class="line">    <a class="code hl_function" href="group__linq.html#gadc7d892fb90f8792e83260f40bf21c75">from</a>(students)</div>
+<div class="line">    <a class="code hl_function" href="group__linq.html#ga51ce7f468e039aae97162ec46d247dad">from</a>(students)</div>
 <div class="line">    .where(_*<a class="code hl_function" href="group__expressions.html#ga582c6dbb71dfc746f9e4b69ba90ed2b6">member</a>(&amp;student::id) &gt; 111)</div>
 <div class="line">    .select&lt;std::tuple&lt;string, string&gt;&gt;([](<span class="keyword">auto</span>&amp;&amp; student) {<span class="keywordflow">return</span> std::make_tuple(student.first, student.last);});</div>
 <div class="line">  </div>
@@ -242,7 +242,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line">  <span class="comment">// Produce a filtered sequence of named objects that contain a method return value and a property from each student.</span></div>
 <div class="line">  <span class="comment">// Use named types if you need to pass the query variable across a method boundary.</span></div>
 <div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span>&amp; student_query8 =</div>
-<div class="line">    <a class="code hl_function" href="group__linq.html#gadc7d892fb90f8792e83260f40bf21c75">from</a>(students)</div>
+<div class="line">    <a class="code hl_function" href="group__linq.html#ga51ce7f468e039aae97162ec46d247dad">from</a>(students)</div>
 <div class="line">    .where(_*<a class="code hl_function" href="group__expressions.html#ga582c6dbb71dfc746f9e4b69ba90ed2b6">member</a>(&amp;student::id) &gt; 111)</div>
 <div class="line">    .select&lt;score_info&gt;([](<span class="keyword">auto</span>&amp;&amp; student) {<span class="keywordflow">return</span> score_info {.average = student.scores.average(), .id = student.id};});</div>
 <div class="line">  </div>
@@ -296,7 +296,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="ttc" id="agroup__expressions_html_ga130423906ed7125e321bf42e00dafae9"><div class="ttname"><a href="group__expressions.html#ga130423906ed7125e321bf42e00dafae9">xtd::expressions::_</a></div><div class="ttdeci">constexpr auto _</div><div class="ttdoc">The xtd::expressions::_ placeholder instance is used by expression that have only one argument.</div><div class="ttdef"><b>Definition</b> args.hpp:66</div></div>
 <div class="ttc" id="agroup__expressions_html_ga582c6dbb71dfc746f9e4b69ba90ed2b6"><div class="ttname"><a href="group__expressions.html#ga582c6dbb71dfc746f9e4b69ba90ed2b6">xtd::expressions::member</a></div><div class="ttdeci">constexpr auto member(member_t member)</div><div class="ttdoc">The xtd::expressions::member is use to bind object member.</div><div class="ttdef"><b>Definition</b> member_expression.hpp:43</div></div>
 <div class="ttc" id="agroup__expressions_html_gga418395dc9383e37eb269a52b25b74683a2063c1608d6e0baf80249c42e2be5804"><div class="ttname"><a href="group__expressions.html#gga418395dc9383e37eb269a52b25b74683a2063c1608d6e0baf80249c42e2be5804">xtd::expressions::operator_precedence::value</a></div><div class="ttdeci">@ value</div><div class="ttdoc">Represnets the constant operator precedence (42).</div><div class="ttdef"><b>Definition</b> operator_precedence.hpp:30</div></div>
-<div class="ttc" id="agroup__linq_html_gadc7d892fb90f8792e83260f40bf21c75"><div class="ttname"><a href="group__linq.html#gadc7d892fb90f8792e83260f40bf21c75">xtd::linq::from</a></div><div class="ttdeci">auto from(source_t &amp;&amp;source) noexcept</div><div class="ttdoc">Returns the input typed as xtd::collections::generic::ienumerable &lt;type_t&gt;.</div><div class="ttdef"><b>Definition</b> from.hpp:28</div></div>
+<div class="ttc" id="agroup__linq_html_ga51ce7f468e039aae97162ec46d247dad"><div class="ttname"><a href="group__linq.html#ga51ce7f468e039aae97162ec46d247dad">xtd::linq::from</a></div><div class="ttdeci">auto from(const source_t &amp;source) noexcept</div><div class="ttdoc">Returns the input typed as xtd::collections::generic::ienumerable &lt;type_t&gt;.</div><div class="ttdef"><b>Definition</b> from.hpp:28</div></div>
 <div class="ttc" id="anamespacextd_html_a1b3b9846a6a691daf8be0fbbfc746604"><div class="ttname"><a href="namespacextd.html#a1b3b9846a6a691daf8be0fbbfc746604">xtd::first</a></div><div class="ttdeci">auto first() const -&gt; read_only_span&lt; type_t, count &gt;</div><div class="ttdoc">Obtains a subspan consisting of the first count elements of the sequence.</div><div class="ttdef"><b>Definition</b> read_only_span.hpp:249</div></div>
 <div class="ttc" id="anamespacextd_html_a35d0d55a78eddf3d056a0db05fbf8b16"><div class="ttname"><a href="namespacextd.html#a35d0d55a78eddf3d056a0db05fbf8b16">xtd::to_string</a></div><div class="ttdeci">auto to_string() const noexcept -&gt; xtd::string override</div><div class="ttdoc">Returns the string representation of this xtd::read_only_span &lt;type_t&gt; object.</div><div class="ttdef"><b>Definition</b> read_only_span.hpp:342</div></div>
 <div class="ttc" id="anamespacextd_html_a747e8580aba7505b4a93950c9882ab54"><div class="ttname"><a href="namespacextd.html#a747e8580aba7505b4a93950c9882ab54">xtd::last</a></div><div class="ttdeci">auto last() const -&gt; read_only_span&lt; type_t, count &gt;</div><div class="ttdoc">Obtains a subspan consisting of the last N elements of the sequence.</div><div class="ttdef"><b>Definition</b> read_only_span.hpp:274</div></div>
