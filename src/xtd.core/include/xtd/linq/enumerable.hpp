@@ -5,6 +5,7 @@
 #include "enumerable_.hpp" // contains xtd::linq::enumerable <type_t> class definition
 #include "../collections/generic/extensions/enumerable.hpp"
 #include "../collections/generic/enumerable_generator.hpp"
+#include "../nullopt.hpp"
 #include "from.hpp"
 
 /// @cond
@@ -169,4 +170,69 @@ auto xtd::linq::enumerable::average(source_t&& source) -> double {
   }
   if (count == 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
   return average / count;
+}
+
+template<xtd::forward_iterable source_t>
+requires std::same_as<typename xtd::raw_type<source_t>::value_type, xtd::optional<xtd::decimal>>
+auto xtd::linq::enumerable::average(source_t&& source) -> xtd::optional<xtd::decimal> {
+  auto average = .0l;
+  auto count = 0;
+  for (auto item : source) {
+    if (!item) continue;
+    average += *item;
+    ++count;
+  }
+  return count == 0 ? xtd::nullopt : std::make_optional(average / count);
+}
+
+template<xtd::forward_iterable source_t>
+requires std::same_as<typename xtd::raw_type<source_t>::value_type, xtd::optional<double>>
+auto xtd::linq::enumerable::average(source_t&& source) -> xtd::optional<double> {
+  auto average = .0;
+  auto count = 0;
+  for (auto item : source) {
+    if (!item) continue;
+    average += *item;
+    ++count;
+  }
+  return count == 0 ? xtd::nullopt : std::make_optional(average / count);
+}
+
+template<xtd::forward_iterable source_t>
+requires std::same_as<typename xtd::raw_type<source_t>::value_type, xtd::optional<xtd::single>>
+auto xtd::linq::enumerable::average(source_t&& source) -> xtd::optional<xtd::single> {
+  auto average = .0f;
+  auto count = 0;
+  for (auto item : source) {
+    if (!item) continue;
+    average += *item;
+    ++count;
+  }
+  return count == 0 ? xtd::nullopt : std::make_optional(average / count);
+}
+
+template<xtd::forward_iterable source_t>
+requires std::same_as<typename xtd::raw_type<source_t>::value_type, xtd::optional<xtd::int32>>
+auto xtd::linq::enumerable::average(source_t&& source) -> xtd::optional<double> {
+  auto average = .0;
+  auto count = 0;
+  for (auto item : source) {
+    if (!item) continue;
+    average += *item;
+    ++count;
+  }
+  return count == 0 ? xtd::nullopt : std::make_optional(average / count);
+}
+
+template<xtd::forward_iterable source_t>
+requires std::same_as<typename xtd::raw_type<source_t>::value_type, xtd::optional<xtd::int64>>
+auto xtd::linq::enumerable::average(source_t&& source) -> xtd::optional<double> {
+  auto average = .0;
+  auto count = 0;
+  for (auto item : source) {
+    if (!item) continue;
+    average += *item;
+    ++count;
+  }
+  return count == 0 ? xtd::nullopt : std::make_optional(average / count);
 }

@@ -1727,7 +1727,6 @@ add_sources(
   "src/xtd/io/string_writer.cpp"
   "src/xtd/io/text_reader.cpp"
   "src/xtd/io/text_writer.cpp"
-  "src/xtd/linq/enumerable.cpp"
   "src/xtd/literals/byte.cpp"
   "src/xtd/literals/char32.cpp"
   "src/xtd/literals/double.cpp"
