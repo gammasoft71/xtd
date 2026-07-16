@@ -71,12 +71,14 @@ auto xtd::linq::enumerable::as_enumerable(std::initializer_list<value_t> source)
     co_yield item;
 }
 
-auto xtd::linq::enumerable::as_enumerable(std::forward_iterator auto first, std::forward_iterator auto last) noexcept -> xtd::collections::generic::enumerable_generator<typename std::decay<decltype(*first)>::type> {
+template<std::forward_iterator iterator_t>
+auto xtd::linq::enumerable::as_enumerable(iterator_t first, iterator_t last) noexcept -> xtd::collections::generic::enumerable_generator<typename std::decay<decltype(*first)>::type> {
   for (auto iterator = first; iterator != last; ++iterator)
     co_yield *iterator;
 }
 
-auto xtd::linq::enumerable::as_enumerable(std::forward_iterator auto iterator, xtd::usize length) noexcept -> xtd::collections::generic::enumerable_generator<typename std::decay<decltype(*iterator)>::type> {
+template<std::forward_iterator iterator_t>
+auto xtd::linq::enumerable::as_enumerable(iterator_t iterator, xtd::usize length) noexcept -> xtd::collections::generic::enumerable_generator<typename std::decay<decltype(*iterator)>::type> {
   return as_enumerable(iterator, iterator + length);
 }
 

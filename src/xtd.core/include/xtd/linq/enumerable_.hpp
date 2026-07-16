@@ -203,7 +203,8 @@ namespace xtd {
       /// @par Example
       /// The following code example demonstrates how to use as_enumerable <source_t>(ienumerable <source_t>) to hide a type's custom Where method when the standard query operator implementation is desired.
       /// @include enumerable_as_enumerable2.cpp
-      [[nodiscard]] static auto as_enumerable(std::forward_iterator auto first, std::forward_iterator auto last) noexcept -> xtd::collections::generic::enumerable_generator<typename std::decay<decltype(*first)>::type>;
+      template<std::forward_iterator iterator_t>
+      [[nodiscard]] static auto as_enumerable(iterator_t first, iterator_t last) noexcept -> xtd::collections::generic::enumerable_generator<typename std::decay<decltype(*first)>::type>;
       /// @brief Returns the input typed as xtd::collections::generic::ienumerable <type_t>.
       /// @tparam input_iterator_t The type of the source iterators.
       /// @param iterator The iterator.
@@ -212,7 +213,8 @@ namespace xtd {
       /// @par Example
       /// The following code example demonstrates how to use as_enumerable <source_t>(ienumerable <source_t>) to hide a type's custom Where method when the standard query operator implementation is desired.
       /// @include enumerable_as_enumerable2.cpp
-      [[nodiscard]] static auto as_enumerable(std::forward_iterator auto iterator, xtd::usize length) noexcept -> xtd::collections::generic::enumerable_generator<typename std::decay<decltype(*iterator)>::type>;
+      template<std::forward_iterator iterator_t>
+      [[nodiscard]] static auto as_enumerable(iterator_t iterator, xtd::usize length) noexcept -> xtd::collections::generic::enumerable_generator<typename std::decay<decltype(*iterator)>::type>;
       /// @brief Returns the input typed as xtd::collections::generic::ienumerable <type_t>.
       /// @tparam source_t The type of the source array.
       /// @param array The native array.
