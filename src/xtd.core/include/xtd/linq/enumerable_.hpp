@@ -228,7 +228,7 @@ namespace xtd {
       
       /// @cond
       template<xtd::usize size_>
-      [[nodiscard]] static auto as_enumerable(std::bitset<size_> source) -> xtd::collections::generic::enumerable_generator<bool>; // defined in xtd/collections/bit_array.hpp
+      [[nodiscard]] static auto as_enumerable(std::bitset<size_> source) noexcept -> xtd::collections::generic::enumerable_generator<bool>; // defined in xtd/collections/bit_array.hpp
       template<typename value_t, typename container_t>
       [[nodiscard]] static auto as_enumerable(std::queue<value_t, container_t> source) noexcept -> xtd::collections::generic::enumerable_generator<value_t>;
       template<typename value_t, typename container_t>
