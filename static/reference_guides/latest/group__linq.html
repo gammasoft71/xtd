@@ -119,18 +119,18 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ga415cf78e6a2102413a1b88ccd0516df6" id="r_ga415cf78e6a2102413a1b88ccd0516df6"><td class="memTemplParams" colspan="2">template&lt;typename collection_t&gt; </td></tr>
-<tr class="memitem:ga415cf78e6a2102413a1b88ccd0516df6 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ga415cf78e6a2102413a1b88ccd0516df6">xtd::linq::from</a> (collection_t &amp;&amp;source) noexcept</td></tr>
-<tr class="memdesc:ga415cf78e6a2102413a1b88ccd0516df6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the input typed as <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt;.  <br /></td></tr>
+<tr class="memitem:gadc7d892fb90f8792e83260f40bf21c75" id="r_gadc7d892fb90f8792e83260f40bf21c75"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t&gt; </td></tr>
+<tr class="memitem:gadc7d892fb90f8792e83260f40bf21c75 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#gadc7d892fb90f8792e83260f40bf21c75">xtd::linq::from</a> (source_t &amp;&amp;source) noexcept</td></tr>
+<tr class="memdesc:gadc7d892fb90f8792e83260f40bf21c75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the input typed as <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt;.  <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
-<a id="ga415cf78e6a2102413a1b88ccd0516df6" name="ga415cf78e6a2102413a1b88ccd0516df6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga415cf78e6a2102413a1b88ccd0516df6">&#9670;&#160;</a></span>from()</h2>
+<a id="gadc7d892fb90f8792e83260f40bf21c75" name="gadc7d892fb90f8792e83260f40bf21c75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadc7d892fb90f8792e83260f40bf21c75">&#9670;&#160;</a></span>from()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename collection_t&gt; </div>
+template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -138,7 +138,7 @@ template&lt;typename collection_t&gt; </div>
         <tr>
           <td class="memname">auto xtd::linq::from </td>
           <td>(</td>
-          <td class="paramtype">collection_t &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>source</em></span></td><td>)</td>
+          <td class="paramtype">source_t &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>source</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -163,7 +163,7 @@ template&lt;typename collection_t&gt; </div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1linq.html" title="Provides classes and interfaces that support queries that use Language-Integrated Query (LINQ).">xtd::linq</a> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to use <a class="el" href="#ga415cf78e6a2102413a1b88ccd0516df6" title="Returns the input typed as xtd::collections::generic::ienumerable &lt;type_t&gt;.">xtd::linq::from</a> to create a sequence of values. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to use <a class="el" href="#gadc7d892fb90f8792e83260f40bf21c75" title="Returns the input typed as xtd::collections::generic::ienumerable &lt;type_t&gt;.">xtd::linq::from</a> to create a sequence of values. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> items = std::vector {<span class="stringliteral">&quot;One&quot;</span>, <span class="stringliteral">&quot;Two&quot;</span>, <span class="stringliteral">&quot;Three&quot;</span>, <span class="stringliteral">&quot;Four&quot;</span>, <span class="stringliteral">&quot;Five&quot;</span>};</div>
@@ -186,7 +186,7 @@ template&lt;typename collection_t&gt; </div>
 <div class="ttc" id="astructxtd_1_1collections_1_1generic_1_1enumerator_html_a56ef2e4d105ed3260d33bd1989b43f3b"><div class="ttname"><a href="structxtd_1_1collections_1_1generic_1_1enumerator.html#a56ef2e4d105ed3260d33bd1989b43f3b">xtd::collections::generic::enumerator::current</a></div><div class="ttdeci">const type_t &amp; current() const override</div><div class="ttdoc">Gets the element in the collection at the current position of the enumerator.</div><div class="ttdef"><b>Definition</b> enumerator.hpp:63</div></div>
 <div class="ttc" id="astructxtd_1_1collections_1_1generic_1_1enumerator_html_ad461ec52e959712ab699f6ca3aa5ec3d"><div class="ttname"><a href="structxtd_1_1collections_1_1generic_1_1enumerator.html#ad461ec52e959712ab699f6ca3aa5ec3d">xtd::collections::generic::enumerator::move_next</a></div><div class="ttdeci">bool move_next() override</div><div class="ttdoc">Advances the enumerator to the next element of the collection.</div><div class="ttdef"><b>Definition</b> enumerator.hpp:72</div></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classxtd_1_1linq_1_1enumerable.html#aeaa2c9615978fa0495b6a69a71a72508" title="Returns the input typed as xtd::collections::generic::ienumerable &lt;type_t&gt;.">xtd::linq::enumerable::from</a> methods for all overloads of <a class="el" href="#ga415cf78e6a2102413a1b88ccd0516df6" title="Returns the input typed as xtd::collections::generic::ienumerable &lt;type_t&gt;.">xtd::linq::from</a>. </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classxtd_1_1linq_1_1enumerable.html#aeaa2c9615978fa0495b6a69a71a72508" title="Returns the input typed as xtd::collections::generic::ienumerable &lt;type_t&gt;.">xtd::linq::enumerable::from</a> methods for all overloads of <a class="el" href="#gadc7d892fb90f8792e83260f40bf21c75" title="Returns the input typed as xtd::collections::generic::ienumerable &lt;type_t&gt;.">xtd::linq::from</a>. </dd></dl>
 
 </div>
 </div>
