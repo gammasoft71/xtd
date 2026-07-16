@@ -185,7 +185,7 @@ namespace xtd {
       /// The following code example demonstrates how to use as_enumerable <source_t>(ienumerable <source_t>) to hide a type's custom Where method when the standard query operator implementation is desired.
       /// @include enumerable_as_enumerable.cpp
       template<xtd::forward_iterable source_t>
-      [[nodiscard]] static auto as_enumerable(source_t&& source) noexcept -> xtd::collections::generic::enumerable_generator<typename xtd::raw_type<source_t>::value_type>;
+      [[nodiscard]] static auto as_enumerable(const source_t& source) noexcept -> xtd::collections::generic::enumerable_generator<typename xtd::raw_type<source_t>::value_type>;
       /// @brief Returns the input typed as xtd::collections::generic::ienumerable <type_t>.
       /// @tparam source_t The type of the elements of source.
       /// @param source A sequence of values.
@@ -228,13 +228,13 @@ namespace xtd {
       
       /// @cond
       template<xtd::usize size_>
-      [[nodiscard]] static auto as_enumerable(std::bitset<size_> source) noexcept -> xtd::collections::generic::enumerable_generator<bool>; // defined in xtd/collections/bit_array.hpp
+      [[nodiscard]] static auto as_enumerable(const std::bitset<size_>& source) noexcept -> xtd::collections::generic::enumerable_generator<bool>; // defined in xtd/collections/bit_array.hpp
       template<typename value_t, typename container_t>
-      [[nodiscard]] static auto as_enumerable(std::queue<value_t, container_t> source) noexcept -> xtd::collections::generic::enumerable_generator<value_t>;
+      [[nodiscard]] static auto as_enumerable(const std::queue<value_t, container_t>& source) noexcept -> xtd::collections::generic::enumerable_generator<value_t>;
       template<typename value_t, typename container_t>
-      [[nodiscard]] static auto as_enumerable(std::priority_queue<value_t, container_t> source) noexcept -> xtd::collections::generic::enumerable_generator<value_t>;
+      [[nodiscard]] static auto as_enumerable(const std::priority_queue<value_t, container_t>& source) noexcept -> xtd::collections::generic::enumerable_generator<value_t>;
       template<typename value_t, typename container_t>
-      [[nodiscard]] static auto as_enumerable(std::stack<value_t, container_t> source) noexcept -> xtd::collections::generic::enumerable_generator<value_t>;
+      [[nodiscard]] static auto as_enumerable(const std::stack<value_t, container_t>& source) noexcept -> xtd::collections::generic::enumerable_generator<value_t>;
       /// @endcond
       
       /// @brief Computes the average of a sequence of xtd::decimal values.
@@ -549,7 +549,7 @@ namespace xtd {
       /// The following code example demonstrates how to use xtd::linq::from to create a sequence of values.
       /// @include linq_from3.cpp
       template<typename collection_t>
-      [[nodiscard]] static auto from(collection_t&& source) noexcept {
+      [[nodiscard]] static auto from(const collection_t& source) noexcept {
         return as_enumerable(source);
       }
       /// @brief Returns the input typed as xtd::collections::generic::ienumerable <type_t>.
@@ -596,11 +596,11 @@ namespace xtd {
       
       ///@cond
       template<typename source_t, typename container_t>
-      [[nodiscard]] static auto from(std::queue<source_t, container_t> source) noexcept {
+      [[nodiscard]] static auto from(const std::queue<source_t, container_t>& source) noexcept {
         return as_enumerable(source);
       }
       template<typename source_t, typename container_t>
-      [[nodiscard]] static auto from(std::stack<source_t, container_t> source) noexcept {
+      [[nodiscard]] static auto from(const std::stack<source_t, container_t>& source) noexcept {
         return as_enumerable(source);
       }
       ///@endcond

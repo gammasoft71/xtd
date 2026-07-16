@@ -395,7 +395,7 @@ namespace xtd {
       static constexpr xtd::usize bytes_per_int32 = 4;
       static constexpr xtd::usize bit_shift_per_int32 = 5;
       mutable boolean_ref value_ref_;
-      xtd::collections::generic::list<int32> bit_array_;
+      xtd::collections::generic::list<xtd::int32> bit_array_;
       xtd::usize length_ = 0;
     };
   }
@@ -403,7 +403,7 @@ namespace xtd {
 
 /// @cond
 template<xtd::usize size_>
-inline auto xtd::linq::enumerable::as_enumerable(std::bitset<size_> source) noexcept -> xtd::collections::generic::enumerable_generator<bool> {
+inline auto xtd::linq::enumerable::as_enumerable(const std::bitset<size_>& source) noexcept -> xtd::collections::generic::enumerable_generator<bool> {
   for (const auto& item : xtd::collections::bit_array {source})
     co_yield item;
 }

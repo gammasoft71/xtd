@@ -52,35 +52,35 @@ namespace xtd::linq::tests {
     
     auto test_method_(as_enumerable_with_enumerable) {
       assert::is_instance_of<xtd::collections::generic::ienumerable<int>>(enumerable::as_enumerable(array {1, 2, 3}));
-      collection_assert::are_equal({1, 2, 3}, enumerable::as_enumerable(array {1, 2, 3}));
+      collection_assert::are_equal({1, 2, 3}, enumerable::as_enumerable(array {1, 2, 3}).to_array());
     }
     
     auto test_method_(as_enumerable_with_initializer_list) {
       assert::is_instance_of<xtd::collections::generic::ienumerable<int>>(enumerable::as_enumerable({1, 2, 3}));
-      collection_assert::are_equal({1, 2, 3}, enumerable::as_enumerable({1, 2, 3}));
+      collection_assert::are_equal({1, 2, 3}, enumerable::as_enumerable({1, 2, 3}).to_array());
     }
     
     auto test_method_(as_enumerable_with_collection) {
       assert::is_instance_of<xtd::collections::generic::ienumerable<int>>(enumerable::as_enumerable(std::vector {1, 2, 3}));
-      collection_assert::are_equal({1, 2, 3}, enumerable::as_enumerable(std::vector {1, 2, 3}));
+      collection_assert::are_equal({1, 2, 3}, enumerable::as_enumerable(std::vector {1, 2, 3}).to_array());
     }
     
     auto test_method_(as_enumerable_with_iterators) {
       auto s = array {1, 2, 3};
       assert::is_instance_of<xtd::collections::generic::ienumerable<int>>(enumerable::as_enumerable(s.begin(), s.end()));
-      collection_assert::are_equal({1, 2, 3}, enumerable::as_enumerable(s.begin(), s.end()));
+      collection_assert::are_equal({1, 2, 3}, enumerable::as_enumerable(s.begin(), s.end()).to_array());
     }
     
     auto test_method_(as_enumerable_with_iterator_and_length) {
       auto s = array {1, 2, 3};
       assert::is_instance_of<xtd::collections::generic::ienumerable<int>>(enumerable::as_enumerable(s.data(), s.length()));
-      collection_assert::are_equal({1, 2, 3}, enumerable::as_enumerable(s.data(), s.length()));
+      collection_assert::are_equal({1, 2, 3}, enumerable::as_enumerable(s.data(), s.length()).to_array());
     }
     
     auto test_method_(as_enumerable_with_native_array) {
       int s[] = {1, 2, 3};
       assert::is_instance_of<xtd::collections::generic::ienumerable<int>>(enumerable::as_enumerable(s));
-      collection_assert::are_equal({1, 2, 3}, enumerable::as_enumerable(s));
+      collection_assert::are_equal({1, 2, 3}, enumerable::as_enumerable(s).to_array());
     }
     
     auto test_method_(average_with_enumerable_decimal) {
