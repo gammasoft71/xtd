@@ -24,19 +24,25 @@ namespace xtd {
     /// The following code example demonstrates how to use xtd::linq::from to create a sequence of values.
     /// @include linq_from3.cpp
     /// @see xtd::linq::enumerable::from methods for all overloads of xtd::linq::from.
-    template<typename collection_t>
-    [[nodiscard]] auto from(collection_t&& source) noexcept {return enumerable::as_enumerable(source);}
+    template<xtd::forward_iterable source_t>
+    [[nodiscard]] auto from(source_t&& source) noexcept {return enumerable::as_enumerable(source);}
     /// @cond
-    template<typename input_iterator_t>
-    [[nodiscard]] auto from(input_iterator_t first, input_iterator_t last) noexcept {return enumerable::as_enumerable(first, last);}
-    template<typename source_t>
-    [[nodiscard]] auto from(const xtd::collections::generic::ienumerable<source_t>& source) noexcept {return enumerable::as_enumerable(source);}
-    template<typename source_t>
-    [[nodiscard]] auto from(const std::initializer_list<source_t>& source) noexcept {return enumerable::as_enumerable(source);}
-    template<typename input_iterator_t>
-    [[nodiscard]] auto from(input_iterator_t iterator, xtd::usize length) noexcept {return enumerable::as_enumerable(iterator, iterator + length);}
+    template<typename value_t>
+    [[nodiscard]] auto from(const std::initializer_list<value_t>& source) noexcept {return enumerable::as_enumerable(source);}
+    template<std::forward_iterator iterator_t>
+    [[nodiscard]] auto from(iterator_t first, iterator_t last) noexcept {return enumerable::as_enumerable(first, last);}
+    template<std::forward_iterator iterator_t>
+    [[nodiscard]] auto from(iterator_t iterator, xtd::usize length) noexcept {return enumerable::as_enumerable(iterator, length);}
     template<typename source_t, xtd::usize length>
-    [[nodiscard]] auto from(const source_t (&array)[length]) noexcept {return enumerable::as_enumerable(array, array + length);}
+    [[nodiscard]] auto from(const source_t (&array)[length]) noexcept {return enumerable::as_enumerable(array);}
+    template<xtd::usize size_>
+    [[nodiscard]] auto from(std::bitset<size_> source) noexcept {return enumerable::as_enumerable(source);}
+    template<typename value_t, typename container_t>
+    [[nodiscard]] auto from(std::queue<value_t, container_t> source) noexcept {return enumerable::as_enumerable(source);}
+    template<typename value_t, typename container_t>
+    [[nodiscard]] auto from(std::priority_queue<value_t, container_t> source) noexcept {return enumerable::as_enumerable(source);}
+    template<typename value_t, typename container_t>
+    [[nodiscard]] auto from(std::stack<value_t, container_t> source) noexcept {return enumerable::as_enumerable(source);}
     /// @endcond
   }
 }
