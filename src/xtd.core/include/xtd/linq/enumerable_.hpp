@@ -241,28 +241,38 @@ namespace xtd {
       /// @param source A sequence of xtd::decimal values to calculate the average of.
       /// @return The average of the sequence of values.
       /// @exception xtd::invalid_operation_exception `source` contains no elements.
-      [[nodiscard]] static auto average(const ienumerable<xtd::decimal>& source) -> xtd::decimal;
+      template<xtd::forward_iterable source_t>
+      requires xtd::real_decimal<typename xtd::raw_type<source_t>::value_type>
+      [[nodiscard]] static auto average(source_t&& source) -> xtd::decimal;
       /// @brief Computes the average of a sequence of double values.
       /// @param source A sequence of double values to calculate the average of.
       /// @return The average of the sequence of values.
       /// @exception xtd::invalid_operation_exception `source` contains no elements.
-      [[nodiscard]] static auto average(const ienumerable<double>& source) -> double;
+      template<xtd::forward_iterable source_t>
+      requires xtd::real_double<typename xtd::raw_type<source_t>::value_type>
+      [[nodiscard]] static auto average(source_t&& source) -> double;
       /// @brief Computes the average of a sequence of float values.
       /// @param source A sequence of float values to calculate the average of.
       /// @return The average of the sequence of values.
       /// @exception xtd::invalid_operation_exception `source` contains no elements.
-      [[nodiscard]] static auto average(const ienumerable<float>& source) -> float;
+      template<xtd::forward_iterable source_t>
+      requires xtd::real_single<typename xtd::raw_type<source_t>::value_type>
+      [[nodiscard]] static auto average(source_t&& source) -> xtd::single;
       /// @brief Computes the average of a sequence of xtd::int32 values.
       /// @param source A sequence of xtd::int32 values to calculate the average of.
       /// @return The average of the sequence of values.
       /// @exception xtd::invalid_operation_exception `source` contains no elements.
-      [[nodiscard]] static auto average(const ienumerable<xtd::int32>& source) -> double;
+      template<xtd::forward_iterable source_t>
+      requires xtd::signed_integer_32<typename xtd::raw_type<source_t>::value_type>
+      [[nodiscard]] static auto average(source_t&& source) -> double;
       /// @brief Computes the average of a sequence of xtd::int64 values.
       /// @param source A sequence of xtd::int64 values to calculate the average of.
       /// @return The average of the sequence of values.
       /// @exception xtd::invalid_operation_exception `source` contains no elements.
-      [[nodiscard]] static auto average(const ienumerable<xtd::int64>& source) -> double;
-      
+      template<xtd::forward_iterable source_t>
+      requires xtd::signed_integer_64<typename xtd::raw_type<source_t>::value_type>
+      [[nodiscard]] static auto average(source_t&& source) -> double;
+
       /// @brief Computes the average of a sequence of optional xtd::decimal values.
       /// @param source A sequence of optional xtd::decimal values to calculate the average of.
       /// @return The average of the sequence of values, or xtd::nullopt if the source sequence is empty or contains only values that are xtd::nullopt.

@@ -105,3 +105,68 @@ auto xtd::linq::enumerable::as_enumerable(const std::stack<value_t, container_t>
   const auto& underlying_items = source.*accessor::get();
   return as_enumerable(underlying_items.begin(), underlying_items.end());
 }
+
+template<xtd::forward_iterable source_t>
+requires xtd::real_decimal<typename xtd::raw_type<source_t>::value_type>
+auto xtd::linq::enumerable::average(source_t&& source) -> xtd::decimal {
+  auto average = .0l;
+  auto count = 0;
+  for (const auto& item : source) {
+    average += item;
+    ++count;
+  }
+  if (count == 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
+  return average / count;
+}
+
+template<xtd::forward_iterable source_t>
+requires xtd::real_double<typename xtd::raw_type<source_t>::value_type>
+auto xtd::linq::enumerable::average(source_t&& source) -> double {
+  auto average = .0;
+  auto count = 0;
+  for (const auto& item : source) {
+    average += item;
+    ++count;
+  }
+  if (count == 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
+  return average / count;
+}
+
+template<xtd::forward_iterable source_t>
+requires xtd::real_single<typename xtd::raw_type<source_t>::value_type>
+auto xtd::linq::enumerable::average(source_t&& source) -> xtd::single {
+  auto average = .0f;
+  auto count = 0;
+  for (const auto& item : source) {
+    average += item;
+    ++count;
+  }
+  if (count == 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
+  return average / count;
+}
+
+template<xtd::forward_iterable source_t>
+requires xtd::signed_integer_32<typename xtd::raw_type<source_t>::value_type>
+auto xtd::linq::enumerable::average(source_t&& source) -> double {
+  auto average = .0;
+  auto count = 0;
+  for (const auto& item : source) {
+    average += item;
+    ++count;
+  }
+  if (count == 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
+  return average / count;
+}
+
+template<xtd::forward_iterable source_t>
+requires xtd::signed_integer_64<typename xtd::raw_type<source_t>::value_type>
+auto xtd::linq::enumerable::average(source_t&& source) -> double {
+  auto average = .0;
+  auto count = 0;
+  for (const auto& item : source) {
+    average += item;
+    ++count;
+  }
+  if (count == 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
+  return average / count;
+}
