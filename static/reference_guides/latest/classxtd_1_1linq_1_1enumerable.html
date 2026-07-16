@@ -180,10 +180,12 @@ Public Static Methods</h2></td></tr>
 <tr class="memitem:ac72dc57e1ba318777f7d87958dd70e54" id="r_ac72dc57e1ba318777f7d87958dd70e54"><td class="memTemplParams" colspan="2">template&lt;typename value_t&gt; </td></tr>
 <tr class="memitem:ac72dc57e1ba318777f7d87958dd70e54 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ac72dc57e1ba318777f7d87958dd70e54">as_enumerable</a> (std::initializer_list&lt; value_t &gt; source) noexcept -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; value_t &gt;</td></tr>
 <tr class="memdesc:ac72dc57e1ba318777f7d87958dd70e54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the input typed as <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt;.  <br /></td></tr>
-<tr class="memitem:a2a4db48f685b6fb241d33d5553f76f0e" id="r_a2a4db48f685b6fb241d33d5553f76f0e"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a2a4db48f685b6fb241d33d5553f76f0e">as_enumerable</a> (std::forward_iterator auto first, std::forward_iterator auto last) noexcept -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; typename std::decay&lt; decltype(*first)&gt;<a class="el" href="group__types.html#ga03b6109bac255dc61a3df38c5d80a46c">::type</a> &gt;</td></tr>
-<tr class="memdesc:a2a4db48f685b6fb241d33d5553f76f0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the input typed as <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt;.  <br /></td></tr>
-<tr class="memitem:a4fe95f4ee0b4a9c05490cdbf9dbd847e" id="r_a4fe95f4ee0b4a9c05490cdbf9dbd847e"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a4fe95f4ee0b4a9c05490cdbf9dbd847e">as_enumerable</a> (std::forward_iterator auto iterator<a class="el" href="namespacextd.html#a00b898d039dd0095b53d7d0a07df4c46">iterator</a>, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> length) noexcept -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; typename std::decay&lt; decltype(*iterator<a class="el" href="namespacextd.html#a00b898d039dd0095b53d7d0a07df4c46">iterator</a>)&gt;<a class="el" href="group__types.html#ga03b6109bac255dc61a3df38c5d80a46c">::type</a> &gt;</td></tr>
-<tr class="memdesc:a4fe95f4ee0b4a9c05490cdbf9dbd847e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the input typed as <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt;.  <br /></td></tr>
+<tr class="memitem:a4fe9128a797fc7644ceea79546e77ee7" id="r_a4fe9128a797fc7644ceea79546e77ee7"><td class="memTemplParams" colspan="2">template&lt;std::forward_iterator iterator_t&gt; </td></tr>
+<tr class="memitem:a4fe9128a797fc7644ceea79546e77ee7 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a4fe9128a797fc7644ceea79546e77ee7">as_enumerable</a> (iterator_t first, iterator_t last) noexcept -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; typename std::decay&lt; decltype(*first)&gt;<a class="el" href="group__types.html#ga03b6109bac255dc61a3df38c5d80a46c">::type</a> &gt;</td></tr>
+<tr class="memdesc:a4fe9128a797fc7644ceea79546e77ee7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the input typed as <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt;.  <br /></td></tr>
+<tr class="memitem:a74f55724d07442cb13abe10529654b1f" id="r_a74f55724d07442cb13abe10529654b1f"><td class="memTemplParams" colspan="2">template&lt;std::forward_iterator iterator_t&gt; </td></tr>
+<tr class="memitem:a74f55724d07442cb13abe10529654b1f template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a74f55724d07442cb13abe10529654b1f">as_enumerable</a> (iterator_t iterator<a class="el" href="namespacextd.html#a00b898d039dd0095b53d7d0a07df4c46">iterator</a>, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> length) noexcept -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; typename std::decay&lt; decltype(*iterator<a class="el" href="namespacextd.html#a00b898d039dd0095b53d7d0a07df4c46">iterator</a>)&gt;<a class="el" href="group__types.html#ga03b6109bac255dc61a3df38c5d80a46c">::type</a> &gt;</td></tr>
+<tr class="memdesc:a74f55724d07442cb13abe10529654b1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the input typed as <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt;.  <br /></td></tr>
 <tr class="memitem:a5a838f8311b8bdfd9cedf761eeddd388" id="r_a5a838f8311b8bdfd9cedf761eeddd388"><td class="memTemplParams" colspan="2">template&lt;typename value_t, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> length&gt; </td></tr>
 <tr class="memitem:a5a838f8311b8bdfd9cedf761eeddd388 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a5a838f8311b8bdfd9cedf761eeddd388">as_enumerable</a> (const value_t(&amp;array)[<a class="el" href="namespacextd.html#a84689e2cdf94d64f7e5f33fe4a1be71a">length</a>]) noexcept -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; value_t &gt;</td></tr>
 <tr class="memdesc:a5a838f8311b8bdfd9cedf761eeddd388"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the input typed as <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt;.  <br /></td></tr>
@@ -1031,11 +1033,13 @@ template&lt;typename value_t&gt; </div>
 
 </div>
 </div>
-<a id="a2a4db48f685b6fb241d33d5553f76f0e" name="a2a4db48f685b6fb241d33d5553f76f0e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2a4db48f685b6fb241d33d5553f76f0e">&#9670;&#160;</a></span>as_enumerable() <span class="overload">[3/5]</span></h2>
+<a id="a4fe9128a797fc7644ceea79546e77ee7" name="a4fe9128a797fc7644ceea79546e77ee7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4fe9128a797fc7644ceea79546e77ee7">&#9670;&#160;</a></span>as_enumerable() <span class="overload">[3/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;std::forward_iterator iterator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1043,12 +1047,12 @@ template&lt;typename value_t&gt; </div>
         <tr>
           <td class="memname">auto xtd::linq::enumerable::as_enumerable </td>
           <td>(</td>
-          <td class="paramtype">std::forward_iterator auto</td>          <td class="paramname"><span class="paramname"><em>first</em></span>, </td>
+          <td class="paramtype">iterator_t</td>          <td class="paramname"><span class="paramname"><em>first</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::forward_iterator auto</td>          <td class="paramname"><span class="paramname"><em>last</em></span>&#160;) -&gt;  <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; typename std::decay&lt; decltype(*<a class="el" href="namespacextd.html#a1b3b9846a6a691daf8be0fbbfc746604">first</a>)&gt;<a class="el" href="group__types.html#ga03b6109bac255dc61a3df38c5d80a46c">::type</a> &gt;</td>
+          <td class="paramtype">iterator_t</td>          <td class="paramname"><span class="paramname"><em>last</em></span>&#160;) -&gt;  <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; typename std::decay&lt; decltype(*<a class="el" href="namespacextd.html#a1b3b9846a6a691daf8be0fbbfc746604">first</a>)&gt;<a class="el" href="group__types.html#ga03b6109bac255dc61a3df38c5d80a46c">::type</a> &gt;</td>
         </tr>
       </table>
   </td>
@@ -1077,11 +1081,13 @@ template&lt;typename value_t&gt; </div>
 
 </div>
 </div>
-<a id="a4fe95f4ee0b4a9c05490cdbf9dbd847e" name="a4fe95f4ee0b4a9c05490cdbf9dbd847e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4fe95f4ee0b4a9c05490cdbf9dbd847e">&#9670;&#160;</a></span>as_enumerable() <span class="overload">[4/5]</span></h2>
+<a id="a74f55724d07442cb13abe10529654b1f" name="a74f55724d07442cb13abe10529654b1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74f55724d07442cb13abe10529654b1f">&#9670;&#160;</a></span>as_enumerable() <span class="overload">[4/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;std::forward_iterator iterator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1089,7 +1095,7 @@ template&lt;typename value_t&gt; </div>
         <tr>
           <td class="memname">auto xtd::linq::enumerable::as_enumerable </td>
           <td>(</td>
-          <td class="paramtype">std::forward_iterator auto</td>          <td class="paramname"><span class="paramname"><em>iterator</em></span>, </td>
+          <td class="paramtype">iterator_t</td>          <td class="paramname"><span class="paramname"><em>iterator</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -3256,7 +3262,7 @@ template&lt;typename type_t&gt; </div>
 <div class="line"><span class="comment">// 64</span></div>
 <div class="line"><span class="comment">// 81</span></div>
 <div class="line"><span class="comment">// 100</span></div>
-<div class="ttc" id="aclassxtd_1_1linq_1_1enumerable_html_ad3f2b197a8f9e4e52710edcdd59870e9"><div class="ttname"><a href="#ad3f2b197a8f9e4e52710edcdd59870e9">xtd::linq::enumerable::range</a></div><div class="ttdeci">static auto range(type_t count)</div><div class="ttdoc">Generates a sequence of integral numbers within a specified range.</div><div class="ttdef"><b>Definition</b> enumerable_.hpp:756</div></div>
+<div class="ttc" id="aclassxtd_1_1linq_1_1enumerable_html_ad3f2b197a8f9e4e52710edcdd59870e9"><div class="ttname"><a href="#ad3f2b197a8f9e4e52710edcdd59870e9">xtd::linq::enumerable::range</a></div><div class="ttdeci">static auto range(type_t count)</div><div class="ttdoc">Generates a sequence of integral numbers within a specified range.</div><div class="ttdef"><b>Definition</b> enumerable_.hpp:758</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
