@@ -6,6 +6,7 @@
 #include <cstdint>
 #include <limits>
 #include <vector>
+#include "../../../forward_iterable.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -178,6 +179,8 @@ namespace xtd {
           }
           raw_array(raw_array&& other) : items_(std::move(other.items_)) {}
           raw_array(base_type&& other) : items_(std::move(other)) {}
+          template<xtd::forward_iterable source_t>
+          raw_array(source_t&& other) : items_(std::move(other)) {}
           raw_array(raw_array&& other, const allocator_type & alloc) : items_(std::move(other.items_), alloc) {}
           raw_array(base_type&& other, const allocator_type & alloc) : items_(std::move(other), alloc) {}
           /// @}
