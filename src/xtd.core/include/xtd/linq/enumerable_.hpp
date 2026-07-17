@@ -185,7 +185,25 @@ namespace xtd {
       /// The following code example demonstrates how to use as_enumerable <source_t>(ienumerable <source_t>) to hide a type's custom Where method when the standard query operator implementation is desired.
       /// @include enumerable_as_enumerable.cpp
       template<xtd::forward_iterable source_t>
+      [[nodiscard]] static auto as_enumerable(source_t&& source) noexcept;  // Defined in include/xtd/collections/generic/list.hpp
+      /// @brief Returns the input typed as xtd::collections::generic::ienumerable <type_t>.
+      /// @tparam source_t The type of the elements of source.
+      /// @param source A sequence of values.
+      /// @return The input sequence typed as xtd::collections::generic::ienumerable <type_t>.
+      /// @par Example
+      /// The following code example demonstrates how to use as_enumerable <source_t>(ienumerable <source_t>) to hide a type's custom Where method when the standard query operator implementation is desired.
+      /// @include enumerable_as_enumerable.cpp
+      template<xtd::forward_iterable source_t>
       [[nodiscard]] static auto as_enumerable(const source_t& source) noexcept -> xtd::collections::generic::enumerable_generator<typename xtd::raw_type<source_t>::value_type>;
+      /// @brief Returns the input typed as xtd::collections::generic::ienumerable <type_t>.
+      /// @tparam source_t The type of the elements of source.
+      /// @param source A sequence of values.
+      /// @return The input sequence typed as xtd::collections::generic::ienumerable <type_t>.
+      /// @par Example
+      /// The following code example demonstrates how to use as_enumerable <source_t>(ienumerable <source_t>) to hide a type's custom Where method when the standard query operator implementation is desired.
+      /// @include enumerable_as_enumerable.cpp
+      template<xtd::forward_iterable source_t>
+      [[nodiscard]] static auto as_enumerable(source_t& source) noexcept -> xtd::collections::generic::enumerable_generator<typename xtd::raw_type<source_t>::value_type>;
       /// @brief Returns the input typed as xtd::collections::generic::ienumerable <type_t>.
       /// @tparam source_t The type of the elements of source.
       /// @param source A sequence of values.
@@ -225,16 +243,34 @@ namespace xtd {
       /// @include enumerable_as_enumerable.cpp
       template<typename value_t, xtd::usize length>
       [[nodiscard]] static auto as_enumerable(const value_t (&array)[length]) noexcept -> xtd::collections::generic::enumerable_generator<value_t>;
-      
+      /// @brief Returns the input typed as xtd::collections::generic::ienumerable <type_t>.
+      /// @tparam source_t The type of the source array.
+      /// @param array The native array.
+      /// @param legnth The length of the array.
+      /// @return The input sequence typed as xtd::collections::generic::ienumerable <type_t>.
+      /// @par Example
+      /// The following code example demonstrates how to use as_enumerable <source_t>(ienumerable <source_t>) to hide a type's custom Where method when the standard query operator implementation is desired.
+      /// @include enumerable_as_enumerable.cpp
+      template<typename value_t, xtd::usize length>
+      [[nodiscard]] static auto as_enumerable(value_t (&array)[length]) noexcept -> xtd::collections::generic::enumerable_generator<value_t>;
+
       /// @cond
       template<xtd::usize size_>
       [[nodiscard]] static auto as_enumerable(const std::bitset<size_>& source) noexcept -> xtd::collections::generic::enumerable_generator<bool>; // defined in xtd/collections/bit_array.hpp
+      template<xtd::usize size_>
+      [[nodiscard]] static auto as_enumerable(std::bitset<size_>& source) noexcept -> xtd::collections::generic::enumerable_generator<bool>; // defined in xtd/collections/bit_array.hpp
       template<typename value_t, typename container_t>
       [[nodiscard]] static auto as_enumerable(const std::queue<value_t, container_t>& source) noexcept -> xtd::collections::generic::enumerable_generator<value_t>;
       template<typename value_t, typename container_t>
+      [[nodiscard]] static auto as_enumerable(std::queue<value_t, container_t>& source) noexcept -> xtd::collections::generic::enumerable_generator<value_t>;
+      template<typename value_t, typename container_t>
       [[nodiscard]] static auto as_enumerable(const std::priority_queue<value_t, container_t>& source) noexcept -> xtd::collections::generic::enumerable_generator<value_t>;
       template<typename value_t, typename container_t>
+      [[nodiscard]] static auto as_enumerable(std::priority_queue<value_t, container_t>& source) noexcept -> xtd::collections::generic::enumerable_generator<value_t>;
+      template<typename value_t, typename container_t>
       [[nodiscard]] static auto as_enumerable(const std::stack<value_t, container_t>& source) noexcept -> xtd::collections::generic::enumerable_generator<value_t>;
+      template<typename value_t, typename container_t>
+      [[nodiscard]] static auto as_enumerable(std::stack<value_t, container_t>& source) noexcept -> xtd::collections::generic::enumerable_generator<value_t>;
       /// @endcond
       
       /// @brief Computes the average of a sequence of xtd::decimal values.
@@ -311,8 +347,8 @@ namespace xtd {
       /// @return An xtd::collections::generic::ienumerable <type_t> that contains each element of the source sequence cast to the specified type.
       /// @exception xtd::invalid_cast_exception An element in the sequence cannot be cast to type `result_t`.
       /// @remarks The xtd::as include file `#include <xtd/as>` is needeed to use this method.
-      template<typename result_t, typename source_t>
-      [[nodiscard]] static auto cast(const ienumerable<source_t>& source) noexcept; // Defined include/xtd/as.hpp
+      template<typename result_t, xtd::forward_iterable source_t>
+      [[nodiscard]] static auto cast(source_t&& source) -> xtd::collections::generic::enumerable_generator<result_t>; // Defined include/xtd/as.hpp
       
       /// @brief Splits the elements of a sequence into chunks of size at most size.
       /// @tparam source_t The type of the elements of source.

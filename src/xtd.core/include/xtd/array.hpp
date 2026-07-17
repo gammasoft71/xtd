@@ -197,6 +197,11 @@ namespace xtd {
 #undef __XTD_CORE_INTERNAL__
 
 /// @cond
+template<typename enumerable_t, typename source_t>
+inline xtd::array<source_t> xtd::collections::generic::extensions::enumerable<enumerable_t, source_t>::to_array() const noexcept {
+  return xtd::linq::enumerable::to_array(self());
+}
+
 template<typename source_t>
 auto xtd::linq::enumerable::chunk(const ienumerable<source_t>& source, xtd::usize size) {
   if (size == 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
@@ -211,7 +216,11 @@ auto xtd::linq::enumerable::chunk(const ienumerable<source_t>& source, xtd::usiz
     }
   }
   if (chunk.size() != 0) chunks.items.push_back(chunk);
-  
   return chunks;
+}
+
+template<typename source_t>
+auto xtd::linq::enumerable::to_array(const xtd::collections::generic::ienumerable<source_t>& source) noexcept {
+  return xtd::array<source_t> {source};
 }
 /// @endcond

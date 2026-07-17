@@ -407,4 +407,9 @@ inline auto xtd::linq::enumerable::as_enumerable(const std::bitset<size_>& sourc
   for (const auto& item : xtd::collections::bit_array {source})
     co_yield item;
 }
+template<xtd::usize size_>
+inline auto xtd::linq::enumerable::as_enumerable(std::bitset<size_>& source) noexcept -> xtd::collections::generic::enumerable_generator<bool> {
+  for (const auto& item : xtd::collections::bit_array {source})
+    co_yield item;
+}
 /// @endcond

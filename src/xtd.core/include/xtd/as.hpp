@@ -57,13 +57,10 @@ template<typename new_type, typename current_type>
   return xtd::as<new_type>(value);
 }
 
-template<typename result_t, typename source_t>
-[[nodiscard]] inline auto xtd::linq::enumerable::cast(const xtd::collections::generic::ienumerable<source_t>& source) noexcept {
-  auto result = __opaque_xtd_linq_enumerable_collection__<result_t> {};
-  result = __opaque_xtd_linq_enumerable_collection__<result_t> {};
+template<typename result_t, xtd::forward_iterable source_t>
+[[nodiscard]] inline auto xtd::linq::enumerable::cast(source_t&& source) -> xtd::collections::generic::enumerable_generator<result_t> {
   for (const auto& item : source)
-    result.items.push_back(xtd::as<result_t>(item));
-  return result;
+    co_yield xtd::as<result_t>(item);
 }
 
 template<typename type_t>

@@ -7,6 +7,7 @@
 #include "helpers/lesser.hpp"
 #include "helpers/raw_array.hpp"
 #include "comparer.hpp"
+#include "enumerable.hpp"
 #include "ilist.hpp"
 #define __XTD_CORE_INTERNAL__
 #include "../../internal/__list_definition.hpp"
@@ -21,6 +22,7 @@
 #include "../../optional.hpp"
 #include "../../new_ptr.hpp"
 #include "../../predicate.hpp"
+#include "../../raw_type.hpp"
 #include "../../self.hpp"
 #include "../../string.hpp"
 
@@ -1108,11 +1110,15 @@ namespace xtd::collections::generic::extensions {
 }
 
 namespace xtd::linq {
-  template<typename source_t>
-  inline auto enumerable::to_list(const xtd::collections::generic::ienumerable<source_t>& source) noexcept {
-    auto result = xtd::collections::generic::list<source_t> {};
-    result = xtd::collections::generic::list<source_t> {source};
-    return result;
+  template<xtd::forward_iterable source_t>
+  auto xtd::linq::enumerable::as_enumerable(source_t&& source) noexcept {
+    if constexpr(xtd::collections::generic::enumerable<source_t>) return std::move(source);
+    else return xtd::collections::generic::list<typename xtd::raw_type<source_t>::value_type>(std::move(source));
+  }
+  
+  template<typename value_t>
+  inline auto enumerable::to_list(const xtd::collections::generic::ienumerable<value_t>& source) noexcept {
+    return xtd::collections::generic::list<value_t> {source};
   }
 }
 /// @endcond
