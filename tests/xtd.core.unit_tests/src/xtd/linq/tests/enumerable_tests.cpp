@@ -134,7 +134,7 @@ namespace xtd::linq::tests {
     }
     
     auto test_method_(cast_with_enumerable) {
-      collection_assert::are_equal({1.0, 2.0, 3.0, 4.0, 5.0}, enumerable::cast<double>(array {1, 2, 3, 4, 5}));
+      collection_assert::are_equal({1.0, 2.0, 3.0, 4.0, 5.0}, enumerable::cast<double>(array {1, 2, 3, 4, 5}).to_array());
       assert::is_instance_of<ienumerable<double>>(enumerable::cast<double>(array {1, 2, 3, 4, 5}));
     }
     
