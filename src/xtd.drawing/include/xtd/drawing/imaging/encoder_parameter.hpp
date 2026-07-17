@@ -99,8 +99,6 @@ namespace xtd {
         
         /// @cond
         encoder_parameter() = default;
-        encoder_parameter(const encoder_parameter&) = default;
-        encoder_parameter& operator =(const encoder_parameter&) = default;
         /// @endcond
         
         
