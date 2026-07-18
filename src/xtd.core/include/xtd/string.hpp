@@ -92,7 +92,7 @@ namespace xtd {
   namespace collections {
     namespace generic {
       template<typename type_t>
-      auto enumerable_generator<type_t>::to_string() const noexcept -> xtd::string {
+      auto enumerable_generator<type_t>::to_string() const -> xtd::string {
         auto result = xtd::string {"["};
         for (auto item : self_)
           result += xtd::string::format("{}{}", result != "[" ? ", " : "", item);

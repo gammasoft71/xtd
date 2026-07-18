@@ -356,8 +356,8 @@ namespace xtd {
       /// @param size The maximum size of each chunk.
       /// @return A sequence of chunks of size at most size.
       /// @zxception xtd::argument_out_of_range_exception `size` is equal to 0.
-      template<typename source_t>
-      [[nodiscard]] static auto chunk(const ienumerable<source_t>& source, xtd::usize size); // Defined in include/xtd/array.hpp
+      template<xtd::forward_iterable source_t>
+      [[nodiscard]] static auto chunk(source_t&& source, xtd::usize size) -> xtd::collections::generic::enumerable_generator<xtd::array<typename xtd::raw_type<source_t>::value_type>>; // Defined in include/xtd/array.hpp
       
       /// @brief Concatenates two sequences.
       /// @tparam source_t The type of the elements of source.
@@ -889,7 +889,7 @@ namespace xtd {
       /// The following code example demonstrates how to use xtd::linq::enumerable::to_array to force immediate query evaluation and return a xtd::array <type_t> that contains the query results.
       /// @include enumerable_to_array.cpp
       template<typename source_t>
-      [[nodiscard]] static auto to_array(const ienumerable<source_t>& source) noexcept; // Defined in include/xtd/array.hpp
+      [[nodiscard]] static auto to_array(const ienumerable<source_t>& source); // Defined in include/xtd/array.hpp
       
       /// @brief Creates a xtd::collections::generic::list <type_t> from an xtd::collections::generic::ienumerable <type_t>.
       /// @tparam source_t The type of the elements of source.
@@ -900,7 +900,7 @@ namespace xtd {
       /// The following code example demonstrates how to use xtd::linq::enumerable::to_list to force immediate query evaluation and return a xtd::collections::generic::list <type_t> that contains the query results.
       /// @include enumerable_to_list.cpp
       template<typename source_t>
-      [[nodiscard]] static auto to_list(const ienumerable<source_t>& source) noexcept; // Defined in include/xtd/collections/generic/list.hpp
+      [[nodiscard]] static auto to_list(const ienumerable<source_t>& source); // Defined in include/xtd/collections/generic/list.hpp
       
       /// @brief Filters a sequence of values based on a predicate.
       /// @tparam source_t The type of the elements of source.

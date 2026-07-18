@@ -389,14 +389,14 @@ namespace xtd {
           /// @par Examples
           /// The following code example demonstrates how to use xtd::linq::enumerable::to_array to force immediate query evaluation and return a xtd::array <type_t> that contains the query results.
           /// @include enumerable_to_array.cpp
-          [[nodiscard]] auto to_array() const noexcept -> xtd::array<source_t>;
+          [[nodiscard]] auto to_array() const -> xtd::array<source_t>;
           
           /// @brief Creates a xtd::collections::generic::list <type_t> from an xtd::collections::generic::ienumerable <type_t>.
           /// @return A xtd::collections::generic::list <type_t> that contains elements from the input sequence.
           /// @par Examples
           /// The following code example demonstrates how to use xtd::linq::enumerable::to_list to force immediate query evaluation and return a xtd::collections::generic::list <type_t> that contains the query results.
           /// @include enumerable_to_list.cpp
-          [[nodiscard]] auto to_list() const noexcept -> xtd::collections::generic::list<source_t>;
+          [[nodiscard]] auto to_list() const -> xtd::collections::generic::list<source_t>;
           
           /// @brief Filters a sequence of values based on a predicate.
           /// @param predicate A function to test each element for a condition.

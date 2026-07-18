@@ -198,29 +198,34 @@ namespace xtd {
 
 /// @cond
 template<typename enumerable_t, typename source_t>
-inline xtd::array<source_t> xtd::collections::generic::extensions::enumerable<enumerable_t, source_t>::to_array() const noexcept {
+inline xtd::array<source_t> xtd::collections::generic::extensions::enumerable<enumerable_t, source_t>::to_array() const {
   return xtd::linq::enumerable::to_array(self());
 }
 
-template<typename source_t>
-auto xtd::linq::enumerable::chunk(const ienumerable<source_t>& source, xtd::usize size) {
+template<xtd::forward_iterable source_t>
+auto xtd::linq::enumerable::chunk(source_t&& source, xtd::usize size) -> xtd::collections::generic::enumerable_generator<xtd::array<typename xtd::raw_type<source_t>::value_type>> {
   if (size == 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
-  auto chunks = __opaque_xtd_linq_enumerable_collection__<xtd::array<source_t>> {};
-  chunks = __opaque_xtd_linq_enumerable_collection__<xtd::array<source_t>> {};
-  auto chunk = std::vector<source_t> {};
-  for (auto index = xtd::usize {0}; const auto& item : source) {
-    chunk.push_back(item);
-    if (++index % size == 0) {
-      chunks.items.push_back(chunk);
-      chunk = std::vector<source_t> {};
+  
+  using value_type = typename xtd::raw_type<source_t>::value_type;
+  
+  std::vector<value_type> buffer;
+  buffer.reserve(size);
+  
+  for (const auto& item : source) {
+    buffer.push_back(item);
+    
+    if (buffer.size() == size) {
+      co_yield xtd::array<value_type>(buffer.begin(), buffer.end());
+      buffer.clear();
     }
   }
-  if (chunk.size() != 0) chunks.items.push_back(chunk);
-  return chunks;
+  
+  if (!buffer.empty())
+    co_yield xtd::array<value_type>(buffer.begin(), buffer.end());
 }
 
 template<typename source_t>
-auto xtd::linq::enumerable::to_array(const xtd::collections::generic::ienumerable<source_t>& source) noexcept {
+auto xtd::linq::enumerable::to_array(const xtd::collections::generic::ienumerable<source_t>& source) {
   return xtd::array<source_t> {source};
 }
 /// @endcond
