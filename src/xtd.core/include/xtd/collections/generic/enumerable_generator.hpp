@@ -79,7 +79,23 @@ namespace xtd {
           /// @param value The value of type `type_t` to be transmitted to the active enumerator or iterator façade.
           /// @return An object that instructs the compiler to suspend execution immediately after capturing the value.
           /// @remarks The value is efficiently transferred into the state using std::move to minimize overhead and enforce **zero-cost abstraction** performance.
-          std::suspend_always yield_value(type_t value) noexcept {
+          std::suspend_always yield_value(const type_t& value) noexcept {
+            current_value = value;
+            return {};
+          }
+          /// @brief Captures the value emitted by a `co_yield` expression and suspends the coroutine execution flow.
+          /// @param value The value of type `type_t` to be transmitted to the active enumerator or iterator façade.
+          /// @return An object that instructs the compiler to suspend execution immediately after capturing the value.
+          /// @remarks The value is efficiently transferred into the state using std::move to minimize overhead and enforce **zero-cost abstraction** performance.
+          std::suspend_always yield_value(type_t& value) noexcept {
+            current_value = value;
+            return {};
+          }
+          /// @brief Captures the value emitted by a `co_yield` expression and suspends the coroutine execution flow.
+          /// @param value The value of type `type_t` to be transmitted to the active enumerator or iterator façade.
+          /// @return An object that instructs the compiler to suspend execution immediately after capturing the value.
+          /// @remarks The value is efficiently transferred into the state using std::move to minimize overhead and enforce **zero-cost abstraction** performance.
+          std::suspend_always yield_value(type_t&& value) noexcept {
             current_value = std::move(value);
             return {};
           }

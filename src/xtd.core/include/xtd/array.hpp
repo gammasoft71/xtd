@@ -203,25 +203,21 @@ inline xtd::array<source_t> xtd::collections::generic::extensions::enumerable<en
 }
 
 template<xtd::forward_iterable source_t>
-auto xtd::linq::enumerable::chunk(source_t&& source, xtd::usize size) -> xtd::collections::generic::enumerable_generator<xtd::array<typename xtd::raw_type<source_t>::value_type>> {
+auto xtd::linq::enumerable::chunk(const source_t& source, xtd::usize size) -> xtd::collections::generic::enumerable_generator<xtd::array<typename xtd::raw_type<source_t>::value_type>> {
   if (size == 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
   
-  using value_type = typename xtd::raw_type<source_t>::value_type;
-  
-  std::vector<value_type> buffer;
-  buffer.reserve(size);
-  
+  xtd::array<typename xtd::raw_type<source_t>::value_type> buffer;
+  buffer.items().reserve(size);
   for (const auto& item : source) {
-    buffer.push_back(item);
-    
+    buffer.items().push_back(item);
     if (buffer.size() == size) {
-      co_yield xtd::array<value_type>(buffer.begin(), buffer.end());
-      buffer.clear();
+      co_yield buffer;
+      buffer.items().clear();
     }
   }
   
   if (!buffer.empty())
-    co_yield xtd::array<value_type>(buffer.begin(), buffer.end());
+    co_yield buffer;
 }
 
 template<typename source_t>

@@ -106,7 +106,7 @@ namespace xtd {
       /// The following code example demonstrates how to reverse the order of words in a string by using enumerable::aggregate.
       /// @include enumerable_aggregate.cpp
       template<xtd::forward_iterable source_t, xtd::func_callable<typename xtd::raw_type<source_t>::value_type, typename xtd::raw_type<source_t>::value_type, typename xtd::raw_type<source_t>::value_type> func_t>
-      [[nodiscard]] static auto aggregate(source_t&& source, func_t&& func) -> typename xtd::raw_type<source_t>::value_type;
+      [[nodiscard]] static auto aggregate(const source_t& source, func_t&& func) -> typename xtd::raw_type<source_t>::value_type;
       /// @brief Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value.
       /// @tparam accumulate_t The type of the accumulator value.
       /// @tparam source_t The type of the elements of source.
@@ -118,7 +118,7 @@ namespace xtd {
       /// The following code example demonstrates how to use xtd::linq::enumerable::aggregate to apply an accumulator function and use a seed value.
       /// @include enumerable_aggregate2.cpp
       template<typename accumulate_t, xtd::forward_iterable source_t, xtd::func_callable<accumulate_t, accumulate_t, typename xtd::raw_type<source_t>::value_type> func_t>
-      [[nodiscard]] static auto aggregate(source_t&& source, accumulate_t&& seed, func_t&& func) -> accumulate_t;
+      [[nodiscard]] static auto aggregate(const source_t& source, accumulate_t&& seed, func_t&& func) -> accumulate_t;
       /// @brief Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value, and the specified function is used to select the result value.
       /// @tparam result_t The type of the resulting value.
       /// @tparam accumulate_t The type of the accumulator value.
@@ -132,7 +132,7 @@ namespace xtd {
       /// The following code example demonstrates how to use xtd::linq::enumerable::aggregate to apply an accumulator function and use a seed value.
       /// @include enumerable_aggregate3.cpp
       template<typename result_t, typename accumulate_t, xtd::forward_iterable source_t, xtd::func_callable<accumulate_t, accumulate_t, typename xtd::raw_type<source_t>::value_type> func_t, xtd::func_callable<result_t, accumulate_t> result_selector_t>
-      [[nodiscard]] static auto aggregate(source_t&& source, accumulate_t&& seed, func_t&& func, result_selector_t&& result_selector) -> result_t;
+      [[nodiscard]] static auto aggregate(const source_t& source, accumulate_t&& seed, func_t&& func, result_selector_t&& result_selector) -> result_t;
       
       /// @brief Determines whether all elements of a sequence satisfy a condition.
       /// @tparam source_t The type of the elements of source.
@@ -143,7 +143,7 @@ namespace xtd {
       /// The following code example demonstrates how to use xtd::linq::enumerable::all <source_t> to determine whether all the elements in a sequence satisfy a condition. Variable all_start_with_B is `true` if all the pet names start with "B" or if the pets array is empty.
       /// @include enumerable_all.cpp
       template<xtd::forward_iterable source_t, xtd::predicate_callable<typename xtd::raw_type<source_t>::value_type> predicate_t>
-      [[nodiscard]] static auto all(source_t&& source, predicate_t&& predicate) -> bool;
+      [[nodiscard]] static auto all(const source_t& source, predicate_t&& predicate) -> bool;
       
       /// @brief Determines whether a sequence contains any elements.
       /// @tparam source_t The type of the elements of source.
@@ -154,7 +154,7 @@ namespace xtd {
       /// The following code example demonstrates how to use Any to determine whether a sequence contains any elements.
       /// @include enumerable_any.cpp
       template<xtd::forward_iterable source_t>
-      [[nodiscard]] static auto any(source_t&& source) noexcept -> bool;
+      [[nodiscard]] static auto any(const source_t& source) noexcept -> bool;
       /// @brief Determines whether any element of a sequence satisfies a condition.
       /// @tparam source_t The type of the elements of source.
       /// @param source An xtd::collections::generic::ienumerable <type_t> that contains the elements to apply the predicate to.
@@ -164,7 +164,7 @@ namespace xtd {
       /// The following code example demonstrates how to use xtd::linq::enumerable::all <source_t> to determine whether all the elements in a sequence satisfy a condition. Variable all_start_with_B is `true` if all the pet names start with "B" or if the pets array is empty.
       /// @include enumerable_all.cpp
       template<xtd::forward_iterable source_t, xtd::predicate_callable<typename xtd::raw_type<source_t>::value_type> predicate_t>
-      [[nodiscard]] static auto any(source_t&& source, predicate_t&& predicate) -> bool;
+      [[nodiscard]] static auto any(const source_t& source, predicate_t&& predicate) -> bool;
 
       /// @brief Appends a value to the end of the sequence.
       /// @tparam source_t The type of the elements of source.
@@ -175,7 +175,7 @@ namespace xtd {
       /// The following code example demonstrates how to use Append to append a value to the end of the sequence.
       /// @include enumerable_append.cpp
       template<xtd::forward_iterable source_t>
-      [[nodiscard]] static auto append(source_t&& source, typename xtd::raw_type<source_t>::value_type&& element) noexcept -> xtd::collections::generic::enumerable_generator<typename xtd::raw_type<source_t>::value_type>;
+      [[nodiscard]] static auto append(const source_t& source, typename xtd::raw_type<source_t>::value_type&& element) noexcept -> xtd::collections::generic::enumerable_generator<typename xtd::raw_type<source_t>::value_type>;
       
       /// @brief Returns the input typed as xtd::collections::generic::ienumerable <type_t>.
       /// @tparam source_t The type of the elements of source.
@@ -279,66 +279,66 @@ namespace xtd {
       /// @exception xtd::invalid_operation_exception `source` contains no elements.
       template<xtd::forward_iterable source_t>
       requires xtd::real_decimal<typename xtd::raw_type<source_t>::value_type>
-      [[nodiscard]] static auto average(source_t&& source) -> xtd::decimal;
+      [[nodiscard]] static auto average(const source_t& source) -> xtd::decimal;
       /// @brief Computes the average of a sequence of double values.
       /// @param source A sequence of double values to calculate the average of.
       /// @return The average of the sequence of values.
       /// @exception xtd::invalid_operation_exception `source` contains no elements.
       template<xtd::forward_iterable source_t>
       requires xtd::real_double<typename xtd::raw_type<source_t>::value_type>
-      [[nodiscard]] static auto average(source_t&& source) -> double;
+      [[nodiscard]] static auto average(const source_t& source) -> double;
       /// @brief Computes the average of a sequence of float values.
       /// @param source A sequence of float values to calculate the average of.
       /// @return The average of the sequence of values.
       /// @exception xtd::invalid_operation_exception `source` contains no elements.
       template<xtd::forward_iterable source_t>
       requires xtd::real_single<typename xtd::raw_type<source_t>::value_type>
-      [[nodiscard]] static auto average(source_t&& source) -> xtd::single;
+      [[nodiscard]] static auto average(const source_t& source) -> xtd::single;
       /// @brief Computes the average of a sequence of xtd::int32 values.
       /// @param source A sequence of xtd::int32 values to calculate the average of.
       /// @return The average of the sequence of values.
       /// @exception xtd::invalid_operation_exception `source` contains no elements.
       template<xtd::forward_iterable source_t>
       requires xtd::signed_integer_32<typename xtd::raw_type<source_t>::value_type>
-      [[nodiscard]] static auto average(source_t&& source) -> double;
+      [[nodiscard]] static auto average(const source_t& source) -> double;
       /// @brief Computes the average of a sequence of xtd::int64 values.
       /// @param source A sequence of xtd::int64 values to calculate the average of.
       /// @return The average of the sequence of values.
       /// @exception xtd::invalid_operation_exception `source` contains no elements.
       template<xtd::forward_iterable source_t>
       requires xtd::signed_integer_64<typename xtd::raw_type<source_t>::value_type>
-      [[nodiscard]] static auto average(source_t&& source) -> double;
+      [[nodiscard]] static auto average(const source_t& source) -> double;
 
       /// @brief Computes the average of a sequence of optional xtd::decimal values.
       /// @param source A sequence of optional xtd::decimal values to calculate the average of.
       /// @return The average of the sequence of values, or xtd::nullopt if the source sequence is empty or contains only values that are xtd::nullopt.
       template<xtd::forward_iterable source_t>
       requires std::same_as<typename xtd::raw_type<source_t>::value_type, xtd::optional<xtd::decimal>>
-      [[nodiscard]] static auto average(source_t&& source) -> xtd::optional<xtd::decimal>;
+      [[nodiscard]] static auto average(const source_t& source) -> xtd::optional<xtd::decimal>;
       /// @brief Computes the average of a sequence of optional double values.
       /// @param source A sequence of optional double values to calculate the average of.
       /// @return The average of the sequence of values, or xtd::nullopt if the source sequence is empty or contains only values that are xtd::nullopt.
       template<xtd::forward_iterable source_t>
       requires std::same_as<typename xtd::raw_type<source_t>::value_type, xtd::optional<double>>
-      [[nodiscard]] static auto average(source_t&& source) -> xtd::optional<double>;
+      [[nodiscard]] static auto average(const source_t& source) -> xtd::optional<double>;
       /// @brief Computes the average of a sequence of optional float values.
       /// @param source A sequence of optional float values to calculate the average of.
       /// @return The average of the sequence of values, or xtd::nullopt if the source sequence is empty or contains only values that are xtd::nullopt.
       template<xtd::forward_iterable source_t>
       requires std::same_as<typename xtd::raw_type<source_t>::value_type, xtd::optional<xtd::single>>
-      [[nodiscard]] static auto average(source_t&& source) -> xtd::optional<xtd::single>;
+      [[nodiscard]] static auto average(const source_t& source) -> xtd::optional<xtd::single>;
       /// @brief Computes the average of a sequence of optional xtd::int32 values.
       /// @param source A sequence of optional xtd::int32 values to calculate the average of.
       /// @return The average of the sequence of values, or xtd::nullopt if the source sequence is empty or contains only values that are xtd::nullopt.
       template<xtd::forward_iterable source_t>
       requires std::same_as<typename xtd::raw_type<source_t>::value_type, xtd::optional<xtd::int32>>
-      [[nodiscard]] static auto average(source_t&& source) -> xtd::optional<double>;
+      [[nodiscard]] static auto average(const source_t& source) -> xtd::optional<double>;
       /// @brief Computes the average of a sequence of optional xtd::int64 values.
       /// @param source A sequence of optional xtd::int64 values to calculate the average of.
       /// @return The average of the sequence of values, or xtd::nullopt if the source sequence is empty or contains only values that are xtd::nullopt.
       template<xtd::forward_iterable source_t>
       requires std::same_as<typename xtd::raw_type<source_t>::value_type, xtd::optional<xtd::int64>>
-      [[nodiscard]] static auto average(source_t&& source) -> xtd::optional<double>;
+      [[nodiscard]] static auto average(const source_t& source) -> xtd::optional<double>;
 
       /// @brief Casts the elements of an xtd::collections::generic::ienumerable to the specified type.
       /// @tparam result_t The type of the resulting value.
@@ -348,7 +348,7 @@ namespace xtd {
       /// @exception xtd::invalid_cast_exception An element in the sequence cannot be cast to type `result_t`.
       /// @remarks The xtd::as include file `#include <xtd/as>` is needeed to use this method.
       template<typename result_t, xtd::forward_iterable source_t>
-      [[nodiscard]] static auto cast(source_t&& source) -> xtd::collections::generic::enumerable_generator<result_t>; // Defined include/xtd/as.hpp
+      [[nodiscard]] static auto cast(const source_t& source) -> xtd::collections::generic::enumerable_generator<result_t>; // Defined include/xtd/as.hpp
       
       /// @brief Splits the elements of a sequence into chunks of size at most size.
       /// @tparam source_t The type of the elements of source.
@@ -357,7 +357,7 @@ namespace xtd {
       /// @return A sequence of chunks of size at most size.
       /// @zxception xtd::argument_out_of_range_exception `size` is equal to 0.
       template<xtd::forward_iterable source_t>
-      [[nodiscard]] static auto chunk(source_t&& source, xtd::usize size) -> xtd::collections::generic::enumerable_generator<xtd::array<typename xtd::raw_type<source_t>::value_type>>; // Defined in include/xtd/array.hpp
+      [[nodiscard]] static auto chunk(const source_t& source, xtd::usize size) -> xtd::collections::generic::enumerable_generator<xtd::array<typename xtd::raw_type<source_t>::value_type>>; // Defined in include/xtd/array.hpp
       
       /// @brief Concatenates two sequences.
       /// @tparam source_t The type of the elements of source.

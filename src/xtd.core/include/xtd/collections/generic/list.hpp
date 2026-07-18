@@ -1109,16 +1109,14 @@ namespace xtd::collections::generic::extensions {
   }
 }
 
-namespace xtd::linq {
-  template<xtd::forward_iterable source_t>
-  auto xtd::linq::enumerable::as_enumerable(source_t&& source) noexcept {
-    if constexpr(xtd::collections::generic::enumerable<source_t>) return std::move(source);
-    else return xtd::collections::generic::list<typename xtd::raw_type<source_t>::value_type>(std::move(source));
-  }
-  
-  template<typename value_t>
-  inline auto enumerable::to_list(const xtd::collections::generic::ienumerable<value_t>& source) {
-    return xtd::collections::generic::list<value_t> {source};
-  }
+template<xtd::forward_iterable source_t>
+auto xtd::linq::enumerable::as_enumerable(source_t&& source) noexcept {
+  if constexpr(xtd::collections::generic::enumerable<source_t>) return std::move(source);
+  else return xtd::collections::generic::list<typename xtd::raw_type<source_t>::value_type>(std::move(source));
+}
+
+template<typename value_t>
+inline auto xtd::linq::enumerable::to_list(const xtd::collections::generic::ienumerable<value_t>& source) {
+  return xtd::collections::generic::list<value_t> {source};
 }
 /// @endcond
