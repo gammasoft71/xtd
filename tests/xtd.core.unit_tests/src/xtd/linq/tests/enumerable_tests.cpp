@@ -152,7 +152,7 @@ namespace xtd::linq::tests {
       collection_assert::are_equal({13, 14}, enumerator.current());
       assert::is_false(enumerator.move_next());
       
-      assert::throws<xtd::argument_out_of_range_exception>([&] {[[maybe_unused]] auto __ = enumerable::chunk(s, 0);});
+      assert::throws<xtd::argument_out_of_range_exception>([&] {[[maybe_unused]] auto __ = enumerable::chunk(s, 0).to_array();});
     }
     
     auto test_method_(concat_with_enumerable_and_enumerable) {
