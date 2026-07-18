@@ -241,9 +241,9 @@ requires std::same_as&lt;typename <a class="el" href="group__xtd__core.html#ga22
 <tr class="memitem:a903dc97ddc49d4769cb245a59f3d6768" id="r_a903dc97ddc49d4769cb245a59f3d6768"><td class="memTemplParams" colspan="2">template&lt;typename result_t, <a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t&gt; </td></tr>
 <tr class="memitem:a903dc97ddc49d4769cb245a59f3d6768 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a903dc97ddc49d4769cb245a59f3d6768">cast</a> (source_t &amp;&amp;source) -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; result_t &gt;</td></tr>
 <tr class="memdesc:a903dc97ddc49d4769cb245a59f3d6768"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts the elements of an <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> to the specified type.  <br /></td></tr>
-<tr class="memitem:adf39f6e251943e4fd7b8a843bafb7d0b" id="r_adf39f6e251943e4fd7b8a843bafb7d0b"><td class="memTemplParams" colspan="2">template&lt;typename source_t&gt; </td></tr>
-<tr class="memitem:adf39f6e251943e4fd7b8a843bafb7d0b template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#adf39f6e251943e4fd7b8a843bafb7d0b">chunk</a> (const <a class="el" href="#a2bd1889dc1967c50ef692411dc2c4b92">ienumerable</a>&lt; source_t &gt; &amp;source, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> size)</td></tr>
-<tr class="memdesc:adf39f6e251943e4fd7b8a843bafb7d0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Splits the elements of a sequence into chunks of size at most size.  <br /></td></tr>
+<tr class="memitem:aaf3e0c9906afb74c45ae429435485d1a" id="r_aaf3e0c9906afb74c45ae429435485d1a"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t&gt; </td></tr>
+<tr class="memitem:aaf3e0c9906afb74c45ae429435485d1a template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aaf3e0c9906afb74c45ae429435485d1a">chunk</a> (source_t &amp;&amp;source, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> size) -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; typename <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt; source_t &gt;<a class="el" href="structxtd_1_1value__type.html">::value_type</a> &gt; &gt;</td></tr>
+<tr class="memdesc:aaf3e0c9906afb74c45ae429435485d1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Splits the elements of a sequence into chunks of size at most size.  <br /></td></tr>
 <tr class="memitem:aa2437294617d23a475ace0d55303913c" id="r_aa2437294617d23a475ace0d55303913c"><td class="memTemplParams" colspan="2">template&lt;typename source_t&gt; </td></tr>
 <tr class="memitem:aa2437294617d23a475ace0d55303913c template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aa2437294617d23a475ace0d55303913c">concat</a> (const <a class="el" href="#a2bd1889dc1967c50ef692411dc2c4b92">ienumerable</a>&lt; source_t &gt; &amp;first, const <a class="el" href="#a2bd1889dc1967c50ef692411dc2c4b92">ienumerable</a>&lt; source_t &gt; &amp;second) noexcept</td></tr>
 <tr class="memdesc:aa2437294617d23a475ace0d55303913c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concatenates two sequences.  <br /></td></tr>
@@ -367,12 +367,12 @@ requires <a class="el" href="structxtd_1_1numeric.html">xtd::numeric</a>&lt;sour
 <tr class="memitem:a76a5278a1b6c1bc366c00fffcd427ef6" id="r_a76a5278a1b6c1bc366c00fffcd427ef6"><td class="memTemplParams" colspan="2">template&lt;typename source_t&gt; </td></tr>
 <tr class="memitem:a76a5278a1b6c1bc366c00fffcd427ef6 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a76a5278a1b6c1bc366c00fffcd427ef6">select</a> (const <a class="el" href="#a2bd1889dc1967c50ef692411dc2c4b92">ienumerable</a>&lt; source_t &gt; &amp;source, auto &amp;&amp;selector)</td></tr>
 <tr class="memdesc:a76a5278a1b6c1bc366c00fffcd427ef6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Projects each element of a sequence into a new form by incorporating the element's index.  <br /></td></tr>
-<tr class="memitem:a80f96a57b1a44cb46023f060e482a040" id="r_a80f96a57b1a44cb46023f060e482a040"><td class="memTemplParams" colspan="2">template&lt;typename source_t&gt; </td></tr>
-<tr class="memitem:a80f96a57b1a44cb46023f060e482a040 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a80f96a57b1a44cb46023f060e482a040">to_array</a> (const <a class="el" href="#a2bd1889dc1967c50ef692411dc2c4b92">ienumerable</a>&lt; source_t &gt; &amp;source) noexcept</td></tr>
-<tr class="memdesc:a80f96a57b1a44cb46023f060e482a040"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> &lt;type_t&gt; from an <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt;.  <br /></td></tr>
-<tr class="memitem:a452f69ae6e7daea4c93977fc2ba8b044" id="r_a452f69ae6e7daea4c93977fc2ba8b044"><td class="memTemplParams" colspan="2">template&lt;typename source_t&gt; </td></tr>
-<tr class="memitem:a452f69ae6e7daea4c93977fc2ba8b044 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a452f69ae6e7daea4c93977fc2ba8b044">to_list</a> (const <a class="el" href="#a2bd1889dc1967c50ef692411dc2c4b92">ienumerable</a>&lt; source_t &gt; &amp;source) noexcept</td></tr>
-<tr class="memdesc:a452f69ae6e7daea4c93977fc2ba8b044"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; from an <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt;.  <br /></td></tr>
+<tr class="memitem:abe2623e93f7343615c3e1e38a018e9eb" id="r_abe2623e93f7343615c3e1e38a018e9eb"><td class="memTemplParams" colspan="2">template&lt;typename source_t&gt; </td></tr>
+<tr class="memitem:abe2623e93f7343615c3e1e38a018e9eb template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#abe2623e93f7343615c3e1e38a018e9eb">to_array</a> (const <a class="el" href="#a2bd1889dc1967c50ef692411dc2c4b92">ienumerable</a>&lt; source_t &gt; &amp;source)</td></tr>
+<tr class="memdesc:abe2623e93f7343615c3e1e38a018e9eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> &lt;type_t&gt; from an <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt;.  <br /></td></tr>
+<tr class="memitem:af3000ed7c9fed27fbe7fcfe3e01c9757" id="r_af3000ed7c9fed27fbe7fcfe3e01c9757"><td class="memTemplParams" colspan="2">template&lt;typename source_t&gt; </td></tr>
+<tr class="memitem:af3000ed7c9fed27fbe7fcfe3e01c9757 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#af3000ed7c9fed27fbe7fcfe3e01c9757">to_list</a> (const <a class="el" href="#a2bd1889dc1967c50ef692411dc2c4b92">ienumerable</a>&lt; source_t &gt; &amp;source)</td></tr>
+<tr class="memdesc:af3000ed7c9fed27fbe7fcfe3e01c9757"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; from an <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt;.  <br /></td></tr>
 <tr class="memitem:ac345cc9c4ac523f74273a28cd26bb04b" id="r_ac345cc9c4ac523f74273a28cd26bb04b"><td class="memTemplParams" colspan="2">template&lt;typename source_t&gt; </td></tr>
 <tr class="memitem:ac345cc9c4ac523f74273a28cd26bb04b template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ac345cc9c4ac523f74273a28cd26bb04b">where</a> (const <a class="el" href="#a2bd1889dc1967c50ef692411dc2c4b92">ienumerable</a>&lt; source_t &gt; &amp;source, auto &amp;&amp;predicate<a class="el" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab">predicate</a>)</td></tr>
 <tr class="memdesc:ac345cc9c4ac523f74273a28cd26bb04b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filters a sequence of values based on a predicate.  <br /></td></tr>
@@ -1782,13 +1782,13 @@ template&lt;typename result_t, <a class="el" href="structxtd_1_1forward__iterabl
 
 </div>
 </div>
-<a id="adf39f6e251943e4fd7b8a843bafb7d0b" name="adf39f6e251943e4fd7b8a843bafb7d0b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adf39f6e251943e4fd7b8a843bafb7d0b">&#9670;&#160;</a></span>chunk()</h2>
+<a id="aaf3e0c9906afb74c45ae429435485d1a" name="aaf3e0c9906afb74c45ae429435485d1a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf3e0c9906afb74c45ae429435485d1a">&#9670;&#160;</a></span>chunk()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename source_t&gt; </div>
+template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1796,12 +1796,12 @@ template&lt;typename source_t&gt; </div>
         <tr>
           <td class="memname">auto xtd::linq::enumerable::chunk </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="#a2bd1889dc1967c50ef692411dc2c4b92">ienumerable</a>&lt; source_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>source</em></span>, </td>
+          <td class="paramtype">source_t &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>source</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>size</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>size</em></span>&#160;) -&gt;  <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; typename <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt; source_t &gt;<a class="el" href="structxtd_1_1value__type.html">::value_type</a> &gt; &gt;</td>
         </tr>
       </table>
   </td>
@@ -3718,8 +3718,8 @@ template&lt;typename source_t&gt; </div>
 
 </div>
 </div>
-<a id="a80f96a57b1a44cb46023f060e482a040" name="a80f96a57b1a44cb46023f060e482a040"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a80f96a57b1a44cb46023f060e482a040">&#9670;&#160;</a></span>to_array()</h2>
+<a id="abe2623e93f7343615c3e1e38a018e9eb" name="abe2623e93f7343615c3e1e38a018e9eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe2623e93f7343615c3e1e38a018e9eb">&#9670;&#160;</a></span>to_array()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3738,7 +3738,7 @@ template&lt;typename source_t&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -3758,12 +3758,12 @@ template&lt;typename source_t&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> &lt;type_t&gt; that contains elements from the input sequence. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> include file <span class="tt">#include &lt;xtd/array&gt;</span> is needeed to use this method. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to use <a class="el" href="#a80f96a57b1a44cb46023f060e482a040" title="Creates a xtd::array &lt;type_t&gt; from an xtd::collections::generic::ienumerable &lt;type_t&gt;.">xtd::linq::enumerable::to_array</a> to force immediate query evaluation and return a <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> &lt;type_t&gt; that contains the query results. <div class="fragment"></div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to use <a class="el" href="#abe2623e93f7343615c3e1e38a018e9eb" title="Creates a xtd::array &lt;type_t&gt; from an xtd::collections::generic::ienumerable &lt;type_t&gt;.">xtd::linq::enumerable::to_array</a> to force immediate query evaluation and return a <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> &lt;type_t&gt; that contains the query results. <div class="fragment"></div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
-<a id="a452f69ae6e7daea4c93977fc2ba8b044" name="a452f69ae6e7daea4c93977fc2ba8b044"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a452f69ae6e7daea4c93977fc2ba8b044">&#9670;&#160;</a></span>to_list()</h2>
+<a id="af3000ed7c9fed27fbe7fcfe3e01c9757" name="af3000ed7c9fed27fbe7fcfe3e01c9757"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3000ed7c9fed27fbe7fcfe3e01c9757">&#9670;&#160;</a></span>to_list()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3782,7 +3782,7 @@ template&lt;typename source_t&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -3802,7 +3802,7 @@ template&lt;typename source_t&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; that contains elements from the input sequence. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> include file <span class="tt">#include &lt;xtd/collections/generic/lists&gt;</span> is needeed to use this method. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to use <a class="el" href="#a452f69ae6e7daea4c93977fc2ba8b044" title="Creates a xtd::collections::generic::list &lt;type_t&gt; from an xtd::collections::generic::ienumerable &lt;ty...">xtd::linq::enumerable::to_list</a> to force immediate query evaluation and return a <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; that contains the query results. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to use <a class="el" href="#af3000ed7c9fed27fbe7fcfe3e01c9757" title="Creates a xtd::collections::generic::list &lt;type_t&gt; from an xtd::collections::generic::ienumerable &lt;ty...">xtd::linq::enumerable::to_list</a> to force immediate query evaluation and return a <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; that contains the query results. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> fruits = <a class="code hl_class" href="classxtd_1_1array.html">array&lt;string&gt;</a> {<span class="stringliteral">&quot;apple&quot;</span>, <span class="stringliteral">&quot;passionfruit&quot;</span>, <span class="stringliteral">&quot;banana&quot;</span>, <span class="stringliteral">&quot;mango&quot;</span>, <span class="stringliteral">&quot;orange&quot;</span>, <span class="stringliteral">&quot;blueberry&quot;</span>, <span class="stringliteral">&quot;grape&quot;</span>, <span class="stringliteral">&quot;strawberry&quot;</span>};</div>

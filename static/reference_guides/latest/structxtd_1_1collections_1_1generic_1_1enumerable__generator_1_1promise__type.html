@@ -124,6 +124,8 @@ struct xtd::collections::generic::enumerable_generator&lt; type_t &gt;::promise_
 Public Attributes</h2></td></tr>
 <tr class="memitem:a5a451196870b77f0b0fd7bc78ca9e042" id="r_a5a451196870b77f0b0fd7bc78ca9e042"><td class="memItemLeft">type_t&#160;</td><td class="memItemRight"><a class="el" href="#a5a451196870b77f0b0fd7bc78ca9e042">current_value</a></td></tr>
 <tr class="memdesc:a5a451196870b77f0b0fd7bc78ca9e042"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the current value yielded by the coroutine execution state.  <br /></td></tr>
+<tr class="memitem:abaeadf06948545a537fa356442e2c38e" id="r_abaeadf06948545a537fa356442e2c38e"><td class="memItemLeft">std::exception_ptr&#160;</td><td class="memItemRight"><a class="el" href="#abaeadf06948545a537fa356442e2c38e">exception</a></td></tr>
+<tr class="memdesc:abaeadf06948545a537fa356442e2c38e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the current exception if exception occured.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -135,8 +137,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:abf10096972cfad54cf1eded631a2c27e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the final suspension behavior of the coroutine upon completion.  <br /></td></tr>
 <tr class="memitem:a372315b4346b632ef4956e33fb149fc3" id="r_a372315b4346b632ef4956e33fb149fc3"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a372315b4346b632ef4956e33fb149fc3">return_void</a> () noexcept</td></tr>
 <tr class="memdesc:a372315b4346b632ef4956e33fb149fc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles the completion of a coroutine function that does not return a final value (using <span class="tt">co_return;</span> or reaching the end of the body).  <br /></td></tr>
-<tr class="memitem:a21a0c149cce6c67797b8954ba8be690d" id="r_a21a0c149cce6c67797b8954ba8be690d"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a21a0c149cce6c67797b8954ba8be690d">unhandled_exception</a> ()</td></tr>
-<tr class="memdesc:a21a0c149cce6c67797b8954ba8be690d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Catches any unhandled exceptions escaped from the coroutine body.  <br /></td></tr>
+<tr class="memitem:af1926939183b73e5f44a435534aefbb0" id="r_af1926939183b73e5f44a435534aefbb0"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#af1926939183b73e5f44a435534aefbb0">unhandled_exception</a> () noexcept</td></tr>
+<tr class="memdesc:af1926939183b73e5f44a435534aefbb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Catches any unhandled exceptions escaped from the coroutine body.  <br /></td></tr>
 <tr class="memitem:a307e54f189276a5ffe27afb3e53f0506" id="r_a307e54f189276a5ffe27afb3e53f0506"><td class="memItemLeft">std::suspend_always&#160;</td><td class="memItemRight"><a class="el" href="#a307e54f189276a5ffe27afb3e53f0506">yield_value</a> (type_t value) noexcept</td></tr>
 <tr class="memdesc:a307e54f189276a5ffe27afb3e53f0506"><td class="mdescLeft">&#160;</td><td class="mdescRight">Captures the value emitted by a <span class="tt">co_yield</span> expression and suspends the coroutine execution flow.  <br /></td></tr>
 </table>
@@ -262,8 +264,8 @@ template&lt;typename type_t&gt; </div>
 
 </div>
 </div>
-<a id="a21a0c149cce6c67797b8954ba8be690d" name="a21a0c149cce6c67797b8954ba8be690d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a21a0c149cce6c67797b8954ba8be690d">&#9670;&#160;</a></span>unhandled_exception()</h2>
+<a id="af1926939183b73e5f44a435534aefbb0" name="af1926939183b73e5f44a435534aefbb0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1926939183b73e5f44a435534aefbb0">&#9670;&#160;</a></span>unhandled_exception()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -282,7 +284,7 @@ template&lt;typename type_t&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -345,6 +347,24 @@ template&lt;typename type_t&gt; </div>
 </div><div class="memdoc">
 
 <p>Represents the current value yielded by the coroutine execution state. </p>
+
+</div>
+</div>
+<a id="abaeadf06948545a537fa356442e2c38e" name="abaeadf06948545a537fa356442e2c38e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abaeadf06948545a537fa356442e2c38e">&#9670;&#160;</a></span>exception</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename type_t&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::exception_ptr <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; type_t &gt;::promise_type::exception</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Represents the current exception if exception occured. </p>
 
 </div>
 </div>
