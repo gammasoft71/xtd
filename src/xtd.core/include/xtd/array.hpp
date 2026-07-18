@@ -206,18 +206,20 @@ template<xtd::forward_iterable source_t>
 auto xtd::linq::enumerable::chunk(const source_t& source, xtd::usize size) -> xtd::collections::generic::enumerable_generator<xtd::array<typename xtd::raw_type<source_t>::value_type>> {
   if (size == 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
   
-  xtd::array<typename xtd::raw_type<source_t>::value_type> buffer;
-  buffer.items().reserve(size);
+  auto buffer = std::vector<typename xtd::raw_type<source_t>::value_type> {};
+  buffer.reserve(size);
+  
   for (const auto& item : source) {
-    buffer.items().push_back(item);
+    buffer.push_back(item);
     if (buffer.size() == size) {
-      co_yield buffer;
-      buffer.items().clear();
+      co_yield std::move(buffer);
+      buffer = {};
+      buffer.reserve(size);
     }
   }
   
   if (!buffer.empty())
-    co_yield buffer;
+    co_yield std::move(buffer);
 }
 
 template<typename source_t>

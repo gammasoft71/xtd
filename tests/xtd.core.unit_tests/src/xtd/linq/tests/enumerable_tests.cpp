@@ -156,9 +156,9 @@ namespace xtd::linq::tests {
     }
     
     auto test_method_(concat_with_enumerable_and_enumerable) {
-      collection_assert::are_equal({1, 2, 3, 4, 5, 6}, enumerable::concat(array {1, 2, 3}, array {4, 5, 6}));
-      collection_assert::are_equal({1, 2, 3}, enumerable::concat(array {1, 2, 3}, array<int> {}));
-      collection_assert::are_equal({4, 5, 6}, enumerable::concat(array<int> {}, array {4, 5, 6}));
+      collection_assert::are_equal({1, 2, 3, 4, 5, 6}, enumerable::concat(array {1, 2, 3}, array {4, 5, 6}).to_array());
+      collection_assert::are_equal({1, 2, 3}, enumerable::concat(array {1, 2, 3}, array<int> {}).to_array());
+      collection_assert::are_equal({4, 5, 6}, enumerable::concat(array<int> {}, array {4, 5, 6}).to_array());
     }
     
     auto test_method_(contains_with_enumerable_and_value) {

@@ -265,3 +265,11 @@ auto xtd::linq::enumerable::average(const source_t& source) -> xtd::optional<dou
   }
   return count == 0 ? xtd::nullopt : std::make_optional(average / count);
 }
+
+template<xtd::forward_iterable first_t,xtd::forward_iterable second_t>
+auto xtd::linq::enumerable::concat(const first_t& first, const second_t& second) noexcept  -> xtd::collections::generic::enumerable_generator<typename xtd::raw_type<first_t>::value_type> {
+  for (const auto& item : first)
+    co_yield item;
+  for (const auto& item : second)
+    co_yield item;
+}
