@@ -50,6 +50,10 @@ namespace xtd {
           /// @brief Represents the current value yielded by the coroutine execution state.
           type_t current_value;
           
+          /// @brief Represents the current exception if exception occured.
+          std::exception_ptr exception;
+
+          
           /// @brief Creates and returns the public instance of the xtd::collections::generic::enumerable_generator linked to this promise state.
           /// @return A new xtd::collections::generic::enumerable_generator instance wrapping the underlying coroutine handle.
           enumerable_generator get_return_object() {return enumerable_generator {std::coroutine_handle<promise_type>::from_promise(*this)};}
@@ -69,7 +73,7 @@ namespace xtd {
           
           /// @brief Catches any unhandled exceptions escaped from the coroutine body.
           /// @remarks In the context of xtd::collections::generic::enumerable_generator, any unhandled exception within the generator block immediately triggers a std::terminate to guarantee system safety.
-          void unhandled_exception() {std::terminate();}
+          void unhandled_exception() noexcept {exception = std::current_exception();}
           
           /// @brief Captures the value emitted by a `co_yield` expression and suspends the coroutine execution flow.
           /// @param value The value of type `type_t` to be transmitted to the active enumerator or iterator façade.
@@ -107,7 +111,12 @@ namespace xtd {
             bool move_next() override {
               started_ = true;
               if (!handle_ || handle_.done()) return false;
+              
               handle_.resume();
+              
+              if (handle_.promise().exception)
+                std::rethrow_exception(handle_.promise().exception);
+              
               return !handle_.done();
             }
             void reset() override {xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::not_supported);}
@@ -122,7 +131,7 @@ namespace xtd {
         
         /// @brief Returns a xtd::string that represents the current object.
         /// @return A string that represents the current object.
-        [[nodiscard]] auto to_string() const noexcept -> xtd::string override; // Defined in xtd/string.hpp
+        [[nodiscard]] auto to_string() const -> xtd::string override; // Defined in xtd/string.hpp
         /// @}
         
       private:
