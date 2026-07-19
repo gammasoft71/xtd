@@ -9,7 +9,7 @@ auto int_generator() -> enumerable_generator<int> {
 }
 
 template<collections::generic::enumerable enumerable_t>
-[[nodiscard]] auto enumerate(enumerable_t&& enumerable) -> enumerable_generator<enumerable_value_type<enumerable_t>> {
+[[nodiscard]] auto enumerate(const enumerable_t& enumerable) -> enumerable_generator<enumerable_value_type<enumerable_t>> {
   for (const auto& item : enumerable)
     co_yield item;
 }
