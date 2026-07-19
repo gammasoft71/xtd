@@ -2,14 +2,13 @@
 /// @brief Contains xtd::read_only_span class.
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
-#define __XTD_STD_INTERNAL__
-#include "internal/__xtd_std_version.hpp"
-#undef __XTD_STD_INTERNAL__
 #include "collections/generic/helpers/wrap_pointer_iterator.hpp"
 #include "array.hpp"
 #include "dynamic_extent.hpp"
 #include "iequatable.hpp"
 #include "is.hpp"
+#include "iterable.hpp"
+#include "iterable_value_type.hpp"
 #include "null.hpp"
 #include "object.hpp"
 #include "ptrdiff.hpp"
@@ -390,13 +389,8 @@ namespace xtd {
   template< class type_t, xtd::usize len>
   read_only_span(const std::array<type_t, len>& array) -> read_only_span<type_t>;
   
-  #if defined(__xtd__cpp_lib_ranges)
-  template<typename range_t>
-  read_only_span(range_t&& items) -> read_only_span<typename std::remove_reference_t<std::ranges::range_reference_t<range_t>>>;
-  #else
-  template<typename range_t>
-  read_only_span(range_t&& items) -> read_only_span<typename range_t::value_type>;
-  #endif
+  template<xtd::iterable iterable_t>
+  read_only_span(iterable_t&& items) -> read_only_span<xtd::iterable_value_type<iterable_t>>;
   
   template<typename collection_t>
   read_only_span(const collection_t& items) -> read_only_span<typename collection_t::value_type>;
