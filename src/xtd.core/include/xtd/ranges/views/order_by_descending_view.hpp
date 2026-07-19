@@ -3,18 +3,11 @@
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 
-#define __XTD_STD_INTERNAL__
-#include "../../internal/__xtd_std_version.hpp"
-#undef __XTD_STD_INTERNAL__
 #include "../../linq/enumerable.hpp"
 #include "../../istringable.hpp"
+#include "../../iterable.hpp"
 #include "../../string.hpp"
 #include "../../views/views.hpp"
-
-/// @cond
-#if defined(__xtd__cpp_lib_ranges)
-/// @endcond
-#include <ranges>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -46,11 +39,11 @@ namespace xtd {
         struct with_key_selector {
           const key_selector_t& key_selector;
           
-          template <std::ranges::range range_t>
-          auto operator()(range_t&& source) const {return xtd::linq::enumerable::as_enumerable(std::forward<range_t>(source)).order_by_descending(key_selector);}
+          template <xtd::iterable iterable_t>
+          auto operator()(iterable_t&& source) const {return xtd::linq::enumerable::as_enumerable(std::forward<iterable_t>(source)).order_by_descending(key_selector);}
           
-          template <std::ranges::range range_t>
-          friend auto operator |(range_t&& source, const with_key_selector& self) {return self(std::forward<range_t>(source));}
+          template <xtd::iterable iterable_t>
+          friend auto operator |(iterable_t&& source, const with_key_selector& self) {return self(std::forward<iterable_t>(source));}
         };
         
       public:
@@ -61,8 +54,8 @@ namespace xtd {
         /// @tparam range_t The type of the elements of source.
         /// @param source A sequence of values to sort.
         /// @param key_selector A function to extract a key from an element.
-        template <std::ranges::range range_t, typename key_selector_t>
-        auto operator()(range_t&& source, const key_selector_t& key_selector) const {return xtd::linq::enumerable::from(std::forward<range_t>(source)).order_by_descending(key_selector);}
+        template <xtd::iterable iterable_t, typename key_selector_t>
+        auto operator()(iterable_t&& source, const key_selector_t& key_selector) const {return xtd::linq::enumerable::from(std::forward<iterable_t>(source)).order_by_descending(key_selector);}
         /// @brief Sorts the elements of a sequence in descending order according to a key.
         /// @tparam range_t The type of the elements of source.
         /// @param key_selector A function to extract a key from an element.
@@ -80,13 +73,10 @@ namespace xtd {
         /// auto result = numbers | order_by_descending_view([](int x) {return x;});
         /// // result = {1, 2, 3, 4}
         /// @endcode
-        template <std::ranges::range range_type>
-        friend auto operator |(range_type&& source, const order_by_descending_view& view) {return view(std::forward<range_type>(source));}
+        template <xtd::iterable iterable_t>
+        friend auto operator |(iterable_t&& source, const order_by_descending_view& view) {return view(std::forward<iterable_t>(source));}
         /// @}
       };
     }
   }
 }
-/// @cond
-#endif
-/// @endcond
