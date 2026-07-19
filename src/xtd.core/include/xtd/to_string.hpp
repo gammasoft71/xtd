@@ -17,11 +17,9 @@
 #include "internal/__numeric_formatter.hpp"
 #include "internal/__format_stringer.hpp"
 #undef __XTD_CORE_INTERNAL__
-#define __XTD_STD_INTERNAL__
-#include "internal/__xtd_std_version.hpp"
-#undef __XTD_STD_INTERNAL__
 /// @endcond
 #include "generic_stream_output.hpp"
+#include "iterable.hpp"
 #include "register_any_stringer.hpp"
 #include "textual.hpp"
 #include "types.hpp"
@@ -475,14 +473,6 @@ namespace xtd {
   template<>
   inline auto to_string(const std::filesystem::path& value, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
 
-  #if defined(__xtd__cpp_lib_ranges)
-  //template <std::ranges::range range_t>
-  //inline auto to_string(const range_t& values, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
-  
-  //template <std::ranges::range range_t>
-  //inline auto to_string(const range_t& values, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
-  #endif
-  
   template<typename type_t>
   inline auto to_string(const xtd::collections::generic::ienumerable<type_t>& values, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
   
