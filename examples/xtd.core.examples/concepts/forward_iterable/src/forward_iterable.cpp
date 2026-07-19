@@ -9,7 +9,7 @@ auto int_generator() -> enumerable_generator<int> {
 }
 
 template <forward_iterable iterable_t>
-[[nodiscard]] auto iterate(iterable_t&& iterable) -> enumerable_generator<forward_iterable_value_type<iterable_t>> {
+[[nodiscard]] auto iterate(const iterable_t& iterable) -> enumerable_generator<forward_iterable_value_type<iterable_t>> {
   for (const auto& item : iterable)
     co_yield item;
 }
