@@ -3,18 +3,11 @@
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 
-#define __XTD_STD_INTERNAL__
-#include "../../internal/__xtd_std_version.hpp"
-#undef __XTD_STD_INTERNAL__
 #include "../../linq/enumerable.hpp"
 #include "../../istringable.hpp"
+#include "../../iterable.hpp"
 #include "../../string.hpp"
 #include "../../views/views.hpp"
-
-/// @cond
-#if defined(__xtd__cpp_lib_ranges)
-/// @endcond
-#include <ranges>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -46,11 +39,11 @@ namespace xtd {
         struct with_selector {
           const selector_t& selector;
           
-          template <std::ranges::range range_t>
-          auto operator()(range_t&& source) const {return xtd::linq::enumerable::from(std::forward<range_t>(source)).select(selector);}
+          template <xtd::iterable iterable_t>
+          auto operator()(iterable_t&& source) const {return xtd::linq::enumerable::from(std::forward<iterable_t>(source)).select(selector);}
           
-          template <std::ranges::range range_t>
-          friend auto operator |(range_t&& source, const with_selector& self) {return self(std::forward<range_t>(source));}
+          template <xtd::iterable iterable_t>
+          friend auto operator |(iterable_t&& source, const with_selector& self) {return self(std::forward<iterable_t>(source));}
         };
         
       public:
@@ -61,8 +54,8 @@ namespace xtd {
         /// @param source A sequence of values to invoke a transform function on.
         /// @param selector A transform function to apply to each element.
         /// @return An iterable select elements from the source sequence.
-        template <std::ranges::range range_t, typename selector_t>
-        auto operator()(range_t&& source, const selector_t& selector) const {return xtd::linq::enumerable::as_enumerable(std::forward<range_t>(source)).select(selector);}
+        template <xtd::iterable iterable_t, typename selector_t>
+        auto operator()(iterable_t&& source, const selector_t& selector) const {return xtd::linq::enumerable::as_enumerable(std::forward<iterable_t>(source)).select(selector);}
         /// @brief Projects each element of a sequence into a new form.
         /// @param selector A transform function to apply to each element.
         /// @return An iterable select elements from the source sequence.
@@ -80,13 +73,10 @@ namespace xtd {
         /// auto result = numbers | select_view([](int x) { return x * 2; });
         /// // result = {2, 4, 6, 8}
         /// @endcode
-        template <std::ranges::range range_type>
-        friend auto operator |(range_type&& source, const select_view& view) {return view(std::forward<range_type>(source));}
+        template <xtd::iterable iterable_t>
+        friend auto operator |(iterable_t&& source, const select_view& view) {return view(std::forward<iterable_t>(source));}
         /// @}
       };
     }
   }
 }
-/// @cond
-#endif
-/// @endcond
