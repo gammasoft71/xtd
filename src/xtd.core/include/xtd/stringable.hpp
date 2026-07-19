@@ -2,19 +2,14 @@
 /// @brief Contains xtd::stringable concept.
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
-#define __XTD_STD_INTERNAL__
-#include "internal/__xtd_std_version.hpp"
-#undef __XTD_STD_INTERNAL__
 #include "stream_insertable.hpp"
 #include "iformatable.hpp"
 #include "istringable.hpp"
+#include "iterable.hpp"
 #include "object.hpp"
 #include "raw_type.hpp"
 #include "textual.hpp"
 #include <concepts>
-#if defined(__xtd__cpp_lib_ranges)
-#include <ranges>
-#endif
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -27,8 +22,6 @@ namespace xtd {
     requires(const xtd::raw_type<value_t>& value) {{value.to_string()} -> xtd::textual;} ||
     std::derived_from<xtd::raw_type<value_t>, std::exception> ||
     std::is_enum_v<xtd::raw_type<value_t>> ||
-    #if defined(__xtd__cpp_lib_ranges)
-    std::ranges::range<xtd::raw_type<value_t>> ||
-    #endif
+    xtd::iterable<xtd::raw_type<value_t>> ||
     xtd::stream_insertable<value_t>;
 }
