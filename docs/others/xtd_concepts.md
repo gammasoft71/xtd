@@ -118,6 +118,7 @@
 🔴   |   |- xtd::bidirectional_iterable (&&)
 🔴   |   |    |- xtd::backward_iterable
 🟢   |   |    |- xtd::forward_iterable
+🟢   |   |    |- xtd::iterable
 🔴   |- xtd::streamable (&&)
 🟢   |   |- xtd::stream_insertable
 🔴   |   |- xtd::stream_extractable
