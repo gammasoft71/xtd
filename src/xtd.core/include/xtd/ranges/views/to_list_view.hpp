@@ -3,18 +3,11 @@
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 
-#define __XTD_STD_INTERNAL__
-#include "../../internal/__xtd_std_version.hpp"
-#undef __XTD_STD_INTERNAL__
 #include "../../linq/enumerable.hpp"
 #include "../../istringable.hpp"
+#include "../../iterable.hpp"
 #include "../../string.hpp"
 #include "../../views/views.hpp"
-
-/// @cond
-#if defined(__xtd__cpp_lib_ranges)
-/// @endcond
-#include <ranges>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -49,8 +42,8 @@ namespace xtd {
         /// @brief Converts a sequence of values to a list.
         /// @tparam range_t The type of the elements of source.
         /// @param source A sequence of values to convert to list.
-        template <std::ranges::range range_t>
-        auto operator()(range_t&& source) const {return xtd::linq::enumerable::from(std::forward<range_t>(source)).to_list();}
+        template <xtd::iterable iterable_t>
+        auto operator()(iterable_t&& source) const {return xtd::linq::enumerable::from(std::forward<iterable_t>(source)).to_list();}
         
         /// @brief Applies a filter on the given range using the pipe operator.
         /// @tparam range_t The type of the elements of source.
@@ -63,13 +56,10 @@ namespace xtd {
         /// auto result = numbers | to_list_view();
         /// // result = xtd::collections::generic::list {1, 2, 3, 4}
         /// @endcode
-        template <std::ranges::range range_t>
-        friend auto operator |(range_t&& source, const to_list_view& view) {return view(std::forward<range_t>(source));}
+        template <xtd::iterable iterable_t>
+        friend auto operator |(iterable_t&& source, const to_list_view& view) {return view(std::forward<iterable_t>(source));}
         /// @}
       };
     }
   }
 }
-/// @cond
-#endif
-/// @endcond
