@@ -121,7 +121,51 @@ struct xtd::iterable&lt; value_t &gt;</div><p>Represents the iterable concept. <
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code shows how to use <a class="el" href="structxtd_1_1iterable.html" title="Represents the iterable concept.">xtd::iterable</a> concept <div class="fragment"></div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following code shows how to use <a class="el" href="structxtd_1_1iterable.html" title="Represents the iterable concept.">xtd::iterable</a> concept <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> int_generator() -&gt; enumerable_generator&lt;int&gt; {</div>
+<div class="line">  <span class="keyword">co_yield</span> 15;</div>
+<div class="line">  <span class="keyword">co_yield</span> 11;</div>
+<div class="line">  <span class="keyword">co_yield</span> 13;</div>
+<div class="line">  <span class="keyword">co_yield</span> 14;</div>
+<div class="line">  <span class="keyword">co_yield</span> 12;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">template</span> &lt;iterable iterable_t&gt;</div>
+<div class="line">[[nodiscard]] <span class="keyword">auto</span> iterate(<span class="keyword">const</span> iterable_t&amp; <a class="code hl_concept" href="conceptxtd_1_1iterable.html">iterable</a>) -&gt; enumerable_generator&lt;iterable_value_type&lt;iterable_t&gt;&gt; {</div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; item : <a class="code hl_concept" href="conceptxtd_1_1iterable.html">iterable</a>)</div>
+<div class="line">    <span class="keyword">co_yield</span> item;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> item : iterate(std::vector {5, 1, 3, 4, 2}).select(_ * 2).order())</div>
+<div class="line">    <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;{,2}&quot;</span>, item);</div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> item : iterate(list {10, 6, 8, 9, 7}).select(_ * 3).order())</div>
+<div class="line">    <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;{,2}&quot;</span>, item);</div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> item : iterate(int_generator()).<a class="code hl_variable" href="group__ranges.html#ga093ba4055ef4d95934c8a014fb7f2683">select</a>(_ * 4).order())</div>
+<div class="line">    <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;{,2}&quot;</span>, item);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">//  2</span></div>
+<div class="line"><span class="comment">//  4</span></div>
+<div class="line"><span class="comment">//  6</span></div>
+<div class="line"><span class="comment">//  8</span></div>
+<div class="line"><span class="comment">// 10</span></div>
+<div class="line"><span class="comment">// 18</span></div>
+<div class="line"><span class="comment">// 21</span></div>
+<div class="line"><span class="comment">// 24</span></div>
+<div class="line"><span class="comment">// 27</span></div>
+<div class="line"><span class="comment">// 30</span></div>
+<div class="line"><span class="comment">// 44</span></div>
+<div class="line"><span class="comment">// 48</span></div>
+<div class="line"><span class="comment">// 52</span></div>
+<div class="line"><span class="comment">// 56</span></div>
+<div class="line"><span class="comment">// 60</span></div>
+<div class="ttc" id="agroup__ranges_html_ga093ba4055ef4d95934c8a014fb7f2683"><div class="ttname"><a href="group__ranges.html#ga093ba4055ef4d95934c8a014fb7f2683">xtd::ranges::views::select</a></div><div class="ttdeci">constexpr auto select</div><div class="ttdoc">The xtd::ranges::views::select instance.</div><div class="ttdef"><b>Definition</b> select.hpp:40</div></div>
+<div class="ttc" id="anamespacextd_html_a9482c5e9fb1d60c658bbe28bfbb17353"><div class="ttname"><a href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">xtd::println</a></div><div class="ttdeci">auto println(FILE *file) -&gt; void</div><div class="ttdoc">Writes the current line terminator to the file output stream using the specified format information.</div><div class="ttdef"><b>Definition</b> println.hpp:14</div></div>
+</div><!-- fragment --> </dd></dl>
 </div><hr/>The documentation for this struct was generated from the following file:<ul>
 <li>xtd.core/include/xtd/<a class="el" href="iterable___8hpp_source.html">iterable_.hpp</a></li>
 </ul>
