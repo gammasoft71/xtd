@@ -202,11 +202,11 @@ inline xtd::array<source_t> xtd::collections::generic::extensions::enumerable<en
   return xtd::linq::enumerable::to_array(self());
 }
 
-template<xtd::forward_iterable source_t>
-auto xtd::linq::enumerable::chunk(const source_t& source, xtd::usize size) -> xtd::collections::generic::enumerable_generator<xtd::array<xtd::forward_iterable_value_type<source_t>>> {
+template<xtd::iterable source_t>
+auto xtd::linq::enumerable::chunk(const source_t& source, xtd::usize size) -> xtd::collections::generic::enumerable_generator<xtd::array<xtd::iterable_value_type<source_t>>> {
   if (size == 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
   
-  auto buffer = std::vector<xtd::forward_iterable_value_type<source_t>> {};
+  auto buffer = std::vector<xtd::iterable_value_type<source_t>> {};
   buffer.reserve(size);
   
   for (const auto& item : source) {
