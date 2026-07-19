@@ -100,7 +100,10 @@ var searchData=
   ['item_5fcheck_5fevent_5fhandler_2ehpp_97',['item_check_event_handler.hpp',['../item__check__event__handler_8hpp.html',1,'']]],
   ['items_5fadded_5fevent_5fargs_2ehpp_98',['items_added_event_args.hpp',['../items__added__event__args_8hpp.html',1,'']]],
   ['items_5fadded_5fevent_5fhandler_2ehpp_99',['items_added_event_handler.hpp',['../items__added__event__handler_8hpp.html',1,'']]],
-  ['iterator_2ehpp_100',['iterator.hpp',['../iterator_8hpp.html',1,'']]],
-  ['itext_5fmodel_2ehpp_101',['itext_model.hpp',['../itext__model_8hpp.html',1,'']]],
-  ['iwin32_5fwindow_2ehpp_102',['iwin32_window.hpp',['../iwin32__window_8hpp.html',1,'']]]
+  ['iterable_2ehpp_100',['iterable.hpp',['../iterable_8hpp.html',1,'']]],
+  ['iterable_5f_2ehpp_101',['iterable_.hpp',['../iterable___8hpp.html',1,'']]],
+  ['iterable_5fvalue_5ftype_2ehpp_102',['iterable_value_type.hpp',['../iterable__value__type_8hpp.html',1,'']]],
+  ['iterator_2ehpp_103',['iterator.hpp',['../iterator_8hpp.html',1,'']]],
+  ['itext_5fmodel_2ehpp_104',['itext_model.hpp',['../itext__model_8hpp.html',1,'']]],
+  ['iwin32_5fwindow_2ehpp_105',['iwin32_window.hpp',['../iwin32__window_8hpp.html',1,'']]]
 ];

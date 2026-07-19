@@ -125,7 +125,7 @@ Inheritance diagram for xtd::linq::enumerable:</div>
 <div class="textblock"><p>Provides a set of static methods for querying objects that implement ienumerable &lt;type_t&gt;. </p>
 <dl class="section user"><dt>Definition</dt><dd><div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> type_t&gt;</div>
 <div class="line"><span class="keyword">class </span><a class="code hl_class" href="classxtd_1_1linq_1_1enumerable.html">enumerable</a> : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1static__object.html">xtd::static_object</a>;</div>
-<div class="ttc" id="aclassxtd_1_1linq_1_1enumerable_html"><div class="ttname"><a href="classxtd_1_1linq_1_1enumerable.html">xtd::linq::enumerable</a></div><div class="ttdoc">Provides a set of static methods for querying objects that implement ienumerable &lt;type_t&gt;.</div><div class="ttdef"><b>Definition</b> enumerable_.hpp:71</div></div>
+<div class="ttc" id="aclassxtd_1_1linq_1_1enumerable_html"><div class="ttname"><a href="classxtd_1_1linq_1_1enumerable.html">xtd::linq::enumerable</a></div><div class="ttdoc">Provides a set of static methods for querying objects that implement ienumerable &lt;type_t&gt;.</div><div class="ttdef"><b>Definition</b> enumerable_.hpp:72</div></div>
 <div class="ttc" id="aclassxtd_1_1static__object_html"><div class="ttname"><a href="classxtd_1_1static__object.html">xtd::static_object</a></div><div class="ttdoc">Represent a static object. A static class can&#39;t be instantiated (constructors are deleted).</div><div class="ttdef"><b>Definition</b> static.hpp:20</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/linq/enumerable&gt;</span></div>
@@ -153,36 +153,36 @@ Public Aliases</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Static Methods</h2></td></tr>
-<tr class="memitem:acebb40445aec75cd246a653a25a20a18" id="r_acebb40445aec75cd246a653a25a20a18"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t, <a class="el" href="structxtd_1_1func__callable.html">xtd::func_callable</a>&lt; typename <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt; source_t &gt;<a class="el" href="structxtd_1_1value__type.html">::value_type</a>, typename <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt; source_t &gt;<a class="el" href="structxtd_1_1value__type.html">::value_type</a>, typename <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt; source_t &gt;<a class="el" href="structxtd_1_1value__type.html">::value_type</a> &gt; func_t&gt; </td></tr>
-<tr class="memitem:acebb40445aec75cd246a653a25a20a18 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#acebb40445aec75cd246a653a25a20a18">aggregate</a> (const source_t &amp;source, func_t &amp;&amp;func<a class="el" href="group__delegates.html#ga17814178399a734d83f7c7ee1ca15365">func</a>) -&gt; typename <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt; source_t &gt;<a class="el" href="structxtd_1_1value__type.html">::value_type</a></td></tr>
-<tr class="memdesc:acebb40445aec75cd246a653a25a20a18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies an accumulator function over a sequence.  <br /></td></tr>
-<tr class="memitem:a6e906ffb7e5ece374177c284096840a8" id="r_a6e906ffb7e5ece374177c284096840a8"><td class="memTemplParams" colspan="2">template&lt;typename accumulate_t, <a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t, <a class="el" href="structxtd_1_1func__callable.html">xtd::func_callable</a>&lt; accumulate_t, accumulate_t, typename <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt; source_t &gt;<a class="el" href="structxtd_1_1value__type.html">::value_type</a> &gt; func_t&gt; </td></tr>
+<tr class="memitem:ad0a9df2a530337f66ac2b880ca260da5" id="r_ad0a9df2a530337f66ac2b880ca260da5"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t, <a class="el" href="structxtd_1_1func__callable.html">xtd::func_callable</a>&lt; <a class="el" href="group__concepts.html#ga10d3c2d33b02ce94a03b0afce9f1c75c">xtd::forward_iterable_value_type</a>&lt; source_t &gt;, <a class="el" href="group__concepts.html#ga10d3c2d33b02ce94a03b0afce9f1c75c">xtd::forward_iterable_value_type</a>&lt; source_t &gt;, <a class="el" href="group__concepts.html#ga10d3c2d33b02ce94a03b0afce9f1c75c">xtd::forward_iterable_value_type</a>&lt; source_t &gt; &gt; func_t&gt; </td></tr>
+<tr class="memitem:ad0a9df2a530337f66ac2b880ca260da5 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ad0a9df2a530337f66ac2b880ca260da5">aggregate</a> (const source_t &amp;source, func_t &amp;&amp;func<a class="el" href="group__delegates.html#ga17814178399a734d83f7c7ee1ca15365">func</a>) -&gt; <a class="el" href="group__concepts.html#ga10d3c2d33b02ce94a03b0afce9f1c75c">xtd::forward_iterable_value_type</a>&lt; source_t &gt;</td></tr>
+<tr class="memdesc:ad0a9df2a530337f66ac2b880ca260da5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies an accumulator function over a sequence.  <br /></td></tr>
+<tr class="memitem:a6e906ffb7e5ece374177c284096840a8" id="r_a6e906ffb7e5ece374177c284096840a8"><td class="memTemplParams" colspan="2">template&lt;typename accumulate_t, <a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t, <a class="el" href="structxtd_1_1func__callable.html">xtd::func_callable</a>&lt; accumulate_t, accumulate_t, <a class="el" href="group__concepts.html#ga10d3c2d33b02ce94a03b0afce9f1c75c">xtd::forward_iterable_value_type</a>&lt; source_t &gt; &gt; func_t&gt; </td></tr>
 <tr class="memitem:a6e906ffb7e5ece374177c284096840a8 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a6e906ffb7e5ece374177c284096840a8">aggregate</a> (const source_t &amp;source, accumulate_t &amp;&amp;seed, func_t &amp;&amp;func<a class="el" href="group__delegates.html#ga17814178399a734d83f7c7ee1ca15365">func</a>) -&gt; accumulate_t</td></tr>
 <tr class="memdesc:a6e906ffb7e5ece374177c284096840a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value.  <br /></td></tr>
-<tr class="memitem:ad6b4e423a4ff7f51123fff3245cabb02" id="r_ad6b4e423a4ff7f51123fff3245cabb02"><td class="memTemplParams" colspan="2">template&lt;typename result_t, typename accumulate_t, <a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t, <a class="el" href="structxtd_1_1func__callable.html">xtd::func_callable</a>&lt; accumulate_t, accumulate_t, typename <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt; source_t &gt;<a class="el" href="structxtd_1_1value__type.html">::value_type</a> &gt; func_t, <a class="el" href="structxtd_1_1func__callable.html">xtd::func_callable</a>&lt; result_t, accumulate_t &gt; result_selector_t&gt; </td></tr>
+<tr class="memitem:ad6b4e423a4ff7f51123fff3245cabb02" id="r_ad6b4e423a4ff7f51123fff3245cabb02"><td class="memTemplParams" colspan="2">template&lt;typename result_t, typename accumulate_t, <a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t, <a class="el" href="structxtd_1_1func__callable.html">xtd::func_callable</a>&lt; accumulate_t, accumulate_t, <a class="el" href="group__concepts.html#ga10d3c2d33b02ce94a03b0afce9f1c75c">xtd::forward_iterable_value_type</a>&lt; source_t &gt; &gt; func_t, <a class="el" href="structxtd_1_1func__callable.html">xtd::func_callable</a>&lt; result_t, accumulate_t &gt; result_selector_t&gt; </td></tr>
 <tr class="memitem:ad6b4e423a4ff7f51123fff3245cabb02 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ad6b4e423a4ff7f51123fff3245cabb02">aggregate</a> (const source_t &amp;source, accumulate_t &amp;&amp;seed, func_t &amp;&amp;func<a class="el" href="group__delegates.html#ga17814178399a734d83f7c7ee1ca15365">func</a>, result_selector_t &amp;&amp;result_selector) -&gt; result_t</td></tr>
 <tr class="memdesc:ad6b4e423a4ff7f51123fff3245cabb02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value, and the specified function is used to select the result value.  <br /></td></tr>
-<tr class="memitem:aa042339a0aa9bd3cce50e9cef51e14a1" id="r_aa042339a0aa9bd3cce50e9cef51e14a1"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t, <a class="el" href="structxtd_1_1predicate__callable.html">xtd::predicate_callable</a>&lt; typename <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt; source_t &gt;<a class="el" href="structxtd_1_1value__type.html">::value_type</a> &gt; predicate_t&gt; </td></tr>
+<tr class="memitem:aa042339a0aa9bd3cce50e9cef51e14a1" id="r_aa042339a0aa9bd3cce50e9cef51e14a1"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t, <a class="el" href="structxtd_1_1predicate__callable.html">xtd::predicate_callable</a>&lt; <a class="el" href="group__concepts.html#ga10d3c2d33b02ce94a03b0afce9f1c75c">xtd::forward_iterable_value_type</a>&lt; source_t &gt; &gt; predicate_t&gt; </td></tr>
 <tr class="memitem:aa042339a0aa9bd3cce50e9cef51e14a1 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aa042339a0aa9bd3cce50e9cef51e14a1">all</a> (const source_t &amp;source, predicate_t &amp;&amp;predicate<a class="el" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab">predicate</a>) -&gt; bool</td></tr>
 <tr class="memdesc:aa042339a0aa9bd3cce50e9cef51e14a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether all elements of a sequence satisfy a condition.  <br /></td></tr>
 <tr class="memitem:a87f0effd1ff49f29b5b1ca0adaa1eacd" id="r_a87f0effd1ff49f29b5b1ca0adaa1eacd"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t&gt; </td></tr>
 <tr class="memitem:a87f0effd1ff49f29b5b1ca0adaa1eacd template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a87f0effd1ff49f29b5b1ca0adaa1eacd">any</a> (const source_t &amp;source) noexcept -&gt; bool</td></tr>
 <tr class="memdesc:a87f0effd1ff49f29b5b1ca0adaa1eacd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether a sequence contains any elements.  <br /></td></tr>
-<tr class="memitem:a56353ad15c3c61828820d81741dea911" id="r_a56353ad15c3c61828820d81741dea911"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t, <a class="el" href="structxtd_1_1predicate__callable.html">xtd::predicate_callable</a>&lt; typename <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt; source_t &gt;<a class="el" href="structxtd_1_1value__type.html">::value_type</a> &gt; predicate_t&gt; </td></tr>
+<tr class="memitem:a56353ad15c3c61828820d81741dea911" id="r_a56353ad15c3c61828820d81741dea911"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t, <a class="el" href="structxtd_1_1predicate__callable.html">xtd::predicate_callable</a>&lt; <a class="el" href="group__concepts.html#ga10d3c2d33b02ce94a03b0afce9f1c75c">xtd::forward_iterable_value_type</a>&lt; source_t &gt; &gt; predicate_t&gt; </td></tr>
 <tr class="memitem:a56353ad15c3c61828820d81741dea911 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a56353ad15c3c61828820d81741dea911">any</a> (const source_t &amp;source, predicate_t &amp;&amp;predicate<a class="el" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab">predicate</a>) -&gt; bool</td></tr>
 <tr class="memdesc:a56353ad15c3c61828820d81741dea911"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether any element of a sequence satisfies a condition.  <br /></td></tr>
-<tr class="memitem:a320d097990358f7c6aa1cbc52c0ba895" id="r_a320d097990358f7c6aa1cbc52c0ba895"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t&gt; </td></tr>
-<tr class="memitem:a320d097990358f7c6aa1cbc52c0ba895 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a320d097990358f7c6aa1cbc52c0ba895">append</a> (const source_t &amp;source, typename <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt; source_t &gt;<a class="el" href="structxtd_1_1value__type.html">::value_type</a> &amp;&amp;element) noexcept -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; typename <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt; source_t &gt;<a class="el" href="structxtd_1_1value__type.html">::value_type</a> &gt;</td></tr>
-<tr class="memdesc:a320d097990358f7c6aa1cbc52c0ba895"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends a value to the end of the sequence.  <br /></td></tr>
+<tr class="memitem:a29fa85b8de2586346ffbbf07421dc572" id="r_a29fa85b8de2586346ffbbf07421dc572"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t&gt; </td></tr>
+<tr class="memitem:a29fa85b8de2586346ffbbf07421dc572 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a29fa85b8de2586346ffbbf07421dc572">append</a> (const source_t &amp;source, <a class="el" href="group__concepts.html#ga10d3c2d33b02ce94a03b0afce9f1c75c">xtd::forward_iterable_value_type</a>&lt; source_t &gt; &amp;&amp;element) noexcept -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; <a class="el" href="group__concepts.html#ga10d3c2d33b02ce94a03b0afce9f1c75c">xtd::forward_iterable_value_type</a>&lt; source_t &gt; &gt;</td></tr>
+<tr class="memdesc:a29fa85b8de2586346ffbbf07421dc572"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends a value to the end of the sequence.  <br /></td></tr>
 <tr class="memitem:a9a6c8aa37a82c4f554a0788deb7e576a" id="r_a9a6c8aa37a82c4f554a0788deb7e576a"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t&gt; </td></tr>
 <tr class="memitem:a9a6c8aa37a82c4f554a0788deb7e576a template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a9a6c8aa37a82c4f554a0788deb7e576a">as_enumerable</a> (source_t &amp;&amp;source) noexcept</td></tr>
 <tr class="memdesc:a9a6c8aa37a82c4f554a0788deb7e576a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the input typed as <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt;.  <br /></td></tr>
-<tr class="memitem:af6e2480e65c45e2950459ae5efbd23a5" id="r_af6e2480e65c45e2950459ae5efbd23a5"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t&gt; </td></tr>
-<tr class="memitem:af6e2480e65c45e2950459ae5efbd23a5 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#af6e2480e65c45e2950459ae5efbd23a5">as_enumerable</a> (const source_t &amp;source) noexcept -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; typename <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt; source_t &gt;<a class="el" href="structxtd_1_1value__type.html">::value_type</a> &gt;</td></tr>
-<tr class="memdesc:af6e2480e65c45e2950459ae5efbd23a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the input typed as <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt;.  <br /></td></tr>
-<tr class="memitem:ac3105a564af9b2f7a735e6e857cf5a4d" id="r_ac3105a564af9b2f7a735e6e857cf5a4d"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t&gt; </td></tr>
-<tr class="memitem:ac3105a564af9b2f7a735e6e857cf5a4d template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ac3105a564af9b2f7a735e6e857cf5a4d">as_enumerable</a> (source_t &amp;source) noexcept -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; typename <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt; source_t &gt;<a class="el" href="structxtd_1_1value__type.html">::value_type</a> &gt;</td></tr>
-<tr class="memdesc:ac3105a564af9b2f7a735e6e857cf5a4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the input typed as <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt;.  <br /></td></tr>
+<tr class="memitem:abfc71b45943d8e01a5fbb4f538d64bce" id="r_abfc71b45943d8e01a5fbb4f538d64bce"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t&gt; </td></tr>
+<tr class="memitem:abfc71b45943d8e01a5fbb4f538d64bce template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#abfc71b45943d8e01a5fbb4f538d64bce">as_enumerable</a> (const source_t &amp;source) noexcept -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; <a class="el" href="group__concepts.html#ga10d3c2d33b02ce94a03b0afce9f1c75c">xtd::forward_iterable_value_type</a>&lt; source_t &gt; &gt;</td></tr>
+<tr class="memdesc:abfc71b45943d8e01a5fbb4f538d64bce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the input typed as <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt;.  <br /></td></tr>
+<tr class="memitem:a84bfbd4c55ee8013da496797bfdd3986" id="r_a84bfbd4c55ee8013da496797bfdd3986"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t&gt; </td></tr>
+<tr class="memitem:a84bfbd4c55ee8013da496797bfdd3986 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a84bfbd4c55ee8013da496797bfdd3986">as_enumerable</a> (source_t &amp;source) noexcept -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; <a class="el" href="group__concepts.html#ga10d3c2d33b02ce94a03b0afce9f1c75c">xtd::forward_iterable_value_type</a>&lt; source_t &gt; &gt;</td></tr>
+<tr class="memdesc:a84bfbd4c55ee8013da496797bfdd3986"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the input typed as <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt;.  <br /></td></tr>
 <tr class="memitem:ac72dc57e1ba318777f7d87958dd70e54" id="r_ac72dc57e1ba318777f7d87958dd70e54"><td class="memTemplParams" colspan="2">template&lt;typename value_t&gt; </td></tr>
 <tr class="memitem:ac72dc57e1ba318777f7d87958dd70e54 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ac72dc57e1ba318777f7d87958dd70e54">as_enumerable</a> (std::initializer_list&lt; value_t &gt; source) noexcept -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; value_t &gt;</td></tr>
 <tr class="memdesc:ac72dc57e1ba318777f7d87958dd70e54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the input typed as <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt;.  <br /></td></tr>
@@ -198,55 +198,55 @@ Public Static Methods</h2></td></tr>
 <tr class="memitem:a5047ff72a5b8d3fa7de0ba1f82cb4a3b" id="r_a5047ff72a5b8d3fa7de0ba1f82cb4a3b"><td class="memTemplParams" colspan="2">template&lt;typename value_t, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> length&gt; </td></tr>
 <tr class="memitem:a5047ff72a5b8d3fa7de0ba1f82cb4a3b template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a5047ff72a5b8d3fa7de0ba1f82cb4a3b">as_enumerable</a> (value_t(&amp;array)[<a class="el" href="namespacextd.html#a84689e2cdf94d64f7e5f33fe4a1be71a">length</a>]) noexcept -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; value_t &gt;</td></tr>
 <tr class="memdesc:a5047ff72a5b8d3fa7de0ba1f82cb4a3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the input typed as <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt;.  <br /></td></tr>
-<tr class="memitem:aa7edee2bc189dca6ba9f9391dc33142a" id="r_aa7edee2bc189dca6ba9f9391dc33142a"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t&gt; <br />
-requires <a class="el" href="structxtd_1_1real__decimal.html">xtd::real_decimal</a>&lt;typename <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt;source_t&gt;<a class="el" href="structxtd_1_1value__type.html">::value_type</a>&gt;</td></tr>
-<tr class="memitem:aa7edee2bc189dca6ba9f9391dc33142a template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aa7edee2bc189dca6ba9f9391dc33142a">average</a> (const source_t &amp;source) -&gt; <a class="el" href="group__types.html#ga7d41c91f9bcab8feb762da96973525fd">xtd::decimal</a></td></tr>
-<tr class="memdesc:aa7edee2bc189dca6ba9f9391dc33142a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the average of a sequence of <a class="el" href="group__types.html#ga7d41c91f9bcab8feb762da96973525fd" title="Represents a decimal-precision floating-point number.">xtd::decimal</a> values.  <br /></td></tr>
-<tr class="memitem:a43fd9c62e7451cc980b93466ac43f861" id="r_a43fd9c62e7451cc980b93466ac43f861"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t&gt; <br />
-requires <a class="el" href="structxtd_1_1real__double.html">xtd::real_double</a>&lt;typename <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt;source_t&gt;<a class="el" href="structxtd_1_1value__type.html">::value_type</a>&gt;</td></tr>
-<tr class="memitem:a43fd9c62e7451cc980b93466ac43f861 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a43fd9c62e7451cc980b93466ac43f861">average</a> (const source_t &amp;source) -&gt; double</td></tr>
-<tr class="memdesc:a43fd9c62e7451cc980b93466ac43f861"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the average of a sequence of double values.  <br /></td></tr>
-<tr class="memitem:a2bef4bd6181b6e84a678a9f83ccd17a7" id="r_a2bef4bd6181b6e84a678a9f83ccd17a7"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t&gt; <br />
-requires <a class="el" href="structxtd_1_1real__single.html">xtd::real_single</a>&lt;typename <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt;source_t&gt;<a class="el" href="structxtd_1_1value__type.html">::value_type</a>&gt;</td></tr>
-<tr class="memitem:a2bef4bd6181b6e84a678a9f83ccd17a7 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a2bef4bd6181b6e84a678a9f83ccd17a7">average</a> (const source_t &amp;source) -&gt; <a class="el" href="group__types.html#gaf9f0ae6db9fc51931d88c537c2bb7a4d">xtd::single</a></td></tr>
-<tr class="memdesc:a2bef4bd6181b6e84a678a9f83ccd17a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the average of a sequence of float values.  <br /></td></tr>
-<tr class="memitem:abd2dbbf9c1915f2bb19f3deb7643ce7f" id="r_abd2dbbf9c1915f2bb19f3deb7643ce7f"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t&gt; <br />
-requires <a class="el" href="structxtd_1_1signed__integer__32.html">xtd::signed_integer_32</a>&lt;typename <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt;source_t&gt;<a class="el" href="structxtd_1_1value__type.html">::value_type</a>&gt;</td></tr>
-<tr class="memitem:abd2dbbf9c1915f2bb19f3deb7643ce7f template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#abd2dbbf9c1915f2bb19f3deb7643ce7f">average</a> (const source_t &amp;source) -&gt; double</td></tr>
-<tr class="memdesc:abd2dbbf9c1915f2bb19f3deb7643ce7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the average of a sequence of <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5" title="Represents a 32-bit signed integer.">xtd::int32</a> values.  <br /></td></tr>
-<tr class="memitem:ac05903dc83ee5eccad7d65db5ffb08a4" id="r_ac05903dc83ee5eccad7d65db5ffb08a4"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t&gt; <br />
-requires <a class="el" href="structxtd_1_1signed__integer__64.html">xtd::signed_integer_64</a>&lt;typename <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt;source_t&gt;<a class="el" href="structxtd_1_1value__type.html">::value_type</a>&gt;</td></tr>
-<tr class="memitem:ac05903dc83ee5eccad7d65db5ffb08a4 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ac05903dc83ee5eccad7d65db5ffb08a4">average</a> (const source_t &amp;source) -&gt; double</td></tr>
-<tr class="memdesc:ac05903dc83ee5eccad7d65db5ffb08a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the average of a sequence of <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9" title="Represents a 64-bit signed integer.">xtd::int64</a> values.  <br /></td></tr>
-<tr class="memitem:a07d06752cffe42e3f7fff70eed5e6476" id="r_a07d06752cffe42e3f7fff70eed5e6476"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t&gt; <br />
-requires std::same_as&lt;typename <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt;source_t&gt;<a class="el" href="structxtd_1_1value__type.html">::value_type</a>, <a class="el" href="group__types.html#gac3e508084ce85854c55799f802c7e7ce">xtd::optional</a>&lt;<a class="el" href="group__types.html#ga7d41c91f9bcab8feb762da96973525fd">xtd::decimal</a>&gt;&gt;</td></tr>
-<tr class="memitem:a07d06752cffe42e3f7fff70eed5e6476 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a07d06752cffe42e3f7fff70eed5e6476">average</a> (const source_t &amp;source) -&gt; <a class="el" href="group__types.html#gac3e508084ce85854c55799f802c7e7ce">xtd::optional</a>&lt; <a class="el" href="group__types.html#ga7d41c91f9bcab8feb762da96973525fd">xtd::decimal</a> &gt;</td></tr>
-<tr class="memdesc:a07d06752cffe42e3f7fff70eed5e6476"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the average of a sequence of optional <a class="el" href="group__types.html#ga7d41c91f9bcab8feb762da96973525fd" title="Represents a decimal-precision floating-point number.">xtd::decimal</a> values.  <br /></td></tr>
-<tr class="memitem:add63021fe37fb94552a4c8fe6de60d4a" id="r_add63021fe37fb94552a4c8fe6de60d4a"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t&gt; <br />
-requires std::same_as&lt;typename <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt;source_t&gt;<a class="el" href="structxtd_1_1value__type.html">::value_type</a>, <a class="el" href="group__types.html#gac3e508084ce85854c55799f802c7e7ce">xtd::optional</a>&lt;double&gt;&gt;</td></tr>
-<tr class="memitem:add63021fe37fb94552a4c8fe6de60d4a template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#add63021fe37fb94552a4c8fe6de60d4a">average</a> (const source_t &amp;source) -&gt; <a class="el" href="group__types.html#gac3e508084ce85854c55799f802c7e7ce">xtd::optional</a>&lt; double &gt;</td></tr>
-<tr class="memdesc:add63021fe37fb94552a4c8fe6de60d4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the average of a sequence of optional double values.  <br /></td></tr>
-<tr class="memitem:a7db070f8038f395f6f915636c10ccd70" id="r_a7db070f8038f395f6f915636c10ccd70"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t&gt; <br />
-requires std::same_as&lt;typename <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt;source_t&gt;<a class="el" href="structxtd_1_1value__type.html">::value_type</a>, <a class="el" href="group__types.html#gac3e508084ce85854c55799f802c7e7ce">xtd::optional</a>&lt;<a class="el" href="group__types.html#gaf9f0ae6db9fc51931d88c537c2bb7a4d">xtd::single</a>&gt;&gt;</td></tr>
-<tr class="memitem:a7db070f8038f395f6f915636c10ccd70 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a7db070f8038f395f6f915636c10ccd70">average</a> (const source_t &amp;source) -&gt; <a class="el" href="group__types.html#gac3e508084ce85854c55799f802c7e7ce">xtd::optional</a>&lt; <a class="el" href="group__types.html#gaf9f0ae6db9fc51931d88c537c2bb7a4d">xtd::single</a> &gt;</td></tr>
-<tr class="memdesc:a7db070f8038f395f6f915636c10ccd70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the average of a sequence of optional float values.  <br /></td></tr>
-<tr class="memitem:ad5eac9387fc2169e6b6669606ca30af9" id="r_ad5eac9387fc2169e6b6669606ca30af9"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t&gt; <br />
-requires std::same_as&lt;typename <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt;source_t&gt;<a class="el" href="structxtd_1_1value__type.html">::value_type</a>, <a class="el" href="group__types.html#gac3e508084ce85854c55799f802c7e7ce">xtd::optional</a>&lt;<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a>&gt;&gt;</td></tr>
-<tr class="memitem:ad5eac9387fc2169e6b6669606ca30af9 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ad5eac9387fc2169e6b6669606ca30af9">average</a> (const source_t &amp;source) -&gt; <a class="el" href="group__types.html#gac3e508084ce85854c55799f802c7e7ce">xtd::optional</a>&lt; double &gt;</td></tr>
-<tr class="memdesc:ad5eac9387fc2169e6b6669606ca30af9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the average of a sequence of optional <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5" title="Represents a 32-bit signed integer.">xtd::int32</a> values.  <br /></td></tr>
-<tr class="memitem:a2f3c181471cf705f627a50099ef5b30e" id="r_a2f3c181471cf705f627a50099ef5b30e"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t&gt; <br />
-requires std::same_as&lt;typename <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt;source_t&gt;<a class="el" href="structxtd_1_1value__type.html">::value_type</a>, <a class="el" href="group__types.html#gac3e508084ce85854c55799f802c7e7ce">xtd::optional</a>&lt;<a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">xtd::int64</a>&gt;&gt;</td></tr>
-<tr class="memitem:a2f3c181471cf705f627a50099ef5b30e template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a2f3c181471cf705f627a50099ef5b30e">average</a> (const source_t &amp;source) -&gt; <a class="el" href="group__types.html#gac3e508084ce85854c55799f802c7e7ce">xtd::optional</a>&lt; double &gt;</td></tr>
-<tr class="memdesc:a2f3c181471cf705f627a50099ef5b30e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the average of a sequence of optional <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9" title="Represents a 64-bit signed integer.">xtd::int64</a> values.  <br /></td></tr>
+<tr class="memitem:a1e2e369d936b97bbe3922438bd6fdbbe" id="r_a1e2e369d936b97bbe3922438bd6fdbbe"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t&gt; <br />
+requires <a class="el" href="structxtd_1_1real__decimal.html">xtd::real_decimal</a>&lt;<a class="el" href="group__concepts.html#ga10d3c2d33b02ce94a03b0afce9f1c75c">xtd::forward_iterable_value_type</a>&lt;source_t&gt;&gt;</td></tr>
+<tr class="memitem:a1e2e369d936b97bbe3922438bd6fdbbe template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a1e2e369d936b97bbe3922438bd6fdbbe">average</a> (const source_t &amp;source) -&gt; <a class="el" href="group__types.html#ga7d41c91f9bcab8feb762da96973525fd">xtd::decimal</a></td></tr>
+<tr class="memdesc:a1e2e369d936b97bbe3922438bd6fdbbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the average of a sequence of <a class="el" href="group__types.html#ga7d41c91f9bcab8feb762da96973525fd" title="Represents a decimal-precision floating-point number.">xtd::decimal</a> values.  <br /></td></tr>
+<tr class="memitem:aa89cd66b87568f19b7f285dce805ac44" id="r_aa89cd66b87568f19b7f285dce805ac44"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t&gt; <br />
+requires <a class="el" href="structxtd_1_1real__double.html">xtd::real_double</a>&lt;<a class="el" href="group__concepts.html#ga10d3c2d33b02ce94a03b0afce9f1c75c">xtd::forward_iterable_value_type</a>&lt;source_t&gt;&gt;</td></tr>
+<tr class="memitem:aa89cd66b87568f19b7f285dce805ac44 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aa89cd66b87568f19b7f285dce805ac44">average</a> (const source_t &amp;source) -&gt; double</td></tr>
+<tr class="memdesc:aa89cd66b87568f19b7f285dce805ac44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the average of a sequence of double values.  <br /></td></tr>
+<tr class="memitem:aeb0ac9823d78b6c04d3ab8e3963e1327" id="r_aeb0ac9823d78b6c04d3ab8e3963e1327"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t&gt; <br />
+requires <a class="el" href="structxtd_1_1real__single.html">xtd::real_single</a>&lt;<a class="el" href="group__concepts.html#ga10d3c2d33b02ce94a03b0afce9f1c75c">xtd::forward_iterable_value_type</a>&lt;source_t&gt;&gt;</td></tr>
+<tr class="memitem:aeb0ac9823d78b6c04d3ab8e3963e1327 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aeb0ac9823d78b6c04d3ab8e3963e1327">average</a> (const source_t &amp;source) -&gt; <a class="el" href="group__types.html#gaf9f0ae6db9fc51931d88c537c2bb7a4d">xtd::single</a></td></tr>
+<tr class="memdesc:aeb0ac9823d78b6c04d3ab8e3963e1327"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the average of a sequence of float values.  <br /></td></tr>
+<tr class="memitem:a1c33a6974b9b2c4fe8332ac63c6d6b3a" id="r_a1c33a6974b9b2c4fe8332ac63c6d6b3a"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t&gt; <br />
+requires <a class="el" href="structxtd_1_1signed__integer__32.html">xtd::signed_integer_32</a>&lt;<a class="el" href="group__concepts.html#ga10d3c2d33b02ce94a03b0afce9f1c75c">xtd::forward_iterable_value_type</a>&lt;source_t&gt;&gt;</td></tr>
+<tr class="memitem:a1c33a6974b9b2c4fe8332ac63c6d6b3a template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a1c33a6974b9b2c4fe8332ac63c6d6b3a">average</a> (const source_t &amp;source) -&gt; double</td></tr>
+<tr class="memdesc:a1c33a6974b9b2c4fe8332ac63c6d6b3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the average of a sequence of <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5" title="Represents a 32-bit signed integer.">xtd::int32</a> values.  <br /></td></tr>
+<tr class="memitem:a318c82b1377b6e38cb31a9becb8748a4" id="r_a318c82b1377b6e38cb31a9becb8748a4"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t&gt; <br />
+requires <a class="el" href="structxtd_1_1signed__integer__64.html">xtd::signed_integer_64</a>&lt;<a class="el" href="group__concepts.html#ga10d3c2d33b02ce94a03b0afce9f1c75c">xtd::forward_iterable_value_type</a>&lt;source_t&gt;&gt;</td></tr>
+<tr class="memitem:a318c82b1377b6e38cb31a9becb8748a4 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a318c82b1377b6e38cb31a9becb8748a4">average</a> (const source_t &amp;source) -&gt; double</td></tr>
+<tr class="memdesc:a318c82b1377b6e38cb31a9becb8748a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the average of a sequence of <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9" title="Represents a 64-bit signed integer.">xtd::int64</a> values.  <br /></td></tr>
+<tr class="memitem:a0a1725c45c0985464d6761dbeda9a6da" id="r_a0a1725c45c0985464d6761dbeda9a6da"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t&gt; <br />
+requires std::same_as&lt;<a class="el" href="group__concepts.html#ga10d3c2d33b02ce94a03b0afce9f1c75c">xtd::forward_iterable_value_type</a>&lt;source_t&gt;, <a class="el" href="group__types.html#gac3e508084ce85854c55799f802c7e7ce">xtd::optional</a>&lt;<a class="el" href="group__types.html#ga7d41c91f9bcab8feb762da96973525fd">xtd::decimal</a>&gt;&gt;</td></tr>
+<tr class="memitem:a0a1725c45c0985464d6761dbeda9a6da template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a0a1725c45c0985464d6761dbeda9a6da">average</a> (const source_t &amp;source) -&gt; <a class="el" href="group__types.html#gac3e508084ce85854c55799f802c7e7ce">xtd::optional</a>&lt; <a class="el" href="group__types.html#ga7d41c91f9bcab8feb762da96973525fd">xtd::decimal</a> &gt;</td></tr>
+<tr class="memdesc:a0a1725c45c0985464d6761dbeda9a6da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the average of a sequence of optional <a class="el" href="group__types.html#ga7d41c91f9bcab8feb762da96973525fd" title="Represents a decimal-precision floating-point number.">xtd::decimal</a> values.  <br /></td></tr>
+<tr class="memitem:a44b193619291b54f4ed6bd6535155673" id="r_a44b193619291b54f4ed6bd6535155673"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t&gt; <br />
+requires std::same_as&lt;<a class="el" href="group__concepts.html#ga10d3c2d33b02ce94a03b0afce9f1c75c">xtd::forward_iterable_value_type</a>&lt;source_t&gt;, <a class="el" href="group__types.html#gac3e508084ce85854c55799f802c7e7ce">xtd::optional</a>&lt;double&gt;&gt;</td></tr>
+<tr class="memitem:a44b193619291b54f4ed6bd6535155673 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a44b193619291b54f4ed6bd6535155673">average</a> (const source_t &amp;source) -&gt; <a class="el" href="group__types.html#gac3e508084ce85854c55799f802c7e7ce">xtd::optional</a>&lt; double &gt;</td></tr>
+<tr class="memdesc:a44b193619291b54f4ed6bd6535155673"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the average of a sequence of optional double values.  <br /></td></tr>
+<tr class="memitem:af8f8cf503ca5b47dbc157e2297a18fc4" id="r_af8f8cf503ca5b47dbc157e2297a18fc4"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t&gt; <br />
+requires std::same_as&lt;<a class="el" href="group__concepts.html#ga10d3c2d33b02ce94a03b0afce9f1c75c">xtd::forward_iterable_value_type</a>&lt;source_t&gt;, <a class="el" href="group__types.html#gac3e508084ce85854c55799f802c7e7ce">xtd::optional</a>&lt;<a class="el" href="group__types.html#gaf9f0ae6db9fc51931d88c537c2bb7a4d">xtd::single</a>&gt;&gt;</td></tr>
+<tr class="memitem:af8f8cf503ca5b47dbc157e2297a18fc4 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#af8f8cf503ca5b47dbc157e2297a18fc4">average</a> (const source_t &amp;source) -&gt; <a class="el" href="group__types.html#gac3e508084ce85854c55799f802c7e7ce">xtd::optional</a>&lt; <a class="el" href="group__types.html#gaf9f0ae6db9fc51931d88c537c2bb7a4d">xtd::single</a> &gt;</td></tr>
+<tr class="memdesc:af8f8cf503ca5b47dbc157e2297a18fc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the average of a sequence of optional float values.  <br /></td></tr>
+<tr class="memitem:af2ade2ad2d8d01a630e710c9187d2a0d" id="r_af2ade2ad2d8d01a630e710c9187d2a0d"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t&gt; <br />
+requires std::same_as&lt;<a class="el" href="group__concepts.html#ga10d3c2d33b02ce94a03b0afce9f1c75c">xtd::forward_iterable_value_type</a>&lt;source_t&gt;, <a class="el" href="group__types.html#gac3e508084ce85854c55799f802c7e7ce">xtd::optional</a>&lt;<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a>&gt;&gt;</td></tr>
+<tr class="memitem:af2ade2ad2d8d01a630e710c9187d2a0d template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#af2ade2ad2d8d01a630e710c9187d2a0d">average</a> (const source_t &amp;source) -&gt; <a class="el" href="group__types.html#gac3e508084ce85854c55799f802c7e7ce">xtd::optional</a>&lt; double &gt;</td></tr>
+<tr class="memdesc:af2ade2ad2d8d01a630e710c9187d2a0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the average of a sequence of optional <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5" title="Represents a 32-bit signed integer.">xtd::int32</a> values.  <br /></td></tr>
+<tr class="memitem:ac78f809f0f72601ae047c17550c0620e" id="r_ac78f809f0f72601ae047c17550c0620e"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t&gt; <br />
+requires std::same_as&lt;<a class="el" href="group__concepts.html#ga10d3c2d33b02ce94a03b0afce9f1c75c">xtd::forward_iterable_value_type</a>&lt;source_t&gt;, <a class="el" href="group__types.html#gac3e508084ce85854c55799f802c7e7ce">xtd::optional</a>&lt;<a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">xtd::int64</a>&gt;&gt;</td></tr>
+<tr class="memitem:ac78f809f0f72601ae047c17550c0620e template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ac78f809f0f72601ae047c17550c0620e">average</a> (const source_t &amp;source) -&gt; <a class="el" href="group__types.html#gac3e508084ce85854c55799f802c7e7ce">xtd::optional</a>&lt; double &gt;</td></tr>
+<tr class="memdesc:ac78f809f0f72601ae047c17550c0620e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the average of a sequence of optional <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9" title="Represents a 64-bit signed integer.">xtd::int64</a> values.  <br /></td></tr>
 <tr class="memitem:a043198eab6d3c7a348317d305aeeb197" id="r_a043198eab6d3c7a348317d305aeeb197"><td class="memTemplParams" colspan="2">template&lt;typename result_t, <a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t&gt; </td></tr>
 <tr class="memitem:a043198eab6d3c7a348317d305aeeb197 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a043198eab6d3c7a348317d305aeeb197">cast</a> (const source_t &amp;source) -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; result_t &gt;</td></tr>
 <tr class="memdesc:a043198eab6d3c7a348317d305aeeb197"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts the elements of an <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> to the specified type.  <br /></td></tr>
-<tr class="memitem:a67cc59d9918ac9e271392a33f8f8288f" id="r_a67cc59d9918ac9e271392a33f8f8288f"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t&gt; </td></tr>
-<tr class="memitem:a67cc59d9918ac9e271392a33f8f8288f template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a67cc59d9918ac9e271392a33f8f8288f">chunk</a> (const source_t &amp;source, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> size) -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; typename <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt; source_t &gt;<a class="el" href="structxtd_1_1value__type.html">::value_type</a> &gt; &gt;</td></tr>
-<tr class="memdesc:a67cc59d9918ac9e271392a33f8f8288f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Splits the elements of a sequence into chunks of size at most size.  <br /></td></tr>
-<tr class="memitem:ac688a62ef385cb9e077a692e42574930" id="r_ac688a62ef385cb9e077a692e42574930"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> first_t, <a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> second_t&gt; </td></tr>
-<tr class="memitem:ac688a62ef385cb9e077a692e42574930 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ac688a62ef385cb9e077a692e42574930">concat</a> (const first_t &amp;first, const second_t &amp;second) noexcept -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; typename <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt; first_t &gt;<a class="el" href="structxtd_1_1value__type.html">::value_type</a> &gt;</td></tr>
-<tr class="memdesc:ac688a62ef385cb9e077a692e42574930"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concatenates two sequences.  <br /></td></tr>
+<tr class="memitem:a772a5d1ba9db541ae9796bc11538062a" id="r_a772a5d1ba9db541ae9796bc11538062a"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t&gt; </td></tr>
+<tr class="memitem:a772a5d1ba9db541ae9796bc11538062a template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a772a5d1ba9db541ae9796bc11538062a">chunk</a> (const source_t &amp;source, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> size) -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__concepts.html#ga10d3c2d33b02ce94a03b0afce9f1c75c">xtd::forward_iterable_value_type</a>&lt; source_t &gt; &gt; &gt;</td></tr>
+<tr class="memdesc:a772a5d1ba9db541ae9796bc11538062a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Splits the elements of a sequence into chunks of size at most size.  <br /></td></tr>
+<tr class="memitem:a284cc7203af67b67f7fd1551dc0e5497" id="r_a284cc7203af67b67f7fd1551dc0e5497"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> first_t, <a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> second_t&gt; </td></tr>
+<tr class="memitem:a284cc7203af67b67f7fd1551dc0e5497 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a284cc7203af67b67f7fd1551dc0e5497">concat</a> (const first_t &amp;first, const second_t &amp;second) noexcept -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; <a class="el" href="group__concepts.html#ga10d3c2d33b02ce94a03b0afce9f1c75c">xtd::forward_iterable_value_type</a>&lt; first_t &gt; &gt;</td></tr>
+<tr class="memdesc:a284cc7203af67b67f7fd1551dc0e5497"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concatenates two sequences.  <br /></td></tr>
 <tr class="memitem:ab6b13f8c5936096fb7fa8981c4e86bcc" id="r_ab6b13f8c5936096fb7fa8981c4e86bcc"><td class="memTemplParams" colspan="2">template&lt;typename source_t&gt; </td></tr>
 <tr class="memitem:ab6b13f8c5936096fb7fa8981c4e86bcc template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ab6b13f8c5936096fb7fa8981c4e86bcc">contains</a> (const <a class="el" href="#a2bd1889dc1967c50ef692411dc2c4b92">ienumerable</a>&lt; source_t &gt; &amp;source, const source_t &amp;value) noexcept -&gt; bool</td></tr>
 <tr class="memdesc:ab6b13f8c5936096fb7fa8981c4e86bcc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether a sequence contains a specified element by using the default equality comparer.  <br /></td></tr>
@@ -469,13 +469,13 @@ template&lt;typename key_t, typename value_t&gt; </div>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="acebb40445aec75cd246a653a25a20a18" name="acebb40445aec75cd246a653a25a20a18"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acebb40445aec75cd246a653a25a20a18">&#9670;&#160;</a></span>aggregate() <span class="overload">[1/3]</span></h2>
+<a id="ad0a9df2a530337f66ac2b880ca260da5" name="ad0a9df2a530337f66ac2b880ca260da5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0a9df2a530337f66ac2b880ca260da5">&#9670;&#160;</a></span>aggregate() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t, <a class="el" href="structxtd_1_1func__callable.html">xtd::func_callable</a>&lt; typename <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt; source_t &gt;<a class="el" href="structxtd_1_1value__type.html">::value_type</a>, typename <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt; source_t &gt;<a class="el" href="structxtd_1_1value__type.html">::value_type</a>, typename <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt; source_t &gt;<a class="el" href="structxtd_1_1value__type.html">::value_type</a> &gt; func_t&gt; </div>
+template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t, <a class="el" href="structxtd_1_1func__callable.html">xtd::func_callable</a>&lt; <a class="el" href="group__concepts.html#ga10d3c2d33b02ce94a03b0afce9f1c75c">xtd::forward_iterable_value_type</a>&lt; source_t &gt;, <a class="el" href="group__concepts.html#ga10d3c2d33b02ce94a03b0afce9f1c75c">xtd::forward_iterable_value_type</a>&lt; source_t &gt;, <a class="el" href="group__concepts.html#ga10d3c2d33b02ce94a03b0afce9f1c75c">xtd::forward_iterable_value_type</a>&lt; source_t &gt; &gt; func_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -488,7 +488,7 @@ template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forwar
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">func_t &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>func</em></span>&#160;) -&gt;  typename <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt; source_t &gt;<a class="el" href="structxtd_1_1value__type.html">::value_type</a></td>
+          <td class="paramtype">func_t &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>func</em></span>&#160;) -&gt;  <a class="el" href="group__concepts.html#ga10d3c2d33b02ce94a03b0afce9f1c75c">xtd::forward_iterable_value_type</a>&lt; source_t &gt;</td>
         </tr>
       </table>
   </td>
@@ -513,7 +513,7 @@ template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forwar
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The final accumulator value. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to reverse the order of words in a string by using <a class="el" href="#acebb40445aec75cd246a653a25a20a18" title="Applies an accumulator function over a sequence.">enumerable::aggregate</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to reverse the order of words in a string by using <a class="el" href="#ad0a9df2a530337f66ac2b880ca260da5" title="Applies an accumulator function over a sequence.">enumerable::aggregate</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> sentence = <span class="stringliteral">&quot;the quick brown fox jumps over the lazy dog&quot;</span>_s;</div>
@@ -541,7 +541,7 @@ template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forwar
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename accumulate_t, <a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t, <a class="el" href="structxtd_1_1func__callable.html">xtd::func_callable</a>&lt; accumulate_t, accumulate_t, typename <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt; source_t &gt;<a class="el" href="structxtd_1_1value__type.html">::value_type</a> &gt; func_t&gt; </div>
+template&lt;typename accumulate_t, <a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t, <a class="el" href="structxtd_1_1func__callable.html">xtd::func_callable</a>&lt; accumulate_t, accumulate_t, <a class="el" href="group__concepts.html#ga10d3c2d33b02ce94a03b0afce9f1c75c">xtd::forward_iterable_value_type</a>&lt; source_t &gt; &gt; func_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -586,7 +586,7 @@ template&lt;typename accumulate_t, <a class="el" href="structxtd_1_1forward__ite
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The final accumulator value. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to use <a class="el" href="#acebb40445aec75cd246a653a25a20a18" title="Applies an accumulator function over a sequence.">xtd::linq::enumerable::aggregate</a> to apply an accumulator function and use a seed value. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to use <a class="el" href="#ad0a9df2a530337f66ac2b880ca260da5" title="Applies an accumulator function over a sequence.">xtd::linq::enumerable::aggregate</a> to apply an accumulator function and use a seed value. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> ints = <a class="code hl_class" href="classxtd_1_1array.html">array</a> {4, 8, 8, 3, 9, 0, 7, 8, 2};</div>
@@ -614,7 +614,7 @@ template&lt;typename accumulate_t, <a class="el" href="structxtd_1_1forward__ite
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename result_t, typename accumulate_t, <a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t, <a class="el" href="structxtd_1_1func__callable.html">xtd::func_callable</a>&lt; accumulate_t, accumulate_t, typename <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt; source_t &gt;<a class="el" href="structxtd_1_1value__type.html">::value_type</a> &gt; func_t, <a class="el" href="structxtd_1_1func__callable.html">xtd::func_callable</a>&lt; result_t, accumulate_t &gt; result_selector_t&gt; </div>
+template&lt;typename result_t, typename accumulate_t, <a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t, <a class="el" href="structxtd_1_1func__callable.html">xtd::func_callable</a>&lt; accumulate_t, accumulate_t, <a class="el" href="group__concepts.html#ga10d3c2d33b02ce94a03b0afce9f1c75c">xtd::forward_iterable_value_type</a>&lt; source_t &gt; &gt; func_t, <a class="el" href="structxtd_1_1func__callable.html">xtd::func_callable</a>&lt; result_t, accumulate_t &gt; result_selector_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -666,7 +666,7 @@ template&lt;typename result_t, typename accumulate_t, <a class="el" href="struct
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The transformed final accumulator value. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to use <a class="el" href="#acebb40445aec75cd246a653a25a20a18" title="Applies an accumulator function over a sequence.">xtd::linq::enumerable::aggregate</a> to apply an accumulator function and use a seed value. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to use <a class="el" href="#ad0a9df2a530337f66ac2b880ca260da5" title="Applies an accumulator function over a sequence.">xtd::linq::enumerable::aggregate</a> to apply an accumulator function and use a seed value. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> fruits = <a class="code hl_class" href="classxtd_1_1array.html">array&lt;string&gt;</a> {<span class="stringliteral">&quot;apple&quot;</span>, <span class="stringliteral">&quot;mango&quot;</span>, <span class="stringliteral">&quot;orange&quot;</span>, <span class="stringliteral">&quot;passionfruit&quot;</span>, <span class="stringliteral">&quot;grape&quot;</span>};</div>
@@ -693,7 +693,7 @@ template&lt;typename result_t, typename accumulate_t, <a class="el" href="struct
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t, <a class="el" href="structxtd_1_1predicate__callable.html">xtd::predicate_callable</a>&lt; typename <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt; source_t &gt;<a class="el" href="structxtd_1_1value__type.html">::value_type</a> &gt; predicate_t&gt; </div>
+template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t, <a class="el" href="structxtd_1_1predicate__callable.html">xtd::predicate_callable</a>&lt; <a class="el" href="group__concepts.html#ga10d3c2d33b02ce94a03b0afce9f1c75c">xtd::forward_iterable_value_type</a>&lt; source_t &gt; &gt; predicate_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -818,7 +818,7 @@ template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forwar
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// The list is not empty.</span></div>
-<div class="ttc" id="aclassxtd_1_1linq_1_1enumerable_html_a4ff59be55b7be66d275f28741e2f1f0a"><div class="ttname"><a href="#a4ff59be55b7be66d275f28741e2f1f0a">xtd::linq::enumerable::list</a></div><div class="ttdeci">typename xtd::collections::generic::list&lt; type_t &gt; list</div><div class="ttdoc">Represents the list value type.</div><div class="ttdef"><b>Definition</b> enumerable_.hpp:90</div></div>
+<div class="ttc" id="aclassxtd_1_1linq_1_1enumerable_html_a4ff59be55b7be66d275f28741e2f1f0a"><div class="ttname"><a href="#a4ff59be55b7be66d275f28741e2f1f0a">xtd::linq::enumerable::list</a></div><div class="ttdeci">typename xtd::collections::generic::list&lt; type_t &gt; list</div><div class="ttdoc">Represents the list value type.</div><div class="ttdef"><b>Definition</b> enumerable_.hpp:91</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -829,7 +829,7 @@ template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forwar
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t, <a class="el" href="structxtd_1_1predicate__callable.html">xtd::predicate_callable</a>&lt; typename <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt; source_t &gt;<a class="el" href="structxtd_1_1value__type.html">::value_type</a> &gt; predicate_t&gt; </div>
+template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t, <a class="el" href="structxtd_1_1predicate__callable.html">xtd::predicate_callable</a>&lt; <a class="el" href="group__concepts.html#ga10d3c2d33b02ce94a03b0afce9f1c75c">xtd::forward_iterable_value_type</a>&lt; source_t &gt; &gt; predicate_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -900,8 +900,8 @@ template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forwar
 
 </div>
 </div>
-<a id="a320d097990358f7c6aa1cbc52c0ba895" name="a320d097990358f7c6aa1cbc52c0ba895"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a320d097990358f7c6aa1cbc52c0ba895">&#9670;&#160;</a></span>append()</h2>
+<a id="a29fa85b8de2586346ffbbf07421dc572" name="a29fa85b8de2586346ffbbf07421dc572"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29fa85b8de2586346ffbbf07421dc572">&#9670;&#160;</a></span>append()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -919,7 +919,7 @@ template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forwar
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">typename <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt; source_t &gt;<a class="el" href="structxtd_1_1value__type.html">::value_type</a> &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>element</em></span>&#160;) -&gt;  <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; typename <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt; source_t &gt;<a class="el" href="structxtd_1_1value__type.html">::value_type</a> &gt;</td>
+          <td class="paramtype"><a class="el" href="group__concepts.html#ga10d3c2d33b02ce94a03b0afce9f1c75c">xtd::forward_iterable_value_type</a>&lt; source_t &gt; &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>element</em></span>&#160;) -&gt;  <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; <a class="el" href="group__concepts.html#ga10d3c2d33b02ce94a03b0afce9f1c75c">xtd::forward_iterable_value_type</a>&lt; source_t &gt; &gt;</td>
         </tr>
       </table>
   </td>
@@ -1019,8 +1019,8 @@ template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forwar
 
 </div>
 </div>
-<a id="af6e2480e65c45e2950459ae5efbd23a5" name="af6e2480e65c45e2950459ae5efbd23a5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af6e2480e65c45e2950459ae5efbd23a5">&#9670;&#160;</a></span>as_enumerable() <span class="overload">[2/8]</span></h2>
+<a id="abfc71b45943d8e01a5fbb4f538d64bce" name="abfc71b45943d8e01a5fbb4f538d64bce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abfc71b45943d8e01a5fbb4f538d64bce">&#9670;&#160;</a></span>as_enumerable() <span class="overload">[2/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1034,7 +1034,7 @@ template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forwar
           <td class="memname">auto xtd::linq::enumerable::as_enumerable </td>
           <td>(</td>
           <td class="paramtype">const source_t &amp;</td>          <td class="paramname"><span class="paramname"><em>source</em></span></td><td>)</td>
-          <td> -&gt;  <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; typename <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt; source_t &gt;<a class="el" href="structxtd_1_1value__type.html">::value_type</a> &gt;</td>
+          <td> -&gt;  <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; <a class="el" href="group__concepts.html#ga10d3c2d33b02ce94a03b0afce9f1c75c">xtd::forward_iterable_value_type</a>&lt; source_t &gt; &gt;</td>
         </tr>
       </table>
   </td>
@@ -1062,8 +1062,8 @@ template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forwar
 
 </div>
 </div>
-<a id="ac3105a564af9b2f7a735e6e857cf5a4d" name="ac3105a564af9b2f7a735e6e857cf5a4d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac3105a564af9b2f7a735e6e857cf5a4d">&#9670;&#160;</a></span>as_enumerable() <span class="overload">[3/8]</span></h2>
+<a id="a84bfbd4c55ee8013da496797bfdd3986" name="a84bfbd4c55ee8013da496797bfdd3986"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84bfbd4c55ee8013da496797bfdd3986">&#9670;&#160;</a></span>as_enumerable() <span class="overload">[3/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1077,7 +1077,7 @@ template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forwar
           <td class="memname">auto xtd::linq::enumerable::as_enumerable </td>
           <td>(</td>
           <td class="paramtype">source_t &amp;</td>          <td class="paramname"><span class="paramname"><em>source</em></span></td><td>)</td>
-          <td> -&gt;  <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; typename <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt; source_t &gt;<a class="el" href="structxtd_1_1value__type.html">::value_type</a> &gt;</td>
+          <td> -&gt;  <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; <a class="el" href="group__concepts.html#ga10d3c2d33b02ce94a03b0afce9f1c75c">xtd::forward_iterable_value_type</a>&lt; source_t &gt; &gt;</td>
         </tr>
       </table>
   </td>
@@ -1332,14 +1332,14 @@ template&lt;typename value_t, <a class="el" href="group__types.html#gae60f5a8617
 
 </div>
 </div>
-<a id="aa7edee2bc189dca6ba9f9391dc33142a" name="aa7edee2bc189dca6ba9f9391dc33142a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa7edee2bc189dca6ba9f9391dc33142a">&#9670;&#160;</a></span>average() <span class="overload">[1/10]</span></h2>
+<a id="a1e2e369d936b97bbe3922438bd6fdbbe" name="a1e2e369d936b97bbe3922438bd6fdbbe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e2e369d936b97bbe3922438bd6fdbbe">&#9670;&#160;</a></span>average() <span class="overload">[1/10]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t&gt; <br />
-requires <a class="el" href="structxtd_1_1real__decimal.html">xtd::real_decimal</a>&lt;typename <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt;source_t&gt;<a class="el" href="structxtd_1_1value__type.html">::value_type</a>&gt;</div>
+requires <a class="el" href="structxtd_1_1real__decimal.html">xtd::real_decimal</a>&lt;<a class="el" href="group__concepts.html#ga10d3c2d33b02ce94a03b0afce9f1c75c">xtd::forward_iterable_value_type</a>&lt;source_t&gt;&gt;</div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1375,14 +1375,14 @@ requires <a class="el" href="structxtd_1_1real__decimal.html">xtd::real_decimal<
 
 </div>
 </div>
-<a id="a43fd9c62e7451cc980b93466ac43f861" name="a43fd9c62e7451cc980b93466ac43f861"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a43fd9c62e7451cc980b93466ac43f861">&#9670;&#160;</a></span>average() <span class="overload">[2/10]</span></h2>
+<a id="aa89cd66b87568f19b7f285dce805ac44" name="aa89cd66b87568f19b7f285dce805ac44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa89cd66b87568f19b7f285dce805ac44">&#9670;&#160;</a></span>average() <span class="overload">[2/10]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t&gt; <br />
-requires <a class="el" href="structxtd_1_1real__double.html">xtd::real_double</a>&lt;typename <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt;source_t&gt;<a class="el" href="structxtd_1_1value__type.html">::value_type</a>&gt;</div>
+requires <a class="el" href="structxtd_1_1real__double.html">xtd::real_double</a>&lt;<a class="el" href="group__concepts.html#ga10d3c2d33b02ce94a03b0afce9f1c75c">xtd::forward_iterable_value_type</a>&lt;source_t&gt;&gt;</div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1418,14 +1418,14 @@ requires <a class="el" href="structxtd_1_1real__double.html">xtd::real_double</a
 
 </div>
 </div>
-<a id="a2bef4bd6181b6e84a678a9f83ccd17a7" name="a2bef4bd6181b6e84a678a9f83ccd17a7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2bef4bd6181b6e84a678a9f83ccd17a7">&#9670;&#160;</a></span>average() <span class="overload">[3/10]</span></h2>
+<a id="aeb0ac9823d78b6c04d3ab8e3963e1327" name="aeb0ac9823d78b6c04d3ab8e3963e1327"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb0ac9823d78b6c04d3ab8e3963e1327">&#9670;&#160;</a></span>average() <span class="overload">[3/10]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t&gt; <br />
-requires <a class="el" href="structxtd_1_1real__single.html">xtd::real_single</a>&lt;typename <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt;source_t&gt;<a class="el" href="structxtd_1_1value__type.html">::value_type</a>&gt;</div>
+requires <a class="el" href="structxtd_1_1real__single.html">xtd::real_single</a>&lt;<a class="el" href="group__concepts.html#ga10d3c2d33b02ce94a03b0afce9f1c75c">xtd::forward_iterable_value_type</a>&lt;source_t&gt;&gt;</div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1461,14 +1461,14 @@ requires <a class="el" href="structxtd_1_1real__single.html">xtd::real_single</a
 
 </div>
 </div>
-<a id="abd2dbbf9c1915f2bb19f3deb7643ce7f" name="abd2dbbf9c1915f2bb19f3deb7643ce7f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abd2dbbf9c1915f2bb19f3deb7643ce7f">&#9670;&#160;</a></span>average() <span class="overload">[4/10]</span></h2>
+<a id="a1c33a6974b9b2c4fe8332ac63c6d6b3a" name="a1c33a6974b9b2c4fe8332ac63c6d6b3a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c33a6974b9b2c4fe8332ac63c6d6b3a">&#9670;&#160;</a></span>average() <span class="overload">[4/10]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t&gt; <br />
-requires <a class="el" href="structxtd_1_1signed__integer__32.html">xtd::signed_integer_32</a>&lt;typename <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt;source_t&gt;<a class="el" href="structxtd_1_1value__type.html">::value_type</a>&gt;</div>
+requires <a class="el" href="structxtd_1_1signed__integer__32.html">xtd::signed_integer_32</a>&lt;<a class="el" href="group__concepts.html#ga10d3c2d33b02ce94a03b0afce9f1c75c">xtd::forward_iterable_value_type</a>&lt;source_t&gt;&gt;</div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1504,14 +1504,14 @@ requires <a class="el" href="structxtd_1_1signed__integer__32.html">xtd::signed_
 
 </div>
 </div>
-<a id="ac05903dc83ee5eccad7d65db5ffb08a4" name="ac05903dc83ee5eccad7d65db5ffb08a4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac05903dc83ee5eccad7d65db5ffb08a4">&#9670;&#160;</a></span>average() <span class="overload">[5/10]</span></h2>
+<a id="a318c82b1377b6e38cb31a9becb8748a4" name="a318c82b1377b6e38cb31a9becb8748a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a318c82b1377b6e38cb31a9becb8748a4">&#9670;&#160;</a></span>average() <span class="overload">[5/10]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t&gt; <br />
-requires <a class="el" href="structxtd_1_1signed__integer__64.html">xtd::signed_integer_64</a>&lt;typename <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt;source_t&gt;<a class="el" href="structxtd_1_1value__type.html">::value_type</a>&gt;</div>
+requires <a class="el" href="structxtd_1_1signed__integer__64.html">xtd::signed_integer_64</a>&lt;<a class="el" href="group__concepts.html#ga10d3c2d33b02ce94a03b0afce9f1c75c">xtd::forward_iterable_value_type</a>&lt;source_t&gt;&gt;</div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1547,14 +1547,14 @@ requires <a class="el" href="structxtd_1_1signed__integer__64.html">xtd::signed_
 
 </div>
 </div>
-<a id="a07d06752cffe42e3f7fff70eed5e6476" name="a07d06752cffe42e3f7fff70eed5e6476"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a07d06752cffe42e3f7fff70eed5e6476">&#9670;&#160;</a></span>average() <span class="overload">[6/10]</span></h2>
+<a id="a0a1725c45c0985464d6761dbeda9a6da" name="a0a1725c45c0985464d6761dbeda9a6da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a1725c45c0985464d6761dbeda9a6da">&#9670;&#160;</a></span>average() <span class="overload">[6/10]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t&gt; <br />
-requires std::same_as&lt;typename <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt;source_t&gt;<a class="el" href="structxtd_1_1value__type.html">::value_type</a>, <a class="el" href="group__types.html#gac3e508084ce85854c55799f802c7e7ce">xtd::optional</a>&lt;<a class="el" href="group__types.html#ga7d41c91f9bcab8feb762da96973525fd">xtd::decimal</a>&gt;&gt;</div>
+requires std::same_as&lt;<a class="el" href="group__concepts.html#ga10d3c2d33b02ce94a03b0afce9f1c75c">xtd::forward_iterable_value_type</a>&lt;source_t&gt;, <a class="el" href="group__types.html#gac3e508084ce85854c55799f802c7e7ce">xtd::optional</a>&lt;<a class="el" href="group__types.html#ga7d41c91f9bcab8feb762da96973525fd">xtd::decimal</a>&gt;&gt;</div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1584,14 +1584,14 @@ requires std::same_as&lt;typename <a class="el" href="group__xtd__core.html#ga22
 
 </div>
 </div>
-<a id="add63021fe37fb94552a4c8fe6de60d4a" name="add63021fe37fb94552a4c8fe6de60d4a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#add63021fe37fb94552a4c8fe6de60d4a">&#9670;&#160;</a></span>average() <span class="overload">[7/10]</span></h2>
+<a id="a44b193619291b54f4ed6bd6535155673" name="a44b193619291b54f4ed6bd6535155673"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44b193619291b54f4ed6bd6535155673">&#9670;&#160;</a></span>average() <span class="overload">[7/10]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t&gt; <br />
-requires std::same_as&lt;typename <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt;source_t&gt;<a class="el" href="structxtd_1_1value__type.html">::value_type</a>, <a class="el" href="group__types.html#gac3e508084ce85854c55799f802c7e7ce">xtd::optional</a>&lt;double&gt;&gt;</div>
+requires std::same_as&lt;<a class="el" href="group__concepts.html#ga10d3c2d33b02ce94a03b0afce9f1c75c">xtd::forward_iterable_value_type</a>&lt;source_t&gt;, <a class="el" href="group__types.html#gac3e508084ce85854c55799f802c7e7ce">xtd::optional</a>&lt;double&gt;&gt;</div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1621,14 +1621,14 @@ requires std::same_as&lt;typename <a class="el" href="group__xtd__core.html#ga22
 
 </div>
 </div>
-<a id="a7db070f8038f395f6f915636c10ccd70" name="a7db070f8038f395f6f915636c10ccd70"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7db070f8038f395f6f915636c10ccd70">&#9670;&#160;</a></span>average() <span class="overload">[8/10]</span></h2>
+<a id="af8f8cf503ca5b47dbc157e2297a18fc4" name="af8f8cf503ca5b47dbc157e2297a18fc4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8f8cf503ca5b47dbc157e2297a18fc4">&#9670;&#160;</a></span>average() <span class="overload">[8/10]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t&gt; <br />
-requires std::same_as&lt;typename <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt;source_t&gt;<a class="el" href="structxtd_1_1value__type.html">::value_type</a>, <a class="el" href="group__types.html#gac3e508084ce85854c55799f802c7e7ce">xtd::optional</a>&lt;<a class="el" href="group__types.html#gaf9f0ae6db9fc51931d88c537c2bb7a4d">xtd::single</a>&gt;&gt;</div>
+requires std::same_as&lt;<a class="el" href="group__concepts.html#ga10d3c2d33b02ce94a03b0afce9f1c75c">xtd::forward_iterable_value_type</a>&lt;source_t&gt;, <a class="el" href="group__types.html#gac3e508084ce85854c55799f802c7e7ce">xtd::optional</a>&lt;<a class="el" href="group__types.html#gaf9f0ae6db9fc51931d88c537c2bb7a4d">xtd::single</a>&gt;&gt;</div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1658,14 +1658,14 @@ requires std::same_as&lt;typename <a class="el" href="group__xtd__core.html#ga22
 
 </div>
 </div>
-<a id="ad5eac9387fc2169e6b6669606ca30af9" name="ad5eac9387fc2169e6b6669606ca30af9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad5eac9387fc2169e6b6669606ca30af9">&#9670;&#160;</a></span>average() <span class="overload">[9/10]</span></h2>
+<a id="af2ade2ad2d8d01a630e710c9187d2a0d" name="af2ade2ad2d8d01a630e710c9187d2a0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2ade2ad2d8d01a630e710c9187d2a0d">&#9670;&#160;</a></span>average() <span class="overload">[9/10]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t&gt; <br />
-requires std::same_as&lt;typename <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt;source_t&gt;<a class="el" href="structxtd_1_1value__type.html">::value_type</a>, <a class="el" href="group__types.html#gac3e508084ce85854c55799f802c7e7ce">xtd::optional</a>&lt;<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a>&gt;&gt;</div>
+requires std::same_as&lt;<a class="el" href="group__concepts.html#ga10d3c2d33b02ce94a03b0afce9f1c75c">xtd::forward_iterable_value_type</a>&lt;source_t&gt;, <a class="el" href="group__types.html#gac3e508084ce85854c55799f802c7e7ce">xtd::optional</a>&lt;<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a>&gt;&gt;</div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1695,14 +1695,14 @@ requires std::same_as&lt;typename <a class="el" href="group__xtd__core.html#ga22
 
 </div>
 </div>
-<a id="a2f3c181471cf705f627a50099ef5b30e" name="a2f3c181471cf705f627a50099ef5b30e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2f3c181471cf705f627a50099ef5b30e">&#9670;&#160;</a></span>average() <span class="overload">[10/10]</span></h2>
+<a id="ac78f809f0f72601ae047c17550c0620e" name="ac78f809f0f72601ae047c17550c0620e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac78f809f0f72601ae047c17550c0620e">&#9670;&#160;</a></span>average() <span class="overload">[10/10]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t&gt; <br />
-requires std::same_as&lt;typename <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt;source_t&gt;<a class="el" href="structxtd_1_1value__type.html">::value_type</a>, <a class="el" href="group__types.html#gac3e508084ce85854c55799f802c7e7ce">xtd::optional</a>&lt;<a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">xtd::int64</a>&gt;&gt;</div>
+requires std::same_as&lt;<a class="el" href="group__concepts.html#ga10d3c2d33b02ce94a03b0afce9f1c75c">xtd::forward_iterable_value_type</a>&lt;source_t&gt;, <a class="el" href="group__types.html#gac3e508084ce85854c55799f802c7e7ce">xtd::optional</a>&lt;<a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">xtd::int64</a>&gt;&gt;</div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1782,8 +1782,8 @@ template&lt;typename result_t, <a class="el" href="structxtd_1_1forward__iterabl
 
 </div>
 </div>
-<a id="a67cc59d9918ac9e271392a33f8f8288f" name="a67cc59d9918ac9e271392a33f8f8288f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a67cc59d9918ac9e271392a33f8f8288f">&#9670;&#160;</a></span>chunk()</h2>
+<a id="a772a5d1ba9db541ae9796bc11538062a" name="a772a5d1ba9db541ae9796bc11538062a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a772a5d1ba9db541ae9796bc11538062a">&#9670;&#160;</a></span>chunk()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1801,7 +1801,7 @@ template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forwar
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>size</em></span>&#160;) -&gt;  <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; typename <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt; source_t &gt;<a class="el" href="structxtd_1_1value__type.html">::value_type</a> &gt; &gt;</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>size</em></span>&#160;) -&gt;  <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__concepts.html#ga10d3c2d33b02ce94a03b0afce9f1c75c">xtd::forward_iterable_value_type</a>&lt; source_t &gt; &gt; &gt;</td>
         </tr>
       </table>
   </td>
@@ -1829,8 +1829,8 @@ template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forwar
 
 </div>
 </div>
-<a id="ac688a62ef385cb9e077a692e42574930" name="ac688a62ef385cb9e077a692e42574930"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac688a62ef385cb9e077a692e42574930">&#9670;&#160;</a></span>concat()</h2>
+<a id="a284cc7203af67b67f7fd1551dc0e5497" name="a284cc7203af67b67f7fd1551dc0e5497"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a284cc7203af67b67f7fd1551dc0e5497">&#9670;&#160;</a></span>concat()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1848,7 +1848,7 @@ template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forwar
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const second_t &amp;</td>          <td class="paramname"><span class="paramname"><em>second</em></span>&#160;) -&gt;  <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; typename <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt; first_t &gt;<a class="el" href="structxtd_1_1value__type.html">::value_type</a> &gt;</td>
+          <td class="paramtype">const second_t &amp;</td>          <td class="paramname"><span class="paramname"><em>second</em></span>&#160;) -&gt;  <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; <a class="el" href="group__concepts.html#ga10d3c2d33b02ce94a03b0afce9f1c75c">xtd::forward_iterable_value_type</a>&lt; first_t &gt; &gt;</td>
         </tr>
       </table>
   </td>
@@ -3451,7 +3451,7 @@ template&lt;typename type_t&gt; </div>
 <div class="line"><span class="comment">// 64</span></div>
 <div class="line"><span class="comment">// 81</span></div>
 <div class="line"><span class="comment">// 100</span></div>
-<div class="ttc" id="aclassxtd_1_1linq_1_1enumerable_html_ad3f2b197a8f9e4e52710edcdd59870e9"><div class="ttname"><a href="#ad3f2b197a8f9e4e52710edcdd59870e9">xtd::linq::enumerable::range</a></div><div class="ttdeci">static auto range(type_t count)</div><div class="ttdoc">Generates a sequence of integral numbers within a specified range.</div><div class="ttdef"><b>Definition</b> enumerable_.hpp:807</div></div>
+<div class="ttc" id="aclassxtd_1_1linq_1_1enumerable_html_ad3f2b197a8f9e4e52710edcdd59870e9"><div class="ttname"><a href="#ad3f2b197a8f9e4e52710edcdd59870e9">xtd::linq::enumerable::range</a></div><div class="ttdeci">static auto range(type_t count)</div><div class="ttdoc">Generates a sequence of integral numbers within a specified range.</div><div class="ttdef"><b>Definition</b> enumerable_.hpp:808</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>

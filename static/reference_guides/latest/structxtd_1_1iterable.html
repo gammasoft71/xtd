@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 		<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-		<title>xtd: enumerable_append2.cpp</title>
+		<title>xtd: xtd::iterable&lt; value_t &gt; Struct Template Reference</title>
     <link href="favicon.png" rel="shortcut icon" type="image/png"/>
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
@@ -79,8 +79,6 @@ document.addEventListener('DOMContentLoaded', () => {
     </li>
   </ul>
 </div><!-- main-nav -->
-</div><!-- top -->
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -102,39 +100,32 @@ document.addEventListener('DOMContentLoaded', () => {
 </div>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a href="namespacextd.html">xtd</a></li><li class="navelem"><a href="structxtd_1_1iterable.html">iterable</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
 <div class="header">
-  <div class="headertitle"><div class="title">enumerable_append2.cpp</div></div>
+  <div class="headertitle"><div class="title">xtd::iterable&lt; value_t &gt; Struct Template Reference<div class="ingroups"><a class="el" href="group__libraries.html">﹡ libraries</a> &raquo; <a class="el" href="group__xtd__core.html">xtd.core</a> &#124; <a class="el" href="group__system.html">system</a> &#124; <a class="el" href="group__system.html">system</a> &raquo; <a class="el" href="group__concepts.html">concepts</a></div></div></div>
 </div><!--header-->
 <div class="contents">
-<p>Shows how to use <a class="el" href="classxtd_1_1linq_1_1enumerable.html#a29fa85b8de2586346ffbbf07421dc572" title="Appends a value to the end of the sequence.">xtd::linq::enumerable::append</a> method.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="comment">// Creating a list of numbers</span></div>
-<div class="line">  <span class="keyword">auto</span> numbers = list {1, 2, 3, 4};</div>
-<div class="line">  </div>
-<div class="line">  <span class="comment">// Trying to append any value of the same type</span></div>
-<div class="line">  <span class="keyword">auto</span> __ = enumerable::from(numbers.begin(), numbers.end()).append(5);</div>
-<div class="line">  </div>
-<div class="line">  <span class="comment">// It doesn&#39;t work because the original list has not been changed</span></div>
-<div class="line">  console::write_line(string::join(<span class="stringliteral">&quot;, &quot;</span>, numbers));</div>
-<div class="line">  </div>
-<div class="line">  <span class="comment">// It works now because we are using a changed copy of the original list</span></div>
-<div class="line">  console::write_line(string::join(<span class="stringliteral">&quot;, &quot;</span>, enumerable::from(numbers.begin(), numbers.end()).append(5)));</div>
-<div class="line">  </div>
-<div class="line">  <span class="comment">// If you prefer, you can create a new list explicitly</span></div>
-<div class="line">  <span class="keyword">auto</span> new_numbers = enumerable::from(numbers.begin(), numbers.end()).append(5).to_list();</div>
-<div class="line">  </div>
-<div class="line">  <span class="comment">// And then write to the console output</span></div>
-<div class="line">  console::write_line(string::join(<span class="stringliteral">&quot;, &quot;</span>, new_numbers));</div>
-<div class="line">}</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// This code produces the following output :</span></div>
-<div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// 1, 2, 3, 4</span></div>
-<div class="line"><span class="comment">// 1, 2, 3, 4, 5</span></div>
-<div class="line"><span class="comment">// 1, 2, 3, 4, 5</span></div>
-</div><!-- fragment --> </div><!-- contents -->
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Definition</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;class value_t&gt;<br />
+struct xtd::iterable&lt; value_t &gt;</div><p>Represents the iterable concept. </p>
+<dl class="section user"><dt>Definition</dt><dd><div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span> value_t&gt;</div>
+<div class="line"><span class="keyword">concept </span><a class="code hl_concept" href="conceptxtd_1_1iterable.html">xtd::iterable</a>;</div>
+<div class="ttc" id="aconceptxtd_1_1iterable_html"><div class="ttname"><a href="conceptxtd_1_1iterable.html">xtd::iterable</a></div><div class="ttdef"><b>Definition</b> iterable.hpp:15</div></div>
+</div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/iterable&gt;</span></div>
+</div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
+<dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following code shows how to use <a class="el" href="structxtd_1_1iterable.html" title="Represents the iterable concept.">xtd::iterable</a> concept <div class="fragment"></div><!-- fragment --> </dd></dl>
+</div><hr/>The documentation for this struct was generated from the following file:<ul>
+<li>xtd.core/include/xtd/<a class="el" href="iterable___8hpp_source.html">iterable_.hpp</a></li>
+</ul>
+</div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

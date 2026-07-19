@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">template</span>&lt;collections::<span class="keyword">generic</span>::enumerable enumerable_t&gt;</div>
-<div class="line">[[nodiscard]] <span class="keyword">auto</span> enumerate(enumerable_t&amp;&amp; enumerable) -&gt; enumerable_generator&lt;enumerable_value_type&lt;enumerable_t&gt;&gt; {</div>
+<div class="line">[[nodiscard]] <span class="keyword">auto</span> enumerate(<span class="keyword">const</span> enumerable_t&amp; enumerable) -&gt; enumerable_generator&lt;enumerable_value_type&lt;enumerable_t&gt;&gt; {</div>
 <div class="line">  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; item : enumerable)</div>
 <div class="line">    <span class="keyword">co_yield</span> item;</div>
 <div class="line">}</div>

@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">template</span> &lt;forward_iterable iterable_t&gt;</div>
-<div class="line">[[nodiscard]] <span class="keyword">auto</span> iterate(iterable_t&amp;&amp; iterable) -&gt; enumerable_generator&lt;forward_iterable_value_type&lt;iterable_t&gt;&gt; {</div>
+<div class="line">[[nodiscard]] <span class="keyword">auto</span> iterate(<span class="keyword">const</span> iterable_t&amp; iterable) -&gt; enumerable_generator&lt;forward_iterable_value_type&lt;iterable_t&gt;&gt; {</div>
 <div class="line">  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; item : iterable)</div>
 <div class="line">    <span class="keyword">co_yield</span> item;</div>
 <div class="line">}</div>
