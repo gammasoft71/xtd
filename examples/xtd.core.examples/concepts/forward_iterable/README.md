@@ -1,10 +1,10 @@
-# enumerable
+# forward_iterable
 
-Shows how to use [xtd::collections::generic::enumerable](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1generic_1_1enumerable.html) concept.
+Shows how to use [xtd::collections::generic::forward_iterable](https://gammasoft71.github.io/xtd/reference_guides/latest/structxtd_1_1forward__iterable.html) concept.
 
 ## Sources
 
-* [src/enumerable.cpp](src/enumerable.cpp)
+* [src/forward_iterable.cpp](src/forward_iterable.cpp)
 * [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
