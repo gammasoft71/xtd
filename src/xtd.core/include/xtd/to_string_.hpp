@@ -13,17 +13,15 @@
 #include "to_string.hpp"
 
 /// @cond
-template<typename range_t>
-[[nodiscard]] auto __xtd_range_to_string(const range_t& values, const xtd::string& fmt, const std::locale& loc) -> std::string;
+template<xtd::iterable range_t>
+[[nodiscard]] auto __xtd_iterable_to_string(const range_t& values, const xtd::string& fmt, const std::locale& loc) -> std::string;
 
 template<typename value_t>
 [[nodiscard]] inline auto xtd::to_string(const value_t& value, const xtd::string& fmt, const std::locale& loc) -> xtd::string {
   if constexpr(std::is_polymorphic_v<value_t>) return __to_string_polymorphic(value, fmt, loc);
   else if constexpr(std::is_enum_v<value_t>) return __enum_formatter<char>(fmt, value, loc);
   else if constexpr(requires(const xtd::raw_type<value_t>& value) {{value.to_string()} -> xtd::textual;}) return value.to_string();
-  #if defined(__xtd__cpp_lib_ranges)
-  else if constexpr(std::ranges::range<value_t> && !std::is_same_v<value_t, xtd::string>) return __xtd_range_to_string(value, fmt, loc);
-  #endif
+  else if constexpr(xtd::iterable<value_t> && !std::is_same_v<value_t, xtd::string>) return __xtd_iterable_to_string(value, fmt, loc);
   else if constexpr(xtd::stream_insertable<value_t>) {
     auto ss = std::stringstream {};
     ss << value;
@@ -248,13 +246,13 @@ template<typename iterator_t>
   return __xtd_iterator_to_string("[", begin, begin, end, fmt, loc) + "]";
 }
 
-template<typename range_t>
-[[nodiscard]] inline auto __xtd_range_to_string(const range_t& values, const xtd::string& fmt, const std::locale& loc) -> std::string {
+template<xtd::iterable iterable_t>
+[[nodiscard]] inline auto __xtd_iterable_to_string(const iterable_t& values, const xtd::string& fmt, const std::locale& loc) -> std::string {
   std::ostringstream oss;
   oss.imbue(loc);
   oss << "[";
   auto first = true;
-  auto& mutable_values = const_cast<range_t&>(values);
+  auto& mutable_values = const_cast<iterable_t&>(values);
   for (const auto value : mutable_values) {
     if (!first) oss << ", ";
     first = false;
@@ -395,13 +393,6 @@ template<>
 inline auto xtd::to_string(const std::filesystem::path& value, const xtd::string& fmt, const std::locale& loc) -> xtd::string {
   return to_string(value.string(), fmt, loc);
 }
-
-#if defined(__xtd__cpp_lib_ranges)
-template <std::ranges::range range_t>
-[[nodiscard]] inline auto to_string(const range_t& values, const xtd::string& fmt, const std::locale& loc) -> xtd::string {
-  return __xtd_range_to_string(values, fmt, loc);
-}
-#endif
 
 template<typename type_t>
 [[nodiscard]] inline auto xtd::to_string(const xtd::collections::generic::ienumerable<type_t>& values, const xtd::string& fmt, const std::locale& loc) -> xtd::string {
