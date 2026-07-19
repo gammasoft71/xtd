@@ -2,14 +2,13 @@
 /// @brief Contains xtd::span class.
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
-#define __XTD_STD_INTERNAL__
-#include "internal/__xtd_std_version.hpp"
-#undef __XTD_STD_INTERNAL__
 #include "collections/generic/helpers/wrap_pointer_iterator.hpp"
 #include "array.hpp"
 #include "dynamic_extent.hpp"
 #include "iequatable.hpp"
 #include "is.hpp"
+#include "iterable.hpp"
+#include "iterable_value_type.hpp"
 #include "null.hpp"
 #include "object.hpp"
 #include "ptrdiff.hpp"
@@ -445,14 +444,9 @@ namespace xtd {
   template< class type_t, xtd::usize len>
   span(std::array<type_t, len>&) noexcept -> span<type_t>;
   
-  #if defined(__xtd__cpp_lib_ranges)
-  template<typename range_t>
-  span(range_t&&) noexcept -> span<std::remove_reference_t<std::ranges::range_reference_t<range_t>>>;
-  #else
-  template<typename range_t>
-  span(range_t&&) noexcept -> span<std::remove_reference_t<typename range_t::value_type>>;
-  #endif
-  
+  template<xtd::iterable iterable_t>
+  span(iterable_t&& items) -> span<xtd::iterable_value_type<iterable_t>>;
+
   template<typename type_t>
   span(std::initializer_list<type_t>) noexcept -> span<const type_t>;
   
