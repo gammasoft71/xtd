@@ -3,18 +3,11 @@
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 
-#define __XTD_STD_INTERNAL__
-#include "../../internal/__xtd_std_version.hpp"
-#undef __XTD_STD_INTERNAL__
 #include "../../linq/enumerable.hpp"
 #include "../../istringable.hpp"
+#include "../../iterable.hpp"
 #include "../../string.hpp"
 #include "../../views/views.hpp"
-
-/// @cond
-#if defined(__xtd__cpp_lib_ranges)
-/// @endcond
-#include <ranges>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -46,11 +39,11 @@ namespace xtd {
         struct with_comparer {
           const comparer_t& comparer;
           
-          template <std::ranges::range range_t>
-          auto operator()(range_t&& source) const {return xtd::linq::enumerable::from(std::forward<range_t>(source)).distinct(comparer);}
+          template <xtd::iterable iterable_t>
+          auto operator()(iterable_t&& source) const {return xtd::linq::enumerable::from(std::forward<iterable_t>(source)).distinct(comparer);}
           
-          template <std::ranges::range range_t>
-          friend auto operator |(range_t&& source, const with_comparer& self) {return self(std::forward<range_t>(source));}
+          template <xtd::iterable iterable_t>
+          friend auto operator |(iterable_t&& source, const with_comparer& self) {return self(std::forward<iterable_t>(source));}
         };
         
       public:
@@ -60,14 +53,14 @@ namespace xtd {
         /// @brief Returns distinct elements from a sequence by using the default equality comparer to compare values.
         /// @param source The sequence to remove duplicate elements from.
         /// @return An iterable distinct elements from the source sequence.
-        template <std::ranges::range range_t>
-        auto operator()(range_t&& source) const {return xtd::linq::enumerable::as_enumerable(std::forward<range_t>(source)).distinct();}
+        template <xtd::iterable iterable_t>
+        auto operator()(iterable_t&& source) const {return xtd::linq::enumerable::as_enumerable(std::forward<iterable_t>(source)).distinct();}
         /// @brief Returns distinct elements from a sequence by using a specified xtd::collections::generic::iequality_comparer <type_t> to compare values.
         /// @param source The sequence to remove duplicate elements from.
         /// @param comparer An xtd::collections::generic::iequality_comparer <type_t> to compare values.
         /// @return An iterable distinct elements from the source sequence.
-        template <std::ranges::range range_t, typename comparer_t>
-        auto operator()(range_t&& source, const comparer_t& comparer) const {return xtd::linq::enumerable::as_enumerable(std::forward<range_t>(source)).distinct(comparer);}
+        template <xtd::iterable iterable_t, typename comparer_t>
+        auto operator()(iterable_t&& source, const comparer_t& comparer) const {return xtd::linq::enumerable::as_enumerable(std::forward<iterable_t>(source)).distinct(comparer);}
         /// @brief Returns distinct elements from a sequence by using a specified xtd::collections::generic::iequality_comparer <type_t> to compare values.
         /// @param comparer An xtd::collections::generic::iequality_comparer <type_t> to compare values.
         /// @return An iterable distinct elements from the source sequence.
@@ -85,13 +78,10 @@ namespace xtd {
         /// auto result = numbers | distinct_view();
         /// // result = {1, 2, 3, 4}
         /// @endcode
-        template <std::ranges::range range_type>
-        friend auto operator |(range_type&& source, const distinct_view& view) {return view(std::forward<range_type>(source));}
+        template <xtd::iterable iterable_t>
+        friend auto operator |(iterable_t&& source, const distinct_view& view) {return view(std::forward<iterable_t>(source));}
         /// @}
       };
     }
   }
 }
-/// @cond
-#endif
-/// @endcond
