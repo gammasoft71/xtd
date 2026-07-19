@@ -203,10 +203,10 @@ inline xtd::array<source_t> xtd::collections::generic::extensions::enumerable<en
 }
 
 template<xtd::forward_iterable source_t>
-auto xtd::linq::enumerable::chunk(const source_t& source, xtd::usize size) -> xtd::collections::generic::enumerable_generator<xtd::array<typename xtd::raw_type<source_t>::value_type>> {
+auto xtd::linq::enumerable::chunk(const source_t& source, xtd::usize size) -> xtd::collections::generic::enumerable_generator<xtd::array<xtd::forward_iterable_value_type<source_t>>> {
   if (size == 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
   
-  auto buffer = std::vector<typename xtd::raw_type<source_t>::value_type> {};
+  auto buffer = std::vector<xtd::forward_iterable_value_type<source_t>> {};
   buffer.reserve(size);
   
   for (const auto& item : source) {

@@ -1112,7 +1112,7 @@ namespace xtd::collections::generic::extensions {
 template<xtd::forward_iterable source_t>
 auto xtd::linq::enumerable::as_enumerable(source_t&& source) noexcept {
   if constexpr(xtd::collections::generic::enumerable<source_t>) return std::move(source);
-  else return xtd::collections::generic::list<typename xtd::raw_type<source_t>::value_type>(std::move(source));
+  else return xtd::collections::generic::list<xtd::forward_iterable_value_type<source_t>>(std::move(source));
 }
 
 template<typename value_t>

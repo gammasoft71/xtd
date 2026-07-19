@@ -9,16 +9,16 @@
 #include "from.hpp"
 
 /// @cond
-template<xtd::forward_iterable source_t, xtd::func_callable<typename xtd::raw_type<source_t>::value_type, typename xtd::raw_type<source_t>::value_type, typename xtd::raw_type<source_t>::value_type> func_t>
-auto xtd::linq::enumerable::aggregate(const source_t& source, func_t&& func) -> typename xtd::raw_type<source_t>::value_type {
+template<xtd::forward_iterable source_t, xtd::func_callable<xtd::forward_iterable_value_type<source_t>, xtd::forward_iterable_value_type<source_t>, xtd::forward_iterable_value_type<source_t>> func_t>
+auto xtd::linq::enumerable::aggregate(const source_t& source, func_t&& func) -> xtd::forward_iterable_value_type<source_t> {
   auto nb = 0;
-  auto aggregated = typename xtd::raw_type<source_t>::value_type {};
+  auto aggregated = xtd::forward_iterable_value_type<source_t> {};
   for (const auto& item : source)
     aggregated = nb++ == 0 ? item : func(aggregated, item);
   return aggregated;
 }
 
-template<typename accumulate_t, xtd::forward_iterable source_t, xtd::func_callable<accumulate_t, accumulate_t, typename xtd::raw_type<source_t>::value_type> func_t>
+template<typename accumulate_t, xtd::forward_iterable source_t, xtd::func_callable<accumulate_t, accumulate_t, xtd::forward_iterable_value_type<source_t>> func_t>
 auto xtd::linq::enumerable::aggregate(const source_t& source, accumulate_t&& seed, func_t&& func) -> accumulate_t {
   auto aggregated = std::move(seed);
   for (const auto& item : source)
@@ -26,7 +26,7 @@ auto xtd::linq::enumerable::aggregate(const source_t& source, accumulate_t&& see
   return aggregated;
 }
 
-template<typename result_t, typename accumulate_t, xtd::forward_iterable source_t, xtd::func_callable<accumulate_t, accumulate_t, typename xtd::raw_type<source_t>::value_type> func_t, xtd::func_callable<result_t, accumulate_t> result_selector_t>
+template<typename result_t, typename accumulate_t, xtd::forward_iterable source_t, xtd::func_callable<accumulate_t, accumulate_t, xtd::forward_iterable_value_type<source_t>> func_t, xtd::func_callable<result_t, accumulate_t> result_selector_t>
 auto xtd::linq::enumerable::aggregate(const source_t& source, accumulate_t&& seed, func_t&& func, result_selector_t&& result_selector) -> result_t {
   auto aggregated = std::move(seed);
   for (const auto& item : source)
@@ -34,7 +34,7 @@ auto xtd::linq::enumerable::aggregate(const source_t& source, accumulate_t&& see
   return result_selector(aggregated);
 }
 
-template<xtd::forward_iterable source_t, xtd::predicate_callable<typename xtd::raw_type<source_t>::value_type> predicate_t>
+template<xtd::forward_iterable source_t, xtd::predicate_callable<xtd::forward_iterable_value_type<source_t>> predicate_t>
 auto xtd::linq::enumerable::all(const source_t& source, predicate_t&& predicate) -> bool {
   for (const auto& item : source)
     if (!predicate(item)) return false;
@@ -46,7 +46,7 @@ auto xtd::linq::enumerable::any(const source_t& source) noexcept -> bool {
   return source.begin() != source.end();
 }
 
-template<xtd::forward_iterable source_t, xtd::predicate_callable<typename xtd::raw_type<source_t>::value_type> predicate_t>
+template<xtd::forward_iterable source_t, xtd::predicate_callable<xtd::forward_iterable_value_type<source_t>> predicate_t>
 auto xtd::linq::enumerable::any(const source_t& source, predicate_t&& predicate) -> bool {
   for (const auto& item : source)
     if (predicate(item)) return true;
@@ -54,20 +54,20 @@ auto xtd::linq::enumerable::any(const source_t& source, predicate_t&& predicate)
 }
 
 template<xtd::forward_iterable source_t>
-auto xtd::linq::enumerable::append(const source_t& source, typename xtd::raw_type<source_t>::value_type&& element) noexcept -> xtd::collections::generic::enumerable_generator<typename xtd::raw_type<source_t>::value_type> {
+auto xtd::linq::enumerable::append(const source_t& source, xtd::forward_iterable_value_type<source_t>&& element) noexcept -> xtd::collections::generic::enumerable_generator<xtd::forward_iterable_value_type<source_t>> {
   for (const auto& item : source)
     co_yield item;
   co_yield std::move(element);
 }
 
 template<xtd::forward_iterable source_t>
-auto xtd::linq::enumerable::as_enumerable(const source_t& source) noexcept -> xtd::collections::generic::enumerable_generator<typename xtd::raw_type<source_t>::value_type> {
+auto xtd::linq::enumerable::as_enumerable(const source_t& source) noexcept -> xtd::collections::generic::enumerable_generator<xtd::forward_iterable_value_type<source_t>> {
   for (const auto& item : source)
     co_yield item;
 }
 
 template<xtd::forward_iterable source_t>
-auto xtd::linq::enumerable::as_enumerable(source_t& source) noexcept -> xtd::collections::generic::enumerable_generator<typename xtd::raw_type<source_t>::value_type> {
+auto xtd::linq::enumerable::as_enumerable(source_t& source) noexcept -> xtd::collections::generic::enumerable_generator<xtd::forward_iterable_value_type<source_t>> {
   for (const auto& item : source)
     co_yield item;
 }
@@ -137,7 +137,7 @@ auto xtd::linq::enumerable::as_enumerable(std::stack<value_t, container_t>& sour
 }
 
 template<xtd::forward_iterable source_t>
-requires xtd::real_decimal<typename xtd::raw_type<source_t>::value_type>
+requires xtd::real_decimal<xtd::forward_iterable_value_type<source_t>>
 auto xtd::linq::enumerable::average(const source_t& source) -> xtd::decimal {
   auto average = .0l;
   auto count = 0;
@@ -150,7 +150,7 @@ auto xtd::linq::enumerable::average(const source_t& source) -> xtd::decimal {
 }
 
 template<xtd::forward_iterable source_t>
-requires xtd::real_double<typename xtd::raw_type<source_t>::value_type>
+requires xtd::real_double<xtd::forward_iterable_value_type<source_t>>
 auto xtd::linq::enumerable::average(const source_t& source) -> double {
   auto average = .0;
   auto count = 0;
@@ -163,7 +163,7 @@ auto xtd::linq::enumerable::average(const source_t& source) -> double {
 }
 
 template<xtd::forward_iterable source_t>
-requires xtd::real_single<typename xtd::raw_type<source_t>::value_type>
+requires xtd::real_single<xtd::forward_iterable_value_type<source_t>>
 auto xtd::linq::enumerable::average(const source_t& source) -> xtd::single {
   auto average = .0f;
   auto count = 0;
@@ -176,7 +176,7 @@ auto xtd::linq::enumerable::average(const source_t& source) -> xtd::single {
 }
 
 template<xtd::forward_iterable source_t>
-requires xtd::signed_integer_32<typename xtd::raw_type<source_t>::value_type>
+requires xtd::signed_integer_32<xtd::forward_iterable_value_type<source_t>>
 auto xtd::linq::enumerable::average(const source_t& source) -> double {
   auto average = .0;
   auto count = 0;
@@ -189,7 +189,7 @@ auto xtd::linq::enumerable::average(const source_t& source) -> double {
 }
 
 template<xtd::forward_iterable source_t>
-requires xtd::signed_integer_64<typename xtd::raw_type<source_t>::value_type>
+requires xtd::signed_integer_64<xtd::forward_iterable_value_type<source_t>>
 auto xtd::linq::enumerable::average(const source_t& source) -> double {
   auto average = .0;
   auto count = 0;
@@ -202,7 +202,7 @@ auto xtd::linq::enumerable::average(const source_t& source) -> double {
 }
 
 template<xtd::forward_iterable source_t>
-requires std::same_as<typename xtd::raw_type<source_t>::value_type, xtd::optional<xtd::decimal>>
+requires std::same_as<xtd::forward_iterable_value_type<source_t>, xtd::optional<xtd::decimal>>
 auto xtd::linq::enumerable::average(const source_t& source) -> xtd::optional<xtd::decimal> {
   auto average = .0l;
   auto count = 0;
@@ -215,7 +215,7 @@ auto xtd::linq::enumerable::average(const source_t& source) -> xtd::optional<xtd
 }
 
 template<xtd::forward_iterable source_t>
-requires std::same_as<typename xtd::raw_type<source_t>::value_type, xtd::optional<double>>
+requires std::same_as<xtd::forward_iterable_value_type<source_t>, xtd::optional<double>>
 auto xtd::linq::enumerable::average(const source_t& source) -> xtd::optional<double> {
   auto average = .0;
   auto count = 0;
@@ -228,7 +228,7 @@ auto xtd::linq::enumerable::average(const source_t& source) -> xtd::optional<dou
 }
 
 template<xtd::forward_iterable source_t>
-requires std::same_as<typename xtd::raw_type<source_t>::value_type, xtd::optional<xtd::single>>
+requires std::same_as<xtd::forward_iterable_value_type<source_t>, xtd::optional<xtd::single>>
 auto xtd::linq::enumerable::average(const source_t& source) -> xtd::optional<xtd::single> {
   auto average = .0f;
   auto count = 0;
@@ -241,7 +241,7 @@ auto xtd::linq::enumerable::average(const source_t& source) -> xtd::optional<xtd
 }
 
 template<xtd::forward_iterable source_t>
-requires std::same_as<typename xtd::raw_type<source_t>::value_type, xtd::optional<xtd::int32>>
+requires std::same_as<xtd::forward_iterable_value_type<source_t>, xtd::optional<xtd::int32>>
 auto xtd::linq::enumerable::average(const source_t& source) -> xtd::optional<double> {
   auto average = .0;
   auto count = 0;
@@ -254,7 +254,7 @@ auto xtd::linq::enumerable::average(const source_t& source) -> xtd::optional<dou
 }
 
 template<xtd::forward_iterable source_t>
-requires std::same_as<typename xtd::raw_type<source_t>::value_type, xtd::optional<xtd::int64>>
+requires std::same_as<xtd::forward_iterable_value_type<source_t>, xtd::optional<xtd::int64>>
 auto xtd::linq::enumerable::average(const source_t& source) -> xtd::optional<double> {
   auto average = .0;
   auto count = 0;
@@ -267,7 +267,7 @@ auto xtd::linq::enumerable::average(const source_t& source) -> xtd::optional<dou
 }
 
 template<xtd::forward_iterable first_t,xtd::forward_iterable second_t>
-auto xtd::linq::enumerable::concat(const first_t& first, const second_t& second) noexcept  -> xtd::collections::generic::enumerable_generator<typename xtd::raw_type<first_t>::value_type> {
+auto xtd::linq::enumerable::concat(const first_t& first, const second_t& second) noexcept  -> xtd::collections::generic::enumerable_generator<xtd::forward_iterable_value_type<first_t>> {
   for (const auto& item : first)
     co_yield item;
   for (const auto& item : second)
