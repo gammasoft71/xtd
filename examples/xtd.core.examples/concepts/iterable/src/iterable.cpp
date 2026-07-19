@@ -1,0 +1,42 @@
+#include <xtd/xtd>
+
+auto int_generator() -> enumerable_generator<int> {
+  co_yield 15;
+  co_yield 11;
+  co_yield 13;
+  co_yield 14;
+  co_yield 12;
+}
+
+template <iterable iterable_t>
+[[nodiscard]] auto iterate(const iterable_t& iterable) -> enumerable_generator<iterable_value_type<iterable_t>> {
+  for (const auto& item : iterable)
+    co_yield item;
+}
+
+auto main() -> int {
+  for (auto item : iterate(std::vector {5, 1, 3, 4, 2}).select(_ * 2).order())
+    println("{,2}", item);
+  for (auto item : iterate(list {10, 6, 8, 9, 7}).select(_ * 3).order())
+    println("{,2}", item);
+  for (auto item : iterate(int_generator()).select(_ * 4).order())
+    println("{,2}", item);
+}
+
+// This code produces the following output :
+//
+//  2
+//  4
+//  6
+//  8
+// 10
+// 18
+// 21
+// 24
+// 27
+// 30
+// 44
+// 48
+// 52
+// 56
+// 60

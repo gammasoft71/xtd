@@ -7,6 +7,7 @@ add_projects(
   comparable
   enumerable
   forward_iterable
+  iterable
   stringable
 )
 
