@@ -1,6 +1,6 @@
 # iterable
 
-Shows how to use [xtd::collections::generic::iterable](https://gammasoft71.github.io/xtd/reference_guides/latest/structxtd_1_1iterable.html) concept.
+Shows how to use [xtd::iterable](https://gammasoft71.github.io/xtd/reference_guides/latest/structxtd_1_1iterable.html) concept.
 
 ## Sources
 

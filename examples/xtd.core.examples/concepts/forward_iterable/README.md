@@ -1,6 +1,6 @@
 # forward_iterable
 
-Shows how to use [xtd::collections::generic::forward_iterable](https://gammasoft71.github.io/xtd/reference_guides/latest/structxtd_1_1forward__iterable.html) concept.
+Shows how to use [xtd::forward_iterable](https://gammasoft71.github.io/xtd/reference_guides/latest/structxtd_1_1forward__iterable.html) concept.
 
 ## Sources
 
