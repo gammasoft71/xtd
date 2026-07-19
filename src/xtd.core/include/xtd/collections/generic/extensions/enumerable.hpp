@@ -172,7 +172,6 @@ namespace xtd {
           [[nodiscard]] auto contains(const value_t& value) const noexcept -> bool {
             return xtd::linq::enumerable::contains(self(), value);
           }
-          
           /// @brief Determines whether a sequence contains a specified element by using a specified equality comparer.
           /// @param value The value to locate in the sequence.
           /// @param comparer An equality comparer to compare values.
@@ -180,7 +179,15 @@ namespace xtd {
           [[nodiscard]] auto contains(const value_t& value, const xtd::collections::generic::iequality_comparer<value_t>& comparer) const noexcept -> bool {
             return xtd::linq::enumerable::contains(self(), value, comparer);
           }
-          
+          /// @brief Determines whether a sequence contains a specified element by using a specified equality comparer.
+          /// @param value The value to locate in the sequence.
+          /// @param comparer An equality comparer to compare values.
+          /// @return `true` if the source sequence contains an element that has the specified value; otherwise, `false`.
+          template<xtd::func_callable<bool, value_t, value_t> equater_t>
+          [[nodiscard]] auto contains(const value_t& value, equater_t&& equater) const noexcept -> bool {
+            return xtd::linq::enumerable::contains(self(), value, equater);
+          }
+
           /// @brief Returns the number of elements in current sequence.
           /// @return The number of elements in the input sequence.
           /// @par Examples

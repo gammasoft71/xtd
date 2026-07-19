@@ -273,3 +273,24 @@ auto xtd::linq::enumerable::concat(const first_t& first, const second_t& second)
   for (const auto& item : second)
     co_yield item;
 }
+
+template<xtd::iterable source_t>
+auto xtd::linq::enumerable::contains(const source_t& source, const xtd::iterable_value_type<source_t>& value) noexcept -> bool {
+  for (const auto& item : source)
+    if (item == value) return true;
+  return false;
+}
+
+template<xtd::iterable source_t>
+auto xtd::linq::enumerable::contains(const source_t& source, const xtd::iterable_value_type<source_t>& value, const xtd::collections::generic::iequality_comparer<xtd::iterable_value_type<source_t>>& comparer) noexcept -> bool {
+  for (const auto& item : source)
+    if (comparer.equals(item, value)) return true;
+  return false;
+}
+
+template<xtd::iterable source_t, xtd::func_callable<bool, xtd::iterable_value_type<source_t>, xtd::iterable_value_type<source_t>> equater_t>
+auto xtd::linq::enumerable::contains(const source_t& source, const xtd::iterable_value_type<source_t>& value, equater_t&& equater) noexcept -> bool {
+  for (const auto& item : source)
+    if (equater(item, value)) return true;
+  return false;
+}

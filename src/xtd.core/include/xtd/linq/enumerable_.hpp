@@ -373,26 +373,25 @@ namespace xtd {
       /// @param source A sequence in which to locate a value.
       /// @param value The value to locate in the sequence.
       /// @return `true` if the source sequence contains an element that has the specified value; otherwise, `false`.
-      template<typename source_t>
-      [[nodiscard]] static auto contains(const ienumerable<source_t>& source, const source_t& value) noexcept -> bool {
-        for (const auto& item : source)
-          if (item == value) return true;
-        return false;
-      }
-      
+      template<xtd::iterable source_t>
+      [[nodiscard]] static auto contains(const source_t& source, const xtd::iterable_value_type<source_t>& value) noexcept -> bool;
       /// @brief Determines whether a sequence contains a specified element by using a specified equality comparer.
       /// @tparam source_t The type of the elements of source.
       /// @param source A sequence in which to locate a value.
       /// @param value The value to locate in the sequence.
       /// @param comparer An equality comparer to compare values.
       /// @return `true` if the source sequence contains an element that has the specified value; otherwise, `false`.
-      template<typename source_t>
-      [[nodiscard]] static auto contains(const ienumerable<source_t>& source, const source_t& value, const xtd::collections::generic::iequality_comparer<source_t>& comparer) noexcept -> bool {
-        for (const auto& item : source)
-          if (comparer.equals(item, value)) return true;
-        return false;
-      }
-      
+      template<xtd::iterable source_t>
+      [[nodiscard]] static auto contains(const source_t& source, const xtd::iterable_value_type<source_t>& value, const xtd::collections::generic::iequality_comparer<xtd::iterable_value_type<source_t>>& comparer) noexcept -> bool;
+      /// @brief Determines whether a sequence contains a specified element by using a specified equality comparer.
+      /// @tparam source_t The type of the elements of source.
+      /// @param source A sequence in which to locate a value.
+      /// @param value The value to locate in the sequence.
+      /// @param equater An equality comparer to compare values.
+      /// @return `true` if the source sequence contains an element that has the specified value; otherwise, `false`.
+      template<xtd::iterable source_t, xtd::func_callable<bool, xtd::iterable_value_type<source_t>, xtd::iterable_value_type<source_t>> equater_t>
+      [[nodiscard]] static auto contains(const source_t& source, const xtd::iterable_value_type<source_t>& value, equater_t&& equater) noexcept -> bool;
+
       /// @brief Returns the number of elements in a sequence.
       /// @tparam source_t The type of the elements of source.
       /// @param source A sequence that contains elements to be counted.
