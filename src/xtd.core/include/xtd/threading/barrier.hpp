@@ -162,8 +162,8 @@ namespace xtd {
       /// @}
       
     private:
-      auto wait_wtih_cancellation_token() -> bool;
-      auto wait_wtih_cancellation_token(xtd::int32 milliseconds_timeout) -> bool;
+      auto wait_with_cancellation_token() -> bool;
+      auto wait_with_cancellation_token(xtd::int32 milliseconds_timeout) -> bool;
       
       xtd::sptr<data> data_;
     };
