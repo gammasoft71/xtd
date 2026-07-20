@@ -15,6 +15,7 @@
 #include "../internal/__key_value_pair_definition.hpp"
 #include "../internal/__list_definition.hpp"
 #undef  __XTD_CORE_INTERNAL__
+#include "../callable.hpp"
 #include "../decimal.hpp"
 #include "../iterable.hpp"
 #include "../iterable_value_type.hpp"
@@ -399,14 +400,8 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates how to use xtd::linq::enumerable::count <source_t>(const ienumerable <source_t>&) to count the elements in a sequence.
       /// @include enumerable_count.cpp
-      template<typename source_t>
-      [[nodiscard]] static auto count(const ienumerable<source_t>& source) noexcept -> xtd::usize {
-        auto count = xtd::usize {0};
-        auto enumerator = source.get_enumerator();
-        while (enumerator.move_next()) ++count;
-        return count;
-      }
-      
+      template<xtd::iterable source_t>
+      [[nodiscard]] static auto count(const source_t& source) noexcept -> xtd::usize;
       /// @brief Returns a number that represents how many elements in the specified sequence satisfy a condition.
       /// @tparam source_t The type of the elements of source.
       /// @param source A sequence that contains elements to be tested and counted.
@@ -415,20 +410,15 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates how to use xtd::linq::enumerable::count <source_t>(const ienumerable <source_t>&, const std::function <bool(const source_t&)>&) to count the elements in a sequence that satisfy a condition.
       /// @include enumerable_count2.cpp
-      template<typename source_t>
-      [[nodiscard]] static auto count(const ienumerable<source_t>& source, const std::function<bool(const source_t&)>& predicate) noexcept -> xtd::usize {
-        return where<source_t>(source, predicate).count();
-      }
-      
+      template<xtd::iterable source_t, xtd::predicate_callable<xtd::iterable_value_type<source_t>> predicate_t>
+      [[nodiscard]] static auto count(const source_t& source, predicate_t&& predicate) noexcept -> xtd::usize;
       /// @brief Returns the number of elements with the specified value.
       /// @tparam source_t The type of the elements of source.
       /// @param source A sequence that contains elements to be tested and counted.
       /// @param value The value to search for.
       /// @return A number representing the number of elements in the sequence that are equal to the `value`.
-      template<typename source_t>
-      [[nodiscard]] static auto count(const ienumerable<source_t>& source, const source_t& value) noexcept -> xtd::usize {
-        return count<source_t>(source, [value](const source_t& item) -> bool {return item == value;});
-      }
+      template<xtd::iterable source_t>
+      [[nodiscard]] static auto count(const source_t& source, const xtd::iterable_value_type<source_t>& value) noexcept -> xtd::usize;
       
       /// @brief Returns the count of elements in the source sequence grouped by key.
       /// @tparam source_t The type of the elements of source.
@@ -443,7 +433,6 @@ namespace xtd {
       [[nodiscard]] static auto count_by(const ienumerable<source_t>& source, const std::function<key_t(const source_t&)>& key_selector) noexcept {
         return count_by(source, key_selector, xtd::collections::generic::equality_comparer<key_t>::default_equality_comparer());
       }
-      
       /// @brief Returns the count of elements in the source sequence grouped by key.
       /// @tparam source_t The type of the elements of source.
       /// @tparam key_t The type of the key returned by `key_selector`.
@@ -847,14 +836,8 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates how to use xtd::linq::enumerable::select <source_t, result_t>(const ienumerable <source_t>&, const std::function <result_t(const source_t&)>&) to project over a sequence of values.
       /// @include enumerable_select.cpp
-      template<typename result_t, typename source_t>
-      [[nodiscard]] static auto select(const ienumerable<source_t>& source, auto&& selector) {
-        auto result = __opaque_xtd_linq_enumerable_collection__<result_t> {};
-        auto index = xtd::usize {0};
-        for (const auto& item : source)
-          result.items.push_back(invoke_selector_wtih_optional_index(selector, item, index++));
-        return result;
-      }
+      template<class result_t, xtd::iterable source_t>
+      [[nodiscard]] static auto select(const source_t& source, auto&& selector) -> xtd::collections::generic::enumerable_generator<result_t>;
       /// @brief Projects each element of a sequence into a new form by incorporating the element's index.
       /// @tparam result_t The type of the resulting value.
       /// @tparam source_t The type of the elements of source.
@@ -864,14 +847,8 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates how to use xtd::linq::enumerable::select <source_t, result_t>(const ienumerable <source_t>&, const std::function <result_t(const source_t&, xtd::usize)>&) to project over a sequence of values and use the index of each element.
       /// @include enumerable_select.cpp
-      template<typename source_t>
-      [[nodiscard]] static auto select(const ienumerable<source_t>& source, auto&& selector) {
-        auto result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
-        auto index = xtd::usize {0};
-        for (const auto& item : source)
-          result.items.push_back(invoke_selector_wtih_optional_index(selector, item, index++));
-        return result;
-      }
+      template<xtd::iterable source_t>
+      [[nodiscard]] static auto select(const source_t& source, auto&& selector) -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>>;
       
       /// @brief Creates a xtd::array <type_t> from an xtd::collections::generic::ienumerable <type_t>.
       /// @tparam source_t The type of the elements of source.
@@ -911,23 +888,29 @@ namespace xtd {
         auto result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
         auto index = xtd::usize {0};
         for (const auto& item : source)
-          if (invoke_predicate_wtih_optional_index(predicate, item, index++)) result.items.push_back(item);
+          if (invoke_predicate_with_optional_index(predicate, item, index++)) result.items.push_back(item);
         return result;
       }
       /// @}
       
     private:
-      template <typename predicate_t, typename source_t>
-      static constexpr bool invoke_predicate_wtih_optional_index(predicate_t&& predicate, source_t&& value, xtd::usize index) {
-        if constexpr (requires { predicate(value, index); }) return predicate(value, index);
-        else return predicate(value);
-      }
+      template<typename type_t>
+      struct enumerable_holder {
+        enumerable_holder(type_t& value) : ptr_(std::addressof(value)) {}
+        enumerable_holder(type_t&& value) : value_(std::move(value)), ptr_(std::addressof(*value_)) {}
+        
+        type_t& get() {return *ptr_;}
+        
+      private:
+        std::optional<type_t> value_;
+        type_t* ptr_;
+      };
       
-      template <typename selector_t, typename source_t>
-      static auto invoke_selector_wtih_optional_index(selector_t&& selector, source_t&& value, xtd::usize index) {
-        if constexpr (requires { selector(value, index); }) return selector(value, index);
-        else return selector(value);
-      }
+      template<typename predicate_t, typename value_t>
+      [[nodiscard]] static constexpr auto invoke_predicate_with_optional_index(predicate_t&& predicate, value_t&& value, xtd::usize index) -> bool;
+
+      template<typename result_t, typename selector_t, typename value_t>
+      [[nodiscard]] static auto invoke_selector_with_optional_index(selector_t&& selector, value_t&& value, xtd::usize index) -> result_t;
     };
   }
 }

@@ -294,3 +294,49 @@ auto xtd::linq::enumerable::contains(const source_t& source, const xtd::iterable
     if (equater(item, value)) return true;
   return false;
 }
+
+template<xtd::iterable source_t>
+auto xtd::linq::enumerable::count(const source_t& source) noexcept -> xtd::usize {
+  auto count = xtd::usize {0};
+  auto enumerator = source.get_enumerator();
+  while (enumerator.move_next()) ++count;
+  return count;
+}
+
+template<xtd::iterable source_t, xtd::predicate_callable<xtd::iterable_value_type<source_t>> predicate_t>
+auto xtd::linq::enumerable::count(const source_t& source, predicate_t&& predicate) noexcept -> xtd::usize {
+  return where(source, predicate).count();
+}
+
+template<xtd::iterable source_t>
+auto xtd::linq::enumerable::count(const source_t& source, const xtd::iterable_value_type<source_t>& value) noexcept -> xtd::usize {
+  return count(source, [value](const xtd::iterable_value_type<source_t>& item) -> bool {return item == value;});
+}
+
+template<class result_t, xtd::iterable source_t>
+auto xtd::linq::enumerable::select(const source_t& source, auto&& selector) -> xtd::collections::generic::enumerable_generator<result_t> {
+  auto index = xtd::usize {0};
+  for (const auto& item : source)
+    co_yield invoke_selector_with_optional_index<result_t>(selector, item, index++);
+}
+
+template<xtd::iterable source_t>
+auto xtd::linq::enumerable::select(const source_t& source, auto&& selector) -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>> {
+  auto index = xtd::usize {0};
+  for (const auto& item : source)
+    co_yield invoke_selector_with_optional_index<xtd::iterable_value_type<source_t>>(selector, item, index++);
+}
+
+template <typename predicate_t, typename value_t>
+constexpr auto xtd::linq::enumerable::invoke_predicate_with_optional_index(predicate_t&& predicate, value_t&& value, xtd::usize index) -> bool {
+  if constexpr (xtd::func_callable<predicate_t, bool, xtd::raw_type<value_t>, xtd::usize>) return predicate(value, index);
+  else if constexpr (xtd::predicate_callable<predicate_t, xtd::raw_type<value_t>>) return predicate(value);
+  else static_assert(false);
+}
+
+template <typename result_t, typename selector_t, typename value_t>
+auto xtd::linq::enumerable::invoke_selector_with_optional_index(selector_t&& selector, value_t&& value, xtd::usize index) -> result_t {
+  if constexpr (xtd::callable<selector_t, xtd::raw_type<result_t>, xtd::raw_type<value_t>, xtd::usize>) return selector(value, index);
+  if constexpr (xtd::callable<selector_t, xtd::raw_type<result_t>, xtd::raw_type<value_t>>) return selector(value);
+  else static_assert(false);
+}
