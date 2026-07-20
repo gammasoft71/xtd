@@ -897,7 +897,7 @@ namespace xtd::collections::generic::helpers::tests {
       collection_assert::are_equal({false, true, false}, items1);
     }
     
-    auto test_method_(operator_equal_wtih_move) {
+    auto test_method_(operator_equal_with_move) {
       auto items1 = raw_array {84, 42, 21};
       auto items2 = raw_array {63, 75, 96};
       items1 = std::move(items2);
