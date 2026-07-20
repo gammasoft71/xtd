@@ -177,8 +177,8 @@ namespace xtd::linq::tests {
     }
     
     auto test_method_(count_with_enumerable_and_predicate) {
-      assert::are_equal(3u, enumerable::count<int>(array {1, 2, 3, 4, 5}, [](int value) {return value <= 3;}));
-      assert::are_equal(0u, enumerable::count<int>(array {1, 2, 3, 4, 5}, [](int value) {return value < 0;}));
+      assert::are_equal(3u, enumerable::count(array {1, 2, 3, 4, 5}, [](int value) {return value <= 3;}));
+      assert::are_equal(0u, enumerable::count(array {1, 2, 3, 4, 5}, [](int value) {return value < 0;}));
     }
     
     auto test_method_(count_by_with_enumerable_and_key_selector) {
