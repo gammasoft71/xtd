@@ -389,7 +389,7 @@ namespace xtd {
           /// @include enumerable_select.cpp
           template<typename result_t>
           [[nodiscard]] auto select(auto&& selector) const {
-            return xtd::linq::enumerable::select<result_t, value_t>(self(), selector);
+            return xtd::linq::enumerable::select<result_t>(self(), selector);
           }
           
           /// @brief Creates a xtd::array <type_t> from an xtd::collections::generic::ienumerable <type_t>.
