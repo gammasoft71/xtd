@@ -166,7 +166,7 @@ namespace xtd::tests {
       assert::are_equal("xtd::collections::specialized", type.namespace_());
     }
 
-    auto test_method_(generic_comparer_wtih_any_object_type) {
+    auto test_method_(generic_comparer_with_any_object_type) {
       auto type = type_of<xtd::collections::generic::comparer<xtd::any_object>>();
       assert::are_equal("xtd::collections::comparer", type.full_name());
       assert::are_equal("comparer", type.name());
