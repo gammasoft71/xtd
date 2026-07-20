@@ -16,7 +16,7 @@ namespace xtd::net::sockets::tests {
       assert::is_zero(linger.linger_time());
     }
     
-    auto test_method_(constructor_wtih_enabled_and_linger_time) {
+    auto test_method_(constructor_with_enabled_and_linger_time) {
       linger_option linger(true, 5);
       assert::is_true(linger.enabled());
       assert::are_equal(5u, linger.linger_time());
