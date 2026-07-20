@@ -68,7 +68,7 @@ namespace xtd::net::tests {
       assert::are_equal("172.16.10.30", ip_address(xtd::array<xtd::byte> {172, 16, 10, 30}).to_string());
     }
     
-    auto test_method_(constructors_wtih_bytes_array_ip_v6) {
+    auto test_method_(constructors_with_bytes_array_ip_v6) {
       assert::are_equal("2001:0:5ef5:73b8:2c2c:3028:2a4e:b283", ip_address({0x20, 0x01, 0x00, 0x00, 0x5e, 0xf5, 0x73, 0xb8, 0x2c, 0x2c, 0x30, 0x28, 0x2a, 0x4e, 0xb2, 0x83}).to_string());
       assert::are_equal("2001:0:5ef5:73b8:2c2c:3028:2a4e:b283%15", ip_address(xtd::array<xtd::byte> {0x20, 0x01, 0x00, 0x00, 0x5e, 0xf5, 0x73, 0xb8, 0x2c, 0x2c, 0x30, 0x28, 0x2a, 0x4e, 0xb2, 0x83}, 15).to_string());
     }
@@ -78,7 +78,7 @@ namespace xtd::net::tests {
       assert::throws<argument_exception>([] {ip_address({172, 16, 10, 30, 25, 42});});
     }
     
-    auto test_method_(constructors_wtih_quad_part) {
+    auto test_method_(constructors_with_quad_part) {
       assert::are_equal("147.24.35.22", ip_address(ip_address(147, 24, 35, 22)).to_string());
       assert::are_equal("0.0.0.0", ip_address(0, 0, 0, 0).to_string());
       assert::are_equal("10.11.12.35", ip_address(10, 11, 12, 35).to_string());
