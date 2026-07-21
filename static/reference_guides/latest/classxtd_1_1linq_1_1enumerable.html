@@ -125,7 +125,7 @@ Inheritance diagram for xtd::linq::enumerable:</div>
 <div class="textblock"><p>Provides a set of static methods for querying objects that implement ienumerable &lt;type_t&gt;. </p>
 <dl class="section user"><dt>Definition</dt><dd><div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> type_t&gt;</div>
 <div class="line"><span class="keyword">class </span><a class="code hl_class" href="classxtd_1_1linq_1_1enumerable.html">enumerable</a> : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1static__object.html">xtd::static_object</a>;</div>
-<div class="ttc" id="aclassxtd_1_1linq_1_1enumerable_html"><div class="ttname"><a href="classxtd_1_1linq_1_1enumerable.html">xtd::linq::enumerable</a></div><div class="ttdoc">Provides a set of static methods for querying objects that implement ienumerable &lt;type_t&gt;.</div><div class="ttdef"><b>Definition</b> enumerable_.hpp:72</div></div>
+<div class="ttc" id="aclassxtd_1_1linq_1_1enumerable_html"><div class="ttname"><a href="classxtd_1_1linq_1_1enumerable.html">xtd::linq::enumerable</a></div><div class="ttdoc">Provides a set of static methods for querying objects that implement ienumerable &lt;type_t&gt;.</div><div class="ttdef"><b>Definition</b> enumerable_.hpp:73</div></div>
 <div class="ttc" id="aclassxtd_1_1static__object_html"><div class="ttname"><a href="classxtd_1_1static__object.html">xtd::static_object</a></div><div class="ttdoc">Represent a static object. A static class can&#39;t be instantiated (constructors are deleted).</div><div class="ttdef"><b>Definition</b> static.hpp:20</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/linq/enumerable&gt;</span></div>
@@ -256,15 +256,15 @@ requires std::same_as&lt;<a class="el" href="group__concepts.html#ga7ffbe4fba341
 <tr class="memitem:add22072f21b90df99e569953d7250578" id="r_add22072f21b90df99e569953d7250578"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t, <a class="el" href="structxtd_1_1func__callable.html">xtd::func_callable</a>&lt; bool, <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt;, <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; &gt; equater_t&gt; </td></tr>
 <tr class="memitem:add22072f21b90df99e569953d7250578 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#add22072f21b90df99e569953d7250578">contains</a> (const source_t &amp;source, const <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; &amp;value, equater_t &amp;&amp;equater) noexcept -&gt; bool</td></tr>
 <tr class="memdesc:add22072f21b90df99e569953d7250578"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether a sequence contains a specified element by using a specified equality comparer.  <br /></td></tr>
-<tr class="memitem:a4a7e43babbe614bde008da47e4819d41" id="r_a4a7e43babbe614bde008da47e4819d41"><td class="memTemplParams" colspan="2">template&lt;typename source_t&gt; </td></tr>
-<tr class="memitem:a4a7e43babbe614bde008da47e4819d41 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a4a7e43babbe614bde008da47e4819d41">count</a> (const <a class="el" href="#a2bd1889dc1967c50ef692411dc2c4b92">ienumerable</a>&lt; source_t &gt; &amp;source) noexcept -&gt; <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td></tr>
-<tr class="memdesc:a4a7e43babbe614bde008da47e4819d41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of elements in a sequence.  <br /></td></tr>
-<tr class="memitem:a042b7055d4214b15e88fe63b19397d8f" id="r_a042b7055d4214b15e88fe63b19397d8f"><td class="memTemplParams" colspan="2">template&lt;typename source_t&gt; </td></tr>
-<tr class="memitem:a042b7055d4214b15e88fe63b19397d8f template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a042b7055d4214b15e88fe63b19397d8f">count</a> (const <a class="el" href="#a2bd1889dc1967c50ef692411dc2c4b92">ienumerable</a>&lt; source_t &gt; &amp;source, const std::function&lt; bool(const source_t &amp;)&gt; &amp;predicate<a class="el" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab">predicate</a>) noexcept -&gt; <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td></tr>
-<tr class="memdesc:a042b7055d4214b15e88fe63b19397d8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a number that represents how many elements in the specified sequence satisfy a condition.  <br /></td></tr>
-<tr class="memitem:ae1b87a0a687cef6dc00cecb2b707852b" id="r_ae1b87a0a687cef6dc00cecb2b707852b"><td class="memTemplParams" colspan="2">template&lt;typename source_t&gt; </td></tr>
-<tr class="memitem:ae1b87a0a687cef6dc00cecb2b707852b template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ae1b87a0a687cef6dc00cecb2b707852b">count</a> (const <a class="el" href="#a2bd1889dc1967c50ef692411dc2c4b92">ienumerable</a>&lt; source_t &gt; &amp;source, const source_t &amp;value) noexcept -&gt; <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td></tr>
-<tr class="memdesc:ae1b87a0a687cef6dc00cecb2b707852b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of elements with the specified value.  <br /></td></tr>
+<tr class="memitem:a5ccabd343a74fdd09f42195a9c654ea1" id="r_a5ccabd343a74fdd09f42195a9c654ea1"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t&gt; </td></tr>
+<tr class="memitem:a5ccabd343a74fdd09f42195a9c654ea1 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a5ccabd343a74fdd09f42195a9c654ea1">count</a> (const source_t &amp;source) noexcept -&gt; <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td></tr>
+<tr class="memdesc:a5ccabd343a74fdd09f42195a9c654ea1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of elements in a sequence.  <br /></td></tr>
+<tr class="memitem:a22c2d4595dd18284e8130db1d3a42088" id="r_a22c2d4595dd18284e8130db1d3a42088"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t, <a class="el" href="structxtd_1_1predicate__callable.html">xtd::predicate_callable</a>&lt; <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; &gt; predicate_t&gt; </td></tr>
+<tr class="memitem:a22c2d4595dd18284e8130db1d3a42088 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a22c2d4595dd18284e8130db1d3a42088">count</a> (const source_t &amp;source, predicate_t &amp;&amp;predicate<a class="el" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab">predicate</a>) noexcept -&gt; <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td></tr>
+<tr class="memdesc:a22c2d4595dd18284e8130db1d3a42088"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a number that represents how many elements in the specified sequence satisfy a condition.  <br /></td></tr>
+<tr class="memitem:af565401a38222c5328fe569445ce91f1" id="r_af565401a38222c5328fe569445ce91f1"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t&gt; </td></tr>
+<tr class="memitem:af565401a38222c5328fe569445ce91f1 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#af565401a38222c5328fe569445ce91f1">count</a> (const source_t &amp;source, const <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; &amp;value) noexcept -&gt; <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td></tr>
+<tr class="memdesc:af565401a38222c5328fe569445ce91f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of elements with the specified value.  <br /></td></tr>
 <tr class="memitem:ac4fcd2e099e280f4c2c6cdfa9ce2423b" id="r_ac4fcd2e099e280f4c2c6cdfa9ce2423b"><td class="memTemplParams" colspan="2">template&lt;typename key_t, typename source_t&gt; </td></tr>
 <tr class="memitem:ac4fcd2e099e280f4c2c6cdfa9ce2423b template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ac4fcd2e099e280f4c2c6cdfa9ce2423b">count_by</a> (const <a class="el" href="#a2bd1889dc1967c50ef692411dc2c4b92">ienumerable</a>&lt; source_t &gt; &amp;source, const std::function&lt; key_t(const source_t &amp;)&gt; &amp;key_selector) noexcept</td></tr>
 <tr class="memdesc:ac4fcd2e099e280f4c2c6cdfa9ce2423b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the count of elements in the source sequence grouped by key.  <br /></td></tr>
@@ -364,12 +364,12 @@ requires <a class="el" href="structxtd_1_1numeric.html">xtd::numeric</a>&lt;sour
 <tr class="memitem:aa2c9248a6f7a6114a7afd708f159de3b" id="r_aa2c9248a6f7a6114a7afd708f159de3b"><td class="memTemplParams" colspan="2">template&lt;typename type_t&gt; </td></tr>
 <tr class="memitem:aa2c9248a6f7a6114a7afd708f159de3b template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aa2c9248a6f7a6114a7afd708f159de3b">range</a> (type_t start, type_t count, type_t step)</td></tr>
 <tr class="memdesc:aa2c9248a6f7a6114a7afd708f159de3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a sequence of integral numbers within a specified range and step.  <br /></td></tr>
-<tr class="memitem:ae403abfe22dae3148786edc992a6d1ea" id="r_ae403abfe22dae3148786edc992a6d1ea"><td class="memTemplParams" colspan="2">template&lt;typename result_t, typename source_t&gt; </td></tr>
-<tr class="memitem:ae403abfe22dae3148786edc992a6d1ea template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ae403abfe22dae3148786edc992a6d1ea">select</a> (const <a class="el" href="#a2bd1889dc1967c50ef692411dc2c4b92">ienumerable</a>&lt; source_t &gt; &amp;source, auto &amp;&amp;selector)</td></tr>
-<tr class="memdesc:ae403abfe22dae3148786edc992a6d1ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Projects each element of a sequence into a new form.  <br /></td></tr>
-<tr class="memitem:a76a5278a1b6c1bc366c00fffcd427ef6" id="r_a76a5278a1b6c1bc366c00fffcd427ef6"><td class="memTemplParams" colspan="2">template&lt;typename source_t&gt; </td></tr>
-<tr class="memitem:a76a5278a1b6c1bc366c00fffcd427ef6 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a76a5278a1b6c1bc366c00fffcd427ef6">select</a> (const <a class="el" href="#a2bd1889dc1967c50ef692411dc2c4b92">ienumerable</a>&lt; source_t &gt; &amp;source, auto &amp;&amp;selector)</td></tr>
-<tr class="memdesc:a76a5278a1b6c1bc366c00fffcd427ef6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Projects each element of a sequence into a new form by incorporating the element's index.  <br /></td></tr>
+<tr class="memitem:addc81a5593653666d16b2be71298ef9c" id="r_addc81a5593653666d16b2be71298ef9c"><td class="memTemplParams" colspan="2">template&lt;class result_t, <a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t&gt; </td></tr>
+<tr class="memitem:addc81a5593653666d16b2be71298ef9c template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#addc81a5593653666d16b2be71298ef9c">select</a> (const source_t &amp;source, auto &amp;&amp;selector) -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; result_t &gt;</td></tr>
+<tr class="memdesc:addc81a5593653666d16b2be71298ef9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Projects each element of a sequence into a new form.  <br /></td></tr>
+<tr class="memitem:a0c05b17d12da3b35f7a11f8e33ec0577" id="r_a0c05b17d12da3b35f7a11f8e33ec0577"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t&gt; </td></tr>
+<tr class="memitem:a0c05b17d12da3b35f7a11f8e33ec0577 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a0c05b17d12da3b35f7a11f8e33ec0577">select</a> (const source_t &amp;source, auto &amp;&amp;selector) -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; &gt;</td></tr>
+<tr class="memdesc:a0c05b17d12da3b35f7a11f8e33ec0577"><td class="mdescLeft">&#160;</td><td class="mdescRight">Projects each element of a sequence into a new form by incorporating the element's index.  <br /></td></tr>
 <tr class="memitem:abe2623e93f7343615c3e1e38a018e9eb" id="r_abe2623e93f7343615c3e1e38a018e9eb"><td class="memTemplParams" colspan="2">template&lt;typename source_t&gt; </td></tr>
 <tr class="memitem:abe2623e93f7343615c3e1e38a018e9eb template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#abe2623e93f7343615c3e1e38a018e9eb">to_array</a> (const <a class="el" href="#a2bd1889dc1967c50ef692411dc2c4b92">ienumerable</a>&lt; source_t &gt; &amp;source)</td></tr>
 <tr class="memdesc:abe2623e93f7343615c3e1e38a018e9eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> &lt;type_t&gt; from an <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt;.  <br /></td></tr>
@@ -821,7 +821,7 @@ template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> so
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// The list is not empty.</span></div>
-<div class="ttc" id="aclassxtd_1_1linq_1_1enumerable_html_a4ff59be55b7be66d275f28741e2f1f0a"><div class="ttname"><a href="#a4ff59be55b7be66d275f28741e2f1f0a">xtd::linq::enumerable::list</a></div><div class="ttdeci">typename xtd::collections::generic::list&lt; type_t &gt; list</div><div class="ttdoc">Represents the list value type.</div><div class="ttdef"><b>Definition</b> enumerable_.hpp:91</div></div>
+<div class="ttc" id="aclassxtd_1_1linq_1_1enumerable_html_a4ff59be55b7be66d275f28741e2f1f0a"><div class="ttname"><a href="#a4ff59be55b7be66d275f28741e2f1f0a">xtd::linq::enumerable::list</a></div><div class="ttdeci">typename xtd::collections::generic::list&lt; type_t &gt; list</div><div class="ttdoc">Represents the list value type.</div><div class="ttdef"><b>Definition</b> enumerable_.hpp:92</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -2032,13 +2032,13 @@ template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> so
 
 </div>
 </div>
-<a id="a4a7e43babbe614bde008da47e4819d41" name="a4a7e43babbe614bde008da47e4819d41"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4a7e43babbe614bde008da47e4819d41">&#9670;&#160;</a></span>count() <span class="overload">[1/3]</span></h2>
+<a id="a5ccabd343a74fdd09f42195a9c654ea1" name="a5ccabd343a74fdd09f42195a9c654ea1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ccabd343a74fdd09f42195a9c654ea1">&#9670;&#160;</a></span>count() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename source_t&gt; </div>
+template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2046,13 +2046,13 @@ template&lt;typename source_t&gt; </div>
         <tr>
           <td class="memname">auto xtd::linq::enumerable::count </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="#a2bd1889dc1967c50ef692411dc2c4b92">ienumerable</a>&lt; source_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>source</em></span></td><td>)</td>
-          <td> -&gt; <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>
+          <td class="paramtype">const source_t &amp;</td>          <td class="paramname"><span class="paramname"><em>source</em></span></td><td>)</td>
+          <td> -&gt;  <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -2071,7 +2071,7 @@ template&lt;typename source_t&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The number of elements in the input sequence. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to use <a class="el" href="#a4a7e43babbe614bde008da47e4819d41" title="Returns the number of elements in a sequence.">xtd::linq::enumerable::count</a> &lt;source_t&gt;(const ienumerable &lt;source_t&gt;&amp;) to count the elements in a sequence. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to use <a class="el" href="#a5ccabd343a74fdd09f42195a9c654ea1" title="Returns the number of elements in a sequence.">xtd::linq::enumerable::count</a> &lt;source_t&gt;(const ienumerable &lt;source_t&gt;&amp;) to count the elements in a sequence. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> fruits = <a class="code hl_class" href="classxtd_1_1array.html">array</a> {<span class="stringliteral">&quot;apple&quot;</span>, <span class="stringliteral">&quot;banana&quot;</span>, <span class="stringliteral">&quot;mango&quot;</span>, <span class="stringliteral">&quot;orange&quot;</span>, <span class="stringliteral">&quot;passionfruit&quot;</span>, <span class="stringliteral">&quot;grape&quot;</span>};</div>
@@ -2087,13 +2087,13 @@ template&lt;typename source_t&gt; </div>
 
 </div>
 </div>
-<a id="a042b7055d4214b15e88fe63b19397d8f" name="a042b7055d4214b15e88fe63b19397d8f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a042b7055d4214b15e88fe63b19397d8f">&#9670;&#160;</a></span>count() <span class="overload">[2/3]</span></h2>
+<a id="a22c2d4595dd18284e8130db1d3a42088" name="a22c2d4595dd18284e8130db1d3a42088"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22c2d4595dd18284e8130db1d3a42088">&#9670;&#160;</a></span>count() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename source_t&gt; </div>
+template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t, <a class="el" href="structxtd_1_1predicate__callable.html">xtd::predicate_callable</a>&lt; <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; &gt; predicate_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2101,17 +2101,17 @@ template&lt;typename source_t&gt; </div>
         <tr>
           <td class="memname">auto xtd::linq::enumerable::count </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="#a2bd1889dc1967c50ef692411dc2c4b92">ienumerable</a>&lt; source_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>source</em></span>, </td>
+          <td class="paramtype">const source_t &amp;</td>          <td class="paramname"><span class="paramname"><em>source</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::function&lt; bool(const source_t &amp;)&gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>predicate</em></span>&#160;) -&gt; <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>
+          <td class="paramtype">predicate_t &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>predicate</em></span>&#160;) -&gt;  <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -2131,7 +2131,7 @@ template&lt;typename source_t&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A number that represents how many elements in the sequence satisfy the condition in the predicate function. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to use <a class="el" href="#a4a7e43babbe614bde008da47e4819d41" title="Returns the number of elements in a sequence.">xtd::linq::enumerable::count</a> &lt;source_t&gt;(const ienumerable &lt;source_t&gt;&amp;, const std::function &lt;bool(const source_t&amp;)&gt;&amp;) to count the elements in a sequence that satisfy a condition. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to use <a class="el" href="#a5ccabd343a74fdd09f42195a9c654ea1" title="Returns the number of elements in a sequence.">xtd::linq::enumerable::count</a> &lt;source_t&gt;(const ienumerable &lt;source_t&gt;&amp;, const std::function &lt;bool(const source_t&amp;)&gt;&amp;) to count the elements in a sequence that satisfy a condition. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">struct </span>pet {</div>
 <div class="line">  <span class="keywordtype">string</span> name;</div>
@@ -2158,13 +2158,13 @@ template&lt;typename source_t&gt; </div>
 
 </div>
 </div>
-<a id="ae1b87a0a687cef6dc00cecb2b707852b" name="ae1b87a0a687cef6dc00cecb2b707852b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae1b87a0a687cef6dc00cecb2b707852b">&#9670;&#160;</a></span>count() <span class="overload">[3/3]</span></h2>
+<a id="af565401a38222c5328fe569445ce91f1" name="af565401a38222c5328fe569445ce91f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af565401a38222c5328fe569445ce91f1">&#9670;&#160;</a></span>count() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename source_t&gt; </div>
+template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2172,17 +2172,17 @@ template&lt;typename source_t&gt; </div>
         <tr>
           <td class="memname">auto xtd::linq::enumerable::count </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="#a2bd1889dc1967c50ef692411dc2c4b92">ienumerable</a>&lt; source_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>source</em></span>, </td>
+          <td class="paramtype">const source_t &amp;</td>          <td class="paramname"><span class="paramname"><em>source</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const source_t &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;) -&gt; <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>
+          <td class="paramtype">const <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;) -&gt;  <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -3507,7 +3507,7 @@ template&lt;typename type_t&gt; </div>
 <div class="line"><span class="comment">// 64</span></div>
 <div class="line"><span class="comment">// 81</span></div>
 <div class="line"><span class="comment">// 100</span></div>
-<div class="ttc" id="aclassxtd_1_1linq_1_1enumerable_html_ad3f2b197a8f9e4e52710edcdd59870e9"><div class="ttname"><a href="#ad3f2b197a8f9e4e52710edcdd59870e9">xtd::linq::enumerable::range</a></div><div class="ttdeci">static auto range(type_t count)</div><div class="ttdoc">Generates a sequence of integral numbers within a specified range.</div><div class="ttdef"><b>Definition</b> enumerable_.hpp:807</div></div>
+<div class="ttc" id="aclassxtd_1_1linq_1_1enumerable_html_ad3f2b197a8f9e4e52710edcdd59870e9"><div class="ttname"><a href="#ad3f2b197a8f9e4e52710edcdd59870e9">xtd::linq::enumerable::range</a></div><div class="ttdeci">static auto range(type_t count)</div><div class="ttdoc">Generates a sequence of integral numbers within a specified range.</div><div class="ttdef"><b>Definition</b> enumerable_.hpp:796</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -3634,13 +3634,13 @@ template&lt;typename type_t&gt; </div>
 
 </div>
 </div>
-<a id="ae403abfe22dae3148786edc992a6d1ea" name="ae403abfe22dae3148786edc992a6d1ea"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae403abfe22dae3148786edc992a6d1ea">&#9670;&#160;</a></span>select() <span class="overload">[1/2]</span></h2>
+<a id="addc81a5593653666d16b2be71298ef9c" name="addc81a5593653666d16b2be71298ef9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#addc81a5593653666d16b2be71298ef9c">&#9670;&#160;</a></span>select() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename result_t, typename source_t&gt; </div>
+template&lt;class result_t, <a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3648,17 +3648,17 @@ template&lt;typename result_t, typename source_t&gt; </div>
         <tr>
           <td class="memname">auto xtd::linq::enumerable::select </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="#a2bd1889dc1967c50ef692411dc2c4b92">ienumerable</a>&lt; source_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>source</em></span>, </td>
+          <td class="paramtype">const source_t &amp;</td>          <td class="paramname"><span class="paramname"><em>source</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">auto &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>selector</em></span>&#160;)</td>
+          <td class="paramtype">auto &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>selector</em></span>&#160;) -&gt;  <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; result_t &gt;</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -3679,7 +3679,7 @@ template&lt;typename result_t, typename source_t&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt; whose elements are the result of invoking the transform function on each element of source. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to use <a class="el" href="#ae403abfe22dae3148786edc992a6d1ea" title="Projects each element of a sequence into a new form.">xtd::linq::enumerable::select</a> &lt;source_t, result_t&gt;(const ienumerable &lt;source_t&gt;&amp;, const std::function &lt;result_t(const source_t&amp;)&gt;&amp;) to project over a sequence of values. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to use <a class="el" href="#addc81a5593653666d16b2be71298ef9c" title="Projects each element of a sequence into a new form.">xtd::linq::enumerable::select</a> &lt;source_t, result_t&gt;(const ienumerable &lt;source_t&gt;&amp;, const std::function &lt;result_t(const source_t&amp;)&gt;&amp;) to project over a sequence of values. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> fruits = <a class="code hl_class" href="classxtd_1_1array.html">array&lt;string&gt;</a> {<span class="stringliteral">&quot;apple&quot;</span>, <span class="stringliteral">&quot;banana&quot;</span>, <span class="stringliteral">&quot;mango&quot;</span>, <span class="stringliteral">&quot;orange&quot;</span>, <span class="stringliteral">&quot;passionfruit&quot;</span>, <span class="stringliteral">&quot;grape&quot;</span>};</div>
@@ -3704,13 +3704,13 @@ template&lt;typename result_t, typename source_t&gt; </div>
 
 </div>
 </div>
-<a id="a76a5278a1b6c1bc366c00fffcd427ef6" name="a76a5278a1b6c1bc366c00fffcd427ef6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a76a5278a1b6c1bc366c00fffcd427ef6">&#9670;&#160;</a></span>select() <span class="overload">[2/2]</span></h2>
+<a id="a0c05b17d12da3b35f7a11f8e33ec0577" name="a0c05b17d12da3b35f7a11f8e33ec0577"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c05b17d12da3b35f7a11f8e33ec0577">&#9670;&#160;</a></span>select() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename source_t&gt; </div>
+template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3718,17 +3718,17 @@ template&lt;typename source_t&gt; </div>
         <tr>
           <td class="memname">auto xtd::linq::enumerable::select </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="#a2bd1889dc1967c50ef692411dc2c4b92">ienumerable</a>&lt; source_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>source</em></span>, </td>
+          <td class="paramtype">const source_t &amp;</td>          <td class="paramname"><span class="paramname"><em>source</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">auto &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>selector</em></span>&#160;)</td>
+          <td class="paramtype">auto &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>selector</em></span>&#160;) -&gt;  <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; &gt;</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -3749,7 +3749,7 @@ template&lt;typename source_t&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt; whose elements are the result of invoking the transform function on each element of source. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to use <a class="el" href="#ae403abfe22dae3148786edc992a6d1ea" title="Projects each element of a sequence into a new form.">xtd::linq::enumerable::select</a> &lt;source_t, result_t&gt;(const ienumerable &lt;source_t&gt;&amp;, const std::function &lt;result_t(const source_t&amp;, xtd::usize)&gt;&amp;) to project over a sequence of values and use the index of each element. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to use <a class="el" href="#addc81a5593653666d16b2be71298ef9c" title="Projects each element of a sequence into a new form.">xtd::linq::enumerable::select</a> &lt;source_t, result_t&gt;(const ienumerable &lt;source_t&gt;&amp;, const std::function &lt;result_t(const source_t&amp;, xtd::usize)&gt;&amp;) to project over a sequence of values and use the index of each element. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> fruits = <a class="code hl_class" href="classxtd_1_1array.html">array&lt;string&gt;</a> {<span class="stringliteral">&quot;apple&quot;</span>, <span class="stringliteral">&quot;banana&quot;</span>, <span class="stringliteral">&quot;mango&quot;</span>, <span class="stringliteral">&quot;orange&quot;</span>, <span class="stringliteral">&quot;passionfruit&quot;</span>, <span class="stringliteral">&quot;grape&quot;</span>};</div>
