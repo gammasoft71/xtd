@@ -124,16 +124,13 @@ struct xtd::forward_iterable&lt; value_t &gt;</div><p>Represents the forward ite
 <dl class="section user"><dt>Examples</dt><dd>The following code shows how to use <a class="el" href="structxtd_1_1forward__iterable.html" title="Represents the forward iterable concept.">xtd::forward_iterable</a> concept <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> int_generator() -&gt; enumerable_generator&lt;int&gt; {</div>
-<div class="line">  <span class="keyword">co_yield</span> 15;</div>
-<div class="line">  <span class="keyword">co_yield</span> 11;</div>
-<div class="line">  <span class="keyword">co_yield</span> 13;</div>
-<div class="line">  <span class="keyword">co_yield</span> 14;</div>
-<div class="line">  <span class="keyword">co_yield</span> 12;</div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> item : {15, 11, 13, 14, 12})</div>
+<div class="line">    <span class="keyword">co_yield</span> item;</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">template</span> &lt;forward_iterable iterable_t&gt;</div>
-<div class="line">[[nodiscard]] <span class="keyword">auto</span> iterate(<span class="keyword">const</span> iterable_t&amp; <a class="code hl_concept" href="conceptxtd_1_1iterable.html">iterable</a>) -&gt; enumerable_generator&lt;forward_iterable_value_type&lt;iterable_t&gt;&gt; {</div>
-<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; item : <a class="code hl_concept" href="conceptxtd_1_1iterable.html">iterable</a>)</div>
+<div class="line">[[nodiscard]] <span class="keyword">auto</span> iterate(<span class="keyword">const</span> iterable_t&amp; iterable) -&gt; enumerable_generator&lt;forward_iterable_value_type&lt;iterable_t&gt;&gt; {</div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; item : iterable)</div>
 <div class="line">    <span class="keyword">co_yield</span> item;</div>
 <div class="line">}</div>
 <div class="line"> </div>
@@ -163,7 +160,6 @@ struct xtd::forward_iterable&lt; value_t &gt;</div><p>Represents the forward ite
 <div class="line"><span class="comment">// 52</span></div>
 <div class="line"><span class="comment">// 56</span></div>
 <div class="line"><span class="comment">// 60</span></div>
-<div class="ttc" id="aconceptxtd_1_1iterable_html"><div class="ttname"><a href="conceptxtd_1_1iterable.html">xtd::iterable</a></div><div class="ttdef"><b>Definition</b> iterable.hpp:15</div></div>
 <div class="ttc" id="agroup__ranges_html_ga093ba4055ef4d95934c8a014fb7f2683"><div class="ttname"><a href="group__ranges.html#ga093ba4055ef4d95934c8a014fb7f2683">xtd::ranges::views::select</a></div><div class="ttdeci">constexpr auto select</div><div class="ttdoc">The xtd::ranges::views::select instance.</div><div class="ttdef"><b>Definition</b> select.hpp:40</div></div>
 <div class="ttc" id="anamespacextd_html_a9482c5e9fb1d60c658bbe28bfbb17353"><div class="ttname"><a href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">xtd::println</a></div><div class="ttdeci">auto println(FILE *file) -&gt; void</div><div class="ttdoc">Writes the current line terminator to the file output stream using the specified format information.</div><div class="ttdef"><b>Definition</b> println.hpp:14</div></div>
 </div><!-- fragment --> </dd></dl>

@@ -110,11 +110,8 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> int_generator() -&gt; enumerable_generator&lt;int&gt; {</div>
-<div class="line">  <span class="keyword">co_yield</span> 15;</div>
-<div class="line">  <span class="keyword">co_yield</span> 11;</div>
-<div class="line">  <span class="keyword">co_yield</span> 13;</div>
-<div class="line">  <span class="keyword">co_yield</span> 14;</div>
-<div class="line">  <span class="keyword">co_yield</span> 12;</div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> item : {15, 11, 13, 14, 12})</div>
+<div class="line">    <span class="keyword">co_yield</span> item;</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">template</span> &lt;forward_iterable iterable_t&gt;</div>

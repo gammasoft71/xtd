@@ -206,6 +206,9 @@ Public Static Methods</h2></td></tr>
 <tr class="memitem:a6281ded648c0ac94502dab747e48b0d3" id="r_a6281ded648c0ac94502dab747e48b0d3"><td class="memTemplParams" colspan="2">template&lt;typename key_t, <a class="el" href="structxtd_1_1callable.html">xtd::callable</a>&lt; key_t, value_t &gt; key_selector_t&gt; </td></tr>
 <tr class="memitem:a6281ded648c0ac94502dab747e48b0d3 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a6281ded648c0ac94502dab747e48b0d3">count_by</a> (key_selector_t &amp;&amp;key_selector, <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html">xtd::collections::generic::iequality_comparer</a>&lt; key_t &gt; &amp;&amp;key_comparer) const noexcept</td></tr>
 <tr class="memdesc:a6281ded648c0ac94502dab747e48b0d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the count of elements in the current sequence grouped by key.  <br /></td></tr>
+<tr class="memitem:a38f25371c64202f71a7c97c6eaefb342" id="r_a38f25371c64202f71a7c97c6eaefb342"><td class="memTemplParams" colspan="2">template&lt;typename key_t, <a class="el" href="structxtd_1_1callable.html">xtd::callable</a>&lt; key_t, value_t &gt; key_selector_t, <a class="el" href="structxtd_1_1callable.html">xtd::callable</a>&lt; bool, key_t, key_t &gt; key_equater_t&gt; </td></tr>
+<tr class="memitem:a38f25371c64202f71a7c97c6eaefb342 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a38f25371c64202f71a7c97c6eaefb342">count_by</a> (key_selector_t &amp;&amp;key_selector, key_equater_t &amp;&amp;key_equater) const noexcept</td></tr>
+<tr class="memdesc:a38f25371c64202f71a7c97c6eaefb342"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the count of elements in the current sequence grouped by key.  <br /></td></tr>
 <tr class="memitem:ad017f7fee584b2bb491636902dac19f0" id="r_ad017f7fee584b2bb491636902dac19f0"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ad017f7fee584b2bb491636902dac19f0">default_if_empty</a> () const noexcept</td></tr>
 <tr class="memdesc:ad017f7fee584b2bb491636902dac19f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the elements of the specified sequence or the type parameter's default value in a singleton collection if the current sequence is empty.  <br /></td></tr>
 <tr class="memitem:a1786f19fb14afa3bdb63a2598a46f045" id="r_a1786f19fb14afa3bdb63a2598a46f045"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a1786f19fb14afa3bdb63a2598a46f045">default_if_empty</a> (value_t &amp;&amp;default_value) const noexcept</td></tr>
@@ -1229,7 +1232,7 @@ template&lt;typename enumerable_t, typename value_t&gt; </div>
 </div>
 </div>
 <a id="a78574cb2a389dbb28bd97c81f2e40a81" name="a78574cb2a389dbb28bd97c81f2e40a81"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a78574cb2a389dbb28bd97c81f2e40a81">&#9670;&#160;</a></span>count_by() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a78574cb2a389dbb28bd97c81f2e40a81">&#9670;&#160;</a></span>count_by() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1269,7 +1272,7 @@ template&lt;typename key_t, <a class="el" href="structxtd_1_1callable.html">xtd:
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An enumerable containing the frequencies of each key occurrence in current sequence. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to use <a class="el" href="classxtd_1_1linq_1_1enumerable.html#ac4fcd2e099e280f4c2c6cdfa9ce2423b" title="Returns the count of elements in the source sequence grouped by key.">xtd::linq::enumerable::count_by</a> &lt;value_t&gt;(const ienumerable &lt;value_t&gt;&amp;, const std::function &lt;key_t(const value_t&amp;)&gt;&amp;) to count the number of elements in a sequence grouped by key. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to use <a class="el" href="classxtd_1_1linq_1_1enumerable.html#a24153c0252345bc22b0c6569fb3b8e28" title="Returns the count of elements in the source sequence grouped by key.">xtd::linq::enumerable::count_by</a> &lt;value_t&gt;(const ienumerable &lt;value_t&gt;&amp;, const std::function &lt;key_t(const value_t&amp;)&gt;&amp;) to count the number of elements in a sequence grouped by key. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">struct </span>student : <a class="code hl_class" href="classxtd_1_1iequatable.html">iequatable</a>&lt;student&gt; {</div>
 <div class="line">  student() = <span class="keywordflow">default</span>;</div>
@@ -1314,7 +1317,7 @@ template&lt;typename key_t, <a class="el" href="structxtd_1_1callable.html">xtd:
 </div>
 </div>
 <a id="a6281ded648c0ac94502dab747e48b0d3" name="a6281ded648c0ac94502dab747e48b0d3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6281ded648c0ac94502dab747e48b0d3">&#9670;&#160;</a></span>count_by() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a6281ded648c0ac94502dab747e48b0d3">&#9670;&#160;</a></span>count_by() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1359,7 +1362,91 @@ template&lt;typename key_t, <a class="el" href="structxtd_1_1callable.html">xtd:
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An enumerable containing the frequencies of each key occurrence in current sequence. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to use <a class="el" href="classxtd_1_1linq_1_1enumerable.html#ac4fcd2e099e280f4c2c6cdfa9ce2423b" title="Returns the count of elements in the source sequence grouped by key.">xtd::linq::enumerable::count_by</a> &lt;value_t&gt;(const ienumerable &lt;value_t&gt;&amp;, const std::function &lt;key_t(const value_t&amp;)&gt;&amp;) to count the number of elements in a sequence grouped by key. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to use <a class="el" href="classxtd_1_1linq_1_1enumerable.html#a24153c0252345bc22b0c6569fb3b8e28" title="Returns the count of elements in the source sequence grouped by key.">xtd::linq::enumerable::count_by</a> &lt;value_t&gt;(const ienumerable &lt;value_t&gt;&amp;, const std::function &lt;key_t(const value_t&amp;)&gt;&amp;) to count the number of elements in a sequence grouped by key. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">struct </span>student : <a class="code hl_class" href="classxtd_1_1iequatable.html">iequatable</a>&lt;student&gt; {</div>
+<div class="line">  student() = <span class="keywordflow">default</span>;</div>
+<div class="line">  student(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; name, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; score) : name {name}, score {score} {}</div>
+<div class="line">  </div>
+<div class="line">  <span class="keywordtype">string</span> name;</div>
+<div class="line">  <span class="keywordtype">string</span> score;</div>
+<div class="line">  </div>
+<div class="line">  <span class="keywordtype">bool</span> <a class="code hl_function" href="classxtd_1_1iequatable.html#a3384503ae1dcbd8796549e4c04cbf1d9">equals</a>(<span class="keyword">const</span> student&amp; other) <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {</div>
+<div class="line">    <span class="keywordflow">return</span> name == <a class="code hl_enumvalue" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>.name &amp;&amp; score == <a class="code hl_enumvalue" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>.score;</div>
+<div class="line">  }</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="keyword">auto</span> students = <a class="code hl_class" href="classxtd_1_1array.html">array&lt;student&gt;</a> {</div>
+<div class="line">    {<span class="stringliteral">&quot;Alice&quot;</span>, <span class="stringliteral">&quot;A&quot;</span>},</div>
+<div class="line">    {<span class="stringliteral">&quot;Bob&quot;</span>, <span class="stringliteral">&quot;B&quot;</span>},</div>
+<div class="line">    {<span class="stringliteral">&quot;Charlie&quot;</span>, <span class="stringliteral">&quot;C&quot;</span>},</div>
+<div class="line">    {<span class="stringliteral">&quot;David&quot;</span>, <span class="stringliteral">&quot;B&quot;</span>},</div>
+<div class="line">    {<span class="stringliteral">&quot;Eve&quot;</span>, <span class="stringliteral">&quot;A&quot;</span>}</div>
+<div class="line">  };</div>
+<div class="line">  </div>
+<div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span>&amp; <a class="code hl_enumvalue" href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba1b1cc7f086b3f074da452bc3129981eb">query</a> = students.count_by&lt;<span class="keywordtype">string</span>&gt;(<a class="code hl_variable" href="group__expressions.html#ga130423906ed7125e321bf42e00dafae9">_</a>*<a class="code hl_function" href="group__expressions.html#ga582c6dbb71dfc746f9e4b69ba90ed2b6">member</a>(&amp;student::score));</div>
+<div class="line">  </div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; [score, count] : query)</div>
+<div class="line">    console::write_line(<span class="stringliteral">&quot;Students with a {}-score: {}&quot;</span>, score, count);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Students with a A-score: 2</span></div>
+<div class="line"><span class="comment">// Students with a B-score: 2</span></div>
+<div class="line"><span class="comment">// Students with a C-score: 1</span></div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="a38f25371c64202f71a7c97c6eaefb342" name="a38f25371c64202f71a7c97c6eaefb342"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38f25371c64202f71a7c97c6eaefb342">&#9670;&#160;</a></span>count_by() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename enumerable_t, typename value_t&gt; </div>
+<div class="memtemplate">
+template&lt;typename key_t, <a class="el" href="structxtd_1_1callable.html">xtd::callable</a>&lt; key_t, value_t &gt; key_selector_t, <a class="el" href="structxtd_1_1callable.html">xtd::callable</a>&lt; bool, key_t, key_t &gt; key_equater_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html">xtd::collections::generic::extensions::enumerable</a>&lt; enumerable_t, value_t &gt;::count_by </td>
+          <td>(</td>
+          <td class="paramtype">key_selector_t &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>key_selector</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">key_equater_t &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>key_equater</em></span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the count of elements in the current sequence grouped by key. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">key_t</td><td>The type of the key returned by <span class="tt">key_selector</span>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key_selector</td><td>A function to extract the key for each element. </td></tr>
+    <tr><td class="paramname">key_comparer</td><td>An equality comparer to compare keys. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An enumerable containing the frequencies of each key occurrence in current sequence. </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to use <a class="el" href="classxtd_1_1linq_1_1enumerable.html#a24153c0252345bc22b0c6569fb3b8e28" title="Returns the count of elements in the source sequence grouped by key.">xtd::linq::enumerable::count_by</a> &lt;value_t&gt;(const ienumerable &lt;value_t&gt;&amp;, const std::function &lt;key_t(const value_t&amp;)&gt;&amp;) to count the number of elements in a sequence grouped by key. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">struct </span>student : <a class="code hl_class" href="classxtd_1_1iequatable.html">iequatable</a>&lt;student&gt; {</div>
 <div class="line">  student() = <span class="keywordflow">default</span>;</div>
@@ -2102,7 +2189,7 @@ template&lt;typename enumerable_t, typename value_t&gt; </div>
 <div class="line"><span class="comment">// 5</span></div>
 <div class="line"><span class="comment">// 10</span></div>
 <div class="ttc" id="aclassxtd_1_1basic__string_html_a4d8c4c95a122844c62de3feb62a5fa74"><div class="ttname"><a href="classxtd_1_1basic__string.html#a4d8c4c95a122844c62de3feb62a5fa74">xtd::basic_string&lt; char &gt;::length</a></div><div class="ttdeci">virtual auto length() const noexcept -&gt; size_type</div><div class="ttdef"><b>Definition</b> basic_string.hpp:383</div></div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable_html_a6c427bcad9b8206141eb6cdc5fa98435"><div class="ttname"><a href="#a6c427bcad9b8206141eb6cdc5fa98435">xtd::collections::generic::extensions::enumerable::select</a></div><div class="ttdeci">auto select(auto &amp;&amp;selector) const</div><div class="ttdoc">Projects each element of a sequence into a new form.</div><div class="ttdef"><b>Definition</b> enumerable.hpp:390</div></div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable_html_a6c427bcad9b8206141eb6cdc5fa98435"><div class="ttname"><a href="#a6c427bcad9b8206141eb6cdc5fa98435">xtd::collections::generic::extensions::enumerable::select</a></div><div class="ttdeci">auto select(auto &amp;&amp;selector) const</div><div class="ttdoc">Projects each element of a sequence into a new form.</div><div class="ttdef"><b>Definition</b> enumerable.hpp:399</div></div>
 <div class="ttc" id="agroup__types_html_gae60f5a861761019d824a87291f85d525"><div class="ttname"><a href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></div><div class="ttdeci">std::size_t usize</div><div class="ttdoc">Represents an unsigned size of any object in bytes.</div><div class="ttdef"><b>Definition</b> usize.hpp:22</div></div>
 <div class="ttc" id="anamespacextd_html_a84689e2cdf94d64f7e5f33fe4a1be71a"><div class="ttname"><a href="namespacextd.html#a84689e2cdf94d64f7e5f33fe4a1be71a">xtd::length</a></div><div class="ttdeci">constexpr auto length() const noexcept -&gt; size_type</div><div class="ttdoc">Returns the length of the current read_only_span.</div><div class="ttdef"><b>Definition</b> read_only_span.hpp:212</div></div>
 </div><!-- fragment --> </dd></dl>
