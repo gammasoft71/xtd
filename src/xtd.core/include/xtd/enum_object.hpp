@@ -348,14 +348,14 @@ namespace xtd {
     /// @{
     /// @brief Retrieves an array of the xtd::enum_collection<enum_t> of the constants in a specified enumeration.
     /// @return A xtd::string array of the values and names of the constants in enumType.
-    template<class enum_t>
+    template<typename enum_t>
     [[nodiscard]] static auto get_entries() noexcept -> const xtd::enum_collection<enum_t>& {
       return enum_object<enum_t>().entries();
     }
     
     /// @brief Retrieves an array of the xtd::enum_collection<xtd::byte> of the constants in a specified enumeration.
     /// @return A xtd::string array of the values and names of the constants in enumType.
-    template<class enum_t>
+    template<typename enum_t>
     [[nodiscard]] static auto get_entries_as_byte() noexcept -> xtd::enum_collection<xtd::byte> {
       xtd::enum_collection<xtd::byte> entries;
       std::for_each(enum_object<enum_t>().entries().begin(), enum_object<enum_t>().entries().end(), [&](auto entry) {entries.emplace_back(enum_object<enum_t>(entry.first).to_byte(), entry.second);});
@@ -364,7 +364,7 @@ namespace xtd {
     
     /// @brief Retrieves an array of the xtd::enum_collection<int16> of the constants in a specified enumeration.
     /// @return A xtd::string array of the values and names of the constants in enumType.
-    template<class enum_t>
+    template<typename enum_t>
     [[nodiscard]] static auto get_entries_as_int16() noexcept -> xtd::enum_collection<xtd::int16> {
       xtd::enum_collection<xtd::int16> entries;
       std::for_each(enum_object<enum_t>().entries().begin(), enum_object<enum_t>().entries().end(), [&](auto entry) {entries.emplace_back(enum_object<enum_t>(entry.first).to_int16(), entry.second);});
@@ -373,7 +373,7 @@ namespace xtd {
     
     /// @brief Retrieves an array of the xtd::enum_collection<int32> of the constants in a specified enumeration.
     /// @return A xtd::string array of the values and names of the constants in enumType.
-    template<class enum_t>
+    template<typename enum_t>
     [[nodiscard]] static auto get_entries_as_int32() noexcept -> xtd::enum_collection<xtd::int32> {
       xtd::enum_collection<xtd::int32> entries;
       std::for_each(enum_object<enum_t>().entries().begin(), enum_object<enum_t>().entries().end(), [&](auto entry) {entries.emplace_back(enum_object<enum_t>(entry.first).to_int32(), entry.second);});
@@ -382,7 +382,7 @@ namespace xtd {
     
     /// @brief Retrieves an array of the xtd::enum_collection<int64> of the constants in a specified enumeration.
     /// @return A xtd::string array of the values and names of the constants in enumType.
-    template<class enum_t>
+    template<typename enum_t>
     [[nodiscard]] static auto get_entries_as_int64() noexcept -> xtd::enum_collection<xtd::int64> {
       xtd::enum_collection<xtd::int64> entries;
       std::for_each(enum_object<enum_t>().entries().begin(), enum_object<enum_t>().entries().end(), [&](auto entry) {entries.emplace_back(enum_object<enum_t>(entry.first).to_int64(), entry.second);});
@@ -391,7 +391,7 @@ namespace xtd {
     
     /// @brief Retrieves an array of the xtd::enum_collection<sbyte> of the constants in a specified enumeration.
     /// @return A xtd::string array of the values and names of the constants in enumType.
-    template<class enum_t>
+    template<typename enum_t>
     [[nodiscard]] static auto get_entries_as_sbyte() noexcept -> xtd::enum_collection<xtd::sbyte> {
       xtd::enum_collection<xtd::sbyte> entries;
       std::for_each(enum_object<enum_t>().entries().begin(), enum_object<enum_t>().entries().end(), [&](auto entry) {entries.emplace_back(enum_object<enum_t>(entry.first).to_sbyte(), entry.second);});
@@ -400,7 +400,7 @@ namespace xtd {
     
     /// @brief Retrieves an array of the xtd::enum_collection<uint16> of the constants in a specified enumeration.
     /// @return A xtd::string array of the values and names of the constants in enumType.
-    template<class enum_t>
+    template<typename enum_t>
     [[nodiscard]] static auto get_entries_as_uint16() noexcept -> xtd::enum_collection<xtd::uint16> {
       xtd::enum_collection<xtd::uint16> entries;
       std::for_each(enum_object<enum_t>().entries().begin(), enum_object<enum_t>().entries().end(), [&](auto entry) {entries.emplace_back(enum_object<enum_t>(entry.first).to_uint16(), entry.second);});
@@ -409,7 +409,7 @@ namespace xtd {
     
     /// @brief Retrieves an array of the xtd::enum_collection<uint32> of the constants in a specified enumeration.
     /// @return A xtd::string array of the values and names of the constants in enumType.
-    template<class enum_t>
+    template<typename enum_t>
     [[nodiscard]] static auto get_entries_as_uint32() noexcept -> xtd::enum_collection<xtd::uint32> {
       xtd::enum_collection<xtd::uint32> entries;
       std::for_each(enum_object<enum_t>().entries().begin(), enum_object<enum_t>().entries().end(), [&](auto entry) {entries.emplace_back(enum_object<enum_t>(entry.first).to_uint32(), entry.second);});
@@ -418,7 +418,7 @@ namespace xtd {
     
     /// @brief Retrieves an array of the xtd::enum_collection<uint64> of the constants in a specified enumeration.
     /// @return A xtd::string array of the values and names of the constants in enumType.
-    template<class enum_t>
+    template<typename enum_t>
     [[nodiscard]] static auto get_entries_as_uint64() noexcept -> xtd::enum_collection<xtd::uint64> {
       xtd::enum_collection<xtd::uint64> entries;
       std::for_each(enum_object<enum_t>().entries().begin(), enum_object<enum_t>().entries().end(), [&](auto entry) {entries.emplace_back(enum_object<enum_t>(entry.first).to_uint64(), entry.second);});
@@ -429,31 +429,31 @@ namespace xtd {
     /// @param value The value of a particular enumerated constant in terms of its underlying type.
     /// @return A xtd::string containing the name of the enumerated constant in enumType whose value is value; or the value xtd::int32 to xtd::string if no such constant is found.
     /// @exception xtd::argument_exception The value is not a value of enumType.
-    template<class enum_t>
+    template<typename enum_t>
     [[nodiscard]] static auto get_name(enum_t value) noexcept -> xtd::string {return enum_object<enum_t>(value).to_string();}
     /// @brief Retrieves the name of the constant in the specified enumeration that has the specified value.
     /// @param value The value of a particular enumerated constant in terms of its underlying type.
     /// @return xtd::string A xtd::string containing the name of the enumerated constant in enumType whose value is value; or the value xtd::int32 to xtd::string if no such constant is found.
     /// @exception xtd::argument_exception The value is not a value of enumType.
-    template<class enum_t>
+    template<typename enum_t>
     [[nodiscard]] static auto get_name(enum_object<enum_t> value) noexcept -> xtd::string {return enum_object<enum_t>(value).to_string();}
     /// @brief Retrieves the name of the constant in the specified enumeration that has the specified value.
     /// @param value The value of a particular enumerated constant in terms of its underlying type.
     /// @return xtd::string A xtd::string containing the name of the enumerated constant in enumType whose value is value; or the value xtd::int32 to xtd::string if no such constant is found.
     /// @exception xtd::argument_exception The value is not a value of enumType.
-    template<class enum_t>
+    template<typename enum_t>
     [[nodiscard]] static auto get_name(int32 value) noexcept -> xtd::string {return enum_object<enum_t>(value).to_string();}
     /// @brief Retrieves the name of the constant in the specified enumeration that has the specified value.
     /// @param value The value of a particular enumerated constant in terms of its underlying type.
     /// @return A xtd::string containing the name of the enumerated constant in enumType whose value is value; or the value xtd::int32 to xtd::string if no such constant is found.
     /// @exception xtd::argument_exception The value is not a value of enumType.
-    template<class enum_t>
+    template<typename enum_t>
     [[nodiscard]] static auto get_name(int64 value) noexcept -> xtd::string {return enum_object<enum_t>(value).to_string();}
     
     /// @brief Retrieves an array of the names of the constants in a specified enumeration.
     /// @return A xtd::string array of the names of the constants in enumType.
     /// @exception xtd::argument_exception The value is not a value of enumType.
-    template<class enum_t>
+    template<typename enum_t>
     [[nodiscard]] static auto get_names() noexcept -> xtd::array<xtd::string> {
       auto names = xtd::array<xtd::string> {};
       std::for_each(enum_object<enum_t>().entries().begin(), enum_object<enum_t>().entries().end(), [&](auto entry) {names.resize(names.length() + 1, entry.second);});
@@ -463,7 +463,7 @@ namespace xtd {
     /// @brief Retrieves an array of the values of the constants in a specified enumeration.
     /// @return Array<enum_t> An array that contains the values of the constants in enumType.
     /// @exception xtd::argument_exception The value is not a value of enumType.
-    template<class enum_t>
+    template<typename enum_t>
     [[nodiscard]] static auto get_values() noexcept -> xtd::array<enum_t> {
       auto values = xtd::array<enum_t> {};
       std::for_each(enum_object<enum_t>().entries().begin(), enum_object<enum_t>().entries().end(), [&](auto entry) {values.resize(values.length() + 1, entry.first);});
@@ -473,7 +473,7 @@ namespace xtd {
     /// @brief Retrieves an array of the values of the constants in a specified enumeration.
     /// @return Array<xtd::byte> An array that contains the values of the constants in enumType.
     /// @exception xtd::argument_exception The value is not a value of enumType.
-    template<class enum_t>
+    template<typename enum_t>
     [[nodiscard]] static auto get_values_as_byte() noexcept -> xtd::array<xtd::byte> {
       auto values = xtd::array<xtd::byte> {};
       std::for_each(enum_object<enum_t>().entries().begin(), enum_object<enum_t>().entries().end(), [&](auto entry) {values.resize(values.length() + 1, enum_object<enum_t>(entry.first).to_byte());});
@@ -483,7 +483,7 @@ namespace xtd {
     /// @brief Retrieves an array of the values of the constants in a specified enumeration.
     /// @return Array<int16> An array that contains the values of the constants in enumType.
     /// @exception xtd::argument_exception The value is not a value of enumType.
-    template<class enum_t>
+    template<typename enum_t>
     [[nodiscard]] static auto get_values_as_int16() noexcept -> xtd::array<xtd::int16> {
       auto values = xtd::array<xtd::int16> {};
       std::for_each(enum_object<enum_t>().entries().begin(), enum_object<enum_t>().entries().end(), [&](auto entry) {values.resize(values.length() + 1, enum_object<enum_t>(entry.first).to_int16());});
@@ -493,7 +493,7 @@ namespace xtd {
     /// @brief Retrieves an array of the values of the constants in a specified enumeration.
     /// @return Array<int32> An array that contains the values of the constants in enumType.
     /// @exception xtd::argument_exception The value is not a value of enumType.
-    template<class enum_t>
+    template<typename enum_t>
     [[nodiscard]] static auto get_values_as_int32() noexcept -> xtd::array<xtd::int32> {
       auto values = xtd::array<xtd::int32> {};
       std::for_each(enum_object<enum_t>().entries().begin(), enum_object<enum_t>().entries().end(), [&](auto entry) {values.resize(values.length() + 1, enum_object<enum_t>(entry.first).to_int32());});
@@ -503,7 +503,7 @@ namespace xtd {
     /// @brief Retrieves an array of the values of the constants in a specified enumeration.
     /// @return Array<int64> An array that contains the values of the constants in enumType.
     /// @exception xtd::argument_exception The value is not a value of enumType.
-    template<class enum_t>
+    template<typename enum_t>
     [[nodiscard]] static auto get_values_as_int64() noexcept -> xtd::array<xtd::int64> {
       auto values = xtd::array<xtd::int64> {};
       std::for_each(enum_object<enum_t>().entries().begin(), enum_object<enum_t>().entries().end(), [&](auto entry) {values.resize(values.length() + 1, enum_object<enum_t>(entry.first).to_int64());});
@@ -513,7 +513,7 @@ namespace xtd {
     /// @brief Retrieves an array of the values of the constants in a specified enumeration.
     /// @return Array<sbyte> An array that contains the values of the constants in enumType.
     /// @exception xtd::argument_exception The value is not a value of enumType.
-    template<class enum_t>
+    template<typename enum_t>
     [[nodiscard]] static auto get_values_as_sbyte() noexcept -> xtd::array<xtd::sbyte> {
       auto values = xtd::array<xtd::sbyte> {};
       std::for_each(enum_object<enum_t>().entries().begin(), enum_object<enum_t>().entries().end(), [&](auto entry) {values.resize(values.length() + 1, enum_object<enum_t>(entry.first).to_sbyte());});
@@ -523,7 +523,7 @@ namespace xtd {
     /// @brief Retrieves an array of the values of the constants in a specified enumeration.
     /// @return Array<uint16> An array that contains the values of the constants in enumType.
     /// @exception xtd::argument_exception The value is not a value of enumType.
-    template<class enum_t>
+    template<typename enum_t>
     [[nodiscard]] static auto get_values_as_uint16() noexcept -> xtd::array<xtd::uint16> {
       auto values = xtd::array<xtd::uint16> {};
       std::for_each(enum_object<enum_t>().entries().begin(), enum_object<enum_t>().entries().end(), [&](auto entry) {values.resize(values.length() + 1, enum_object<enum_t>(entry.first).to_uint16());});
@@ -533,7 +533,7 @@ namespace xtd {
     /// @brief Retrieves an array of the values of the constants in a specified enumeration.
     /// @return Array<uint32> An array that contains the values of the constants in enumType.
     /// @exception xtd::argument_exception The value is not a value of enumType.
-    template<class enum_t>
+    template<typename enum_t>
     [[nodiscard]] static auto get_values_as_uint32() noexcept -> xtd::array<xtd::uint32> {
       auto values = xtd::array<xtd::uint32> {};
       std::for_each(enum_object<enum_t>().entries().begin(), enum_object<enum_t>().entries().end(), [&](auto entry) {values.resize(values.length() + 1, enum_object<enum_t>(entry.first).to_uint32());});
@@ -543,7 +543,7 @@ namespace xtd {
     /// @brief Retrieves an array of the values of the constants in a specified enumeration.
     /// @return Array<uint64> An array that contains the values of the constants in enumType.
     /// @exception xtd::argument_exception The value is not a value of enumType.
-    template<class enum_t>
+    template<typename enum_t>
     [[nodiscard]] static auto get_values_as_uint64() noexcept -> xtd::array<xtd::uint64> {
       auto values = xtd::array<xtd::uint64> {};
       std::for_each(enum_object<enum_t>().entries().begin(), enum_object<enum_t>().entries().end(), [&](auto entry) {values.resize(values.length() + 1, enum_object<enum_t>(entry.first).to_uint64());});
@@ -554,27 +554,27 @@ namespace xtd {
     /// @param fromValue An enumeration value.
     /// @return `true` if a constant in enumType has a value equal to value; otherwise, `false`.
     /// @exception xtd::argument_exception The value is not a value of enumType.
-    template<class enum_t>
+    template<typename enum_t>
     [[nodiscard]] static auto is_defined(enum_t value) noexcept -> bool {return std::find_if(enum_object<enum_t>().entries().begin(), enum_object<enum_t>().entries().end(), [&](auto item)->bool {return item.first == value;}) != enum_object<enum_t>().entries().end();}
     /// @brief Returns an indication whether a constant with a specified value exists in a specified enumeration.
     /// @param fromValue An enumeration value.
     /// @return `true` if a constant in enumType has a value equal to value; otherwise, `false`.
     /// @exception xtd::argument_exception The value is not a value of enumType.
-    template<class enum_t>
+    template<typename enum_t>
     [[nodiscard]] static auto is_defined(enum_object<enum_t>value) noexcept -> bool {return std::find_if(enum_object<enum_t>().entries().begin(), enum_object<enum_t>().entries().end(), [&](auto item)->bool {return item.first == value;}) != enum_object<enum_t>().entries().end();}
     
     /// @brief Converts the xtd::string representation of the name or numeric value of one or more enumerated constants to an equivalent enumerated object.
     /// @param value An A xtd::string containing the name or value to convert.
     /// @return enum_object An enum whose value is represented by value.
     /// @exception xtd::argument_exception The value is not a value of enumType.
-    template<class enum_t>
+    template<typename enum_t>
     [[nodiscard]] static auto parse(const xtd::string & value) -> enum_t {return parse<enum_t>(value, false);}
     /// @brief Converts the xtd::string representation of the name or numeric value of one or more enumerated constants to an equivalent enumerated object.
     /// @param str An A xtd::string containing the name or value to convert.
     /// @param ignore_case `true` to Ignore case; `false` to regard case.
     /// @return enum_object An enum whose value is represented by value.
     /// @exception xtd::argument_exception The value is not a value of enumType.
-    template<class enum_t>
+    template<typename enum_t>
     [[nodiscard]] static auto parse(const xtd::string & str, bool ignore_case) -> enum_t {
       return enum_object<enum_t>::parse(str, ignore_case);
     }
@@ -582,62 +582,62 @@ namespace xtd {
     /// @brief Converts this instance to byte.
     /// @return A new xtd::byte object converted from this instance.
     /// @param value The value to convert.
-    template<class enum_t>
+    template<typename enum_t>
     [[nodiscard]] static auto to_byte(enum_t value) noexcept -> xtd::byte {return enum_object<enum_t>(value).to_byte();}
     
     /// @brief Converts this instance to int16.
     /// @param value The value to convert.
     /// @return A new to_int16 object converted from this instance.
-    template<class enum_t>
+    template<typename enum_t>
     [[nodiscard]] static auto to_int16(enum_t value) noexcept -> xtd::int16 {return enum_object<enum_t>(value).to_int16();}
     
     /// @brief Converts this instance to int32.
     /// @param value The value to convert.
     /// @return A new to_int32 object converted from this instance.
-    template<class enum_t>
+    template<typename enum_t>
     [[nodiscard]] static auto to_int32(enum_t value) noexcept -> xtd::int32 {return enum_object<enum_t>(value).to_int32();}
     
     /// @brief Converts this instance to int64.
     /// @param value The value to convert.
     /// @return A new to_int64 object converted from this instance.
-    template<class enum_t>
+    template<typename enum_t>
     [[nodiscard]] static auto to_int64(enum_t value) noexcept -> xtd::int64 {return enum_object<enum_t>(value).to_int64();}
     
     /// @brief Converts this instance to signed byte.
     /// @param value The value to convert.
     /// @return A new xtd::sbyte object converted from this instance.
-    template<class enum_t>
+    template<typename enum_t>
     [[nodiscard]] static auto to_sbyte(enum_t value) noexcept -> xtd::sbyte {return enum_object<enum_t>(value).to_sbyte();}
     
     /// @brief Converts this instance to string.
     /// @param value The value to convert.
     /// @return A new xtd::string converted from this instance.
-    template<class enum_t>
+    template<typename enum_t>
     [[nodiscard]] static auto to_string(enum_t value) noexcept -> xtd::string {return enum_object<enum_t>(value).to_string();}
     
     /// @brief Converts this instance to unsigned int16.
     /// @param value The value to convert.
     /// @return A new to_uint16 object converted from this instance.
-    template<class enum_t>
+    template<typename enum_t>
     [[nodiscard]] static auto to_uint16(enum_t value) noexcept -> xtd::uint16 {return enum_object<enum_t>(value).to_uint16();}
     
     /// @brief Converts this instance to unsigned int32.
     /// @param value The value to convert.
     /// @return A new to_uint32 object converted from this instance.
-    template<class enum_t>
+    template<typename enum_t>
     [[nodiscard]] static auto to_uint32(enum_t value) noexcept -> xtd::uint32 {return enum_object<enum_t>(value).to_uint32();}
     
     /// @brief Converts this instance to unsigned int64.
     /// @param value The value to convert.
     /// @return A new to_uint64 object converted from this instance.
-    template<class enum_t>
+    template<typename enum_t>
     [[nodiscard]] static auto to_uint64(enum_t value) noexcept -> xtd::uint64 {return enum_object<enum_t>(value).to_uint64();}
     
     /// @brief Converts the xtd::string representation of the name or numeric value of one or more enumerated constants to an equivalent enumerated object. The return value indicates whether the conversion succeeded.
     /// @param vaue The xtd::string representation of the enumeration name or underlying value to convert.
     /// @param reslt When this method returns, result contains an object of type TEnum whose value is represented by value if the parse operation succeeds. If the parse operation fails, result contains the default value of the underlying type of TEnum. Note that this value need not be a member of the TEnum enumeration. This parameter is passed uninitialized.
     /// @return `true` if the value parameter was converted successfully; otherwise, `false`.
-    template<class enum_t>
+    template<typename enum_t>
     [[nodiscard]] static auto try_parse(const xtd::string & value, enum_t& result) noexcept -> bool {return try_parse<enum_t>(value, false, result);}
     
     /// @brief Converts the xtd::string representation of the name or numeric value of one or more enumerated constants to an equivalent enumerated object. A parameter specifies whether the operation is case-sensitive. The return value indicates whether the conversion succeeded.
@@ -645,7 +645,7 @@ namespace xtd {
     /// @param ignore_case `true` to Ignore case; `false` to regard case.
     /// @param reslt When this method returns, result contains an object of type TEnum whose value is represented by value if the parse operation succeeds. If the parse operation fails, result contains the default value of the underlying type of TEnum. Note that this value need not be a member of the TEnum enumeration. This parameter is passed uninitialized.
     /// @return `true` if the value parameter was converted successfully; otherwise, `false`.
-    template<class enum_t>
+    template<typename enum_t>
     [[nodiscard]] static auto try_parse(const xtd::string & value, bool ignore_case, enum_t& result) noexcept -> bool {
       try {
         result = parse<enum_t>(value, ignore_case);
@@ -660,12 +660,12 @@ namespace xtd {
 }
 
 /// @cond
-template<class enum_t>
+template<typename enum_t>
 [[nodiscard]] inline auto __enum_to_string__(enum_t value) noexcept -> std::string {
   return xtd::enum_object<>::get_name(value);
 }
 
-template<class value_t>
+template<typename value_t>
 [[nodiscard]] inline auto __parse_enum(const std::string& str) -> value_t {
   return xtd::enum_object<>::parse<value_t> (str);
 }

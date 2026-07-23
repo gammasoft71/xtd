@@ -28,7 +28,7 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core expressions
     /// @remarks The xtd::expressions::as_expression method is used by xtd::expressions operators.
-    template <typename type_t>
+    template<typename type_t>
     requires expression_operand<type_t>
     constexpr decltype(auto) as_expression(type_t&& value) {
       return std::forward<type_t>(value);
@@ -46,7 +46,7 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core expressions
     /// @remarks The xtd::expressions::as_expression method is used by xtd::expressions operators.
-    template <typename type_t>
+    template<typename type_t>
     requires (!expression_operand<type_t>)
     constexpr auto as_expression(type_t&& value) {
       return xtd::expressions::value<std::decay_t<type_t>> {std::forward<type_t>(value)};

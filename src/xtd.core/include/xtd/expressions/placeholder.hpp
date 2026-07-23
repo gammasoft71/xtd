@@ -74,7 +74,7 @@ namespace xtd {
       /// @{
       /// @brief Gets the placeholder value.
       /// @return The placeholder value.
-      template <typename... args_t>
+      template<typename... args_t>
       constexpr decltype(auto) operator()(args_t&&... args) const {
         return std::get<index - 1>(std::forward_as_tuple(std::forward<args_t>(args)...));
       }

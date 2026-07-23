@@ -19,7 +19,7 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core expressions
-    template <typename expression_t>
+    template<typename expression_t>
     struct expression_stream {
       /// @brief The expression to stream
       const expression_t& expression;
@@ -28,7 +28,7 @@ namespace xtd {
     };
 
     /// @cond
-    template <typename expression_t>
+    template<typename expression_t>
     auto operator<<(std::ostream& os, const expression_stream<expression_t>& ps) -> std::ostream& {
       if (ps.parent_precedence < expression_t::precedence) os << "(" << ps.expression << ")";
       else os << ps.expression;

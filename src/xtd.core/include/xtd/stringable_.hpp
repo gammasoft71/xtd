@@ -9,7 +9,7 @@ namespace xtd {
   /// @brief Represents the stringable concept.
   /// @par Definition
   /// ```cpp
-  /// template<class value_t>
+  /// template<typename value_t>
   /// concept xtd::stringable;
   /// ```
   /// @par Header
@@ -26,6 +26,6 @@ namespace xtd {
   /// @par Examples
   /// The following code shows how to use xtd::stringable concept
   /// @include stringable.cpp
-  template<class value_t>
+  template<typename value_t>
   struct stringable;
 }

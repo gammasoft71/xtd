@@ -429,9 +429,9 @@ namespace xtd {
     /// @return The next line of characters from the input stream, or "" if no more lines are available.
     static auto read_line(const string& text, bool intercept) -> xtd::string;
 
-    template <typename string_t>
+    template<typename string_t>
     static auto read_line(string_t text) -> xtd::string {return read_line(xtd::string(text), false);}
-    template <typename string_t>
+    template<typename string_t>
     static auto read_line(string_t text, bool intercept) -> xtd::string {return read_line(xtd::string(text), intercept);}
 
     /// @brief Sets the foreground and background console colors to their defaults.

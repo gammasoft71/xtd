@@ -22,7 +22,7 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core
     /// @remarks The xtd::expressions::member_type struct is used by xtd::expressions::member.
-    template <typename member_t>
+    template<typename member_t>
     struct member_type {
       const char* name = nullptr;
       member_t member;
@@ -39,7 +39,7 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core expressions
     /// @remarks The xtd::expressions::member mzthod is used by xtd::expressions::operator ^().
-    template <typename member_t>
+    template<typename member_t>
     constexpr auto member(member_t member) {
       return member_type<member_t>{"<member>", member};
     }
@@ -54,7 +54,7 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core expressions
     /// @remarks The xtd::expressions::member mzthod is used by xtd::expressions::operator ^().
-    template <typename member_t>
+    template<typename member_t>
     constexpr auto member(const char* name, member_t member) {
       return member_type<member_t>{name, member};
     }
@@ -72,7 +72,7 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core
     /// @remarks The xtd::expressions::as_expression method is used by xtd::expressions operators.
-    template <typename expression_t, typename member_t>
+    template<typename expression_t, typename member_t>
     struct member_expression : private expression {
       /// @name Public Fields
       
@@ -148,7 +148,7 @@ namespace xtd {
     /// //
     /// // mem1 result => 42
     /// ```
-    template <typename expression_t, typename member_t>
+    template<typename expression_t, typename member_t>
     requires expression_operand<expression_t> || expression_operand<member_type<member_t>>
     constexpr auto operator *(expression_t expression, member_type<member_t> member) {
       auto expr = as_expression(expression);
@@ -186,7 +186,7 @@ namespace xtd {
     /// //
     /// // mem1 result => 42
     /// ```
-    template <typename expression_t, typename member_t>
+    template<typename expression_t, typename member_t>
     requires expression_operand<expression_t> || expression_operand<member_type<member_t>>
     constexpr auto operator |(expression_t expression, member_type<member_t> member) {
       return std::forward<expression_t>(expression) * std::forward<member_type<member_t>>(member);

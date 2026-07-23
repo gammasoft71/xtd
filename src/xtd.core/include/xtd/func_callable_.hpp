@@ -10,7 +10,7 @@ namespace xtd {
   /// @brief Represents the func callable (function, method, xtd::delegate, xtd::event, std::functional) concept.
   /// @par Definition
   /// ```cpp
-  /// template<class function_t, class result_t = void, class... args_t>
+  /// template<typename function_t, typename result_t = void, typename... args_t>
   /// concept concept func_callable = xtd::invocable<function_t, result_t, args_t...>;
   /// ```
   /// @par Header
@@ -22,6 +22,6 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core concepts
-  template<class function_t, class result_t = void, class... args_t>
+  template<typename function_t, typename result_t = void, typename... args_t>
   struct func_callable;
 }

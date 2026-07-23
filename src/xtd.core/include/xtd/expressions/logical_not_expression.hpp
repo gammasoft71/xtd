@@ -40,7 +40,7 @@ namespace xtd {
     /// // not1 result => false
     /// // not1 result => true
     /// ```
-    template <typename value_t>
+    template<typename value_t>
     struct logical_not_expression : unary_expression {
       /// @name Public Fields
       
@@ -66,7 +66,7 @@ namespace xtd {
       /// @brief Add the specified arguments.
       /// @param args the arguments to add.
       /// @return The result of not.
-      template <typename... args_t>
+      template<typename... args_t>
       constexpr auto operator()(args_t&&... args) const {return !value(std::forward<args_t>(args)...);}
       /// @}
       
@@ -79,7 +79,7 @@ namespace xtd {
     };
     
     /// @cond
-    template <typename vakue_t>
+    template<typename vakue_t>
     requires std::is_base_of_v<expression, std::decay_t<vakue_t>>
     constexpr auto expression::logical_not(vakue_t value) {
       auto expression = as_expression(value);
@@ -121,7 +121,7 @@ namespace xtd {
     /// // logical_not1 result => true
     /// // logical_not2 result => true
     /// ```
-    template <typename value_t>
+    template<typename value_t>
     requires expression_operand<value_t>
     constexpr auto operator !(value_t value) {return expression::logical_not(std::move(value));}
     /// @}

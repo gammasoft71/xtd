@@ -9,7 +9,7 @@ namespace xtd {
   /// @brief Represent the enumeration concept.
   /// @par Definition
   /// ```cpp
-  /// template<class type_t>
+  /// template<typename type_t>
   /// concept xtd::enumeration = std::is_enum_v<xtd::raw_type<type_t>>;
   /// ```
   /// @par Header
@@ -71,6 +71,6 @@ namespace xtd {
   /// // 01:12:24.0480000 (xtd::time_span) is not enumeration
   /// // wednesday (xtd::day_of_week) is enumeration
   /// ```
-  template<class type_t>
+  template<typename type_t>
   struct enumeration;
 }

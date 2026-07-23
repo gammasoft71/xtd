@@ -149,7 +149,7 @@ For example, if file contains :
 
 namespace xtd {
   namespace forms {
-    template<class type_t>
+    template<typename type_t>
     using form_closed_event_handler = delegate<void(const type_t& sender, const form_closed_event_args& e)>;
   }
 }
@@ -264,7 +264,7 @@ class math {
 public:
 math() = delete;
   // equivalent : #define max(value1, value2) (value1 >= value2 ? value1 : value2)
-  template<class T>
+  template<typename T>
   static T max(T value1, T value2) {return value1 >= value2 ? value1 : value2;}
 };
 ```

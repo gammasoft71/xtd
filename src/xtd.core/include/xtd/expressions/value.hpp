@@ -51,7 +51,7 @@ namespace xtd {
     /// //
     /// // expr1 result => 50
     /// ```
-    template <typename type_t>
+    template<typename type_t>
     struct value : value_expression {
       /// @name Public Fields
       
@@ -73,7 +73,7 @@ namespace xtd {
       /// @{
       /// @brief Gets the value value.
       /// @return The value value.
-      template <typename... args_t>
+      template<typename... args_t>
       constexpr auto operator()(args_t&&...) const {return value_;}
       /// @}
 
@@ -86,7 +86,7 @@ namespace xtd {
     };
     
     /// @cond
-    template <typename type_t>
+    template<typename type_t>
     constexpr auto expression::value(type_t value) {return xtd::expressions::value {std::move(value)};}
     /// @endcond
   }

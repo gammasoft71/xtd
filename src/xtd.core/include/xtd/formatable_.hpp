@@ -9,7 +9,7 @@ namespace xtd {
   /// @brief Represents the formatable concept.
   /// @par Definition
   /// ```cpp
-  /// template<class value_t>
+  /// template<typename value_t>
   /// concept xtd::formatable;
   /// ```
   /// @par Header
@@ -26,6 +26,6 @@ namespace xtd {
   /// @par Examples
   /// The following code shows how to use xtd::formatbale concept
   /// @include formatbale.cpp
-  template<class value_t>
+  template<typename value_t>
   struct formatable;
 }

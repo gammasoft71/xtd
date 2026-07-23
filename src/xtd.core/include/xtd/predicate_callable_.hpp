@@ -10,8 +10,8 @@ namespace xtd {
   /// @brief Represents the predicate callable (function, method, xtd::delegate, xtd::event, std::functional) concept.
   /// @par Definition
   /// ```cpp
-  /// template<class function_t, class result_t = void, class... args_t>
-  /// concept concept predicate_callable = xtd::invocable<function_t, result_t, args_t...>;
+  /// template<typename function_t, typename arg_t>
+  /// concept concept predicate_callable = xtd::invocable<function_t, bool, arg_t>;
   /// ```
   /// @par Header
   /// ```cpp
@@ -22,6 +22,6 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core concepts
-  template<class function_t, class arg_t>
+  template<typename function_t, typename arg_t>
   struct predicate_callable;
 }

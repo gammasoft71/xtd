@@ -22,6 +22,6 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core concepts
-  template<class function_t>
+  template<typename function_t>
   struct async_callback_callable;
 }

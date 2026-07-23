@@ -23,7 +23,7 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core
     /// @remarks The xtd::expressions::compare_three_way_expression struct is used by xtd::expressions::expression::compare_three_way expression.
-    template <typename left_t, typename right_t>
+    template<typename left_t, typename right_t>
     struct compare_three_way_expression : binary_expression {
       /// @name Public Fields
       
@@ -50,7 +50,7 @@ namespace xtd {
       /// @brief Equal to the specified arguments.
       /// @param args the arguments to three_way_comparison.
       /// @return The result of three_way_comparison.
-      template <typename... args_t>
+      template<typename... args_t>
       constexpr auto operator()(args_t&&... args) const {return left(std::forward<args_t>(args)...) <=> right(std::forward<args_t>(args)...);}
       /// @}
       
@@ -64,7 +64,7 @@ namespace xtd {
     };
     
     /// @cond
-    template <typename left_t, typename right_t>
+    template<typename left_t, typename right_t>
     requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
     constexpr auto expression::compare_three_way(left_t left, right_t right) {
       auto left_expression = as_expression(left);
@@ -72,7 +72,7 @@ namespace xtd {
       return compare_three_way_expression<std::decay_t<decltype(left_expression)>, std::decay_t<decltype(right_expression)>> {std::move(left_expression), std::move(right_expression)};
     }
 
-    template <typename left_t, typename right_t>
+    template<typename left_t, typename right_t>
     requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
     constexpr auto expression::spaceship(left_t left, right_t right) {return expression::compare_three_way(std::move(left), std::move(right));}
     /// @endcond
@@ -117,7 +117,7 @@ namespace xtd {
     /// // three_way_comparison1 result => greater
     /// // three_way_comparison2 result => equivalent
     /// ```
-    template <typename left_t, typename right_t>
+    template<typename left_t, typename right_t>
     requires expression_operand<left_t> || expression_operand<right_t>
     constexpr auto operator <=>(left_t left, right_t right) {return expression::compare_three_way(std::move(left), std::move(right));}
     /// @}

@@ -24,7 +24,7 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core
     /// @remarks The xtd::expressions::right_shift_expression struct is used by xtd::expressions::expression::right_shift expression.
-    template <typename left_t, typename right_t>
+    template<typename left_t, typename right_t>
     struct right_shift_expression : binary_expression {
       /// @name Public Fields
       
@@ -51,7 +51,7 @@ namespace xtd {
       /// @brief Bitwise left the specified arguments.
       /// @param args the arguments to bitwise right.
       /// @return The result of left.
-      template <typename... args_t>
+      template<typename... args_t>
       constexpr auto operator()(args_t&&... args) const {
         auto&& l = left(std::forward<args_t>(args)...);
         using result_t = std::decay_t<decltype(l)>;
@@ -70,7 +70,7 @@ namespace xtd {
     };
     
     /// @cond
-    template <typename left_t, typename right_t>
+    template<typename left_t, typename right_t>
     requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
     constexpr auto expression::right_shift(left_t left, right_t right) {
       auto left_expression = as_expression(left);
@@ -122,7 +122,7 @@ namespace xtd {
     /// // right_shift3 result => 2
     /// // right_shift4 result => 2
     /// ```
-    template <typename left_t, typename right_t>
+    template<typename left_t, typename right_t>
     requires expression_operand<left_t> || expression_operand<right_t>
     constexpr auto operator >>(left_t left, right_t right) {return expression::right_shift(std::move(left), std::move(right));}
     /// @}

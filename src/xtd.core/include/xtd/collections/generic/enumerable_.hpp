@@ -12,7 +12,7 @@ namespace xtd {
       /// @brief Represents the enumerable concept.
       /// @par Definition
       /// ```cpp
-      /// template<class value_t>
+      /// template<typename value_t>
       /// concept xtd::collections::generic::enumerable = requires {typename xtd::raw_type<type_t>::value_type;} && std::derived_from<xtd::raw_type<type_t>, xtd::collections::generic::ienumerable<typename xtd::raw_type<type_t>::value_type>>;
       /// ```
       /// @par Header
@@ -27,7 +27,7 @@ namespace xtd {
       /// @par Examples
       /// The following code shows how to use xtd::collections::generic::enumerable concept
       /// @include enumerable.cpp
-      template<class type_t>
+      template<typename type_t>
       struct enumerable;
     }
   }

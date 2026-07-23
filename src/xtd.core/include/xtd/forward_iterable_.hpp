@@ -9,7 +9,7 @@ namespace xtd {
   /// @brief Represents the forward iterable concept.
   /// @par Definition
   /// ```cpp
-  /// template<class value_t>
+  /// template<typename value_t>
   /// concept xtd::forward_iterable;
   /// ```
   /// @par Header
@@ -24,6 +24,6 @@ namespace xtd {
   /// @par Examples
   /// The following code shows how to use xtd::forward_iterable concept
   /// @include forward_iterable.cpp
-  template<class value_t>
+  template<typename value_t>
   struct forward_iterable;
 }

@@ -30,7 +30,7 @@ namespace xtd {
 /// @param optional The optional to gets the value.
 /// @param default_value The default value if optioanl is empty.
 /// @return The contained value of optional if available; otherwise the default value.
-template <typename optional_t, typename default_value_t>
+template<typename optional_t, typename default_value_t>
 optional_t operator |(const xtd::optional<optional_t>& optional, default_value_t&& default_value) {
   return optional.value_or(std::forward<default_value_t>(default_value));
 }
@@ -39,7 +39,7 @@ optional_t operator |(const xtd::optional<optional_t>& optional, default_value_t
 /// @param optional The optional to sets the value.
 /// @param default_value The default value to set t optional if optioanl is empty.
 /// @return The optional updated if empty otherwise; option not updated.
-template <typename optional_t, typename default_value_t>
+template<typename optional_t, typename default_value_t>
 xtd::optional<optional_t>& operator |=(xtd::optional<optional_t>& optional, default_value_t&& default_value) {
   if (!optional) optional = std::forward<default_value_t>(default_value);
   return optional;

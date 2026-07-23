@@ -24,7 +24,7 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core
     /// @remarks The xtd::expressions::or_expression struct is used by xtd::expressions::expression::or_ expression.
-    template <typename left_t, typename right_t>
+    template<typename left_t, typename right_t>
     struct or_expression : binary_expression {
       /// @name Public Fields
       
@@ -51,7 +51,7 @@ namespace xtd {
       /// @brief Bitwise or the specified arguments.
       /// @param args the arguments to bitwise or.
       /// @return The result of bitwise or.
-      template <typename... args_t>
+      template<typename... args_t>
       constexpr auto operator()(args_t&&... args) const {
         auto&& l = left(std::forward<args_t>(args)...);
         auto&& r = right(std::forward<args_t>(args)...);
@@ -71,7 +71,7 @@ namespace xtd {
     };
     
     /// @cond
-    template <typename left_t, typename right_t>
+    template<typename left_t, typename right_t>
     requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
     constexpr auto expression::or_(left_t left, right_t right) {
       auto left_expression = as_expression(left);
@@ -123,7 +123,7 @@ namespace xtd {
     /// // or3 result => 11111010
     /// // or4 result => 11111010
     /// ```
-    template <typename left_t, typename right_t>
+    template<typename left_t, typename right_t>
     requires expression_operand<left_t> || expression_operand<right_t>
     constexpr auto operator |(left_t left, right_t right) {return expression::or_(std::move(left), std::move(right));}
     /// @}

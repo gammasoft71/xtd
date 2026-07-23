@@ -334,18 +334,18 @@ auto xtd::linq::enumerable::count(const source_t& source, xtd::iterable_value_ty
   return count(source, [value](const xtd::iterable_value_type<source_t>& item) -> bool {return item == value;});
 }
 
-template<class key_t, xtd::iterable source_t, xtd::callable<key_t, xtd::iterable_value_type<source_t>> key_selector_t>
+template<typename key_t, xtd::iterable source_t, xtd::callable<key_t, xtd::iterable_value_type<source_t>> key_selector_t>
 auto xtd::linq::enumerable::count_by(const source_t& source, key_selector_t&& key_selector) noexcept -> xtd::collections::generic::enumerable_generator<xtd::collections::generic::key_value_pair<key_t, xtd::usize>> {
   return count_by<key_t>(source, key_selector, [](auto&& a, auto&& b) {return xtd::collections::generic::equality_comparer<key_t>::default_equality_comparer().equals(a, b);});
   return count_by<key_t>(source, key_selector, xtd::collections::generic::equality_comparer<key_t>::default_equality_comparer());
 }
 
-template<class key_t, xtd::iterable source_t, xtd::callable<key_t, xtd::iterable_value_type<source_t>> key_selector_t>
+template<typename key_t, xtd::iterable source_t, xtd::callable<key_t, xtd::iterable_value_type<source_t>> key_selector_t>
 auto xtd::linq::enumerable::count_by(const source_t& source, key_selector_t&& key_selector, const iequality_comparer<key_t>& key_comparer) noexcept -> xtd::collections::generic::enumerable_generator<xtd::collections::generic::key_value_pair<key_t, xtd::usize>> {
   return count_by<key_t>(source, key_selector, [&key_comparer](auto&& a, auto&& b) {return key_comparer.equals(a, b);});
 }
 
-template<class result_t, xtd::iterable source_t>
+template<typename result_t, xtd::iterable source_t>
 auto xtd::linq::enumerable::select(source_t&& source, auto&& selector) -> xtd::collections::generic::enumerable_generator<result_t> {
   auto index = xtd::usize {0};
   //auto source_holder = __xtd_enumerable_holder<source_t> {std::forward<source_t>(source)};
@@ -363,14 +363,14 @@ auto xtd::linq::enumerable::select(source_t&& source, auto&& selector) -> xtd::c
     co_yield invoke_selector_with_optional_index<xtd::iterable_value_type<source_t>>(selector, item, index++);
 }
 
-template <typename predicate_t, typename value_t>
+template<typename predicate_t, typename value_t>
 constexpr auto xtd::linq::enumerable::invoke_predicate_with_optional_index(predicate_t&& predicate, value_t&& value, xtd::usize index) -> bool {
   if constexpr (xtd::func_callable<predicate_t, bool, xtd::raw_type<value_t>, xtd::usize>) return predicate(std::forward<value_t>(value), index);
   else if constexpr (xtd::predicate_callable<predicate_t, xtd::raw_type<value_t>>) return predicate(std::forward<value_t>(value));
   else static_assert(always_false_v<predicate_t>, "Predicate must accept either (value) or (value, index).");
 }
 
-template <typename result_t, typename selector_t, typename value_t>
+template<typename result_t, typename selector_t, typename value_t>
 auto xtd::linq::enumerable::invoke_selector_with_optional_index(selector_t&& selector, value_t&& value, xtd::usize index) -> result_t {
   if constexpr (xtd::callable<selector_t, xtd::raw_type<result_t>, xtd::raw_type<value_t>, xtd::usize>) return selector(std::forward<value_t>(value), index);
   if constexpr (xtd::callable<selector_t, xtd::raw_type<result_t>, xtd::raw_type<value_t>>) return selector(std::forward<value_t>(value));

@@ -10,7 +10,7 @@ namespace xtd {
   /// @brief Represents the invocable (function, method, xtd::delegate, xtd::event, std::functional) concept.
   /// @par Definition
   /// ```cpp
-  /// template<class function_t, class result_t = void, class... args_t>
+  /// template<typename function_t, typename result_t = void, typename... args_t>
   /// concept invocable = std::invocable<function_t, args_t...> && (std::is_void_v<result_t> || std::convertible_to<std::invoke_result_t<function_t, args_t...>, result_t>);
   /// ```
   /// @par Header
@@ -27,7 +27,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/xtd>
   ///
-  /// template<class value_t>
+  /// template<typename value_t>
   /// auto sort_with(const array<value_t>& items, invocable<int, value_t, value_t> auto fct) -> array<value_t> {
   ///   auto result = items;
   ///   result.sort(fct);
@@ -43,6 +43,6 @@ namespace xtd {
   /// //
   /// // items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
   /// ```
-  template<class function_t, class result_t = void, class... args_t>
+  template<typename function_t, typename result_t = void, typename... args_t>
   struct invocable;
 }

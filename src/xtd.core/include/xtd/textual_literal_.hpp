@@ -9,7 +9,7 @@ namespace xtd {
   /// @brief Represents the textual literal concept.
   /// @par Definition
   /// ```cpp
-  /// template<class type_t>
+  /// template<typename type_t>
   /// concept xtd::textual_literal = std::same_as<type_t, const xtd::char_*> || std::same_as<type_t, const xtd::wchar*> || std::same_as<type_t, const xtd::char8*> || std::same_as<type_t, const xtd::char16*> || std::same_as<type_t, const xtd::char32*>;
   /// ```
   /// @par Header
@@ -71,6 +71,6 @@ namespace xtd {
   /// // 01:12:24.0480000 (xtd::time_span) is not textual_literal
   /// // wednesday (xtd::day_of_week) is not textual_literal
   /// ```
-  template<class type_t>
+  template<typename type_t>
   struct textual_literal;
 }

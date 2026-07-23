@@ -24,7 +24,7 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core
     /// @remarks The xtd::expressions::not_expression struct is used by xtd::expressions::expression::not_ expression.
-    template <typename value_t>
+    template<typename value_t>
     struct not_expression : unary_expression {
       /// @name Public Fields
       
@@ -50,7 +50,7 @@ namespace xtd {
       /// @brief Add the specified arguments.
       /// @param args the arguments to add.
       /// @return The result of bitwise not.
-      template <typename... args_t>
+      template<typename... args_t>
       constexpr auto operator()(args_t&&... args) const {
         auto&& v = value(std::forward<args_t>(args)...);
         using result_t = std::decay_t<decltype(v)>;
@@ -68,7 +68,7 @@ namespace xtd {
     };
     
     /// @cond
-    template <typename vakue_t>
+    template<typename vakue_t>
     requires std::is_base_of_v<expression, std::decay_t<vakue_t>>
     constexpr auto expression::not_(vakue_t value) {
       auto expression = as_expression(value);
@@ -110,7 +110,7 @@ namespace xtd {
     /// // not1 result => 11010101
     /// // not2 result => 11010101
     /// ```
-    template <typename value_t>
+    template<typename value_t>
     requires expression_operand<value_t>
     constexpr auto operator ~(value_t value) {return expression::not_(std::move(value));}
     /// @}

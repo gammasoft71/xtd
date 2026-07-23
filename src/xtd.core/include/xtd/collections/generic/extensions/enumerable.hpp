@@ -68,7 +68,7 @@ namespace xtd {
           /// @par Examples
           /// The following code example demonstrates how to use xtd::linq::enumerable::aggregate to apply an accumulator function and use a seed value.
           /// @include enumerable_aggregate2.cpp
-          template<class accumulate_t, xtd::func_callable<accumulate_t, accumulate_t, value_t> func_t>
+          template<typename accumulate_t, xtd::func_callable<accumulate_t, accumulate_t, value_t> func_t>
           [[nodiscard]] auto aggregate(accumulate_t&& seed, func_t&& func) const -> accumulate_t {
             return xtd::linq::enumerable::aggregate(self(), std::forward<accumulate_t>(seed), std::forward<func_t>(func));
           }
@@ -82,7 +82,7 @@ namespace xtd {
           /// @par Examples
           /// The following code example demonstrates how to use xtd::linq::enumerable::aggregate to apply an accumulator function and use a seed value.
           /// @include enumerable_aggregate3.cpp
-          template<class result_t, typename accumulate_t, xtd::func_callable<accumulate_t, accumulate_t, value_t> func_t, xtd::func_callable<result_t, value_t> result_selector_t>
+          template<typename result_t, typename accumulate_t, xtd::func_callable<accumulate_t, accumulate_t, value_t> func_t, xtd::func_callable<result_t, value_t> result_selector_t>
           [[nodiscard]] auto aggregate(accumulate_t&& seed, func_t&& func, result_selector_t&& result_selector) const -> result_t {
             return xtd::linq::enumerable::aggregate(self(), std::forward<accumulate_t>(seed), std::forward<func_t>(func), std::forward<result_selector_t>(result_selector));
           }
@@ -123,7 +123,7 @@ namespace xtd {
           /// @par Examples
           /// The following code example demonstrates how to use Append to append a value to the end of the sequence.
           /// @include enumerable_append.cpp
-          template<class element_t>
+          template<typename element_t>
           [[nodiscard]] auto append(element_t&& element) const noexcept {
             return xtd::linq::enumerable::append(self(), std::forward<element_t>(element));
           }

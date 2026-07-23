@@ -9,7 +9,7 @@ namespace xtd {
   /// @brief Represents the character concept.
   /// @par Definition
   /// ```cpp
-  /// template<class type_t>
+  /// template<typename type_t>
   /// concept xtd::character = std::same_as<xtd::raw_type<type_t>, xtd::char_> || std::same_as<xtd::raw_type<type_t>, xtd::char8> || std::same_as<xtd::raw_type<type_t>, xtd::char16> || std::same_as<xtd::raw_type<type_t>, xtd::char32> || std::same_as<xtd::raw_type<type_t>, xtd::wchar>;
   /// ```
   /// @par Header
@@ -80,6 +80,6 @@ namespace xtd {
   /// // 01:12:24.0480000 (xtd::time_span) is not character
   /// // wednesday (xtd::day_of_week) is not character
   /// ```
-  template<class type_t>
+  template<typename type_t>
   struct character;
 }

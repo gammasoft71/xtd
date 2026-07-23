@@ -9,7 +9,7 @@ namespace xtd {
   /// @brief Represents the iterable concept.
   /// @par Definition
   /// ```cpp
-  /// template<class value_t>
+  /// template<typename value_t>
   /// concept xtd::iterable;
   /// ```
   /// @par Header
@@ -24,6 +24,6 @@ namespace xtd {
   /// @par Examples
   /// The following code shows how to use xtd::iterable concept
   /// @include iterable.cpp
-  template<class value_t>
+  template<typename value_t>
   struct iterable;
 }

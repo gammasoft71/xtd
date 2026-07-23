@@ -20,10 +20,10 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core expressions
-    //template <typename left_t, typename right_t>
+    //template<typename left_t, typename right_t>
     //concept expression_operand =
     //expression<left_t> || expression<right_t>;
-    template <typename type_t>
+    template<typename type_t>
     concept expression_operand =
     std::is_base_of_v<expression, std::decay_t<type_t>>;
   }

@@ -8,6 +8,6 @@
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   // Since Doxygen does not work properly with the C++ concept, the documentation for this concept is declared in xtd/invocable_.hpp
-  template<class function_t, class result_t = void, class... args_t>
+  template<typename function_t, typename result_t = void, typename... args_t>
   concept invocable = std::invocable<function_t, args_t...> && std::same_as<std::invoke_result_t<function_t, args_t...>, result_t>;
 }

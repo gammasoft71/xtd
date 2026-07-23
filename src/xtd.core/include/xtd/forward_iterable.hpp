@@ -7,7 +7,7 @@
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   // Since Doxygen does not work properly with the C++ concept, the documentation for this concept is declared in xtd/forward_iterable_.hpp
-  template <class value_t>
+  template<typename value_t>
   concept forward_iterable = xtd::iterable<value_t> && std::forward_iterator<decltype(std::begin(std::declval<value_t&>()))>;
 }
 

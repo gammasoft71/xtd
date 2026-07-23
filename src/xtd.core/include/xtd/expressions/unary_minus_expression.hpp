@@ -23,7 +23,7 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core
     /// @remarks The xtd::expressions::unary_minus_expression struct is used by xtd::expressions::expression::unary_minus expression.
-    template <typename value_t>
+    template<typename value_t>
     struct unary_minus_expression : unary_expression {
       /// @name Public Fields
       
@@ -49,7 +49,7 @@ namespace xtd {
       /// @brief Add the specified arguments.
       /// @param args the arguments to add.
       /// @return The result of unary minus.
-      template <typename... args_t>
+      template<typename... args_t>
       constexpr auto operator()(args_t&&... args) const {return -value(std::forward<args_t>(args)...);}
       /// @}
       
@@ -62,11 +62,11 @@ namespace xtd {
     };
     
     /// @cond
-    template <typename vakue_t>
+    template<typename vakue_t>
     requires std::is_base_of_v<expression, std::decay_t<vakue_t>>
     constexpr auto expression::negate(vakue_t value) {return expression::unary_minus(std::move(value));}
 
-    template <typename vakue_t>
+    template<typename vakue_t>
     requires std::is_base_of_v<expression, std::decay_t<vakue_t>>
     constexpr auto expression::unary_minus(vakue_t value) {
       auto expression = as_expression(value);
@@ -108,7 +108,7 @@ namespace xtd {
     /// // unary_minus1 result => -42
     /// // unary_minus2 result => -42
     /// ```
-    template <typename value_t>
+    template<typename value_t>
     requires expression_operand<value_t>
     constexpr auto operator -(value_t value) {return expression::unary_minus(std::move(value));}
     /// @}

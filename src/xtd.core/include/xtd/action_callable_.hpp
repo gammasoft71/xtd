@@ -10,7 +10,7 @@ namespace xtd {
   /// @brief Represents the action callable (actiontion, method, xtd::delegate, xtd::event, std::actiontional) concept.
   /// @par Definition
   /// ```cpp
-  /// template<class actiontion_t, class... args_t>
+  /// template<typename actiontion_t, typename result_t = void, typename... args_t>
   /// concept concept action_callable = xtd::invocable<actiontion_t, void, args_t...>;
   /// ```
   /// @par Header
@@ -22,6 +22,6 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core concepts
-  template<class function_t, class result_t = void, class... args_t>
+  template<typename function_t, typename result_t = void, typename... args_t>
   struct action_callable;
 }

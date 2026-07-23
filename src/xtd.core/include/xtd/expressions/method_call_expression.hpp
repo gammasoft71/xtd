@@ -23,7 +23,7 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core
     /// @remarks The xtd::expressions::method_type struct is used by xtd::expressions::method.
-    template <typename method_t, typename... args_t>
+    template<typename method_t, typename... args_t>
     struct method_type {
       const char* name = nullptr;
       method_t method;
@@ -41,7 +41,7 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core expressions
     /// @remarks The xtd::expressions::method mzthod is used by xtd::expressions::operator ^().
-    template <typename method_t, typename... args_t>
+    template<typename method_t, typename... args_t>
     constexpr auto method(method_t method, args_t&&... args) {
       return method_type<method_t, decltype(as_expression(std::forward<args_t>(args)))...>{"<method>", method, std::make_tuple(as_expression(std::forward<args_t>(args))...)};
     }
@@ -56,7 +56,7 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core expressions
     /// @remarks The xtd::expressions::method mzthod is used by xtd::expressions::operator ^().
-    template <typename method_t, typename... args_t>
+    template<typename method_t, typename... args_t>
     constexpr auto method(const char* name, method_t method, args_t&&... args) {
       return method_type<method_t, decltype(as_expression(std::forward<args_t>(args)))...>{name, method, std::make_tuple(as_expression(std::forward<args_t>(args))...)};
     }
@@ -74,7 +74,7 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core
     /// @remarks The xtd::expressions::as_expression method is used by xtd::expressions operators.
-    template <typename expression_t, typename method_t>
+    template<typename expression_t, typename method_t>
     struct method_call_expression : invocation_expression {
       /// @name Public Fields
       
@@ -101,7 +101,7 @@ namespace xtd {
       /// @brief Add the specified arguments.
       /// @param args the arguments to add.
       /// @return The result of method.
-      template <typename... call_args_t>
+      template<typename... call_args_t>
       constexpr decltype(auto) operator()(call_args_t&&... call_args) const {
         auto&& obj = expression(std::forward<call_args_t>(call_args)...);
         auto invoke = [&](auto&&... evaluated_args) -> decltype(auto) {
@@ -166,7 +166,7 @@ namespace xtd {
     /// // fct2 result => World!
     /// // fct3 result => World!
     /// ```
-    template <typename expression_t, typename method_t, typename... stored_args_t>
+    template<typename expression_t, typename method_t, typename... stored_args_t>
     requires expression_operand<expression_t> || expression_operand<method_type<method_t, stored_args_t...>>
     constexpr auto operator*(expression_t expression, method_type<method_t, stored_args_t...> method) {
       auto expr = as_expression(expression);
@@ -206,7 +206,7 @@ namespace xtd {
     /// // fct2 result => World!
     /// // fct3 result => World!
     /// ```
-    template <typename expression_t, typename method_t, typename... stored_args_t>
+    template<typename expression_t, typename method_t, typename... stored_args_t>
     requires expression_operand<expression_t> || expression_operand<method_type<method_t, stored_args_t...>>
     constexpr auto operator |(expression_t expression, method_type<method_t, stored_args_t...> method) {
       return std::forward<expression_t>(expression) * std::forward<method_type<method_t, stored_args_t...>>(method);

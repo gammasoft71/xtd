@@ -23,7 +23,7 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core
     /// @remarks The xtd::expressions::less_than_expression struct is used by xtd::expressions::expression::less_than expression.
-    template <typename left_t, typename right_t>
+    template<typename left_t, typename right_t>
     struct less_than_expression : binary_expression {
       /// @name Public Fields
       
@@ -50,7 +50,7 @@ namespace xtd {
       /// @brief Equal to the specified arguments.
       /// @param args the arguments to less.
       /// @return The result of less.
-      template <typename... args_t>
+      template<typename... args_t>
       constexpr auto operator()(args_t&&... args) const {return left(std::forward<args_t>(args)...) < right(std::forward<args_t>(args)...);}
       /// @}
       
@@ -64,7 +64,7 @@ namespace xtd {
     };
     
     /// @cond
-    template <typename left_t, typename right_t>
+    template<typename left_t, typename right_t>
     requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
     constexpr auto expression::less_than(left_t left, right_t right) {
       auto left_expression = as_expression(left);
@@ -116,7 +116,7 @@ namespace xtd {
     /// // greater_than3 result => true
     /// // greater_than4 result => true
     /// ```
-    template <typename left_t, typename right_t>
+    template<typename left_t, typename right_t>
     requires expression_operand<left_t> || expression_operand<right_t>
     constexpr auto operator <(left_t left, right_t right) {return expression::less_than(std::move(left), std::move(right));}
     /// @}

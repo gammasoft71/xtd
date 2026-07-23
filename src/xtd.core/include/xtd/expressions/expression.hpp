@@ -139,7 +139,7 @@ namespace xtd {
       /// // add3 result => 60
       /// // add4 result => 60
       /// ```
-      template <typename left_t, typename right_t>
+      template<typename left_t, typename right_t>
       requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
       static constexpr auto add(left_t left, right_t right);
       
@@ -174,7 +174,7 @@ namespace xtd {
       /// // and3 result => 100000
       /// // and4 result => 100000
       /// ```
-      template <typename left_t, typename right_t>
+      template<typename left_t, typename right_t>
       requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
       static constexpr auto and_(left_t left, right_t right);
       
@@ -211,7 +211,7 @@ namespace xtd {
       /// // and_also3 result => false
       /// // and_also4 result => false
       /// ```
-      template <typename left_t, typename right_t>
+      template<typename left_t, typename right_t>
       requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
       static constexpr auto and_also(left_t left, right_t right);
       
@@ -281,7 +281,7 @@ namespace xtd {
       /// // compare_three_way3 result => equivalent
       /// // compare_three_way4 result => equivalent
       /// ```
-      template <typename left_t, typename right_t>
+      template<typename left_t, typename right_t>
       requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
       static constexpr auto compare_three_way(left_t left, right_t right);
       
@@ -354,7 +354,7 @@ namespace xtd {
       /// // divide3 result => 4
       /// // divide4 result => 4
       /// ```
-      template <typename left_t, typename right_t>
+      template<typename left_t, typename right_t>
       requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
       static constexpr auto divide(left_t left, right_t right);
      
@@ -389,7 +389,7 @@ namespace xtd {
       /// // equal3 result => true
       /// // equal4 result => true
       /// ```
-      template <typename left_t, typename right_t>
+      template<typename left_t, typename right_t>
       requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
       static constexpr auto equal(left_t left, right_t right);
       
@@ -424,7 +424,7 @@ namespace xtd {
       /// // greater_than3 result => false
       /// // greater_than4 result => false
       /// ```
-      template <typename left_t, typename right_t>
+      template<typename left_t, typename right_t>
       requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
       static constexpr auto greater_than(left_t left, right_t right);
       
@@ -459,7 +459,7 @@ namespace xtd {
       /// // greater_than_or_equal3 result => false
       /// // greater_than_or_equal4 result => false
       /// ```
-      template <typename left_t, typename right_t>
+      template<typename left_t, typename right_t>
       requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
       static constexpr auto greater_than_or_equal(left_t left, right_t right);
 
@@ -494,7 +494,7 @@ namespace xtd {
       /// // left_shift3 result => 672
       /// // left_shift4 result => 672
       /// ```
-      template <typename left_t, typename right_t>
+      template<typename left_t, typename right_t>
       requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
       static constexpr auto left_shift(left_t left, right_t right);
       
@@ -529,7 +529,7 @@ namespace xtd {
       /// // greater_than3 result => true
       /// // greater_than4 result => true
       /// ```
-      template <typename left_t, typename right_t>
+      template<typename left_t, typename right_t>
       requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
       static constexpr auto less_than(left_t left, right_t right);
       
@@ -564,7 +564,7 @@ namespace xtd {
       /// // greater_than3 result => true
       /// // greater_than4 result => true
       /// ```
-      template <typename left_t, typename right_t>
+      template<typename left_t, typename right_t>
       requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
       static constexpr auto less_than_or_equal(left_t left, right_t right);
 
@@ -601,7 +601,7 @@ namespace xtd {
       /// // logical_and3 result => false
       /// // logical_and4 result => false
       /// ```
-      template <typename left_t, typename right_t>
+      template<typename left_t, typename right_t>
       requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
       static constexpr auto logical_and(left_t left, right_t right);
       
@@ -628,7 +628,7 @@ namespace xtd {
       /// // logical_not1 result => true
       /// // logical_not2 result => true
       /// ```
-      template <typename value_t>
+      template<typename value_t>
       requires std::is_base_of_v<expression, std::decay_t<value_t>>
       static constexpr auto logical_not(value_t value);
 
@@ -665,7 +665,7 @@ namespace xtd {
       /// // logical_or3 result => false
       /// // logical_or4 result => false
       /// ```
-      template <typename left_t, typename right_t>
+      template<typename left_t, typename right_t>
       requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
       static constexpr auto logical_or(left_t left, right_t right);
 
@@ -700,7 +700,7 @@ namespace xtd {
       /// // mul3 result => 4
       /// // mul4 result => 4
       /// ```
-      template <typename left_t, typename right_t>
+      template<typename left_t, typename right_t>
       requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
       static constexpr auto modulo(left_t left, right_t right);
 
@@ -735,7 +735,7 @@ namespace xtd {
       /// // mul3 result => 60
       /// // mul4 result => 60
       /// ```
-      template <typename left_t, typename right_t>
+      template<typename left_t, typename right_t>
       requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
       static constexpr auto multiply(left_t left, right_t right);
       
@@ -762,7 +762,7 @@ namespace xtd {
       /// // negate1 result => -42
       /// // negate2 result => -42
       /// ```
-      template <typename value_t>
+      template<typename value_t>
       requires std::is_base_of_v<expression, std::decay_t<value_t>>
       static constexpr auto negate(value_t value);
       
@@ -789,7 +789,7 @@ namespace xtd {
       /// // not1 result => 11010101
       /// // not2 result => 11010101
       /// ```
-      template <typename value_t>
+      template<typename value_t>
       requires std::is_base_of_v<expression, std::decay_t<value_t>>
       static constexpr auto not_(value_t value);
       
@@ -824,7 +824,7 @@ namespace xtd {
       /// // not_equal3 result => false
       /// // not_equal4 result => false
       /// ```
-      template <typename left_t, typename right_t>
+      template<typename left_t, typename right_t>
       requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
       static constexpr auto not_equal(left_t left, right_t right);
       
@@ -859,7 +859,7 @@ namespace xtd {
       /// // or3 result => 11111010
       /// // or4 result => 11111010
       /// ```
-      template <typename left_t, typename right_t>
+      template<typename left_t, typename right_t>
       requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
       static constexpr auto or_(left_t left, right_t right);
 
@@ -896,7 +896,7 @@ namespace xtd {
       /// // or_else3 result => false
       /// // or_else4 result => false
       /// ```
-      template <typename left_t, typename right_t>
+      template<typename left_t, typename right_t>
       requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
       static constexpr auto or_else(left_t left, right_t right);
 
@@ -967,7 +967,7 @@ namespace xtd {
       /// // right_shift3 result => 2
       /// // right_shift4 result => 2
       /// ```
-      template <typename left_t, typename right_t>
+      template<typename left_t, typename right_t>
       requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
       static constexpr auto right_shift(left_t left, right_t right);
 
@@ -1002,7 +1002,7 @@ namespace xtd {
       /// // spaceship3 result => equivalent
       /// // spaceship4 result => equivalent
       /// ```
-      template <typename left_t, typename right_t>
+      template<typename left_t, typename right_t>
       requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
       static constexpr auto spaceship(left_t left, right_t right);
       
@@ -1037,7 +1037,7 @@ namespace xtd {
       /// // subtract3 result => 20
       /// // subtract4 result => 20
       /// ```
-      template <typename left_t, typename right_t>
+      template<typename left_t, typename right_t>
       requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
       static constexpr auto subtract(left_t left, right_t right);
       
@@ -1064,7 +1064,7 @@ namespace xtd {
       /// // unary_minus1 result => -42
       /// // unary_minus2 result => -42
       /// ```
-      template <typename value_t>
+      template<typename value_t>
       requires std::is_base_of_v<expression, std::decay_t<value_t>>
       static constexpr auto unary_minus(value_t value);
       
@@ -1091,7 +1091,7 @@ namespace xtd {
       /// // unary_plus1 result => 42
       /// // unary_plus2 result => 42
       /// ```
-      template <typename value_t>
+      template<typename value_t>
       requires std::is_base_of_v<expression, std::decay_t<value_t>>
       static constexpr auto unary_plus(value_t value);
 
@@ -1130,7 +1130,7 @@ namespace xtd {
       /// //
       /// // expr1 result => 50
       /// ```
-      template <typename type_t>
+      template<typename type_t>
       static constexpr auto value(type_t value);
       
       /// @brief Bitwise xor the specified left and right operands.
@@ -1164,7 +1164,7 @@ namespace xtd {
       /// // xor3 result => 11010010
       /// // xor4 result => 11010010
       /// ```
-      template <typename left_t, typename right_t>
+      template<typename left_t, typename right_t>
       requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
       static constexpr auto xor_(left_t left, right_t right);
       /// @}

@@ -9,7 +9,7 @@ namespace xtd {
   /// @brief Represent a logical concept.
   /// @par Definition
   /// ```cpp
-  /// template<class type_t>
+  /// template<typename type_t>
   /// concept xtd::logical = std::same_as<xtd::raw_type<type_t>, xtd::boolean>;
   /// ```
   /// @par Header
@@ -72,6 +72,6 @@ namespace xtd {
   /// // 01:12:24.0480000 (xtd::time_span) is not logical
   /// // wednesday (xtd::day_of_week) is not logical
   /// ```
-  template<class type_t>
+  template<typename type_t>
   struct logical;
 }

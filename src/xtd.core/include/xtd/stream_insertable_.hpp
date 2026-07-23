@@ -9,7 +9,7 @@ namespace xtd {
   /// @brief Represents the stream insertable concept.
   /// @par Definition
   /// ```cpp
-  /// template<class value_t>
+  /// template<typename value_t>
   /// concept xtd::stream_insertable;
   /// ```
   /// @par Header
