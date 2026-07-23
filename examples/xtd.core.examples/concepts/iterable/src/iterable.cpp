@@ -1,11 +1,8 @@
 #include <xtd/xtd>
 
 auto int_generator() -> enumerable_generator<int> {
-  co_yield 15;
-  co_yield 11;
-  co_yield 13;
-  co_yield 14;
-  co_yield 12;
+  for (auto item : {15, 11, 13, 14, 12})
+    co_yield item;
 }
 
 template <iterable iterable_t>
