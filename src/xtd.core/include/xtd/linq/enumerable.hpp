@@ -9,6 +9,19 @@
 #include "from.hpp"
 
 /// @cond
+template<typename type_t>
+struct __xtd_enumerable_holder {
+  __xtd_enumerable_holder(const type_t& value) : ptr_(std::addressof(value)) {}
+  //__xtd_enumerable_holder(type_t& value) : ptr_(std::addressof(value)) {}
+  __xtd_enumerable_holder(type_t&& value) requires std::movable<type_t> : value_(std::move(value)), ptr_(std::addressof(*value_)) {}
+  
+  const xtd::raw_type<type_t>& get() const {return *ptr_;}
+  
+private:
+  std::optional<type_t> value_;
+  const xtd::raw_type<type_t>* ptr_;
+};
+
 template<xtd::iterable source_t, xtd::func_callable<xtd::iterable_value_type<source_t>, xtd::iterable_value_type<source_t>, xtd::iterable_value_type<source_t>> func_t>
 auto xtd::linq::enumerable::aggregate(const source_t& source, func_t&& func) -> xtd::iterable_value_type<source_t> {
   auto nb = 0;
@@ -54,7 +67,9 @@ auto xtd::linq::enumerable::any(const source_t& source, predicate_t&& predicate)
 }
 
 template<xtd::iterable source_t>
-auto xtd::linq::enumerable::append(const source_t& source, xtd::iterable_value_type<source_t>&& element) noexcept -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>> {
+auto xtd::linq::enumerable::append(source_t&& source, xtd::iterable_value_type<source_t>&& element) noexcept -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>> {
+  //auto source_holder = __xtd_enumerable_holder<source_t> {std::forward<xtd::raw_type<source_t>>(source)};
+  //for (const auto& item : source_holder.get())
   for (const auto& item : source)
     co_yield item;
   co_yield std::move(element);
@@ -267,7 +282,13 @@ auto xtd::linq::enumerable::average(const source_t& source) -> xtd::optional<dou
 }
 
 template<xtd::iterable first_t,xtd::iterable second_t>
-auto xtd::linq::enumerable::concat(const first_t& first, const second_t& second) noexcept  -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<first_t>> {
+auto xtd::linq::enumerable::concat(first_t&& first, second_t&& second) noexcept  -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<first_t>> {
+  //auto first_holder = __xtd_enumerable_holder<xtd::raw_type<first_t>> {std::forward<first_t>(first)};
+  //auto second_holder = __xtd_enumerable_holder<xtd::raw_type<second_t>> {std::forward<second_t>(second)};
+  //for (const auto& item : first_holder.get())
+  //  co_yield item;
+  //for (const auto& item : second_holder.get())
+  //  co_yield item;
   for (const auto& item : first)
     co_yield item;
   for (const auto& item : second)
@@ -314,29 +335,34 @@ auto xtd::linq::enumerable::count(const source_t& source, const xtd::iterable_va
 }
 
 template<class result_t, xtd::iterable source_t>
-auto xtd::linq::enumerable::select(const source_t& source, auto&& selector) -> xtd::collections::generic::enumerable_generator<result_t> {
+auto xtd::linq::enumerable::select(source_t&& source, auto&& selector) -> xtd::collections::generic::enumerable_generator<result_t> {
   auto index = xtd::usize {0};
+  //auto source_holder = __xtd_enumerable_holder<source_t> {std::forward<source_t>(source)};
+  //for (const auto& item : source_holder.get())
   for (const auto& item : source)
     co_yield invoke_selector_with_optional_index<result_t>(selector, item, index++);
 }
 
 template<xtd::iterable source_t>
-auto xtd::linq::enumerable::select(const source_t& source, auto&& selector) -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>> {
+auto xtd::linq::enumerable::select(source_t&& source, auto&& selector) -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>> {
   auto index = xtd::usize {0};
+  //auto source_holder = __xtd_enumerable_holder<xtd::raw_type<source_t>> {std::forward<source_t>(source)};
+  //for (const auto& item : source_holder.get())
   for (const auto& item : source)
     co_yield invoke_selector_with_optional_index<xtd::iterable_value_type<source_t>>(selector, item, index++);
 }
 
 template <typename predicate_t, typename value_t>
 constexpr auto xtd::linq::enumerable::invoke_predicate_with_optional_index(predicate_t&& predicate, value_t&& value, xtd::usize index) -> bool {
-  if constexpr (xtd::func_callable<predicate_t, bool, xtd::raw_type<value_t>, xtd::usize>) return predicate(value, index);
-  else if constexpr (xtd::predicate_callable<predicate_t, xtd::raw_type<value_t>>) return predicate(value);
-  else static_assert(false);
+  if constexpr (xtd::func_callable<predicate_t, bool, xtd::raw_type<value_t>, xtd::usize>) return predicate(std::forward<value_t>(value), index);
+  else if constexpr (xtd::predicate_callable<predicate_t, xtd::raw_type<value_t>>) return predicate(std::forward<value_t>(value));
+  else static_assert(always_false_v<predicate_t>, "Predicate must accept either (value) or (value, index).");
 }
 
 template <typename result_t, typename selector_t, typename value_t>
 auto xtd::linq::enumerable::invoke_selector_with_optional_index(selector_t&& selector, value_t&& value, xtd::usize index) -> result_t {
-  if constexpr (xtd::callable<selector_t, xtd::raw_type<result_t>, xtd::raw_type<value_t>, xtd::usize>) return selector(value, index);
-  if constexpr (xtd::callable<selector_t, xtd::raw_type<result_t>, xtd::raw_type<value_t>>) return selector(value);
-  else static_assert(false);
+  if constexpr (xtd::callable<selector_t, xtd::raw_type<result_t>, xtd::raw_type<value_t>, xtd::usize>) return selector(std::forward<value_t>(value), index);
+  if constexpr (xtd::callable<selector_t, xtd::raw_type<result_t>, xtd::raw_type<value_t>>) return selector(std::forward<value_t>(value));
+  else static_assert(always_false_v<selector_t>, "Selector must accept either (value) or (value, index).");
 }
+/// @endcond

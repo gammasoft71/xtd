@@ -177,7 +177,7 @@ namespace xtd {
       /// The following code example demonstrates how to use Append to append a value to the end of the sequence.
       /// @include enumerable_append.cpp
       template<xtd::iterable source_t>
-      [[nodiscard]] static auto append(const source_t& source, xtd::iterable_value_type<source_t>&& element) noexcept -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>>;
+      [[nodiscard]] static auto append(source_t&& source, xtd::iterable_value_type<source_t>&& element) noexcept -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>>;
       
       /// @brief Returns the input typed as xtd::collections::generic::ienumerable <type_t>.
       /// @tparam source_t The type of the elements of source.
@@ -350,7 +350,7 @@ namespace xtd {
       /// @exception xtd::invalid_cast_exception An element in the sequence cannot be cast to type `result_t`.
       /// @remarks The xtd::as include file `#include <xtd/as>` is needeed to use this method.
       template<typename result_t, xtd::iterable source_t>
-      [[nodiscard]] static auto cast(const source_t& source) -> xtd::collections::generic::enumerable_generator<result_t>; // Defined include/xtd/as.hpp
+      [[nodiscard]] static auto cast(source_t&& source) -> xtd::collections::generic::enumerable_generator<result_t>; // Defined include/xtd/as.hpp
       
       /// @brief Splits the elements of a sequence into chunks of size at most size.
       /// @tparam source_t The type of the elements of source.
@@ -359,7 +359,7 @@ namespace xtd {
       /// @return A sequence of chunks of size at most size.
       /// @zxception xtd::argument_out_of_range_exception `size` is equal to 0.
       template<xtd::iterable source_t>
-      [[nodiscard]] static auto chunk(const source_t& source, xtd::usize size) -> xtd::collections::generic::enumerable_generator<xtd::array<xtd::iterable_value_type<source_t>>>; // Defined in include/xtd/array.hpp
+      [[nodiscard]] static auto chunk(source_t&& source, xtd::usize size) -> xtd::collections::generic::enumerable_generator<xtd::array<xtd::iterable_value_type<source_t>>>; // Defined in include/xtd/array.hpp
       
       /// @brief Concatenates two sequences.
       /// @tparam source_t The type of the elements of source.
@@ -367,7 +367,7 @@ namespace xtd {
       /// @param second The sequence to concatenate to the first sequence.
       /// @return An xtd::collections::generic::ienumerable <type_t> that contains the concatenated elements of the two input sequences.
       template<xtd::iterable first_t,xtd::iterable second_t>
-      [[nodiscard]] static auto concat(const first_t& first, const second_t& second) noexcept  -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<first_t>>;
+      [[nodiscard]] static auto concat(first_t&& first, second_t&& second) noexcept  -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<first_t>>;
       
       /// @brief Determines whether a sequence contains a specified element by using the default equality comparer.
       /// @tparam source_t The type of the elements of source.
@@ -837,7 +837,7 @@ namespace xtd {
       /// The following code example demonstrates how to use xtd::linq::enumerable::select <source_t, result_t>(const ienumerable <source_t>&, const std::function <result_t(const source_t&)>&) to project over a sequence of values.
       /// @include enumerable_select.cpp
       template<class result_t, xtd::iterable source_t>
-      [[nodiscard]] static auto select(const source_t& source, auto&& selector) -> xtd::collections::generic::enumerable_generator<result_t>;
+      [[nodiscard]] static auto select(source_t&& source, auto&& selector) -> xtd::collections::generic::enumerable_generator<result_t>;
       /// @brief Projects each element of a sequence into a new form by incorporating the element's index.
       /// @tparam result_t The type of the resulting value.
       /// @tparam source_t The type of the elements of source.
@@ -848,7 +848,7 @@ namespace xtd {
       /// The following code example demonstrates how to use xtd::linq::enumerable::select <source_t, result_t>(const ienumerable <source_t>&, const std::function <result_t(const source_t&, xtd::usize)>&) to project over a sequence of values and use the index of each element.
       /// @include enumerable_select.cpp
       template<xtd::iterable source_t>
-      [[nodiscard]] static auto select(const source_t& source, auto&& selector) -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>>;
+      [[nodiscard]] static auto select(source_t&& source, auto&& selector) -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>>;
       
       /// @brief Creates a xtd::array <type_t> from an xtd::collections::generic::ienumerable <type_t>.
       /// @tparam source_t The type of the elements of source.
@@ -893,18 +893,9 @@ namespace xtd {
       }
       /// @}
       
-    private:
-      template<typename type_t>
-      struct enumerable_holder {
-        enumerable_holder(type_t& value) : ptr_(std::addressof(value)) {}
-        enumerable_holder(type_t&& value) : value_(std::move(value)), ptr_(std::addressof(*value_)) {}
-        
-        type_t& get() {return *ptr_;}
-        
-      private:
-        std::optional<type_t> value_;
-        type_t* ptr_;
-      };
+    private:      
+      template<typename...>
+      static inline constexpr bool always_false_v = false;
       
       template<typename predicate_t, typename value_t>
       [[nodiscard]] static constexpr auto invoke_predicate_with_optional_index(predicate_t&& predicate, value_t&& value, xtd::usize index) -> bool;
