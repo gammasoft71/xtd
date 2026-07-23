@@ -303,7 +303,7 @@ auto xtd::linq::enumerable::contains(const source_t& source, const xtd::iterable
 }
 
 template<xtd::iterable source_t>
-auto xtd::linq::enumerable::contains(const source_t& source, const xtd::iterable_value_type<source_t>& value, const xtd::collections::generic::iequality_comparer<xtd::iterable_value_type<source_t>>& comparer) noexcept -> bool {
+auto xtd::linq::enumerable::contains(const source_t& source, const xtd::iterable_value_type<source_t>& value, const iequality_comparer<xtd::iterable_value_type<source_t>>& comparer) noexcept -> bool {
   for (const auto& item : source)
     if (comparer.equals(item, value)) return true;
   return false;
@@ -330,8 +330,19 @@ auto xtd::linq::enumerable::count(const source_t& source, predicate_t&& predicat
 }
 
 template<xtd::iterable source_t>
-auto xtd::linq::enumerable::count(const source_t& source, const xtd::iterable_value_type<source_t>& value) noexcept -> xtd::usize {
+auto xtd::linq::enumerable::count(const source_t& source, xtd::iterable_value_type<source_t>&& value) noexcept -> xtd::usize {
   return count(source, [value](const xtd::iterable_value_type<source_t>& item) -> bool {return item == value;});
+}
+
+template<class key_t, xtd::iterable source_t, xtd::callable<key_t, xtd::iterable_value_type<source_t>> key_selector_t>
+auto xtd::linq::enumerable::count_by(const source_t& source, key_selector_t&& key_selector) noexcept -> xtd::collections::generic::enumerable_generator<xtd::collections::generic::key_value_pair<key_t, xtd::usize>> {
+  return count_by<key_t>(source, key_selector, [](auto&& a, auto&& b) {return xtd::collections::generic::equality_comparer<key_t>::default_equality_comparer().equals(a, b);});
+  return count_by<key_t>(source, key_selector, xtd::collections::generic::equality_comparer<key_t>::default_equality_comparer());
+}
+
+template<class key_t, xtd::iterable source_t, xtd::callable<key_t, xtd::iterable_value_type<source_t>> key_selector_t>
+auto xtd::linq::enumerable::count_by(const source_t& source, key_selector_t&& key_selector, const iequality_comparer<key_t>& key_comparer) noexcept -> xtd::collections::generic::enumerable_generator<xtd::collections::generic::key_value_pair<key_t, xtd::usize>> {
+  return count_by<key_t>(source, key_selector, [&key_comparer](auto&& a, auto&& b) {return key_comparer.equals(a, b);});
 }
 
 template<class result_t, xtd::iterable source_t>

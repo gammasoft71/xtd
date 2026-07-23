@@ -383,7 +383,7 @@ namespace xtd {
       /// @param comparer An equality comparer to compare values.
       /// @return `true` if the source sequence contains an element that has the specified value; otherwise, `false`.
       template<xtd::iterable source_t>
-      [[nodiscard]] static auto contains(const source_t& source, const xtd::iterable_value_type<source_t>& value, const xtd::collections::generic::iequality_comparer<xtd::iterable_value_type<source_t>>& comparer) noexcept -> bool;
+      [[nodiscard]] static auto contains(const source_t& source, const xtd::iterable_value_type<source_t>& value, const iequality_comparer<xtd::iterable_value_type<source_t>>& comparer) noexcept -> bool;
       /// @brief Determines whether a sequence contains a specified element by using a specified equality comparer.
       /// @tparam source_t The type of the elements of source.
       /// @param source A sequence in which to locate a value.
@@ -418,7 +418,7 @@ namespace xtd {
       /// @param value The value to search for.
       /// @return A number representing the number of elements in the sequence that are equal to the `value`.
       template<xtd::iterable source_t>
-      [[nodiscard]] static auto count(const source_t& source, const xtd::iterable_value_type<source_t>& value) noexcept -> xtd::usize;
+      [[nodiscard]] static auto count(const source_t& source, xtd::iterable_value_type<source_t>&& value) noexcept -> xtd::usize;
       
       /// @brief Returns the count of elements in the source sequence grouped by key.
       /// @tparam source_t The type of the elements of source.
@@ -429,10 +429,8 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates how to use xtd::linq::enumerable::count_by <source_t>(const ienumerable <source_t>&, const std::function <key_t(const source_t&)>&) to count the number of elements in a sequence grouped by key.
       /// @include enumerable_count_by.cpp
-      template<typename key_t, typename source_t>
-      [[nodiscard]] static auto count_by(const ienumerable<source_t>& source, const std::function<key_t(const source_t&)>& key_selector) noexcept {
-        return count_by(source, key_selector, xtd::collections::generic::equality_comparer<key_t>::default_equality_comparer());
-      }
+      template<class key_t, xtd::iterable source_t, xtd::callable<key_t, xtd::iterable_value_type<source_t>> key_selector_t>
+      [[nodiscard]] static auto count_by(const source_t& source, key_selector_t&& key_selector) noexcept -> xtd::collections::generic::enumerable_generator<xtd::collections::generic::key_value_pair<key_t, xtd::usize>>;
       /// @brief Returns the count of elements in the source sequence grouped by key.
       /// @tparam source_t The type of the elements of source.
       /// @tparam key_t The type of the key returned by `key_selector`.
@@ -443,25 +441,21 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates how to use xtd::linq::enumerable::count_by <source_t>(const ienumerable <source_t>&, const std::function <key_t(const source_t&)>&) to count the number of elements in a sequence grouped by key.
       /// @include enumerable_count_by.cpp
-      template<typename key_t, typename source_t>
-      [[nodiscard]] static auto count_by(const ienumerable<source_t>& source, const std::function<key_t(const source_t&)>& key_selector, const iequality_comparer<key_t>& key_comparer) noexcept {
-        auto result = __opaque_xtd_linq_enumerable_collection__<key_value_pair<key_t, xtd::usize>> {};
-        auto keys = list<key_t> {};
-        auto enumerator = source.get_enumerator();
-        while (enumerator.move_next()) {
-          auto key = key_selector(enumerator.current());
-          auto index = xtd::usize {0};
-          for (; index < keys.count(); ++index)
-            if (key_comparer.equals(keys[index], key)) break;
-          if (index < keys.count()) result.items[index] = {key, result.items[index].value() + 1};
-          else {
-            keys.add(key);
-            result.items.push_back({key, 1});
-          }
-        }
-        return result;
-      }
-      
+      template<class key_t, xtd::iterable source_t, xtd::callable<key_t, xtd::iterable_value_type<source_t>> key_selector_t>
+      [[nodiscard]] static auto count_by(const source_t& source, key_selector_t&& key_selector, const iequality_comparer<key_t>& key_comparer) noexcept -> xtd::collections::generic::enumerable_generator<xtd::collections::generic::key_value_pair<key_t, xtd::usize>>;
+      /// @brief Returns the count of elements in the source sequence grouped by key.
+      /// @tparam source_t The type of the elements of source.
+      /// @tparam key_t The type of the key returned by `key_selector`.
+      /// @param source A sequence that contains elements to be counted.
+      /// @param key_selector A function to extract the key for each element.
+      /// @param key_equater An equality comparer to compare keys.
+      /// @return An enumerable containing the frequencies of each key occurrence in `source`.
+      /// @par Examples
+      /// The following code example demonstrates how to use xtd::linq::enumerable::count_by <source_t>(const ienumerable <source_t>&, const std::function <key_t(const source_t&)>&) to count the number of elements in a sequence grouped by key.
+      /// @include enumerable_count_by.cpp
+      template<class key_t, xtd::iterable source_t, xtd::callable<key_t, xtd::iterable_value_type<source_t>> key_selector_t, xtd::callable<bool, key_t, key_t> key_equater_t>
+      [[nodiscard]] static auto count_by(const source_t& source, key_selector_t&& key_selector, key_equater_t&& key_equater) noexcept -> xtd::collections::generic::enumerable_generator<xtd::collections::generic::key_value_pair<key_t, xtd::usize>>; // Defined in include/xtd/collections/generic/list.hpp
+
       /// @brief Returns the elements of the specified sequence or the type parameter's default value in a singleton collection if the sequence is empty.
       /// @tparam source_t The type of the elements of source.
       /// @param source The sequence to return a default value for if it is empty.
@@ -508,7 +502,7 @@ namespace xtd {
       /// @param comparer An xtd::collections::generic::iequality_comparer <type_t> to compare values.
       /// @return An enumerable distinct elements from the source sequence.
       template<typename source_t>
-      [[nodiscard]] static auto distinct(const ienumerable<source_t>& source, const xtd::collections::generic::iequality_comparer<source_t>& comparer) noexcept {
+      [[nodiscard]] static auto distinct(const ienumerable<source_t>& source, const iequality_comparer<source_t>& comparer) noexcept {
         auto result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
         for (const auto& item : source)
           if (!contains(result, item, comparer))

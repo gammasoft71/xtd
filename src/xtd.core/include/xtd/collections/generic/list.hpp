@@ -1115,6 +1115,27 @@ auto xtd::linq::enumerable::as_enumerable(source_t&& source) noexcept {
   else return xtd::collections::generic::list<xtd::iterable_value_type<source_t>>(std::move(source));
 }
 
+template<class key_t, xtd::iterable source_t, xtd::callable<key_t, xtd::iterable_value_type<source_t>> key_selector_t, xtd::callable<bool, key_t, key_t> key_equater_t>
+auto xtd::linq::enumerable::count_by(const source_t& source, key_selector_t&& key_selector, key_equater_t&& key_equater) noexcept -> xtd::collections::generic::enumerable_generator<xtd::collections::generic::key_value_pair<key_t, xtd::usize>> {
+  auto result = list<key_value_pair<key_t, xtd::usize>> {};
+  auto keys = list<key_t> {};
+  auto enumerator = source.get_enumerator();
+  while (enumerator.move_next()) {
+    auto key = key_selector(enumerator.current());
+    auto index = xtd::usize {0};
+    for (; index < keys.count(); ++index)
+      if (key_equater(keys[index], key)) break;
+    if (index < keys.count()) result[index] = {key, result[index].value() + 1};
+    else {
+      keys.add(key);
+      result.add({key, 1});
+    }
+  }
+  
+  for (const auto& item : result)
+    co_yield item;
+}
+
 template<typename value_t>
 inline auto xtd::linq::enumerable::to_list(const xtd::collections::generic::ienumerable<value_t>& source) {
   return xtd::collections::generic::list<value_t> {source};

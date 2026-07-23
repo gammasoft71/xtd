@@ -182,7 +182,8 @@ namespace xtd::linq::tests {
     }
     
     auto test_method_(count_by_with_enumerable_and_key_selector) {
-      auto result = enumerable::count_by<bool, int>(array {1, 2, 3, 4, 5, 6, 7, 9}, [](int value) {return value % 2 == 0;});
+      auto items = array {1, 2, 3, 4, 5, 6, 7, 9};
+      auto result = enumerable::count_by<bool>(items, [](int value) {return value % 2 == 0;});
       auto enumerator = result.get_enumerator();
       assert::is_true(enumerator.move_next());
       assert::are_equal(false, enumerator.current().key());

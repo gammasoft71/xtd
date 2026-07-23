@@ -200,7 +200,6 @@ namespace xtd {
           [[nodiscard]] auto count() const noexcept -> xtd::usize {
             return xtd::linq::enumerable::count(self());
           }
-          
           /// @brief Returns a number that represents how many elements in the specified sequence satisfy a condition.
           /// @param predicate A function to test each element for a condition.
           /// @return A number that represents how many elements in the sequence satisfy the condition in the predicate function.
@@ -211,7 +210,6 @@ namespace xtd {
           [[nodiscard]] auto count(predicate_t&& predicate) const noexcept -> xtd::usize {
             return xtd::linq::enumerable::count(self(), std::forward<predicate_t>(predicate));
           }
-          
           /// @brief Returns the number of elements with the specified value.
           /// @param value The value to search for.
           /// @return A number representing the number of elements in the sequence that are equal to the `value`.
@@ -230,7 +228,6 @@ namespace xtd {
           [[nodiscard]] auto count_by(key_selector_t&& key_selector) const noexcept {
             return xtd::linq::enumerable::count_by<key_t, value_t>(self(), std::forward<key_selector_t>(key_selector));
           }
-          
           /// @brief Returns the count of elements in the current sequence grouped by key.
           /// @tparam key_t The type of the key returned by `key_selector`.
           /// @param key_selector A function to extract the key for each element.
@@ -243,7 +240,19 @@ namespace xtd {
           [[nodiscard]] auto count_by(key_selector_t&& key_selector, xtd::collections::generic::iequality_comparer<key_t>&& key_comparer) const noexcept {
             return xtd::linq::enumerable::count_by<key_t, value_t>(self(), std::forward<key_selector_t>(key_selector), std::forward<xtd::collections::generic::iequality_comparer<key_t>>(key_comparer));
           }
-          
+          /// @brief Returns the count of elements in the current sequence grouped by key.
+          /// @tparam key_t The type of the key returned by `key_selector`.
+          /// @param key_selector A function to extract the key for each element.
+          /// @param key_comparer An equality comparer to compare keys.
+          /// @return An enumerable containing the frequencies of each key occurrence in current sequence.
+          /// @par Examples
+          /// The following code example demonstrates how to use xtd::linq::enumerable::count_by <value_t>(const ienumerable <value_t>&, const std::function <key_t(const value_t&)>&) to count the number of elements in a sequence grouped by key.
+          /// @include enumerable_count_by.cpp
+          template<typename key_t, xtd::callable<key_t, value_t> key_selector_t, xtd::callable<bool, key_t, key_t> key_equater_t>
+          [[nodiscard]] auto count_by(key_selector_t&& key_selector, key_equater_t&& key_equater) const noexcept {
+            return xtd::linq::enumerable::count_by<key_t, value_t>(self(), std::forward<key_selector_t>(key_selector), std::forward<key_equater_t>(key_equater));
+          }
+
           /// @brief Returns the elements of the specified sequence or the type parameter's default value in a singleton collection if the current sequence is empty.
           /// @return An xtd::collections::generic::ienumerable <type_t> that contains default_value if source is empty; otherwise, source.
           [[nodiscard]] auto default_if_empty() const noexcept {
