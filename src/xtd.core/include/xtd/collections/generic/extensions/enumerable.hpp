@@ -28,7 +28,7 @@ namespace xtd {
         /// @par Library
         /// xtd.core
         /// @ingroup xtd_core extensions_generic_collections
-        template<typename enumerable_t, typename value_t>
+        template<typename value_t, typename enumerable_t>
         class enumerable {
         public:
           /// @name Public Aliases

@@ -197,8 +197,8 @@ namespace xtd {
 #undef __XTD_CORE_INTERNAL__
 
 /// @cond
-template<typename enumerable_t, typename source_t>
-inline xtd::array<source_t> xtd::collections::generic::extensions::enumerable<enumerable_t, source_t>::to_array() const {
+template<typename source_t, typename enumerable_t>
+inline xtd::array<source_t> xtd::collections::generic::extensions::enumerable<source_t, enumerable_t>::to_array() const {
   return xtd::linq::enumerable::to_array(self());
 }
 

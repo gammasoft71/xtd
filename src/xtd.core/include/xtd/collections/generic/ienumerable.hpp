@@ -37,7 +37,7 @@ namespace xtd {
       /// @remarks For the non-generic version of this interface, see xtd::collections::ienumerable.
       /// @remarks xtd::collections::generic::ienumerable <type_t> contains a single method that you must implement when implementing this interface; xtd::collections::generic::ienumerable::get_enumerator, which returns an xtd::collections::generic::enumerator <type_t> object. The returned xtd::collections::generic::enumerator <type_t> provides the ability to iterate through the collection by exposing a xtd::collections::generic::enumerator::current property.
       template<typename type_t>
-      class ienumerable interface_, public ienumerable_abstract, public xtd::collections::generic::extensions::enumerable_iterators<type_t, xtd::collections::generic::ienumerable<type_t>>, public xtd::collections::generic::extensions::enumerable<ienumerable<type_t>, type_t > {
+      class ienumerable interface_, public ienumerable_abstract, public xtd::collections::generic::extensions::enumerable_iterators<type_t, xtd::collections::generic::ienumerable<type_t>>, public xtd::collections::generic::extensions::enumerable<type_t, xtd::collections::generic::ienumerable<type_t>> {
       public:
         /// @name Public Aliases
         

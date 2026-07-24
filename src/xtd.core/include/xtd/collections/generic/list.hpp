@@ -1103,8 +1103,8 @@ namespace xtd {
 
 /// @cond
 namespace xtd::collections::generic::extensions {
-  template<typename enumerable_t, typename source_t>
-  inline auto enumerable<enumerable_t, source_t>::to_list() const -> xtd::collections::generic::list<source_t> {
+  template<typename source_t, typename enumerable_t>
+  inline auto enumerable<source_t, enumerable_t>::to_list() const -> xtd::collections::generic::list<source_t> {
     return xtd::linq::enumerable::to_list(self());
   }
 }

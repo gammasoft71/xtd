@@ -65,7 +65,7 @@ namespace xtd {
     /// @name Public Properties
     
     /// @{
-    using xtd::collections::generic::extensions::enumerable<xtd::collections::generic::ienumerable<value_type>, value_type>::count;
+    using xtd::collections::generic::extensions::enumerable<value_type, xtd::collections::generic::ienumerable<value_type>>::count;
     /// @brief Gets the number of elements contained in the xtd::array <type_t>.
     /// @return The number of elements contained in the xtd::array <type_t>.
     /// @remarks Retrieving the value of this property is an O(1) operation; setting the property is an O(n) operation, where n is the new capacity.
