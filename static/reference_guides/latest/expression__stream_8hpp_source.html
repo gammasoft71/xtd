@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a> {</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>  <span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd_1_1expressions.html">expressions</a> {</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> expression_t&gt;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> expression_t&gt;</div>
 <div class="foldopen" id="foldopen00023" data-start="{" data-end="};">
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="structxtd_1_1expressions_1_1expression__stream.html">   23</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structxtd_1_1expressions_1_1expression__stream.html">expression_stream</a> {</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="structxtd_1_1expressions_1_1expression__stream.html#ab5ba56b9ac34850ad9fa48d75ee91a8e">   25</a></span>      <span class="keyword">const</span> expression_t&amp; <a class="code hl_variable" href="structxtd_1_1expressions_1_1expression__stream.html#ab5ba56b9ac34850ad9fa48d75ee91a8e">expression</a>;</div>
@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    };</div>
 </div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> expression_t&gt;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> expression_t&gt;</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keyword">auto</span> <a class="code hl_function" href="group__expressions.html#ga8ad99637fe15c61b5003d3f64c9f6c86">operator&lt;&lt;</a>(std::ostream&amp; os, <span class="keyword">const</span> <a class="code hl_struct" href="structxtd_1_1expressions_1_1expression__stream.html">expression_stream&lt;expression_t&gt;</a>&amp; ps) -&gt; std::ostream&amp; {</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>      <span class="keywordflow">if</span> (ps.parent_precedence &lt; expression_t::precedence) os &lt;&lt; <span class="stringliteral">&quot;(&quot;</span> &lt;&lt; ps.expression &lt;&lt; <span class="stringliteral">&quot;)&quot;</span>;</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>      <span class="keywordflow">else</span> os &lt;&lt; ps.expression;</div>

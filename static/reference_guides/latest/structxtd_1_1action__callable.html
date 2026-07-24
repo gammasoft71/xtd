@@ -111,9 +111,9 @@ document.addEventListener('DOMContentLoaded', () => {
 </div><!--header-->
 <div class="contents">
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Definition</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;class function_t, class result_t = void, class... args_t&gt;<br />
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename function_t, typename result_t = void, typename... args_t&gt;<br />
 struct xtd::action_callable&lt; function_t, result_t, args_t &gt;</div><p>Represents the action callable (actiontion, method, xtd::delegate, <a class="el" href="classxtd_1_1event.html" title="Represents an event.">xtd::event</a>, std::actiontional) concept. </p>
-<dl class="section user"><dt>Definition</dt><dd><div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">class </span>actiontion_t, <span class="keyword">class</span>... args_t&gt;</div>
+<dl class="section user"><dt>Definition</dt><dd><div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> actiontion_t, <span class="keyword">typename</span> result_t = void, <span class="keyword">typename</span>... args_t&gt;</div>
 <div class="line"><span class="keyword">concept </span>concept <a class="code hl_concept" href="conceptxtd_1_1action__callable.html">action_callable</a> = <a class="code hl_struct" href="structxtd_1_1invocable.html">xtd::invocable</a>&lt;actiontion_t, void, args_t...&gt;;</div>
 <div class="ttc" id="aconceptxtd_1_1action__callable_html"><div class="ttname"><a href="conceptxtd_1_1action__callable.html">xtd::action_callable</a></div><div class="ttdef"><b>Definition</b> action_callable.hpp:11</div></div>
 <div class="ttc" id="astructxtd_1_1invocable_html"><div class="ttname"><a href="structxtd_1_1invocable.html">xtd::invocable</a></div><div class="ttdoc">Represents the invocable (function, method, xtd::delegate, xtd::event, std::functional) concept.</div><div class="ttdef"><b>Definition</b> invocable_.hpp:47</div></div>

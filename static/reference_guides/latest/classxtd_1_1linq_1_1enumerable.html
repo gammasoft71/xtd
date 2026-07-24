@@ -265,13 +265,13 @@ requires std::same_as&lt;<a class="el" href="group__concepts.html#ga7ffbe4fba341
 <tr class="memitem:a3986492ea8bcf1daeaef2b2bbd94714c" id="r_a3986492ea8bcf1daeaef2b2bbd94714c"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t&gt; </td></tr>
 <tr class="memitem:a3986492ea8bcf1daeaef2b2bbd94714c template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a3986492ea8bcf1daeaef2b2bbd94714c">count</a> (const source_t &amp;source, <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; &amp;&amp;value) noexcept -&gt; <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td></tr>
 <tr class="memdesc:a3986492ea8bcf1daeaef2b2bbd94714c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of elements with the specified value.  <br /></td></tr>
-<tr class="memitem:a24153c0252345bc22b0c6569fb3b8e28" id="r_a24153c0252345bc22b0c6569fb3b8e28"><td class="memTemplParams" colspan="2">template&lt;class key_t, <a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t, <a class="el" href="structxtd_1_1callable.html">xtd::callable</a>&lt; key_t, <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; &gt; key_selector_t&gt; </td></tr>
+<tr class="memitem:a24153c0252345bc22b0c6569fb3b8e28" id="r_a24153c0252345bc22b0c6569fb3b8e28"><td class="memTemplParams" colspan="2">template&lt;typename key_t, <a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t, <a class="el" href="structxtd_1_1callable.html">xtd::callable</a>&lt; key_t, <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; &gt; key_selector_t&gt; </td></tr>
 <tr class="memitem:a24153c0252345bc22b0c6569fb3b8e28 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a24153c0252345bc22b0c6569fb3b8e28">count_by</a> (const source_t &amp;source, key_selector_t &amp;&amp;key_selector) noexcept -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; <a class="el" href="structxtd_1_1collections_1_1generic_1_1key__value__pair.html">xtd::collections::generic::key_value_pair</a>&lt; key_t, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> &gt; &gt;</td></tr>
 <tr class="memdesc:a24153c0252345bc22b0c6569fb3b8e28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the count of elements in the source sequence grouped by key.  <br /></td></tr>
-<tr class="memitem:a76331c4441de345abe6041f3f22c0a76" id="r_a76331c4441de345abe6041f3f22c0a76"><td class="memTemplParams" colspan="2">template&lt;class key_t, <a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t, <a class="el" href="structxtd_1_1callable.html">xtd::callable</a>&lt; key_t, <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; &gt; key_selector_t&gt; </td></tr>
+<tr class="memitem:a76331c4441de345abe6041f3f22c0a76" id="r_a76331c4441de345abe6041f3f22c0a76"><td class="memTemplParams" colspan="2">template&lt;typename key_t, <a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t, <a class="el" href="structxtd_1_1callable.html">xtd::callable</a>&lt; key_t, <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; &gt; key_selector_t&gt; </td></tr>
 <tr class="memitem:a76331c4441de345abe6041f3f22c0a76 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a76331c4441de345abe6041f3f22c0a76">count_by</a> (const source_t &amp;source, key_selector_t &amp;&amp;key_selector, const <a class="el" href="#a49bbe9fcf3dfc4dae1ad074550a1e37a">iequality_comparer</a>&lt; key_t &gt; &amp;key_comparer) noexcept -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; <a class="el" href="structxtd_1_1collections_1_1generic_1_1key__value__pair.html">xtd::collections::generic::key_value_pair</a>&lt; key_t, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> &gt; &gt;</td></tr>
 <tr class="memdesc:a76331c4441de345abe6041f3f22c0a76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the count of elements in the source sequence grouped by key.  <br /></td></tr>
-<tr class="memitem:aff68b5c5b743fa20ce9fd541ee838417" id="r_aff68b5c5b743fa20ce9fd541ee838417"><td class="memTemplParams" colspan="2">template&lt;class key_t, <a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t, <a class="el" href="structxtd_1_1callable.html">xtd::callable</a>&lt; key_t, <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; &gt; key_selector_t, <a class="el" href="structxtd_1_1callable.html">xtd::callable</a>&lt; bool, key_t, key_t &gt; key_equater_t&gt; </td></tr>
+<tr class="memitem:aff68b5c5b743fa20ce9fd541ee838417" id="r_aff68b5c5b743fa20ce9fd541ee838417"><td class="memTemplParams" colspan="2">template&lt;typename key_t, <a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t, <a class="el" href="structxtd_1_1callable.html">xtd::callable</a>&lt; key_t, <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; &gt; key_selector_t, <a class="el" href="structxtd_1_1callable.html">xtd::callable</a>&lt; bool, key_t, key_t &gt; key_equater_t&gt; </td></tr>
 <tr class="memitem:aff68b5c5b743fa20ce9fd541ee838417 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aff68b5c5b743fa20ce9fd541ee838417">count_by</a> (const source_t &amp;source, key_selector_t &amp;&amp;key_selector, key_equater_t &amp;&amp;key_equater) noexcept -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; <a class="el" href="structxtd_1_1collections_1_1generic_1_1key__value__pair.html">xtd::collections::generic::key_value_pair</a>&lt; key_t, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> &gt; &gt;</td></tr>
 <tr class="memdesc:aff68b5c5b743fa20ce9fd541ee838417"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the count of elements in the source sequence grouped by key.  <br /></td></tr>
 <tr class="memitem:a0f6d60a2871618535d7238d9ee876426" id="r_a0f6d60a2871618535d7238d9ee876426"><td class="memTemplParams" colspan="2">template&lt;typename source_t&gt; </td></tr>
@@ -367,7 +367,7 @@ requires <a class="el" href="structxtd_1_1numeric.html">xtd::numeric</a>&lt;sour
 <tr class="memitem:aa2c9248a6f7a6114a7afd708f159de3b" id="r_aa2c9248a6f7a6114a7afd708f159de3b"><td class="memTemplParams" colspan="2">template&lt;typename type_t&gt; </td></tr>
 <tr class="memitem:aa2c9248a6f7a6114a7afd708f159de3b template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aa2c9248a6f7a6114a7afd708f159de3b">range</a> (type_t start, type_t count, type_t step)</td></tr>
 <tr class="memdesc:aa2c9248a6f7a6114a7afd708f159de3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a sequence of integral numbers within a specified range and step.  <br /></td></tr>
-<tr class="memitem:a54478908a846a024a8efff362627e7d4" id="r_a54478908a846a024a8efff362627e7d4"><td class="memTemplParams" colspan="2">template&lt;class result_t, <a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t&gt; </td></tr>
+<tr class="memitem:a54478908a846a024a8efff362627e7d4" id="r_a54478908a846a024a8efff362627e7d4"><td class="memTemplParams" colspan="2">template&lt;typename result_t, <a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t&gt; </td></tr>
 <tr class="memitem:a54478908a846a024a8efff362627e7d4 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a54478908a846a024a8efff362627e7d4">select</a> (source_t &amp;&amp;source, auto &amp;&amp;selector) -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; result_t &gt;</td></tr>
 <tr class="memdesc:a54478908a846a024a8efff362627e7d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Projects each element of a sequence into a new form.  <br /></td></tr>
 <tr class="memitem:ab073a2194cd0b17a94abc13f0a17a846" id="r_ab073a2194cd0b17a94abc13f0a17a846"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t&gt; </td></tr>
@@ -598,7 +598,7 @@ template&lt;typename accumulate_t, <a class="el" href="structxtd_1_1iterable.htm
 <div class="line">  <span class="keyword">auto</span> ints = <a class="code hl_class" href="classxtd_1_1array.html">array</a> {4, 8, 8, 3, 9, 0, 7, 8, 2};</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Count the even numbers in the array, using a seed value of 0.</span></div>
-<div class="line">  <span class="keyword">auto</span> num_even = ints.<a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a974dbd44b3864910b856099805e6b91c">aggregate</a>(0, [](<span class="keyword">auto</span>&amp;&amp; total, <span class="keyword">auto</span>&amp;&amp; next) {</div>
+<div class="line">  <span class="keyword">auto</span> num_even = ints.<a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#ae52b5352798588d992f7a20b7736208b">aggregate</a>(0, [](<span class="keyword">auto</span>&amp;&amp; total, <span class="keyword">auto</span>&amp;&amp; next) {</div>
 <div class="line">    <span class="keywordflow">return</span> next % 2 == 0 ? total + 1 : total;</div>
 <div class="line">  });</div>
 <div class="line"> </div>
@@ -609,7 +609,7 @@ template&lt;typename accumulate_t, <a class="el" href="structxtd_1_1iterable.htm
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// The number of even integers is: 6</span></div>
 <div class="ttc" id="aclassxtd_1_1array_html"><div class="ttname"><a href="classxtd_1_1array.html">xtd::array</a></div><div class="ttdoc">Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...</div><div class="ttdef"><b>Definition</b> array.hpp:64</div></div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable_html_a974dbd44b3864910b856099805e6b91c"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a974dbd44b3864910b856099805e6b91c">xtd::collections::generic::extensions::enumerable::aggregate</a></div><div class="ttdeci">auto aggregate(func_t &amp;&amp;func) const -&gt; value_t</div><div class="ttdoc">Applies an accumulator function over a sequence.</div><div class="ttdef"><b>Definition</b> enumerable.hpp:60</div></div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable_html_ae52b5352798588d992f7a20b7736208b"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#ae52b5352798588d992f7a20b7736208b">xtd::collections::generic::extensions::enumerable::aggregate</a></div><div class="ttdeci">auto aggregate(func_t &amp;&amp;func) const -&gt; value_t</div><div class="ttdoc">Applies an accumulator function over a sequence.</div><div class="ttdef"><b>Definition</b> enumerable.hpp:60</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -678,7 +678,7 @@ template&lt;typename result_t, typename accumulate_t, <a class="el" href="struct
 <div class="line">  <span class="keyword">auto</span> fruits = <a class="code hl_class" href="classxtd_1_1array.html">array&lt;string&gt;</a> {<span class="stringliteral">&quot;apple&quot;</span>, <span class="stringliteral">&quot;mango&quot;</span>, <span class="stringliteral">&quot;orange&quot;</span>, <span class="stringliteral">&quot;passionfruit&quot;</span>, <span class="stringliteral">&quot;grape&quot;</span>};</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Determine whether any string in the array is longer than &quot;banana&quot;.</span></div>
-<div class="line">  <span class="keyword">auto</span> longest_name = fruits.<a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a974dbd44b3864910b856099805e6b91c">aggregate</a>(<span class="stringliteral">&quot;bananas&quot;</span>,</div>
+<div class="line">  <span class="keyword">auto</span> longest_name = fruits.<a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#ae52b5352798588d992f7a20b7736208b">aggregate</a>(<span class="stringliteral">&quot;bananas&quot;</span>,</div>
 <div class="line">     [](<span class="keyword">auto</span>&amp;&amp; longest, <span class="keyword">auto</span>&amp;&amp; next) {<span class="keywordflow">return</span> next.length() &gt; longest.length() ? next : longest;},</div>
 <div class="line">     <span class="comment">// Return the final result as an upper case string.</span></div>
 <div class="line">     [](<span class="keyword">auto</span>&amp;&amp; fruit) {<span class="keywordflow">return</span> fruit.to_upper();});</div>
@@ -756,7 +756,7 @@ template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> so
 <div class="line">  };</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Determine whether all pet names in the array start with &#39;B&#39;.</span></div>
-<div class="line">  <span class="keywordtype">bool</span> all_start_with_b = pets.<a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a09b64931571d1a88f328e0b49cab9bd8">all</a>([](<span class="keyword">auto</span>&amp;&amp; pet) {</div>
+<div class="line">  <span class="keywordtype">bool</span> all_start_with_b = pets.<a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#ab0df621ab1e82dd659dcb0664e734e7d">all</a>([](<span class="keyword">auto</span>&amp;&amp; pet) {</div>
 <div class="line">    <span class="keywordflow">return</span> pet.name.starts_with(<span class="stringliteral">&quot;B&quot;</span>);</div>
 <div class="line">  });</div>
 <div class="line">  </div>
@@ -766,7 +766,7 @@ template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> so
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// Not all pet names start with &#39;B&#39;.</span></div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable_html_a09b64931571d1a88f328e0b49cab9bd8"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a09b64931571d1a88f328e0b49cab9bd8">xtd::collections::generic::extensions::enumerable::all</a></div><div class="ttdeci">auto all(predicate_t &amp;&amp;predicate) const -&gt; bool</div><div class="ttdoc">Determines whether all elements of a sequence satisfy a condition.</div><div class="ttdef"><b>Definition</b> enumerable.hpp:97</div></div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable_html_ab0df621ab1e82dd659dcb0664e734e7d"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#ab0df621ab1e82dd659dcb0664e734e7d">xtd::collections::generic::extensions::enumerable::all</a></div><div class="ttdeci">auto all(predicate_t &amp;&amp;predicate) const -&gt; bool</div><div class="ttdoc">Determines whether all elements of a sequence satisfy a condition.</div><div class="ttdef"><b>Definition</b> enumerable.hpp:97</div></div>
 <div class="ttc" id="aclassxtd_1_1object_html"><div class="ttname"><a href="classxtd_1_1object.html">xtd::object</a></div><div class="ttdoc">Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....</div><div class="ttdef"><b>Definition</b> object.hpp:45</div></div>
 </div><!-- fragment --> </dd></dl>
 
@@ -892,7 +892,7 @@ template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> so
 <div class="line">  };</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Determine whether all pet names in the array start with &#39;B&#39;.</span></div>
-<div class="line">  <span class="keywordtype">bool</span> all_start_with_b = pets.<a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a09b64931571d1a88f328e0b49cab9bd8">all</a>([](<span class="keyword">auto</span>&amp;&amp; pet) {</div>
+<div class="line">  <span class="keywordtype">bool</span> all_start_with_b = pets.<a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#ab0df621ab1e82dd659dcb0664e734e7d">all</a>([](<span class="keyword">auto</span>&amp;&amp; pet) {</div>
 <div class="line">    <span class="keywordflow">return</span> pet.name.starts_with(<span class="stringliteral">&quot;B&quot;</span>);</div>
 <div class="line">  });</div>
 <div class="line">  </div>
@@ -2214,7 +2214,7 @@ template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> so
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class key_t, <a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t, <a class="el" href="structxtd_1_1callable.html">xtd::callable</a>&lt; key_t, <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; &gt; key_selector_t&gt; </div>
+template&lt;typename key_t, <a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t, <a class="el" href="structxtd_1_1callable.html">xtd::callable</a>&lt; key_t, <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; &gt; key_selector_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2302,7 +2302,7 @@ template&lt;class key_t, <a class="el" href="structxtd_1_1iterable.html">xtd::it
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class key_t, <a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t, <a class="el" href="structxtd_1_1callable.html">xtd::callable</a>&lt; key_t, <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; &gt; key_selector_t&gt; </div>
+template&lt;typename key_t, <a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t, <a class="el" href="structxtd_1_1callable.html">xtd::callable</a>&lt; key_t, <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; &gt; key_selector_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2391,7 +2391,7 @@ template&lt;class key_t, <a class="el" href="structxtd_1_1iterable.html">xtd::it
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class key_t, <a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t, <a class="el" href="structxtd_1_1callable.html">xtd::callable</a>&lt; key_t, <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; &gt; key_selector_t, <a class="el" href="structxtd_1_1callable.html">xtd::callable</a>&lt; bool, key_t, key_t &gt; key_equater_t&gt; </div>
+template&lt;typename key_t, <a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t, <a class="el" href="structxtd_1_1callable.html">xtd::callable</a>&lt; key_t, <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; &gt; key_selector_t, <a class="el" href="structxtd_1_1callable.html">xtd::callable</a>&lt; bool, key_t, key_t &gt; key_equater_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3732,7 +3732,7 @@ template&lt;typename type_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class result_t, <a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t&gt; </div>
+template&lt;typename result_t, <a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3955,7 +3955,7 @@ template&lt;typename source_t&gt; </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> fruits = <a class="code hl_class" href="classxtd_1_1array.html">array&lt;string&gt;</a> {<span class="stringliteral">&quot;apple&quot;</span>, <span class="stringliteral">&quot;passionfruit&quot;</span>, <span class="stringliteral">&quot;banana&quot;</span>, <span class="stringliteral">&quot;mango&quot;</span>, <span class="stringliteral">&quot;orange&quot;</span>, <span class="stringliteral">&quot;blueberry&quot;</span>, <span class="stringliteral">&quot;grape&quot;</span>, <span class="stringliteral">&quot;strawberry&quot;</span>};</div>
 <div class="line">  </div>
-<div class="line">  <span class="keyword">auto</span> lengths = fruits.<a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a6c427bcad9b8206141eb6cdc5fa98435">select</a>&lt;<a class="code hl_typedef" href="group__types.html#gae60f5a861761019d824a87291f85d525">usize</a>&gt;(_*method(&amp;<a class="code hl_function" href="classxtd_1_1basic__string.html#a4d8c4c95a122844c62de3feb62a5fa74">string::length</a>)).to_list();</div>
+<div class="line">  <span class="keyword">auto</span> lengths = fruits.<a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a77f28b05a9f794ee4885ddb682c1498d">select</a>&lt;<a class="code hl_typedef" href="group__types.html#gae60f5a861761019d824a87291f85d525">usize</a>&gt;(_*method(&amp;<a class="code hl_function" href="classxtd_1_1basic__string.html#a4d8c4c95a122844c62de3feb62a5fa74">string::length</a>)).to_list();</div>
 <div class="line">  </div>
 <div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> <a class="code hl_function" href="namespacextd.html#a84689e2cdf94d64f7e5f33fe4a1be71a">length</a> : lengths)</div>
 <div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<a class="code hl_function" href="namespacextd.html#a84689e2cdf94d64f7e5f33fe4a1be71a">length</a>);</div>
@@ -3972,7 +3972,7 @@ template&lt;typename source_t&gt; </div>
 <div class="line"><span class="comment">// 5</span></div>
 <div class="line"><span class="comment">// 10</span></div>
 <div class="ttc" id="aclassxtd_1_1basic__string_html_a4d8c4c95a122844c62de3feb62a5fa74"><div class="ttname"><a href="classxtd_1_1basic__string.html#a4d8c4c95a122844c62de3feb62a5fa74">xtd::basic_string&lt; char &gt;::length</a></div><div class="ttdeci">virtual auto length() const noexcept -&gt; size_type</div><div class="ttdef"><b>Definition</b> basic_string.hpp:383</div></div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable_html_a6c427bcad9b8206141eb6cdc5fa98435"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a6c427bcad9b8206141eb6cdc5fa98435">xtd::collections::generic::extensions::enumerable::select</a></div><div class="ttdeci">auto select(auto &amp;&amp;selector) const</div><div class="ttdoc">Projects each element of a sequence into a new form.</div><div class="ttdef"><b>Definition</b> enumerable.hpp:399</div></div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable_html_a77f28b05a9f794ee4885ddb682c1498d"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a77f28b05a9f794ee4885ddb682c1498d">xtd::collections::generic::extensions::enumerable::select</a></div><div class="ttdeci">auto select(auto &amp;&amp;selector) const</div><div class="ttdoc">Projects each element of a sequence into a new form.</div><div class="ttdef"><b>Definition</b> enumerable.hpp:399</div></div>
 <div class="ttc" id="agroup__types_html_gae60f5a861761019d824a87291f85d525"><div class="ttname"><a href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></div><div class="ttdeci">std::size_t usize</div><div class="ttdoc">Represents an unsigned size of any object in bytes.</div><div class="ttdef"><b>Definition</b> usize.hpp:22</div></div>
 <div class="ttc" id="anamespacextd_html_a84689e2cdf94d64f7e5f33fe4a1be71a"><div class="ttname"><a href="namespacextd.html#a84689e2cdf94d64f7e5f33fe4a1be71a">xtd::length</a></div><div class="ttdeci">constexpr auto length() const noexcept -&gt; size_type</div><div class="ttdoc">Returns the length of the current read_only_span.</div><div class="ttdef"><b>Definition</b> read_only_span.hpp:212</div></div>
 </div><!-- fragment --> </dd></dl>

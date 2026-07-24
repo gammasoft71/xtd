@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a> {</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>  <span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd_1_1expressions.html">expressions</a> {</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> type_t&gt;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> type_t&gt;</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keyword">requires</span> <a class="code hl_concept" href="conceptxtd_1_1expressions_1_1expression__operand.html">expression_operand&lt;type_t&gt;</a></div>
 <div class="foldopen" id="foldopen00033" data-start="{" data-end="}">
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="group__expressions.html#gabc1777dc8a90ef1cd24f1a91ed382e40">   33</a></span>    <span class="keyword">constexpr</span> <span class="keyword">decltype</span>(<span class="keyword">auto</span>) <a class="code hl_function" href="group__expressions.html#gabc1777dc8a90ef1cd24f1a91ed382e40">as_expression</a>(type_t&amp;&amp; <a class="code hl_struct" href="structxtd_1_1expressions_1_1value.html">value</a>) {</div>
@@ -129,7 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    }</div>
 </div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span></div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> type_t&gt;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> type_t&gt;</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keyword">requires</span> (!expression_operand&lt;type_t&gt;)</div>
 <div class="foldopen" id="foldopen00051" data-start="{" data-end="}">
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="group__expressions.html#gabc1777dc8a90ef1cd24f1a91ed382e40">   51</a></span>    <span class="keyword">constexpr</span> <span class="keyword">auto</span> <a class="code hl_function" href="group__expressions.html#gabc1777dc8a90ef1cd24f1a91ed382e40">as_expression</a>(type_t&amp;&amp; <a class="code hl_struct" href="structxtd_1_1expressions_1_1value.html">value</a>) {</div>

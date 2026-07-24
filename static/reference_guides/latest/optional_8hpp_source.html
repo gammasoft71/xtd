@@ -124,14 +124,14 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="group__types.html#gac3e508084ce85854c55799f802c7e7ce">   26</a></span>  <span class="keyword">using </span><a class="code hl_typedef" href="group__types.html#gac3e508084ce85854c55799f802c7e7ce">optional</a> = std::optional&lt;type_t&gt;;</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>}</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span></div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> optional_t, <span class="keyword">typename</span> default_value_t&gt;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> optional_t, <span class="keyword">typename</span> default_value_t&gt;</div>
 <div class="foldopen" id="foldopen00034" data-start="{" data-end="}">
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="optional_8hpp.html#a322c8d2a5995a2c0450ee33448158571">   34</a></span>optional_t <a class="code hl_function" href="optional_8hpp.html#a322c8d2a5995a2c0450ee33448158571">operator |</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="group__types.html#gac3e508084ce85854c55799f802c7e7ce">xtd::optional&lt;optional_t&gt;</a>&amp; optional, default_value_t&amp;&amp; default_value) {</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  <span class="keywordflow">return</span> optional.value_or(std::forward&lt;default_value_t&gt;(default_value));</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>}</div>
 </div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> optional_t, <span class="keyword">typename</span> default_value_t&gt;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> optional_t, <span class="keyword">typename</span> default_value_t&gt;</div>
 <div class="foldopen" id="foldopen00043" data-start="{" data-end="}">
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="optional_8hpp.html#a26819680b83c0a787f6adbb9ae4ab061">   43</a></span><a class="code hl_typedef" href="group__types.html#gac3e508084ce85854c55799f802c7e7ce">xtd::optional&lt;optional_t&gt;</a>&amp; <a class="code hl_function" href="optional_8hpp.html#a26819680b83c0a787f6adbb9ae4ab061">operator |=</a>(<a class="code hl_typedef" href="group__types.html#gac3e508084ce85854c55799f802c7e7ce">xtd::optional&lt;optional_t&gt;</a>&amp; optional, default_value_t&amp;&amp; default_value) {</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  <span class="keywordflow">if</span> (!optional) optional = std::forward&lt;default_value_t&gt;(default_value);</div>

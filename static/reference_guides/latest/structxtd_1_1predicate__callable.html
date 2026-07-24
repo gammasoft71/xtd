@@ -111,10 +111,10 @@ document.addEventListener('DOMContentLoaded', () => {
 </div><!--header-->
 <div class="contents">
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Definition</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;class function_t, class arg_t&gt;<br />
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename function_t, typename arg_t&gt;<br />
 struct xtd::predicate_callable&lt; function_t, arg_t &gt;</div><p>Represents the predicate callable (function, method, xtd::delegate, <a class="el" href="classxtd_1_1event.html" title="Represents an event.">xtd::event</a>, std::functional) concept. </p>
-<dl class="section user"><dt>Definition</dt><dd><div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">class </span>function_t, <span class="keyword">class </span>result_t = void, <span class="keyword">class</span>... args_t&gt;</div>
-<div class="line"><span class="keyword">concept </span>concept <a class="code hl_concept" href="conceptxtd_1_1predicate__callable.html">predicate_callable</a> = <a class="code hl_struct" href="structxtd_1_1invocable.html">xtd::invocable</a>&lt;function_t, result_t, args_t...&gt;;</div>
+<dl class="section user"><dt>Definition</dt><dd><div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> function_t, <span class="keyword">typename</span> arg_t&gt;</div>
+<div class="line"><span class="keyword">concept </span>concept <a class="code hl_concept" href="conceptxtd_1_1predicate__callable.html">predicate_callable</a> = <a class="code hl_struct" href="structxtd_1_1invocable.html">xtd::invocable&lt;function_t, bool, arg_t&gt;</a>;</div>
 <div class="ttc" id="aconceptxtd_1_1predicate__callable_html"><div class="ttname"><a href="conceptxtd_1_1predicate__callable.html">xtd::predicate_callable</a></div><div class="ttdef"><b>Definition</b> predicate_callable.hpp:11</div></div>
 <div class="ttc" id="astructxtd_1_1invocable_html"><div class="ttname"><a href="structxtd_1_1invocable.html">xtd::invocable</a></div><div class="ttdoc">Represents the invocable (function, method, xtd::delegate, xtd::event, std::functional) concept.</div><div class="ttdef"><b>Definition</b> invocable_.hpp:47</div></div>
 </div><!-- fragment --> </dd></dl>
