@@ -151,7 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line">    <span class="keyword">auto</span> on_paint(paint_event_args&amp; e) -&gt; <span class="keywordtype">void</span> <span class="keyword">override</span> {</div>
 <div class="line">      <span class="keyword">static</span> <span class="keyword">const</span> <span class="keyword">auto</span> sins = fixed_array {0, 38, 71, 92, 100, 92, 71, 38, 0, -38, -71, -92, -100, -92, -71, -38};</div>
 <div class="line">      <span class="keyword">auto</span> pos = point {(e.clip_rectangle().size().width - as&lt;int&gt;(e.graphics().measure_string(text(), font()).width)) / 2, (e.clip_rectangle().size().height - as&lt;int&gt;(e.graphics().measure_string(text(), font()).height)) / 2};</div>
-<div class="line">      e.graphics().clear(default_back_color());</div>
+<div class="line">      e.graphics().clear(back_color());</div>
 <div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> char_index = 0_z; <span class="keyword">const</span> <span class="keyword">auto</span>&amp; c : text().to_u32string()) {</div>
 <div class="line">        <span class="keyword">auto</span> sins_index = (step + char_index++) % sins.size();</div>
 <div class="line">        e.graphics().draw_string(string::format(<span class="stringliteral">&quot;{}&quot;</span>, c), font(), solid_brush {color::from_hsv(360.0f / sins.size() * sins_index, 1.0f, 0.75f)}, point::subtract(pos, point(0, sins[sins_index] * font().height() / 400)));</div>
