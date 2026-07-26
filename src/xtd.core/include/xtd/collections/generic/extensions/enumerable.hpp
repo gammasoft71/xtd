@@ -297,23 +297,18 @@ namespace xtd {
           /// @brief Returns the first element of the sequence that satisfies a condition or a default value if no such element is found.
           /// @param predicate A function to test each element for a condition.
           /// @return default `value_t {}` if source is empty or if no element passes the test specified by predicate; otherwise, the first element in source that passes the test specified by predicate.
-          //template<xtd::predicate_callable<value_t> predicate_t>
-          //[[nodiscard]] auto first_or_default(predicate_t&& predicate) const noexcept -> value_t {
-          //  return xtd::linq::enumerable::first_or_default(self(), std::forward<predicate_t>(predicate));
-          //}
-          [[nodiscard]] auto first_or_default(const std::function<bool(const value_t&)>& predicate) const noexcept -> value_t {
-            return xtd::linq::enumerable::first_or_default(self(), predicate);
+          template<xtd::predicate_callable<value_t> predicate_t>
+          [[nodiscard]] auto first_or_default(predicate_t&& predicate) const noexcept -> value_t {
+            return xtd::linq::enumerable::first_or_default(self(), std::forward<predicate_t>(predicate));
           }
-          
           /// @brief Returns the first element of the sequence that satisfies a condition or a default value if no such element is found.
           /// @param default_value The default value to return if the sequence is empty.
           /// @return `default_value`  if source is empty or if no element passes the test specified by predicate; otherwise, the first element in source that passes the test specified by predicate.
           [[nodiscard]] auto first_or_default(value_t&& default_value) const noexcept -> value_t {
             return xtd::linq::enumerable::first_or_default(self(), std::forward<value_t>(default_value));
           }
-          
           /// @brief Returns the first element of the sequence that satisfies a condition or a default value if no such element is found.
-          /// @return default `value_t {}`  if source is empty or if no element passes the test specified by predicate; otherwise, the first element in source that passes the test specified by predicate.
+          /// @return default `value_t {}` if source is empty or if no element passes the test specified by predicate; otherwise, the first element in source that passes the test specified by predicate.
           [[nodiscard]] auto first_or_default() const noexcept -> value_t {
             return xtd::linq::enumerable::first_or_default(self());
           }

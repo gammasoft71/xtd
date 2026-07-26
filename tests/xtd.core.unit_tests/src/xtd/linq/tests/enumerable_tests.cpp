@@ -205,13 +205,13 @@ namespace xtd::linq::tests {
     }
     
     auto test_method_(first_or_default_with_enumerable_predicate_and_default_value) {
-      assert::are_equal(3, enumerable::first_or_default<int>(array {3, 4, 5}, [](int value) {return value <= 3;}, 2));
-      assert::are_equal(2, enumerable::first_or_default<int>(array {3, 4, 5}, [](int value) {return value < 3;}, 2));
+      assert::are_equal(3, enumerable::first_or_default(array {3, 4, 5}, [](int value) {return value <= 3;}, 2));
+      assert::are_equal(2, enumerable::first_or_default(array {3, 4, 5}, [](int value) {return value < 3;}, 2));
     }
     
     auto test_method_(first_or_default_with_enumerable_and_predicate) {
-      assert::are_equal(3, enumerable::first_or_default<int>(array {3, 4, 5}, [](int value) {return value <= 3;}));
-      assert::are_equal(0, enumerable::first_or_default<int>(array {3, 4, 5}, [](int value) {return value < 3;}));
+      assert::are_equal(3, enumerable::first_or_default(array {3, 4, 5}, [](int value) {return value <= 3;}));
+      assert::are_equal(0, enumerable::first_or_default(array {3, 4, 5}, [](int value) {return value < 3;}));
     }
     
     auto test_method_(first_or_default_with_enumerable_and_default_value) {

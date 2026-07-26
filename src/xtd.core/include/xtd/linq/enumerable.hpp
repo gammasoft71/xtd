@@ -401,6 +401,27 @@ auto xtd::linq::enumerable::default_if_empty(source_t&& source, xtd::iterable_va
     co_yield item;
 }
 
+template<xtd::iterable source_t, xtd::predicate_callable<xtd::iterable_value_type<source_t>> prediacte_t>
+auto xtd::linq::enumerable::first_or_default(source_t&& source, prediacte_t&& predicate, xtd::iterable_value_type<source_t>&& default_value) noexcept -> xtd::iterable_value_type<source_t> {
+  auto result = where(std::forward<source_t>(source), std::forward<prediacte_t>(predicate));
+  return any(result) ? *result.begin() : std::move(default_value);
+}
+
+template<xtd::iterable source_t, xtd::predicate_callable<xtd::iterable_value_type<source_t>> prediacte_t>
+auto xtd::linq::enumerable::first_or_default(source_t&& source, prediacte_t&& predicate) noexcept -> xtd::iterable_value_type<source_t> {
+  return first_or_default(std::forward<source_t>(source), std::forward<prediacte_t>(predicate), xtd::iterable_value_type<source_t> {});
+}
+
+template<xtd::iterable source_t>
+auto xtd::linq::enumerable::first_or_default(source_t&& source, xtd::iterable_value_type<source_t>&& default_value) noexcept -> xtd::iterable_value_type<source_t> {
+  return any(std::forward<source_t>(source)) ? *source.begin() : std::move(default_value);
+}
+
+template<xtd::iterable source_t>
+auto xtd::linq::enumerable::first_or_default(source_t&& source) noexcept -> xtd::iterable_value_type<source_t> {
+  return first_or_default(std::forward<source_t>(source), xtd::iterable_value_type<source_t> {});
+}
+
 template<typename result_t, xtd::iterable source_t>
 auto xtd::linq::enumerable::select(source_t&& source, auto&& selector) -> xtd::collections::generic::enumerable_generator<result_t> {
   auto index = xtd::usize {0};

@@ -500,37 +500,28 @@ namespace xtd {
       /// @param predicate A function to test each element for a condition.
       /// @param default_value The default value to return if the sequence is empty.
       /// @return `default_value` if source is empty or if no element passes the test specified by predicate; otherwise, the first element in source that passes the test specified by predicate.
-      template<typename source_t>
-      [[nodiscard]] static auto first_or_default(const ienumerable<source_t>& source, const std::function<bool(const source_t&)>& predicate, const source_t& default_value) noexcept -> source_t {
-        const auto& result = where(source, predicate);
-        return any(result) ? *result.begin() : default_value;
-      }
+      template<xtd::iterable source_t, xtd::predicate_callable<xtd::iterable_value_type<source_t>> prediacte_t>
+      [[nodiscard]] static auto first_or_default(source_t&& source, prediacte_t&& predicate, xtd::iterable_value_type<source_t>&& default_value) noexcept -> xtd::iterable_value_type<source_t>;
       /// @brief Returns the first element of the sequence that satisfies a condition or a default value if no such element is found.
       /// @tparam source_t The type of the elements of source.
       /// @param source A sequence of values to return an element from.
       /// @param predicate A function to test each element for a condition.
       /// @return default `source_t {}` if source is empty or if no element passes the test specified by predicate; otherwise, the first element in source that passes the test specified by predicate.
-      template<typename source_t>
-      [[nodiscard]] static auto first_or_default(const ienumerable<source_t>& source, const std::function<bool(const source_t&)>& predicate) noexcept -> source_t {
-        return first_or_default(source, predicate, source_t {});
-      }
+      template<xtd::iterable source_t, xtd::predicate_callable<xtd::iterable_value_type<source_t>> prediacte_t>
+      [[nodiscard]] static auto first_or_default(source_t&& source, prediacte_t&& predicate) noexcept -> xtd::iterable_value_type<source_t>;
       /// @brief Returns the first element of the sequence that satisfies a condition or a default value if no such element is found.
       /// @tparam source_t The type of the elements of source.
       /// @param source A sequence of values to return an element from.
       /// @param default_value The default value to return if the sequence is empty.
       /// @return `default_value` if source is empty or if no element passes the test specified by predicate; otherwise, the first element in source that passes the test specified by predicate.
-      template<typename source_t>
-      [[nodiscard]] static auto first_or_default(const ienumerable<source_t>& source, const source_t& default_value) noexcept -> source_t {
-        return any(source) ? *source.begin() : default_value;
-      }
+      template<xtd::iterable source_t>
+      [[nodiscard]] static auto first_or_default(source_t&& source, xtd::iterable_value_type<source_t>&& default_value) noexcept -> xtd::iterable_value_type<source_t>;
       /// @brief Returns the first element of the sequence that satisfies a condition or a default value if no such element is found.
       /// @tparam source_t The type of the elements of source.
       /// @param source A sequence of values to return an element from.
       /// @return default `source_t {}` if source is empty or if no element passes the test specified by predicate; otherwise, the first element in source that passes the test specified by predicate.
-      template<typename source_t>
-      [[nodiscard]] static auto first_or_default(const ienumerable<source_t>& source) noexcept -> source_t {
-        return first_or_default(source, source_t {});
-      }
+      template<xtd::iterable source_t>
+      [[nodiscard]] static auto first_or_default(source_t&& source) noexcept -> xtd::iterable_value_type<source_t>;
       
       /// @brief Returns the input typed as xtd::collections::generic::ienumerable <type_t>.
       /// @tparam source_t The type of the elements of source.
