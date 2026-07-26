@@ -479,28 +479,21 @@ namespace xtd {
       /// @brief Returns distinct elements from a sequence by using the default equality comparer to compare values.
       /// @param source The sequence to remove duplicate elements from.
       /// @return An enumerable distinct elements from the source sequence.
-      template<typename source_t>
-      [[nodiscard]] static auto distinct(const ienumerable<source_t>& source) noexcept {
-        auto result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
-        for (const auto& item : source)
-          if (!contains(result, item))
-            result.items.push_back(item);
-        return result;
-      }
-      
+      template<xtd::iterable source_t>
+      [[nodiscard]] static auto distinct(source_t&& source) noexcept -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>>;      
       /// @brief Returns distinct elements from a sequence by using a specified xtd::collections::generic::iequality_comparer <type_t> to compare values.
       /// @param source The sequence to remove duplicate elements from.
       /// @param comparer An xtd::collections::generic::iequality_comparer <type_t> to compare values.
       /// @return An enumerable distinct elements from the source sequence.
-      template<typename source_t>
-      [[nodiscard]] static auto distinct(const ienumerable<source_t>& source, const iequality_comparer<source_t>& comparer) noexcept {
-        auto result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
-        for (const auto& item : source)
-          if (!contains(result, item, comparer))
-            result.items.push_back(item);
-        return result;
-      }
-      
+      template<xtd::iterable source_t>
+      [[nodiscard]] static auto distinct(source_t&& source, const iequality_comparer<source_t>& comparer) noexcept  -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>>;
+      /// @brief Returns distinct elements from a sequence by using a specified xtd::collections::generic::iequality_comparer <type_t> to compare values.
+      /// @param source The sequence to remove duplicate elements from.
+      /// @param equater An equality comparer to compare values.
+      /// @return An enumerable distinct elements from the source sequence.
+      template<xtd::iterable source_t, xtd::func_callable<bool, xtd::iterable_value_type<source_t>, xtd::iterable_value_type<source_t>> equater_t>
+      [[nodiscard]] static auto distinct(source_t&& source, equater_t&& equater) noexcept  -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>>;
+
       /// @brief Returns the first element of the sequence that satisfies a condition, or a specified default value if no such element is found.
       /// @tparam source_t The type of the elements of source.
       /// @param source A sequence of values to return an element from.

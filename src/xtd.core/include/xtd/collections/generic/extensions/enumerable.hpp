@@ -252,13 +252,12 @@ namespace xtd {
           [[nodiscard]] auto count_by(key_selector_t&& key_selector, key_equater_t&& key_equater) const noexcept {
             return xtd::linq::enumerable::count_by<key_t, value_t>(self(), std::forward<key_selector_t>(key_selector), std::forward<key_equater_t>(key_equater));
           }
-
+          
           /// @brief Returns the elements of the specified sequence or the type parameter's default value in a singleton collection if the current sequence is empty.
           /// @return An xtd::collections::generic::ienumerable <type_t> that contains default_value if source is empty; otherwise, source.
           [[nodiscard]] auto default_if_empty() const noexcept {
             return xtd::linq::enumerable::default_if_empty(self());
           }
-          
           /// @brief Returns the elements of the specified sequence or the specified value in a singleton collection if the current sequence is empty.
           /// @param default_value The value to return if the sequence is empty.
           /// @return An xtd::collections::generic::ienumerable <type_t> that contains default_value if source is empty; otherwise, source.
@@ -271,7 +270,6 @@ namespace xtd {
           [[nodiscard]] auto distinct() const noexcept {
             return xtd::linq::enumerable::distinct(self());
           }
-          
           /// @brief Returns distinct elements from a sequence by using a specified xtd::collections::generic::iequality_comparer <type_t> to compare values.
           /// @param source The sequence to remove duplicate elements from.
           /// @param comparer An xtd::collections::generic::iequality_comparer <type_t> to compare values.
@@ -279,7 +277,15 @@ namespace xtd {
           [[nodiscard]] auto distinct(xtd::collections::generic::iequality_comparer<value_t>&& comparer) const noexcept {
             return xtd::linq::enumerable::distinct(self(), std::forward<xtd::collections::generic::iequality_comparer<value_t>>(comparer));
           }
-          
+          /// @brief Returns distinct elements from a sequence by using a specified xtd::collections::generic::iequality_comparer <type_t> to compare values.
+          /// @param source The sequence to remove duplicate elements from.
+          /// @param equater An equality comparer to compare values.
+          /// @return An enumerable distinct elements from the source sequence.
+          template<xtd::func_callable<bool, value_t, value_t> equater_t>
+          [[nodiscard]] auto distinct(equater_t&& equater) const noexcept {
+            return xtd::linq::enumerable::distinct(self(), std::forward<equater_t>(equater));
+          }
+
           /// @brief Returns the first element of the sequence that satisfies a condition, or a specified default value if no such element is found.
           /// @param predicate A function to test each element for a condition.
           /// @param default_value The default value to return if the sequence is empty.
