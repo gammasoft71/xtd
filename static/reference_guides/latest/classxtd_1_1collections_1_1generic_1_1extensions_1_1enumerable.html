@@ -217,6 +217,9 @@ Public Static Methods</h2></td></tr>
 <tr class="memdesc:ae547d8053b68d24480e7e5344ba6cd0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns distinct elements from a sequence by using the default equality comparer to compare values.  <br /></td></tr>
 <tr class="memitem:a8c6bf78999e40e46986d52829f6cc54d" id="r_a8c6bf78999e40e46986d52829f6cc54d"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a8c6bf78999e40e46986d52829f6cc54d">distinct</a> (<a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html">xtd::collections::generic::iequality_comparer</a>&lt; value_t &gt; &amp;&amp;comparer) const noexcept</td></tr>
 <tr class="memdesc:a8c6bf78999e40e46986d52829f6cc54d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns distinct elements from a sequence by using a specified <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html" title="Defines methods to support the comparison of objects for equality.">xtd::collections::generic::iequality_comparer</a> &lt;type_t&gt; to compare values.  <br /></td></tr>
+<tr class="memitem:afa95cda1efb766a7286ef7f0724deecc" id="r_afa95cda1efb766a7286ef7f0724deecc"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1func__callable.html">xtd::func_callable</a>&lt; bool, value_t, value_t &gt; equater_t&gt; </td></tr>
+<tr class="memitem:afa95cda1efb766a7286ef7f0724deecc template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#afa95cda1efb766a7286ef7f0724deecc">distinct</a> (equater_t &amp;&amp;equater) const noexcept</td></tr>
+<tr class="memdesc:afa95cda1efb766a7286ef7f0724deecc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns distinct elements from a sequence by using a specified <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html" title="Defines methods to support the comparison of objects for equality.">xtd::collections::generic::iequality_comparer</a> &lt;type_t&gt; to compare values.  <br /></td></tr>
 <tr class="memitem:abba948e55ca93a4bd4e91ed2365265b5" id="r_abba948e55ca93a4bd4e91ed2365265b5"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1predicate__callable.html">xtd::predicate_callable</a>&lt; value_t &gt; predicate_t&gt; </td></tr>
 <tr class="memitem:abba948e55ca93a4bd4e91ed2365265b5 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#abba948e55ca93a4bd4e91ed2365265b5">first_or_default</a> (predicate_t &amp;&amp;predicate<a class="el" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab">predicate</a>, value_t &amp;&amp;default_value) const noexcept -&gt; value_t</td></tr>
 <tr class="memdesc:abba948e55ca93a4bd4e91ed2365265b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the first element of the sequence that satisfies a condition, or a specified default value if no such element is found.  <br /></td></tr>
@@ -1551,7 +1554,7 @@ template&lt;typename value_t, typename enumerable_t&gt; </div>
 </div>
 </div>
 <a id="ae547d8053b68d24480e7e5344ba6cd0d" name="ae547d8053b68d24480e7e5344ba6cd0d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae547d8053b68d24480e7e5344ba6cd0d">&#9670;&#160;</a></span>distinct() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ae547d8053b68d24480e7e5344ba6cd0d">&#9670;&#160;</a></span>distinct() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1581,7 +1584,7 @@ template&lt;typename value_t, typename enumerable_t&gt; </div>
 </div>
 </div>
 <a id="a8c6bf78999e40e46986d52829f6cc54d" name="a8c6bf78999e40e46986d52829f6cc54d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8c6bf78999e40e46986d52829f6cc54d">&#9670;&#160;</a></span>distinct() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c6bf78999e40e46986d52829f6cc54d">&#9670;&#160;</a></span>distinct() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1610,6 +1613,45 @@ template&lt;typename value_t, typename enumerable_t&gt; </div>
   <table class="params">
     <tr><td class="paramname">source</td><td>The sequence to remove duplicate elements from. </td></tr>
     <tr><td class="paramname">comparer</td><td>An <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html" title="Defines methods to support the comparison of objects for equality.">xtd::collections::generic::iequality_comparer</a> &lt;type_t&gt; to compare values. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An enumerable distinct elements from the source sequence. </dd></dl>
+
+</div>
+</div>
+<a id="afa95cda1efb766a7286ef7f0724deecc" name="afa95cda1efb766a7286ef7f0724deecc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa95cda1efb766a7286ef7f0724deecc">&#9670;&#160;</a></span>distinct() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename value_t, typename enumerable_t&gt; </div>
+<div class="memtemplate">
+template&lt;<a class="el" href="structxtd_1_1func__callable.html">xtd::func_callable</a>&lt; bool, value_t, value_t &gt; equater_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html">xtd::collections::generic::extensions::enumerable</a>&lt; value_t, enumerable_t &gt;::distinct </td>
+          <td>(</td>
+          <td class="paramtype">equater_t &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>equater</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns distinct elements from a sequence by using a specified <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html" title="Defines methods to support the comparison of objects for equality.">xtd::collections::generic::iequality_comparer</a> &lt;type_t&gt; to compare values. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">source</td><td>The sequence to remove duplicate elements from. </td></tr>
+    <tr><td class="paramname">equater</td><td>An equality comparer to compare values. </td></tr>
   </table>
   </dd>
 </dl>
@@ -2189,7 +2231,7 @@ template&lt;typename value_t, typename enumerable_t&gt; </div>
 <div class="line"><span class="comment">// 5</span></div>
 <div class="line"><span class="comment">// 10</span></div>
 <div class="ttc" id="aclassxtd_1_1basic__string_html_a4d8c4c95a122844c62de3feb62a5fa74"><div class="ttname"><a href="classxtd_1_1basic__string.html#a4d8c4c95a122844c62de3feb62a5fa74">xtd::basic_string&lt; char &gt;::length</a></div><div class="ttdeci">virtual auto length() const noexcept -&gt; size_type</div><div class="ttdef"><b>Definition</b> basic_string.hpp:383</div></div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable_html_a77f28b05a9f794ee4885ddb682c1498d"><div class="ttname"><a href="#a77f28b05a9f794ee4885ddb682c1498d">xtd::collections::generic::extensions::enumerable::select</a></div><div class="ttdeci">auto select(auto &amp;&amp;selector) const</div><div class="ttdoc">Projects each element of a sequence into a new form.</div><div class="ttdef"><b>Definition</b> enumerable.hpp:399</div></div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable_html_a77f28b05a9f794ee4885ddb682c1498d"><div class="ttname"><a href="#a77f28b05a9f794ee4885ddb682c1498d">xtd::collections::generic::extensions::enumerable::select</a></div><div class="ttdeci">auto select(auto &amp;&amp;selector) const</div><div class="ttdoc">Projects each element of a sequence into a new form.</div><div class="ttdef"><b>Definition</b> enumerable.hpp:405</div></div>
 <div class="ttc" id="agroup__types_html_gae60f5a861761019d824a87291f85d525"><div class="ttname"><a href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></div><div class="ttdeci">std::size_t usize</div><div class="ttdoc">Represents an unsigned size of any object in bytes.</div><div class="ttdef"><b>Definition</b> usize.hpp:22</div></div>
 <div class="ttc" id="anamespacextd_html_a84689e2cdf94d64f7e5f33fe4a1be71a"><div class="ttname"><a href="namespacextd.html#a84689e2cdf94d64f7e5f33fe4a1be71a">xtd::length</a></div><div class="ttdeci">constexpr auto length() const noexcept -&gt; size_type</div><div class="ttdoc">Returns the length of the current read_only_span.</div><div class="ttdef"><b>Definition</b> read_only_span.hpp:212</div></div>
 </div><!-- fragment --> </dd></dl>
