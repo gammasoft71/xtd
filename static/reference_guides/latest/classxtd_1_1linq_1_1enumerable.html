@@ -289,18 +289,18 @@ requires std::same_as&lt;<a class="el" href="group__concepts.html#ga7ffbe4fba341
 <tr class="memitem:a77981da69a9247df9dc649ab15fbbddb" id="r_a77981da69a9247df9dc649ab15fbbddb"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t, <a class="el" href="structxtd_1_1func__callable.html">xtd::func_callable</a>&lt; bool, <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt;, <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; &gt; equater_t&gt; </td></tr>
 <tr class="memitem:a77981da69a9247df9dc649ab15fbbddb template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a77981da69a9247df9dc649ab15fbbddb">distinct</a> (source_t &amp;&amp;source, equater_t &amp;&amp;equater) noexcept -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; &gt;</td></tr>
 <tr class="memdesc:a77981da69a9247df9dc649ab15fbbddb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns distinct elements from a sequence by using a specified <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html" title="Defines methods to support the comparison of objects for equality.">xtd::collections::generic::iequality_comparer</a> &lt;type_t&gt; to compare values.  <br /></td></tr>
-<tr class="memitem:a7a931c8a75e0a2a07cbb50f784d5b2c6" id="r_a7a931c8a75e0a2a07cbb50f784d5b2c6"><td class="memTemplParams" colspan="2">template&lt;typename source_t&gt; </td></tr>
-<tr class="memitem:a7a931c8a75e0a2a07cbb50f784d5b2c6 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a7a931c8a75e0a2a07cbb50f784d5b2c6">first_or_default</a> (const <a class="el" href="#a2bd1889dc1967c50ef692411dc2c4b92">ienumerable</a>&lt; source_t &gt; &amp;source, const std::function&lt; bool(const source_t &amp;)&gt; &amp;predicate<a class="el" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab">predicate</a>, const source_t &amp;default_value) noexcept -&gt; source_t</td></tr>
-<tr class="memdesc:a7a931c8a75e0a2a07cbb50f784d5b2c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the first element of the sequence that satisfies a condition, or a specified default value if no such element is found.  <br /></td></tr>
-<tr class="memitem:ad077a51eeae86a7a4f338cda516ac2c4" id="r_ad077a51eeae86a7a4f338cda516ac2c4"><td class="memTemplParams" colspan="2">template&lt;typename source_t&gt; </td></tr>
-<tr class="memitem:ad077a51eeae86a7a4f338cda516ac2c4 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ad077a51eeae86a7a4f338cda516ac2c4">first_or_default</a> (const <a class="el" href="#a2bd1889dc1967c50ef692411dc2c4b92">ienumerable</a>&lt; source_t &gt; &amp;source, const std::function&lt; bool(const source_t &amp;)&gt; &amp;predicate<a class="el" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab">predicate</a>) noexcept -&gt; source_t</td></tr>
-<tr class="memdesc:ad077a51eeae86a7a4f338cda516ac2c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the first element of the sequence that satisfies a condition or a default value if no such element is found.  <br /></td></tr>
-<tr class="memitem:a8cfec1d89b69514a1e266749e1ea2792" id="r_a8cfec1d89b69514a1e266749e1ea2792"><td class="memTemplParams" colspan="2">template&lt;typename source_t&gt; </td></tr>
-<tr class="memitem:a8cfec1d89b69514a1e266749e1ea2792 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a8cfec1d89b69514a1e266749e1ea2792">first_or_default</a> (const <a class="el" href="#a2bd1889dc1967c50ef692411dc2c4b92">ienumerable</a>&lt; source_t &gt; &amp;source, const source_t &amp;default_value) noexcept -&gt; source_t</td></tr>
-<tr class="memdesc:a8cfec1d89b69514a1e266749e1ea2792"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the first element of the sequence that satisfies a condition or a default value if no such element is found.  <br /></td></tr>
-<tr class="memitem:a2d5af2097309e9a4485bd4871a8daa9a" id="r_a2d5af2097309e9a4485bd4871a8daa9a"><td class="memTemplParams" colspan="2">template&lt;typename source_t&gt; </td></tr>
-<tr class="memitem:a2d5af2097309e9a4485bd4871a8daa9a template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a2d5af2097309e9a4485bd4871a8daa9a">first_or_default</a> (const <a class="el" href="#a2bd1889dc1967c50ef692411dc2c4b92">ienumerable</a>&lt; source_t &gt; &amp;source) noexcept -&gt; source_t</td></tr>
-<tr class="memdesc:a2d5af2097309e9a4485bd4871a8daa9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the first element of the sequence that satisfies a condition or a default value if no such element is found.  <br /></td></tr>
+<tr class="memitem:a477bb204cd1f8cbe5496bbdc51c6925f" id="r_a477bb204cd1f8cbe5496bbdc51c6925f"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t, <a class="el" href="structxtd_1_1predicate__callable.html">xtd::predicate_callable</a>&lt; <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; &gt; prediacte_t&gt; </td></tr>
+<tr class="memitem:a477bb204cd1f8cbe5496bbdc51c6925f template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a477bb204cd1f8cbe5496bbdc51c6925f">first_or_default</a> (source_t &amp;&amp;source, prediacte_t &amp;&amp;predicate<a class="el" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab">predicate</a>, <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; &amp;&amp;default_value) noexcept -&gt; <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt;</td></tr>
+<tr class="memdesc:a477bb204cd1f8cbe5496bbdc51c6925f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the first element of the sequence that satisfies a condition, or a specified default value if no such element is found.  <br /></td></tr>
+<tr class="memitem:a92d59da0aa03644103b1ddadd071d5f6" id="r_a92d59da0aa03644103b1ddadd071d5f6"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t, <a class="el" href="structxtd_1_1predicate__callable.html">xtd::predicate_callable</a>&lt; <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; &gt; prediacte_t&gt; </td></tr>
+<tr class="memitem:a92d59da0aa03644103b1ddadd071d5f6 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a92d59da0aa03644103b1ddadd071d5f6">first_or_default</a> (source_t &amp;&amp;source, prediacte_t &amp;&amp;predicate<a class="el" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab">predicate</a>) noexcept -&gt; <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt;</td></tr>
+<tr class="memdesc:a92d59da0aa03644103b1ddadd071d5f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the first element of the sequence that satisfies a condition or a default value if no such element is found.  <br /></td></tr>
+<tr class="memitem:a6df4a5eebd5b47294a398338b703836e" id="r_a6df4a5eebd5b47294a398338b703836e"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t&gt; </td></tr>
+<tr class="memitem:a6df4a5eebd5b47294a398338b703836e template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a6df4a5eebd5b47294a398338b703836e">first_or_default</a> (source_t &amp;&amp;source, <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; &amp;&amp;default_value) noexcept -&gt; <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt;</td></tr>
+<tr class="memdesc:a6df4a5eebd5b47294a398338b703836e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the first element of the sequence that satisfies a condition or a default value if no such element is found.  <br /></td></tr>
+<tr class="memitem:ad3690f729ba252711ea339903f411708" id="r_ad3690f729ba252711ea339903f411708"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t&gt; </td></tr>
+<tr class="memitem:ad3690f729ba252711ea339903f411708 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ad3690f729ba252711ea339903f411708">first_or_default</a> (source_t &amp;&amp;source) noexcept -&gt; <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt;</td></tr>
+<tr class="memdesc:ad3690f729ba252711ea339903f411708"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the first element of the sequence that satisfies a condition or a default value if no such element is found.  <br /></td></tr>
 <tr class="memitem:aeaa2c9615978fa0495b6a69a71a72508" id="r_aeaa2c9615978fa0495b6a69a71a72508"><td class="memTemplParams" colspan="2">template&lt;typename source_t&gt; </td></tr>
 <tr class="memitem:aeaa2c9615978fa0495b6a69a71a72508 template"><td class="memItemLeft">static const auto &amp;&#160;</td><td class="memItemRight"><a class="el" href="#aeaa2c9615978fa0495b6a69a71a72508">from</a> (const <a class="el" href="#a2bd1889dc1967c50ef692411dc2c4b92">ienumerable</a>&lt; source_t &gt; &amp;source) noexcept</td></tr>
 <tr class="memdesc:aeaa2c9615978fa0495b6a69a71a72508"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the input typed as <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt;.  <br /></td></tr>
@@ -2760,13 +2760,13 @@ template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> so
 
 </div>
 </div>
-<a id="a7a931c8a75e0a2a07cbb50f784d5b2c6" name="a7a931c8a75e0a2a07cbb50f784d5b2c6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7a931c8a75e0a2a07cbb50f784d5b2c6">&#9670;&#160;</a></span>first_or_default() <span class="overload">[1/4]</span></h2>
+<a id="a477bb204cd1f8cbe5496bbdc51c6925f" name="a477bb204cd1f8cbe5496bbdc51c6925f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a477bb204cd1f8cbe5496bbdc51c6925f">&#9670;&#160;</a></span>first_or_default() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename source_t&gt; </div>
+template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t, <a class="el" href="structxtd_1_1predicate__callable.html">xtd::predicate_callable</a>&lt; <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; &gt; prediacte_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2774,22 +2774,22 @@ template&lt;typename source_t&gt; </div>
         <tr>
           <td class="memname">auto xtd::linq::enumerable::first_or_default </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="#a2bd1889dc1967c50ef692411dc2c4b92">ienumerable</a>&lt; source_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>source</em></span>, </td>
+          <td class="paramtype">source_t &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>source</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::function&lt; bool(const source_t &amp;)&gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>predicate</em></span>, </td>
+          <td class="paramtype">prediacte_t &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>predicate</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const source_t &amp;</td>          <td class="paramname"><span class="paramname"><em>default_value</em></span>&#160;) -&gt; source_t</td>
+          <td class="paramtype"><a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>default_value</em></span>&#160;) -&gt;  <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt;</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -2813,13 +2813,13 @@ template&lt;typename source_t&gt; </div>
 
 </div>
 </div>
-<a id="ad077a51eeae86a7a4f338cda516ac2c4" name="ad077a51eeae86a7a4f338cda516ac2c4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad077a51eeae86a7a4f338cda516ac2c4">&#9670;&#160;</a></span>first_or_default() <span class="overload">[2/4]</span></h2>
+<a id="a92d59da0aa03644103b1ddadd071d5f6" name="a92d59da0aa03644103b1ddadd071d5f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92d59da0aa03644103b1ddadd071d5f6">&#9670;&#160;</a></span>first_or_default() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename source_t&gt; </div>
+template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t, <a class="el" href="structxtd_1_1predicate__callable.html">xtd::predicate_callable</a>&lt; <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; &gt; prediacte_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2827,17 +2827,17 @@ template&lt;typename source_t&gt; </div>
         <tr>
           <td class="memname">auto xtd::linq::enumerable::first_or_default </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="#a2bd1889dc1967c50ef692411dc2c4b92">ienumerable</a>&lt; source_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>source</em></span>, </td>
+          <td class="paramtype">source_t &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>source</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::function&lt; bool(const source_t &amp;)&gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>predicate</em></span>&#160;) -&gt; source_t</td>
+          <td class="paramtype">prediacte_t &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>predicate</em></span>&#160;) -&gt;  <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt;</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -2860,13 +2860,13 @@ template&lt;typename source_t&gt; </div>
 
 </div>
 </div>
-<a id="a8cfec1d89b69514a1e266749e1ea2792" name="a8cfec1d89b69514a1e266749e1ea2792"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8cfec1d89b69514a1e266749e1ea2792">&#9670;&#160;</a></span>first_or_default() <span class="overload">[3/4]</span></h2>
+<a id="a6df4a5eebd5b47294a398338b703836e" name="a6df4a5eebd5b47294a398338b703836e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6df4a5eebd5b47294a398338b703836e">&#9670;&#160;</a></span>first_or_default() <span class="overload">[3/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename source_t&gt; </div>
+template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2874,17 +2874,17 @@ template&lt;typename source_t&gt; </div>
         <tr>
           <td class="memname">auto xtd::linq::enumerable::first_or_default </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="#a2bd1889dc1967c50ef692411dc2c4b92">ienumerable</a>&lt; source_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>source</em></span>, </td>
+          <td class="paramtype">source_t &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>source</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const source_t &amp;</td>          <td class="paramname"><span class="paramname"><em>default_value</em></span>&#160;) -&gt; source_t</td>
+          <td class="paramtype"><a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>default_value</em></span>&#160;) -&gt;  <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt;</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -2907,13 +2907,13 @@ template&lt;typename source_t&gt; </div>
 
 </div>
 </div>
-<a id="a2d5af2097309e9a4485bd4871a8daa9a" name="a2d5af2097309e9a4485bd4871a8daa9a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2d5af2097309e9a4485bd4871a8daa9a">&#9670;&#160;</a></span>first_or_default() <span class="overload">[4/4]</span></h2>
+<a id="ad3690f729ba252711ea339903f411708" name="ad3690f729ba252711ea339903f411708"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3690f729ba252711ea339903f411708">&#9670;&#160;</a></span>first_or_default() <span class="overload">[4/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename source_t&gt; </div>
+template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2921,13 +2921,13 @@ template&lt;typename source_t&gt; </div>
         <tr>
           <td class="memname">auto xtd::linq::enumerable::first_or_default </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="#a2bd1889dc1967c50ef692411dc2c4b92">ienumerable</a>&lt; source_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>source</em></span></td><td>)</td>
-          <td> -&gt; source_t</td>
+          <td class="paramtype">source_t &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>source</em></span></td><td>)</td>
+          <td> -&gt;  <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt;</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -3643,7 +3643,7 @@ template&lt;typename type_t&gt; </div>
 <div class="line"><span class="comment">// 64</span></div>
 <div class="line"><span class="comment">// 81</span></div>
 <div class="line"><span class="comment">// 100</span></div>
-<div class="ttc" id="aclassxtd_1_1linq_1_1enumerable_html_ad3f2b197a8f9e4e52710edcdd59870e9"><div class="ttname"><a href="#ad3f2b197a8f9e4e52710edcdd59870e9">xtd::linq::enumerable::range</a></div><div class="ttdeci">static auto range(type_t count)</div><div class="ttdoc">Generates a sequence of integral numbers within a specified range.</div><div class="ttdef"><b>Definition</b> enumerable_.hpp:774</div></div>
+<div class="ttc" id="aclassxtd_1_1linq_1_1enumerable_html_ad3f2b197a8f9e4e52710edcdd59870e9"><div class="ttname"><a href="#ad3f2b197a8f9e4e52710edcdd59870e9">xtd::linq::enumerable::range</a></div><div class="ttdeci">static auto range(type_t count)</div><div class="ttdoc">Generates a sequence of integral numbers within a specified range.</div><div class="ttdef"><b>Definition</b> enumerable_.hpp:765</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -4016,7 +4016,7 @@ template&lt;typename source_t&gt; </div>
 <div class="line"><span class="comment">// 5</span></div>
 <div class="line"><span class="comment">// 10</span></div>
 <div class="ttc" id="aclassxtd_1_1basic__string_html_a4d8c4c95a122844c62de3feb62a5fa74"><div class="ttname"><a href="classxtd_1_1basic__string.html#a4d8c4c95a122844c62de3feb62a5fa74">xtd::basic_string&lt; char &gt;::length</a></div><div class="ttdeci">virtual auto length() const noexcept -&gt; size_type</div><div class="ttdef"><b>Definition</b> basic_string.hpp:383</div></div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable_html_a77f28b05a9f794ee4885ddb682c1498d"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a77f28b05a9f794ee4885ddb682c1498d">xtd::collections::generic::extensions::enumerable::select</a></div><div class="ttdeci">auto select(auto &amp;&amp;selector) const</div><div class="ttdoc">Projects each element of a sequence into a new form.</div><div class="ttdef"><b>Definition</b> enumerable.hpp:405</div></div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable_html_a77f28b05a9f794ee4885ddb682c1498d"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a77f28b05a9f794ee4885ddb682c1498d">xtd::collections::generic::extensions::enumerable::select</a></div><div class="ttdeci">auto select(auto &amp;&amp;selector) const</div><div class="ttdoc">Projects each element of a sequence into a new form.</div><div class="ttdef"><b>Definition</b> enumerable.hpp:400</div></div>
 <div class="ttc" id="agroup__types_html_gae60f5a861761019d824a87291f85d525"><div class="ttname"><a href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></div><div class="ttdeci">std::size_t usize</div><div class="ttdoc">Represents an unsigned size of any object in bytes.</div><div class="ttdef"><b>Definition</b> usize.hpp:22</div></div>
 <div class="ttc" id="anamespacextd_html_a84689e2cdf94d64f7e5f33fe4a1be71a"><div class="ttname"><a href="namespacextd.html#a84689e2cdf94d64f7e5f33fe4a1be71a">xtd::length</a></div><div class="ttdeci">constexpr auto length() const noexcept -&gt; size_type</div><div class="ttdoc">Returns the length of the current read_only_span.</div><div class="ttdef"><b>Definition</b> read_only_span.hpp:212</div></div>
 </div><!-- fragment --> </dd></dl>
