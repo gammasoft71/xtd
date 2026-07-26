@@ -20,9 +20,9 @@ namespace wiggly_example {
       static const auto sins = fixed_array {0, 38, 71, 92, 100, 92, 71, 38, 0, -38, -71, -92, -100, -92, -71, -38};
       auto pos = point {(e.clip_rectangle().size().width - as<int>(e.graphics().measure_string(text(), font()).width)) / 2, (e.clip_rectangle().size().height - as<int>(e.graphics().measure_string(text(), font()).height)) / 2};
       e.graphics().clear(back_color());
-      for (auto char_index = 0_z; const auto& c : text().to_u32string()) {
+      for (auto char_index = 0_z; auto c : text().to_u32string()) {
         auto sins_index = (step + char_index++) % sins.size();
-        e.graphics().draw_string(string::format("{}", c), font(), solid_brush {color::from_hsv(360.0f / sins.size() * sins_index, 1.0f, 0.75f)}, point::subtract(pos, point(0, sins[sins_index] * font().height() / 400)));
+        e.graphics().draw_string(string::format("{}", c), font(), solid_brush {color::from_hsv(360.0f / sins.size() * sins_index, 1.0f, 0.75f)}, point::subtract(pos, point {0, sins[sins_index] * font().height() / 400}));
         pos.x = pos.x + as<int>(e.graphics().measure_string(string::format("{}", c), font()).width);
       }
     }
@@ -32,9 +32,9 @@ namespace wiggly_example {
     usize step = 0;
   };
   
-  class form1 : public form {
+  class main_form : public form {
   public:
-    form1() {
+    main_form() {
       text("Wiggly");
       client_size({330, 130});
       controls().add_range({wiggly, text_box});
@@ -50,7 +50,6 @@ namespace wiggly_example {
       
       wiggly.bounds({20, 20, 290, 60});
       wiggly.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::right | anchor_styles::bottom);
-      wiggly.text(text_box.text());
     }
     
   private:
@@ -60,5 +59,5 @@ namespace wiggly_example {
 }
 
 auto main() -> int {
-  application::run(wiggly_example::form1 {});
+  application::run(wiggly_example::main_form {});
 }
