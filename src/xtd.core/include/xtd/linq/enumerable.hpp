@@ -23,44 +23,54 @@ private:
 };
 
 template<xtd::iterable source_t, xtd::func_callable<xtd::iterable_value_type<source_t>, xtd::iterable_value_type<source_t>, xtd::iterable_value_type<source_t>> func_t>
-auto xtd::linq::enumerable::aggregate(const source_t& source, func_t&& func) -> xtd::iterable_value_type<source_t> {
+auto xtd::linq::enumerable::aggregate(source_t&& source, func_t&& func) -> xtd::iterable_value_type<source_t> {
   auto nb = 0;
   auto aggregated = xtd::iterable_value_type<source_t> {};
+  //auto source_holder = __xtd_enumerable_holder<source_t> {std::forward<source_t>(source)};
+  //for (const auto& item : source_holder.get())
   for (const auto& item : source)
     aggregated = nb++ == 0 ? item : func(aggregated, item);
   return aggregated;
 }
 
 template<typename accumulate_t, xtd::iterable source_t, xtd::func_callable<accumulate_t, accumulate_t, xtd::iterable_value_type<source_t>> func_t>
-auto xtd::linq::enumerable::aggregate(const source_t& source, accumulate_t&& seed, func_t&& func) -> accumulate_t {
+auto xtd::linq::enumerable::aggregate(source_t&& source, accumulate_t&& seed, func_t&& func) -> accumulate_t {
   auto aggregated = std::move(seed);
+  //auto source_holder = __xtd_enumerable_holder<source_t> {std::forward<source_t>(source)};
+  //for (const auto& item : source_holder.get())
   for (const auto& item : source)
     aggregated = func(aggregated, item);
   return aggregated;
 }
 
 template<typename result_t, typename accumulate_t, xtd::iterable source_t, xtd::func_callable<accumulate_t, accumulate_t, xtd::iterable_value_type<source_t>> func_t, xtd::func_callable<result_t, accumulate_t> result_selector_t>
-auto xtd::linq::enumerable::aggregate(const source_t& source, accumulate_t&& seed, func_t&& func, result_selector_t&& result_selector) -> result_t {
+auto xtd::linq::enumerable::aggregate(source_t&& source, accumulate_t&& seed, func_t&& func, result_selector_t&& result_selector) -> result_t {
   auto aggregated = std::move(seed);
+  //auto source_holder = __xtd_enumerable_holder<source_t> {std::forward<source_t>(source)};
+  //for (const auto& item : source_holder.get())
   for (const auto& item : source)
     aggregated = func(aggregated, item);
   return result_selector(aggregated);
 }
 
 template<xtd::iterable source_t, xtd::predicate_callable<xtd::iterable_value_type<source_t>> predicate_t>
-auto xtd::linq::enumerable::all(const source_t& source, predicate_t&& predicate) -> bool {
+auto xtd::linq::enumerable::all(source_t&& source, predicate_t&& predicate) -> bool {
+  //auto source_holder = __xtd_enumerable_holder<source_t> {std::forward<source_t>(source)};
+  //for (const auto& item : source_holder.get())
   for (const auto& item : source)
     if (!predicate(item)) return false;
   return true;
 }
 
 template<xtd::iterable source_t>
-auto xtd::linq::enumerable::any(const source_t& source) noexcept -> bool {
+auto xtd::linq::enumerable::any(source_t&& source) noexcept -> bool {
   return source.begin() != source.end();
 }
 
 template<xtd::iterable source_t, xtd::predicate_callable<xtd::iterable_value_type<source_t>> predicate_t>
-auto xtd::linq::enumerable::any(const source_t& source, predicate_t&& predicate) -> bool {
+auto xtd::linq::enumerable::any(source_t&& source, predicate_t&& predicate) -> bool {
+  //auto source_holder = __xtd_enumerable_holder<source_t> {std::forward<source_t>(source)};
+  //for (const auto& item : source_holder.get())
   for (const auto& item : source)
     if (predicate(item)) return true;
   return false;
@@ -153,9 +163,11 @@ auto xtd::linq::enumerable::as_enumerable(std::stack<value_t, container_t>& sour
 
 template<xtd::iterable source_t>
 requires xtd::real_decimal<xtd::iterable_value_type<source_t>>
-auto xtd::linq::enumerable::average(const source_t& source) -> xtd::decimal {
+auto xtd::linq::enumerable::average(source_t&& source) -> xtd::decimal {
   auto average = .0l;
   auto count = 0;
+  //auto source_holder = __xtd_enumerable_holder<source_t> {std::forward<source_t>(source)};
+  //for (const auto& item : source_holder.get())
   for (const auto& item : source) {
     average += item;
     ++count;
@@ -166,9 +178,11 @@ auto xtd::linq::enumerable::average(const source_t& source) -> xtd::decimal {
 
 template<xtd::iterable source_t>
 requires xtd::real_double<xtd::iterable_value_type<source_t>>
-auto xtd::linq::enumerable::average(const source_t& source) -> double {
+auto xtd::linq::enumerable::average(source_t&& source) -> double {
   auto average = .0;
   auto count = 0;
+  //auto source_holder = __xtd_enumerable_holder<source_t> {std::forward<source_t>(source)};
+  //for (const auto& item : source_holder.get())
   for (const auto& item : source) {
     average += item;
     ++count;
@@ -179,9 +193,11 @@ auto xtd::linq::enumerable::average(const source_t& source) -> double {
 
 template<xtd::iterable source_t>
 requires xtd::real_single<xtd::iterable_value_type<source_t>>
-auto xtd::linq::enumerable::average(const source_t& source) -> xtd::single {
+auto xtd::linq::enumerable::average(source_t&& source) -> xtd::single {
   auto average = .0f;
   auto count = 0;
+  //auto source_holder = __xtd_enumerable_holder<source_t> {std::forward<source_t>(source)};
+  //for (const auto& item : source_holder.get())
   for (const auto& item : source) {
     average += item;
     ++count;
@@ -192,9 +208,11 @@ auto xtd::linq::enumerable::average(const source_t& source) -> xtd::single {
 
 template<xtd::iterable source_t>
 requires xtd::signed_integer_32<xtd::iterable_value_type<source_t>>
-auto xtd::linq::enumerable::average(const source_t& source) -> double {
+auto xtd::linq::enumerable::average(source_t&& source) -> double {
   auto average = .0;
   auto count = 0;
+  //auto source_holder = __xtd_enumerable_holder<source_t> {std::forward<source_t>(source)};
+  //for (const auto& item : source_holder.get())
   for (const auto& item : source) {
     average += item;
     ++count;
@@ -205,9 +223,11 @@ auto xtd::linq::enumerable::average(const source_t& source) -> double {
 
 template<xtd::iterable source_t>
 requires xtd::signed_integer_64<xtd::iterable_value_type<source_t>>
-auto xtd::linq::enumerable::average(const source_t& source) -> double {
+auto xtd::linq::enumerable::average(source_t&& source) -> double {
   auto average = .0;
   auto count = 0;
+  //auto source_holder = __xtd_enumerable_holder<source_t> {std::forward<source_t>(source)};
+  //for (const auto& item : source_holder.get())
   for (const auto& item : source) {
     average += item;
     ++count;
@@ -218,10 +238,12 @@ auto xtd::linq::enumerable::average(const source_t& source) -> double {
 
 template<xtd::iterable source_t>
 requires std::same_as<xtd::iterable_value_type<source_t>, xtd::optional<xtd::decimal>>
-auto xtd::linq::enumerable::average(const source_t& source) -> xtd::optional<xtd::decimal> {
+auto xtd::linq::enumerable::average(source_t&& source) -> xtd::optional<xtd::decimal> {
   auto average = .0l;
   auto count = 0;
-  for (auto item : source) {
+  //auto source_holder = __xtd_enumerable_holder<source_t> {std::forward<source_t>(source)};
+  //for (const auto& item : source_holder.get())
+  for (const auto& item : source) {
     if (!item) continue;
     average += *item;
     ++count;
@@ -231,10 +253,12 @@ auto xtd::linq::enumerable::average(const source_t& source) -> xtd::optional<xtd
 
 template<xtd::iterable source_t>
 requires std::same_as<xtd::iterable_value_type<source_t>, xtd::optional<double>>
-auto xtd::linq::enumerable::average(const source_t& source) -> xtd::optional<double> {
+auto xtd::linq::enumerable::average(source_t&& source) -> xtd::optional<double> {
   auto average = .0;
   auto count = 0;
-  for (auto item : source) {
+  //auto source_holder = __xtd_enumerable_holder<source_t> {std::forward<source_t>(source)};
+  //for (const auto& item : source_holder.get())
+  for (const auto& item : source) {
     if (!item) continue;
     average += *item;
     ++count;
@@ -244,10 +268,12 @@ auto xtd::linq::enumerable::average(const source_t& source) -> xtd::optional<dou
 
 template<xtd::iterable source_t>
 requires std::same_as<xtd::iterable_value_type<source_t>, xtd::optional<xtd::single>>
-auto xtd::linq::enumerable::average(const source_t& source) -> xtd::optional<xtd::single> {
+auto xtd::linq::enumerable::average(source_t&& source) -> xtd::optional<xtd::single> {
   auto average = .0f;
   auto count = 0;
-  for (auto item : source) {
+  //auto source_holder = __xtd_enumerable_holder<source_t> {std::forward<source_t>(source)};
+  //for (const auto& item : source_holder.get())
+  for (const auto& item : source) {
     if (!item) continue;
     average += *item;
     ++count;
@@ -257,10 +283,12 @@ auto xtd::linq::enumerable::average(const source_t& source) -> xtd::optional<xtd
 
 template<xtd::iterable source_t>
 requires std::same_as<xtd::iterable_value_type<source_t>, xtd::optional<xtd::int32>>
-auto xtd::linq::enumerable::average(const source_t& source) -> xtd::optional<double> {
+auto xtd::linq::enumerable::average(source_t&& source) -> xtd::optional<double> {
   auto average = .0;
   auto count = 0;
-  for (auto item : source) {
+  //auto source_holder = __xtd_enumerable_holder<source_t> {std::forward<source_t>(source)};
+  //for (const auto& item : source_holder.get())
+  for (const auto& item : source) {
     if (!item) continue;
     average += *item;
     ++count;
@@ -270,10 +298,12 @@ auto xtd::linq::enumerable::average(const source_t& source) -> xtd::optional<dou
 
 template<xtd::iterable source_t>
 requires std::same_as<xtd::iterable_value_type<source_t>, xtd::optional<xtd::int64>>
-auto xtd::linq::enumerable::average(const source_t& source) -> xtd::optional<double> {
+auto xtd::linq::enumerable::average(source_t&& source) -> xtd::optional<double> {
   auto average = .0;
   auto count = 0;
-  for (auto item : source) {
+  //auto source_holder = __xtd_enumerable_holder<source_t> {std::forward<source_t>(source)};
+  //for (const auto& item : source_holder.get())
+  for (const auto& item : source) {
     if (!item) continue;
     average += *item;
     ++count;
@@ -296,28 +326,34 @@ auto xtd::linq::enumerable::concat(first_t&& first, second_t&& second) noexcept 
 }
 
 template<xtd::iterable source_t>
-auto xtd::linq::enumerable::contains(const source_t& source, const xtd::iterable_value_type<source_t>& value) noexcept -> bool {
+auto xtd::linq::enumerable::contains(source_t&& source, const xtd::iterable_value_type<source_t>& value) noexcept -> bool {
+  //auto source_holder = __xtd_enumerable_holder<source_t> {std::forward<source_t>(source)};
+  //for (const auto& item : source_holder.get())
   for (const auto& item : source)
     if (item == value) return true;
   return false;
 }
 
 template<xtd::iterable source_t>
-auto xtd::linq::enumerable::contains(const source_t& source, const xtd::iterable_value_type<source_t>& value, const iequality_comparer<xtd::iterable_value_type<source_t>>& comparer) noexcept -> bool {
+auto xtd::linq::enumerable::contains(source_t&& source, const xtd::iterable_value_type<source_t>& value, const iequality_comparer<xtd::iterable_value_type<source_t>>& comparer) noexcept -> bool {
+  //auto source_holder = __xtd_enumerable_holder<source_t> {std::forward<source_t>(source)};
+  //for (const auto& item : source_holder.get())
   for (const auto& item : source)
     if (comparer.equals(item, value)) return true;
   return false;
 }
 
 template<xtd::iterable source_t, xtd::func_callable<bool, xtd::iterable_value_type<source_t>, xtd::iterable_value_type<source_t>> equater_t>
-auto xtd::linq::enumerable::contains(const source_t& source, const xtd::iterable_value_type<source_t>& value, equater_t&& equater) noexcept -> bool {
+auto xtd::linq::enumerable::contains(source_t&& source, const xtd::iterable_value_type<source_t>& value, equater_t&& equater) noexcept -> bool {
+  //auto source_holder = __xtd_enumerable_holder<source_t> {std::forward<source_t>(source)};
+  //for (const auto& item : source_holder.get())
   for (const auto& item : source)
     if (equater(item, value)) return true;
   return false;
 }
 
 template<xtd::iterable source_t>
-auto xtd::linq::enumerable::count(const source_t& source) noexcept -> xtd::usize {
+auto xtd::linq::enumerable::count(source_t&& source) noexcept -> xtd::usize {
   auto count = xtd::usize {0};
   auto enumerator = source.get_enumerator();
   while (enumerator.move_next()) ++count;
@@ -325,24 +361,44 @@ auto xtd::linq::enumerable::count(const source_t& source) noexcept -> xtd::usize
 }
 
 template<xtd::iterable source_t, xtd::predicate_callable<xtd::iterable_value_type<source_t>> predicate_t>
-auto xtd::linq::enumerable::count(const source_t& source, predicate_t&& predicate) noexcept -> xtd::usize {
-  return where(source, predicate).count();
+auto xtd::linq::enumerable::count(source_t&& source, predicate_t&& predicate) noexcept -> xtd::usize {
+  return where(std::forward<source_t>(source), predicate).count();
 }
 
 template<xtd::iterable source_t>
-auto xtd::linq::enumerable::count(const source_t& source, xtd::iterable_value_type<source_t>&& value) noexcept -> xtd::usize {
-  return count(source, [value](const xtd::iterable_value_type<source_t>& item) -> bool {return item == value;});
+auto xtd::linq::enumerable::count(source_t&& source, xtd::iterable_value_type<source_t>&& value) noexcept -> xtd::usize {
+  return count(std::forward<source_t>(source), [value](const xtd::iterable_value_type<source_t>& item) -> bool {return item == value;});
 }
 
 template<typename key_t, xtd::iterable source_t, xtd::callable<key_t, xtd::iterable_value_type<source_t>> key_selector_t>
-auto xtd::linq::enumerable::count_by(const source_t& source, key_selector_t&& key_selector) noexcept -> xtd::collections::generic::enumerable_generator<xtd::collections::generic::key_value_pair<key_t, xtd::usize>> {
-  return count_by<key_t>(source, key_selector, [](auto&& a, auto&& b) {return xtd::collections::generic::equality_comparer<key_t>::default_equality_comparer().equals(a, b);});
-  return count_by<key_t>(source, key_selector, xtd::collections::generic::equality_comparer<key_t>::default_equality_comparer());
+auto xtd::linq::enumerable::count_by(source_t&& source, key_selector_t&& key_selector) noexcept -> xtd::collections::generic::enumerable_generator<xtd::collections::generic::key_value_pair<key_t, xtd::usize>> {
+  return count_by<key_t>(std::forward<source_t>(source), key_selector, [](auto&& a, auto&& b) {return xtd::collections::generic::equality_comparer<key_t>::default_equality_comparer().equals(a, b);});
+  //return count_by<key_t>(std::forward<source_t>(source), key_selector, xtd::collections::generic::equality_comparer<key_t>::default_equality_comparer());
 }
 
 template<typename key_t, xtd::iterable source_t, xtd::callable<key_t, xtd::iterable_value_type<source_t>> key_selector_t>
-auto xtd::linq::enumerable::count_by(const source_t& source, key_selector_t&& key_selector, const iequality_comparer<key_t>& key_comparer) noexcept -> xtd::collections::generic::enumerable_generator<xtd::collections::generic::key_value_pair<key_t, xtd::usize>> {
-  return count_by<key_t>(source, key_selector, [&key_comparer](auto&& a, auto&& b) {return key_comparer.equals(a, b);});
+auto xtd::linq::enumerable::count_by(source_t&& source, key_selector_t&& key_selector, const iequality_comparer<key_t>& key_comparer) noexcept -> xtd::collections::generic::enumerable_generator<xtd::collections::generic::key_value_pair<key_t, xtd::usize>> {
+  return count_by<key_t>(std::forward<source_t>(source), key_selector, [&key_comparer](auto&& a, auto&& b) {return key_comparer.equals(a, b);});
+}
+
+template<xtd::iterable source_t>
+auto xtd::linq::enumerable::default_if_empty(source_t&& source) noexcept -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>> {
+  auto default_value = xtd::iterable_value_type<source_t> {};
+  //return default_if_empty(std::forward<source_t>(source), std::forward<xtd::iterable_value_type<source_t>>(default_value));
+  if (!any(source)) co_yield default_value;
+  //auto source_holder = __xtd_enumerable_holder<source_t> {std::forward<source_t>(source)};
+  //else for (const auto& item : source_holder.get())
+  else for (const auto& item : source)
+    co_yield item;
+}
+
+template<xtd::iterable source_t>
+auto xtd::linq::enumerable::default_if_empty(source_t&& source, xtd::iterable_value_type<source_t>&& default_value) noexcept -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>> {
+  if (!any(source)) co_yield default_value;
+  //auto source_holder = __xtd_enumerable_holder<source_t> {std::forward<source_t>(source)};
+  //else for (const auto& item : source_holder.get())
+  else for (const auto& item : source)
+    co_yield item;
 }
 
 template<typename result_t, xtd::iterable source_t>

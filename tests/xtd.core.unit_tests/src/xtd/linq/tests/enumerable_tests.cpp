@@ -183,7 +183,7 @@ namespace xtd::linq::tests {
     
     auto test_method_(count_by_with_enumerable_and_key_selector) {
       auto items = array {1, 2, 3, 4, 5, 6, 7, 9};
-      auto result = enumerable::count_by<bool>(items, [](int value) {return value % 2 == 0;});
+      auto result = enumerable::count_by<bool>(items, [](int value) {return value % 2 == 0;}).to_array();
       auto enumerator = result.get_enumerator();
       assert::is_true(enumerator.move_next());
       assert::are_equal(false, enumerator.current().key());
@@ -195,13 +195,13 @@ namespace xtd::linq::tests {
     }
     
     auto test_method_(default_if_empty_with_enumerable) {
-      collection_assert::are_equal({1, 2, 3}, enumerable::default_if_empty(array {1, 2, 3}));
-      collection_assert::are_equal({0}, enumerable::default_if_empty(array<int> {}));
+      collection_assert::are_equal({1, 2, 3}, enumerable::default_if_empty(array {1, 2, 3}).to_array());
+      collection_assert::are_equal({0}, enumerable::default_if_empty(array<int> {}).to_array());
     }
     
     auto test_method_(default_if_empty_with_enumerable_and_default_value) {
-      collection_assert::are_equal({1, 2, 3}, enumerable::default_if_empty(array {1, 2, 3}, 5));
-      collection_assert::are_equal({5}, enumerable::default_if_empty(array<int> {}, 5));
+      collection_assert::are_equal({1, 2, 3}, enumerable::default_if_empty(array {1, 2, 3}, 5).to_array());
+      collection_assert::are_equal({5}, enumerable::default_if_empty(array<int> {}, 5).to_array());
     }
     
     auto test_method_(first_or_default_with_enumerable_predicate_and_default_value) {
