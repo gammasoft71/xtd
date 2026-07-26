@@ -152,9 +152,9 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line">      <span class="keyword">static</span> <span class="keyword">const</span> <span class="keyword">auto</span> sins = fixed_array {0, 38, 71, 92, 100, 92, 71, 38, 0, -38, -71, -92, -100, -92, -71, -38};</div>
 <div class="line">      <span class="keyword">auto</span> pos = point {(e.clip_rectangle().size().width - as&lt;int&gt;(e.graphics().measure_string(text(), font()).width)) / 2, (e.clip_rectangle().size().height - as&lt;int&gt;(e.graphics().measure_string(text(), font()).height)) / 2};</div>
 <div class="line">      e.graphics().clear(back_color());</div>
-<div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> char_index = 0_z; <span class="keyword">const</span> <span class="keyword">auto</span>&amp; c : text().to_u32string()) {</div>
+<div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> char_index = 0_z; <span class="keyword">auto</span> c : text().to_u32string()) {</div>
 <div class="line">        <span class="keyword">auto</span> sins_index = (step + char_index++) % sins.size();</div>
-<div class="line">        e.graphics().draw_string(string::format(<span class="stringliteral">&quot;{}&quot;</span>, c), font(), solid_brush {color::from_hsv(360.0f / sins.size() * sins_index, 1.0f, 0.75f)}, point::subtract(pos, point(0, sins[sins_index] * font().height() / 400)));</div>
+<div class="line">        e.graphics().draw_string(string::format(<span class="stringliteral">&quot;{}&quot;</span>, c), font(), solid_brush {color::from_hsv(360.0f / sins.size() * sins_index, 1.0f, 0.75f)}, point::subtract(pos, point {0, sins[sins_index] * font().height() / 400}));</div>
 <div class="line">        pos.x = pos.x + as&lt;int&gt;(e.graphics().measure_string(string::format(<span class="stringliteral">&quot;{}&quot;</span>, c), font()).width);</div>
 <div class="line">      }</div>
 <div class="line">    }</div>
@@ -164,9 +164,9 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line">    usize step = 0;</div>
 <div class="line">  };</div>
 <div class="line">  </div>
-<div class="line">  <span class="keyword">class </span>form1 : <span class="keyword">public</span> form {</div>
+<div class="line">  <span class="keyword">class </span>main_form : <span class="keyword">public</span> form {</div>
 <div class="line">  <span class="keyword">public</span>:</div>
-<div class="line">    form1() {</div>
+<div class="line">    main_form() {</div>
 <div class="line">      text(<span class="stringliteral">&quot;Wiggly&quot;</span>);</div>
 <div class="line">      client_size({330, 130});</div>
 <div class="line">      controls().add_range({wiggly, text_box});</div>
@@ -182,7 +182,6 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line">      </div>
 <div class="line">      wiggly.bounds({20, 20, 290, 60});</div>
 <div class="line">      wiggly.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::right | anchor_styles::bottom);</div>
-<div class="line">      wiggly.text(text_box.text());</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">  <span class="keyword">private</span>:</div>
@@ -192,7 +191,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  application::run(wiggly_example::form1 {});</div>
+<div class="line">  application::run(wiggly_example::main_form {});</div>
 <div class="line">}</div>
 <div class="ttc" id="aclassxtd_1_1drawing_1_1color_html"><div class="ttname"><a href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a></div><div class="ttdoc">Represents an ARGB (alpha, red, green, blue) color.</div><div class="ttdef"><b>Definition</b> color.hpp:52</div></div>
 <div class="ttc" id="agroup__keywords_html_gac0b0b1a17f583a897eb6b424f2475363"><div class="ttname"><a href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a></div><div class="ttdeci">#define delegate_</div><div class="ttdoc">The declaration of a delegate type is similar to a method signature. It has a return value and any nu...</div><div class="ttdef"><b>Definition</b> delegate.hpp:1018</div></div>
