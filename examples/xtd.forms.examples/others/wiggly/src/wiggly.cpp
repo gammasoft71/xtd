@@ -19,7 +19,7 @@ namespace wiggly_example {
     auto on_paint(paint_event_args& e) -> void override {
       static const auto sins = fixed_array {0, 38, 71, 92, 100, 92, 71, 38, 0, -38, -71, -92, -100, -92, -71, -38};
       auto pos = point {(e.clip_rectangle().size().width - as<int>(e.graphics().measure_string(text(), font()).width)) / 2, (e.clip_rectangle().size().height - as<int>(e.graphics().measure_string(text(), font()).height)) / 2};
-      e.graphics().clear(default_back_color());
+      e.graphics().clear(back_color());
       for (auto char_index = 0_z; const auto& c : text().to_u32string()) {
         auto sins_index = (step + char_index++) % sins.size();
         e.graphics().draw_string(string::format("{}", c), font(), solid_brush {color::from_hsv(360.0f / sins.size() * sins_index, 1.0f, 0.75f)}, point::subtract(pos, point(0, sins[sins_index] * font().height() / 400)));
