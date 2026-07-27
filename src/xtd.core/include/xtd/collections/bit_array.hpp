@@ -412,4 +412,13 @@ inline auto xtd::linq::enumerable::as_enumerable(std::bitset<size_>& source) noe
   for (const auto& item : xtd::collections::bit_array {source})
     co_yield item;
 }
+
+template<xtd::usize size_>
+auto xtd::linq::enumerable::from(const std::bitset<size_>& source) noexcept -> xtd::collections::generic::enumerable_generator<bool> {
+  return as_enumerable(source);
+}
+template<xtd::usize size_>
+auto xtd::linq::enumerable::from(std::bitset<size_>& source) noexcept -> xtd::collections::generic::enumerable_generator<bool> {
+  return as_enumerable(source);
+}
 /// @endcond

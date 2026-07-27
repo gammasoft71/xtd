@@ -1177,6 +1177,11 @@ auto xtd::linq::enumerable::distinct(source_t&& source, equater_t&& equater) noe
     co_yield item;
 }
 
+template<xtd::iterable source_t>
+auto xtd::linq::enumerable::from(source_t&& source) noexcept {
+  return as_enumerable(std::forward<source_t>(source));
+}
+
 template<typename value_t>
 inline auto xtd::linq::enumerable::to_list(const xtd::collections::generic::ienumerable<value_t>& source) {
   return xtd::collections::generic::list<value_t> {source};

@@ -183,7 +183,7 @@ namespace xtd {
       /// @tparam source_t The type of the elements of source.
       /// @param source A sequence of values.
       /// @return The input sequence typed as xtd::collections::generic::ienumerable <type_t>.
-      /// @par Example
+      /// @par Examples
       /// The following code example demonstrates how to use as_enumerable <source_t>(ienumerable <source_t>) to hide a type's custom Where method when the standard query operator implementation is desired.
       /// @include enumerable_as_enumerable.cpp
       template<xtd::iterable source_t>
@@ -192,7 +192,7 @@ namespace xtd {
       /// @tparam source_t The type of the elements of source.
       /// @param source A sequence of values.
       /// @return The input sequence typed as xtd::collections::generic::ienumerable <type_t>.
-      /// @par Example
+      /// @par Examples
       /// The following code example demonstrates how to use as_enumerable <source_t>(ienumerable <source_t>) to hide a type's custom Where method when the standard query operator implementation is desired.
       /// @include enumerable_as_enumerable.cpp
       template<xtd::iterable source_t>
@@ -201,7 +201,7 @@ namespace xtd {
       /// @tparam source_t The type of the elements of source.
       /// @param source A sequence of values.
       /// @return The input sequence typed as xtd::collections::generic::ienumerable <type_t>.
-      /// @par Example
+      /// @par Examples
       /// The following code example demonstrates how to use as_enumerable <source_t>(ienumerable <source_t>) to hide a type's custom Where method when the standard query operator implementation is desired.
       /// @include enumerable_as_enumerable.cpp
       template<xtd::iterable source_t>
@@ -210,7 +210,7 @@ namespace xtd {
       /// @tparam source_t The type of the elements of source.
       /// @param source A sequence of values.
       /// @return The input sequence typed as xtd::collections::generic::ienumerable <type_t>.
-      /// @par Example
+      /// @par Examples
       /// The following code example demonstrates how to use as_enumerable <source_t>(ienumerable <source_t>) to hide a type's custom Where method when the standard query operator implementation is desired.
       /// @include enumerable_as_enumerable.cpp
       template<typename value_t>
@@ -220,7 +220,7 @@ namespace xtd {
       /// @param first The first iterator.
       /// @param last The last iterator.
       /// @return The input sequence typed as xtd::collections::generic::ienumerable <type_t>.
-      /// @par Example
+      /// @par Examples
       /// The following code example demonstrates how to use as_enumerable <source_t>(ienumerable <source_t>) to hide a type's custom Where method when the standard query operator implementation is desired.
       /// @include enumerable_as_enumerable2.cpp
       template<std::forward_iterator iterator_t>
@@ -230,7 +230,7 @@ namespace xtd {
       /// @param iterator The iterator.
       /// @param legnth The le,gth to iterate.
       /// @return The input sequence typed as xtd::collections::generic::ienumerable <type_t>.
-      /// @par Example
+      /// @par Examples
       /// The following code example demonstrates how to use as_enumerable <source_t>(ienumerable <source_t>) to hide a type's custom Where method when the standard query operator implementation is desired.
       /// @include enumerable_as_enumerable2.cpp
       template<std::forward_iterator iterator_t>
@@ -240,7 +240,7 @@ namespace xtd {
       /// @param array The native array.
       /// @param legnth The length of the array.
       /// @return The input sequence typed as xtd::collections::generic::ienumerable <type_t>.
-      /// @par Example
+      /// @par Examples
       /// The following code example demonstrates how to use as_enumerable <source_t>(ienumerable <source_t>) to hide a type's custom Where method when the standard query operator implementation is desired.
       /// @include enumerable_as_enumerable.cpp
       template<typename value_t, xtd::usize length>
@@ -250,7 +250,7 @@ namespace xtd {
       /// @param array The native array.
       /// @param legnth The length of the array.
       /// @return The input sequence typed as xtd::collections::generic::ienumerable <type_t>.
-      /// @par Example
+      /// @par Examples
       /// The following code example demonstrates how to use as_enumerable <source_t>(ienumerable <source_t>) to hide a type's custom Where method when the standard query operator implementation is desired.
       /// @include enumerable_as_enumerable.cpp
       template<typename value_t, xtd::usize length>
@@ -531,10 +531,28 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates how to use xtd::linq::from to create a sequence of values.
       /// @include linq_from.cpp
-      template<typename source_t>
-      [[nodiscard]] static const auto& from(const ienumerable<source_t>& source) noexcept {
-        return as_enumerable(source);
-      }
+      template<xtd::iterable source_t>
+      [[nodiscard]] static auto from(source_t&& source) noexcept;  // Defined in include/xtd/collections/generic/list.hpp
+      /// @brief Returns the input typed as xtd::collections::generic::ienumerable <type_t>.
+      /// @tparam source_t The type of the elements of source.
+      /// @param source A sequence of values.
+      /// @return The input sequence typed as xtd::collections::generic::ienumerable <type_t>.
+      /// @remarks Same as as_enemerable(const ienumerable<source_t>& source).
+      /// @par Examples
+      /// The following code example demonstrates how to use xtd::linq::from to create a sequence of values.
+      /// @include linq_from.cpp
+      template<xtd::iterable source_t>
+      [[nodiscard]] static auto from(const source_t& source) noexcept -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>>;
+      /// @brief Returns the input typed as xtd::collections::generic::ienumerable <type_t>.
+      /// @tparam source_t The type of the elements of source.
+      /// @param source A sequence of values.
+      /// @return The input sequence typed as xtd::collections::generic::ienumerable <type_t>.
+      /// @remarks Same as as_enemerable(const ienumerable<source_t>& source).
+      /// @par Examples
+      /// The following code example demonstrates how to use xtd::linq::from to create a sequence of values.
+      /// @include linq_from3.cpp
+      template<xtd::iterable source_t>
+      [[nodiscard]] static auto from(source_t& source) noexcept -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>>;
       /// @brief Returns the input typed as xtd::collections::generic::ienumerable <type_t>.
       /// @tparam source_t The type of the elements of source.
       /// @param source A sequence of values.
@@ -543,22 +561,8 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates how to use xtd::linq::from to create a sequence of values.
       /// @include linq_from2.cpp
-      template<typename source_t>
-      [[nodiscard]] static auto from(std::initializer_list<source_t> source) noexcept {
-        return as_enumerable(source);
-      }
-      /// @brief Returns the input typed as xtd::collections::generic::ienumerable <type_t>.
-      /// @tparam collection_t The type of the source.
-      /// @param source A sequence of values.
-      /// @return The input sequence typed as xtd::collections::generic::ienumerable <type_t>.
-      /// @remarks Same as as_enemerable(const collection_t& source).
-      /// @par Examples
-      /// The following code example demonstrates how to use xtd::linq::from to create a sequence of values.
-      /// @include linq_from3.cpp
-      template<typename collection_t>
-      [[nodiscard]] static auto from(const collection_t& source) noexcept {
-        return as_enumerable(source);
-      }
+      template<typename value_t>
+      [[nodiscard]] static auto from(std::initializer_list<value_t> source) noexcept -> xtd::collections::generic::enumerable_generator<value_t>;
       /// @brief Returns the input typed as xtd::collections::generic::ienumerable <type_t>.
       /// @tparam input_iterator_t The type of the source iterators.
       /// @param first The first iterator.
@@ -570,10 +574,8 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates how to use xtd::linq::from to create a sequence of values.
       /// @include linq_from4.cpp
-      template<typename input_iterator_t>
-      [[nodiscard]] static auto from(input_iterator_t first, input_iterator_t last) noexcept {
-        return as_enumerable(first, last);
-      }
+      template<std::forward_iterator iterator_t>
+      [[nodiscard]] static auto from(iterator_t first, iterator_t last) noexcept -> xtd::collections::generic::enumerable_generator<typename std::decay<decltype(*first)>::type>;
       /// @brief Returns the input typed as xtd::collections::generic::ienumerable <type_t>.
       /// @tparam input_iterator_t The type of the source iterators.
       /// @param iterator The iterator.
@@ -583,10 +585,8 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates how to use xtd::linq::from to create a sequence of values.
       /// @include linq_from5.cpp
-      template<typename input_iterator_t>
-      [[nodiscard]] static auto from(input_iterator_t iterator, xtd::usize length) noexcept {
-        return as_enumerable(iterator, iterator + length);
-      }
+      template<std::forward_iterator iterator_t>
+      [[nodiscard]] static auto from(iterator_t iterator, xtd::usize length) noexcept -> xtd::collections::generic::enumerable_generator<typename std::decay<decltype(*iterator)>::type>;
       /// @brief Returns the input typed as xtd::collections::generic::ienumerable <type_t>.
       /// @tparam source_t The type of the source array.
       /// @param array The native array.
@@ -596,22 +596,39 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates how to use xtd::linq::from to create a sequence of values.
       /// @include linq_from6.cpp
-      template<typename source_t, xtd::usize length>
-      [[nodiscard]] static auto from(const source_t (&array)[length]) noexcept {
-        return as_enumerable(array, array + length);
-      }
+      template<typename value_t, xtd::usize length>
+      [[nodiscard]] static auto from(const value_t (&array)[length]) noexcept -> xtd::collections::generic::enumerable_generator<value_t>;
+      /// @brief Returns the input typed as xtd::collections::generic::ienumerable <type_t>.
+      /// @tparam source_t The type of the source array.
+      /// @param array The native array.
+      /// @param legnth The length of the array.
+      /// @return The input sequence typed as xtd::collections::generic::ienumerable <type_t>.
+      /// @remarks Same as as_enemerable(const source_t (&array)[length]).
+      /// @par Examples
+      /// The following code example demonstrates how to use xtd::linq::from to create a sequence of values.
+      /// @include linq_from6.cpp
+      template<typename value_t, xtd::usize length>
+      [[nodiscard]] static auto from(value_t (&array)[length]) noexcept -> xtd::collections::generic::enumerable_generator<value_t>;
       
-      ///@cond
-      template<typename source_t, typename container_t>
-      [[nodiscard]] static auto from(const std::queue<source_t, container_t>& source) noexcept {
-        return as_enumerable(source);
-      }
-      template<typename source_t, typename container_t>
-      [[nodiscard]] static auto from(const std::stack<source_t, container_t>& source) noexcept {
-        return as_enumerable(source);
-      }
-      ///@endcond
-      
+      /// @cond
+      template<xtd::usize size_>
+      [[nodiscard]] static auto from(const std::bitset<size_>& source) noexcept -> xtd::collections::generic::enumerable_generator<bool>; // defined in xtd/collections/bit_array.hpp
+      template<xtd::usize size_>
+      [[nodiscard]] static auto from(std::bitset<size_>& source) noexcept -> xtd::collections::generic::enumerable_generator<bool>; // defined in xtd/collections/bit_array.hpp
+      template<typename value_t, typename container_t>
+      [[nodiscard]] static auto from(const std::queue<value_t, container_t>& source) noexcept -> xtd::collections::generic::enumerable_generator<value_t>;
+      template<typename value_t, typename container_t>
+      [[nodiscard]] static auto from(std::queue<value_t, container_t>& source) noexcept -> xtd::collections::generic::enumerable_generator<value_t>;
+      template<typename value_t, typename container_t>
+      [[nodiscard]] static auto from(const std::priority_queue<value_t, container_t>& source) noexcept -> xtd::collections::generic::enumerable_generator<value_t>;
+      template<typename value_t, typename container_t>
+      [[nodiscard]] static auto from(std::priority_queue<value_t, container_t>& source) noexcept -> xtd::collections::generic::enumerable_generator<value_t>;
+      template<typename value_t, typename container_t>
+      [[nodiscard]] static auto from(const std::stack<value_t, container_t>& source) noexcept -> xtd::collections::generic::enumerable_generator<value_t>;
+      template<typename value_t, typename container_t>
+      [[nodiscard]] static auto from(std::stack<value_t, container_t>& source) noexcept -> xtd::collections::generic::enumerable_generator<value_t>;
+      /// @endcond
+
       template<typename result_t, typename source_t>
       requires xtd::numeric<result_t>
       [[nodiscard]] static auto max(const ienumerable<source_t>& source, auto&& selector) {

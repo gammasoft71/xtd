@@ -422,6 +422,71 @@ auto xtd::linq::enumerable::first_or_default(source_t&& source) noexcept -> xtd:
   return first_or_default(std::forward<source_t>(source), xtd::iterable_value_type<source_t> {});
 }
 
+template<xtd::iterable source_t>
+auto xtd::linq::enumerable::from(const source_t& source) noexcept -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>> {
+  return as_enumerable(source);
+}
+
+template<xtd::iterable source_t>
+auto xtd::linq::enumerable::from(source_t& source) noexcept -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>> {
+  return as_enumerable(source);
+}
+
+template<typename value_t>
+auto xtd::linq::enumerable::from(std::initializer_list<value_t> source) noexcept -> xtd::collections::generic::enumerable_generator<value_t> {
+  return as_enumerable(source);
+}
+
+template<std::forward_iterator iterator_t>
+auto xtd::linq::enumerable::from(iterator_t first, iterator_t last) noexcept -> xtd::collections::generic::enumerable_generator<typename std::decay<decltype(*first)>::type> {
+  return as_enumerable(first, last);
+}
+
+template<std::forward_iterator iterator_t>
+auto xtd::linq::enumerable::from(iterator_t iterator, xtd::usize length) noexcept -> xtd::collections::generic::enumerable_generator<typename std::decay<decltype(*iterator)>::type> {
+  return as_enumerable(iterator, length);
+}
+
+template<typename value_t, xtd::usize length>
+auto xtd::linq::enumerable::from(const value_t (&array)[length]) noexcept -> xtd::collections::generic::enumerable_generator<value_t> {
+  return as_enumerable(array);
+}
+
+template<typename value_t, xtd::usize length>
+auto xtd::linq::enumerable::from(value_t (&array)[length]) noexcept -> xtd::collections::generic::enumerable_generator<value_t> {
+  return as_enumerable(array);
+}
+
+template<typename value_t, typename container_t>
+auto xtd::linq::enumerable::from(const std::queue<value_t, container_t>& source) noexcept -> xtd::collections::generic::enumerable_generator<value_t> {
+  return as_enumerable(source);
+}
+
+template<typename value_t, typename container_t>
+auto xtd::linq::enumerable::from(std::queue<value_t, container_t>& source) noexcept -> xtd::collections::generic::enumerable_generator<value_t> {
+  return as_enumerable(source);
+}
+
+template<typename value_t, typename container_t>
+auto xtd::linq::enumerable::from(const std::priority_queue<value_t, container_t>& source) noexcept -> xtd::collections::generic::enumerable_generator<value_t> {
+  return as_enumerable(source);
+}
+
+template<typename value_t, typename container_t>
+auto xtd::linq::enumerable::from(std::priority_queue<value_t, container_t>& source) noexcept -> xtd::collections::generic::enumerable_generator<value_t> {
+  return as_enumerable(source);
+}
+
+template<typename value_t, typename container_t>
+auto xtd::linq::enumerable::from(const std::stack<value_t, container_t>& source) noexcept -> xtd::collections::generic::enumerable_generator<value_t> {
+  return as_enumerable(source);
+}
+
+template<typename value_t, typename container_t>
+auto xtd::linq::enumerable::from(std::stack<value_t, container_t>& source) noexcept -> xtd::collections::generic::enumerable_generator<value_t> {
+  return as_enumerable(source);
+}
+
 template<typename result_t, xtd::iterable source_t>
 auto xtd::linq::enumerable::select(source_t&& source, auto&& selector) -> xtd::collections::generic::enumerable_generator<result_t> {
   auto index = xtd::usize {0};
