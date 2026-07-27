@@ -487,6 +487,37 @@ auto xtd::linq::enumerable::from(std::stack<value_t, container_t>& source) noexc
   return as_enumerable(source);
 }
 
+template<xtd::iterable source_t>
+requires xtd::numeric<xtd::iterable_value_type<source_t>>
+auto xtd::linq::enumerable::max(source_t&& source) -> xtd::iterable_value_type<source_t> {
+  auto result = xtd::optional<xtd::iterable_value_type<source_t>> {};
+  for (const auto& item : source)
+    if (!result || item > result) result = item;
+  return result.value_or(xtd::iterable_value_type<source_t> {});
+}
+
+template<xtd::iterable source_t, xtd::callable<xtd::iterable_value_type<source_t>, xtd::iterable_value_type<source_t>> selector_t>
+requires xtd::numeric<xtd::iterable_value_type<source_t>>
+auto xtd::linq::enumerable::max(source_t&& source, selector_t&& selector) -> xtd::iterable_value_type<source_t> {
+  auto result = xtd::optional<xtd::iterable_value_type<source_t>> {};
+  for (const auto& item : source) {
+    auto val = selector(item);
+    if (!result || val > result) result = val;
+  }
+  return result.value_or(xtd::iterable_value_type<source_t> {});
+}
+
+template<typename result_t, xtd::iterable source_t, xtd::callable<result_t, xtd::iterable_value_type<source_t>> selector_t>
+requires xtd::numeric<xtd::iterable_value_type<source_t>>
+auto xtd::linq::enumerable::max(source_t&& source, selector_t&& selector) -> result_t {
+  auto result = xtd::optional<result_t> {};
+  for (const auto& item : source) {
+    auto val = selector(item);
+    if (!result || val > result) result = val;
+  }
+  return result.value_or(result_t {});
+}
+
 template<typename result_t, xtd::iterable source_t>
 auto xtd::linq::enumerable::select(source_t&& source, auto&& selector) -> xtd::collections::generic::enumerable_generator<result_t> {
   auto index = xtd::usize {0};

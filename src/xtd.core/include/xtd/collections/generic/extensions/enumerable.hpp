@@ -313,17 +313,17 @@ namespace xtd {
             return xtd::linq::enumerable::first_or_default(self());
           }
           
+          [[nodiscard]] auto max() const requires xtd::numeric<value_t> {
+            return xtd::linq::enumerable::max(self());
+          }
           template<typename result_t, xtd::callable<result_t, value_t> selector_t>
           requires xtd::numeric<result_t>
           [[nodiscard]] auto max(selector_t&& selector) const {
-            return xtd::linq::enumerable::max<result_t, value_t>(self(), std::forward<selector_t>(selector));
+            return xtd::linq::enumerable::max<result_t>(self(), std::forward<selector_t>(selector));
           }
           template<xtd::callable<value_t, value_t> selector_t>
           [[nodiscard]] auto max(selector_t&& selector) const requires xtd::numeric<value_t> {
             return xtd::linq::enumerable::max(self(), std::forward<selector_t>(selector));
-          }
-          [[nodiscard]] auto max() const requires xtd::numeric<value_t> {
-            return xtd::linq::enumerable::max(self());
           }
 
           template<typename result_t>
