@@ -96,6 +96,15 @@ namespace xtd {
         hash_set(const ienumerable < value_type >& collection, const xtd::collections::generic::iequality_comparer<key_type>& comparer) noexcept : data_(xtd::new_ptr<hash_set_data>(comparer)) {
           for (const auto& item : collection)
             add(item);
+          ensure_capacity(count());
+        }
+        /// @brief Initializes a new instance of the xtd::iterable that contains elements copied from the specified collection and has sufficient capacity to accommodate the number of elements copied.
+        /// @param items The iterable whose elements are copied to the new xtd::collections::generic::hash_set <type_t>.
+        template<xtd::iterable iterable_t>
+        hash_set(iterable_t&& items) {
+          for (const auto& item : items)
+            add(item);
+          ensure_capacity(count());
         }
         /// @brief Initializes a new instance of the xtd::collections::generic::hash_set <type_t> class that is empty, but has reserved space for capacity items and uses the default equality comparer for the set type.
         /// @param capacity The initial size of the xtd::collections::generic::hash_set <type_t>.
@@ -436,6 +445,9 @@ namespace xtd {
       
       template<typename type_t>
       hash_set(ienumerable<type_t>) -> hash_set<type_t>;
+      
+      template<xtd::iterable iterable_t>
+      hash_set(iterable_t&&) -> hash_set<xtd::iterable_value_type<iterable_t>>;
       
       template<typename type_t>
       hash_set(std::initializer_list<type_t>) -> hash_set<type_t>;
