@@ -38,6 +38,34 @@ namespace xtd {
   /// @param fmt A composite format string.
   /// @param loc An object of class std::locale is an immutable indexed set of immutable facets.
   /// @remarks for more information about format see @ref FormatPage "Format".
+  template<class value_t>
+  requires (requires (const xtd::raw_type<value_t>& value, const xtd::string& fmt) {{value.to_string(fmt)} -> xtd::textual;})
+  inline auto to_string(const value_t& value, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
+
+  /// @brief Convert a specified value into a string with specified format and locale.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @param value Value to convert.
+  /// @param fmt A composite format string.
+  /// @param loc An object of class std::locale is an immutable indexed set of immutable facets.
+  /// @remarks for more information about format see @ref FormatPage "Format".
+  template<class value_t>
+  requires (!requires (const xtd::raw_type<value_t>& value, const xtd::string& fmt) {{value.to_string(fmt)} -> xtd::textual;} && requires (const xtd::raw_type<value_t>& value) {{value.to_string()} -> xtd::textual;})
+  inline auto to_string(const value_t& value, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
+  
+  /// @brief Convert a specified value into a string with specified format and locale.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @param value Value to convert.
+  /// @param fmt A composite format string.
+  /// @param loc An object of class std::locale is an immutable indexed set of immutable facets.
+  /// @remarks for more information about format see @ref FormatPage "Format".
   template<typename value_t>
   inline auto to_string(const value_t& value, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
   
