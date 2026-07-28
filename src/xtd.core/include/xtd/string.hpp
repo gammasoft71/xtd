@@ -142,3 +142,6 @@ template<typename type_t, typename deleter_t>
 /// @endcond
 
 #include "literals/string.hpp"
+#define __XTD_CORE_INTERNAL__
+#include "internal/__xtd_std_format.hpp"
+#undef __XTD_CORE_INTERNAL__

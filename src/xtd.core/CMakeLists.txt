@@ -1202,6 +1202,7 @@ add_sources(
   "include/xtd/internal/__unique_ptr_object_definition.hpp"
   "include/xtd/internal/__xtd_debugbreak.hpp"
   "include/xtd/internal/__xtd_source_location.hpp"
+  "include/xtd/internal/__xtd_std_format.hpp"
   "include/xtd/internal/__xtd_std_version.hpp"
   "include/xtd/io/binary_reader.hpp"
   "include/xtd/io/binary_reader"
