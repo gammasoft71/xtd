@@ -134,6 +134,13 @@ namespace xtd {
           for (const auto& value : collection)
             data_->items.push_back(value);
         }
+        /// @brief Initializes a new instance of the xtd::iterable that contains elements copied from the specified collection and has sufficient capacity to accommodate the number of elements copied.
+        /// @param items The iterable whose elements are copied to the new xtd::collections::generic::list <type_t>.
+        template<xtd::iterable iterable_t>
+        list(iterable_t&& items) {
+          for (const auto& item : items)
+            data_->items.push_back(item);
+        }
         /// @brief Default copy constructor with specified list.
         /// @param list The xtd::collections::generic::list which elements will be inserted from.
         list(const list& list) requires std::copy_constructible<type_t> {*data_ = *list.data_;}
@@ -1081,6 +1088,9 @@ namespace xtd {
       template<typename type_t>
       list(const ienumerable<type_t>&) -> list<type_t>;
       
+      template<xtd::iterable iterable_t>
+      list(iterable_t&&) -> list<xtd::iterable_value_type<iterable_t>>;
+
       template<typename type_t>
       list(const ilist<type_t>&) -> list<type_t>;
       
