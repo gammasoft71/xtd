@@ -99,6 +99,14 @@ namespace xtd {
             data_->items.push(item);
           ensure_capacity(count());
         }
+        /// @brief Initializes a new instance of the xtd::iterable that contains elements copied from the specified collection and has sufficient capacity to accommodate the number of elements copied.
+        /// @param items The iterable whose elements are copied to the new xtd::collections::generic::queue <type_t>.
+        template<xtd::iterable iterable_t>
+        queue(iterable_t&& items) {
+          for (const auto& item : items)
+            data_->items.push(item);
+          ensure_capacity(count());
+        }
         /// @brief Initializes a new instance of the xtd::collections::generic::queue <type_t> class that is empty and has the specified initial capacity.
         /// @param capacity The initial number of elements that the xtd::collections::generic::queue <type_t> can contain.
         queue(size_type capacity) {
@@ -357,6 +365,9 @@ namespace xtd {
       template < class type_t>
       queue(const ienumerable<type_t>&) -> queue<type_t>;
       
+      template <xtd::iterable iterable_t>
+      queue(iterable_t&&) -> queue<xtd::iterable_value_type<iterable_t>>;
+
       template < class type_t>
       queue(std::initializer_list<type_t>) -> queue<type_t>;
       
