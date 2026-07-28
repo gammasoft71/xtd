@@ -19,7 +19,8 @@ namespace xtd {
     std::derived_from<xtd::raw_type<value_t>, xtd::object> ||
     std::derived_from<xtd::raw_type<value_t>, xtd::istringable<xtd::raw_type<value_t>>> ||
     std::derived_from<xtd::raw_type<value_t>, xtd::iformatable> ||
-    requires(const xtd::raw_type<value_t>& value) {{value.to_string()} -> xtd::textual;} ||
+    requires (const xtd::raw_type<value_t>& value) {{value.to_string()} -> xtd::textual;} ||
+    requires (const xtd::raw_type<value_t>& value, const xtd::string& fmt) {{value.to_string(fmt)} -> xtd::textual;} ||
     std::derived_from<xtd::raw_type<value_t>, std::exception> ||
     std::is_enum_v<xtd::raw_type<value_t>> ||
     xtd::iterable<xtd::raw_type<value_t>> ||
