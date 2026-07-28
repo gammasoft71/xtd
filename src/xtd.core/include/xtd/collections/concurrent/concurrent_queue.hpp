@@ -62,6 +62,13 @@ namespace xtd {
           for (const auto& item : collection)
             enqueue(item);
         }
+        /// @brief Initializes a new instance of the xtd::iterable that contains elements copied from the specified collection and has sufficient capacity to accommodate the number of elements copied.
+        /// @param items The iterable whose elements are copied to the new xtd::collections::concurrent::concurrent_queue <type_t>.
+        template<xtd::iterable iterable_t>
+        concurrent_queue(iterable_t&& items) {
+          for (const auto& item : items)
+            enqueue(item);
+        }
         /// @}
         
         /// @name Public Properties
@@ -175,6 +182,20 @@ namespace xtd {
         
         collection_type items_;
       };
+      
+      /// @cond
+      // Deduction guides for xtd::collections::generic::hash_set
+      // {
+      template<typename type_t>
+      concurrent_queue(xtd::collections::generic::ienumerable<type_t>) -> concurrent_queue<type_t>;
+      
+      template<xtd::iterable iterable_t>
+      concurrent_queue(iterable_t&&) -> concurrent_queue<xtd::iterable_value_type<iterable_t>>;
+      
+      template<typename type_t>
+      concurrent_queue(std::initializer_list<type_t>) -> concurrent_queue<type_t>;
+      // }
+      /// @endcond
     }
   }
 }
