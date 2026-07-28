@@ -69,6 +69,14 @@ namespace xtd {
           for (const auto& item : collection)
             add(item);
         }
+        /// @brief Initializes a new instance of the xtd::iterable that contains elements copied from the specified collection and has sufficient capacity to accommodate the number of elements copied.
+        /// @param items The iterable whose elements are copied to the new xtd::collections::concurrent::concurrent_bag <type_t>.
+        template<xtd::iterable iterable_t>
+        concurrent_bag(iterable_t&& items) {
+          for (const auto& item : items)
+            add(item);
+          ensure_capacity(count());
+        }
         /// @}
         
         /// @name Public Properties
@@ -230,6 +238,9 @@ namespace xtd {
       
       template<typename type_t>
       concurrent_bag(const xtd::collections::generic::ienumerable<type_t>&) -> concurrent_bag<type_t>;
+      
+      template<xtd::iterable iterable_t>
+      concurrent_bag(iterable_t&&) -> concurrent_bag<xtd::iterable_value_type<iterable_t>>;
       // }
       /// @endcond
     }
