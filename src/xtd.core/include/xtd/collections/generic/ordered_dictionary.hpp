@@ -107,6 +107,13 @@ namespace xtd {
           for (const auto& item : collection)
             add(item);
         }
+        /// @brief Initializes a new instance of the xtd::iterable that contains elements copied from the specified collection and has sufficient capacity to accommodate the number of elements copied.
+        /// @param items The iterable whose elements are copied to the new xtd::collections::generic::ordered_dictionary <key_t, value_t>.
+        template<xtd::iterable iterable_t>
+        ordered_dictionary(iterable_t&& items) {
+          for (const auto& [key, value] : items)
+            add({key, value});
+        }
         /// @brief Initializes a new instance of the xtd::collections::generic::ordered_dictionary <key_t, value_t> class that contains elements copied from the specified xtd::collections::generic::ienumerable <type_t>, and uses the specified xtd::collections::generic::iequality_comparer <key_type>.
         /// @param collection The xtd::collections::generic::ienumerable <type_t> whose elements are copied to the new xtd::collections::generic::ordered_dictionary <key_t, value_t>
         /// @param comparer The xtd::collections::generic::iequality_comparer <key_type> implementation to use when comparing keys.
@@ -529,6 +536,9 @@ namespace xtd {
       template < class key_t, typename value_t >
       ordered_dictionary(xtd::collections::generic::ienumerable < key_value_pair < key_t, value_t>>) -> ordered_dictionary<key_t, value_t>;
       
+      template<xtd::iterable iterable_t>
+      ordered_dictionary(iterable_t&&) -> ordered_dictionary<std::remove_const_t<std::tuple_element_t<0, xtd::iterable_value_type<iterable_t>>>, std::remove_const_t<std::tuple_element_t<1, xtd::iterable_value_type<iterable_t>>>>;
+
       template < class key_t, typename value_t >
       ordered_dictionary(std::initializer_list < key_value_pair < key_t, value_t>>) -> ordered_dictionary < key_t, value_t >;
       
