@@ -74,6 +74,9 @@ namespace xtd {
         }
         /// @brief Default copy constructor with specified stack.
         /// @param stack The xtd::collections::generic::stack <type_t> which elements will be inserted from.
+        stack(stack& stack) = default;
+        /// @brief Default copy constructor with specified stack.
+        /// @param stack The xtd::collections::generic::stack <type_t> which elements will be inserted from.
         stack(const stack& stack) = default;
         /// @brief Move constructor with specified stack.
         /// @param stack The std::stack <type_t> which elements will be moved from.
@@ -369,6 +372,9 @@ namespace xtd {
       
       template <typename type_t, typename container_t>
       stack(const stack<type_t, container_t>&) -> stack<type_t, container_t>;
+      
+      template <typename type_t, typename container_t>
+      stack(stack<type_t, container_t>&) -> stack<type_t, container_t>;
       
       template <typename type_t>
       stack(const ienumerable<type_t>&) -> stack<type_t>;
