@@ -256,7 +256,7 @@ namespace {
   
   string date_time_formatter(string fmt, const std::tm& time, uint32 nanoseconds, const culture_info& culture) {
     auto dt = xtd::date_time(time.tm_year + 1900, time.tm_mon + 1, time.tm_mday, time.tm_hour, time.tm_min, time.tm_sec);
-    dt = dt.add_ticks(nanoseconds * 100);
+    dt = dt.add_ticks(nanoseconds / 100);
     return dt.to_string(fmt, culture);
   }
 }
