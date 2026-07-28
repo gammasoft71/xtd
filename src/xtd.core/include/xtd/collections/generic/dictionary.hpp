@@ -143,6 +143,13 @@ namespace xtd {
           for (const auto& item : collection)
             add(item);
         }
+        /// @brief Initializes a new instance of the xtd::iterable that contains elements copied from the specified collection and has sufficient capacity to accommodate the number of elements copied.
+        /// @param items The iterable whose elements are copied to the new xtd::collections::generic::dictionary <key_t, value_t>.
+        template<xtd::iterable iterable_t>
+        dictionary(iterable_t&& items) {
+          for (const auto& [key, value] : items)
+            add({key, value});
+        }
         /// @brief Initializes a new instance of the xtd::collections::generic::dictionary <key_t, value_t> class that is empty, has the default initial capacity, and uses the specified xtd::collections::generic::iequality_comparer<type_t>.
         /// @param comparer The xtd::collections::generic::iequality_comparer<type_t> implementation to use when comparing keys.
         /// @remarks Use this constructor with the case-insensitive string comparers provided by the xtd::string_comparer class to create dictionaries with case-insensitive string keys.
@@ -613,19 +620,22 @@ namespace xtd {
       /// @cond
       // Deduction guides for xtd::collections::generic::dictionary
       // {
-      template < class key_t, typename value_t >
-      dictionary(idictionary < key_t, value_t >) -> dictionary<key_t, value_t>;
+      template<typename key_t, typename value_t >
+      dictionary(idictionary<key_t, value_t>) -> dictionary<key_t, value_t>;
       
-      template < class key_t, typename value_t >
-      dictionary(ienumerable < key_value_pair < key_t, value_t>>) -> dictionary<key_t, value_t>;
+      template<typename key_t, typename value_t >
+      dictionary(ienumerable<key_value_pair<key_t, value_t>>) -> dictionary<key_t, value_t>;
       
-      template < class key_t, typename value_t >
+      template<xtd::iterable iterable_t>
+      dictionary(iterable_t&&) -> dictionary<std::remove_const_t<std::tuple_element_t<0, xtd::iterable_value_type<iterable_t>>>, std::remove_const_t<std::tuple_element_t<1, xtd::iterable_value_type<iterable_t>>>>;
+      
+      template<typename key_t, typename value_t >
       dictionary(std::initializer_list < key_value_pair < key_t, value_t>>) -> dictionary<key_t, value_t>;
       
-      template < class key_t, typename value_t >
+      template<typename key_t, typename value_t >
       dictionary(std::initializer_list < std::pair < key_t, value_t>>) -> dictionary<key_t, value_t>;
       
-      template < class input_iterator_t >
+      template<typename input_iterator_t >
       dictionary(input_iterator_t, input_iterator_t) -> dictionary<helpers::iterator_key_t<input_iterator_t>, helpers::iterator_mapped_t<input_iterator_t>>;
       // }
       /// @endcond
