@@ -266,6 +266,8 @@ Public Constructors</h2></td></tr>
 <tr class="memdesc:a1f5295a6e3530e1e428214404b20b081"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...">xtd::collections::generic::stack</a> &lt;type_t&gt; class that is empty and has the default initial capacity.  <br /></td></tr>
 <tr class="memitem:a8e03e312aae4047918b192b0fe82fcac" id="r_a8e03e312aae4047918b192b0fe82fcac"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a8e03e312aae4047918b192b0fe82fcac">stack</a> (stack &amp;&amp;stack)</td></tr>
 <tr class="memdesc:a8e03e312aae4047918b192b0fe82fcac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move constructor with specified stack.  <br /></td></tr>
+<tr class="memitem:ada388874ddac3fb6557ce8ffef718ade" id="r_ada388874ddac3fb6557ce8ffef718ade"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ada388874ddac3fb6557ce8ffef718ade">stack</a> (stack &amp;stack)=default</td></tr>
+<tr class="memdesc:ada388874ddac3fb6557ce8ffef718ade"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default copy constructor with specified stack.  <br /></td></tr>
 <tr class="memitem:aa27011e8f609aa8581eb9230be3d59d6" id="r_aa27011e8f609aa8581eb9230be3d59d6"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aa27011e8f609aa8581eb9230be3d59d6">stack</a> (const stack &amp;stack)=default</td></tr>
 <tr class="memdesc:aa27011e8f609aa8581eb9230be3d59d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default copy constructor with specified stack.  <br /></td></tr>
 <tr class="memitem:a43714747b7b39996a5c5aae347eb080d" id="r_a43714747b7b39996a5c5aae347eb080d"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a43714747b7b39996a5c5aae347eb080d">stack</a> (std::stack&lt; type_t &gt; &amp;&amp;stack)</td></tr>
@@ -541,7 +543,7 @@ template&lt;typename type_t, typename container_t = std::deque&lt;type_t&gt;&gt;
 </div>
 <a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a1f5295a6e3530e1e428214404b20b081" name="a1f5295a6e3530e1e428214404b20b081"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1f5295a6e3530e1e428214404b20b081">&#9670;&#160;</a></span>stack() <span class="overload">[1/10]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f5295a6e3530e1e428214404b20b081">&#9670;&#160;</a></span>stack() <span class="overload">[1/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -570,7 +572,7 @@ template&lt;typename type_t, typename container_t = std::deque&lt;type_t&gt;&gt;
 </div>
 </div>
 <a id="a8e03e312aae4047918b192b0fe82fcac" name="a8e03e312aae4047918b192b0fe82fcac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8e03e312aae4047918b192b0fe82fcac">&#9670;&#160;</a></span>stack() <span class="overload">[2/10]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e03e312aae4047918b192b0fe82fcac">&#9670;&#160;</a></span>stack() <span class="overload">[2/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -604,8 +606,43 @@ template&lt;typename type_t, typename container_t = std::deque&lt;type_t&gt;&gt;
 
 </div>
 </div>
+<a id="ada388874ddac3fb6557ce8ffef718ade" name="ada388874ddac3fb6557ce8ffef718ade"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada388874ddac3fb6557ce8ffef718ade">&#9670;&#160;</a></span>stack() <span class="overload">[3/11]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename type_t, typename container_t = std::deque&lt;type_t&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html">xtd::collections::generic::stack</a>&lt; type_t, container_t &gt;::stack </td>
+          <td>(</td>
+          <td class="paramtype">stack&lt; type_t, container_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>stack</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel default">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Default copy constructor with specified stack. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stack</td><td>The <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...">xtd::collections::generic::stack</a> &lt;type_t&gt; which elements will be inserted from. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="aa27011e8f609aa8581eb9230be3d59d6" name="aa27011e8f609aa8581eb9230be3d59d6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa27011e8f609aa8581eb9230be3d59d6">&#9670;&#160;</a></span>stack() <span class="overload">[3/10]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa27011e8f609aa8581eb9230be3d59d6">&#9670;&#160;</a></span>stack() <span class="overload">[4/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -640,7 +677,7 @@ template&lt;typename type_t, typename container_t = std::deque&lt;type_t&gt;&gt;
 </div>
 </div>
 <a id="a43714747b7b39996a5c5aae347eb080d" name="a43714747b7b39996a5c5aae347eb080d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a43714747b7b39996a5c5aae347eb080d">&#9670;&#160;</a></span>stack() <span class="overload">[4/10]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a43714747b7b39996a5c5aae347eb080d">&#9670;&#160;</a></span>stack() <span class="overload">[5/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -675,7 +712,7 @@ template&lt;typename type_t, typename container_t = std::deque&lt;type_t&gt;&gt;
 </div>
 </div>
 <a id="a53d22390f68f1913922c34db000e583d" name="a53d22390f68f1913922c34db000e583d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a53d22390f68f1913922c34db000e583d">&#9670;&#160;</a></span>stack() <span class="overload">[5/10]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a53d22390f68f1913922c34db000e583d">&#9670;&#160;</a></span>stack() <span class="overload">[6/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -710,7 +747,7 @@ template&lt;typename type_t, typename container_t = std::deque&lt;type_t&gt;&gt;
 </div>
 </div>
 <a id="a28ac718576bfa4c60dcb6adc0cd0ac31" name="a28ac718576bfa4c60dcb6adc0cd0ac31"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a28ac718576bfa4c60dcb6adc0cd0ac31">&#9670;&#160;</a></span>stack() <span class="overload">[6/10]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a28ac718576bfa4c60dcb6adc0cd0ac31">&#9670;&#160;</a></span>stack() <span class="overload">[7/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -745,7 +782,7 @@ template&lt;typename type_t, typename container_t = std::deque&lt;type_t&gt;&gt;
 </div>
 </div>
 <a id="a7a315fd82c9ce78ecfca5d06c17cf8be" name="a7a315fd82c9ce78ecfca5d06c17cf8be"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7a315fd82c9ce78ecfca5d06c17cf8be">&#9670;&#160;</a></span>stack() <span class="overload">[7/10]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a315fd82c9ce78ecfca5d06c17cf8be">&#9670;&#160;</a></span>stack() <span class="overload">[8/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -782,7 +819,7 @@ template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> it
 </div>
 </div>
 <a id="ade0576668bfebe65297c079c4dc66d00" name="ade0576668bfebe65297c079c4dc66d00"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ade0576668bfebe65297c079c4dc66d00">&#9670;&#160;</a></span>stack() <span class="overload">[8/10]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ade0576668bfebe65297c079c4dc66d00">&#9670;&#160;</a></span>stack() <span class="overload">[9/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -817,7 +854,7 @@ template&lt;typename type_t, typename container_t = std::deque&lt;type_t&gt;&gt;
 </div>
 </div>
 <a id="addeb06cabe8632055e7860854f8afabe" name="addeb06cabe8632055e7860854f8afabe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#addeb06cabe8632055e7860854f8afabe">&#9670;&#160;</a></span>stack() <span class="overload">[9/10]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#addeb06cabe8632055e7860854f8afabe">&#9670;&#160;</a></span>stack() <span class="overload">[10/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -852,7 +889,7 @@ template&lt;typename type_t, typename container_t = std::deque&lt;type_t&gt;&gt;
 </div>
 </div>
 <a id="a8e75cce7a7a2771d04996064235063b2" name="a8e75cce7a7a2771d04996064235063b2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8e75cce7a7a2771d04996064235063b2">&#9670;&#160;</a></span>stack() <span class="overload">[10/10]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e75cce7a7a2771d04996064235063b2">&#9670;&#160;</a></span>stack() <span class="overload">[11/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">

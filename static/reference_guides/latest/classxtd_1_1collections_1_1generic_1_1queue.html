@@ -268,6 +268,8 @@ Public Constructors</h2></td></tr>
 <tr class="memdesc:ad26ca1d474311a1ce3d5ef2abc062ebe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move constructor with specified queue.  <br /></td></tr>
 <tr class="memitem:a23c711cedfb8dd1cdb61aa4466a4e51a" id="r_a23c711cedfb8dd1cdb61aa4466a4e51a"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a23c711cedfb8dd1cdb61aa4466a4e51a">queue</a> (const queue &amp;queue)=default</td></tr>
 <tr class="memdesc:a23c711cedfb8dd1cdb61aa4466a4e51a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default copy constructor with specified queue.  <br /></td></tr>
+<tr class="memitem:a50064ef4ba27812c0cf7d5d071c81f2f" id="r_a50064ef4ba27812c0cf7d5d071c81f2f"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a50064ef4ba27812c0cf7d5d071c81f2f">queue</a> (queue &amp;queue)=default</td></tr>
+<tr class="memdesc:a50064ef4ba27812c0cf7d5d071c81f2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default copy constructor with specified queue.  <br /></td></tr>
 <tr class="memitem:aa46582e9c211c773a3c179f91a88ae28" id="r_aa46582e9c211c773a3c179f91a88ae28"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aa46582e9c211c773a3c179f91a88ae28">queue</a> (std::queue&lt; type_t &gt; &amp;&amp;queue)</td></tr>
 <tr class="memdesc:aa46582e9c211c773a3c179f91a88ae28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move constructor with specified queue.  <br /></td></tr>
 <tr class="memitem:ada83320414a3b2f5fcd172ad2196af83" id="r_ada83320414a3b2f5fcd172ad2196af83"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ada83320414a3b2f5fcd172ad2196af83">queue</a> (const std::queue&lt; type_t &gt; &amp;queue)</td></tr>
@@ -541,7 +543,7 @@ template&lt;typename type_t, typename container_t = std::deque&lt;type_t&gt;&gt;
 </div>
 <a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="abbdd79c605263a99d1976549b8c3c79e" name="abbdd79c605263a99d1976549b8c3c79e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abbdd79c605263a99d1976549b8c3c79e">&#9670;&#160;</a></span>queue() <span class="overload">[1/10]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#abbdd79c605263a99d1976549b8c3c79e">&#9670;&#160;</a></span>queue() <span class="overload">[1/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -570,7 +572,7 @@ template&lt;typename type_t, typename container_t = std::deque&lt;type_t&gt;&gt;
 </div>
 </div>
 <a id="ad26ca1d474311a1ce3d5ef2abc062ebe" name="ad26ca1d474311a1ce3d5ef2abc062ebe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad26ca1d474311a1ce3d5ef2abc062ebe">&#9670;&#160;</a></span>queue() <span class="overload">[2/10]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ad26ca1d474311a1ce3d5ef2abc062ebe">&#9670;&#160;</a></span>queue() <span class="overload">[2/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -605,7 +607,7 @@ template&lt;typename type_t, typename container_t = std::deque&lt;type_t&gt;&gt;
 </div>
 </div>
 <a id="a23c711cedfb8dd1cdb61aa4466a4e51a" name="a23c711cedfb8dd1cdb61aa4466a4e51a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a23c711cedfb8dd1cdb61aa4466a4e51a">&#9670;&#160;</a></span>queue() <span class="overload">[3/10]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a23c711cedfb8dd1cdb61aa4466a4e51a">&#9670;&#160;</a></span>queue() <span class="overload">[3/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -639,8 +641,43 @@ template&lt;typename type_t, typename container_t = std::deque&lt;type_t&gt;&gt;
 
 </div>
 </div>
+<a id="a50064ef4ba27812c0cf7d5d071c81f2f" name="a50064ef4ba27812c0cf7d5d071c81f2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50064ef4ba27812c0cf7d5d071c81f2f">&#9670;&#160;</a></span>queue() <span class="overload">[4/11]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename type_t, typename container_t = std::deque&lt;type_t&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html">xtd::collections::generic::queue</a>&lt; type_t, container_t &gt;::queue </td>
+          <td>(</td>
+          <td class="paramtype">queue&lt; type_t, container_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>queue</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel default">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Default copy constructor with specified queue. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">queue</td><td>The <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html" title="Represents a first-in, first-out collection of objects.">xtd::collections::generic::queue</a> &lt;type_t&gt; which elements will be inserted from. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="aa46582e9c211c773a3c179f91a88ae28" name="aa46582e9c211c773a3c179f91a88ae28"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa46582e9c211c773a3c179f91a88ae28">&#9670;&#160;</a></span>queue() <span class="overload">[4/10]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa46582e9c211c773a3c179f91a88ae28">&#9670;&#160;</a></span>queue() <span class="overload">[5/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -675,7 +712,7 @@ template&lt;typename type_t, typename container_t = std::deque&lt;type_t&gt;&gt;
 </div>
 </div>
 <a id="ada83320414a3b2f5fcd172ad2196af83" name="ada83320414a3b2f5fcd172ad2196af83"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ada83320414a3b2f5fcd172ad2196af83">&#9670;&#160;</a></span>queue() <span class="overload">[5/10]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ada83320414a3b2f5fcd172ad2196af83">&#9670;&#160;</a></span>queue() <span class="overload">[6/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -710,7 +747,7 @@ template&lt;typename type_t, typename container_t = std::deque&lt;type_t&gt;&gt;
 </div>
 </div>
 <a id="abd7a86e62f114ccface31b3c75414730" name="abd7a86e62f114ccface31b3c75414730"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abd7a86e62f114ccface31b3c75414730">&#9670;&#160;</a></span>queue() <span class="overload">[6/10]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#abd7a86e62f114ccface31b3c75414730">&#9670;&#160;</a></span>queue() <span class="overload">[7/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -745,7 +782,7 @@ template&lt;typename type_t, typename container_t = std::deque&lt;type_t&gt;&gt;
 </div>
 </div>
 <a id="aefda323e5650001eb08dcf7a41cce895" name="aefda323e5650001eb08dcf7a41cce895"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aefda323e5650001eb08dcf7a41cce895">&#9670;&#160;</a></span>queue() <span class="overload">[7/10]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aefda323e5650001eb08dcf7a41cce895">&#9670;&#160;</a></span>queue() <span class="overload">[8/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -782,7 +819,7 @@ template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> it
 </div>
 </div>
 <a id="a0e3bb4a468c0cf0bcf47c71b130445b5" name="a0e3bb4a468c0cf0bcf47c71b130445b5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0e3bb4a468c0cf0bcf47c71b130445b5">&#9670;&#160;</a></span>queue() <span class="overload">[8/10]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e3bb4a468c0cf0bcf47c71b130445b5">&#9670;&#160;</a></span>queue() <span class="overload">[9/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -817,7 +854,7 @@ template&lt;typename type_t, typename container_t = std::deque&lt;type_t&gt;&gt;
 </div>
 </div>
 <a id="a1a9a9d96fdd19b940dd886ed61d1445f" name="a1a9a9d96fdd19b940dd886ed61d1445f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1a9a9d96fdd19b940dd886ed61d1445f">&#9670;&#160;</a></span>queue() <span class="overload">[9/10]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a9a9d96fdd19b940dd886ed61d1445f">&#9670;&#160;</a></span>queue() <span class="overload">[10/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -852,7 +889,7 @@ template&lt;typename type_t, typename container_t = std::deque&lt;type_t&gt;&gt;
 </div>
 </div>
 <a id="a69d074993196c2faf21f861a5c3098e7" name="a69d074993196c2faf21f861a5c3098e7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a69d074993196c2faf21f861a5c3098e7">&#9670;&#160;</a></span>queue() <span class="overload">[10/10]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a69d074993196c2faf21f861a5c3098e7">&#9670;&#160;</a></span>queue() <span class="overload">[11/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">

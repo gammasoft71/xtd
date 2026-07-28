@@ -439,6 +439,8 @@ Public Constructors</h2></td></tr>
 <tr class="memitem:aa5c3bae85baf3195e682c1c07df9a096" id="r_aa5c3bae85baf3195e682c1c07df9a096"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> iterable_t&gt; </td></tr>
 <tr class="memitem:aa5c3bae85baf3195e682c1c07df9a096 template"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aa5c3bae85baf3195e682c1c07df9a096">list</a> (iterable_t &amp;&amp;items)</td></tr>
 <tr class="memdesc:aa5c3bae85baf3195e682c1c07df9a096"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="structxtd_1_1iterable.html" title="Represents the iterable concept.">xtd::iterable</a> that contains elements copied from the specified collection and has sufficient capacity to accommodate the number of elements copied.  <br /></td></tr>
+<tr class="memitem:a9cfdd9b5c06c1949d0fafbbc42340e8c" id="r_a9cfdd9b5c06c1949d0fafbbc42340e8c"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a9cfdd9b5c06c1949d0fafbbc42340e8c">list</a> (list &amp;list)</td></tr>
+<tr class="memdesc:a9cfdd9b5c06c1949d0fafbbc42340e8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default copy constructor with specified list.  <br /></td></tr>
 <tr class="memitem:a85a4fe62705e040dcaa817e9a94dc335" id="r_a85a4fe62705e040dcaa817e9a94dc335"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a85a4fe62705e040dcaa817e9a94dc335">list</a> (const list &amp;list)</td></tr>
 <tr class="memdesc:a85a4fe62705e040dcaa817e9a94dc335"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default copy constructor with specified list.  <br /></td></tr>
 <tr class="memitem:aa4b1e4470c5e32cd2b8752e761e4dd44" id="r_aa4b1e4470c5e32cd2b8752e761e4dd44"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aa4b1e4470c5e32cd2b8752e761e4dd44">list</a> (list &amp;&amp;list)</td></tr>
@@ -900,7 +902,7 @@ template&lt;typename type_t, typename allocator_t&gt; </div>
 </div>
 <a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a84c3e29f04a6474378357709ee06c800" name="a84c3e29f04a6474378357709ee06c800"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a84c3e29f04a6474378357709ee06c800">&#9670;&#160;</a></span>list() <span class="overload">[1/10]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a84c3e29f04a6474378357709ee06c800">&#9670;&#160;</a></span>list() <span class="overload">[1/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1032,7 +1034,7 @@ This constructor is an O(1) operation. </dd></dl>
 </div>
 </div>
 <a id="ababa0501a06fb3380f2516090325acb5" name="ababa0501a06fb3380f2516090325acb5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ababa0501a06fb3380f2516090325acb5">&#9670;&#160;</a></span>list() <span class="overload">[2/10]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ababa0501a06fb3380f2516090325acb5">&#9670;&#160;</a></span>list() <span class="overload">[2/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1169,7 +1171,7 @@ template&lt;typename type_t, typename allocator_t&gt; </div>
 </div>
 </div>
 <a id="a9b14db48511efb51d5cd79349e54ddbd" name="a9b14db48511efb51d5cd79349e54ddbd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9b14db48511efb51d5cd79349e54ddbd">&#9670;&#160;</a></span>list() <span class="overload">[3/10]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b14db48511efb51d5cd79349e54ddbd">&#9670;&#160;</a></span>list() <span class="overload">[3/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1298,7 +1300,7 @@ This constructor is an O(<span class="tt">n</span>) operation, where <span class
 </div>
 </div>
 <a id="aa5c3bae85baf3195e682c1c07df9a096" name="aa5c3bae85baf3195e682c1c07df9a096"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa5c3bae85baf3195e682c1c07df9a096">&#9670;&#160;</a></span>list() <span class="overload">[4/10]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5c3bae85baf3195e682c1c07df9a096">&#9670;&#160;</a></span>list() <span class="overload">[4/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1334,8 +1336,43 @@ template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> it
 
 </div>
 </div>
+<a id="a9cfdd9b5c06c1949d0fafbbc42340e8c" name="a9cfdd9b5c06c1949d0fafbbc42340e8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9cfdd9b5c06c1949d0fafbbc42340e8c">&#9670;&#160;</a></span>list() <span class="overload">[5/11]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename type_t, typename allocator_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a>&lt; type_t, allocator_t &gt;::list </td>
+          <td>(</td>
+          <td class="paramtype">list&lt; type_t, allocator_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>list</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Default copy constructor with specified list. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">list</td><td>The <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> which elements will be inserted from. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a85a4fe62705e040dcaa817e9a94dc335" name="a85a4fe62705e040dcaa817e9a94dc335"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a85a4fe62705e040dcaa817e9a94dc335">&#9670;&#160;</a></span>list() <span class="overload">[5/10]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a85a4fe62705e040dcaa817e9a94dc335">&#9670;&#160;</a></span>list() <span class="overload">[6/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1370,7 +1407,7 @@ template&lt;typename type_t, typename allocator_t&gt; </div>
 </div>
 </div>
 <a id="aa4b1e4470c5e32cd2b8752e761e4dd44" name="aa4b1e4470c5e32cd2b8752e761e4dd44"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa4b1e4470c5e32cd2b8752e761e4dd44">&#9670;&#160;</a></span>list() <span class="overload">[6/10]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4b1e4470c5e32cd2b8752e761e4dd44">&#9670;&#160;</a></span>list() <span class="overload">[7/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1405,7 +1442,7 @@ template&lt;typename type_t, typename allocator_t&gt; </div>
 </div>
 </div>
 <a id="a9eeb39e3583dabb7b43058505b3119fa" name="a9eeb39e3583dabb7b43058505b3119fa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9eeb39e3583dabb7b43058505b3119fa">&#9670;&#160;</a></span>list() <span class="overload">[7/10]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a9eeb39e3583dabb7b43058505b3119fa">&#9670;&#160;</a></span>list() <span class="overload">[8/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1440,7 +1477,7 @@ template&lt;typename type_t, typename allocator_t&gt; </div>
 </div>
 </div>
 <a id="a208c641873e0fcbb1d6a74e529ee7978" name="a208c641873e0fcbb1d6a74e529ee7978"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a208c641873e0fcbb1d6a74e529ee7978">&#9670;&#160;</a></span>list() <span class="overload">[8/10]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a208c641873e0fcbb1d6a74e529ee7978">&#9670;&#160;</a></span>list() <span class="overload">[9/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1475,7 +1512,7 @@ template&lt;typename type_t, typename allocator_t&gt; </div>
 </div>
 </div>
 <a id="a05e3c6ab0787d870e0373ff83279fd5f" name="a05e3c6ab0787d870e0373ff83279fd5f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a05e3c6ab0787d870e0373ff83279fd5f">&#9670;&#160;</a></span>list() <span class="overload">[9/10]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a05e3c6ab0787d870e0373ff83279fd5f">&#9670;&#160;</a></span>list() <span class="overload">[10/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1510,7 +1547,7 @@ template&lt;typename type_t, typename allocator_t&gt; </div>
 </div>
 </div>
 <a id="af9b717ca0e195ae0f1f3f510acc052c4" name="af9b717ca0e195ae0f1f3f510acc052c4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af9b717ca0e195ae0f1f3f510acc052c4">&#9670;&#160;</a></span>list() <span class="overload">[10/10]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#af9b717ca0e195ae0f1f3f510acc052c4">&#9670;&#160;</a></span>list() <span class="overload">[11/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">

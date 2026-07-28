@@ -5124,9 +5124,18 @@ requires (std::is_polymorphic_v&lt;type_t&gt; &amp;&amp; std::is_polymorphic_v&l
 <tr class="memitem:gafba7db74f1a11cbc1fd0524d98c2d339" id="r_gafba7db74f1a11cbc1fd0524d98c2d339"><td class="memItemLeft">template&lt;&gt; </td></tr>
 <tr class="memitem:gafba7db74f1a11cbc1fd0524d98c2d339 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="group__xtd__core.html#gafba7db74f1a11cbc1fd0524d98c2d339">parse&lt; time_span &gt;</a> (const std::string &amp;str) -&gt; <a class="el" href="classxtd_1_1time__span.html">xtd::time_span</a></td></tr>
 <tr class="memdesc:gafba7db74f1a11cbc1fd0524d98c2d339"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the string representation of a time interval to its <a class="el" href="classxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> equivalent.  <br /></td></tr>
-<tr class="memitem:gad779d63dabf10bc8987cb0c005417701" id="r_gad779d63dabf10bc8987cb0c005417701"><td class="memTemplParams" colspan="2">template&lt;typename value_t&gt; </td></tr>
-<tr class="memitem:gad779d63dabf10bc8987cb0c005417701 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="group__xtd__core.html#gad779d63dabf10bc8987cb0c005417701">to_string</a> (const value_t &amp;value, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;fmt, const std::locale &amp;loc) -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td></tr>
-<tr class="memdesc:gad779d63dabf10bc8987cb0c005417701"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a specified value into a string with specified format and locale.  <br /></td></tr>
+<tr class="memitem:ga3a7031fbfad66f0b44c667c1d5909dc8" id="r_ga3a7031fbfad66f0b44c667c1d5909dc8"><td class="memTemplParams" colspan="2">template&lt;class value_t&gt; <br />
+requires (requires (const <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt;value_t&gt;&amp; value, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&amp; fmt) {{value.to_string(fmt)} -&gt; <a class="el" href="structxtd_1_1textual.html">xtd::textual</a>;})</td></tr>
+<tr class="memitem:ga3a7031fbfad66f0b44c667c1d5909dc8 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="group__xtd__core.html#ga3a7031fbfad66f0b44c667c1d5909dc8">to_string</a> (const value_t &amp;value, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;fmt, const std::locale &amp;loc) -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td></tr>
+<tr class="memdesc:ga3a7031fbfad66f0b44c667c1d5909dc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a specified value into a string with specified format and locale.  <br /></td></tr>
+<tr class="memitem:ga3a7031fbfad66f0b44c667c1d5909dc8" id="r_ga3a7031fbfad66f0b44c667c1d5909dc8"><td class="memTemplParams" colspan="2">template&lt;class value_t&gt; <br />
+requires (!requires (const <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt;value_t&gt;&amp; value, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&amp; fmt) {{value.to_string(fmt)} -&gt; <a class="el" href="structxtd_1_1textual.html">xtd::textual</a>;} &amp;&amp;<br class="typebreak" />
+ requires (const <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt;value_t&gt;&amp; value) {{value.to_string()} -&gt; <a class="el" href="structxtd_1_1textual.html">xtd::textual</a>;})</td></tr>
+<tr class="memitem:ga3a7031fbfad66f0b44c667c1d5909dc8 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ga3a7031fbfad66f0b44c667c1d5909dc8">to_string</a> (const value_t &amp;value, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;fmt, const std::locale &amp;loc) -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td></tr>
+<tr class="memdesc:ga3a7031fbfad66f0b44c667c1d5909dc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a specified value into a string with specified format and locale.  <br /></td></tr>
+<tr class="memitem:ga3a7031fbfad66f0b44c667c1d5909dc8" id="r_ga3a7031fbfad66f0b44c667c1d5909dc8"><td class="memTemplParams" colspan="2">template&lt;typename value_t&gt; </td></tr>
+<tr class="memitem:ga3a7031fbfad66f0b44c667c1d5909dc8 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ga3a7031fbfad66f0b44c667c1d5909dc8">to_string</a> (const value_t &amp;value, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;fmt, const std::locale &amp;loc) -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td></tr>
+<tr class="memdesc:ga3a7031fbfad66f0b44c667c1d5909dc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a specified value into a string with specified format and locale.  <br /></td></tr>
 <tr class="memitem:ga940d42b9bfb9611cf73331cc0c839970" id="r_ga940d42b9bfb9611cf73331cc0c839970"><td class="memItemLeft">template&lt;&gt; </td></tr>
 <tr class="memitem:ga940d42b9bfb9611cf73331cc0c839970 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="group__xtd__core.html#ga940d42b9bfb9611cf73331cc0c839970">to_string</a> (const bool &amp;value, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;fmt, const std::locale &amp;loc) -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td></tr>
 <tr class="memdesc:ga940d42b9bfb9611cf73331cc0c839970"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a specified value into a string with specified format and locale.  <br /></td></tr>
@@ -9378,7 +9387,7 @@ template&lt;<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85
 </div>
 </div>
 <a id="a35d0d55a78eddf3d056a0db05fbf8b16" name="a35d0d55a78eddf3d056a0db05fbf8b16"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a35d0d55a78eddf3d056a0db05fbf8b16">&#9670;&#160;</a></span>to_string() <span class="overload">[1/11]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a35d0d55a78eddf3d056a0db05fbf8b16">&#9670;&#160;</a></span>to_string() <span class="overload">[1/13]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -9588,7 +9597,7 @@ template&lt;typename type_t&gt; </div>
 </div>
 </div>
 <a id="a300bb3aa7e1548e4192a88af764822ac" name="a300bb3aa7e1548e4192a88af764822ac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a300bb3aa7e1548e4192a88af764822ac">&#9670;&#160;</a></span>to_string() <span class="overload">[2/11]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a300bb3aa7e1548e4192a88af764822ac">&#9670;&#160;</a></span>to_string() <span class="overload">[2/13]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -9622,7 +9631,7 @@ template&lt;typename type_t&gt; </div>
 </div>
 </div>
 <a id="a3859f8d00339f7741d04a9c6fb0ef967" name="a3859f8d00339f7741d04a9c6fb0ef967"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3859f8d00339f7741d04a9c6fb0ef967">&#9670;&#160;</a></span>to_string() <span class="overload">[3/11]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a3859f8d00339f7741d04a9c6fb0ef967">&#9670;&#160;</a></span>to_string() <span class="overload">[3/13]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -9656,7 +9665,7 @@ template&lt;typename type_t&gt; </div>
 </div>
 </div>
 <a id="a9c9fae855202df89905f367c21dd4713" name="a9c9fae855202df89905f367c21dd4713"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9c9fae855202df89905f367c21dd4713">&#9670;&#160;</a></span>to_string() <span class="overload">[4/11]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c9fae855202df89905f367c21dd4713">&#9670;&#160;</a></span>to_string() <span class="overload">[4/13]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -9690,7 +9699,7 @@ template&lt;typename type_t&gt; </div>
 </div>
 </div>
 <a id="a61bb7ff5eb2e68e9be1bdd95961fac45" name="a61bb7ff5eb2e68e9be1bdd95961fac45"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a61bb7ff5eb2e68e9be1bdd95961fac45">&#9670;&#160;</a></span>to_string() <span class="overload">[5/11]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a61bb7ff5eb2e68e9be1bdd95961fac45">&#9670;&#160;</a></span>to_string() <span class="overload">[5/13]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -9724,7 +9733,7 @@ template&lt;typename type_t&gt; </div>
 </div>
 </div>
 <a id="a0320735a9122accc10863d4738cbb6c7" name="a0320735a9122accc10863d4738cbb6c7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0320735a9122accc10863d4738cbb6c7">&#9670;&#160;</a></span>to_string() <span class="overload">[6/11]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a0320735a9122accc10863d4738cbb6c7">&#9670;&#160;</a></span>to_string() <span class="overload">[6/13]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -9758,7 +9767,7 @@ template&lt;typename type_t&gt; </div>
 </div>
 </div>
 <a id="a3a95dff64f255efe0c96e326814eff7a" name="a3a95dff64f255efe0c96e326814eff7a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3a95dff64f255efe0c96e326814eff7a">&#9670;&#160;</a></span>to_string() <span class="overload">[7/11]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a95dff64f255efe0c96e326814eff7a">&#9670;&#160;</a></span>to_string() <span class="overload">[7/13]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -9792,7 +9801,7 @@ template&lt;typename type_t&gt; </div>
 </div>
 </div>
 <a id="a4192dbbe47607517faaf7a371bbfacb3" name="a4192dbbe47607517faaf7a371bbfacb3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4192dbbe47607517faaf7a371bbfacb3">&#9670;&#160;</a></span>to_string() <span class="overload">[8/11]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a4192dbbe47607517faaf7a371bbfacb3">&#9670;&#160;</a></span>to_string() <span class="overload">[8/13]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -9826,7 +9835,7 @@ template&lt;typename type_t&gt; </div>
 </div>
 </div>
 <a id="a64dd04deae0d817ab438b9c87d9b11ea" name="a64dd04deae0d817ab438b9c87d9b11ea"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a64dd04deae0d817ab438b9c87d9b11ea">&#9670;&#160;</a></span>to_string() <span class="overload">[9/11]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a64dd04deae0d817ab438b9c87d9b11ea">&#9670;&#160;</a></span>to_string() <span class="overload">[9/13]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -9860,7 +9869,7 @@ template&lt;typename type_t&gt; </div>
 </div>
 </div>
 <a id="a562e4cdb80354c266f931ad1a0cbbcf3" name="a562e4cdb80354c266f931ad1a0cbbcf3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a562e4cdb80354c266f931ad1a0cbbcf3">&#9670;&#160;</a></span>to_string() <span class="overload">[10/11]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a562e4cdb80354c266f931ad1a0cbbcf3">&#9670;&#160;</a></span>to_string() <span class="overload">[10/13]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -9894,7 +9903,7 @@ template&lt;typename type_t&gt; </div>
 </div>
 </div>
 <a id="aba4bd22fedcd575e9680d2f05ecb3e49" name="aba4bd22fedcd575e9680d2f05ecb3e49"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aba4bd22fedcd575e9680d2f05ecb3e49">&#9670;&#160;</a></span>to_string() <span class="overload">[11/11]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aba4bd22fedcd575e9680d2f05ecb3e49">&#9670;&#160;</a></span>to_string() <span class="overload">[11/13]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -9963,6 +9972,106 @@ template&lt;typename type_t&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A string holding the converted value.</dd></dl>
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000163">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#a35d0d55a78eddf3d056a0db05fbf8b16" title="Returns the string representation of this xtd::read_only_span &lt;type_t&gt; object.">xtd::to_string</a> - Will be removed in version 1.2.0. </dd></dl>
+
+</div>
+</div>
+<a id="ga3a7031fbfad66f0b44c667c1d5909dc8" name="ga3a7031fbfad66f0b44c667c1d5909dc8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3a7031fbfad66f0b44c667c1d5909dc8">&#9670;&#160;</a></span>to_string() <span class="overload">[12/13]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class value_t&gt; <br />
+requires (!requires (const <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt;value_t&gt;&amp; value, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&amp; fmt) {{value.to_string(fmt)} -&gt; <a class="el" href="structxtd_1_1textual.html">xtd::textual</a>;} &amp;&amp;<br class="typebreak" />
+ requires (const <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt;value_t&gt;&amp; value) {{value.to_string()} -&gt; <a class="el" href="structxtd_1_1textual.html">xtd::textual</a>;})</div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto xtd::to_string </td>
+          <td>(</td>
+          <td class="paramtype">const value_t &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>fmt</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::locale &amp;</td>          <td class="paramname"><span class="paramname"><em>loc</em></span>&#160;) -&gt;  <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Convert a specified value into a string with specified format and locale. </p>
+<dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
+<dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>Value to convert. </td></tr>
+    <tr><td class="paramname">fmt</td><td>A composite format string. </td></tr>
+    <tr><td class="paramname">loc</td><td>An object of class std::locale is an immutable indexed set of immutable facets. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>for more information about format see <a class="el" href="_format_page.html" title="Format">Format</a>. </dd></dl>
+
+</div>
+</div>
+<a id="ga3a7031fbfad66f0b44c667c1d5909dc8" name="ga3a7031fbfad66f0b44c667c1d5909dc8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3a7031fbfad66f0b44c667c1d5909dc8">&#9670;&#160;</a></span>to_string() <span class="overload">[13/13]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename value_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto xtd::to_string </td>
+          <td>(</td>
+          <td class="paramtype">const value_t &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>fmt</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::locale &amp;</td>          <td class="paramname"><span class="paramname"><em>loc</em></span>&#160;) -&gt;  <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Convert a specified value into a string with specified format and locale. </p>
+<dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
+<dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>Value to convert. </td></tr>
+    <tr><td class="paramname">fmt</td><td>A composite format string. </td></tr>
+    <tr><td class="paramname">loc</td><td>An object of class std::locale is an immutable indexed set of immutable facets. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>for more information about format see <a class="el" href="_format_page.html" title="Format">Format</a>. </dd></dl>
 
 </div>
 </div>
