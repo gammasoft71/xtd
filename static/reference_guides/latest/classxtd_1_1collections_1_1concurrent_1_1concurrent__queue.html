@@ -162,6 +162,9 @@ Public Conctructors</h2></td></tr>
 <tr class="memdesc:a896e8cbe3c757f98e6b39a25ca5e3f98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the container with the contents of the specified initializer list, and allocator.  <br /></td></tr>
 <tr class="memitem:a9f72bbc394bd642812f4954ad6e8a4bf" id="r_a9f72bbc394bd642812f4954ad6e8a4bf"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a9f72bbc394bd642812f4954ad6e8a4bf">concurrent_queue</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; <a class="el" href="#a3e3f3dff9d3ebcae51fa9efeea42b6ac">value_type</a> &gt; &amp;collection)</td></tr>
 <tr class="memdesc:a9f72bbc394bd642812f4954ad6e8a4bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__queue.html" title="Represents a thread-safe first in-first out (FIFO) collection.">xtd::collections::concurrent::concurrent_queue</a> &lt;type_t&gt; class that contains elements copied from the specified collection.  <br /></td></tr>
+<tr class="memitem:abc87e4085f0fed930c256b39b28fde14" id="r_abc87e4085f0fed930c256b39b28fde14"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> iterable_t&gt; </td></tr>
+<tr class="memitem:abc87e4085f0fed930c256b39b28fde14 template"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#abc87e4085f0fed930c256b39b28fde14">concurrent_queue</a> (iterable_t &amp;&amp;items)</td></tr>
+<tr class="memdesc:abc87e4085f0fed930c256b39b28fde14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="structxtd_1_1iterable.html" title="Represents the iterable concept.">xtd::iterable</a> that contains elements copied from the specified collection and has sufficient capacity to accommodate the number of elements copied.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Properties</h2></td></tr>
@@ -274,8 +277,8 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memdesc:ae547d8053b68d24480e7e5344ba6cd0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns distinct elements from a sequence by using the default equality comparer to compare values.  <br /></td></tr>
 <tr class="memitem:abba948e55ca93a4bd4e91ed2365265b5" id="r_abba948e55ca93a4bd4e91ed2365265b5"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#abba948e55ca93a4bd4e91ed2365265b5">first_or_default</a> (predicate_t &amp;&amp;predicate<a class="el" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab">predicate</a>, type_t &amp;&amp;default_value) const noexcept -&gt; type_t</td></tr>
 <tr class="memdesc:abba948e55ca93a4bd4e91ed2365265b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the first element of the sequence that satisfies a condition, or a specified default value if no such element is found.  <br /></td></tr>
-<tr class="memitem:a9e8bc87837df4e4409c890c83a7d501b" id="r_a9e8bc87837df4e4409c890c83a7d501b"><td class="memItemLeft"><a id="a9e8bc87837df4e4409c890c83a7d501b" name="a9e8bc87837df4e4409c890c83a7d501b"></a>
-auto&#160;</td><td class="memItemRight"><b>max</b> (selector_t &amp;&amp;selector) const</td></tr>
+<tr class="memitem:ad1f6b35ce7466355526ac44a627349b7" id="r_ad1f6b35ce7466355526ac44a627349b7"><td class="memItemLeft"><a id="ad1f6b35ce7466355526ac44a627349b7" name="ad1f6b35ce7466355526ac44a627349b7"></a>
+auto&#160;</td><td class="memItemRight"><b>max</b> () const</td></tr>
 <tr class="memitem:a1f08c248133a5fe34b151c2f5fd77ebe" id="r_a1f08c248133a5fe34b151c2f5fd77ebe"><td class="memItemLeft"><a id="a1f08c248133a5fe34b151c2f5fd77ebe" name="a1f08c248133a5fe34b151c2f5fd77ebe"></a>
 auto&#160;</td><td class="memItemRight"><b>min</b> (auto &amp;&amp;selector) const</td></tr>
 <tr class="memitem:a67c297a6ad5b4019a1e7f118a8d80751" id="r_a67c297a6ad5b4019a1e7f118a8d80751"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a67c297a6ad5b4019a1e7f118a8d80751">order</a> () const</td></tr>
@@ -386,7 +389,7 @@ template&lt;typename type_t&gt; </div>
 </div>
 <a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="afb229a2563da547a47ed5af6a0d1d4b5" name="afb229a2563da547a47ed5af6a0d1d4b5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afb229a2563da547a47ed5af6a0d1d4b5">&#9670;&#160;</a></span>concurrent_queue() <span class="overload">[1/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#afb229a2563da547a47ed5af6a0d1d4b5">&#9670;&#160;</a></span>concurrent_queue() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -415,7 +418,7 @@ template&lt;typename type_t&gt; </div>
 </div>
 </div>
 <a id="a896e8cbe3c757f98e6b39a25ca5e3f98" name="a896e8cbe3c757f98e6b39a25ca5e3f98"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a896e8cbe3c757f98e6b39a25ca5e3f98">&#9670;&#160;</a></span>concurrent_queue() <span class="overload">[2/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a896e8cbe3c757f98e6b39a25ca5e3f98">&#9670;&#160;</a></span>concurrent_queue() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -450,7 +453,7 @@ template&lt;typename type_t&gt; </div>
 </div>
 </div>
 <a id="a9f72bbc394bd642812f4954ad6e8a4bf" name="a9f72bbc394bd642812f4954ad6e8a4bf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9f72bbc394bd642812f4954ad6e8a4bf">&#9670;&#160;</a></span>concurrent_queue() <span class="overload">[3/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f72bbc394bd642812f4954ad6e8a4bf">&#9670;&#160;</a></span>concurrent_queue() <span class="overload">[3/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -475,6 +478,43 @@ template&lt;typename type_t&gt; </div>
 </div><div class="memdoc">
 
 <p>Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__queue.html" title="Represents a thread-safe first in-first out (FIFO) collection.">xtd::collections::concurrent::concurrent_queue</a> &lt;type_t&gt; class that contains elements copied from the specified collection. </p>
+
+</div>
+</div>
+<a id="abc87e4085f0fed930c256b39b28fde14" name="abc87e4085f0fed930c256b39b28fde14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc87e4085f0fed930c256b39b28fde14">&#9670;&#160;</a></span>concurrent_queue() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename type_t&gt; </div>
+<div class="memtemplate">
+template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> iterable_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__queue.html">xtd::collections::concurrent::concurrent_queue</a>&lt; type_t &gt;::concurrent_queue </td>
+          <td>(</td>
+          <td class="paramtype">iterable_t &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>items</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes a new instance of the <a class="el" href="structxtd_1_1iterable.html" title="Represents the iterable concept.">xtd::iterable</a> that contains elements copied from the specified collection and has sufficient capacity to accommodate the number of elements copied. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">items</td><td>The iterable whose elements are copied to the new <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__queue.html" title="Represents a thread-safe first in-first out (FIFO) collection.">xtd::collections::concurrent::concurrent_queue</a> &lt;type_t&gt;. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

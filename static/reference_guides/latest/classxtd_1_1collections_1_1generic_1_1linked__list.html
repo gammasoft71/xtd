@@ -460,6 +460,9 @@ Public Constructors</h2></td></tr>
 <tr class="memdesc:ac9497d0d9ef95e0e47569eaab9505ae1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor with specified base type list.  <br /></td></tr>
 <tr class="memitem:a050a0b28162b446de5d3682e69f411b9" id="r_a050a0b28162b446de5d3682e69f411b9"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a050a0b28162b446de5d3682e69f411b9">linked_list</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; type_t &gt; &amp;collection)</td></tr>
 <tr class="memdesc:a050a0b28162b446de5d3682e69f411b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html" title="Represents a doubly linked list.">xtd::collections::generic::linked_list</a> &lt;type_t&gt; class that contains elements copied from the specified <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> and has sufficient capacity to accommodate the number of elements copied.  <br /></td></tr>
+<tr class="memitem:a1754629e0b1589be64b3c0e03298339b" id="r_a1754629e0b1589be64b3c0e03298339b"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> iterable_t&gt; </td></tr>
+<tr class="memitem:a1754629e0b1589be64b3c0e03298339b template"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a1754629e0b1589be64b3c0e03298339b">linked_list</a> (iterable_t &amp;&amp;items)</td></tr>
+<tr class="memdesc:a1754629e0b1589be64b3c0e03298339b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="structxtd_1_1iterable.html" title="Represents the iterable concept.">xtd::iterable</a> that contains elements copied from the specified collection and has sufficient capacity to accommodate the number of elements copied.  <br /></td></tr>
 <tr class="memitem:a03ed87d713d9daf3f28208a17bcb4b31" id="r_a03ed87d713d9daf3f28208a17bcb4b31"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a03ed87d713d9daf3f28208a17bcb4b31">linked_list</a> (std::initializer_list&lt; type_t &gt; items)</td></tr>
 <tr class="memdesc:a03ed87d713d9daf3f28208a17bcb4b31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the container with the contents of the specified initializer list, and allocator.  <br /></td></tr>
 <tr class="memitem:a6488fe1681fea23f5fc62717f17353df" id="r_a6488fe1681fea23f5fc62717f17353df"><td class="memTemplParams" colspan="2">template&lt;std::input_iterator input_iterator_t&gt; </td></tr>
@@ -608,8 +611,8 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memdesc:ae547d8053b68d24480e7e5344ba6cd0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns distinct elements from a sequence by using the default equality comparer to compare values.  <br /></td></tr>
 <tr class="memitem:abba948e55ca93a4bd4e91ed2365265b5" id="r_abba948e55ca93a4bd4e91ed2365265b5"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#abba948e55ca93a4bd4e91ed2365265b5">first_or_default</a> (predicate_t &amp;&amp;predicate<a class="el" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab">predicate</a>, type_t &amp;&amp;default_value) const noexcept -&gt; type_t</td></tr>
 <tr class="memdesc:abba948e55ca93a4bd4e91ed2365265b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the first element of the sequence that satisfies a condition, or a specified default value if no such element is found.  <br /></td></tr>
-<tr class="memitem:a9e8bc87837df4e4409c890c83a7d501b" id="r_a9e8bc87837df4e4409c890c83a7d501b"><td class="memItemLeft"><a id="a9e8bc87837df4e4409c890c83a7d501b" name="a9e8bc87837df4e4409c890c83a7d501b"></a>
-auto&#160;</td><td class="memItemRight"><b>max</b> (selector_t &amp;&amp;selector) const</td></tr>
+<tr class="memitem:ad1f6b35ce7466355526ac44a627349b7" id="r_ad1f6b35ce7466355526ac44a627349b7"><td class="memItemLeft"><a id="ad1f6b35ce7466355526ac44a627349b7" name="ad1f6b35ce7466355526ac44a627349b7"></a>
+auto&#160;</td><td class="memItemRight"><b>max</b> () const</td></tr>
 <tr class="memitem:a1f08c248133a5fe34b151c2f5fd77ebe" id="r_a1f08c248133a5fe34b151c2f5fd77ebe"><td class="memItemLeft"><a id="a1f08c248133a5fe34b151c2f5fd77ebe" name="a1f08c248133a5fe34b151c2f5fd77ebe"></a>
 auto&#160;</td><td class="memItemRight"><b>min</b> (auto &amp;&amp;selector) const</td></tr>
 <tr class="memitem:a67c297a6ad5b4019a1e7f118a8d80751" id="r_a67c297a6ad5b4019a1e7f118a8d80751"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a67c297a6ad5b4019a1e7f118a8d80751">order</a> () const</td></tr>
@@ -738,7 +741,7 @@ template&lt;typename type_t, typename allocator_t&gt; </div>
 </div>
 <a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a0b991936506920e5c0ed7d6b09819859" name="a0b991936506920e5c0ed7d6b09819859"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0b991936506920e5c0ed7d6b09819859">&#9670;&#160;</a></span>linked_list() <span class="overload">[1/8]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b991936506920e5c0ed7d6b09819859">&#9670;&#160;</a></span>linked_list() <span class="overload">[1/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -772,7 +775,7 @@ This constructor is an O(1) operation. </dd></dl>
 </div>
 </div>
 <a id="a67ed2b398282005645849d756b3f16f7" name="a67ed2b398282005645849d756b3f16f7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a67ed2b398282005645849d756b3f16f7">&#9670;&#160;</a></span>linked_list() <span class="overload">[2/8]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a67ed2b398282005645849d756b3f16f7">&#9670;&#160;</a></span>linked_list() <span class="overload">[2/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -807,7 +810,7 @@ template&lt;typename type_t, typename allocator_t&gt; </div>
 </div>
 </div>
 <a id="a22cedd5cddbac523bd42adf89b027fdc" name="a22cedd5cddbac523bd42adf89b027fdc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a22cedd5cddbac523bd42adf89b027fdc">&#9670;&#160;</a></span>linked_list() <span class="overload">[3/8]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a22cedd5cddbac523bd42adf89b027fdc">&#9670;&#160;</a></span>linked_list() <span class="overload">[3/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -842,7 +845,7 @@ template&lt;typename type_t, typename allocator_t&gt; </div>
 </div>
 </div>
 <a id="a837dc07c512602014cca71dd36b91626" name="a837dc07c512602014cca71dd36b91626"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a837dc07c512602014cca71dd36b91626">&#9670;&#160;</a></span>linked_list() <span class="overload">[4/8]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a837dc07c512602014cca71dd36b91626">&#9670;&#160;</a></span>linked_list() <span class="overload">[4/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -877,7 +880,7 @@ template&lt;typename type_t, typename allocator_t&gt; </div>
 </div>
 </div>
 <a id="ac9497d0d9ef95e0e47569eaab9505ae1" name="ac9497d0d9ef95e0e47569eaab9505ae1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac9497d0d9ef95e0e47569eaab9505ae1">&#9670;&#160;</a></span>linked_list() <span class="overload">[5/8]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9497d0d9ef95e0e47569eaab9505ae1">&#9670;&#160;</a></span>linked_list() <span class="overload">[5/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -912,7 +915,7 @@ template&lt;typename type_t, typename allocator_t&gt; </div>
 </div>
 </div>
 <a id="a050a0b28162b446de5d3682e69f411b9" name="a050a0b28162b446de5d3682e69f411b9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a050a0b28162b446de5d3682e69f411b9">&#9670;&#160;</a></span>linked_list() <span class="overload">[6/8]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a050a0b28162b446de5d3682e69f411b9">&#9670;&#160;</a></span>linked_list() <span class="overload">[6/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -951,8 +954,45 @@ This constructor is an O(<span class="tt">n</span>) operation, where <span class
 
 </div>
 </div>
+<a id="a1754629e0b1589be64b3c0e03298339b" name="a1754629e0b1589be64b3c0e03298339b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1754629e0b1589be64b3c0e03298339b">&#9670;&#160;</a></span>linked_list() <span class="overload">[7/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename type_t, typename allocator_t&gt; </div>
+<div class="memtemplate">
+template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> iterable_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html">xtd::collections::generic::linked_list</a>&lt; type_t, allocator_t &gt;::linked_list </td>
+          <td>(</td>
+          <td class="paramtype">iterable_t &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>items</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes a new instance of the <a class="el" href="structxtd_1_1iterable.html" title="Represents the iterable concept.">xtd::iterable</a> that contains elements copied from the specified collection and has sufficient capacity to accommodate the number of elements copied. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">items</td><td>The iterable whose elements are copied to the new <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html" title="Represents a doubly linked list.">xtd::collections::generic::linked_list</a> &lt;type_t&gt;. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a03ed87d713d9daf3f28208a17bcb4b31" name="a03ed87d713d9daf3f28208a17bcb4b31"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a03ed87d713d9daf3f28208a17bcb4b31">&#9670;&#160;</a></span>linked_list() <span class="overload">[7/8]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a03ed87d713d9daf3f28208a17bcb4b31">&#9670;&#160;</a></span>linked_list() <span class="overload">[8/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -987,7 +1027,7 @@ template&lt;typename type_t, typename allocator_t&gt; </div>
 </div>
 </div>
 <a id="a6488fe1681fea23f5fc62717f17353df" name="a6488fe1681fea23f5fc62717f17353df"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6488fe1681fea23f5fc62717f17353df">&#9670;&#160;</a></span>linked_list() <span class="overload">[8/8]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a6488fe1681fea23f5fc62717f17353df">&#9670;&#160;</a></span>linked_list() <span class="overload">[9/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">

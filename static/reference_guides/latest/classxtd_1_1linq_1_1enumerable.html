@@ -301,36 +301,42 @@ requires std::same_as&lt;<a class="el" href="group__concepts.html#ga7ffbe4fba341
 <tr class="memitem:ad3690f729ba252711ea339903f411708" id="r_ad3690f729ba252711ea339903f411708"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t&gt; </td></tr>
 <tr class="memitem:ad3690f729ba252711ea339903f411708 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ad3690f729ba252711ea339903f411708">first_or_default</a> (source_t &amp;&amp;source) noexcept -&gt; <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt;</td></tr>
 <tr class="memdesc:ad3690f729ba252711ea339903f411708"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the first element of the sequence that satisfies a condition or a default value if no such element is found.  <br /></td></tr>
-<tr class="memitem:aeaa2c9615978fa0495b6a69a71a72508" id="r_aeaa2c9615978fa0495b6a69a71a72508"><td class="memTemplParams" colspan="2">template&lt;typename source_t&gt; </td></tr>
-<tr class="memitem:aeaa2c9615978fa0495b6a69a71a72508 template"><td class="memItemLeft">static const auto &amp;&#160;</td><td class="memItemRight"><a class="el" href="#aeaa2c9615978fa0495b6a69a71a72508">from</a> (const <a class="el" href="#a2bd1889dc1967c50ef692411dc2c4b92">ienumerable</a>&lt; source_t &gt; &amp;source) noexcept</td></tr>
-<tr class="memdesc:aeaa2c9615978fa0495b6a69a71a72508"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the input typed as <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt;.  <br /></td></tr>
-<tr class="memitem:a90d2ecce5f6d3f0cf3a64fc90cf2727e" id="r_a90d2ecce5f6d3f0cf3a64fc90cf2727e"><td class="memTemplParams" colspan="2">template&lt;typename source_t&gt; </td></tr>
-<tr class="memitem:a90d2ecce5f6d3f0cf3a64fc90cf2727e template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a90d2ecce5f6d3f0cf3a64fc90cf2727e">from</a> (std::initializer_list&lt; source_t &gt; source) noexcept</td></tr>
-<tr class="memdesc:a90d2ecce5f6d3f0cf3a64fc90cf2727e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the input typed as <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt;.  <br /></td></tr>
-<tr class="memitem:a08aa0c6d69fceb0376804f871602b8de" id="r_a08aa0c6d69fceb0376804f871602b8de"><td class="memTemplParams" colspan="2">template&lt;typename collection_t&gt; </td></tr>
-<tr class="memitem:a08aa0c6d69fceb0376804f871602b8de template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a08aa0c6d69fceb0376804f871602b8de">from</a> (const collection_t &amp;source) noexcept</td></tr>
-<tr class="memdesc:a08aa0c6d69fceb0376804f871602b8de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the input typed as <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt;.  <br /></td></tr>
-<tr class="memitem:a2572f6159407e59e7076ff715cefe546" id="r_a2572f6159407e59e7076ff715cefe546"><td class="memTemplParams" colspan="2">template&lt;typename input_iterator_t&gt; </td></tr>
-<tr class="memitem:a2572f6159407e59e7076ff715cefe546 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a2572f6159407e59e7076ff715cefe546">from</a> (input_iterator_t first, input_iterator_t last) noexcept</td></tr>
-<tr class="memdesc:a2572f6159407e59e7076ff715cefe546"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the input typed as <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt;.  <br /></td></tr>
-<tr class="memitem:a2d9b22faaf924eca90f44329f1f1c871" id="r_a2d9b22faaf924eca90f44329f1f1c871"><td class="memTemplParams" colspan="2">template&lt;typename input_iterator_t&gt; </td></tr>
-<tr class="memitem:a2d9b22faaf924eca90f44329f1f1c871 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a2d9b22faaf924eca90f44329f1f1c871">from</a> (input_iterator_t iterator<a class="el" href="namespacextd.html#a00b898d039dd0095b53d7d0a07df4c46">iterator</a>, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> length) noexcept</td></tr>
-<tr class="memdesc:a2d9b22faaf924eca90f44329f1f1c871"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the input typed as <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt;.  <br /></td></tr>
-<tr class="memitem:a348b7154bf4fbc6ddfa03f9bf8de4a1f" id="r_a348b7154bf4fbc6ddfa03f9bf8de4a1f"><td class="memTemplParams" colspan="2">template&lt;typename source_t, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> length&gt; </td></tr>
-<tr class="memitem:a348b7154bf4fbc6ddfa03f9bf8de4a1f template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a348b7154bf4fbc6ddfa03f9bf8de4a1f">from</a> (const source_t(&amp;array)[<a class="el" href="namespacextd.html#a84689e2cdf94d64f7e5f33fe4a1be71a">length</a>]) noexcept</td></tr>
-<tr class="memdesc:a348b7154bf4fbc6ddfa03f9bf8de4a1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the input typed as <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt;.  <br /></td></tr>
-<tr class="memitem:aab5b31f0f897c323915ffe0b8557ee37" id="r_aab5b31f0f897c323915ffe0b8557ee37"><td class="memTemplParams" colspan="2"><a id="aab5b31f0f897c323915ffe0b8557ee37" name="aab5b31f0f897c323915ffe0b8557ee37"></a>
-template&lt;typename result_t, typename source_t&gt; <br />
-requires <a class="el" href="structxtd_1_1numeric.html">xtd::numeric</a>&lt;result_t&gt;</td></tr>
-<tr class="memitem:aab5b31f0f897c323915ffe0b8557ee37 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><b>max</b> (const <a class="el" href="#a2bd1889dc1967c50ef692411dc2c4b92">ienumerable</a>&lt; source_t &gt; &amp;source, auto &amp;&amp;selector)</td></tr>
-<tr class="memitem:ab8d87b3200ad92e295014275c52b3af5" id="r_ab8d87b3200ad92e295014275c52b3af5"><td class="memTemplParams" colspan="2"><a id="ab8d87b3200ad92e295014275c52b3af5" name="ab8d87b3200ad92e295014275c52b3af5"></a>
-template&lt;typename source_t&gt; <br />
-requires <a class="el" href="structxtd_1_1numeric.html">xtd::numeric</a>&lt;source_t&gt;</td></tr>
-<tr class="memitem:ab8d87b3200ad92e295014275c52b3af5 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><b>max</b> (const <a class="el" href="#a2bd1889dc1967c50ef692411dc2c4b92">ienumerable</a>&lt; source_t &gt; &amp;source, auto &amp;&amp;selector)</td></tr>
-<tr class="memitem:ab709904486a632fd1fffb3e33d7ef520" id="r_ab709904486a632fd1fffb3e33d7ef520"><td class="memTemplParams" colspan="2"><a id="ab709904486a632fd1fffb3e33d7ef520" name="ab709904486a632fd1fffb3e33d7ef520"></a>
-template&lt;typename source_t&gt; <br />
-requires <a class="el" href="structxtd_1_1numeric.html">xtd::numeric</a>&lt;source_t&gt;</td></tr>
-<tr class="memitem:ab709904486a632fd1fffb3e33d7ef520 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><b>max</b> (const <a class="el" href="#a2bd1889dc1967c50ef692411dc2c4b92">ienumerable</a>&lt; source_t &gt; &amp;source)</td></tr>
+<tr class="memitem:a7f23089e6aa9b703266a5045b69375e0" id="r_a7f23089e6aa9b703266a5045b69375e0"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t&gt; </td></tr>
+<tr class="memitem:a7f23089e6aa9b703266a5045b69375e0 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a7f23089e6aa9b703266a5045b69375e0">from</a> (source_t &amp;&amp;source) noexcept</td></tr>
+<tr class="memdesc:a7f23089e6aa9b703266a5045b69375e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the input typed as <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt;.  <br /></td></tr>
+<tr class="memitem:abb2ef28fddcb31ca20ee434facdb7688" id="r_abb2ef28fddcb31ca20ee434facdb7688"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t&gt; </td></tr>
+<tr class="memitem:abb2ef28fddcb31ca20ee434facdb7688 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#abb2ef28fddcb31ca20ee434facdb7688">from</a> (const source_t &amp;source) noexcept -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; &gt;</td></tr>
+<tr class="memdesc:abb2ef28fddcb31ca20ee434facdb7688"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the input typed as <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt;.  <br /></td></tr>
+<tr class="memitem:ad86fa6ae3313368256a6cd4ded08bf5f" id="r_ad86fa6ae3313368256a6cd4ded08bf5f"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t&gt; </td></tr>
+<tr class="memitem:ad86fa6ae3313368256a6cd4ded08bf5f template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ad86fa6ae3313368256a6cd4ded08bf5f">from</a> (source_t &amp;source) noexcept -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; &gt;</td></tr>
+<tr class="memdesc:ad86fa6ae3313368256a6cd4ded08bf5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the input typed as <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt;.  <br /></td></tr>
+<tr class="memitem:a3e04cc83b1a9bff88e6e55bf956e8bdd" id="r_a3e04cc83b1a9bff88e6e55bf956e8bdd"><td class="memTemplParams" colspan="2">template&lt;typename value_t&gt; </td></tr>
+<tr class="memitem:a3e04cc83b1a9bff88e6e55bf956e8bdd template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a3e04cc83b1a9bff88e6e55bf956e8bdd">from</a> (std::initializer_list&lt; value_t &gt; source) noexcept -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; value_t &gt;</td></tr>
+<tr class="memdesc:a3e04cc83b1a9bff88e6e55bf956e8bdd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the input typed as <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt;.  <br /></td></tr>
+<tr class="memitem:a94aba954ae6038cf89ce79f259370ff0" id="r_a94aba954ae6038cf89ce79f259370ff0"><td class="memTemplParams" colspan="2">template&lt;std::forward_iterator iterator_t&gt; </td></tr>
+<tr class="memitem:a94aba954ae6038cf89ce79f259370ff0 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a94aba954ae6038cf89ce79f259370ff0">from</a> (iterator_t first, iterator_t last) noexcept -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; typename std::decay&lt; decltype(*first)&gt;<a class="el" href="group__types.html#ga03b6109bac255dc61a3df38c5d80a46c">::type</a> &gt;</td></tr>
+<tr class="memdesc:a94aba954ae6038cf89ce79f259370ff0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the input typed as <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt;.  <br /></td></tr>
+<tr class="memitem:a7132b042479bbd5c28b5eb6806337f86" id="r_a7132b042479bbd5c28b5eb6806337f86"><td class="memTemplParams" colspan="2">template&lt;std::forward_iterator iterator_t&gt; </td></tr>
+<tr class="memitem:a7132b042479bbd5c28b5eb6806337f86 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a7132b042479bbd5c28b5eb6806337f86">from</a> (iterator_t iterator<a class="el" href="namespacextd.html#a00b898d039dd0095b53d7d0a07df4c46">iterator</a>, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> length) noexcept -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; typename std::decay&lt; decltype(*iterator<a class="el" href="namespacextd.html#a00b898d039dd0095b53d7d0a07df4c46">iterator</a>)&gt;<a class="el" href="group__types.html#ga03b6109bac255dc61a3df38c5d80a46c">::type</a> &gt;</td></tr>
+<tr class="memdesc:a7132b042479bbd5c28b5eb6806337f86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the input typed as <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt;.  <br /></td></tr>
+<tr class="memitem:ab0d95d21a1b1f6ccb4cac675031ff931" id="r_ab0d95d21a1b1f6ccb4cac675031ff931"><td class="memTemplParams" colspan="2">template&lt;typename value_t, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> length&gt; </td></tr>
+<tr class="memitem:ab0d95d21a1b1f6ccb4cac675031ff931 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ab0d95d21a1b1f6ccb4cac675031ff931">from</a> (const value_t(&amp;array)[<a class="el" href="namespacextd.html#a84689e2cdf94d64f7e5f33fe4a1be71a">length</a>]) noexcept -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; value_t &gt;</td></tr>
+<tr class="memdesc:ab0d95d21a1b1f6ccb4cac675031ff931"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the input typed as <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt;.  <br /></td></tr>
+<tr class="memitem:ab51623442a981cccb1f599e61c79d56d" id="r_ab51623442a981cccb1f599e61c79d56d"><td class="memTemplParams" colspan="2">template&lt;typename value_t, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> length&gt; </td></tr>
+<tr class="memitem:ab51623442a981cccb1f599e61c79d56d template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ab51623442a981cccb1f599e61c79d56d">from</a> (value_t(&amp;array)[<a class="el" href="namespacextd.html#a84689e2cdf94d64f7e5f33fe4a1be71a">length</a>]) noexcept -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; value_t &gt;</td></tr>
+<tr class="memdesc:ab51623442a981cccb1f599e61c79d56d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the input typed as <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt;.  <br /></td></tr>
+<tr class="memitem:aeb5d92fce049bb3c73f8480f7c25c9ab" id="r_aeb5d92fce049bb3c73f8480f7c25c9ab"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t&gt; <br />
+requires <a class="el" href="structxtd_1_1numeric.html">xtd::numeric</a>&lt;<a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt;source_t&gt;&gt;</td></tr>
+<tr class="memitem:aeb5d92fce049bb3c73f8480f7c25c9ab template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aeb5d92fce049bb3c73f8480f7c25c9ab">max</a> (source_t &amp;&amp;source) -&gt; <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt;</td></tr>
+<tr class="memdesc:aeb5d92fce049bb3c73f8480f7c25c9ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the maximum value in a sequence of <a class="el" href="structxtd_1_1numeric.html" title="Represents the numeric concept.">xtd::numeric</a> values.  <br /></td></tr>
+<tr class="memitem:a25d94a89547e5d45d6c71e91e2b62b0e" id="r_a25d94a89547e5d45d6c71e91e2b62b0e"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t, <a class="el" href="structxtd_1_1callable.html">xtd::callable</a>&lt; <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt;, <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; &gt; selector_t&gt; <br />
+requires <a class="el" href="structxtd_1_1numeric.html">xtd::numeric</a>&lt;<a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt;source_t&gt;&gt;</td></tr>
+<tr class="memitem:a25d94a89547e5d45d6c71e91e2b62b0e template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a25d94a89547e5d45d6c71e91e2b62b0e">max</a> (source_t &amp;&amp;source, selector_t &amp;&amp;selector) -&gt; <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt;</td></tr>
+<tr class="memdesc:a25d94a89547e5d45d6c71e91e2b62b0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the maximum value in a sequence of <a class="el" href="structxtd_1_1numeric.html" title="Represents the numeric concept.">xtd::numeric</a> values.  <br /></td></tr>
+<tr class="memitem:a831e306d63d697b0179d66e1c7f1a5b9" id="r_a831e306d63d697b0179d66e1c7f1a5b9"><td class="memTemplParams" colspan="2"><a id="a831e306d63d697b0179d66e1c7f1a5b9" name="a831e306d63d697b0179d66e1c7f1a5b9"></a>
+template&lt;typename result_t, <a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t, <a class="el" href="structxtd_1_1callable.html">xtd::callable</a>&lt; result_t, <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; &gt; selector_t&gt; <br />
+requires <a class="el" href="structxtd_1_1numeric.html">xtd::numeric</a>&lt;<a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt;source_t&gt;&gt;</td></tr>
+<tr class="memitem:a831e306d63d697b0179d66e1c7f1a5b9 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><b>max</b> (source_t &amp;&amp;source, selector_t &amp;&amp;selector) -&gt; result_t</td></tr>
 <tr class="memitem:ab6ee16e4688af9acfbfabee444f7c919" id="r_ab6ee16e4688af9acfbfabee444f7c919"><td class="memTemplParams" colspan="2"><a id="ab6ee16e4688af9acfbfabee444f7c919" name="ab6ee16e4688af9acfbfabee444f7c919"></a>
 template&lt;typename result_t, typename source_t&gt; <br />
 requires <a class="el" href="structxtd_1_1numeric.html">xtd::numeric</a>&lt;result_t&gt;</td></tr>
@@ -1024,7 +1030,7 @@ template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> so
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The input sequence typed as <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt;. </dd></dl>
-<dl class="section user"><dt>Example</dt><dd>The following code example demonstrates how to use as_enumerable &lt;source_t&gt;(ienumerable &lt;source_t&gt;) to hide a type's custom Where method when the standard query operator implementation is desired. <div class="fragment"></div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to use as_enumerable &lt;source_t&gt;(ienumerable &lt;source_t&gt;) to hide a type's custom Where method when the standard query operator implementation is desired. <div class="fragment"></div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
@@ -1067,7 +1073,7 @@ template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> so
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The input sequence typed as <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt;. </dd></dl>
-<dl class="section user"><dt>Example</dt><dd>The following code example demonstrates how to use as_enumerable &lt;source_t&gt;(ienumerable &lt;source_t&gt;) to hide a type's custom Where method when the standard query operator implementation is desired. <div class="fragment"></div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to use as_enumerable &lt;source_t&gt;(ienumerable &lt;source_t&gt;) to hide a type's custom Where method when the standard query operator implementation is desired. <div class="fragment"></div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
@@ -1110,7 +1116,7 @@ template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> so
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The input sequence typed as <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt;. </dd></dl>
-<dl class="section user"><dt>Example</dt><dd>The following code example demonstrates how to use as_enumerable &lt;source_t&gt;(ienumerable &lt;source_t&gt;) to hide a type's custom Where method when the standard query operator implementation is desired. <div class="fragment"></div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to use as_enumerable &lt;source_t&gt;(ienumerable &lt;source_t&gt;) to hide a type's custom Where method when the standard query operator implementation is desired. <div class="fragment"></div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
@@ -1153,7 +1159,7 @@ template&lt;typename value_t&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The input sequence typed as <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt;. </dd></dl>
-<dl class="section user"><dt>Example</dt><dd>The following code example demonstrates how to use as_enumerable &lt;source_t&gt;(ienumerable &lt;source_t&gt;) to hide a type's custom Where method when the standard query operator implementation is desired. <div class="fragment"></div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to use as_enumerable &lt;source_t&gt;(ienumerable &lt;source_t&gt;) to hide a type's custom Where method when the standard query operator implementation is desired. <div class="fragment"></div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
@@ -1201,7 +1207,7 @@ template&lt;std::forward_iterator iterator_t&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The input sequence typed as <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt;. </dd></dl>
-<dl class="section user"><dt>Example</dt><dd>The following code example demonstrates how to use as_enumerable &lt;source_t&gt;(ienumerable &lt;source_t&gt;) to hide a type's custom Where method when the standard query operator implementation is desired. <div class="fragment"></div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to use as_enumerable &lt;source_t&gt;(ienumerable &lt;source_t&gt;) to hide a type's custom Where method when the standard query operator implementation is desired. <div class="fragment"></div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
@@ -1249,7 +1255,7 @@ template&lt;std::forward_iterator iterator_t&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The input sequence typed as <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt;. </dd></dl>
-<dl class="section user"><dt>Example</dt><dd>The following code example demonstrates how to use as_enumerable &lt;source_t&gt;(ienumerable &lt;source_t&gt;) to hide a type's custom Where method when the standard query operator implementation is desired. <div class="fragment"></div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to use as_enumerable &lt;source_t&gt;(ienumerable &lt;source_t&gt;) to hide a type's custom Where method when the standard query operator implementation is desired. <div class="fragment"></div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
@@ -1293,7 +1299,7 @@ template&lt;typename value_t, <a class="el" href="group__types.html#gae60f5a8617
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The input sequence typed as <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt;. </dd></dl>
-<dl class="section user"><dt>Example</dt><dd>The following code example demonstrates how to use as_enumerable &lt;source_t&gt;(ienumerable &lt;source_t&gt;) to hide a type's custom Where method when the standard query operator implementation is desired. <div class="fragment"></div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to use as_enumerable &lt;source_t&gt;(ienumerable &lt;source_t&gt;) to hide a type's custom Where method when the standard query operator implementation is desired. <div class="fragment"></div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
@@ -1337,7 +1343,7 @@ template&lt;typename value_t, <a class="el" href="group__types.html#gae60f5a8617
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The input sequence typed as <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt;. </dd></dl>
-<dl class="section user"><dt>Example</dt><dd>The following code example demonstrates how to use as_enumerable &lt;source_t&gt;(ienumerable &lt;source_t&gt;) to hide a type's custom Where method when the standard query operator implementation is desired. <div class="fragment"></div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to use as_enumerable &lt;source_t&gt;(ienumerable &lt;source_t&gt;) to hide a type's custom Where method when the standard query operator implementation is desired. <div class="fragment"></div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
@@ -2949,27 +2955,27 @@ template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> so
 
 </div>
 </div>
-<a id="aeaa2c9615978fa0495b6a69a71a72508" name="aeaa2c9615978fa0495b6a69a71a72508"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeaa2c9615978fa0495b6a69a71a72508">&#9670;&#160;</a></span>from() <span class="overload">[1/6]</span></h2>
+<a id="a7f23089e6aa9b703266a5045b69375e0" name="a7f23089e6aa9b703266a5045b69375e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f23089e6aa9b703266a5045b69375e0">&#9670;&#160;</a></span>from() <span class="overload">[1/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename source_t&gt; </div>
+template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const auto &amp; xtd::linq::enumerable::from </td>
+          <td class="memname">auto xtd::linq::enumerable::from </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="#a2bd1889dc1967c50ef692411dc2c4b92">ienumerable</a>&lt; source_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>source</em></span></td><td>)</td>
+          <td class="paramtype">source_t &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>source</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -3015,13 +3021,13 @@ template&lt;typename source_t&gt; </div>
 
 </div>
 </div>
-<a id="a90d2ecce5f6d3f0cf3a64fc90cf2727e" name="a90d2ecce5f6d3f0cf3a64fc90cf2727e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a90d2ecce5f6d3f0cf3a64fc90cf2727e">&#9670;&#160;</a></span>from() <span class="overload">[2/6]</span></h2>
+<a id="abb2ef28fddcb31ca20ee434facdb7688" name="abb2ef28fddcb31ca20ee434facdb7688"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb2ef28fddcb31ca20ee434facdb7688">&#9670;&#160;</a></span>from() <span class="overload">[2/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename source_t&gt; </div>
+template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3029,13 +3035,139 @@ template&lt;typename source_t&gt; </div>
         <tr>
           <td class="memname">auto xtd::linq::enumerable::from </td>
           <td>(</td>
-          <td class="paramtype">std::initializer_list&lt; source_t &gt;</td>          <td class="paramname"><span class="paramname"><em>source</em></span></td><td>)</td>
-          <td></td>
+          <td class="paramtype">const source_t &amp;</td>          <td class="paramname"><span class="paramname"><em>source</em></span></td><td>)</td>
+          <td> -&gt;  <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; &gt;</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the input typed as <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt;. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">source_t</td><td>The type of the elements of source. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">source</td><td>A sequence of values. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The input sequence typed as <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt;. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Same as as_enemerable(const ienumerable&lt;source_t&gt;&amp; source). </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to use <a class="el" href="group__linq.html#ga51ce7f468e039aae97162ec46d247dad" title="Returns the input typed as xtd::collections::generic::ienumerable &lt;type_t&gt;.">xtd::linq::from</a> to create a sequence of values. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="keyword">auto</span> items = <a class="code hl_class" href="classxtd_1_1array.html">array</a> {<span class="stringliteral">&quot;One&quot;</span>, <span class="stringliteral">&quot;Two&quot;</span>, <span class="stringliteral">&quot;Three&quot;</span>, <span class="stringliteral">&quot;Four&quot;</span>, <span class="stringliteral">&quot;Five&quot;</span>};</div>
+<div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span>&amp; <a class="code hl_class" href="classxtd_1_1linq_1_1enumerable.html">enumerable</a> = <a class="code hl_function" href="group__linq.html#ga51ce7f468e039aae97162ec46d247dad">from</a>(items);</div>
+<div class="line">  <span class="keyword">auto</span> enumerator = <a class="code hl_class" href="classxtd_1_1linq_1_1enumerable.html">enumerable</a>.get_enumerator();</div>
+<div class="line">  </div>
+<div class="line">  <span class="keywordflow">while</span> (enumerator.<a class="code hl_function" href="structxtd_1_1collections_1_1generic_1_1enumerator.html#ad461ec52e959712ab699f6ca3aa5ec3d">move_next</a>())</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(enumerator.<a class="code hl_function" href="structxtd_1_1collections_1_1generic_1_1enumerator.html#a56ef2e4d105ed3260d33bd1989b43f3b">current</a>());</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// One</span></div>
+<div class="line"><span class="comment">// Two</span></div>
+<div class="line"><span class="comment">// Three</span></div>
+<div class="line"><span class="comment">// Four</span></div>
+<div class="line"><span class="comment">// Five</span></div>
+<div class="line"> </div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="ad86fa6ae3313368256a6cd4ded08bf5f" name="ad86fa6ae3313368256a6cd4ded08bf5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad86fa6ae3313368256a6cd4ded08bf5f">&#9670;&#160;</a></span>from() <span class="overload">[3/8]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto xtd::linq::enumerable::from </td>
+          <td>(</td>
+          <td class="paramtype">source_t &amp;</td>          <td class="paramname"><span class="paramname"><em>source</em></span></td><td>)</td>
+          <td> -&gt;  <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; &gt;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the input typed as <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt;. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">source_t</td><td>The type of the elements of source. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">source</td><td>A sequence of values. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The input sequence typed as <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt;. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Same as as_enemerable(const ienumerable&lt;source_t&gt;&amp; source). </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to use <a class="el" href="group__linq.html#ga51ce7f468e039aae97162ec46d247dad" title="Returns the input typed as xtd::collections::generic::ienumerable &lt;type_t&gt;.">xtd::linq::from</a> to create a sequence of values. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="keyword">auto</span> items = std::vector {<span class="stringliteral">&quot;One&quot;</span>, <span class="stringliteral">&quot;Two&quot;</span>, <span class="stringliteral">&quot;Three&quot;</span>, <span class="stringliteral">&quot;Four&quot;</span>, <span class="stringliteral">&quot;Five&quot;</span>};</div>
+<div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span>&amp; <a class="code hl_class" href="classxtd_1_1linq_1_1enumerable.html">enumerable</a> = <a class="code hl_function" href="group__linq.html#ga51ce7f468e039aae97162ec46d247dad">from</a>(items);</div>
+<div class="line">  <span class="keyword">auto</span> enumerator = <a class="code hl_class" href="classxtd_1_1linq_1_1enumerable.html">enumerable</a>.get_enumerator();</div>
+<div class="line">  </div>
+<div class="line">  <span class="keywordflow">while</span> (enumerator.<a class="code hl_function" href="structxtd_1_1collections_1_1generic_1_1enumerator.html#ad461ec52e959712ab699f6ca3aa5ec3d">move_next</a>())</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(enumerator.<a class="code hl_function" href="structxtd_1_1collections_1_1generic_1_1enumerator.html#a56ef2e4d105ed3260d33bd1989b43f3b">current</a>());</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// One</span></div>
+<div class="line"><span class="comment">// Two</span></div>
+<div class="line"><span class="comment">// Three</span></div>
+<div class="line"><span class="comment">// Four</span></div>
+<div class="line"><span class="comment">// Five</span></div>
+<div class="line"> </div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="a3e04cc83b1a9bff88e6e55bf956e8bdd" name="a3e04cc83b1a9bff88e6e55bf956e8bdd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e04cc83b1a9bff88e6e55bf956e8bdd">&#9670;&#160;</a></span>from() <span class="overload">[4/8]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename value_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto xtd::linq::enumerable::from </td>
+          <td>(</td>
+          <td class="paramtype">std::initializer_list&lt; value_t &gt;</td>          <td class="paramname"><span class="paramname"><em>source</em></span></td><td>)</td>
+          <td> -&gt;  <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; value_t &gt;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -3078,13 +3210,13 @@ template&lt;typename source_t&gt; </div>
 
 </div>
 </div>
-<a id="a08aa0c6d69fceb0376804f871602b8de" name="a08aa0c6d69fceb0376804f871602b8de"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a08aa0c6d69fceb0376804f871602b8de">&#9670;&#160;</a></span>from() <span class="overload">[3/6]</span></h2>
+<a id="a94aba954ae6038cf89ce79f259370ff0" name="a94aba954ae6038cf89ce79f259370ff0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94aba954ae6038cf89ce79f259370ff0">&#9670;&#160;</a></span>from() <span class="overload">[5/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename collection_t&gt; </div>
+template&lt;std::forward_iterator iterator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3092,80 +3224,17 @@ template&lt;typename collection_t&gt; </div>
         <tr>
           <td class="memname">auto xtd::linq::enumerable::from </td>
           <td>(</td>
-          <td class="paramtype">const collection_t &amp;</td>          <td class="paramname"><span class="paramname"><em>source</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns the input typed as <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt;. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">collection_t</td><td>The type of the source. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">source</td><td>A sequence of values. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The input sequence typed as <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt;. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>Same as as_enemerable(const collection_t&amp; source). </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to use <a class="el" href="group__linq.html#ga51ce7f468e039aae97162ec46d247dad" title="Returns the input typed as xtd::collections::generic::ienumerable &lt;type_t&gt;.">xtd::linq::from</a> to create a sequence of values. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keyword">auto</span> items = std::vector {<span class="stringliteral">&quot;One&quot;</span>, <span class="stringliteral">&quot;Two&quot;</span>, <span class="stringliteral">&quot;Three&quot;</span>, <span class="stringliteral">&quot;Four&quot;</span>, <span class="stringliteral">&quot;Five&quot;</span>};</div>
-<div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span>&amp; <a class="code hl_class" href="classxtd_1_1linq_1_1enumerable.html">enumerable</a> = <a class="code hl_function" href="group__linq.html#ga51ce7f468e039aae97162ec46d247dad">from</a>(items);</div>
-<div class="line">  <span class="keyword">auto</span> enumerator = <a class="code hl_class" href="classxtd_1_1linq_1_1enumerable.html">enumerable</a>.get_enumerator();</div>
-<div class="line">  </div>
-<div class="line">  <span class="keywordflow">while</span> (enumerator.<a class="code hl_function" href="structxtd_1_1collections_1_1generic_1_1enumerator.html#ad461ec52e959712ab699f6ca3aa5ec3d">move_next</a>())</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(enumerator.<a class="code hl_function" href="structxtd_1_1collections_1_1generic_1_1enumerator.html#a56ef2e4d105ed3260d33bd1989b43f3b">current</a>());</div>
-<div class="line">}</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// This code produces the following output :</span></div>
-<div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// One</span></div>
-<div class="line"><span class="comment">// Two</span></div>
-<div class="line"><span class="comment">// Three</span></div>
-<div class="line"><span class="comment">// Four</span></div>
-<div class="line"><span class="comment">// Five</span></div>
-<div class="line"> </div>
-</div><!-- fragment --> </dd></dl>
-
-</div>
-</div>
-<a id="a2572f6159407e59e7076ff715cefe546" name="a2572f6159407e59e7076ff715cefe546"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2572f6159407e59e7076ff715cefe546">&#9670;&#160;</a></span>from() <span class="overload">[4/6]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename input_iterator_t&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto xtd::linq::enumerable::from </td>
-          <td>(</td>
-          <td class="paramtype">input_iterator_t</td>          <td class="paramname"><span class="paramname"><em>first</em></span>, </td>
+          <td class="paramtype">iterator_t</td>          <td class="paramname"><span class="paramname"><em>first</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">input_iterator_t</td>          <td class="paramname"><span class="paramname"><em>last</em></span>&#160;)</td>
+          <td class="paramtype">iterator_t</td>          <td class="paramname"><span class="paramname"><em>last</em></span>&#160;) -&gt;  <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; typename std::decay&lt; decltype(*<a class="el" href="namespacextd.html#a1b3b9846a6a691daf8be0fbbfc746604">first</a>)&gt;<a class="el" href="group__types.html#ga03b6109bac255dc61a3df38c5d80a46c">::type</a> &gt;</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -3210,13 +3279,13 @@ template&lt;typename input_iterator_t&gt; </div>
 
 </div>
 </div>
-<a id="a2d9b22faaf924eca90f44329f1f1c871" name="a2d9b22faaf924eca90f44329f1f1c871"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2d9b22faaf924eca90f44329f1f1c871">&#9670;&#160;</a></span>from() <span class="overload">[5/6]</span></h2>
+<a id="a7132b042479bbd5c28b5eb6806337f86" name="a7132b042479bbd5c28b5eb6806337f86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7132b042479bbd5c28b5eb6806337f86">&#9670;&#160;</a></span>from() <span class="overload">[6/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename input_iterator_t&gt; </div>
+template&lt;std::forward_iterator iterator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3224,17 +3293,17 @@ template&lt;typename input_iterator_t&gt; </div>
         <tr>
           <td class="memname">auto xtd::linq::enumerable::from </td>
           <td>(</td>
-          <td class="paramtype">input_iterator_t</td>          <td class="paramname"><span class="paramname"><em>iterator</em></span>, </td>
+          <td class="paramtype">iterator_t</td>          <td class="paramname"><span class="paramname"><em>iterator</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>length</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>length</em></span>&#160;) -&gt;  <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; typename std::decay&lt; decltype(*<a class="el" href="namespacextd.html#a00b898d039dd0095b53d7d0a07df4c46">iterator</a>)&gt;<a class="el" href="group__types.html#ga03b6109bac255dc61a3df38c5d80a46c">::type</a> &gt;</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -3278,13 +3347,13 @@ template&lt;typename input_iterator_t&gt; </div>
 
 </div>
 </div>
-<a id="a348b7154bf4fbc6ddfa03f9bf8de4a1f" name="a348b7154bf4fbc6ddfa03f9bf8de4a1f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a348b7154bf4fbc6ddfa03f9bf8de4a1f">&#9670;&#160;</a></span>from() <span class="overload">[6/6]</span></h2>
+<a id="ab0d95d21a1b1f6ccb4cac675031ff931" name="ab0d95d21a1b1f6ccb4cac675031ff931"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0d95d21a1b1f6ccb4cac675031ff931">&#9670;&#160;</a></span>from() <span class="overload">[7/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename source_t, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> length&gt; </div>
+template&lt;typename value_t, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> length&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3292,13 +3361,13 @@ template&lt;typename source_t, <a class="el" href="group__types.html#gae60f5a861
         <tr>
           <td class="memname">auto xtd::linq::enumerable::from </td>
           <td>(</td>
-          <td class="paramtype">const source_t(&amp;)</td>          <td class="paramname"><span class="paramname"><em>array</em></span>[length]</td><td>)</td>
-          <td></td>
+          <td class="paramtype">const value_t(&amp;)</td>          <td class="paramname"><span class="paramname"><em>array</em></span>[length]</td><td>)</td>
+          <td> -&gt;  <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; value_t &gt;</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -3339,6 +3408,148 @@ template&lt;typename source_t, <a class="el" href="group__types.html#gae60f5a861
 <div class="line"><span class="comment">// Five</span></div>
 <div class="line"> </div>
 </div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="ab51623442a981cccb1f599e61c79d56d" name="ab51623442a981cccb1f599e61c79d56d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab51623442a981cccb1f599e61c79d56d">&#9670;&#160;</a></span>from() <span class="overload">[8/8]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename value_t, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> length&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto xtd::linq::enumerable::from </td>
+          <td>(</td>
+          <td class="paramtype">value_t(&amp;)</td>          <td class="paramname"><span class="paramname"><em>array</em></span>[length]</td><td>)</td>
+          <td> -&gt;  <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; value_t &gt;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the input typed as <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt;. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">source_t</td><td>The type of the source array. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">array</td><td>The native array. </td></tr>
+    <tr><td class="paramname">legnth</td><td>The length of the array. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The input sequence typed as <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt;. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Same as as_enemerable(const source_t (&amp;array)[length]). </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to use <a class="el" href="group__linq.html#ga51ce7f468e039aae97162ec46d247dad" title="Returns the input typed as xtd::collections::generic::ienumerable &lt;type_t&gt;.">xtd::linq::from</a> to create a sequence of values. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="keyword">const</span> <span class="keywordtype">char</span>* items[] = {<span class="stringliteral">&quot;One&quot;</span>, <span class="stringliteral">&quot;Two&quot;</span>, <span class="stringliteral">&quot;Three&quot;</span>, <span class="stringliteral">&quot;Four&quot;</span>, <span class="stringliteral">&quot;Five&quot;</span>};</div>
+<div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span>&amp; <a class="code hl_class" href="classxtd_1_1linq_1_1enumerable.html">enumerable</a> = <a class="code hl_function" href="group__linq.html#ga51ce7f468e039aae97162ec46d247dad">from</a>(items);</div>
+<div class="line">  <span class="keyword">auto</span> enumerator = <a class="code hl_class" href="classxtd_1_1linq_1_1enumerable.html">enumerable</a>.get_enumerator();</div>
+<div class="line">  </div>
+<div class="line">  <span class="keywordflow">while</span> (enumerator.<a class="code hl_function" href="structxtd_1_1collections_1_1generic_1_1enumerator.html#ad461ec52e959712ab699f6ca3aa5ec3d">move_next</a>())</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(enumerator.<a class="code hl_function" href="structxtd_1_1collections_1_1generic_1_1enumerator.html#a56ef2e4d105ed3260d33bd1989b43f3b">current</a>());</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// One</span></div>
+<div class="line"><span class="comment">// Two</span></div>
+<div class="line"><span class="comment">// Three</span></div>
+<div class="line"><span class="comment">// Four</span></div>
+<div class="line"><span class="comment">// Five</span></div>
+<div class="line"> </div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="aeb5d92fce049bb3c73f8480f7c25c9ab" name="aeb5d92fce049bb3c73f8480f7c25c9ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb5d92fce049bb3c73f8480f7c25c9ab">&#9670;&#160;</a></span>max() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t&gt; <br />
+requires <a class="el" href="structxtd_1_1numeric.html">xtd::numeric</a>&lt;<a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt;source_t&gt;&gt;</div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto xtd::linq::enumerable::max </td>
+          <td>(</td>
+          <td class="paramtype">source_t &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>source</em></span></td><td>)</td>
+          <td> -&gt;  <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the maximum value in a sequence of <a class="el" href="structxtd_1_1numeric.html" title="Represents the numeric concept.">xtd::numeric</a> values. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sources</td><td>A sequence of <a class="el" href="structxtd_1_1numeric.html" title="Represents the numeric concept.">xtd::numeric</a> values to determine the maximum value of. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A value of <a class="el" href="structxtd_1_1numeric.html" title="Represents the numeric concept.">xtd::numeric</a> that corresponds to the maximum value in the sequence. </dd></dl>
+
+</div>
+</div>
+<a id="a25d94a89547e5d45d6c71e91e2b62b0e" name="a25d94a89547e5d45d6c71e91e2b62b0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25d94a89547e5d45d6c71e91e2b62b0e">&#9670;&#160;</a></span>max() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t, <a class="el" href="structxtd_1_1callable.html">xtd::callable</a>&lt; <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt;, <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; &gt; selector_t&gt; <br />
+requires <a class="el" href="structxtd_1_1numeric.html">xtd::numeric</a>&lt;<a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt;source_t&gt;&gt;</div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto xtd::linq::enumerable::max </td>
+          <td>(</td>
+          <td class="paramtype">source_t &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>source</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">selector_t &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>selector</em></span>&#160;) -&gt;  <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the maximum value in a sequence of <a class="el" href="structxtd_1_1numeric.html" title="Represents the numeric concept.">xtd::numeric</a> values. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sources</td><td>A sequence of <a class="el" href="structxtd_1_1numeric.html" title="Represents the numeric concept.">xtd::numeric</a> values to determine the maximum value of. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A value of <a class="el" href="structxtd_1_1numeric.html" title="Represents the numeric concept.">xtd::numeric</a> that corresponds to the maximum value in the sequence. </dd></dl>
 
 </div>
 </div>
@@ -3643,7 +3854,7 @@ template&lt;typename type_t&gt; </div>
 <div class="line"><span class="comment">// 64</span></div>
 <div class="line"><span class="comment">// 81</span></div>
 <div class="line"><span class="comment">// 100</span></div>
-<div class="ttc" id="aclassxtd_1_1linq_1_1enumerable_html_ad3f2b197a8f9e4e52710edcdd59870e9"><div class="ttname"><a href="#ad3f2b197a8f9e4e52710edcdd59870e9">xtd::linq::enumerable::range</a></div><div class="ttdeci">static auto range(type_t count)</div><div class="ttdoc">Generates a sequence of integral numbers within a specified range.</div><div class="ttdef"><b>Definition</b> enumerable_.hpp:765</div></div>
+<div class="ttc" id="aclassxtd_1_1linq_1_1enumerable_html_ad3f2b197a8f9e4e52710edcdd59870e9"><div class="ttname"><a href="#ad3f2b197a8f9e4e52710edcdd59870e9">xtd::linq::enumerable::range</a></div><div class="ttdeci">static auto range(type_t count)</div><div class="ttdoc">Generates a sequence of integral numbers within a specified range.</div><div class="ttdef"><b>Definition</b> enumerable_.hpp:769</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
