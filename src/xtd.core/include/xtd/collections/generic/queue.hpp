@@ -75,6 +75,9 @@ namespace xtd {
         /// @brief Default copy constructor with specified queue.
         /// @param queue The xtd::collections::generic::queue <type_t> which elements will be inserted from.
         queue(const queue& queue) = default;
+        /// @brief Default copy constructor with specified queue.
+        /// @param queue The xtd::collections::generic::queue <type_t> which elements will be inserted from.
+        queue(queue& queue) = default;
         /// @brief Move constructor with specified queue.
         /// @param queue The std::queue <type_t> which elements will be moved from.
         queue(std::queue<type_t>&& queue) {
@@ -361,6 +364,9 @@ namespace xtd {
       
       template < class type_t, typename container_t>
       queue(const queue<type_t, container_t>&) -> queue<type_t, container_t>;
+      
+      template < class type_t, typename container_t>
+      queue(queue<type_t, container_t>&) -> queue<type_t, container_t>;
       
       template < class type_t>
       queue(const ienumerable<type_t>&) -> queue<type_t>;
