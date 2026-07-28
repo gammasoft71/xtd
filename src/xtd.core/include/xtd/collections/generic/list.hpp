@@ -143,6 +143,9 @@ namespace xtd {
         }
         /// @brief Default copy constructor with specified list.
         /// @param list The xtd::collections::generic::list which elements will be inserted from.
+        list(list& list) requires std::copy_constructible<type_t> {*data_ = *list.data_;}
+        /// @brief Default copy constructor with specified list.
+        /// @param list The xtd::collections::generic::list which elements will be inserted from.
         list(const list& list) requires std::copy_constructible<type_t> {*data_ = *list.data_;}
         /// @brief Move constructor with specified list.
         /// @param list The xtd::collections::generic::list which elements will be moved from.
@@ -1096,6 +1099,9 @@ namespace xtd {
       
       template<typename type_t>
       list(const std::vector<type_t>&) -> list<type_t>;
+      
+      template<typename type_t, typename allocator_t = helpers::allocator<type_t>>
+      list(list<type_t, allocator_t>&) -> list<type_t, allocator_t>;
       
       template<typename type_t, typename allocator_t = helpers::allocator<type_t>>
       list(const list<type_t, allocator_t>&) -> list<type_t, allocator_t>;
