@@ -75,7 +75,6 @@ namespace xtd {
         concurrent_bag(iterable_t&& items) {
           for (const auto& item : items)
             add(item);
-          ensure_capacity(count());
         }
         /// @}
         
