@@ -94,6 +94,13 @@ namespace xtd {
           for (const auto& item : collection)
             add(item);
         }
+        /// @brief Initializes a new instance of the xtd::iterable that contains elements copied from the specified collection and has sufficient capacity to accommodate the number of elements copied.
+        /// @param items The iterable whose elements are copied to the new xtd::collections::generic::linked_list <type_t>.
+        template<xtd::iterable iterable_t>
+        linked_list(iterable_t&& items) {
+          for (const auto& item : items)
+            add(item);
+        }
         /// @brief Constructs the container with the contents of the specified initializer list, and allocator.
         /// @param items The initializer list to initialize the elements of the container with.
         linked_list(std::initializer_list < type_t > items) {
@@ -455,7 +462,10 @@ namespace xtd {
       
       template < class type_t>
       linked_list(const ienumerable < type_t >&) -> linked_list < type_t >;
-      
+
+      template <xtd::iterable iterable_t>
+      linked_list(iterable_t&&) -> linked_list<xtd::iterable_value_type<iterable_t>>;
+
       template < class type_t>
       linked_list(std::initializer_list < type_t >) -> linked_list < type_t >;
       
