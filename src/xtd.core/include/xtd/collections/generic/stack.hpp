@@ -106,6 +106,14 @@ namespace xtd {
             data_->items.push(item);
           ensure_capacity(count());
         }
+        /// @brief Initializes a new instance of the xtd::iterable that contains elements copied from the specified collection and has sufficient capacity to accommodate the number of elements copied.
+        /// @param items The iterable whose elements are copied to the new xtd::collections::generic::stack <type_t>.
+        template<xtd::iterable iterable_t>
+        stack(iterable_t&& items) {
+          for (const auto& item : items)
+            data_->items.push(item);
+          ensure_capacity(count());
+        }
         /// @brief Initializes a new instance of the xtd::collections::generic::stack <type_t> class that is empty and has the specified initial capacity.
         /// @param capacity The initial number of elements that the xtd::collections::generic::stack <type_t> can contain.
         stack(size_type capacity) {
@@ -356,16 +364,19 @@ namespace xtd {
       /// @cond
       // Deduction guides for xtd::collections::generic::stack
       // {
-      template < class type_t, typename container_t>
+      template <typename type_t, typename container_t>
       stack(stack< type_t, container_t>&&) -> stack<type_t, container_t>;
       
-      template < class type_t, typename container_t>
+      template <typename type_t, typename container_t>
       stack(const stack<type_t, container_t>&) -> stack<type_t, container_t>;
       
-      template < class type_t>
+      template <typename type_t>
       stack(const ienumerable<type_t>&) -> stack<type_t>;
       
-      template < class type_t>
+      template <xtd::iterable iterable_t>
+      stack(iterable_t&&) -> stack<xtd::iterable_value_type<iterable_t>>;
+
+      template <typename type_t>
       stack(std::initializer_list<type_t>) -> stack<type_t>;
       
       template<typename input_iterator_t>
