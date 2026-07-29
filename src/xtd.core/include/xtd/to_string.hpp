@@ -28,6 +28,7 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
+  /*
   /// @brief Convert a specified value into a string with specified format and locale.
   /// @par Namespace
   /// xtd
@@ -55,6 +56,7 @@ namespace xtd {
   template<class value_t>
   requires (!requires (const xtd::raw_type<value_t>& value, const xtd::string& fmt) {{value.to_string(fmt)} -> xtd::textual;} && requires (const xtd::raw_type<value_t>& value) {{value.to_string()} -> xtd::textual;})
   inline auto to_string(const value_t& value, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
+   */
   
   /// @brief Convert a specified value into a string with specified format and locale.
   /// @par Namespace
