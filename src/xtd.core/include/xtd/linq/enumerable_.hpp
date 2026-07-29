@@ -635,48 +635,41 @@ namespace xtd {
       template<xtd::iterable source_t>
       requires xtd::numeric<xtd::iterable_value_type<source_t>>
       [[nodiscard]] static auto max(source_t&& source) -> xtd::iterable_value_type<source_t>;
-      
       /// @brief Returns the maximum value in a sequence of xtd::numeric values.
       /// @param sources A sequence of xtd::numeric values to determine the maximum value of.
+      /// @param selector A transform function to apply to each element.
       /// @return A value of xtd::numeric that corresponds to the maximum value in the sequence.
       template<xtd::iterable source_t, xtd::callable<xtd::iterable_value_type<source_t>, xtd::iterable_value_type<source_t>> selector_t>
       requires xtd::numeric<xtd::iterable_value_type<source_t>>
       [[nodiscard]] static auto max(source_t&& source, selector_t&& selector) -> xtd::iterable_value_type<source_t>;
-
+      /// @brief Returns the maximum value in a sequence of xtd::numeric values.
+      /// @param sources A sequence of xtd::numeric values to determine the maximum value of.
+      /// @param selector A transform function to apply to each element.
+      /// @return A value of xtd::numeric that corresponds to the maximum value in the sequence.
       template<typename result_t, xtd::iterable source_t, xtd::callable<result_t, xtd::iterable_value_type<source_t>> selector_t>
       requires xtd::numeric<xtd::iterable_value_type<source_t>>
       [[nodiscard]] static auto max(source_t&& source, selector_t&& selector) -> result_t;
       
-      template<typename result_t, typename source_t>
-      requires xtd::numeric<result_t>
-      [[nodiscard]] static auto min(const ienumerable<source_t>& source, auto&& selector) {
-        auto result = xtd::optional<result_t> {};
-        for (const auto& item : source) {
-          auto val = selector(item);
-          if (!result || val < result) result = val;
-        }
-        return result.value_or(result_t {});
-      }
-
-      template<typename source_t>
-      requires xtd::numeric<source_t>
-      [[nodiscard]] static auto min(const ienumerable<source_t>& source, auto&& selector) {
-        auto result = xtd::optional<source_t> {};
-        for (const auto& item : source) {
-          auto val = selector(item);
-          if (!result || val < result) result = val;
-        }
-        return result.value_or(source_t {});
-      }
-
-      template<typename source_t>
-      requires xtd::numeric<source_t>
-      [[nodiscard]] static auto min(const ienumerable<source_t>& source) {
-        auto result = xtd::optional<source_t> {};
-        for (const auto& item : source)
-          if (!result || item < result) result = item;
-        return result.value_or(source_t {});
-      }
+      /// @brief Returns the minimum value in a sequence of xtd::numeric values.
+      /// @param sources A sequence of xtd::numeric values to determine the minimum value of.
+      /// @return A value of xtd::numeric that corresponds to the minimum value in the sequence.
+      template<xtd::iterable source_t>
+      requires xtd::numeric<xtd::iterable_value_type<source_t>>
+      [[nodiscard]] static auto min(source_t&& source) -> xtd::iterable_value_type<source_t>;
+      /// @brief Returns the minimum value in a sequence of xtd::numeric values.
+      /// @param sources A sequence of xtd::numeric values to determine the minimum value of.
+      /// @param selector A transform function to apply to each element.
+      /// @return A value of xtd::numeric that corresponds to the minimum value in the sequence.
+      template<xtd::iterable source_t, xtd::callable<xtd::iterable_value_type<source_t>, xtd::iterable_value_type<source_t>> selector_t>
+      requires xtd::numeric<xtd::iterable_value_type<source_t>>
+      [[nodiscard]] static auto min(source_t&& source, selector_t&& selector) -> xtd::iterable_value_type<source_t>;
+      /// @brief Returns the minimum value in a sequence of xtd::numeric values.
+      /// @param sources A sequence of xtd::numeric values to determine the minimum value of.
+      /// @param selector A transform function to apply to each element.
+      /// @return A value of xtd::numeric that corresponds to the minimum value in the sequence.
+      template<typename result_t, xtd::iterable source_t, xtd::callable<result_t, xtd::iterable_value_type<source_t>> selector_t>
+      requires xtd::numeric<xtd::iterable_value_type<source_t>>
+      [[nodiscard]] static auto min(source_t&& source, selector_t&& selector) -> result_t;
 
       /// @brief Sorts the elements of a sequence in ascending order.
       /// @param source A sequence of values to order.
