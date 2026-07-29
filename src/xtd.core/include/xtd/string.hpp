@@ -103,19 +103,6 @@ namespace xtd {
   /// @endcond
 }
 
-/*
-/// @cond
-/// Needed for std::format
-#if defined(__xtd__cpp_lib_format)
-template <>
-struct std::formatter<xtd::string> : std::formatter<std::string> {
-  template<typename object_t, typename format_context_t>
-  auto format(const object_t& obj, format_context_t& ctx) const {return std::format_to(ctx.out(), "{}", std::string {obj.to_string()});}
-};
-#endif
-/// @endcond
-*/
-
 /// @cond
 template<typename type_t>
 [[nodiscard]] inline auto __to_string_istringable_to_string(const xtd::istringable<type_t>* obj) -> std::string {
