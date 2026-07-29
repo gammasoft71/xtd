@@ -367,7 +367,7 @@ namespace xtd {
       /// @param second The sequence to concatenate to the first sequence.
       /// @return An xtd::collections::generic::ienumerable <type_t> that contains the concatenated elements of the two input sequences.
       template<xtd::iterable first_t,xtd::iterable second_t>
-      [[nodiscard]] static auto concat(first_t&& first, second_t&& second) noexcept  -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<first_t>>;
+      [[nodiscard]] static auto concat(first_t&& first, second_t&& second) noexcept -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<first_t>>;
       
       /// @brief Determines whether a sequence contains a specified element by using the default equality comparer.
       /// @tparam source_t The type of the elements of source.

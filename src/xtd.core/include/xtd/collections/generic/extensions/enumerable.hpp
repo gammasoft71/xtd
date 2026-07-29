@@ -124,7 +124,7 @@ namespace xtd {
           /// The following code example demonstrates how to use Append to append a value to the end of the sequence.
           /// @include enumerable_append.cpp
           template<typename element_t>
-          [[nodiscard]] auto append(element_t&& element) const noexcept {
+          [[nodiscard]] auto append(element_t&& element) const noexcept -> xtd::collections::generic::enumerable_generator<value_t> {
             return xtd::linq::enumerable::append(self(), std::forward<element_t>(element));
           }
           
@@ -149,7 +149,7 @@ namespace xtd {
           /// @return An xtd::collections::generic::ienumerable <type_t> that contains each element of the source sequence cast to the specified type.
           /// @exception xtd::invalid_cast_exception An element in the sequence cannot be cast to type `result_t`.
           template<typename result_t>
-          [[nodiscard]] auto cast() const noexcept {
+          [[nodiscard]] auto cast() const noexcept -> xtd::collections::generic::enumerable_generator<result_t> {
             return xtd::linq::enumerable::cast<result_t>(self());
           }
           
@@ -158,15 +158,15 @@ namespace xtd {
           /// @param source A sequence of values to chunk.
           /// @param size The maximum size of each chunk.
           /// @return A sequence of chunks of size at most size.
-          [[nodiscard]] auto chunk(xtd::usize size) const {
+          [[nodiscard]] auto chunk(xtd::usize size) const -> xtd::collections::generic::enumerable_generator<xtd::array<value_t>> {
             return xtd::linq::enumerable::chunk(self(), size);
           }
           
           /// @brief Concatenates two sequences.
           /// @param second The sequence to concatenate to the current sequence.
           /// @return An xtd::collections::generic::ienumerable <type_t> that contains the concatenated elements of the two input sequences.
-          template<xtd::forward_iterable second_t>
-          [[nodiscard]] auto concat(second_t&& second) const noexcept {
+          template<xtd::iterable second_t>
+          [[nodiscard]] auto concat(second_t&& second) const noexcept -> xtd::collections::generic::enumerable_generator<value_t> {
             return xtd::linq::enumerable::concat(self(), std::forward<second_t>(second));
           }
           
@@ -237,7 +237,7 @@ namespace xtd {
           /// The following code example demonstrates how to use xtd::linq::enumerable::count_by <value_t>(const ienumerable <value_t>&, const std::function <key_t(const value_t&)>&) to count the number of elements in a sequence grouped by key.
           /// @include enumerable_count_by.cpp
           template<typename key_t, xtd::callable<key_t, value_t> key_selector_t>
-          [[nodiscard]] auto count_by(key_selector_t&& key_selector, xtd::collections::generic::iequality_comparer<key_t>&& key_comparer) const noexcept {
+          [[nodiscard]] auto count_by(key_selector_t&& key_selector, xtd::collections::generic::iequality_comparer<key_t>&& key_comparer) const noexcept -> xtd::collections::generic::enumerable_generator<xtd::collections::generic::key_value_pair<key_t, xtd::usize>> {
             return xtd::linq::enumerable::count_by<key_t, value_t>(self(), std::forward<key_selector_t>(key_selector), std::forward<xtd::collections::generic::iequality_comparer<key_t>>(key_comparer));
           }
           /// @brief Returns the count of elements in the current sequence grouped by key.
@@ -249,32 +249,32 @@ namespace xtd {
           /// The following code example demonstrates how to use xtd::linq::enumerable::count_by <value_t>(const ienumerable <value_t>&, const std::function <key_t(const value_t&)>&) to count the number of elements in a sequence grouped by key.
           /// @include enumerable_count_by.cpp
           template<typename key_t, xtd::callable<key_t, value_t> key_selector_t, xtd::callable<bool, key_t, key_t> key_equater_t>
-          [[nodiscard]] auto count_by(key_selector_t&& key_selector, key_equater_t&& key_equater) const noexcept {
+          [[nodiscard]] auto count_by(key_selector_t&& key_selector, key_equater_t&& key_equater) const noexcept -> xtd::collections::generic::enumerable_generator<xtd::collections::generic::key_value_pair<key_t, xtd::usize>> {
             return xtd::linq::enumerable::count_by<key_t, value_t>(self(), std::forward<key_selector_t>(key_selector), std::forward<key_equater_t>(key_equater));
           }
           
           /// @brief Returns the elements of the specified sequence or the type parameter's default value in a singleton collection if the current sequence is empty.
           /// @return An xtd::collections::generic::ienumerable <type_t> that contains default_value if source is empty; otherwise, source.
-          [[nodiscard]] auto default_if_empty() const noexcept {
+          [[nodiscard]] auto default_if_empty() const noexcept -> xtd::collections::generic::enumerable_generator<value_t> {
             return xtd::linq::enumerable::default_if_empty(self());
           }
           /// @brief Returns the elements of the specified sequence or the specified value in a singleton collection if the current sequence is empty.
           /// @param default_value The value to return if the sequence is empty.
           /// @return An xtd::collections::generic::ienumerable <type_t> that contains default_value if source is empty; otherwise, source.
-          [[nodiscard]] auto default_if_empty(value_t&& default_value) const noexcept {
+          [[nodiscard]] auto default_if_empty(value_t&& default_value) const noexcept -> xtd::collections::generic::enumerable_generator<value_t> {
             return xtd::linq::enumerable::default_if_empty(self(), std::forward<value_t>(default_value));
           }
           
           /// @brief Returns distinct elements from a sequence by using the default equality comparer to compare values.
           /// @return An enumerable distinct elements from the source sequence.
-          [[nodiscard]] auto distinct() const noexcept {
+          [[nodiscard]] auto distinct() const noexcept -> xtd::collections::generic::enumerable_generator<value_t> {
             return xtd::linq::enumerable::distinct(self());
           }
           /// @brief Returns distinct elements from a sequence by using a specified xtd::collections::generic::iequality_comparer <type_t> to compare values.
           /// @param source The sequence to remove duplicate elements from.
           /// @param comparer An xtd::collections::generic::iequality_comparer <type_t> to compare values.
           /// @return An enumerable distinct elements from the source sequence.
-          [[nodiscard]] auto distinct(xtd::collections::generic::iequality_comparer<value_t>&& comparer) const noexcept {
+          [[nodiscard]] auto distinct(xtd::collections::generic::iequality_comparer<value_t>&& comparer) const noexcept -> xtd::collections::generic::enumerable_generator<value_t> {
             return xtd::linq::enumerable::distinct(self(), std::forward<xtd::collections::generic::iequality_comparer<value_t>>(comparer));
           }
           /// @brief Returns distinct elements from a sequence by using a specified xtd::collections::generic::iequality_comparer <type_t> to compare values.
@@ -282,7 +282,7 @@ namespace xtd {
           /// @param equater An equality comparer to compare values.
           /// @return An enumerable distinct elements from the source sequence.
           template<xtd::func_callable<bool, value_t, value_t> equater_t>
-          [[nodiscard]] auto distinct(equater_t&& equater) const noexcept {
+          [[nodiscard]] auto distinct(equater_t&& equater) const noexcept -> xtd::collections::generic::enumerable_generator<value_t> {
             return xtd::linq::enumerable::distinct(self(), std::forward<equater_t>(equater));
           }
 
@@ -313,29 +313,46 @@ namespace xtd {
             return xtd::linq::enumerable::first_or_default(self());
           }
           
-          [[nodiscard]] auto max() const requires xtd::numeric<value_t> {
+          /// @brief Returns the maximum value in a sequence of xtd::numeric values.
+          /// @return A value of xtd::numeric that corresponds to the maximum value in the sequence.
+          [[nodiscard]] auto max() const -> value_t requires xtd::numeric<value_t> {
             return xtd::linq::enumerable::max(self());
           }
-          template<typename result_t, xtd::callable<result_t, value_t> selector_t>
-          requires xtd::numeric<result_t>
-          [[nodiscard]] auto max(selector_t&& selector) const {
-            return xtd::linq::enumerable::max<result_t>(self(), std::forward<selector_t>(selector));
-          }
+          /// @brief Returns the maximum value in a sequence of xtd::numeric values.
+          /// @param selector A transform function to apply to each element.
+          /// @return A value of xtd::numeric that corresponds to the maximum value in the sequence.
           template<xtd::callable<value_t, value_t> selector_t>
-          [[nodiscard]] auto max(selector_t&& selector) const requires xtd::numeric<value_t> {
+          [[nodiscard]] auto max(selector_t&& selector) const -> value_t requires xtd::numeric<value_t> {
             return xtd::linq::enumerable::max(self(), std::forward<selector_t>(selector));
           }
-
-          template<typename result_t>
+          /// @brief Returns the maximum value in a sequence of xtd::numeric values.
+          /// @param selector A transform function to apply to each element.
+          /// @return A value of xtd::numeric that corresponds to the maximum value in the sequence.
+          template<typename result_t, xtd::callable<result_t, value_t> selector_t>
           requires xtd::numeric<result_t>
-          [[nodiscard]] auto min(auto&& selector) const {
-            return xtd::linq::enumerable::min<result_t, value_t>(self(), selector);
+          [[nodiscard]] auto max(selector_t&& selector) const -> result_t {
+            return xtd::linq::enumerable::max<result_t>(self(), std::forward<selector_t>(selector));
           }
-          [[nodiscard]] auto min(auto&& selector) const requires xtd::numeric<value_t> {
+
+          /// @brief Returns the minimum value in a sequence of xtd::numeric values.
+          /// @return A value of xtd::numeric that corresponds to the minimum value in the sequence.
+          [[nodiscard]] auto min() const -> value_t requires xtd::numeric<value_t> {
+            return xtd::linq::enumerable::min(self());
+          }
+          /// @brief Returns the minimum value in a sequence of xtd::numeric values.
+          /// @param selector A transform function to apply to each element.
+          /// @return A value of xtd::numeric that corresponds to the minimum value in the sequence.
+          template<xtd::callable<value_t, value_t> selector_t>
+          [[nodiscard]] auto min(selector_t&& selector) const -> value_t requires xtd::numeric<value_t> {
             return xtd::linq::enumerable::min(self(), selector);
           }
-          [[nodiscard]] auto min() const requires xtd::numeric<value_t> {
-            return xtd::linq::enumerable::min(self());
+          /// @brief Returns the minimum value in a sequence of xtd::numeric values.
+          /// @param selector A transform function to apply to each element.
+          /// @return A value of xtd::numeric that corresponds to the minimum value in the sequence.
+          template<typename result_t, xtd::callable<result_t, value_t> selector_t>
+          requires xtd::numeric<result_t>
+          [[nodiscard]] auto min(selector_t&& selector) const -> result_t {
+            return xtd::linq::enumerable::min<result_t, value_t>(self(), selector);
           }
 
           /// @brief Sorts the elements of a sequence in ascending order.
