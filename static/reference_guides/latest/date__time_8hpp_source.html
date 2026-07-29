@@ -334,27 +334,6 @@ document.addEventListener('DOMContentLoaded', () => {
 </div>
 <div class="line"><a id="l01422" name="l01422"></a><span class="lineno"> 1422</span></div>
 <div class="line"><a id="l01423" name="l01423"></a><span class="lineno"> 1423</span>}</div>
-<div class="line"><a id="l01424" name="l01424"></a><span class="lineno"> 1424</span> </div>
-<div class="line"><a id="l01425" name="l01425"></a><span class="lineno"> 1425</span><span class="comment">/*</span></div>
-<div class="line"><a id="l01428" name="l01428"></a><span class="lineno"> 1428</span>#if defined(__xtd__cpp_lib_format)</div>
-<div class="line"><a id="l01429" name="l01429"></a><span class="lineno"> 1429</span>template &lt;&gt;</div>
-<div class="line"><a id="l01430" name="l01430"></a><span class="lineno"> 1430</span>struct std::formatter&lt;xtd::date_time&gt; : std::formatter&lt;std::string&gt; {</div>
-<div class="line"><a id="l01431" name="l01431"></a><span class="lineno"> 1431</span>  template&lt;typename format_context_t&gt;</div>
-<div class="line"><a id="l01432" name="l01432"></a><span class="lineno"> 1432</span>  constexpr auto parse(format_context_t&amp; ctx) {</div>
-<div class="line"><a id="l01433" name="l01433"></a><span class="lineno"> 1433</span>    auto iterator = ctx.begin();</div>
-<div class="line"><a id="l01434" name="l01434"></a><span class="lineno"> 1434</span>    for (; iterator != ctx.end() &amp;&amp; *iterator != &#39;}&#39;; ++iterator)</div>
-<div class="line"><a id="l01435" name="l01435"></a><span class="lineno"> 1435</span>      format_value += *iterator;</div>
-<div class="line"><a id="l01436" name="l01436"></a><span class="lineno"> 1436</span>    return iterator;</div>
-<div class="line"><a id="l01437" name="l01437"></a><span class="lineno"> 1437</span>  }</div>
-<div class="line"><a id="l01438" name="l01438"></a><span class="lineno"> 1438</span> </div>
-<div class="line"><a id="l01439" name="l01439"></a><span class="lineno"> 1439</span>  template&lt;typename object_t, typename format_context_t&gt;</div>
-<div class="line"><a id="l01440" name="l01440"></a><span class="lineno"> 1440</span>  auto format(const object_t&amp; obj, format_context_t&amp; ctx) const {return std::format_to(ctx.out(), &quot;{}&quot;, std::string {obj.to_string(format_value)});}</div>
-<div class="line"><a id="l01441" name="l01441"></a><span class="lineno"> 1441</span> </div>
-<div class="line"><a id="l01442" name="l01442"></a><span class="lineno"> 1442</span>private:</div>
-<div class="line"><a id="l01443" name="l01443"></a><span class="lineno"> 1443</span>  std::string format_value;</div>
-<div class="line"><a id="l01444" name="l01444"></a><span class="lineno"> 1444</span>};</div>
-<div class="line"><a id="l01445" name="l01445"></a><span class="lineno"> 1445</span>#endif</div>
-<div class="line"><a id="l01447" name="l01447"></a><span class="lineno"> 1447</span>*/</div>
 <div class="ttc" id="achrono_8hpp_html"><div class="ttname"><a href="chrono_8hpp.html">chrono.hpp</a></div><div class="ttdoc">Contains std::chrono::days, std::chrono::weeks, std::chrono::months and std::chrono::years duration t...</div></div>
 <div class="ttc" id="aclassxtd_1_1array_html"><div class="ttname"><a href="classxtd_1_1array.html">xtd::array</a></div><div class="ttdoc">Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...</div><div class="ttdef"><b>Definition</b> array.hpp:64</div></div>
 <div class="ttc" id="aclassxtd_1_1date__time_html"><div class="ttname"><a href="classxtd_1_1date__time.html">xtd::date_time</a></div><div class="ttdoc">Represents an instant in time, typically expressed as a date and time of day.</div><div class="ttdef"><b>Definition</b> date_time.hpp:83</div></div>
@@ -431,7 +410,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="ttc" id="aclassxtd_1_1icomparable_html"><div class="ttname"><a href="classxtd_1_1icomparable.html">xtd::icomparable</a></div><div class="ttdoc">Defines a generalized comparison method that a value type or class implements to create a type-specif...</div><div class="ttdef"><b>Definition</b> icomparable.hpp:22</div></div>
 <div class="ttc" id="aclassxtd_1_1iequatable_html"><div class="ttname"><a href="classxtd_1_1iequatable.html">xtd::iequatable</a></div><div class="ttdoc">Defines a generalized method that a value type or class implements to create a type-specific method f...</div><div class="ttdef"><b>Definition</b> iequatable.hpp:23</div></div>
 <div class="ttc" id="aclassxtd_1_1iformatable_html"><div class="ttname"><a href="classxtd_1_1iformatable.html">xtd::iformatable</a></div><div class="ttdoc">Provides functionality to format the value of an object into a string representation.</div><div class="ttdef"><b>Definition</b> iformatable.hpp:42</div></div>
-<div class="ttc" id="aclassxtd_1_1object_html"><div class="ttname"><a href="classxtd_1_1object.html">xtd::object</a></div><div class="ttdoc">Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....</div><div class="ttdef"><b>Definition</b> object.hpp:45</div></div>
+<div class="ttc" id="aclassxtd_1_1object_html"><div class="ttname"><a href="classxtd_1_1object.html">xtd::object</a></div><div class="ttdoc">Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....</div><div class="ttdef"><b>Definition</b> object.hpp:40</div></div>
 <div class="ttc" id="aclassxtd_1_1time__span_html"><div class="ttname"><a href="classxtd_1_1time__span.html">xtd::time_span</a></div><div class="ttdoc">Represents a time interval.</div><div class="ttdef"><b>Definition</b> time_span.hpp:29</div></div>
 <div class="ttc" id="aclassxtd_1_1time__zone__info_html"><div class="ttname"><a href="classxtd_1_1time__zone__info.html">xtd::time_zone_info</a></div><div class="ttdoc">Represents any time zone in the world.</div><div class="ttdef"><b>Definition</b> time_zone_info.hpp:38</div></div>
 <div class="ttc" id="aculture__info_8hpp_html"><div class="ttname"><a href="culture__info_8hpp.html">culture_info.hpp</a></div><div class="ttdoc">Contains xtd::globalization::culture_info class.</div></div>

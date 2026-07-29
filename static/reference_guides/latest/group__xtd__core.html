@@ -6067,10 +6067,9 @@ requires (std::is_polymorphic_v&lt;type_t&gt; &amp;&amp; std::is_polymorphic_v&l
 <tr class="memitem:gafba7db74f1a11cbc1fd0524d98c2d339" id="r_gafba7db74f1a11cbc1fd0524d98c2d339"><td class="memItemLeft">template&lt;&gt; </td></tr>
 <tr class="memitem:gafba7db74f1a11cbc1fd0524d98c2d339 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#gafba7db74f1a11cbc1fd0524d98c2d339">xtd::parse&lt; time_span &gt;</a> (const std::string &amp;str) -&gt; <a class="el" href="classxtd_1_1time__span.html">xtd::time_span</a></td></tr>
 <tr class="memdesc:gafba7db74f1a11cbc1fd0524d98c2d339"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the string representation of a time interval to its <a class="el" href="classxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> equivalent.  <br /></td></tr>
-<tr class="memitem:ga3a7031fbfad66f0b44c667c1d5909dc8" id="r_ga3a7031fbfad66f0b44c667c1d5909dc8"><td class="memTemplParams" colspan="2">template&lt;class value_t&gt; <br />
-requires (requires (const <a class="el" href="#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt;value_t&gt;&amp; value, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&amp; fmt) {{value.to_string(fmt)} -&gt; <a class="el" href="structxtd_1_1textual.html">xtd::textual</a>;})</td></tr>
-<tr class="memitem:ga3a7031fbfad66f0b44c667c1d5909dc8 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ga3a7031fbfad66f0b44c667c1d5909dc8">xtd::to_string</a> (const value_t &amp;value, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;fmt, const std::locale &amp;loc) -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td></tr>
-<tr class="memdesc:ga3a7031fbfad66f0b44c667c1d5909dc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a specified value into a string with specified format and locale.  <br /></td></tr>
+<tr class="memitem:gad779d63dabf10bc8987cb0c005417701" id="r_gad779d63dabf10bc8987cb0c005417701"><td class="memTemplParams" colspan="2">template&lt;typename value_t&gt; </td></tr>
+<tr class="memitem:gad779d63dabf10bc8987cb0c005417701 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#gad779d63dabf10bc8987cb0c005417701">xtd::to_string</a> (const value_t &amp;value, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;fmt, const std::locale &amp;loc) -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td></tr>
+<tr class="memdesc:gad779d63dabf10bc8987cb0c005417701"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a specified value into a string with specified format and locale.  <br /></td></tr>
 <tr class="memitem:ga940d42b9bfb9611cf73331cc0c839970" id="r_ga940d42b9bfb9611cf73331cc0c839970"><td class="memItemLeft">template&lt;&gt; </td></tr>
 <tr class="memitem:ga940d42b9bfb9611cf73331cc0c839970 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ga940d42b9bfb9611cf73331cc0c839970">xtd::to_string</a> (const bool &amp;value, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;fmt, const std::locale &amp;loc) -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td></tr>
 <tr class="memdesc:ga940d42b9bfb9611cf73331cc0c839970"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a specified value into a string with specified format and locale.  <br /></td></tr>
@@ -66215,14 +66214,13 @@ At least one of the days, hours, minutes, or seconds components is outside its v
 
 </div>
 </div>
-<a id="ga3a7031fbfad66f0b44c667c1d5909dc8" name="ga3a7031fbfad66f0b44c667c1d5909dc8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga3a7031fbfad66f0b44c667c1d5909dc8">&#9670;&#160;</a></span>to_string() <span class="overload">[1/24]</span></h2>
+<a id="gad779d63dabf10bc8987cb0c005417701" name="gad779d63dabf10bc8987cb0c005417701"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad779d63dabf10bc8987cb0c005417701">&#9670;&#160;</a></span>to_string() <span class="overload">[1/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class value_t&gt; <br />
-requires (requires (const <a class="el" href="#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt;value_t&gt;&amp; value, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&amp; fmt) {{value.to_string(fmt)} -&gt; <a class="el" href="structxtd_1_1textual.html">xtd::textual</a>;})</div>
+template&lt;typename value_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
