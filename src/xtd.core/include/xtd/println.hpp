@@ -5,6 +5,7 @@
 #define __XTD_CORE_INTERNAL__
 #include "internal/__print.hpp"
 #undef __XTD_CORE_INTERNAL__
+#include "globalization/culture_info.hpp"
 #include "string.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -213,4 +214,215 @@ namespace xtd {
   /// @param values Values to write,
   template<typename ...args_t>
   auto println(const wchar_t* fmt, args_t&& ... values) -> void {xtd::println(stdout, fmt, std::forward<args_t>(values)...);}
+  
+  /// @brief Writes the text representation of the specified value, followed by the current line terminator, to the file output stream.
+  /// @tparam arg_t The type of the value to write.
+  /// @param file A file output stream.
+  /// @param culture The xtd::globalization::culture_info used to print value.
+  /// @param value The value to write,
+  template<typename arg_t>
+  auto println(FILE* file, const xtd::globalization::culture_info& culture, arg_t&& value) -> void {
+    __xtd_print_with_file_write__(true, file, string::format(culture, "{}",  value));
+  }
+  
+  /// @cond
+  template<typename type_t>
+  auto println(FILE* file, const xtd::globalization::culture_info& culture, const std::initializer_list<type_t>& il) -> void {
+    __xtd_print_with_file_write__(true, file, string::format(culture, "{}",  il));
+  }
+  /// @endcond
+  
+  /// @brief Writes the text representation of the specified list of values, followed by the current line terminator, to the file output stream using the specified format information.
+  /// @tparam ...args_t Types of the values to write.
+  /// @param file A file output stream.
+  /// @param culture The xtd::globalization::culture_info used to print value.
+  /// @param fmt A composite format string.
+  /// @param values Values to write,
+  template<typename ...args_t>
+  auto println(FILE* file, const xtd::globalization::culture_info& culture, const xtd::string& fmt, args_t&& ... values) -> void {
+    __xtd_print_with_file_write__(true, file, string::format(culture, fmt, std::forward<args_t>(values)...));
+  }
+  /// @brief Writes the text representation of the specified list of values, followed by the current line terminator, to the file output stream using the specified format information.
+  /// @tparam ...args_t Types of the values to write.
+  /// @param file A file output stream.
+  /// @param culture The xtd::globalization::culture_info used to print value.
+  /// @param fmt A composite format string.
+  /// @param values Values to write,
+  template<typename ...args_t>
+  auto println(FILE* file, const xtd::globalization::culture_info& culture, const char* fmt, args_t&& ... values) -> void {
+    __xtd_print_with_file_write__(true, file, string::format(culture, xtd::string {fmt}, std::forward<args_t>(values)...));
+  }
+  /// @brief Writes the text representation of the specified list of values, followed by the current line terminator, to the file output stream using the specified format information.
+  /// @tparam ...args_t Types of the values to write.
+  /// @param file A file output stream.
+  /// @param culture The xtd::globalization::culture_info used to print value.
+  /// @param fmt A composite format string.
+  /// @param values Values to write,
+  template<typename ...args_t>
+  auto println(FILE* file, const xtd::globalization::culture_info& culture, const char8_t* fmt, args_t&& ... values) -> void {
+    __xtd_print_with_file_write__(true, file, string::format(culture, xtd::string {fmt}, std::forward<args_t>(values)...));
+  }
+  /// @brief Writes the text representation of the specified list of values, followed by the current line terminator, to the file output stream using the specified format information.
+  /// @tparam ...args_t Types of the values to write.
+  /// @param file A file output stream.
+  /// @param culture The xtd::globalization::culture_info used to print value.
+  /// @param fmt A composite format string.
+  /// @param values Values to write,
+  template<typename ...args_t>
+  auto println(FILE* file, const xtd::globalization::culture_info& culture, const char16_t* fmt, args_t&& ... values) -> void {
+    __xtd_print_with_file_write__(true, file, string::format(culture, xtd::string {fmt}, std::forward<args_t>(values)...));
+  }
+  /// @brief Writes the text representation of the specified list of values, followed by the current line terminator, to the file output stream using the specified format information.
+  /// @tparam ...args_t Types of the values to write.
+  /// @param file A file output stream.
+  /// @param culture The xtd::globalization::culture_info used to print value.
+  /// @param fmt A composite format string.
+  /// @param values Values to write,
+  template<typename ...args_t>
+  auto println(FILE* file, const xtd::globalization::culture_info& culture, const char32_t* fmt, args_t&& ... values) -> void {
+    __xtd_print_with_file_write__(true, file, string::format(culture, xtd::string {fmt}, std::forward<args_t>(values)...));
+  }
+  /// @brief Writes the text representation of the specified list of values, followed by the current line terminator, to the file output stream using the specified format information.
+  /// @tparam ...args_t Types of the values to write.
+  /// @param file A file output stream.
+  /// @param culture The xtd::globalization::culture_info used to print value.
+  /// @param fmt A composite format string.
+  /// @param values Values to write,
+  template<typename ...args_t>
+  auto println(FILE* file, const xtd::globalization::culture_info& culture, const wchar_t* fmt, args_t&& ... values) -> void {
+    __xtd_print_with_file_write__(true, file, string::format(culture, xtd::string {fmt}, std::forward<args_t>(values)...));
+  }
+  
+  /// @brief Writes the text representation of the specified value, followed by the current line terminator, to the output stream.
+  /// @tparam arg_t The type of the value to write.
+  /// @param os The output stream to insert data into.
+  /// @param culture The xtd::globalization::culture_info used to print value.
+  /// @param value The value to write,
+  template<typename arg_t>
+  auto println(std::ostream& os, const xtd::globalization::culture_info& culture, arg_t&& value) -> void {
+    __xtd_print_with_ostream_write__(true, os, string::format(culture, "{}",  value));
+  }
+  
+  /// @cond
+  template<typename type_t>
+  auto println(std::ostream& os, const xtd::globalization::culture_info& culture, const std::initializer_list<type_t>& il) -> void {
+    __xtd_print_with_ostream_write__(true, os, string::format(culture, "{}",  il));
+  }
+  /// @endcond
+  
+  /// @brief Writes the text representation of the specified list of values, followed by the current line terminator, to the output stream using the specified format information.
+  /// @tparam ...args_t Types of the values to write.
+  /// @param os The output stream to insert data into.
+  /// @param culture The xtd::globalization::culture_info used to print value.
+  /// @param fmt A composite format string.
+  /// @param values Values to write,
+  template<typename ...args_t>
+  auto println(std::ostream& os, const xtd::globalization::culture_info& culture, const xtd::string& fmt, args_t&& ... values) -> void {
+    __xtd_print_with_ostream_write__(true, os, string::format(culture, fmt, std::forward<args_t>(values)...));
+  }
+  /// @brief Writes the text representation of the specified list of values, followed by the current line terminator, to the output stream using the specified format information.
+  /// @tparam ...args_t Types of the values to write.
+  /// @param os The output stream to insert data into.
+  /// @param culture The xtd::globalization::culture_info used to print value.
+  /// @param fmt A composite format string.
+  /// @param values Values to write,
+  template<typename ...args_t>
+  auto println(std::ostream& os, const xtd::globalization::culture_info& culture, const char* fmt, args_t&& ... values) -> void {
+    __xtd_print_with_ostream_write__(true, os, string::format(culture, xtd::string {fmt}, std::forward<args_t>(values)...));
+  }
+  /// @brief Writes the text representation of the specified list of values, followed by the current line terminator, to the output stream using the specified format information.
+  /// @tparam ...args_t Types of the values to write.
+  /// @param os The output stream to insert data into.
+  /// @param culture The xtd::globalization::culture_info used to print value.
+  /// @param fmt A composite format string.
+  /// @param values Values to write,
+  template<typename ...args_t>
+  auto println(std::ostream& os, const xtd::globalization::culture_info& culture, const char8_t* fmt, args_t&& ... values) -> void {
+    __xtd_print_with_ostream_write__(true, os, string::format(culture, xtd::string {fmt}, std::forward<args_t>(values)...));
+  }
+  /// @brief Writes the text representation of the specified list of values, followed by the current line terminator, to the output stream using the specified format information.
+  /// @tparam ...args_t Types of the values to write.
+  /// @param os The output stream to insert data into.
+  /// @param culture The xtd::globalization::culture_info used to print value.
+  /// @param fmt A composite format string.
+  /// @param values Values to write,
+  template<typename ...args_t>
+  auto println(std::ostream& os, const xtd::globalization::culture_info& culture, const char16_t* fmt, args_t&& ... values) -> void {
+    __xtd_print_with_ostream_write__(true, os, string::format(culture, xtd::string {fmt}, std::forward<args_t>(values)...));
+  }
+  /// @brief Writes the text representation of the specified list of values, followed by the current line terminator, to the output stream using the specified format information.
+  /// @tparam ...args_t Types of the values to write.
+  /// @param os The output stream to insert data into.
+  /// @param culture The xtd::globalization::culture_info used to print value.
+  /// @param fmt A composite format string.
+  /// @param values Values to write,
+  template<typename ...args_t>
+  auto println(std::ostream& os, const xtd::globalization::culture_info& culture, const char32_t* fmt, args_t&& ... values) -> void {
+    __xtd_print_with_ostream_write__(true, os, string::format(culture, xtd::string {fmt}, std::forward<args_t>(values)...));
+  }
+  /// @brief Writes the text representation of the specified list of values, followed by the current line terminator, to the output stream using the specified format information.
+  /// @tparam ...args_t Types of the values to write.
+  /// @param os The output stream to insert data into.
+  /// @param culture The xtd::globalization::culture_info used to print value.
+  /// @param fmt A composite format string.
+  /// @param values Values to write,
+  template<typename ...args_t>
+  auto println(std::ostream& os, const xtd::globalization::culture_info& culture, const wchar_t* fmt, args_t&& ... values) -> void {
+    __xtd_print_with_ostream_write__(true, os, string::format(culture, xtd::string {fmt}, std::forward<args_t>(values)...));
+  }
+  
+  /// @brief Writes the text representation of the specified value, followed by the current line terminator, to the standard output stream.
+  /// @tparam arg_t The type of the value to write.
+  /// @param culture The xtd::globalization::culture_info used to print value.
+  /// @param value The value to write,
+  template<typename arg_t>
+  auto println(const xtd::globalization::culture_info& culture, arg_t&& value) -> void {xtd::println(stdout, culture, value);}
+  
+  /// @cond
+  template<typename type_t>
+  auto println(const xtd::globalization::culture_info& culture, const std::initializer_list<type_t>& il) -> void {xtd::println(stdout, culture, il);}
+  /// @endcond
+  
+  /// @brief Writes the text representation of the specified list of values, followed by the current line terminator, to the standard output stream using the specified format information.
+  /// @tparam ...args_t Types of the values to write.
+  /// @param culture The xtd::globalization::culture_info used to print value.
+  /// @param fmt A composite format string.
+  /// @param values Values to write,
+  template<typename ...args_t>
+  auto println(const xtd::globalization::culture_info& culture, const xtd::string& fmt, args_t&& ... values) -> void {xtd::println(stdout, culture, fmt, std::forward<args_t>(values)...);}
+  /// @brief Writes the text representation of the specified list of values, followed by the current line terminator, to the standard output stream using the specified format information.
+  /// @tparam ...args_t Types of the values to write.
+  /// @param culture The xtd::globalization::culture_info used to print value.
+  /// @param fmt A composite format string.
+  /// @param values Values to write,
+  template<typename ...args_t>
+  auto println(const xtd::globalization::culture_info& culture, const char* fmt, args_t&& ... values) -> void {xtd::println(stdout, culture, fmt, std::forward<args_t>(values)...);}
+  /// @brief Writes the text representation of the specified list of values, followed by the current line terminator, to the standard output stream using the specified format information.
+  /// @tparam ...args_t Types of the values to write.
+  /// @param culture The xtd::globalization::culture_info used to print value.
+  /// @param fmt A composite format string.
+  /// @param values Values to write,
+  template<typename ...args_t>
+  auto println(const xtd::globalization::culture_info& culture, const char8_t* fmt, args_t&& ... values) -> void {xtd::println(stdout, culture, fmt, std::forward<args_t>(values)...);}
+  /// @brief Writes the text representation of the specified list of values, followed by the current line terminator, to the standard output stream using the specified format information.
+  /// @tparam ...args_t Types of the values to write.
+  /// @param culture The xtd::globalization::culture_info used to print value.
+  /// @param fmt A composite format string.
+  /// @param values Values to write,
+  template<typename ...args_t>
+  auto println(const xtd::globalization::culture_info& culture, const char16_t* fmt, args_t&& ... values) -> void {xtd::println(stdout, culture, fmt, std::forward<args_t>(values)...);}
+  /// @brief Writes the text representation of the specified list of values, followed by the current line terminator, to the standard output stream using the specified format information.
+  /// @tparam ...args_t Types of the values to write.
+  /// @param culture The xtd::globalization::culture_info used to print value.
+  /// @param fmt A composite format string.
+  /// @param values Values to write,
+  template<typename ...args_t>
+  auto println(const xtd::globalization::culture_info& culture, const char32_t* fmt, args_t&& ... values) -> void {xtd::println(stdout, culture, fmt, std::forward<args_t>(values)...);}
+  /// @brief Writes the text representation of the specified list of values, followed by the current line terminator, to the standard output stream using the specified format information.
+  /// @tparam ...args_t Types of the values to write.
+  /// @param culture The xtd::globalization::culture_info used to print value.
+  /// @param fmt A composite format string.
+  /// @param values Values to write,
+  template<typename ...args_t>
+  auto println(const xtd::globalization::culture_info& culture, const wchar_t* fmt, args_t&& ... values) -> void {xtd::println(stdout, culture, fmt, std::forward<args_t>(values)...);}
 }
