@@ -136,11 +136,11 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span></div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a> {</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  <span class="comment">/*</span></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  template&lt;class value_t&gt;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  template&lt;typename value_t&gt;</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  requires (requires (const xtd::raw_type&lt;value_t&gt;&amp; value, const xtd::string&amp; fmt) {{value.to_string(fmt)} -&gt; xtd::textual;})</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  inline auto to_string(const value_t&amp; value, const xtd::string&amp; fmt, const std::locale&amp; loc) -&gt; xtd::string;</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span></div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  template&lt;class value_t&gt;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  template&lt;typename value_t&gt;</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  requires (!requires (const xtd::raw_type&lt;value_t&gt;&amp; value, const xtd::string&amp; fmt) {{value.to_string(fmt)} -&gt; xtd::textual;} &amp;&amp; requires (const xtd::raw_type&lt;value_t&gt;&amp; value) {{value.to_string()} -&gt; xtd::textual;})</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  inline auto to_string(const value_t&amp; value, const xtd::string&amp; fmt, const std::locale&amp; loc) -&gt; xtd::string;</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>   */</div>
