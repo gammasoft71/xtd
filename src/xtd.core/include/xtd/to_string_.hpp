@@ -31,13 +31,13 @@ template<typename value_t>
 }
 
 /*
-template<class value_t>
+template<typename value_t>
 requires (requires (const xtd::raw_type<value_t>& value, const xtd::string& fmt) {{value.to_string(fmt)} -> xtd::textual;})
 [[nodiscard]] inline auto xtd::to_string(const value_t& value, const xtd::string& fmt, const std::locale& loc) -> xtd::string {
   return value.to_string(fmt);
 }
 
-template<class value_t>
+template<typename value_t>
 requires (!requires (const xtd::raw_type<value_t>& value, const xtd::string& fmt) {{value.to_string(fmt)} -> xtd::textual;} && requires (const xtd::raw_type<value_t>& value) {{value.to_string()} -> xtd::textual;})
 [[nodiscard]] inline auto xtd::to_string(const value_t& value, const xtd::string& fmt, const std::locale& loc) -> xtd::string {
   return value.to_string();

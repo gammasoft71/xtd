@@ -16,7 +16,7 @@
 #include <version>
 #if (defined(__cpp_lib_format) && defined(_MSC_VER) && _MSC_VER >= 1932) || (defined(__apple_build_version__) && __apple_build_version__ >= 15000300) || (!defined(__APPLE__) && defined(__GNUC__) && __GNUC__ >= 13) || (!defined(__APPLE__) && defined(__clang_major__) && __clang_major__ >= 15)
 #  include <format>
-template <class type_t>
+template<typename type_t>
 requires (std::derived_from<xtd::raw_type<type_t>, xtd::object> ||
           std::derived_from<xtd::raw_type<type_t>, xtd::istringable<xtd::raw_type<type_t>>> ||
           std::derived_from<xtd::raw_type<type_t>, xtd::iformatable> ||

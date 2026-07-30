@@ -367,22 +367,22 @@ namespace xtd {
       /// @cond
       // Deduction guides for xtd::collections::generic::stack
       // {
-      template <typename type_t, typename container_t>
+      template<typename type_t, typename container_t>
       stack(stack< type_t, container_t>&&) -> stack<type_t, container_t>;
       
-      template <typename type_t, typename container_t>
+      template<typename type_t, typename container_t>
       stack(const stack<type_t, container_t>&) -> stack<type_t, container_t>;
       
-      template <typename type_t, typename container_t>
+      template<typename type_t, typename container_t>
       stack(stack<type_t, container_t>&) -> stack<type_t, container_t>;
       
-      template <typename type_t>
+      template<typename type_t>
       stack(const ienumerable<type_t>&) -> stack<type_t>;
       
-      template <xtd::iterable iterable_t>
+      template<xtd::iterable iterable_t>
       stack(iterable_t&&) -> stack<xtd::iterable_value_type<iterable_t>>;
 
-      template <typename type_t>
+      template<typename type_t>
       stack(std::initializer_list<type_t>) -> stack<type_t>;
       
       template<typename input_iterator_t>
