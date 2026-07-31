@@ -277,9 +277,9 @@ requires std::same_as&lt;<a class="el" href="group__concepts.html#ga7ffbe4fba341
 <tr class="memitem:a55fd5094e0edafdd7d4c736ccdf19ea7" id="r_a55fd5094e0edafdd7d4c736ccdf19ea7"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t&gt; </td></tr>
 <tr class="memitem:a55fd5094e0edafdd7d4c736ccdf19ea7 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a55fd5094e0edafdd7d4c736ccdf19ea7">default_if_empty</a> (source_t &amp;&amp;source) noexcept -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; &gt;</td></tr>
 <tr class="memdesc:a55fd5094e0edafdd7d4c736ccdf19ea7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the elements of the specified sequence or the type parameter's default value in a singleton collection if the sequence is empty.  <br /></td></tr>
-<tr class="memitem:ab5a02f552419b1e67387c365708d95f3" id="r_ab5a02f552419b1e67387c365708d95f3"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t&gt; </td></tr>
-<tr class="memitem:ab5a02f552419b1e67387c365708d95f3 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ab5a02f552419b1e67387c365708d95f3">default_if_empty</a> (source_t &amp;&amp;source, <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; &amp;&amp;default_value) noexcept -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; &gt;</td></tr>
-<tr class="memdesc:ab5a02f552419b1e67387c365708d95f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the elements of the specified sequence or the specified value in a singleton collection if the sequence is empty.  <br /></td></tr>
+<tr class="memitem:ad4e4fa7895f7924c85ed4311db52b414" id="r_ad4e4fa7895f7924c85ed4311db52b414"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t&gt; </td></tr>
+<tr class="memitem:ad4e4fa7895f7924c85ed4311db52b414 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ad4e4fa7895f7924c85ed4311db52b414">default_if_empty</a> (source_t &amp;&amp;source, const <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; &amp;default_value) noexcept -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; &gt;</td></tr>
+<tr class="memdesc:ad4e4fa7895f7924c85ed4311db52b414"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the elements of the specified sequence or the specified value in a singleton collection if the sequence is empty.  <br /></td></tr>
 <tr class="memitem:a345de6aadf1924af94c39184124293a1" id="r_a345de6aadf1924af94c39184124293a1"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t&gt; </td></tr>
 <tr class="memitem:a345de6aadf1924af94c39184124293a1 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a345de6aadf1924af94c39184124293a1">distinct</a> (source_t &amp;&amp;source) noexcept -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; &gt;</td></tr>
 <tr class="memdesc:a345de6aadf1924af94c39184124293a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns distinct elements from a sequence by using the default equality comparer to compare values.  <br /></td></tr>
@@ -2561,8 +2561,8 @@ template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> so
 
 </div>
 </div>
-<a id="ab5a02f552419b1e67387c365708d95f3" name="ab5a02f552419b1e67387c365708d95f3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab5a02f552419b1e67387c365708d95f3">&#9670;&#160;</a></span>default_if_empty() <span class="overload">[2/2]</span></h2>
+<a id="ad4e4fa7895f7924c85ed4311db52b414" name="ad4e4fa7895f7924c85ed4311db52b414"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4e4fa7895f7924c85ed4311db52b414">&#9670;&#160;</a></span>default_if_empty() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2580,7 +2580,7 @@ template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> so
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>default_value</em></span>&#160;) -&gt;  <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; &gt;</td>
+          <td class="paramtype">const <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>default_value</em></span>&#160;) -&gt;  <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; &gt;</td>
         </tr>
       </table>
   </td>
@@ -2611,14 +2611,14 @@ template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> so
 <div class="line">  <span class="keywordtype">string</span> name;</div>
 <div class="line">  <span class="keywordtype">int</span> age = 0;</div>
 <div class="line">  </div>
-<div class="line">  <span class="keyword">static</span> pet default_pet;</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">const</span> pet default_pet;</div>
 <div class="line">  </div>
 <div class="line">  <span class="keyword">friend</span> <span class="keywordtype">bool</span> operator ==(<span class="keyword">const</span> pet&amp; lhs, <span class="keyword">const</span> pet&amp; rhs) <span class="keyword">noexcept</span> {</div>
 <div class="line">    <span class="keywordflow">return</span> lhs.name == rhs.name &amp;&amp; lhs.age == rhs.age;</div>
 <div class="line">  }</div>
 <div class="line">};</div>
 <div class="line"> </div>
-<div class="line">pet pet::default_pet {.name = <span class="stringliteral">&quot;Default pet&quot;</span>, .age = 0};</div>
+<div class="line"><span class="keyword">const</span> pet pet::default_pet {.name = <span class="stringliteral">&quot;Default pet&quot;</span>, .age = 0};</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> pets1 = array&lt;pet&gt; {</div>

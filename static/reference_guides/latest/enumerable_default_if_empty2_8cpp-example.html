@@ -113,14 +113,14 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line">  <span class="keywordtype">string</span> name;</div>
 <div class="line">  <span class="keywordtype">int</span> age = 0;</div>
 <div class="line">  </div>
-<div class="line">  <span class="keyword">static</span> pet default_pet;</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">const</span> pet default_pet;</div>
 <div class="line">  </div>
 <div class="line">  <span class="keyword">friend</span> <span class="keywordtype">bool</span> operator ==(<span class="keyword">const</span> pet&amp; lhs, <span class="keyword">const</span> pet&amp; rhs) <span class="keyword">noexcept</span> {</div>
 <div class="line">    <span class="keywordflow">return</span> lhs.name == rhs.name &amp;&amp; lhs.age == rhs.age;</div>
 <div class="line">  }</div>
 <div class="line">};</div>
 <div class="line"> </div>
-<div class="line">pet pet::default_pet {.name = <span class="stringliteral">&quot;Default pet&quot;</span>, .age = 0};</div>
+<div class="line"><span class="keyword">const</span> pet pet::default_pet {.name = <span class="stringliteral">&quot;Default pet&quot;</span>, .age = 0};</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> pets1 = array&lt;pet&gt; {</div>
