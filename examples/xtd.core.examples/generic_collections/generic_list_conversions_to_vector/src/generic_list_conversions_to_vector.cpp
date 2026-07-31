@@ -14,7 +14,7 @@ auto main() -> int {
   println("v1 = {}", v1);
   
   // xtd::collections::generic::list<xtd::string> -> std::vector<std::string>
-  auto v2 = std::vector<std::string> {l.cast<std::string>()}; // explicit cast
+  auto v2 = std::vector<std::string> {l.cast<std::string>().to_array()}; // explicit cast
   println("v2 = {}", v2);
   
   // xtd::collections::generic::list<xtd::string> -> std::vector<std::string>
