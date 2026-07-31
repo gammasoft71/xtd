@@ -4,14 +4,14 @@ struct pet {
   string name;
   int age = 0;
   
-  static pet default_pet;
+  static const pet default_pet;
   
   friend bool operator ==(const pet& lhs, const pet& rhs) noexcept {
     return lhs.name == rhs.name && lhs.age == rhs.age;
   }
 };
 
-pet pet::default_pet {.name = "Default pet", .age = 0};
+const pet pet::default_pet {.name = "Default pet", .age = 0};
 
 auto main() -> int {
   auto pets1 = array<pet> {
