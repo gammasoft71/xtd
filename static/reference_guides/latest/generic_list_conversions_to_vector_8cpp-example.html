@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line">  println(<span class="stringliteral">&quot;v1 = {}&quot;</span>, v1);</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// xtd::collections::generic::list&lt;xtd::string&gt; -&gt; std::vector&lt;std::string&gt;</span></div>
-<div class="line">  <span class="keyword">auto</span> v2 = std::vector&lt;std::string&gt; {l.cast&lt;std::string&gt;()}; <span class="comment">// explicit cast</span></div>
+<div class="line">  <span class="keyword">auto</span> v2 = std::vector&lt;std::string&gt; {l.cast&lt;std::string&gt;().to_array()}; <span class="comment">// explicit cast</span></div>
 <div class="line">  println(<span class="stringliteral">&quot;v2 = {}&quot;</span>, v2);</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// xtd::collections::generic::list&lt;xtd::string&gt; -&gt; std::vector&lt;std::string&gt;</span></div>

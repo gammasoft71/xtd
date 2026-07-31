@@ -163,7 +163,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line">  };</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Produce a filtered sequence of unmodified students.</span></div>
-<div class="line">  <span class="keyword">const</span> ienumerable&lt;student&gt;&amp; student_query1 =</div>
+<div class="line">  <span class="keyword">auto</span> student_query1 =</div>
 <div class="line">    <a class="code hl_function" href="group__linq.html#ga51ce7f468e039aae97162ec46d247dad">from</a>(students)</div>
 <div class="line">    .where(_*<a class="code hl_function" href="group__expressions.html#ga582c6dbb71dfc746f9e4b69ba90ed2b6">member</a>(&amp;student::id) &gt; 111)</div>
 <div class="line">    .select(_);</div>
@@ -171,7 +171,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line">  console::write_line(<span class="stringliteral">&quot;student_query1: select range_variable&quot;</span>);</div>
 <div class="line">  <span class="keywordflow">for</span> (<span class="keyword">const</span> student&amp; student : student_query1)</div>
 <div class="line">    console::write_line(student);</div>
-<div class="line">  </div>
+<div class="line"> </div>
 <div class="line">  <span class="comment">// Produce a filtered sequence of elements that contain only one property of each student.</span></div>
 <div class="line">  <span class="keyword">const</span> ienumerable&lt;string&gt;&amp; student_query2 =</div>
 <div class="line">    <a class="code hl_function" href="group__linq.html#ga51ce7f468e039aae97162ec46d247dad">from</a>(students)</div>
