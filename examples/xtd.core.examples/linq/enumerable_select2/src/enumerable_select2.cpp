@@ -54,7 +54,7 @@ auto main() -> int {
   };
   
   // Produce a filtered sequence of unmodified students.
-  const ienumerable<student>& student_query1 =
+  auto student_query1 =
     from(students)
     .where(_*member(&student::id) > 111)
     .select(_);
@@ -62,7 +62,7 @@ auto main() -> int {
   console::write_line("student_query1: select range_variable");
   for (const student& student : student_query1)
     console::write_line(student);
-  
+
   // Produce a filtered sequence of elements that contain only one property of each student.
   const ienumerable<string>& student_query2 =
     from(students)
