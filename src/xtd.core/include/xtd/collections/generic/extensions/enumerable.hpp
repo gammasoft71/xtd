@@ -261,8 +261,8 @@ namespace xtd {
           /// @brief Returns the elements of the specified sequence or the specified value in a singleton collection if the current sequence is empty.
           /// @param default_value The value to return if the sequence is empty.
           /// @return An xtd::collections::generic::ienumerable <type_t> that contains default_value if source is empty; otherwise, source.
-          [[nodiscard]] auto default_if_empty(value_t&& default_value) const noexcept -> xtd::collections::generic::enumerable_generator<value_t> {
-            return xtd::linq::enumerable::default_if_empty(self(), std::forward<value_t>(default_value));
+          [[nodiscard]] auto default_if_empty(const value_t& default_value) const noexcept -> xtd::collections::generic::enumerable_generator<value_t> {
+            return xtd::linq::enumerable::default_if_empty(self(), default_value);
           }
           
           /// @brief Returns distinct elements from a sequence by using the default equality comparer to compare values.
