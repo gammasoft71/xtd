@@ -255,17 +255,17 @@ protected:
 private:
   void on_menu_click(object& sender, const event_args& e) {
     string file_name;
-    if (main_menu1.menu_items()[0].get().menu_items()[1].get() == sender) auto __ = open_file_box::show(file_name, *this);
-    if (main_menu1.menu_items()[0].get().menu_items()[3].get() == sender) auto __ = save_file_box::show(file_name, *this);
-    if (main_menu1.menu_items()[0].get().menu_items()[4].get() == sender) auto __ = save_file_box::show(file_name, *this, "Save as...");
+    if (main_menu1.menu_items()[0].get().menu_items()[1].get() == sender) auto _ = open_file_box::show(file_name, *this);
+    if (main_menu1.menu_items()[0].get().menu_items()[3].get() == sender) auto _ = save_file_box::show(file_name, *this);
+    if (main_menu1.menu_items()[0].get().menu_items()[4].get() == sender) auto _ = save_file_box::show(file_name, *this, "Save as...");
     if (main_menu1.menu_items()[0].get().menu_items()[9].get() == sender) application::exit();
     if (main_menu1.menu_items()[3].get().menu_items()[4].get() == sender) about_box::show(*this, "Shows some controls by category", "Some controls example", xtd::drawing::system_icons::xtd_logo(), environment::version().to_string(2), environment::version().to_string(), "Copyright (c) 2024 Gammasoft.", "https://gammasoft71.github.io/xtd", "xtd");
   }
   
   void on_tool_bar_button_click(object& sender, const tool_bar_button_click_event_args& e) {
     string file_name;
-    if (e.button() == open_tool_bar_button) auto __ = open_file_box::show(file_name, *this);
-    if (e.button() == save_tool_bar_button) auto __ = save_file_box::show(file_name, *this);
+    if (e.button() == open_tool_bar_button) auto _ = open_file_box::show(file_name, *this);
+    if (e.button() == save_tool_bar_button) auto _ = save_file_box::show(file_name, *this);
     if (e.button() == help_tool_bar_button) about_box::show(*this, "Shows some controls by category", "Some controls example", xtd::drawing::system_icons::xtd_logo(), environment::version().to_string(2), environment::version().to_string(), "Copyright (c) 2024 Gammasoft.", "https://gammasoft71.github.io/xtd", "xtd");
   }
   
