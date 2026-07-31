@@ -18,7 +18,7 @@ public:
     console::write_line("  items = {}", results.to_array());
     
     parallel::invoke(array<action<>> {10, delegate_ {
-      for ([[maybe_unused]] auto __ : range(1, 5)) {
+      for ([[maybe_unused]] auto _ : range(1, 5)) {
         auto value = 0;
         items.try_dequeue(value);
         thread::sleep(10_ms);
