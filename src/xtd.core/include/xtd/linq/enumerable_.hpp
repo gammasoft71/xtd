@@ -474,7 +474,7 @@ namespace xtd {
       /// The following code example demonstrates how to use xtd::linq::enumerable::default_if_empty <source_t>(const ienumerable <source_t>&, const source_t&) to return a default value if a sequence is empty.
       /// @include enumerable_default_if_empty2.cpp
       template<xtd::iterable source_t>
-      [[nodiscard]] static auto default_if_empty(source_t&& source, xtd::iterable_value_type<source_t>&& default_value) noexcept -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>>;
+      [[nodiscard]] static auto default_if_empty(source_t&& source, const xtd::iterable_value_type<source_t>& default_value) noexcept -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>>;
       
       /// @brief Returns distinct elements from a sequence by using the default equality comparer to compare values.
       /// @param source The sequence to remove duplicate elements from.

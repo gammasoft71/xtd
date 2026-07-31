@@ -393,7 +393,7 @@ auto xtd::linq::enumerable::default_if_empty(source_t&& source) noexcept -> xtd:
 }
 
 template<xtd::iterable source_t>
-auto xtd::linq::enumerable::default_if_empty(source_t&& source, xtd::iterable_value_type<source_t>&& default_value) noexcept -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>> {
+auto xtd::linq::enumerable::default_if_empty(source_t&& source, const xtd::iterable_value_type<source_t>& default_value) noexcept -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>> {
   if (!any(source)) co_yield default_value;
   //auto source_holder = __xtd_enumerable_holder<source_t> {std::forward<source_t>(source)};
   //else for (const auto& item : source_holder.get())
