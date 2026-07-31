@@ -59,8 +59,9 @@ template<typename new_type, typename current_type>
 
 template<typename result_t, xtd::iterable source_t>
 [[nodiscard]] inline auto xtd::linq::enumerable::cast(source_t&& source) -> xtd::collections::generic::enumerable_generator<result_t> {
-  auto source_holder = __xtd_enumerable_holder<xtd::raw_type<source_t>> {std::forward<xtd::raw_type<source_t>>(source)};
-  for (const auto& item : source_holder.get())
+  //auto source_holder = __xtd_enumerable_holder<xtd::raw_type<source_t>> {std::forward<xtd::raw_type<source_t>>(source)};
+  //for (const auto& item : source_holder.get())
+  for (const auto& item : source)
     co_yield xtd::as<result_t>(item);
 }
 
