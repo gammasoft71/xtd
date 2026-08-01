@@ -1,15 +1,8 @@
 #include <xtd/xtd>
 
-struct student : iequatable<student> {
-  student() = default;
-  student(const string& name, const string& score) : name {name}, score {score} {}
-  
+struct student {
   string name;
   string score;
-  
-  bool equals(const student& other) const noexcept override {
-    return name == other.name && score == other.score;
-  }
 };
 
 auto main() -> int {
@@ -22,7 +15,7 @@ auto main() -> int {
   };
   
   const auto& query = students.count_by<string>(_*member(&student::score));
-  
+
   for (const auto& [score, count] : query)
     console::write_line("Students with a {}-score: {}", score, count);
 }
