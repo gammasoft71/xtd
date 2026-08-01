@@ -582,16 +582,14 @@ auto xtd::linq::enumerable::select(source_t&& source, auto&& selector) -> xtd::c
 template<typename predicate_t, typename value_t>
 constexpr auto xtd::linq::enumerable::invoke_predicate_with_optional_index(predicate_t&& predicate, value_t&& value, xtd::usize index) -> bool {
   if constexpr (xtd::func_callable<predicate_t, bool, xtd::raw_type<value_t>, xtd::usize>) return predicate(std::forward<value_t>(value), index);
-  else return predicate(std::forward<value_t>(value));
-  //else if constexpr (xtd::predicate_callable<predicate_t, xtd::raw_type<value_t>>) return predicate(std::forward<value_t>(value));
-  //else static_assert(always_false_v<predicate_t>, "Predicate must accept either (value) or (value, index).");
+  else if constexpr (xtd::predicate_callable<predicate_t, xtd::raw_type<value_t>>) return predicate(std::forward<value_t>(value));
+  else static_assert(always_false_v<predicate_t>, "Predicate must accept either (value) or (value, index).");
 }
 
 template<typename result_t, typename selector_t, typename value_t>
 auto xtd::linq::enumerable::invoke_selector_with_optional_index(selector_t&& selector, value_t&& value, xtd::usize index) -> result_t {
   if constexpr (xtd::callable<selector_t, xtd::raw_type<result_t>, xtd::raw_type<value_t>, xtd::usize>) return selector(std::forward<value_t>(value), index);
-  else return selector(std::forward<value_t>(value));
-  //if constexpr (xtd::callable<selector_t, xtd::raw_type<result_t>, xtd::raw_type<value_t>>) return selector(std::forward<value_t>(value));
-  //else static_assert(always_false_v<selector_t>, "Selector must accept either (value) or (value, index).");
+  if constexpr (xtd::callable<selector_t, xtd::raw_type<result_t>, xtd::raw_type<value_t>>) return selector(std::forward<value_t>(value));
+  else static_assert(always_false_v<selector_t>, "Selector must accept either (value) or (value, index).");
 }
 /// @endcond
