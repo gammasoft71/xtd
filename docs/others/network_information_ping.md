@@ -47,7 +47,7 @@ namespace xtd {
         /// @brief The ICMP echo request failed because there is no valid route between the source and destination computers.
         bad_route = 11012,
         /// @brief The ICMP echo request failed because its Time to Live (TTL) value reached zero, causing the forwarding node (router or gateway) to discard the packet.
-        ttl_eExpired = 11013,
+        ttl_expired = 11013,
         /// @brief The ICMP echo request failed because the packet was divided into fragments for transmission and all of the fragments were not received within the time allotted for reassembly. RFC 2460 specifies 60 seconds as the time limit within which all packet fragments must be received.
         ttl_reassembly_time_exceeded = 11014,
         /// @brief The ICMP echo request failed because a node (router or gateway) encountered problems while processing the packet header. This is the status if, for example, the header contains invalid field data or an unrecognized option.
