@@ -226,7 +226,7 @@ namespace xtd {
           /// @include enumerable_count_by.cpp
           template<typename key_t, xtd::callable<key_t, value_t> key_selector_t>
           [[nodiscard]] auto count_by(key_selector_t&& key_selector) const noexcept {
-            return xtd::linq::enumerable::count_by<key_t, value_t>(self(), std::forward<key_selector_t>(key_selector));
+            return xtd::linq::enumerable::count_by<key_t>(self(), std::forward<key_selector_t>(key_selector));
           }
           /// @brief Returns the count of elements in the current sequence grouped by key.
           /// @tparam key_t The type of the key returned by `key_selector`.
@@ -238,7 +238,7 @@ namespace xtd {
           /// @include enumerable_count_by.cpp
           template<typename key_t, xtd::callable<key_t, value_t> key_selector_t>
           [[nodiscard]] auto count_by(key_selector_t&& key_selector, xtd::collections::generic::iequality_comparer<key_t>&& key_comparer) const noexcept -> xtd::collections::generic::enumerable_generator<xtd::collections::generic::key_value_pair<key_t, xtd::usize>> {
-            return xtd::linq::enumerable::count_by<key_t, value_t>(self(), std::forward<key_selector_t>(key_selector), std::forward<xtd::collections::generic::iequality_comparer<key_t>>(key_comparer));
+            return xtd::linq::enumerable::count_by<key_t>(self(), std::forward<key_selector_t>(key_selector), std::forward<xtd::collections::generic::iequality_comparer<key_t>>(key_comparer));
           }
           /// @brief Returns the count of elements in the current sequence grouped by key.
           /// @tparam key_t The type of the key returned by `key_selector`.
