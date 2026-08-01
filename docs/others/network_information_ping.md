@@ -21,7 +21,7 @@ namespace xtd {
       /// @ingroup xtd_core
       enum class ip_status {
         /// @brief The ICMP echo request failed for an unknown reason.
-        unnknown = -1,
+        unknown = -1,
         /// @brief The ICMP echo request succeeded; an ICMP echo reply was received. When you get this status code, the other PingReply properties contain valid data.
         success = 0,
         /// @brief The ICMP echo request failed because the network that contains the destination computer is not reachable.
@@ -31,7 +31,7 @@ namespace xtd {
         /// @brief The ICMPv6 echo request failed because contact with the destination computer is administratively prohibited. This value applies only to IPv6.
         destination_prohibited = 11004,
         /// @brief The ICMP echo request failed because the destination computer that is specified in an ICMP echo message is not reachable, because it does not support the packet's protocol. This value applies only to IPv4. This value is described in IETF RFC 1812 as Communication Administratively Prohibited.
-        destination_rotocol_nreachable = 11004,
+        destination_protocol_unreachable = 11004,
         /// @brief The ICMP echo request failed because the port on the destination computer is not available.
         destination_port_unreachable = 11005,
         /// @brief The ICMP echo request failed because of insufficient network resources.
@@ -162,7 +162,7 @@ namespace xtd {
           xtd::array<xtd::byte> buffer;
           xtd::net::network_information::ping_options options;
           xtd::int64 roudtrip_time = 0;
-          xtd::net::network_information::ip_status status = xtd::net::network_information::ip_status::unnknown;
+          xtd::net::network_information::ip_status status = xtd::net::network_information::ip_status::unknown;
         };
         
         xtd::ptr<data> data_ = xtd::new_ptr<data>();
