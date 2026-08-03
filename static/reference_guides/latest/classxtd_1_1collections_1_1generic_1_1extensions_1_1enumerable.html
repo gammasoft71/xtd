@@ -250,10 +250,13 @@ requires <a class="el" href="structxtd_1_1numeric.html">xtd::numeric</a>&lt;valu
 requires <a class="el" href="structxtd_1_1numeric.html">xtd::numeric</a>&lt;result_t&gt;</td></tr>
 <tr class="memitem:a7f38f518221ce3102ed0780e27609750 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a7f38f518221ce3102ed0780e27609750">min</a> (selector_t &amp;&amp;selector) const -&gt; result_t</td></tr>
 <tr class="memdesc:a7f38f518221ce3102ed0780e27609750"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the minimum value in a sequence of <a class="el" href="structxtd_1_1numeric.html" title="Represents the numeric concept.">xtd::numeric</a> values.  <br /></td></tr>
-<tr class="memitem:a67c297a6ad5b4019a1e7f118a8d80751" id="r_a67c297a6ad5b4019a1e7f118a8d80751"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a67c297a6ad5b4019a1e7f118a8d80751">order</a> () const</td></tr>
-<tr class="memdesc:a67c297a6ad5b4019a1e7f118a8d80751"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts the elements of a sequence in ascending order.  <br /></td></tr>
-<tr class="memitem:a01f7cd531023f02bcca564fcd352c789" id="r_a01f7cd531023f02bcca564fcd352c789"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a01f7cd531023f02bcca564fcd352c789">order</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1icomparer.html">xtd::collections::generic::icomparer</a>&lt; value_t &gt; &amp;comparer) const</td></tr>
-<tr class="memdesc:a01f7cd531023f02bcca564fcd352c789"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts the elements of a sequence in ascending order.  <br /></td></tr>
+<tr class="memitem:a96e347c7dc52732445e9f3521a311010" id="r_a96e347c7dc52732445e9f3521a311010"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a96e347c7dc52732445e9f3521a311010">order</a> () const -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; value_t &gt;</td></tr>
+<tr class="memdesc:a96e347c7dc52732445e9f3521a311010"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts the elements of a sequence in ascending order.  <br /></td></tr>
+<tr class="memitem:a435eb3f3f3462142b91dceaef674be8e" id="r_a435eb3f3f3462142b91dceaef674be8e"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a435eb3f3f3462142b91dceaef674be8e">order</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1icomparer.html">xtd::collections::generic::icomparer</a>&lt; value_t &gt; &amp;comparer) const -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; value_t &gt;</td></tr>
+<tr class="memdesc:a435eb3f3f3462142b91dceaef674be8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts the elements of a sequence in ascending order.  <br /></td></tr>
+<tr class="memitem:a781fb3b5301b161a1844aa5bc1e32971" id="r_a781fb3b5301b161a1844aa5bc1e32971"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1func__callable.html">xtd::func_callable</a>&lt; bool, value_t, value_t &gt; lesser_t&gt; </td></tr>
+<tr class="memitem:a781fb3b5301b161a1844aa5bc1e32971 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a781fb3b5301b161a1844aa5bc1e32971">order</a> (lesser_t &amp;&amp;lesser) const -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; value_t &gt;</td></tr>
+<tr class="memdesc:a781fb3b5301b161a1844aa5bc1e32971"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts the elements of a sequence in ascending order.  <br /></td></tr>
 <tr class="memitem:add2d925876b268812bbbe061f2e2be1c" id="r_add2d925876b268812bbbe061f2e2be1c"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#add2d925876b268812bbbe061f2e2be1c">order_by</a> (const std::function&lt; value_t(const value_t &amp;)&gt; &amp;key_selector) const</td></tr>
 <tr class="memdesc:add2d925876b268812bbbe061f2e2be1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts the elements of a sequence in ascending order according to a key.  <br /></td></tr>
 <tr class="memitem:a6be529c933b3ef9f3bed9883664fdf4d" id="r_a6be529c933b3ef9f3bed9883664fdf4d"><td class="memTemplParams" colspan="2">template&lt;typename key_t&gt; </td></tr>
@@ -2001,8 +2004,8 @@ requires <a class="el" href="structxtd_1_1numeric.html">xtd::numeric</a>&lt;resu
 
 </div>
 </div>
-<a id="a67c297a6ad5b4019a1e7f118a8d80751" name="a67c297a6ad5b4019a1e7f118a8d80751"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a67c297a6ad5b4019a1e7f118a8d80751">&#9670;&#160;</a></span>order() <span class="overload">[1/2]</span></h2>
+<a id="a96e347c7dc52732445e9f3521a311010" name="a96e347c7dc52732445e9f3521a311010"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96e347c7dc52732445e9f3521a311010">&#9670;&#160;</a></span>order() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2016,7 +2019,7 @@ template&lt;typename value_t, typename enumerable_t&gt; </div>
           <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html">xtd::collections::generic::extensions::enumerable</a>&lt; value_t, enumerable_t &gt;::order </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; value_t &gt;</td>
         </tr>
       </table>
   </td>
@@ -2037,8 +2040,8 @@ template&lt;typename value_t, typename enumerable_t&gt; </div>
 
 </div>
 </div>
-<a id="a01f7cd531023f02bcca564fcd352c789" name="a01f7cd531023f02bcca564fcd352c789"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a01f7cd531023f02bcca564fcd352c789">&#9670;&#160;</a></span>order() <span class="overload">[2/2]</span></h2>
+<a id="a435eb3f3f3462142b91dceaef674be8e" name="a435eb3f3f3462142b91dceaef674be8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a435eb3f3f3462142b91dceaef674be8e">&#9670;&#160;</a></span>order() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2052,7 +2055,7 @@ template&lt;typename value_t, typename enumerable_t&gt; </div>
           <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html">xtd::collections::generic::extensions::enumerable</a>&lt; value_t, enumerable_t &gt;::order </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1icomparer.html">xtd::collections::generic::icomparer</a>&lt; value_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>comparer</em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; value_t &gt;</td>
         </tr>
       </table>
   </td>
@@ -2067,6 +2070,45 @@ template&lt;typename value_t, typename enumerable_t&gt; </div>
   <table class="params">
     <tr><td class="paramname">source</td><td>A sequence of values to order. </td></tr>
     <tr><td class="paramname">comparer</td><td>An <a class="el" href="classxtd_1_1collections_1_1generic_1_1icomparer.html" title="Exposes a method that compares two objects.">xtd::collections::generic::icomparer</a> &lt;value_t&gt; to compare keys. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;value_t&gt; whose elements are sorted. </dd></dl>
+
+</div>
+</div>
+<a id="a781fb3b5301b161a1844aa5bc1e32971" name="a781fb3b5301b161a1844aa5bc1e32971"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a781fb3b5301b161a1844aa5bc1e32971">&#9670;&#160;</a></span>order() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename value_t, typename enumerable_t&gt; </div>
+<div class="memtemplate">
+template&lt;<a class="el" href="structxtd_1_1func__callable.html">xtd::func_callable</a>&lt; bool, value_t, value_t &gt; lesser_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html">xtd::collections::generic::extensions::enumerable</a>&lt; value_t, enumerable_t &gt;::order </td>
+          <td>(</td>
+          <td class="paramtype">lesser_t &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>lesser</em></span></td><td>)</td>
+          <td> const -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; value_t &gt;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sorts the elements of a sequence in ascending order. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">source</td><td>A sequence of values to order. </td></tr>
+    <tr><td class="paramname">lesser</td><td>An <a class="el" href="classxtd_1_1collections_1_1generic_1_1icomparer.html" title="Exposes a method that compares two objects.">xtd::collections::generic::icomparer</a> &lt;value_t&gt; to compare keys. </td></tr>
   </table>
   </dd>
 </dl>
@@ -2428,7 +2470,7 @@ template&lt;typename value_t, typename enumerable_t&gt; </div>
 <div class="line"><span class="comment">// 5</span></div>
 <div class="line"><span class="comment">// 10</span></div>
 <div class="ttc" id="aclassxtd_1_1basic__string_html_a4d8c4c95a122844c62de3feb62a5fa74"><div class="ttname"><a href="classxtd_1_1basic__string.html#a4d8c4c95a122844c62de3feb62a5fa74">xtd::basic_string&lt; char &gt;::length</a></div><div class="ttdeci">virtual auto length() const noexcept -&gt; size_type</div><div class="ttdef"><b>Definition</b> basic_string.hpp:383</div></div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable_html_a77f28b05a9f794ee4885ddb682c1498d"><div class="ttname"><a href="#a77f28b05a9f794ee4885ddb682c1498d">xtd::collections::generic::extensions::enumerable::select</a></div><div class="ttdeci">auto select(auto &amp;&amp;selector) const</div><div class="ttdoc">Projects each element of a sequence into a new form.</div><div class="ttdef"><b>Definition</b> enumerable.hpp:417</div></div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable_html_a77f28b05a9f794ee4885ddb682c1498d"><div class="ttname"><a href="#a77f28b05a9f794ee4885ddb682c1498d">xtd::collections::generic::extensions::enumerable::select</a></div><div class="ttdeci">auto select(auto &amp;&amp;selector) const</div><div class="ttdoc">Projects each element of a sequence into a new form.</div><div class="ttdef"><b>Definition</b> enumerable.hpp:425</div></div>
 <div class="ttc" id="agroup__types_html_gae60f5a861761019d824a87291f85d525"><div class="ttname"><a href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></div><div class="ttdeci">std::size_t usize</div><div class="ttdoc">Represents an unsigned size of any object in bytes.</div><div class="ttdef"><b>Definition</b> usize.hpp:22</div></div>
 <div class="ttc" id="anamespacextd_html_a84689e2cdf94d64f7e5f33fe4a1be71a"><div class="ttname"><a href="namespacextd.html#a84689e2cdf94d64f7e5f33fe4a1be71a">xtd::length</a></div><div class="ttdeci">constexpr auto length() const noexcept -&gt; size_type</div><div class="ttdoc">Returns the length of the current read_only_span.</div><div class="ttdef"><b>Definition</b> read_only_span.hpp:212</div></div>
 </div><!-- fragment --> </dd></dl>
