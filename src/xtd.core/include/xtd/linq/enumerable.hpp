@@ -611,6 +611,16 @@ auto xtd::linq::enumerable::select(source_t&& source, auto&& selector) -> xtd::c
     co_yield invoke_selector_with_optional_index<xtd::iterable_value_type<source_t>>(selector, item, index++);
 }
 
+template<xtd::iterable source_t>
+auto xtd::linq::enumerable::where(source_t&& source, auto&& predicate) -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>> {
+  auto index = xtd::usize {0};
+  //auto source_holder = __xtd_enumerable_holder<xtd::raw_type<source_t>> {std::forward<source_t>(source)};
+  //for (const auto& item : source_holder.get())
+  for (const auto& item : source)
+    if (invoke_predicate_with_optional_index(predicate, item, index++)) co_yield item;
+}
+
+
 template<typename predicate_t, typename value_t>
 constexpr auto xtd::linq::enumerable::invoke_predicate_with_optional_index(predicate_t&& predicate, value_t&& value, xtd::usize index) -> bool {
   if constexpr (xtd::func_callable<predicate_t, bool, xtd::raw_type<value_t>, xtd::usize>) return predicate(std::forward<value_t>(value), index);
