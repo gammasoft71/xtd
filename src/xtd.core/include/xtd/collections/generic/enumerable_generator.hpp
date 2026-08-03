@@ -72,7 +72,6 @@ namespace xtd {
           void return_void() noexcept {}
           
           /// @brief Catches any unhandled exceptions escaped from the coroutine body.
-          /// @remarks In the context of xtd::collections::generic::enumerable_generator, any unhandled exception within the generator block immediately triggers a std::terminate to guarantee system safety.
           void unhandled_exception() noexcept {exception = std::current_exception();}
           
           /// @brief Captures the value emitted by a `co_yield` expression and suspends the coroutine execution flow.
@@ -106,6 +105,7 @@ namespace xtd {
         enumerable_generator& operator =(const enumerable_generator& other) = delete;
         enumerable_generator(enumerable_generator&& other) noexcept : handle_(std::exchange(other.handle_, {})) {}
         enumerable_generator& operator =(enumerable_generator&& other) noexcept {
+          if (handle_) handle_.destroy();
           handle_ = std::exchange(other.handle_, {});
           return *this;
         }
