@@ -481,7 +481,7 @@ namespace xtd {
       /// @param source The sequence to remove duplicate elements from.
       /// @return An enumerable distinct elements from the source sequence.
       template<xtd::iterable source_t>
-      [[nodiscard]] static auto distinct(source_t&& source) noexcept -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>>;      
+      [[nodiscard]] static auto distinct(source_t&& source) noexcept -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>>; // Defined in include/xtd/collections/generic/list.hpp
       /// @brief Returns distinct elements from a sequence by using a specified xtd::collections::generic::iequality_comparer <type_t> to compare values.
       /// @param source The sequence to remove duplicate elements from.
       /// @param comparer An xtd::collections::generic::iequality_comparer <type_t> to compare values.
@@ -493,7 +493,7 @@ namespace xtd {
       /// @param equater An equality comparer to compare values.
       /// @return An enumerable distinct elements from the source sequence.
       template<xtd::iterable source_t, xtd::func_callable<bool, xtd::iterable_value_type<source_t>, xtd::iterable_value_type<source_t>> equater_t>
-      [[nodiscard]] static auto distinct(source_t&& source, equater_t&& equater) noexcept  -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>>;
+      [[nodiscard]] static auto distinct(source_t&& source, equater_t&& equater) noexcept  -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>>; // Defined in include/xtd/collections/generic/list.hpp
 
       /// @brief Returns the first element of the sequence that satisfies a condition, or a specified default value if no such element is found.
       /// @tparam source_t The type of the elements of source.
@@ -688,7 +688,7 @@ namespace xtd {
       /// @param lesser An xtd::collections::generic::icomparer <source_t> to compare keys.
       /// @return An xtd::collections::generic::ienumerable <source_t> whose elements are sorted.
       template<xtd::iterable source_t, xtd::func_callable<bool, xtd::iterable_value_type<source_t>, xtd::iterable_value_type<source_t>> lesser_t>
-      [[nodiscard]] static auto order(source_t&& source, lesser_t&& lesser) -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>>;
+      [[nodiscard]] static auto order(source_t&& source, lesser_t&& lesser) -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>>; // Defined in include/xtd/collections/generic/list.hpp
 
       /// @brief Sorts the elements of a sequence in ascending order according to a key.
       /// @param source A sequence of values to order.
@@ -697,7 +697,7 @@ namespace xtd {
       /// The following code example demonstrates how to use order_by<key_t, source_t>(ienumerable <source_t>, std::function<key_t(const source_t&)>) to sort the elements of a sequence.
       /// @include linq_order_by.cpp
       template<typename key_t, xtd::iterable source_t, xtd::callable<key_t, xtd::iterable_value_type<source_t>> key_selector_t>
-      [[nodiscard]] static auto order_by(source_t&& source, key_selector_t&& key_selector) -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>>;
+      [[nodiscard]] static auto order_by(source_t&& source, key_selector_t&& key_selector) -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>>; // Defined in include/xtd/collections/generic/list.hpp
       
       /// @brief Sorts the elements of a sequence in ascending order according to a key.
       /// @param source A sequence of values to order.
@@ -706,7 +706,7 @@ namespace xtd {
       /// The following code example demonstrates how to use order_by<source_t, source_t>(ienumerable <source_t>, std::function<source_t(const source_t&)>) to sort the elements of a sequence.
       /// @include linq_order_by.cpp
       template<xtd::iterable source_t, xtd::callable<xtd::iterable_value_type<source_t>, xtd::iterable_value_type<source_t>> key_selector_t>
-      [[nodiscard]] static auto order_by(source_t&& source, key_selector_t&& key_selector) -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>>;
+      [[nodiscard]] static auto order_by(source_t&& source, key_selector_t&& key_selector) -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>>; // Defined in include/xtd/collections/generic/list.hpp
       
       /// @brief Sorts the elements of a sequence in descending order according to a key.
       /// @param source A sequence of values to order.
@@ -714,14 +714,8 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates how to use order_by<key_t, source_t>(ienumerable <source_t>, std::function<key_t(const source_t&)>) to sort the elements of a sequence.
       /// @include linq_order_by_descending.cpp
-      template<typename key_t, typename source_t>
-      [[nodiscard]] static auto order_by_descending(const ienumerable<source_t>& source, const std::function<key_t(const source_t&)>& key_selector) {
-        auto result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
-        for (const auto& item : source)
-          result.items.push_back(item);
-        std::sort(result.items.begin(), result.items.end(), [key_selector](const source_t& a, const source_t& b) {return key_selector(a) > key_selector(b);});
-        return result;
-      }
+      template<typename key_t, xtd::iterable source_t, xtd::callable<key_t, xtd::iterable_value_type<source_t>> key_selector_t>
+      [[nodiscard]] static auto order_by_descending(source_t&& source, key_selector_t&& key_selector) -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>>; // Defined in include/xtd/collections/generic/list.hpp
       
       /// @brief Sorts the elements of a sequence in descending order according to a key.
       /// @param source A sequence of values to order.
@@ -729,14 +723,8 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates how to use order_by<source_t, source_t>(ienumerable <source_t>, std::function<source_t(const source_t&)>) to sort the elements of a sequence.
       /// @include linq_order_by_descending.cpp
-      template<typename source_t>
-      [[nodiscard]] static auto order_by_descending(const ienumerable<source_t>& source, const std::function<source_t(const source_t&)>& key_selector) {
-        auto result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
-        for (const auto& item : source)
-          result.items.push_back(item);
-        std::sort(result.items.begin(), result.items.end(), [key_selector](const source_t& a, const source_t& b) {return key_selector(a) > key_selector(b);});
-        return result;
-      }
+      template<xtd::iterable source_t, xtd::callable<xtd::iterable_value_type<source_t>, xtd::iterable_value_type<source_t>> key_selector_t>
+      [[nodiscard]] static auto order_by_descending(source_t&& source, key_selector_t&& key_selector) -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>>; // Defined in include/xtd/collections/generic/list.hpp
       
       /// @brief Generates a sequence of integral numbers within a specified range.
       /// @param count The number of sequential integers to generate.
