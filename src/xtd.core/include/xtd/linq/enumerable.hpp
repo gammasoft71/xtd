@@ -561,6 +561,17 @@ auto xtd::linq::enumerable::min(source_t&& source, selector_t&& selector) -> res
   return result.value_or(result_t {});
 }
 
+template<xtd::iterable source_t>
+auto xtd::linq::enumerable::order(source_t&& source) -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>> {
+  //return order(source, xtd::collections::generic::comparer<xtd::iterable_value_type<source_t>>::default_comparer);
+  return order(source, xtd::collections::generic::helpers::lesser<xtd::iterable_value_type<source_t>>(xtd::collections::generic::comparer<xtd::iterable_value_type<source_t>>::default_comparer));
+}
+
+template<xtd::iterable source_t>
+auto xtd::linq::enumerable::order(source_t&& source, const xtd::collections::generic::icomparer<xtd::iterable_value_type<source_t>>& comparer) -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>> {
+  return order(source, xtd::collections::generic::helpers::lesser<xtd::iterable_value_type<source_t>>(comparer));
+}
+
 template<typename result_t, xtd::iterable source_t>
 auto xtd::linq::enumerable::select(source_t&& source, auto&& selector) -> xtd::collections::generic::enumerable_generator<result_t> {
   auto index = xtd::usize {0};

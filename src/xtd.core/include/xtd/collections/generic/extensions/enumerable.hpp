@@ -358,17 +358,25 @@ namespace xtd {
           /// @brief Sorts the elements of a sequence in ascending order.
           /// @param source A sequence of values to order.
           /// @return An xtd::collections::generic::ienumerable <value_t> whose elements are sorted.
-          [[nodiscard]] auto order() const {
+          [[nodiscard]] auto order() const -> xtd::collections::generic::enumerable_generator<value_t> {
             return xtd::linq::enumerable::order(self());
           }
           /// @brief Sorts the elements of a sequence in ascending order.
           /// @param source A sequence of values to order.
           /// @param comparer An xtd::collections::generic::icomparer <value_t> to compare keys.
           /// @return An xtd::collections::generic::ienumerable <value_t> whose elements are sorted.
-          [[nodiscard]] auto order(const xtd::collections::generic::icomparer<value_t>& comparer) const {
+          [[nodiscard]] auto order(const xtd::collections::generic::icomparer<value_t>& comparer) const -> xtd::collections::generic::enumerable_generator<value_t> {
             return xtd::linq::enumerable::order(self(), comparer);
           }
-          
+          /// @brief Sorts the elements of a sequence in ascending order.
+          /// @param source A sequence of values to order.
+          /// @param lesser An xtd::collections::generic::icomparer <value_t> to compare keys.
+          /// @return An xtd::collections::generic::ienumerable <value_t> whose elements are sorted.
+          template<xtd::func_callable<bool, value_t, value_t> lesser_t>
+          [[nodiscard]] auto order(lesser_t&& lesser) const -> xtd::collections::generic::enumerable_generator<value_t> {
+            return xtd::linq::enumerable::order(self(), lesser);
+          }
+
           /// @brief Sorts the elements of a sequence in ascending order according to a key.
           /// @param key_selector A function to extract a key from an element.
           /// @par Examples

@@ -674,23 +674,21 @@ namespace xtd {
       /// @brief Sorts the elements of a sequence in ascending order.
       /// @param source A sequence of values to order.
       /// @return An xtd::collections::generic::ienumerable <source_t> whose elements are sorted.
-      template<typename source_t>
-      [[nodiscard]] static auto order(const ienumerable<source_t>& source) {
-        return order(source, xtd::collections::generic::comparer<source_t>::default_comparer);
-      }
+      template<xtd::iterable source_t>
+      [[nodiscard]] static auto order(source_t&& source) -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>>;
       /// @brief Sorts the elements of a sequence in ascending order.
       /// @param source A sequence of values to order.
       /// @param comparer An xtd::collections::generic::icomparer <source_t> to compare keys.
       /// @return An xtd::collections::generic::ienumerable <source_t> whose elements are sorted.
-      template<typename source_t>
-      [[nodiscard]] static auto order(const ienumerable<source_t>& source, const xtd::collections::generic::icomparer<source_t>& comparer) {
-        auto result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
-        for (const auto& item : source)
-          result.items.push_back(item);
-        std::sort(result.items.begin(), result.items.end(), xtd::collections::generic::helpers::lesser<source_t>(comparer));
-        return result;
-      }
-      
+      template<xtd::iterable source_t>
+      [[nodiscard]] static auto order(source_t&& source, const xtd::collections::generic::icomparer<xtd::iterable_value_type<source_t>>& comparer) -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>>;
+      /// @brief Sorts the elements of a sequence in ascending order.
+      /// @param source A sequence of values to order.
+      /// @param lesser An xtd::collections::generic::icomparer <source_t> to compare keys.
+      /// @return An xtd::collections::generic::ienumerable <source_t> whose elements are sorted.
+      template<xtd::iterable source_t, xtd::func_callable<bool, xtd::iterable_value_type<source_t>, xtd::iterable_value_type<source_t>> lesser_t>
+      [[nodiscard]] static auto order(source_t&& source, lesser_t&& lesser) -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>>;
+
       /// @brief Sorts the elements of a sequence in ascending order according to a key.
       /// @param source A sequence of values to order.
       /// @param key_selector A function to extract a key from an element.

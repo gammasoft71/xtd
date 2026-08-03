@@ -1201,6 +1201,19 @@ auto xtd::linq::enumerable::from(source_t&& source) noexcept {
   return as_enumerable(std::forward<source_t>(source));
 }
 
+
+template<xtd::iterable source_t, xtd::func_callable<bool, xtd::iterable_value_type<source_t>, xtd::iterable_value_type<source_t>> lesser_t>
+auto xtd::linq::enumerable::order(source_t&& source, lesser_t&& lesser) -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>> {
+  auto result = list<xtd::iterable_value_type<source_t>> {};
+  //auto source_holder = __xtd_enumerable_holder<source_t> {std::forward<source_t>(source)};
+  //for (const auto& item : source_holder.get())
+  for (const auto& item : source)
+    result.add(item);
+  std::sort(result.items().begin(), result.items().end(), lesser);
+  for (const auto& item : result)
+    co_yield item;
+}
+
 template<typename value_t>
 inline auto xtd::linq::enumerable::to_list(const xtd::collections::generic::ienumerable<value_t>& source) {
   return xtd::collections::generic::list<value_t>(source);
