@@ -1214,6 +1214,26 @@ auto xtd::linq::enumerable::order(source_t&& source, lesser_t&& lesser) -> xtd::
     co_yield item;
 }
 
+template<typename key_t, xtd::iterable source_t, xtd::callable<key_t, xtd::iterable_value_type<source_t>> key_selector_t>
+auto xtd::linq::enumerable::order_by(source_t&& source, key_selector_t&& key_selector) -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>> {
+  auto result = list<xtd::iterable_value_type<source_t>> {};
+  for (const auto& item : source)
+    result.add(item);
+  std::sort(result.items().begin(), result.items().end(), [key_selector](const source_t& a, const source_t& b) {return key_selector(a) < key_selector(b);});
+  for (const auto& item : result)
+    co_yield item;
+}
+
+template<xtd::iterable source_t, xtd::callable<xtd::iterable_value_type<source_t>, xtd::iterable_value_type<source_t>> key_selector_t>
+auto xtd::linq::enumerable::order_by(source_t&& source, key_selector_t&& key_selector) -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>> {
+  auto result = list<xtd::iterable_value_type<source_t>> {};
+  for (const auto& item : source)
+    result.add(item);
+  std::sort(result.items().begin(), result.items().end(), [key_selector](const source_t& a, const source_t& b) {return key_selector(a) < key_selector(b);});
+  for (const auto& item : result)
+    co_yield item;
+}
+
 template<typename value_t>
 inline auto xtd::linq::enumerable::to_list(const xtd::collections::generic::ienumerable<value_t>& source) {
   return xtd::collections::generic::list<value_t>(source);
