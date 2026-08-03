@@ -17,6 +17,7 @@
 #undef  __XTD_CORE_INTERNAL__
 #include "../callable.hpp"
 #include "../decimal.hpp"
+#include "../integer.hpp"
 #include "../iterable.hpp"
 #include "../iterable_value_type.hpp"
 #include "../func_callable.hpp"
@@ -756,11 +757,8 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates how to use xtd::linq::enumerable::range to generate a sequence of values.
       /// @include enumerable_range.cpp
-      template<typename type_t>
-      [[nodiscard]] static auto range(type_t count) {
-        auto step = type_t {};
-        return range(type_t {}, count, ++step);
-      }
+      template<xtd::integer integer_t>
+      [[nodiscard]] static auto range(integer_t count) -> xtd::collections::generic::enumerable_generator<integer_t>;
       /// @brief Generates a sequence of integral numbers within a specified range.
       /// @param start The value of the first integer in the sequence.
       /// @param count The number of sequential integers to generate.
@@ -769,27 +767,16 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates how to use xtd::linq::enumerable::range to generate a sequence of values.
       /// @include enumerable_range.cpp
-      template<typename type_t>
-      [[nodiscard]] static auto range(type_t start, type_t count) {
-        auto step = type_t {};
-        return range(start, count, ++step);
-      }
+      template<xtd::integer integer_t>
+      [[nodiscard]] static auto range(integer_t start, integer_t count) -> xtd::collections::generic::enumerable_generator<integer_t>;
       /// @brief Generates a sequence of integral numbers within a specified range and step.
       /// @param start The value of the first integer in the sequence.
       /// @param count The number of sequential integers to generate.
       /// @param step The integer number specifying the incrementation.
       /// @return An xtd::collections::generic::ienumerable that contains a range of sequential integral numbers.
       /// @exception xtd::argument_out_of_range_exception `count` is less than 0.
-      template<typename type_t>
-      [[nodiscard]] static auto range(type_t start, type_t count, type_t step) {
-        if (step == type_t {}) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
-        if (count < type_t {}) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
-        
-        auto result = __opaque_xtd_linq_enumerable_collection__<type_t> {};
-        for (auto index = type_t {}; index < count; ++index)
-          result.items.push_back(start + (index * step));
-        return result;
-      }
+      template<xtd::integer integer_t>
+      [[nodiscard]] static auto range(integer_t start, integer_t count, integer_t step) -> xtd::collections::generic::enumerable_generator<integer_t>;
       
       /// @brief Projects each element of a sequence into a new form.
       /// @tparam result_t The type of the resulting value.

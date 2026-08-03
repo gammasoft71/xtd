@@ -572,6 +572,27 @@ auto xtd::linq::enumerable::order(source_t&& source, const xtd::collections::gen
   return order(source, xtd::collections::generic::helpers::lesser<xtd::iterable_value_type<source_t>>(comparer));
 }
 
+template<xtd::integer integer_t>
+auto xtd::linq::enumerable::range(integer_t count) -> xtd::collections::generic::enumerable_generator<integer_t> {
+  auto step = integer_t {};
+  return range(integer_t {}, count, ++step);
+}
+
+template<xtd::integer integer_t>
+auto xtd::linq::enumerable::range(integer_t start, integer_t count) -> xtd::collections::generic::enumerable_generator<integer_t> {
+  auto step = integer_t {};
+  return range(start, count, ++step);
+}
+
+template<xtd::integer integer_t>
+auto xtd::linq::enumerable::range(integer_t start, integer_t count, integer_t step) -> xtd::collections::generic::enumerable_generator<integer_t> {
+  if (step == integer_t {}) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (count < integer_t {}) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+  
+  for (auto index = integer_t {}; index < count; ++index)
+    co_yield start + (index * step);
+}
+
 template<typename result_t, xtd::iterable source_t>
 auto xtd::linq::enumerable::select(source_t&& source, auto&& selector) -> xtd::collections::generic::enumerable_generator<result_t> {
   auto index = xtd::usize {0};
