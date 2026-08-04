@@ -1219,7 +1219,7 @@ auto xtd::linq::enumerable::order_by(source_t&& source, key_selector_t&& key_sel
   auto result = list<xtd::iterable_value_type<source_t>> {};
   for (const auto& item : source)
     result.add(item);
-  std::sort(result.items().begin(), result.items().end(), [key_selector](const source_t& a, const source_t& b) {return key_selector(a) < key_selector(b);});
+  std::sort(result.items().begin(), result.items().end(), [key_selector](auto&& a, auto&& b) {return key_selector(a) < key_selector(b);});
   for (const auto& item : result)
     co_yield item;
 }
@@ -1229,7 +1229,7 @@ auto xtd::linq::enumerable::order_by(source_t&& source, key_selector_t&& key_sel
   auto result = list<xtd::iterable_value_type<source_t>> {};
   for (const auto& item : source)
     result.add(item);
-  std::sort(result.items().begin(), result.items().end(), [key_selector](const source_t& a, const source_t& b) {return key_selector(a) < key_selector(b);});
+  std::sort(result.items().begin(), result.items().end(), [key_selector](auto&& a, auto&& b) {return key_selector(a) < key_selector(b);});
   for (const auto& item : result)
     co_yield item;
 }
@@ -1239,7 +1239,7 @@ auto xtd::linq::enumerable::order_by_descending(source_t&& source, key_selector_
   auto result = list<xtd::iterable_value_type<source_t>> {};
   for (const auto& item : source)
     result.add(item);
-  std::sort(result.items().begin(), result.items().end(), [key_selector](const source_t& a, const source_t& b) {return key_selector(a) > key_selector(b);});
+  std::sort(result.items().begin(), result.items().end(), [key_selector](auto&& a, auto&& b) {return key_selector(a) > key_selector(b);});
   for (const auto& item : result)
     co_yield item;
 }
@@ -1249,7 +1249,7 @@ auto xtd::linq::enumerable::order_by_descending(source_t&& source, key_selector_
   auto result = list<xtd::iterable_value_type<source_t>> {};
   for (const auto& item : source)
     result.add(item);
-  std::sort(result.items().begin(), result.items().end(), [key_selector](const source_t& a, const source_t& b) {return key_selector(a) > key_selector(b);});
+  std::sort(result.items().begin(), result.items().end(), [key_selector](auto&& a, auto&& b) {return key_selector(a) > key_selector(b);});
   for (const auto& item : result)
     co_yield item;
 }
