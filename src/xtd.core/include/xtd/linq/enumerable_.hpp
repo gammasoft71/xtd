@@ -187,6 +187,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates how to use as_enumerable <source_t>(ienumerable <source_t>) to hide a type's custom Where method when the standard query operator implementation is desired.
       /// @include enumerable_as_enumerable.cpp
+      /// @note Need to include list file `#include <xtd/collections/generic/list>`.
       template<xtd::iterable source_t>
       [[nodiscard]] static auto as_enumerable(source_t&& source) noexcept;  // Defined in include/xtd/collections/generic/list.hpp
       /// @brief Returns the input typed as xtd::collections::generic::ienumerable <type_t>.
@@ -359,6 +360,7 @@ namespace xtd {
       /// @param size The maximum size of each chunk.
       /// @return A sequence of chunks of size at most size.
       /// @zxception xtd::argument_out_of_range_exception `size` is equal to 0.
+      /// @note Need to include array file `#include <xtd/array>`.
       template<xtd::iterable source_t>
       [[nodiscard]] static auto chunk(source_t&& source, xtd::usize size) -> xtd::collections::generic::enumerable_generator<xtd::array<xtd::iterable_value_type<source_t>>>; // Defined in include/xtd/array.hpp
       
@@ -454,6 +456,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates how to use xtd::linq::enumerable::count_by <source_t>(const ienumerable <source_t>&, const std::function <key_t(const source_t&)>&) to count the number of elements in a sequence grouped by key.
       /// @include enumerable_count_by.cpp
+      /// @note Need to include list file `#include <xtd/collections/generic/list>`.
       template<typename key_t, xtd::iterable source_t, xtd::callable<key_t, xtd::iterable_value_type<source_t>> key_selector_t, xtd::callable<bool, key_t, key_t> key_equater_t>
       [[nodiscard]] static auto count_by(source_t&& source, key_selector_t&& key_selector, key_equater_t&& key_equater) noexcept -> xtd::collections::generic::enumerable_generator<xtd::collections::generic::key_value_pair<key_t, xtd::usize>>; // Defined in include/xtd/collections/generic/list.hpp
 
@@ -480,6 +483,7 @@ namespace xtd {
       /// @brief Returns distinct elements from a sequence by using the default equality comparer to compare values.
       /// @param source The sequence to remove duplicate elements from.
       /// @return An enumerable distinct elements from the source sequence.
+      /// @note Need to include list file `#include <xtd/collections/generic/list>`.
       template<xtd::iterable source_t>
       [[nodiscard]] static auto distinct(source_t&& source) noexcept -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>>; // Defined in include/xtd/collections/generic/list.hpp
       /// @brief Returns distinct elements from a sequence by using a specified xtd::collections::generic::iequality_comparer <type_t> to compare values.
@@ -492,6 +496,7 @@ namespace xtd {
       /// @param source The sequence to remove duplicate elements from.
       /// @param equater An equality comparer to compare values.
       /// @return An enumerable distinct elements from the source sequence.
+      /// @note Need to include list file `#include <xtd/collections/generic/list>`.
       template<xtd::iterable source_t, xtd::func_callable<bool, xtd::iterable_value_type<source_t>, xtd::iterable_value_type<source_t>> equater_t>
       [[nodiscard]] static auto distinct(source_t&& source, equater_t&& equater) noexcept  -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>>; // Defined in include/xtd/collections/generic/list.hpp
 
@@ -532,6 +537,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates how to use xtd::linq::from to create a sequence of values.
       /// @include linq_from.cpp
+      /// @note Need to include list file `#include <xtd/collections/generic/list>`.
       template<xtd::iterable source_t>
       [[nodiscard]] static auto from(source_t&& source) noexcept;  // Defined in include/xtd/collections/generic/list.hpp
       /// @brief Returns the input typed as xtd::collections::generic::ienumerable <type_t>.
@@ -687,6 +693,7 @@ namespace xtd {
       /// @param source A sequence of values to order.
       /// @param lesser An xtd::collections::generic::icomparer <source_t> to compare keys.
       /// @return An xtd::collections::generic::ienumerable <source_t> whose elements are sorted.
+      /// @note Need to include list file `#include <xtd/collections/generic/list>`.
       template<xtd::iterable source_t, xtd::func_callable<bool, xtd::iterable_value_type<source_t>, xtd::iterable_value_type<source_t>> lesser_t>
       [[nodiscard]] static auto order(source_t&& source, lesser_t&& lesser) -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>>; // Defined in include/xtd/collections/generic/list.hpp
 
@@ -696,6 +703,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates how to use order_by<key_t, source_t>(ienumerable <source_t>, std::function<key_t(const source_t&)>) to sort the elements of a sequence.
       /// @include linq_order_by.cpp
+      /// @note Need to include list file `#include <xtd/collections/generic/list>`.
       template<typename key_t, xtd::iterable source_t, xtd::callable<key_t, xtd::iterable_value_type<source_t>> key_selector_t>
       [[nodiscard]] static auto order_by(source_t&& source, key_selector_t&& key_selector) -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>>; // Defined in include/xtd/collections/generic/list.hpp
       
@@ -705,6 +713,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates how to use order_by<source_t, source_t>(ienumerable <source_t>, std::function<source_t(const source_t&)>) to sort the elements of a sequence.
       /// @include linq_order_by.cpp
+      /// @note Need to include list file `#include <xtd/collections/generic/list>`.
       template<xtd::iterable source_t, xtd::callable<xtd::iterable_value_type<source_t>, xtd::iterable_value_type<source_t>> key_selector_t>
       [[nodiscard]] static auto order_by(source_t&& source, key_selector_t&& key_selector) -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>>; // Defined in include/xtd/collections/generic/list.hpp
       
@@ -714,6 +723,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates how to use order_by<key_t, source_t>(ienumerable <source_t>, std::function<key_t(const source_t&)>) to sort the elements of a sequence.
       /// @include linq_order_by_descending.cpp
+      /// @note Need to include list file `#include <xtd/collections/generic/list>`.
       template<typename key_t, xtd::iterable source_t, xtd::callable<key_t, xtd::iterable_value_type<source_t>> key_selector_t>
       [[nodiscard]] static auto order_by_descending(source_t&& source, key_selector_t&& key_selector) -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>>; // Defined in include/xtd/collections/generic/list.hpp
       
@@ -723,6 +733,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates how to use order_by<source_t, source_t>(ienumerable <source_t>, std::function<source_t(const source_t&)>) to sort the elements of a sequence.
       /// @include linq_order_by_descending.cpp
+      /// @note Need to include list file `#include <xtd/collections/generic/list>`.
       template<xtd::iterable source_t, xtd::callable<xtd::iterable_value_type<source_t>, xtd::iterable_value_type<source_t>> key_selector_t>
       [[nodiscard]] static auto order_by_descending(source_t&& source, key_selector_t&& key_selector) -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>>; // Defined in include/xtd/collections/generic/list.hpp
       
@@ -777,6 +788,13 @@ namespace xtd {
       template<xtd::iterable source_t>
       [[nodiscard]] static auto select(source_t&& source, auto&& selector) -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>>;
       
+      /// @brief Shuffles the order of the elements of a sequence.
+      /// @param source A sequence of values to shuffle.
+      /// @return A sequence whose elements correspond to those of the input sequence in randomized order.
+      /// @note Need to include random file `#include <xtd/random>`.
+      template<xtd::forward_iterable source_t>
+      [[nodiscard]] static auto shuffle(source_t&& source) -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>>; // Defined in include/xtd/random.hpp
+
       /// @brief Creates a xtd::array <type_t> from an xtd::collections::generic::ienumerable <type_t>.
       /// @tparam source_t The type of the elements of source.
       /// @param source The xtd::collections::generic::ienumerable <type_t> to create a xtd::collections::generic::list <type_t> from.
@@ -785,6 +803,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates how to use xtd::linq::enumerable::to_array to force immediate query evaluation and return a xtd::array <type_t> that contains the query results.
       /// @include enumerable_to_array.cpp
+      /// @note Need to include array file `#include <xtd/array>`.
       template<typename source_t>
       [[nodiscard]] static auto to_array(const ienumerable<source_t>& source); // Defined in include/xtd/array.hpp
       
@@ -796,6 +815,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates how to use xtd::linq::enumerable::to_list to force immediate query evaluation and return a xtd::collections::generic::list <type_t> that contains the query results.
       /// @include enumerable_to_list.cpp
+      /// @note Need to include list file `#include <xtd/collections/generic/list>`.
       template<typename source_t>
       [[nodiscard]] static auto to_list(const ienumerable<source_t>& source); // Defined in include/xtd/collections/generic/list.hpp
       

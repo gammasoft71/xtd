@@ -1256,6 +1256,6 @@ auto xtd::linq::enumerable::order_by_descending(source_t&& source, key_selector_
 
 template<typename value_t>
 inline auto xtd::linq::enumerable::to_list(const xtd::collections::generic::ienumerable<value_t>& source) {
-  return xtd::collections::generic::list<value_t>(source);
+  return list<value_t>(source);
 }
 /// @endcond

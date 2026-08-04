@@ -272,3 +272,13 @@ namespace xtd {
     mutable std::default_random_engine generator_;
   };
 }
+
+template<xtd::forward_iterable source_t>
+inline auto xtd::linq::enumerable::shuffle(source_t&& source) -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>> {
+  auto result = list<xtd::iterable_value_type<source_t>> {};
+  for (const auto& item : source)
+    result.add(item);
+  xtd::random {}.shuffle(result);
+  for (const auto& item : result)
+    co_yield item;
+}

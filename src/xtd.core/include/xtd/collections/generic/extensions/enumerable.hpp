@@ -154,8 +154,6 @@ namespace xtd {
           }
           
           /// @brief Splits the elements of a sequence into chunks of size at most size.
-          /// @tparam value_t The type of the elements of source.
-          /// @param source A sequence of values to chunk.
           /// @param size The maximum size of each chunk.
           /// @return A sequence of chunks of size at most size.
           [[nodiscard]] auto chunk(xtd::usize size) const -> xtd::collections::generic::enumerable_generator<xtd::array<value_t>> {
@@ -271,14 +269,12 @@ namespace xtd {
             return xtd::linq::enumerable::distinct(self());
           }
           /// @brief Returns distinct elements from a sequence by using a specified xtd::collections::generic::iequality_comparer <type_t> to compare values.
-          /// @param source The sequence to remove duplicate elements from.
           /// @param comparer An xtd::collections::generic::iequality_comparer <type_t> to compare values.
           /// @return An enumerable distinct elements from the source sequence.
           [[nodiscard]] auto distinct(xtd::collections::generic::iequality_comparer<value_t>&& comparer) const noexcept -> xtd::collections::generic::enumerable_generator<value_t> {
             return xtd::linq::enumerable::distinct(self(), std::forward<xtd::collections::generic::iequality_comparer<value_t>>(comparer));
           }
           /// @brief Returns distinct elements from a sequence by using a specified xtd::collections::generic::iequality_comparer <type_t> to compare values.
-          /// @param source The sequence to remove duplicate elements from.
           /// @param equater An equality comparer to compare values.
           /// @return An enumerable distinct elements from the source sequence.
           template<xtd::func_callable<bool, value_t, value_t> equater_t>
@@ -356,20 +352,17 @@ namespace xtd {
           }
 
           /// @brief Sorts the elements of a sequence in ascending order.
-          /// @param source A sequence of values to order.
           /// @return An xtd::collections::generic::ienumerable <value_t> whose elements are sorted.
           [[nodiscard]] auto order() const -> xtd::collections::generic::enumerable_generator<value_t> {
             return xtd::linq::enumerable::order(self());
           }
           /// @brief Sorts the elements of a sequence in ascending order.
-          /// @param source A sequence of values to order.
           /// @param comparer An xtd::collections::generic::icomparer <value_t> to compare keys.
           /// @return An xtd::collections::generic::ienumerable <value_t> whose elements are sorted.
           [[nodiscard]] auto order(const xtd::collections::generic::icomparer<value_t>& comparer) const -> xtd::collections::generic::enumerable_generator<value_t> {
             return xtd::linq::enumerable::order(self(), comparer);
           }
           /// @brief Sorts the elements of a sequence in ascending order.
-          /// @param source A sequence of values to order.
           /// @param lesser An xtd::collections::generic::icomparer <value_t> to compare keys.
           /// @return An xtd::collections::generic::ienumerable <value_t> whose elements are sorted.
           template<xtd::func_callable<bool, value_t, value_t> lesser_t>
@@ -416,7 +409,6 @@ namespace xtd {
           }
           
           /// @brief Projects each element of a sequence into a new form.
-          /// @param source A sequence of values to invoke a transform function on.
           /// @param selector A transform function to apply to each element.
           /// @return An xtd::collections::generic::ienumerable <type_t> whose elements are the result of invoking the transform function on each element of source.
           /// @par Examples
@@ -427,7 +419,6 @@ namespace xtd {
           }
           /// @brief Projects each element of a sequence into a new form by incorporating the element's index.
           /// @tparam result_t The type of the resulting value.
-          /// @param source A sequence of values to invoke a transform function on.
           /// @param selector A transform function to apply to each source element; the second parameter of the function represents the index of the source element.
           /// @return An xtd::collections::generic::ienumerable <type_t> whose elements are the result of invoking the transform function on each element of source.
           /// @par Examples
@@ -437,7 +428,14 @@ namespace xtd {
           [[nodiscard]] auto select(auto&& selector) const {
             return xtd::linq::enumerable::select<result_t>(self(), selector);
           }
-          
+
+          /// @brief Shuffles the order of the elements of a sequence.
+          /// @return A sequence whose elements correspond to those of the input sequence in randomized order.
+          /// @warning Need to include random file `#include <xtd/random>`.
+          [[nodiscard]] auto shuffle() const -> xtd::collections::generic::enumerable_generator<value_t> {
+            return xtd::linq::enumerable::shuffle(self());
+          }
+
           /// @brief Creates a xtd::array <type_t> from an xtd::collections::generic::ienumerable <type_t>.
           /// @return A xtd::array <type_t> that contains elements from the input sequence.
           /// @par Examples
