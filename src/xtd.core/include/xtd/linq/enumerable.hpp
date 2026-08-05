@@ -624,6 +624,17 @@ auto xtd::linq::enumerable::skip_while(source_t&& source, auto&& predicate) -> x
 }
 
 template<xtd::iterable source_t>
+auto xtd::linq::enumerable::take_while(source_t&& source, auto&& predicate) -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>> {
+  auto index = xtd::usize {0};
+  //auto source_holder = __xtd_enumerable_holder<xtd::raw_type<source_t>> {std::forward<source_t>(source)};
+  //for (const auto& item : source_holder.get())
+  for (const auto& item : source) {
+    if (!invoke_predicate_with_optional_index(predicate, item, index++)) break;
+    co_yield item;
+  }
+}
+
+template<xtd::iterable source_t>
 auto xtd::linq::enumerable::where(source_t&& source, auto&& predicate) -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>> {
   auto index = xtd::usize {0};
   //auto source_holder = __xtd_enumerable_holder<xtd::raw_type<source_t>> {std::forward<source_t>(source)};

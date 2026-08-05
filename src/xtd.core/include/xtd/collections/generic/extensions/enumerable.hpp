@@ -436,11 +436,20 @@ namespace xtd {
             return xtd::linq::enumerable::shuffle(self());
           }
 
-          template<xtd::predicate_callable<value_t> predicate_t>
-          [[nodiscard]] auto skip_while(predicate_t&& predicate) -> xtd::collections::generic::enumerable_generator<value_t> {
+          /// @brief Bypasses elements in a sequence as long as a specified condition is true and then returns the remaining elements.
+          /// @param predicate A function to test each element for a condition.
+          /// @return A sequence that contains the elements from the input sequence starting at the first element in the linear series that does not pass the test specified by predicate.
+          [[nodiscard]] auto skip_while(auto&& predicate) -> xtd::collections::generic::enumerable_generator<value_t> {
             return xtd::linq::enumerable::skip_while(self(), predicate);
           }
-
+          
+          /// @brief Returns elements from a sequence as long as a specified condition is true, and then skips the remaining elements.
+          /// @param predicate A function to test each element for a condition.
+          /// @return A sequence that contains the elements from the input sequence that occur before the element at which the test no longer passes.
+          [[nodiscard]] auto take_while(auto&& predicate) -> xtd::collections::generic::enumerable_generator<value_t> {
+            return xtd::linq::enumerable::take_while(self(), predicate);
+          }
+          
           /// @brief Creates a xtd::array <type_t> from an xtd::collections::generic::ienumerable <type_t>.
           /// @return A xtd::array <type_t> that contains elements from the input sequence.
           /// @par Examples
