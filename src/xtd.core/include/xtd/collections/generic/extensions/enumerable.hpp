@@ -436,6 +436,11 @@ namespace xtd {
             return xtd::linq::enumerable::shuffle(self());
           }
 
+          template<xtd::predicate_callable<value_t> predicate_t>
+          [[nodiscard]] auto skip_while(predicate_t&& predicate) -> xtd::collections::generic::enumerable_generator<value_t> {
+            return xtd::linq::enumerable::skip_while(self(), predicate);
+          }
+
           /// @brief Creates a xtd::array <type_t> from an xtd::collections::generic::ienumerable <type_t>.
           /// @return A xtd::array <type_t> that contains elements from the input sequence.
           /// @par Examples

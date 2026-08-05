@@ -795,6 +795,13 @@ namespace xtd {
       template<xtd::forward_iterable source_t>
       [[nodiscard]] static auto shuffle(source_t&& source) -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>>; // Defined in include/xtd/random.hpp
 
+      /// @brief Bypasses elements in a sequence as long as a specified condition is true and then returns the remaining elements.
+      /// @param source A sequence of values to return elements from.
+      /// @param predicate A function to test each element for a condition.
+      /// @return A sequence that contains the elements from the input sequence starting at the first element in the linear series that does not pass the test specified by predicate.
+      template<xtd::iterable source_t>
+      [[nodiscard]] static auto skip_while(source_t&& source, auto&& predicate) -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>>;
+
       /// @brief Creates a xtd::array <type_t> from an xtd::collections::generic::ienumerable <type_t>.
       /// @tparam source_t The type of the elements of source.
       /// @param source The xtd::collections::generic::ienumerable <type_t> to create a xtd::collections::generic::list <type_t> from.
