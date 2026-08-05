@@ -272,6 +272,11 @@ requires <a class="el" href="structxtd_1_1numeric.html">xtd::numeric</a>&lt;resu
 <tr class="memitem:ab2e62fc5c95202790e98b6e2fa381c42" id="r_ab2e62fc5c95202790e98b6e2fa381c42"><td class="memTemplParams" colspan="2">template&lt;typename result_t&gt; </td></tr>
 <tr class="memitem:ab2e62fc5c95202790e98b6e2fa381c42 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ab2e62fc5c95202790e98b6e2fa381c42">select</a> (auto &amp;&amp;selector) const</td></tr>
 <tr class="memdesc:ab2e62fc5c95202790e98b6e2fa381c42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Projects each element of a sequence into a new form by incorporating the element's index.  <br /></td></tr>
+<tr class="memitem:ac39730381e2aa9f7929923c7a3ce3e09" id="r_ac39730381e2aa9f7929923c7a3ce3e09"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ac39730381e2aa9f7929923c7a3ce3e09">shuffle</a> () const -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; value_t &gt;</td></tr>
+<tr class="memdesc:ac39730381e2aa9f7929923c7a3ce3e09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shuffles the order of the elements of a sequence.  <br /></td></tr>
+<tr class="memitem:a47dc5def421bed3e6484024ae12454b7" id="r_a47dc5def421bed3e6484024ae12454b7"><td class="memTemplParams" colspan="2"><a id="a47dc5def421bed3e6484024ae12454b7" name="a47dc5def421bed3e6484024ae12454b7"></a>
+template&lt;<a class="el" href="structxtd_1_1predicate__callable.html">xtd::predicate_callable</a>&lt; value_t &gt; predicate_t&gt; </td></tr>
+<tr class="memitem:a47dc5def421bed3e6484024ae12454b7 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><b>skip_while</b> (predicate_t &amp;&amp;predicate<a class="el" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab">predicate</a>) -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; value_t &gt;</td></tr>
 <tr class="memitem:a66cd970a5826aadb5d40278303417daa" id="r_a66cd970a5826aadb5d40278303417daa"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a66cd970a5826aadb5d40278303417daa">to_array</a> () const -&gt; <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; value_t &gt;</td></tr>
 <tr class="memdesc:a66cd970a5826aadb5d40278303417daa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> &lt;type_t&gt; from an <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt;.  <br /></td></tr>
 <tr class="memitem:a090281aadc7438b70eb601b1565e2561" id="r_a090281aadc7438b70eb601b1565e2561"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a090281aadc7438b70eb601b1565e2561">to_list</a> () const -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a>&lt; value_t &gt;</td></tr>
@@ -925,15 +930,8 @@ template&lt;typename value_t, typename enumerable_t&gt; </div>
 </div><div class="memdoc">
 
 <p>Splits the elements of a sequence into chunks of size at most size. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">value_t</td><td>The type of the elements of source. </td></tr>
-  </table>
-  </dd>
-</dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">source</td><td>A sequence of values to chunk. </td></tr>
     <tr><td class="paramname">size</td><td>The maximum size of each chunk. </td></tr>
   </table>
   </dd>
@@ -1593,7 +1591,6 @@ template&lt;typename value_t, typename enumerable_t&gt; </div>
 <p>Returns distinct elements from a sequence by using a specified <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html" title="Defines methods to support the comparison of objects for equality.">xtd::collections::generic::iequality_comparer</a> &lt;type_t&gt; to compare values. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">source</td><td>The sequence to remove duplicate elements from. </td></tr>
     <tr><td class="paramname">comparer</td><td>An <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html" title="Defines methods to support the comparison of objects for equality.">xtd::collections::generic::iequality_comparer</a> &lt;type_t&gt; to compare values. </td></tr>
   </table>
   </dd>
@@ -1632,7 +1629,6 @@ template&lt;<a class="el" href="structxtd_1_1func__callable.html">xtd::func_call
 <p>Returns distinct elements from a sequence by using a specified <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html" title="Defines methods to support the comparison of objects for equality.">xtd::collections::generic::iequality_comparer</a> &lt;type_t&gt; to compare values. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">source</td><td>The sequence to remove duplicate elements from. </td></tr>
     <tr><td class="paramname">equater</td><td>An equality comparer to compare values. </td></tr>
   </table>
   </dd>
@@ -2030,12 +2026,6 @@ template&lt;typename value_t, typename enumerable_t&gt; </div>
 </div><div class="memdoc">
 
 <p>Sorts the elements of a sequence in ascending order. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">source</td><td>A sequence of values to order. </td></tr>
-  </table>
-  </dd>
-</dl>
 <dl class="section return"><dt>Returns</dt><dd>An <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;value_t&gt; whose elements are sorted. </dd></dl>
 
 </div>
@@ -2068,7 +2058,6 @@ template&lt;typename value_t, typename enumerable_t&gt; </div>
 <p>Sorts the elements of a sequence in ascending order. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">source</td><td>A sequence of values to order. </td></tr>
     <tr><td class="paramname">comparer</td><td>An <a class="el" href="classxtd_1_1collections_1_1generic_1_1icomparer.html" title="Exposes a method that compares two objects.">xtd::collections::generic::icomparer</a> &lt;value_t&gt; to compare keys. </td></tr>
   </table>
   </dd>
@@ -2107,7 +2096,6 @@ template&lt;<a class="el" href="structxtd_1_1func__callable.html">xtd::func_call
 <p>Sorts the elements of a sequence in ascending order. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">source</td><td>A sequence of values to order. </td></tr>
     <tr><td class="paramname">lesser</td><td>An <a class="el" href="classxtd_1_1collections_1_1generic_1_1icomparer.html" title="Exposes a method that compares two objects.">xtd::collections::generic::icomparer</a> &lt;value_t&gt; to compare keys. </td></tr>
   </table>
   </dd>
@@ -2292,7 +2280,6 @@ template&lt;typename value_t, typename enumerable_t&gt; </div>
 <p>Projects each element of a sequence into a new form. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">source</td><td>A sequence of values to invoke a transform function on. </td></tr>
     <tr><td class="paramname">selector</td><td>A transform function to apply to each element. </td></tr>
   </table>
   </dd>
@@ -2359,7 +2346,6 @@ template&lt;typename result_t&gt; </div>
 </dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">source</td><td>A sequence of values to invoke a transform function on. </td></tr>
     <tr><td class="paramname">selector</td><td>A transform function to apply to each source element; the second parameter of the function represents the index of the source element. </td></tr>
   </table>
   </dd>
@@ -2387,6 +2373,37 @@ template&lt;typename result_t&gt; </div>
 <div class="line"><span class="comment">// { index = 4, str = pass }</span></div>
 <div class="line"><span class="comment">// { index = 5, str = grape }</span></div>
 </div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="ac39730381e2aa9f7929923c7a3ce3e09" name="ac39730381e2aa9f7929923c7a3ce3e09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac39730381e2aa9f7929923c7a3ce3e09">&#9670;&#160;</a></span>shuffle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename value_t, typename enumerable_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html">xtd::collections::generic::extensions::enumerable</a>&lt; value_t, enumerable_t &gt;::shuffle </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; value_t &gt;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Shuffles the order of the elements of a sequence. </p>
+<dl class="section return"><dt>Returns</dt><dd>A sequence whose elements correspond to those of the input sequence in randomized order. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Need to include random file <span class="tt">#include &lt;xtd/random&gt;</span>. </dd></dl>
 
 </div>
 </div>
@@ -2470,7 +2487,7 @@ template&lt;typename value_t, typename enumerable_t&gt; </div>
 <div class="line"><span class="comment">// 5</span></div>
 <div class="line"><span class="comment">// 10</span></div>
 <div class="ttc" id="aclassxtd_1_1basic__string_html_a4d8c4c95a122844c62de3feb62a5fa74"><div class="ttname"><a href="classxtd_1_1basic__string.html#a4d8c4c95a122844c62de3feb62a5fa74">xtd::basic_string&lt; char &gt;::length</a></div><div class="ttdeci">virtual auto length() const noexcept -&gt; size_type</div><div class="ttdef"><b>Definition</b> basic_string.hpp:383</div></div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable_html_a77f28b05a9f794ee4885ddb682c1498d"><div class="ttname"><a href="#a77f28b05a9f794ee4885ddb682c1498d">xtd::collections::generic::extensions::enumerable::select</a></div><div class="ttdeci">auto select(auto &amp;&amp;selector) const</div><div class="ttdoc">Projects each element of a sequence into a new form.</div><div class="ttdef"><b>Definition</b> enumerable.hpp:425</div></div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable_html_a77f28b05a9f794ee4885ddb682c1498d"><div class="ttname"><a href="#a77f28b05a9f794ee4885ddb682c1498d">xtd::collections::generic::extensions::enumerable::select</a></div><div class="ttdeci">auto select(auto &amp;&amp;selector) const</div><div class="ttdoc">Projects each element of a sequence into a new form.</div><div class="ttdef"><b>Definition</b> enumerable.hpp:417</div></div>
 <div class="ttc" id="agroup__types_html_gae60f5a861761019d824a87291f85d525"><div class="ttname"><a href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></div><div class="ttdeci">std::size_t usize</div><div class="ttdoc">Represents an unsigned size of any object in bytes.</div><div class="ttdef"><b>Definition</b> usize.hpp:22</div></div>
 <div class="ttc" id="anamespacextd_html_a84689e2cdf94d64f7e5f33fe4a1be71a"><div class="ttname"><a href="namespacextd.html#a84689e2cdf94d64f7e5f33fe4a1be71a">xtd::length</a></div><div class="ttdeci">constexpr auto length() const noexcept -&gt; size_type</div><div class="ttdoc">Returns the length of the current read_only_span.</div><div class="ttdef"><b>Definition</b> read_only_span.hpp:212</div></div>
 </div><!-- fragment --> </dd></dl>
