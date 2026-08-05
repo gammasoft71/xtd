@@ -391,6 +391,9 @@ requires <a class="el" href="structxtd_1_1numeric.html">xtd::numeric</a>&lt;<a c
 <tr class="memitem:a1aeacc913bd36fb500344981669176ea" id="r_a1aeacc913bd36fb500344981669176ea"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t&gt; </td></tr>
 <tr class="memitem:a1aeacc913bd36fb500344981669176ea template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a1aeacc913bd36fb500344981669176ea">skip_while</a> (source_t &amp;&amp;source, auto &amp;&amp;predicate<a class="el" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab">predicate</a>) -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; &gt;</td></tr>
 <tr class="memdesc:a1aeacc913bd36fb500344981669176ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bypasses elements in a sequence as long as a specified condition is true and then returns the remaining elements.  <br /></td></tr>
+<tr class="memitem:aeee24e3b06018cf01c101ce41ce784d6" id="r_aeee24e3b06018cf01c101ce41ce784d6"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t&gt; </td></tr>
+<tr class="memitem:aeee24e3b06018cf01c101ce41ce784d6 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aeee24e3b06018cf01c101ce41ce784d6">take_while</a> (source_t &amp;&amp;source, auto &amp;&amp;predicate<a class="el" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab">predicate</a>) -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; &gt;</td></tr>
+<tr class="memdesc:aeee24e3b06018cf01c101ce41ce784d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns elements from a sequence as long as a specified condition is true, and then skips the remaining elements.  <br /></td></tr>
 <tr class="memitem:abe2623e93f7343615c3e1e38a018e9eb" id="r_abe2623e93f7343615c3e1e38a018e9eb"><td class="memTemplParams" colspan="2">template&lt;typename source_t&gt; </td></tr>
 <tr class="memitem:abe2623e93f7343615c3e1e38a018e9eb template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#abe2623e93f7343615c3e1e38a018e9eb">to_array</a> (const <a class="el" href="#a2bd1889dc1967c50ef692411dc2c4b92">ienumerable</a>&lt; source_t &gt; &amp;source)</td></tr>
 <tr class="memdesc:abe2623e93f7343615c3e1e38a018e9eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> &lt;type_t&gt; from an <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt;.  <br /></td></tr>
@@ -4397,6 +4400,47 @@ template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> so
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A sequence that contains the elements from the input sequence starting at the first element in the linear series that does not pass the test specified by predicate. </dd></dl>
+
+</div>
+</div>
+<a id="aeee24e3b06018cf01c101ce41ce784d6" name="aeee24e3b06018cf01c101ce41ce784d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeee24e3b06018cf01c101ce41ce784d6">&#9670;&#160;</a></span>take_while()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto xtd::linq::enumerable::take_while </td>
+          <td>(</td>
+          <td class="paramtype">source_t &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>source</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">auto &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>predicate</em></span>&#160;) -&gt;  <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; &gt;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns elements from a sequence as long as a specified condition is true, and then skips the remaining elements. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">source</td><td>A sequence to return elements from. </td></tr>
+    <tr><td class="paramname">predicate</td><td>A function to test each element for a condition. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A sequence that contains the elements from the input sequence that occur before the element at which the test no longer passes. </dd></dl>
 
 </div>
 </div>

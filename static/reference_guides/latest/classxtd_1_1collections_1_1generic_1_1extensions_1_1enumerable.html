@@ -274,9 +274,10 @@ requires <a class="el" href="structxtd_1_1numeric.html">xtd::numeric</a>&lt;resu
 <tr class="memdesc:ab2e62fc5c95202790e98b6e2fa381c42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Projects each element of a sequence into a new form by incorporating the element's index.  <br /></td></tr>
 <tr class="memitem:ac39730381e2aa9f7929923c7a3ce3e09" id="r_ac39730381e2aa9f7929923c7a3ce3e09"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ac39730381e2aa9f7929923c7a3ce3e09">shuffle</a> () const -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; value_t &gt;</td></tr>
 <tr class="memdesc:ac39730381e2aa9f7929923c7a3ce3e09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shuffles the order of the elements of a sequence.  <br /></td></tr>
-<tr class="memitem:a47dc5def421bed3e6484024ae12454b7" id="r_a47dc5def421bed3e6484024ae12454b7"><td class="memTemplParams" colspan="2"><a id="a47dc5def421bed3e6484024ae12454b7" name="a47dc5def421bed3e6484024ae12454b7"></a>
-template&lt;<a class="el" href="structxtd_1_1predicate__callable.html">xtd::predicate_callable</a>&lt; value_t &gt; predicate_t&gt; </td></tr>
-<tr class="memitem:a47dc5def421bed3e6484024ae12454b7 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><b>skip_while</b> (predicate_t &amp;&amp;predicate<a class="el" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab">predicate</a>) -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; value_t &gt;</td></tr>
+<tr class="memitem:a609b3e1c5f0d092b16b985b2c35f3098" id="r_a609b3e1c5f0d092b16b985b2c35f3098"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a609b3e1c5f0d092b16b985b2c35f3098">skip_while</a> (auto &amp;&amp;predicate<a class="el" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab">predicate</a>) -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; value_t &gt;</td></tr>
+<tr class="memdesc:a609b3e1c5f0d092b16b985b2c35f3098"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bypasses elements in a sequence as long as a specified condition is true and then returns the remaining elements.  <br /></td></tr>
+<tr class="memitem:ad48bd6bd0efb630951ac0fa21e5b5b32" id="r_ad48bd6bd0efb630951ac0fa21e5b5b32"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ad48bd6bd0efb630951ac0fa21e5b5b32">take_while</a> (auto &amp;&amp;predicate<a class="el" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab">predicate</a>) -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; value_t &gt;</td></tr>
+<tr class="memdesc:ad48bd6bd0efb630951ac0fa21e5b5b32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns elements from a sequence as long as a specified condition is true, and then skips the remaining elements.  <br /></td></tr>
 <tr class="memitem:a66cd970a5826aadb5d40278303417daa" id="r_a66cd970a5826aadb5d40278303417daa"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a66cd970a5826aadb5d40278303417daa">to_array</a> () const -&gt; <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; value_t &gt;</td></tr>
 <tr class="memdesc:a66cd970a5826aadb5d40278303417daa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> &lt;type_t&gt; from an <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt;.  <br /></td></tr>
 <tr class="memitem:a090281aadc7438b70eb601b1565e2561" id="r_a090281aadc7438b70eb601b1565e2561"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a090281aadc7438b70eb601b1565e2561">to_list</a> () const -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a>&lt; value_t &gt;</td></tr>
@@ -2404,6 +2405,78 @@ template&lt;typename value_t, typename enumerable_t&gt; </div>
 <p>Shuffles the order of the elements of a sequence. </p>
 <dl class="section return"><dt>Returns</dt><dd>A sequence whose elements correspond to those of the input sequence in randomized order. </dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>Need to include random file <span class="tt">#include &lt;xtd/random&gt;</span>. </dd></dl>
+
+</div>
+</div>
+<a id="a609b3e1c5f0d092b16b985b2c35f3098" name="a609b3e1c5f0d092b16b985b2c35f3098"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a609b3e1c5f0d092b16b985b2c35f3098">&#9670;&#160;</a></span>skip_while()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename value_t, typename enumerable_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html">xtd::collections::generic::extensions::enumerable</a>&lt; value_t, enumerable_t &gt;::skip_while </td>
+          <td>(</td>
+          <td class="paramtype">auto &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>predicate</em></span></td><td>)</td>
+          <td> -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; value_t &gt;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Bypasses elements in a sequence as long as a specified condition is true and then returns the remaining elements. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">predicate</td><td>A function to test each element for a condition. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A sequence that contains the elements from the input sequence starting at the first element in the linear series that does not pass the test specified by predicate. </dd></dl>
+
+</div>
+</div>
+<a id="ad48bd6bd0efb630951ac0fa21e5b5b32" name="ad48bd6bd0efb630951ac0fa21e5b5b32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad48bd6bd0efb630951ac0fa21e5b5b32">&#9670;&#160;</a></span>take_while()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename value_t, typename enumerable_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html">xtd::collections::generic::extensions::enumerable</a>&lt; value_t, enumerable_t &gt;::take_while </td>
+          <td>(</td>
+          <td class="paramtype">auto &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>predicate</em></span></td><td>)</td>
+          <td> -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; value_t &gt;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns elements from a sequence as long as a specified condition is true, and then skips the remaining elements. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">predicate</td><td>A function to test each element for a condition. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A sequence that contains the elements from the input sequence that occur before the element at which the test no longer passes. </dd></dl>
 
 </div>
 </div>

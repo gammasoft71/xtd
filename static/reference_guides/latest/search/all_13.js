@@ -421,7 +421,7 @@ var searchData=
   ['skateboard_418',['skateboard',['../classxtd_1_1forms_1_1emoticons.html#a6ae3854a959caad7546b831416807f20',1,'xtd::forms::emoticons']]],
   ['ski_5fand_5fski_5fboot_419',['ski_and_ski_boot',['../classxtd_1_1forms_1_1emoticons.html#ae0b6608783d57bef2a066e3c4b20f107',1,'xtd::forms::emoticons']]],
   ['skier_420',['skier',['../classxtd_1_1forms_1_1emoticons.html#a9827b9eb2170c911f496b074271a7a54',1,'xtd::forms::emoticons']]],
-  ['skip_5fwhile_421',['skip_while',['../classxtd_1_1linq_1_1enumerable.html#a1aeacc913bd36fb500344981669176ea',1,'xtd::linq::enumerable']]],
+  ['skip_5fwhile_421',['skip_while',['../classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a609b3e1c5f0d092b16b985b2c35f3098',1,'xtd::collections::generic::extensions::enumerable::skip_while()'],['../classxtd_1_1linq_1_1enumerable.html#a1aeacc913bd36fb500344981669176ea',1,'xtd::linq::enumerable::skip_while()']]],
   ['skipped_422',['skipped',['../classxtd_1_1forms_1_1progress__box.html#ae18c8c3083659ae35674915db43fa9fc',1,'xtd::forms::progress_box::skipped()'],['../classxtd_1_1forms_1_1progress__dialog.html#a92fe0634b8037c54f19f552747630419',1,'xtd::forms::progress_dialog::skipped()']]],
   ['skull_423',['skull',['../classxtd_1_1forms_1_1emoticons.html#abc15604dc722920d0413b637a16580cc',1,'xtd::forms::emoticons']]],
   ['skull_5fand_5fcrossbones_424',['skull_and_crossbones',['../classxtd_1_1forms_1_1emoticons.html#aa4bc2092c841052f8be64202bb51366a',1,'xtd::forms::emoticons']]],
