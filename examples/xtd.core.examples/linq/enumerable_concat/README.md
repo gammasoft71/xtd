@@ -1,10 +1,10 @@
-# linq_from6
+# enumerable_concat
 
-Shows how to use [xtd::linq::from](https://gammasoft71.github.io/xtd/reference_guides/latest/group__linq.html#ga267c953a403e0c43848091ac5a55f7e7) method.
+Shows how to use [xtd::linq::concat](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#ae2eef33ad8482265d75b6c9e88214269) method.
 
 ## Sources
 
-* [src/linq_from6.cpp](src/linq_from6.cpp)
+* [src/enumerable_concat.cpp](src/enumerable_concat.cpp)
 * [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
@@ -18,9 +18,10 @@ xtdc run
 ## Output
 
 ```
-One
-Two
-Three
-Four
-Five
+Barley
+Boots
+Whiskers
+Bounder
+Snoopy
+Fido
 ```
