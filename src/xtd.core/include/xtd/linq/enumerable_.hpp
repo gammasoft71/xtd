@@ -799,6 +799,9 @@ namespace xtd {
       /// @param source A sequence of values to return elements from.
       /// @param predicate A function to test each element for a condition.
       /// @return A sequence that contains the elements from the input sequence starting at the first element in the linear series that does not pass the test specified by predicate.
+      /// @par Examples
+      /// The following code example demonstrates how to use xtd::linq::enumerable::skip_while to skip elements of an array as long as a condition is true.
+      /// @include enumerable_skip_while.cpp
       template<xtd::iterable source_t>
       [[nodiscard]] static auto skip_while(source_t&& source, auto&& predicate) -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>>;
 

@@ -439,6 +439,9 @@ namespace xtd {
           /// @brief Bypasses elements in a sequence as long as a specified condition is true and then returns the remaining elements.
           /// @param predicate A function to test each element for a condition.
           /// @return A sequence that contains the elements from the input sequence starting at the first element in the linear series that does not pass the test specified by predicate.
+          /// @par Examples
+          /// The following code example demonstrates how to use xtd::linq::enumerable::skip_while to skip elements of an array as long as a condition is true.
+          /// @include enumerable_skip_while.cpp
           [[nodiscard]] auto skip_while(auto&& predicate) -> xtd::collections::generic::enumerable_generator<value_t> {
             return xtd::linq::enumerable::skip_while(self(), predicate);
           }
