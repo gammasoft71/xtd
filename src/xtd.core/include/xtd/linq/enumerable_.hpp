@@ -809,6 +809,9 @@ namespace xtd {
       /// @param source A sequence to return elements from.
       /// @param predicate A function to test each element for a condition.
       /// @return A sequence that contains the elements from the input sequence that occur before the element at which the test no longer passes.
+      /// @par Examples
+      /// The following code example demonstrates how to use xtd::linq::enumerable::take_while to return elements from the start of a sequence as long as a condition is true.
+      /// @include enumerable_take_while.cpp
       template<xtd::iterable source_t>
       [[nodiscard]] static auto take_while(source_t&& source, auto&& predicate) -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>>;
 

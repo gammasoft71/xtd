@@ -30,6 +30,7 @@ add_projects(
   enumerable_select
   enumerable_select2
   enumerable_skip_while
+  enumerable_take_while
   enumerable_to_list
   enumerable_where
   enumerable_where2
