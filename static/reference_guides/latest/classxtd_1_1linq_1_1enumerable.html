@@ -4400,6 +4400,27 @@ template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> so
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A sequence that contains the elements from the input sequence starting at the first element in the linear series that does not pass the test specified by predicate. </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to use <a class="el" href="#a1aeacc913bd36fb500344981669176ea" title="Bypasses elements in a sequence as long as a specified condition is true and then returns the remaini...">xtd::linq::enumerable::skip_while</a> to skip elements of an array as long as a condition is true. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="keyword">auto</span> grades = <a class="code hl_class" href="classxtd_1_1array.html">array</a> {59, 82, 70, 56, 92, 98, 85};</div>
+<div class="line">  </div>
+<div class="line">  <span class="keyword">auto</span> lower_grades = grades.<a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a96e347c7dc52732445e9f3521a311010">order</a>(_1 &gt; _2).skip_while(_ &gt;= 80).to_array();</div>
+<div class="line">  </div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;All grades below 80:&quot;</span>);</div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> grade : lower_grades)</div>
+<div class="line">    <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(grade);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// All grades below 80:</span></div>
+<div class="line"><span class="comment">// 70</span></div>
+<div class="line"><span class="comment">// 59</span></div>
+<div class="line"><span class="comment">// 56</span></div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable_html_a96e347c7dc52732445e9f3521a311010"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a96e347c7dc52732445e9f3521a311010">xtd::collections::generic::extensions::enumerable::order</a></div><div class="ttdeci">auto order() const -&gt; xtd::collections::generic::enumerable_generator&lt; value_t &gt;</div><div class="ttdoc">Sorts the elements of a sequence in ascending order.</div><div class="ttdef"><b>Definition</b> enumerable.hpp:356</div></div>
+<div class="ttc" id="anamespacextd_html_a9482c5e9fb1d60c658bbe28bfbb17353"><div class="ttname"><a href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">xtd::println</a></div><div class="ttdeci">auto println(FILE *file) -&gt; void</div><div class="ttdoc">Writes the current line terminator to the file output stream using the specified format information.</div><div class="ttdef"><b>Definition</b> println.hpp:15</div></div>
+</div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
@@ -4441,6 +4462,25 @@ template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> so
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A sequence that contains the elements from the input sequence that occur before the element at which the test no longer passes. </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to use <a class="el" href="#aeee24e3b06018cf01c101ce41ce784d6" title="Returns elements from a sequence as long as a specified condition is true, and then skips the remaini...">xtd::linq::enumerable::take_while</a> to return elements from the start of a sequence as long as a condition is true. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="keyword">auto</span> fruits = <a class="code hl_class" href="classxtd_1_1array.html">array</a> {<span class="stringliteral">&quot;apple&quot;</span>, <span class="stringliteral">&quot;banana&quot;</span>, <span class="stringliteral">&quot;mango&quot;</span>, <span class="stringliteral">&quot;orange&quot;</span>, <span class="stringliteral">&quot;passionfruit&quot;</span>, <span class="stringliteral">&quot;grape&quot;</span>};</div>
+<div class="line">  </div>
+<div class="line">  <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba1b1cc7f086b3f074da452bc3129981eb">query</a> = fruits.take_while([](<span class="keyword">auto</span>&amp;&amp; fruit) {<span class="keywordflow">return</span> <a class="code hl_function" href="classxtd_1_1basic__string.html#a217283eca2cd563ea61f7d63b53dcbe5">string::compare</a>(<span class="stringliteral">&quot;orange&quot;</span>, fruit, <span class="keyword">true</span>) != 0;}).<a class="code hl_function" href="namespacextd.html#a1a32fa2253ff0b900636db75245d9195">to_array</a>();</div>
+<div class="line">  </div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> fruit : query)</div>
+<div class="line">    <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(fruit);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// apple</span></div>
+<div class="line"><span class="comment">// banana</span></div>
+<div class="line"><span class="comment">// mango</span></div>
+<div class="ttc" id="aclassxtd_1_1basic__string_html_a217283eca2cd563ea61f7d63b53dcbe5"><div class="ttname"><a href="classxtd_1_1basic__string.html#a217283eca2cd563ea61f7d63b53dcbe5">xtd::basic_string&lt; char &gt;::compare</a></div><div class="ttdeci">static auto compare(const basic_string &amp;str_a, const basic_string &amp;str_b) noexcept -&gt; xtd::int32</div><div class="ttdef"><b>Definition</b> basic_string.hpp:1021</div></div>
+<div class="ttc" id="anamespacextd_html_a1a32fa2253ff0b900636db75245d9195"><div class="ttname"><a href="namespacextd.html#a1a32fa2253ff0b900636db75245d9195">xtd::to_array</a></div><div class="ttdeci">auto to_array() const noexcept -&gt; xtd::array&lt; std::remove_cv_t&lt; type_t &gt; &gt;</div><div class="ttdoc">Copies the contents of this read_only_span into a new array.</div><div class="ttdef"><b>Definition</b> read_only_span.hpp:334</div></div>
+</div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
