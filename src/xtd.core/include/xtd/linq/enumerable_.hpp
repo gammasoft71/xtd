@@ -855,6 +855,19 @@ namespace xtd {
       /// @}
       
     private:      
+      template<typename type_t>
+      struct enumerable_holder {
+        enumerable_holder(const type_t& value);
+        //enumerable_holder(type_t& value);
+        enumerable_holder(type_t&& value) requires std::movable<type_t>;
+        
+        auto get() const -> const xtd::raw_type<type_t>&;
+        
+      private:
+        std::optional<type_t> value_;
+        const xtd::raw_type<type_t>* ptr_;
+      };
+
       template<typename...>
       static inline constexpr bool always_false_v = false;
       

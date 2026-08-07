@@ -209,7 +209,7 @@ auto xtd::linq::enumerable::chunk(source_t&& source, xtd::usize size) -> xtd::co
   auto buffer = std::vector<xtd::iterable_value_type<source_t>> {};
   buffer.reserve(size);
   
-  //auto source_holder = __xtd_enumerable_holder<xtd::raw_type<source_t>> {std::forward<xtd::raw_type<source_t>>(source)};
+  //auto source_holder = enumerable_holder<xtd::raw_type<source_t>> {std::forward<xtd::raw_type<source_t>>(source)};
   //for (const auto& item : source_holder.get()) {
   for (const auto& item : source) {
     buffer.push_back(item);
