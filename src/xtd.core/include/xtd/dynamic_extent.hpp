@@ -2,7 +2,7 @@
 /// @brief Contains xtd::dynamic_extent field.
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
-#include "epos.hpp"
+#include "npos.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -20,6 +20,6 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core system
-  inline constexpr auto dynamic_extent = xtd::epos;
+  inline constexpr auto dynamic_extent = xtd::npos;
   /// @}
 }
