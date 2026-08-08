@@ -2,7 +2,7 @@
 
 [[nodiscard]] auto odd_numbers_generator(int count = 100, int min_value = 0, int max_value = 100) -> enumerable_generator<int> {
   auto rnd = xtd::random {};
-  for (auto _ : range(count))
+  for (auto _ : views::range(count))
     co_yield rnd.next(min_value, max_value) | 1;
 }
 
