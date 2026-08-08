@@ -1,6 +1,7 @@
 #include <xtd/xtd>
 
 using namespace std::ranges::views;
+using namespace views;
 
 auto main() -> int {
   //string names[] = {"Burke", "Connor", "Frank", "Everett", "Albert", "George", "Harris", "David"};
