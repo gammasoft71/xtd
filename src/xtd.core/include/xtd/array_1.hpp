@@ -229,7 +229,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example shows how to use operator () to list the elements of an array.
     /// @include ArrayArrayOperatorFunctor.cpp
-    [[nodiscard]] auto operator()(size_type index) -> value_type& {return xtd::basic_array<type_t, allocator_t>::operator[](index);}
+    [[nodiscard]] auto operator()(size_type index) -> value_type& override {return xtd::basic_array<type_t, allocator_t>::operator[](index);}
     
     /// @brief Gets the value at the specified position in the one-dimensional Array. The index is specified as a 32-bit integer.
     /// @param index A 32-bit integer that represents the position of the Array element to get.
@@ -239,7 +239,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example shows how to use operator () to list the elements of an array.
     /// @include ArrayArrayOperatorFunctor.cpp
-    [[nodiscard]] auto operator()(size_type index) const -> const value_type& {return xtd::basic_array<type_t, allocator_t>::operator[](index);}
+    [[nodiscard]] auto operator()(size_type index) const -> const value_type& override {return xtd::basic_array<type_t, allocator_t>::operator[](index);}
     
     /// @brief Sets a value to the element at the specified position in the one-dimensional Array. The index is specified as a 32-bit integer.
     /// @param value The new value for the specified element.

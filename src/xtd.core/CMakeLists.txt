@@ -867,6 +867,8 @@ add_sources(
   "include/xtd/collections/generic/extensions/enumerable.hpp"
   "include/xtd/collections/generic/extensions/enumerable"
   "include/xtd/collections/generic/extensions/enumerable_iterators.hpp"
+  "include/xtd/collections/generic/extensions/list_common.hpp"
+  "include/xtd/collections/generic/extensions/list_common"
   "include/xtd/collections/generic/extensions/enumerable_iterators"
   "include/xtd/collections/generic/comparer.hpp"
   "include/xtd/collections/generic/comparer"
