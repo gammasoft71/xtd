@@ -109,6 +109,8 @@ document.addEventListener('DOMContentLoaded', () => {
 <p>Shows how to use <a class="el" href="classxtd_1_1ranges_1_1views_1_1order__by__descending__view.html" title="The xtd::ranges::views::order_by_descending_view class is used to sort the elements of a sequence in ...">xtd::ranges::views::order_by_descending_view</a> class.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span>views;</div>
+<div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> numbers = array {2, 7, 3, 1, 4, 10, 5, 6, 8, 9};</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;numbers = {}&quot;</span>, order_by_descending(numbers, _));</div>

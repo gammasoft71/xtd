@@ -238,6 +238,8 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Supports all classes in the xtd class hierarchy and provides low-level services to derived classes. This is the ultimate base class of all classes in the xtd. It is the root of the type hierarchy.  <a href="classxtd_1_1object.html#details">More...</a><br /></td></tr>
 <tr class="memitem:xtd_3A_3Arandom" id="r_xtd_3A_3Arandom"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1random.html">xtd::random</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a pseudo-random number generator, a device that produces a sequence of numbers that meet certain statistical requirements for randomness.  <a href="classxtd_1_1random.html#details">More...</a><br /></td></tr>
+<tr class="memitem:xtd_3A_3Arange" id="r_xtd_3A_3Arange"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1range.html">xtd::range</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a range that has start and end indexes.  <a href="classxtd_1_1range.html#details">More...</a><br /></td></tr>
 <tr class="memitem:xtd_3A_3Aspan_3C_20type_5Ft_2C_20extent_20_3E" id="r_xtd_3A_3Aspan_3C_20type_5Ft_2C_20extent_20_3E"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1span.html">xtd::span&lt; type_t, extent &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a non-owning view over a contiguous sequence of objects.  <a href="classxtd_1_1span.html#details">More...</a><br /></td></tr>
 <tr class="memitem:xtd_3A_3Astartup" id="r_xtd_3A_3Astartup"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1startup.html">xtd::startup</a></td></tr>
@@ -290,10 +292,10 @@ Aliases</h2></td></tr>
 Static Fields</h2></td></tr>
 <tr class="memitem:ga6e3f19ce1f48406d6c1f1f0213418c9e" id="r_ga6e3f19ce1f48406d6c1f1f0213418c9e"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#ga6e3f19ce1f48406d6c1f1f0213418c9e">xtd::bpos</a></td></tr>
 <tr class="memdesc:ga6e3f19ce1f48406d6c1f1f0213418c9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the index of the firsy valid element in a collection.  <br /></td></tr>
-<tr class="memitem:ga102c84d4bb364dec3406c84c71191a6d" id="r_ga102c84d4bb364dec3406c84c71191a6d"><td class="memItemLeft">constexpr <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a>&#160;</td><td class="memItemRight"><a class="el" href="#ga102c84d4bb364dec3406c84c71191a6d">xtd::dynamic_extent</a></td></tr>
-<tr class="memdesc:ga102c84d4bb364dec3406c84c71191a6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the constant of type <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525" title="Represents an unsigned size of any object in bytes.">xtd::usize</a> signifying that the span has dynamic extent.  <br /></td></tr>
-<tr class="memitem:gac8bcbd8c06b90f2b0935bc0b414bdf66" id="r_gac8bcbd8c06b90f2b0935bc0b414bdf66"><td class="memItemLeft">constexpr <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a>&#160;</td><td class="memItemRight"><a class="el" href="#gac8bcbd8c06b90f2b0935bc0b414bdf66">xtd::epos</a></td></tr>
-<tr class="memdesc:gac8bcbd8c06b90f2b0935bc0b414bdf66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the index of the last valid element in a collection.  <br /></td></tr>
+<tr class="memitem:ga6cc9b96f50a9cf9c60be64f9b9d19eb4" id="r_ga6cc9b96f50a9cf9c60be64f9b9d19eb4"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#ga6cc9b96f50a9cf9c60be64f9b9d19eb4">xtd::dynamic_extent</a></td></tr>
+<tr class="memdesc:ga6cc9b96f50a9cf9c60be64f9b9d19eb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the constant of type <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525" title="Represents an unsigned size of any object in bytes.">xtd::usize</a> signifying that the span has dynamic extent.  <br /></td></tr>
+<tr class="memitem:gae07d4f90f849f8a342d562935986e067" id="r_gae07d4f90f849f8a342d562935986e067"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#gae07d4f90f849f8a342d562935986e067">xtd::epos</a></td></tr>
+<tr class="memdesc:gae07d4f90f849f8a342d562935986e067"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the index of the last valid element in a collection.  <br /></td></tr>
 <tr class="memitem:gab7854b68f0ca73a92f4c4cec362061fd" id="r_gab7854b68f0ca73a92f4c4cec362061fd"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#gab7854b68f0ca73a92f4c4cec362061fd">xtd::npos</a></td></tr>
 <tr class="memdesc:gab7854b68f0ca73a92f4c4cec362061fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a value that is not a valid position in a collection.  <br /></td></tr>
 </table><table class="memberdecls">
@@ -855,8 +857,8 @@ template&lt;typename type_t&gt; </div>
 
 </div>
 </div>
-<a id="ga102c84d4bb364dec3406c84c71191a6d" name="ga102c84d4bb364dec3406c84c71191a6d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga102c84d4bb364dec3406c84c71191a6d">&#9670;&#160;</a></span>dynamic_extent</h2>
+<a id="ga6cc9b96f50a9cf9c60be64f9b9d19eb4" name="ga6cc9b96f50a9cf9c60be64f9b9d19eb4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6cc9b96f50a9cf9c60be64f9b9d19eb4">&#9670;&#160;</a></span>dynamic_extent</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -865,7 +867,7 @@ template&lt;typename type_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> xtd::dynamic_extent</td>
+          <td class="memname">auto xtd::dynamic_extent</td>
         </tr>
       </table>
   </td>
@@ -878,7 +880,7 @@ template&lt;typename type_t&gt; </div>
 <p><code>#include &lt;<a class="el" href="dynamic__extent_8hpp.html">dynamic_extent.hpp</a>&gt;</code></p>
 
 <p>Represents the constant of type <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525" title="Represents an unsigned size of any object in bytes.">xtd::usize</a> signifying that the span has dynamic extent. </p>
-<dl class="section remark"><dt>Remarks</dt><dd><a class="el" href="#ga102c84d4bb364dec3406c84c71191a6d" title="Represents the constant of type xtd::usize signifying that the span has dynamic extent.">xtd::dynamic_extent</a> is a constant of type <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525" title="Represents an unsigned size of any object in bytes.">xtd::usize</a> that is generally used to indicate that any type using <a class="el" href="#ga102c84d4bb364dec3406c84c71191a6d" title="Represents the constant of type xtd::usize signifying that the span has dynamic extent.">xtd::dynamic_extent</a> will dynamically store its value (e.g., size) rather than having the value statically known in the type. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd><a class="el" href="#ga6cc9b96f50a9cf9c60be64f9b9d19eb4" title="Represents the constant of type xtd::usize signifying that the span has dynamic extent.">xtd::dynamic_extent</a> is a constant of type <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525" title="Represents an unsigned size of any object in bytes.">xtd::usize</a> that is generally used to indicate that any type using <a class="el" href="#ga6cc9b96f50a9cf9c60be64f9b9d19eb4" title="Represents the constant of type xtd::usize signifying that the span has dynamic extent.">xtd::dynamic_extent</a> will dynamically store its value (e.g., size) rather than having the value statically known in the type. </dd></dl>
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/dynamic_extent&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
@@ -886,8 +888,8 @@ template&lt;typename type_t&gt; </div>
 
 </div>
 </div>
-<a id="gac8bcbd8c06b90f2b0935bc0b414bdf66" name="gac8bcbd8c06b90f2b0935bc0b414bdf66"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gac8bcbd8c06b90f2b0935bc0b414bdf66">&#9670;&#160;</a></span>epos</h2>
+<a id="gae07d4f90f849f8a342d562935986e067" name="gae07d4f90f849f8a342d562935986e067"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae07d4f90f849f8a342d562935986e067">&#9670;&#160;</a></span>epos</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -896,7 +898,7 @@ template&lt;typename type_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> xtd::epos</td>
+          <td class="memname">auto xtd::epos</td>
         </tr>
       </table>
   </td>
@@ -911,13 +913,13 @@ template&lt;typename type_t&gt; </div>
 <p>Represents the index of the last valid element in a collection. </p>
 <dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>Unlike <a class="el" href="#gab7854b68f0ca73a92f4c4cec362061fd" title="Represents a value that is not a valid position in a collection.">xtd::npos</a> (which means "no position"), <a class="el" href="#gac8bcbd8c06b90f2b0935bc0b414bdf66" title="Represents the index of the last valid element in a collection.">xtd::epos</a> points to the last accessible element of a collection. It is equivalent to <span class="tt">items.count() - 1</span>. </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>This constant is provided for readability and convenience. For example, <span class="tt">items[<a class="el" href="#gac8bcbd8c06b90f2b0935bc0b414bdf66" title="Represents the index of the last valid element in a collection.">xtd::epos</a>]</span> directly accesses the last element without manually subtracting one from the collection count. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Unlike <a class="el" href="#gab7854b68f0ca73a92f4c4cec362061fd" title="Represents a value that is not a valid position in a collection.">xtd::npos</a> (which means "no position"), <a class="el" href="#gae07d4f90f849f8a342d562935986e067" title="Represents the index of the last valid element in a collection.">xtd::epos</a> points to the last accessible element of a collection. It is equivalent to <span class="tt">items.count() - 1</span>. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This constant is provided for readability and convenience. For example, <span class="tt">items[<a class="el" href="#gae07d4f90f849f8a342d562935986e067" title="Represents the index of the last valid element in a collection.">xtd::epos</a>]</span> directly accesses the last element without manually subtracting one from the collection count. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The epos is equivalent to <span class="tt">~1_z</span>. With bitwise operator the code is more concise. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><span class="keyword">auto</span> items = <a class="code hl_class" href="classxtd_1_1array.html">array</a> {10, 20, 30, 40};</div>
-<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(items[<a class="code hl_variable" href="#gac8bcbd8c06b90f2b0935bc0b414bdf66">epos</a>]); <span class="comment">// Prints 40</span></div>
-<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(items[<a class="code hl_variable" href="#gac8bcbd8c06b90f2b0935bc0b414bdf66">epos</a> - 1]); <span class="comment">// Prints 30</span></div>
-<div class="ttc" id="agroup__system_html_gac8bcbd8c06b90f2b0935bc0b414bdf66"><div class="ttname"><a href="#gac8bcbd8c06b90f2b0935bc0b414bdf66">xtd::epos</a></div><div class="ttdeci">constexpr xtd::usize epos</div><div class="ttdoc">Represents the index of the last valid element in a collection.</div><div class="ttdef"><b>Definition</b> epos.hpp:33</div></div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(items[<a class="code hl_variable" href="#gae07d4f90f849f8a342d562935986e067">epos</a>]); <span class="comment">// Prints 40</span></div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(items[<a class="code hl_variable" href="#gae07d4f90f849f8a342d562935986e067">epos</a> - 1]); <span class="comment">// Prints 30</span></div>
+<div class="ttc" id="agroup__system_html_gae07d4f90f849f8a342d562935986e067"><div class="ttname"><a href="#gae07d4f90f849f8a342d562935986e067">xtd::epos</a></div><div class="ttdeci">constexpr auto epos</div><div class="ttdoc">Represents the index of the last valid element in a collection.</div><div class="ttdef"><b>Definition</b> epos.hpp:33</div></div>
 </div><!-- fragment --> The wollowing exemple shows the same example with bitwise operator as index. <div class="fragment"><div class="line"><span class="keyword">auto</span> items = <a class="code hl_class" href="classxtd_1_1array.html">array</a> {10, 20, 30, 40};</div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(items[~1_z]); <span class="comment">// Prints 40</span></div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(items[~2_z]); <span class="comment">// Prints 30</span></div>

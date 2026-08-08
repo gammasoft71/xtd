@@ -109,6 +109,8 @@ document.addEventListener('DOMContentLoaded', () => {
 <p>Shows how to use <a class="el" href="classxtd_1_1ranges_1_1views_1_1where__view.html" title="The xtd::ranges::views::where_view class is used to filter elements from a sequence.">xtd::ranges::views::where_view</a> class.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span>views;</div>
+<div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> numbers = array {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;numbers = {}&quot;</span>, numbers | where(_ &lt;= 5));</div>

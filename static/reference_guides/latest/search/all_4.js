@@ -518,6 +518,6 @@ var searchData=
   ['dumpling_515',['dumpling',['../classxtd_1_1forms_1_1emoticons.html#a0adfb1e5058fbda7e0d9e4bf9aecde25',1,'xtd::forms::emoticons']]],
   ['duration_516',['duration',['../classxtd_1_1time__span.html#ac0772f9df8a8828e8ce0327e3b848161',1,'xtd::time_span']]],
   ['dvd_517',['dvd',['../classxtd_1_1forms_1_1emoticons.html#a4907bb79ea4099deedf1cd41e5832706',1,'xtd::forms::emoticons']]],
-  ['dynamic_5fextent_518',['dynamic_extent',['../group__system.html#ga102c84d4bb364dec3406c84c71191a6d',1,'xtd']]],
+  ['dynamic_5fextent_518',['dynamic_extent',['../group__system.html#ga6cc9b96f50a9cf9c60be64f9b9d19eb4',1,'xtd']]],
   ['dynamic_5fextent_2ehpp_519',['dynamic_extent.hpp',['../dynamic__extent_8hpp.html',1,'']]]
 ];

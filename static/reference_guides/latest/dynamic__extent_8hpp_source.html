@@ -112,17 +112,16 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="contents">
 <a href="dynamic__extent_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="usize_8hpp.html">usize.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;limits&gt;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a> {</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>  </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="group__system.html#ga102c84d4bb364dec3406c84c71191a6d">   24</a></span>  <span class="keyword">inline</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> <a class="code hl_variable" href="group__system.html#ga102c84d4bb364dec3406c84c71191a6d">dynamic_extent</a> = std::numeric_limits&lt;xtd::usize&gt;::max();</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>}</div>
-<div class="ttc" id="agroup__system_html_ga102c84d4bb364dec3406c84c71191a6d"><div class="ttname"><a href="group__system.html#ga102c84d4bb364dec3406c84c71191a6d">xtd::dynamic_extent</a></div><div class="ttdeci">constexpr xtd::usize dynamic_extent</div><div class="ttdoc">Represents the constant of type xtd::usize signifying that the span has dynamic extent.</div><div class="ttdef"><b>Definition</b> dynamic_extent.hpp:24</div></div>
-<div class="ttc" id="agroup__types_html_gae60f5a861761019d824a87291f85d525"><div class="ttname"><a href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></div><div class="ttdeci">std::size_t usize</div><div class="ttdoc">Represents an unsigned size of any object in bytes.</div><div class="ttdef"><b>Definition</b> usize.hpp:22</div></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="npos_8hpp.html">npos.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a> {</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>  </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="group__system.html#ga6cc9b96f50a9cf9c60be64f9b9d19eb4">   23</a></span>  <span class="keyword">inline</span> <span class="keyword">constexpr</span> <span class="keyword">auto</span> <a class="code hl_variable" href="group__system.html#ga6cc9b96f50a9cf9c60be64f9b9d19eb4">dynamic_extent</a> = <a class="code hl_variable" href="group__system.html#gab7854b68f0ca73a92f4c4cec362061fd">xtd::npos</a>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>}</div>
+<div class="ttc" id="agroup__system_html_ga6cc9b96f50a9cf9c60be64f9b9d19eb4"><div class="ttname"><a href="group__system.html#ga6cc9b96f50a9cf9c60be64f9b9d19eb4">xtd::dynamic_extent</a></div><div class="ttdeci">constexpr auto dynamic_extent</div><div class="ttdoc">Represents the constant of type xtd::usize signifying that the span has dynamic extent.</div><div class="ttdef"><b>Definition</b> dynamic_extent.hpp:23</div></div>
+<div class="ttc" id="agroup__system_html_gab7854b68f0ca73a92f4c4cec362061fd"><div class="ttname"><a href="group__system.html#gab7854b68f0ca73a92f4c4cec362061fd">xtd::npos</a></div><div class="ttdeci">constexpr auto npos</div><div class="ttdoc">Represents a value that is not a valid position in a collection.</div><div class="ttdef"><b>Definition</b> npos.hpp:26</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
-<div class="ttc" id="ausize_8hpp_html"><div class="ttname"><a href="usize_8hpp.html">usize.hpp</a></div><div class="ttdoc">Contains xtd::usize type.</div></div>
+<div class="ttc" id="anpos_8hpp_html"><div class="ttname"><a href="npos_8hpp.html">npos.hpp</a></div><div class="ttdoc">Contains xtd::npos constant.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
