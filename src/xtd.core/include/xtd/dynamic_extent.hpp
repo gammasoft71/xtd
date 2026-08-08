@@ -2,8 +2,7 @@
 /// @brief Contains xtd::dynamic_extent field.
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
-#include "usize.hpp"
-#include <limits>
+#include "epos.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -21,6 +20,6 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core system
-  inline constexpr xtd::usize dynamic_extent = std::numeric_limits<xtd::usize>::max();
+  inline constexpr auto dynamic_extent = xtd::epos;
   /// @}
 }

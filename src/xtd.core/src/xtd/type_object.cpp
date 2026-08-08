@@ -11,8 +11,8 @@ namespace {
     if (name.contains("xtd::basic_string<char8_t, std::char_traits<char8_t>, std::allocator<char8_t>>")) name = name.replace("xtd::basic_string<char8_t, std::char_traits<char8_t>, std::allocator<char8_t>>", "xtd::u8string");
     if (name.contains("xtd::basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t>>")) name = name.replace("xtd::basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t>>", "xtd::wstring");
 
-    if (name.contains("xtd::read_only_span<") && name.contains(", 18446744073709551615ul>")) name = name.replace(", 18446744073709551615ul>", ", xtd::dynamic_extent>");
-    if (name.contains("xtd::span<") && name.contains(", 18446744073709551615ul>")) name = name.replace(", 18446744073709551615ul>", ", xtd::dynamic_extent>");
+    if (name.contains("xtd::read_only_span<") && name.contains(", 18446744073709551614ul>")) name = name.replace(", 18446744073709551614ul>", ", xtd::dynamic_extent>");
+    if (name.contains("xtd::span<") && name.contains(", 18446744073709551614ul>")) name = name.replace(", 18446744073709551614ul>", ", xtd::dynamic_extent>");
   }
   
   auto normalize_xtd_collections_specialized_type_names(auto& name) {
