@@ -6,7 +6,7 @@ public:
     auto items = collections::concurrent::concurrent_queue<int> {};
     
     parallel::invoke(array<action<>> {10_z, delegate_ {
-      for (auto i : range(1, 10)) {
+      for (auto i : views::range(1, 10)) {
         items.enqueue(as<int>(task<>::current_id()) * 10 + i);
         thread::sleep(10_ms);
       }
@@ -18,7 +18,7 @@ public:
     console::write_line("  items = {}", results.to_array());
     
     parallel::invoke(array<action<>> {10, delegate_ {
-      for ([[maybe_unused]] auto _ : range(1, 5)) {
+      for ([[maybe_unused]] auto _ : views::range(1, 5)) {
         auto value = 0;
         items.try_dequeue(value);
         thread::sleep(10_ms);
