@@ -5,7 +5,7 @@
 #include "object.hpp"
 #include "usize.hpp"
 #include "usize_object.hpp"
-#include "epos.hpp"
+#include "npos.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -79,7 +79,7 @@ namespace xtd {
     /// @{
     /// @brief Gets a xtd::range object that starts from the first element to the end.
     /// @return A range from the start to the end.
-    [[nodiscard]] static auto all() noexcept -> xtd::range {return range {index_type {0}, xtd::epos};}
+    [[nodiscard]] static auto all() noexcept -> xtd::range {return range {index_type {0}, xtd::npos};}
     /// @}
     
     /// @name Public Static Methods
@@ -93,7 +93,7 @@ namespace xtd {
     /// @brief Creates a new xtd::range object starting from a specified start index to the end of the collection.
     /// @param start The position of the first element from which the Range will be created.
     /// @return A range from start to the end of the collection.
-    [[nodiscard]] static auto start_at(index_type start) noexcept -> xtd::range {return range {start, xtd::epos};}
+    [[nodiscard]] static auto start_at(index_type start) noexcept -> xtd::range {return range {start, xtd::npos};}
     /// @}
   private:
     /// @todo replcae by xtd::index::to_string()...
