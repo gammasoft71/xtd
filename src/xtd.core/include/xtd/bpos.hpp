@@ -1,8 +1,8 @@
 /// @file
-/// @brief Contains xtd::epos constant.
+/// @brief Contains xtd::bpos constant.
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
-#include "npos"
+#include "usize.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
