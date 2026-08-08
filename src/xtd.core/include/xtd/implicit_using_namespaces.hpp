@@ -20,7 +20,6 @@ __using_namespace__(xtd::expressions);
 __using_namespace__(xtd::io);
 __using_namespace__(xtd::linq);
 __using_namespace__(xtd::net::http);
-__using_namespace__(xtd::ranges::views);
 __using_namespace__(xtd::threading);
 __using_namespace__(xtd::threading::tasks);
 #endif
