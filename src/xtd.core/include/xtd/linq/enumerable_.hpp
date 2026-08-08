@@ -805,6 +805,13 @@ namespace xtd {
       template<xtd::iterable source_t>
       [[nodiscard]] static auto skip_while(source_t&& source, auto&& predicate) -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>>;
 
+      /// @brief Returns a specified number of contiguous elements from the start of a sequence.
+      /// @param source A sequence of values to return elements from.
+      /// @param count The number of elements to return.
+      /// @return A sequence that contains the specified number of elements from the start of the input sequence.
+      template<xtd::iterable source_t>
+      [[nodiscard]] static auto take(source_t&& source, xtd::usize count) -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>>;
+      
       /// @brief Returns elements from a sequence as long as a specified condition is true, and then skips the remaining elements.
       /// @param source A sequence to return elements from.
       /// @param predicate A function to test each element for a condition.
