@@ -12,6 +12,7 @@
 #include "null.hpp"
 #include "object.hpp"
 #include "ptrdiff.hpp"
+#include "range.hpp"
 #include "views/views.hpp"
 #include "typeof.hpp"
 #include <type_traits>
@@ -182,6 +183,16 @@ namespace xtd {
     /// @param length The number of elements to constuct.
     constexpr span(type_t* const data, size_type length) : data_ {data}, length_ {extent != dynamic_extent ? extent : length} {
       if (!data) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_null);
+    }
+    /// @brief Creates an xtd::span with specified collection, and range.
+    /// @param items The collection to construct a view for.
+    /// @param range The range of elements in the collection.
+    /// @exception xtd::argument_out_of_range_exception if range.start or range.start + range.end - range.start are greater than items size.
+    template<typename collection_t>
+    constexpr span(collection_t& items, const xtd::range& range) : data_ {items.data() + range.start()} {
+      auto length = (range.end() > std::numeric_limits<size_type>::max() / 2 ? (items.size() - ~range.end()) : range.end()) - range.start();
+      if (range.start() + length > items.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+      length_ = extent != dynamic_extent ? extent : length;
     }
     /// @}
     
@@ -465,6 +476,9 @@ namespace xtd {
   template<typename collection_t>
   span(collection_t&, xtd::usize, xtd::usize) -> span<typename collection_t::value_type>;
   
+  template<typename collection_t>
+  span(const collection_t&, const xtd::range&) -> span<const typename collection_t::value_type>;
+
   template<typename type_t>
   span(type_t* const, xtd::usize) -> span<type_t>;
   // }
