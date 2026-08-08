@@ -546,6 +546,8 @@ add_sources(
   "include/xtd/ptrdiff_object"
   "include/xtd/random.hpp"
   "include/xtd/random"
+  "include/xtd/range.hpp"
+  "include/xtd/range"
   "include/xtd/rank_exception.hpp"
   "include/xtd/rank_exception"
   "include/xtd/raw_type.hpp"
