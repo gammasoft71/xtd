@@ -1,5 +1,7 @@
 #include <xtd/xtd>
 
+using namespace views;
+
 auto main() -> int {
   auto numbers = array {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
   console::write_line("numbers = {}", numbers | where(_ <= 5));
