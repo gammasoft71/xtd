@@ -1,5 +1,7 @@
 #include <xtd/xtd>
 
+using namespace views;
+
 auto main() -> int {
   auto numbers = array {2, 7, 3, 1, 1, 4, 10, 5, 3, 3, 3, 6, 6, 2, 8, 9, 8, 9};
   console::write_line("numbers = {}", distinct(numbers));
