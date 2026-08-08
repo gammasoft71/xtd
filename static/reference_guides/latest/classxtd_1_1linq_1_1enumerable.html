@@ -391,6 +391,9 @@ requires <a class="el" href="structxtd_1_1numeric.html">xtd::numeric</a>&lt;<a c
 <tr class="memitem:a1aeacc913bd36fb500344981669176ea" id="r_a1aeacc913bd36fb500344981669176ea"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t&gt; </td></tr>
 <tr class="memitem:a1aeacc913bd36fb500344981669176ea template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a1aeacc913bd36fb500344981669176ea">skip_while</a> (source_t &amp;&amp;source, auto &amp;&amp;predicate<a class="el" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab">predicate</a>) -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; &gt;</td></tr>
 <tr class="memdesc:a1aeacc913bd36fb500344981669176ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bypasses elements in a sequence as long as a specified condition is true and then returns the remaining elements.  <br /></td></tr>
+<tr class="memitem:a5c668ce4fc5dee05caf84ec89b19388b" id="r_a5c668ce4fc5dee05caf84ec89b19388b"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t&gt; </td></tr>
+<tr class="memitem:a5c668ce4fc5dee05caf84ec89b19388b template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a5c668ce4fc5dee05caf84ec89b19388b">take</a> (source_t &amp;&amp;source, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> count) -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; &gt;</td></tr>
+<tr class="memdesc:a5c668ce4fc5dee05caf84ec89b19388b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a specified number of contiguous elements from the start of a sequence.  <br /></td></tr>
 <tr class="memitem:aeee24e3b06018cf01c101ce41ce784d6" id="r_aeee24e3b06018cf01c101ce41ce784d6"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t&gt; </td></tr>
 <tr class="memitem:aeee24e3b06018cf01c101ce41ce784d6 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aeee24e3b06018cf01c101ce41ce784d6">take_while</a> (source_t &amp;&amp;source, auto &amp;&amp;predicate<a class="el" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab">predicate</a>) -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; &gt;</td></tr>
 <tr class="memdesc:aeee24e3b06018cf01c101ce41ce784d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns elements from a sequence as long as a specified condition is true, and then skips the remaining elements.  <br /></td></tr>
@@ -4421,6 +4424,47 @@ template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> so
 <div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable_html_a96e347c7dc52732445e9f3521a311010"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a96e347c7dc52732445e9f3521a311010">xtd::collections::generic::extensions::enumerable::order</a></div><div class="ttdeci">auto order() const -&gt; xtd::collections::generic::enumerable_generator&lt; value_t &gt;</div><div class="ttdoc">Sorts the elements of a sequence in ascending order.</div><div class="ttdef"><b>Definition</b> enumerable.hpp:356</div></div>
 <div class="ttc" id="anamespacextd_html_a9482c5e9fb1d60c658bbe28bfbb17353"><div class="ttname"><a href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">xtd::println</a></div><div class="ttdeci">auto println(FILE *file) -&gt; void</div><div class="ttdoc">Writes the current line terminator to the file output stream using the specified format information.</div><div class="ttdef"><b>Definition</b> println.hpp:15</div></div>
 </div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="a5c668ce4fc5dee05caf84ec89b19388b" name="a5c668ce4fc5dee05caf84ec89b19388b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c668ce4fc5dee05caf84ec89b19388b">&#9670;&#160;</a></span>take()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto xtd::linq::enumerable::take </td>
+          <td>(</td>
+          <td class="paramtype">source_t &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>source</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>count</em></span>&#160;) -&gt;  <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; &gt;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a specified number of contiguous elements from the start of a sequence. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">source</td><td>A sequence of values to return elements from. </td></tr>
+    <tr><td class="paramname">count</td><td>The number of elements to return. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A sequence that contains the specified number of elements from the start of the input sequence. </dd></dl>
 
 </div>
 </div>
