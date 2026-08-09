@@ -388,6 +388,9 @@ requires <a class="el" href="structxtd_1_1numeric.html">xtd::numeric</a>&lt;<a c
 <tr class="memitem:a848b8bb65ca7bbca10902d05eaa4ec81" id="r_a848b8bb65ca7bbca10902d05eaa4ec81"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t&gt; </td></tr>
 <tr class="memitem:a848b8bb65ca7bbca10902d05eaa4ec81 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a848b8bb65ca7bbca10902d05eaa4ec81">shuffle</a> (source_t &amp;&amp;source) -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; &gt;</td></tr>
 <tr class="memdesc:a848b8bb65ca7bbca10902d05eaa4ec81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shuffles the order of the elements of a sequence.  <br /></td></tr>
+<tr class="memitem:ad66dc8209dbaf90dbe15b803ee7d5e1f" id="r_ad66dc8209dbaf90dbe15b803ee7d5e1f"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t&gt; </td></tr>
+<tr class="memitem:ad66dc8209dbaf90dbe15b803ee7d5e1f template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ad66dc8209dbaf90dbe15b803ee7d5e1f">skip</a> (source_t &amp;&amp;source, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> count) -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; &gt;</td></tr>
+<tr class="memdesc:ad66dc8209dbaf90dbe15b803ee7d5e1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bypasses a specified number of elements in a sequence and then returns the remaining elements.  <br /></td></tr>
 <tr class="memitem:a1aeacc913bd36fb500344981669176ea" id="r_a1aeacc913bd36fb500344981669176ea"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t&gt; </td></tr>
 <tr class="memitem:a1aeacc913bd36fb500344981669176ea template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a1aeacc913bd36fb500344981669176ea">skip_while</a> (source_t &amp;&amp;source, auto &amp;&amp;predicate<a class="el" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab">predicate</a>) -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; &gt;</td></tr>
 <tr class="memdesc:a1aeacc913bd36fb500344981669176ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bypasses elements in a sequence as long as a specified condition is true and then returns the remaining elements.  <br /></td></tr>
@@ -4362,6 +4365,47 @@ template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forwar
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A sequence whose elements correspond to those of the input sequence in randomized order. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>Need to include random file <span class="tt">#include &lt;xtd/random&gt;</span>. </dd></dl>
+
+</div>
+</div>
+<a id="ad66dc8209dbaf90dbe15b803ee7d5e1f" name="ad66dc8209dbaf90dbe15b803ee7d5e1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad66dc8209dbaf90dbe15b803ee7d5e1f">&#9670;&#160;</a></span>skip()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto xtd::linq::enumerable::skip </td>
+          <td>(</td>
+          <td class="paramtype">source_t &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>source</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>count</em></span>&#160;) -&gt;  <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; &gt;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Bypasses a specified number of elements in a sequence and then returns the remaining elements. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">source</td><td>A sequznce of values to return elements from. </td></tr>
+    <tr><td class="paramname">count</td><td>The number of elements to skip before returning the remaining elements. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A sequence that contains the elements that occur after the specified index in the input sequence. </dd></dl>
 
 </div>
 </div>
