@@ -125,11 +125,6 @@ namespace xtd {
         /// @include read_only_collection.cpp
         /// @remarks Retrieving the value of this property is an O(1) operation.
         [[nodiscard]] auto count() const noexcept -> xtd::usize override {return items_.count();}
-        
-        /// @brief Returns pointer to the underlying array serving as element storage.
-        /// @return Pointer to the underlying element storage. For non-empty containers, the returned pointer compares equal to the address of the first element.
-        /// @remarks The pointer is such that range [xtd::collections::generic::list::data(), xtd::collections::generic::list::data() + xtd::collections::generic::list::count()) is always a valid range, even if the container is empty (xtd::collections::generic::list::data() is not dereferenceable in that case).
-        [[nodiscard]] auto data() noexcept -> value_type* override {return items_.data();}
 
         /// @brief Gets an empty xtd::collections::object_model::read_only_collection <type_t>.
         /// @return An empty xtd::collections::object_model::read_only_collection <type_t>.
@@ -258,6 +253,7 @@ namespace xtd {
         /// @}
         
       private:
+        auto data() noexcept -> value_type* override {return xtd::null;}
         auto is_fixed_size() const noexcept -> bool override {return false;}
         auto is_read_only() const noexcept -> bool override {return true;}
         auto is_synchronized() const noexcept -> bool override {return false;}
