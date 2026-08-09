@@ -126,6 +126,8 @@ public:
     
     auto count() const noexcept -> usize override {return count_;}
     
+    auto data() noexcept -> any_object* override {return contents_.data();}
+    
     auto is_synchronized() const noexcept -> bool override {return false;}
     
     // Return the current instance since the underlying store is not

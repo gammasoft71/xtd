@@ -92,6 +92,11 @@ namespace xtd {
         /// @return The number of elements contained in the xtd::collections::generic::icollection <type_t>.
         [[nodiscard]] virtual auto count() const noexcept -> xtd::usize = 0;
         
+        /// @brief Returns pointer to the underlying array serving as element storage.
+        /// @return Pointer to the underlying element storage. For non-empty containers, the returned pointer compares equal to the address of the first element.
+        /// @remarks The pointer is such that range [xtd::collections::generic::list::data(), xtd::collections::generic::list::data() + xtd::collections::generic::list::count()) is always a valid range, even if the container is empty (xtd::collections::generic::list::data() is not dereferenceable in that case).
+        [[nodiscard]] virtual auto data() noexcept -> type_t* = 0;
+
         /// @brief Gets a value indicating whether the xtd::collections::generic::ilist <type_t> has a fixed size.
         /// @return `true` if the xtd::collections::generic::ilist <type_t> has a fixed size; otherwise, `false`.
         /// @remarks A collection with a fixed size does not allow the addition or removal of elements after the collection is created, but it allows the modification of existing elements.

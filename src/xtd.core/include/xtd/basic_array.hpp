@@ -74,7 +74,7 @@ namespace xtd {
     /// @brief Returns pointer to the underlying array serving as element storage.
     /// @return Pointer to the underlying element storage. For non-empty containers, the returned pointer compares equal to the address of the first element.
     /// @remarks The pointer is such that range [xtd::array::data(), xtd::array::data() + xtd::array::size()) is always a valid range, even if the container is empty (xtd::array::data() is not dereferenceable in that case).
-    [[nodiscard]] virtual auto data() noexcept -> pointer {return (pointer)data_->items.data();}
+    [[nodiscard]] virtual auto data() noexcept -> pointer override {return (pointer)data_->items.data();}
     /// @brief Returns pointer to the underlying array serving as element storage.
     /// @return Pointer to the underlying element storage. For non-empty containers, the returned pointer compares equal to the address of the first element.
     /// @remarks The pointer is such that range [xtd::array::data(), xtd::array::data() + xtd::array::size()) is always a valid range, even if the container is empty (xtd::array::data() is not dereferenceable in that case).
