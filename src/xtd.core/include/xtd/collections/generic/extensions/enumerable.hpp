@@ -436,6 +436,13 @@ namespace xtd {
             return xtd::linq::enumerable::shuffle(self());
           }
 
+          /// @brief Bypasses a specified number of elements in a sequence and then returns the remaining elements.
+          /// @param count The number of elements to skip before returning the remaining elements.
+          /// @return A sequence that contains the elements that occur after the specified index in the input sequence.
+          [[nodiscard]] auto skip(xtd::usize count) -> xtd::collections::generic::enumerable_generator<value_t> {
+            return xtd::linq::enumerable::skip(self(), count);
+          }
+          
           /// @brief Bypasses elements in a sequence as long as a specified condition is true and then returns the remaining elements.
           /// @param predicate A function to test each element for a condition.
           /// @return A sequence that contains the elements from the input sequence starting at the first element in the linear series that does not pass the test specified by predicate.
