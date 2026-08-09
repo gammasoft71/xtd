@@ -728,7 +728,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line"><a id="l00619" name="l00619"></a><span class="lineno">  619</span>  <span class="comment">//auto source_holder = enumerable_holder&lt;xtd::raw_type&lt;source_t&gt;&gt; {std::forward&lt;source_t&gt;(source)};</span></div>
 <div class="line"><a id="l00620" name="l00620"></a><span class="lineno">  620</span>  <span class="comment">//for (const auto&amp; item : source_holder.get())</span></div>
 <div class="line"><a id="l00621" name="l00621"></a><span class="lineno">  621</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; item : source) {</div>
-<div class="line"><a id="l00622" name="l00622"></a><span class="lineno">  622</span>    <span class="keywordflow">if</span> (++index &lt; count) <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00622" name="l00622"></a><span class="lineno">  622</span>    <span class="keywordflow">if</span> (index++ &lt; count) <span class="keywordflow">continue</span>;</div>
 <div class="line"><a id="l00623" name="l00623"></a><span class="lineno">  623</span>    <span class="keyword">co_yield</span> item;</div>
 <div class="line"><a id="l00624" name="l00624"></a><span class="lineno">  624</span>  }</div>
 <div class="line"><a id="l00625" name="l00625"></a><span class="lineno">  625</span>}</div>
