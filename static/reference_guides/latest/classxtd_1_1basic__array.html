@@ -189,8 +189,8 @@ Public Aliases</h2></td></tr>
 Public Properties</h2></td></tr>
 <tr class="memitem:a63ea4c7a305ecdff5882d1cf2336c739" id="r_a63ea4c7a305ecdff5882d1cf2336c739"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a63ea4c7a305ecdff5882d1cf2336c739">count</a> () const noexcept -&gt; <a class="el" href="#a30653839cc25d78a97efbd11687311e7">size_type</a> override</td></tr>
 <tr class="memdesc:a63ea4c7a305ecdff5882d1cf2336c739"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of elements contained in the <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> &lt;type_t&gt;.  <br /></td></tr>
-<tr class="memitem:af02da392442bf73622bb9c4283fd278e" id="r_af02da392442bf73622bb9c4283fd278e"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#af02da392442bf73622bb9c4283fd278e">data</a> () noexcept -&gt; <a class="el" href="#a58756d2450f08851d601a29456ba4273">pointer</a></td></tr>
-<tr class="memdesc:af02da392442bf73622bb9c4283fd278e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns pointer to the underlying array serving as element storage.  <br /></td></tr>
+<tr class="memitem:ac8956071bed59b8538a0ded1e2ecec2a" id="r_ac8956071bed59b8538a0ded1e2ecec2a"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#ac8956071bed59b8538a0ded1e2ecec2a">data</a> () noexcept -&gt; <a class="el" href="#a58756d2450f08851d601a29456ba4273">pointer</a> override</td></tr>
+<tr class="memdesc:ac8956071bed59b8538a0ded1e2ecec2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns pointer to the underlying array serving as element storage.  <br /></td></tr>
 <tr class="memitem:a22c2f59f9cf1d53c163d31446ef4f9d4" id="r_a22c2f59f9cf1d53c163d31446ef4f9d4"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#a22c2f59f9cf1d53c163d31446ef4f9d4">data</a> () const noexcept -&gt; <a class="el" href="#a52835b4b627c5d7783f5d523aa265927">const_pointer</a></td></tr>
 <tr class="memdesc:a22c2f59f9cf1d53c163d31446ef4f9d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns pointer to the underlying array serving as element storage.  <br /></td></tr>
 <tr class="memitem:a11f585c378ccca2d5e97023065fe0623" id="r_a11f585c378ccca2d5e97023065fe0623"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a11f585c378ccca2d5e97023065fe0623">is_fixed_size</a> () const noexcept -&gt; bool override</td></tr>
@@ -688,8 +688,8 @@ template&lt;typename type_t, typename allocator_t = xtd::collections::generic::h
 
 </div>
 </div>
-<a id="af02da392442bf73622bb9c4283fd278e" name="af02da392442bf73622bb9c4283fd278e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af02da392442bf73622bb9c4283fd278e">&#9670;&#160;</a></span>data() <span class="overload">[1/2]</span></h2>
+<a id="ac8956071bed59b8538a0ded1e2ecec2a" name="ac8956071bed59b8538a0ded1e2ecec2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8956071bed59b8538a0ded1e2ecec2a">&#9670;&#160;</a></span>data() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -708,14 +708,16 @@ template&lt;typename type_t, typename allocator_t = xtd::collections::generic::h
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>Returns pointer to the underlying array serving as element storage. </p>
 <dl class="section return"><dt>Returns</dt><dd>Pointer to the underlying element storage. For non-empty containers, the returned pointer compares equal to the address of the first element. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The pointer is such that range [<a class="el" href="#af02da392442bf73622bb9c4283fd278e">xtd::array::data()</a>, <a class="el" href="#af02da392442bf73622bb9c4283fd278e">xtd::array::data()</a> + <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1collection__common.html#a146a032614f18c6e07841b515c78d8fe">xtd::array::size()</a>) is always a valid range, even if the container is empty (<a class="el" href="#af02da392442bf73622bb9c4283fd278e">xtd::array::data()</a> is not dereferenceable in that case). </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The pointer is such that range [<a class="el" href="classxtd_1_1collections_1_1generic_1_1ilist.html#a33cf8df48c54645f480c190a62e966bb" title="Returns pointer to the underlying array serving as element storage.">xtd::array::data()</a>, <a class="el" href="classxtd_1_1collections_1_1generic_1_1ilist.html#a33cf8df48c54645f480c190a62e966bb" title="Returns pointer to the underlying array serving as element storage.">xtd::array::data()</a> + <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1collection__common.html#a146a032614f18c6e07841b515c78d8fe">xtd::array::size()</a>) is always a valid range, even if the container is empty (<a class="el" href="classxtd_1_1collections_1_1generic_1_1ilist.html#a33cf8df48c54645f480c190a62e966bb" title="Returns pointer to the underlying array serving as element storage.">xtd::array::data()</a> is not dereferenceable in that case). </dd></dl>
+
+<p>Implements <a class="el" href="classxtd_1_1collections_1_1generic_1_1ilist.html#a33cf8df48c54645f480c190a62e966bb">xtd::collections::generic::ilist&lt; type_t &gt;</a>.</p>
 
 </div>
 </div>
@@ -746,7 +748,7 @@ template&lt;typename type_t, typename allocator_t = xtd::collections::generic::h
 
 <p>Returns pointer to the underlying array serving as element storage. </p>
 <dl class="section return"><dt>Returns</dt><dd>Pointer to the underlying element storage. For non-empty containers, the returned pointer compares equal to the address of the first element. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The pointer is such that range [<a class="el" href="#af02da392442bf73622bb9c4283fd278e">xtd::array::data()</a>, <a class="el" href="#af02da392442bf73622bb9c4283fd278e">xtd::array::data()</a> + <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1collection__common.html#a146a032614f18c6e07841b515c78d8fe">xtd::array::size()</a>) is always a valid range, even if the container is empty (<a class="el" href="#af02da392442bf73622bb9c4283fd278e">xtd::array::data()</a> is not dereferenceable in that case). </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The pointer is such that range [<a class="el" href="classxtd_1_1collections_1_1generic_1_1ilist.html#a33cf8df48c54645f480c190a62e966bb" title="Returns pointer to the underlying array serving as element storage.">xtd::array::data()</a>, <a class="el" href="classxtd_1_1collections_1_1generic_1_1ilist.html#a33cf8df48c54645f480c190a62e966bb" title="Returns pointer to the underlying array serving as element storage.">xtd::array::data()</a> + <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1collection__common.html#a146a032614f18c6e07841b515c78d8fe">xtd::array::size()</a>) is always a valid range, even if the container is empty (<a class="el" href="classxtd_1_1collections_1_1generic_1_1ilist.html#a33cf8df48c54645f480c190a62e966bb" title="Returns pointer to the underlying array serving as element storage.">xtd::array::data()</a> is not dereferenceable in that case). </dd></dl>
 
 </div>
 </div>

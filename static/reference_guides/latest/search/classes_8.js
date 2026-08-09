@@ -232,7 +232,7 @@ var searchData=
   ['iequatable_3c_20xtd_3a_3areflection_3a_3aassembly_5ftitle_5fattribute_20_3e_229',['iequatable&lt; xtd::reflection::assembly_title_attribute &gt;',['../classxtd_1_1iequatable.html',1,'xtd']]],
   ['iequatable_3c_20xtd_3a_3areflection_3a_3aassembly_5ftrademark_5fattribute_20_3e_230',['iequatable&lt; xtd::reflection::assembly_trademark_attribute &gt;',['../classxtd_1_1iequatable.html',1,'xtd']]],
   ['iequatable_3c_20xtd_3a_3areflection_3a_3aassembly_5fversion_5fattribute_20_3e_231',['iequatable&lt; xtd::reflection::assembly_version_attribute &gt;',['../classxtd_1_1iequatable.html',1,'xtd']]],
-  ['iequatable_3c_20xtd_3a_3aspan_3c_20type_5ft_2c_20xtd_3a_3adynamic_5fextent_20_3e_20_3e_232',['iequatable&lt; xtd::span&lt; type_t, xtd::dynamic_extent &gt; &gt;',['../classxtd_1_1iequatable.html',1,'xtd']]],
+  ['iequatable_3c_20xtd_3a_3aspan_3c_20type_5ft_2c_20extent_20_3e_20_3e_232',['iequatable&lt; xtd::span&lt; type_t, extent &gt; &gt;',['../classxtd_1_1iequatable.html',1,'xtd']]],
   ['iequatable_3c_20xtd_5flibrary_20_3e_233',['iequatable&lt; xtd_library &gt;',['../classxtd_1_1iequatable.html',1,'xtd']]],
   ['iformatable_234',['iformatable',['../classxtd_1_1iformatable.html',1,'xtd']]],
   ['ignore_5ferror_235',['ignore_error',['../classxtd_1_1tunit_1_1ignore__error.html',1,'xtd::tunit']]],
