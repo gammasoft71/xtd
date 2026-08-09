@@ -619,7 +619,7 @@ auto xtd::linq::enumerable::skip(source_t&& source, xtd::usize count) -> xtd::co
   //auto source_holder = enumerable_holder<xtd::raw_type<source_t>> {std::forward<source_t>(source)};
   //for (const auto& item : source_holder.get())
   for (const auto& item : source) {
-    if (++index < count) continue;
+    if (index++ < count) continue;
     co_yield item;
   }
 }
