@@ -2,6 +2,9 @@
 /// @brief Contains xtd::read_only_span class.
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
+#define __XTD_CORE_INTERNAL__
+#include "internal/__span_definitions.hpp"
+#undef __XTD_CORE_INTERNAL__
 #include "collections/generic/helpers/wrap_pointer_iterator.hpp"
 #include "array.hpp"
 #include "dynamic_extent.hpp"
@@ -45,7 +48,7 @@ namespace xtd {
   /// span<int> span_numbers = numbers;
   /// span_numbers[0] = 42; // numbers == {42, 1, 2};
   /// ```
-  template<typename type_t, xtd::usize extent = xtd::dynamic_extent>
+  template<typename type_t, xtd::usize extent>
   class read_only_span : public xtd::object, public xtd::iequatable<xtd::read_only_span<type_t, extent>> {
   public:
     /// @name Public Aliases
@@ -420,3 +423,10 @@ namespace xtd {
   // }
   /// @endcond
 }
+
+/// @cond
+template<typename type_t, typename list_t>
+auto xtd::collections::generic::extensions::list_common<type_t, list_t>::operator ()(const xtd::range& range) const -> xtd::read_only_span<type_t> {
+  return xtd::read_only_span<type_t>(self(), range);
+}
+/// @endcond

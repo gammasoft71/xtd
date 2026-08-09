@@ -2,10 +2,17 @@
 /// @brief Contains xtd::collections::generic::extensions::list_common class.
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
+#define __XTD_CORE_INTERNAL__
+#include "../../../internal/__span_definitions.hpp"
+#undef __XTD_CORE_INTERNAL__
 #include "../../../self.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
+  /// @cond
+  class range;
+  /// @endcond
+  
   /// @brief The xtd::collections namespace contains interfaces and classes that define various collections of objects, such as lists, queues, bit arrays, hash tables and dictionaries.
   namespace collections {
     /// @brief The xtd::collections::generic namespace contains interfaces and classes that define generic collections, which allow users to create strongly typed collections that provide better type safety and performance than non-generic strongly typed collections.
@@ -46,6 +53,15 @@ namespace xtd {
           [[nodiscard]] virtual auto operator ()(xtd::usize index) -> type_t& {
             return self().operator [](index);
           }
+
+          /// @brief Gets the elements at the specified range.
+          /// @param range The range of the elements to get.
+          /// @remarks This operator provides the ability to access a specific element in the collection by using the following syntax: `my_collection[index]`.
+          auto operator ()(const xtd::range& range) const -> xtd::read_only_span<type_t>;
+          /// @brief Sets the elements at the specified range.
+          /// @param range The range of the elements to set.
+          /// @remarks This operator provides the ability to access a specific element in the collection by using the following syntax: `my_collection[index]`.
+          auto operator ()(const xtd::range& range) -> xtd::span<type_t>;
           /// @}
           
         private:
