@@ -460,7 +460,14 @@ namespace xtd {
           [[nodiscard]] auto take(xtd::usize count) -> xtd::collections::generic::enumerable_generator<value_t> {
             return xtd::linq::enumerable::take(self(), count);
           }
-
+          /// @brief Returns a specified number of contiguous elements from the start of a sequence.
+          /// @param source A sequence of values to return elements from.
+          /// @param range The range of elements to return.
+          /// @return A sequence that contains the specified number of elements from the start of the input sequence.
+          [[nodiscard]] auto take(const xtd::range& range) -> xtd::collections::generic::enumerable_generator<value_t> {
+            return xtd::linq::enumerable::take(self(), range);
+          }
+          
           /// @brief Returns elements from a sequence as long as a specified condition is true, and then skips the remaining elements.
           /// @param predicate A function to test each element for a condition.
           /// @return A sequence that contains the elements from the input sequence that occur before the element at which the test no longer passes.

@@ -45,6 +45,7 @@ struct __opaque_xtd_linq_lazy_enumerable__;
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @cond
+  class range;
   namespace collections::generic {
     template<typename type_t>
     class enumerable_generator;
@@ -818,7 +819,14 @@ namespace xtd {
       /// @return A sequence that contains the specified number of elements from the start of the input sequence.
       template<xtd::iterable source_t>
       [[nodiscard]] static auto take(source_t&& source, xtd::usize count) -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>>;
-      
+      /// @brief Returns a specified number of contiguous elements from the start of a sequence.
+      /// @param source A sequence of values to return elements from.
+      /// @param range The range of elements to return.
+      /// @return A sequence that contains the specified number of elements from the start of the input sequence.
+      /// @note Need to include list file `#include <xtd/range>`.
+      template<xtd::iterable source_t>
+      [[nodiscard]] static auto take(source_t&& source, const xtd::range& range) -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>>; // Defined in include/xtd/range.hpp
+
       /// @brief Returns elements from a sequence as long as a specified condition is true, and then skips the remaining elements.
       /// @param source A sequence to return elements from.
       /// @param predicate A function to test each element for a condition.
@@ -885,6 +893,13 @@ namespace xtd {
       template<typename...>
       static inline constexpr bool always_false_v = false;
       
+      template<typename source_t>
+      requires(requires (const xtd::raw_type<source_t>& source) {{source.size()} -> std::convertible_to<std::size_t>;})
+      [[nodiscard]] static auto invoke_take_with_range(source_t&& source, const xtd::range& range) -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>>;
+      template<typename source_t>
+      requires(!requires (const xtd::raw_type<source_t>& source) {{source.size()} -> std::convertible_to<std::size_t>;})
+      [[nodiscard]] static auto invoke_take_with_range(source_t&& source, const xtd::range& range) -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>>;
+
       template<typename predicate_t, typename value_t>
       [[nodiscard]] static constexpr auto invoke_predicate_with_optional_index(predicate_t&& predicate, value_t&& value, xtd::usize index) -> bool;
 

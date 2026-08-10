@@ -6,6 +6,8 @@
 #include "usize.hpp"
 #include "usize_object.hpp"
 #include "npos.hpp"
+#include "linq/enumerable.hpp"
+#include <vector>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -102,3 +104,37 @@ namespace xtd {
     index_type end_ = index_type {0};
   };
 }
+
+/// @cond
+template<xtd::iterable source_t>
+auto xtd::linq::enumerable::take(source_t&& source, const xtd::range& range) -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>> {
+  //auto source_holder = enumerable_holder<source_t> {std::forward<source_t>(source)};
+  //return invoke_take_with_range(source_holder.get(), range);
+  return invoke_take_with_range(source, range);
+}
+
+template<typename source_t>
+requires(!requires (const xtd::raw_type<source_t>& source) {{source.size()} -> std::convertible_to<std::size_t>;})
+auto xtd::linq::enumerable::invoke_take_with_range(source_t&& source, const xtd::range& range) -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>> {
+  //auto source_holder = enumerable_holder<source_t> {std::forward<source_t>(source)};
+  //auto result = list<xtd::iterable_value_type<source_t>> {source_holder.get()};
+  auto result = std::vector<xtd::iterable_value_type<source_t>> {source.begin(), source.end()};
+  return invoke_take_with_range(result, range);
+}
+
+template<typename source_t>
+requires(requires (const xtd::raw_type<source_t>& source) {{source.size()} -> std::convertible_to<std::size_t>;})
+auto xtd::linq::enumerable::invoke_take_with_range(source_t&& source, const xtd::range& range) -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>> {
+  auto index = xtd::usize {0};
+  auto skip = range.start();
+  auto count = skip + range.end() - range.start();
+  //if (range.end() )
+  //auto source_holder = enumerable_holder<xtd::raw_type<source_t>> {std::forward<source_t>(source)};
+  //for (const auto& item : source_holder.get())
+  for (const auto& item : source) {
+    if (index++ < skip) continue;
+    if (index++ == count) break;
+    co_yield item;
+  }
+}
+/// @endcond
