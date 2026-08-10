@@ -1184,7 +1184,7 @@ auto xtd::linq::enumerable::distinct(source_t&& source, const iequality_comparer
 }
 
 template<xtd::iterable source_t, xtd::func_callable<bool, xtd::iterable_value_type<source_t>, xtd::iterable_value_type<source_t>> equater_t>
-auto xtd::linq::enumerable::distinct(source_t&& source, equater_t&& equater) noexcept  -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>> {
+auto xtd::linq::enumerable::distinct(source_t&& source, equater_t&& equater) noexcept -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>> {
   auto result = list<xtd::iterable_value_type<source_t>> {};
   //auto source_holder = enumerable_holder<source_t> {std::forward<source_t>(source)};
   //for (const auto& item : source_holder.get())
