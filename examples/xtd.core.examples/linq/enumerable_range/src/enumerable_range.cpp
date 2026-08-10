@@ -1,7 +1,7 @@
 #include <xtd/xtd>
 
 auto main() -> int {
-  const auto& squares = enumerable::range(1, 10).select(_ * _);
+  auto squares = enumerable::range(1, 10).select(_ * _);
   
   for (auto num : squares)
     console::write_line(num);
