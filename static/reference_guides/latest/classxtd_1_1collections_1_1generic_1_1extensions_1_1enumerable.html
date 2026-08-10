@@ -280,6 +280,8 @@ requires <a class="el" href="structxtd_1_1numeric.html">xtd::numeric</a>&lt;resu
 <tr class="memdesc:a609b3e1c5f0d092b16b985b2c35f3098"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bypasses elements in a sequence as long as a specified condition is true and then returns the remaining elements.  <br /></td></tr>
 <tr class="memitem:a8cf522a2a8ca681a82aee4d99ca14d89" id="r_a8cf522a2a8ca681a82aee4d99ca14d89"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a8cf522a2a8ca681a82aee4d99ca14d89">take</a> (<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> count) -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; value_t &gt;</td></tr>
 <tr class="memdesc:a8cf522a2a8ca681a82aee4d99ca14d89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a specified number of contiguous elements from the start of a sequence.  <br /></td></tr>
+<tr class="memitem:a4cd5b7d28d9e0abe3d35f2906c891e12" id="r_a4cd5b7d28d9e0abe3d35f2906c891e12"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a4cd5b7d28d9e0abe3d35f2906c891e12">take</a> (const <a class="el" href="classxtd_1_1range.html">xtd::range</a> &amp;range) -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; value_t &gt;</td></tr>
+<tr class="memdesc:a4cd5b7d28d9e0abe3d35f2906c891e12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a specified number of contiguous elements from the start of a sequence.  <br /></td></tr>
 <tr class="memitem:ad48bd6bd0efb630951ac0fa21e5b5b32" id="r_ad48bd6bd0efb630951ac0fa21e5b5b32"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ad48bd6bd0efb630951ac0fa21e5b5b32">take_while</a> (auto &amp;&amp;predicate<a class="el" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab">predicate</a>) -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; value_t &gt;</td></tr>
 <tr class="memdesc:ad48bd6bd0efb630951ac0fa21e5b5b32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns elements from a sequence as long as a specified condition is true, and then skips the remaining elements.  <br /></td></tr>
 <tr class="memitem:a66cd970a5826aadb5d40278303417daa" id="r_a66cd970a5826aadb5d40278303417daa"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a66cd970a5826aadb5d40278303417daa">to_array</a> () const -&gt; <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; value_t &gt;</td></tr>
@@ -2506,7 +2508,7 @@ template&lt;typename value_t, typename enumerable_t&gt; </div>
 </div>
 </div>
 <a id="a8cf522a2a8ca681a82aee4d99ca14d89" name="a8cf522a2a8ca681a82aee4d99ca14d89"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8cf522a2a8ca681a82aee4d99ca14d89">&#9670;&#160;</a></span>take()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a8cf522a2a8ca681a82aee4d99ca14d89">&#9670;&#160;</a></span>take() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2535,6 +2537,43 @@ template&lt;typename value_t, typename enumerable_t&gt; </div>
   <table class="params">
     <tr><td class="paramname">source</td><td>A sequence of values to return elements from. </td></tr>
     <tr><td class="paramname">count</td><td>The number of elements to return. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A sequence that contains the specified number of elements from the start of the input sequence. </dd></dl>
+
+</div>
+</div>
+<a id="a4cd5b7d28d9e0abe3d35f2906c891e12" name="a4cd5b7d28d9e0abe3d35f2906c891e12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4cd5b7d28d9e0abe3d35f2906c891e12">&#9670;&#160;</a></span>take() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename value_t, typename enumerable_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html">xtd::collections::generic::extensions::enumerable</a>&lt; value_t, enumerable_t &gt;::take </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1range.html">xtd::range</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>range</em></span></td><td>)</td>
+          <td> -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; value_t &gt;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a specified number of contiguous elements from the start of a sequence. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">source</td><td>A sequence of values to return elements from. </td></tr>
+    <tr><td class="paramname">range</td><td>The range of elements to return. </td></tr>
   </table>
   </dd>
 </dl>
