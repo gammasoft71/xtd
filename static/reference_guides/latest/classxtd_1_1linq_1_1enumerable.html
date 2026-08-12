@@ -4244,12 +4244,12 @@ template&lt;typename result_t, <a class="el" href="structxtd_1_1iterable.html">x
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> fruits = <a class="code hl_class" href="classxtd_1_1array.html">array&lt;string&gt;</a> {<span class="stringliteral">&quot;apple&quot;</span>, <span class="stringliteral">&quot;banana&quot;</span>, <span class="stringliteral">&quot;mango&quot;</span>, <span class="stringliteral">&quot;orange&quot;</span>, <span class="stringliteral">&quot;passionfruit&quot;</span>, <span class="stringliteral">&quot;grape&quot;</span>};</div>
 <div class="line">  </div>
-<div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span>&amp; <a class="code hl_enumvalue" href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba1b1cc7f086b3f074da452bc3129981eb">query</a> = fruits.select&lt;std::tuple&lt;usize, string&gt;&gt;([](<span class="keyword">auto</span>&amp;&amp; fruit, <span class="keyword">auto</span> index) {</div>
-<div class="line">    <span class="keywordflow">return</span> std::make_tuple(index, fruit.substring(0, index));</div>
+<div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span>&amp; <a class="code hl_enumvalue" href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba1b1cc7f086b3f074da452bc3129981eb">query</a> = fruits.select&lt;std::tuple&lt;usize, string&gt;&gt;([](<span class="keyword">auto</span>&amp;&amp; fruit, <span class="keyword">auto</span> <a class="code hl_class" href="classxtd_1_1index.html">index</a>) {</div>
+<div class="line">    <span class="keywordflow">return</span> std::make_tuple(<a class="code hl_class" href="classxtd_1_1index.html">index</a>, fruit.substring(0, <a class="code hl_class" href="classxtd_1_1index.html">index</a>));</div>
 <div class="line">  });</div>
 <div class="line"> </div>
-<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; [index, str] : query)</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;{{ index = {}, str = {} }}&quot;</span>, index, str);</div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; [<a class="code hl_class" href="classxtd_1_1index.html">index</a>, str] : query)</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;{{ index = {}, str = {} }}&quot;</span>, <a class="code hl_class" href="classxtd_1_1index.html">index</a>, str);</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
@@ -4260,6 +4260,7 @@ template&lt;typename result_t, <a class="el" href="structxtd_1_1iterable.html">x
 <div class="line"><span class="comment">// { index = 3, str = ora }</span></div>
 <div class="line"><span class="comment">// { index = 4, str = pass }</span></div>
 <div class="line"><span class="comment">// { index = 5, str = grape }</span></div>
+<div class="ttc" id="aclassxtd_1_1index_html"><div class="ttname"><a href="classxtd_1_1index.html">xtd::index</a></div><div class="ttdoc">Represents a type that can be used to index a collection either from the beginning or the end.</div><div class="ttdef"><b>Definition</b> index.hpp:26</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -4314,12 +4315,12 @@ template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> so
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> fruits = <a class="code hl_class" href="classxtd_1_1array.html">array&lt;string&gt;</a> {<span class="stringliteral">&quot;apple&quot;</span>, <span class="stringliteral">&quot;banana&quot;</span>, <span class="stringliteral">&quot;mango&quot;</span>, <span class="stringliteral">&quot;orange&quot;</span>, <span class="stringliteral">&quot;passionfruit&quot;</span>, <span class="stringliteral">&quot;grape&quot;</span>};</div>
 <div class="line">  </div>
-<div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span>&amp; <a class="code hl_enumvalue" href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba1b1cc7f086b3f074da452bc3129981eb">query</a> = fruits.select&lt;std::tuple&lt;usize, string&gt;&gt;([](<span class="keyword">auto</span>&amp;&amp; fruit, <span class="keyword">auto</span> index) {</div>
-<div class="line">    <span class="keywordflow">return</span> std::make_tuple(index, fruit.substring(0, index));</div>
+<div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span>&amp; <a class="code hl_enumvalue" href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba1b1cc7f086b3f074da452bc3129981eb">query</a> = fruits.select&lt;std::tuple&lt;usize, string&gt;&gt;([](<span class="keyword">auto</span>&amp;&amp; fruit, <span class="keyword">auto</span> <a class="code hl_class" href="classxtd_1_1index.html">index</a>) {</div>
+<div class="line">    <span class="keywordflow">return</span> std::make_tuple(<a class="code hl_class" href="classxtd_1_1index.html">index</a>, fruit.substring(0, <a class="code hl_class" href="classxtd_1_1index.html">index</a>));</div>
 <div class="line">  });</div>
 <div class="line"> </div>
-<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; [index, str] : query)</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;{{ index = {}, str = {} }}&quot;</span>, index, str);</div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; [<a class="code hl_class" href="classxtd_1_1index.html">index</a>, str] : query)</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;{{ index = {}, str = {} }}&quot;</span>, <a class="code hl_class" href="classxtd_1_1index.html">index</a>, str);</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
