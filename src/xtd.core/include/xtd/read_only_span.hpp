@@ -426,6 +426,11 @@ namespace xtd {
 
 /// @cond
 template<typename type_t, typename list_t>
+auto xtd::collections::generic::extensions::list_common<type_t, list_t>::operator [](const xtd::range& range) const -> xtd::read_only_span<type_t> {
+  return xtd::read_only_span<type_t>(self(), range);
+}
+
+template<typename type_t, typename list_t>
 auto xtd::collections::generic::extensions::list_common<type_t, list_t>::operator ()(const xtd::range& range) const -> xtd::read_only_span<type_t> {
   return xtd::read_only_span<type_t>(self(), range);
 }
