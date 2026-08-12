@@ -138,6 +138,30 @@ Public Aliases</h2></td></tr>
 <tr class="memdesc:a34de99a0ebc85b94f37492c2b735e1a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the <a class="el" href="classxtd_1_1index.html" title="Represents a type that can be used to index a collection either from the beginning or the end.">xtd::index</a> index type.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
+Public Static Properties</h2></td></tr>
+<tr><td class="ititle" colspan="2"><p>Represents the index of the firsy valid element in a collection.</p>
+<dl class="section remark"><dt>Remarks</dt><dd>Unlike <a class="el" href="group__system.html#gab7854b68f0ca73a92f4c4cec362061fd" title="Represents a value that is not a valid position in a collection.">xtd::npos</a> (which means "no position"), <a class="el" href="group__system.html#ga6e3f19ce1f48406d6c1f1f0213418c9e" title="Represents the index of the firsy valid element in a collection.">xtd::bpos</a> points to the first accessible element of a collection. It is equivalent to <span class="tt">0</span>. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This constant is provided for readability and convenience. For example, <span class="tt">items[<a class="el" href="group__system.html#ga6e3f19ce1f48406d6c1f1f0213418c9e" title="Represents the index of the firsy valid element in a collection.">xtd::bpos</a>]</span> directly accesses the fist element. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="#a21d3396cbfdd809ed8a75b6100c0d6de" title="Represents the index of the last valid element in a collection.">xtd::index::epos</a> is equivalent to <span class="tt">0</span>. With <span class="tt">0</span> the code is more concise. </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><span class="keyword">auto</span> items = <a class="code hl_class" href="classxtd_1_1array.html">array</a> {10, 20, 30, 40};</div>
+<div class="line"><a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(items[index::bpos]); <span class="comment">// Prints 10</span></div>
+<div class="line"><a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(items[index::bpos + 1]); <span class="comment">// Prints 20</span></div>
+<div class="ttc" id="aclassxtd_1_1array_html"><div class="ttname"><a href="classxtd_1_1array.html">xtd::array</a></div><div class="ttdoc">Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...</div><div class="ttdef"><b>Definition</b> array.hpp:64</div></div>
+<div class="ttc" id="anamespacextd_html_a9482c5e9fb1d60c658bbe28bfbb17353"><div class="ttname"><a href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">xtd::println</a></div><div class="ttdeci">auto println(FILE *file) -&gt; void</div><div class="ttdoc">Writes the current line terminator to the file output stream using the specified format information.</div><div class="ttdef"><b>Definition</b> println.hpp:15</div></div>
+</div><!-- fragment --> The wollowing exemple shows the same example without index. <div class="fragment"><div class="line"><span class="keyword">auto</span> items = <a class="code hl_class" href="classxtd_1_1array.html">array</a> {10, 20, 30, 40};</div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(items[0]); <span class="comment">// Prints 10</span></div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(items[1]); <span class="comment">// Prints 20</span></div>
+<div class="ttc" id="aclassxtd_1_1console_html_ae600c08b996905be13225bba0f253a63"><div class="ttname"><a href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">xtd::console::write_line</a></div><div class="ttdeci">static auto write_line() -&gt; void</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
+</div><!-- fragment --> </dd></dl>
+</td></tr>
+<tr class="memitem:a22ad7eaee524f9e53962414aac1799d0" id="r_a22ad7eaee524f9e53962414aac1799d0"><td class="memItemLeft"><a id="a22ad7eaee524f9e53962414aac1799d0" name="a22ad7eaee524f9e53962414aac1799d0"></a>
+static const <a class="el" href="#a2d3e9c4c9d77e21a9ce2236765930cf1">index</a>&#160;</td><td class="memItemRight"><b>bpos</b></td></tr>
+<tr class="memitem:a21d3396cbfdd809ed8a75b6100c0d6de" id="r_a21d3396cbfdd809ed8a75b6100c0d6de"><td class="memItemLeft">static const <a class="el" href="#a2d3e9c4c9d77e21a9ce2236765930cf1">index</a>&#160;</td><td class="memItemRight"><a class="el" href="#a21d3396cbfdd809ed8a75b6100c0d6de">epos</a></td></tr>
+<tr class="memdesc:a21d3396cbfdd809ed8a75b6100c0d6de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the index of the last valid element in a collection.  <br /></td></tr>
+<tr class="memitem:a2ae5246681bd2931ab6a3351e1823122" id="r_a2ae5246681bd2931ab6a3351e1823122"><td class="memItemLeft">static const <a class="el" href="#a2d3e9c4c9d77e21a9ce2236765930cf1">index</a>&#160;</td><td class="memItemRight"><a class="el" href="#a2ae5246681bd2931ab6a3351e1823122">npos</a></td></tr>
+<tr class="memdesc:a2ae5246681bd2931ab6a3351e1823122"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a value that is not a valid position in a collection.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Constructors</h2></td></tr>
 <tr class="memitem:a2d3e9c4c9d77e21a9ce2236765930cf1" id="r_a2d3e9c4c9d77e21a9ce2236765930cf1"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a2d3e9c4c9d77e21a9ce2236765930cf1">index</a> () noexcept=default</td></tr>
 <tr class="memdesc:a2d3e9c4c9d77e21a9ce2236765930cf1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instantiates a new <a class="el" href="classxtd_1_1index.html" title="Represents a type that can be used to index a collection either from the beginning or the end.">xtd::index</a> instance.  <br /></td></tr>
@@ -175,6 +199,8 @@ Public Methods</h2></td></tr>
 Public Operators</h2></td></tr>
 <tr class="memitem:a88fdc53897ee613a1a7260d54623523f" id="r_a88fdc53897ee613a1a7260d54623523f"><td class="memItemLeft"><a id="a88fdc53897ee613a1a7260d54623523f" name="a88fdc53897ee613a1a7260d54623523f"></a>
 &#160;</td><td class="memItemRight"><b>operator value_type</b> ()</td></tr>
+<tr class="memitem:afd1805865ec2bef4a8ce6f7ec4ce0c3b" id="r_afd1805865ec2bef4a8ce6f7ec4ce0c3b"><td class="memItemLeft"><a id="afd1805865ec2bef4a8ce6f7ec4ce0c3b" name="afd1805865ec2bef4a8ce6f7ec4ce0c3b"></a>
+&#160;</td><td class="memItemRight"><b>operator value_type</b> () const</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -259,7 +285,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel explicit">explicit</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -356,7 +382,6 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><span class="comment">// false</span></div>
 <div class="line"><span class="comment">// true</span></div>
 <div class="line"><span class="comment">// true</span></div>
-<div class="ttc" id="aclassxtd_1_1console_html_ae600c08b996905be13225bba0f253a63"><div class="ttname"><a href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">xtd::console::write_line</a></div><div class="ttdeci">static auto write_line() -&gt; void</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ga90ae49206646bf4444fa4f2e57990d08"><div class="ttname"><a href="group__xtd__core.html#ga90ae49206646bf4444fa4f2e57990d08">xtd::new_ptr</a></div><div class="ttdeci">auto new_ptr(args_t &amp;&amp;... args) -&gt; xtd::ptr&lt; type_t &gt;</div><div class="ttdoc">The xtd::new_ptr operator creates a xtd::ptr object.</div><div class="ttdef"><b>Definition</b> new_ptr.hpp:24</div></div>
 </div><!-- fragment --> </dd></dl>
 
@@ -457,6 +482,78 @@ Additional Inherited Members</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>The string representation of the range. </dd></dl>
 
 <p>Reimplemented from <a class="el" href="classxtd_1_1object.html#a4a2f2b475b43f587551ec12d10f1715d">xtd::object</a>.</p>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
+<a id="a21d3396cbfdd809ed8a75b6100c0d6de" name="a21d3396cbfdd809ed8a75b6100c0d6de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21d3396cbfdd809ed8a75b6100c0d6de">&#9670;&#160;</a></span>epos</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="#a2d3e9c4c9d77e21a9ce2236765930cf1">index</a> xtd::index::epos</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Represents the index of the last valid element in a collection. </p>
+<dl class="section remark"><dt>Remarks</dt><dd>Unlike <a class="el" href="group__system.html#gab7854b68f0ca73a92f4c4cec362061fd" title="Represents a value that is not a valid position in a collection.">xtd::npos</a> (which means "no position"), <a class="el" href="group__system.html#gae07d4f90f849f8a342d562935986e067" title="Represents the index of the last valid element in a collection.">xtd::epos</a> points to the last accessible element of a collection. It is equivalent to <span class="tt">items.count() - 1</span>. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This constant is provided for readability and convenience. For example, <span class="tt">items[<a class="el" href="group__system.html#gae07d4f90f849f8a342d562935986e067" title="Represents the index of the last valid element in a collection.">xtd::epos</a>]</span> directly accesses the last element without manually subtracting one from the collection count. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="#a21d3396cbfdd809ed8a75b6100c0d6de" title="Represents the index of the last valid element in a collection.">xtd::index::epos</a> is equivalent to <span class="tt">~1_z</span>. With bitwise operator the code is more concise. </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><span class="keyword">auto</span> items = <a class="code hl_class" href="classxtd_1_1array.html">array</a> {10, 20, 30, 40};</div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(items[<a class="code hl_variable" href="#a21d3396cbfdd809ed8a75b6100c0d6de">index::epos</a>]); <span class="comment">// Prints 40</span></div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(items[<a class="code hl_variable" href="#a21d3396cbfdd809ed8a75b6100c0d6de">index::epos</a> - 1]); <span class="comment">// Prints 30</span></div>
+<div class="ttc" id="aclassxtd_1_1index_html_a21d3396cbfdd809ed8a75b6100c0d6de"><div class="ttname"><a href="#a21d3396cbfdd809ed8a75b6100c0d6de">xtd::index::epos</a></div><div class="ttdeci">static const index epos</div><div class="ttdoc">Represents the index of the last valid element in a collection.</div><div class="ttdef"><b>Definition</b> index.hpp:125</div></div>
+</div><!-- fragment --> The wollowing exemple shows the same example with bitwise operator as index. <div class="fragment"><div class="line"><span class="keyword">auto</span> items = <a class="code hl_class" href="classxtd_1_1array.html">array</a> {10, 20, 30, 40};</div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(items[<a class="code hl_class" href="classxtd_1_1index.html">index</a>::~1_z]); <span class="comment">// Prints 40</span></div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(items[<a class="code hl_class" href="classxtd_1_1index.html">index</a>::~2_z]); <span class="comment">// Prints 30</span></div>
+<div class="ttc" id="aclassxtd_1_1index_html"><div class="ttname"><a href="classxtd_1_1index.html">xtd::index</a></div><div class="ttdoc">Represents a type that can be used to index a collection either from the beginning or the end.</div><div class="ttdef"><b>Definition</b> index.hpp:27</div></div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="a2ae5246681bd2931ab6a3351e1823122" name="a2ae5246681bd2931ab6a3351e1823122"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ae5246681bd2931ab6a3351e1823122">&#9670;&#160;</a></span>npos</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="#a2d3e9c4c9d77e21a9ce2236765930cf1">index</a> xtd::index::npos</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Represents a value that is not a valid position in a collection. </p>
+<dl class="section remark"><dt>Remarks</dt><dd>This constant is typically used to indicate the absence of an index or a failed search operation. It is equivalent to the maximum value of <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525" title="Represents an unsigned size of any object in bytes.">xtd::usize</a>. </dd>
+<dd>
+The <a class="el" href="#a21d3396cbfdd809ed8a75b6100c0d6de" title="Represents the index of the last valid element in a collection.">xtd::index::epos</a> is equivalent to <span class="tt">~0_z</span>. With bitwise operator the code is more concise. </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><span class="keyword">auto</span> items = <a class="code hl_class" href="classxtd_1_1array.html">array</a> {10, 20, 30, 40};</div>
+<div class="line"><span class="keywordflow">if</span> (items.index_of(50) == <a class="code hl_variable" href="#a2ae5246681bd2931ab6a3351e1823122">index::npos</a>)</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;Value not found&quot;</span>);</div>
+<div class="ttc" id="aclassxtd_1_1index_html_a2ae5246681bd2931ab6a3351e1823122"><div class="ttname"><a href="#a2ae5246681bd2931ab6a3351e1823122">xtd::index::npos</a></div><div class="ttdeci">static const index npos</div><div class="ttdoc">Represents a value that is not a valid position in a collection.</div><div class="ttdef"><b>Definition</b> index.hpp:141</div></div>
+</div><!-- fragment --> The wollowing exemple shows the same example with bitwise operator as index. <div class="fragment"><div class="line"><span class="keyword">auto</span> items = <a class="code hl_class" href="classxtd_1_1array.html">array</a> {10, 20, 30, 40};</div>
+<div class="line"><span class="keywordflow">if</span> (items.index_of(50) == ~0_z)</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;Value not found&quot;</span>);</div>
+</div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
