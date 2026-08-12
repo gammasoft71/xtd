@@ -339,6 +339,8 @@ add_sources(
   "include/xtd/incrementable.hpp"
   "include/xtd/incrementable_.hpp"
   "include/xtd/incrementable"
+  "include/xtd/index.hpp"
+  "include/xtd/index"
   "include/xtd/index_out_of_range_exception.hpp"
   "include/xtd/index_out_of_range_exception"
   "include/xtd/int16.hpp"
