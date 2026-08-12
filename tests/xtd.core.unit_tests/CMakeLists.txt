@@ -254,6 +254,7 @@ add_sources(
   "src/xtd/tests/iasync_result_tests.cpp"
   "src/xtd/tests/icomparable_tests.cpp"
   "src/xtd/tests/iequatable_tests.cpp"
+  "src/xtd/tests/index_tests.cpp"
   "src/xtd/tests/index_out_of_range_exception_tests.cpp"
   "src/xtd/tests/interrupt_exception_tests.cpp"
   "src/xtd/tests/interface_tests.cpp"
