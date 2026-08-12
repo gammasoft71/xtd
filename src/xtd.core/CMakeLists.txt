@@ -1652,6 +1652,7 @@ add_sources(
   "src/xtd/h_result.cpp"
   "src/xtd/h_result_category.cpp"
   "src/xtd/iformatable.cpp"
+  "src/xtd/index_out_of_range_exception.cpp"
   "src/xtd/invalid_handle.cpp"
   "src/xtd/invalid_operation_exception.cpp"
   "src/xtd/make_error_code.cpp"
