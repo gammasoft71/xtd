@@ -17,6 +17,7 @@
 #include "hash_code.hpp"
 #include "icomparable.hpp"
 #include "iequatable.hpp"
+#include "index.hpp"
 #include "null.hpp"
 #include "string_comparison.hpp"
 #include "string_split_options.hpp"
@@ -143,8 +144,8 @@ namespace xtd {
     /// The wollowing exemple shows the same example with bitwise operator as index.
     /// ```cpp
     /// auto str = string {"hello"};
-    /// console::write_line(str[~1_z]); // Prints 'o'
-    /// console::write_line(str[~2_z]); // Prints 'l'
+    /// console::write_line(str[~1_i]); // Prints 'o'
+    /// console::write_line(str[~2_i]); // Prints 'l'
     /// ```
     static inline constexpr xtd::usize epos = npos - 1;
     /// @}
@@ -1393,11 +1394,18 @@ namespace xtd {
     /// @param index The position of the character to return.
     /// @return Reference to the requested character.
     /// @exception xtd::index_out_of_range_exception If `index` is not within the range of the string.
-    auto operator [](xtd::usize index) const -> const_reference {
-      if (index >= length() && index != epos) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
-      return chars_[index == epos ? length() - 1 : index];
+    auto operator [](xtd::index index) const -> const_reference {
+      return operator [](index.get_offset(length()));
     }
-    
+    /// @brief Returns a reference to the character at specified location index.
+    /// @param index The position of the character to return.
+    /// @return Reference to the requested character.
+    /// @exception xtd::index_out_of_range_exception If `index` is not within the range of the string.
+    auto operator [](xtd::usize index) const -> const_reference {
+      if (index >= length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
+      return chars_[index];
+    }
+
     /// @brief Returns a reference to the underlying base type.
     /// @return Reference to the underlying base type.
     operator const base_type& () const noexcept {return chars_;}
