@@ -103,8 +103,8 @@ namespace xtd {
       /// The wollowing exemple shows the same example with bitwise operator as index.
       /// ```cpp
       /// auto str = string {"hello"};
-      /// console::write_line(str[~1_z]); // Prints 'o'
-      /// console::write_line(str[~2_z]); // Prints 'l'
+      /// console::write_line(str[~1_i]); // Prints 'o'
+      /// console::write_line(str[~2_i]); // Prints 'l'
       /// ```
       static inline constexpr xtd::usize epos = npos - 1;
       /// @}
