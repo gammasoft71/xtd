@@ -3,6 +3,7 @@
 #include "../../../include/xtd/diagnostics/debug.hpp"
 #include "../../../include/xtd/as.hpp"
 #include "../../../include/xtd/environment.hpp"
+#include "../../../include/xtd/index.hpp"
 #include "../../../include/xtd/lock.hpp"
 #include <mutex>
 
@@ -92,7 +93,7 @@ registered_wait_handle thread_pool::register_wait_for_single_object(wait_handle&
   auto result = registered_wait_handle {};
   lock_(static_data_.thread_pool_asynchronous_io_items_sync_root) {
     static_data_.thread_pool_asynchronous_io_items.insert(0, thread_pool_asynchronous_io_item {callback, state, wait_object, milliseconds_timeout_interval, execute_only_once});
-    result.item_ = reinterpret_cast<intptr>(&static_data_.thread_pool_asynchronous_io_items[~1_z]);
+    result.item_ = reinterpret_cast<intptr>(&static_data_.thread_pool_asynchronous_io_items[~1_i]);
     if (static_data_.asynchronous_io_threads.count() == 0) initialize_min_asynchronous_io_threads();
     if (static_data_.thread_pool_asynchronous_io_items.count() + 1 > static_data_.asynchronous_io_threads.count() && static_data_.thread_pool_asynchronous_io_items.count() < max_asynchronous_io_threads_) create_asynchronous_io_thread();
   }
@@ -143,7 +144,7 @@ void thread_pool::asynchronous_io_run() {
     if (wait_handle::wait_any(static_data_.close_asynchronous_io_threads_manual_reset_event, static_data_.asynchronous_io_semaphore) == 0) break;
     thread_pool_asynchronous_io_item item;
     lock_(static_data_.thread_pool_asynchronous_io_items_sync_root) {
-      item = static_data_.thread_pool_asynchronous_io_items[~1_z];
+      item = static_data_.thread_pool_asynchronous_io_items[~1_i];
       if (static_data_.thread_pool_asynchronous_io_items.count() > max_asynchronous_io_threads_) static_data_.asynchronous_io_semaphore.release();
       static_data_.thread_pool_asynchronous_io_items.remove_at(static_data_.thread_pool_asynchronous_io_items.count() - 1);
     }
@@ -159,18 +160,18 @@ void thread_pool::asynchronous_io_run() {
 
 void thread_pool::create_thread() {
   static_data_.threads.add(thread {&thread_pool::run});
-  static_data_.threads[~1_z].name("Thread Pool");
-  static_data_.threads[~1_z].is_background(true);
-  static_data_.threads[~1_z].is_thread_pool_thread(true);
-  static_data_.threads[~1_z].start();
+  static_data_.threads[~1_i].name("Thread Pool");
+  static_data_.threads[~1_i].is_background(true);
+  static_data_.threads[~1_i].is_thread_pool_thread(true);
+  static_data_.threads[~1_i].start();
 }
 
 void thread_pool::create_asynchronous_io_thread() {
   static_data_.asynchronous_io_threads.add(thread {&thread_pool::asynchronous_io_run});
-  static_data_.asynchronous_io_threads[~1_z].name("Thread Pool");
-  static_data_.asynchronous_io_threads[~1_z].is_background(true);
-  static_data_.asynchronous_io_threads[~1_z].is_thread_pool_thread(true);
-  static_data_.asynchronous_io_threads[~1_z].start();
+  static_data_.asynchronous_io_threads[~1_i].name("Thread Pool");
+  static_data_.asynchronous_io_threads[~1_i].is_background(true);
+  static_data_.asynchronous_io_threads[~1_i].is_thread_pool_thread(true);
+  static_data_.asynchronous_io_threads[~1_i].start();
 }
 
 void thread_pool::initialize_min_threads() {
@@ -226,7 +227,7 @@ void thread_pool::run() {
     if (wait_handle::wait_any(static_data_.close_threads_manual_reset_event, static_data_.semaphore) == 0) break;
     auto item = thread_pool_item {};
     lock_(static_data_.thread_pool_items_sync_root) {
-      item = static_data_.thread_pool_items[~1_z];
+      item = static_data_.thread_pool_items[~1_i];
       if (static_data_.thread_pool_items.count() > max_threads_) static_data_.semaphore.release();
       static_data_.thread_pool_items.remove_at(static_data_.thread_pool_items.count() - 1);
     }
