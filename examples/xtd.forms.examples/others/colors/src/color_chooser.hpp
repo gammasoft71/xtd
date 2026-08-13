@@ -84,8 +84,6 @@ namespace colors_example {
     event<color_chooser, event_handler> selected_index_changed;
     event<color_chooser, event_handler> selected_color_changed;
     
-    static const usize npos = std::numeric_limits<usize>::max();
-    
   private:
     void add_color_panel(const drawing::color& color) {
       auto color_panel = new_ptr<color_chooser::color_panel>();
@@ -100,25 +98,25 @@ namespace colors_example {
     void on_colors_choice_selected_index_changed(object & sender, const event_args & e) {
       suspend_layout();
       auto index = selected_index();
-      selected_index(npos);
+      selected_index(xtd::index::end);
       colors_.clear();
       auto colors = as<const array<drawing::color>&(*)() noexcept>(colors_choice_.selected_item().tag());
       colors().to_list().reverse().for_each(xtd::action<const drawing::color&> {self_, &color_chooser::add_color_panel});
-      if (index == npos || colors_.count() == 0) return;
+      if (index == xtd::index::end || colors_.count() == 0) return;
       if (index < colors_.count()) selected_index(index);
       else selected_index(colors_.count() - 1);
       resume_layout();
     }
     
     void on_color_panel_click(object & sender, const event_args & e) {
-      selected_index(npos);
+      selected_index(xtd::index::end);
       selected_index(colors_.count() - 1 - as<usize>(as<control>(sender).tag()));
     }
     
     void on_selected_index_changed(const event_args& e) {
-      if (previous_selected_index_ != npos) colors_[colors_.count() - 1 - previous_selected_index_]->back_color(main_panel_.back_color());
-      if (previous_selected_index_ != npos) colors_[colors_.count() - 1 - previous_selected_index_]->fore_color(main_panel_.fore_color());
-      if (selected_index_ == npos) selected_color(drawing::color::empty);
+      if (previous_selected_index_ != xtd::index::end) colors_[colors_.count() - 1 - previous_selected_index_]->back_color(main_panel_.back_color());
+      if (previous_selected_index_ != xtd::index::end) colors_[colors_.count() - 1 - previous_selected_index_]->fore_color(main_panel_.fore_color());
+      if (selected_index_ == xtd::index::end) selected_color(drawing::color::empty);
       else {
         colors_[colors_.count() - 1 - selected_index_]->back_color(drawing::system_colors::accent());
         colors_[colors_.count() - 1 - selected_index_]->fore_color(drawing::system_colors::accent_text());
@@ -137,8 +135,8 @@ namespace colors_example {
       selected_color_changed(*this, e);
     }
     
-    usize previous_selected_index_ = npos;
-    usize selected_index_ = npos;
+    usize previous_selected_index_ = xtd::index::end;
+    usize selected_index_ = xtd::index::end;
     drawing::color selected_color_ = drawing::color::empty;
     choice colors_choice_;
     panel main_panel_;

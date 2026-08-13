@@ -8,7 +8,7 @@ auto gen_time_span_from_days (double days) -> void {
   // Fills the end of the time_span string with spaces if it does not contain milliseconds.
   auto index = time_interval.index_of(':');
   index = time_interval.index_of('.', index);
-  if (index == string::npos) time_interval += "        ";
+  if (index == xtd::index::end) time_interval += "        ";
   
   console::write_line("{0,21}{1,26}", days, time_interval);
 }

@@ -19,7 +19,7 @@ namespace numeric_tex_box_example {
   protected:
     void on_key_press(key_press_event_args& e) override {
       text_box::on_key_press(e);
-      e.handled((!char_object::is_number(e.key_char()) && e.key_char() != '.') || (e.key_char() == '.' && as<string>(text()).index_of('.') != string::npos));
+      e.handled((!char_object::is_number(e.key_char()) && e.key_char() != '.') || (e.key_char() == '.' && as<string>(text()).index_of('.') != xtd::index::end));
     }
     
     void on_text_changed(const event_args& e) override {

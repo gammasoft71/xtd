@@ -46,14 +46,14 @@ public:
     const collections::array_list& people_;
 
     // Enumerators are positioned before the first element until the first xtd::collections::ienumerator::move_next() call.
-    usize position = collections::array_list::npos;
+    usize position = xtd::index::end;
     
   public:
     people_enumerator(const collections::array_list& list) : people_(list) {}
     
     auto move_next() -> bool override {return ++position < people_.count();}
     
-    auto reset() -> void override {position = collections::array_list::npos;}
+    auto reset() -> void override {position = xtd::index::end;}
     
     auto current() const -> const any_object& override {
       if (position >= people_.count()) throw invalid_operation_exception {};

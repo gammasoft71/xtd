@@ -49,8 +49,6 @@ public:
     usize count_;
     
   public:
-    inline static constexpr usize npos = ilist::npos;
-
     simple_list() {count_ = 0;}
     
     auto print_contents() const noexcept -> void {
@@ -87,7 +85,7 @@ public:
     auto index_of(const any_object& value) const noexcept -> usize override {
       for (auto i = 0_z; i < count(); ++i)
         if (contents_[i] == value) return i;
-      return npos;
+      return xtd::index::end;
     }
     
     auto insert(usize index, const any_object& value) -> void override {
@@ -104,7 +102,7 @@ public:
     auto remove(const any_object& value) -> bool override {
       auto index = index_of(value);
       remove_at(index);
-      return index != npos;
+      return index != xtd::index::end;
     }
     
     auto remove_at(usize index) -> void override {
