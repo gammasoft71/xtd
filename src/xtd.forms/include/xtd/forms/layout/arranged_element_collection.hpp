@@ -128,8 +128,8 @@ namespace xtd {
         /// The wollowing exemple shows the same example with bitwise operator as index.
         /// ```cpp
         /// auto controls = control_collection {label1, button1, choice1};
-        /// controls[~1_z].width(240); // change the with of choice1 to 240
-        /// controls[~2_z].width(120); // change the with of button1 to 120
+        /// controls[~1_i].width(240); // change the with of choice1 to 240
+        /// controls[~2_i].width(120); // change the with of button1 to 120
         /// ```
         static inline constexpr xtd::usize epos = npos - 1;
         /// @}
@@ -538,13 +538,13 @@ namespace xtd {
         
         /// @brief Access the last element.
         /// @return The last element.
-        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::operator [~1_z] - Will be removed in version 1.2.0.
-        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::operator [~1_z] - Will be removed in version 1.2.0.")]]
+        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::operator [~1_i] - Will be removed in version 1.2.0.
+        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::operator [~1_i] - Will be removed in version 1.2.0.")]]
         [[nodiscard]] auto back() -> reference {return data_->items.back();}
         /// @brief Access the last element.
         /// @return The last element.
-        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::operator [~1_z] - Will be removed in version 1.2.0.
-        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::operator [~1_z] - Will be removed in version 1.2.0.")]]
+        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::operator [~1_i] - Will be removed in version 1.2.0.
+        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::operator [~1_i] - Will be removed in version 1.2.0.")]]
         [[nodiscard]] auto back() const -> const_reference {return data_->items.back();}
         
         /// @brief Returns a reverse iterator to the end.
