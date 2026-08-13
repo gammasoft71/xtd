@@ -7,6 +7,7 @@
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/collections/generic/list>
 #include <xtd/as>
+#include <xtd/index>
 #include <xtd/math>
 #include <xtd/static>
 #include <map>
@@ -46,9 +47,9 @@ namespace {
     static void start(wxGraphicsPath* path, const wxPoint2DDouble& current_point) {
       auto it = figures_.find(path);
       if (it != figures_.end()) {
-        if (it->second[~1_z]) return;
+        if (it->second[~1_i]) return;
         path->MoveToPoint(current_point.m_x, current_point.m_y);
-        it->second[~1_z] = true;
+        it->second[~1_i] = true;
       }
     }
     
