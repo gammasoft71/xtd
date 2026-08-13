@@ -1043,6 +1043,8 @@ namespace xtd {
           return self_;
         }
         
+        using xtd::collections::generic::ilist<type_t>::operator [];
+        using xtd::collections::generic::ilist<type_t>::operator ();
         /// @brief Returns a reference to the element at specified location index.
         /// @param index The position of the element to return.
         /// @return Reference to the requested element.
