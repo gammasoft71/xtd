@@ -318,7 +318,7 @@ requires std::is_base_of_v&lt;expression, std::decay_t&lt;left_t&gt;&gt; || std:
 <tr class="memdesc:aa8447d62d2aaa48ee855da2aebbabd03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logical and the specified left and right operands.  <br /></td></tr>
 <tr class="memitem:a2a510526157a4ccf4cc31e6cee826883" id="r_a2a510526157a4ccf4cc31e6cee826883"><td class="memTemplParams" colspan="2">template&lt;size_t index&gt; </td></tr>
 <tr class="memitem:a2a510526157a4ccf4cc31e6cee826883 template"><td class="memItemLeft">static constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#a2a510526157a4ccf4cc31e6cee826883">arg</a> ()</td></tr>
-<tr class="memdesc:a2a510526157a4ccf4cc31e6cee826883"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the <span class="tt"><a class="el" href="classxtd_1_1index.html" title="Represents a type that can be used to index a collection either from the beginning or the end.">index</a></span> argument used by expression.  <br /></td></tr>
+<tr class="memdesc:a2a510526157a4ccf4cc31e6cee826883"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the <span class="tt">index</span> argument used by expression.  <br /></td></tr>
 <tr class="memitem:a2f6331e445a905dd2fc6386f911c44f4" id="r_a2f6331e445a905dd2fc6386f911c44f4"><td class="memTemplParams" colspan="2">template&lt;typename left_t, typename right_t&gt; <br />
 requires std::is_base_of_v&lt;expression, std::decay_t&lt;left_t&gt;&gt; || std::is_base_of_v&lt;expression, std::decay_t&lt;right_t&gt;&gt;</td></tr>
 <tr class="memitem:a2f6331e445a905dd2fc6386f911c44f4 template"><td class="memItemLeft">static constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#a2f6331e445a905dd2fc6386f911c44f4">compare_three_way</a> (left_t left, right_t right)</td></tr>
@@ -396,7 +396,7 @@ requires std::is_base_of_v&lt;expression, std::decay_t&lt;left_t&gt;&gt; || std:
 <tr class="memdesc:aefe64077f2e81320bb012a6255575280"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logical or the specified left and right operands.  <br /></td></tr>
 <tr class="memitem:a1b061396ff3e57e5c65ea10d370fa4a9" id="r_a1b061396ff3e57e5c65ea10d370fa4a9"><td class="memTemplParams" colspan="2">template&lt;size_t index&gt; </td></tr>
 <tr class="memitem:a1b061396ff3e57e5c65ea10d370fa4a9 template"><td class="memItemLeft">static constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#a1b061396ff3e57e5c65ea10d370fa4a9">placeholder</a> ()</td></tr>
-<tr class="memdesc:a1b061396ff3e57e5c65ea10d370fa4a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the <span class="tt"><a class="el" href="classxtd_1_1index.html" title="Represents a type that can be used to index a collection either from the beginning or the end.">index</a></span> placeholder used by expression.  <br /></td></tr>
+<tr class="memdesc:a1b061396ff3e57e5c65ea10d370fa4a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the <span class="tt">index</span> placeholder used by expression.  <br /></td></tr>
 <tr class="memitem:aa513aeb5191aea1ab56ce14ebad66624" id="r_aa513aeb5191aea1ab56ce14ebad66624"><td class="memTemplParams" colspan="2">template&lt;typename left_t, typename right_t&gt; <br />
 requires std::is_base_of_v&lt;expression, std::decay_t&lt;left_t&gt;&gt; || std::is_base_of_v&lt;expression, std::decay_t&lt;right_t&gt;&gt;</td></tr>
 <tr class="memitem:aa513aeb5191aea1ab56ce14ebad66624 template"><td class="memItemLeft">static constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#aa513aeb5191aea1ab56ce14ebad66624">right_shift</a> (left_t left, right_t right)</td></tr>
@@ -654,7 +654,7 @@ template&lt;size_t index&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Gets the <span class="tt"><a class="el" href="classxtd_1_1index.html" title="Represents a type that can be used to index a collection either from the beginning or the end.">index</a></span> argument used by expression. </p>
+<p>Gets the <span class="tt">index</span> argument used by expression. </p>
 <dl class="section remark"><dt>Remarks</dt><dd>The index start from 1 to N. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="#a2a510526157a4ccf4cc31e6cee826883" title="Gets the index argument used by expression.">xtd::expressions::expression::arg</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
@@ -1956,7 +1956,7 @@ template&lt;size_t index&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Gets the <span class="tt"><a class="el" href="classxtd_1_1index.html" title="Represents a type that can be used to index a collection either from the beginning or the end.">index</a></span> placeholder used by expression. </p>
+<p>Gets the <span class="tt">index</span> placeholder used by expression. </p>
 <dl class="section remark"><dt>Remarks</dt><dd>The index start from 1 to N. </dd>
 <dd>
 Prefer the <a class="el" href="#a2a510526157a4ccf4cc31e6cee826883" title="Gets the index argument used by expression.">xtd::expressions::expression::arg</a> &lt;N&gt; or <a class="el" href="group__expressions.html#ga130423906ed7125e321bf42e00dafae9" title="The xtd::expressions::_ placeholder instance is used by expression that have only one argument.">xtd::expressions::_</a>, <a class="el" href="group__expressions.html#gafe769e4a8371075920e4ecf343d399ab" title="The xtd::expressions::_1 placeholder instance is first argument used by expression.">xtd::expressions::_1</a> ... <a class="el" href="group__expressions.html#ga84127de44e98b57262eba686d337e700" title="The xtd::expressions::_10 placeholder instance is tenth argument used by expression.">xtd::expressions::_10</a> instead <a class="el" href="#a1b061396ff3e57e5c65ea10d370fa4a9" title="Gets the index placeholder used by expression.">xtd::expressions::expression::placeholder</a>. </dd></dl>

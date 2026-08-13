@@ -151,7 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line">  <span class="keyword">protected</span>:</div>
 <div class="line">    <span class="keywordtype">void</span> on_key_press(key_press_event_args&amp; e)<span class="keyword"> override </span>{</div>
 <div class="line">      text_box::on_key_press(e);</div>
-<div class="line">      e.handled((!char_object::is_number(e.key_char()) &amp;&amp; e.key_char() != <span class="charliteral">&#39;.&#39;</span>) || (e.key_char() == <span class="charliteral">&#39;.&#39;</span> &amp;&amp; as&lt;string&gt;(text()).index_of(<span class="charliteral">&#39;.&#39;</span>) != string::npos));</div>
+<div class="line">      e.handled((!char_object::is_number(e.key_char()) &amp;&amp; e.key_char() != <span class="charliteral">&#39;.&#39;</span>) || (e.key_char() == <span class="charliteral">&#39;.&#39;</span> &amp;&amp; as&lt;string&gt;(text()).index_of(<span class="charliteral">&#39;.&#39;</span>) != xtd::index::end));</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordtype">void</span> on_text_changed(<span class="keyword">const</span> event_args&amp; e)<span class="keyword"> override </span>{</div>

@@ -323,6 +323,8 @@ Public Fields</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Operators</h2></td></tr>
+<tr class="memitem:aa5f2b589abb3d13a64cefe3c54b00b23" id="r_aa5f2b589abb3d13a64cefe3c54b00b23"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aa5f2b589abb3d13a64cefe3c54b00b23">operator[]</a> (xtd::index index) const -&gt; <a class="el" href="#a5a19c12dd03024a0b27ae68115bbfa2b">const_reference</a></td></tr>
+<tr class="memdesc:aa5f2b589abb3d13a64cefe3c54b00b23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a reference to the character at specified location index.  <br /></td></tr>
 <tr class="memitem:a4a1bf00164f9b0c004cc70b6f1d69fa5" id="r_a4a1bf00164f9b0c004cc70b6f1d69fa5"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a4a1bf00164f9b0c004cc70b6f1d69fa5">operator[]</a> (<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> index) const -&gt; <a class="el" href="#a5a19c12dd03024a0b27ae68115bbfa2b">const_reference</a></td></tr>
 <tr class="memdesc:a4a1bf00164f9b0c004cc70b6f1d69fa5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a reference to the character at specified location index.  <br /></td></tr>
 <tr class="memitem:a6775931e51f45aad56df1c249c578832" id="r_a6775931e51f45aad56df1c249c578832"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a6775931e51f45aad56df1c249c578832">operator const base_type &amp;</a> () const noexcept</td></tr>
@@ -2552,7 +2554,7 @@ template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>A pointer to the underlying character storage. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The pointer obtained from <span class="tt"><a class="el" href="#adb5f080eff4c7b9d38a253754483507f" title="Returns a pointer to the underlying array serving as character storage. The pointer is such that the ...">data()</a></span> may be invalidated by:<ul>
 <li>Passing a non-const reference to the string to any standard library function, or</li>
-<li>Calling non-const member functions on the string, excluding <a class="el" href="#a4a1bf00164f9b0c004cc70b6f1d69fa5" title="Returns a reference to the character at specified location index.">operator[]()</a>, at(), front(), back(), <a class="el" href="namespacextd.html#a286f3b5c2fe472a7b62cf22d2f4bf7da" title="Returns an iterator to the beginning.">begin()</a>, <a class="el" href="namespacextd.html#aa56636733a54ef849898bbab97515f5b" title="Returns an iterator to the end.">end()</a>, rbegin(), rend().<ol type="1">
+<li>Calling non-const member functions on the string, excluding <a class="el" href="#aa5f2b589abb3d13a64cefe3c54b00b23" title="Returns a reference to the character at specified location index.">operator[]()</a>, at(), front(), back(), <a class="el" href="namespacextd.html#a286f3b5c2fe472a7b62cf22d2f4bf7da" title="Returns an iterator to the beginning.">begin()</a>, <a class="el" href="namespacextd.html#aa56636733a54ef849898bbab97515f5b" title="Returns an iterator to the end.">end()</a>, rbegin(), rend().<ol type="1">
 <li>Modifying the character array accessed through the const overload of data has undefined behavior.</li>
 <li>Modifying the past-the-end null terminator stored at <a class="el" href="#adb5f080eff4c7b9d38a253754483507f" title="Returns a pointer to the underlying array serving as character storage. The pointer is such that the ...">data()</a> + <a class="el" href="#afbaddf90724a6a53beb932cd7e4b7f1e" title="Gets the number of characters in the current xtd::basic_string object.">size()</a> to any value other than char_t() has undefined behavior. </li>
 </ol>
@@ -6829,7 +6831,7 @@ template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// name = N3xtd9date_timeE</span></div>
 <div class="line"><span class="comment">// demangled name = xtd::date_time</span></div>
-<div class="ttc" id="aclassxtd_1_1basic__string_html_ac5f6d2ab7df4317d6ed5c29f9ae0bcae"><div class="ttname"><a href="#ac5f6d2ab7df4317d6ed5c29f9ae0bcae">xtd::basic_string::demangle</a></div><div class="ttdeci">static auto demangle(const basic_string &amp;name) -&gt; basic_string</div><div class="ttdoc">Gets demangled basic_string of name,.</div><div class="ttdef"><b>Definition</b> basic_string.hpp:1192</div></div>
+<div class="ttc" id="aclassxtd_1_1basic__string_html_ac5f6d2ab7df4317d6ed5c29f9ae0bcae"><div class="ttname"><a href="#ac5f6d2ab7df4317d6ed5c29f9ae0bcae">xtd::basic_string::demangle</a></div><div class="ttdeci">static auto demangle(const basic_string &amp;name) -&gt; basic_string</div><div class="ttdoc">Gets demangled basic_string of name,.</div><div class="ttdef"><b>Definition</b> basic_string.hpp:1193</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae600c08b996905be13225bba0f253a63"><div class="ttname"><a href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">xtd::console::write_line</a></div><div class="ttdeci">static auto write_line() -&gt; void</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
 <div class="ttc" id="aclassxtd_1_1date__time_html"><div class="ttname"><a href="classxtd_1_1date__time.html">xtd::date_time</a></div><div class="ttdoc">Represents an instant in time, typically expressed as a date and time of day.</div><div class="ttdef"><b>Definition</b> date_time.hpp:83</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
@@ -7294,8 +7296,50 @@ template&lt;typename value_t&gt; </div>
 
 </div>
 </div>
+<a id="aa5f2b589abb3d13a64cefe3c54b00b23" name="aa5f2b589abb3d13a64cefe3c54b00b23"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5f2b589abb3d13a64cefe3c54b00b23">&#9670;&#160;</a></span>operator[]() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t, traits_t, allocator_t &gt;::operator[] </td>
+          <td>(</td>
+          <td class="paramtype">xtd::index</td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
+          <td> const -&gt; <a class="el" href="#a5a19c12dd03024a0b27ae68115bbfa2b">const_reference</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a reference to the character at specified location index. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>The position of the character to return. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Reference to the requested character. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">xtd::index_out_of_range_exception</td><td>If `index` is not within the range of the string. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a4a1bf00164f9b0c004cc70b6f1d69fa5" name="a4a1bf00164f9b0c004cc70b6f1d69fa5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4a1bf00164f9b0c004cc70b6f1d69fa5">&#9670;&#160;</a></span>operator[]()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a1bf00164f9b0c004cc70b6f1d69fa5">&#9670;&#160;</a></span>operator[]() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -9910,8 +9954,8 @@ template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(str[<a class="code hl_variable" href="group__system.html#gae07d4f90f849f8a342d562935986e067">epos</a> - 1]); <span class="comment">// Prints &#39;l&#39;</span></div>
 <div class="ttc" id="agroup__system_html_gae07d4f90f849f8a342d562935986e067"><div class="ttname"><a href="group__system.html#gae07d4f90f849f8a342d562935986e067">xtd::epos</a></div><div class="ttdeci">constexpr auto epos</div><div class="ttdoc">Represents the index of the last valid element in a collection.</div><div class="ttdef"><b>Definition</b> epos.hpp:33</div></div>
 </div><!-- fragment --> The wollowing exemple shows the same example with bitwise operator as index. <div class="fragment"><div class="line"><span class="keyword">auto</span> str = <span class="keywordtype">string</span> {<span class="stringliteral">&quot;hello&quot;</span>};</div>
-<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(str[~1_z]); <span class="comment">// Prints &#39;o&#39;</span></div>
-<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(str[~2_z]); <span class="comment">// Prints &#39;l&#39;</span></div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(str[~1_i]); <span class="comment">// Prints &#39;o&#39;</span></div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(str[~2_i]); <span class="comment">// Prints &#39;l&#39;</span></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>

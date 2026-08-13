@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line">  <span class="comment">// Fills the end of the time_span string with spaces if it does not contain milliseconds.</span></div>
 <div class="line">  <span class="keyword">auto</span> index = time_interval.index_of(<span class="charliteral">&#39;:&#39;</span>);</div>
 <div class="line">  index = time_interval.index_of(<span class="charliteral">&#39;.&#39;</span>, index);</div>
-<div class="line">  <span class="keywordflow">if</span> (index == string::npos) time_interval += <span class="stringliteral">&quot;        &quot;</span>;</div>
+<div class="line">  <span class="keywordflow">if</span> (index == xtd::index::end) time_interval += <span class="stringliteral">&quot;        &quot;</span>;</div>
 <div class="line">  </div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;{0,21}{1,26}&quot;</span>, days, time_interval);</div>
 <div class="line">}</div>

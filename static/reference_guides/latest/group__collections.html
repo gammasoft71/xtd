@@ -599,14 +599,14 @@ For the generic version of this interface, see <a class="el" href="classxtd_1_1c
 <div class="line">    <span class="keyword">const</span> collections::array_list&amp; people_;</div>
 <div class="line"> </div>
 <div class="line">    <span class="comment">// Enumerators are positioned before the first element until the first xtd::collections::ienumerator::move_next() call.</span></div>
-<div class="line">    <a class="code hl_typedef" href="group__types.html#gae60f5a861761019d824a87291f85d525">usize</a> position = collections::array_list::npos;</div>
+<div class="line">    <a class="code hl_typedef" href="group__types.html#gae60f5a861761019d824a87291f85d525">usize</a> position = xtd::index::end;</div>
 <div class="line">    </div>
 <div class="line">  <span class="keyword">public</span>:</div>
 <div class="line">    people_enumerator(<span class="keyword">const</span> collections::array_list&amp; list) : people_(list) {}</div>
 <div class="line">    </div>
 <div class="line">    <span class="keyword">auto</span> move_next() -&gt; <span class="keywordtype">bool</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> ++position &lt; people_.count();}</div>
 <div class="line">    </div>
-<div class="line">    <span class="keyword">auto</span> reset() -&gt; <span class="keywordtype">void</span> <span class="keyword">override</span> {position = collections::array_list::npos;}</div>
+<div class="line">    <span class="keyword">auto</span> reset() -&gt; <span class="keywordtype">void</span> <span class="keyword">override</span> {position = xtd::index::end;}</div>
 <div class="line">    </div>
 <div class="line">    <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#gga7a589c8f2da82ae9a6f693b968cb7afca43b5c9175984c071f30b873fdce0a000">current</a>() const -&gt; const any_object&amp;<span class="keyword"> override </span>{</div>
 <div class="line">      <span class="keywordflow">if</span> (position &gt;= people_.count()) <span class="keywordflow">throw</span> invalid_operation_exception {};</div>
@@ -721,14 +721,14 @@ It is a best practice to implement <a class="el" href="#gaf8650b6defaa4608630701
 <div class="line">    <span class="keyword">const</span> collections::array_list&amp; people_;</div>
 <div class="line"> </div>
 <div class="line">    <span class="comment">// Enumerators are positioned before the first element until the first xtd::collections::ienumerator::move_next() call.</span></div>
-<div class="line">    <a class="code hl_typedef" href="group__types.html#gae60f5a861761019d824a87291f85d525">usize</a> position = collections::array_list::npos;</div>
+<div class="line">    <a class="code hl_typedef" href="group__types.html#gae60f5a861761019d824a87291f85d525">usize</a> position = xtd::index::end;</div>
 <div class="line">    </div>
 <div class="line">  <span class="keyword">public</span>:</div>
 <div class="line">    people_enumerator(<span class="keyword">const</span> collections::array_list&amp; list) : people_(list) {}</div>
 <div class="line">    </div>
 <div class="line">    <span class="keyword">auto</span> move_next() -&gt; <span class="keywordtype">bool</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> ++position &lt; people_.count();}</div>
 <div class="line">    </div>
-<div class="line">    <span class="keyword">auto</span> reset() -&gt; <span class="keywordtype">void</span> <span class="keyword">override</span> {position = collections::array_list::npos;}</div>
+<div class="line">    <span class="keyword">auto</span> reset() -&gt; <span class="keywordtype">void</span> <span class="keyword">override</span> {position = xtd::index::end;}</div>
 <div class="line">    </div>
 <div class="line">    <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#gga7a589c8f2da82ae9a6f693b968cb7afca43b5c9175984c071f30b873fdce0a000">current</a>() const -&gt; const any_object&amp;<span class="keyword"> override </span>{</div>
 <div class="line">      <span class="keywordflow">if</span> (position &gt;= people_.count()) <span class="keywordflow">throw</span> invalid_operation_exception {};</div>
@@ -881,8 +881,6 @@ The <a class="el" href="#gaf08e1c4c9551b36c55a00283f6431e5d" title="Defines meth
 <div class="line">    <a class="code hl_typedef" href="group__types.html#gae60f5a861761019d824a87291f85d525">usize</a> count_;</div>
 <div class="line">    </div>
 <div class="line">  <span class="keyword">public</span>:</div>
-<div class="line">    <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="group__types.html#gae60f5a861761019d824a87291f85d525">usize</a> <a class="code hl_variable" href="group__system.html#gab7854b68f0ca73a92f4c4cec362061fd">npos</a> = ilist::npos;</div>
-<div class="line"> </div>
 <div class="line">    simple_list() {count_ = 0;}</div>
 <div class="line">    </div>
 <div class="line">    <span class="keyword">auto</span> print_contents() const noexcept -&gt; <span class="keywordtype">void</span> {</div>
@@ -919,7 +917,7 @@ The <a class="el" href="#gaf08e1c4c9551b36c55a00283f6431e5d" title="Defines meth
 <div class="line">    <span class="keyword">auto</span> index_of(<span class="keyword">const</span> any_object&amp; value) <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; <a class="code hl_typedef" href="group__types.html#gae60f5a861761019d824a87291f85d525">usize</a> <span class="keyword">override</span> {</div>
 <div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> i = 0_z; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> &lt; count(); ++<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>)</div>
 <div class="line">        <span class="keywordflow">if</span> (contents_[i] == value) <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>;</div>
-<div class="line">      <span class="keywordflow">return</span> <a class="code hl_variable" href="group__system.html#gab7854b68f0ca73a92f4c4cec362061fd">npos</a>;</div>
+<div class="line">      <span class="keywordflow">return</span> xtd::index::end;</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">    <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae0df5f3dfd2650ae5be9993434e2b2c0">insert</a>(usize index, <span class="keyword">const</span> any_object&amp; value) -&gt; <span class="keywordtype">void</span> <span class="keyword">override</span> {</div>
@@ -936,7 +934,7 @@ The <a class="el" href="#gaf08e1c4c9551b36c55a00283f6431e5d" title="Defines meth
 <div class="line">    <span class="keyword">auto</span> remove(<span class="keyword">const</span> any_object&amp; value) -&gt; <span class="keywordtype">bool</span> <span class="keyword">override</span> {</div>
 <div class="line">      <span class="keyword">auto</span> index = index_of(value);</div>
 <div class="line">      remove_at(index);</div>
-<div class="line">      <span class="keywordflow">return</span> index != <a class="code hl_variable" href="group__system.html#gab7854b68f0ca73a92f4c4cec362061fd">npos</a>;</div>
+<div class="line">      <span class="keywordflow">return</span> index != xtd::index::end;</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">    <span class="keyword">auto</span> remove_at(usize index) -&gt; <span class="keywordtype">void</span> <span class="keyword">override</span> {</div>
@@ -1008,7 +1006,6 @@ The <a class="el" href="#gaf08e1c4c9551b36c55a00283f6431e5d" title="Defines meth
 <div class="ttc" id="aclassxtd_1_1basic__array_html_a9d5d3b513ccae2470ae034fac4cb85ad"><div class="ttname"><a href="classxtd_1_1basic__array.html#a9d5d3b513ccae2470ae034fac4cb85ad">xtd::basic_array::length</a></div><div class="ttdeci">virtual auto length() const noexcept -&gt; size_type</div><div class="ttdoc">Gets a size that represents the total number of elements in all the dimensions of the array.</div><div class="ttdef"><b>Definition</b> basic_array.hpp:122</div></div>
 <div class="ttc" id="aclassxtd_1_1basic__array_html_ac8956071bed59b8538a0ded1e2ecec2a"><div class="ttname"><a href="classxtd_1_1basic__array.html#ac8956071bed59b8538a0ded1e2ecec2a">xtd::basic_array::data</a></div><div class="ttdeci">virtual auto data() noexcept -&gt; pointer override</div><div class="ttdoc">Returns pointer to the underlying array serving as element storage.</div><div class="ttdef"><b>Definition</b> basic_array.hpp:77</div></div>
 <div class="ttc" id="agroup__expressions_html_gga418395dc9383e37eb269a52b25b74683a2063c1608d6e0baf80249c42e2be5804"><div class="ttname"><a href="group__expressions.html#gga418395dc9383e37eb269a52b25b74683a2063c1608d6e0baf80249c42e2be5804">xtd::expressions::operator_precedence::value</a></div><div class="ttdeci">@ value</div><div class="ttdoc">Represnets the constant operator precedence (42).</div><div class="ttdef"><b>Definition</b> operator_precedence.hpp:30</div></div>
-<div class="ttc" id="agroup__system_html_gab7854b68f0ca73a92f4c4cec362061fd"><div class="ttname"><a href="group__system.html#gab7854b68f0ca73a92f4c4cec362061fd">xtd::npos</a></div><div class="ttdeci">constexpr auto npos</div><div class="ttdoc">Represents a value that is not a valid position in a collection.</div><div class="ttdef"><b>Definition</b> npos.hpp:26</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a01bc6f8efa4202821e95f4fdf6298b30"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a01bc6f8efa4202821e95f4fdf6298b30">xtd::console_key::clear</a></div><div class="ttdeci">@ clear</div><div class="ttdoc">The CLEAR key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:26</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a34ec78fcc91ffb1e54cd85e4a0924332"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a34ec78fcc91ffb1e54cd85e4a0924332">xtd::console_key::add</a></div><div class="ttdeci">@ add</div><div class="ttdoc">The Add key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:170</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2ae0df5f3dfd2650ae5be9993434e2b2c0"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae0df5f3dfd2650ae5be9993434e2b2c0">xtd::console_key::insert</a></div><div class="ttdeci">@ insert</div><div class="ttdoc">The INS (INSERT) key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:62</div></div>

@@ -37,7 +37,7 @@ var searchData=
   ['implicit_5fusing_5fnamespaces_2ehpp_34',['implicit_using_namespaces.hpp',['../implicit__using__namespaces_8hpp.html',1,'']]],
   ['incrementable_2ehpp_35',['incrementable.hpp',['../incrementable_8hpp.html',1,'']]],
   ['incrementable_5f_2ehpp_36',['incrementable_.hpp',['../incrementable___8hpp.html',1,'']]],
-  ['index_2ehpp_37',['index.hpp',['../index_8hpp.html',1,'']]],
+  ['index_2ehpp_37',['index.hpp',['../index_8hpp.html',1,'(Global Namespace)'],['../literals_2index_8hpp.html',1,'(Global Namespace)']]],
   ['index_5fout_5fof_5frange_5fexception_2ehpp_38',['index_out_of_range_exception.hpp',['../index__out__of__range__exception_8hpp.html',1,'']]],
   ['ini_5ffile_5fsettings_2ehpp_39',['ini_file_settings.hpp',['../ini__file__settings_8hpp.html',1,'']]],
   ['input_5fbox_2ehpp_40',['input_box.hpp',['../input__box_8hpp.html',1,'']]],

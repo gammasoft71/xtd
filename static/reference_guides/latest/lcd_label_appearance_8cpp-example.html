@@ -179,7 +179,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line">      segment_style_choice.location({120, 45});</div>
 <div class="line">      segment_style_choice.width(180);</div>
 <div class="line">      segment_style_choice.selected_value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
-<div class="line">        <span class="keywordflow">if</span> (segment_style_choice.selected_index() == segment_style_choice.items().npos) <span class="keywordflow">return</span>;</div>
+<div class="line">        <span class="keywordflow">if</span> (segment_style_choice.selected_index() == xtd::index::end) <span class="keywordflow">return</span>;</div>
 <div class="line">        <span class="keyword">auto</span> style = segment_style_choice.selected_item().tag();</div>
 <div class="line">        <span class="keywordflow">if</span> (is&lt;dot_matrix_style&gt;(style)) label_lcd_label.dot_matrix_style(as&lt;forms::dot_matrix_style&gt;(segment_style_choice.selected_item().tag()));</div>
 <div class="line">        <span class="keywordflow">else</span> label_lcd_label.segment_style(as&lt;forms::segment_style&gt;(segment_style_choice.selected_item().tag()));</div>
