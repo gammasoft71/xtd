@@ -4,6 +4,7 @@
 #include "../../../include/xtd/io/directory_info.hpp"
 #include "../../../include/xtd/io/path.hpp"
 #include "../../../include/xtd/argument_exception.hpp"
+#include "../../../include/xtd/index.hpp"
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/file>
 #include <xtd/native/file_system>
@@ -56,7 +57,7 @@ auto file_info::length() const -> usize {
 auto file_info::name() const -> string {
   auto items = full_path_.split(path::directory_separator_char());
   if (items.length() == 0) return full_path_;
-  return items[~1_z];
+  return items[~1_i];
 }
 
 auto file_info::append_text() const -> stream_writer {
