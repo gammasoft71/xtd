@@ -9,6 +9,7 @@
 #include "../../../include/xtd/security/security_exception.hpp"
 #include "../../../include/xtd/argument_exception.hpp"
 #include "../../../include/xtd/as.hpp"
+#include "../../../include/xtd/index.hpp"
 #include "../../../include/xtd/not_implemented_exception.hpp"
 #include "../../../include/xtd/unauthorized_access_exception.hpp"
 #define __XTD_CORE_NATIVE_LIBRARY__
@@ -190,7 +191,7 @@ auto directory_info::name() const -> string {
   auto items = full_path_.split(path::directory_separator_char());
   if (items.length() == 0)
     return full_path_;
-  return items[~1_z];
+  return items[~1_i];
 }
 
 auto directory_info::parent() const -> directory_info {
