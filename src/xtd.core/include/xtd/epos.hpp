@@ -27,8 +27,8 @@ namespace xtd {
   /// The wollowing exemple shows the same example with bitwise operator as index.
   /// ```cpp
   /// auto items = array {10, 20, 30, 40};
-  /// console::write_line(items[~1_z]); // Prints 40
-  /// console::write_line(items[~2_z]); // Prints 30
+  /// console::write_line(items[~1_i]); // Prints 40
+  /// console::write_line(items[~2_i]); // Prints 30
   /// ```
   inline constexpr auto epos = xtd::npos - 1;
   /// @}
