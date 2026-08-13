@@ -55,6 +55,8 @@ namespace xtd {
           }
           [[nodiscard]] auto index_of(const list_type_t& item) const noexcept -> xtd::usize override {return npos;}
           
+          using xtd::collections::generic::ilist<type_t>::operator [];
+          using xtd::collections::generic::ilist<type_t>::operator ();
           const list_type_t& operator [](xtd::usize index) const override {xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);}
           list_type_t& operator [](xtd::usize index) override {xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);}
           
@@ -214,6 +216,8 @@ namespace xtd {
         /// @name Public Operators
         
         /// @{
+        using xtd::collections::generic::ilist<type_t>::operator [];
+        using xtd::collections::generic::ilist<type_t>::operator ();
         /// @brief Returns a reference to the element at specified location pos.
         /// @param index The position of the element to return.
         /// @return Reference to the requested element.
