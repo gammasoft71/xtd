@@ -79,8 +79,8 @@ namespace xtd {
         /// The wollowing exemple shows the same example with bitwise operator as index.
         /// ```cpp
         /// auto items = list {10, 20, 30, 40};
-        /// console::write_line(items[~1_z]); // Prints 40
-        /// console::write_line(items[~2_z]); // Prints 30
+        /// console::write_line(items[~1_i]); // Prints 40
+        /// console::write_line(items[~2_i]); // Prints 30
         /// ```
         static inline constexpr xtd::usize epos = npos - 1;
         /// @}
@@ -210,6 +210,8 @@ namespace xtd {
         /// @name Public Operators
         
         /// @{
+        using xtd::collections::generic::extensions::list_common<type_t, ilist<type_t>>::operator [];
+        using xtd::collections::generic::extensions::list_common<type_t, ilist<type_t>>::operator ();
         /// @brief Gets the element at the specified index.
         /// @param index The zero-based index of the element to get.
         /// @remarks This operator provides the ability to access a specific element in the collection by using the following syntax: `my_collection[index]`.
