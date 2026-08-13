@@ -10,6 +10,10 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
+  /// @cond
+  struct index;
+  /// @endcond
+  
   /// @brief The xtd::collections namespace contains interfaces and classes that define various collections of objects, such as lists, queues, bit arrays, hash tables and dictionaries.
   namespace collections {
     /// @brief The xtd::collections::generic namespace contains interfaces and classes that define generic collections, which allow users to create strongly typed collections that provide better type safety and performance than non-generic strongly typed collections.
@@ -313,7 +317,10 @@ namespace xtd {
           friend auto operator !=(const std::vector<type_t>& a, const raw_array<type_t>& b) -> bool {
             return a != b.items();
           }
-          
+
+          auto operator [](const xtd::index& index) const -> const_reference;
+          auto operator [](const xtd::index& index) -> reference;
+
           auto operator [](size_type index) const -> const_reference {return at(index);}
           auto operator [](size_type index) -> reference {return at(index);}
           
