@@ -200,6 +200,7 @@ namespace xtd {
     /// @return This current instance.
     auto operator=(array&&) -> array& = default;
     
+    using xtd::basic_array<type_t, allocator_t>::operator[];
     using xtd::basic_array<type_t, allocator_t>::operator();
     /// @brief Sets a value to the element at the specified position in the one-dimensional Array. The index is specified as a 32-bit integer.
     /// @param value The new value for the specified element.
@@ -226,7 +227,6 @@ namespace xtd {
     [[nodiscard]] auto operator()(size_type index1, size_type index2, size_type index3) const -> const value_type& {return xtd::basic_array<type_t, allocator_t>::operator()({index1, index2, index3});}
     
 #if __cpp_multidimensional_subscript
-    using xtd::basic_array<type_t, allocator_t>::operator [];
     /// @brief Sets a value to the element at the specified position in the one-dimensional Array. The index is specified as a 32-bit integer.
     /// @param value The new value for the specified element.
     /// @param index1 A xtd::usize that represents the position of the first rank of array element to set.
