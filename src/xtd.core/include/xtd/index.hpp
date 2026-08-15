@@ -72,16 +72,16 @@ namespace xtd {
     /// @brief Indicates whether the current object is equal to another object of the same type.
     /// @param obj An object to compare with this object.
     /// @return `true` if the current object is equal to the other parameter; otherwise, `false`.
-    [[nodiscard]] constexpr auto equals(const index& value) const noexcept -> bool override {return xtd::collections::generic::helpers::equator<value_type> {}(__v__, value.__v__);}
+    [[nodiscard]] auto equals(const index& value) const noexcept -> bool override {return xtd::collections::generic::helpers::equator<value_type> {}(__v__, value.__v__);}
     
     /// @brief Serves as a hash function for a particular type.
     /// @return A hash code for the current object.
-    [[nodiscard]] constexpr auto get_hash_code() const noexcept -> xtd::usize override {return hash_code::combine(__v__);}
+    [[nodiscard]] auto get_hash_code() const noexcept -> xtd::usize override {return hash_code::combine(__v__);}
 
     /// @brief Calculates the offset from the start of the collection using the specified collection length.
     /// @param length The length of the collection that the xtd::index will be used with. Must be a positive value.
     /// @return The offset.
-    [[nodiscard]] constexpr auto get_offset(value_type length) const noexcept -> xtd::usize {return is_from_end() ? length - value() : value();}
+    [[nodiscard]] auto get_offset(value_type length) const noexcept -> xtd::usize {return is_from_end() ? length - value() : value();}
 
     /// @brief Returns the string representation of the current Range object.
     /// @return The string representation of the range.
