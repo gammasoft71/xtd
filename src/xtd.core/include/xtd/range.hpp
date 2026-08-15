@@ -69,15 +69,15 @@ namespace xtd {
     /// @brief Determines whether the specified object is equal to the current object.
     /// @param obj The object to compare with the current object.
     /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-    [[nodiscard]] constexpr auto equals(const object& obj) const noexcept -> bool override {return is<range>(obj) && equals(static_cast<const range& > (obj));}
+    [[nodiscard]] auto equals(const object& obj) const noexcept -> bool override {return is<range>(obj) && equals(static_cast<const range& > (obj));}
     /// @brief Indicates whether the current object is equal to another object of the same type.
     /// @param obj An object to compare with this object.
     /// @return `true` if the current object is equal to the other parameter; otherwise, `false`.
-    [[nodiscard]] constexpr auto equals(const range& value) const noexcept -> bool override {return xtd::collections::generic::helpers::equator<index_type> {}(start_, value.start_) && xtd::collections::generic::helpers::equator<index_type> {}(end_, value.end_);}
+    [[nodiscard]] auto equals(const range& value) const noexcept -> bool override {return xtd::collections::generic::helpers::equator<index_type> {}(start_, value.start_) && xtd::collections::generic::helpers::equator<index_type> {}(end_, value.end_);}
     
     /// @brief Serves as a hash function for a particular type.
     /// @return A hash code for the current object.
-    [[nodiscard]] constexpr auto get_hash_code() const noexcept -> size_type override {return hash_code::combine(start_, end_);}
+    [[nodiscard]] auto get_hash_code() const noexcept -> size_type override {return hash_code::combine(start_, end_);}
     
     /// @brief Returns the string representation of the current Range object.
     /// @return The string representation of the range.
