@@ -238,16 +238,14 @@ auto bit_array::xor_(const bit_array& value) -> const bit_array& {
 
 auto bit_array::operator [](xtd::usize index) const -> const bool& {
   flush(); // Must be call first
-  if (index >= length() && index != epos) throw_helper::throws(exception_case::argument_out_of_range);
-  auto idx = index == epos ? length() - 1 : index;
-  return value_ref_.get_boolean_ref(get_bit_value(idx), idx);
+  if (index >= length()) throw_helper::throws(exception_case::argument_out_of_range);
+  return value_ref_.get_boolean_ref(get_bit_value(index), index);
 }
 
 auto bit_array::operator [](xtd::usize index) -> bool& {
   flush(); // Must be call first
-  if (index >= length() && index != epos) throw_helper::throws(exception_case::argument_out_of_range);
-  auto idx = index == epos ? length() - 1 : index;
-  return value_ref_.get_boolean_ref(get_bit_value(idx), idx);
+  if (index >= length()) throw_helper::throws(exception_case::argument_out_of_range);
+  return value_ref_.get_boolean_ref(get_bit_value(index), index);
 }
 
 auto bit_array::operator &(const bit_array& value) const -> bit_array {
