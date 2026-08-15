@@ -186,8 +186,6 @@ Public Aliases</h2></td></tr>
 Public Fields</h2></td></tr>
 <tr class="memitem:a08bf02d73655eeb3dbc8eac397b81123" id="r_a08bf02d73655eeb3dbc8eac397b81123"><td class="memItemLeft">static constexpr <a class="el" href="#a00d3525c87b582cd9dbf27852cf1199f">size_type</a>&#160;</td><td class="memItemRight"><a class="el" href="#a08bf02d73655eeb3dbc8eac397b81123">npos</a></td></tr>
 <tr class="memdesc:a08bf02d73655eeb3dbc8eac397b81123"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a value that is not a valid position in a collection.  <br /></td></tr>
-<tr class="memitem:a4e00a3442ff63de44338426e8dde442d" id="r_a4e00a3442ff63de44338426e8dde442d"><td class="memItemLeft">static constexpr <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a>&#160;</td><td class="memItemRight"><a class="el" href="#a4e00a3442ff63de44338426e8dde442d">epos</a></td></tr>
-<tr class="memdesc:a4e00a3442ff63de44338426e8dde442d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the index of the last valid element in a collection.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Constructors</h2></td></tr>
@@ -817,7 +815,7 @@ template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;,
 </dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example demonstrates how to call the <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html" title="Represents a mutable string of characters. This class cannot be inherited.">xtd::text::basic_string_builder</a> constructor with a specified capacity. <div class="fragment"><div class="line"><span class="keyword">auto</span> <a class="code hl_function" href="#a3757ada163cd412812d53c879b07b395">capacity</a> = 255_z;</div>
 <div class="line"><span class="keyword">auto</span> sb = <a class="code hl_typedef" href="group__strings.html#ga80050d927e8b925c2668c1faebf0b941">string_builder</a>(<a class="code hl_function" href="#a3757ada163cd412812d53c879b07b395">capacity</a>);</div>
-<div class="ttc" id="aclassxtd_1_1text_1_1basic__string__builder_html_a3757ada163cd412812d53c879b07b395"><div class="ttname"><a href="#a3757ada163cd412812d53c879b07b395">xtd::text::basic_string_builder::capacity</a></div><div class="ttdeci">auto capacity() const noexcept -&gt; size_type</div><div class="ttdoc">Returns the number of characters that the string has currently allocated space for.</div><div class="ttdef"><b>Definition</b> basic_string_builder.hpp:337</div></div>
+<div class="ttc" id="aclassxtd_1_1text_1_1basic__string__builder_html_a3757ada163cd412812d53c879b07b395"><div class="ttname"><a href="#a3757ada163cd412812d53c879b07b395">xtd::text::basic_string_builder::capacity</a></div><div class="ttdeci">auto capacity() const noexcept -&gt; size_type</div><div class="ttdoc">Returns the number of characters that the string has currently allocated space for.</div><div class="ttdef"><b>Definition</b> basic_string_builder.hpp:319</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The <span class="tt"><a class="el" href="#a3757ada163cd412812d53c879b07b395" title="Returns the number of characters that the string has currently allocated space for.">capacity</a></span> parameter defines the maximum number of characters that can be stored in the memory allocated by the current instance. Its value is assigned to the <a class="el" href="#a3757ada163cd412812d53c879b07b395" title="Returns the number of characters that the string has currently allocated space for.">xtd::text::basic_string_builder::capacity</a> property. If the number of characters to be stored in the current instance exceeds this capacity value, the <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html" title="Represents a mutable string of characters. This class cannot be inherited.">xtd::text::basic_string_builder</a> object allocates additional memory to store them. </dd>
 <dd>
@@ -871,7 +869,7 @@ template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;,
 <dl class="section user"><dt>Examples</dt><dd>The following example demonstrates how to call the <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html" title="Represents a mutable string of characters. This class cannot be inherited.">xtd::text::basic_string_builder</a> constructor with a specified capacity and maximum capacity. <div class="fragment"><div class="line"><span class="keyword">auto</span> <a class="code hl_function" href="#a3757ada163cd412812d53c879b07b395">capacity</a> = 255_z;</div>
 <div class="line"><span class="keyword">auto</span> <a class="code hl_function" href="#a21b37f354ed1d1d353c07b71fd563e0d">max_capacity</a> = 1024_z</div>
 <div class="line"><span class="keyword">auto</span> sb = <a class="code hl_typedef" href="group__strings.html#ga80050d927e8b925c2668c1faebf0b941">string_builder</a>(<a class="code hl_function" href="#a3757ada163cd412812d53c879b07b395">capacity</a>, <a class="code hl_function" href="#a21b37f354ed1d1d353c07b71fd563e0d">max_capacity</a>);</div>
-<div class="ttc" id="aclassxtd_1_1text_1_1basic__string__builder_html_a21b37f354ed1d1d353c07b71fd563e0d"><div class="ttname"><a href="#a21b37f354ed1d1d353c07b71fd563e0d">xtd::text::basic_string_builder::max_capacity</a></div><div class="ttdeci">auto max_capacity() const noexcept -&gt; size_type</div><div class="ttdoc">Returns the number of characters that the string has currently allocated space for.</div><div class="ttdef"><b>Definition</b> basic_string_builder.hpp:414</div></div>
+<div class="ttc" id="aclassxtd_1_1text_1_1basic__string__builder_html_a21b37f354ed1d1d353c07b71fd563e0d"><div class="ttname"><a href="#a21b37f354ed1d1d353c07b71fd563e0d">xtd::text::basic_string_builder::max_capacity</a></div><div class="ttdeci">auto max_capacity() const noexcept -&gt; size_type</div><div class="ttdoc">Returns the number of characters that the string has currently allocated space for.</div><div class="ttdef"><b>Definition</b> basic_string_builder.hpp:396</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The <span class="tt"><a class="el" href="#a3757ada163cd412812d53c879b07b395" title="Returns the number of characters that the string has currently allocated space for.">capacity</a></span> parameter defines the maximum number of characters that can be stored in the memory allocated by the current instance. Its value is assigned to the <a class="el" href="#a3757ada163cd412812d53c879b07b395" title="Returns the number of characters that the string has currently allocated space for.">xtd::text::basic_string_builder::capacity</a> property. If the number of characters to be stored in the current instance exceeds this capacity value, the <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html" title="Represents a mutable string of characters. This class cannot be inherited.">xtd::text::basic_string_builder</a> object allocates additional memory to store them. </dd>
 <dd>
@@ -1024,7 +1022,7 @@ template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;,
 <div class="line"><span class="keyword">auto</span> <a class="code hl_function" href="#af4661eb652eca22f370347dc32df1339">length</a> = 14_z;</div>
 <div class="line"><span class="keyword">auto</span> <a class="code hl_function" href="#a3757ada163cd412812d53c879b07b395">capacity</a> = 255_z;</div>
 <div class="line"><span class="keyword">auto</span> sb = <a class="code hl_typedef" href="group__strings.html#ga80050d927e8b925c2668c1faebf0b941">string_builder</a>(initial_string, start_index, <a class="code hl_function" href="#af4661eb652eca22f370347dc32df1339">length</a>, <a class="code hl_function" href="#a3757ada163cd412812d53c879b07b395">capacity</a>);</div>
-<div class="ttc" id="aclassxtd_1_1text_1_1basic__string__builder_html_af4661eb652eca22f370347dc32df1339"><div class="ttname"><a href="#af4661eb652eca22f370347dc32df1339">xtd::text::basic_string_builder::length</a></div><div class="ttdeci">auto length() const noexcept -&gt; size_type</div><div class="ttdoc">Gets or sets the length of the current xtd::text::basic_string_builder object.</div><div class="ttdef"><b>Definition</b> basic_string_builder.hpp:397</div></div>
+<div class="ttc" id="aclassxtd_1_1text_1_1basic__string__builder_html_af4661eb652eca22f370347dc32df1339"><div class="ttname"><a href="#af4661eb652eca22f370347dc32df1339">xtd::text::basic_string_builder::length</a></div><div class="ttdeci">auto length() const noexcept -&gt; size_type</div><div class="ttdoc">Gets or sets the length of the current xtd::text::basic_string_builder object.</div><div class="ttdef"><b>Definition</b> basic_string_builder.hpp:379</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The <span class="tt"><a class="el" href="#a3757ada163cd412812d53c879b07b395" title="Returns the number of characters that the string has currently allocated space for.">capacity</a></span> parameter defines the maximum number of characters that can be stored in the memory allocated by the current instance. Its value is assigned to the <a class="el" href="#a3757ada163cd412812d53c879b07b395" title="Returns the number of characters that the string has currently allocated space for.">xtd::text::basic_string_builder::capacity</a> property. If the number of characters to be stored in the current instance exceeds this capacity value, the <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html" title="Represents a mutable string of characters. This class cannot be inherited.">xtd::text::basic_string_builder</a> object allocates additional memory to store them. </dd></dl>
 
@@ -6876,43 +6874,6 @@ template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;,
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><span class="keyword">auto</span> str = <a class="code hl_typedef" href="group__strings.html#ga80050d927e8b925c2668c1faebf0b941">string_builder</a> {<span class="stringliteral">&quot;hello&quot;</span>};</div>
 <div class="line"><span class="keywordflow">if</span> (str.index_of(<span class="charliteral">&#39;g&#39;</span>) == str.npos)</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;Value not found&quot;</span>);</div>
-</div><!-- fragment --> </dd></dl>
-
-</div>
-</div>
-<a id="a4e00a3442ff63de44338426e8dde442d" name="a4e00a3442ff63de44338426e8dde442d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4e00a3442ff63de44338426e8dde442d">&#9670;&#160;</a></span>epos</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html">xtd::text::basic_string_builder</a>&lt; char_t, traits_t, allocator_t &gt;::epos</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Represents the index of the last valid element in a collection. </p>
-<dl class="section remark"><dt>Remarks</dt><dd>Unlike <a class="el" href="group__system.html#gab7854b68f0ca73a92f4c4cec362061fd" title="Represents a value that is not a valid position in a collection.">xtd::npos</a> (which means "no position"), <a class="el" href="group__system.html#gae07d4f90f849f8a342d562935986e067" title="Represents the index of the last valid element in a collection.">xtd::epos</a> points to the last accessible element of a collection. It is equivalent to <span class="tt">items.count() - 1</span>. </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>This constant is provided for readability and convenience. For example, <span class="tt">items[<a class="el" href="group__system.html#gae07d4f90f849f8a342d562935986e067" title="Represents the index of the last valid element in a collection.">xtd::epos</a>]</span> directly accesses the last element without manually subtracting one from the collection count. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The epos is equivalent to <span class="tt">~1_z</span>. With bitwise operator the code is more concise. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><span class="keyword">auto</span> str = <a class="code hl_typedef" href="group__strings.html#ga80050d927e8b925c2668c1faebf0b941">string_builder</a> {<span class="stringliteral">&quot;hello&quot;</span>};</div>
-<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(str[<a class="code hl_variable" href="group__system.html#gae07d4f90f849f8a342d562935986e067">epos</a>]); <span class="comment">// Prints &#39;o&#39;</span></div>
-<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(str[<a class="code hl_variable" href="group__system.html#gae07d4f90f849f8a342d562935986e067">epos</a> - 1]); <span class="comment">// Prints &#39;l&#39;</span></div>
-<div class="ttc" id="agroup__system_html_gae07d4f90f849f8a342d562935986e067"><div class="ttname"><a href="group__system.html#gae07d4f90f849f8a342d562935986e067">xtd::epos</a></div><div class="ttdeci">constexpr auto epos</div><div class="ttdoc">Represents the index of the last valid element in a collection.</div><div class="ttdef"><b>Definition</b> epos.hpp:33</div></div>
-</div><!-- fragment --> The wollowing exemple shows the same example with bitwise operator as index. <div class="fragment"><div class="line"><span class="keyword">auto</span> str = <span class="keywordtype">string</span> {<span class="stringliteral">&quot;hello&quot;</span>};</div>
-<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(str[~1_i]); <span class="comment">// Prints &#39;o&#39;</span></div>
-<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(str[~2_i]); <span class="comment">// Prints &#39;l&#39;</span></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>

@@ -292,8 +292,6 @@ Aliases</h2></td></tr>
 Static Fields</h2></td></tr>
 <tr class="memitem:ga6cc9b96f50a9cf9c60be64f9b9d19eb4" id="r_ga6cc9b96f50a9cf9c60be64f9b9d19eb4"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#ga6cc9b96f50a9cf9c60be64f9b9d19eb4">xtd::dynamic_extent</a></td></tr>
 <tr class="memdesc:ga6cc9b96f50a9cf9c60be64f9b9d19eb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the constant of type <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525" title="Represents an unsigned size of any object in bytes.">xtd::usize</a> signifying that the span has dynamic extent.  <br /></td></tr>
-<tr class="memitem:gae07d4f90f849f8a342d562935986e067" id="r_gae07d4f90f849f8a342d562935986e067"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#gae07d4f90f849f8a342d562935986e067">xtd::epos</a></td></tr>
-<tr class="memdesc:gae07d4f90f849f8a342d562935986e067"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the index of the last valid element in a collection.  <br /></td></tr>
 <tr class="memitem:gab7854b68f0ca73a92f4c4cec362061fd" id="r_gab7854b68f0ca73a92f4c4cec362061fd"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#gab7854b68f0ca73a92f4c4cec362061fd">xtd::npos</a></td></tr>
 <tr class="memdesc:gab7854b68f0ca73a92f4c4cec362061fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a value that is not a valid position in a collection.  <br /></td></tr>
 </table><table class="memberdecls">
@@ -851,46 +849,6 @@ template&lt;typename type_t&gt; </div>
 
 </div>
 </div>
-<a id="gae07d4f90f849f8a342d562935986e067" name="gae07d4f90f849f8a342d562935986e067"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gae07d4f90f849f8a342d562935986e067">&#9670;&#160;</a></span>epos</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto xtd::epos</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p><code>#include &lt;<a class="el" href="epos_8hpp.html">epos.hpp</a>&gt;</code></p>
-
-<p>Represents the index of the last valid element in a collection. </p>
-<dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
-<dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>Unlike <a class="el" href="#gab7854b68f0ca73a92f4c4cec362061fd" title="Represents a value that is not a valid position in a collection.">xtd::npos</a> (which means "no position"), <a class="el" href="#gae07d4f90f849f8a342d562935986e067" title="Represents the index of the last valid element in a collection.">xtd::epos</a> points to the last accessible element of a collection. It is equivalent to <span class="tt">items.count() - 1</span>. </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>This constant is provided for readability and convenience. For example, <span class="tt">items[<a class="el" href="#gae07d4f90f849f8a342d562935986e067" title="Represents the index of the last valid element in a collection.">xtd::epos</a>]</span> directly accesses the last element without manually subtracting one from the collection count. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The epos is equivalent to <span class="tt">~1_z</span>. With bitwise operator the code is more concise. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><span class="keyword">auto</span> items = <a class="code hl_class" href="classxtd_1_1array.html">array</a> {10, 20, 30, 40};</div>
-<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(items[<a class="code hl_variable" href="#gae07d4f90f849f8a342d562935986e067">epos</a>]); <span class="comment">// Prints 40</span></div>
-<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(items[<a class="code hl_variable" href="#gae07d4f90f849f8a342d562935986e067">epos</a> - 1]); <span class="comment">// Prints 30</span></div>
-<div class="ttc" id="aclassxtd_1_1array_html"><div class="ttname"><a href="classxtd_1_1array.html">xtd::array</a></div><div class="ttdoc">Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...</div><div class="ttdef"><b>Definition</b> array.hpp:64</div></div>
-<div class="ttc" id="agroup__system_html_gae07d4f90f849f8a342d562935986e067"><div class="ttname"><a href="#gae07d4f90f849f8a342d562935986e067">xtd::epos</a></div><div class="ttdeci">constexpr auto epos</div><div class="ttdoc">Represents the index of the last valid element in a collection.</div><div class="ttdef"><b>Definition</b> epos.hpp:33</div></div>
-</div><!-- fragment --> The wollowing exemple shows the same example with bitwise operator as index. <div class="fragment"><div class="line"><span class="keyword">auto</span> items = <a class="code hl_class" href="classxtd_1_1array.html">array</a> {10, 20, 30, 40};</div>
-<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(items[~1_i]); <span class="comment">// Prints 40</span></div>
-<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(items[~2_i]); <span class="comment">// Prints 30</span></div>
-</div><!-- fragment --> </dd></dl>
-
-</div>
-</div>
 <a id="gab7854b68f0ca73a92f4c4cec362061fd" name="gab7854b68f0ca73a92f4c4cec362061fd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gab7854b68f0ca73a92f4c4cec362061fd">&#9670;&#160;</a></span>npos</h2>
 
@@ -920,6 +878,7 @@ template&lt;typename type_t&gt; </div>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><span class="keyword">auto</span> items = <a class="code hl_class" href="classxtd_1_1array.html">array</a> {1, 2, 3};</div>
 <div class="line"><span class="keywordflow">if</span> (items.index_of(42) == <a class="code hl_variable" href="#gab7854b68f0ca73a92f4c4cec362061fd">npos</a>)</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;Value not found&quot;</span>);</div>
+<div class="ttc" id="aclassxtd_1_1array_html"><div class="ttname"><a href="classxtd_1_1array.html">xtd::array</a></div><div class="ttdoc">Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...</div><div class="ttdef"><b>Definition</b> array.hpp:64</div></div>
 <div class="ttc" id="agroup__system_html_gab7854b68f0ca73a92f4c4cec362061fd"><div class="ttname"><a href="#gab7854b68f0ca73a92f4c4cec362061fd">xtd::npos</a></div><div class="ttdeci">constexpr auto npos</div><div class="ttdoc">Represents a value that is not a valid position in a collection.</div><div class="ttdef"><b>Definition</b> npos.hpp:26</div></div>
 </div><!-- fragment --> </dd></dl>
 
