@@ -288,15 +288,15 @@ namespace xtd {
     /// @return Reference to the requested element.
     /// @exception std::out_of_range If `index` is not within the range of the container.
     auto operator [](size_type index) const -> const_reference {
-      if ((index >= count() && index <= ~count() - 1) || index == npos) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
-      return items_[index == epos ? size() - 1 : index];
+      if (index >= count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
+      return items_[index];
     }
     /// @brief Returns a reference to the element at specified location index.
     /// @param index The position of the element to return.
     /// @return Reference to the requested element.
     auto operator [](size_type index) -> reference {
-      if ((index >= count() && index <= ~count() - 1) || index == npos) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
-      return items_[index == epos ? size() - 1 : index];
+      if (index >= count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
+      return items_[index];
     }
     /// @}
     
