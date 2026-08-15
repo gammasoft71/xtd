@@ -74,10 +74,16 @@
 /// Shows how to use xtd::collections::generic::enumerable concept.
 ///
 /// @example forward_iterable.cpp
-/// Shows how to use xtd::collections::generic::enumerable concept.
+/// Shows how to use xtd::forward_iterable concept.
+///
+/// @example iterable.cpp
+/// Shows how to use xtd::iterable concept.
 ///
 /// @example stringable.cpp
 /// Shows how to use xtd::stringable concept.
+///
+/// @example concurrent_queue.cpp
+/// Shows how to use xtd::collections::concurrent::concurrent_queue class.
 ///
 /// @example file_settings.cpp
 /// Shows how to use xtd::consiguration::file_settings object.
@@ -809,7 +815,7 @@
 /// Shows how to use xtd::linq::enumerable::all method.
 ///
 /// @example enumerable_any.cpp
-/// Shows how to use xtd::linq::enumerable::all method.
+/// Shows how to use xtd::linq::enumerable::any method.
 ///
 /// @example enumerable_any2.cpp
 /// Shows how to use xtd::linq::enumerable::any method.
@@ -826,6 +832,9 @@
 /// @example enumerable_append2.cpp
 /// Shows how to use xtd::linq::enumerable::append method.
 ///
+/// @example enumerable_concat.cpp
+/// Shows how to use xtd::linq::concat method.
+///
 /// @example enumerable_count.cpp
 /// Shows how to use xtd::linq::enumerable::count method.
 ///
@@ -833,6 +842,9 @@
 /// Shows how to use xtd::linq::enumerable::count method.
 ///
 /// @example enumerable_count_by.cpp
+/// Shows how to use xtd::linq::enumerable::count_by method.
+///
+/// @example enumerable_count_by2.cpp
 /// Shows how to use xtd::linq::enumerable::count_by method.
 ///
 /// @example enumerable_default_if_empty.cpp
@@ -852,6 +864,12 @@
 ///
 /// @example enumerable_select2.cpp
 /// Shows how to use xtd::linq::enumerable::select method.
+///
+/// @example enumerable_skip_while.cpp
+/// Shows how to use xtd::linq::skip_while method.
+///
+/// @example enumerable_take_while.cpp
+/// Shows how to use xtd::linq::take_while method.
 ///
 /// @example enumerable_to_list.cpp
 /// Shows how to use xtd::linq::enumerable::to_list method.
@@ -1307,7 +1325,7 @@
 /// Shows how to use xtd.tunit assert methods like xtd::tunit::assert in a xtd.console or xtd.forms application.
 ///
 /// @example xtd_collection_indexer.cpp
-/// Shows how to use indexing operators with xtd::bpos (bpos, bpos + 1, bpos + 2), xtd::epos (epos, epos - 1, epos - 2, ...) and bitwise operators (~1_z, ~2_z, ...) with xtd collections like xtd::collections::generic::list.
+/// Shows how to use indexing operators with xtd::index (xtd::index::start, xtd::index::start + 1, xtd::index::start + 2), xtd::xtd::index::last (xtd::index::last, xtd::index::last - 1, xtd::index::last - 2, ...) and bitwise operators (~1_z, ~2_z, ...) with xtd collections like xtd::collections::generic::list.
 ///
 /// @example uri.cpp
 /// Demonstrates the xtd::uri various properties.
