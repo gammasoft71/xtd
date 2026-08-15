@@ -224,8 +224,6 @@ Public Fields</h2></td></tr>
 <tr class="memdesc:adac82e68a344bc74d55d015e4fdb3f4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents an <a class="el" href="classxtd_1_1forms_1_1image__list.html" title="Provides methods to manage a collection of xtd::drawing::image objects. This class cannot be inherite...">image_list</a> empty.  <br /></td></tr>
 <tr class="memitem:ad15fb5e58c5d28a990607411ddc1dc34" id="r_ad15fb5e58c5d28a990607411ddc1dc34"><td class="memItemLeft">static constexpr <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a>&#160;</td><td class="memItemRight"><a class="el" href="#ad15fb5e58c5d28a990607411ddc1dc34">npos</a></td></tr>
 <tr class="memdesc:ad15fb5e58c5d28a990607411ddc1dc34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a value that is not a valid position in a collection.  <br /></td></tr>
-<tr class="memitem:aa2337512a27b00528d3b7ecaa942f1ff" id="r_aa2337512a27b00528d3b7ecaa942f1ff"><td class="memItemLeft">static constexpr <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a>&#160;</td><td class="memItemRight"><a class="el" href="#aa2337512a27b00528d3b7ecaa942f1ff">epos</a></td></tr>
-<tr class="memdesc:aa2337512a27b00528d3b7ecaa942f1ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the index of the last valid element in a collection.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Constructors</h2></td></tr>
@@ -696,33 +694,6 @@ Because setting the image_size property causes the handle to be recreated, you s
 
 <p>Represents a value that is not a valid position in a collection. </p>
 <dl class="section remark"><dt>Remarks</dt><dd>This constant is typically used to indicate the absence of an index or a failed search operation. It is equivalent to the maximum value of <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525" title="Represents an unsigned size of any object in bytes.">xtd::usize</a>. </dd></dl>
-
-</div>
-</div>
-<a id="aa2337512a27b00528d3b7ecaa942f1ff" name="aa2337512a27b00528d3b7ecaa942f1ff"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa2337512a27b00528d3b7ecaa942f1ff">&#9670;&#160;</a></span>epos</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> xtd::forms::image_list::epos</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Represents the index of the last valid element in a collection. </p>
-<dl class="section remark"><dt>Remarks</dt><dd>Unlike <a class="el" href="group__system.html#gab7854b68f0ca73a92f4c4cec362061fd" title="Represents a value that is not a valid position in a collection.">xtd::npos</a> (which means "no position"), <a class="el" href="group__system.html#gae07d4f90f849f8a342d562935986e067" title="Represents the index of the last valid element in a collection.">xtd::epos</a> points to the last accessible element of a collection. It is equivalent to <span class="tt">items.count() - 1</span>. </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>This constant is provided for readability and convenience. For example, <span class="tt">items[<a class="el" href="group__system.html#gae07d4f90f849f8a342d562935986e067" title="Represents the index of the last valid element in a collection.">xtd::epos</a>]</span> directly accesses the last element without manually subtracting one from the collection count. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The epos is equivalent to <span class="tt">~1_z</span>. With bitwise operator the code is more concise. </dd></dl>
 
 </div>
 </div>

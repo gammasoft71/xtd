@@ -179,8 +179,6 @@ Public Deprecatd Aliases</h2></td></tr>
 Public Fields</h2></td></tr>
 <tr class="memitem:a73eb8239622205ab6dca296980760a77" id="r_a73eb8239622205ab6dca296980760a77"><td class="memItemLeft">static constexpr <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a>&#160;</td><td class="memItemRight"><a class="el" href="#a73eb8239622205ab6dca296980760a77">npos</a></td></tr>
 <tr class="memdesc:a73eb8239622205ab6dca296980760a77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a value that is not a valid position in a collection.  <br /></td></tr>
-<tr class="memitem:ab1094f7e7aa8409b6a28653fd6a82d6b" id="r_ab1094f7e7aa8409b6a28653fd6a82d6b"><td class="memItemLeft">static constexpr <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a>&#160;</td><td class="memItemRight"><a class="el" href="#ab1094f7e7aa8409b6a28653fd6a82d6b">epos</a></td></tr>
-<tr class="memdesc:ab1094f7e7aa8409b6a28653fd6a82d6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the index of the last valid element in a collection.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Events</h2></td></tr>
@@ -3987,45 +3985,8 @@ template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><span class="keyword">auto</span> controls = control_collection {label1, <a class="code hl_enumvalue" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">button1</a>, choice1};</div>
 <div class="line"><span class="keywordflow">if</span> (<a class="code hl_function" href="#a0dbb8ecc97b75a03224e2b4369aaebdb">items</a>.index_of(label1) == <a class="code hl_function" href="#a0dbb8ecc97b75a03224e2b4369aaebdb">items</a>.npos)</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;Value not found&quot;</span>);</div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1layout_1_1arranged__element__collection_html_a0dbb8ecc97b75a03224e2b4369aaebdb"><div class="ttname"><a href="#a0dbb8ecc97b75a03224e2b4369aaebdb">xtd::forms::layout::arranged_element_collection::items</a></div><div class="ttdeci">const auto &amp; items() const</div><div class="ttdoc">Returns the underlying base type items.</div><div class="ttdef"><b>Definition</b> arranged_element_collection.hpp:206</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1layout_1_1arranged__element__collection_html_a0dbb8ecc97b75a03224e2b4369aaebdb"><div class="ttname"><a href="#a0dbb8ecc97b75a03224e2b4369aaebdb">xtd::forms::layout::arranged_element_collection::items</a></div><div class="ttdeci">const auto &amp; items() const</div><div class="ttdoc">Returns the underlying base type items.</div><div class="ttdef"><b>Definition</b> arranged_element_collection.hpp:188</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9"><div class="ttname"><a href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">xtd::forms::message_dialog_default_button::button1</a></div><div class="ttdeci">@ button1</div><div class="ttdoc">The first button on the message box is the default button.</div><div class="ttdef"><b>Definition</b> message_dialog_default_button.hpp:24</div></div>
-</div><!-- fragment --> </dd></dl>
-
-</div>
-</div>
-<a id="ab1094f7e7aa8409b6a28653fd6a82d6b" name="ab1094f7e7aa8409b6a28653fd6a82d6b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab1094f7e7aa8409b6a28653fd6a82d6b">&#9670;&#160;</a></span>epos</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::epos</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Represents the index of the last valid element in a collection. </p>
-<dl class="section remark"><dt>Remarks</dt><dd>Unlike <a class="el" href="group__system.html#gab7854b68f0ca73a92f4c4cec362061fd" title="Represents a value that is not a valid position in a collection.">xtd::npos</a> (which means "no position"), <a class="el" href="group__system.html#gae07d4f90f849f8a342d562935986e067" title="Represents the index of the last valid element in a collection.">xtd::epos</a> points to the last accessible element of a collection. It is equivalent to <span class="tt">items.count() - 1</span>. </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>This constant is provided for readability and convenience. For example, <span class="tt"><a class="el" href="#a0dbb8ecc97b75a03224e2b4369aaebdb" title="Returns the underlying base type items.">items</a>[<a class="el" href="group__system.html#gae07d4f90f849f8a342d562935986e067" title="Represents the index of the last valid element in a collection.">xtd::epos</a>]</span> directly accesses the last element without manually subtracting one from the collection count. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The epos is equivalent to <span class="tt">~1_z</span>. With bitwise operator the code is more concise. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><span class="keyword">auto</span> controls = control_collection {label1, <a class="code hl_enumvalue" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">button1</a>, choice1};</div>
-<div class="line">controls[<a class="code hl_variable" href="group__system.html#gae07d4f90f849f8a342d562935986e067">epos</a>].width(240); <span class="comment">// change the with of choice1 to 240</span></div>
-<div class="line">controls[<a class="code hl_variable" href="group__system.html#gae07d4f90f849f8a342d562935986e067">epos</a> - 1].width(120); <span class="comment">// change the with of button1 to 120</span></div>
-<div class="ttc" id="agroup__system_html_gae07d4f90f849f8a342d562935986e067"><div class="ttname"><a href="group__system.html#gae07d4f90f849f8a342d562935986e067">xtd::epos</a></div><div class="ttdeci">constexpr auto epos</div><div class="ttdoc">Represents the index of the last valid element in a collection.</div><div class="ttdef"><b>Definition</b> epos.hpp:33</div></div>
-</div><!-- fragment --> The wollowing exemple shows the same example with bitwise operator as index. <div class="fragment"><div class="line"><span class="keyword">auto</span> controls = control_collection {label1, <a class="code hl_enumvalue" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">button1</a>, choice1};</div>
-<div class="line">controls[~1_i].width(240); <span class="comment">// change the with of choice1 to 240</span></div>
-<div class="line">controls[~2_i].width(120); <span class="comment">// change the with of button1 to 120</span></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
