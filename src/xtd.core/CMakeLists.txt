@@ -262,8 +262,6 @@ add_sources(
   "include/xtd/environment"
   "include/xtd/environment_variable_target.hpp"
   "include/xtd/environment_variable_target"
-  "include/xtd/epos.hpp"
-  "include/xtd/epos"
   "include/xtd/event.hpp"
   "include/xtd/event"
   "include/xtd/event_args.hpp"

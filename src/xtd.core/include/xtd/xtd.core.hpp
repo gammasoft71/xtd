@@ -449,7 +449,6 @@
 #include "enumeration.hpp"
 #include "environment.hpp"
 #include "environment_variable_target.hpp"
-#include "epos.hpp"
 #include "event.hpp"
 #include "event_args.hpp"
 #include "event_handler.hpp"
