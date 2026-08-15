@@ -111,10 +111,6 @@ namespace xtd::tests {
       collection_assert::is_empty(array<bool> {});
     }
     
-    auto test_method_(epos) {
-      assert::are_equal(usize_object::max_value - 1, array<int>::epos);
-    }
-    
     auto test_method_(npos) {
       assert::are_equal(usize_object::max_value, array<int>::npos);
     }
@@ -592,22 +588,19 @@ namespace xtd::tests {
       collection_assert::are_equal({63, 31, 10}, items);
     }
     
-    auto test_method_(index_operators_with_epos) {
+    auto test_method_(index_operators_with_index_last) {
       auto items = array {1, 2, 3, 4, 5};
       
       assert::are_equal(5, items[items.count() - 1]);
-      assert::are_equal(5, items[items.epos]);
-      assert::are_equal(5, items[xtd::epos]);
+      assert::are_equal(5, items[xtd::index::last]);
       
-      items[items.epos] = 6;
+      items[xtd::index::last] = 6;
       assert::are_equal(6, items[items.count() - 1]);
-      assert::are_equal(6, items[items.epos]);
-      assert::are_equal(6, items[xtd::epos]);
+      assert::are_equal(6, items[xtd::index::last]);
       
-      items[xtd::epos] = 7;
+      items[xtd::index::last] = 7;
       assert::are_equal(7, items[items.count() - 1]);
-      assert::are_equal(7, items[items.epos]);
-      assert::are_equal(7, items[xtd::epos]);
+      assert::are_equal(7, items[xtd::index::last]);
     }
     
     auto test_method_(index_functor) {
@@ -626,22 +619,19 @@ namespace xtd::tests {
       collection_assert::are_equal({63, 31, 10}, items);
     }
     
-    auto test_method_(index_functor_with_epos) {
+    auto test_method_(index_functor_with_index_last) {
       auto items = array {1, 2, 3, 4, 5};
       
       assert::are_equal(5, items(items.count() - 1));
-      assert::are_equal(5, items(items.epos));
-      assert::are_equal(5, items(xtd::epos));
+      assert::are_equal(5, items(xtd::index::last));
       
-      items(items.epos) = 6;
+      items(xtd::index::last) = 6;
       assert::are_equal(6, items(items.count() - 1));
-      assert::are_equal(6, items(items.epos));
-      assert::are_equal(6, items(xtd::epos));
+      assert::are_equal(6, items(xtd::index::last));
       
-      items(xtd::epos) = 7;
+      items(xtd::index::last) = 7;
       assert::are_equal(7, items(items.count() - 1));
-      assert::are_equal(7, items(items.epos));
-      assert::are_equal(7, items(xtd::epos));
+      assert::are_equal(7, items(xtd::index::last));
     }
     
     auto test_method_(indexes_array_functor) {
