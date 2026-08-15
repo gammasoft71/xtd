@@ -79,24 +79,6 @@ namespace xtd {
       ///   console::write_line("Value not found");
       /// ```
       inline static constexpr size_type npos = base_type::npos;
-      
-      /// @brief Represents the index of the last valid element in a collection.
-      /// @remarks Unlike xtd::npos (which means "no position"), xtd::epos points to the last accessible element of a collection. It is equivalent to `items.count() - 1`.
-      /// @note This constant is provided for readability and convenience. For example, `items[xtd::epos]` directly accesses the last element without manually subtracting one from the collection count.
-      /// @remarks The epos is equivalent to `~1_z`. With bitwise operator the code is more concise.
-      /// @par Examples
-      /// ```cpp
-      /// auto str = string_builder {"hello"};
-      /// console::write_line(str[epos]); // Prints 'o'
-      /// console::write_line(str[epos - 1]); // Prints 'l'
-      /// ```
-      /// The wollowing exemple shows the same example with bitwise operator as index.
-      /// ```cpp
-      /// auto str = string {"hello"};
-      /// console::write_line(str[~1_i]); // Prints 'o'
-      /// console::write_line(str[~2_i]); // Prints 'l'
-      /// ```
-      static inline constexpr xtd::usize epos = npos - 1;
       /// @}
       
       /// @name Public Constructors
@@ -1432,16 +1414,16 @@ namespace xtd {
       /// @return Reference to the requested character.
       /// @exception xtd::index_out_of_range_exception If `index` is not within the range of the string.
       auto operator [](xtd::usize index) const -> const_reference {
-        if (index >= length() && index != epos) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
-        return chars_[index == epos ? length() - 1 : index];
+        if (index >= length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
+        return chars_[index];
       }
       /// @brief Returns a reference to the character at specified location index.
       /// @param index The position of the character to return.
       /// @return Reference to the requested character.
       /// @exception xtd::index_out_of_range_exception If `index` is not within the range of the string.
       auto operator [](xtd::usize index) -> reference {
-        if (index >= length() && index != epos) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
-        return chars_[index == epos ? length() - 1 : index];
+        if (index >= length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
+        return chars_[index];
       }
       
       /// @brief Returns a reference to the underlying base type.
