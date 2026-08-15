@@ -68,7 +68,7 @@ namespace xtd {
     /// @brief Determines whether the specified object is equal to the current object.
     /// @param obj The object to compare with the current object.
     /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-    [[nodiscard]] constexpr auto equals(const object& obj) const noexcept -> bool override {return is<index>(obj) && equals(static_cast<const index&>(obj));}
+    [[nodiscard]] auto equals(const object& obj) const noexcept -> bool override {return is<index>(obj) && equals(static_cast<const index&>(obj));}
     /// @brief Indicates whether the current object is equal to another object of the same type.
     /// @param obj An object to compare with this object.
     /// @return `true` if the current object is equal to the other parameter; otherwise, `false`.
