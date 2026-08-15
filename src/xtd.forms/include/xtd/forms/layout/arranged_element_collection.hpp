@@ -104,24 +104,6 @@ namespace xtd {
         ///   console::write_line("Value not found");
         /// ```
         inline static constexpr xtd::usize npos = xtd::npos;
-        
-        /// @brief Represents the index of the last valid element in a collection.
-        /// @remarks Unlike xtd::npos (which means "no position"), xtd::epos points to the last accessible element of a collection. It is equivalent to `items.count() - 1`.
-        /// @note This constant is provided for readability and convenience. For example, `items[xtd::epos]` directly accesses the last element without manually subtracting one from the collection count.
-        /// @remarks The epos is equivalent to `~1_z`. With bitwise operator the code is more concise.
-        /// @par Examples
-        /// ```cpp
-        /// auto controls = control_collection {label1, button1, choice1};
-        /// controls[epos].width(240); // change the with of choice1 to 240
-        /// controls[epos - 1].width(120); // change the with of button1 to 120
-        /// ```
-        /// The wollowing exemple shows the same example with bitwise operator as index.
-        /// ```cpp
-        /// auto controls = control_collection {label1, button1, choice1};
-        /// controls[~1_i].width(240); // change the with of choice1 to 240
-        /// controls[~2_i].width(120); // change the with of button1 to 120
-        /// ```
-        static inline constexpr xtd::usize epos = npos - 1;
         /// @}
         
         /// @name Public Constructors
