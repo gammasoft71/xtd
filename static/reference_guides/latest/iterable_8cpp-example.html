@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 		<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-		<title>xtd: forward_iterable.cpp</title>
+		<title>xtd: iterable.cpp</title>
     <link href="favicon.png" rel="shortcut icon" type="image/png"/>
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
@@ -103,10 +103,10 @@ document.addEventListener('DOMContentLoaded', () => {
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">forward_iterable.cpp</div></div>
+  <div class="headertitle"><div class="title">iterable.cpp</div></div>
 </div><!--header-->
 <div class="contents">
-<p>Shows how to use <a class="el" href="structxtd_1_1forward__iterable.html" title="Represents the forward iterable concept.">xtd::forward_iterable</a> concept.</p>
+<p>Shows how to use <a class="el" href="structxtd_1_1iterable.html" title="Represents the iterable concept.">xtd::iterable</a> concept.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> int_generator() -&gt; enumerable_generator&lt;int&gt; {</div>
@@ -114,8 +114,8 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line">    <span class="keyword">co_yield</span> item;</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">template</span> &lt;forward_iterable iterable_t&gt;</div>
-<div class="line">[[nodiscard]] <span class="keyword">auto</span> iterate(<span class="keyword">const</span> iterable_t&amp; iterable) -&gt; enumerable_generator&lt;forward_iterable_value_type&lt;iterable_t&gt;&gt; {</div>
+<div class="line"><span class="keyword">template</span> &lt;iterable iterable_t&gt;</div>
+<div class="line">[[nodiscard]] <span class="keyword">auto</span> iterate(<span class="keyword">const</span> iterable_t&amp; iterable) -&gt; enumerable_generator&lt;iterable_value_type&lt;iterable_t&gt;&gt; {</div>
 <div class="line">  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; item : iterable)</div>
 <div class="line">    <span class="keyword">co_yield</span> item;</div>
 <div class="line">}</div>

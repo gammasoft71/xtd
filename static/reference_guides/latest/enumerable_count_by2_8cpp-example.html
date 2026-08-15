@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 		<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-		<title>xtd: forward_iterable.cpp</title>
+		<title>xtd: enumerable_count_by2.cpp</title>
     <link href="favicon.png" rel="shortcut icon" type="image/png"/>
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
@@ -103,51 +103,41 @@ document.addEventListener('DOMContentLoaded', () => {
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">forward_iterable.cpp</div></div>
+  <div class="headertitle"><div class="title">enumerable_count_by2.cpp</div></div>
 </div><!--header-->
 <div class="contents">
-<p>Shows how to use <a class="el" href="structxtd_1_1forward__iterable.html" title="Represents the forward iterable concept.">xtd::forward_iterable</a> concept.</p>
+<p>Shows how to use <a class="el" href="classxtd_1_1linq_1_1enumerable.html#a6dda29e3e873c55dcf914bdca4ece6b6" title="Returns the count of elements in the source sequence grouped by key.">xtd::linq::enumerable::count_by</a> method.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> int_generator() -&gt; enumerable_generator&lt;int&gt; {</div>
-<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> item : {15, 11, 13, 14, 12})</div>
-<div class="line">    <span class="keyword">co_yield</span> item;</div>
-<div class="line">}</div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">template</span> &lt;forward_iterable iterable_t&gt;</div>
-<div class="line">[[nodiscard]] <span class="keyword">auto</span> iterate(<span class="keyword">const</span> iterable_t&amp; iterable) -&gt; enumerable_generator&lt;forward_iterable_value_type&lt;iterable_t&gt;&gt; {</div>
-<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; item : iterable)</div>
-<div class="line">    <span class="keyword">co_yield</span> item;</div>
-<div class="line">}</div>
+<div class="line"><span class="keyword">struct </span>student {</div>
+<div class="line">  std::string name;</div>
+<div class="line">  std::string score;</div>
+<div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> item : iterate(std::vector {5, 1, 3, 4, 2}).select(_ * 2).order())</div>
-<div class="line">    <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;{,2}&quot;</span>, item);</div>
-<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> item : iterate(list {10, 6, 8, 9, 7}).select(_ * 3).order())</div>
-<div class="line">    <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;{,2}&quot;</span>, item);</div>
-<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> item : iterate(int_generator()).<a class="code hl_variable" href="group__ranges.html#ga093ba4055ef4d95934c8a014fb7f2683">select</a>(_ * 4).order())</div>
-<div class="line">    <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;{,2}&quot;</span>, item);</div>
+<div class="line">  <span class="keyword">auto</span> students = std::vector&lt;student&gt; {</div>
+<div class="line">    {<span class="stringliteral">&quot;Alice&quot;</span>, <span class="stringliteral">&quot;A&quot;</span>},</div>
+<div class="line">    {<span class="stringliteral">&quot;Bob&quot;</span>, <span class="stringliteral">&quot;B&quot;</span>},</div>
+<div class="line">    {<span class="stringliteral">&quot;Charlie&quot;</span>, <span class="stringliteral">&quot;C&quot;</span>},</div>
+<div class="line">    {<span class="stringliteral">&quot;David&quot;</span>, <span class="stringliteral">&quot;B&quot;</span>},</div>
+<div class="line">    {<span class="stringliteral">&quot;Eve&quot;</span>, <span class="stringliteral">&quot;A&quot;</span>}</div>
+<div class="line">  };</div>
+<div class="line">  </div>
+<div class="line">  <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba1b1cc7f086b3f074da452bc3129981eb">query</a> = <a class="code hl_function" href="group__linq.html#ga51ce7f468e039aae97162ec46d247dad">from</a>(students).count_by&lt;<span class="keywordtype">string</span>&gt;(<a class="code hl_variable" href="group__expressions.html#ga130423906ed7125e321bf42e00dafae9">_</a>*<a class="code hl_function" href="group__expressions.html#ga582c6dbb71dfc746f9e4b69ba90ed2b6">member</a>(&amp;student::score));</div>
+<div class="line"> </div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; [score, count] : query)</div>
+<div class="line">    std::println(<span class="stringliteral">&quot;Students with a {}-score: {}&quot;</span>, score, count);</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">//  2</span></div>
-<div class="line"><span class="comment">//  4</span></div>
-<div class="line"><span class="comment">//  6</span></div>
-<div class="line"><span class="comment">//  8</span></div>
-<div class="line"><span class="comment">// 10</span></div>
-<div class="line"><span class="comment">// 18</span></div>
-<div class="line"><span class="comment">// 21</span></div>
-<div class="line"><span class="comment">// 24</span></div>
-<div class="line"><span class="comment">// 27</span></div>
-<div class="line"><span class="comment">// 30</span></div>
-<div class="line"><span class="comment">// 44</span></div>
-<div class="line"><span class="comment">// 48</span></div>
-<div class="line"><span class="comment">// 52</span></div>
-<div class="line"><span class="comment">// 56</span></div>
-<div class="line"><span class="comment">// 60</span></div>
-<div class="ttc" id="agroup__ranges_html_ga093ba4055ef4d95934c8a014fb7f2683"><div class="ttname"><a href="group__ranges.html#ga093ba4055ef4d95934c8a014fb7f2683">xtd::ranges::views::select</a></div><div class="ttdeci">constexpr auto select</div><div class="ttdoc">The xtd::ranges::views::select instance.</div><div class="ttdef"><b>Definition</b> select.hpp:40</div></div>
-<div class="ttc" id="anamespacextd_html_a9482c5e9fb1d60c658bbe28bfbb17353"><div class="ttname"><a href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">xtd::println</a></div><div class="ttdeci">auto println(FILE *file) -&gt; void</div><div class="ttdoc">Writes the current line terminator to the file output stream using the specified format information.</div><div class="ttdef"><b>Definition</b> println.hpp:15</div></div>
+<div class="line"><span class="comment">// Students with a A-score: 2</span></div>
+<div class="line"><span class="comment">// Students with a B-score: 2</span></div>
+<div class="line"><span class="comment">// Students with a C-score: 1</span></div>
+<div class="ttc" id="agroup__expressions_html_ga130423906ed7125e321bf42e00dafae9"><div class="ttname"><a href="group__expressions.html#ga130423906ed7125e321bf42e00dafae9">xtd::expressions::_</a></div><div class="ttdeci">constexpr auto _</div><div class="ttdoc">The xtd::expressions::_ placeholder instance is used by expression that have only one argument.</div><div class="ttdef"><b>Definition</b> args.hpp:66</div></div>
+<div class="ttc" id="agroup__expressions_html_ga582c6dbb71dfc746f9e4b69ba90ed2b6"><div class="ttname"><a href="group__expressions.html#ga582c6dbb71dfc746f9e4b69ba90ed2b6">xtd::expressions::member</a></div><div class="ttdeci">constexpr auto member(member_t member)</div><div class="ttdoc">The xtd::expressions::member is use to bind object member.</div><div class="ttdef"><b>Definition</b> member_expression.hpp:43</div></div>
+<div class="ttc" id="agroup__linq_html_ga51ce7f468e039aae97162ec46d247dad"><div class="ttname"><a href="group__linq.html#ga51ce7f468e039aae97162ec46d247dad">xtd::linq::from</a></div><div class="ttdeci">auto from(const source_t &amp;source) noexcept</div><div class="ttdoc">Returns the input typed as xtd::collections::generic::ienumerable &lt;type_t&gt;.</div><div class="ttdef"><b>Definition</b> from.hpp:28</div></div>
+<div class="ttc" id="agroup__xtd__core_html_gga20b51d7977f3ffaaca44c6075ad021dba1b1cc7f086b3f074da452bc3129981eb"><div class="ttname"><a href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba1b1cc7f086b3f074da452bc3129981eb">xtd::uri_components::query</a></div><div class="ttdeci">@ query</div><div class="ttdoc">The xtd::uri::query data.</div><div class="ttdef"><b>Definition</b> uri_components.hpp:29</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
