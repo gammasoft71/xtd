@@ -144,7 +144,6 @@ namespace xtd {
           
           /// @{
           inline static constexpr size_type npos = std::numeric_limits<size_type>::max(); ///< Represents an invalid index.
-          static inline constexpr size_type bpos = 0; ///< Beginning position.
           static inline constexpr size_type epos = npos - 1; ///< End position.
           /// @}
           

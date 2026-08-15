@@ -4,7 +4,6 @@
 #pragma once
 #include "icollection.hpp"
 #include "extensions/list_common.hpp"
-#include "../../bpos.hpp"
 #include "../../epos.hpp"
 #include "../../npos.hpp"
 #include "../../usize.hpp"
@@ -55,16 +54,6 @@ namespace xtd {
         ///   console::write_line("Value not found");
         /// ```
         inline static constexpr xtd::usize npos = xtd::npos;
-        
-        /// @brief Represents the index of the first valid element in a collection.
-        /// @remarks Unlike xtd::npos (which means "no position"), xtd::bpos points to the first accessible element of a collection. It is equivalent to `0`.
-        /// @par Examples
-        /// ```cpp
-        /// auto items = list {10, 20, 30, 40};
-        /// console::write_line(items[bpos]); // Prints 10
-        /// console::write_line(items[bpos + 1]); // Prints Z0
-        /// ```
-        static inline constexpr xtd::usize bpos = 0;
         
         /// @brief Represents the index of the last valid element in a collection.
         /// @remarks Unlike xtd::npos (which means "no position"), xtd::epos points to the last accessible element of a collection. It is equivalent to `items.count() - 1`.

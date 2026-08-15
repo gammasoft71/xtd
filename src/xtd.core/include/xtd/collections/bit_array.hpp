@@ -47,7 +47,6 @@ namespace xtd {
         void from_boolean(bit_array& parent) noexcept;
         
         inline static constexpr xtd::usize npos = xtd::npos;
-        inline static constexpr xtd::usize bpos = xtd::bpos;
         inline static constexpr xtd::usize epos = xtd::epos;
         mutable xtd::usize index = npos;
         mutable bool value = false;

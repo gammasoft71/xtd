@@ -105,16 +105,6 @@ namespace xtd {
         /// ```
         inline static constexpr xtd::usize npos = xtd::npos;
         
-        /// @brief Represents the index of the first valid element in a collection.
-        /// @remarks Unlike xtd::npos (which means "no position"), xtd::bpos points to the first accessible element of a collection. It is equivalent to `0`.
-        /// @par Examples
-        /// ```cpp
-        /// auto controls = control_collection {label1, button1, choice1};
-        /// controls[bpos].width(240); // change the with of label1 to 240
-        /// controls[bpos + 1].width(120); // change the with of button1 to 120
-        /// ```
-        static inline constexpr xtd::usize bpos = 0;
-        
         /// @brief Represents the index of the last valid element in a collection.
         /// @remarks Unlike xtd::npos (which means "no position"), xtd::epos points to the last accessible element of a collection. It is equivalent to `items.count() - 1`.
         /// @note This constant is provided for readability and convenience. For example, `items[xtd::epos]` directly accesses the last element without manually subtracting one from the collection count.
