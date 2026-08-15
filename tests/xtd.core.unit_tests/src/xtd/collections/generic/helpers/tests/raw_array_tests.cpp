@@ -105,10 +105,6 @@ namespace xtd::collections::generic::helpers::tests {
       assert::are_equal(typeof_<std::reverse_iterator<raw_array<bool>::const_iterator>>(), typeof_<raw_array<bool>::const_reverse_iterator > ());
     }
     
-    auto test_method_(epos) {
-      assert::are_equal(usize_object::max_value - 1, raw_array<int>::epos);
-    }
-    
     auto test_method_(npos) {
       assert::are_equal(usize_object::max_value, raw_array<int>::npos);
     }
@@ -941,22 +937,19 @@ namespace xtd::collections::generic::helpers::tests {
       collection_assert::are_equal({63, 31, 10}, items);
     }
     
-    auto test_method_(operator_index_with_epos) {
+    auto test_method_(operator_index_with_index_last) {
       auto items = raw_array {1, 2, 3, 4, 5};
       
       assert::are_equal(5, items[items.size() - 1]);
-      assert::are_equal(5, items[items.epos]);
-      assert::are_equal(5, items[xtd::epos]);
+      assert::are_equal(5, items[xtd::index::last]);
       
-      items[items.epos] = 6;
+      items[xtd::index::last] = 6;
       assert::are_equal(6, items[items.size() - 1]);
-      assert::are_equal(6, items[items.epos]);
-      assert::are_equal(6, items[xtd::epos]);
+      assert::are_equal(6, items[xtd::index::last]);
       
-      items[xtd::epos] = 7;
+      items[xtd::index::last] = 7;
       assert::are_equal(7, items[items.size() - 1]);
-      assert::are_equal(7, items[items.epos]);
-      assert::are_equal(7, items[xtd::epos]);
+      assert::are_equal(7, items[xtd::index::last]);
     }
     
     auto test_method_(operator_index_with_bool) {
