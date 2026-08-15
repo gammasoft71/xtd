@@ -4,7 +4,6 @@
 #pragma once
 #include "icollection.hpp"
 #include "extensions/list_common.hpp"
-#include "../../epos.hpp"
 #include "../../npos.hpp"
 #include "../../usize.hpp"
 
@@ -54,24 +53,6 @@ namespace xtd {
         ///   console::write_line("Value not found");
         /// ```
         inline static constexpr xtd::usize npos = xtd::npos;
-        
-        /// @brief Represents the index of the last valid element in a collection.
-        /// @remarks Unlike xtd::npos (which means "no position"), xtd::epos points to the last accessible element of a collection. It is equivalent to `items.count() - 1`.
-        /// @note This constant is provided for readability and convenience. For example, `items[xtd::epos]` directly accesses the last element without manually subtracting one from the collection count.
-        /// @remarks The epos is equivalent to `~1_z`. With bitwise operator the code is more concise.
-        /// @par Examples
-        /// ```cpp
-        /// auto items = list {10, 20, 30, 40};
-        /// console::write_line(items[epos]); // Prints 40
-        /// console::write_line(items[epos - 1]); // Prints 30
-        /// ```
-        /// The wollowing exemple shows the same example with bitwise operator as index.
-        /// ```cpp
-        /// auto items = list {10, 20, 30, 40};
-        /// console::write_line(items[~1_i]); // Prints 40
-        /// console::write_line(items[~2_i]); // Prints 30
-        /// ```
-        static inline constexpr xtd::usize epos = npos - 1;
         /// @}
         
         /// @name Public Properties
