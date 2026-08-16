@@ -38,7 +38,7 @@ protected:
 private:
   xtd::string get_command() const {
     auto pos = text().last_index_of(prompt);
-    if (pos != xtd::index::end) {
+    if (pos != xtd::string::npos) {
       pos += prompt.length();
       return text().substring(pos);
     }

@@ -67,7 +67,7 @@ private:
     
     auto clear() -> void override {boxes_.clear();}
     
-    auto contains(const program::box& item) const noexcept -> bool override {return index_of(item) != xtd::index::end;}
+    auto contains(const program::box& item) const noexcept -> bool override {return index_of(item) != npos;}
     
     auto contains(const program::box& item, const iequality_comparer<program::box>& comparer) const noexcept -> bool {
       for (auto box : boxes_)
@@ -82,7 +82,7 @@ private:
     auto index_of(const program::box& item) const noexcept -> usize override {
       for (auto index = 0_z; index  < count(); ++index)
         if (boxes_[index] == item) return index;
-      return xtd::index::end;
+      return npos;
     }
     
     auto insert(usize index, const program::box& item) -> void override {

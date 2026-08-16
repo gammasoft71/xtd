@@ -47,7 +47,7 @@ namespace lcd_label_appearance_example {
       segment_style_choice.location({120, 45});
       segment_style_choice.width(180);
       segment_style_choice.selected_value_changed += delegate_ {
-        if (segment_style_choice.selected_index() == xtd::index::end) return;
+        if (segment_style_choice.selected_index() == segment_style_choice.items().npos) return;
         auto style = segment_style_choice.selected_item().tag();
         if (is<dot_matrix_style>(style)) label_lcd_label.dot_matrix_style(as<forms::dot_matrix_style>(segment_style_choice.selected_item().tag()));
         else label_lcd_label.segment_style(as<forms::segment_style>(segment_style_choice.selected_item().tag()));
