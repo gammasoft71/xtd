@@ -134,14 +134,14 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line">    <span class="keyword">const</span> collections::array_list&amp; people_;</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// Enumerators are positioned before the first element until the first xtd::collections::ienumerator::move_next() call.</span></div>
-<div class="line">    usize position = xtd::index::end;</div>
+<div class="line">    usize position = collections::array_list::npos;</div>
 <div class="line">    </div>
 <div class="line">  <span class="keyword">public</span>:</div>
 <div class="line">    people_enumerator(<span class="keyword">const</span> collections::array_list&amp; list) : people_(list) {}</div>
 <div class="line">    </div>
 <div class="line">    <span class="keyword">auto</span> move_next() -&gt; <span class="keywordtype">bool</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> ++position &lt; people_.count();}</div>
 <div class="line">    </div>
-<div class="line">    <span class="keyword">auto</span> reset() -&gt; <span class="keywordtype">void</span> <span class="keyword">override</span> {position = xtd::index::end;}</div>
+<div class="line">    <span class="keyword">auto</span> reset() -&gt; <span class="keywordtype">void</span> <span class="keyword">override</span> {position = collections::array_list::npos;}</div>
 <div class="line">    </div>
 <div class="line">    <span class="keyword">auto</span> current() <span class="keyword">const</span> -&gt; <span class="keyword">const</span> any_object&amp; <span class="keyword">override</span> {</div>
 <div class="line">      <span class="keywordflow">if</span> (position &gt;= people_.count()) <span class="keywordflow">throw</span> invalid_operation_exception {};</div>

@@ -2200,7 +2200,7 @@ value is <a class="el" href="classxtd_1_1box__floating__point.html#af0e356626d4d
 <div class="line">  <span class="comment">// Fills the end of the time_span string with spaces if it does not contain milliseconds.</span></div>
 <div class="line">  <span class="keyword">auto</span> index = time_interval.index_of(<span class="charliteral">&#39;:&#39;</span>);</div>
 <div class="line">  index = time_interval.index_of(<span class="charliteral">&#39;.&#39;</span>, index);</div>
-<div class="line">  <span class="keywordflow">if</span> (index == xtd::index::end) time_interval += <span class="stringliteral">&quot;        &quot;</span>;</div>
+<div class="line">  <span class="keywordflow">if</span> (index == <a class="code hl_variable" href="classxtd_1_1basic__string.html#a9629cc4c296a49e4f99d718e8117689e">string::npos</a>) time_interval += <span class="stringliteral">&quot;        &quot;</span>;</div>
 <div class="line">  </div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;{0,21}{1,26}&quot;</span>, <a class="code hl_function" href="#a8bec335e6fcbd8a7b4384854c55f9c45">days</a>, time_interval);</div>
 <div class="line">}</div>
@@ -2238,6 +2238,7 @@ value is <a class="el" href="classxtd_1_1box__floating__point.html#af0e356626d4d
 <div class="line"><span class="comment">//           0.041666666          01:00:00</span></div>
 <div class="line"><span class="comment">//                     1        1.00:00:00</span></div>
 <div class="line"><span class="comment">//           20.84745602       20.20:20:20.2000000</span></div>
+<div class="ttc" id="aclassxtd_1_1basic__string_html_a9629cc4c296a49e4f99d718e8117689e"><div class="ttname"><a href="classxtd_1_1basic__string.html#a9629cc4c296a49e4f99d718e8117689e">xtd::basic_string&lt; char &gt;::npos</a></div><div class="ttdeci">static constexpr size_type npos</div><div class="ttdef"><b>Definition</b> basic_string.hpp:122</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae600c08b996905be13225bba0f253a63"><div class="ttname"><a href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">xtd::console::write_line</a></div><div class="ttdeci">static auto write_line() -&gt; void</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
 <div class="ttc" id="aclassxtd_1_1time__span_html_a8bec335e6fcbd8a7b4384854c55f9c45"><div class="ttname"><a href="#a8bec335e6fcbd8a7b4384854c55f9c45">xtd::time_span::days</a></div><div class="ttdeci">auto days() const noexcept -&gt; xtd::int32</div><div class="ttdoc">Gets the days component of the time interval represented by the current xtd::time_span structure.</div></div>
 <div class="ttc" id="aclassxtd_1_1time__span_html_ae660a058785b341e30765a6add47a8ce"><div class="ttname"><a href="#ae660a058785b341e30765a6add47a8ce">xtd::time_span::from_days</a></div><div class="ttdeci">static auto from_days(double value) -&gt; time_span</div><div class="ttdoc">Returns a xtd::time_span that represents a specified number of days, where the specification is accur...</div></div>

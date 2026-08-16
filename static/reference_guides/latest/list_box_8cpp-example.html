@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line">      layout_panel.padding(forms::padding(20));</div>
 <div class="line">      </div>
 <div class="line">      list_box_left.double_click += <a id="_a1" name="_a1"></a><a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
-<div class="line">        <span class="keywordflow">if</span> (list_box_left.selected_index() != xtd::index::end) {</div>
+<div class="line">        <span class="keywordflow">if</span> (list_box_left.selected_index() != list_box_left.npos) {</div>
 <div class="line">          list_box_right.items().add(list_box_left.selected_item());</div>
 <div class="line">          list_box_right.selected_index(0);</div>
 <div class="line">          list_box_left.items().remove_at(list_box_left.selected_index());</div>
@@ -156,7 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line">      </div>
 <div class="line">      list_box_right.sorted(<span class="keyword">true</span>);</div>
 <div class="line">      list_box_right.double_click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
-<div class="line">        <span class="keywordflow">if</span> (list_box_right.selected_index() != xtd::index::end) {</div>
+<div class="line">        <span class="keywordflow">if</span> (list_box_right.selected_index() != list_box_right.npos) {</div>
 <div class="line">          list_box_left.items().add(list_box_right.selected_item());</div>
 <div class="line">          list_box_left.selected_index(0);</div>
 <div class="line">          list_box_right.items().remove_at(list_box_right.selected_index());</div>
