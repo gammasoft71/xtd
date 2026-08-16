@@ -22,6 +22,8 @@ main_form::main_form() {
   const auto fps = 60;
   animation_timer_.interval_milliseconds(1000 / fps);
   animation_timer_.tick += {*this, &main_form::on_animation_timer_tick};
+  
+  if (environment::os_version().is_macos()) menu(main_menu_);
 
   main_panel_.context_menu(context_menu_);
   main_panel_.parent(*this);

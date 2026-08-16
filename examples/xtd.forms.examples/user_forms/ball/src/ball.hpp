@@ -46,10 +46,14 @@ namespace ball {
 
     settings_form settings_form_;
     forms::timer animation_timer_;
-    menu_item context_settings_menu_item_ {drawing::texts::settings(), event_handler {*this, &main_form::on_settings_menu_item_click}};
-    menu_item context_separator_menu_item_ {drawing::texts::separator()};
-    menu_item context_exit_menu_item_ {drawing::texts::exit(), event_handler {*this, &main_form::on_exit_menu_item_click}};
+    menu_item context_settings_menu_item_ {texts::settings(), event_handler {*this, &main_form::on_settings_menu_item_click}};
+    menu_item context_separator_menu_item_ {texts::separator()};
+    menu_item context_exit_menu_item_ {texts::exit(), event_handler {*this, &main_form::on_exit_menu_item_click}};
     forms::context_menu context_menu_ {context_settings_menu_item_, context_separator_menu_item_, context_exit_menu_item_};
+    menu_item main_settings_menu_item_ {texts::settings(), event_handler {*this, &main_form::on_settings_menu_item_click}};
+    menu_item main_exit_menu_item_ {texts::exit(), event_handler {*this, &main_form::on_exit_menu_item_click}, shortcut::alt_f4};
+    forms::menu_item main_window_menu_ {texts::window(), {main_settings_menu_item_, main_exit_menu_item_}};
+    forms::main_menu main_menu_ {main_window_menu_};
     bool is_dragging_ = false;
     panel main_panel_;
     drawing::point mouse_location_ = point::empty;
