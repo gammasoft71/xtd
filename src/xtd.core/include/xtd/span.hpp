@@ -5,6 +5,7 @@
 #define __XTD_CORE_INTERNAL__
 #include "internal/__span_definitions.hpp"
 #undef __XTD_CORE_INTERNAL__
+#include "collections/generic/helpers/raw_array.hpp"
 #include "collections/generic/helpers/wrap_pointer_iterator.hpp"
 #include "array.hpp"
 #include "dynamic_extent.hpp"
@@ -497,5 +498,15 @@ auto xtd::collections::generic::extensions::list_common<type_t, list_t>::operato
 template<typename type_t, typename list_t>
 auto xtd::collections::generic::extensions::list_common<type_t, list_t>::operator ()(const xtd::range& range) -> xtd::span<type_t> {
   return xtd::span<type_t>(self(), range);
+}
+
+template<typename type_t, typename allocator_t>
+auto xtd::collections::generic::helpers::raw_array<type_t, allocator_t>::operator [](const xtd::range& range) -> xtd::span<type_t> {
+  return xtd::span<type_t>(*this, range);
+}
+
+template<typename type_t, typename allocator_t>
+auto xtd::collections::generic::helpers::raw_array<type_t, allocator_t>::operator ()(const xtd::range& range) -> xtd::span<type_t> {
+  return xtd::span<type_t>(*this, range);
 }
 /// @endcond

@@ -7,11 +7,15 @@
 #include <limits>
 #include <vector>
 #include "../../../forward_iterable.hpp"
+#define __XTD_CORE_INTERNAL__
+#include "../../../internal/__span_definitions.hpp"
+#undef __XTD_CORE_INTERNAL__
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @cond
   struct index;
+  class range;
   /// @endcond
   
   /// @brief The xtd::collections namespace contains interfaces and classes that define various collections of objects, such as lists, queues, bit arrays, hash tables and dictionaries.
@@ -316,12 +320,20 @@ namespace xtd {
             return a != b.items();
           }
 
-          auto operator [](const xtd::index& index) const -> const_reference;
-          auto operator [](const xtd::index& index) -> reference;
-
           auto operator [](size_type index) const -> const_reference {return at(index);}
           auto operator [](size_type index) -> reference {return at(index);}
-          
+          auto operator [](const xtd::index& index) const -> const_reference;
+          auto operator [](const xtd::index& index) -> reference;
+          auto operator [](const xtd::range& range) const -> xtd::read_only_span<type_t>;
+          auto operator [](const xtd::range& range) -> xtd::span<type_t>;
+
+          auto operator ()(size_type index) const -> const_reference {return at(index);}
+          auto operator ()(size_type index) -> reference {return at(index);}
+          auto operator ()(const xtd::index& index) const -> const_reference;
+          auto operator ()(const xtd::index& index) -> reference;
+          auto operator ()(const xtd::range& range) const -> xtd::read_only_span<type_t>;
+          auto operator ()(const xtd::range& range) -> xtd::span<type_t>;
+
           operator const base_type& () const noexcept {return items_;}
           operator base_type& () noexcept {return items_;}
           /// @}

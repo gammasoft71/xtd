@@ -191,6 +191,12 @@ auto xtd::collections::generic::helpers::raw_array<type_t, allocator_t>::operato
 template<typename type_t, typename allocator_t>
 auto xtd::collections::generic::helpers::raw_array<type_t, allocator_t>::operator [](const xtd::index& index) -> reference {return operator [](index.get_offset(size()));}
 
+template<typename type_t, typename allocator_t>
+auto xtd::collections::generic::helpers::raw_array<type_t, allocator_t>::operator ()(const xtd::index& index) const -> const_reference {return operator [](index.get_offset(size()));}
+
+template<typename type_t, typename allocator_t>
+auto xtd::collections::generic::helpers::raw_array<type_t, allocator_t>::operator ()(const xtd::index& index) -> reference {return operator [](index.get_offset(size()));}
+
 template<typename type_t, typename list_t>
 auto xtd::collections::generic::extensions::list_common<type_t, list_t>::operator [](const xtd::index& index) const -> const type_t& {return self().operator [](index.get_offset(self().count()));}
 
