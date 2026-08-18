@@ -127,6 +127,7 @@ public:
     auto count() const noexcept -> usize override {return count_;}
     
     auto data() noexcept -> any_object* override {return contents_.data();}
+    auto data() const noexcept -> const any_object* override {return contents_.data();}
     
     auto is_synchronized() const noexcept -> bool override {return false;}
     

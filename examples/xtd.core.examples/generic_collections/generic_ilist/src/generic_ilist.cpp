@@ -52,7 +52,8 @@ private:
     auto count() const noexcept -> usize override {return boxes_.count();}
     
     auto data() noexcept -> program::box* override {return boxes_.data();}
-    
+    auto data() const noexcept -> const program::box* override {return boxes_.data();}
+
     auto is_fixed_size() const noexcept -> bool override {return false;}
     auto is_read_only() const noexcept -> bool override {return false;}
     auto is_synchronized() const noexcept -> bool override {return false;}

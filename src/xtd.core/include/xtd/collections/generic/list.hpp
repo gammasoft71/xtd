@@ -259,7 +259,7 @@ namespace xtd {
         /// @brief Returns pointer to the underlying array serving as element storage.
         /// @return Pointer to the underlying element storage. For non-empty containers, the returned pointer compares equal to the address of the first element.
         /// @remarks The pointer is such that range [xtd::collections::generic::list::data(), xtd::collections::generic::list::data() + xtd::collections::generic::list::count()) is always a valid range, even if the container is empty (xtd::collections::generic::list::data() is not dereferenceable in that case).
-        [[nodiscard]] auto data() const noexcept -> const_pointer {return reinterpret_cast<const_pointer>(data_->items.data());}
+        [[nodiscard]] auto data() const noexcept -> const_pointer override {return reinterpret_cast<const_pointer>(data_->items.data());}
         
         /// @brief Returns the underlying base type items.
         /// @return The underlying base type items.

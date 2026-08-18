@@ -66,6 +66,11 @@ namespace xtd {
         /// @return Pointer to the underlying element storage. For non-empty containers, the returned pointer compares equal to the address of the first element.
         /// @remarks The pointer is such that range [xtd::collections::generic::list::data(), xtd::collections::generic::list::data() + xtd::collections::generic::list::count()) is always a valid range, even if the container is empty (xtd::collections::generic::list::data() is not dereferenceable in that case).
         [[nodiscard]] virtual auto data() noexcept -> type_t* = 0;
+        
+        /// @brief Returns pointer to the underlying array serving as element storage.
+        /// @return Pointer to the underlying element storage. For non-empty containers, the returned pointer compares equal to the address of the first element.
+        /// @remarks The pointer is such that range [xtd::collections::generic::list::data(), xtd::collections::generic::list::data() + xtd::collections::generic::list::count()) is always a valid range, even if the container is empty (xtd::collections::generic::list::data() is not dereferenceable in that case).
+        [[nodiscard]] virtual auto data() const noexcept -> const type_t* = 0;
 
         /// @brief Gets a value indicating whether the xtd::collections::generic::ilist <type_t> has a fixed size.
         /// @return `true` if the xtd::collections::generic::ilist <type_t> has a fixed size; otherwise, `false`.
@@ -124,7 +129,7 @@ namespace xtd {
         /// @param item The object to add to the xtd::collections::generic::icollection <type_t>.
         /// @exception xtd::not_supported_exception The xtd::collections::generic::icollection <type_t> is read-only.
         virtual auto add(const type_t& item) -> void = 0;
-        
+
         /// @brief Removes all items from the xtd::collections::generic::icollection <type_t>.
         /// @exception xtd::not_supported_exception The xtd::collections::generic::icollection <type_t> is read-only.
         /// @remarks xtd::collections::generic::icollection::count must be set to 0, and references to other objects from elements of the collection must be released.
