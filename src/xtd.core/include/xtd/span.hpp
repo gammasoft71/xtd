@@ -179,13 +179,13 @@ namespace xtd {
     /// @param length The number of elements in the collection.
     /// @exception xtd::argument_out_of_range_exception if start or start + length are greater than items size.
     template<typename collection_t>
-    constexpr span(collection_t& items, size_type start, size_type length) : data_ {items.data() + start}, length_ {extent != dynamic_extent ? extent : length} {
+    constexpr span(collection_t& items, size_type start, size_type length) : data_ {const_cast<pointer>(items.data()) + start}, length_ {extent != dynamic_extent ? extent : length} {
       if (start + length > items.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
     }
     /// @brief Creates an xtd::span with specified data pointer and count.
     /// @param data The data pointer to construct a view for.
     /// @param length The number of elements to constuct.
-    constexpr span(type_t* const data, size_type length) : data_ {data}, length_ {extent != dynamic_extent ? extent : length} {
+    constexpr span(type_t* const data, size_type length) : data_ {const_cast<pointer>(data)}, length_ {extent != dynamic_extent ? extent : length} {
       if (!data) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_null);
     }
     /// @brief Creates an xtd::span with specified collection, and range.
@@ -193,7 +193,7 @@ namespace xtd {
     /// @param range The range of elements in the collection.
     /// @exception xtd::argument_out_of_range_exception if range.start or range.start + range.end - range.start are greater than items size.
     template<typename collection_t>
-    constexpr span(collection_t& items, const xtd::range& range) : data_ {items.data() + range.start()} {
+    constexpr span(collection_t& items, const xtd::range& range) : data_ {const_cast<pointer>(items.data()) + range.start()} {
       auto length = (range.end() > std::numeric_limits<size_type>::max() / 2 ? (items.size() - ~range.end()) : range.end()) - range.start();
       if (range.start() + length > items.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
       length_ = extent != dynamic_extent ? extent : length;
