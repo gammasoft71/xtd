@@ -248,6 +248,30 @@ auto bit_array::operator [](xtd::usize index) -> bool& {
   return value_ref_.get_boolean_ref(get_bit_value(index), index);
 }
 
+auto bit_array::operator [](const xtd::index& index) const -> const bool& {
+  return operator [](index.get_offset(count()));
+}
+
+auto bit_array::operator [](const xtd::index& index) -> bool& {
+  return operator [](index.get_offset(count()));
+}
+
+auto bit_array::operator ()(xtd::usize index) const -> const bool& {
+  return operator [](index);
+}
+
+auto bit_array::operator ()(xtd::usize index) -> bool& {
+  return operator [](index);
+}
+
+auto bit_array::operator ()(const xtd::index& index) const -> const bool& {
+  return operator [](index);
+}
+
+auto bit_array::operator ()(const xtd::index& index) -> bool& {
+  return operator [](index);
+}
+
 auto bit_array::operator &(const bit_array& value) const -> bit_array {
   flush(); // Must be call first
   auto result = self_;

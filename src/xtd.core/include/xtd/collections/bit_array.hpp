@@ -8,6 +8,7 @@
 #include "../array.hpp"
 #include "../boolean.hpp"
 #include "../byte.hpp"
+#include "../index.hpp"
 #include "../int32.hpp"
 #include "../math.hpp"
 #include "../npos.hpp"
@@ -286,13 +287,43 @@ namespace xtd {
       /// @return The element at the specified index.
       /// @exception xtd::argument_out_of_range_exception index is less than 0 or index is equal to or greater than count.
       auto operator [](xtd::usize index) const -> const bool&;
-      
       /// @brief Gets or Sets the element at the specified index.
       /// @param index The zero-based index of the element to get.
       /// @return The element at the specified index.
       /// @exception xtd::argument_out_of_range_exception index is less than 0 or index is equal to or greater than count.
       auto operator [](xtd::usize index) -> bool&;
-      
+      /// @brief Gets the element at the specified index.
+      /// @param index The zero-based index of the element to get.
+      /// @return The element at the specified index.
+      /// @exception xtd::argument_out_of_range_exception index is less than 0 or index is equal to or greater than count.
+      auto operator [](const xtd::index& index) const -> const bool&;
+      /// @brief Gets the element at the specified index.
+      /// @param index The zero-based index of the element to get.
+      /// @return The element at the specified index.
+      /// @exception xtd::argument_out_of_range_exception index is less than 0 or index is equal to or greater than count.
+      auto operator [](const xtd::index& index) -> bool&;
+
+      /// @brief Gets the element at the specified index.
+      /// @param index The zero-based index of the element to get.
+      /// @return The element at the specified index.
+      /// @exception xtd::argument_out_of_range_exception index is less than 0 or index is equal to or greater than count.
+      auto operator ()(xtd::usize index) const -> const bool&;
+      /// @brief Gets or Sets the element at the specified index.
+      /// @param index The zero-based index of the element to get.
+      /// @return The element at the specified index.
+      /// @exception xtd::argument_out_of_range_exception index is less than 0 or index is equal to or greater than count.
+      auto operator ()(xtd::usize index) -> bool&;
+      /// @brief Gets the element at the specified index.
+      /// @param index The zero-based index of the element to get.
+      /// @return The element at the specified index.
+      /// @exception xtd::argument_out_of_range_exception index is less than 0 or index is equal to or greater than count.
+      auto operator ()(const xtd::index& index) const -> const bool&;
+      /// @brief Gets the element at the specified index.
+      /// @param index The zero-based index of the element to get.
+      /// @return The element at the specified index.
+      /// @exception xtd::argument_out_of_range_exception index is less than 0 or index is equal to or greater than count.
+      auto operator ()(const xtd::index& index) -> bool&;
+
       /// @brief Performs the bitwise AND operation on the elements in the current xtd::collections::bit_array against the corresponding elements in the specified xtd::collections::bit_array.
       /// @param value The xtd::collections::bit_array with which to perform the bitwise AND operation.
       /// @return The new instance containing the result of the bitwise AND operation on the elements in the current xtd::collections::bit_array against the corresponding elements in the specified xtd::collections::bit_array.
