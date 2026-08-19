@@ -257,6 +257,8 @@ Public Constructors</h2></td></tr>
 Public Properties</h2></td></tr>
 <tr class="memitem:ac3dcafff73a682b1b0b707de12eb8fad" id="r_ac3dcafff73a682b1b0b707de12eb8fad"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ac3dcafff73a682b1b0b707de12eb8fad">count</a> () const noexcept -&gt; <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> override</td></tr>
 <tr class="memdesc:ac3dcafff73a682b1b0b707de12eb8fad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of elements contained in the <a class="el" href="classxtd_1_1collections_1_1object__model_1_1read__only__collection.html" title="Provides the base class for a generic read-only collection.">xtd::collections::object_model::read_only_collection</a> &lt;type_t&gt; instance.  <br /></td></tr>
+<tr class="memitem:a20de70a5bf16f6496f9eda8b8903afb1" id="r_a20de70a5bf16f6496f9eda8b8903afb1"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a20de70a5bf16f6496f9eda8b8903afb1">data</a> () const noexcept -&gt; <a class="el" href="#a5d9b9942cd1007235928c3dd46fa38d0">const_pointer</a> override</td></tr>
+<tr class="memdesc:a20de70a5bf16f6496f9eda8b8903afb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns pointer to the underlying array serving as element storage.  <br /></td></tr>
 <tr class="memitem:ae250e6a68d4c8347c13bc457acd4c0b7" id="r_ae250e6a68d4c8347c13bc457acd4c0b7"><td class="memItemLeft">const <a class="el" href="classxtd_1_1object.html">xtd::object</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#ae250e6a68d4c8347c13bc457acd4c0b7">sync_root</a> () const noexcept override</td></tr>
 <tr class="memdesc:ae250e6a68d4c8347c13bc457acd4c0b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets an object that can be used to synchronize access to the the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt;.  <br /></td></tr>
 <tr class="memitem:af8fbb1b14567031249b0ce95951ba127" id="r_af8fbb1b14567031249b0ce95951ba127"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#af8fbb1b14567031249b0ce95951ba127">empty_collection</a> () -&gt; const <a class="el" href="#ad9b093289a0bc17e8469eaa98ced9a48">read_only_collection</a>&lt; <a class="el" href="#a86a177d59b116e61676643dfbb96558f">value_type</a> &gt; &amp;</td></tr>
@@ -814,6 +816,39 @@ template&lt;typename type_t&gt; </div>
 </div><!-- fragment --> <dl class="section remark"><dt>Remarks</dt><dd>Retrieving the value of this property is an O(1) operation. </dd></dl>
 
 <p>Implements <a class="el" href="classxtd_1_1collections_1_1generic_1_1ilist.html#a5c90e427ae4ee7522d0f3a09210ed235">xtd::collections::generic::ilist&lt; type_t &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a20de70a5bf16f6496f9eda8b8903afb1" name="a20de70a5bf16f6496f9eda8b8903afb1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20de70a5bf16f6496f9eda8b8903afb1">&#9670;&#160;</a></span>data()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename type_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1object__model_1_1read__only__collection.html">xtd::collections::object_model::read_only_collection</a>&lt; type_t &gt;::data </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const -&gt; <a class="el" href="#a5d9b9942cd1007235928c3dd46fa38d0">const_pointer</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns pointer to the underlying array serving as element storage. </p>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to the underlying element storage. For non-empty containers, the returned pointer compares equal to the address of the first element. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The pointer is such that range [<a class="el" href="classxtd_1_1collections_1_1generic_1_1ilist.html#a33cf8df48c54645f480c190a62e966bb" title="Returns pointer to the underlying array serving as element storage.">xtd::collections::generic::list::data()</a>, <a class="el" href="classxtd_1_1collections_1_1generic_1_1ilist.html#a33cf8df48c54645f480c190a62e966bb" title="Returns pointer to the underlying array serving as element storage.">xtd::collections::generic::list::data()</a> + <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a0168e83b95232afde2aa19da18350096" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::count()</a>) is always a valid range, even if the container is empty (<a class="el" href="classxtd_1_1collections_1_1generic_1_1ilist.html#a33cf8df48c54645f480c190a62e966bb" title="Returns pointer to the underlying array serving as element storage.">xtd::collections::generic::list::data()</a> is not dereferenceable in that case). </dd></dl>
+
+<p>Implements <a class="el" href="classxtd_1_1collections_1_1generic_1_1ilist.html#a29a8d9e87e25654c49957612c94c5b2e">xtd::collections::generic::ilist&lt; type_t &gt;</a>.</p>
 
 </div>
 </div>

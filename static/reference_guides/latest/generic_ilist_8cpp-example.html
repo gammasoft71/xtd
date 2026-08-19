@@ -161,7 +161,8 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line">    <span class="keyword">auto</span> count() <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; usize <span class="keyword">override</span> {<span class="keywordflow">return</span> boxes_.count();}</div>
 <div class="line">    </div>
 <div class="line">    <span class="keyword">auto</span> data() <span class="keyword">noexcept</span> -&gt; program::box* <span class="keyword">override</span> {<span class="keywordflow">return</span> boxes_.data();}</div>
-<div class="line">    </div>
+<div class="line">    <span class="keyword">auto</span> data() <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; <span class="keyword">const</span> program::box* <span class="keyword">override</span> {<span class="keywordflow">return</span> boxes_.data();}</div>
+<div class="line"> </div>
 <div class="line">    <span class="keyword">auto</span> is_fixed_size() <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; <span class="keywordtype">bool</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> <span class="keyword">false</span>;}</div>
 <div class="line">    <span class="keyword">auto</span> is_read_only() <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; <span class="keywordtype">bool</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> <span class="keyword">false</span>;}</div>
 <div class="line">    <span class="keyword">auto</span> is_synchronized() <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; <span class="keywordtype">bool</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> <span class="keyword">false</span>;}</div>

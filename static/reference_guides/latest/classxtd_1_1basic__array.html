@@ -191,8 +191,8 @@ Public Properties</h2></td></tr>
 <tr class="memdesc:a63ea4c7a305ecdff5882d1cf2336c739"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of elements contained in the <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> &lt;type_t&gt;.  <br /></td></tr>
 <tr class="memitem:ac8956071bed59b8538a0ded1e2ecec2a" id="r_ac8956071bed59b8538a0ded1e2ecec2a"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#ac8956071bed59b8538a0ded1e2ecec2a">data</a> () noexcept -&gt; <a class="el" href="#a58756d2450f08851d601a29456ba4273">pointer</a> override</td></tr>
 <tr class="memdesc:ac8956071bed59b8538a0ded1e2ecec2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns pointer to the underlying array serving as element storage.  <br /></td></tr>
-<tr class="memitem:a22c2f59f9cf1d53c163d31446ef4f9d4" id="r_a22c2f59f9cf1d53c163d31446ef4f9d4"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#a22c2f59f9cf1d53c163d31446ef4f9d4">data</a> () const noexcept -&gt; <a class="el" href="#a52835b4b627c5d7783f5d523aa265927">const_pointer</a></td></tr>
-<tr class="memdesc:a22c2f59f9cf1d53c163d31446ef4f9d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns pointer to the underlying array serving as element storage.  <br /></td></tr>
+<tr class="memitem:a7668a93fb760c60fb23401589c11bc2b" id="r_a7668a93fb760c60fb23401589c11bc2b"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#a7668a93fb760c60fb23401589c11bc2b">data</a> () const noexcept -&gt; <a class="el" href="#a52835b4b627c5d7783f5d523aa265927">const_pointer</a> override</td></tr>
+<tr class="memdesc:a7668a93fb760c60fb23401589c11bc2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns pointer to the underlying array serving as element storage.  <br /></td></tr>
 <tr class="memitem:a11f585c378ccca2d5e97023065fe0623" id="r_a11f585c378ccca2d5e97023065fe0623"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a11f585c378ccca2d5e97023065fe0623">is_fixed_size</a> () const noexcept -&gt; bool override</td></tr>
 <tr class="memdesc:a11f585c378ccca2d5e97023065fe0623"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ilist.html" title="Represents a collection of objects that can be individually accessed by index.">xtd::collections::generic::ilist</a> &lt;type_t&gt; has a fixed size.  <br /></td></tr>
 <tr class="memitem:a075d59c8f688cafa6cfaf1c4b14d8358" id="r_a075d59c8f688cafa6cfaf1c4b14d8358"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a075d59c8f688cafa6cfaf1c4b14d8358">is_read_only</a> () const noexcept -&gt; bool override</td></tr>
@@ -721,8 +721,8 @@ template&lt;typename type_t, typename allocator_t = xtd::collections::generic::h
 
 </div>
 </div>
-<a id="a22c2f59f9cf1d53c163d31446ef4f9d4" name="a22c2f59f9cf1d53c163d31446ef4f9d4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a22c2f59f9cf1d53c163d31446ef4f9d4">&#9670;&#160;</a></span>data() <span class="overload">[2/2]</span></h2>
+<a id="a7668a93fb760c60fb23401589c11bc2b" name="a7668a93fb760c60fb23401589c11bc2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7668a93fb760c60fb23401589c11bc2b">&#9670;&#160;</a></span>data() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -741,7 +741,7 @@ template&lt;typename type_t, typename allocator_t = xtd::collections::generic::h
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -749,6 +749,8 @@ template&lt;typename type_t, typename allocator_t = xtd::collections::generic::h
 <p>Returns pointer to the underlying array serving as element storage. </p>
 <dl class="section return"><dt>Returns</dt><dd>Pointer to the underlying element storage. For non-empty containers, the returned pointer compares equal to the address of the first element. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The pointer is such that range [<a class="el" href="classxtd_1_1collections_1_1generic_1_1ilist.html#a33cf8df48c54645f480c190a62e966bb" title="Returns pointer to the underlying array serving as element storage.">xtd::array::data()</a>, <a class="el" href="classxtd_1_1collections_1_1generic_1_1ilist.html#a33cf8df48c54645f480c190a62e966bb" title="Returns pointer to the underlying array serving as element storage.">xtd::array::data()</a> + <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1collection__common.html#a146a032614f18c6e07841b515c78d8fe">xtd::array::size()</a>) is always a valid range, even if the container is empty (<a class="el" href="classxtd_1_1collections_1_1generic_1_1ilist.html#a33cf8df48c54645f480c190a62e966bb" title="Returns pointer to the underlying array serving as element storage.">xtd::array::data()</a> is not dereferenceable in that case). </dd></dl>
+
+<p>Implements <a class="el" href="classxtd_1_1collections_1_1generic_1_1ilist.html#a29a8d9e87e25654c49957612c94c5b2e">xtd::collections::generic::ilist&lt; type_t &gt;</a>.</p>
 
 </div>
 </div>

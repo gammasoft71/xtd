@@ -266,7 +266,7 @@ Inheritance diagram for xtd::collections::bit_array:</div>
 <div class="line"><span class="comment">//    false   false   false   false   false   false   false   false</span></div>
 <div class="line"><span class="comment">//    false   false   false   false   false   false   false   false</span></div>
 <div class="ttc" id="aclassxtd_1_1array_html"><div class="ttname"><a href="classxtd_1_1array.html">xtd::array</a></div><div class="ttdoc">Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...</div><div class="ttdef"><b>Definition</b> array.hpp:64</div></div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1bit__array_html"><div class="ttname"><a href="classxtd_1_1collections_1_1bit__array.html">xtd::collections::bit_array</a></div><div class="ttdoc">Manages a compact array of bit values, which are represented as booleans, where true indicates that t...</div><div class="ttdef"><b>Definition</b> bit_array.hpp:41</div></div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1bit__array_html"><div class="ttname"><a href="classxtd_1_1collections_1_1bit__array.html">xtd::collections::bit_array</a></div><div class="ttdoc">Manages a compact array of bit values, which are represented as booleans, where true indicates that t...</div><div class="ttdef"><b>Definition</b> bit_array.hpp:42</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html_abd86463570c9aa0ca88ce4bb118aef7d"><div class="ttname"><a href="classxtd_1_1console.html#abd86463570c9aa0ca88ce4bb118aef7d">xtd::console::write</a></div><div class="ttdeci">static auto write(arg_t &amp;&amp;value) -&gt; void</div><div class="ttdoc">Writes the text representation of the specified value to the standard output stream.</div><div class="ttdef"><b>Definition</b> console.hpp:490</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae600c08b996905be13225bba0f253a63"><div class="ttname"><a href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">xtd::console::write_line</a></div><div class="ttdeci">static auto write_line() -&gt; void</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
 <div class="ttc" id="agroup__keywords_html_gaeb9462ec721c9718cf689e93bf11bf56"><div class="ttname"><a href="group__keywords.html#gaeb9462ec721c9718cf689e93bf11bf56">startup_</a></div><div class="ttdeci">#define startup_(...)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:152</div></div>
@@ -371,6 +371,18 @@ Public Operators</h2></td></tr>
 <tr class="memdesc:a10edfe705d2443844a2e8afc076e8cb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the element at the specified index.  <br /></td></tr>
 <tr class="memitem:a9d31cc44f16271ed35b9954a90514190" id="r_a9d31cc44f16271ed35b9954a90514190"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a9d31cc44f16271ed35b9954a90514190">operator[]</a> (<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> index) -&gt; bool &amp;</td></tr>
 <tr class="memdesc:a9d31cc44f16271ed35b9954a90514190"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or Sets the element at the specified index.  <br /></td></tr>
+<tr class="memitem:a7fc7f09437e54a1278dca0e8d118cfc9" id="r_a7fc7f09437e54a1278dca0e8d118cfc9"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a7fc7f09437e54a1278dca0e8d118cfc9">operator[]</a> (const xtd::index &amp;index) const -&gt; const bool &amp;</td></tr>
+<tr class="memdesc:a7fc7f09437e54a1278dca0e8d118cfc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the element at the specified index.  <br /></td></tr>
+<tr class="memitem:a498c1597f50e8e40f35a6961ba4690a9" id="r_a498c1597f50e8e40f35a6961ba4690a9"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a498c1597f50e8e40f35a6961ba4690a9">operator[]</a> (const xtd::index &amp;index) -&gt; bool &amp;</td></tr>
+<tr class="memdesc:a498c1597f50e8e40f35a6961ba4690a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the element at the specified index.  <br /></td></tr>
+<tr class="memitem:a655e9df55bc8b2c2a38b381ee1a83f87" id="r_a655e9df55bc8b2c2a38b381ee1a83f87"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a655e9df55bc8b2c2a38b381ee1a83f87">operator()</a> (<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> index) const -&gt; const bool &amp;</td></tr>
+<tr class="memdesc:a655e9df55bc8b2c2a38b381ee1a83f87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the element at the specified index.  <br /></td></tr>
+<tr class="memitem:ad93e180686e145597bfd9bb5497dc8fc" id="r_ad93e180686e145597bfd9bb5497dc8fc"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ad93e180686e145597bfd9bb5497dc8fc">operator()</a> (<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> index) -&gt; bool &amp;</td></tr>
+<tr class="memdesc:ad93e180686e145597bfd9bb5497dc8fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or Sets the element at the specified index.  <br /></td></tr>
+<tr class="memitem:a6ff6167006024597c94ca828a5bde7cb" id="r_a6ff6167006024597c94ca828a5bde7cb"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a6ff6167006024597c94ca828a5bde7cb">operator()</a> (const xtd::index &amp;index) const -&gt; const bool &amp;</td></tr>
+<tr class="memdesc:a6ff6167006024597c94ca828a5bde7cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the element at the specified index.  <br /></td></tr>
+<tr class="memitem:ab4f8e976947f8d2348ee9334e4cde409" id="r_ab4f8e976947f8d2348ee9334e4cde409"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ab4f8e976947f8d2348ee9334e4cde409">operator()</a> (const xtd::index &amp;index) -&gt; bool &amp;</td></tr>
+<tr class="memdesc:ab4f8e976947f8d2348ee9334e4cde409"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the element at the specified index.  <br /></td></tr>
 <tr class="memitem:a623ac60eab06694124252106559f1481" id="r_a623ac60eab06694124252106559f1481"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a623ac60eab06694124252106559f1481">operator&amp;</a> (const <a class="el" href="#a934e8881f5975aa6ab671b294f78abf4">bit_array</a> &amp;value) const -&gt; <a class="el" href="#a934e8881f5975aa6ab671b294f78abf4">bit_array</a></td></tr>
 <tr class="memdesc:a623ac60eab06694124252106559f1481"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs the bitwise AND operation on the elements in the current <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a> against the corresponding elements in the specified <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a>.  <br /></td></tr>
 <tr class="memitem:a951f202fdec1401abafe0e041fa9d66e" id="r_a951f202fdec1401abafe0e041fa9d66e"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a951f202fdec1401abafe0e041fa9d66e">operator&amp;=</a> (const <a class="el" href="#a934e8881f5975aa6ab671b294f78abf4">bit_array</a> &amp;value) -&gt; <a class="el" href="#a934e8881f5975aa6ab671b294f78abf4">bit_array</a> &amp;</td></tr>
@@ -1681,7 +1693,7 @@ This method is an O(n) operation, where n is count. </dd></dl>
 </div>
 </div>
 <a id="a10edfe705d2443844a2e8afc076e8cb5" name="a10edfe705d2443844a2e8afc076e8cb5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a10edfe705d2443844a2e8afc076e8cb5">&#9670;&#160;</a></span>operator[]() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a10edfe705d2443844a2e8afc076e8cb5">&#9670;&#160;</a></span>operator[]() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1713,7 +1725,7 @@ This method is an O(n) operation, where n is count. </dd></dl>
 </div>
 </div>
 <a id="a9d31cc44f16271ed35b9954a90514190" name="a9d31cc44f16271ed35b9954a90514190"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9d31cc44f16271ed35b9954a90514190">&#9670;&#160;</a></span>operator[]() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d31cc44f16271ed35b9954a90514190">&#9670;&#160;</a></span>operator[]() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1728,6 +1740,198 @@ This method is an O(n) operation, where n is count. </dd></dl>
 </div><div class="memdoc">
 
 <p>Gets or Sets the element at the specified index. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>The zero-based index of the element to get. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The element at the specified index. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">xtd::argument_out_of_range_exception</td><td>index is less than 0 or index is equal to or greater than count. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7fc7f09437e54a1278dca0e8d118cfc9" name="a7fc7f09437e54a1278dca0e8d118cfc9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7fc7f09437e54a1278dca0e8d118cfc9">&#9670;&#160;</a></span>operator[]() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto xtd::collections::bit_array::operator[] </td>
+          <td>(</td>
+          <td class="paramtype">const xtd::index &amp;</td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
+          <td> const -&gt;  const bool &amp;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the element at the specified index. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>The zero-based index of the element to get. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The element at the specified index. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">xtd::argument_out_of_range_exception</td><td>index is less than 0 or index is equal to or greater than count. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a498c1597f50e8e40f35a6961ba4690a9" name="a498c1597f50e8e40f35a6961ba4690a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a498c1597f50e8e40f35a6961ba4690a9">&#9670;&#160;</a></span>operator[]() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto xtd::collections::bit_array::operator[] </td>
+          <td>(</td>
+          <td class="paramtype">const xtd::index &amp;</td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
+          <td> -&gt;  bool &amp;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the element at the specified index. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>The zero-based index of the element to get. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The element at the specified index. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">xtd::argument_out_of_range_exception</td><td>index is less than 0 or index is equal to or greater than count. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a655e9df55bc8b2c2a38b381ee1a83f87" name="a655e9df55bc8b2c2a38b381ee1a83f87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a655e9df55bc8b2c2a38b381ee1a83f87">&#9670;&#160;</a></span>operator()() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto xtd::collections::bit_array::operator() </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
+          <td> const -&gt;  const bool &amp;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the element at the specified index. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>The zero-based index of the element to get. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The element at the specified index. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">xtd::argument_out_of_range_exception</td><td>index is less than 0 or index is equal to or greater than count. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad93e180686e145597bfd9bb5497dc8fc" name="ad93e180686e145597bfd9bb5497dc8fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad93e180686e145597bfd9bb5497dc8fc">&#9670;&#160;</a></span>operator()() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto xtd::collections::bit_array::operator() </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
+          <td> -&gt;  bool &amp;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets or Sets the element at the specified index. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>The zero-based index of the element to get. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The element at the specified index. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">xtd::argument_out_of_range_exception</td><td>index is less than 0 or index is equal to or greater than count. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a6ff6167006024597c94ca828a5bde7cb" name="a6ff6167006024597c94ca828a5bde7cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ff6167006024597c94ca828a5bde7cb">&#9670;&#160;</a></span>operator()() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto xtd::collections::bit_array::operator() </td>
+          <td>(</td>
+          <td class="paramtype">const xtd::index &amp;</td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
+          <td> const -&gt;  const bool &amp;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the element at the specified index. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>The zero-based index of the element to get. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The element at the specified index. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">xtd::argument_out_of_range_exception</td><td>index is less than 0 or index is equal to or greater than count. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab4f8e976947f8d2348ee9334e4cde409" name="ab4f8e976947f8d2348ee9334e4cde409"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4f8e976947f8d2348ee9334e4cde409">&#9670;&#160;</a></span>operator()() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto xtd::collections::bit_array::operator() </td>
+          <td>(</td>
+          <td class="paramtype">const xtd::index &amp;</td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
+          <td> -&gt;  bool &amp;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the element at the specified index. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">index</td><td>The zero-based index of the element to get. </td></tr>
