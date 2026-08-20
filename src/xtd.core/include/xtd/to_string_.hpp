@@ -277,6 +277,14 @@ template<xtd::iterable iterable_t>
   return oss.str();
 }
 
+template<typename char_t, class traits_t>
+[[nodiscard]] inline auto xtd::to_string(const std::basic_string_view<char_t, traits_t>& chars, const xtd::string& fmt, const std::locale& loc) -> xtd::string {
+  auto str = xtd::string {};
+  for (const auto& c : chars)
+    str += xtd::to_string(c, fmt, loc);
+  return str;
+}
+
 template<typename type_t, xtd::usize size>
 [[nodiscard]] inline auto xtd::to_string(const std::array<type_t, size>& values, const xtd::string& fmt, const std::locale& loc) -> xtd::string {
   return __xtd_sequence_container_to_string(values.begin(), values.end(), fmt, loc);

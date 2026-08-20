@@ -435,6 +435,9 @@ namespace xtd {
   template<typename ...types_t>
   inline auto to_string(const std::tuple<types_t ...>& value, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
   
+  template<typename char_t, typename traits_t>
+  inline auto to_string(const std::basic_string_view<char_t, traits_t>& chars, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
+
   template<typename type_t, xtd::usize size>
   inline auto to_string(const std::array<type_t, size>& values, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
   
