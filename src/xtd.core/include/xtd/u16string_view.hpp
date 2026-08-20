@@ -2,7 +2,7 @@
 /// @brief Contains xtd::u16string_view alias.
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
-#include <string_view>
+#include "basic_string_view.hpp"
 #include "char16.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -13,5 +13,5 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core system strings
-  using u16string_view = std::basic_string_view<xtd::char16>;
+  using u16string_view = xtd::basic_string_view<xtd::char16>;
 }
