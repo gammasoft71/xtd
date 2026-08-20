@@ -169,9 +169,11 @@ namespace xtd {
     /// @param range The range of elements in the collection.
     /// @exception xtd::argument_out_of_range_exception if range.start or range.start + range.end - range.start are greater than items size.
     template<typename collection_t>
-    constexpr read_only_span(const collection_t& items, const xtd::range& range) : data_ {items.data() + range.start()} {
-      auto length = (range.end() > std::numeric_limits<size_type>::max() / 2 ? (items.size() - ~range.end()) : range.end()) - range.start();
-      if (range.start() + length > items.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+    constexpr read_only_span(const collection_t& items, const xtd::range& range) {
+      auto start = range.start().is_from_end() ? (items.size() - ~range.start().value()) : range.start().value();
+      auto length = (range.end().is_from_end() ? (items.size() - ~range.end().value() - 1) : range.end().value()) - start;
+      if (start + length > items.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+      data_ = items.data() + start;
       length_ = extent != dynamic_extent ? extent : length;
     }
     /// @}
