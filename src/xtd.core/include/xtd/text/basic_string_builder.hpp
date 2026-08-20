@@ -1663,7 +1663,7 @@ namespace xtd {
       /// @param str The string to be inserted.
       /// @remarks Then inserts each character from the resulting sequence `seq` (the contents of `str` plus padding) to the output stream `os` as if by calling `os.rdbuf()->sputn(seq, n)`, where n is `std::max(os.width(), str.length())`.
       /// @remarks Finally, calls `os.width(0)` to cancel the effects of std::setw, if any.
-      /// @remarks Equivalent to `return os << std::basic_string_view<char_t, traits_t>(str);`.
+      /// @remarks Equivalent to `return os << xtd::basic_string_view<char_t, traits_t>(str);`.
       /// @todo uncomment following line and remove the next.
       //friend std::basic_ostream<char>& operator <<(std::basic_ostream<char>& stream, const basic_string_builder& str) {return stream << str.to_string().chars_;}
       friend auto operator <<(std::ostream& stream, const basic_string_builder & str) -> std::ostream& {return stream << xtd::basic_string<char>(str.chars()).chars();}
@@ -1672,7 +1672,7 @@ namespace xtd {
       /// @param str The string to be inserted.
       /// @remarks Then inserts each character from the resulting sequence `seq` (the contents of `str` plus padding) to the output stream `os` as if by calling `os.rdbuf()->sputn(seq, n)`, where n is `std::max(os.width(), str.length())`.
       /// @remarks Finally, calls `os.width(0)` to cancel the effects of std::setw, if any.
-      /// @remarks Equivalent to `return os << std::basic_string_view<char_t, traits_t>(str);`.
+      /// @remarks Equivalent to `return os << xtd::basic_string_view<char_t, traits_t>(str);`.
       friend auto operator <<(std::wostream& stream, const basic_string_builder & str) -> std::wostream& {return stream << xtd::basic_string<xtd::wchar>(str.chars()).chars();}
       
       /// @brief Input stream operator. Behaves as a [FormattedInputFunction](https://en.cppreference.com/w/cpp/named_req/FormattedInputFunction). After constructing and checking the sentry object, which may skip leading whitespace, first clears `str` with `str.erase()`, then reads characters from `is` and appends them to `str` as if by `str.append(1, c)`, until one of the following conditions becomes `true`:
