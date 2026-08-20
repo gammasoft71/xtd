@@ -80,6 +80,8 @@ add_sources(
   "include/xtd/basic_string.hpp"
   "include/xtd/basic_string"
   "include/xtd/basic_string_.hpp"
+  "include/xtd/basic_string_view.hpp"
+  "include/xtd/basic_string_view"
   "include/xtd/beep.hpp"
   "include/xtd/beep"
   "include/xtd/bit_converter.hpp"
