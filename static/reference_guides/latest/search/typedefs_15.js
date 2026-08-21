@@ -9,5 +9,5 @@ var searchData=
   ['wstring_6',['wstring',['../group__strings.html#gaef465eea9979bb0b1332b8bc46abe0ff',1,'xtd']]],
   ['wstring_5fbuilder_7',['wstring_builder',['../group__strings.html#ga5619413acf6894bdc5403fd52b64a72e',1,'xtd::text']]],
   ['wstring_5fcomparer_8',['wstring_comparer',['../group__system.html#ga71a60542f95931afbe0c807bd5cca415',1,'xtd']]],
-  ['wstring_5fview_9',['wstring_view',['../group__strings.html#gadd5d9e5ac3f537201073d7f2dcb2a9a8',1,'xtd']]]
+  ['wstring_5fview_9',['wstring_view',['../group__strings.html#gab7d4dc4b66c49ea949e8f3a997b2b279',1,'xtd']]]
 ];

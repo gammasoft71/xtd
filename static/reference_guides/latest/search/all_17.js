@@ -209,7 +209,7 @@ var searchData=
   ['wstring_5fbuilder_2ehpp_206',['wstring_builder.hpp',['../wstring__builder_8hpp.html',1,'']]],
   ['wstring_5fcomparer_207',['wstring_comparer',['../group__system.html#ga71a60542f95931afbe0c807bd5cca415',1,'xtd']]],
   ['wstring_5fcomparer_2ehpp_208',['wstring_comparer.hpp',['../wstring__comparer_8hpp.html',1,'']]],
-  ['wstring_5fview_209',['wstring_view',['../group__strings.html#gadd5d9e5ac3f537201073d7f2dcb2a9a8',1,'xtd']]],
+  ['wstring_5fview_209',['wstring_view',['../group__strings.html#gab7d4dc4b66c49ea949e8f3a997b2b279',1,'xtd']]],
   ['wstring_5fview_2ehpp_210',['wstring_view.hpp',['../wstring__view_8hpp.html',1,'']]],
   ['wtask_211',['wtask',['../classxtd_1_1threading_1_1tasks_1_1wtask.html',1,'xtd::threading::tasks']]],
   ['wtask_2ehpp_212',['wtask.hpp',['../wtask_8hpp.html',1,'']]],

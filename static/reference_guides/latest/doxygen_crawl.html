@@ -602,6 +602,8 @@
 <a href="basic__string__builder_8hpp_source.html"/>
 <a href="basic__string__comparer_8hpp.html"/>
 <a href="basic__string__comparer_8hpp_source.html"/>
+<a href="basic__string__view_8hpp.html"/>
+<a href="basic__string__view_8hpp_source.html"/>
 <a href="basic__task_8hpp.html"/>
 <a href="basic__task_8hpp_source.html"/>
 <a href="battery__charge__status_8hpp.html"/>
@@ -1190,6 +1192,7 @@
 <a href="classxtd_1_1basic__string.html#a1d66bd5bc202d1344d5ad91c42a76648"/>
 <a href="classxtd_1_1basic__string.html#a2095a4dd9dbf5c5b0945458539b94a3d"/>
 <a href="classxtd_1_1basic__string.html#a217283eca2cd563ea61f7d63b53dcbe5"/>
+<a href="classxtd_1_1basic__string.html#a237f4bede2020fd06251f52881e658a3"/>
 <a href="classxtd_1_1basic__string.html#a240eb7c362f14b10924dd535212f04b2"/>
 <a href="classxtd_1_1basic__string.html#a2504101a329d79296777f3efabd28ff5"/>
 <a href="classxtd_1_1basic__string.html#a25f4971c02dfdea492b1ae1df155172f"/>
@@ -1197,7 +1200,6 @@
 <a href="classxtd_1_1basic__string.html#a26e6d374b35ce56cd10d6b4fe4deefeb"/>
 <a href="classxtd_1_1basic__string.html#a2760deccd3dbe4d983f7781b2847c0b9"/>
 <a href="classxtd_1_1basic__string.html#a2822296bdeb95be7b9b7ad8cd427b970"/>
-<a href="classxtd_1_1basic__string.html#a2881dd6b562f0ac26f56ac028efd28be"/>
 <a href="classxtd_1_1basic__string.html#a2a4fb37433a7c5084f88255c1e369590"/>
 <a href="classxtd_1_1basic__string.html#a2acc0d2cf6917cfb99269e9ff3c9c011"/>
 <a href="classxtd_1_1basic__string.html#a2b5493bd9034616dded9fb810d65fd6c"/>
@@ -1205,6 +1207,7 @@
 <a href="classxtd_1_1basic__string.html#a2bb40d92ec1cebd778d994bcdf2b14d3"/>
 <a href="classxtd_1_1basic__string.html#a2bc2e260b85f281c7dbb5b7595f940a4"/>
 <a href="classxtd_1_1basic__string.html#a2c180f94205ae5c90c13c47e83257b4c"/>
+<a href="classxtd_1_1basic__string.html#a2e928100a32027a348748a92364fc86c"/>
 <a href="classxtd_1_1basic__string.html#a2fa67fdd2798346152a0369deb327928"/>
 <a href="classxtd_1_1basic__string.html#a311796df207f48060b5c20b1553c5d0a"/>
 <a href="classxtd_1_1basic__string.html#a3150c5b90a07f7d9a239c52bda67e0e6"/>
@@ -1354,7 +1357,6 @@
 <a href="classxtd_1_1basic__string.html#aa468a09c36805efa28344d5e0298eb53"/>
 <a href="classxtd_1_1basic__string.html#aa5768e86782c1fc569d8c12a0b4cbbb1"/>
 <a href="classxtd_1_1basic__string.html#aa5da6392707a08f5be478bebea4ac838"/>
-<a href="classxtd_1_1basic__string.html#aa5f2b589abb3d13a64cefe3c54b00b23"/>
 <a href="classxtd_1_1basic__string.html#aa6beeacb00f0606e8190ee9a96164f4c"/>
 <a href="classxtd_1_1basic__string.html#aa8af8c00522d503d3b21144f2d425d36"/>
 <a href="classxtd_1_1basic__string.html#aab2d8c24d285ea3c1c133e4066436e10"/>
@@ -1375,6 +1377,7 @@
 <a href="classxtd_1_1basic__string.html#abc1576ecdc98da4e491e6ea1e87ac838"/>
 <a href="classxtd_1_1basic__string.html#abdb70e81e17d26e4f86008e87198baa4"/>
 <a href="classxtd_1_1basic__string.html#abf69edecd89307a137aa18e2022de634"/>
+<a href="classxtd_1_1basic__string.html#abfa71269166437113bd1e77647673efa"/>
 <a href="classxtd_1_1basic__string.html#abfb4283bf6f8e32820a7eaa04cf1fd71"/>
 <a href="classxtd_1_1basic__string.html#ac0107620d24c3577dbe7d1c6d4e1e7a9"/>
 <a href="classxtd_1_1basic__string.html#ac0332614065a56dd131a5d14186e5596"/>
@@ -1419,6 +1422,7 @@
 <a href="classxtd_1_1basic__string.html#ae03e04c26247b1429e607e753508e858"/>
 <a href="classxtd_1_1basic__string.html#ae053896eb703262ae7c4ac517abcff9b"/>
 <a href="classxtd_1_1basic__string.html#ae082a0c13604c272110244edeae4edbd"/>
+<a href="classxtd_1_1basic__string.html#ae09c0ff09a4dc73a69b62edcc897a957"/>
 <a href="classxtd_1_1basic__string.html#ae13893dcdf41e314e37387c2a1649be8"/>
 <a href="classxtd_1_1basic__string.html#ae17ea82ccd01f4810db8ba2fdc53d138"/>
 <a href="classxtd_1_1basic__string.html#ae1da6ede5ca59dc97eb1425561514610"/>
@@ -30761,17 +30765,18 @@
 <a href="group__strings.html#ga2a1c504cef5a83ac0d4dec15817b0511"/>
 <a href="group__strings.html#ga2b0fa8983b51035b33f765fd06a5c9af"/>
 <a href="group__strings.html#ga30cd2dda34afc715ec10817ced72ac25"/>
-<a href="group__strings.html#ga3af0f129d5aecb98beb0996ebf9e5019"/>
+<a href="group__strings.html#ga354e85b5eebdc9f5c79c42dda8402bb8"/>
+<a href="group__strings.html#ga4ad8cb1dd3898cf637f95f636781fc83"/>
 <a href="group__strings.html#ga5619413acf6894bdc5403fd52b64a72e"/>
+<a href="group__strings.html#ga5c354c2010f75db327e29be44b1851e2"/>
 <a href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e"/>
 <a href="group__strings.html#ga6740756710f29c0742a183f24f7547b9"/>
-<a href="group__strings.html#ga6f9b765ecc6344c56381a0356b604594"/>
 <a href="group__strings.html#ga80050d927e8b925c2668c1faebf0b941"/>
 <a href="group__strings.html#ga866d47762847e8a5f1de2e8589eda83d"/>
-<a href="group__strings.html#gad0cb77ab6d8d2208215009b1802001b3"/>
+<a href="group__strings.html#gab7d4dc4b66c49ea949e8f3a997b2b279"/>
+<a href="group__strings.html#gacc00f584d5adf88858d4a48e51aad475"/>
 <a href="group__strings.html#gad9519a3c079fca351ff0c97ccd3b012a"/>
-<a href="group__strings.html#gadd5d9e5ac3f537201073d7f2dcb2a9a8"/>
-<a href="group__strings.html#gae4cdd41320a4dff79b4d5bf881da5838"/>
+<a href="group__strings.html#gadaedf7d5231a7076bac579a626bd741d"/>
 <a href="group__strings.html#gaef465eea9979bb0b1332b8bc46abe0ff"/>
 <a href="group__style__sheets.html"/>
 <a href="group__style__sheets.html#ga000ce3ba53d5dd196e53215625642a44"/>

@@ -49,7 +49,7 @@ var searchData=
   ['string_5fmap_46',['string_map',['../group__specialized__collections.html#gad6edadf6723b3286f18b75cdc609de7d',1,'xtd::collections::specialized']]],
   ['string_5fpair_47',['string_pair',['../group__specialized__collections.html#gaeef2ee69b902f72ee3a4016d04525b65',1,'xtd::collections::specialized']]],
   ['string_5fvector_48',['string_vector',['../group__specialized__collections.html#gae7daee1e7504d661131d0f2a3f14b73b',1,'xtd::collections::specialized']]],
-  ['string_5fview_49',['string_view',['../group__strings.html#ga3af0f129d5aecb98beb0996ebf9e5019',1,'xtd']]],
+  ['string_5fview_49',['string_view',['../group__strings.html#ga5c354c2010f75db327e29be44b1851e2',1,'xtd']]],
   ['style_5fsheet_5fnames_5ft_50',['style_sheet_names_t',['../classxtd_1_1forms_1_1style__sheets_1_1style__sheet.html#a3d178fd489e94d1d89363054fe8300c3',1,'xtd::forms::style_sheets::style_sheet']]],
   ['style_5fsheets_5ft_51',['style_sheets_t',['../classxtd_1_1forms_1_1style__sheets_1_1style__sheet.html#a3d3851260e8765a01259b71955844ad9',1,'xtd::forms::style_sheets::style_sheet']]],
   ['system_5fcolor_5fcollection_52',['system_color_collection',['../classxtd_1_1system__report.html#abad3614994bf2343dee19fc143619c8a',1,'xtd::system_report']]],

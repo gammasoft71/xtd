@@ -838,7 +838,7 @@ var searchData=
   ['string_5fvalid_2ehpp_835',['string_valid.hpp',['../string__valid_8hpp.html',1,'']]],
   ['string_5fvector_836',['string_vector',['../group__specialized__collections.html#gae7daee1e7504d661131d0f2a3f14b73b',1,'xtd::collections::specialized']]],
   ['string_5fvector_2ehpp_837',['string_vector.hpp',['../string__vector_8hpp.html',1,'']]],
-  ['string_5fview_838',['string_view',['../group__strings.html#ga3af0f129d5aecb98beb0996ebf9e5019',1,'xtd']]],
+  ['string_5fview_838',['string_view',['../group__strings.html#ga5c354c2010f75db327e29be44b1851e2',1,'xtd']]],
   ['string_5fview_2ehpp_839',['string_view.hpp',['../string__view_8hpp.html',1,'']]],
   ['string_5fwriter_840',['string_writer',['../classxtd_1_1io_1_1string__writer.html',1,'xtd::io::string_writer'],['../classxtd_1_1io_1_1string__writer.html#abcef562f3b0f1b57aeac914b23876a58',1,'xtd::io::string_writer::string_writer()=default'],['../classxtd_1_1io_1_1string__writer.html#a7b0a52f28197a466ad668b81a7950abc',1,'xtd::io::string_writer::string_writer(const xtd::string &amp;str)']]],
   ['string_5fwriter_2ehpp_841',['string_writer.hpp',['../string__writer_8hpp.html',1,'']]],
