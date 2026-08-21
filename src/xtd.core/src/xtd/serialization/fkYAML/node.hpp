@@ -2163,7 +2163,7 @@ FK_YAML_DETAIL_NAMESPACE_BEGIN
 
 /// @brief Non owning view into constant character sequence.
 /// @note
-/// This class is a minimal implementation of std::basic_string_view which has been available since C++17
+/// This class is a minimal implementation of xtd::basic_string_view which has been available since C++17
 /// but pretty useful and efficient for referencing/investigating character sequences.
 /// @warning
 /// This class intentionally omits a lot of value checks to improve efficiency. Necessary checks should be
