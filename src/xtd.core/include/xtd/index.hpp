@@ -77,27 +77,35 @@ namespace xtd {
     /// @brief Serves as a hash function for a particular type.
     /// @return A hash code for the current object.
     [[nodiscard]] auto get_hash_code() const noexcept -> xtd::usize override {return hash_code::combine(__v__);}
-
+    
     /// @brief Calculates the offset from the start of the collection using the specified collection length.
     /// @param length The length of the collection that the xtd::index will be used with. Must be a positive value.
     /// @return The offset.
     [[nodiscard]] auto get_offset(value_type length) const noexcept -> xtd::usize {return is_from_end() ? length - value() : value();}
-
+    
     /// @brief Returns the string representation of the current Range object.
     /// @return The string representation of the range.
     [[nodiscard]] auto to_string() const noexcept -> xtd::string override;
+    
+    /// @brief Returns the xtd::usize representation of the current Range object.
+    /// @return The xtd::usize representation of the range.
+    [[nodiscard]] auto to_usize() const noexcept -> value_type {return __v__;}
     /// @}
     
-    /// @name Public Operators
-    ///
-    /// @{
-    ///@brief Gets the underlying xtd::index value type.
-    ///@return The underlying xtd::index value type.
-    operator value_type() {return __v__;}
-    ///@brief Gets the underlying xtd::index value type.
-    ///@return The underlying xtd::index value type.
-    constexpr operator value_type() const {return __v__;}
-    /// @}
+    /// @cond
+    auto operator ++() noexcept -> xtd::index& {++__v__; return *this;}
+    auto operator --() noexcept -> xtd::index& {--__v__; return *this;}
+    auto operator ++(int) noexcept -> xtd::index {return xtd::index {__v__++};}
+    auto operator --(int) noexcept -> xtd::index {return xtd::index {__v__--};}
+    auto operator ~() const noexcept -> xtd::index {return xtd::index {~__v__};}
+    auto operator +() const noexcept -> xtd::index {return xtd::index {+__v__};}
+    auto operator -() const noexcept -> xtd::index {return xtd::index {-__v__};}
+    auto operator +(xtd::integer auto v) const noexcept -> xtd::index {return xtd::index {__v__ + static_cast<value_type>(v)};}
+    auto operator -(xtd::integer auto v) const noexcept -> xtd::index {return xtd::index {__v__ - static_cast<value_type>(v)};}
+    auto operator *(xtd::integer auto v) const noexcept -> xtd::index {return xtd::index {__v__ * static_cast<value_type>(v)};}
+    auto operator /(xtd::integer auto v) const noexcept -> xtd::index {return xtd::index {__v__ / static_cast<value_type>(v)};}
+    auto operator %(xtd::integer auto v) const noexcept -> xtd::index {return xtd::index {__v__ % static_cast<value_type>(v)};}
+    /// @endcond
     
     /// @name Public Static Properties
     ///
