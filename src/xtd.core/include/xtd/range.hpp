@@ -2,6 +2,8 @@
 /// @brief Contains xtd::range class.
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
+#include "basic_string_view.hpp"
+#include "index.hpp"
 #include "index.hpp"
 #include "object.hpp"
 #include "usize.hpp"
@@ -121,6 +123,20 @@ namespace xtd {
 }
 
 /// @cond
+template<typename char_t, typename traits_t, typename allocator_t>
+auto xtd::basic_string<char_t, traits_t, allocator_t>::operator [](const xtd::range& range) const -> xtd::basic_string_view<char_t> {
+  //return xtd::basic_string_view<type_t>(self(), range);
+  auto start = range.start().is_from_end() ? (size() - ~range.start().value()) : range.start().value();
+  auto length = (range.end().is_from_end() ? (size() - ~range.end().value() - 1) : range.end().value()) - start;
+  if (start + length > size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+  return xtd::basic_string_view<char_t> {chars_.begin() + start, chars_.begin() + start + length};
+}
+
+template<typename char_t, typename traits_t, typename allocator_t>
+auto xtd::basic_string<char_t, traits_t, allocator_t>::operator ()(const xtd::range& range) const -> xtd::basic_string_view<char_t> {
+  return operator [](range);
+}
+
 template<xtd::iterable source_t>
 auto xtd::linq::enumerable::take(source_t&& source, const xtd::range& range) -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>> {
   //auto source_holder = enumerable_holder<source_t> {std::forward<source_t>(source)};
@@ -141,8 +157,8 @@ template<typename source_t>
 requires(requires (const xtd::raw_type<source_t>& source) {{source.size()} -> std::convertible_to<std::size_t>;})
 auto xtd::linq::enumerable::invoke_take_with_range(source_t&& source, const xtd::range& range) -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>> {
   auto index = xtd::usize {0};
-  auto skip = range.start();
-  auto count = skip + range.end() - range.start();
+  auto skip = range.start().value();
+  auto count = skip + range.end().value() - range.start().value();
   //if (range.end() )
   //auto source_holder = enumerable_holder<xtd::raw_type<source_t>> {std::forward<source_t>(source)};
   //for (const auto& item : source_holder.get())

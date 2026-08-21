@@ -6,6 +6,7 @@
 #include "internal/__string_definitions.hpp"
 #undef __XTD_CORE_INTERNAL__
 #include "basic_string.hpp"
+#include "index.hpp"
 #include "collections/generic/enumerable_generator.hpp"
 #include "collections/generic/key_value_pair.hpp"
 
@@ -104,6 +105,12 @@ namespace xtd {
 }
 
 /// @cond
+template<typename char_t, typename traits_t, typename allocator_t>
+auto xtd::basic_string<char_t, traits_t, allocator_t>::operator [](const xtd::index& index) const -> const_reference {return operator [](index.get_offset(length()));}
+
+template<typename char_t, typename traits_t, typename allocator_t>
+auto xtd::basic_string<char_t, traits_t, allocator_t>::operator ()(const xtd::index& index) const -> const_reference {return operator [](index);}
+
 template<typename type_t>
 [[nodiscard]] inline auto __to_string_istringable_to_string(const xtd::istringable<type_t>* obj) -> std::string {
   return obj->to_string();

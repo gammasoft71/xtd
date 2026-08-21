@@ -14,10 +14,10 @@
 #undef __XTD_STD_INTERNAL__
 /// @endcond
 #include "collections/generic/ienumerable.hpp"
+#include "basic_string_view.hpp"
 #include "hash_code.hpp"
 #include "icomparable.hpp"
 #include "iequatable.hpp"
-#include "index.hpp"
 #include "null.hpp"
 #include "string_comparison.hpp"
 #include "string_split_options.hpp"
@@ -45,6 +45,11 @@ std::basic_string<char> __xtd_get_full_class_name(const std::type_info& value) n
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
+  /// @cond
+  struct index;
+  class range;
+  /// @endcond
+  
   /// @brief Represents text as a sequence of character units.
   /// @par Namespace
   /// xtd
@@ -292,9 +297,9 @@ namespace xtd {
     /// @brief Initializes a new instance of xtd::basic_string with specified ienumerable.
     /// @param items The ienumerable to convert to basic_string.
     basic_string(const xtd::collections::generic::ienumerable<char_t>& items) : chars_(items.begin(), items.end()) {}
-    /// @brief Initializes a new instance of xtd::basic_string with specified std::basic_string_view.
-    /// @param str The std::basic_string_view string.
-    basic_string(const std::basic_string_view<char_t>& str) : chars_(str) {}
+    /// @brief Initializes a new instance of xtd::basic_string with specified xtd::basic_string_view.
+    /// @param str The xtd::basic_string_view string.
+    basic_string(const xtd::basic_string_view<char_t>& str) : chars_(str) {}
     /// @brief Initializes a new instance of xtd::basic_string with specified initializer list.
     /// @param il The initializer list to fill.
     basic_string(std::initializer_list<char> il) : basic_string(std::basic_string<char>(il)) {}
@@ -1366,9 +1371,7 @@ namespace xtd {
     /// @param index The position of the character to return.
     /// @return Reference to the requested character.
     /// @exception xtd::index_out_of_range_exception If `index` is not within the range of the string.
-    auto operator [](xtd::index index) const -> const_reference {
-      return operator [](index.get_offset(length()));
-    }
+    auto operator [](const xtd::index& index) const -> const_reference;
     /// @brief Returns a reference to the character at specified location index.
     /// @param index The position of the character to return.
     /// @return Reference to the requested character.
@@ -1377,6 +1380,21 @@ namespace xtd {
       if (index >= length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
       return chars_[index];
     }
+    auto operator [](const xtd::range& range) const -> xtd::basic_string_view<char_t>;
+
+    /// @brief Returns a reference to the character at specified location index.
+    /// @param index The position of the character to return.
+    /// @return Reference to the requested character.
+    /// @exception xtd::index_out_of_range_exception If `index` is not within the range of the string.
+    auto operator ()(const xtd::index& index) const -> const_reference;
+    /// @brief Returns a reference to the character at specified location index.
+    /// @param index The position of the character to return.
+    /// @return Reference to the requested character.
+    /// @exception xtd::index_out_of_range_exception If `index` is not within the range of the string.
+    auto operator ()(xtd::usize index) const -> const_reference {
+      return operator [](index);
+    }
+    auto operator ()(const xtd::range& range) const -> xtd::basic_string_view<char_t>;
 
     /// @brief Returns a reference to the underlying base type.
     /// @return Reference to the underlying base type.
@@ -2517,7 +2535,7 @@ namespace xtd {
     /// @param str The string to be inserted.
     /// @remarks Then inserts each character from the resulting sequence `seq` (the contents of `str` plus padding) to the output stream `os` as if by calling `os.rdbuf()->sputn(seq, n)`, where n is `std::max(os.width(), str.length())`.
     /// @remarks Finally, calls `os.width(0)` to cancel the effects of std::setw, if any.
-    /// @remarks Equivalent to `return os << std::basic_string_view<char_t, traits_t>(str);`.
+    /// @remarks Equivalent to `return os << xtd::basic_string_view<char_t, traits_t>(str);`.
     /// @todo uncomment following line and remove the next.
     //friend std::basic_ostream<char>& operator <<(std::basic_ostream<char>& stream, const basic_string& str) {return stream << str.to_string().chars_;}
     friend auto operator <<(std::basic_ostream<char>& stream, const basic_string& str) -> std::basic_ostream<char>& {
@@ -2529,7 +2547,7 @@ namespace xtd {
     /// @param str The string to be inserted.
     /// @remarks Then inserts each character from the resulting sequence `seq` (the contents of `str` plus padding) to the output stream `os` as if by calling `os.rdbuf()->sputn(seq, n)`, where n is `std::max(os.width(), str.length())`.
     /// @remarks Finally, calls `os.width(0)` to cancel the effects of std::setw, if any.
-    /// @remarks Equivalent to `return os << std::basic_string_view<char_t, traits_t>(str);`.
+    /// @remarks Equivalent to `return os << xtd::basic_string_view<char_t, traits_t>(str);`.
     friend auto operator <<(std::basic_ostream<xtd::wchar>& stream, const basic_string& str) -> std::basic_ostream<xtd::wchar>& {return stream << str.to_wstring().chars();}
     
     /// @brief Input stream operator. Behaves as a [FormattedInputFunction](https://en.cppreference.com/w/cpp/named_req/FormattedInputFunction). After constructing and checking the sentry object, which may skip leading whitespace, first clears `str` with `str.erase()`, then reads characters from `is` and appends them to `str` as if by `str.append(1, c)`, until one of the following conditions becomes `true`:
