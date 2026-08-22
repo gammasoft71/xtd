@@ -97,14 +97,14 @@ namespace xtd {
     auto operator --() noexcept -> xtd::index& {--__v__; return *this;}
     auto operator ++(int) noexcept -> xtd::index {return xtd::index {__v__++};}
     auto operator --(int) noexcept -> xtd::index {return xtd::index {__v__--};}
-    auto operator ~() const noexcept -> xtd::index {return xtd::index {~__v__};}
-    auto operator +() const noexcept -> xtd::index {return xtd::index {+__v__};}
-    auto operator -() const noexcept -> xtd::index {return xtd::index {-__v__};}
-    auto operator +(xtd::integer auto v) const noexcept -> xtd::index {return xtd::index {__v__ + static_cast<value_type>(v)};}
-    auto operator -(xtd::integer auto v) const noexcept -> xtd::index {return xtd::index {__v__ - static_cast<value_type>(v)};}
-    auto operator *(xtd::integer auto v) const noexcept -> xtd::index {return xtd::index {__v__ * static_cast<value_type>(v)};}
-    auto operator /(xtd::integer auto v) const noexcept -> xtd::index {return xtd::index {__v__ / static_cast<value_type>(v)};}
-    auto operator %(xtd::integer auto v) const noexcept -> xtd::index {return xtd::index {__v__ % static_cast<value_type>(v)};}
+    constexpr auto operator ~() const noexcept -> xtd::index {return xtd::index {~__v__};}
+    constexpr auto operator +() const noexcept -> xtd::index {return xtd::index {+__v__};}
+    constexpr auto operator -() const noexcept -> xtd::index {return xtd::index {-__v__};}
+    constexpr auto operator +(xtd::integer auto v) const noexcept -> xtd::index {return xtd::index {__v__ + static_cast<value_type>(v)};}
+    constexpr auto operator -(xtd::integer auto v) const noexcept -> xtd::index {return xtd::index {__v__ - static_cast<value_type>(v)};}
+    constexpr auto operator *(xtd::integer auto v) const noexcept -> xtd::index {return xtd::index {__v__ * static_cast<value_type>(v)};}
+    constexpr auto operator /(xtd::integer auto v) const noexcept -> xtd::index {return xtd::index {__v__ / static_cast<value_type>(v)};}
+    constexpr auto operator %(xtd::integer auto v) const noexcept -> xtd::index {return xtd::index {__v__ % static_cast<value_type>(v)};}
     /// @endcond
     
     /// @name Public Static Properties
