@@ -549,6 +549,7 @@
 #include "operation_canceled_exception.hpp"
 #include "overflow_exception.hpp"
 #include "overload.hpp"
+#include "params.hpp"
 #include "parse.hpp"
 #include "platform_id.hpp"
 #include "platform_not_supported_exception.hpp"

@@ -505,6 +505,8 @@ add_sources(
   "include/xtd/overflow_exception"
   "include/xtd/overload.hpp"
   "include/xtd/overload"
+  "include/xtd/params.hpp"
+  "include/xtd/params"
   "include/xtd/parse.hpp"
   "include/xtd/parse"
   "include/xtd/platform_id.hpp"
