@@ -5,6 +5,7 @@
 #include "../basic_string.hpp"
 #include "../environment.hpp"
 #include "../numeric_literals.hpp"
+#include "../range.hpp"
 #include <iterator>
 ///
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -1425,7 +1426,66 @@ namespace xtd {
         if (index >= length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
         return chars_[index];
       }
-      
+      /// @brief Returns a reference to the character at specified location index.
+      /// @param index The position of the character to return.
+      /// @return Reference to the requested character.
+      /// @exception xtd::index_out_of_range_exception If `index` is not within the range of the string.
+      auto operator [](const xtd::index& index) const -> const_reference {return operator [](index.get_offset(length()));}
+      /// @brief Returns a reference to the character at specified location index.
+      /// @param index The position of the character to return.
+      /// @return Reference to the requested character.
+      /// @exception xtd::index_out_of_range_exception If `index` is not within the range of the string.
+      auto operator [](const xtd::index& index) -> reference {return operator [](index.get_offset(length()));}
+      /// @brief Gets the elements at the specified range.
+      /// @param range The range of the elements to get.
+      /// @remarks This operator provides the ability to access a specific element in the collection by using the following syntax: `my_collection[index]`.
+      auto operator [](const xtd::range& range) const -> xtd::basic_string_view<char_t> {
+        //return xtd::basic_string_view<type_t>(self(), range);
+        auto start = range.start().is_from_end() ? (size() - ~range.start().value()) : range.start().value();
+        auto length = (range.end().is_from_end() ? (size() - ~range.end().value() - 1) : range.end().value()) - start;
+        if (start + length > size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+        return xtd::basic_string_view<char_t> {chars_.begin() + start, chars_.begin() + start + length};
+      }
+      /// @brief Gets the elements at the specified range.
+      /// @param range The range of the elements to get.
+      /// @remarks This operator provides the ability to access a specific element in the collection by using the following syntax: `my_collection[index]`.
+      auto operator [](const xtd::range& range) -> xtd::basic_string_view<char_t> {
+        //return xtd::basic_string_view<type_t>(self(), range);
+        auto start = range.start().is_from_end() ? (size() - ~range.start().value()) : range.start().value();
+        auto length = (range.end().is_from_end() ? (size() - ~range.end().value() - 1) : range.end().value()) - start;
+        if (start + length > size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+        return xtd::basic_string_view<char_t> {chars_.begin() + start, chars_.begin() + start + length};
+      }
+
+      /// @brief Returns a reference to the character at specified location index.
+      /// @param index The position of the character to return.
+      /// @return Reference to the requested character.
+      /// @exception xtd::index_out_of_range_exception If `index` is not within the range of the string.
+      auto operator ()(xtd::usize index) const -> const_reference {return operator[](index);}
+      /// @brief Returns a reference to the character at specified location index.
+      /// @param index The position of the character to return.
+      /// @return Reference to the requested character.
+      /// @exception xtd::index_out_of_range_exception If `index` is not within the range of the string.
+      auto operator ()(xtd::usize index) -> reference {return operator[](index);}
+      /// @brief Returns a reference to the character at specified location index.
+      /// @param index The position of the character to return.
+      /// @return Reference to the requested character.
+      /// @exception xtd::index_out_of_range_exception If `index` is not within the range of the string.
+      auto operator ()(const xtd::index& index) const -> const_reference {return operator[](index);}
+      /// @brief Returns a reference to the character at specified location index.
+      /// @param index The position of the character to return.
+      /// @return Reference to the requested character.
+      /// @exception xtd::index_out_of_range_exception If `index` is not within the range of the string.
+      auto operator ()(const xtd::index& index) -> reference {return operator[](index);}
+      /// @brief Gets the elements at the specified range.
+      /// @param range The range of the elements to get.
+      /// @remarks This operator provides the ability to access a specific element in the collection by using the following syntax: `my_collection[index]`.
+      auto operator ()(const xtd::range& range) const -> xtd::basic_string_view<char_t> {return operator [](range);}
+      /// @brief Gets the elements at the specified range.
+      /// @param range The range of the elements to get.
+      /// @remarks This operator provides the ability to access a specific element in the collection by using the following syntax: `my_collection[index]`.
+      auto operator ()(const xtd::range& range) -> xtd::basic_string_view<char_t> {return operator [](range);}
+
       /// @brief Returns a reference to the underlying base type.
       /// @return Reference to the underlying base type.
       operator const base_type& () const noexcept {return chars_;}
