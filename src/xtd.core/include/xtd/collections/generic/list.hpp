@@ -23,7 +23,9 @@
 #include "../../new_ptr.hpp"
 #include "../../predicate.hpp"
 #include "../../raw_type.hpp"
+#include "../../read_only_span.hpp"
 #include "../../self.hpp"
+#include "../../span.hpp"
 #include "../../string.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -913,11 +915,20 @@ namespace xtd {
         /// @brief Creates a shallow copy of a range of elements in the source xtd::collections::generic::list <type_t>.
         /// @param start The zero-based xtd::collections::generic::list <type_t> index at which the range starts.
         /// @param length The length of the range.
-        /// @return A shallow copy of a range of elements in the source xtd::collections::generic::list <type_t>.
+        /// @return A xtd::read_only_span of a range of elements in the source xtd::collections::generic::list <type_t>.
         /// @exception xt::argument_out_of_range_exception `start` and `length` do not denote a valid range of elements in the xtd::collections::generic::list <type_t>.
-        [[nodiscard]] auto slice(size_type start, size_type length) const -> list<type_t> requires std::copy_constructible<type_t> {
+        [[nodiscard]] auto slice(size_type start, size_type length) const -> xtd::read_only_span<type_t> {
           if (start + length > count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
-          return list<type_t> {data_->items.begin() + start, data_->items.begin() + start + length};
+          return xtd::read_only_span<type_t> {data_->items.begin() + start, data_->items.begin() + start + length};
+        }
+        /// @brief Creates a shallow copy of a range of elements in the source xtd::collections::generic::list <type_t>.
+        /// @param start The zero-based xtd::collections::generic::list <type_t> index at which the range starts.
+        /// @param length The length of the range.
+        /// @return A xtd::span of a range of elements in the source xtd::collections::generic::list <type_t>.
+        /// @exception xt::argument_out_of_range_exception `start` and `length` do not denote a valid range of elements in the xtd::collections::generic::list <type_t>.
+        [[nodiscard]] auto slice(size_type start, size_type length) -> xtd::span<type_t> {
+          if (start + length > count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+          return xtd::span<type_t> {data_->items.begin() + start, data_->items.begin() + start + length};
         }
         
         /// @brief Sorts the elements in the entire xtd::collections::generic::list <type_t> using the default comparer.
