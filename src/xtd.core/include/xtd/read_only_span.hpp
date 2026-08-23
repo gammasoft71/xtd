@@ -482,4 +482,14 @@ template<typename type_t, typename allocator_t>
 auto xtd::collections::generic::helpers::raw_array<type_t, allocator_t>::operator ()(const xtd::range& range) const -> xtd::read_only_span<type_t> {
   return xtd::read_only_span<type_t>(*this, range);
 }
+
+template<typename type_t, xtd::usize extent>
+auto xtd::span<type_t, extent>::operator [](const xtd::range& range) const -> xtd::read_only_span<type_t> {
+  return xtd::read_only_span<type_t> {data_, range};
+}
+
+template<typename type_t, xtd::usize extent>
+auto xtd::span<type_t, extent>::operator ()(const xtd::range& range) const -> xtd::read_only_span<type_t> {
+  return operator[](range);
+}
 /// @endcond
