@@ -86,7 +86,7 @@ namespace xtd {
           /// @param range The range of the elements to get.
           /// @remarks This operator provides the ability to access a specific element in the collection by using the following syntax: `my_collection[index]`.
           [[nodiscard]] auto operator ()(const xtd::range& range) const -> xtd::read_only_span<type_t>;
-          /// @brief Sets the elements at the specified range.
+          /// @brief Gets the elements at the specified range.
           /// @param range The range of the elements to set.
           /// @remarks This operator provides the ability to access a specific element in the collection by using the following syntax: `my_collection[index]`.
           [[nodiscard]] auto operator ()(const xtd::range& range) -> xtd::span<type_t>;
