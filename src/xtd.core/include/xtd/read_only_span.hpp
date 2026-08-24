@@ -396,7 +396,7 @@ namespace xtd {
     /// @param range The range of the elements to set.
     /// @remarks This operator provides the ability to access a specific element in the collection by using the following syntax: `my_collection[index]`.
     auto operator [](const xtd::range& range) const -> read_only_span {
-      return read_only_span {data_, range};
+      return read_only_span {*this, range};
     }
 
     /// @brief Gets the element at the specified zero-based index.
@@ -485,7 +485,7 @@ auto xtd::collections::generic::helpers::raw_array<type_t, allocator_t>::operato
 
 template<typename type_t, xtd::usize extent>
 auto xtd::span<type_t, extent>::operator [](const xtd::range& range) const -> xtd::read_only_span<type_t> {
-  return xtd::read_only_span<type_t> {data_, range};
+  return xtd::read_only_span<type_t> {*this, range};
 }
 
 template<typename type_t, xtd::usize extent>

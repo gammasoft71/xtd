@@ -239,7 +239,10 @@ namespace xtd {
     /// @brief Gets direct access to the underlying contiguous storage
     /// @return A pointer to the beginning of the sequence.
     [[nodiscard]] constexpr auto data() const noexcept -> const_pointer {return data_;}
-    
+    /// @brief Gets direct access to the underlying contiguous storage
+    /// @return A pointer to the beginning of the sequence.
+    [[nodiscard]] constexpr auto data() noexcept -> pointer {return data_;}
+
     /// @brief Returns a value that indicates whether the current xtd::span <type_t> is empty.
     /// @return `true` if the current span is empty; otherwise, `false`.
     [[nodiscard]] constexpr auto empty() const noexcept -> bool {return is_empty();}
@@ -459,7 +462,7 @@ namespace xtd {
     /// @param range The range of the elements to set.
     /// @remarks This operator provides the ability to access a specific element in the collection by using the following syntax: `my_collection[index]`.
     auto operator [](const xtd::range& range) -> span {
-      return span {data_, range};
+      return span {*this, range};
     }
 
     /// @brief Gets the element at the specified zero-based index.
