@@ -444,6 +444,7 @@ void application::run(xtd::forms::application_context& context) {
   application::message_loop_ = false;
   internal_context_.main_form(nullptr);
   native::application::cleanup();
+  thread::join_all();
 }
 
 void application::run(const form& form) {
