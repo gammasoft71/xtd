@@ -97,6 +97,18 @@ inline const type_t& xtd::basic_array<type_t, allocator_t>::operator [](const xt
 
 template<typename type_t, typename allocator_t>
 template<xtd::integer index_t>
+inline type_t& xtd::basic_array<type_t, allocator_t>::operator ()(const std::initializer_list<index_t>& indexes) {
+  return data_->items[compute_index(self_, xtd::array<index_t> {indexes})];
+}
+
+template<typename type_t, typename allocator_t>
+template<xtd::integer index_t>
+inline const type_t& xtd::basic_array<type_t, allocator_t>::operator ()(const std::initializer_list<index_t>& indexes) const {
+  return data_->items[compute_index(self_, xtd::array<index_t> {indexes})];
+}
+
+template<typename type_t, typename allocator_t>
+template<xtd::integer index_t>
 inline type_t& xtd::basic_array<type_t, allocator_t>::operator()(const xtd::array<index_t>& indexes) {
   return operator [](indexes);
 }
