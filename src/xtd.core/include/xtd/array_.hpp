@@ -72,32 +72,39 @@ inline xtd::string xtd::basic_array<type_t, allocator_t>::to_string() const noex
 }
 
 template<typename type_t, typename allocator_t>
-inline type_t& xtd::basic_array<type_t, allocator_t>::operator()(const xtd::array<xtd::usize>& indexes) {
-  auto position = xtd::usize {0};
-  for (auto index1 = xtd::usize {0}; index1 < indexes.length(); ++index1) {
-    if (indexes[index1] >= get_length(index1)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
-    auto multiplicand = xtd::usize {1};
-    for (auto index2 = index1 + 1; index2 < indexes.length(); ++index2)
-      multiplicand *= get_length(index2);
-    position += indexes[index1] * multiplicand;
-  }
-  if (position >= length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
-  return data_->items[position];
+template<xtd::integer index_t>
+inline type_t& xtd::basic_array<type_t, allocator_t>::operator [](const std::initializer_list<index_t>& indexes) {
+  return data_->items[compute_index(self_, xtd::array<index_t> {indexes})];
 }
 
 template<typename type_t, typename allocator_t>
-inline const type_t& xtd::basic_array<type_t, allocator_t>::operator()(const xtd::array<xtd::usize>& indexes) const {
+template<xtd::integer index_t>
+inline const type_t& xtd::basic_array<type_t, allocator_t>::operator [](const std::initializer_list<index_t>& indexes) const {
+  return data_->items[compute_index(self_, xtd::array<index_t> {indexes})];
+}
+
+template<typename type_t, typename allocator_t>
+template<xtd::integer index_t>
+inline type_t& xtd::basic_array<type_t, allocator_t>::operator [](const xtd::array<index_t>& indexes) {
   return data_->items[compute_index(self_, indexes)];
 }
 
 template<typename type_t, typename allocator_t>
-inline type_t& xtd::basic_array<type_t, allocator_t>::operator[](const xtd::array<xtd::usize>& indexes) {
-  return operator ()(indexes);
+template<xtd::integer index_t>
+inline const type_t& xtd::basic_array<type_t, allocator_t>::operator [](const xtd::array<index_t>& indexes) const {
+  return data_->items[compute_index(self_, indexes)];
 }
 
 template<typename type_t, typename allocator_t>
-inline const type_t& xtd::basic_array<type_t, allocator_t>::operator[](const xtd::array<xtd::usize>& indexes) const {
-  return operator ()(indexes);
+template<xtd::integer index_t>
+inline type_t& xtd::basic_array<type_t, allocator_t>::operator()(const xtd::array<index_t>& indexes) {
+  return operator [](indexes);
+}
+
+template<typename type_t, typename allocator_t>
+template<xtd::integer index_t>
+inline const type_t& xtd::basic_array<type_t, allocator_t>::operator()(const xtd::array<index_t>& indexes) const {
+  return operator [](indexes);
 }
 
 template<typename type_t, typename allocator_t>
@@ -123,23 +130,23 @@ inline xtd::basic_array<type_t, allocator_t>::basic_array(const array<size_type,
 }
 
 template<typename type_t, typename allocator_t>
-template<typename value_t>
-xtd::usize xtd::basic_array<type_t, allocator_t>::compute_index(const xtd::basic_array<value_t>& items, const xtd::array < size_type >& indexes) {
+template<typename value_t, xtd::integer index_t>
+xtd::usize xtd::basic_array<type_t, allocator_t>::compute_index(const xtd::basic_array<value_t>& items, const xtd::array <index_t>& indexes) {
   auto position = xtd::usize {0};
   for (auto index1 = xtd::usize {0}; index1 < indexes.length(); ++index1) {
-    if (indexes[index1] >= items.get_length(index1)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
+    if (static_cast<size_type>(indexes[index1]) >= items.get_length(index1)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
     auto multiplier = xtd::usize {1};
     for (auto index2 = index1 + 1; index2 < indexes.length(); ++index2)
       multiplier *= items.get_length(index2);
-    position += indexes[index1] * multiplier;
+    position += static_cast<size_type>(indexes[index1]) * multiplier;
   }
   if (position >= items.length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
   return position;
 }
 
 template<typename type_t, typename allocator_t>
-template<typename value_t>
-xtd::usize xtd::basic_array<type_t, allocator_t>::compute_index(const xtd::basic_array<value_t>& items, xtd::usize rank, xtd::usize index) {
+template<typename value_t, xtd::integer index_t>
+xtd::usize xtd::basic_array<type_t, allocator_t>::compute_index(const xtd::basic_array<value_t>& items, index_t rank, index_t index) {
   auto relative = index - items.get_lower_bound(rank);
   auto multiplier = xtd::usize {1};
   for (auto r = rank + 1; r < items.rank(); ++r)
