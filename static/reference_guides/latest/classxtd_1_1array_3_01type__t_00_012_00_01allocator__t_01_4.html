@@ -316,6 +316,10 @@ Public Operators</h2></td></tr>
 <tr class="memdesc:aacb536fe9a6d2a119343f49503357e91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a value to the element at the specified position in the one-dimensional Array. The index is specified as a 32-bit integer.  <br /></td></tr>
 <tr class="memitem:af17e19970ea98b44258401efdf54a2ad" id="r_af17e19970ea98b44258401efdf54a2ad"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#af17e19970ea98b44258401efdf54a2ad">operator()</a> (<a class="el" href="#a4731ac857fc328924a4135892eed414d">size_type</a> index1, <a class="el" href="#a4731ac857fc328924a4135892eed414d">size_type</a> index2) const -&gt; const <a class="el" href="#abf22a43ee1463d998175ca57f7313afd">value_type</a> &amp;</td></tr>
 <tr class="memdesc:af17e19970ea98b44258401efdf54a2ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the value at the specified position in the one-dimensional Array. The index is specified as a 32-bit integer.  <br /></td></tr>
+<tr class="memitem:ac2ae5a5a75cc49f33da23292444b668f" id="r_ac2ae5a5a75cc49f33da23292444b668f"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ac2ae5a5a75cc49f33da23292444b668f">operator()</a> (const xtd::index &amp;index1, const xtd::index &amp;index2) -&gt; <a class="el" href="#abf22a43ee1463d998175ca57f7313afd">value_type</a> &amp;</td></tr>
+<tr class="memdesc:ac2ae5a5a75cc49f33da23292444b668f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a value to the element at the specified position in the one-dimensional Array. The index is specified as a 32-bit integer.  <br /></td></tr>
+<tr class="memitem:a9585f95ed98b5deeaf5f1a96b2c0cd35" id="r_a9585f95ed98b5deeaf5f1a96b2c0cd35"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a9585f95ed98b5deeaf5f1a96b2c0cd35">operator()</a> (const xtd::index &amp;index1, const xtd::index &amp;index2) const -&gt; const <a class="el" href="#abf22a43ee1463d998175ca57f7313afd">value_type</a> &amp;</td></tr>
+<tr class="memdesc:a9585f95ed98b5deeaf5f1a96b2c0cd35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the value at the specified position in the one-dimensional Array. The index is specified as a 32-bit integer.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -1537,7 +1541,7 @@ template&lt;typename type_t, typename allocator_t&gt; </div>
 </div>
 </div>
 <a id="aacb536fe9a6d2a119343f49503357e91" name="aacb536fe9a6d2a119343f49503357e91"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aacb536fe9a6d2a119343f49503357e91">&#9670;&#160;</a></span>operator()() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aacb536fe9a6d2a119343f49503357e91">&#9670;&#160;</a></span>operator()() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1586,7 +1590,7 @@ template&lt;typename type_t, typename allocator_t&gt; </div>
 </div>
 </div>
 <a id="af17e19970ea98b44258401efdf54a2ad" name="af17e19970ea98b44258401efdf54a2ad"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af17e19970ea98b44258401efdf54a2ad">&#9670;&#160;</a></span>operator()() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#af17e19970ea98b44258401efdf54a2ad">&#9670;&#160;</a></span>operator()() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1610,6 +1614,104 @@ template&lt;typename type_t, typename allocator_t&gt; </div>
   </td>
   <td class="mlabels-right">
 <span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the value at the specified position in the one-dimensional Array. The index is specified as a 32-bit integer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index1</td><td>A <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525" title="Represents an unsigned size of any object in bytes.">xtd::usize</a> that represents the position of the first rank of array element to set. </td></tr>
+    <tr><td class="paramname">index2</td><td>A <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525" title="Represents an unsigned size of any object in bytes.">xtd::usize</a> that represents the position of the second rank of array element to set. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The value at the specified position in the one-dimensional Array. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">xtd::argument_exception</td><td>The current Array does not have exactly one dimension. </td></tr>
+    <tr><td class="paramname">xtd::index_out_of_range_exception</td><td>index is outside the range of valid indexes for the current Array. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section user"><dt>Examples</dt><dd>The following code example shows how to use operator () to list the elements of an array. <div class="fragment"></div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="ac2ae5a5a75cc49f33da23292444b668f" name="ac2ae5a5a75cc49f33da23292444b668f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2ae5a5a75cc49f33da23292444b668f">&#9670;&#160;</a></span>operator()() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename type_t, typename allocator_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; type_t, 2, allocator_t &gt;::operator() </td>
+          <td>(</td>
+          <td class="paramtype">const xtd::index &amp;</td>          <td class="paramname"><span class="paramname"><em>index1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const xtd::index &amp;</td>          <td class="paramname"><span class="paramname"><em>index2</em></span>&#160;) -&gt;  <a class="el" href="#abf22a43ee1463d998175ca57f7313afd">value_type</a> &amp;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets a value to the element at the specified position in the one-dimensional Array. The index is specified as a 32-bit integer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>The new value for the specified element. </td></tr>
+    <tr><td class="paramname">index1</td><td>A <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525" title="Represents an unsigned size of any object in bytes.">xtd::usize</a> that represents the position of the first rank of array element to set. </td></tr>
+    <tr><td class="paramname">index2</td><td>A <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525" title="Represents an unsigned size of any object in bytes.">xtd::usize</a> that represents the position of the second rank of array element to set. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">xtd::argument_exception</td><td>The current Array does not have exactly one dimension. </td></tr>
+    <tr><td class="paramname">xtd::index_out_of_range_exception</td><td>index is outside the range of valid indexes for the current Array. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section user"><dt>Examples</dt><dd>The following code example shows how to use operator () to list the elements of an array. <div class="fragment"></div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="a9585f95ed98b5deeaf5f1a96b2c0cd35" name="a9585f95ed98b5deeaf5f1a96b2c0cd35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9585f95ed98b5deeaf5f1a96b2c0cd35">&#9670;&#160;</a></span>operator()() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename type_t, typename allocator_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; type_t, 2, allocator_t &gt;::operator() </td>
+          <td>(</td>
+          <td class="paramtype">const xtd::index &amp;</td>          <td class="paramname"><span class="paramname"><em>index1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const xtd::index &amp;</td>          <td class="paramname"><span class="paramname"><em>index2</em></span>&#160;) const -&gt;  const <a class="el" href="#abf22a43ee1463d998175ca57f7313afd">value_type</a> &amp;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
