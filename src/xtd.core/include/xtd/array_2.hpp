@@ -200,28 +200,6 @@ namespace xtd {
     
     using xtd::basic_array<type_t, allocator_t>::operator[];
     using xtd::basic_array<type_t, allocator_t>::operator();
-    /// @brief Sets a value to the element at the specified position in the one-dimensional Array. The index is specified as a 32-bit integer.
-    /// @param value The new value for the specified element.
-    /// @param index1 A xtd::usize that represents the position of the first rank of array element to set.
-    /// @param index2 A xtd::usize that represents the position of the second rank of array element to set.
-    /// @exception xtd::argument_exception The current Array does not have exactly one dimension.
-    /// @exception xtd::index_out_of_range_exception index is outside the range of valid indexes for the current Array.
-    /// @par Examples
-    /// The following code example shows how to use operator () to list the elements of an array.
-    /// @include ArrayArrayOperatorFunctor.cpp
-    [[nodiscard]] auto operator()(size_type index1, size_type index2) -> value_type& {return xtd::basic_array<type_t, allocator_t>::operator()({index1, index2});}
-    
-    /// @brief Gets the value at the specified position in the one-dimensional Array. The index is specified as a 32-bit integer.
-    /// @param index1 A xtd::usize that represents the position of the first rank of array element to set.
-    /// @param index2 A xtd::usize that represents the position of the second rank of array element to set.
-    /// @return The value at the specified position in the one-dimensional Array.
-    /// @exception xtd::argument_exception The current Array does not have exactly one dimension.
-    /// @exception xtd::index_out_of_range_exception index is outside the range of valid indexes for the current Array.
-    /// @par Examples
-    /// The following code example shows how to use operator () to list the elements of an array.
-    /// @include ArrayArrayOperatorFunctor.cpp
-    [[nodiscard]] auto operator()(size_type index1, size_type index2) const -> const value_type& {return xtd::basic_array<type_t, allocator_t>::operator()({index1, index2});}
-    
 #if __cpp_multidimensional_subscript
     /// @brief Gets the value at the specified position in the one-dimensional Array. The index is specified as a 32-bit integer.
     /// @param index1 A xtd::usize that represents the position of the first rank of array element to set.
@@ -232,8 +210,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example shows how to use operator () to list the elements of an array.
     /// @include ArrayArrayOperatorFunctor.cpp
-    auto operator[](size_type index1, size_type index2) -> value_type& {return xtd::basic_array<type_t, allocator_t>::operator()({index1, index2});}
-
+    auto operator[](size_type index1, size_type index2) -> value_type& {return xtd::basic_array<type_t, allocator_t>::operator[]({index1, index2});}
     /// @brief Gets the value at the specified position in the one-dimensional Array. The index is specified as a 32-bit integer.
     /// @param index1 A xtd::usize that represents the position of the first rank of array element to set.
     /// @param index2 A xtd::usize that represents the position of the second rank of array element to set.
@@ -243,8 +220,69 @@ namespace xtd {
     /// @par Examples
     /// The following code example shows how to use operator () to list the elements of an array.
     /// @include ArrayArrayOperatorFunctor.cpp
-    auto operator[](size_type index1, size_type index2) const -> const value_type& {return xtd::basic_array<type_t, allocator_t>::operator()({index1, index2});}
+    auto operator[](size_type index1, size_type index2) const -> const value_type& {return xtd::basic_array<type_t, allocator_t>::operator[]({index1, index2});}
+    /// @brief Sets a value to the element at the specified position in the one-dimensional Array. The index is specified as a 32-bit integer.
+    /// @param value The new value for the specified element.
+    /// @param index1 A xtd::usize that represents the position of the first rank of array element to set.
+    /// @param index2 A xtd::usize that represents the position of the second rank of array element to set.
+    /// @exception xtd::argument_exception The current Array does not have exactly one dimension.
+    /// @exception xtd::index_out_of_range_exception index is outside the range of valid indexes for the current Array.
+    /// @par Examples
+    /// The following code example shows how to use operator () to list the elements of an array.
+    /// @include ArrayArrayOperatorFunctor.cpp
+    [[nodiscard]] auto operator[](const xtd::index& index1, const xtd::index& index2) -> value_type&;
+    /// @brief Gets the value at the specified position in the one-dimensional Array. The index is specified as a 32-bit integer.
+    /// @param index1 A xtd::usize that represents the position of the first rank of array element to set.
+    /// @param index2 A xtd::usize that represents the position of the second rank of array element to set.
+    /// @return The value at the specified position in the one-dimensional Array.
+    /// @exception xtd::argument_exception The current Array does not have exactly one dimension.
+    /// @exception xtd::index_out_of_range_exception index is outside the range of valid indexes for the current Array.
+    /// @par Examples
+    /// The following code example shows how to use operator () to list the elements of an array.
+    /// @include ArrayArrayOperatorFunctor.cpp
+    [[nodiscard]] auto operator[](const xtd::index& index1, const xtd::index& index2) const -> const value_type&;
 #endif
+
+    /// @brief Sets a value to the element at the specified position in the one-dimensional Array. The index is specified as a 32-bit integer.
+    /// @param value The new value for the specified element.
+    /// @param index1 A xtd::usize that represents the position of the first rank of array element to set.
+    /// @param index2 A xtd::usize that represents the position of the second rank of array element to set.
+    /// @exception xtd::argument_exception The current Array does not have exactly one dimension.
+    /// @exception xtd::index_out_of_range_exception index is outside the range of valid indexes for the current Array.
+    /// @par Examples
+    /// The following code example shows how to use operator () to list the elements of an array.
+    /// @include ArrayArrayOperatorFunctor.cpp
+    [[nodiscard]] auto operator()(size_type index1, size_type index2) -> value_type& {return xtd::basic_array<type_t, allocator_t>::operator[]({index1, index2});}
+    /// @brief Gets the value at the specified position in the one-dimensional Array. The index is specified as a 32-bit integer.
+    /// @param index1 A xtd::usize that represents the position of the first rank of array element to set.
+    /// @param index2 A xtd::usize that represents the position of the second rank of array element to set.
+    /// @return The value at the specified position in the one-dimensional Array.
+    /// @exception xtd::argument_exception The current Array does not have exactly one dimension.
+    /// @exception xtd::index_out_of_range_exception index is outside the range of valid indexes for the current Array.
+    /// @par Examples
+    /// The following code example shows how to use operator () to list the elements of an array.
+    /// @include ArrayArrayOperatorFunctor.cpp
+    [[nodiscard]] auto operator()(size_type index1, size_type index2) const -> const value_type& {return xtd::basic_array<type_t, allocator_t>::operator[]({index1, index2});}
+    /// @brief Sets a value to the element at the specified position in the one-dimensional Array. The index is specified as a 32-bit integer.
+    /// @param value The new value for the specified element.
+    /// @param index1 A xtd::usize that represents the position of the first rank of array element to set.
+    /// @param index2 A xtd::usize that represents the position of the second rank of array element to set.
+    /// @exception xtd::argument_exception The current Array does not have exactly one dimension.
+    /// @exception xtd::index_out_of_range_exception index is outside the range of valid indexes for the current Array.
+    /// @par Examples
+    /// The following code example shows how to use operator () to list the elements of an array.
+    /// @include ArrayArrayOperatorFunctor.cpp
+    [[nodiscard]] auto operator()(const xtd::index& index1, const xtd::index& index2) -> value_type&;
+    /// @brief Gets the value at the specified position in the one-dimensional Array. The index is specified as a 32-bit integer.
+    /// @param index1 A xtd::usize that represents the position of the first rank of array element to set.
+    /// @param index2 A xtd::usize that represents the position of the second rank of array element to set.
+    /// @return The value at the specified position in the one-dimensional Array.
+    /// @exception xtd::argument_exception The current Array does not have exactly one dimension.
+    /// @exception xtd::index_out_of_range_exception index is outside the range of valid indexes for the current Array.
+    /// @par Examples
+    /// The following code example shows how to use operator () to list the elements of an array.
+    /// @include ArrayArrayOperatorFunctor.cpp
+    [[nodiscard]] auto operator()(const xtd::index& index1, const xtd::index& index2) const -> const value_type&;
     /// @}
   };
 }

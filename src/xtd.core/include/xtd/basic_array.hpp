@@ -498,7 +498,6 @@ namespace xtd {
     /// @include array_array_operator_functor.cpp
     template<xtd::integer index_t>
     [[nodiscard]] auto operator [](const xtd::array<index_t>& indexes) const -> const type_t&;
-
     /// @brief Gets the value at the specified position in the multidimensional array. The indexes are specified as a 32-bit integer array.
     /// @param indexes An array that represents the multidimension index of the array element to get.
     /// @return The value at the specified position in the multidimensional array.
@@ -517,6 +516,38 @@ namespace xtd {
     /// @include array_array_operator_functor.cpp
     template<xtd::integer index_t>
     [[nodiscard]] auto operator [](const std::initializer_list<index_t>& indexes) const -> const type_t&;
+    /// @brief Gets the value at the specified position in the multidimensional array. The indexes are specified as a 32-bit integer array.
+    /// @param indexes An array that represents the multidimension index of the array element to get.
+    /// @return The value at the specified position in the multidimensional array.
+    /// @exception xtd::index_out_of_range_exception Either each index is outside the range of valid indexes for the corresponding dimension of the current array.
+    /// @par Examples
+    /// The following code example shows how to use operator [] to list the elements of an array.
+    /// @include array_array_operator_functor.cpp
+    [[nodiscard]] auto operator [](const xtd::array<xtd::index>& indexes) -> type_t&;
+    /// @brief Gets the value at the specified position in the multidimensional array. The indexes are specified as a 32-bit integer array.
+    /// @param indexes An array that represents the multidimension index of the array element to get.
+    /// @return The value at the specified position in the multidimensional array.
+    /// @exception xtd::index_out_of_range_exception Either each index is outside the range of valid indexes for the corresponding dimension of the current array.
+    /// @par Examples
+    /// The following code example shows how to use operator [] to list the elements of an array.
+    /// @include array_array_operator_functor.cpp
+    [[nodiscard]] auto operator [](const xtd::array<xtd::index>& indexes) const -> const type_t&;
+    /// @brief Gets the value at the specified position in the multidimensional array. The indexes are specified as a 32-bit integer array.
+    /// @param indexes An array that represents the multidimension index of the array element to get.
+    /// @return The value at the specified position in the multidimensional array.
+    /// @exception xtd::index_out_of_range_exception Either each index is outside the range of valid indexes for the corresponding dimension of the current array.
+    /// @par Examples
+    /// The following code example shows how to use operator [] to list the elements of an array.
+    /// @include array_array_operator_functor.cpp
+    [[nodiscard]] auto operator [](const std::initializer_list<xtd::index>& indexes) -> type_t&;
+    /// @brief Gets the value at the specified position in the multidimensional array. The indexes are specified as a 32-bit integer array.
+    /// @param indexes An array that represents the multidimension index of the array element to get.
+    /// @return The value at the specified position in the multidimensional array.
+    /// @exception xtd::index_out_of_range_exception Either each index is outside the range of valid indexes for the corresponding dimension of the current array.
+    /// @par Examples
+    /// The following code example shows how to use operator [] to list the elements of an array.
+    /// @include array_array_operator_functor.cpp
+    [[nodiscard]] auto operator [](const std::initializer_list<xtd::index>& indexes) const -> const type_t&;
 
     /// @brief Gets the value at the specified position in the multidimensional array. The indexes are specified as a 32-bit integer array.
     /// @param indexes An array that represents the multidimension index of the array element to get.
@@ -536,7 +567,6 @@ namespace xtd {
     /// @include array_array_operator_functor.cpp
     template<xtd::integer index_t>
     [[nodiscard]] auto operator ()(const xtd::array<index_t>& indexes) const -> const type_t&;
-
     /// @brief Gets the value at the specified position in the multidimensional array. The indexes are specified as a 32-bit integer array.
     /// @param indexes An array that represents the multidimension index of the array element to get.
     /// @return The value at the specified position in the multidimensional array.
@@ -555,6 +585,38 @@ namespace xtd {
     /// @include array_array_operator_functor.cpp
     template<xtd::integer index_t>
     [[nodiscard]] auto operator ()(const std::initializer_list<index_t>& indexes) const -> const type_t&;
+    /// @brief Gets the value at the specified position in the multidimensional array. The indexes are specified as a 32-bit integer array.
+    /// @param indexes An array that represents the multidimension index of the array element to get.
+    /// @return The value at the specified position in the multidimensional array.
+    /// @exception xtd::index_out_of_range_exception Either each index is outside the range of valid indexes for the corresponding dimension of the current array.
+    /// @par Examples
+    /// The following code example shows how to use operator [] to list the elements of an array.
+    /// @include array_array_operator_functor.cpp
+    [[nodiscard]] auto operator ()(const xtd::array<xtd::index>& indexes) -> type_t&;
+    /// @brief Gets the value at the specified position in the multidimensional array. The indexes are specified as a 32-bit integer array.
+    /// @param indexes An array that represents the multidimension index of the array element to get.
+    /// @return The value at the specified position in the multidimensional array.
+    /// @exception xtd::index_out_of_range_exception Either each index is outside the range of valid indexes for the corresponding dimension of the current array.
+    /// @par Examples
+    /// The following code example shows how to use operator [] to list the elements of an array.
+    /// @include array_array_operator_functor.cpp
+    [[nodiscard]] auto operator ()(const xtd::array<xtd::index>& indexes) const -> const type_t&;
+    /// @brief Gets the value at the specified position in the multidimensional array. The indexes are specified as a 32-bit integer array.
+    /// @param indexes An array that represents the multidimension index of the array element to get.
+    /// @return The value at the specified position in the multidimensional array.
+    /// @exception xtd::index_out_of_range_exception Either each index is outside the range of valid indexes for the corresponding dimension of the current array.
+    /// @par Examples
+    /// The following code example shows how to use operator [] to list the elements of an array.
+    /// @include array_array_operator_functor.cpp
+    [[nodiscard]] auto operator ()(const std::initializer_list<xtd::index>& indexes) -> type_t&;
+    /// @brief Gets the value at the specified position in the multidimensional array. The indexes are specified as a 32-bit integer array.
+    /// @param indexes An array that represents the multidimension index of the array element to get.
+    /// @return The value at the specified position in the multidimensional array.
+    /// @exception xtd::index_out_of_range_exception Either each index is outside the range of valid indexes for the corresponding dimension of the current array.
+    /// @par Examples
+    /// The following code example shows how to use operator [] to list the elements of an array.
+    /// @include array_array_operator_functor.cpp
+    [[nodiscard]] auto operator ()(const std::initializer_list<xtd::index>& indexes) const -> const type_t&;
     /// @}
     
   private:
@@ -639,6 +701,8 @@ namespace xtd {
     
     auto clear() -> void override {fill(value_type {});}
     
+    template<typename value_t>
+    [[nodiscard]] static auto compute_index(const xtd::basic_array<value_t>& items, const xtd::array<xtd::index>& indexes) -> xtd::usize;
     template<typename value_t, xtd::integer index_t>
     [[nodiscard]] static auto compute_index(const xtd::basic_array<value_t>& items, const xtd::array<index_t>& indexes) -> xtd::usize;
     template<typename value_t, xtd::integer index_t>

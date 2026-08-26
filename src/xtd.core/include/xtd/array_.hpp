@@ -7,6 +7,7 @@
 #error "Do not include this file: Internal use only. Include <xtd/array> or <xtd/array.hpp> instead."
 #endif
 
+#include "index.hpp"
 #include "string.hpp"
 #include "collections/object_model/read_only_collection.hpp"
 #include <numeric>
@@ -73,18 +74,6 @@ inline xtd::string xtd::basic_array<type_t, allocator_t>::to_string() const noex
 
 template<typename type_t, typename allocator_t>
 template<xtd::integer index_t>
-inline type_t& xtd::basic_array<type_t, allocator_t>::operator [](const std::initializer_list<index_t>& indexes) {
-  return data_->items[compute_index(self_, xtd::array<index_t> {indexes})];
-}
-
-template<typename type_t, typename allocator_t>
-template<xtd::integer index_t>
-inline const type_t& xtd::basic_array<type_t, allocator_t>::operator [](const std::initializer_list<index_t>& indexes) const {
-  return data_->items[compute_index(self_, xtd::array<index_t> {indexes})];
-}
-
-template<typename type_t, typename allocator_t>
-template<xtd::integer index_t>
 inline type_t& xtd::basic_array<type_t, allocator_t>::operator [](const xtd::array<index_t>& indexes) {
   return data_->items[compute_index(self_, indexes)];
 }
@@ -97,13 +86,13 @@ inline const type_t& xtd::basic_array<type_t, allocator_t>::operator [](const xt
 
 template<typename type_t, typename allocator_t>
 template<xtd::integer index_t>
-inline type_t& xtd::basic_array<type_t, allocator_t>::operator ()(const std::initializer_list<index_t>& indexes) {
+inline type_t& xtd::basic_array<type_t, allocator_t>::operator [](const std::initializer_list<index_t>& indexes) {
   return data_->items[compute_index(self_, xtd::array<index_t> {indexes})];
 }
 
 template<typename type_t, typename allocator_t>
 template<xtd::integer index_t>
-inline const type_t& xtd::basic_array<type_t, allocator_t>::operator ()(const std::initializer_list<index_t>& indexes) const {
+inline const type_t& xtd::basic_array<type_t, allocator_t>::operator [](const std::initializer_list<index_t>& indexes) const {
   return data_->items[compute_index(self_, xtd::array<index_t> {indexes})];
 }
 
@@ -117,6 +106,18 @@ template<typename type_t, typename allocator_t>
 template<xtd::integer index_t>
 inline const type_t& xtd::basic_array<type_t, allocator_t>::operator()(const xtd::array<index_t>& indexes) const {
   return operator [](indexes);
+}
+
+template<typename type_t, typename allocator_t>
+template<xtd::integer index_t>
+inline type_t& xtd::basic_array<type_t, allocator_t>::operator ()(const std::initializer_list<index_t>& indexes) {
+  return data_->items[compute_index(self_, xtd::array<index_t> {indexes})];
+}
+
+template<typename type_t, typename allocator_t>
+template<xtd::integer index_t>
+inline const type_t& xtd::basic_array<type_t, allocator_t>::operator ()(const std::initializer_list<index_t>& indexes) const {
+  return data_->items[compute_index(self_, xtd::array<index_t> {indexes})];
 }
 
 template<typename type_t, typename allocator_t>
@@ -205,5 +206,96 @@ inline xtd::string xtd::array<type_t, 2, allocator_t>::to_string() const noexcep
 template<typename type_t, typename allocator_t>
 inline xtd::string xtd::array<type_t, 3, allocator_t>::to_string() const noexcept {
   return xtd::basic_array<type_t, allocator_t>::to_string(self_, 0, 0);
+}
+
+template<typename type_t, typename allocator_t>
+inline type_t& xtd::basic_array<type_t, allocator_t>::operator [](const xtd::array<xtd::index>& indexes) {
+  return data_->items[compute_index(self_, indexes)];
+}
+ 
+template<typename type_t, typename allocator_t>
+inline const type_t& xtd::basic_array<type_t, allocator_t>::operator [](const xtd::array<xtd::index>& indexes) const {
+  return data_->items[compute_index(self_, indexes)];
+}
+ 
+template<typename type_t, typename allocator_t>
+inline type_t& xtd::basic_array<type_t, allocator_t>::operator [](const std::initializer_list<xtd::index>& indexes) {
+  return data_->items[compute_index(self_, xtd::array<xtd::index> {indexes})];
+}
+ 
+template<typename type_t, typename allocator_t>
+inline const type_t& xtd::basic_array<type_t, allocator_t>::operator [](const std::initializer_list<xtd::index>& indexes) const {
+  return data_->items[compute_index(self_, xtd::array<xtd::index> {indexes})];
+}
+
+template<typename type_t, typename allocator_t>
+inline type_t& xtd::basic_array<type_t, allocator_t>::operator ()(const xtd::array<xtd::index>& indexes) {
+  return data_->items[compute_index(self_, indexes)];
+}
+ 
+template<typename type_t, typename allocator_t>
+inline const type_t& xtd::basic_array<type_t, allocator_t>::operator ()(const xtd::array<xtd::index>& indexes) const {
+  return data_->items[compute_index(self_, indexes)];
+}
+ 
+template<typename type_t, typename allocator_t>
+inline type_t& xtd::basic_array<type_t, allocator_t>::operator ()(const std::initializer_list<xtd::index>& indexes) {
+  return data_->items[compute_index(self_, xtd::array<xtd::index> {indexes})];
+}
+ 
+template<typename type_t, typename allocator_t>
+inline const type_t& xtd::basic_array<type_t, allocator_t>::operator ()(const std::initializer_list<xtd::index>& indexes) const {
+  return data_->items[compute_index(self_, xtd::array<xtd::index> {indexes})];
+}
+
+template<typename type_t, typename allocator_t>
+template<typename value_t>
+xtd::usize xtd::basic_array<type_t, allocator_t>::compute_index(const xtd::basic_array<value_t>& items, const xtd::array <xtd::index>& indexes) {
+  auto size_type_indexes = xtd::array <size_type>(indexes.length());
+  for (auto index = size_type {0}; index < indexes.length(); ++index)
+    size_type_indexes[index] = indexes[index].get_offset(items.get_length(index));
+  return compute_index(items, size_type_indexes);
+}
+
+#if __cpp_multidimensional_subscript
+template<typename type_t, typename allocator_t>
+auto xtd::array<type_t, 2, allocator_t>::operator[](const xtd::index& index1, const xtd::index& index2) -> value_type& {
+  return xtd::basic_array<type_t, allocator_t>::operator[]({index1, index2});
+}
+
+template<typename type_t, typename allocator_t>
+auto xtd::array<type_t, 2, allocator_t>::operator[](const xtd::index& index1, const xtd::index& index2) const -> const value_type& {
+  return xtd::basic_array<type_t, allocator_t>::operator[]({index1, index2});
+}
+
+template<typename type_t, typename allocator_t>
+auto xtd::array<type_t, 3, allocator_t>::operator[](const xtd::index& index1, const xtd::index& index2, const xtd::index& index3) -> value_type& {
+  return xtd::basic_array<type_t, allocator_t>::operator[]({index1, index2, index3});
+}
+
+template<typename type_t, typename allocator_t>
+auto xtd::array<type_t, 3, allocator_t>::operator[](const xtd::index& index1, const xtd::index& index2, const xtd::index& index3) const -> const value_type& {
+  return xtd::basic_array<type_t, allocator_t>::operator[]({index1, index2, index3});
+}
+#endif
+
+template<typename type_t, typename allocator_t>
+auto xtd::array<type_t, 2, allocator_t>::operator()(const xtd::index& index1, const xtd::index& index2) -> value_type& {
+  return xtd::basic_array<type_t, allocator_t>::operator[]({index1, index2});
+}
+
+template<typename type_t, typename allocator_t>
+auto xtd::array<type_t, 2, allocator_t>::operator()(const xtd::index& index1, const xtd::index& index2) const -> const value_type& {
+  return xtd::basic_array<type_t, allocator_t>::operator[]({index1, index2});
+}
+
+template<typename type_t, typename allocator_t>
+auto xtd::array<type_t, 3, allocator_t>::operator()(const xtd::index& index1, const xtd::index& index2, const xtd::index& index3) -> value_type& {
+  return xtd::basic_array<type_t, allocator_t>::operator[]({index1, index2, index3});
+}
+
+template<typename type_t, typename allocator_t>
+auto xtd::array<type_t, 3, allocator_t>::operator()(const xtd::index& index1, const xtd::index& index2, const xtd::index& index3) const -> const value_type& {
+  return xtd::basic_array<type_t, allocator_t>::operator[]({index1, index2, index3});
 }
 /// @endcond
