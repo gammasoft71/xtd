@@ -13,8 +13,12 @@
 #include <xtd/event_args>
 #include <xtd/event_handler>
 #include <xtd/event>
+#include <xtd/index>
 #include <xtd/object>
 #include <xtd/new_ptr>
+#include <xtd/range>
+#include <xtd/read_only_span>
+#include <xtd/span>
 #include <xtd/usize_object>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -439,7 +443,68 @@ namespace xtd {
           data_->items[index].owner = const_cast<arranged_element_collection*>(this);
           return data_->items[index];
         }
-        
+        /// @brief Access specified element.
+        /// @param index The position of the element to return.
+        /// @return The requested element.
+        [[nodiscard]] auto operator [](const xtd::index& index) -> value_type& {
+          return operator [](index.get_offset(count()));
+        }
+        /// @brief Access specified element.
+        /// @param index The position of the element to return.
+        /// @return The requested element.
+        [[nodiscard]] auto operator [](const xtd::index& index) const -> const value_type& {
+          return operator [](index.get_offset(count()));
+        }
+        /// @brief Gets the elements at the specified range.
+        /// @param range The range of the elements to set.
+        /// @remarks This operator provides the ability to access a specific element in the collection by using the following syntax: `my_collection[index]`.
+        auto operator [](const xtd::range& range) const -> xtd::read_only_span<value_type> {
+          return xtd::read_only_span<value_type> {*this, range};
+        }
+        /// @brief Gets the elements at the specified range.
+        /// @param range The range of the elements to set.
+        /// @remarks This operator provides the ability to access a specific element in the collection by using the following syntax: `my_collection[index]`.
+        auto operator [](const xtd::range& range) -> xtd::span<value_type> {
+          return xtd::span<value_type> {*this, range};
+        }
+
+        /// @brief Access specified element.
+        /// @param index The position of the element to return.
+        /// @return The requested element.
+        [[nodiscard]] auto operator ()(size_type index) -> value_type& {
+          return operator [](index);
+        }
+        /// @brief Access specified element.
+        /// @param index The position of the element to return.
+        /// @return The requested element.
+        [[nodiscard]] auto operator ()(size_type index) const -> const value_type& {
+          return operator [](index);
+        }
+        /// @brief Access specified element.
+        /// @param index The position of the element to return.
+        /// @return The requested element.
+        [[nodiscard]] auto operator ()(const xtd::index& index) -> value_type& {
+          return operator [](index);
+        }
+        /// @brief Access specified element.
+        /// @param index The position of the element to return.
+        /// @return The requested element.
+        [[nodiscard]] auto operator ()(const xtd::index& index) const -> const value_type& {
+          return operator [](index);
+        }
+        /// @brief Gets the elements at the specified range.
+        /// @param range The range of the elements to set.
+        /// @remarks This operator provides the ability to access a specific element in the collection by using the following syntax: `my_collection[index]`.
+        auto operator ()(const xtd::range& range) const -> xtd::read_only_span<value_type> {
+          return operator[](range);
+        }
+        /// @brief Gets the elements at the specified range.
+        /// @param range The range of the elements to set.
+        /// @remarks This operator provides the ability to access a specific element in the collection by using the following syntax: `my_collection[index]`.
+        auto operator ()(const xtd::range& range) -> xtd::span<value_type> {
+          return operator[](range);
+        }
+
         /// @brief Returns a reference to the underlying base type.
         /// @return Reference to the underlying base type.
         [[nodiscard]] operator const_base_type& () const noexcept {return items();}
