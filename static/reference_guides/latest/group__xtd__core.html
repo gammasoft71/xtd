@@ -1531,6 +1531,38 @@ Enumerations</h2></td></tr>
 &#160;&#160;<a class="el" href="#gga6c8c305349ee97fd7fe886bd41995863a260ca9dd8a4577fc00b7bd5810298076">xtd::exit_status::success</a>
 , <br />
 &#160;&#160;<a class="el" href="#gga6c8c305349ee97fd7fe886bd41995863a3ee28fe1a60c95b89d29317f122c7021">xtd::exit_status::failure</a>
+, <br />
+&#160;&#160;<a class="el" href="#gga6c8c305349ee97fd7fe886bd41995863a9366282e11c151558bdfaab4a264aa1b">xtd::exit_status::usage</a>
+, <br />
+&#160;&#160;<a class="el" href="#gga6c8c305349ee97fd7fe886bd41995863a45fcc78d28a685f96c0db4ffbedad955">xtd::exit_status::data_err</a>
+, <br />
+&#160;&#160;<a class="el" href="#gga6c8c305349ee97fd7fe886bd41995863a9356dabdc8862dff08a9ab9d174121c1">xtd::exit_status::no_input</a>
+, <br />
+&#160;&#160;<a class="el" href="#gga6c8c305349ee97fd7fe886bd41995863ac8c1c5073a76bbd98ab028727519579e">xtd::exit_status::no_user</a>
+, <br />
+&#160;&#160;<a class="el" href="#gga6c8c305349ee97fd7fe886bd41995863ac71956e94ad9bd5d6761e5fe47c0baab">xtd::exit_status::no_host</a>
+, <br />
+&#160;&#160;<a class="el" href="#gga6c8c305349ee97fd7fe886bd41995863a7060e0481896e00b3f7d20f1e8e2749a">xtd::exit_status::unavailable</a>
+, <br />
+&#160;&#160;<a class="el" href="#gga6c8c305349ee97fd7fe886bd41995863af9fa10ba956cacf91d7878861139efb9">xtd::exit_status::software</a>
+, <br />
+&#160;&#160;<a class="el" href="#gga6c8c305349ee97fd7fe886bd41995863a1d5098fcc43e8084a21b082462200f57">xtd::exit_status::os_err</a>
+, <br />
+&#160;&#160;<a class="el" href="#gga6c8c305349ee97fd7fe886bd41995863a547f2db01e4febcd229641e9e2d7bdef">xtd::exit_status::os_file</a>
+, <br />
+&#160;&#160;<a class="el" href="#gga6c8c305349ee97fd7fe886bd41995863a2ac5eb27a6ba8570cc913e65542e0915">xtd::exit_status::cant_create</a>
+, <br />
+&#160;&#160;<a class="el" href="#gga6c8c305349ee97fd7fe886bd41995863a4aba0424e7e9c6a1a832a9c0b5b8cf44">xtd::exit_status::io_err</a>
+, <br />
+&#160;&#160;<a class="el" href="#gga6c8c305349ee97fd7fe886bd41995863a1809e3646b30467617eca4eba4d1af25">xtd::exit_status::temp_fail</a>
+, <br />
+&#160;&#160;<a class="el" href="#gga6c8c305349ee97fd7fe886bd41995863a81788ba0d7d02d81c063dbca621ba11b">xtd::exit_status::protocol</a>
+, <br />
+&#160;&#160;<a class="el" href="#gga6c8c305349ee97fd7fe886bd41995863a37787cd89d4286d4241b35894ef46a43">xtd::exit_status::noperm</a>
+, <br />
+&#160;&#160;<a class="el" href="#gga6c8c305349ee97fd7fe886bd41995863a2245023265ae4cf87d02c8b6ba991139">xtd::exit_status::config</a>
+, <br />
+&#160;&#160;<a class="el" href="#gga6c8c305349ee97fd7fe886bd41995863ae8574087009edb8bb0210790b077ed23">xtd::exit_status::unknown_fatal</a>
 <br />
  }</td></tr>
 <tr class="memdesc:ga6c8c305349ee97fd7fe886bd41995863"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies exit status for the <a class="el" href="classxtd_1_1environment.html#a0e295700d732e6d310d060a2caa0932d" title="Terminates this process and returns an exit code to the operating system.">xtd::environment::exit</a> method.  <a href="#ga6c8c305349ee97fd7fe886bd41995863">More...</a><br /></td></tr>
@@ -7715,6 +7747,38 @@ For more information about <a class="el" href="#ga6c8c305349ee97fd7fe886bd419958
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="gga6c8c305349ee97fd7fe886bd41995863a260ca9dd8a4577fc00b7bd5810298076" name="gga6c8c305349ee97fd7fe886bd41995863a260ca9dd8a4577fc00b7bd5810298076"></a>success&#160;</td><td class="fielddoc"><p>Successful execution of a program. Is equal to <a href="https://en.cppreference.com/w/cpp/utility/program/EXIT_status.html">EXIT_SUCCESS</a>. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="gga6c8c305349ee97fd7fe886bd41995863a3ee28fe1a60c95b89d29317f122c7021" name="gga6c8c305349ee97fd7fe886bd41995863a3ee28fe1a60c95b89d29317f122c7021"></a>failure&#160;</td><td class="fielddoc"><p>Unsuccessful execution of a program. Is equal to <a href="https://en.cppreference.com/w/cpp/utility/program/EXIT_status.html">EXIT_FAILURE</a>. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga6c8c305349ee97fd7fe886bd41995863a9366282e11c151558bdfaab4a264aa1b" name="gga6c8c305349ee97fd7fe886bd41995863a9366282e11c151558bdfaab4a264aa1b"></a>usage&#160;</td><td class="fielddoc"><p>Command line usage error (e.g., wrong arguments). </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga6c8c305349ee97fd7fe886bd41995863a45fcc78d28a685f96c0db4ffbedad955" name="gga6c8c305349ee97fd7fe886bd41995863a45fcc78d28a685f96c0db4ffbedad955"></a>data_err&#160;</td><td class="fielddoc"><p>&lt; Input data was incorrect or malformed. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga6c8c305349ee97fd7fe886bd41995863a9356dabdc8862dff08a9ab9d174121c1" name="gga6c8c305349ee97fd7fe886bd41995863a9356dabdc8862dff08a9ab9d174121c1"></a>no_input&#160;</td><td class="fielddoc"><p>Input file was not found or unreadable. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga6c8c305349ee97fd7fe886bd41995863ac8c1c5073a76bbd98ab028727519579e" name="gga6c8c305349ee97fd7fe886bd41995863ac8c1c5073a76bbd98ab028727519579e"></a>no_user&#160;</td><td class="fielddoc"><p>Specified user or entity was not found. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga6c8c305349ee97fd7fe886bd41995863ac71956e94ad9bd5d6761e5fe47c0baab" name="gga6c8c305349ee97fd7fe886bd41995863ac71956e94ad9bd5d6761e5fe47c0baab"></a>no_host&#160;</td><td class="fielddoc"><p>Specified host or server was not found. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga6c8c305349ee97fd7fe886bd41995863a7060e0481896e00b3f7d20f1e8e2749a" name="gga6c8c305349ee97fd7fe886bd41995863a7060e0481896e00b3f7d20f1e8e2749a"></a>unavailable&#160;</td><td class="fielddoc"><p>External service or resource is temporarily unavailable. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga6c8c305349ee97fd7fe886bd41995863af9fa10ba956cacf91d7878861139efb9" name="gga6c8c305349ee97fd7fe886bd41995863af9fa10ba956cacf91d7878861139efb9"></a>software&#160;</td><td class="fielddoc"><p>Internal software logic or runtime error. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga6c8c305349ee97fd7fe886bd41995863a1d5098fcc43e8084a21b082462200f57" name="gga6c8c305349ee97fd7fe886bd41995863a1d5098fcc43e8084a21b082462200f57"></a>os_err&#160;</td><td class="fielddoc"><p>Operating system error (e.g., cannot fork or create thread). </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga6c8c305349ee97fd7fe886bd41995863a547f2db01e4febcd229641e9e2d7bdef" name="gga6c8c305349ee97fd7fe886bd41995863a547f2db01e4febcd229641e9e2d7bdef"></a>os_file&#160;</td><td class="fielddoc"><p>Missing or inaccessible critical system file. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga6c8c305349ee97fd7fe886bd41995863a2ac5eb27a6ba8570cc913e65542e0915" name="gga6c8c305349ee97fd7fe886bd41995863a2ac5eb27a6ba8570cc913e65542e0915"></a>cant_create&#160;</td><td class="fielddoc"><p>Cannot create the requested output file. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga6c8c305349ee97fd7fe886bd41995863a4aba0424e7e9c6a1a832a9c0b5b8cf44" name="gga6c8c305349ee97fd7fe886bd41995863a4aba0424e7e9c6a1a832a9c0b5b8cf44"></a>io_err&#160;</td><td class="fielddoc"><p>Input/Output (I/O) error during read/write. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga6c8c305349ee97fd7fe886bd41995863a1809e3646b30467617eca4eba4d1af25" name="gga6c8c305349ee97fd7fe886bd41995863a1809e3646b30467617eca4eba4d1af25"></a>temp_fail&#160;</td><td class="fielddoc"><p>Temporary failure (invites the user to retry later). </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga6c8c305349ee97fd7fe886bd41995863a81788ba0d7d02d81c063dbca621ba11b" name="gga6c8c305349ee97fd7fe886bd41995863a81788ba0d7d02d81c063dbca621ba11b"></a>protocol&#160;</td><td class="fielddoc"><p>Network protocol or data exchange error. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga6c8c305349ee97fd7fe886bd41995863a37787cd89d4286d4241b35894ef46a43" name="gga6c8c305349ee97fd7fe886bd41995863a37787cd89d4286d4241b35894ef46a43"></a>noperm&#160;</td><td class="fielddoc"><p>Permission denied for the requested operation. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga6c8c305349ee97fd7fe886bd41995863a2245023265ae4cf87d02c8b6ba991139" name="gga6c8c305349ee97fd7fe886bd41995863a2245023265ae4cf87d02c8b6ba991139"></a>config&#160;</td><td class="fielddoc"><p>Configuration file is corrupted or invalid. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga6c8c305349ee97fd7fe886bd41995863ae8574087009edb8bb0210790b077ed23" name="gga6c8c305349ee97fd7fe886bd41995863ae8574087009edb8bb0210790b077ed23"></a>unknown_fatal&#160;</td><td class="fielddoc"><p>Uncategorized critical error (upper safety bound). </p>
 </td></tr>
 </table>
 
