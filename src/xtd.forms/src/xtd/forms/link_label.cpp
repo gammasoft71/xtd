@@ -67,6 +67,14 @@ link_label::link_collection::reference link_label::link_collection::operator [](
   return link_empty;
 }
 
+link_label::link_collection::const_reference link_label::link_collection::operator ()(const string& name) const noexcept {
+  return operator [](name);
+}
+
+link_label::link_collection::reference link_label::link_collection::operator ()(const string& name) noexcept {
+  return operator [](name);
+}
+
 link_label::link_label() {
   data_ = xtd::new_sptr<data>(*this);
   double_buffered(true);
