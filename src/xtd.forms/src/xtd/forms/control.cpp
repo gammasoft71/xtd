@@ -105,13 +105,21 @@ control::control_collection& control::control_collection::operator = (const cont
 control::control_collection::value_type control::control_collection::operator [](const string& name) const {
   for (auto item : items())
     if (item.get().name() == name) return item;
-  return {};
+  return nullopt;
 }
 
 control::control_collection::value_type control::control_collection::operator [](const string& name) {
   for (auto item : items())
     if (item.get().name() == name) return item;
-  return std::nullopt;
+  return nullopt;
+}
+
+control::control_collection::value_type control::control_collection::operator ()(const string& name) const {
+  return operator [](name);
+}
+
+control::control_collection::value_type control::control_collection::operator ()(const string& name) {
+  return operator [](name);
 }
 
 void control::control_collection::add(const control_ref& value) {
