@@ -4,8 +4,12 @@
 #pragma once
 #include "array.hpp"
 #include "iequatable.hpp"
+#include "index.hpp"
 #include "optional.hpp"
 #include "npos.hpp"
+#include "range.hpp"
+#include "read_only_span.hpp"
+#include "span.hpp"
 #include "string.hpp"
 #include "collections/generic/ienumerable.hpp"
 #include "helpers/throw_helper.hpp"
@@ -282,7 +286,6 @@ namespace xtd {
     /// @name Public Operators
     
     /// @{
-    
     /// @brief Returns a reference to the element at specified location index.
     /// @param index The position of the element to return.
     /// @return Reference to the requested element.
@@ -297,6 +300,70 @@ namespace xtd {
     auto operator [](size_type index) -> reference {
       if (index >= count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
       return items_[index];
+    }
+    /// @brief Returns a reference to the element at specified location index.
+    /// @param index The position of the element to return.
+    /// @return Reference to the requested element.
+    /// @exception std::out_of_range If `index` is not within the range of the container.
+    auto operator [](const xtd::index& index) const -> const_reference {
+      return operator[](index.get_offset(length()));
+    }
+    /// @brief Returns a reference to the element at specified location index.
+    /// @param index The position of the element to return.
+    /// @return Reference to the requested element.
+    auto operator [](const xtd::index& index) -> reference {
+      return operator[](index.get_offset(length()));
+    }
+    /// @brief Gets the elements at the specified range.
+    /// @param range The range of the elements to set.
+    /// @remarks This operator provides the ability to access a specific element in the collection by using the following syntax: `my_collection[index]`.
+    auto operator [](const xtd::range& range) const -> xtd::read_only_span<value_type> {
+      return xtd::read_only_span<value_type> {*this, range};
+    }
+    /// @brief Gets the elements at the specified range.
+    /// @param range The range of the elements to set.
+    /// @remarks This operator provides the ability to access a specific element in the collection by using the following syntax: `my_collection[index]`.
+    auto operator [](const xtd::range& range) -> xtd::span<value_type> {
+      return xtd::span<value_type> {*this, range};
+    }
+
+    /// @brief Returns a reference to the element at specified location index.
+    /// @param index The position of the element to return.
+    /// @return Reference to the requested element.
+    /// @exception std::out_of_range If `index` is not within the range of the container.
+    auto operator ()(size_type index) const -> const_reference {
+      return operator[](index);
+    }
+    /// @brief Returns a reference to the element at specified location index.
+    /// @param index The position of the element to return.
+    /// @return Reference to the requested element.
+    auto operator ()(size_type index) -> reference {
+      return operator[](index);
+    }
+    /// @brief Returns a reference to the element at specified location index.
+    /// @param index The position of the element to return.
+    /// @return Reference to the requested element.
+    /// @exception std::out_of_range If `index` is not within the range of the container.
+    auto operator ()(const xtd::index& index) const -> const_reference {
+      return operator[](index);
+    }
+    /// @brief Returns a reference to the element at specified location index.
+    /// @param index The position of the element to return.
+    /// @return Reference to the requested element.
+    auto operator ()(const xtd::index& index) -> reference {
+      return operator[](index);
+    }
+    /// @brief Gets the elements at the specified range.
+    /// @param range The range of the elements to set.
+    /// @remarks This operator provides the ability to access a specific element in the collection by using the following syntax: `my_collection[index]`.
+    auto operator ()(const xtd::range& range) const -> xtd::read_only_span<value_type> {
+      return operator[](range);
+    }
+    /// @brief Gets the elements at the specified range.
+    /// @param range The range of the elements to set.
+    /// @remarks This operator provides the ability to access a specific element in the collection by using the following syntax: `my_collection[index]`.
+    auto operator ()(const xtd::range& range) -> xtd::span<value_type> {
+      return operator[](range);
     }
     /// @}
     
