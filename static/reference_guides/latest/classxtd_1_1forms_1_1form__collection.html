@@ -158,6 +158,10 @@ Operators</h2></td></tr>
 <tr class="memdesc:a7c1c390a147ec9494d4604b0ac17d329"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the first <a class="el" href="classxtd_1_1forms_1_1form__collection.html" title="Represents a collection of form objects.">xtd::forms::form_collection</a> in the list with the specified name.  <br /></td></tr>
 <tr class="memitem:a04382fcc8f7134370071cb8ad94cb1d1" id="r_a04382fcc8f7134370071cb8ad94cb1d1"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a04382fcc8f7134370071cb8ad94cb1d1">operator[]</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;name) -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#aa29dee61f691c52c380fc92c868c311a">value_type</a></td></tr>
 <tr class="memdesc:a04382fcc8f7134370071cb8ad94cb1d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the first <a class="el" href="classxtd_1_1forms_1_1form__collection.html" title="Represents a collection of form objects.">xtd::forms::form_collection</a> in the list with the specified name.  <br /></td></tr>
+<tr class="memitem:a931103a90cc2cac2e7eef7eeb1e37b69" id="r_a931103a90cc2cac2e7eef7eeb1e37b69"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a931103a90cc2cac2e7eef7eeb1e37b69">operator()</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;name) const -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#aa29dee61f691c52c380fc92c868c311a">value_type</a></td></tr>
+<tr class="memdesc:a931103a90cc2cac2e7eef7eeb1e37b69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the first <a class="el" href="classxtd_1_1forms_1_1form__collection.html" title="Represents a collection of form objects.">xtd::forms::form_collection</a> in the list with the specified name.  <br /></td></tr>
+<tr class="memitem:a0417f4b815ef7f467b3e21ea5cf319b6" id="r_a0417f4b815ef7f467b3e21ea5cf319b6"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a0417f4b815ef7f467b3e21ea5cf319b6">operator()</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;name) -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#aa29dee61f691c52c380fc92c868c311a">value_type</a></td></tr>
+<tr class="memdesc:a0417f4b815ef7f467b3e21ea5cf319b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the first <a class="el" href="classxtd_1_1forms_1_1form__collection.html" title="Represents a collection of form objects.">xtd::forms::form_collection</a> in the list with the specified name.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -574,6 +578,76 @@ virtual auto resize(size_type count) -&gt; void {
       <table class="memname">
         <tr>
           <td class="memname">auto xtd::forms::form_collection::operator[] </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span></td><td>)</td>
+          <td> -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#aa29dee61f691c52c380fc92c868c311a">value_type</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the first <a class="el" href="classxtd_1_1forms_1_1form__collection.html" title="Represents a collection of form objects.">xtd::forms::form_collection</a> in the list with the specified name. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>The name of the <a class="el" href="classxtd_1_1forms_1_1control.html" title="Defines the base class for controls, which are components with visual representation.">xtd::forms::control</a> to get from the list. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The first <a class="el" href="classxtd_1_1forms_1_1control.html" title="Defines the base class for controls, which are components with visual representation.">xtd::forms::control</a> in the list with the given Name. This item returns optional with no value if no <a class="el" href="classxtd_1_1forms_1_1control.html" title="Defines the base class for controls, which are components with visual representation.">xtd::forms::control</a> with the given name can be found. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The operator [] property is case-sensitive when searching for names. That is, if two controls exist with the names "Lname" and "lname", operator [] property will find only the <a class="el" href="classxtd_1_1forms_1_1control.html" title="Defines the base class for controls, which are components with visual representation.">xtd::forms::control</a> with the <a class="el" href="classxtd_1_1forms_1_1control.html#a8415e10704524e0ff5096489009832f4" title="Gets the name of the control.">xtd::forms::control::name()</a> that you specify, not both. </dd></dl>
+
+</div>
+</div>
+<a id="a931103a90cc2cac2e7eef7eeb1e37b69" name="a931103a90cc2cac2e7eef7eeb1e37b69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a931103a90cc2cac2e7eef7eeb1e37b69">&#9670;&#160;</a></span>operator()() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto xtd::forms::form_collection::operator() </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span></td><td>)</td>
+          <td> const -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#aa29dee61f691c52c380fc92c868c311a">value_type</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the first <a class="el" href="classxtd_1_1forms_1_1form__collection.html" title="Represents a collection of form objects.">xtd::forms::form_collection</a> in the list with the specified name. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>The name of the <a class="el" href="classxtd_1_1forms_1_1control.html" title="Defines the base class for controls, which are components with visual representation.">xtd::forms::control</a> to get from the list. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The first <a class="el" href="classxtd_1_1forms_1_1control.html" title="Defines the base class for controls, which are components with visual representation.">xtd::forms::control</a> in the list with the given Name. This item returns optional with no value if no <a class="el" href="classxtd_1_1forms_1_1control.html" title="Defines the base class for controls, which are components with visual representation.">xtd::forms::control</a> with the given name can be found. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The operator [] property is case-sensitive when searching for names. That is, if two controls exist with the names "Lname" and "lname", operator [] property will find only the <a class="el" href="classxtd_1_1forms_1_1control.html" title="Defines the base class for controls, which are components with visual representation.">xtd::forms::control</a> with the <a class="el" href="classxtd_1_1forms_1_1control.html#a8415e10704524e0ff5096489009832f4" title="Gets the name of the control.">xtd::forms::control::name()</a> that you specify, not both. </dd></dl>
+
+</div>
+</div>
+<a id="a0417f4b815ef7f467b3e21ea5cf319b6" name="a0417f4b815ef7f467b3e21ea5cf319b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0417f4b815ef7f467b3e21ea5cf319b6">&#9670;&#160;</a></span>operator()() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto xtd::forms::form_collection::operator() </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span></td><td>)</td>
           <td> -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#aa29dee61f691c52c380fc92c868c311a">value_type</a></td>
