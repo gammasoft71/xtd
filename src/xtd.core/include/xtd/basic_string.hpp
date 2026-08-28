@@ -14,6 +14,7 @@
 #undef __XTD_STD_INTERNAL__
 /// @endcond
 #include "collections/generic/ienumerable.hpp"
+#include "basic_read_only_string_view.hpp"
 #include "basic_string_view.hpp"
 #include "hash_code.hpp"
 #include "icomparable.hpp"
@@ -300,6 +301,9 @@ namespace xtd {
     /// @brief Initializes a new instance of xtd::basic_string with specified xtd::basic_string_view.
     /// @param str The xtd::basic_string_view string.
     basic_string(const xtd::basic_string_view<char_t>& str) : chars_(str) {}
+    /// @brief Initializes a new instance of xtd::basic_string with specified xtd::basic_string_view.
+    /// @param str The xtd::basic_string_view string.
+    //basic_string(const xtd::basic_read_only_string_view<char_t>& str) : chars_(str) {}
     /// @brief Initializes a new instance of xtd::basic_string with specified initializer list.
     /// @param il The initializer list to fill.
     basic_string(std::initializer_list<char> il) : basic_string(std::basic_string<char>(il)) {}
@@ -1383,7 +1387,7 @@ namespace xtd {
     /// @brief Gets the elements at the specified range.
     /// @param range The range of the elements to get.
     /// @remarks This operator provides the ability to access a specific element in the collection by using the following syntax: `my_collection[index]`.
-    auto operator [](const xtd::range& range) const -> xtd::basic_string_view<char_t>;
+    auto operator [](const xtd::range& range) const -> xtd::basic_read_only_string_view<char_t>;
 
     /// @brief Returns a reference to the character at specified location index.
     /// @param index The position of the character to return.
@@ -1400,7 +1404,7 @@ namespace xtd {
     /// @brief Gets the elements at the specified range.
     /// @param range The range of the elements to get.
     /// @remarks This operator provides the ability to access a specific element in the collection by using the following syntax: `my_collection[index]`.
-    auto operator ()(const xtd::range& range) const -> xtd::basic_string_view<char_t>;
+    auto operator ()(const xtd::range& range) const -> xtd::basic_read_only_string_view<char_t>;
 
     /// @brief Returns a reference to the underlying base type.
     /// @return Reference to the underlying base type.

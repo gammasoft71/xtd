@@ -124,7 +124,7 @@ namespace xtd {
 
 /// @cond
 template<typename char_t, typename traits_t, typename allocator_t>
-auto xtd::basic_string<char_t, traits_t, allocator_t>::operator [](const xtd::range& range) const -> xtd::basic_string_view<char_t> {
+auto xtd::basic_string<char_t, traits_t, allocator_t>::operator [](const xtd::range& range) const -> xtd::basic_read_only_string_view<char_t> {
   //return xtd::basic_string_view<type_t>(self(), range);
   auto start = range.start().is_from_end() ? (size() - ~range.start().value()) : range.start().value();
   auto length = (range.end().is_from_end() ? (size() - ~range.end().value() - 1) : range.end().value()) - start;
@@ -133,7 +133,7 @@ auto xtd::basic_string<char_t, traits_t, allocator_t>::operator [](const xtd::ra
 }
 
 template<typename char_t, typename traits_t, typename allocator_t>
-auto xtd::basic_string<char_t, traits_t, allocator_t>::operator ()(const xtd::range& range) const -> xtd::basic_string_view<char_t> {
+auto xtd::basic_string<char_t, traits_t, allocator_t>::operator ()(const xtd::range& range) const -> xtd::basic_read_only_string_view<char_t> {
   return operator [](range);
 }
 
