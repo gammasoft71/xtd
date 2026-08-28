@@ -22,7 +22,7 @@ namespace xtd {
     failure = 1,
     /// @brief Command line usage error (e.g., wrong arguments).
     usage = 64,
-    /// @brief< Input data was incorrect or malformed.
+    /// @brief Input data was incorrect or malformed.
     data_err = 65,
     /// @brief Input file was not found or unreadable.
     no_input = 66,
