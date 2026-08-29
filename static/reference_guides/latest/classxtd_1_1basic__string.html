@@ -2434,7 +2434,7 @@ template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <dd>
 The pointer obtained from <a class="el" href="#a7c8839ff7790d3bf7fb2535fd2db51f4" title="Returns a pointer to a null-terminated character array with data equivalent to those stored in the st...">c_str()</a> may be invalidated by:<ul>
 <li>Passing a non-const reference to the string to any standard library function, or</li>
-<li>Calling non-const member functions on the string, excluding operator[], at(), front(), back(), <a class="el" href="namespacextd.html#a286f3b5c2fe472a7b62cf22d2f4bf7da" title="Returns an iterator to the beginning.">begin()</a>, rbegin(), <a class="el" href="namespacextd.html#aa56636733a54ef849898bbab97515f5b" title="Returns an iterator to the end.">end()</a> and rend(). </li>
+<li>Calling non-const member functions on the string, excluding operator[], at(), front(), back(), <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html#a4d2fbc3e59bb8d3c04f670a5d8ba4f12">begin()</a>, rbegin(), <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7f021a1415b86f2d013b2618fb31ae53" title="The END key.">end()</a> and rend(). </li>
 </ul>
 </dd>
 <dd>
@@ -2564,7 +2564,7 @@ template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>A pointer to the underlying character storage. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The pointer obtained from <span class="tt"><a class="el" href="#adb5f080eff4c7b9d38a253754483507f" title="Returns a pointer to the underlying array serving as character storage. The pointer is such that the ...">data()</a></span> may be invalidated by:<ul>
 <li>Passing a non-const reference to the string to any standard library function, or</li>
-<li>Calling non-const member functions on the string, excluding <a class="el" href="#a4a1bf00164f9b0c004cc70b6f1d69fa5" title="Returns a reference to the character at specified location index.">operator[]()</a>, at(), front(), back(), <a class="el" href="namespacextd.html#a286f3b5c2fe472a7b62cf22d2f4bf7da" title="Returns an iterator to the beginning.">begin()</a>, <a class="el" href="namespacextd.html#aa56636733a54ef849898bbab97515f5b" title="Returns an iterator to the end.">end()</a>, rbegin(), rend().<ol type="1">
+<li>Calling non-const member functions on the string, excluding <a class="el" href="#a4a1bf00164f9b0c004cc70b6f1d69fa5" title="Returns a reference to the character at specified location index.">operator[]()</a>, at(), front(), back(), <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html#a4d2fbc3e59bb8d3c04f670a5d8ba4f12">begin()</a>, <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7f021a1415b86f2d013b2618fb31ae53" title="The END key.">end()</a>, rbegin(), rend().<ol type="1">
 <li>Modifying the character array accessed through the const overload of data has undefined behavior.</li>
 <li>Modifying the past-the-end null terminator stored at <a class="el" href="#adb5f080eff4c7b9d38a253754483507f" title="Returns a pointer to the underlying array serving as character storage. The pointer is such that the ...">data()</a> + <a class="el" href="#afbaddf90724a6a53beb932cd7e4b7f1e" title="Gets the number of characters in the current xtd::basic_string object.">size()</a> to any value other than char_t() has undefined behavior. </li>
 </ol>

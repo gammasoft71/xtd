@@ -6,7 +6,6 @@ var searchData=
   ['where_5fview_3',['where_view',['../classxtd_1_1ranges_1_1views_1_1where__view.html',1,'xtd::ranges::views']]],
   ['white_5fcolors_4',['white_colors',['../classxtd_1_1drawing_1_1white__colors.html',1,'xtd::drawing']]],
   ['wrap_5fpointer_5fiterator_5',['wrap_pointer_iterator',['../classxtd_1_1collections_1_1generic_1_1helpers_1_1wrap__pointer__iterator.html',1,'xtd::collections::generic::helpers']]],
-  ['wrap_5fpointer_5fiterator_3c_20pointer_20_3e_6',['wrap_pointer_iterator&lt; pointer &gt;',['../classxtd_1_1collections_1_1generic_1_1helpers_1_1wrap__pointer__iterator.html',1,'xtd::collections::generic::helpers']]],
-  ['wtask_7',['wtask',['../classxtd_1_1threading_1_1tasks_1_1wtask.html',1,'xtd::threading::tasks']]],
-  ['wtask_3c_20result_5ft_20_3e_8',['wtask&lt; result_t &gt;',['../classxtd_1_1threading_1_1tasks_1_1wtask.html',1,'xtd::threading::tasks']]]
+  ['wtask_6',['wtask',['../classxtd_1_1threading_1_1tasks_1_1wtask.html',1,'xtd::threading::tasks']]],
+  ['wtask_3c_20result_5ft_20_3e_7',['wtask&lt; result_t &gt;',['../classxtd_1_1threading_1_1tasks_1_1wtask.html',1,'xtd::threading::tasks']]]
 ];
