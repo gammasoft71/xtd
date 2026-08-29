@@ -99,7 +99,6 @@ namespace xtd {
     auto operator --(int) noexcept -> xtd::index {return xtd::index {__v__--};}
     constexpr auto operator ~() const noexcept -> xtd::index {return xtd::index {~__v__};}
     constexpr auto operator +() const noexcept -> xtd::index {return xtd::index {+__v__};}
-    constexpr auto operator -() const noexcept -> xtd::index {return xtd::index {-__v__};}
     constexpr auto operator +(xtd::integer auto v) const noexcept -> xtd::index {return xtd::index {__v__ + static_cast<value_type>(v)};}
     constexpr auto operator -(xtd::integer auto v) const noexcept -> xtd::index {return xtd::index {__v__ - static_cast<value_type>(v)};}
     constexpr auto operator *(xtd::integer auto v) const noexcept -> xtd::index {return xtd::index {__v__ * static_cast<value_type>(v)};}
