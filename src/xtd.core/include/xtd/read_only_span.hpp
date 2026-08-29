@@ -7,6 +7,7 @@
 #undef __XTD_CORE_INTERNAL__
 #include "collections/generic/helpers/raw_array.hpp"
 #include "collections/generic/helpers/wrap_pointer_iterator.hpp"
+#include "collections/generic/enumerable.hpp"
 #include "array.hpp"
 #include "dynamic_extent.hpp"
 #include "iequatable.hpp"
@@ -51,15 +52,15 @@ namespace xtd {
   /// span_numbers[0] = 42; // numbers == {42, 1, 2};
   /// ```
   template<typename type_t, xtd::usize extent>
-  class read_only_span : public xtd::object, public xtd::iequatable<xtd::read_only_span<type_t, extent>> {
+  class read_only_span : public xtd::object, public xtd::iequatable<xtd::read_only_span<type_t, extent>>, public xtd::collections::generic::ienumerable<type_t> {
   public:
     /// @name Public Aliases
     
     /// @{
-    /// @brief Represents the read_only_span elemeent type.
-    using element_type = std::add_cv_t<type_t>;
+    /// @brief Represents the read_only_span element type.
+    using element_type = std::add_const_t<type_t>;
     /// @brief Represents the read_only_span value type.
-    using value_type = std::add_cv_t<type_t>;
+    using value_type = type_t;
     /// @brief Represents the read_only_span size type (usually xtd::usize).
     using size_type = xtd::usize;
     /// @brief Represents the read_only_span difference type (usually xtd::ptrdiff).
@@ -72,14 +73,6 @@ namespace xtd {
     using reference = const type_t&;
     /// @brief Represents the read_only_span const reference type.
     using const_reference = const type_t&;
-    /// @brief Represents the iterator of read_only_span value type.
-    using iterator = const xtd::collections::generic::helpers::wrap_pointer_iterator<pointer>;
-    /// @brief Represents the const iterator of read_only_span value type.
-    using const_iterator = const xtd::collections::generic::helpers::wrap_pointer_iterator<pointer>;
-    /// @brief Represents the reverse iterator of read_only_span value type.
-    using reverse_iterator = const std::reverse_iterator<xtd::collections::generic::helpers::wrap_pointer_iterator<pointer>>;
-    /// @brief Represents the const reverse iterator of read_only_span value type.
-    using const_reverse_iterator = const std::reverse_iterator<xtd::collections::generic::helpers::wrap_pointer_iterator<pointer>>;
     /// @}
     
     /// @name Public Constructors
@@ -180,6 +173,9 @@ namespace xtd {
     /// @}
     
     /// @cond
+    template<xtd::usize extent_>
+    constexpr read_only_span(const std::span<type_t, extent_>& s) : data_ {s.data()}, length_ {s.size()} {}
+    
     constexpr read_only_span(read_only_span&& items) = default;
     constexpr read_only_span(const read_only_span& items) = default;
     
@@ -198,17 +194,6 @@ namespace xtd {
     /// @name Public Properties
     
     /// @{
-    /// @brief Returns an iterator to the beginning.
-    /// @return The iterator of the first element.
-    [[nodiscard]] auto begin() const -> const_iterator {return cbegin();}
-    
-    /// @brief Returns an iterator to the beginning.
-    /// @return The iterator of the first element.
-    [[nodiscard]] auto cbegin() const -> const_iterator {return const_iterator {data_};}
-    /// @brief Returns an iterator to the end.
-    /// @return The iterator to the element following the last element.
-    [[nodiscard]] auto cend() const -> const_iterator {return const_iterator {data_ + length_};}
-
     /// @brief Gets direct access to the underlying contiguous storage
     /// @return A pointer to the beginning of the sequence.
     [[nodiscard]] constexpr auto data() const noexcept -> const_pointer {return data_;}
@@ -216,10 +201,6 @@ namespace xtd {
     /// @brief Returns a value that indicates whether the current xtd::read_only_span <type_t> is empty.
     /// @return `true` if the current read_only_span is empty; otherwise, `false`.
     [[nodiscard]] constexpr auto empty() const noexcept -> bool {return is_empty();}
-    
-    /// @brief Returns an iterator to the end.
-    /// @return The iterator to the element following the last element.
-    [[nodiscard]] auto end() const -> const_iterator {return cend();}
     
     /// @brief Returns a value that indicates whether the current xtd::read_only_span <type_t> is empty.
     /// @return `true` if the current read_only_span is empty; otherwise, `false`.
@@ -275,6 +256,22 @@ namespace xtd {
       return read_only_span<type_t> {data_, count};
     }
     
+    auto get_enumerator() const -> xtd::collections::generic::enumerator<type_t> override {
+      class read_only_span_enumerator : public xtd::collections::generic::ienumerator<type_t> {
+      public:
+        explicit read_only_span_enumerator(const_pointer data, xtd::usize length) : data_(data), length_(length) {}
+        auto current() const -> const type_t& override {return *(data_ + index_);}
+        auto move_next() -> bool override {return ++index_ < length_;}
+        auto reset() -> void override {index_ = xtd::npos;}
+        
+      protected:
+        const_pointer data_;
+        xtd::usize length_;
+        xtd::usize index_ = xtd::npos;
+      };
+      return {new_ptr<read_only_span_enumerator>(data_, length_)};
+    }
+
     /// @brief Serves as a hash function for a particular type.
     /// @return A hash code for the current object.
     [[nodiscard]] auto get_hash_code() const noexcept -> xtd::usize override {
@@ -420,7 +417,11 @@ namespace xtd {
       return operator[](range);
     }
     /// @}
-    
+
+    /// @cond
+    operator std::span<type_t, extent>() const {return std::span<type_t, extent>(data_, length_);}
+    /// @endcond
+
   private:
     pointer data_ = null;
     size_type length_ = size_type {};
