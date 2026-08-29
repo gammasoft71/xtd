@@ -302,9 +302,9 @@ namespace xtd {
       class span_enumerator : public xtd::collections::generic::ienumerator<type_t> {
       public:
         explicit span_enumerator(const_pointer data, xtd::usize length) : data_(data), length_(length) {}
-        auto current() const -> const type_t& override {return *(data_ + index_);}
-        auto move_next() -> bool override {return ++index_ < length_;}
-        auto reset() -> void override {index_ = xtd::npos;}
+        const type_t& current() const override {return *(data_ + index_);}
+        bool move_next() override {return ++index_ < length_;}
+        void reset() override {index_ = xtd::npos;}
         
       protected:
         const_pointer data_;
