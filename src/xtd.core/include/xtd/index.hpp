@@ -28,6 +28,9 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core system
+  /// @par Examples
+  /// The following example shows how to use xtd::index with xtd::collections::generic::list.
+  /// @include index.cpp
   struct index : public xtd::object, xtd::iequatable<index> {
     ///@name Public Aliases
     

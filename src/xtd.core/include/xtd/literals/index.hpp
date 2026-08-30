@@ -8,10 +8,10 @@
 namespace xtd {
   /// @brief The xtd::literals namespace contains all xtd's litterals operators.
   inline namespace literals {
-    /// @name Size suffixes
+    /// @name Index suffixes
     
     /// @{
-    /// @brief Used to convert specified value into xtd::usize.
+    /// @brief Used to convert specified value into xtd::index.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -19,11 +19,15 @@ namespace xtd {
     /// @ingroup xtd_core literals
     /// @par Examples
     /// ```cpp
-    /// xtd::console::out << 1.6_uz << xtd::environment::new_line;
+    /// auto items = array {1, 2, 3, 4, 5};
+    /// println("items[0_i] = {}", items[0_i]); // 1
+    /// println("items[2_i] = {}", items[2_i]); // 3
+    /// println("items[~1_i] = {}", items[~1_i]); // 5
+    /// println("items[~3_i] = {}", items[~3_i]); // 3
     /// ```
     [[nodiscard]] constexpr auto operator""_i(long double n) -> xtd::index {return xtd::index {static_cast<xtd::usize>(n)};}
     
-    /// @brief Used to convert specified value into xtd::usize.
+    /// @brief Used to convert specified value into xtd::index.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -31,11 +35,15 @@ namespace xtd {
     /// @ingroup xtd_core literals
     /// @par Examples
     /// ```cpp
-    /// xtd::console::out << 54_uz << xtd::environment::new_line;
+    /// auto items = array {1, 2, 3, 4, 5};
+    /// println("items[0_i] = {}", items[0_i]); // 1
+    /// println("items[2_i] = {}", items[2_i]); // 3
+    /// println("items[~1_i] = {}", items[~1_i]); // 5
+    /// println("items[~3_i] = {}", items[~3_i]); // 3
     /// ```
     [[nodiscard]] constexpr auto operator""_i(unsigned long long n) -> xtd::index {return xtd::index {static_cast<xtd::usize>(n)};}
     
-    /// @brief Used to convert specified value into xtd::usize.
+    /// @brief Used to convert specified value into xtd::index.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -43,11 +51,15 @@ namespace xtd {
     /// @ingroup xtd_core literals
     /// @par Examples
     /// ```cpp
-    /// xtd::console::out << "125"_i << xtd::environment::new_line;
+    /// auto items = array {1, 2, 3, 4, 5};
+    /// println("items[0_i] = {}", items[0_i]); // 1
+    /// println("items[2_i] = {}", items[2_i]); // 3
+    /// println("items[~1_i] = {}", items[~1_i]); // 5
+    /// println("items[~3_i] = {}", items[~3_i]); // 3
     /// ```
     [[nodiscard]] auto operator""_i(const char* s, xtd::usize n) -> xtd::index;
     
-    /// @brief Used to convert specified value into xtd::usize.
+    /// @brief Used to convert specified value into xtd::index.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -55,11 +67,15 @@ namespace xtd {
     /// @ingroup xtd_core literals
     /// @par Examples
     /// ```cpp
-    /// xtd::console::out << u8"125"_i << xtd::environment::new_line;
+    /// auto items = array {1, 2, 3, 4, 5};
+    /// println("items[0_i] = {}", items[0_i]); // 1
+    /// println("items[2_i] = {}", items[2_i]); // 3
+    /// println("items[~1_i] = {}", items[~1_i]); // 5
+    /// println("items[~3_i] = {}", items[~3_i]); // 3
     /// ```
     [[nodiscard]] auto operator""_i(const char8_t* s, xtd::usize n) -> xtd::index;
     
-    /// @brief Used to convert specified value into xtd::usize.
+    /// @brief Used to convert specified value into xtd::index.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -71,7 +87,7 @@ namespace xtd {
     /// ```
     [[nodiscard]] auto operator""_i(const char16_t* s, xtd::usize n) -> xtd::index;
     
-    /// @brief Used to convert specified value into xtd::usize.
+    /// @brief Used to convert specified value into xtd::index.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -79,11 +95,15 @@ namespace xtd {
     /// @ingroup xtd_core literals
     /// @par Examples
     /// ```cpp
-    /// xtd::console::out << U"125"_i << xtd::environment::new_line;
+    /// auto items = array {1, 2, 3, 4, 5};
+    /// println("items[0_i] = {}", items[0_i]); // 1
+    /// println("items[2_i] = {}", items[2_i]); // 3
+    /// println("items[~1_i] = {}", items[~1_i]); // 5
+    /// println("items[~3_i] = {}", items[~3_i]); // 3
     /// ```
     [[nodiscard]] auto operator""_i(const char32_t* s, xtd::usize n) -> xtd::index;
     
-    /// @brief Used to convert specified value into xtd::usize.
+    /// @brief Used to convert specified value into xtd::index.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -91,7 +111,11 @@ namespace xtd {
     /// @ingroup xtd_core literals
     /// @par Examples
     /// ```cpp
-    /// xtd::console::out << L"125"_i << xtd::environment::new_line;
+    /// auto items = array {1, 2, 3, 4, 5};
+    /// println("items[0_i] = {}", items[0_i]); // 1
+    /// println("items[2_i] = {}", items[2_i]); // 3
+    /// println("items[~1_i] = {}", items[~1_i]); // 5
+    /// println("items[~3_i] = {}", items[~3_i]); // 3
     /// ```
     [[nodiscard]] auto operator""_i(const wchar_t* s, xtd::usize n) -> xtd::index;
     /// @}
