@@ -179,7 +179,7 @@ namespace xtd {
 
     /// @cond
     value_type __v__ = value_type {0};
-    /// @end_cond
+    /// @endcond
   };
 }
 
