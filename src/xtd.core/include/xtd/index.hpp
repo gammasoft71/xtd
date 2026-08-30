@@ -113,11 +113,11 @@ namespace xtd {
     /// @{
     /// @brief Represents a value that is not a valid position in a collection.
     /// @remarks This constant is typically used to indicate the absence of an index or a failed search operation. It is equivalent to the maximum value of xtd::usize.
-    /// @remarks The xtd::index::lpos is equivalent to `~0_i`. With bitwise operator the code is more concise.
+    /// @remarks The xtd::index::end is equivalent to `~0_i`. With bitwise operator the code is more concise.
     /// @par Examples
     /// ```cpp
     /// auto items = array {10, 20, 30, 40};
-    /// if (items.index_of(50) == index::npos)
+    /// if (items.index_of(50) == index::end)
     ///   console::write_line("Value not found");
     /// ```
     /// The wollowing exemple shows the same example with bitwise operator as index.
@@ -129,14 +129,14 @@ namespace xtd {
     static const index end;
 
     /// @brief Represents the index of the last valid element in a collection.
-    /// @remarks Unlike xtd::npos (which means "no position"), xtd::lpos points to the last accessible element of a collection. It is equivalent to `items.count() - 1`.
-    /// @note This constant is provided for readability and convenience. For example, `items[xtd::lpos]` directly accesses the last element without manually subtracting one from the collection count.
-    /// @remarks The xtd::index::lpos is equivalent to `~1_i`. With bitwise operator the code is more concise.
+    /// @remarks Unlike xtd::index::end (which means "no position"), xtd::index::last points to the last accessible element of a collection. It is equivalent to `items.count() - 1`.
+    /// @note This constant is provided for readability and convenience. For example, `items[xtd::index::last]` directly accesses the last element without manually subtracting one from the collection count.
+    /// @remarks The xtd::index::last is equivalent to `~1_i`. With bitwise operator the code is more concise.
     /// @par Examples
     /// ```cpp
     /// auto items = array {10, 20, 30, 40};
-    /// console::write_line(items[index::lpos]); // Prints 40
-    /// console::write_line(items[index::lpos - 1]); // Prints 30
+    /// console::write_line(items[index::last]); // Prints 40
+    /// console::write_line(items[index::last - 1]); // Prints 30
     /// ```
     /// The wollowing exemple shows the same example with bitwise operator as index.
     /// ```cpp
@@ -147,9 +147,9 @@ namespace xtd {
     static const index last;
 
     /// @brief Represents the index of the first valid element in a collection.
-    /// @remarks Unlike xtd::npos (which means "no position"), xtd::spos points to the first accessible element of a collection. It is equivalent to `0`.
-    /// @note This constant is provided for readability and convenience. For example, `items[xtd::spos]` directly accesses the fist element.
-    /// @remarks The xtd::index::lpos is equivalent to `0`. With `0` the code is more concise.
+    /// @remarks Unlike xtd::index::end (which means "no position"), xtd::index::start points to the first accessible element of a collection. It is equivalent to `0`.
+    /// @note This constant is provided for readability and convenience. For example, `items[xtd::index::start]` directly accesses the fist element.
+    /// @remarks The xtd::index::start is equivalent to `0`. With `0` the code is more concise.
     /// @par Examples
     /// ```cpp
     /// auto items = array {10, 20, 30, 40};
