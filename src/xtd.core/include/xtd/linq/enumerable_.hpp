@@ -893,13 +893,6 @@ namespace xtd {
       template<typename...>
       static inline constexpr bool always_false_v = false;
       
-      template<typename source_t>
-      requires(requires (const xtd::raw_type<source_t>& source) {{source.size()} -> std::convertible_to<std::size_t>;})
-      [[nodiscard]] static auto invoke_take_with_range(source_t&& source, const xtd::range& range) -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>>;
-      template<typename source_t>
-      requires(!requires (const xtd::raw_type<source_t>& source) {{source.size()} -> std::convertible_to<std::size_t>;})
-      [[nodiscard]] static auto invoke_take_with_range(source_t&& source, const xtd::range& range) -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>>;
-
       template<typename predicate_t, typename value_t>
       [[nodiscard]] static constexpr auto invoke_predicate_with_optional_index(predicate_t&& predicate, value_t&& value, xtd::usize index) -> bool;
 

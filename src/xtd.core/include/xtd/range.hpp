@@ -139,33 +139,21 @@ auto xtd::basic_string<char_t, traits_t, allocator_t>::operator ()(const xtd::ra
 
 template<xtd::iterable source_t>
 auto xtd::linq::enumerable::take(source_t&& source, const xtd::range& range) -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>> {
-  //auto source_holder = enumerable_holder<source_t> {std::forward<source_t>(source)};
-  //return invoke_take_with_range(source_holder.get(), range);
-  return invoke_take_with_range(source, range);
-}
-
-template<typename source_t>
-requires(!requires (const xtd::raw_type<source_t>& source) {{source.size()} -> std::convertible_to<std::size_t>;})
-auto xtd::linq::enumerable::invoke_take_with_range(source_t&& source, const xtd::range& range) -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>> {
-  //auto source_holder = enumerable_holder<source_t> {std::forward<source_t>(source)};
-  //auto result = list<xtd::iterable_value_type<source_t>> {source_holder.get()};
-  auto result = std::vector<xtd::iterable_value_type<source_t>> {source.begin(), source.end()};
-  return invoke_take_with_range(result, range);
-}
-
-template<typename source_t>
-requires(requires (const xtd::raw_type<source_t>& source) {{source.size()} -> std::convertible_to<std::size_t>;})
-auto xtd::linq::enumerable::invoke_take_with_range(source_t&& source, const xtd::range& range) -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>> {
-  auto index = xtd::usize {0};
-  auto skip = range.start().value();
-  auto count = skip + range.end().value() - range.start().value();
-  //if (range.end() )
-  //auto source_holder = enumerable_holder<xtd::raw_type<source_t>> {std::forward<source_t>(source)};
-  //for (const auto& item : source_holder.get())
-  for (const auto& item : source) {
-    if (index++ < skip) continue;
-    if (index++ == count) break;
-    co_yield item;
+  if (range.start().is_from_end() || range.end().is_from_end()) {
+    auto safe_source = std::vector<xtd::iterable_value_type<source_t>> {source.begin(), source.end()};
+    for (const auto& item : xtd::span<xtd::iterable_value_type<source_t>>{safe_source, range})
+      co_yield item;
+  } else {
+    auto index = xtd::usize {0};
+    auto skip = range.start().value();
+    auto end = range.end().value();
+    //auto source_holder = enumerable_holder<xtd::raw_type<source_t>> {std::forward<source_t>(source)};
+    //for (const auto& item : source_holder.get())
+    for (const auto& item : source) {
+      if (index++ < skip) continue;
+      if (index - 1 == end) break;
+      co_yield item;
+    }
   }
 }
 /// @endcond
