@@ -73,20 +73,20 @@ namespace xtd {
     /// @brief Determines whether the specified object is equal to the current object.
     /// @param obj The object to compare with the current object.
     /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-    [[nodiscard]] auto equals(const object& obj) const noexcept -> bool override {return is<index>(obj) && equals(static_cast<const index&>(obj));}
+    [[nodiscard]] auto equals(const object& obj) const noexcept -> bool override;
     /// @brief Indicates whether the current object is equal to another object of the same type.
     /// @param obj An object to compare with this object.
     /// @return `true` if the current object is equal to the other parameter; otherwise, `false`.
-    [[nodiscard]] auto equals(const index& value) const noexcept -> bool override {return xtd::collections::generic::helpers::equator<value_type> {}(__v__, value.__v__);}
+    [[nodiscard]] auto equals(const index& value) const noexcept -> bool override;
     
     /// @brief Serves as a hash function for a particular type.
     /// @return A hash code for the current object.
-    [[nodiscard]] auto get_hash_code() const noexcept -> xtd::usize override {return hash_code::combine(__v__);}
+    [[nodiscard]] auto get_hash_code() const noexcept -> xtd::usize override;
     
     /// @brief Calculates the offset from the start of the collection using the specified collection length.
     /// @param length The length of the collection that the xtd::index will be used with. Must be a positive value.
     /// @return The offset.
-    [[nodiscard]] auto get_offset(value_type length) const noexcept -> xtd::usize {return is_from_end() ? length - value() : value();}
+    [[nodiscard]] auto get_offset(value_type length) const noexcept -> xtd::usize;
     
     /// @brief Returns the string representation of the current Range object.
     /// @return The string representation of the range.
@@ -94,14 +94,14 @@ namespace xtd {
     
     /// @brief Returns the xtd::usize representation of the current Range object.
     /// @return The xtd::usize representation of the range.
-    [[nodiscard]] auto to_usize() const noexcept -> value_type {return __v__;}
+    [[nodiscard]] constexpr auto to_usize() const noexcept -> value_type {return __v__;}
     /// @}
     
     /// @cond
-    auto operator ++() noexcept -> xtd::index& {++__v__; return *this;}
-    auto operator --() noexcept -> xtd::index& {--__v__; return *this;}
-    auto operator ++(int) noexcept -> xtd::index {return xtd::index {__v__++};}
-    auto operator --(int) noexcept -> xtd::index {return xtd::index {__v__--};}
+    auto operator ++() noexcept -> xtd::index&;
+    auto operator --() noexcept -> xtd::index&;
+    auto operator ++(int) noexcept -> xtd::index;
+    auto operator --(int) noexcept -> xtd::index;
     constexpr auto operator ~() const noexcept -> xtd::index {return xtd::index {~__v__};}
     constexpr auto operator +() const noexcept -> xtd::index {return xtd::index {+__v__};}
     constexpr auto operator +(xtd::integer auto v) const noexcept -> xtd::index {return xtd::index {__v__ + static_cast<value_type>(v)};}
@@ -180,6 +180,17 @@ namespace xtd {
     /// @param value The index value from the start of a collection.
     /// @return The index value.
     inline static constexpr auto from_start(xtd::integer auto value) {return index {value};}
+
+    /// @brief Converts the string to xtd::index equivalent.
+    /// @param value A string containing a xtd::index to convert.
+    /// @return A xtd::index equivalent to the native value contained in value.
+    [[nodiscard]] static auto parse(const xtd::string& value) -> xtd::index;
+    
+    /// @brief Converts the string to xtd::index equivalent. A return value indicates whether the conversion succeeded or failed.
+    /// @param value A string containing a xtd::index to convert.
+    /// @param result A xtd::index equivalent to the native value contained in value.
+    /// @return `true` if s was converted successfully; otherwise, `false`.
+    [[nodiscard]] static auto try_parse(const xtd::string& value, xtd::index& result) noexcept -> bool;
     /// @}
 
     /// @cond

@@ -125,8 +125,6 @@ template<typename type_t>
 template<typename type_t, typename param_t>
 [[nodiscard]] inline auto __opaque_xtd_linq_lazy_enumerable__<type_t, param_t>::to_string() const -> xtd::string {return xtd::string::format("[{}]", xtd::string::join(", ", *this));}
 
-[[nodiscard]] inline auto xtd::index::to_string() const noexcept -> xtd::string {return is_from_end() ? xtd::string::format("~{}", ~__v__) : xtd::string::format("{}", __v__);}
-
 template<typename type_t>
 [[nodiscard]] inline auto xtd::reference_wrapper_object<type_t>::to_string() const noexcept -> xtd::string {return xtd::string::format("{} [value={}]", xtd::object::to_string(), !ref_.has_value() ? "(null)" : string::format("{}", get()));}
 
