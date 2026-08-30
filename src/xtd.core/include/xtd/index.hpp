@@ -59,6 +59,8 @@ namespace xtd {
     ///@return The end index of the range.
     [[nodiscard]] constexpr auto value() const noexcept -> value_type {return is_from_end() ? ~__v__ : __v__;}
     
+    /// @brief Gets a value that indicates whether the index is from the start or the end.
+    /// @return `true` if the xtd::index is from the end; otherwise, `false`.
     [[nodiscard]] constexpr auto is_from_end() const noexcept -> bool {return __v__ > std::numeric_limits<value_type>::max() / 2;}
     /// @}
     
