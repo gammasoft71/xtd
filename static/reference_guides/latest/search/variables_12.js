@@ -171,7 +171,7 @@ var searchData=
   ['staff_5fof_5faesculapius_168',['staff_of_aesculapius',['../classxtd_1_1forms_1_1emoticons.html#a88e2c75dad8cf58bbc5506e31584f78a',1,'xtd::forms::emoticons']]],
   ['star_5fand_5fcrescent_169',['star_and_crescent',['../classxtd_1_1forms_1_1emoticons.html#aab0c546014b3ccb2275fddc03a15085d',1,'xtd::forms::emoticons']]],
   ['star_5fof_5fdavid_170',['star_of_david',['../classxtd_1_1forms_1_1emoticons.html#ab468ea355cd2310a1e7c27d0c302b9f2',1,'xtd::forms::emoticons']]],
-  ['start_171',['start',['../structxtd_1_1forms_1_1selection__range.html#a8ba2b8b609f44473d3c4ab1ca9828804',1,'xtd::forms::selection_range']]],
+  ['start_171',['start',['../structxtd_1_1index.html#a48020f8854906f34d4b0fc6c5fb5ade7',1,'xtd::index::start'],['../structxtd_1_1forms_1_1selection__range.html#a8ba2b8b609f44473d3c4ab1ca9828804',1,'xtd::forms::selection_range::start']]],
   ['state_5fchanged_172',['state_changed',['../classxtd_1_1speech_1_1synthesis_1_1speech__synthesizer.html#ae413acc5fa9f9ea511808c31a2f36187',1,'xtd::speech::synthesis::speech_synthesizer']]],
   ['station_173',['station',['../classxtd_1_1forms_1_1emoticons.html#a3ae4f6125e9de05c9b85902d22102a38',1,'xtd::forms::emoticons']]],
   ['statue_5fof_5fliberty_174',['statue_of_liberty',['../classxtd_1_1forms_1_1emoticons.html#a45fb12156ac023e5c1922575a8bf1506',1,'xtd::forms::emoticons']]],

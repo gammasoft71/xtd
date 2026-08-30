@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
   <div class="headertitle"><div class="title">xtd_collection_indexer.cpp</div></div>
 </div><!--header-->
 <div class="contents">
-<p>Shows how to use indexing operators with xtd::index (xtd::index::start, xtd::index::start + 1, xtd::index::start + 2), xtd::xtd::index::last (xtd::index::last, xtd::index::last - 1, xtd::index::last - 2, ...) and bitwise operators (~1_z, ~2_z, ...) with xtd collections like <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a>.</p>
+<p>Shows how to use indexing operators with <a class="el" href="structxtd_1_1index.html" title="Represents a type that can be used to index a collection either from the beginning or the end.">xtd::index</a> (<a class="el" href="structxtd_1_1index.html#a48020f8854906f34d4b0fc6c5fb5ade7" title="Represents the index of the first valid element in a collection.">xtd::index::start</a>, <a class="el" href="structxtd_1_1index.html#a48020f8854906f34d4b0fc6c5fb5ade7" title="Represents the index of the first valid element in a collection.">xtd::index::start</a> + 1, <a class="el" href="structxtd_1_1index.html#a48020f8854906f34d4b0fc6c5fb5ade7" title="Represents the index of the first valid element in a collection.">xtd::index::start</a> + 2), xtd::xtd::index::last (<a class="el" href="structxtd_1_1index.html#a6c22e60b7cb28284487e3575a990e792" title="Represents the index of the last valid element in a collection.">xtd::index::last</a>, <a class="el" href="structxtd_1_1index.html#a6c22e60b7cb28284487e3575a990e792" title="Represents the index of the last valid element in a collection.">xtd::index::last</a> - 1, <a class="el" href="structxtd_1_1index.html#a6c22e60b7cb28284487e3575a990e792" title="Represents the index of the last valid element in a collection.">xtd::index::last</a> - 2, ...) and bitwise operators (~1_z, ~2_z, ...) with xtd collections like <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a>.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
@@ -129,17 +129,17 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line">  println();</div>
 <div class="line">  </div>
 <div class="line">  <span class="keywordflow">try</span> {</div>
-<div class="line">    println(<span class="stringliteral">&quot;a[xtd::index::start-1] = {}&quot;</span>, a[xtd::index::start-1]);</div>
+<div class="line">    println(<span class="stringliteral">&quot;a[xtd::index::start-1] = {}&quot;</span>, a[<a id="_a0" name="_a0"></a><a class="code hl_variable" href="structxtd_1_1index.html#a48020f8854906f34d4b0fc6c5fb5ade7">xtd::index::start</a>-1]);</div>
 <div class="line">  } <span class="keywordflow">catch</span> (<span class="keyword">const</span> index_out_of_range_exception&amp; e) {</div>
 <div class="line">    println(<span class="stringliteral">&quot;a[xtd::index::start-1] Throws {}&quot;</span>, e);</div>
 <div class="line">  }</div>
-<div class="line">  println(<span class="stringliteral">&quot;a[xtd::index::start]   = {}&quot;</span>, a[xtd::index::start]);</div>
-<div class="line">  println(<span class="stringliteral">&quot;a[xtd::index::start+1] = {}&quot;</span>, a[xtd::index::start+1]);</div>
-<div class="line">  println(<span class="stringliteral">&quot;a[xtd::index::start+2] = {}&quot;</span>, a[xtd::index::start+2]);</div>
-<div class="line">  println(<span class="stringliteral">&quot;a[xtd::index::start+3] = {}&quot;</span>, a[xtd::index::start+3]);</div>
-<div class="line">  println(<span class="stringliteral">&quot;a[xtd::index::start+4] = {}&quot;</span>, a[xtd::index::start+4]);</div>
+<div class="line">  println(<span class="stringliteral">&quot;a[xtd::index::start]   = {}&quot;</span>, a[<a class="code hl_variable" href="structxtd_1_1index.html#a48020f8854906f34d4b0fc6c5fb5ade7">xtd::index::start</a>]);</div>
+<div class="line">  println(<span class="stringliteral">&quot;a[xtd::index::start+1] = {}&quot;</span>, a[<a class="code hl_variable" href="structxtd_1_1index.html#a48020f8854906f34d4b0fc6c5fb5ade7">xtd::index::start</a>+1]);</div>
+<div class="line">  println(<span class="stringliteral">&quot;a[xtd::index::start+2] = {}&quot;</span>, a[<a class="code hl_variable" href="structxtd_1_1index.html#a48020f8854906f34d4b0fc6c5fb5ade7">xtd::index::start</a>+2]);</div>
+<div class="line">  println(<span class="stringliteral">&quot;a[xtd::index::start+3] = {}&quot;</span>, a[<a class="code hl_variable" href="structxtd_1_1index.html#a48020f8854906f34d4b0fc6c5fb5ade7">xtd::index::start</a>+3]);</div>
+<div class="line">  println(<span class="stringliteral">&quot;a[xtd::index::start+4] = {}&quot;</span>, a[<a class="code hl_variable" href="structxtd_1_1index.html#a48020f8854906f34d4b0fc6c5fb5ade7">xtd::index::start</a>+4]);</div>
 <div class="line">  <span class="keywordflow">try</span> {</div>
-<div class="line">    println(<span class="stringliteral">&quot;a[xtd::index::start+5] = {}&quot;</span>, a[xtd::index::start+5]);</div>
+<div class="line">    println(<span class="stringliteral">&quot;a[xtd::index::start+5] = {}&quot;</span>, a[<a class="code hl_variable" href="structxtd_1_1index.html#a48020f8854906f34d4b0fc6c5fb5ade7">xtd::index::start</a>+5]);</div>
 <div class="line">  } <span class="keywordflow">catch</span> (<span class="keyword">const</span> index_out_of_range_exception&amp; e) {</div>
 <div class="line">    println(<span class="stringliteral">&quot;a[xtd::index::start+5] Throws {}&quot;</span>, e);</div>
 <div class="line">  }</div>
@@ -180,17 +180,17 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line">  println();</div>
 <div class="line">  </div>
 <div class="line">  <span class="keywordflow">try</span> {</div>
-<div class="line">    println(<span class="stringliteral">&quot;a[xtd::index::last+1] = {}&quot;</span>, a[xtd::index::last+1]);</div>
+<div class="line">    println(<span class="stringliteral">&quot;a[xtd::index::last+1] = {}&quot;</span>, a[<a id="_a1" name="_a1"></a><a class="code hl_variable" href="structxtd_1_1index.html#a6c22e60b7cb28284487e3575a990e792">xtd::index::last</a>+1]);</div>
 <div class="line">  } <span class="keywordflow">catch</span> (<span class="keyword">const</span> index_out_of_range_exception&amp; e) {</div>
 <div class="line">    println(<span class="stringliteral">&quot;a[xtd::index::last+1] Throws {}&quot;</span>, e);</div>
 <div class="line">  }</div>
-<div class="line">  println(<span class="stringliteral">&quot;a[xtd::index::last]   = {}&quot;</span>, a[xtd::index::last]);</div>
-<div class="line">  println(<span class="stringliteral">&quot;a[xtd::index::last-1] = {}&quot;</span>, a[xtd::index::last-1]);</div>
-<div class="line">  println(<span class="stringliteral">&quot;a[xtd::index::last-2] = {}&quot;</span>, a[xtd::index::last-2]);</div>
-<div class="line">  println(<span class="stringliteral">&quot;a[xtd::index::last-3] = {}&quot;</span>, a[xtd::index::last-3]);</div>
-<div class="line">  println(<span class="stringliteral">&quot;a[xtd::index::last-4] = {}&quot;</span>, a[xtd::index::last-4]);</div>
+<div class="line">  println(<span class="stringliteral">&quot;a[xtd::index::last]   = {}&quot;</span>, a[<a class="code hl_variable" href="structxtd_1_1index.html#a6c22e60b7cb28284487e3575a990e792">xtd::index::last</a>]);</div>
+<div class="line">  println(<span class="stringliteral">&quot;a[xtd::index::last-1] = {}&quot;</span>, a[<a class="code hl_variable" href="structxtd_1_1index.html#a6c22e60b7cb28284487e3575a990e792">xtd::index::last</a>-1]);</div>
+<div class="line">  println(<span class="stringliteral">&quot;a[xtd::index::last-2] = {}&quot;</span>, a[<a class="code hl_variable" href="structxtd_1_1index.html#a6c22e60b7cb28284487e3575a990e792">xtd::index::last</a>-2]);</div>
+<div class="line">  println(<span class="stringliteral">&quot;a[xtd::index::last-3] = {}&quot;</span>, a[<a class="code hl_variable" href="structxtd_1_1index.html#a6c22e60b7cb28284487e3575a990e792">xtd::index::last</a>-3]);</div>
+<div class="line">  println(<span class="stringliteral">&quot;a[xtd::index::last-4] = {}&quot;</span>, a[<a class="code hl_variable" href="structxtd_1_1index.html#a6c22e60b7cb28284487e3575a990e792">xtd::index::last</a>-4]);</div>
 <div class="line">  <span class="keywordflow">try</span> {</div>
-<div class="line">    println(<span class="stringliteral">&quot;a[xtd::index::last-5] = {}&quot;</span>, a[xtd::index::last-5]);</div>
+<div class="line">    println(<span class="stringliteral">&quot;a[xtd::index::last-5] = {}&quot;</span>, a[<a class="code hl_variable" href="structxtd_1_1index.html#a6c22e60b7cb28284487e3575a990e792">xtd::index::last</a>-5]);</div>
 <div class="line">  } <span class="keywordflow">catch</span> (<span class="keyword">const</span> index_out_of_range_exception&amp; e) {</div>
 <div class="line">    println(<span class="stringliteral">&quot;a[xtd::index::last-5] Throws {}&quot;</span>, e);</div>
 <div class="line">  }</div>
@@ -301,6 +301,8 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line"><span class="comment">//    at xtd::basic_array&lt;int, std::allocator&lt;int&gt;&gt;::operator[](unsigned long) in basic_array.hpp:line 0</span></div>
 <div class="line"><span class="comment">//    at xtd::array&lt;int, 1ul, std::allocator&lt;int&gt;&gt;::operator[](unsigned long) in array_1.hpp:line 249</span></div>
 <div class="line"><span class="comment">//    at main in xtd_collection_indexer.cpp:line 91</span></div>
+<div class="ttc" id="astructxtd_1_1index_html_a48020f8854906f34d4b0fc6c5fb5ade7"><div class="ttname"><a href="structxtd_1_1index.html#a48020f8854906f34d4b0fc6c5fb5ade7">xtd::index::start</a></div><div class="ttdeci">static const index start</div><div class="ttdoc">Represents the index of the first valid element in a collection.</div><div class="ttdef"><b>Definition</b> index.hpp:163</div></div>
+<div class="ttc" id="astructxtd_1_1index_html_a6c22e60b7cb28284487e3575a990e792"><div class="ttname"><a href="structxtd_1_1index.html#a6c22e60b7cb28284487e3575a990e792">xtd::index::last</a></div><div class="ttdeci">static const index last</div><div class="ttdoc">Represents the index of the last valid element in a collection.</div><div class="ttdef"><b>Definition</b> index.hpp:145</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->

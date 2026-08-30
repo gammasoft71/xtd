@@ -221,8 +221,8 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>    template&lt;typename value_t&gt;</div>
 <div class="foldopen" id="foldopen00203" data-start="{" data-end="}">
 <div class="line"><a id="l00203" name="l00203"></a><span class="lineno"><a class="line" href="classxtd_1_1random.html#a6e1acca96954a49510c0454015e4487a">  203</a></span>    auto <a class="code hl_function" href="classxtd_1_1random.html#a6e1acca96954a49510c0454015e4487a">next_values</a>(<a class="code hl_namespace" href="namespacextd.html">xtd</a>::<a class="code hl_class" href="classxtd_1_1span.html">span</a>&lt;value_t&gt;&amp; buffer) const -&gt; <span class="keywordtype">void</span> {</div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>      <span class="keywordflow">for</span> (<span class="keyword">auto</span> index = 0_z; index &lt; buffer.length(); ++index)</div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>        buffer[index] = <a class="code hl_function" href="classxtd_1_1random.html#a565fba72ee5fa860f4b283b02975aa7a">next&lt;value_t&gt;</a>();</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>      <span class="keywordflow">for</span> (<span class="keyword">auto</span> <a class="code hl_struct" href="structxtd_1_1index.html">index</a> = 0_z; <a class="code hl_struct" href="structxtd_1_1index.html">index</a> &lt; buffer.length(); ++<a class="code hl_struct" href="structxtd_1_1index.html">index</a>)</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>        buffer[<a class="code hl_struct" href="structxtd_1_1index.html">index</a>] = <a class="code hl_function" href="classxtd_1_1random.html#a565fba72ee5fa860f4b283b02975aa7a">next&lt;value_t&gt;</a>();</div>
 <div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>    }</div>
 </div>
 <div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>    </div>
@@ -243,8 +243,8 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>    template&lt;typename value_t&gt;</div>
 <div class="foldopen" id="foldopen00242" data-start="{" data-end="}">
 <div class="line"><a id="l00242" name="l00242"></a><span class="lineno"><a class="line" href="classxtd_1_1random.html#a8763ec88d75b24298f71cbe68717d1df">  242</a></span>    auto <a class="code hl_function" href="classxtd_1_1random.html#a8763ec88d75b24298f71cbe68717d1df">shuffle</a>(<a class="code hl_namespace" href="namespacextd.html">xtd</a>::<a class="code hl_class" href="classxtd_1_1span.html">span</a>&lt;value_t&gt;&amp; values) const -&gt; <a class="code hl_namespace" href="namespacextd.html">xtd</a>::<a class="code hl_class" href="classxtd_1_1span.html">span</a>&lt;value_t&gt;&amp; {</div>
-<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>      <span class="keywordflow">for</span> (<span class="keyword">auto</span> index = 0_z; index &lt; values.length() - 1; ++index)</div>
-<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>        std::swap(values[index], values[<a class="code hl_function" href="classxtd_1_1random.html#a565fba72ee5fa860f4b283b02975aa7a">next</a>(index, values.length())]);</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>      <span class="keywordflow">for</span> (<span class="keyword">auto</span> <a class="code hl_struct" href="structxtd_1_1index.html">index</a> = 0_z; <a class="code hl_struct" href="structxtd_1_1index.html">index</a> &lt; values.length() - 1; ++<a class="code hl_struct" href="structxtd_1_1index.html">index</a>)</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>        std::swap(values[<a class="code hl_struct" href="structxtd_1_1index.html">index</a>], values[<a class="code hl_function" href="classxtd_1_1random.html#a565fba72ee5fa860f4b283b02975aa7a">next</a>(<a class="code hl_struct" href="structxtd_1_1index.html">index</a>, values.length())]);</div>
 <div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>      <span class="keywordflow">return</span> values;</div>
 <div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>    }</div>
 </div>
@@ -345,6 +345,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="ttc" id="aobject_8hpp_html"><div class="ttname"><a href="object_8hpp.html">object.hpp</a></div><div class="ttdoc">Contains xtd::object class.</div></div>
 <div class="ttc" id="aoptional_8hpp_html"><div class="ttname"><a href="optional_8hpp.html">optional.hpp</a></div><div class="ttdoc">Contains xtd::optional type.</div></div>
 <div class="ttc" id="aspan_8hpp_html"><div class="ttname"><a href="span_8hpp.html">span.hpp</a></div><div class="ttdoc">Contains xtd::span class.</div></div>
+<div class="ttc" id="astructxtd_1_1index_html"><div class="ttname"><a href="structxtd_1_1index.html">xtd::index</a></div><div class="ttdoc">Represents a type that can be used to index a collection either from the beginning or the end.</div><div class="ttdef"><b>Definition</b> index.hpp:31</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
