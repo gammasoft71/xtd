@@ -5,47 +5,48 @@
 
 using namespace xtd;
 using namespace xtd::helpers;
+using namespace xtd::collections::generic::helpers;
 
 auto index::equals(const object& obj) const noexcept -> bool {
   return is<index>(obj) && equals(static_cast<const index&>(obj));
 }
 
 auto index::equals(const index& value) const noexcept -> bool {
-  return xtd::collections::generic::helpers::equator<value_type> {}(__v__, value.__v__);
+  return equator<value_type> {}(__v__, value.__v__);
 }
 
-auto index::get_hash_code() const noexcept -> xtd::usize {
+auto index::get_hash_code() const noexcept -> usize {
   return hash_code::combine(__v__);
 }
 
-auto index::get_offset(value_type length) const noexcept -> xtd::usize {
+auto index::get_offset(value_type length) const noexcept -> usize {
   return is_from_end() ? length - value() : value();
 }
 
-auto index::to_string() const noexcept -> xtd::string {
-  return is_from_end() ? xtd::string::format("~{}", ~__v__) : xtd::string::format("{}", __v__);
+auto index::to_string() const noexcept -> string {
+  return is_from_end() ? string::format("~{}", ~__v__) : string::format("{}", __v__);
 }
 
-auto index::operator ++() noexcept -> xtd::index& {
+auto index::operator ++() noexcept -> index& {
   ++__v__;
   return *this;
 }
 
-auto index::operator --() noexcept -> xtd::index& {
+auto index::operator --() noexcept -> index& {
   --__v__;
   return *this;
 }
 
-auto index::operator ++(int) noexcept -> xtd::index
-{return xtd::index {__v__++};
+auto index::operator ++(int) noexcept -> index
+{return index {__v__++};
 }
-auto index::operator --(int) noexcept -> xtd::index {
-  return xtd::index {__v__--};
+auto index::operator --(int) noexcept -> index {
+  return index {__v__--};
 }
 
 auto index::parse(const string& value) -> index {
   auto result = index {};
-  if (!try_parse(value, result)) throw_helper::throws(xtd::helpers::exception_case::format);
+  if (!try_parse(value, result)) throw_helper::throws(exception_case::format);
   return result;
 }
 
