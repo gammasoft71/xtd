@@ -175,8 +175,8 @@ Public Constructors</h2></td></tr>
 Public Properties</h2></td></tr>
 <tr class="memitem:ab5c23b144520eda653eb66bcc9586fb3" id="r_ab5c23b144520eda653eb66bcc9586fb3"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#ab5c23b144520eda653eb66bcc9586fb3">value</a> () const noexcept -&gt; <a class="el" href="#a34de99a0ebc85b94f37492c2b735e1a9">value_type</a></td></tr>
 <tr class="memdesc:ab5c23b144520eda653eb66bcc9586fb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets an <a class="el" href="structxtd_1_1index.html" title="Represents a type that can be used to index a collection either from the beginning or the end.">xtd::index</a> that represents the exclusive end index of the range.  <br /></td></tr>
-<tr class="memitem:a94cf3a64c2649a0617b4eb1296d38d12" id="r_a94cf3a64c2649a0617b4eb1296d38d12"><td class="memItemLeft"><a id="a94cf3a64c2649a0617b4eb1296d38d12" name="a94cf3a64c2649a0617b4eb1296d38d12"></a>
-constexpr auto&#160;</td><td class="memItemRight"><b>is_from_end</b> () const noexcept -&gt; bool</td></tr>
+<tr class="memitem:a94cf3a64c2649a0617b4eb1296d38d12" id="r_a94cf3a64c2649a0617b4eb1296d38d12"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#a94cf3a64c2649a0617b4eb1296d38d12">is_from_end</a> () const noexcept -&gt; bool</td></tr>
+<tr class="memdesc:a94cf3a64c2649a0617b4eb1296d38d12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value that indicates whether the index is from the start or the end.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Methods</h2></td></tr>
@@ -378,6 +378,34 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Gets an <a class="el" href="structxtd_1_1index.html" title="Represents a type that can be used to index a collection either from the beginning or the end.">xtd::index</a> that represents the exclusive end index of the range. </p>
 <dl class="section return"><dt>Returns</dt><dd>The end index of the range. </dd></dl>
+
+</div>
+</div>
+<a id="a94cf3a64c2649a0617b4eb1296d38d12" name="a94cf3a64c2649a0617b4eb1296d38d12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94cf3a64c2649a0617b4eb1296d38d12">&#9670;&#160;</a></span>is_from_end()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto xtd::index::is_from_end </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const -&gt; bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets a value that indicates whether the index is from the start or the end. </p>
+<dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span> if the <a class="el" href="structxtd_1_1index.html" title="Represents a type that can be used to index a collection either from the beginning or the end.">xtd::index</a> is from the end; otherwise, <span class="tt">false</span>. </dd></dl>
 
 </div>
 </div>
@@ -696,7 +724,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(items[<a class="code hl_variable" href="#a48020f8854906f34d4b0fc6c5fb5ade7">index::start</a>]); <span class="comment">// Prints 10</span></div>
 <div class="line"><a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(items[<a class="code hl_variable" href="#a48020f8854906f34d4b0fc6c5fb5ade7">index::start</a> + 1]); <span class="comment">// Prints 20</span></div>
 <div class="ttc" id="anamespacextd_html_a9482c5e9fb1d60c658bbe28bfbb17353"><div class="ttname"><a href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">xtd::println</a></div><div class="ttdeci">auto println(FILE *file) -&gt; void</div><div class="ttdoc">Writes the current line terminator to the file output stream using the specified format information.</div><div class="ttdef"><b>Definition</b> println.hpp:15</div></div>
-<div class="ttc" id="astructxtd_1_1index_html_a48020f8854906f34d4b0fc6c5fb5ade7"><div class="ttname"><a href="#a48020f8854906f34d4b0fc6c5fb5ade7">xtd::index::start</a></div><div class="ttdeci">static const index start</div><div class="ttdoc">Represents the index of the first valid element in a collection.</div><div class="ttdef"><b>Definition</b> index.hpp:163</div></div>
+<div class="ttc" id="astructxtd_1_1index_html_a48020f8854906f34d4b0fc6c5fb5ade7"><div class="ttname"><a href="#a48020f8854906f34d4b0fc6c5fb5ade7">xtd::index::start</a></div><div class="ttdeci">static const index start</div><div class="ttdoc">Represents the index of the first valid element in a collection.</div><div class="ttdef"><b>Definition</b> index.hpp:165</div></div>
 </div><!-- fragment --> The wollowing exemple shows the same example without index. <div class="fragment"><div class="line"><span class="keyword">auto</span> items = <a class="code hl_class" href="classxtd_1_1array.html">array</a> {10, 20, 30, 40};</div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(items[0]); <span class="comment">// Prints 10</span></div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(items[1]); <span class="comment">// Prints 20</span></div>
