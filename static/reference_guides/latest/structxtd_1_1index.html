@@ -231,8 +231,8 @@ Public Methods</h2></td></tr>
 <tr class="memdesc:aa26f5235354ff6441ba13f70834e4dd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the offset from the start of the collection using the specified collection length.  <br /></td></tr>
 <tr class="memitem:a2336c580bc5c21a6ad2de23adeb12c11" id="r_a2336c580bc5c21a6ad2de23adeb12c11"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a2336c580bc5c21a6ad2de23adeb12c11">to_string</a> () const noexcept -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> override</td></tr>
 <tr class="memdesc:a2336c580bc5c21a6ad2de23adeb12c11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the string representation of the current Range object.  <br /></td></tr>
-<tr class="memitem:a5cfc33cd61f38498f5dd29db76aace3f" id="r_a5cfc33cd61f38498f5dd29db76aace3f"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a5cfc33cd61f38498f5dd29db76aace3f">to_usize</a> () const noexcept -&gt; <a class="el" href="#a34de99a0ebc85b94f37492c2b735e1a9">value_type</a></td></tr>
-<tr class="memdesc:a5cfc33cd61f38498f5dd29db76aace3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525" title="Represents an unsigned size of any object in bytes.">xtd::usize</a> representation of the current Range object.  <br /></td></tr>
+<tr class="memitem:a85edb6de632afad675fdcc19c77b52ed" id="r_a85edb6de632afad675fdcc19c77b52ed"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#a85edb6de632afad675fdcc19c77b52ed">to_usize</a> () const noexcept -&gt; <a class="el" href="#a34de99a0ebc85b94f37492c2b735e1a9">value_type</a></td></tr>
+<tr class="memdesc:a85edb6de632afad675fdcc19c77b52ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525" title="Represents an unsigned size of any object in bytes.">xtd::usize</a> representation of the current Range object.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Static Methods</h2></td></tr>
@@ -240,6 +240,10 @@ Public Static Methods</h2></td></tr>
 <tr class="memdesc:a1c4391aa68fe52a341817fb7842cb922"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an xtd::ndex from the end of a collection at a specified index position.  <br /></td></tr>
 <tr class="memitem:a4273c7d86ec97086d31b58cfd13062a4" id="r_a4273c7d86ec97086d31b58cfd13062a4"><td class="memItemLeft">static constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#a4273c7d86ec97086d31b58cfd13062a4">from_start</a> (<a class="el" href="structxtd_1_1integer.html">xtd::integer</a> auto value)</td></tr>
 <tr class="memdesc:a4273c7d86ec97086d31b58cfd13062a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an xtd::ndex from the start of a collection at a specified index position.  <br /></td></tr>
+<tr class="memitem:a5bda046cb81a51b4e3358c36330b5d11" id="r_a5bda046cb81a51b4e3358c36330b5d11"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a5bda046cb81a51b4e3358c36330b5d11">parse</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;value) -&gt; <a class="el" href="structxtd_1_1index.html">xtd::index</a></td></tr>
+<tr class="memdesc:a5bda046cb81a51b4e3358c36330b5d11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the string to <a class="el" href="structxtd_1_1index.html" title="Represents a type that can be used to index a collection either from the beginning or the end.">xtd::index</a> equivalent.  <br /></td></tr>
+<tr class="memitem:a8fbe59427c4a6597c6a64347098e1c05" id="r_a8fbe59427c4a6597c6a64347098e1c05"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a8fbe59427c4a6597c6a64347098e1c05">try_parse</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;value, <a class="el" href="structxtd_1_1index.html">xtd::index</a> &amp;result) noexcept -&gt; bool</td></tr>
+<tr class="memdesc:a8fbe59427c4a6597c6a64347098e1c05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the string to <a class="el" href="structxtd_1_1index.html" title="Represents a type that can be used to index a collection either from the beginning or the end.">xtd::index</a> equivalent. A return value indicates whether the conversion succeeded or failed.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -445,12 +449,12 @@ Additional Inherited Members</h2></td></tr>
           <td class="memname">auto xtd::index::equals </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">object</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
-          <td> const -&gt; bool</td>
+          <td> const -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -481,12 +485,12 @@ Additional Inherited Members</h2></td></tr>
           <td class="memname">auto xtd::index::equals </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="#a6c77d5284d84e1de402dcdf69650abc5">index</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td> const -&gt; bool</td>
+          <td> const -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -517,12 +521,12 @@ Additional Inherited Members</h2></td></tr>
           <td class="memname">auto xtd::index::get_hash_code </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const -&gt; <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>
+          <td> const -&gt;  <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -547,12 +551,12 @@ Additional Inherited Members</h2></td></tr>
           <td class="memname">auto xtd::index::get_offset </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="#a34de99a0ebc85b94f37492c2b735e1a9">value_type</a></td>          <td class="paramname"><span class="paramname"><em>length</em></span></td><td>)</td>
-          <td> const -&gt; <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>
+          <td> const -&gt;  <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -598,8 +602,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a5cfc33cd61f38498f5dd29db76aace3f" name="a5cfc33cd61f38498f5dd29db76aace3f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5cfc33cd61f38498f5dd29db76aace3f">&#9670;&#160;</a></span>to_usize()</h2>
+<a id="a85edb6de632afad675fdcc19c77b52ed" name="a85edb6de632afad675fdcc19c77b52ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85edb6de632afad675fdcc19c77b52ed">&#9670;&#160;</a></span>to_usize()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -616,7 +620,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -691,6 +695,79 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The index value. </dd></dl>
+
+</div>
+</div>
+<a id="a5bda046cb81a51b4e3358c36330b5d11" name="a5bda046cb81a51b4e3358c36330b5d11"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5bda046cb81a51b4e3358c36330b5d11">&#9670;&#160;</a></span>parse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto xtd::index::parse </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td> -&gt;  <a class="el" href="structxtd_1_1index.html">xtd::index</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Converts the string to <a class="el" href="structxtd_1_1index.html" title="Represents a type that can be used to index a collection either from the beginning or the end.">xtd::index</a> equivalent. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>A string containing a <a class="el" href="structxtd_1_1index.html" title="Represents a type that can be used to index a collection either from the beginning or the end.">xtd::index</a> to convert. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="structxtd_1_1index.html" title="Represents a type that can be used to index a collection either from the beginning or the end.">xtd::index</a> equivalent to the native value contained in value. </dd></dl>
+
+</div>
+</div>
+<a id="a8fbe59427c4a6597c6a64347098e1c05" name="a8fbe59427c4a6597c6a64347098e1c05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8fbe59427c4a6597c6a64347098e1c05">&#9670;&#160;</a></span>try_parse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto xtd::index::try_parse </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structxtd_1_1index.html">xtd::index</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>result</em></span>&#160;) -&gt;  bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Converts the string to <a class="el" href="structxtd_1_1index.html" title="Represents a type that can be used to index a collection either from the beginning or the end.">xtd::index</a> equivalent. A return value indicates whether the conversion succeeded or failed. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>A string containing a <a class="el" href="structxtd_1_1index.html" title="Represents a type that can be used to index a collection either from the beginning or the end.">xtd::index</a> to convert. </td></tr>
+    <tr><td class="paramname">result</td><td>A <a class="el" href="structxtd_1_1index.html" title="Represents a type that can be used to index a collection either from the beginning or the end.">xtd::index</a> equivalent to the native value contained in value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span> if s was converted successfully; otherwise, <span class="tt">false</span>. </dd></dl>
 
 </div>
 </div>
