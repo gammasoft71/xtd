@@ -37,7 +37,7 @@ namespace xtd {
     /// @}
     
     ///@name Public Constructors
-    
+
     /// @{
     /// @brief Instantiates a new xtd::index instance.
     constexpr index() noexcept = default;
@@ -53,7 +53,7 @@ namespace xtd {
     /// @}
     
     ///@name Public Properties
-    
+
     /// @{
     ///@brief Gets an xtd::index that represents the exclusive end index of the range.
     ///@return The end index of the range.
@@ -65,7 +65,7 @@ namespace xtd {
     /// @}
     
     /// @name Public Methods
-    ///
+
     /// @{
     /// @brief Determines whether the specified object is equal to the current object.
     /// @param obj The object to compare with the current object.
@@ -109,7 +109,7 @@ namespace xtd {
     /// @endcond
     
     /// @name Public Static Properties
-    ///
+
     /// @{
     /// @brief Represents a value that is not a valid position in a collection.
     /// @remarks This constant is typically used to indicate the absence of an index or a failed search operation. It is equivalent to the maximum value of xtd::usize.
@@ -166,7 +166,7 @@ namespace xtd {
     /// @}
     
     /// @name Public Static Methods
-    ///
+
     /// @{
     /// @brief Creates an xtd::ndex from the end of a collection at a specified index position.
     /// @param value The index value from the end of a collection.
