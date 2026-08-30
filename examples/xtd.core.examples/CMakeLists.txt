@@ -29,6 +29,7 @@ add_projects(
   globalization
   guid
   hash_code
+  indexes
   interfaces
   io
   keywords

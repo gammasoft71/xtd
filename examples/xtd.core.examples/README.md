@@ -288,6 +288,10 @@
 
 * [hash_code](hash_code/hash_code/README.md) shows how to use [xtd::hash_code](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1hash__code.html) class.
 
+## [Indexes](indexes/README.md)
+
+* [index](indexes/index/README.md) shows how to use [xtd::index](https://gammasoft71.github.io/xtd/reference_guides/latest/structxtd_1_1index.html) struct.
+
 ## [Interfaces](interfaces/README.md)
 
 * [iasync_result](iasync_result/README.md) shows how to use how to use [xtd::iasync_result](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1iasync__result.html) interface.
