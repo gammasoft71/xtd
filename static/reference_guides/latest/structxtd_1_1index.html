@@ -133,7 +133,61 @@ Inheritance diagram for xtd::index:</div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="structxtd_1_1index.html" title="Represents a type that can be used to index a collection either from the beginning or the end.">xtd::index</a> with <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a>. <div class="fragment"></div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="structxtd_1_1index.html" title="Represents a type that can be used to index a collection either from the beginning or the end.">xtd::index</a> with <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="keyword">auto</span> items = list {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};</div>
+<div class="line">  </div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;items[0_i] = {}&quot;</span>, items[<a class="code hl_function" href="#a4273c7d86ec97086d31b58cfd13062a4">index::from_start</a>(0)]);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;items(1_i) = {}&quot;</span>, items(1_i));</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;items[2_i] = {}&quot;</span>, items[2_i]);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;items(3_i) = {}&quot;</span>, items(3_i));</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;items[4_i] = {}&quot;</span>, items[4_i]);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;items(5_i) = {}&quot;</span>, items(5_i));</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;items[6_i] = {}&quot;</span>, items[6_i]);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;items(7_i) = {}&quot;</span>, items(7_i));</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;items[8_i] = {}&quot;</span>, items[8_i]);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;items(9_i) = {}&quot;</span>, items(<a class="code hl_function" href="#a4273c7d86ec97086d31b58cfd13062a4">index::from_start</a>(9)));</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>();</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;items[~1_i] = {}&quot;</span>, items[<a class="code hl_function" href="#a1c4391aa68fe52a341817fb7842cb922">index::from_end</a>(1)]);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;items(~2_i) = {}&quot;</span>, items(~2_i));</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;items[~3_i] = {}&quot;</span>, items[~3_i]);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;items(~4_i) = {}&quot;</span>, items(~4_i));</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;items[~5_i] = {}&quot;</span>, items[~5_i]);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;items(~6_i) = {}&quot;</span>, items(~6_i));</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;items[~7_i] = {}&quot;</span>, items[~7_i]);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;items(~8_i) = {}&quot;</span>, items(~8_i));</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;items[~9_i] = {}&quot;</span>, items[~9_i]);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;items(~10_i) = {}&quot;</span>, items(<a class="code hl_function" href="#a1c4391aa68fe52a341817fb7842cb922">index::from_end</a>(10)));</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// items[0_i] = 1</span></div>
+<div class="line"><span class="comment">// items(1_i) = 2</span></div>
+<div class="line"><span class="comment">// items[2_i] = 3</span></div>
+<div class="line"><span class="comment">// items(3_i) = 4</span></div>
+<div class="line"><span class="comment">// items[4_i] = 5</span></div>
+<div class="line"><span class="comment">// items(5_i) = 6</span></div>
+<div class="line"><span class="comment">// items[6_i] = 7</span></div>
+<div class="line"><span class="comment">// items(7_i) = 8</span></div>
+<div class="line"><span class="comment">// items[8_i] = 9</span></div>
+<div class="line"><span class="comment">// items(9_i) = 10</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// items[~1_i] = 10</span></div>
+<div class="line"><span class="comment">// items(~2_i) = 9</span></div>
+<div class="line"><span class="comment">// items[~3_i] = 8</span></div>
+<div class="line"><span class="comment">// items(~4_i) = 7</span></div>
+<div class="line"><span class="comment">// items[~5_i] = 6</span></div>
+<div class="line"><span class="comment">// items(~6_i) = 5</span></div>
+<div class="line"><span class="comment">// items[~7_i] = 4</span></div>
+<div class="line"><span class="comment">// items(~8_i) = 3</span></div>
+<div class="line"><span class="comment">// items[~9_i] = 2</span></div>
+<div class="line"><span class="comment">// items(~10_i) = 1</span></div>
+<div class="ttc" id="anamespacextd_html_a9482c5e9fb1d60c658bbe28bfbb17353"><div class="ttname"><a href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">xtd::println</a></div><div class="ttdeci">auto println(FILE *file) -&gt; void</div><div class="ttdoc">Writes the current line terminator to the file output stream using the specified format information.</div><div class="ttdef"><b>Definition</b> println.hpp:15</div></div>
+<div class="ttc" id="astructxtd_1_1index_html_a1c4391aa68fe52a341817fb7842cb922"><div class="ttname"><a href="#a1c4391aa68fe52a341817fb7842cb922">xtd::index::from_end</a></div><div class="ttdeci">static constexpr auto from_end(xtd::integer auto value)</div><div class="ttdoc">Creates an xtd::ndex from the end of a collection at a specified index position.</div><div class="ttdef"><b>Definition</b> index.hpp:177</div></div>
+<div class="ttc" id="astructxtd_1_1index_html_a4273c7d86ec97086d31b58cfd13062a4"><div class="ttname"><a href="#a4273c7d86ec97086d31b58cfd13062a4">xtd::index::from_start</a></div><div class="ttdeci">static constexpr auto from_start(xtd::integer auto value)</div><div class="ttdoc">Creates an xtd::ndex from the start of a collection at a specified index position.</div><div class="ttdef"><b>Definition</b> index.hpp:182</div></div>
+</div><!-- fragment --> </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Aliases</h2></td></tr>
@@ -744,7 +798,6 @@ The <a class="el" href="#a6354a96d41d98a27eefa8ce6784d95e2" title="Represents a 
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><span class="keyword">auto</span> items = <a class="code hl_class" href="classxtd_1_1array.html">array</a> {10, 20, 30, 40};</div>
 <div class="line"><a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(items[<a class="code hl_variable" href="#a48020f8854906f34d4b0fc6c5fb5ade7">index::start</a>]); <span class="comment">// Prints 10</span></div>
 <div class="line"><a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(items[<a class="code hl_variable" href="#a48020f8854906f34d4b0fc6c5fb5ade7">index::start</a> + 1]); <span class="comment">// Prints 20</span></div>
-<div class="ttc" id="anamespacextd_html_a9482c5e9fb1d60c658bbe28bfbb17353"><div class="ttname"><a href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">xtd::println</a></div><div class="ttdeci">auto println(FILE *file) -&gt; void</div><div class="ttdoc">Writes the current line terminator to the file output stream using the specified format information.</div><div class="ttdef"><b>Definition</b> println.hpp:15</div></div>
 <div class="ttc" id="astructxtd_1_1index_html_a48020f8854906f34d4b0fc6c5fb5ade7"><div class="ttname"><a href="#a48020f8854906f34d4b0fc6c5fb5ade7">xtd::index::start</a></div><div class="ttdeci">static const index start</div><div class="ttdoc">Represents the index of the first valid element in a collection.</div><div class="ttdef"><b>Definition</b> index.hpp:168</div></div>
 </div><!-- fragment --> The wollowing exemple shows the same example without index. <div class="fragment"><div class="line"><span class="keyword">auto</span> items = <a class="code hl_class" href="classxtd_1_1array.html">array</a> {10, 20, 30, 40};</div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(items[0]); <span class="comment">// Prints 10</span></div>
