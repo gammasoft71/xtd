@@ -43,7 +43,7 @@ var searchData=
   ['empty_5fspan_40',['empty_span',['../classxtd_1_1span.html#a0f6f2cb41306609e11d24f25e8cfa87c',1,'xtd::span']]],
   ['empty_5fstring_41',['empty_string',['../classxtd_1_1basic__string.html#a0ae9e9b0cbe9df3f4fc03f7e4682ef2e',1,'xtd::basic_string']]],
   ['enabled_5fchanged_42',['enabled_changed',['../classxtd_1_1forms_1_1control.html#adc8dc0fbb39887cc5f1b1e86a3168634',1,'xtd::forms::control']]],
-  ['end_43',['end',['../structxtd_1_1forms_1_1selection__range.html#ace035c5bed544afc77e6a2e5949ddd99',1,'xtd::forms::selection_range']]],
+  ['end_43',['end',['../structxtd_1_1index.html#a6354a96d41d98a27eefa8ce6784d95e2',1,'xtd::index::end'],['../structxtd_1_1forms_1_1selection__range.html#ace035c5bed544afc77e6a2e5949ddd99',1,'xtd::forms::selection_range::end']]],
   ['end_5fwith_5fleftwards_5farrow_5fabove_44',['end_with_leftwards_arrow_above',['../classxtd_1_1forms_1_1emoticons.html#a0ff64d196f7a6a57a475d8bfd2e36b74',1,'xtd::forms::emoticons']]],
   ['endianness_45',['endianness',['../classxtd_1_1bit__converter.html#a74775c90de1b900dda7995b804274b1b',1,'xtd::bit_converter']]],
   ['enter_5fthread_5fmodal_46',['enter_thread_modal',['../classxtd_1_1forms_1_1application.html#a33d06fc192ea9b4896d82f07fbcaf6bc',1,'xtd::forms::application']]],
