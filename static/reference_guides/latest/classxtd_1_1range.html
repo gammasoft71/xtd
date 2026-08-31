@@ -108,6 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div id="doc-content">
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="classxtd_1_1range-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">xtd::range Class Reference<div class="ingroups"><a class="el" href="group__libraries.html">﹡ libraries</a> &raquo; <a class="el" href="group__xtd__core.html">xtd.core</a> &#124; <a class="el" href="group__system.html">system</a></div></div></div>
 </div><!--header-->
@@ -132,6 +133,11 @@ Inheritance diagram for xtd::range:</div>
 <dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core </dd></dl>
 </div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:offset_5Fand_5Flength" id="r_offset_5Fand_5Flength"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structxtd_1_1range_1_1offset__and__length.html">offset_and_length</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a offset and length.  <a href="structxtd_1_1range_1_1offset__and__length.html#details">More...</a><br /></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Aliases</h2></td></tr>
 <tr class="memitem:a28aa7cd6a7464f45b4fe1fb948098f15" id="r_a28aa7cd6a7464f45b4fe1fb948098f15"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a28aa7cd6a7464f45b4fe1fb948098f15">index_type</a></td></tr>
@@ -157,19 +163,12 @@ Public Properties</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Methods</h2></td></tr>
-<tr><td class="ititle" colspan="2"><p>Determines whether the specified object is equal to the current object.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">obj</td><td>The object to compare with the current object. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span> if the specified object is equal to the current object. otherwise, <span class="tt">false</span>. </dd></dl>
-</td></tr>
 <tr class="memitem:aaa6ec5231e4c3489e6ebb4c403150766" id="r_aaa6ec5231e4c3489e6ebb4c403150766"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aaa6ec5231e4c3489e6ebb4c403150766">equals</a> (const <a class="el" href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">object</a> &amp;obj) const noexcept -&gt; bool override</td></tr>
 <tr class="memdesc:aaa6ec5231e4c3489e6ebb4c403150766"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
 <tr class="memitem:af6ded01707ba3fdc76277af2a4055b04" id="r_af6ded01707ba3fdc76277af2a4055b04"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#af6ded01707ba3fdc76277af2a4055b04">equals</a> (const <a class="el" href="#af743367e1c429d4cc746620a5661d329">range</a> &amp;value) const noexcept -&gt; bool override</td></tr>
 <tr class="memdesc:af6ded01707ba3fdc76277af2a4055b04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the current object is equal to another object of the same type.  <br /></td></tr>
+<tr class="memitem:a71b81cb07ffbd2508137dc2351de463a" id="r_a71b81cb07ffbd2508137dc2351de463a"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a71b81cb07ffbd2508137dc2351de463a">get_offset_and_length</a> (<a class="el" href="#a7207b9661491fd28d059071ff2b3afc7">size_type</a> length) const -&gt; <a class="el" href="structxtd_1_1range_1_1offset__and__length.html">offset_and_length</a></td></tr>
+<tr class="memdesc:a71b81cb07ffbd2508137dc2351de463a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the start offset and length of the range object using a collection length.  <br /></td></tr>
 <tr class="memitem:a03af40614ea52e6a0b228016ebe91b86" id="r_a03af40614ea52e6a0b228016ebe91b86"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a03af40614ea52e6a0b228016ebe91b86">get_hash_code</a> () const noexcept -&gt; <a class="el" href="#a7207b9661491fd28d059071ff2b3afc7">size_type</a> override</td></tr>
 <tr class="memdesc:a03af40614ea52e6a0b228016ebe91b86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a particular type.  <br /></td></tr>
 <tr class="memitem:a05c2cdbcd31f13d89a0d93f98f86c012" id="r_a05c2cdbcd31f13d89a0d93f98f86c012"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a05c2cdbcd31f13d89a0d93f98f86c012">to_string</a> () const noexcept -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> override</td></tr>
@@ -177,25 +176,13 @@ Public Methods</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Static Properties</h2></td></tr>
-<tr><td class="ititle" colspan="2"><p>Gets a <a class="el" href="classxtd_1_1range.html" title="Represents a range that has start and end indexes.">xtd::range</a> object that starts from the first element to the end.</p>
-<dl class="section return"><dt>Returns</dt><dd>A range from the start to the end. </dd></dl>
-</td></tr>
-<tr class="memitem:a942830a1239e7ed3634776325e28dbdc" id="r_a942830a1239e7ed3634776325e28dbdc"><td class="memItemLeft"><a id="a942830a1239e7ed3634776325e28dbdc" name="a942830a1239e7ed3634776325e28dbdc"></a>
-static auto&#160;</td><td class="memItemRight"><b>all</b> () noexcept -&gt; <a class="el" href="classxtd_1_1range.html">xtd::range</a></td></tr>
+<tr class="memitem:a942830a1239e7ed3634776325e28dbdc" id="r_a942830a1239e7ed3634776325e28dbdc"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a942830a1239e7ed3634776325e28dbdc">all</a> () noexcept -&gt; <a class="el" href="classxtd_1_1range.html">xtd::range</a></td></tr>
+<tr class="memdesc:a942830a1239e7ed3634776325e28dbdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a <a class="el" href="classxtd_1_1range.html" title="Represents a range that has start and end indexes.">xtd::range</a> object that starts from the first element to the end.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Static Methods</h2></td></tr>
-<tr><td class="ititle" colspan="2"><p>Creates a <a class="el" href="classxtd_1_1range.html" title="Represents a range that has start and end indexes.">xtd::range</a> object starting from the first element in the collection to a specified end index.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">end</td><td>The position of the last element up to which the Range object will be created. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>A range that starts from the first element to end. </dd></dl>
-</td></tr>
-<tr class="memitem:a19a49e7a9d6db853f38f6a320bc2c4f0" id="r_a19a49e7a9d6db853f38f6a320bc2c4f0"><td class="memItemLeft"><a id="a19a49e7a9d6db853f38f6a320bc2c4f0" name="a19a49e7a9d6db853f38f6a320bc2c4f0"></a>
-static auto&#160;</td><td class="memItemRight"><b>end_at</b> (<a class="el" href="#a28aa7cd6a7464f45b4fe1fb948098f15">index_type</a> end) noexcept -&gt; <a class="el" href="classxtd_1_1range.html">xtd::range</a></td></tr>
+<tr class="memitem:a19a49e7a9d6db853f38f6a320bc2c4f0" id="r_a19a49e7a9d6db853f38f6a320bc2c4f0"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a19a49e7a9d6db853f38f6a320bc2c4f0">end_at</a> (<a class="el" href="#a28aa7cd6a7464f45b4fe1fb948098f15">index_type</a> end) noexcept -&gt; <a class="el" href="classxtd_1_1range.html">xtd::range</a></td></tr>
+<tr class="memdesc:a19a49e7a9d6db853f38f6a320bc2c4f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="classxtd_1_1range.html" title="Represents a range that has start and end indexes.">xtd::range</a> object starting from the first element in the collection to a specified end index.  <br /></td></tr>
 <tr class="memitem:a3b263666b2149064725d508f680da2a1" id="r_a3b263666b2149064725d508f680da2a1"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a3b263666b2149064725d508f680da2a1">end_at</a> (<a class="el" href="structxtd_1_1integer.html">xtd::integer</a> auto end) noexcept -&gt; <a class="el" href="classxtd_1_1range.html">xtd::range</a></td></tr>
 <tr class="memdesc:a3b263666b2149064725d508f680da2a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="classxtd_1_1range.html" title="Represents a range that has start and end indexes.">xtd::range</a> object starting from the first element in the collection to a specified end index.  <br /></td></tr>
 <tr class="memitem:adc59c2678f54777eaed55aaed53651fa" id="r_adc59c2678f54777eaed55aaed53651fa"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#adc59c2678f54777eaed55aaed53651fa">parse</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;value) -&gt; <a class="el" href="classxtd_1_1range.html">xtd::range</a></td></tr>
@@ -430,7 +417,7 @@ Additional Inherited Members</h2></td></tr>
           <td class="memname">auto xtd::range::equals </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">object</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
-          <td> const -&gt;  bool</td>
+          <td> const -&gt; bool</td>
         </tr>
       </table>
   </td>
@@ -448,29 +435,6 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span> if the specified object is equal to the current object. otherwise, <span class="tt">false</span>. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example compares the current instance with another object. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keyword">auto</span> object1 = <a class="code hl_function" href="group__xtd__core.html#ga90ae49206646bf4444fa4f2e57990d08">new_ptr&lt;object&gt;</a>();</div>
-<div class="line">  <span class="keyword">auto</span> object2 = <a class="code hl_function" href="group__xtd__core.html#ga90ae49206646bf4444fa4f2e57990d08">new_ptr&lt;object&gt;</a>();</div>
-<div class="line">  </div>
-<div class="line">  <span class="keyword">auto</span> object3 = object2;</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(object1-&gt;equals(*object3));</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(*object1 == *object3);</div>
-<div class="line">  object3 = object1;</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(object1-&gt;equals(*object3));</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(*object1 == *object3);</div>
-<div class="line">}</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// This code produces the following output :</span></div>
-<div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// false</span></div>
-<div class="line"><span class="comment">// false</span></div>
-<div class="line"><span class="comment">// true</span></div>
-<div class="line"><span class="comment">// true</span></div>
-<div class="ttc" id="aclassxtd_1_1console_html_ae600c08b996905be13225bba0f253a63"><div class="ttname"><a href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">xtd::console::write_line</a></div><div class="ttdeci">static auto write_line() -&gt; void</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
-<div class="ttc" id="agroup__xtd__core_html_ga90ae49206646bf4444fa4f2e57990d08"><div class="ttname"><a href="group__xtd__core.html#ga90ae49206646bf4444fa4f2e57990d08">xtd::new_ptr</a></div><div class="ttdeci">auto new_ptr(args_t &amp;&amp;... args) -&gt; xtd::ptr&lt; type_t &gt;</div><div class="ttdoc">The xtd::new_ptr operator creates a xtd::ptr object.</div><div class="ttdef"><b>Definition</b> new_ptr.hpp:24</div></div>
-</div><!-- fragment --> </dd></dl>
 
 <p>Reimplemented from <a class="el" href="classxtd_1_1object.html#a7d6bef3a3d8b4d071c801e9f74c2f6b2">xtd::object</a>.</p>
 
@@ -509,6 +473,44 @@ Additional Inherited Members</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span> if the current object is equal to the other parameter; otherwise, <span class="tt">false</span>. </dd></dl>
 
 <p>Implements <a class="el" href="classxtd_1_1iequatable.html#a3384503ae1dcbd8796549e4c04cbf1d9">xtd::iequatable&lt; range &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a71b81cb07ffbd2508137dc2351de463a" name="a71b81cb07ffbd2508137dc2351de463a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71b81cb07ffbd2508137dc2351de463a">&#9670;&#160;</a></span>get_offset_and_length()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto xtd::range::get_offset_and_length </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a7207b9661491fd28d059071ff2b3afc7">size_type</a></td>          <td class="paramname"><span class="paramname"><em>length</em></span></td><td>)</td>
+          <td> const -&gt; <a class="el" href="structxtd_1_1range_1_1offset__and__length.html">offset_and_length</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Calculates the start offset and length of the range object using a collection length. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lengh</td><td>A positive integer that represents the length of the collection that the range will be used with. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The start offset and length of the range. </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><span class="keyword">auto</span> [<a class="code hl_function" href="#a33c5b98b52350c7adecc95435fd77e6e">start</a>, <a class="code hl_function" href="namespacextd.html#a84689e2cdf94d64f7e5f33fe4a1be71a">length</a>] = items_range.get_offset_and_length(items.size());</div>
+<div class="ttc" id="aclassxtd_1_1range_html_a33c5b98b52350c7adecc95435fd77e6e"><div class="ttname"><a href="#a33c5b98b52350c7adecc95435fd77e6e">xtd::range::start</a></div><div class="ttdeci">constexpr auto start() const noexcept -&gt; const index_type &amp;</div><div class="ttdoc">Gets the inclusive start index of the Range.</div><div class="ttdef"><b>Definition</b> range.hpp:83</div></div>
+<div class="ttc" id="anamespacextd_html_a84689e2cdf94d64f7e5f33fe4a1be71a"><div class="ttname"><a href="namespacextd.html#a84689e2cdf94d64f7e5f33fe4a1be71a">xtd::length</a></div><div class="ttdeci">constexpr auto length() const noexcept -&gt; size_type</div><div class="ttdoc">Returns the length of the current read_only_span.</div><div class="ttdef"><b>Definition</b> read_only_span.hpp:209</div></div>
+</div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
@@ -572,8 +574,70 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a id="a942830a1239e7ed3634776325e28dbdc" name="a942830a1239e7ed3634776325e28dbdc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a942830a1239e7ed3634776325e28dbdc">&#9670;&#160;</a></span>all()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto xtd::range::all </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> -&gt; <a class="el" href="classxtd_1_1range.html">xtd::range</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets a <a class="el" href="classxtd_1_1range.html" title="Represents a range that has start and end indexes.">xtd::range</a> object that starts from the first element to the end. </p>
+<dl class="section return"><dt>Returns</dt><dd>A range from the start to the end. </dd></dl>
+
+</div>
+</div>
+<a id="a19a49e7a9d6db853f38f6a320bc2c4f0" name="a19a49e7a9d6db853f38f6a320bc2c4f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19a49e7a9d6db853f38f6a320bc2c4f0">&#9670;&#160;</a></span>end_at() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto xtd::range::end_at </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a28aa7cd6a7464f45b4fe1fb948098f15">index_type</a></td>          <td class="paramname"><span class="paramname"><em>end</em></span></td><td>)</td>
+          <td> -&gt; <a class="el" href="classxtd_1_1range.html">xtd::range</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a <a class="el" href="classxtd_1_1range.html" title="Represents a range that has start and end indexes.">xtd::range</a> object starting from the first element in the collection to a specified end index. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">end</td><td>The position of the last element up to which the Range object will be created. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A range that starts from the first element to end. </dd></dl>
+
+</div>
+</div>
 <a id="a3b263666b2149064725d508f680da2a1" name="a3b263666b2149064725d508f680da2a1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3b263666b2149064725d508f680da2a1">&#9670;&#160;</a></span>end_at()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b263666b2149064725d508f680da2a1">&#9670;&#160;</a></span>end_at() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">

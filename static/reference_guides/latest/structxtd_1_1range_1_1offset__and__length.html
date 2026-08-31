@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 		<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-		<title>xtd: xtd.core/include/xtd/range.hpp File Reference</title>
+		<title>xtd: xtd::range::offset_and_length Struct Reference</title>
     <link href="favicon.png" rel="shortcut icon" type="image/png"/>
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
@@ -102,45 +102,68 @@ document.addEventListener('DOMContentLoaded', () => {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>xtd.core</b></li><li class="navelem"><b>include</b></li><li class="navelem"><b>xtd</b></li>  </ul>
+<li class="navelem"><a href="namespacextd.html">xtd</a></li><li class="navelem"><a href="classxtd_1_1range.html">range</a></li><li class="navelem"><a href="structxtd_1_1range_1_1offset__and__length.html">offset_and_length</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a>  </div>
-  <div class="headertitle"><div class="title">range.hpp File Reference</div></div>
+<a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="structxtd_1_1range_1_1offset__and__length-members.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">xtd::range::offset_and_length Struct Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="throw__helper_8hpp_source.html">helpers/throw_helper.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="basic__string__view_8hpp_source.html">basic_string_view.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="index_8hpp_source.html">index.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="object_8hpp_source.html">object.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="usize_8hpp_source.html">usize.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="usize__object_8hpp_source.html">usize_object.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="npos_8hpp_source.html">npos.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="linq_2enumerable_8hpp_source.html">linq/enumerable.hpp</a>&quot;</code><br />
-<code>#include &lt;vector&gt;</code><br />
-<code>#include &quot;<a class="el" href="literals_2range_8hpp_source.html">literals/range.hpp</a>&quot;</code><br />
-</div><a name="details" id="details"></a><h2 id="header-details" class="groupheader">Definition</h2>
-<div class="textblock"><p>Contains <a class="el" href="classxtd_1_1range.html" title="Represents a range that has start and end indexes.">xtd::range</a> class. </p>
-<dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2026 Gammasoft. All rights reserved. </dd></dl>
-</div>
-<p><a href="range_8hpp_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:xtd_3A_3Arange" id="r_xtd_3A_3Arange"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1range.html">xtd::range</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a range that has start and end indexes.  <a href="classxtd_1_1range.html#details">More...</a><br /></td></tr>
-<tr class="memitem:xtd_3A_3Arange_3A_3Aoffset_5Fand_5Flength" id="r_xtd_3A_3Arange_3A_3Aoffset_5Fand_5Flength"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structxtd_1_1range_1_1offset__and__length.html">xtd::range::offset_and_length</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a offset and length.  <a href="structxtd_1_1range_1_1offset__and__length.html#details">More...</a><br /></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
-Namespaces</h2></td></tr>
-<tr class="memitem:xtd" id="r_xtd"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="namespacextd.html">xtd</a></td></tr>
-<tr class="memdesc:namespacextd"><td class="mdescLeft">&#160;</td><td class="mdescRight">The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more. <br /></td></tr>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Definition</h2>
+<div class="textblock"><p>Represents a offset and length. </p>
+<dl class="section remark"><dt>Remarks</dt><dd>Used by <a class="el" href="classxtd_1_1range.html#a71b81cb07ffbd2508137dc2351de463a" title="Calculates the start offset and length of the range object using a collection length.">xtd::range::get_offset_and_length</a> method. </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><span class="keyword">auto</span> [<a class="code hl_variable" href="#a8e3a00ee462378724971cbc0c792478f">start</a>, <a class="code hl_variable" href="#a5ef13df341d6c4ef4199c3f7b4d60d7a">length</a>] = items_range.get_offset_and_length(items.size());</div>
+<div class="ttc" id="astructxtd_1_1range_1_1offset__and__length_html_a5ef13df341d6c4ef4199c3f7b4d60d7a"><div class="ttname"><a href="#a5ef13df341d6c4ef4199c3f7b4d60d7a">xtd::range::offset_and_length::length</a></div><div class="ttdeci">size_type length</div><div class="ttdoc">Represents a length.</div><div class="ttdef"><b>Definition</b> range.hpp:56</div></div>
+<div class="ttc" id="astructxtd_1_1range_1_1offset__and__length_html_a8e3a00ee462378724971cbc0c792478f"><div class="ttname"><a href="#a8e3a00ee462378724971cbc0c792478f">xtd::range::offset_and_length::start</a></div><div class="ttdeci">size_type start</div><div class="ttdoc">Represents a offset.</div><div class="ttdef"><b>Definition</b> range.hpp:54</div></div>
+</div><!-- fragment --> </dd></dl>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a8e3a00ee462378724971cbc0c792478f" id="r_a8e3a00ee462378724971cbc0c792478f"><td class="memItemLeft"><a class="el" href="classxtd_1_1range.html#a7207b9661491fd28d059071ff2b3afc7">size_type</a>&#160;</td><td class="memItemRight"><a class="el" href="#a8e3a00ee462378724971cbc0c792478f">start</a></td></tr>
+<tr class="memdesc:a8e3a00ee462378724971cbc0c792478f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a offset.  <br /></td></tr>
+<tr class="memitem:a5ef13df341d6c4ef4199c3f7b4d60d7a" id="r_a5ef13df341d6c4ef4199c3f7b4d60d7a"><td class="memItemLeft"><a class="el" href="classxtd_1_1range.html#a7207b9661491fd28d059071ff2b3afc7">size_type</a>&#160;</td><td class="memItemRight"><a class="el" href="#a5ef13df341d6c4ef4199c3f7b4d60d7a">length</a></td></tr>
+<tr class="memdesc:a5ef13df341d6c4ef4199c3f7b4d60d7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a length.  <br /></td></tr>
 </table>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
+<a id="a8e3a00ee462378724971cbc0c792478f" name="a8e3a00ee462378724971cbc0c792478f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e3a00ee462378724971cbc0c792478f">&#9670;&#160;</a></span>start</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1range.html#a7207b9661491fd28d059071ff2b3afc7">size_type</a> xtd::range::offset_and_length::start</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Represents a offset. </p>
+
+</div>
+</div>
+<a id="a5ef13df341d6c4ef4199c3f7b4d60d7a" name="a5ef13df341d6c4ef4199c3f7b4d60d7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ef13df341d6c4ef4199c3f7b4d60d7a">&#9670;&#160;</a></span>length</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1range.html#a7207b9661491fd28d059071ff2b3afc7">size_type</a> xtd::range::offset_and_length::length</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Represents a length. </p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
+<li>xtd.core/include/xtd/<a class="el" href="range_8hpp_source.html">range.hpp</a></li>
+</ul>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
