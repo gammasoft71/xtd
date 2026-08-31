@@ -164,9 +164,7 @@ namespace xtd {
     /// @exception xtd::argument_out_of_range_exception if range.start or range.start + range.end - range.start are greater than items size.
     template<typename collection_t>
     constexpr read_only_span(const collection_t& items, const xtd::range& range) {
-      auto start = range.start().get_offset(items.size());
-      auto length = range.end().get_offset(items.size()) - start;
-      if (start + length > items.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+      auto [start, length] = range.get_offset_and_length(items.size());
       data_ = items.data() + start;
       length_ = extent != dynamic_extent ? extent : length;
     }
