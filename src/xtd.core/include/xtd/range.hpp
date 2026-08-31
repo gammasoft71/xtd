@@ -2,6 +2,7 @@
 /// @brief Contains xtd::range class.
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
+#include "helpers/throw_helper.hpp"
 #include "basic_string_view.hpp"
 #include "index.hpp"
 #include "index.hpp"
@@ -106,6 +107,15 @@ namespace xtd {
     /// @return A range that starts from the first element to end.
     [[nodiscard]] static auto end_at(xtd::integer auto end) noexcept -> xtd::range {return range {xtd::index::start, xtd::index {end}};}
 
+    /// @brief Converts the string to xtd::range equivalent.
+    /// @param value A string containing a xtd::index to convert.
+    /// @return A xtd::range equivalent to the native value contained in value.
+    [[nodiscard]] static auto parse(const xtd::string& value) -> xtd::range {
+      auto result = range {};
+      if (!try_parse(value, result)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+      return result;
+    }
+
     /// @brief Creates a new xtd::range object starting from a specified start index to the end of the collection.
     /// @param start The position of the first element from which the Range will be created.
     /// @return A range from start to the end of the collection.
@@ -114,6 +124,18 @@ namespace xtd {
     /// @param start The position of the first element from which the Range will be created.
     /// @return A range from start to the end of the collection.
     [[nodiscard]] static auto start_at(xtd::integer auto start) noexcept -> xtd::range {return range {xtd::index {start}, xtd::index::end};}
+    
+    /// @brief Converts the string to xtd::range equivalent. A return value indicates whether the conversion succeeded or failed.
+    /// @param value A string containing a xtd::range to convert.
+    /// @param result A xtd::range equivalent to the native value contained in value.
+    /// @return `true` if s was converted successfully; otherwise, `false`.
+    [[nodiscard]] static auto try_parse(const xtd::string& value, xtd::range& result) noexcept -> bool {
+      auto indexes = value.split('.');
+      if (indexes.length() != 3 && !xtd::string::is_empty(indexes[1])) return false;
+      if (!xtd::index::try_parse(indexes[0], result.start_)) return false;
+      if (!xtd::index::try_parse(indexes[2], result.end_)) return false;
+      return true;
+    }
     /// @}
   
   private:
@@ -121,6 +143,8 @@ namespace xtd {
     index_type end_ = index_type {0};
   };
 }
+
+#include "literals/range.hpp"
 
 /// @cond
 template<typename char_t, typename traits_t, typename allocator_t>
