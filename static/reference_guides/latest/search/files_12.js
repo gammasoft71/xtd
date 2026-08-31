@@ -6,7 +6,7 @@ var searchData=
   ['radio_5fbutton_5fstate_2ehpp_3',['radio_button_state.hpp',['../radio__button__state_8hpp.html',1,'']]],
   ['radio_5fbuttons_2ehpp_4',['radio_buttons.hpp',['../radio__buttons_8hpp.html',1,'']]],
   ['random_2ehpp_5',['random.hpp',['../random_8hpp.html',1,'']]],
-  ['range_2ehpp_6',['range.hpp',['../range_8hpp.html',1,'(Global Namespace)'],['../ranges_2views_2range_8hpp.html',1,'(Global Namespace)']]],
+  ['range_2ehpp_6',['range.hpp',['../literals_2range_8hpp.html',1,'(Global Namespace)'],['../range_8hpp.html',1,'(Global Namespace)'],['../ranges_2views_2range_8hpp.html',1,'(Global Namespace)']]],
   ['range_5fview_5fadapter_2ehpp_7',['range_view_adapter.hpp',['../range__view__adapter_8hpp.html',1,'']]],
   ['rank_5fexception_2ehpp_8',['rank_exception.hpp',['../rank__exception_8hpp.html',1,'']]],
   ['raw_5farray_2ehpp_9',['raw_array.hpp',['../raw__array_8hpp.html',1,'']]],
