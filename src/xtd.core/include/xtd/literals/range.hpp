@@ -8,7 +8,7 @@
 namespace xtd {
   /// @brief The xtd::literals namespace contains all xtd's litterals operators.
   inline namespace literals {
-    /// @name Index suffixes
+    /// @name Range suffixes
     
     /// @{
     /// @brief Used to convert specified value into xtd::range.
