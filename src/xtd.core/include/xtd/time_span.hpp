@@ -335,13 +335,6 @@ namespace xtd {
     /// @exception xtd::overflow_exception The negated value of this instance cannot be represented by a xtd::time_spam; that is, the value of this instance is xtd::time_spam::min_value.
     [[nodiscard]] auto negate() const -> time_span;
     
-    /// @brief Converts the string representation of a time interval to its xtd::time_span equivalent.
-    /// @param value A string that specifies the time interval to convert.
-    /// @return A time interval that corresponds to value.
-    /// @exception xtd::format_exception value has an invalid format.
-    /// @exception value represents a number that is less than xtd::time_span::min_value or greater than xtd::time_span::max_value.<br>-or-<br>At least one of the days, hours, minutes, or seconds components is outside its valid range.
-    static auto parse(const string& value) -> time_span;
-    
     /// @brief Returns a new xtd::time_span object whose value is the difference between the specified xtd::time_span object and this instance.
     /// @param ts The time interval to be subtracted.
     /// @return A new time interval whose value is the result of the value of this instance minus the value of ts.
@@ -533,6 +526,13 @@ namespace xtd {
     /// @return An object that represents value.
     /// @remarks This is a convenience method with the same behavior as the xtd::time_spam.xtd::time_spam (int64) constructor. A single tick represents one hundred nanoseconds or one ten-millionth of a second. There are 10,000 ticks in a millisecond.
     [[nodiscard]] static auto from_ticks(xtd::ticks value) -> time_span;
+    
+    /// @brief Converts the string representation of a time interval to its xtd::time_span equivalent.
+    /// @param value A string that specifies the time interval to convert.
+    /// @return A time interval that corresponds to value.
+    /// @exception xtd::format_exception value has an invalid format.
+    /// @exception value represents a number that is less than xtd::time_span::min_value or greater than xtd::time_span::max_value.<br>-or-<br>At least one of the days, hours, minutes, or seconds components is outside its valid range.
+    static auto parse(const string& value) -> time_span;
     
     /// @brief Converts the string representation of a time interval to its xtd::time_span equivalent and returns a value that indicates whether the conversion succeeded.
     /// @param value A string that specifies the time interval to convert.
