@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::usize suffixes.
+/// @brief Contains xtd::index suffixes.
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "../index.hpp"
@@ -52,10 +52,10 @@ namespace xtd {
     /// @par Examples
     /// ```cpp
     /// auto items = array {1, 2, 3, 4, 5};
-    /// println("items["0"_i] = {}", items[0_i]); // 1
-    /// println("items["2"_i] = {}", items[2_i]); // 3
-    /// println("items["~1"_i] = {}", items[~1_i]); // 5
-    /// println("items["~3"_i] = {}", items[~3_i]); // 3
+    /// println("items[\"0\"_i] = {}", items["0"_i]); // 1
+    /// println("items[\"2\"_i] = {}", items["2"_i]); // 3
+    /// println("items[\"~1\"_i] = {}", items["~1"_i]); // 5
+    /// println("items[\"~3\"_i] = {}", items["~3"_i]); // 3
     /// ```
     [[nodiscard]] auto operator""_i(const char* s, xtd::usize n) -> xtd::index;
     
@@ -68,10 +68,10 @@ namespace xtd {
     /// @par Examples
     /// ```cpp
     /// auto items = array {1, 2, 3, 4, 5};
-    /// println("items[u8"0"_i] = {}", items[0_i]); // 1
-    /// println("items[u8"2"_i] = {}", items[2_i]); // 3
-    /// println("items[u8"~1"_i] = {}", items[~1_i]); // 5
-    /// println("items[u8"~3"_i] = {}", items[~3_i]); // 3
+    /// println("items[u8\"0\"_i] = {}", items[u8"0"_i]); // 1
+    /// println("items[u8\"2\"_i] = {}", items[u8"2"_i]); // 3
+    /// println("items[u8\"~1\"_i] = {}", items[u8"~1"_i]); // 5
+    /// println("items[u8\"~3\"_i] = {}", items[u8"~3"_i]); // 3
     /// ```
     [[nodiscard]] auto operator""_i(const char8_t* s, xtd::usize n) -> xtd::index;
     
@@ -84,10 +84,10 @@ namespace xtd {
     /// @par Examples
     /// ```cpp
     /// auto items = array {1, 2, 3, 4, 5};
-    /// println("items[u"0"_i] = {}", items[0_i]); // 1
-    /// println("items[u"2"_i] = {}", items[2_i]); // 3
-    /// println("items[u"~1"_i] = {}", items[~1_i]); // 5
-    /// println("items[u"~3"_i] = {}", items[~3_i]); // 3
+    /// println("items[u\"0\"_i] = {}", items[u"0"_i]); // 1
+    /// println("items[u\"2\"_i] = {}", items[u"2"_i]); // 3
+    /// println("items[u\"~1\"_i] = {}", items[u"~1"_i]); // 5
+    /// println("items[u\"~3\"_i] = {}", items[u"~3"_i]); // 3
     /// ```
     [[nodiscard]] auto operator""_i(const char16_t* s, xtd::usize n) -> xtd::index;
     
@@ -100,10 +100,10 @@ namespace xtd {
     /// @par Examples
     /// ```cpp
     /// auto items = array {1, 2, 3, 4, 5};
-    /// println("items[U"0"_i] = {}", items[0_i]); // 1
-    /// println("items[U"2"_i] = {}", items[2_i]); // 3
-    /// println("items[U"~1"_i] = {}", items[~1_i]); // 5
-    /// println("items[U"~3"_i] = {}", items[~3_i]); // 3
+    /// println("items[U\"0\"_i] = {}", items[U"0"_i]); // 1
+    /// println("items[U\"2\"_i] = {}", items[U"2"_i]); // 3
+    /// println("items[U\"~1\"_i] = {}", items[U"~1"_i]); // 5
+    /// println("items[U\"~3\"_i] = {}", items[U"~3"_i]); // 3
     /// ```
     [[nodiscard]] auto operator""_i(const char32_t* s, xtd::usize n) -> xtd::index;
     
@@ -116,10 +116,10 @@ namespace xtd {
     /// @par Examples
     /// ```cpp
     /// auto items = array {1, 2, 3, 4, 5};
-    /// println("items[L"0"_i] = {}", items[0_i]); // 1
-    /// println("items[L"2"_i] = {}", items[2_i]); // 3
-    /// println("items[L"~1"_i] = {}", items[~1_i]); // 5
-    /// println("items[L"~3"_i] = {}", items[~3_i]); // 3
+    /// println("items[L\"0\"_i] = {}", items[L"0"_i]); // 1
+    /// println("items[L\"2\"_i] = {}", items[L"2"_i]); // 3
+    /// println("items[L\"~1\"_i] = {}", items[L"~1"_i]); // 5
+    /// println("items[L\"~3\"_i] = {}", items[L"~3"_i]); // 3
     /// ```
     [[nodiscard]] auto operator""_i(const wchar_t* s, xtd::usize n) -> xtd::index;
     /// @}
