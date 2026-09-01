@@ -27,13 +27,13 @@ auto main() -> int {
   auto items = persona_collection {{.name = "Oliver Queen", .age = 24}, {.name = "Laurel Lance", .age = 23}, {.name = "John \"Dig\" Diggle", .age = 27}, {.name = "Thea Queen", .age = 20}, {.name = "Felicity Smoak", .age = 22}};
   
   println("items = {}", items);
+  
   println();
   println("items[0_i] = {}", items[0_i]);
   println("items[2] = {}", items[2]);
   println("items[~1_i] = {}", items[~1_i]);
   
   println();
-
   println("items[1_i] = {}", items[1_i]);
   items[1_i].age = 24;
   println("items[1_i] (updated) = {}", items[1_i]);
