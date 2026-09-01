@@ -293,6 +293,7 @@
 * [index](indexes/index/README.md) shows how to use [xtd::index](https://gammasoft71.github.io/xtd/reference_guides/latest/structxtd_1_1index.html) struct.
 * [index_literal](indexes/index_literal/README.md) shows how to use how to use [xtd:index](https://gammasoft71.github.io/xtd/reference_guides/latest/structxtd_1_1index.html) struct.
 * [range](indexes/range/README.md) shows how to use how to use [xtd:range](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1range.html) struct.
+* [range_literal](indexes/range_literal/README.md) shows how to use how to use [xtd:range](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1range.html) struct.
 
 ## [Interfaces](interfaces/README.md)
 

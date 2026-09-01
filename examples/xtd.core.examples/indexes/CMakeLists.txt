@@ -7,5 +7,6 @@ add_projects(
   index
   index_literal
   range
+  range_literal
 )
 
