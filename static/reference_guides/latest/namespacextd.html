@@ -444,6 +444,7 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a range that has start and end indexes.  <a href="classxtd_1_1range.html#details">More...</a><br /></td></tr>
 <tr class="memitem:rank_5Fexception" id="r_rank_5Fexception"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1rank__exception.html">rank_exception</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The exception that is thrown when an array with the wrong number of dimensions is passed to a method.  <a href="classxtd_1_1rank__exception.html#details">More...</a><br /></td></tr>
+<tr class="memitem:read_5Fonly_5Fspan" id="r_read_5Fonly_5Fspan"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a></td></tr>
 <tr class="memitem:real" id="r_real"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structxtd_1_1real.html">real</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the real concept.  <a href="structxtd_1_1real.html#details">More...</a><br /></td></tr>
 <tr class="memitem:real_5Fdecimal" id="r_real_5Fdecimal"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structxtd_1_1real__decimal.html">real_decimal</a></td></tr>
@@ -5549,42 +5550,43 @@ Boxed types</h2></td></tr>
 Public Aliases</h2></td></tr>
 <tr><td class="ititle" colspan="2"><p>Represents a non-owning view over a contiguous sequence of objects.</p>
 <dl class="section user"><dt>Definition</dt><dd><div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> type_t, xtd::usize extent = dynamic_extent&gt;</div>
-<div class="line"><span class="keyword">class </span><a class="code hl_function" href="#ab93f2ac54f69b5d8e044046a30cc80ec">read_only_span</a> : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1object.html">xtd::object</a>, <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1iequatable.html">xtd::iequatable</a>&lt;xtd::read_only_span&lt;type_t, extent&gt;&gt;;</div>
+<div class="line"><span class="keyword">class </span><a class="code hl_class" href="classxtd_1_1read__only__span.html">read_only_span</a> : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1object.html">xtd::object</a>, <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1iequatable.html">xtd::iequatable</a>&lt;xtd::read_only_span&lt;type_t, extent&gt;&gt;;</div>
 <div class="ttc" id="aclassxtd_1_1iequatable_html"><div class="ttname"><a href="classxtd_1_1iequatable.html">xtd::iequatable</a></div><div class="ttdoc">Defines a generalized method that a value type or class implements to create a type-specific method f...</div><div class="ttdef"><b>Definition</b> iequatable.hpp:23</div></div>
 <div class="ttc" id="aclassxtd_1_1object_html"><div class="ttname"><a href="classxtd_1_1object.html">xtd::object</a></div><div class="ttdoc">Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....</div><div class="ttdef"><b>Definition</b> object.hpp:40</div></div>
-<div class="ttc" id="anamespacextd_html_ab93f2ac54f69b5d8e044046a30cc80ec"><div class="ttname"><a href="#ab93f2ac54f69b5d8e044046a30cc80ec">xtd::read_only_span</a></div><div class="ttdeci">constexpr read_only_span()</div><div class="ttdoc">Creates an empty xtd::read_only_span whose xtd::read_only_span::data is null and xtd::read_only_span:...</div><div class="ttdef"><b>Definition</b> read_only_span.hpp:83</div></div>
+<div class="ttc" id="aclassxtd_1_1read__only__span_html"><div class="ttname"><a href="classxtd_1_1read__only__span.html">xtd::read_only_span</a></div><div class="ttdef"><b>Definition</b> __span_definitions.hpp:16</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/read_only_span&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The class template <a class="el" href="#ab93f2ac54f69b5d8e044046a30cc80ec" title="Creates an empty xtd::read_only_span whose xtd::read_only_span::data is null and xtd::read_only_span:...">xtd::read_only_span</a> describes an object that can refer to a contiguous sequence of objects with the first element of the sequence at position zero. A read_only_span can either have a static extent, in which case the number of elements in the sequence is known at compile-time and encoded in the type, or a dynamic extent. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>The class template <a class="el" href="classxtd_1_1read__only__span.html">xtd::read_only_span</a> describes an object that can refer to a contiguous sequence of objects with the first element of the sequence at position zero. A <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a> can either have a static extent, in which case the number of elements in the sequence is known at compile-time and encoded in the type, or a dynamic extent. </dd>
 <dd>
-The referenced data can't be modified through a <a class="el" href="#ab93f2ac54f69b5d8e044046a30cc80ec" title="Creates an empty xtd::read_only_span whose xtd::read_only_span::data is null and xtd::read_only_span:...">xtd::read_only_span</a> object. To prevent this, use a xtd::only_span`: <div class="fragment"><div class="line"><span class="keywordtype">int</span> numbers[] = {0, 1, 2};</div>
+The referenced data can't be modified through a <a class="el" href="classxtd_1_1read__only__span.html">xtd::read_only_span</a> object. To prevent this, use a xtd::only_span`: <div class="fragment"><div class="line"><span class="keywordtype">int</span> numbers[] = {0, 1, 2};</div>
 <div class="line"><a class="code hl_function" href="#ab93f2ac54f69b5d8e044046a30cc80ec">read_only_span&lt;int&gt;</a> read_only_span_numbers = numbers;</div>
 <div class="line">read_only_span_numbers[0] = 42; <span class="comment">// ERROR: read_only_span_numbers[0] is read-only</span></div>
 <div class="line">span&lt;int&gt; span_numbers = numbers;</div>
 <div class="line">span_numbers[0] = 42; <span class="comment">// numbers == {42, 1, 2};</span></div>
-</div><!-- fragment --> template&lt;typename type_t, xtd::usize extent&gt; */ class read_only_span : public <a class="el" href="classxtd_1_1object.html" title="Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....">xtd::object</a>, public <a class="el" href="classxtd_1_1iequatable.html" title="Defines a generalized method that a value type or class implements to create a type-specific method f...">xtd::iequatable&lt;xtd::read_only_span&lt;type_t, extent&gt;&gt;</a>, public <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable&lt;type_t&gt;</a> { public: /</dd></dl>
+<div class="ttc" id="anamespacextd_html_ab93f2ac54f69b5d8e044046a30cc80ec"><div class="ttname"><a href="#ab93f2ac54f69b5d8e044046a30cc80ec">xtd::read_only_span</a></div><div class="ttdeci">constexpr read_only_span()</div><div class="ttdoc">Creates an empty xtd::read_only_span whose xtd::read_only_span::data is null and xtd::read_only_span:...</div><div class="ttdef"><b>Definition</b> read_only_span.hpp:83</div></div>
+</div><!-- fragment --> template&lt;typename type_t, xtd::usize extent&gt; */ class <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a> : public <a class="el" href="classxtd_1_1object.html" title="Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....">xtd::object</a>, public <a class="el" href="classxtd_1_1iequatable.html" title="Defines a generalized method that a value type or class implements to create a type-specific method f...">xtd::iequatable&lt;xtd::read_only_span&lt;type_t, extent&gt;&gt;</a>, public <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable&lt;type_t&gt;</a> { public: /</dd></dl>
 <p>/**</p>
-<p>Represents the read_only_span element type. </p>
+<p>Represents the <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a> element type. </p>
 </td></tr>
 <tr class="memitem:a3d9b3a0f14556c35727c44258c4aead9" id="r_a3d9b3a0f14556c35727c44258c4aead9"><td class="memItemLeft"><a id="a3d9b3a0f14556c35727c44258c4aead9" name="a3d9b3a0f14556c35727c44258c4aead9"></a>
 using&#160;</td><td class="memItemRight"><b>element_type</b></td></tr>
 <tr class="memitem:a58d7e8aa2c6e6208036918e4c636b777" id="r_a58d7e8aa2c6e6208036918e4c636b777"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a58d7e8aa2c6e6208036918e4c636b777">value_type</a></td></tr>
-<tr class="memdesc:a58d7e8aa2c6e6208036918e4c636b777"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the read_only_span value type.  <br /></td></tr>
+<tr class="memdesc:a58d7e8aa2c6e6208036918e4c636b777"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a> value type.  <br /></td></tr>
 <tr class="memitem:a4fbd51535a62417407b70c3b12dac95a" id="r_a4fbd51535a62417407b70c3b12dac95a"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a4fbd51535a62417407b70c3b12dac95a">size_type</a></td></tr>
-<tr class="memdesc:a4fbd51535a62417407b70c3b12dac95a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the read_only_span size type (usually <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525" title="Represents an unsigned size of any object in bytes.">xtd::usize</a>).  <br /></td></tr>
+<tr class="memdesc:a4fbd51535a62417407b70c3b12dac95a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a> size type (usually <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525" title="Represents an unsigned size of any object in bytes.">xtd::usize</a>).  <br /></td></tr>
 <tr class="memitem:abd3a14cfa4ecfd55503d9c6301c03d9f" id="r_abd3a14cfa4ecfd55503d9c6301c03d9f"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#abd3a14cfa4ecfd55503d9c6301c03d9f">difference_type</a></td></tr>
-<tr class="memdesc:abd3a14cfa4ecfd55503d9c6301c03d9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the read_only_span difference type (usually <a class="el" href="group__types.html#gae3c4f13b0aabf2474d7c5b2e36aad317" title="Represent the signed integer type of the result of subtracting two pointers.">xtd::ptrdiff</a>).  <br /></td></tr>
+<tr class="memdesc:abd3a14cfa4ecfd55503d9c6301c03d9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a> difference type (usually <a class="el" href="group__types.html#gae3c4f13b0aabf2474d7c5b2e36aad317" title="Represent the signed integer type of the result of subtracting two pointers.">xtd::ptrdiff</a>).  <br /></td></tr>
 <tr class="memitem:a6a9ce8a3260df068d5839831ac46d248" id="r_a6a9ce8a3260df068d5839831ac46d248"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a6a9ce8a3260df068d5839831ac46d248">pointer</a></td></tr>
-<tr class="memdesc:a6a9ce8a3260df068d5839831ac46d248"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the read_only_span pointer type.  <br /></td></tr>
+<tr class="memdesc:a6a9ce8a3260df068d5839831ac46d248"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a> pointer type.  <br /></td></tr>
 <tr class="memitem:aa0012f39fcfef12d2a4042971e2c9ec1" id="r_aa0012f39fcfef12d2a4042971e2c9ec1"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#aa0012f39fcfef12d2a4042971e2c9ec1">const_pointer</a></td></tr>
-<tr class="memdesc:aa0012f39fcfef12d2a4042971e2c9ec1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the read_only_span const pointer type.  <br /></td></tr>
+<tr class="memdesc:aa0012f39fcfef12d2a4042971e2c9ec1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a> const pointer type.  <br /></td></tr>
 <tr class="memitem:a0c3a2cb83294b1c2c34fadaaffa11934" id="r_a0c3a2cb83294b1c2c34fadaaffa11934"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a0c3a2cb83294b1c2c34fadaaffa11934">reference</a></td></tr>
-<tr class="memdesc:a0c3a2cb83294b1c2c34fadaaffa11934"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the read_only_span reference type.  <br /></td></tr>
+<tr class="memdesc:a0c3a2cb83294b1c2c34fadaaffa11934"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a> reference type.  <br /></td></tr>
 <tr class="memitem:a50675ff766faf27813f2589f9e0b768c" id="r_a50675ff766faf27813f2589f9e0b768c"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a50675ff766faf27813f2589f9e0b768c">const_reference</a></td></tr>
-<tr class="memdesc:a50675ff766faf27813f2589f9e0b768c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the read_only_span const reference type.  <br /></td></tr>
+<tr class="memdesc:a50675ff766faf27813f2589f9e0b768c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a> const reference type.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Variables</h2></td></tr>
@@ -5610,8 +5612,8 @@ template&lt;typename ... args_t&gt; </td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Fields</h2></td></tr>
-<tr class="memitem:a484aad66ac9d90b6cceb14c1ef49323d" id="r_a484aad66ac9d90b6cceb14c1ef49323d"><td class="memItemLeft">static const <a class="el" href="#ab93f2ac54f69b5d8e044046a30cc80ec">read_only_span</a>&#160;</td><td class="memItemRight"><a class="el" href="#a484aad66ac9d90b6cceb14c1ef49323d">empty_read_only_span</a></td></tr>
-<tr class="memdesc:a484aad66ac9d90b6cceb14c1ef49323d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an empty <a class="el" href="#ab93f2ac54f69b5d8e044046a30cc80ec" title="Creates an empty xtd::read_only_span whose xtd::read_only_span::data is null and xtd::read_only_span:...">xtd::read_only_span</a> &lt;type_t&gt; object.  <br /></td></tr>
+<tr class="memitem:a484aad66ac9d90b6cceb14c1ef49323d" id="r_a484aad66ac9d90b6cceb14c1ef49323d"><td class="memItemLeft">static const <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a>&#160;</td><td class="memItemRight"><a class="el" href="#a484aad66ac9d90b6cceb14c1ef49323d">empty_read_only_span</a></td></tr>
+<tr class="memdesc:a484aad66ac9d90b6cceb14c1ef49323d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an empty <a class="el" href="classxtd_1_1read__only__span.html">xtd::read_only_span</a> &lt;type_t&gt; object.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Static Methods</h2></td></tr>
@@ -6135,35 +6137,35 @@ Version suffixes</h2></td></tr>
 Public Constructors</h2></td></tr>
 <tr class="memitem:ab93f2ac54f69b5d8e044046a30cc80ec" id="r_ab93f2ac54f69b5d8e044046a30cc80ec"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> count = 0&gt; </td></tr>
 <tr class="memitem:ab93f2ac54f69b5d8e044046a30cc80ec template"><td class="memItemLeft">constexpr&#160;</td><td class="memItemRight"><a class="el" href="#ab93f2ac54f69b5d8e044046a30cc80ec">read_only_span</a> ()</td></tr>
-<tr class="memdesc:ab93f2ac54f69b5d8e044046a30cc80ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an empty <a class="el" href="#ab93f2ac54f69b5d8e044046a30cc80ec" title="Creates an empty xtd::read_only_span whose xtd::read_only_span::data is null and xtd::read_only_span:...">xtd::read_only_span</a> whose xtd::read_only_span::data is null and xtd::read_only_span::size is 0.  <br /></td></tr>
+<tr class="memdesc:ab93f2ac54f69b5d8e044046a30cc80ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an empty <a class="el" href="classxtd_1_1read__only__span.html">xtd::read_only_span</a> whose xtd::read_only_span::data is null and xtd::read_only_span::size is 0.  <br /></td></tr>
 <tr class="memitem:aa26a64b51c42e70a26cd4079288c7645" id="r_aa26a64b51c42e70a26cd4079288c7645"><td class="memTemplParams" colspan="2">template&lt;typename iterator_t&gt; </td></tr>
 <tr class="memitem:aa26a64b51c42e70a26cd4079288c7645 template"><td class="memItemLeft">constexpr&#160;</td><td class="memItemRight"><a class="el" href="#aa26a64b51c42e70a26cd4079288c7645">read_only_span</a> (iterator_t first, iterator_t last)</td></tr>
-<tr class="memdesc:aa26a64b51c42e70a26cd4079288c7645"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an <a class="el" href="#ab93f2ac54f69b5d8e044046a30cc80ec" title="Creates an empty xtd::read_only_span whose xtd::read_only_span::data is null and xtd::read_only_span:...">xtd::read_only_span</a> with specified iterators.  <br /></td></tr>
+<tr class="memdesc:aa26a64b51c42e70a26cd4079288c7645"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an <a class="el" href="classxtd_1_1read__only__span.html">xtd::read_only_span</a> with specified iterators.  <br /></td></tr>
 <tr class="memitem:a2b676b6a3f84c0e49b13b227f6b9cd25" id="r_a2b676b6a3f84c0e49b13b227f6b9cd25"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> len&gt; </td></tr>
 <tr class="memitem:a2b676b6a3f84c0e49b13b227f6b9cd25 template"><td class="memItemLeft">constexpr&#160;</td><td class="memItemRight"><a class="el" href="#a2b676b6a3f84c0e49b13b227f6b9cd25">read_only_span</a> (const element_type(&amp;array)[len]) noexcept</td></tr>
-<tr class="memdesc:a2b676b6a3f84c0e49b13b227f6b9cd25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an <a class="el" href="#ab93f2ac54f69b5d8e044046a30cc80ec" title="Creates an empty xtd::read_only_span whose xtd::read_only_span::data is null and xtd::read_only_span:...">xtd::read_only_span</a> with specified native array.  <br /></td></tr>
+<tr class="memdesc:a2b676b6a3f84c0e49b13b227f6b9cd25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an <a class="el" href="classxtd_1_1read__only__span.html">xtd::read_only_span</a> with specified native array.  <br /></td></tr>
 <tr class="memitem:a70d23acd4c30756318431157fc1e225e" id="r_a70d23acd4c30756318431157fc1e225e"><td class="memTemplParams" colspan="2">template&lt;typename array_type_t, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> len&gt; </td></tr>
 <tr class="memitem:a70d23acd4c30756318431157fc1e225e template"><td class="memItemLeft">constexpr&#160;</td><td class="memItemRight"><a class="el" href="#a70d23acd4c30756318431157fc1e225e">read_only_span</a> (const std::array&lt; array_type_t, len &gt; &amp;array) noexcept</td></tr>
-<tr class="memdesc:a70d23acd4c30756318431157fc1e225e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an <a class="el" href="#ab93f2ac54f69b5d8e044046a30cc80ec" title="Creates an empty xtd::read_only_span whose xtd::read_only_span::data is null and xtd::read_only_span:...">xtd::read_only_span</a> with specified std::array.  <br /></td></tr>
+<tr class="memdesc:a70d23acd4c30756318431157fc1e225e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an <a class="el" href="classxtd_1_1read__only__span.html">xtd::read_only_span</a> with specified std::array.  <br /></td></tr>
 <tr class="memitem:aa379ad64f7cc08faf8a23ecc029c1c0a" id="r_aa379ad64f7cc08faf8a23ecc029c1c0a"><td class="memTemplParams" colspan="2">template&lt;typename array_type_t&gt; </td></tr>
 <tr class="memitem:aa379ad64f7cc08faf8a23ecc029c1c0a template"><td class="memItemLeft">constexpr&#160;</td><td class="memItemRight"><a class="el" href="#aa379ad64f7cc08faf8a23ecc029c1c0a">read_only_span</a> (const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; array_type_t &gt; &amp;items)</td></tr>
 <tr class="memdesc:aa379ad64f7cc08faf8a23ecc029c1c0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an <a class="el" href="classxtd_1_1span.html" title="Represents a non-owning view over a contiguous sequence of objects.">xtd::span</a> with specified collection and count.  <br /></td></tr>
 <tr class="memitem:a6821b3fcb0a09e2814badada7dd97580" id="r_a6821b3fcb0a09e2814badada7dd97580"><td class="memTemplParams" colspan="2">template&lt;typename range_t&gt; </td></tr>
 <tr class="memitem:a6821b3fcb0a09e2814badada7dd97580 template"><td class="memItemLeft">constexpr&#160;</td><td class="memItemRight"><a class="el" href="#a6821b3fcb0a09e2814badada7dd97580">read_only_span</a> (range_t &amp;&amp;range) noexcept</td></tr>
-<tr class="memdesc:a6821b3fcb0a09e2814badada7dd97580"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an <a class="el" href="#ab93f2ac54f69b5d8e044046a30cc80ec" title="Creates an empty xtd::read_only_span whose xtd::read_only_span::data is null and xtd::read_only_span:...">xtd::read_only_span</a> with specified range.  <br /></td></tr>
+<tr class="memdesc:a6821b3fcb0a09e2814badada7dd97580"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an <a class="el" href="classxtd_1_1read__only__span.html">xtd::read_only_span</a> with specified range.  <br /></td></tr>
 <tr class="memitem:aeb9f97c251ed96bfa9eb7fa678724fda" id="r_aeb9f97c251ed96bfa9eb7fa678724fda"><td class="memItemLeft">constexpr&#160;</td><td class="memItemRight"><a class="el" href="#aeb9f97c251ed96bfa9eb7fa678724fda">read_only_span</a> (std::initializer_list&lt; type_t &gt; items) noexcept</td></tr>
-<tr class="memdesc:aeb9f97c251ed96bfa9eb7fa678724fda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an <a class="el" href="#ab93f2ac54f69b5d8e044046a30cc80ec" title="Creates an empty xtd::read_only_span whose xtd::read_only_span::data is null and xtd::read_only_span:...">xtd::read_only_span</a> with specified initializer list.  <br /></td></tr>
+<tr class="memdesc:aeb9f97c251ed96bfa9eb7fa678724fda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an <a class="el" href="classxtd_1_1read__only__span.html">xtd::read_only_span</a> with specified initializer list.  <br /></td></tr>
 <tr class="memitem:afd689c6899b3e3051fa123e0c104c6fc" id="r_afd689c6899b3e3051fa123e0c104c6fc"><td class="memTemplParams" colspan="2">template&lt;typename collection_t&gt; </td></tr>
 <tr class="memitem:afd689c6899b3e3051fa123e0c104c6fc template"><td class="memItemLeft">constexpr&#160;</td><td class="memItemRight"><a class="el" href="#afd689c6899b3e3051fa123e0c104c6fc">read_only_span</a> (const collection_t &amp;items, <a class="el" href="#a4fbd51535a62417407b70c3b12dac95a">size_type</a> length)</td></tr>
-<tr class="memdesc:afd689c6899b3e3051fa123e0c104c6fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an <a class="el" href="#ab93f2ac54f69b5d8e044046a30cc80ec" title="Creates an empty xtd::read_only_span whose xtd::read_only_span::data is null and xtd::read_only_span:...">xtd::read_only_span</a> with specified collection and count.  <br /></td></tr>
+<tr class="memdesc:afd689c6899b3e3051fa123e0c104c6fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an <a class="el" href="classxtd_1_1read__only__span.html">xtd::read_only_span</a> with specified collection and count.  <br /></td></tr>
 <tr class="memitem:ab4c9dc274590676a91024d9fb356b964" id="r_ab4c9dc274590676a91024d9fb356b964"><td class="memTemplParams" colspan="2">template&lt;typename collection_t&gt; </td></tr>
 <tr class="memitem:ab4c9dc274590676a91024d9fb356b964 template"><td class="memItemLeft">constexpr&#160;</td><td class="memItemRight"><a class="el" href="#ab4c9dc274590676a91024d9fb356b964">read_only_span</a> (const collection_t &amp;items, <a class="el" href="#a4fbd51535a62417407b70c3b12dac95a">size_type</a> start, <a class="el" href="#a4fbd51535a62417407b70c3b12dac95a">size_type</a> length)</td></tr>
-<tr class="memdesc:ab4c9dc274590676a91024d9fb356b964"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an <a class="el" href="#ab93f2ac54f69b5d8e044046a30cc80ec" title="Creates an empty xtd::read_only_span whose xtd::read_only_span::data is null and xtd::read_only_span:...">xtd::read_only_span</a> with specified collection, offest and count.  <br /></td></tr>
+<tr class="memdesc:ab4c9dc274590676a91024d9fb356b964"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an <a class="el" href="classxtd_1_1read__only__span.html">xtd::read_only_span</a> with specified collection, offest and count.  <br /></td></tr>
 <tr class="memitem:ab36e2145886099203146583aba41a30d" id="r_ab36e2145886099203146583aba41a30d"><td class="memItemLeft">constexpr&#160;</td><td class="memItemRight"><a class="el" href="#ab36e2145886099203146583aba41a30d">read_only_span</a> (const type_t *data, <a class="el" href="#a4fbd51535a62417407b70c3b12dac95a">size_type</a> length)</td></tr>
-<tr class="memdesc:ab36e2145886099203146583aba41a30d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an <a class="el" href="#ab93f2ac54f69b5d8e044046a30cc80ec" title="Creates an empty xtd::read_only_span whose xtd::read_only_span::data is null and xtd::read_only_span:...">xtd::read_only_span</a> with specified data pointer and count.  <br /></td></tr>
+<tr class="memdesc:ab36e2145886099203146583aba41a30d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an <a class="el" href="classxtd_1_1read__only__span.html">xtd::read_only_span</a> with specified data pointer and count.  <br /></td></tr>
 <tr class="memitem:a4518c2b280f1b5110736a6c2d1b1c047" id="r_a4518c2b280f1b5110736a6c2d1b1c047"><td class="memTemplParams" colspan="2">template&lt;typename collection_t&gt; </td></tr>
 <tr class="memitem:a4518c2b280f1b5110736a6c2d1b1c047 template"><td class="memItemLeft">constexpr&#160;</td><td class="memItemRight"><a class="el" href="#a4518c2b280f1b5110736a6c2d1b1c047">read_only_span</a> (const collection_t &amp;items, const <a class="el" href="classxtd_1_1range.html">xtd::range</a> &amp;range)</td></tr>
-<tr class="memdesc:a4518c2b280f1b5110736a6c2d1b1c047"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an <a class="el" href="#ab93f2ac54f69b5d8e044046a30cc80ec" title="Creates an empty xtd::read_only_span whose xtd::read_only_span::data is null and xtd::read_only_span:...">xtd::read_only_span</a> with specified collection, and range.  <br /></td></tr>
+<tr class="memdesc:a4518c2b280f1b5110736a6c2d1b1c047"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an <a class="el" href="classxtd_1_1read__only__span.html">xtd::read_only_span</a> with specified collection, and range.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Properties</h2></td></tr>
@@ -6172,11 +6174,11 @@ Public Properties</h2></td></tr>
 <tr class="memitem:a56b8af7b1b3a63e90e33cc756a1c7aff" id="r_a56b8af7b1b3a63e90e33cc756a1c7aff"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#a56b8af7b1b3a63e90e33cc756a1c7aff">data</a> () const noexcept -&gt; <a class="el" href="#aa0012f39fcfef12d2a4042971e2c9ec1">const_pointer</a></td></tr>
 <tr class="memdesc:a56b8af7b1b3a63e90e33cc756a1c7aff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets direct access to the underlying contiguous storage.  <br /></td></tr>
 <tr class="memitem:a5192ddac4dd884c2f0c53417b1528186" id="r_a5192ddac4dd884c2f0c53417b1528186"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#a5192ddac4dd884c2f0c53417b1528186">empty</a> () const noexcept -&gt; bool</td></tr>
-<tr class="memdesc:a5192ddac4dd884c2f0c53417b1528186"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a value that indicates whether the current <a class="el" href="#ab93f2ac54f69b5d8e044046a30cc80ec" title="Creates an empty xtd::read_only_span whose xtd::read_only_span::data is null and xtd::read_only_span:...">xtd::read_only_span</a> &lt;type_t&gt; is empty.  <br /></td></tr>
+<tr class="memdesc:a5192ddac4dd884c2f0c53417b1528186"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a value that indicates whether the current <a class="el" href="classxtd_1_1read__only__span.html">xtd::read_only_span</a> &lt;type_t&gt; is empty.  <br /></td></tr>
 <tr class="memitem:ada049aeac8e4a93e19f1189c6ab50020" id="r_ada049aeac8e4a93e19f1189c6ab50020"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#ada049aeac8e4a93e19f1189c6ab50020">is_empty</a> () const noexcept -&gt; bool</td></tr>
-<tr class="memdesc:ada049aeac8e4a93e19f1189c6ab50020"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a value that indicates whether the current <a class="el" href="#ab93f2ac54f69b5d8e044046a30cc80ec" title="Creates an empty xtd::read_only_span whose xtd::read_only_span::data is null and xtd::read_only_span:...">xtd::read_only_span</a> &lt;type_t&gt; is empty.  <br /></td></tr>
+<tr class="memdesc:ada049aeac8e4a93e19f1189c6ab50020"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a value that indicates whether the current <a class="el" href="classxtd_1_1read__only__span.html">xtd::read_only_span</a> &lt;type_t&gt; is empty.  <br /></td></tr>
 <tr class="memitem:a84689e2cdf94d64f7e5f33fe4a1be71a" id="r_a84689e2cdf94d64f7e5f33fe4a1be71a"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#a84689e2cdf94d64f7e5f33fe4a1be71a">length</a> () const noexcept -&gt; <a class="el" href="#a4fbd51535a62417407b70c3b12dac95a">size_type</a></td></tr>
-<tr class="memdesc:a84689e2cdf94d64f7e5f33fe4a1be71a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the length of the current read_only_span.  <br /></td></tr>
+<tr class="memdesc:a84689e2cdf94d64f7e5f33fe4a1be71a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the length of the current <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a>.  <br /></td></tr>
 <tr class="memitem:ad1e549152bf4d9f98e51b0ea225af532" id="r_ad1e549152bf4d9f98e51b0ea225af532"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#ad1e549152bf4d9f98e51b0ea225af532">size</a> () const noexcept -&gt; <a class="el" href="#a4fbd51535a62417407b70c3b12dac95a">size_type</a></td></tr>
 <tr class="memdesc:ad1e549152bf4d9f98e51b0ea225af532"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of elements.  <br /></td></tr>
 <tr class="memitem:a0e5858df5836cdc2f3c6d9d5fb40dcbe" id="r_a0e5858df5836cdc2f3c6d9d5fb40dcbe"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#a0e5858df5836cdc2f3c6d9d5fb40dcbe">size_bytes</a> () const noexcept -&gt; <a class="el" href="#a4fbd51535a62417407b70c3b12dac95a">size_type</a></td></tr>
@@ -6186,44 +6188,44 @@ Public Properties</h2></td></tr>
 Public Methods</h2></td></tr>
 <tr class="memitem:a8753c19ca69fff04d60fd9dc9cb81b09" id="r_a8753c19ca69fff04d60fd9dc9cb81b09"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> length&gt; </td></tr>
 <tr class="memitem:a8753c19ca69fff04d60fd9dc9cb81b09 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a8753c19ca69fff04d60fd9dc9cb81b09">copy_to</a> (<a class="el" href="classxtd_1_1span.html">span</a>&lt; type_t, <a class="el" href="#a84689e2cdf94d64f7e5f33fe4a1be71a">length</a> &gt; &amp;destination) const -&gt; void</td></tr>
-<tr class="memdesc:a8753c19ca69fff04d60fd9dc9cb81b09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the contents of this <a class="el" href="#ab93f2ac54f69b5d8e044046a30cc80ec" title="Creates an empty xtd::read_only_span whose xtd::read_only_span::data is null and xtd::read_only_span:...">xtd::read_only_span</a> &lt;type_t&gt; into a destination xtd:span &lt;type_t&gt;.  <br /></td></tr>
+<tr class="memdesc:a8753c19ca69fff04d60fd9dc9cb81b09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the contents of this <a class="el" href="classxtd_1_1read__only__span.html">xtd::read_only_span</a> &lt;type_t&gt; into a destination xtd:span &lt;type_t&gt;.  <br /></td></tr>
 <tr class="memitem:a678a2218785aaad9e6c107a34b486369" id="r_a678a2218785aaad9e6c107a34b486369"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a678a2218785aaad9e6c107a34b486369">equals</a> (const <a class="el" href="classxtd_1_1object.html">object</a> &amp;obj) const noexcept -&gt; bool override</td></tr>
 <tr class="memdesc:a678a2218785aaad9e6c107a34b486369"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
-<tr class="memitem:a678bbc93d3c201b941306bc187e7242a" id="r_a678bbc93d3c201b941306bc187e7242a"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a678bbc93d3c201b941306bc187e7242a">equals</a> (const <a class="el" href="#ab93f2ac54f69b5d8e044046a30cc80ec">read_only_span</a> &amp;rhs) const noexcept -&gt; bool override</td></tr>
+<tr class="memitem:a678bbc93d3c201b941306bc187e7242a" id="r_a678bbc93d3c201b941306bc187e7242a"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a678bbc93d3c201b941306bc187e7242a">equals</a> (const <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a> &amp;rhs) const noexcept -&gt; bool override</td></tr>
 <tr class="memdesc:a678bbc93d3c201b941306bc187e7242a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the current object is equal to another object of the same type.  <br /></td></tr>
 <tr class="memitem:a1b3b9846a6a691daf8be0fbbfc746604" id="r_a1b3b9846a6a691daf8be0fbbfc746604"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> count&gt; </td></tr>
-<tr class="memitem:a1b3b9846a6a691daf8be0fbbfc746604 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a1b3b9846a6a691daf8be0fbbfc746604">first</a> () const -&gt; <a class="el" href="#ab93f2ac54f69b5d8e044046a30cc80ec">read_only_span</a>&lt; type_t, count &gt;</td></tr>
+<tr class="memitem:a1b3b9846a6a691daf8be0fbbfc746604 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a1b3b9846a6a691daf8be0fbbfc746604">first</a> () const -&gt; <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a>&lt; type_t, count &gt;</td></tr>
 <tr class="memdesc:a1b3b9846a6a691daf8be0fbbfc746604"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtains a subspan consisting of the first <span class="tt">count</span> elements of the sequence.  <br /></td></tr>
-<tr class="memitem:a1e6c8ecc49e99bb04d01c78178af7030" id="r_a1e6c8ecc49e99bb04d01c78178af7030"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a1e6c8ecc49e99bb04d01c78178af7030">first</a> (<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> count) const -&gt; <a class="el" href="#ab93f2ac54f69b5d8e044046a30cc80ec">read_only_span</a>&lt; type_t &gt;</td></tr>
+<tr class="memitem:a1e6c8ecc49e99bb04d01c78178af7030" id="r_a1e6c8ecc49e99bb04d01c78178af7030"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a1e6c8ecc49e99bb04d01c78178af7030">first</a> (<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> count) const -&gt; <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a>&lt; type_t &gt;</td></tr>
 <tr class="memdesc:a1e6c8ecc49e99bb04d01c78178af7030"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtains a subspan consisting of the first <span class="tt">count</span> elements of the sequence.  <br /></td></tr>
 <tr class="memitem:a38eb02f796240ee86c27904bb8541b38" id="r_a38eb02f796240ee86c27904bb8541b38"><td class="memItemLeft"><a id="a38eb02f796240ee86c27904bb8541b38" name="a38eb02f796240ee86c27904bb8541b38"></a>
 auto&#160;</td><td class="memItemRight"><b>get_enumerator</b> () const -&gt; <a class="el" href="structxtd_1_1collections_1_1generic_1_1enumerator.html">xtd::collections::generic::enumerator</a>&lt; type_t &gt; override</td></tr>
 <tr class="memitem:a85b140865b125bae134ec880895ae74b" id="r_a85b140865b125bae134ec880895ae74b"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a85b140865b125bae134ec880895ae74b">get_hash_code</a> () const noexcept -&gt; <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> override</td></tr>
 <tr class="memdesc:a85b140865b125bae134ec880895ae74b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a particular type.  <br /></td></tr>
 <tr class="memitem:a747e8580aba7505b4a93950c9882ab54" id="r_a747e8580aba7505b4a93950c9882ab54"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> count&gt; </td></tr>
-<tr class="memitem:a747e8580aba7505b4a93950c9882ab54 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a747e8580aba7505b4a93950c9882ab54">last</a> () const -&gt; <a class="el" href="#ab93f2ac54f69b5d8e044046a30cc80ec">read_only_span</a>&lt; type_t, count &gt;</td></tr>
+<tr class="memitem:a747e8580aba7505b4a93950c9882ab54 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a747e8580aba7505b4a93950c9882ab54">last</a> () const -&gt; <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a>&lt; type_t, count &gt;</td></tr>
 <tr class="memdesc:a747e8580aba7505b4a93950c9882ab54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtains a subspan consisting of the last N elements of the sequence.  <br /></td></tr>
-<tr class="memitem:a15507031fb548757e027d7c2e3bc349b" id="r_a15507031fb548757e027d7c2e3bc349b"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a15507031fb548757e027d7c2e3bc349b">last</a> (<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> count) const -&gt; <a class="el" href="#ab93f2ac54f69b5d8e044046a30cc80ec">read_only_span</a>&lt; type_t &gt;</td></tr>
+<tr class="memitem:a15507031fb548757e027d7c2e3bc349b" id="r_a15507031fb548757e027d7c2e3bc349b"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a15507031fb548757e027d7c2e3bc349b">last</a> (<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> count) const -&gt; <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a>&lt; type_t &gt;</td></tr>
 <tr class="memdesc:a15507031fb548757e027d7c2e3bc349b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtains a subspan consisting of the last N elements of the sequence.  <br /></td></tr>
 <tr class="memitem:a829a88c714fa31c28e0dc14e2fdc9ef2" id="r_a829a88c714fa31c28e0dc14e2fdc9ef2"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> start, <a class="el" href="#a4fbd51535a62417407b70c3b12dac95a">size_type</a> lenght = xtd::dynamic_extent&gt; </td></tr>
-<tr class="memitem:a829a88c714fa31c28e0dc14e2fdc9ef2 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a829a88c714fa31c28e0dc14e2fdc9ef2">slice</a> () const -&gt; <a class="el" href="#ab93f2ac54f69b5d8e044046a30cc80ec">read_only_span</a>&lt; type_t &gt;</td></tr>
-<tr class="memdesc:a829a88c714fa31c28e0dc14e2fdc9ef2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forms a slice out of the current read_only_span starting at a specified index for a specified length.  <br /></td></tr>
-<tr class="memitem:a3fbf8717b5538bd594e20d638584fd62" id="r_a3fbf8717b5538bd594e20d638584fd62"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a3fbf8717b5538bd594e20d638584fd62">slice</a> (<a class="el" href="#a4fbd51535a62417407b70c3b12dac95a">size_type</a> start) const -&gt; <a class="el" href="#ab93f2ac54f69b5d8e044046a30cc80ec">read_only_span</a>&lt; type_t &gt;</td></tr>
-<tr class="memdesc:a3fbf8717b5538bd594e20d638584fd62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forms a slice out of the current read_only_span that begins at a specified index.  <br /></td></tr>
-<tr class="memitem:a815d81960bb14aa3cf4ddc0582472ba1" id="r_a815d81960bb14aa3cf4ddc0582472ba1"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a815d81960bb14aa3cf4ddc0582472ba1">slice</a> (<a class="el" href="#a4fbd51535a62417407b70c3b12dac95a">size_type</a> start, <a class="el" href="#a4fbd51535a62417407b70c3b12dac95a">size_type</a> length) const -&gt; <a class="el" href="#ab93f2ac54f69b5d8e044046a30cc80ec">read_only_span</a>&lt; type_t &gt;</td></tr>
-<tr class="memdesc:a815d81960bb14aa3cf4ddc0582472ba1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forms a slice out of the current read_only_span starting at a specified index for a specified length.  <br /></td></tr>
+<tr class="memitem:a829a88c714fa31c28e0dc14e2fdc9ef2 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a829a88c714fa31c28e0dc14e2fdc9ef2">slice</a> () const -&gt; <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a>&lt; type_t &gt;</td></tr>
+<tr class="memdesc:a829a88c714fa31c28e0dc14e2fdc9ef2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forms a slice out of the current <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a> starting at a specified index for a specified length.  <br /></td></tr>
+<tr class="memitem:a3fbf8717b5538bd594e20d638584fd62" id="r_a3fbf8717b5538bd594e20d638584fd62"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a3fbf8717b5538bd594e20d638584fd62">slice</a> (<a class="el" href="#a4fbd51535a62417407b70c3b12dac95a">size_type</a> start) const -&gt; <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a>&lt; type_t &gt;</td></tr>
+<tr class="memdesc:a3fbf8717b5538bd594e20d638584fd62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forms a slice out of the current <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a> that begins at a specified index.  <br /></td></tr>
+<tr class="memitem:a815d81960bb14aa3cf4ddc0582472ba1" id="r_a815d81960bb14aa3cf4ddc0582472ba1"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a815d81960bb14aa3cf4ddc0582472ba1">slice</a> (<a class="el" href="#a4fbd51535a62417407b70c3b12dac95a">size_type</a> start, <a class="el" href="#a4fbd51535a62417407b70c3b12dac95a">size_type</a> length) const -&gt; <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a>&lt; type_t &gt;</td></tr>
+<tr class="memdesc:a815d81960bb14aa3cf4ddc0582472ba1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forms a slice out of the current <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a> starting at a specified index for a specified length.  <br /></td></tr>
 <tr class="memitem:a110c7f581c7fa00d14bd5fa2dd6b57d0" id="r_a110c7f581c7fa00d14bd5fa2dd6b57d0"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> offset, <a class="el" href="#a4fbd51535a62417407b70c3b12dac95a">size_type</a> count = xtd::dynamic_extent&gt; </td></tr>
-<tr class="memitem:a110c7f581c7fa00d14bd5fa2dd6b57d0 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a110c7f581c7fa00d14bd5fa2dd6b57d0">subspan</a> () const -&gt; <a class="el" href="#ab93f2ac54f69b5d8e044046a30cc80ec">read_only_span</a>&lt; type_t &gt;</td></tr>
-<tr class="memdesc:a110c7f581c7fa00d14bd5fa2dd6b57d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forms a subspan of the current read_only_span starting at a specified index for a specified length.  <br /></td></tr>
-<tr class="memitem:ac0824665f818c0cd2fb1514b4acda9d5" id="r_ac0824665f818c0cd2fb1514b4acda9d5"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ac0824665f818c0cd2fb1514b4acda9d5">subspan</a> (<a class="el" href="#a4fbd51535a62417407b70c3b12dac95a">size_type</a> offset, <a class="el" href="#a4fbd51535a62417407b70c3b12dac95a">size_type</a> count=<a class="el" href="group__system.html#ga6cc9b96f50a9cf9c60be64f9b9d19eb4">xtd::dynamic_extent</a>) const -&gt; <a class="el" href="#ab93f2ac54f69b5d8e044046a30cc80ec">read_only_span</a>&lt; type_t &gt;</td></tr>
-<tr class="memdesc:ac0824665f818c0cd2fb1514b4acda9d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forms a subspan of the current read_only_span starting at a specified index for a specified length.  <br /></td></tr>
+<tr class="memitem:a110c7f581c7fa00d14bd5fa2dd6b57d0 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a110c7f581c7fa00d14bd5fa2dd6b57d0">subspan</a> () const -&gt; <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a>&lt; type_t &gt;</td></tr>
+<tr class="memdesc:a110c7f581c7fa00d14bd5fa2dd6b57d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forms a subspan of the current <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a> starting at a specified index for a specified length.  <br /></td></tr>
+<tr class="memitem:ac0824665f818c0cd2fb1514b4acda9d5" id="r_ac0824665f818c0cd2fb1514b4acda9d5"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ac0824665f818c0cd2fb1514b4acda9d5">subspan</a> (<a class="el" href="#a4fbd51535a62417407b70c3b12dac95a">size_type</a> offset, <a class="el" href="#a4fbd51535a62417407b70c3b12dac95a">size_type</a> count=<a class="el" href="group__system.html#ga6cc9b96f50a9cf9c60be64f9b9d19eb4">xtd::dynamic_extent</a>) const -&gt; <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a>&lt; type_t &gt;</td></tr>
+<tr class="memdesc:ac0824665f818c0cd2fb1514b4acda9d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forms a subspan of the current <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a> starting at a specified index for a specified length.  <br /></td></tr>
 <tr class="memitem:a1a32fa2253ff0b900636db75245d9195" id="r_a1a32fa2253ff0b900636db75245d9195"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a1a32fa2253ff0b900636db75245d9195">to_array</a> () const noexcept -&gt; <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; std::remove_cv_t&lt; type_t &gt; &gt;</td></tr>
-<tr class="memdesc:a1a32fa2253ff0b900636db75245d9195"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the contents of this read_only_span into a new array.  <br /></td></tr>
+<tr class="memdesc:a1a32fa2253ff0b900636db75245d9195"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the contents of this <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a> into a new array.  <br /></td></tr>
 <tr class="memitem:a35d0d55a78eddf3d056a0db05fbf8b16" id="r_a35d0d55a78eddf3d056a0db05fbf8b16"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a35d0d55a78eddf3d056a0db05fbf8b16">to_string</a> () const noexcept -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> override</td></tr>
-<tr class="memdesc:a35d0d55a78eddf3d056a0db05fbf8b16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the string representation of this <a class="el" href="#ab93f2ac54f69b5d8e044046a30cc80ec" title="Creates an empty xtd::read_only_span whose xtd::read_only_span::data is null and xtd::read_only_span:...">xtd::read_only_span</a> &lt;type_t&gt; object.  <br /></td></tr>
+<tr class="memdesc:a35d0d55a78eddf3d056a0db05fbf8b16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the string representation of this <a class="el" href="classxtd_1_1read__only__span.html">xtd::read_only_span</a> &lt;type_t&gt; object.  <br /></td></tr>
 <tr class="memitem:a78a7a4d397402c87d3c731de3c58c4c7" id="r_a78a7a4d397402c87d3c731de3c58c4c7"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> length&gt; </td></tr>
 <tr class="memitem:a78a7a4d397402c87d3c731de3c58c4c7 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a78a7a4d397402c87d3c731de3c58c4c7">try_copy_to</a> (<a class="el" href="classxtd_1_1span.html">span</a>&lt; type_t, <a class="el" href="#a84689e2cdf94d64f7e5f33fe4a1be71a">length</a> &gt; &amp;destination) const noexcept -&gt; bool</td></tr>
-<tr class="memdesc:a78a7a4d397402c87d3c731de3c58c4c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempts to copy the current <a class="el" href="#ab93f2ac54f69b5d8e044046a30cc80ec" title="Creates an empty xtd::read_only_span whose xtd::read_only_span::data is null and xtd::read_only_span:...">xtd::read_only_span</a> &lt;type_t&gt; to a destination <a class="el" href="#ab93f2ac54f69b5d8e044046a30cc80ec" title="Creates an empty xtd::read_only_span whose xtd::read_only_span::data is null and xtd::read_only_span:...">xtd::read_only_span</a> &lt;type_t&gt; and returns a value that indicates whether the copy operation succeeded.  <br /></td></tr>
+<tr class="memdesc:a78a7a4d397402c87d3c731de3c58c4c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempts to copy the current <a class="el" href="classxtd_1_1read__only__span.html">xtd::read_only_span</a> &lt;type_t&gt; to a destination <a class="el" href="classxtd_1_1read__only__span.html">xtd::read_only_span</a> &lt;type_t&gt; and returns a value that indicates whether the copy operation succeeded.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Operators</h2></td></tr>
@@ -6231,13 +6233,13 @@ Public Operators</h2></td></tr>
 <tr class="memdesc:a2b8bebde82942eac1856e92e9e2debcd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the element at the specified zero-based index.  <br /></td></tr>
 <tr class="memitem:acdf40cec488a8ae0f93940a87c91813d" id="r_acdf40cec488a8ae0f93940a87c91813d"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#acdf40cec488a8ae0f93940a87c91813d">operator[]</a> (const <a class="el" href="structxtd_1_1index.html">xtd::index</a> &amp;index) const -&gt; <a class="el" href="#a50675ff766faf27813f2589f9e0b768c">const_reference</a></td></tr>
 <tr class="memdesc:acdf40cec488a8ae0f93940a87c91813d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the element at the specified zero-based index.  <br /></td></tr>
-<tr class="memitem:a6ce13f4d16368593933990354c0b70a8" id="r_a6ce13f4d16368593933990354c0b70a8"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a6ce13f4d16368593933990354c0b70a8">operator[]</a> (const <a class="el" href="classxtd_1_1range.html">xtd::range</a> &amp;range) const -&gt; <a class="el" href="#ab93f2ac54f69b5d8e044046a30cc80ec">read_only_span</a></td></tr>
+<tr class="memitem:a6ce13f4d16368593933990354c0b70a8" id="r_a6ce13f4d16368593933990354c0b70a8"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a6ce13f4d16368593933990354c0b70a8">operator[]</a> (const <a class="el" href="classxtd_1_1range.html">xtd::range</a> &amp;range) const -&gt; <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a></td></tr>
 <tr class="memdesc:a6ce13f4d16368593933990354c0b70a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the elements at the specified range.  <br /></td></tr>
 <tr class="memitem:aad9d7ba199213946e4688708d3824be6" id="r_aad9d7ba199213946e4688708d3824be6"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aad9d7ba199213946e4688708d3824be6">operator()</a> (<a class="el" href="#a4fbd51535a62417407b70c3b12dac95a">size_type</a> index) const -&gt; <a class="el" href="#a50675ff766faf27813f2589f9e0b768c">const_reference</a></td></tr>
 <tr class="memdesc:aad9d7ba199213946e4688708d3824be6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the element at the specified zero-based index.  <br /></td></tr>
 <tr class="memitem:ab763d7e6aa4f86a6faedf82db32ed108" id="r_ab763d7e6aa4f86a6faedf82db32ed108"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ab763d7e6aa4f86a6faedf82db32ed108">operator()</a> (const <a class="el" href="structxtd_1_1index.html">xtd::index</a> &amp;index) const -&gt; <a class="el" href="#a50675ff766faf27813f2589f9e0b768c">const_reference</a></td></tr>
 <tr class="memdesc:ab763d7e6aa4f86a6faedf82db32ed108"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the element at the specified zero-based index.  <br /></td></tr>
-<tr class="memitem:a24d555b28a3af4c06a06d9b85776e4d9" id="r_a24d555b28a3af4c06a06d9b85776e4d9"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a24d555b28a3af4c06a06d9b85776e4d9">operator()</a> (const <a class="el" href="classxtd_1_1range.html">xtd::range</a> &amp;range) const -&gt; <a class="el" href="#ab93f2ac54f69b5d8e044046a30cc80ec">read_only_span</a></td></tr>
+<tr class="memitem:a24d555b28a3af4c06a06d9b85776e4d9" id="r_a24d555b28a3af4c06a06d9b85776e4d9"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a24d555b28a3af4c06a06d9b85776e4d9">operator()</a> (const <a class="el" href="classxtd_1_1range.html">xtd::range</a> &amp;range) const -&gt; <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a></td></tr>
 <tr class="memdesc:a24d555b28a3af4c06a06d9b85776e4d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the elements at the specified range.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
@@ -6292,7 +6294,7 @@ Country suffixes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Represents the read_only_span value type. </p>
+<p>Represents the <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a> value type. </p>
 
 </div>
 </div>
@@ -6308,7 +6310,7 @@ Country suffixes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Represents the read_only_span size type (usually <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525" title="Represents an unsigned size of any object in bytes.">xtd::usize</a>). </p>
+<p>Represents the <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a> size type (usually <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525" title="Represents an unsigned size of any object in bytes.">xtd::usize</a>). </p>
 
 </div>
 </div>
@@ -6324,7 +6326,7 @@ Country suffixes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Represents the read_only_span difference type (usually <a class="el" href="group__types.html#gae3c4f13b0aabf2474d7c5b2e36aad317" title="Represent the signed integer type of the result of subtracting two pointers.">xtd::ptrdiff</a>). </p>
+<p>Represents the <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a> difference type (usually <a class="el" href="group__types.html#gae3c4f13b0aabf2474d7c5b2e36aad317" title="Represent the signed integer type of the result of subtracting two pointers.">xtd::ptrdiff</a>). </p>
 
 </div>
 </div>
@@ -6340,7 +6342,7 @@ Country suffixes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Represents the read_only_span pointer type. </p>
+<p>Represents the <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a> pointer type. </p>
 
 </div>
 </div>
@@ -6356,7 +6358,7 @@ Country suffixes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Represents the read_only_span const pointer type. </p>
+<p>Represents the <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a> const pointer type. </p>
 
 </div>
 </div>
@@ -6372,7 +6374,7 @@ Country suffixes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Represents the read_only_span reference type. </p>
+<p>Represents the <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a> reference type. </p>
 
 </div>
 </div>
@@ -6388,7 +6390,7 @@ Country suffixes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Represents the read_only_span const reference type. </p>
+<p>Represents the <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a> const reference type. </p>
 
 </div>
 </div>
@@ -10381,7 +10383,7 @@ template&lt;<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85
 </table>
 </div><div class="memdoc">
 
-<p>Creates an empty <a class="el" href="#ab93f2ac54f69b5d8e044046a30cc80ec" title="Creates an empty xtd::read_only_span whose xtd::read_only_span::data is null and xtd::read_only_span:...">xtd::read_only_span</a> whose xtd::read_only_span::data is null and xtd::read_only_span::size is 0. </p>
+<p>Creates an empty <a class="el" href="classxtd_1_1read__only__span.html">xtd::read_only_span</a> whose xtd::read_only_span::data is null and xtd::read_only_span::size is 0. </p>
 
 </div>
 </div>
@@ -10414,7 +10416,7 @@ template&lt;typename iterator_t&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Creates an <a class="el" href="#ab93f2ac54f69b5d8e044046a30cc80ec" title="Creates an empty xtd::read_only_span whose xtd::read_only_span::data is null and xtd::read_only_span:...">xtd::read_only_span</a> with specified iterators. </p>
+<p>Creates an <a class="el" href="classxtd_1_1read__only__span.html">xtd::read_only_span</a> with specified iterators. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">first</td><td>The iterator to the first element of the sequence. </td></tr>
@@ -10450,7 +10452,7 @@ template&lt;<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85
 </table>
 </div><div class="memdoc">
 
-<p>Creates an <a class="el" href="#ab93f2ac54f69b5d8e044046a30cc80ec" title="Creates an empty xtd::read_only_span whose xtd::read_only_span::data is null and xtd::read_only_span:...">xtd::read_only_span</a> with specified native array. </p>
+<p>Creates an <a class="el" href="classxtd_1_1read__only__span.html">xtd::read_only_span</a> with specified native array. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">array</td><td>The native array to construct a view for. </td></tr>
@@ -10485,7 +10487,7 @@ template&lt;typename array_type_t, <a class="el" href="group__types.html#gae60f5
 </table>
 </div><div class="memdoc">
 
-<p>Creates an <a class="el" href="#ab93f2ac54f69b5d8e044046a30cc80ec" title="Creates an empty xtd::read_only_span whose xtd::read_only_span::data is null and xtd::read_only_span:...">xtd::read_only_span</a> with specified std::array. </p>
+<p>Creates an <a class="el" href="classxtd_1_1read__only__span.html">xtd::read_only_span</a> with specified std::array. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">array</td><td>The std::array to construct a view for. </td></tr>
@@ -10562,7 +10564,7 @@ template&lt;typename range_t&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Creates an <a class="el" href="#ab93f2ac54f69b5d8e044046a30cc80ec" title="Creates an empty xtd::read_only_span whose xtd::read_only_span::data is null and xtd::read_only_span:...">xtd::read_only_span</a> with specified range. </p>
+<p>Creates an <a class="el" href="classxtd_1_1read__only__span.html">xtd::read_only_span</a> with specified range. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">range</td><td>The range to construct a view for. </td></tr>
@@ -10595,7 +10597,7 @@ template&lt;typename range_t&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Creates an <a class="el" href="#ab93f2ac54f69b5d8e044046a30cc80ec" title="Creates an empty xtd::read_only_span whose xtd::read_only_span::data is null and xtd::read_only_span:...">xtd::read_only_span</a> with specified initializer list. </p>
+<p>Creates an <a class="el" href="classxtd_1_1read__only__span.html">xtd::read_only_span</a> with specified initializer list. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">items</td><td>The initializer list to construct a view for. </td></tr>
@@ -10634,7 +10636,7 @@ template&lt;typename collection_t&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Creates an <a class="el" href="#ab93f2ac54f69b5d8e044046a30cc80ec" title="Creates an empty xtd::read_only_span whose xtd::read_only_span::data is null and xtd::read_only_span:...">xtd::read_only_span</a> with specified collection and count. </p>
+<p>Creates an <a class="el" href="classxtd_1_1read__only__span.html">xtd::read_only_span</a> with specified collection and count. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">items</td><td>The collection to construct a view for. </td></tr>
@@ -10685,7 +10687,7 @@ template&lt;typename collection_t&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Creates an <a class="el" href="#ab93f2ac54f69b5d8e044046a30cc80ec" title="Creates an empty xtd::read_only_span whose xtd::read_only_span::data is null and xtd::read_only_span:...">xtd::read_only_span</a> with specified collection, offest and count. </p>
+<p>Creates an <a class="el" href="classxtd_1_1read__only__span.html">xtd::read_only_span</a> with specified collection, offest and count. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">items</td><td>The collection to construct a view for. </td></tr>
@@ -10730,7 +10732,7 @@ template&lt;typename collection_t&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Creates an <a class="el" href="#ab93f2ac54f69b5d8e044046a30cc80ec" title="Creates an empty xtd::read_only_span whose xtd::read_only_span::data is null and xtd::read_only_span:...">xtd::read_only_span</a> with specified data pointer and count. </p>
+<p>Creates an <a class="el" href="classxtd_1_1read__only__span.html">xtd::read_only_span</a> with specified data pointer and count. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">data</td><td>The data pointer to construct a view for. </td></tr>
@@ -10770,7 +10772,7 @@ template&lt;typename collection_t&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Creates an <a class="el" href="#ab93f2ac54f69b5d8e044046a30cc80ec" title="Creates an empty xtd::read_only_span whose xtd::read_only_span::data is null and xtd::read_only_span:...">xtd::read_only_span</a> with specified collection, and range. </p>
+<p>Creates an <a class="el" href="classxtd_1_1read__only__span.html">xtd::read_only_span</a> with specified collection, and range. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">items</td><td>The collection to construct a view for. </td></tr>
@@ -10838,8 +10840,8 @@ template&lt;typename collection_t&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Returns a value that indicates whether the current <a class="el" href="#ab93f2ac54f69b5d8e044046a30cc80ec" title="Creates an empty xtd::read_only_span whose xtd::read_only_span::data is null and xtd::read_only_span:...">xtd::read_only_span</a> &lt;type_t&gt; is empty. </p>
-<dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span> if the current read_only_span is empty; otherwise, <span class="tt">false</span>. </dd></dl>
+<p>Returns a value that indicates whether the current <a class="el" href="classxtd_1_1read__only__span.html">xtd::read_only_span</a> &lt;type_t&gt; is empty. </p>
+<dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span> if the current <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a> is empty; otherwise, <span class="tt">false</span>. </dd></dl>
 
 </div>
 </div>
@@ -10866,8 +10868,8 @@ template&lt;typename collection_t&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Returns a value that indicates whether the current <a class="el" href="#ab93f2ac54f69b5d8e044046a30cc80ec" title="Creates an empty xtd::read_only_span whose xtd::read_only_span::data is null and xtd::read_only_span:...">xtd::read_only_span</a> &lt;type_t&gt; is empty. </p>
-<dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span> if the current read_only_span is empty; otherwise, <span class="tt">false</span>. </dd></dl>
+<p>Returns a value that indicates whether the current <a class="el" href="classxtd_1_1read__only__span.html">xtd::read_only_span</a> &lt;type_t&gt; is empty. </p>
+<dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span> if the current <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a> is empty; otherwise, <span class="tt">false</span>. </dd></dl>
 
 </div>
 </div>
@@ -10894,8 +10896,8 @@ template&lt;typename collection_t&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Returns the length of the current read_only_span. </p>
-<dl class="section return"><dt>Returns</dt><dd>The length of the current read_only_span. </dd></dl>
+<p>Returns the length of the current <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>The length of the current <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a>. </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="test_forms_8cpp-example.html#a14">test_forms.cpp</a>.</dd>
 </dl>
 
@@ -10925,7 +10927,7 @@ template&lt;typename collection_t&gt; </div>
 </div><div class="memdoc">
 
 <p>Returns the number of elements. </p>
-<dl class="section return"><dt>Returns</dt><dd>The number of elements in the read_only_span. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The number of elements in the <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a>. </dd></dl>
 
 </div>
 </div>
@@ -10974,10 +10976,10 @@ template&lt;<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85
       </table>
 </div><div class="memdoc">
 
-<p>Copies the contents of this <a class="el" href="#ab93f2ac54f69b5d8e044046a30cc80ec" title="Creates an empty xtd::read_only_span whose xtd::read_only_span::data is null and xtd::read_only_span:...">xtd::read_only_span</a> &lt;type_t&gt; into a destination xtd:span &lt;type_t&gt;. </p>
+<p>Copies the contents of this <a class="el" href="classxtd_1_1read__only__span.html">xtd::read_only_span</a> &lt;type_t&gt; into a destination xtd:span &lt;type_t&gt;. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">destinaton</td><td>The destination <a class="el" href="#ab93f2ac54f69b5d8e044046a30cc80ec" title="Creates an empty xtd::read_only_span whose xtd::read_only_span::data is null and xtd::read_only_span:...">xtd::read_only_span</a> &lt;type_t&gt; object. </td></tr>
+    <tr><td class="paramname">destinaton</td><td>The destination <a class="el" href="classxtd_1_1read__only__span.html">xtd::read_only_span</a> &lt;type_t&gt; object. </td></tr>
   </table>
   </dd>
 </dl>
@@ -11036,7 +11038,7 @@ template&lt;<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85
         <tr>
           <td class="memname">auto xtd::equals </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="#ab93f2ac54f69b5d8e044046a30cc80ec">read_only_span</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>rhs</em></span></td><td>)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>rhs</em></span></td><td>)</td>
           <td> const -&gt; bool</td>
         </tr>
       </table>
@@ -11073,7 +11075,7 @@ template&lt;<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85
           <td class="memname">auto xtd::first </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const -&gt; <a class="el" href="#ab93f2ac54f69b5d8e044046a30cc80ec">read_only_span</a>&lt; type_t, count &gt;</td>
+          <td> const -&gt; <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a>&lt; type_t, count &gt;</td>
         </tr>
       </table>
   </td>
@@ -11090,7 +11092,7 @@ template&lt;<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A read_only_span <span class="tt">r</span> that is a view over the first <span class="tt">count</span> elements of <span class="tt">*this</span>, such that <span class="tt">r.data() == this-&gt;<a class="el" href="#a56b8af7b1b3a63e90e33cc756a1c7aff" title="Gets direct access to the underlying contiguous storage.">data()</a> &amp;&amp; r.size() == count</span>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a> <span class="tt">r</span> that is a view over the first <span class="tt">count</span> elements of <span class="tt">*this</span>, such that <span class="tt">r.data() == this-&gt;<a class="el" href="#a56b8af7b1b3a63e90e33cc756a1c7aff" title="Gets direct access to the underlying contiguous storage.">data()</a> &amp;&amp; r.size() == count</span>. </dd></dl>
 
 </div>
 </div>
@@ -11107,7 +11109,7 @@ template&lt;<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85
           <td class="memname">auto xtd::first </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>count</em></span></td><td>)</td>
-          <td> const -&gt; <a class="el" href="#ab93f2ac54f69b5d8e044046a30cc80ec">read_only_span</a>&lt; type_t &gt;</td>
+          <td> const -&gt; <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a>&lt; type_t &gt;</td>
         </tr>
       </table>
   </td>
@@ -11124,7 +11126,7 @@ template&lt;<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A read_only_span <span class="tt">r</span> that is a view over the first <span class="tt">count</span> elements of <span class="tt">*this</span>, such that <span class="tt">r.data() == this-&gt;<a class="el" href="#a56b8af7b1b3a63e90e33cc756a1c7aff" title="Gets direct access to the underlying contiguous storage.">data()</a> &amp;&amp; r.size() == count</span>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a> <span class="tt">r</span> that is a view over the first <span class="tt">count</span> elements of <span class="tt">*this</span>, such that <span class="tt">r.data() == this-&gt;<a class="el" href="#a56b8af7b1b3a63e90e33cc756a1c7aff" title="Gets direct access to the underlying contiguous storage.">data()</a> &amp;&amp; r.size() == count</span>. </dd></dl>
 
 </div>
 </div>
@@ -11171,7 +11173,7 @@ template&lt;<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85
           <td class="memname">auto xtd::last </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const -&gt; <a class="el" href="#ab93f2ac54f69b5d8e044046a30cc80ec">read_only_span</a>&lt; type_t, count &gt;</td>
+          <td> const -&gt; <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a>&lt; type_t, count &gt;</td>
         </tr>
       </table>
   </td>
@@ -11188,7 +11190,7 @@ template&lt;<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A read_only_span <span class="tt">r</span> that is a view over the last <span class="tt">count</span> elements of <span class="tt">*this</span>, such that <span class="tt">r.data() == this-&gt;<a class="el" href="#a56b8af7b1b3a63e90e33cc756a1c7aff" title="Gets direct access to the underlying contiguous storage.">data()</a> + (this-&gt;<a class="el" href="#ad1e549152bf4d9f98e51b0ea225af532" title="Returns the number of elements.">size()</a> - count) &amp;&amp; r.size() == count</span>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a> <span class="tt">r</span> that is a view over the last <span class="tt">count</span> elements of <span class="tt">*this</span>, such that <span class="tt">r.data() == this-&gt;<a class="el" href="#a56b8af7b1b3a63e90e33cc756a1c7aff" title="Gets direct access to the underlying contiguous storage.">data()</a> + (this-&gt;<a class="el" href="#ad1e549152bf4d9f98e51b0ea225af532" title="Returns the number of elements.">size()</a> - count) &amp;&amp; r.size() == count</span>. </dd></dl>
 
 </div>
 </div>
@@ -11205,7 +11207,7 @@ template&lt;<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85
           <td class="memname">auto xtd::last </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>count</em></span></td><td>)</td>
-          <td> const -&gt; <a class="el" href="#ab93f2ac54f69b5d8e044046a30cc80ec">read_only_span</a>&lt; type_t &gt;</td>
+          <td> const -&gt; <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a>&lt; type_t &gt;</td>
         </tr>
       </table>
   </td>
@@ -11222,7 +11224,7 @@ template&lt;<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A read_only_span <span class="tt">r</span> that is a view over the last <span class="tt">count</span> elements of <span class="tt">*this</span>, such that <span class="tt">r.data() == this-&gt;<a class="el" href="#a56b8af7b1b3a63e90e33cc756a1c7aff" title="Gets direct access to the underlying contiguous storage.">data()</a> + (this-&gt;<a class="el" href="#ad1e549152bf4d9f98e51b0ea225af532" title="Returns the number of elements.">size()</a> - count) &amp;&amp; r.size() == count</span>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a> <span class="tt">r</span> that is a view over the last <span class="tt">count</span> elements of <span class="tt">*this</span>, such that <span class="tt">r.data() == this-&gt;<a class="el" href="#a56b8af7b1b3a63e90e33cc756a1c7aff" title="Gets direct access to the underlying contiguous storage.">data()</a> + (this-&gt;<a class="el" href="#ad1e549152bf4d9f98e51b0ea225af532" title="Returns the number of elements.">size()</a> - count) &amp;&amp; r.size() == count</span>. </dd></dl>
 
 </div>
 </div>
@@ -11241,7 +11243,7 @@ template&lt;<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85
           <td class="memname">auto xtd::slice </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const -&gt; <a class="el" href="#ab93f2ac54f69b5d8e044046a30cc80ec">read_only_span</a>&lt; type_t &gt;</td>
+          <td> const -&gt; <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a>&lt; type_t &gt;</td>
         </tr>
       </table>
   </td>
@@ -11251,7 +11253,7 @@ template&lt;<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85
 </table>
 </div><div class="memdoc">
 
-<p>Forms a slice out of the current read_only_span starting at a specified index for a specified length. </p>
+<p>Forms a slice out of the current <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a> starting at a specified index for a specified length. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">start</td><td>The zero-based index at which to begin this slice. </td></tr>
@@ -11259,7 +11261,7 @@ template&lt;<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A read_only_span that consists of length elements from the current read_only_span starting at start. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a> that consists of length elements from the current <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a> starting at start. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">xtd::argument_out_of_range_exception</td><td>`start` or `start + length` is less than zero or greater than xtd::read_only_span::length. </td></tr>
@@ -11282,7 +11284,7 @@ template&lt;<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85
           <td class="memname">auto xtd::slice </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="#a4fbd51535a62417407b70c3b12dac95a">size_type</a></td>          <td class="paramname"><span class="paramname"><em>start</em></span></td><td>)</td>
-          <td> const -&gt; <a class="el" href="#ab93f2ac54f69b5d8e044046a30cc80ec">read_only_span</a>&lt; type_t &gt;</td>
+          <td> const -&gt; <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a>&lt; type_t &gt;</td>
         </tr>
       </table>
   </td>
@@ -11292,14 +11294,14 @@ template&lt;<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85
 </table>
 </div><div class="memdoc">
 
-<p>Forms a slice out of the current read_only_span that begins at a specified index. </p>
+<p>Forms a slice out of the current <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a> that begins at a specified index. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">start</td><td>The zero-based index at which to begin the slice. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A read_only_span that consists of all elements of the current read_only_span from <span class="tt">start</span> to the end of the read_only_span. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a> that consists of all elements of the current <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a> from <span class="tt">start</span> to the end of the <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a>. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">xtd::argument_out_of_range_exception</td><td>`start` is less than zero or greater than xtd::read_only_span::length. </td></tr>
@@ -11326,7 +11328,7 @@ template&lt;<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="#a4fbd51535a62417407b70c3b12dac95a">size_type</a></td>          <td class="paramname"><span class="paramname"><em>length</em></span>&#160;) const -&gt; <a class="el" href="#ab93f2ac54f69b5d8e044046a30cc80ec">read_only_span</a>&lt; type_t &gt;</td>
+          <td class="paramtype"><a class="el" href="#a4fbd51535a62417407b70c3b12dac95a">size_type</a></td>          <td class="paramname"><span class="paramname"><em>length</em></span>&#160;) const -&gt; <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a>&lt; type_t &gt;</td>
         </tr>
       </table>
   </td>
@@ -11336,7 +11338,7 @@ template&lt;<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85
 </table>
 </div><div class="memdoc">
 
-<p>Forms a slice out of the current read_only_span starting at a specified index for a specified length. </p>
+<p>Forms a slice out of the current <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a> starting at a specified index for a specified length. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">start</td><td>The zero-based index at which to begin this slice. </td></tr>
@@ -11344,7 +11346,7 @@ template&lt;<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A read_only_span that consists of length elements from the current read_only_span starting at start. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a> that consists of length elements from the current <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a> starting at start. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">xtd::argument_out_of_range_exception</td><td>`start` or `start + length` is less than zero or greater than xtd::read_only_span::length. </td></tr>
@@ -11369,7 +11371,7 @@ template&lt;<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85
           <td class="memname">auto xtd::subspan </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const -&gt; <a class="el" href="#ab93f2ac54f69b5d8e044046a30cc80ec">read_only_span</a>&lt; type_t &gt;</td>
+          <td> const -&gt; <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a>&lt; type_t &gt;</td>
         </tr>
       </table>
   </td>
@@ -11379,7 +11381,7 @@ template&lt;<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85
 </table>
 </div><div class="memdoc">
 
-<p>Forms a subspan of the current read_only_span starting at a specified index for a specified length. </p>
+<p>Forms a subspan of the current <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a> starting at a specified index for a specified length. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">offset</td><td>The zero-based index at which to begin this slice. </td></tr>
@@ -11387,7 +11389,7 @@ template&lt;<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A read_only_span that consists of length elements from the current read_only_span starting at start. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a> that consists of length elements from the current <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a> starting at start. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">xtd::argument_out_of_range_exception</td><td>`offset` or `offset + count` is less than zero or greater than xtd::read_only_span::length. </td></tr>
@@ -11414,7 +11416,7 @@ template&lt;<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="#a4fbd51535a62417407b70c3b12dac95a">size_type</a></td>          <td class="paramname"><span class="paramname"><em>count</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="group__system.html#ga6cc9b96f50a9cf9c60be64f9b9d19eb4">xtd::dynamic_extent</a></span>&#160;) const -&gt; <a class="el" href="#ab93f2ac54f69b5d8e044046a30cc80ec">read_only_span</a>&lt; type_t &gt;</td>
+          <td class="paramtype"><a class="el" href="#a4fbd51535a62417407b70c3b12dac95a">size_type</a></td>          <td class="paramname"><span class="paramname"><em>count</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="group__system.html#ga6cc9b96f50a9cf9c60be64f9b9d19eb4">xtd::dynamic_extent</a></span>&#160;) const -&gt; <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a>&lt; type_t &gt;</td>
         </tr>
       </table>
   </td>
@@ -11424,7 +11426,7 @@ template&lt;<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85
 </table>
 </div><div class="memdoc">
 
-<p>Forms a subspan of the current read_only_span starting at a specified index for a specified length. </p>
+<p>Forms a subspan of the current <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a> starting at a specified index for a specified length. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">offset</td><td>The zero-based index at which to begin this slice. </td></tr>
@@ -11432,7 +11434,7 @@ template&lt;<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A read_only_span that consists of length elements from the current read_only_span starting at start. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a> that consists of length elements from the current <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a> starting at start. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">xtd::argument_out_of_range_exception</td><td>`offset` or `offset + count` is less than zero or greater than xtd::read_only_span::length. </td></tr>
@@ -11465,8 +11467,8 @@ template&lt;<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85
 </table>
 </div><div class="memdoc">
 
-<p>Copies the contents of this read_only_span into a new array. </p>
-<dl class="section return"><dt>Returns</dt><dd>An array containing the data in the current read_only_span. </dd></dl>
+<p>Copies the contents of this <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a> into a new array. </p>
+<dl class="section return"><dt>Returns</dt><dd>An array containing the data in the current <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a>. </dd></dl>
 
 </div>
 </div>
@@ -11493,9 +11495,9 @@ template&lt;<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85
 </table>
 </div><div class="memdoc">
 
-<p>Returns the string representation of this <a class="el" href="#ab93f2ac54f69b5d8e044046a30cc80ec" title="Creates an empty xtd::read_only_span whose xtd::read_only_span::data is null and xtd::read_only_span:...">xtd::read_only_span</a> &lt;type_t&gt; object. </p>
-<dl class="section return"><dt>Returns</dt><dd>The string representation of this <a class="el" href="#ab93f2ac54f69b5d8e044046a30cc80ec" title="Creates an empty xtd::read_only_span whose xtd::read_only_span::data is null and xtd::read_only_span:...">xtd::read_only_span</a> &lt;type_t&gt; object. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>For a <a class="el" href="#ab93f2ac54f69b5d8e044046a30cc80ec" title="Creates an empty xtd::read_only_span whose xtd::read_only_span::data is null and xtd::read_only_span:...">xtd::read_only_span</a> &lt;type_t&gt;, the xtd::read_only_span::to_string method returns a <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> that contains the characters pointed to by the <a class="el" href="#ab93f2ac54f69b5d8e044046a30cc80ec" title="Creates an empty xtd::read_only_span whose xtd::read_only_span::data is null and xtd::read_only_span:...">xtd::read_only_span</a> &lt;type_t&gt;. Otherwise, it returns a <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> with collection sequance string of the elements that the <a class="el" href="#ab93f2ac54f69b5d8e044046a30cc80ec" title="Creates an empty xtd::read_only_span whose xtd::read_only_span::data is null and xtd::read_only_span:...">xtd::read_only_span</a> &lt;type_t&gt; contains separated by <span class="tt">, </span>. </dd></dl>
+<p>Returns the string representation of this <a class="el" href="classxtd_1_1read__only__span.html">xtd::read_only_span</a> &lt;type_t&gt; object. </p>
+<dl class="section return"><dt>Returns</dt><dd>The string representation of this <a class="el" href="classxtd_1_1read__only__span.html">xtd::read_only_span</a> &lt;type_t&gt; object. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For a <a class="el" href="classxtd_1_1read__only__span.html">xtd::read_only_span</a> &lt;type_t&gt;, the xtd::read_only_span::to_string method returns a <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> that contains the characters pointed to by the <a class="el" href="classxtd_1_1read__only__span.html">xtd::read_only_span</a> &lt;type_t&gt;. Otherwise, it returns a <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> with collection sequance string of the elements that the <a class="el" href="classxtd_1_1read__only__span.html">xtd::read_only_span</a> &lt;type_t&gt; contains separated by <span class="tt">, </span>. </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="any_8cpp-example.html#a0">any.cpp</a>, <a class="el" href="any_info_8cpp-example.html#a0">any_info.cpp</a>, <a class="el" href="format_class_with_specified_formating_8cpp-example.html#_a1">format_class_with_specified_formating.cpp</a>, <a class="el" href="format_class_with_specified_formating_with_to_string_8cpp-example.html#_a0">format_class_with_specified_formating_with_to_string.cpp</a>, <a class="el" href="format_exception_8cpp-example.html#_a1">format_exception.cpp</a>, <a class="el" href="iformatable_8cpp-example.html#_a3">iformatable.cpp</a>, <a class="el" href="iformatable_vs_to_string_8cpp-example.html#_a0">iformatable_vs_to_string.cpp</a>, <a class="el" href="sprintf_class_with_specified_formating_8cpp-example.html#_a1">sprintf_class_with_specified_formating.cpp</a>, <a class="el" href="sprintf_class_with_specified_formating_with_to_string_8cpp-example.html#_a0">sprintf_class_with_specified_formating_with_to_string.cpp</a>, and <a class="el" href="stringable_8cpp-example.html#a0">stringable.cpp</a>.</dd>
 </dl>
 
@@ -11526,7 +11528,7 @@ template&lt;<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85
 </table>
 </div><div class="memdoc">
 
-<p>Attempts to copy the current <a class="el" href="#ab93f2ac54f69b5d8e044046a30cc80ec" title="Creates an empty xtd::read_only_span whose xtd::read_only_span::data is null and xtd::read_only_span:...">xtd::read_only_span</a> &lt;type_t&gt; to a destination <a class="el" href="#ab93f2ac54f69b5d8e044046a30cc80ec" title="Creates an empty xtd::read_only_span whose xtd::read_only_span::data is null and xtd::read_only_span:...">xtd::read_only_span</a> &lt;type_t&gt; and returns a value that indicates whether the copy operation succeeded. </p>
+<p>Attempts to copy the current <a class="el" href="classxtd_1_1read__only__span.html">xtd::read_only_span</a> &lt;type_t&gt; to a destination <a class="el" href="classxtd_1_1read__only__span.html">xtd::read_only_span</a> &lt;type_t&gt; and returns a value that indicates whether the copy operation succeeded. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">destination</td><td>The target of the copy operation. </td></tr>
@@ -11612,7 +11614,7 @@ template&lt;<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85
           <td class="memname">auto xtd::operator[] </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1range.html">xtd::range</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>range</em></span></td><td>)</td>
-          <td> const -&gt; <a class="el" href="#ab93f2ac54f69b5d8e044046a30cc80ec">read_only_span</a></td>
+          <td> const -&gt; <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -11702,7 +11704,7 @@ template&lt;<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85
           <td class="memname">auto xtd::operator() </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1range.html">xtd::range</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>range</em></span></td><td>)</td>
-          <td> const -&gt; <a class="el" href="#ab93f2ac54f69b5d8e044046a30cc80ec">read_only_span</a></td>
+          <td> const -&gt; <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -12218,7 +12220,7 @@ template&lt;typename type_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="#ab93f2ac54f69b5d8e044046a30cc80ec">read_only_span</a> xtd::empty_read_only_span</td>
+          <td class="memname">const <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a> xtd::empty_read_only_span</td>
         </tr>
       </table>
   </td>
@@ -12228,8 +12230,8 @@ template&lt;typename type_t&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Returns an empty <a class="el" href="#ab93f2ac54f69b5d8e044046a30cc80ec" title="Creates an empty xtd::read_only_span whose xtd::read_only_span::data is null and xtd::read_only_span:...">xtd::read_only_span</a> &lt;type_t&gt; object. </p>
-<dl class="section return"><dt>Returns</dt><dd>An empty <a class="el" href="#ab93f2ac54f69b5d8e044046a30cc80ec" title="Creates an empty xtd::read_only_span whose xtd::read_only_span::data is null and xtd::read_only_span:...">xtd::read_only_span</a> &lt;type_t&gt; object. </dd></dl>
+<p>Returns an empty <a class="el" href="classxtd_1_1read__only__span.html">xtd::read_only_span</a> &lt;type_t&gt; object. </p>
+<dl class="section return"><dt>Returns</dt><dd>An empty <a class="el" href="classxtd_1_1read__only__span.html">xtd::read_only_span</a> &lt;type_t&gt; object. </dd></dl>
 
 </div>
 </div>
