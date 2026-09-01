@@ -5,5 +5,6 @@ find_package(xtd REQUIRED)
 
 add_projects(
   index
+  index_literal
 )
 
