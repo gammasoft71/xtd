@@ -18,25 +18,25 @@ xtdc run
 ## Output
 
 ```
-items[0_i] = 1
-items(1_i) = 2
-items[2_i] = 3
-items(3_i) = 4
-items[4_i] = 5
-items(5_i) = 6
-items[6_i] = 7
-items(7_i) = 8
-items[8_i] = 9
-items(9_i) = 10
+items[xtd::index::from_start(0)] = 1
+items(xtd::index {1, false}) = 2
+items[xtd::index {2}] = 3
+items(xtd::index {~3, true}) = 4
+items[xtd::index {4}] = 5
+items(xtd::index {5}) = 6
+items[xtd::index {6}] = 7
+items(xtd::index {7}) = 8
+items[xtd::index {8}] = 9
+items(xtd::index::from_start(9)) = 10
 
-items[~1_i] = 10
-items(~2_i) = 9
-items[~3_i] = 8
-items(~4_i) = 7
-items[~5_i] = 6
-items(~6_i) = 5
-items[~7_i] = 4
-items(~8_i) = 3
-items[~9_i] = 2
-items(~10_i) = 1
+items[xtd::index::from_end(1)] = 10
+items(xtd::index {2}, true)) = 9
+items[xtd::index {~3}] = 8
+items(xtd::index {~4, false}) = 7
+items[xtd::index {~5}] = 6
+items(xtd::index {~6}) = 5
+items[xtd::index {~7}] = 4
+items(xtd::index {~8}) = 3
+items[xtd::index {~9}] = 2
+items(xtd::index::from_end(10)) = 1
 ```

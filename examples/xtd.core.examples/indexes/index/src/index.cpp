@@ -3,49 +3,50 @@
 auto main() -> int {
   auto items = list {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
   
-  println("items[0_i] = {}", items[index::from_start(0)]);
-  println("items(1_i) = {}", items(1_i));
-  println("items[2_i] = {}", items[2_i]);
-  println("items(3_i) = {}", items(3_i));
-  println("items[4_i] = {}", items[4_i]);
-  println("items(5_i) = {}", items(5_i));
-  println("items[6_i] = {}", items[6_i]);
-  println("items(7_i) = {}", items(7_i));
-  println("items[8_i] = {}", items[8_i]);
-  println("items(9_i) = {}", items(index::from_start(9)));
-  println();
-  println("items[~1_i] = {}", items[index::from_end(1)]);
-  println("items(~2_i) = {}", items(~2_i));
-  println("items[~3_i] = {}", items[~3_i]);
-  println("items(~4_i) = {}", items(~4_i));
-  println("items[~5_i] = {}", items[~5_i]);
-  println("items(~6_i) = {}", items(~6_i));
-  println("items[~7_i] = {}", items[~7_i]);
-  println("items(~8_i) = {}", items(~8_i));
-  println("items[~9_i] = {}", items[~9_i]);
-  println("items(~10_i) = {}", items(index::from_end(10)));
+  xtd::println("items[xtd::index::from_start(0)] = {}", items[xtd::index::from_start(0)]);
+  xtd::println("items(xtd::index {{1, false}}) = {}", items(xtd::index {1, false}));
+  xtd::println("items[xtd::index {{2}}] = {}", items[xtd::index {2}]);
+  xtd::println("items(xtd::index {{~3, true}}) = {}", items(xtd::index {~3, true}));
+  xtd::println("items[xtd::index {{4}}] = {}", items[xtd::index {4}]);
+  xtd::println("items(xtd::index {{5}}) = {}", items(xtd::index {5}));
+  xtd::println("items[xtd::index {{6}}] = {}", items[xtd::index {6}]);
+  xtd::println("items(xtd::index {{7}}) = {}", items(xtd::index {7}));
+  xtd::println("items[xtd::index {{8}}] = {}", items[xtd::index {8}]);
+  xtd::println("items(xtd::index::from_start(9)) = {}", items(xtd::index::from_start(9)));
+  xtd::println();
+  xtd::println("items[xtd::index::from_end(1)] = {}", items[xtd::index::from_end(1)]);
+  xtd::println("items(xtd::index {{2}}, true)) = {}", items(xtd::index {2, true}));
+  xtd::println("items[xtd::index {{~3}}] = {}", items[xtd::index {~3}]);
+  xtd::println("items(xtd::index {{~4, false}}) = {}", items(xtd::index {~4, false}));
+  xtd::println("items[xtd::index {{~5}}] = {}", items[xtd::index {~5}]);
+  xtd::println("items(xtd::index {{~6}}) = {}", items(xtd::index {~6}));
+  xtd::println("items[xtd::index {{~7}}] = {}", items[xtd::index {~7}]);
+  xtd::println("items(xtd::index {{~8}}) = {}", items(xtd::index {~8}));
+  xtd::println("items[xtd::index {{~9}}] = {}", items[xtd::index {~9}]);
+  xtd::println("items(xtd::index::from_end(10)) = {}", items(xtd::index::from_end(10)));
 }
 
 // This code produces the following output :
 //
-// items[0_i] = 1
-// items(1_i) = 2
-// items[2_i] = 3
-// items(3_i) = 4
-// items[4_i] = 5
-// items(5_i) = 6
-// items[6_i] = 7
-// items(7_i) = 8
-// items[8_i] = 9
-// items(9_i) = 10
+// items[xtd::index::from_start(0)] = 1
+// items(xtd::index {1, false}) = 2
+// items[xtd::index {2}] = 3
+// items(xtd::index {~3, true}) = 4
+// items[xtd::index {4}] = 5
+// items(xtd::index {5}) = 6
+// items[xtd::index {6}] = 7
+// items(xtd::index {7}) = 8
+// items[xtd::index {8}] = 9
+// items(xtd::index::from_start(9)) = 10
+
 //
-// items[~1_i] = 10
-// items(~2_i) = 9
-// items[~3_i] = 8
-// items(~4_i) = 7
-// items[~5_i] = 6
-// items(~6_i) = 5
-// items[~7_i] = 4
-// items(~8_i) = 3
-// items[~9_i] = 2
-// items(~10_i) = 1
+// items[xtd::index::from_end(1)] = 10
+// items(xtd::index {2, true}) = 9
+// items[xtd::index {~3}] = 8
+// items(xtd::index {~4, false}) = 7
+// items[xtd::index {~5}] = 6
+// items(xtd::index {~6}) = 5
+// items[xtd::index {~7}] = 4
+// items(xtd::index {~8}) = 3
+// items[xtd::index {~9}] = 2
+// items(xtd::index::from_end(10)) = 1
