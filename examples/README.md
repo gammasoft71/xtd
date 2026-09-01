@@ -32,6 +32,7 @@
 * [Globalization](xtd.core.examples/globalization/README.md) contains globalization examples.
 * [Guid](xtd.core.examples/guid/README.md) contains guid examples.
 * [Hash code](xtd.core.examples/hash_code/README.md) contains hash_code examples.
+* [Indexes](xtd.core.examples/indexes/README.md) contains indexes examples.
 * [Interfaces](xtd.core.examples/interfaces/README.md) contains interfaces examples.
 * [IO](xtd.core.examples/io/README.md) contains io examples.
 * [Keywords](xtd.core.examples/keywords/README.md) contains keywords examples.
