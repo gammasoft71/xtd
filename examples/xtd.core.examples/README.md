@@ -295,6 +295,7 @@
 * [index_operator](indexes/index_operator/README.md) shows how to use how to use [xtd:index](https://gammasoft71.github.io/xtd/reference_guides/latest/structxtd_1_1index.html) struct as operator.
 * [range](indexes/range/README.md) shows how to use how to use [xtd:range](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1range.html) struct.
 * [range_literal](indexes/range_literal/README.md) shows how to use how to use [xtd:range](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1range.html) struct.
+* [range_operator](indexes/range_operator/README.md) shows how to use how to use [xtd:range](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1range.html) struct as operator.
 
 ## [Interfaces](interfaces/README.md)
 

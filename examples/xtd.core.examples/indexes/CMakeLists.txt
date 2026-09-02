@@ -9,5 +9,6 @@ add_projects(
   index_operator
   range
   range_literal
+  range_operator
 )
 
