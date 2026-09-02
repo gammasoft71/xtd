@@ -31,6 +31,10 @@ namespace xtd {
   /// @par Examples
   /// The following example shows how to use xtd::index with xtd::collections::generic::list.
   /// @include index.cpp
+  /// The following example shows how to use index literal operator.
+  /// @include index_literal.cpp
+  /// The following example shows how to create your own collection with xtd::index operator.
+  /// @include index_operator.cpp
   struct index : public xtd::object, xtd::iequatable<index> {
     ///@name Public Aliases
     

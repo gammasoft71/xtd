@@ -28,6 +28,13 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core system
+  /// @par Examples
+  /// The following example shows how to use xtd::range with a xtd::collections::generic::list.
+  /// @include range.cpp
+  /// The following example shows how to use range literal operator.
+  /// @include range_literal.cpp
+  /// The following example shows how to create your own collection with xtd::range operator.
+  /// @include range_operator.cpp
   class range : public xtd::object, xtd::iequatable<range> {
   public:
     ///@name Public Aliases

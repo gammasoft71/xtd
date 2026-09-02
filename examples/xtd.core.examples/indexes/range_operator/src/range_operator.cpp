@@ -16,8 +16,8 @@ public:
   
   auto operator [](usize index) -> persona& {return items_[index];}
   auto operator [](usize index) const -> const persona& {return items_[index];}
-  auto operator [](xtd::range range) -> span<persona> {return span<persona> {items_, range};}
-  auto operator [](xtd::range range) const -> read_only_span<persona> {return read_only_span<persona> {items_, range};}
+  auto operator [](const xtd::range& range) -> span<persona> {return span<persona> {items_, range};}
+  auto operator [](const xtd::range& range) const -> read_only_span<persona> {return read_only_span<persona> {items_, range};}
   
 private:
   list<persona> items_;
