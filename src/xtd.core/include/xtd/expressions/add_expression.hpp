@@ -21,7 +21,10 @@ namespace xtd {
     /// ```
     /// @par Library
     /// xtd.core
-    /// @ingroup xtd_core
+    /// @ingroup xtd_core expressions
+    /// @par Examples
+    /// The following example shows how to use xtd::expressions::expression::add.
+    /// @include add_expression/src/add_expression.cpp
     /// @remarks The xtd::expressions::add_expression struct is used by xtd::expressions::expression::add expression.
     template<typename left_t, typename right_t>
     struct add_expression : binary_expression {
@@ -91,31 +94,7 @@ namespace xtd {
     /// @ingroup xtd_core expressions
     /// @par Examples
     /// The following example shows how to use xtd::expressions::expression::add.
-    /// ```cpp
-    /// #include <xtd/xtd>
-    ///
-    /// auto main() -> int {
-    ///   // auto add1 = [](auto&& _) {return _ + 10;};
-    ///   auto add1 = _ + 10;
-    ///   println("add1 result => {}", add1(40));
-    ///   auto add2 = expression::add(_, 10);
-    ///   println("add2 result => {}", add2(40));
-    ///   println();
-    ///   // auto add3 = [](auto&& _1, auto&& _2) {return _1 + _2;};
-    ///   auto add3 = _1 + _2;
-    ///   println("add3 result => {}", add3(40, 20));
-    ///   auto add4 = expression::add(_1, _2);
-    ///   println("add4 result => {}", add4(40, 20));
-    /// }
-    ///
-    /// // This code produces the following output :
-    /// //
-    /// // add1 result => 50
-    /// // add2 result => 50
-    /// //
-    /// // add3 result => 60
-    /// // add4 result => 60
-    /// ```
+    /// @include add_expression/src/add_expression.cpp
     template<typename left_t, typename right_t>
     requires expression_operand<left_t> || expression_operand<right_t>
     constexpr auto operator +(left_t left, right_t right) {return expression::add(std::move(left), std::move(right));}
