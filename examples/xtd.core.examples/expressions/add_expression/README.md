@@ -18,13 +18,9 @@ xtdc run
 ## Output
 
 ```
-add1 resul => 52
+add1 result => 50
+add2 result => 50
 
-add2 resul => 52
-add2 resul => Hello, world!
-add2 resul => 4/20/2026 9:20:00 PM
-add2 resul => 52
-
-add3 resul => 52
-
+add3 result => 60
+add4 result => 60
 ```
