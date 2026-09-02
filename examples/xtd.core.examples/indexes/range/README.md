@@ -27,4 +27,6 @@ items[range::end_at(index::from_start(6))] = [1, 2, 3, 4, 5, 6]
 items(range::end_at(~4_i)) = [1, 2, 3, 4, 5, 6]
 items(range {2, 6}) = [3, 4, 5, 6]
 items(range {3_i, ~2_i}) = [4, 5, 6, 7, 8]
+items({0, 8}) = [1, 2, 3, 4, 5, 6, 7, 8]
+items({1_i, ~4_i}) = [2, 3, 4, 5, 6]
 ```
