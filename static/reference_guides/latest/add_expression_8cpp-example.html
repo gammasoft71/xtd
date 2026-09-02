@@ -109,51 +109,27 @@ document.addEventListener('DOMContentLoaded', () => {
 <p>Shows how to use xtd::expressions::operator + expression.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">struct </span>foo {</div>
-<div class="line">  <span class="keywordtype">int</span> value;</div>
-<div class="line">  </div>
-<div class="line">  <span class="keyword">friend</span> <span class="keyword">auto</span> operator &lt;&lt;(std::ostream&amp; os, <span class="keyword">const</span> foo&amp; f) -&gt; std::ostream&amp; {<span class="keywordflow">return</span> os &lt;&lt; f.value;}</div>
-<div class="line">  <span class="keyword">friend</span> <span class="keyword">auto</span> operator +(<span class="keyword">const</span> foo&amp; a, <span class="keyword">const</span> foo&amp; b) -&gt; foo {<span class="keywordflow">return</span> foo {a.value + b.value};}</div>
-<div class="line">};</div>
-<div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="comment">//auto add1 = [](auto&amp;&amp; a) {return a + 10;}</span></div>
+<div class="line">  <span class="comment">// auto add1 = [](auto&amp;&amp; _) {return _ + 10;};</span></div>
 <div class="line">  <span class="keyword">auto</span> add1 = _ + 10;</div>
-<div class="line"> </div>
-<div class="line">  println(<span class="stringliteral">&quot;add1 resul =&gt; {}&quot;</span>, add1(42));</div>
+<div class="line">  println(<span class="stringliteral">&quot;add1 result =&gt; {}&quot;</span>, add1(40));</div>
+<div class="line">  <span class="keyword">auto</span> add2 = expression::add(_, 10);</div>
+<div class="line">  println(<span class="stringliteral">&quot;add2 result =&gt; {}&quot;</span>, add2(40));</div>
 <div class="line">  println();</div>
-<div class="line"> </div>
-<div class="line">  <span class="comment">//auto add2 = [](auto&amp;&amp; a, auto&amp;&amp; b) {return a + b;}</span></div>
-<div class="line">  <span class="keyword">auto</span> add2 = _1 + _2;</div>
-<div class="line"> </div>
-<div class="line">  println(<span class="stringliteral">&quot;add2 resul =&gt; {}&quot;</span>, add2(42, 10));</div>
-<div class="line">  println(<span class="stringliteral">&quot;add2 resul =&gt; {}&quot;</span>, add2(<span class="stringliteral">&quot;Hello, &quot;</span>_s, <span class="stringliteral">&quot;world!&quot;</span>));</div>
-<div class="line">  println(<span class="stringliteral">&quot;add2 resul =&gt; {}&quot;</span>, add2(date_time {2026, 4, 20, 21, 12, 36}, 7_min + 24_s));</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;add2 resul =&gt; {}&quot;</span>, add2(foo {42}, foo {10}));</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>();</div>
-<div class="line"> </div>
-<div class="line">  <span class="comment">//auto add3 = [](auto&amp;&amp; a, auto&amp;&amp; b, auto&amp;&amp; c) {return a + 10 + b + c;}</span></div>
-<div class="line">  <span class="keyword">auto</span> add3 = <a class="code hl_variable" href="group__expressions.html#gafe769e4a8371075920e4ecf343d399ab">_1</a> + 10 + <a class="code hl_variable" href="group__expressions.html#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>  + <a class="code hl_variable" href="group__expressions.html#gac705fd840359c016dad779817f2f7c36">_3</a>;</div>
-<div class="line"> </div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;add3 resul =&gt; {}&quot;</span>, add3(22, 18, 2));</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>();</div>
+<div class="line">  <span class="comment">// auto add3 = [](auto&amp;&amp; _1, auto&amp;&amp; _2) {return _1 + _2;};</span></div>
+<div class="line">  <span class="keyword">auto</span> add3 = _1 + _2;</div>
+<div class="line">  println(<span class="stringliteral">&quot;add3 result =&gt; {}&quot;</span>, add3(40, 20));</div>
+<div class="line">  <span class="keyword">auto</span> add4 = expression::add(_1, _2);</div>
+<div class="line">  println(<span class="stringliteral">&quot;add4 result =&gt; {}&quot;</span>, add4(40, 20));</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// add1 resul =&gt; 52</span></div>
+<div class="line"><span class="comment">// add1 result =&gt; 50</span></div>
+<div class="line"><span class="comment">// add2 result =&gt; 50</span></div>
 <div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// add2 resul =&gt; 52</span></div>
-<div class="line"><span class="comment">// add2 resul =&gt; Hello, world!</span></div>
-<div class="line"><span class="comment">// add2 resul =&gt; 4/20/2026 9:20:00 PM</span></div>
-<div class="line"><span class="comment">// add2 resul =&gt; 52</span></div>
-<div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// add3 resul =&gt; 52</span></div>
-<div class="line"><span class="comment">//</span></div>
-<div class="ttc" id="agroup__expressions_html_ga9d506249a7fb0b4fb43b6880ac3b13f0"><div class="ttname"><a href="group__expressions.html#ga9d506249a7fb0b4fb43b6880ac3b13f0">xtd::expressions::_2</a></div><div class="ttdeci">constexpr auto _2</div><div class="ttdoc">The xtd::expressions::_2 placeholder instance is second argument used by expression.</div><div class="ttdef"><b>Definition</b> args.hpp:117</div></div>
-<div class="ttc" id="agroup__expressions_html_gac705fd840359c016dad779817f2f7c36"><div class="ttname"><a href="group__expressions.html#gac705fd840359c016dad779817f2f7c36">xtd::expressions::_3</a></div><div class="ttdeci">constexpr auto _3</div><div class="ttdoc">The xtd::expressions::_3 placeholder instance is third argument used by expression.</div><div class="ttdef"><b>Definition</b> args.hpp:142</div></div>
-<div class="ttc" id="agroup__expressions_html_gafe769e4a8371075920e4ecf343d399ab"><div class="ttname"><a href="group__expressions.html#gafe769e4a8371075920e4ecf343d399ab">xtd::expressions::_1</a></div><div class="ttdeci">constexpr auto _1</div><div class="ttdoc">The xtd::expressions::_1 placeholder instance is first argument used by expression.</div><div class="ttdef"><b>Definition</b> args.hpp:92</div></div>
-<div class="ttc" id="anamespacextd_html_a9482c5e9fb1d60c658bbe28bfbb17353"><div class="ttname"><a href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">xtd::println</a></div><div class="ttdeci">auto println(FILE *file) -&gt; void</div><div class="ttdoc">Writes the current line terminator to the file output stream using the specified format information.</div><div class="ttdef"><b>Definition</b> println.hpp:15</div></div>
+<div class="line"><span class="comment">// add3 result =&gt; 60</span></div>
+<div class="line"><span class="comment">// add4 result =&gt; 60</span></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
