@@ -3,27 +3,27 @@
 auto main() -> int {
   auto items = list {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
   
-  println("items[\"0\"_i] = {}", items["0"_i]);
+  println(R"(items["0"_i] = {})", items["0"_i]);
   println("items(1_i) = {}", items(1_i));
-  println("items[u8\"2\"_i] = {}", items[u8"2"_i]);
+  println(R"(items[u8"(2"_i] = {})", items[u8"2"_i]);
   println("items(3_i) = {}", items(3_i));
   println("items[4_i] = {}", items[4_i]);
   println("items(5_i) = {}", items(5_i));
   println("items[6_i] = {}", items[6_i]);
   println("items(7_i) = {}", items(7_i));
   println("items[8_i] = {}", items[8_i]);
-  println("items(u\"9\"_i) = {}", items(u"9"_i));
+  println(R"(items(u"9"_i) = {})", items(u"9"_i));
   println();
-  println("items[\"~1\"_i] = {}", items["~1"_i]);
+  println(R"(items["~1"_i] = {})", items["~1"_i]);
   println("items(~2_i) = {}", items(~2_i));
-  println("items[U\"~3\"_i] = {}", items[U"~3"_i]);
+  println(R"(items[U"~3"_i] = {})", items[U"~3"_i]);
   println("items(~4_i) = {}", items(~4_i));
   println("items[~5_i] = {}", items[~5_i]);
   println("items(~6_i) = {}", items(~6_i));
   println("items[~7_i] = {}", items[~7_i]);
   println("items(~8_i) = {}", items(~8_i));
   println("items[~9_i] = {}", items[~9_i]);
-  println("items(L\"~10\"_i) = {}", items(L"~10"_i));
+  println(R"(items(L"~10"_i) = {})", items(L"~10"_i));
 }
 
 // This code produces the following output :
