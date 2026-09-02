@@ -14,6 +14,7 @@ auto main() -> int {
   println("items[range {{3_i, ~2_i}}) = {}", items[range {3_i, ~2_i}]);
   println("items[{{0, 8}}] = {}", items[{0, 8}]);
   println("items[{{1_i, ~4_i}}][{{1_i, ~1_i}}] = {}", items[{1_i, ~4_i}][{1_i, ~1_i}]);
+  println("items[{{1_i, ~4_i}}].where(_ % 2 == 0).select(_ * _) = {}", items[{1_i, ~4_i}].where(_ % 2 == 0).select(_ * _));
 }
 
 // This code produces the following output :
@@ -29,3 +30,4 @@ auto main() -> int {
 // items[range {3_i, ~2_i}) = [4, 5, 6, 7, 8]
 // items[{0, 8}] = [1, 2, 3, 4, 5, 6, 7, 8]
 // items[{1_i, ~4_i}][{1_i, ~1_i}] = [3, 4, 5]
+// items[{1_i, ~4_i}].where(_ % 2 == 0).select(_ * _) = [4, 16, 36]
