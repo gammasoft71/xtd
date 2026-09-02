@@ -17,7 +17,7 @@
 namespace xtd {
   /// @brief Represents a range that has start and end indexes.
   /// ```cpp
-  /// class range : public xtd::object;
+  /// class range : public xtd::object, xtd::iequatable<range;
   /// ```
   /// @par Header
   /// ```cpp

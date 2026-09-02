@@ -17,7 +17,7 @@
 namespace xtd {
   /// @brief Represents a type that can be used to index a collection either from the beginning or the end.
   /// ```cpp
-  /// class index : public xtd::object;
+  /// class index : public xtd::object, xtd::iequatable<index>;
   /// ```
   /// @par Header
   /// ```cpp
