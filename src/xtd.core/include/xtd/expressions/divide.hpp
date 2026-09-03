@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::expressions::divide_expression operator.
+/// @brief Contains xtd::expressions::divide operator.
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "as_expression.hpp"
@@ -12,12 +12,12 @@
 namespace xtd {
   /// @brief The xtd::expressions namespace provides a lightweight, composable expression template framework for building and evaluating lazy, strongly-typed functional expressions from arbitrary callables
   namespace expressions {
-    /// @brief The xtd::expressions::divide_expression is the division expression.
+    /// @brief The xtd::expressions::divide is the division expression.
     /// @par Namespace
     /// xtd::expressions
     /// @par Header
     /// ```cpp
-    /// #include <xtd/expressions/divide_expression>
+    /// #include <xtd/expressions/divide>
     /// ```
     /// @par Library
     /// xtd.core
@@ -49,9 +49,9 @@ namespace xtd {
     /// // divide3 result => 4
     /// // divide4 result => 4
     /// ```
-    /// @remarks The xtd::expressions::divide_expression struct is used by xtd::expressions::expression::divide expression.
+    /// @remarks The xtd::expressions::divide struct is used by xtd::expressions::expression::divide expression.
     template<typename left_t, typename right_t>
-    struct divide_expression : binary_expression {
+    struct divide : binary_expression {
       /// @name Public Fields
       
       /// @{
@@ -62,13 +62,13 @@ namespace xtd {
       /// @name Public Constructors
       
       /// @{
-      /// @brief Initialize a new xtd::expressions::divide_expression object.
-      constexpr divide_expression() = default;
+      /// @brief Initialize a new xtd::expressions::divide object.
+      constexpr divide() = default;
       
-      /// @brief Initialize a new xtd::expressions::divide_expression object with specified left and right operands.
+      /// @brief Initialize a new xtd::expressions::divide object with specified left and right operands.
       /// @param left The left operand.
       /// @param right The right operand.
-      constexpr divide_expression(left_t left, right_t right) : left {std::move(left)}, right {std::move(right)} {}
+      constexpr divide(left_t left, right_t right) : left {std::move(left)}, right {std::move(right)} {}
       /// @}
       
       /// @name Public Operators
@@ -82,7 +82,7 @@ namespace xtd {
       /// @}
       
       /// @cond
-      friend inline auto operator <<(std::ostream& os, const divide_expression& e) -> std::ostream& {return os << expression_stream {e.left, e.precedence} << " / " << expression_stream {e.right, e.precedence};}
+      friend inline auto operator <<(std::ostream& os, const divide& e) -> std::ostream& {return os << expression_stream {e.left, e.precedence} << " / " << expression_stream {e.right, e.precedence};}
       /// @endcond
 
     private:
@@ -96,7 +96,7 @@ namespace xtd {
     constexpr auto expression::divide(left_t left, right_t right) {
       auto left_expression = as_expression(left);
       auto right_expression = as_expression(right);
-      return divide_expression<std::decay_t<decltype(left_expression)>, std::decay_t<decltype(right_expression)>> {std::move(left_expression), std::move(right_expression)};
+      return expressions::divide<std::decay_t<decltype(left_expression)>, std::decay_t<decltype(right_expression)>> {std::move(left_expression), std::move(right_expression)};
     }
     /// @endcond
 
@@ -111,7 +111,7 @@ namespace xtd {
     /// xtd::expressions
     /// @par Header
     /// ```cpp
-    /// #include <xtd/expressions/divide_expression>
+    /// #include <xtd/expressions/divide>
     /// ```
     /// @par Library
     /// xtd.core

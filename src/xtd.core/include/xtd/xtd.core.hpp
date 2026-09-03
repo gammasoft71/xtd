@@ -120,7 +120,7 @@
 #include "expressions/binary_expression.hpp"
 #include "expressions/conditional_expression.hpp"
 #include "expressions/constant.hpp"
-#include "expressions/divide_expression.hpp"
+#include "expressions/divide.hpp"
 #include "expressions/equal_expression.hpp"
 #include "expressions/expression.hpp"
 #include "expressions/expression_operand.hpp"
