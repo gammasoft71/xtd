@@ -18,13 +18,11 @@ xtdc run
 ## Output
 
 ```
-arg1_1 result => 10
-arg1_2 result => 10
-arg1_3 result => 10
+arg1_1 = 10
+arg1_2 = 10
+arg1_3 = 10
 
-expr1 result => 60
-expr2 result => 60
-expr3 result => 60
-
-expr4 result => 60
+expr1 = 60
+expr2 = 60
+expr3 = 60
 ```
