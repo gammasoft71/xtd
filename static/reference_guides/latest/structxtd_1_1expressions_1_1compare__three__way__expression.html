@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="header">
   <div class="summary">
 <a href="structxtd_1_1expressions_1_1compare__three__way__expression-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">xtd::expressions::compare_three_way_expression&lt; left_t, right_t &gt; Struct Template Reference<div class="ingroups"><a class="el" href="group__libraries.html">﹡ libraries</a> &raquo; <a class="el" href="group__xtd__core.html">xtd.core</a></div></div></div>
+  <div class="headertitle"><div class="title">xtd::expressions::compare_three_way_expression&lt; left_t, right_t &gt; Struct Template Reference<div class="ingroups"><a class="el" href="group__libraries.html">﹡ libraries</a> &raquo; <a class="el" href="group__xtd__core.html">xtd.core</a> &#124; <a class="el" href="group__system.html">system</a> &raquo; <a class="el" href="group__expressions.html">expressions</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 <div class="dynheader">
@@ -129,6 +129,32 @@ struct xtd::expressions::compare_three_way_expression&lt; left_t, right_t &gt;</
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/expressions/compare_three_way_expression&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="structxtd_1_1expressions_1_1compare__three__way__expression.html" title="The xtd::expressions::compare_three_way_expression is the three_way_comparison expression.">xtd::expressions::compare_three_way_expression</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="comment">// auto compare_three_way1 = [value](auto&amp;&amp; _) {return _ &lt;=&gt; 10;};</span></div>
+<div class="line">  <span class="keyword">auto</span> compare_three_way1 = <a class="code hl_variable" href="group__expressions.html#ga130423906ed7125e321bf42e00dafae9">_ &lt;=&gt;</a> 10;</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;compare_three_way1 result =&gt; {}&quot;</span>, compare_three_way1(42));</div>
+<div class="line">  <span class="keyword">auto</span> compare_three_way2 =  <a class="code hl_function" href="structxtd_1_1expressions_1_1expression.html#a2f6331e445a905dd2fc6386f911c44f4">expression::compare_three_way</a>(<a class="code hl_variable" href="group__expressions.html#ga130423906ed7125e321bf42e00dafae9">_</a>, 10);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;compare_three_way2 result =&gt; {}&quot;</span>, compare_three_way2(42));</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>();</div>
+<div class="line">  <span class="comment">//auto compare_three_way3 = [](auto&amp;&amp; _1, auto&amp;&amp; _2) {return _1 &lt;=&gt; _2;};</span></div>
+<div class="line">  <span class="keyword">auto</span> compare_three_way3 = <a class="code hl_variable" href="group__expressions.html#gafe769e4a8371075920e4ecf343d399ab">_1 &lt;=&gt;</a> <a class="code hl_variable" href="group__expressions.html#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>;</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;compare_three_way3 result =&gt; {}&quot;</span>, compare_three_way3(42, 42));</div>
+<div class="line">  <span class="keyword">auto</span> compare_three_way4 =  <a class="code hl_function" href="structxtd_1_1expressions_1_1expression.html#a2f6331e445a905dd2fc6386f911c44f4">expression::compare_three_way</a>(<a class="code hl_variable" href="group__expressions.html#gafe769e4a8371075920e4ecf343d399ab">_1</a>, <a class="code hl_variable" href="group__expressions.html#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;compare_three_way4 result =&gt; {}&quot;</span>, compare_three_way4(42, 42));</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// three_way_comparison1 result =&gt; greater</span></div>
+<div class="line"><span class="comment">// three_way_comparison2 result =&gt; equivalent</span></div>
+<div class="ttc" id="agroup__expressions_html_ga130423906ed7125e321bf42e00dafae9"><div class="ttname"><a href="group__expressions.html#ga130423906ed7125e321bf42e00dafae9">xtd::expressions::_</a></div><div class="ttdeci">constexpr auto _</div><div class="ttdoc">The xtd::expressions::_ placeholder instance is used by expression that have only one argument.</div><div class="ttdef"><b>Definition</b> args.hpp:66</div></div>
+<div class="ttc" id="agroup__expressions_html_ga9d506249a7fb0b4fb43b6880ac3b13f0"><div class="ttname"><a href="group__expressions.html#ga9d506249a7fb0b4fb43b6880ac3b13f0">xtd::expressions::_2</a></div><div class="ttdeci">constexpr auto _2</div><div class="ttdoc">The xtd::expressions::_2 placeholder instance is second argument used by expression.</div><div class="ttdef"><b>Definition</b> args.hpp:117</div></div>
+<div class="ttc" id="agroup__expressions_html_gafe769e4a8371075920e4ecf343d399ab"><div class="ttname"><a href="group__expressions.html#gafe769e4a8371075920e4ecf343d399ab">xtd::expressions::_1</a></div><div class="ttdeci">constexpr auto _1</div><div class="ttdoc">The xtd::expressions::_1 placeholder instance is first argument used by expression.</div><div class="ttdef"><b>Definition</b> args.hpp:92</div></div>
+<div class="ttc" id="anamespacextd_html_a9482c5e9fb1d60c658bbe28bfbb17353"><div class="ttname"><a href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">xtd::println</a></div><div class="ttdeci">auto println(FILE *file) -&gt; void</div><div class="ttdoc">Writes the current line terminator to the file output stream using the specified format information.</div><div class="ttdef"><b>Definition</b> println.hpp:15</div></div>
+<div class="ttc" id="astructxtd_1_1expressions_1_1expression_html_a2f6331e445a905dd2fc6386f911c44f4"><div class="ttname"><a href="structxtd_1_1expressions_1_1expression.html#a2f6331e445a905dd2fc6386f911c44f4">xtd::expressions::expression::compare_three_way</a></div><div class="ttdeci">static constexpr auto compare_three_way(left_t left, right_t right)</div><div class="ttdoc">Compare three way the specified left and right operands.</div></div>
+</div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="structxtd_1_1expressions_1_1compare__three__way__expression.html" title="The xtd::expressions::compare_three_way_expression is the three_way_comparison expression.">xtd::expressions::compare_three_way_expression</a> struct is used by <a class="el" href="structxtd_1_1expressions_1_1expression.html#a2f6331e445a905dd2fc6386f911c44f4" title="Compare three way the specified left and right operands.">xtd::expressions::expression::compare_three_way</a> expression. </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>

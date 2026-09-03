@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="header">
   <div class="summary">
 <a href="structxtd_1_1expressions_1_1greater__than__or__equal__expression-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">xtd::expressions::greater_than_or_equal_expression&lt; left_t, right_t &gt; Struct Template Reference<div class="ingroups"><a class="el" href="group__libraries.html">﹡ libraries</a> &raquo; <a class="el" href="group__xtd__core.html">xtd.core</a></div></div></div>
+  <div class="headertitle"><div class="title">xtd::expressions::greater_than_or_equal_expression&lt; left_t, right_t &gt; Struct Template Reference<div class="ingroups"><a class="el" href="group__libraries.html">﹡ libraries</a> &raquo; <a class="el" href="group__xtd__core.html">xtd.core</a> &#124; <a class="el" href="group__system.html">system</a> &raquo; <a class="el" href="group__expressions.html">expressions</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 <div class="dynheader">
@@ -129,6 +129,35 @@ struct xtd::expressions::greater_than_or_equal_expression&lt; left_t, right_t &g
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/expressions/greater_than_or_equal_expression&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="structxtd_1_1expressions_1_1expression.html#a425b2af8d82d60da36f0394c5fe72af7" title="Greater than or equzl the specified left and right operands.">xtd::expressions::expression::greater_than_or_equal</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="comment">// auto greater_than_or_equal1 = [](auto&amp;&amp; _) {return _ &gt;= 10;};</span></div>
+<div class="line">  <span class="keyword">auto</span> greater_than_or_equal1 = <a class="code hl_variable" href="group__expressions.html#ga130423906ed7125e321bf42e00dafae9">_</a> &gt; 10;</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;greater_than_or_equal1 result =&gt; {}&quot;</span>, greater_than_or_equal1(42));</div>
+<div class="line">  <span class="keyword">auto</span> greater_than_or_equal2 = <a class="code hl_function" href="structxtd_1_1expressions_1_1expression.html#a425b2af8d82d60da36f0394c5fe72af7">expression::greater_than_or_equal</a>(<a class="code hl_variable" href="group__expressions.html#ga130423906ed7125e321bf42e00dafae9">_</a>, 10);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;greater_than_or_equal2 result =&gt; {}&quot;</span>, greater_than2(42));</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>();</div>
+<div class="line">  <span class="comment">// auto greater_than_or_equal3 = [](auto&amp;&amp; _1, auto&amp;&amp; _2) {return _1 &gt;= _2;};</span></div>
+<div class="line">  <span class="keyword">auto</span> greater_than_or_equal3 = <a class="code hl_variable" href="group__expressions.html#gafe769e4a8371075920e4ecf343d399ab">_1</a> &gt; <a class="code hl_variable" href="group__expressions.html#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>;</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;greater_than_or_equal3 result =&gt; {}&quot;</span>, greater_than_or_equal2(32, 42));</div>
+<div class="line">  <span class="keyword">auto</span> greater_than_or_equal4 = <a class="code hl_function" href="structxtd_1_1expressions_1_1expression.html#a425b2af8d82d60da36f0394c5fe72af7">expression::greater_than_or_equal</a>(<a class="code hl_variable" href="group__expressions.html#gafe769e4a8371075920e4ecf343d399ab">_1</a>, <a class="code hl_variable" href="group__expressions.html#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;greater_than_or_equal4 result =&gt; {}&quot;</span>, greater_than_or_equal4(32, 42));</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// greater_than_or_equal1 result =&gt; true</span></div>
+<div class="line"><span class="comment">// greater_than_or_equal2 result =&gt; true</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// greater_than_or_equal3 result =&gt; false</span></div>
+<div class="line"><span class="comment">// greater_than_or_equal4 result =&gt; false</span></div>
+<div class="ttc" id="agroup__expressions_html_ga130423906ed7125e321bf42e00dafae9"><div class="ttname"><a href="group__expressions.html#ga130423906ed7125e321bf42e00dafae9">xtd::expressions::_</a></div><div class="ttdeci">constexpr auto _</div><div class="ttdoc">The xtd::expressions::_ placeholder instance is used by expression that have only one argument.</div><div class="ttdef"><b>Definition</b> args.hpp:66</div></div>
+<div class="ttc" id="agroup__expressions_html_ga9d506249a7fb0b4fb43b6880ac3b13f0"><div class="ttname"><a href="group__expressions.html#ga9d506249a7fb0b4fb43b6880ac3b13f0">xtd::expressions::_2</a></div><div class="ttdeci">constexpr auto _2</div><div class="ttdoc">The xtd::expressions::_2 placeholder instance is second argument used by expression.</div><div class="ttdef"><b>Definition</b> args.hpp:117</div></div>
+<div class="ttc" id="agroup__expressions_html_gafe769e4a8371075920e4ecf343d399ab"><div class="ttname"><a href="group__expressions.html#gafe769e4a8371075920e4ecf343d399ab">xtd::expressions::_1</a></div><div class="ttdeci">constexpr auto _1</div><div class="ttdoc">The xtd::expressions::_1 placeholder instance is first argument used by expression.</div><div class="ttdef"><b>Definition</b> args.hpp:92</div></div>
+<div class="ttc" id="anamespacextd_html_a9482c5e9fb1d60c658bbe28bfbb17353"><div class="ttname"><a href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">xtd::println</a></div><div class="ttdeci">auto println(FILE *file) -&gt; void</div><div class="ttdoc">Writes the current line terminator to the file output stream using the specified format information.</div><div class="ttdef"><b>Definition</b> println.hpp:15</div></div>
+<div class="ttc" id="astructxtd_1_1expressions_1_1expression_html_a425b2af8d82d60da36f0394c5fe72af7"><div class="ttname"><a href="structxtd_1_1expressions_1_1expression.html#a425b2af8d82d60da36f0394c5fe72af7">xtd::expressions::expression::greater_than_or_equal</a></div><div class="ttdeci">static constexpr auto greater_than_or_equal(left_t left, right_t right)</div><div class="ttdoc">Greater than or equzl the specified left and right operands.</div></div>
+</div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="structxtd_1_1expressions_1_1greater__than__or__equal__expression.html" title="The xtd::expressions::greater_than_or_equal_expression is the greater or equal expression.">xtd::expressions::greater_than_or_equal_expression</a> struct is used by <a class="el" href="structxtd_1_1expressions_1_1expression.html#a425b2af8d82d60da36f0394c5fe72af7" title="Greater than or equzl the specified left and right operands.">xtd::expressions::expression::greater_than_or_equal</a> expression. </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
