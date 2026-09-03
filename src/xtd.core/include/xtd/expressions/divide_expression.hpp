@@ -21,7 +21,7 @@ namespace xtd {
     /// ```
     /// @par Library
     /// xtd.core
-    /// @ingroup xtd_core expressions
+    /// @ingroup xtd_core
     /// @par Examples
     /// The following example shows how to use xtd::expressions::expression::divide.
     /// ```cpp

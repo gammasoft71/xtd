@@ -21,7 +21,7 @@ namespace xtd {
     /// ```
     /// @par Library
     /// xtd.core
-    /// @ingroup xtd_core expressions
+    /// @ingroup xtd_core
     /// @remarks The xtd::expressions::unary_minus_expression struct is used by xtd::expressions::expression::unary_minus expression.
     template<typename value_t>
     struct unary_minus_expression : unary_expression {

@@ -21,7 +21,7 @@ namespace xtd {
     /// ```
     /// @par Library
     /// xtd.core
-    /// @ingroup xtd_core expressions
+    /// @ingroup xtd_core
     /// @remarks The xtd::expressions::multiply_expression struct is used by xtd::expressions::expression::multiply expression.
     template<typename left_t, typename right_t>
     struct multiply_expression : binary_expression {

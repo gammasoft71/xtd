@@ -26,7 +26,7 @@ namespace xtd {
     /// ```
     /// @par Library
     /// xtd.core
-    /// @ingroup xtd_core expressions
+    /// @ingroup xtd_core
     /// @remarks The xtd::expressions::as_expression method is used by xtd::expressions operators.
     template<typename type_t>
     requires expression_operand<type_t>
@@ -44,7 +44,7 @@ namespace xtd {
     /// ```
     /// @par Library
     /// xtd.core
-    /// @ingroup xtd_core expressions
+    /// @ingroup xtd_core
     /// @remarks The xtd::expressions::as_expression method is used by xtd::expressions operators.
     template<typename type_t>
     requires (!expression_operand<type_t>)

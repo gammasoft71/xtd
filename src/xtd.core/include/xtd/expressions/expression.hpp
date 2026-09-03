@@ -12,6 +12,11 @@
 namespace xtd {
   /// @brief The xtd::expressions namespace provides a lightweight, composable expression template framework for building and evaluating lazy, strongly-typed functional expressions from arbitrary callables
   namespace expressions {
+    /// @cond
+    template <size_t index>
+    struct placeholder;
+    /// @endcond
+    
     /// @brief Provides the base class from which the classes that represent expression tree nodes are derived. It also contains static factory methods to create the various node types. This is an abstract class.
     /// @par Namespace
     /// xtd::expressions
@@ -105,6 +110,54 @@ namespace xtd {
     /// // type_of(expr2) = xtd::expressions::multiply_expression<xtd::expressions::add_expression<xtd::expressions::placeholder<1ul>, xtd::expressions::placeholder<2ul>>, xtd::expressions::constant<int>>
     /// ```
     struct expression {
+      /// @name Public Static Fields
+      
+      /// @{
+      /// @brief Gets the `index` argument used by expression.
+      /// @remarks The index start from 1 to N.
+      /// @par Examples
+      /// The following example shows how to use xtd::expressions::expression::arg.
+      /// @include add_expression/src/arg_expression.cpp
+      template <size_t index>
+      static constexpr xtd::expressions::placeholder<index> arg;
+
+      /// @brief Gets the `index` placeholder used by expression.
+      /// @remarks The index start from 1 to N.
+      /// @remarks Prefer the xtd::expressions::expression::arg <N> or xtd::expressions::_, xtd::expressions::_1 ... xtd::expressions::_10 instead xtd::expressions::expression::placeholder.
+      /// @par Examples
+      /// The following example shows how to use xtd::expressions::expression::placeholder.
+      /// ```cpp
+      /// #include <xtd/xtd>
+      ///
+      /// auto main() -> int {
+      ///   // auto placeholder1 = [](auto&& _) {return _;};
+      ///   auto placeholder1 = _;
+      ///   println("placeholder1 result => {}", placeholder1(10));
+      ///   auto placeholder2 = _1;
+      ///   println("placeholder2 result => {}", placeholder2(10));
+      ///   auto placeholder3 = placeholder<1> {};
+      ///   println("placeholder3 result => {}", placeholder3(10));
+      ///   auto placeholder4 = expression::placeholder<1>();
+      ///   println("placeholder4 result => {}", placeholder4(10));
+      ///   println();
+      ///   // auto expr1 = [](auto&& _1, auto&& _2, auto&& _3) {return _1 + _2 + _3;};
+      ///   auto expr1 = _1 + placeholder<2> {} + expression::placeholder<3>();
+      ///   println("expr1 result => {}", expr1(10, 20, 30));
+      /// }
+      ///
+      /// // This code produces the following output :
+      /// //
+      /// // placeholder1 result => 10
+      /// // placeholder2 result => 10
+      /// // placeholder3 result => 10
+      /// // placeholder4 result => 10
+      /// //
+      /// // expr1 result => 60
+      /// ```
+      template <size_t index>
+      static constexpr xtd::expressions::placeholder<index> placeholder;
+      /// @}
+
       /// @name Public Static Methods
       
       /// @{
@@ -114,31 +167,7 @@ namespace xtd {
       /// @return The result of add.
       /// @par Examples
       /// The following example shows how to use xtd::expressions::expression::add.
-      /// ```cpp
-      /// #include <xtd/xtd>
-      ///
-      /// auto main() -> int {
-      ///   // auto add1 = [](auto&& _) {return _ + 10;};
-      ///   auto add1 = _ + 10;
-      ///   println("add1 result => {}", add1(40));
-      ///   auto add2 = expression::add(_, 10);
-      ///   println("add2 result => {}", add2(40));
-      ///   println();
-      ///   // auto add3 = [](auto&& _1, auto&& _2) {return _1 + _2;};
-      ///   auto add3 = _1 + _2;
-      ///   println("add3 result => {}", add3(40, 20));
-      ///   auto add4 = expression::add(_1, _2);
-      ///   println("add4 result => {}", add4(40, 20));
-      /// }
-      ///
-      /// // This code produces the following output :
-      /// //
-      /// // add1 result => 50
-      /// // add2 result => 50
-      /// //
-      /// // add3 result => 60
-      /// // add4 result => 60
-      /// ```
+      /// @include add_expression/src/add_expression.cpp
       template<typename left_t, typename right_t>
       requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
       static constexpr auto add(left_t left, right_t right);
@@ -149,31 +178,7 @@ namespace xtd {
       /// @return The result of bitwise and.
       /// @par Examples
       /// The following example shows how to use xtd::expressions::expression::and_.
-      /// ```cpp
-      /// #include <xtd/xtd>
-      ///
-      /// auto main() -> int {
-      ///   // auto and1 = [](auto&& _) {return _ & 0x0F;};
-      ///   auto and1 = _ & 0x0F;
-      ///   println("and1 result => {:B}", and1(42));
-      ///   auto and2 = expression::and_(_, 0x0F);
-      ///   println("and2 result => {:B}", and2(42));
-      ///   println();
-      ///   // auto and3 = [](auto&& _1, auto&& _2) {return _1 & _2;};
-      ///   auto and3 = _1 & _2;
-      ///   println("and3 result => {:B}", and3(42, 0xF0));
-      ///   auto and4 = expression::and_(_1, _2);
-      ///   println("and4 result => {:B}", and4(42, 0xF0));
-      /// }
-      ///
-      /// // This code produces the following output :
-      /// //
-      /// // and1 result => 1010
-      /// // and2 result => 1010
-      /// //
-      /// // and3 result => 100000
-      /// // and4 result => 100000
-      /// ```
+      /// @include add_expression/src/and_expression.cpp
       template<typename left_t, typename right_t>
       requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
       static constexpr auto and_(left_t left, right_t right);
@@ -214,41 +219,6 @@ namespace xtd {
       template<typename left_t, typename right_t>
       requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
       static constexpr auto and_also(left_t left, right_t right);
-      
-      /// @brief Gets the `index` argument used by expression.
-      /// @remarks The index start from 1 to N.
-      /// @par Examples
-      /// The following example shows how to use xtd::expressions::expression::arg.
-      /// ```cpp
-      /// #include <xtd/xtd>
-      ///
-      /// auto main() -> int {
-      ///   // auto placeholder1 = [](auto&& _) {return _;};
-      ///   auto arg1 = _;
-      ///   println("arg1 result => {}", arg1(10));
-      ///   auto arg2 = _1;
-      ///   println("arg2 result => {}", arg2(10));
-      ///   auto arg3 = arg<1> {};
-      ///   println("arg3 result => {}", arg3(10));
-      ///   auto arg4 = expression::arg<1>();
-      ///   println("arg4 result => {}", arg4(10));
-      ///   println();
-      ///   // auto expr1 = [](auto&& _1, auto&& _2, auto&& _3) {return _1 + _2 + _3;};
-      ///   auto expr1 = _1 + arg<2> + expression::arg<3>();
-      ///   println("expr1 result => {}", expr1(10, 20, 30));
-      /// }
-      ///
-      /// // This code produces the following output :
-      /// //
-      /// // arg1 result => 10
-      /// // arg2 result => 10
-      /// // arg3 result => 10
-      /// // arg4 result => 10
-      /// //
-      /// // expr1 result => 60
-      /// ```
-      template <size_t index>
-      static constexpr auto arg();
       
       /// @brief Compare three way the specified left and right operands.
       /// @param left The left operand.
@@ -899,42 +869,6 @@ namespace xtd {
       template<typename left_t, typename right_t>
       requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
       static constexpr auto or_else(left_t left, right_t right);
-
-      /// @brief Gets the `index` placeholder used by expression.
-      /// @remarks The index start from 1 to N.
-      /// @remarks Prefer the xtd::expressions::expression::arg <N> or xtd::expressions::_, xtd::expressions::_1 ... xtd::expressions::_10 instead xtd::expressions::expression::placeholder.
-      /// @par Examples
-      /// The following example shows how to use xtd::expressions::expression::placeholder.
-      /// ```cpp
-      /// #include <xtd/xtd>
-      ///
-      /// auto main() -> int {
-      ///   // auto placeholder1 = [](auto&& _) {return _;};
-      ///   auto placeholder1 = _;
-      ///   println("placeholder1 result => {}", placeholder1(10));
-      ///   auto placeholder2 = _1;
-      ///   println("placeholder2 result => {}", placeholder2(10));
-      ///   auto placeholder3 = placeholder<1> {};
-      ///   println("placeholder3 result => {}", placeholder3(10));
-      ///   auto placeholder4 = expression::placeholder<1>();
-      ///   println("placeholder4 result => {}", placeholder4(10));
-      ///   println();
-      ///   // auto expr1 = [](auto&& _1, auto&& _2, auto&& _3) {return _1 + _2 + _3;};
-      ///   auto expr1 = _1 + placeholder<2> {} + expression::placeholder<3>();
-      ///   println("expr1 result => {}", expr1(10, 20, 30));
-      /// }
-      ///
-      /// // This code produces the following output :
-      /// //
-      /// // placeholder1 result => 10
-      /// // placeholder2 result => 10
-      /// // placeholder3 result => 10
-      /// // placeholder4 result => 10
-      /// //
-      /// // expr1 result => 60
-      /// ```
-      template <size_t index>
-      static constexpr auto placeholder();
 
       /// @brief Right shift the specified left and right operands.
       /// @param left The left operand.

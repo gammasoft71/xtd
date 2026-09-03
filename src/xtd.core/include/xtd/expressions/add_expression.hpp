@@ -21,7 +21,7 @@ namespace xtd {
     /// ```
     /// @par Library
     /// xtd.core
-    /// @ingroup xtd_core expressions
+    /// @ingroup xtd_core
     /// @par Examples
     /// The following example shows how to use xtd::expressions::expression::add.
     /// @include add_expression/src/add_expression.cpp
@@ -94,7 +94,7 @@ namespace xtd {
     /// @ingroup xtd_core expressions
     /// @par Examples
     /// The following example shows how to use xtd::expressions::expression::add.
-    /// @include add_expression/src/add_expression.cpp
+    /// @include add_expression.cpp
     template<typename left_t, typename right_t>
     requires expression_operand<left_t> || expression_operand<right_t>
     constexpr auto operator +(left_t left, right_t right) {return expression::add(std::move(left), std::move(right));}

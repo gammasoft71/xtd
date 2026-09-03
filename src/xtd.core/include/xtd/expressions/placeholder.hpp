@@ -22,7 +22,7 @@ namespace xtd {
     /// ```
     /// @par Library
     /// xtd.core
-    /// @ingroup xtd_core expressions
+    /// @ingroup xtd_core
     /// @remarks Prefer the xtd::expressions::arg <N> or xtd::expressions::_, xtd::expressions::_1 ... xtd::expressions::_10 instead xtd::expressions::placeholder.
     /// @par Examples
     /// The following example shows how to use xtd::expressions::expression::placeholder.
@@ -83,7 +83,11 @@ namespace xtd {
 
     /// @cond
     template <size_t index>
-    constexpr auto expression::placeholder() {return xtd::expressions::placeholder<index> {};}
+    inline constexpr placeholder<index> expression::arg;
+
+    template <size_t index>
+    inline constexpr placeholder<index> expression::placeholder;
+    /// @endcond
 
     template <size_t index>
     inline auto operator <<(std::ostream& os, const placeholder<index>&) -> std::ostream& {return os << "_" << index;}
