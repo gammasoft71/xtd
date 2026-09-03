@@ -19,7 +19,7 @@ xtdc run
 
 ```
 add(40, 20)) => 60
-add("Hello, "_s, "world!"_s) => Hello, world!
-add(date_time , 7_min + 24_s) => 4/20/2026 9:20:00 PM
-add(foo {50}, foo {30}) => 80
+add("Hello, "_s, "world!"_s) = Hello, world!
+add(date_time , 7_min + 24_s) = 4/20/2026 9:20:00 PM
+add(foo {50}, foo {30}) = 80
 ```
