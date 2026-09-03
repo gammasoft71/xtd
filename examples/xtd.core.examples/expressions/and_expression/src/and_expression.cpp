@@ -1,23 +1,23 @@
 #include <xtd/xtd>
 
 auto main() -> int {
-  // auto and1 = [](auto&& _) {return _ & 0x0F;};
-  auto and1 = _ & 0x0F;
-  println("and1 result => {:B}", and1(42));
-  auto and2 = expression::and_(_, 0x0F);
-  println("and2 result => {:B}", and2(42));
+  // auto expr1 = [](auto&& _) {return _ & 0x0F;};
+  auto expr1 = _ & 0x0F;
+  println("expr1 = {:B}", expr1(42));
+  auto expr2 = expression::and_(_, 0x0F);
+  println("expr2 = {:B}", expr2(42));
   println();
-  // auto and3 = [](auto&& _1, auto&& _2) {return _1 & _2;};
-  auto and3 = _1 & _2;
-  println("and3 result => {:B}", and3(42, 0xF0));
-  auto and4 = expression::and_(_1, _2);
-  println("and4 result => {:B}", and4(42, 0xF0));
+  // auto expr3 = [](auto&& _1, auto&& _2) {return _1 & _2;};
+  auto expr3 = _1 & _2;
+  println("expr3 = {:B}", expr3(42, 0xF0));
+  auto expr4 = expression::and_(_1, _2);
+  println("expr4 = {:B}", expr4(42, 0xF0));
 }
 
 // This code produces the following output :
 //
-// and1 result => 1010
-// and2 result => 1010
+// expr1 = 1010
+// expr2 = 1010
 //
-// and3 result => 100000
-// and4 result => 100000
+// expr3 = 100000
+// expr4 = 100000

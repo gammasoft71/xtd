@@ -18,9 +18,9 @@ xtdc run
 ## Output
 
 ```
-and1 result => 1010
-and2 result => 1010
+expr1 = 1010
+expr2 = 1010
 
-and3 result => 100000
-and4 result => 100000
+expr3 = 100000
+expr4 = 100000
 ```
