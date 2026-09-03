@@ -117,34 +117,32 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="comment">// auto div1 = [](auto&amp;&amp; a) {return a / 2;}</span></div>
-<div class="line">  <span class="keyword">auto</span> div1 = _ / 2;</div>
-<div class="line"> </div>
-<div class="line">  println(<span class="stringliteral">&quot;div1 resul =&gt; {}&quot;</span>, div1(84));</div>
+<div class="line">  <span class="comment">// auto expr1 = [](auto&amp;&amp; a) {return a / 2;}</span></div>
+<div class="line">  <span class="keyword">auto</span> expr1 = _ / 2;</div>
+<div class="line">  println(<span class="stringliteral">&quot;expr1 = {}&quot;</span>, expr1(84));</div>
 <div class="line">  println();</div>
 <div class="line"> </div>
-<div class="line">  <span class="comment">// auto div2 = [](auto&amp;&amp; a, auto&amp;&amp; b) {return a / b;}</span></div>
-<div class="line">  <span class="keyword">auto</span> div2 = _1 / _2;</div>
-<div class="line"> </div>
-<div class="line">  println(<span class="stringliteral">&quot;div2 resul =&gt; {}&quot;</span>, div2(84, 2));</div>
-<div class="line">  println(<span class="stringliteral">&quot;div2 resul =&gt; {}&quot;</span>, div2(foo {84}, foo {2}));</div>
+<div class="line">  <span class="comment">// auto expr2 = [](auto&amp;&amp; a, auto&amp;&amp; b) {return a / b;}</span></div>
+<div class="line">  <span class="keyword">auto</span> expr2 = _1 / _2;</div>
+<div class="line">  println(<span class="stringliteral">&quot;expr2 = {}&quot;</span>, expr2(84, 2));</div>
+<div class="line">  println(<span class="stringliteral">&quot;expr2 = {}&quot;</span>, expr2(foo {84}, foo {2}));</div>
 <div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>();</div>
 <div class="line"> </div>
-<div class="line">  <span class="comment">// auto div3 = [](auto&amp;&amp; a, auto&amp;&amp; b, auto&amp;&amp; c) {return a / 2 / b / c;}</span></div>
-<div class="line">  <span class="keyword">auto</span> div3 = <a class="code hl_variable" href="group__expressions.html#gafe769e4a8371075920e4ecf343d399ab">_1</a> / 2 / <a class="code hl_variable" href="group__expressions.html#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>  / <a class="code hl_variable" href="group__expressions.html#gac705fd840359c016dad779817f2f7c36">_3</a>;</div>
+<div class="line">  <span class="comment">// auto expr3 = [](auto&amp;&amp; a, auto&amp;&amp; b, auto&amp;&amp; c) {return a / 2 / b / c;}</span></div>
+<div class="line">  <span class="keyword">auto</span> expr3 = <a class="code hl_variable" href="group__expressions.html#gafe769e4a8371075920e4ecf343d399ab">_1</a> / 2 / <a class="code hl_variable" href="group__expressions.html#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>  / <a class="code hl_variable" href="group__expressions.html#gac705fd840359c016dad779817f2f7c36">_3</a>;</div>
 <div class="line"> </div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;div3 resul =&gt; {}&quot;</span>, div3(84, 7, 3));</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;expr3 = {}&quot;</span>, expr3(84, 7, 3));</div>
 <div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>();</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// div1 resul =&gt; 42</span></div>
+<div class="line"><span class="comment">// expr1 = 42</span></div>
 <div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// div2 resul =&gt; 42</span></div>
-<div class="line"><span class="comment">// div2 resul =&gt; 42</span></div>
+<div class="line"><span class="comment">// expr2 = 42</span></div>
+<div class="line"><span class="comment">// expr2 = 42</span></div>
 <div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// div3 resul =&gt; 2</span></div>
+<div class="line"><span class="comment">// expr3 = 2</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="ttc" id="agroup__expressions_html_ga9d506249a7fb0b4fb43b6880ac3b13f0"><div class="ttname"><a href="group__expressions.html#ga9d506249a7fb0b4fb43b6880ac3b13f0">xtd::expressions::_2</a></div><div class="ttdeci">constexpr auto _2</div><div class="ttdoc">The xtd::expressions::_2 placeholder instance is second argument used by expression.</div><div class="ttdef"><b>Definition</b> args.hpp:82</div></div>
 <div class="ttc" id="agroup__expressions_html_gac705fd840359c016dad779817f2f7c36"><div class="ttname"><a href="group__expressions.html#gac705fd840359c016dad779817f2f7c36">xtd::expressions::_3</a></div><div class="ttdeci">constexpr auto _3</div><div class="ttdoc">The xtd::expressions::_3 placeholder instance is third argument used by expression.</div><div class="ttdef"><b>Definition</b> args.hpp:107</div></div>

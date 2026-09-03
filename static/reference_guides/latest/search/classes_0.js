@@ -12,7 +12,7 @@ var searchData=
   ['addable_9',['addable',['../structxtd_1_1addable.html',1,'xtd']]],
   ['adjustment_5frule_10',['adjustment_rule',['../classxtd_1_1time__zone__info_1_1adjustment__rule.html',1,'xtd::time_zone_info']]],
   ['alpha_11',['alpha',['../structxtd_1_1drawing_1_1helpers_1_1alpha.html',1,'xtd::drawing::helpers']]],
-  ['and_5fexpression_12',['and_expression',['../structxtd_1_1expressions_1_1and__expression.html',1,'xtd::expressions']]],
+  ['and_5f_12',['and_',['../structxtd_1_1expressions_1_1and__.html',1,'xtd::expressions']]],
   ['and_5foperator_5fvalue_13',['and_operator_value',['../classxtd_1_1tunit_1_1constraints_1_1and__operator__value.html',1,'xtd::tunit::constraints']]],
   ['animation_14',['animation',['../classxtd_1_1forms_1_1animation.html',1,'xtd::forms']]],
   ['animation_5fupdated_5fevent_5fargs_15',['animation_updated_event_args',['../classxtd_1_1forms_1_1animation__updated__event__args.html',1,'xtd::forms']]],

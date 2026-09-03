@@ -126,7 +126,7 @@ Inheritance diagram for xtd::expressions::expression:</div>
 <area href="structxtd_1_1expressions_1_1unary__expression.html" title="The xtd::expressions::unary_expression is the base class for xtd::expressions::placeholder." alt="xtd::expressions::unary_expression" shape="rect" coords="2961,56,3374,80"/>
 <area href="structxtd_1_1expressions_1_1value__expression.html" title="The xtd::expressions::value_expression is the base class for xtd::expressions::placeholder." alt="xtd::expressions::value_expression" shape="rect" coords="3807,56,4220,80"/>
 <area href="structxtd_1_1expressions_1_1add.html" title="The xtd::expressions::add is the add expression." alt="xtd::expressions::add&lt; left_t, right_t &gt;" shape="rect" coords="423,112,836,136"/>
-<area href="structxtd_1_1expressions_1_1and__expression.html" title="The xtd::expressions::and_expression is the bitwise and expression." alt="xtd::expressions::and_expression&lt; left_t, right_t &gt;" shape="rect" coords="423,168,836,192"/>
+<area href="structxtd_1_1expressions_1_1and__.html" title="The xtd::expressions::and_ is the bitwise and expression." alt="xtd::expressions::and_&lt; left_t, right_t &gt;" shape="rect" coords="423,168,836,192"/>
 <area href="structxtd_1_1expressions_1_1compare__three__way__expression.html" title="The xtd::expressions::compare_three_way_expression is the three_way_comparison expression." alt="xtd::expressions::compare_three_way_expression&lt; left_t, right_t &gt;" shape="rect" coords="423,224,836,248"/>
 <area href="structxtd_1_1expressions_1_1divide__expression.html" title="The xtd::expressions::divide_expression is the division expression." alt="xtd::expressions::divide_expression&lt; left_t, right_t &gt;" shape="rect" coords="423,280,836,304"/>
 <area href="structxtd_1_1expressions_1_1equal__expression.html" title="The xtd::expressions::equal_expression is the equal expression." alt="xtd::expressions::equal_expression&lt; left_t, right_t &gt;" shape="rect" coords="423,336,836,360"/>
@@ -474,26 +474,26 @@ requires std::is_base_of_v&lt;expression, std::decay_t&lt;left_t&gt;&gt; || std:
 <dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="#a3db1b12325af413591046bd39d77b807" title="Add the specified left and right operands.">xtd::expressions::expression::add</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="comment">// auto add1 = [](auto&amp;&amp; _) {return _ + 10;};</span></div>
-<div class="line">  <span class="keyword">auto</span> add1 = <a class="code hl_variable" href="group__expressions.html#ga130423906ed7125e321bf42e00dafae9">_</a> + 10;</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;add1 result =&gt; {}&quot;</span>, add1(40));</div>
-<div class="line">  <span class="keyword">auto</span> add2 = <a class="code hl_function" href="#a3db1b12325af413591046bd39d77b807">expression::add</a>(<a class="code hl_variable" href="group__expressions.html#ga130423906ed7125e321bf42e00dafae9">_</a>, 10);</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;add2 result =&gt; {}&quot;</span>, add2(40));</div>
+<div class="line">  <span class="comment">// auto expr1 = [](auto&amp;&amp; _) {return _ + 10;};</span></div>
+<div class="line">  <span class="keyword">auto</span> expr1 = <a class="code hl_variable" href="group__expressions.html#ga130423906ed7125e321bf42e00dafae9">_</a> + 10;</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;expr1 = {}&quot;</span>, expr1(40));</div>
+<div class="line">  <span class="keyword">auto</span> expr2 = <a class="code hl_function" href="#a3db1b12325af413591046bd39d77b807">expression::add</a>(<a class="code hl_variable" href="group__expressions.html#ga130423906ed7125e321bf42e00dafae9">_</a>, 10);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;expr2 = {}&quot;</span>, expr2(40));</div>
 <div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>();</div>
-<div class="line">  <span class="comment">// auto add3 = [](auto&amp;&amp; _1, auto&amp;&amp; _2) {return _1 + _2;};</span></div>
-<div class="line">  <span class="keyword">auto</span> add3 = <a class="code hl_variable" href="group__expressions.html#gafe769e4a8371075920e4ecf343d399ab">_1</a> + <a class="code hl_variable" href="group__expressions.html#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>;</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;add3 result =&gt; {}&quot;</span>, add3(40, 20));</div>
-<div class="line">  <span class="keyword">auto</span> add4 = <a class="code hl_function" href="#a3db1b12325af413591046bd39d77b807">expression::add</a>(<a class="code hl_variable" href="group__expressions.html#gafe769e4a8371075920e4ecf343d399ab">_1</a>, <a class="code hl_variable" href="group__expressions.html#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>);</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;add4 result =&gt; {}&quot;</span>, add4(40, 20));</div>
+<div class="line">  <span class="comment">// auto expr3 = [](auto&amp;&amp; _1, auto&amp;&amp; _2) {return _1 + _2;};</span></div>
+<div class="line">  <span class="keyword">auto</span> expr3 = <a class="code hl_variable" href="group__expressions.html#gafe769e4a8371075920e4ecf343d399ab">_1</a> + <a class="code hl_variable" href="group__expressions.html#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>;</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;expr3 = {}&quot;</span>, expr3(40, 20));</div>
+<div class="line">  <span class="keyword">auto</span> expr4 = <a class="code hl_function" href="#a3db1b12325af413591046bd39d77b807">expression::add</a>(<a class="code hl_variable" href="group__expressions.html#gafe769e4a8371075920e4ecf343d399ab">_1</a>, <a class="code hl_variable" href="group__expressions.html#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;expr4 = {}&quot;</span>, expr4(40, 20));</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// add1 result =&gt; 50</span></div>
-<div class="line"><span class="comment">// add2 result =&gt; 50</span></div>
+<div class="line"><span class="comment">// expr1 = 50</span></div>
+<div class="line"><span class="comment">// expr2 = 50</span></div>
 <div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// add3 result =&gt; 60</span></div>
-<div class="line"><span class="comment">// add4 result =&gt; 60</span></div>
+<div class="line"><span class="comment">// expr3 = 60</span></div>
+<div class="line"><span class="comment">// expr4 = 60</span></div>
 <div class="ttc" id="agroup__expressions_html_ga130423906ed7125e321bf42e00dafae9"><div class="ttname"><a href="group__expressions.html#ga130423906ed7125e321bf42e00dafae9">xtd::expressions::_</a></div><div class="ttdeci">constexpr auto _</div><div class="ttdoc">The xtd::expressions::_ placeholder instance is used by expression that have only one argument.</div><div class="ttdef"><b>Definition</b> args.hpp:31</div></div>
 </div><!-- fragment --> </dd></dl>
 
@@ -541,26 +541,26 @@ requires std::is_base_of_v&lt;expression, std::decay_t&lt;left_t&gt;&gt; || std:
 <dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="#a91497147d6e1d49364f7f219d0b74aa7" title="Bitwise and the specified left and right operands.">xtd::expressions::expression::and_</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="comment">// auto and1 = [](auto&amp;&amp; _) {return _ &amp; 0x0F;};</span></div>
-<div class="line">  <span class="keyword">auto</span> and1 = <a class="code hl_variable" href="group__expressions.html#ga130423906ed7125e321bf42e00dafae9">_</a> &amp; 0x0F;</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;and1 result =&gt; {:B}&quot;</span>, and1(42));</div>
-<div class="line">  <span class="keyword">auto</span> and2 = <a class="code hl_function" href="#a91497147d6e1d49364f7f219d0b74aa7">expression::and_</a>(<a class="code hl_variable" href="group__expressions.html#ga130423906ed7125e321bf42e00dafae9">_</a>, 0x0F);</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;and2 result =&gt; {:B}&quot;</span>, and2(42));</div>
+<div class="line">  <span class="comment">// auto expr1 = [](auto&amp;&amp; _) {return _ &amp; 0x0F;};</span></div>
+<div class="line">  <span class="keyword">auto</span> expr1 = <a class="code hl_variable" href="group__expressions.html#ga130423906ed7125e321bf42e00dafae9">_</a> &amp; 0x0F;</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;expr1 = {:B}&quot;</span>, expr1(42));</div>
+<div class="line">  <span class="keyword">auto</span> expr2 = <a class="code hl_function" href="#a91497147d6e1d49364f7f219d0b74aa7">expression::and_</a>(<a class="code hl_variable" href="group__expressions.html#ga130423906ed7125e321bf42e00dafae9">_</a>, 0x0F);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;expr2 = {:B}&quot;</span>, expr2(42));</div>
 <div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>();</div>
-<div class="line">  <span class="comment">// auto and3 = [](auto&amp;&amp; _1, auto&amp;&amp; _2) {return _1 &amp; _2;};</span></div>
-<div class="line">  <span class="keyword">auto</span> and3 = <a class="code hl_variable" href="group__expressions.html#gafe769e4a8371075920e4ecf343d399ab">_1</a> &amp; <a class="code hl_variable" href="group__expressions.html#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>;</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;and3 result =&gt; {:B}&quot;</span>, and3(42, 0xF0));</div>
-<div class="line">  <span class="keyword">auto</span> and4 = <a class="code hl_function" href="#a91497147d6e1d49364f7f219d0b74aa7">expression::and_</a>(<a class="code hl_variable" href="group__expressions.html#gafe769e4a8371075920e4ecf343d399ab">_1</a>, <a class="code hl_variable" href="group__expressions.html#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>);</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;and4 result =&gt; {:B}&quot;</span>, and4(42, 0xF0));</div>
+<div class="line">  <span class="comment">// auto expr3 = [](auto&amp;&amp; _1, auto&amp;&amp; _2) {return _1 &amp; _2;};</span></div>
+<div class="line">  <span class="keyword">auto</span> expr3 = <a class="code hl_variable" href="group__expressions.html#gafe769e4a8371075920e4ecf343d399ab">_1</a> &amp; <a class="code hl_variable" href="group__expressions.html#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>;</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;expr3 = {:B}&quot;</span>, expr3(42, 0xF0));</div>
+<div class="line">  <span class="keyword">auto</span> expr4 = <a class="code hl_function" href="#a91497147d6e1d49364f7f219d0b74aa7">expression::and_</a>(<a class="code hl_variable" href="group__expressions.html#gafe769e4a8371075920e4ecf343d399ab">_1</a>, <a class="code hl_variable" href="group__expressions.html#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;expr4 = {:B}&quot;</span>, expr4(42, 0xF0));</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// and1 result =&gt; 1010</span></div>
-<div class="line"><span class="comment">// and2 result =&gt; 1010</span></div>
+<div class="line"><span class="comment">// expr1 = 1010</span></div>
+<div class="line"><span class="comment">// expr2 = 1010</span></div>
 <div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// and3 result =&gt; 100000</span></div>
-<div class="line"><span class="comment">// and4 result =&gt; 100000</span></div>
+<div class="line"><span class="comment">// expr3 = 100000</span></div>
+<div class="line"><span class="comment">// expr4 = 100000</span></div>
 <div class="ttc" id="astructxtd_1_1expressions_1_1expression_html_a91497147d6e1d49364f7f219d0b74aa7"><div class="ttname"><a href="#a91497147d6e1d49364f7f219d0b74aa7">xtd::expressions::expression::and_</a></div><div class="ttdeci">static constexpr auto and_(left_t left, right_t right)</div><div class="ttdoc">Bitwise and the specified left and right operands.</div></div>
 </div><!-- fragment --> </dd></dl>
 
@@ -2350,39 +2350,34 @@ template&lt;size_t index&gt; </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="comment">// auto arg1 = [](auto&amp;&amp; _1) {return _1;};</span></div>
 <div class="line">  <span class="keyword">auto</span> arg1_1 = <a class="code hl_variable" href="#a417c513909f116ecb7f124af58e7fe3b">expression::arg&lt;1&gt;</a>;</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;arg1_1 result =&gt; {}&quot;</span>, arg1_1(10));</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;arg1_1 = {}&quot;</span>, arg1_1(10));</div>
 <div class="line">  <span class="comment">// For argument 1 to 10, a second method is possible because the _N are aliases on xtd::expressionq::expression::arg&lt;N&gt;.</span></div>
 <div class="line">  <span class="keyword">auto</span> arg1_2 = <a class="code hl_variable" href="group__expressions.html#gafe769e4a8371075920e4ecf343d399ab">_1</a>; <span class="comment">// The _N are aliases on xtd::expressions::expression::arg&lt;N&gt;.</span></div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;arg1_2 result =&gt; {}&quot;</span>, arg1_2(10));</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;arg1_2 = {}&quot;</span>, arg1_2(10));</div>
 <div class="line">  <span class="comment">// For argument 1, a third method is possible because the _ is an alias on xtd::expressionq::expression::arg&lt;1&gt;.</span></div>
 <div class="line">  <span class="keyword">auto</span> arg1_3 = <a class="code hl_variable" href="group__expressions.html#ga130423906ed7125e321bf42e00dafae9">_</a>; <span class="comment">// The _ is an alias on xtd::expressions::expression::arg&lt;1&gt;.</span></div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;arg1_3 result =&gt; {}&quot;</span>, arg1_3(10));</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;arg1_3 = {}&quot;</span>, arg1_3(10));</div>
 <div class="line">  </div>
 <div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>();</div>
 <div class="line">  <span class="comment">// auto expr = [](auto&amp;&amp; arg1, auto&amp;&amp; arg2, auto&amp;&amp; arg3) {return arg1 + arg2 + arg3;};</span></div>
 <div class="line">  <span class="keyword">auto</span> expr1 = <a class="code hl_variable" href="#a417c513909f116ecb7f124af58e7fe3b">expression::arg&lt;1&gt;</a> + <a class="code hl_variable" href="#a417c513909f116ecb7f124af58e7fe3b">expression::arg&lt;2&gt;</a> + <a class="code hl_variable" href="#a417c513909f116ecb7f124af58e7fe3b">expression::arg&lt;3&gt;</a>;</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;expr1 result =&gt; {}&quot;</span>, expr1(10, 20, 30));</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;expr1 = {}&quot;</span>, expr1(10, 20, 30));</div>
 <div class="line">  <span class="keyword">auto</span> expr2 = <a class="code hl_variable" href="group__expressions.html#gafe769e4a8371075920e4ecf343d399ab">_1</a> + <a class="code hl_variable" href="group__expressions.html#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a> + <a class="code hl_variable" href="group__expressions.html#gac705fd840359c016dad779817f2f7c36">_3</a>; <span class="comment">// The _N are aliases on xtd::expressions::expression::arg&lt;N&gt;.</span></div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;expr2 result =&gt; {}&quot;</span>, expr2(10, 20, 30));</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;expr2 = {}&quot;</span>, expr2(10, 20, 30));</div>
 <div class="line">  <span class="keyword">auto</span> expr3 = <a class="code hl_variable" href="group__expressions.html#ga130423906ed7125e321bf42e00dafae9">_</a> + <a class="code hl_variable" href="group__expressions.html#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a> + <a class="code hl_variable" href="group__expressions.html#gac705fd840359c016dad779817f2f7c36">_3</a>;  <span class="comment">// The _ is an alias on xtd::expressions::expression::arg&lt;1&gt;.</span></div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;expr3 result =&gt; {}&quot;</span>, expr3(10, 20, 30));</div>
-<div class="line"> </div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>();</div>
-<div class="line">  <span class="keyword">auto</span> expr4 = <a class="code hl_variable" href="group__expressions.html#gafe769e4a8371075920e4ecf343d399ab">_1</a> + <a class="code hl_variable" href="#a417c513909f116ecb7f124af58e7fe3b">arg&lt;2&gt;</a> + <a class="code hl_variable" href="#a417c513909f116ecb7f124af58e7fe3b">expression::arg&lt;3&gt;</a>;</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;expr4 result =&gt; {}&quot;</span>, expr4(10, 20, 30));</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;expr3 = {}&quot;</span>, expr3(10, 20, 30));</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// arg1_1 result =&gt; 10</span></div>
-<div class="line"><span class="comment">// arg1_2 result =&gt; 10</span></div>
-<div class="line"><span class="comment">// arg1_3 result =&gt; 10</span></div>
+<div class="line"><span class="comment">// arg1_1 = 10</span></div>
+<div class="line"><span class="comment">// arg1_2 = 10</span></div>
+<div class="line"><span class="comment">// arg1_3 = 10</span></div>
 <div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// expr1 result =&gt; 60</span></div>
-<div class="line"><span class="comment">// expr2 result =&gt; 60</span></div>
-<div class="line"><span class="comment">// expr3 result =&gt; 60</span></div>
-<div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// expr4 result =&gt; 60</span></div>
+<div class="line"><span class="comment">// expr1 = 60</span></div>
+<div class="line"><span class="comment">// expr2 = 60</span></div>
+<div class="line"><span class="comment">// expr3 = 60</span></div>
+<div class="line"> </div>
 <div class="ttc" id="agroup__expressions_html_gac705fd840359c016dad779817f2f7c36"><div class="ttname"><a href="group__expressions.html#gac705fd840359c016dad779817f2f7c36">xtd::expressions::_3</a></div><div class="ttdeci">constexpr auto _3</div><div class="ttdoc">The xtd::expressions::_3 placeholder instance is third argument used by expression.</div><div class="ttdef"><b>Definition</b> args.hpp:107</div></div>
 <div class="ttc" id="astructxtd_1_1expressions_1_1expression_html_a417c513909f116ecb7f124af58e7fe3b"><div class="ttname"><a href="#a417c513909f116ecb7f124af58e7fe3b">xtd::expressions::expression::arg</a></div><div class="ttdeci">static constexpr xtd::expressions::placeholder&lt; index &gt; arg</div><div class="ttdoc">Gets the index argument used by expression.</div><div class="ttdef"><b>Definition</b> expression.hpp:95</div></div>
 </div><!-- fragment --> </dd></dl>

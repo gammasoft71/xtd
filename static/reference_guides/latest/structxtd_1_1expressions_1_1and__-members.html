@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 		<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-		<title>xtd: add_expression.cpp</title>
+		<title>xtd: Member List</title>
     <link href="favicon.png" rel="shortcut icon" type="image/png"/>
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
@@ -79,8 +79,6 @@ document.addEventListener('DOMContentLoaded', () => {
     </li>
   </ul>
 </div><!-- main-nav -->
-</div><!-- top -->
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -102,35 +100,25 @@ document.addEventListener('DOMContentLoaded', () => {
 </div>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a href="namespacextd.html">xtd</a></li><li class="navelem"><a href="namespacextd_1_1expressions.html">expressions</a></li><li class="navelem"><a href="structxtd_1_1expressions_1_1and__.html">and_</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
 <div class="header">
-  <div class="headertitle"><div class="title">add_expression.cpp</div></div>
+  <div class="headertitle"><div class="title">xtd::expressions::and_&lt; left_t, right_t &gt; Member List</div></div>
 </div><!--header-->
 <div class="contents">
-<p>Shows how to use xtd::expressions::operator + expression.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="comment">// auto expr1 = [](auto&amp;&amp; _) {return _ + 10;};</span></div>
-<div class="line">  <span class="keyword">auto</span> expr1 = _ + 10;</div>
-<div class="line">  println(<span class="stringliteral">&quot;expr1 = {}&quot;</span>, expr1(40));</div>
-<div class="line">  <span class="keyword">auto</span> expr2 = expression::add(_, 10);</div>
-<div class="line">  println(<span class="stringliteral">&quot;expr2 = {}&quot;</span>, expr2(40));</div>
-<div class="line">  println();</div>
-<div class="line">  <span class="comment">// auto expr3 = [](auto&amp;&amp; _1, auto&amp;&amp; _2) {return _1 + _2;};</span></div>
-<div class="line">  <span class="keyword">auto</span> expr3 = _1 + _2;</div>
-<div class="line">  println(<span class="stringliteral">&quot;expr3 = {}&quot;</span>, expr3(40, 20));</div>
-<div class="line">  <span class="keyword">auto</span> expr4 = expression::add(_1, _2);</div>
-<div class="line">  println(<span class="stringliteral">&quot;expr4 = {}&quot;</span>, expr4(40, 20));</div>
-<div class="line">}</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// This code produces the following output :</span></div>
-<div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// expr1 = 50</span></div>
-<div class="line"><span class="comment">// expr2 = 50</span></div>
-<div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// expr3 = 60</span></div>
-<div class="line"><span class="comment">// expr4 = 60</span></div>
-</div><!-- fragment --> </div><!-- contents -->
+
+<p>This is the complete list of members for <a class="el" href="structxtd_1_1expressions_1_1and__.html">xtd::expressions::and_&lt; left_t, right_t &gt;</a>, including all inherited members.</p>
+<table class="directory">
+  <tr class="even"><td class="entry"><a class="el" href="structxtd_1_1expressions_1_1and__.html#a12bb92c27d97ef3bf9fb22d12fb6cd8f">and_</a>()=default</td><td class="entry"><a class="el" href="structxtd_1_1expressions_1_1and__.html">xtd::expressions::and_&lt; left_t, right_t &gt;</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="structxtd_1_1expressions_1_1and__.html#ab9a90ae5492e071dd135b3f2d58732e0">and_</a>(left_t left, right_t right)</td><td class="entry"><a class="el" href="structxtd_1_1expressions_1_1and__.html">xtd::expressions::and_&lt; left_t, right_t &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>binary_expression</b>()=default (defined in <a class="el" href="structxtd_1_1expressions_1_1binary__expression.html">xtd::expressions::binary_expression</a>)</td><td class="entry"><a class="el" href="structxtd_1_1expressions_1_1binary__expression.html">xtd::expressions::binary_expression</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="structxtd_1_1expressions_1_1and__.html#a2e32fb2561e83e90d8f555e1310564f3">operator()</a>(args_t &amp;&amp;... args) const</td><td class="entry"><a class="el" href="structxtd_1_1expressions_1_1and__.html">xtd::expressions::and_&lt; left_t, right_t &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="structxtd_1_1expressions_1_1and__.html#a45b60009c544e84879b4003759d448c1">precedence</a></td><td class="entry"><a class="el" href="structxtd_1_1expressions_1_1and__.html">xtd::expressions::and_&lt; left_t, right_t &gt;</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+</table></div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
