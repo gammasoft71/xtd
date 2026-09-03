@@ -121,7 +121,7 @@
 #include "expressions/conditional_expression.hpp"
 #include "expressions/constant.hpp"
 #include "expressions/divide.hpp"
-#include "expressions/equal_expression.hpp"
+#include "expressions/equal.hpp"
 #include "expressions/expression.hpp"
 #include "expressions/expression_operand.hpp"
 #include "expressions/expression_stream.hpp"

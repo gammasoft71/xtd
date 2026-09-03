@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::expressions::equal_expression operator.
+/// @brief Contains xtd::expressions::equal operator.
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "as_expression.hpp"
@@ -12,12 +12,12 @@
 namespace xtd {
   /// @brief The xtd::expressions namespace provides a lightweight, composable expression template framework for building and evaluating lazy, strongly-typed functional expressions from arbitrary callables
   namespace expressions {
-    /// @brief The xtd::expressions::equal_expression is the equal expression.
+    /// @brief The xtd::expressions::equal is the equal expression.
     /// @par Namespace
     /// xtd::expressions
     /// @par Header
     /// ```cpp
-    /// #include <xtd/expressions/equal_expression>
+    /// #include <xtd/expressions/equal>
     /// ```
     /// @par Library
     /// xtd.core
@@ -49,9 +49,9 @@ namespace xtd {
     /// // equal3 result => true
     /// // equal4 result => true
     /// ```
-    /// @remarks The xtd::expressions::equal_expression struct is used by xtd::expressions::expression::equal expression.
+    /// @remarks The xtd::expressions::equal struct is used by xtd::expressions::expression::equal expression.
     template<typename left_t, typename right_t>
-    struct equal_expression : binary_expression {
+    struct equal : binary_expression {
       /// @name Public Fields
       
       /// @{
@@ -62,13 +62,13 @@ namespace xtd {
       /// @name Public Constructors
       
       /// @{
-      /// @brief Initialize a new xtd::expressions::equal_expression object.
-      constexpr equal_expression() = default;
+      /// @brief Initialize a new xtd::expressions::equal object.
+      constexpr equal() = default;
       
-      /// @brief Initialize a new xtd::expressions::equal_expression object with specified left and right operands.
+      /// @brief Initialize a new xtd::expressions::equal object with specified left and right operands.
       /// @param left The left operand.
       /// @param right The right operand.
-      constexpr equal_expression(left_t left, right_t right) : left {std::move(left)}, right {std::move(right)} {}
+      constexpr equal(left_t left, right_t right) : left {std::move(left)}, right {std::move(right)} {}
       /// @}
       
       /// @name Public Operators
@@ -82,7 +82,7 @@ namespace xtd {
       /// @}
       
       /// @cond
-      friend inline auto operator <<(std::ostream& os, const equal_expression& e) -> std::ostream& {return os << expression_stream {e.left, e.precedence} << " == " << expression_stream {e.right, e.precedence};}
+      friend inline auto operator <<(std::ostream& os, const equal& e) -> std::ostream& {return os << expression_stream {e.left, e.precedence} << " == " << expression_stream {e.right, e.precedence};}
       /// @endcond
 
     private:
@@ -96,7 +96,7 @@ namespace xtd {
     constexpr auto expression::equal(left_t left, right_t right) {
       auto left_expression = as_expression(left);
       auto right_expression = as_expression(right);
-      return equal_expression<std::decay_t<decltype(left_expression)>, std::decay_t<decltype(right_expression)>> {std::move(left_expression), std::move(right_expression)};
+      return expressions::equal<std::decay_t<decltype(left_expression)>, std::decay_t<decltype(right_expression)>> {std::move(left_expression), std::move(right_expression)};
     }
     /// @endcond
 
@@ -111,7 +111,7 @@ namespace xtd {
     /// xtd::expressions
     /// @par Header
     /// ```cpp
-    /// #include <xtd/expressions/equal_expression>
+    /// #include <xtd/expressions/equal>
     /// ```
     /// @par Library
     /// xtd.core
