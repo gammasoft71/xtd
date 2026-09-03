@@ -21,7 +21,34 @@ namespace xtd {
     /// ```
     /// @par Library
     /// xtd.core
-    /// @ingroup xtd_core
+    /// @ingroup xtd_core expressions
+    /// @par Examples
+    /// The following example shows how to use xtd::expressions::expression::greater_than.
+    /// ```cpp
+    /// #include <xtd/xtd>
+    ///
+    /// auto main() -> int {
+    ///   // auto greater_than1 = [](auto&& _) {return _ > 10;};
+    ///   auto greater_than1 = _ > 10;
+    ///   println("greater_than1 result => {}", greater_than1(42));
+    ///   auto greater_than2 = expression::greater_than(_, 10);
+    ///   println("greater_than2 result => {}", greater_than2(42));
+    ///   println();
+    ///   // auto greater_than3 = [](auto&& _1, auto&& _2) {return _1 > _2;};
+    ///   auto greater_than3 = _1 > _2;
+    ///   println("greater_than3 result => {}", greater_than3(42, 42));
+    ///   auto greater_than4 = expression::greater_than(_1, _2);
+    ///   println("greater_than4 result => {}", greater_than4(42, 42));
+    /// }
+    ///
+    /// // This code produces the following output :
+    /// //
+    /// // greater_than1 result => true
+    /// // greater_than2 result => true
+    /// //
+    /// // greater_than3 result => false
+    /// // greater_than4 result => false
+    /// ```
     /// @remarks The xtd::expressions::greater_than_expression struct is used by xtd::expressions::expression::greater_than expression.
     template<typename left_t, typename right_t>
     struct greater_than_expression : binary_expression {

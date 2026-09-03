@@ -22,7 +22,7 @@ namespace xtd {
     /// ```
     /// @par Library
     /// xtd.core
-    /// @ingroup xtd_core
+    /// @ingroup xtd_core expressions
     /// @remarks The xtd::expressions::left_shift_expression struct is used by xtd::expressions::expression::left_shift expression.
     template<typename left_t, typename right_t>
     struct left_shift_expression : binary_expression {

@@ -21,7 +21,7 @@ namespace xtd {
     /// ```
     /// @par Library
     /// xtd.core
-    /// @ingroup xtd_core
+    /// @ingroup xtd_core expressions
     /// @remarks The xtd::expressions::logical_and_expression struct is used by xtd::expressions::expression::logical_and expression.
     template<typename left_t, typename right_t>
     struct logical_and_expression : binary_expression {

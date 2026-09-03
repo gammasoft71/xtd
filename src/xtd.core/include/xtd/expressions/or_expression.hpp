@@ -22,7 +22,7 @@ namespace xtd {
     /// ```
     /// @par Library
     /// xtd.core
-    /// @ingroup xtd_core
+    /// @ingroup xtd_core expressions
     /// @remarks The xtd::expressions::or_expression struct is used by xtd::expressions::expression::or_ expression.
     template<typename left_t, typename right_t>
     struct or_expression : binary_expression {

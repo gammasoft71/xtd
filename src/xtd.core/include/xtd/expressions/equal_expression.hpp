@@ -21,7 +21,34 @@ namespace xtd {
     /// ```
     /// @par Library
     /// xtd.core
-    /// @ingroup xtd_core
+    /// @ingroup xtd_core expressions
+    /// @par Examples
+    /// The following example shows how to use xtd::expressions::expression::equal.
+    /// ```cpp
+    /// #include <xtd/xtd>
+    ///
+    /// auto main() -> int {
+    ///   // auto equal1 = [](auto&& _) {return _ == 10;};
+    ///   auto equal1 = _ == 10;
+    ///   println("equal1 result => {}", equal1(42));
+    ///   auto equal2 = expression::equal(_, 10);
+    ///   println("equal2 result => {}", equal2(42));
+    ///   println();
+    ///   // auto equal3 = [](auto&& _1, auto&& _2) {return _1 == _2;};
+    ///   auto equal3 = _1 == _2;
+    ///   println("equal3 result => {}", equal3(42, 42));
+    ///   auto equal4 = expression::equal(_1, _2);
+    ///   println("equal4 result => {}", equal4(42, 42));
+    /// }
+    ///
+    /// // This code produces the following output :
+    /// //
+    /// // equal1 result => false
+    /// // equal2 result => false
+    /// //
+    /// // equal3 result => true
+    /// // equal4 result => true
+    /// ```
     /// @remarks The xtd::expressions::equal_expression struct is used by xtd::expressions::expression::equal expression.
     template<typename left_t, typename right_t>
     struct equal_expression : binary_expression {

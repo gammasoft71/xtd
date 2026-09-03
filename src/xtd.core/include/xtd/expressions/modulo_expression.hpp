@@ -21,7 +21,7 @@ namespace xtd {
     /// ```
     /// @par Library
     /// xtd.core
-    /// @ingroup xtd_core
+    /// @ingroup xtd_core expressions
     /// @remarks The xtd::expressions::modulo_expression struct is used by xtd::expressions::expression::modulo expression.
     template<typename left_t, typename right_t>
     struct modulo_expression : binary_expression {

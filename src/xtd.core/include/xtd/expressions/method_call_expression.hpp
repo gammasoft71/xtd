@@ -21,7 +21,7 @@ namespace xtd {
     /// ```
     /// @par Library
     /// xtd.core
-    /// @ingroup xtd_core
+    /// @ingroup xtd_core expressions
     /// @remarks The xtd::expressions::method_type struct is used by xtd::expressions::method.
     template<typename method_t, typename... args_t>
     struct method_type {

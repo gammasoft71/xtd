@@ -18,7 +18,7 @@ namespace xtd {
     /// ```
     /// @par Library
     /// xtd.core
-    /// @ingroup xtd_core
+    /// @ingroup xtd_core expressions
     /// @par Examples
     /// The following example shows how to use xtd::expressions::expression::constant.
     /// ```cpp

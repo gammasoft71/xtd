@@ -22,7 +22,7 @@ namespace xtd {
     /// ```
     /// @par Library
     /// xtd.core
-    /// @ingroup xtd_core
+    /// @ingroup xtd_core expressions
     /// @remarks The xtd::expressions::not_expression struct is used by xtd::expressions::expression::not_ expression.
     template<typename value_t>
     struct not_expression : unary_expression {

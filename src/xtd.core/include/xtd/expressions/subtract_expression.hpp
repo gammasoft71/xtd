@@ -21,7 +21,7 @@ namespace xtd {
     /// ```
     /// @par Library
     /// xtd.core
-    /// @ingroup xtd_core
+    /// @ingroup xtd_core expressions
     /// @remarks The xtd::expressions::subtract_expression struct is used by xtd::expressions::expression::subtract expression.
     template<typename left_t, typename right_t>
     struct subtract_expression : binary_expression {

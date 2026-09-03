@@ -20,7 +20,7 @@ namespace xtd {
     /// ```
     /// @par Library
     /// xtd.core
-    /// @ingroup xtd_core
+    /// @ingroup xtd_core expressions
     /// @remarks The xtd::expressions::member_type struct is used by xtd::expressions::member.
     template<typename member_t>
     struct member_type {

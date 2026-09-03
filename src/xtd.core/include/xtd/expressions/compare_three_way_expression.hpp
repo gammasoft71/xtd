@@ -21,7 +21,31 @@ namespace xtd {
     /// ```
     /// @par Library
     /// xtd.core
-    /// @ingroup xtd_core
+    /// @ingroup xtd_core expressions
+    /// @par Examples
+    /// The following example shows how to use xtd::expressions::compare_three_way_expression.
+    /// ```cpp
+    /// #include <xtd/xtd>
+    ///
+    /// auto main() -> int {
+    ///   // auto compare_three_way1 = [value](auto&& _) {return _ <=> 10;};
+    ///   auto compare_three_way1 = _ <=> 10;
+    ///   println("compare_three_way1 result => {}", compare_three_way1(42));
+    ///   auto compare_three_way2 =  expression::compare_three_way(_, 10);
+    ///   println("compare_three_way2 result => {}", compare_three_way2(42));
+    ///   println();
+    ///   //auto compare_three_way3 = [](auto&& _1, auto&& _2) {return _1 <=> _2;};
+    ///   auto compare_three_way3 = _1 <=> _2;
+    ///   println("compare_three_way3 result => {}", compare_three_way3(42, 42));
+    ///   auto compare_three_way4 =  expression::compare_three_way(_1, _2);
+    ///   println("compare_three_way4 result => {}", compare_three_way4(42, 42));
+    /// }
+    ///
+    /// // This code produces the following output :
+    /// //
+    /// // three_way_comparison1 result => greater
+    /// // three_way_comparison2 result => equivalent
+    /// ```
     /// @remarks The xtd::expressions::compare_three_way_expression struct is used by xtd::expressions::expression::compare_three_way expression.
     template<typename left_t, typename right_t>
     struct compare_three_way_expression : binary_expression {
