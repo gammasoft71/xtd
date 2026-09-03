@@ -151,7 +151,7 @@ namespace xtd {
       /// @return The result of bitwise and.
       /// @par Examples
       /// The following example shows how to use xtd::expressions::expression::and_.
-      /// @include and_expression/src/and_expression.cpp
+      /// @include and_expression.cpp
       template<typename left_t, typename right_t>
       requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
       static constexpr auto and_(left_t left, right_t right);
