@@ -123,7 +123,7 @@ namespace xtd {
     /// // left_shift4 result => 672
     /// ```
     template<typename left_t, typename right_t>
-    requires expression_operand<left_t> || expression_operand<right_t> && (!std::is_base_of_v<std::ostream, std::remove_reference_t<left_t>>)
+    requires (expression_operand<left_t> || expression_operand<right_t>) && (!std::is_base_of_v<std::ostream, std::remove_reference_t<left_t>>)
     constexpr auto operator <<(left_t left, right_t right) {return expression::left_shift(std::move(left), std::move(right));}
     /// @}
   }
