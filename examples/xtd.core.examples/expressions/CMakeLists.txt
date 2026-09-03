@@ -10,4 +10,5 @@ add_projects(
   arg_expression
   division_expression
   division_expression_with_own_struct
+  expression
 )

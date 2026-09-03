@@ -7,6 +7,7 @@
 * [and_expression](and_expression/README.md) Shows how to use [xtd::expressions::operator &](https://gammasoft71.github.io/xtd/reference_guides/latest/group__expressions.html#gab75c8d1fbe3ada2749acee564896020a) expression.
 * [arg_expression](arg_expression/README.md) Shows how to use [xtd::expressions::arg](https://gammasoft71.github.io/xtd/reference_guides/latest/group__expressions.html#gaea1e40ed40e3795497204f134d6e9f81) expression.
 * [division_expression](division_expression/README.md) Shows how to use [xtd::expressions::operator /](https://gammasoft71.github.io/xtd/reference_guides/latest/group__expressions.html#ga26429abdfbcb94b8bda0ef50e026e5bc) expression.
+* [expression](expression/README.md) Shows how to use [xtd::expressions::expression](https://gammasoft71.github.io/xtd/reference_guides/latest/structxtd_1_1expressions_1_1expression.html) class.
 
 ## Build and run any project
 
