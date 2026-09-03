@@ -126,7 +126,7 @@
 #include "expressions/expression_operand.hpp"
 #include "expressions/expression_stream.hpp"
 #include "expressions/greater_than.hpp"
-#include "expressions/greater_than_or_equal_expression.hpp"
+#include "expressions/greater_than_or_equal.hpp"
 #include "expressions/invocation_expression.hpp"
 #include "expressions/left_shift_expression.hpp"
 #include "expressions/less_than_expression.hpp"
