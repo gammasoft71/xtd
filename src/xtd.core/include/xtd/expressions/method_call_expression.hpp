@@ -89,7 +89,7 @@ namespace xtd {
       /// @brief Initialize a new xtd::expressions::method_call_expression object.
       constexpr method_call_expression() = default;
       
-      /// @brief Initialize a new xtd::expressions::add_expression object with specified expression and method operands.
+      /// @brief Initialize a new xtd::expressions::method_call_expression object with specified expression and method operands.
       /// @param expression The expression operand.
       /// @param method The method operand.
       constexpr method_call_expression(expression_t expression, method_t method) : expression {std::move(expression)}, method {std::move(method)} {}
