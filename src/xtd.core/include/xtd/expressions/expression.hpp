@@ -81,34 +81,7 @@ namespace xtd {
     ///   | xtd::expressions::expression::placeholder |          |
     /// @par Examples
     /// The following example shows how to use xtd::expressions::expression class.
-    /// ```cpp
-    /// #include <xtd/xtd>
-    ///
-    /// auto main() -> int {
-    ///   auto value = 30;
-    ///   // auto expr1 = [](auto&& _1, auto&& _2) {return (_1 + _2) * value;};
-    ///   auto expr1 = (_1 + _2) * value;
-    ///   println("expr1 result = {}", expr1(10, 20));
-    ///   println("expr1 = {}", expr1);
-    ///   println("type_of(expr1) = {}", type_of(expr1));
-    ///
-    ///   println();
-    ///   auto expr2 = expression::multiply(expression::add(_1, _2), value);
-    ///   println("expr2 result = {}", expr2(10, 20));
-    ///   println("expr2 = {}", expr2);
-    ///   println("type_of(expr2) = {}", type_of(expr2));
-    /// }
-    ///
-    /// // This code produces the following output :
-    /// //
-    /// // expr1 result = 900
-    /// // expr1 = (_1 + _2) * 30
-    /// // type_of(expr1) = xtd::expressions::multiply_expression<xtd::expressions::add_expression<xtd::expressions::placeholder<1ul>, xtd::expressions::placeholder<2ul>>, xtd::expressions::constant<int>>
-    /// //
-    /// // expr2 result = 900
-    /// // expr2 = (_1 + _2) * 30
-    /// // type_of(expr2) = xtd::expressions::multiply_expression<xtd::expressions::add_expression<xtd::expressions::placeholder<1ul>, xtd::expressions::placeholder<2ul>>, xtd::expressions::constant<int>>
-    /// ```
+    /// @include expression/src/expression.cpp
     struct expression {
       /// @name Public Static Fields
       
@@ -117,7 +90,7 @@ namespace xtd {
       /// @remarks The index start from 1 to N.
       /// @par Examples
       /// The following example shows how to use xtd::expressions::expression::arg.
-      /// @include add_expression/src/arg_expression.cpp
+      /// @include arg_expression/src/arg_expression.cpp
       template <size_t index>
       static constexpr xtd::expressions::placeholder<index> arg;
 
@@ -167,7 +140,7 @@ namespace xtd {
       /// @return The result of add.
       /// @par Examples
       /// The following example shows how to use xtd::expressions::expression::add.
-      /// @include add_expression/src/add_expression.cpp
+      /// @include add_expression.cpp
       template<typename left_t, typename right_t>
       requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
       static constexpr auto add(left_t left, right_t right);
@@ -178,7 +151,7 @@ namespace xtd {
       /// @return The result of bitwise and.
       /// @par Examples
       /// The following example shows how to use xtd::expressions::expression::and_.
-      /// @include add_expression/src/and_expression.cpp
+      /// @include and_expression/src/and_expression.cpp
       template<typename left_t, typename right_t>
       requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
       static constexpr auto and_(left_t left, right_t right);
