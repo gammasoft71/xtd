@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line"> </div>
 <div class="line"><span class="comment">// Play the notes in a song.</span></div>
 <div class="line"><span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2aa3b34c0871dc2fd51eec5559b68f709d">play</a>(<span class="keyword">auto</span>&amp;&amp; tone, <span class="keyword">auto</span>&amp;&amp; duration) {console::beep(as&lt;uint32&gt;(tone), as&lt;uint32&gt;(duration));}</div>
-<div class="line"><span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2aa3b34c0871dc2fd51eec5559b68f709d">play</a>(<span class="keyword">auto</span>&amp;&amp; note) {std::apply([](<span class="keyword">auto</span>&amp;&amp;... args) {<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2aa3b34c0871dc2fd51eec5559b68f709d">play</a>(<a class="code hl_function" href="group__expressions.html#gacea22e940dce5924428e5e334eb8572a">args</a>...);}, note);}</div>
+<div class="line"><span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2aa3b34c0871dc2fd51eec5559b68f709d">play</a>(<span class="keyword">auto</span>&amp;&amp; note) {std::apply([](<span class="keyword">auto</span>&amp;&amp;... args) {<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2aa3b34c0871dc2fd51eec5559b68f709d">play</a>(args...);}, note);}</div>
 <div class="line"><span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2aa3b34c0871dc2fd51eec5559b68f709d">play</a>(<span class="keyword">auto</span>&amp;&amp;... tune) {(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2aa3b34c0871dc2fd51eec5559b68f709d">play</a>(tune), ...);}</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
@@ -161,7 +161,6 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line">       note {tone::d, duration::quarter},</div>
 <div class="line">       note {tone::d, duration::half});</div>
 <div class="line">}</div>
-<div class="ttc" id="agroup__expressions_html_gacea22e940dce5924428e5e334eb8572a"><div class="ttname"><a href="group__expressions.html#gacea22e940dce5924428e5e334eb8572a">xtd::expressions::args</a></div><div class="ttdeci">constexpr auto args()</div><div class="ttdoc">Generates a set of positional placeholders that can be decomposed using structured bindings to build ...</div><div class="ttdef"><b>Definition</b> args.hpp:43</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2aa3b34c0871dc2fd51eec5559b68f709d"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2aa3b34c0871dc2fd51eec5559b68f709d">xtd::console_key::play</a></div><div class="ttdeci">@ play</div><div class="ttdoc">The Play key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:302</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
