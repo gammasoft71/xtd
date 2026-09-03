@@ -129,7 +129,35 @@ struct xtd::expressions::and_expression&lt; left_t, right_t &gt;</div><p>The <a 
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/expressions/and_expression&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="structxtd_1_1expressions_1_1expression.html#a91497147d6e1d49364f7f219d0b74aa7" title="Bitwise and the specified left and right operands.">xtd::expressions::expression::and_</a>. <div class="fragment"></div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="structxtd_1_1expressions_1_1expression.html#a91497147d6e1d49364f7f219d0b74aa7" title="Bitwise and the specified left and right operands.">xtd::expressions::expression::and_</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="comment">// auto and1 = [](auto&amp;&amp; _) {return _ &amp; 0x0F;};</span></div>
+<div class="line">  <span class="keyword">auto</span> and1 = <a class="code hl_variable" href="group__expressions.html#ga130423906ed7125e321bf42e00dafae9">_</a> &amp; 0x0F;</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;and1 result =&gt; {:B}&quot;</span>, and1(42));</div>
+<div class="line">  <span class="keyword">auto</span> and2 = <a class="code hl_function" href="structxtd_1_1expressions_1_1expression.html#a91497147d6e1d49364f7f219d0b74aa7">expression::and_</a>(<a class="code hl_variable" href="group__expressions.html#ga130423906ed7125e321bf42e00dafae9">_</a>, 0x0F);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;and2 result =&gt; {:B}&quot;</span>, and2(42));</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>();</div>
+<div class="line">  <span class="comment">// auto and3 = [](auto&amp;&amp; _1, auto&amp;&amp; _2) {return _1 &amp; _2;};</span></div>
+<div class="line">  <span class="keyword">auto</span> and3 = <a class="code hl_variable" href="group__expressions.html#gafe769e4a8371075920e4ecf343d399ab">_1</a> &amp; <a class="code hl_variable" href="group__expressions.html#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>;</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;and3 result =&gt; {:B}&quot;</span>, and3(42, 0xF0));</div>
+<div class="line">  <span class="keyword">auto</span> and4 = <a class="code hl_function" href="structxtd_1_1expressions_1_1expression.html#a91497147d6e1d49364f7f219d0b74aa7">expression::and_</a>(<a class="code hl_variable" href="group__expressions.html#gafe769e4a8371075920e4ecf343d399ab">_1</a>, <a class="code hl_variable" href="group__expressions.html#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;and4 result =&gt; {:B}&quot;</span>, and4(42, 0xF0));</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// and1 result =&gt; 1010</span></div>
+<div class="line"><span class="comment">// and2 result =&gt; 1010</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// and3 result =&gt; 100000</span></div>
+<div class="line"><span class="comment">// and4 result =&gt; 100000</span></div>
+<div class="ttc" id="agroup__expressions_html_ga130423906ed7125e321bf42e00dafae9"><div class="ttname"><a href="group__expressions.html#ga130423906ed7125e321bf42e00dafae9">xtd::expressions::_</a></div><div class="ttdeci">constexpr auto _</div><div class="ttdoc">The xtd::expressions::_ placeholder instance is used by expression that have only one argument.</div><div class="ttdef"><b>Definition</b> args.hpp:31</div></div>
+<div class="ttc" id="agroup__expressions_html_ga9d506249a7fb0b4fb43b6880ac3b13f0"><div class="ttname"><a href="group__expressions.html#ga9d506249a7fb0b4fb43b6880ac3b13f0">xtd::expressions::_2</a></div><div class="ttdeci">constexpr auto _2</div><div class="ttdoc">The xtd::expressions::_2 placeholder instance is second argument used by expression.</div><div class="ttdef"><b>Definition</b> args.hpp:82</div></div>
+<div class="ttc" id="agroup__expressions_html_gafe769e4a8371075920e4ecf343d399ab"><div class="ttname"><a href="group__expressions.html#gafe769e4a8371075920e4ecf343d399ab">xtd::expressions::_1</a></div><div class="ttdeci">constexpr auto _1</div><div class="ttdoc">The xtd::expressions::_1 placeholder instance is first argument used by expression.</div><div class="ttdef"><b>Definition</b> args.hpp:57</div></div>
+<div class="ttc" id="anamespacextd_html_a9482c5e9fb1d60c658bbe28bfbb17353"><div class="ttname"><a href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">xtd::println</a></div><div class="ttdeci">auto println(FILE *file) -&gt; void</div><div class="ttdoc">Writes the current line terminator to the file output stream using the specified format information.</div><div class="ttdef"><b>Definition</b> println.hpp:15</div></div>
+<div class="ttc" id="astructxtd_1_1expressions_1_1expression_html_a91497147d6e1d49364f7f219d0b74aa7"><div class="ttname"><a href="structxtd_1_1expressions_1_1expression.html#a91497147d6e1d49364f7f219d0b74aa7">xtd::expressions::expression::and_</a></div><div class="ttdeci">static constexpr auto and_(left_t left, right_t right)</div><div class="ttdoc">Bitwise and the specified left and right operands.</div></div>
+</div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="structxtd_1_1expressions_1_1and__expression.html" title="The xtd::expressions::and_expression is the bitwise and expression.">xtd::expressions::and_expression</a> struct is used by <a class="el" href="structxtd_1_1expressions_1_1expression.html#a91497147d6e1d49364f7f219d0b74aa7" title="Bitwise and the specified left and right operands.">xtd::expressions::expression::and_</a> expression. </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>

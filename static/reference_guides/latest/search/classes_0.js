@@ -8,7 +8,7 @@ var searchData=
   ['action_5fcallable_5',['action_callable',['../structxtd_1_1action__callable.html',1,'xtd']]],
   ['actions_5fsystem_5fimages_6',['actions_system_images',['../classxtd_1_1drawing_1_1actions__system__images.html',1,'xtd::drawing']]],
   ['actual_5fvalue_7',['actual_value',['../classxtd_1_1tunit_1_1constraints_1_1actual__value.html',1,'xtd::tunit::constraints']]],
-  ['add_5fexpression_8',['add_expression',['../structxtd_1_1expressions_1_1add__expression.html',1,'xtd::expressions']]],
+  ['add_8',['add',['../structxtd_1_1expressions_1_1add.html',1,'xtd::expressions']]],
   ['addable_9',['addable',['../structxtd_1_1addable.html',1,'xtd']]],
   ['adjustment_5frule_10',['adjustment_rule',['../classxtd_1_1time__zone__info_1_1adjustment__rule.html',1,'xtd::time_zone_info']]],
   ['alpha_11',['alpha',['../structxtd_1_1drawing_1_1helpers_1_1alpha.html',1,'xtd::drawing::helpers']]],
