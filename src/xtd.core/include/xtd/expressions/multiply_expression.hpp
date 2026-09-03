@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::expressions::multiply_expression operator.
+/// @brief Contains xtd::expressions::multiply operator.
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "as_expression.hpp"
@@ -12,19 +12,19 @@
 namespace xtd {
   /// @brief The xtd::expressions namespace provides a lightweight, composable expression template framework for building and evaluating lazy, strongly-typed functional expressions from arbitrary callables
   namespace expressions {
-    /// @brief The xtd::expressions::multiply_expression is the multiplication expression.
+    /// @brief The xtd::expressions::multiply is the multiplication expression.
     /// @par Namespace
     /// xtd::expressions
     /// @par Header
     /// ```cpp
-    /// #include <xtd/expressions/multiply_expression>
+    /// #include <xtd/expressions/multiply>
     /// ```
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core
-    /// @remarks The xtd::expressions::multiply_expression struct is used by xtd::expressions::expression::multiply expression.
+    /// @remarks The xtd::expressions::multiply struct is used by xtd::expressions::expression::multiply expression.
     template<typename left_t, typename right_t>
-    struct multiply_expression : binary_expression {
+    struct multiply : binary_expression {
       /// @name Public Fields
       
       /// @{
@@ -35,13 +35,13 @@ namespace xtd {
       /// @name Public Constructors
       
       /// @{
-      /// @brief Initialize a new xtd::expressions::multiply_expression object.
-      constexpr multiply_expression() = default;
+      /// @brief Initialize a new xtd::expressions::multiply object.
+      constexpr multiply() = default;
       
-      /// @brief Initialize a new xtd::expressions::multiply_expression object with specified left and right operands.
+      /// @brief Initialize a new xtd::expressions::multiply object with specified left and right operands.
       /// @param left The left operand.
       /// @param right The right operand.
-      constexpr multiply_expression(left_t left, right_t right) : left {std::move(left)}, right {std::move(right)} {}
+      constexpr multiply(left_t left, right_t right) : left {std::move(left)}, right {std::move(right)} {}
       /// @}
       
       /// @name Public Operators
@@ -55,7 +55,7 @@ namespace xtd {
       /// @}
       
       /// @cond
-      friend inline auto operator <<(std::ostream& os, const multiply_expression& e) -> std::ostream& {return os << expression_stream {e.left, e.precedence} << " * " << expression_stream {e.right, e.precedence};}
+      friend inline auto operator <<(std::ostream& os, const multiply& e) -> std::ostream& {return os << expression_stream {e.left, e.precedence} << " * " << expression_stream {e.right, e.precedence};}
       /// @endcond
 
     private:
@@ -69,7 +69,7 @@ namespace xtd {
     constexpr auto expression::multiply(left_t left, right_t right) {
       auto left_expression = as_expression(left);
       auto right_expression = as_expression(right);
-      return multiply_expression<std::decay_t<decltype(left_expression)>, std::decay_t<decltype(right_expression)>> {std::move(left_expression), std::move(right_expression)};
+      return expressions::multiply<std::decay_t<decltype(left_expression)>, std::decay_t<decltype(right_expression)>> {std::move(left_expression), std::move(right_expression)};
     }
     /// @endcond
 
