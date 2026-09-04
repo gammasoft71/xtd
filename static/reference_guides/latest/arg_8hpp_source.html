@@ -112,15 +112,52 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="contents">
 <a href="arg_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="placeholder_8hpp.html">placeholder.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a> {</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>  <span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd_1_1expressions.html">expressions</a> {</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>  }</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>}</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="operator__precedence_8hpp.html">operator_precedence.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="arg__expression_8hpp.html">arg_expression.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;concepts&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;ostream&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;tuple&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;type_traits&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a> {</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>  <span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd_1_1expressions.html">expressions</a> {</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keyword">template</span> &lt;<span class="keywordtype">size_t</span> index&gt;</div>
+<div class="foldopen" id="foldopen00031" data-start="{" data-end="};">
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="structxtd_1_1expressions_1_1arg.html">   31</a></span>    <span class="keyword">struct </span>arg : arg_expression {</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>      </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="structxtd_1_1expressions_1_1arg.html#ad0fa35740da32387043347a9562b36cb">   36</a></span>      <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_enumeration" href="group__expressions.html#ga418395dc9383e37eb269a52b25b74683">operator_precedence</a> <a class="code hl_variable" href="structxtd_1_1expressions_1_1arg.html#ad0fa35740da32387043347a9562b36cb">precedence</a> = <a class="code hl_enumvalue" href="group__expressions.html#gga418395dc9383e37eb269a52b25b74683a61dd86c2dc75c3f569ec619bd283a33f">operator_precedence::arg</a>;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>      </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>      <a class="code hl_variable" href="structxtd_1_1expressions_1_1expression.html#ac9dfd00c4427c1a6f7d058232833eb88">arg</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>      </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>      <span class="keyword">template</span>&lt;<span class="keyword">typename</span>... args_t&gt;</div>
+<div class="foldopen" id="foldopen00051" data-start="{" data-end="}">
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="structxtd_1_1expressions_1_1arg.html#a4d799e94292c97ec71ad356ad62c7365">   51</a></span>      <span class="keyword">constexpr</span> <span class="keyword">decltype</span>(<span class="keyword">auto</span>) <span class="keyword">operator</span>()(args_t&amp;&amp;... <a class="code hl_struct" href="structxtd_1_1expressions_1_1args.html">args</a>) <span class="keyword">const</span> {</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        <span class="keywordflow">return</span> std::get&lt;<a class="code hl_struct" href="structxtd_1_1index.html">index</a> - 1&gt;(std::forward_as_tuple(std::forward&lt;args_t&gt;(<a class="code hl_struct" href="structxtd_1_1expressions_1_1args.html">args</a>)...));</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>      }</div>
+</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    };</div>
+</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keyword">template</span> &lt;<span class="keywordtype">size_t</span> index&gt;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keyword">constexpr</span> <a class="code hl_enumvalue" href="group__expressions.html#gga418395dc9383e37eb269a52b25b74683a61dd86c2dc75c3f569ec619bd283a33f">arg&lt;index&gt;</a> <a class="code hl_variable" href="structxtd_1_1expressions_1_1expression.html#ac9dfd00c4427c1a6f7d058232833eb88">expression::arg</a>;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keyword">template</span> &lt;<span class="keywordtype">size_t</span> index&gt;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keyword">inline</span> <span class="keyword">auto</span> operator &lt;&lt;(std::ostream&amp; os, <span class="keyword">const</span> <a class="code hl_enumvalue" href="group__expressions.html#gga418395dc9383e37eb269a52b25b74683a61dd86c2dc75c3f569ec619bd283a33f">arg&lt;index&gt;</a>&amp;) -&gt; std::ostream&amp; {<span class="keywordflow">return</span> os &lt;&lt; <span class="stringliteral">&quot;_&quot;</span> &lt;&lt; <a class="code hl_struct" href="structxtd_1_1index.html">index</a>;}</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  }</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>}</div>
+<div class="ttc" id="aarg__expression_8hpp_html"><div class="ttname"><a href="arg__expression_8hpp.html">arg_expression.hpp</a></div><div class="ttdoc">Contains xtd::expressions::arg_expression struct.</div></div>
+<div class="ttc" id="agroup__expressions_html_ga418395dc9383e37eb269a52b25b74683"><div class="ttname"><a href="group__expressions.html#ga418395dc9383e37eb269a52b25b74683">xtd::expressions::operator_precedence</a></div><div class="ttdeci">operator_precedence</div><div class="ttdoc">Specifies the operator precedence.</div><div class="ttdef"><b>Definition</b> operator_precedence.hpp:22</div></div>
+<div class="ttc" id="agroup__expressions_html_gga418395dc9383e37eb269a52b25b74683a61dd86c2dc75c3f569ec619bd283a33f"><div class="ttname"><a href="group__expressions.html#gga418395dc9383e37eb269a52b25b74683a61dd86c2dc75c3f569ec619bd283a33f">xtd::expressions::operator_precedence::arg</a></div><div class="ttdeci">@ arg</div><div class="ttdoc">Represnets the arg operator precedence (_1).</div><div class="ttdef"><b>Definition</b> operator_precedence.hpp:26</div></div>
 <div class="ttc" id="anamespacextd_1_1expressions_html"><div class="ttname"><a href="namespacextd_1_1expressions.html">xtd::expressions</a></div><div class="ttdoc">The xtd::expressions namespace provides a lightweight, composable expression template framework for b...</div><div class="ttdef"><b>Definition</b> add.hpp:14</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
-<div class="ttc" id="aplaceholder_8hpp_html"><div class="ttname"><a href="placeholder_8hpp.html">placeholder.hpp</a></div><div class="ttdoc">Contains xtd::expressions::placeholder struct.</div></div>
+<div class="ttc" id="aoperator__precedence_8hpp_html"><div class="ttname"><a href="operator__precedence_8hpp.html">operator_precedence.hpp</a></div><div class="ttdoc">Contains xtd::expressions::operator_precedence enum class.</div></div>
+<div class="ttc" id="astructxtd_1_1expressions_1_1arg_html_ad0fa35740da32387043347a9562b36cb"><div class="ttname"><a href="structxtd_1_1expressions_1_1arg.html#ad0fa35740da32387043347a9562b36cb">xtd::expressions::arg::precedence</a></div><div class="ttdeci">static constexpr operator_precedence precedence</div><div class="ttdoc">The operator precedence. That contains one of xtd::expressions::operator_precedence values.</div><div class="ttdef"><b>Definition</b> arg.hpp:36</div></div>
+<div class="ttc" id="astructxtd_1_1expressions_1_1args_html"><div class="ttname"><a href="structxtd_1_1expressions_1_1args.html">xtd::expressions::args</a></div><div class="ttdoc">Generates a set of positional args that can be decomposed using structured bindings to build readable...</div><div class="ttdef"><b>Definition</b> args.hpp:42</div></div>
+<div class="ttc" id="astructxtd_1_1expressions_1_1expression_html_ac9dfd00c4427c1a6f7d058232833eb88"><div class="ttname"><a href="structxtd_1_1expressions_1_1expression.html#ac9dfd00c4427c1a6f7d058232833eb88">xtd::expressions::expression::arg</a></div><div class="ttdeci">static constexpr xtd::expressions::arg&lt; index &gt; arg</div><div class="ttdoc">Gets the index argument used by expression.</div><div class="ttdef"><b>Definition</b> expression.hpp:95</div></div>
+<div class="ttc" id="astructxtd_1_1index_html"><div class="ttname"><a href="structxtd_1_1index.html">xtd::index</a></div><div class="ttdoc">Represents a type that can be used to index a collection either from the beginning or the end.</div><div class="ttdef"><b>Definition</b> index.hpp:38</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
