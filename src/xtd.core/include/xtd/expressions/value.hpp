@@ -78,7 +78,7 @@ namespace xtd {
       /// @}
 
       /// @cond
-      friend auto operator <<(std::ostream& os, value c) -> std::ostream& {return os << c.value_;}
+      friend auto operator <<(std::ostream& os, value v) -> std::ostream& {return os << xtd::string::format("{}", v.value_);}
       /// @endcond
       
     private:
