@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::expressions::logical_and_expression operator.
+/// @brief Contains xtd::expressions::logical_and operator.
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "as_expression.hpp"
@@ -12,19 +12,19 @@
 namespace xtd {
   /// @brief The xtd::expressions namespace provides a lightweight, composable expression template framework for building and evaluating lazy, strongly-typed functional expressions from arbitrary callables
   namespace expressions {
-    /// @brief The xtd::expressions::logical_and_expression is the and alse expression.
+    /// @brief The xtd::expressions::logical_and is the and alse expression.
     /// @par Namespace
     /// xtd::expressions
     /// @par Header
     /// ```cpp
-    /// #include <xtd/expressions/logical_and_expression>
+    /// #include <xtd/expressions/logical_and>
     /// ```
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core
-    /// @remarks The xtd::expressions::logical_and_expression struct is used by xtd::expressions::expression::logical_and expression.
+    /// @remarks The xtd::expressions::logical_and struct is used by xtd::expressions::expression::logical_and expression.
     template<typename left_t, typename right_t>
-    struct logical_and_expression : binary_expression {
+    struct logical_and : binary_expression {
       /// @name Public Fields
       
       /// @{
@@ -35,13 +35,13 @@ namespace xtd {
       /// @name Public Constructors
       
       /// @{
-      /// @brief Initialize a new xtd::expressions::logical_and_expression object.
-      constexpr logical_and_expression() = default;
+      /// @brief Initialize a new xtd::expressions::logical_and object.
+      constexpr logical_and() = default;
       
-      /// @brief Initialize a new xtd::expressions::logical_and_expression object with specified left and right operands.
+      /// @brief Initialize a new xtd::expressions::logical_and object with specified left and right operands.
       /// @param left The left operand.
       /// @param right The right operand.
-      constexpr logical_and_expression(left_t left, right_t right) : left {std::move(left)}, right {std::move(right)} {}
+      constexpr logical_and(left_t left, right_t right) : left {std::move(left)}, right {std::move(right)} {}
       /// @}
       
       /// @name Public Operators
@@ -55,7 +55,7 @@ namespace xtd {
       /// @}
       
       /// @cond
-      friend inline auto operator <<(std::ostream& os, const logical_and_expression& e) -> std::ostream& {return os << expression_stream {e.left, e.precedence} << " && " << expression_stream {e.right, e.precedence};}
+      friend inline auto operator <<(std::ostream& os, const logical_and& e) -> std::ostream& {return os << expression_stream {e.left, e.precedence} << " && " << expression_stream {e.right, e.precedence};}
       /// @endcond
 
     private:
@@ -73,7 +73,7 @@ namespace xtd {
     constexpr auto expression::logical_and(left_t left, right_t right) {
       auto left_expression = as_expression(left);
       auto right_expression = as_expression(right);
-      return logical_and_expression<std::decay_t<decltype(left_expression)>, std::decay_t<decltype(right_expression)>> {std::move(left_expression), std::move(right_expression)};
+      return expressions::logical_and<std::decay_t<decltype(left_expression)>, std::decay_t<decltype(right_expression)>> {std::move(left_expression), std::move(right_expression)};
     }
     /// @endcond
     
@@ -88,7 +88,7 @@ namespace xtd {
     /// xtd::expressions
     /// @par Header
     /// ```cpp
-    /// #include <xtd/expressions/logical_and_expression>
+    /// #include <xtd/expressions/logical_and>
     /// ```
     /// @par Library
     /// xtd.core

@@ -131,7 +131,7 @@
 #include "expressions/left_shift.hpp"
 #include "expressions/less_than.hpp"
 #include "expressions/less_than_or_equal.hpp"
-#include "expressions/logical_and_expression.hpp"
+#include "expressions/logical_and.hpp"
 #include "expressions/logical_not_expression.hpp"
 #include "expressions/member_expression.hpp"
 #include "expressions/method_call_expression.hpp"
