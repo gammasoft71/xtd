@@ -20,9 +20,9 @@ xtdc run
 ```
 expr1 = 900
 expr1 => (_1 + _2) * 30
-type_of(expr1) => xtd::expressions::multiply<xtd::expressions::add<xtd::expressions::arg_<1ul>, xtd::expressions::arg_<2ul>>, xtd::expressions::value<int>>
+type_of(expr1) => xtd::expressions::multiply<xtd::expressions::add<xtd::expressions::argument<1ul>, xtd::expressions::argument<2ul>>, xtd::expressions::value<int>>
 
 expr2 = 900
 expr2 => (_1 + _2) * 30
-type_of(expr2) => xtd::expressions::multiply<xtd::expressions::add<xtd::expressions::arg_<1ul>, xtd::expressions::arg_<2ul>>, xtd::expressions::value<int>>
+type_of(expr2) => xtd::expressions::multiply<xtd::expressions::add<xtd::expressions::argument<1ul>, xtd::expressions::argument<2ul>>, xtd::expressions::value<int>>
 ```
