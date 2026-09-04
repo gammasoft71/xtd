@@ -52,7 +52,7 @@ namespace xtd {
     /// // expr1 result => 50
     /// ```
     template <auto constant_value>
-    struct constant_expression : value_expression {
+    struct constant : value_expression {
       /// @name Public Fields
       
       /// @{
@@ -64,7 +64,7 @@ namespace xtd {
       
       /// @{
       /// @brief Initialize a new xtd::expressions::constant object.
-      constexpr constant_expression() = default;
+      constexpr constant() = default;
       /// @}
       
       
@@ -79,7 +79,7 @@ namespace xtd {
       /// @}
       
       /// @cond
-      friend auto operator <<(std::ostream& os, constant_expression c) -> std::ostream& {return os << c.value_;}
+      friend auto operator <<(std::ostream& os, constant c) -> std::ostream& {return os << c.value_;}
       /// @endcond
       
     private:
@@ -88,7 +88,7 @@ namespace xtd {
     
     /// @cond
     template <auto constant_value>
-    constexpr auto expression::constant() {return constant_expression<constant_value> {};}
+    constexpr auto expression::constant() {return xtd::expressions::constant<constant_value> {};}
     /// @endcond
   }
 }
