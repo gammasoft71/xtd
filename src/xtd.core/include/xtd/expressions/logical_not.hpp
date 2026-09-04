@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::expressions::logical_not_expression operator.
+/// @brief Contains xtd::expressions::logical_not operator.
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "as_expression.hpp"
@@ -12,19 +12,19 @@
 namespace xtd {
   /// @brief The xtd::expressions namespace provides a lightweight, composable expression template framework for building and evaluating lazy, strongly-typed functional expressions from arbitrary callables
   namespace expressions {
-    /// @brief The xtd::expressions::logical_not_expression is the not expression.
+    /// @brief The xtd::expressions::logical_not is the not expression.
     /// @par Namespace
     /// xtd::expressions
     /// @par Header
     /// ```cpp
-    /// #include <xtd/expressions/logical_not_expression>
+    /// #include <xtd/expressions/logical_not>
     /// ```
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core
-    /// @remarks The xtd::expressions::logical_not_expression struct is used by xtd::expressions::expression::logical_not expression.
+    /// @remarks The xtd::expressions::logical_not struct is used by xtd::expressions::expression::logical_not expression.
     /// @par Examples
-    /// The following example shows how to use xtd::expressions::logical_not_expression.
+    /// The following example shows how to use xtd::expressions::logical_not.
     /// ```cpp
     /// #include <xtd/xtd>
     ///
@@ -41,7 +41,7 @@ namespace xtd {
     /// // not1 result => true
     /// ```
     template<typename value_t>
-    struct logical_not_expression : unary_expression {
+    struct logical_not : unary_expression {
       /// @name Public Fields
       
       /// @{
@@ -52,12 +52,12 @@ namespace xtd {
       /// @name Public Constructors
       
       /// @{
-      /// @brief Initialize a new xtd::expressions::logical_not_expression object.
-      constexpr logical_not_expression() = default;
+      /// @brief Initialize a new xtd::expressions::logical_not object.
+      constexpr logical_not() = default;
       
-      /// @brief Initialize a new xtd::expressions::logical_not_expression object with specified value operand.
+      /// @brief Initialize a new xtd::expressions::logical_not object with specified value operand.
       /// @param value The value operand.
-      constexpr logical_not_expression(value_t value) : value {std::move(value)} {}
+      constexpr logical_not(value_t value) : value {std::move(value)} {}
       /// @}
       
       /// @name Public Operators
@@ -71,7 +71,7 @@ namespace xtd {
       /// @}
       
       /// @cond
-      friend inline auto operator <<(std::ostream& os, const logical_not_expression& e) -> std::ostream& {return os << "!" << expression_stream {e.value, e.precedence};}
+      friend inline auto operator <<(std::ostream& os, const logical_not& e) -> std::ostream& {return os << "!" << expression_stream {e.value, e.precedence};}
       /// @endcond
 
     private:
@@ -83,7 +83,7 @@ namespace xtd {
     requires std::is_base_of_v<expression, std::decay_t<vakue_t>>
     constexpr auto expression::logical_not(vakue_t value) {
       auto expression = as_expression(value);
-      return logical_not_expression<std::decay_t<decltype(expression)>> {std::move(expression)};
+      return expressions::logical_not<std::decay_t<decltype(expression)>> {std::move(expression)};
     }
     /// @endcond
 
@@ -98,7 +98,7 @@ namespace xtd {
     /// xtd::expressions
     /// @par Header
     /// ```cpp
-    /// #include <xtd/expressions/logical_not_expression>
+    /// #include <xtd/expressions/logical_not>
     /// ```
     /// @par Library
     /// xtd.core
