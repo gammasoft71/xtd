@@ -14,7 +14,7 @@ namespace xtd {
   namespace expressions {
     /// @cond
     template <size_t index>
-    struct arg_;
+    struct argument;
     /// @endcond
     
     /// @brief Provides the base class from which the classes that represent expression tree nodes are derived. It also contains static factory methods to create the various node types. This is an abstract class.
@@ -92,7 +92,7 @@ namespace xtd {
       /// The following example shows how to use xtd::expressions::expression::arg.
       /// @include arg_expression/src/arg_expression.cpp
       template <size_t index>
-      static const xtd::expressions::arg_<index> arg;
+      static const xtd::expressions::argument<index> arg;
       /// @}
 
       /// @name Public Static Methods
