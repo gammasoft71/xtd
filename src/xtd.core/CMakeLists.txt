@@ -1056,8 +1056,6 @@ add_sources(
   "include/xtd/expressions/add"
   "include/xtd/expressions/and.hpp"
   "include/xtd/expressions/and"
-  "include/xtd/expressions/arg.hpp"
-  "include/xtd/expressions/arg"
   "include/xtd/expressions/args.hpp"
   "include/xtd/expressions/args"
   "include/xtd/expressions/as_expression.hpp"
