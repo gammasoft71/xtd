@@ -150,7 +150,7 @@
 #include "expressions/unary_plus_expression.hpp"
 #include "expressions/value.hpp"
 #include "expressions/value_expression.hpp"
-#include "expressions/xor_expression.hpp"
+#include "expressions/xor.hpp"
 #include "exception_services/exception_dispatch_info.hpp"
 #include "globalization/culture_info.hpp"
 #include "globalization/culture_not_found_exception.hpp"
