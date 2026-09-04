@@ -28,7 +28,7 @@ namespace xtd {
     /// The following example shows how to use xtd::expressions::expression::arg.
     /// @include arg_expression/src/arg_expression.cpp
     template <size_t index>
-    struct arg : arg_expression {
+    struct arg_ : arg_expression {
       /// @name Public Fields
       
       /// @{
@@ -39,7 +39,7 @@ namespace xtd {
       /// @name Public Constructors
       
       /// @{
-      arg() = default;
+      arg_() = default;
       /// @}
 
       /// @name Public Operators
@@ -54,13 +54,16 @@ namespace xtd {
       /// @}
     };
 
+    template <size_t index>
+    constexpr arg_<index> arg;
+
     /// @cond
     template <size_t index>
-    constexpr arg<index> expression::arg;
+    const arg_<index> expression::arg;
     /// @endcond
 
     template <size_t index>
-    inline auto operator <<(std::ostream& os, const arg<index>&) -> std::ostream& {return os << "_" << index;}
+    inline auto operator <<(std::ostream& os, const arg_<index>&) -> std::ostream& {return os << "_" << index;}
     /// @endcond
   }
 }
