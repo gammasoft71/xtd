@@ -137,7 +137,7 @@
 #include "expressions/method_call_expression.hpp"
 #include "expressions/modulo.hpp"
 #include "expressions/multiply.hpp"
-#include "expressions/not_equal_expression.hpp"
+#include "expressions/not_equal.hpp"
 #include "expressions/not_expression.hpp"
 #include "expressions/logical_or.hpp"
 #include "expressions/or_expression.hpp"
