@@ -49,7 +49,7 @@ var searchData=
   ['distinct_2ehpp_46',['distinct.hpp',['../distinct_8hpp.html',1,'']]],
   ['distinct_5fview_2ehpp_47',['distinct_view.hpp',['../distinct__view_8hpp.html',1,'']]],
   ['distribution_2ehpp_48',['distribution.hpp',['../distribution_8hpp.html',1,'']]],
-  ['divide_5fexpression_2ehpp_49',['divide_expression.hpp',['../divide__expression_8hpp.html',1,'']]],
+  ['divide_2ehpp_49',['divide.hpp',['../divide_8hpp.html',1,'']]],
   ['divided_5fby_5fzero_5fexception_2ehpp_50',['divided_by_zero_exception.hpp',['../divided__by__zero__exception_8hpp.html',1,'']]],
   ['divisible_2ehpp_51',['divisible.hpp',['../divisible_8hpp.html',1,'']]],
   ['divisible_5f_2ehpp_52',['divisible_.hpp',['../divisible___8hpp.html',1,'']]],

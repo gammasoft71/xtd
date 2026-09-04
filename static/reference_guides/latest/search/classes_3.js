@@ -34,7 +34,7 @@ var searchData=
   ['disabled_5feffect_31',['disabled_effect',['../structxtd_1_1drawing_1_1imaging_1_1effects_1_1disabled__effect.html',1,'xtd::drawing::imaging::effects']]],
   ['distinct_5fview_32',['distinct_view',['../classxtd_1_1ranges_1_1views_1_1distinct__view.html',1,'xtd::ranges::views']]],
   ['distribution_33',['distribution',['../classxtd_1_1distribution.html',1,'xtd']]],
-  ['divide_5fexpression_34',['divide_expression',['../structxtd_1_1expressions_1_1divide__expression.html',1,'xtd::expressions']]],
+  ['divide_34',['divide',['../structxtd_1_1expressions_1_1divide.html',1,'xtd::expressions']]],
   ['divided_5fby_5fzero_5fexception_35',['divided_by_zero_exception',['../classxtd_1_1divided__by__zero__exception.html',1,'xtd']]],
   ['divisible_36',['divisible',['../structxtd_1_1divisible.html',1,'xtd']]],
   ['dns_37',['dns',['../classxtd_1_1net_1_1dns.html',1,'xtd::net']]],

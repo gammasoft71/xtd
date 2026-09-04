@@ -67,7 +67,7 @@ var searchData=
   ['common_5fdialog_2ehpp_64',['common_dialog.hpp',['../common__dialog_8hpp.html',1,'']]],
   ['comparable_2ehpp_65',['comparable.hpp',['../comparable_8hpp.html',1,'']]],
   ['comparable_5f_2ehpp_66',['comparable_.hpp',['../comparable___8hpp.html',1,'']]],
-  ['compare_5fthree_5fway_5fexpression_2ehpp_67',['compare_three_way_expression.hpp',['../compare__three__way__expression_8hpp.html',1,'']]],
+  ['compare_5fthree_5fway_2ehpp_67',['compare_three_way.hpp',['../compare__three__way_8hpp.html',1,'']]],
   ['comparer_2ehpp_68',['comparer.hpp',['../comparer_8hpp.html',1,'(Global Namespace)'],['../generic_2comparer_8hpp.html',1,'(Global Namespace)'],['../generic_2helpers_2comparer_8hpp.html',1,'(Global Namespace)']]],
   ['comparison_2ehpp_69',['comparison.hpp',['../comparison_8hpp.html',1,'']]],
   ['comparison_5foperators_2ehpp_70',['comparison_operators.hpp',['../comparison__operators_8hpp.html',1,'']]],

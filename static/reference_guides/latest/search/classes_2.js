@@ -60,7 +60,7 @@ var searchData=
   ['command_5flink_5fbuttons_57',['command_link_buttons',['../classxtd_1_1forms_1_1command__link__buttons.html',1,'xtd::forms']]],
   ['common_5fdialog_58',['common_dialog',['../classxtd_1_1forms_1_1common__dialog.html',1,'xtd::forms']]],
   ['comparable_59',['comparable',['../structxtd_1_1comparable.html',1,'xtd']]],
-  ['compare_5fthree_5fway_5fexpression_60',['compare_three_way_expression',['../structxtd_1_1expressions_1_1compare__three__way__expression.html',1,'xtd::expressions']]],
+  ['compare_5fthree_5fway_60',['compare_three_way',['../structxtd_1_1expressions_1_1compare__three__way.html',1,'xtd::expressions']]],
   ['comparer_61',['comparer',['../classxtd_1_1collections_1_1generic_1_1comparer.html',1,'xtd::collections::generic::comparer&lt; type_t &gt;'],['../structxtd_1_1collections_1_1generic_1_1helpers_1_1comparer.html',1,'xtd::collections::generic::helpers::comparer&lt; value_t &gt;']]],
   ['comparer_3c_20xtd_3a_3aany_5fobject_20_3e_62',['comparer&lt; xtd::any_object &gt;',['../classxtd_1_1collections_1_1generic_1_1comparer.html',1,'xtd::collections::generic']]],
   ['comparison_5foperators_63',['comparison_operators',['../classxtd_1_1extensions_1_1comparison__operators.html',1,'xtd::extensions']]],
