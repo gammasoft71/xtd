@@ -78,7 +78,6 @@ namespace xtd {
     ///   | xtd::expressions::expression::constant    |          |
     ///   | xtd::expressions::expression::value       |          |
     ///   | xtd::expressions::expression::arg         |          |
-    ///   | xtd::expressions::expression::placeholder |          |
     /// @par Examples
     /// The following example shows how to use xtd::expressions::expression class.
     /// @include expression/src/expression.cpp
@@ -88,47 +87,12 @@ namespace xtd {
       /// @{
       /// @brief Gets the `index` argument used by expression.
       /// @remarks The index start from 1 to N.
+      /// @remarks Prefer the xtd::expressions::expression::arg <N> or xtd::expressions::_, xtd::expressions::_1 ... xtd::expressions::_10 instead xtd::expressions::expression::arg.
       /// @par Examples
       /// The following example shows how to use xtd::expressions::expression::arg.
       /// @include arg_expression/src/arg_expression.cpp
       template <size_t index>
-      inline static constexpr xtd::expressions::arg<index> arg;
-
-      /// @brief Gets the `index` placeholder used by expression.
-      /// @remarks The index start from 1 to N.
-      /// @remarks Prefer the xtd::expressions::expression::arg <N> or xtd::expressions::_, xtd::expressions::_1 ... xtd::expressions::_10 instead xtd::expressions::expression::placeholder.
-      /// @par Examples
-      /// The following example shows how to use xtd::expressions::expression::placeholder.
-      /// ```cpp
-      /// #include <xtd/xtd>
-      ///
-      /// auto main() -> int {
-      ///   // auto placeholder1 = [](auto&& _) {return _;};
-      ///   auto placeholder1 = _;
-      ///   println("placeholder1 result => {}", placeholder1(10));
-      ///   auto placeholder2 = _1;
-      ///   println("placeholder2 result => {}", placeholder2(10));
-      ///   auto placeholder3 = placeholder<1> {};
-      ///   println("placeholder3 result => {}", placeholder3(10));
-      ///   auto placeholder4 = expression::placeholder<1>();
-      ///   println("placeholder4 result => {}", placeholder4(10));
-      ///   println();
-      ///   // auto expr1 = [](auto&& _1, auto&& _2, auto&& _3) {return _1 + _2 + _3;};
-      ///   auto expr1 = _1 + placeholder<2> {} + expression::placeholder<3>();
-      ///   println("expr1 result => {}", expr1(10, 20, 30));
-      /// }
-      ///
-      /// // This code produces the following output :
-      /// //
-      /// // placeholder1 result => 10
-      /// // placeholder2 result => 10
-      /// // placeholder3 result => 10
-      /// // placeholder4 result => 10
-      /// //
-      /// // expr1 result => 60
-      /// ```
-      template <size_t index>
-      inline static constexpr xtd::expressions::arg<index> placeholder;
+      static constexpr xtd::expressions::arg<index> arg;
       /// @}
 
       /// @name Public Static Methods
