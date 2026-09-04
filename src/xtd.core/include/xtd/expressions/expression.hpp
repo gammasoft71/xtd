@@ -300,6 +300,41 @@ namespace xtd {
       requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
       static constexpr auto equal(left_t left, right_t right);
       
+      /// @brief Bitwise xor the specified left and right operands.
+      /// @param left The left operand.
+      /// @param right The right operand.
+      /// @return The result of bitwise xor.
+      /// @par Examples
+      /// The following example shows how to use xtd::expressions::expression::xor_.
+      /// ```cpp
+      /// #include <xtd/xtd>
+      ///
+      /// auto main() -> int {
+      ///   // auto or1 = [](auto&& _) {return _ ^ 0x0F;};
+      ///   auto xor1 = _ ^ 0x0F;
+      ///   println("xor1 result => {:B}", xor1(42));
+      ///   auto xor2 = expression::exclusive_or(_, 0x0F);
+      ///   println("xor2 result => {:B}", xor2(42));
+      ///   println();
+      ///   // auto xor3 = [](auto&& _1, auto&& _2) {return _1 ^ _2;};
+      ///   auto xor3 = _1 ^ _2;
+      ///   println("xor3 result => {:B}", xor3(42, 0xF0));
+      ///   auto xor4 = expression::exclusive_or(_1, _2);
+      ///   println("xor4 result => {:B}", xor4(42, 0xF0));
+      /// }
+      ///
+      /// // This code produces the following output :
+      /// //
+      /// // xor1 result => 100101
+      /// // xor2 result => 100101
+      /// //
+      /// // xor3 result => 11010010
+      /// // xor4 result => 11010010
+      /// ```
+      template<typename left_t, typename right_t>
+      requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
+      static constexpr auto exclusive_or(left_t left, right_t right);
+
       /// @brief Greater than the specified left and right operands.
       /// @param left The left operand.
       /// @param right The right operand.
