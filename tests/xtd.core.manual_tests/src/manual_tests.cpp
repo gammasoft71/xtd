@@ -11,3 +11,6 @@ auto main() -> int {
 // This code produces the following output :
 //
 // Hello, World!
+// expr = 3600
+// expr => (_1 + _2 + _3) * (_1 + _2 + _3)
+// type_of(expr) => multiply<add<add<placeholder<1ul>, placeholder<2ul>>, placeholder<3ul>>, add<add<placeholder<1ul>, placeholder<2ul>>, placeholder<3ul>>>
