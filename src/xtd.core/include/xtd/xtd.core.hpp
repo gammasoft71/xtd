@@ -142,7 +142,7 @@
 #include "expressions/not_equal.hpp"
 #include "expressions/logical_or.hpp"
 #include "expressions/or.hpp"
-#include "expressions/right_shift_expression.hpp"
+#include "expressions/right_shift.hpp"
 #include "expressions/subtract_expression.hpp"
 #include "expressions/compare_three_way.hpp"
 #include "expressions/unary_expression.hpp"

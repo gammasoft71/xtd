@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::expressions::right_shift_expression operator.
+/// @brief Contains xtd::expressions::right_shift operator.
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "as_expression.hpp"
@@ -13,19 +13,19 @@
 namespace xtd {
   /// @brief The xtd::expressions namespace provides a lightweight, composable expression template framework for building and evaluating lazy, strongly-typed functional expressions from arbitrary callables
   namespace expressions {
-    /// @brief The xtd::expressions::right_shift_expression is the bitwise right expression.
+    /// @brief The xtd::expressions::right_shift is the bitwise right expression.
     /// @par Namespace
     /// xtd::expressions
     /// @par Header
     /// ```cpp
-    /// #include <xtd/expressions/right_shift_expression>
+    /// #include <xtd/expressions/right_shift>
     /// ```
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core
-    /// @remarks The xtd::expressions::right_shift_expression struct is used by xtd::expressions::expression::right_shift expression.
+    /// @remarks The xtd::expressions::right_shift struct is used by xtd::expressions::expression::right_shift expression.
     template<typename left_t, typename right_t>
-    struct right_shift_expression : binary_expression {
+    struct right_shift : binary_expression {
       /// @name Public Fields
       
       /// @{
@@ -36,13 +36,13 @@ namespace xtd {
       /// @name Public Constructors
       
       /// @{
-      /// @brief Initialize a new xtd::expressions::right_shift_expression object.
-      constexpr right_shift_expression() = default;
+      /// @brief Initialize a new xtd::expressions::right_shift object.
+      constexpr right_shift() = default;
       
-      /// @brief Initialize a new xtd::expressions::right_shift_expression object with specified left and right operands.
+      /// @brief Initialize a new xtd::expressions::right_shift object with specified left and right operands.
       /// @param left The left operand.
       /// @param right The right operand.
-      constexpr right_shift_expression(left_t left, right_t right) : left {std::move(left)}, right {std::move(right)} {}
+      constexpr right_shift(left_t left, right_t right) : left {std::move(left)}, right {std::move(right)} {}
       /// @}
       
       /// @name Public Operators
@@ -61,7 +61,7 @@ namespace xtd {
       /// @}
       
       /// @cond
-      friend inline auto operator <<(std::ostream& os, const right_shift_expression& e) -> std::ostream& {return os << expression_stream {e.left, e.precedence} << " >> " << expression_stream {e.right, e.precedence};}
+      friend inline auto operator <<(std::ostream& os, const right_shift& e) -> std::ostream& {return os << expression_stream {e.left, e.precedence} << " >> " << expression_stream {e.right, e.precedence};}
       /// @endcond
 
     private:
@@ -75,7 +75,7 @@ namespace xtd {
     constexpr auto expression::right_shift(left_t left, right_t right) {
       auto left_expression = as_expression(left);
       auto right_expression = as_expression(right);
-      return right_shift_expression<std::decay_t<decltype(left_expression)>, std::decay_t<decltype(right_expression)>> {std::move(left_expression), std::move(right_expression)};
+      return expressions::right_shift<std::decay_t<decltype(left_expression)>, std::decay_t<decltype(right_expression)>> {std::move(left_expression), std::move(right_expression)};
     }
     /// @endcond
 
@@ -90,7 +90,7 @@ namespace xtd {
     /// xtd::expressions
     /// @par Header
     /// ```cpp
-    /// #include <xtd/expressions/right_shift_expression>
+    /// #include <xtd/expressions/right_shift>
     /// ```
     /// @par Library
     /// xtd.core
