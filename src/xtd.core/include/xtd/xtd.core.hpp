@@ -128,7 +128,7 @@
 #include "expressions/greater_than.hpp"
 #include "expressions/greater_than_or_equal.hpp"
 #include "expressions/invocation_expression.hpp"
-#include "expressions/left_shift_expression.hpp"
+#include "expressions/left_shift.hpp"
 #include "expressions/less_than_expression.hpp"
 #include "expressions/less_than_or_equal_expression.hpp"
 #include "expressions/logical_and_expression.hpp"
