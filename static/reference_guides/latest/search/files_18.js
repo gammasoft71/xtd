@@ -1,7 +1,7 @@
 var searchData=
 [
   ['xml_5fsyntax_5fexception_2ehpp_0',['xml_syntax_exception.hpp',['../xml__syntax__exception_8hpp.html',1,'']]],
-  ['xor_5fexpression_2ehpp_1',['xor_expression.hpp',['../xor__expression_8hpp.html',1,'']]],
+  ['xor_2ehpp_1',['xor.hpp',['../xor_8hpp.html',1,'']]],
   ['xtd_2ecore_2ehpp_2',['xtd.core.hpp',['../xtd_8core_8hpp.html',1,'']]],
   ['xtd_2edrawing_2ehpp_3',['xtd.drawing.hpp',['../xtd_8drawing_8hpp.html',1,'']]],
   ['xtd_2eforms_2ehpp_4',['xtd.forms.hpp',['../xtd_8forms_8hpp.html',1,'']]],

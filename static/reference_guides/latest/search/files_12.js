@@ -47,7 +47,7 @@ var searchData=
   ['resize_5feffect_2ehpp_44',['resize_effect.hpp',['../resize__effect_8hpp.html',1,'']]],
   ['resources_2ehpp_45',['resources.hpp',['../resources_8hpp.html',1,'']]],
   ['rgb_2ehpp_46',['rgb.hpp',['../rgb_8hpp.html',1,'']]],
-  ['right_5fshift_5fexpression_2ehpp_47',['right_shift_expression.hpp',['../right__shift__expression_8hpp.html',1,'']]],
+  ['right_5fshift_2ehpp_47',['right_shift.hpp',['../right__shift_8hpp.html',1,'']]],
   ['right_5fto_5fleft_2ehpp_48',['right_to_left.hpp',['../right__to__left_8hpp.html',1,'']]],
   ['rotate_5fflip_5feffect_2ehpp_49',['rotate_flip_effect.hpp',['../rotate__flip__effect_8hpp.html',1,'']]],
   ['rotate_5fflip_5ftype_2ehpp_50',['rotate_flip_type.hpp',['../rotate__flip__type_8hpp.html',1,'']]],
