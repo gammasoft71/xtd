@@ -22,8 +22,8 @@ namespace xtd {
     enum class operator_precedence {
       /// @brief Represnets the highest operator precedence.
       highest = 0,
-      /// @brief Represnets the placeholder operator precedence (`_1`).
-      placeholder = 0,
+      /// @brief Represnets the arg operator precedence (`_1`).
+      arg = 0,
       /// @brief Represnets the constant operator precedence (`constant<42>`).
       constant = 0,
       /// @brief Represnets the constant operator precedence (`42`).

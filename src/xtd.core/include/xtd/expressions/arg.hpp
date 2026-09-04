@@ -1,14 +1,96 @@
 /// @file
-/// @brief Contains xtd::expressions::arg variable.
+/// @brief Contains xtd::expressions::arg struct.
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
-#include "placeholder.hpp"
+#include "operator_precedence.hpp"
+#include "arg_expression.hpp"
+#include <concepts>
+#include <ostream>
+#include <tuple>
+#include <type_traits>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief The xtd::expressions namespace provides a lightweight, composable expression template framework for building and evaluating lazy, strongly-typed functional expressions from arbitrary callables
   namespace expressions {
+    /// @brief The xtd::expressions::arg object is arg for all expressions.
+    /// @par Namespace
+    /// xtd::expressions
+    /// @par Header
+    /// ```cpp
+    /// #include <xtd/expressions/arg>
+    /// ```
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core
+    /// @remarks Prefer the xtd::expressions::arg <N> or xtd::expressions::_, xtd::expressions::_1 ... xtd::expressions::_10 instead xtd::expressions::arg.
+    /// @par Examples
+    /// The following example shows how to use xtd::expressions::expression::arg.
+    /// ```cpp
+    /// #include <xtd/xtd>
+    ///
+    /// auto main() -> int {
+    ///   // auto arg1 = [](auto&& _) {return _;};
+    ///   auto arg1 = _;
+    ///   println("arg1 result => {}", arg1(10));
+    ///   auto arg2 = _1;
+    ///   println("arg2 result => {}", arg2(10));
+    ///   auto arg3 = arg<1> {};
+    ///   println("arg3 result => {}", arg3(10));
+    ///   auto arg4 = expression::arg<1>();
+    ///   println("arg4 result => {}", arg4(10));
+    ///   println();
+    ///   // auto expr1 = [](auto&& _1, auto&& _2, auto&& _3) {return _1 + _2 + _3;};
+    ///   auto expr1 = _1 + arg<2> {} + expression::arg<3>();
+    ///   println("expr1 result => {}", expr1(10, 20, 30));
+    /// }
+    ///
+    /// // This code produces the following output :
+    /// //
+    /// // arg1 result => 10
+    /// // arg2 result => 10
+    /// // arg3 result => 10
+    /// // arg4 result => 10
+    /// //
+    /// // expr1 result => 60
+    /// ```
+    template <size_t index>
+    struct arg : arg_expression {
+      /// @name Public Fields
+      
+      /// @{
+      /// @brief The operator precedence. That contains one of xtd::expressions::operator_precedence values.
+      static constexpr operator_precedence precedence = operator_precedence::arg;
+      /// @}
+
+      /// @name Public Constructors
+      
+      /// @{
+      arg() = default;
+      /// @}
+
+      /// @name Public Operators
+      
+      /// @{
+      /// @brief Gets the arg value.
+      /// @return The arg value.
+      template<typename... args_t>
+      constexpr decltype(auto) operator()(args_t&&... args) const {
+        return std::get<index - 1>(std::forward_as_tuple(std::forward<args_t>(args)...));
+      }
+      /// @}
+    };
+
     /// @cond
+    template <size_t index>
+    inline constexpr arg<index> expression::arg;
+
+    template <size_t index>
+    inline constexpr arg<index> expression::placeholder;
+    /// @endcond
+
+    template <size_t index>
+    inline auto operator <<(std::ostream& os, const arg<index>&) -> std::ostream& {return os << "_" << index;}
     /// @endcond
   }
 }

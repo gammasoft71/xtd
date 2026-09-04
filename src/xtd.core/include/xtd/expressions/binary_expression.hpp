@@ -8,7 +8,7 @@
 namespace xtd {
   /// @brief The xtd::expressions namespace provides a lightweight, composable expression template framework for building and evaluating lazy, strongly-typed functional expressions from arbitrary callables
   namespace expressions {
-    /// @brief The xtd::expressions::binary_expression is the base class for xtd::expressions::placeholder.
+    /// @brief The xtd::expressions::binary_expression is the base class for xtd::expressions::arg.
     /// @par Namespace
     /// xtd::expressions
     /// @par Header

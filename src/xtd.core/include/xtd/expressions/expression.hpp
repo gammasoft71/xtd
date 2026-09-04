@@ -14,7 +14,7 @@ namespace xtd {
   namespace expressions {
     /// @cond
     template <size_t index>
-    struct placeholder;
+    struct arg;
     /// @endcond
     
     /// @brief Provides the base class from which the classes that represent expression tree nodes are derived. It also contains static factory methods to create the various node types. This is an abstract class.
@@ -92,7 +92,7 @@ namespace xtd {
       /// The following example shows how to use xtd::expressions::expression::arg.
       /// @include arg_expression/src/arg_expression.cpp
       template <size_t index>
-      inline static constexpr xtd::expressions::placeholder<index> arg;
+      inline static constexpr xtd::expressions::arg<index> arg;
 
       /// @brief Gets the `index` placeholder used by expression.
       /// @remarks The index start from 1 to N.
@@ -128,7 +128,7 @@ namespace xtd {
       /// // expr1 result => 60
       /// ```
       template <size_t index>
-      inline static constexpr xtd::expressions::placeholder<index> placeholder;
+      inline static constexpr xtd::expressions::arg<index> placeholder;
       /// @}
 
       /// @name Public Static Methods
