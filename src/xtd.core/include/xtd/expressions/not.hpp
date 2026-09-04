@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::expressions::not_expression operator.
+/// @brief Contains xtd::expressions::not_ operator.
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "as_expression.hpp"
@@ -13,19 +13,19 @@
 namespace xtd {
   /// @brief The xtd::expressions namespace provides a lightweight, composable expression template framework for building and evaluating lazy, strongly-typed functional expressions from arbitrary callables
   namespace expressions {
-    /// @brief The xtd::expressions::not_expression is the bitwise not expression.
+    /// @brief The xtd::expressions::not_ is the bitwise not expression.
     /// @par Namespace
     /// xtd::expressions
     /// @par Header
     /// ```cpp
-    /// #include <xtd/expressions/not_expression>
+    /// #include <xtd/expressions/not_>
     /// ```
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core
-    /// @remarks The xtd::expressions::not_expression struct is used by xtd::expressions::expression::not_ expression.
+    /// @remarks The xtd::expressions::not_ struct is used by xtd::expressions::expression::not_ expression.
     template<typename value_t>
-    struct not_expression : unary_expression {
+    struct not_ : unary_expression {
       /// @name Public Fields
       
       /// @{
@@ -36,12 +36,12 @@ namespace xtd {
       /// @name Public Constructors
       
       /// @{
-      /// @brief Initialize a new xtd::expressions::not_expression object.
-      constexpr not_expression() = default;
+      /// @brief Initialize a new xtd::expressions::not_ object.
+      constexpr not_() = default;
       
-      /// @brief Initialize a new xtd::expressions::not_expression object with specified value operand.
+      /// @brief Initialize a new xtd::expressions::not_ object with specified value operand.
       /// @param value The value operand.
-      constexpr not_expression(value_t value) : value {std::move(value)} {}
+      constexpr not_(value_t value) : value {std::move(value)} {}
       /// @}
       
       /// @name Public Operators
@@ -60,7 +60,7 @@ namespace xtd {
       /// @}
       
       /// @cond
-      friend inline auto operator <<(std::ostream& os, const not_expression& e) -> std::ostream& {return os << "~" << expression_stream {e.value, e.precedence};}
+      friend inline auto operator <<(std::ostream& os, const not_& e) -> std::ostream& {return os << "~" << expression_stream {e.value, e.precedence};}
       /// @endcond
 
     private:
@@ -72,7 +72,7 @@ namespace xtd {
     requires std::is_base_of_v<expression, std::decay_t<vakue_t>>
     constexpr auto expression::not_(vakue_t value) {
       auto expression = as_expression(value);
-      return not_expression<std::decay_t<decltype(expression)>> {std::move(expression)};
+      return expressions::not_<std::decay_t<decltype(expression)>> {std::move(expression)};
     }
     /// @endcond
 
@@ -87,7 +87,7 @@ namespace xtd {
     /// xtd::expressions
     /// @par Header
     /// ```cpp
-    /// #include <xtd/expressions/not_expression>
+    /// #include <xtd/expressions/not_>
     /// ```
     /// @par Library
     /// xtd.core
