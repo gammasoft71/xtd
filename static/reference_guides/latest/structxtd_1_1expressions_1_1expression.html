@@ -152,7 +152,7 @@ Inheritance diagram for xtd::expressions::expression:</div>
 <area href="structxtd_1_1expressions_1_1not__.html" title="The xtd::expressions::not_ is the bitwise not expression." alt="xtd::expressions::not_&lt; value_t &gt;" shape="rect" coords="3384,168,3797,192"/>
 <area href="structxtd_1_1expressions_1_1unary__minus__expression.html" title="The xtd::expressions::unary_minus_expression is the unary minus expression." alt="xtd::expressions::unary_minus_expression&lt; value_t &gt;" shape="rect" coords="3384,224,3797,248"/>
 <area href="structxtd_1_1expressions_1_1unary__plus__expression.html" title="The xtd::expressions::unary_plus_expression is the unary plus expression." alt="xtd::expressions::unary_plus_expression&lt; value_t &gt;" shape="rect" coords="3384,280,3797,304"/>
-<area href="structxtd_1_1expressions_1_1constant__expression.html" title="The xtd::expressions::constant is the constant wrapper." alt="xtd::expressions::constant_expression&lt; constant_value &gt;" shape="rect" coords="4230,112,4643,136"/>
+<area href="structxtd_1_1expressions_1_1constant.html" title="The xtd::expressions::constant is the constant wrapper." alt="xtd::expressions::constant&lt; constant_value &gt;" shape="rect" coords="4230,112,4643,136"/>
 <area href="structxtd_1_1expressions_1_1value.html" title="The xtd::expressions::value is the value wrapper." alt="xtd::expressions::value&lt; type_t &gt;" shape="rect" coords="4230,168,4643,192"/>
   </map>
 </div></div>
@@ -739,7 +739,7 @@ template&lt;auto constant_value&gt; </div>
 <div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;constant2 result =&gt; {}&quot;</span>, constant2());</div>
 <div class="line">  <span class="keyword">auto</span> <a class="code hl_struct" href="structxtd_1_1expressions_1_1value.html">value</a> = 30;</div>
 <div class="line">  <span class="comment">//auto constant3 = [value] {return value;};</span></div>
-<div class="line">  <span class="keyword">auto</span> constant3 =  <a class="code hl_function" href="#a3962a43a6b277819f145124edf446c0a">constant&lt;value&gt;</a> {};</div>
+<div class="line">  <span class="keyword">auto</span> constant3 =  <a class="code hl_struct" href="structxtd_1_1expressions_1_1constant.html">constant&lt;value&gt;</a> {};</div>
 <div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;constant3 result =&gt; {}&quot;</span>, constant3());</div>
 <div class="line">  <span class="keyword">auto</span> constant4 =  <a class="code hl_function" href="#a3962a43a6b277819f145124edf446c0a">expression::constant&lt;value&gt;</a>();</div>
 <div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;constant4 result =&gt; {}&quot;</span>, constant4());</div>
@@ -757,6 +757,7 @@ template&lt;auto constant_value&gt; </div>
 <div class="line"><span class="comment">// constant4 result =&gt; 30</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// expr1 result =&gt; 50</span></div>
+<div class="ttc" id="astructxtd_1_1expressions_1_1constant_html"><div class="ttname"><a href="structxtd_1_1expressions_1_1constant.html">xtd::expressions::constant</a></div><div class="ttdoc">The xtd::expressions::constant is the constant wrapper.</div><div class="ttdef"><b>Definition</b> constant.hpp:55</div></div>
 <div class="ttc" id="astructxtd_1_1expressions_1_1expression_html_a3962a43a6b277819f145124edf446c0a"><div class="ttname"><a href="#a3962a43a6b277819f145124edf446c0a">xtd::expressions::expression::constant</a></div><div class="ttdeci">static constexpr auto constant()</div><div class="ttdoc">Gets the constant value.</div></div>
 <div class="ttc" id="astructxtd_1_1expressions_1_1value_html"><div class="ttname"><a href="structxtd_1_1expressions_1_1value.html">xtd::expressions::value</a></div><div class="ttdoc">The xtd::expressions::value is the value wrapper.</div><div class="ttdef"><b>Definition</b> value.hpp:55</div></div>
 </div><!-- fragment --> </dd></dl>

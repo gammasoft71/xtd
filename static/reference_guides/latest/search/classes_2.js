@@ -101,7 +101,7 @@ var searchData=
   ['const_5foverload_5ftype_98',['const_overload_type',['../structxtd_1_1const__overload__type.html',1,'xtd']]],
   ['const_5foverload_5ftype_3c_20args_5ft_2e_2e_2e_20_3e_99',['const_overload_type&lt; args_t... &gt;',['../structxtd_1_1const__overload__type.html',1,'xtd']]],
   ['const_5ftab_5fpage_5fref_5fless_100',['const_tab_page_ref_less',['../structxtd_1_1forms_1_1const__tab__page__ref__less.html',1,'xtd::forms']]],
-  ['constant_5fexpression_101',['constant_expression',['../structxtd_1_1expressions_1_1constant__expression.html',1,'xtd::expressions']]],
+  ['constant_101',['constant',['../structxtd_1_1expressions_1_1constant.html',1,'xtd::expressions']]],
   ['container_5fcontrol_102',['container_control',['../classxtd_1_1forms_1_1container__control.html',1,'xtd::forms']]],
   ['context_5fmenu_103',['context_menu',['../classxtd_1_1forms_1_1context__menu.html',1,'xtd::forms']]],
   ['contrast_5feffect_104',['contrast_effect',['../structxtd_1_1drawing_1_1imaging_1_1effects_1_1contrast__effect.html',1,'xtd::drawing::imaging::effects']]],
