@@ -4,13 +4,13 @@ var searchData=
   ['label_5frenderer_1',['label_renderer',['../classxtd_1_1forms_1_1label__renderer.html',1,'xtd::forms']]],
   ['labels_2',['labels',['../classxtd_1_1forms_1_1labels.html',1,'xtd::forms']]],
   ['lcd_5flabel_3',['lcd_label',['../classxtd_1_1forms_1_1lcd__label.html',1,'xtd::forms']]],
-  ['left_5fshift_5fexpression_4',['left_shift_expression',['../structxtd_1_1expressions_1_1left__shift__expression.html',1,'xtd::expressions']]],
+  ['left_5fshift_4',['left_shift',['../structxtd_1_1expressions_1_1left__shift.html',1,'xtd::expressions']]],
   ['length_5',['length',['../classxtd_1_1forms_1_1style__sheets_1_1length.html',1,'xtd::forms::style_sheets']]],
   ['length_5fexception_6',['length_exception',['../classxtd_1_1length__exception.html',1,'xtd']]],
   ['lengths_7',['lengths',['../classxtd_1_1forms_1_1style__sheets_1_1lengths.html',1,'xtd::forms::style_sheets']]],
-  ['less_5fthan_5fcomparable_8',['less_than_comparable',['../structxtd_1_1less__than__comparable.html',1,'xtd']]],
-  ['less_5fthan_5fexpression_9',['less_than_expression',['../structxtd_1_1expressions_1_1less__than__expression.html',1,'xtd::expressions']]],
-  ['less_5fthan_5for_5fequal_5fexpression_10',['less_than_or_equal_expression',['../structxtd_1_1expressions_1_1less__than__or__equal__expression.html',1,'xtd::expressions']]],
+  ['less_5fthan_8',['less_than',['../structxtd_1_1expressions_1_1less__than.html',1,'xtd::expressions']]],
+  ['less_5fthan_5fcomparable_9',['less_than_comparable',['../structxtd_1_1less__than__comparable.html',1,'xtd']]],
+  ['less_5fthan_5for_5fequal_10',['less_than_or_equal',['../structxtd_1_1expressions_1_1less__than__or__equal.html',1,'xtd::expressions']]],
   ['lesser_11',['lesser',['../structxtd_1_1collections_1_1generic_1_1helpers_1_1lesser.html',1,'xtd::collections::generic::helpers']]],
   ['light_5fbutton_12',['light_button',['../classxtd_1_1forms_1_1light__button.html',1,'xtd::forms']]],
   ['light_5fbuttons_13',['light_buttons',['../classxtd_1_1forms_1_1light__buttons.html',1,'xtd::forms']]],
@@ -81,7 +81,7 @@ var searchData=
   ['lock_5fguard_78',['lock_guard',['../classxtd_1_1threading_1_1lock__guard.html',1,'xtd::threading']]],
   ['lock_5frecursion_5fexception_79',['lock_recursion_exception',['../classxtd_1_1threading_1_1lock__recursion__exception.html',1,'xtd::threading']]],
   ['logical_80',['logical',['../structxtd_1_1logical.html',1,'xtd']]],
-  ['logical_5fand_5fexpression_81',['logical_and_expression',['../structxtd_1_1expressions_1_1logical__and__expression.html',1,'xtd::expressions']]],
-  ['logical_5fnot_5fexpression_82',['logical_not_expression',['../structxtd_1_1expressions_1_1logical__not__expression.html',1,'xtd::expressions']]],
-  ['logical_5for_5fexpression_83',['logical_or_expression',['../structxtd_1_1expressions_1_1logical__or__expression.html',1,'xtd::expressions']]]
+  ['logical_5fand_81',['logical_and',['../structxtd_1_1expressions_1_1logical__and.html',1,'xtd::expressions']]],
+  ['logical_5fnot_82',['logical_not',['../structxtd_1_1expressions_1_1logical__not.html',1,'xtd::expressions']]],
+  ['logical_5for_83',['logical_or',['../structxtd_1_1expressions_1_1logical__or.html',1,'xtd::expressions']]]
 ];

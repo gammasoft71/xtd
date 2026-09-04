@@ -22,7 +22,7 @@ var searchData=
   ['mimetypes_5fsystem_5fimages_19',['mimetypes_system_images',['../classxtd_1_1drawing_1_1mimetypes__system__images.html',1,'xtd::drawing']]],
   ['min_5fview_20',['min_view',['../classxtd_1_1ranges_1_1views_1_1min__view.html',1,'xtd::ranges::views']]],
   ['modable_21',['modable',['../structxtd_1_1modable.html',1,'xtd']]],
-  ['modulo_5fexpression_22',['modulo_expression',['../structxtd_1_1expressions_1_1modulo__expression.html',1,'xtd::expressions']]],
+  ['modulo_22',['modulo',['../structxtd_1_1expressions_1_1modulo.html',1,'xtd::expressions']]],
   ['monitor_23',['monitor',['../classxtd_1_1threading_1_1monitor.html',1,'xtd::threading']]],
   ['month_5fcalendar_24',['month_calendar',['../classxtd_1_1forms_1_1month__calendar.html',1,'xtd::forms']]],
   ['mouse_5fevent_5fargs_25',['mouse_event_args',['../classxtd_1_1forms_1_1mouse__event__args.html',1,'xtd::forms']]],
