@@ -1,6 +1,6 @@
 # division_expression
 
-Shows how to use [xtd::expressions::operator /](https://gammasoft71.github.io/xtd/reference_guides/latest/group__expressions.html#ga26429abdfbcb94b8bda0ef50e026e5bc) expression.
+Shows how to use [xtd::expressions::expression::divide](https://gammasoft71.github.io/xtd/reference_guides/latest/structxtd_1_1expressions_1_1expression.html#a5d636dd68e9216ccbf4ce3b87a5f00c9) expression.
 
 ## Sources
 

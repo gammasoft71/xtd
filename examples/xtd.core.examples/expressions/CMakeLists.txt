@@ -7,6 +7,7 @@ add_projects(
   add_expression
   add_expression_with_own_struct
   and_expression
+  and_also_expression
   arg_expression
   division_expression
   division_expression_with_own_struct

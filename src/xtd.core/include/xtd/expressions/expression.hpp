@@ -127,32 +127,7 @@ namespace xtd {
       /// @remarks xtd::expressions::expression::and_also is an alias on xtd::expressions::expression::logical_and
       /// @par Examples
       /// The following example shows how to use xtd::expressions::expression::and_also.
-      /// ```cpp
-      /// #include <xtd/xtd>
-      ///
-      /// auto main() -> int {
-      ///   auto value = true;
-      ///   // auto and_also1 = [value](auto&& _) {return _ && value;};
-      ///   auto and_also1 = _ && value;
-      ///   println("and_also1 result => {}", and_also1(42 % 2 == 0));
-      ///   auto and_also2 = expression::and_also(_, value);
-      ///   println("and_also2 result => {}", and_also2(42 % 2 == 0));
-      ///   println();
-      ///   // auto and_also3 = [](auto&& _1, auto&& _2) {return _1 && _2;};
-      ///   auto and_also3 = _1 && _2;
-      ///   println("and_also3 result => {}", and_also3(42 % 2 == 0, 42 % 8 == 0));
-      ///   auto and_also4 = expression::and_also(_1, _2);
-      ///   println("and_also4 result => {}", and_also4(42 % 2 == 0, 42 % 8 == 0));
-      /// }
-      ///
-      /// // This code produces the following output :
-      /// //
-      /// // and_also1 result => true
-      /// // and_also2 result => true
-      /// //
-      /// // and_also3 result => false
-      /// // and_also4 result => false
-      /// ```
+      /// @include and_also_expression.cpp
       template<typename left_t, typename right_t>
       requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
       static constexpr auto and_also(left_t left, right_t right);

@@ -1,6 +1,6 @@
 # add_expression_with_own_struct
 
-Shows how to use [xtd::expressions::operator +](https://gammasoft71.github.io/xtd/reference_guides/latest/group__expressions.html#ga2595c35e5a97bfe1a900ce48f63a755b) expression.
+Shows how to use [xtd::expressions::expression::add](https://gammasoft71.github.io/xtd/reference_guides/latest/structxtd_1_1expressions_1_1expression.html#a3db1b12325af413591046bd39d77b807) expression.
 
 ## Sources
 
