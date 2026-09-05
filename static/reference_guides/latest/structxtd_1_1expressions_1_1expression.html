@@ -230,7 +230,8 @@ Inheritance diagram for xtd::expressions::expression:</div>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><a class="el" href="#a5f4d1a3fe1579445f440a9bc4a54ffcf" title="Bitwise or the specified left and right operands.">xtd::expressions::expression::or_</a>  </td><td class="markdownTableBodyNone"><code>a | b</code>  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><a class="el" href="#acfe0d2f599bc6e14fd1d9c1a70e82123" title="Bitwise xor the specified left and right operands.">xtd::expressions::expression::xor_</a>  </td><td class="markdownTableBodyNone"><code>a ^ b</code>  </td></tr>
+<td class="markdownTableBodyNone"><a class="el" href="#a88df3cb08f9cb7964c19a7c5b9ce7aa9" title="Bitwise xor the specified left and right operands.">xtd::expressions::expression::exclusive_or</a><br  />
+<a class="el" href="#acfe0d2f599bc6e14fd1d9c1a70e82123" title="Bitwise xor the specified left and right operands.">xtd::expressions::expression::xor_</a>  </td><td class="markdownTableBodyNone"><code>a ^ b</code>  </td></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><a class="el" href="#ae63466127501f8d220de58fd04001e94" title="Left shift the specified left and right operands.">xtd::expressions::expression::left_shift</a>  </td><td class="markdownTableBodyNone"><code>a &lt;&lt; b</code>  </td></tr>
 <tr class="markdownTableRowEven">
@@ -608,26 +609,26 @@ requires std::is_base_of_v&lt;expression, std::decay_t&lt;left_t&gt;&gt; || std:
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> <a class="code hl_function" href="#ab60c84b43ed66b9d27be1678fcc0a305">value</a> = <span class="keyword">true</span>;</div>
-<div class="line">  <span class="comment">// auto and_also1 = [value](auto&amp;&amp; _) {return _ &amp;&amp; value;};</span></div>
-<div class="line">  <span class="keyword">auto</span> and_also1 = <a class="code hl_variable" href="group__expressions.html#ga130423906ed7125e321bf42e00dafae9">_</a> &amp;&amp; <a class="code hl_function" href="#ab60c84b43ed66b9d27be1678fcc0a305">value</a>;</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;and_also1 result =&gt; {}&quot;</span>, and_also1(42 % 2 == 0));</div>
-<div class="line">  <span class="keyword">auto</span> and_also2 = <a class="code hl_function" href="#aa8447d62d2aaa48ee855da2aebbabd03">expression::and_also</a>(<a class="code hl_variable" href="group__expressions.html#ga130423906ed7125e321bf42e00dafae9">_</a>, <a class="code hl_function" href="#ab60c84b43ed66b9d27be1678fcc0a305">value</a>);</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;and_also2 result =&gt; {}&quot;</span>, and_also2(42 % 2 == 0));</div>
+<div class="line">  <span class="comment">// auto expr1 = [value](auto&amp;&amp; _) {return _ &amp;&amp; value;};</span></div>
+<div class="line">  <span class="keyword">auto</span> expr1 = <a class="code hl_variable" href="group__expressions.html#ga130423906ed7125e321bf42e00dafae9">_</a> &amp;&amp; <a class="code hl_function" href="#ab60c84b43ed66b9d27be1678fcc0a305">value</a>;</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;expr1 = {}&quot;</span>, expr1(42 % 2 == 0));</div>
+<div class="line">  <span class="keyword">auto</span> expr2 = <a class="code hl_function" href="#aa8447d62d2aaa48ee855da2aebbabd03">expression::and_also</a>(<a class="code hl_variable" href="group__expressions.html#ga130423906ed7125e321bf42e00dafae9">_</a>, <a class="code hl_function" href="#ab60c84b43ed66b9d27be1678fcc0a305">value</a>);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;expr2 = {}&quot;</span>, expr2(42 % 2 == 0));</div>
 <div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>();</div>
-<div class="line">  <span class="comment">// auto and_also3 = [](auto&amp;&amp; _1, auto&amp;&amp; _2) {return _1 &amp;&amp; _2;};</span></div>
-<div class="line">  <span class="keyword">auto</span> and_also3 = <a class="code hl_variable" href="group__expressions.html#gafe769e4a8371075920e4ecf343d399ab">_1</a> &amp;&amp; <a class="code hl_variable" href="group__expressions.html#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>;</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;and_also3 result =&gt; {}&quot;</span>, and_also3(42 % 2 == 0, 42 % 8 == 0));</div>
-<div class="line">  <span class="keyword">auto</span> and_also4 = <a class="code hl_function" href="#aa8447d62d2aaa48ee855da2aebbabd03">expression::and_also</a>(<a class="code hl_variable" href="group__expressions.html#gafe769e4a8371075920e4ecf343d399ab">_1</a>, <a class="code hl_variable" href="group__expressions.html#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>);</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;and_also4 result =&gt; {}&quot;</span>, and_also4(42 % 2 == 0, 42 % 8 == 0));</div>
+<div class="line">  <span class="comment">// auto expr3 = [](auto&amp;&amp; _1, auto&amp;&amp; _2) {return _1 &amp;&amp; _2;};</span></div>
+<div class="line">  <span class="keyword">auto</span> expr3 = <a class="code hl_variable" href="group__expressions.html#gafe769e4a8371075920e4ecf343d399ab">_1</a> &amp;&amp; <a class="code hl_variable" href="group__expressions.html#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>;</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;expr3 = {}&quot;</span>, expr3(42 % 2 == 0, 42 % 8 == 0));</div>
+<div class="line">  <span class="keyword">auto</span> expr4 = <a class="code hl_function" href="#aa8447d62d2aaa48ee855da2aebbabd03">expression::and_also</a>(<a class="code hl_variable" href="group__expressions.html#gafe769e4a8371075920e4ecf343d399ab">_1</a>, <a class="code hl_variable" href="group__expressions.html#ga9d506249a7fb0b4fb43b6880ac3b13f0">_2</a>);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;expr4 = {}&quot;</span>, expr4(42 % 2 == 0, 42 % 8 == 0));</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// and_also1 result =&gt; true</span></div>
-<div class="line"><span class="comment">// and_also2 result =&gt; true</span></div>
+<div class="line"><span class="comment">// expr1 = true</span></div>
+<div class="line"><span class="comment">// expr2 = true</span></div>
 <div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// and_also3 result =&gt; false</span></div>
-<div class="line"><span class="comment">// and_also4 result =&gt; false</span></div>
+<div class="line"><span class="comment">// expr3 = false</span></div>
+<div class="line"><span class="comment">// expr4 = false</span></div>
 <div class="ttc" id="astructxtd_1_1expressions_1_1expression_html_aa8447d62d2aaa48ee855da2aebbabd03"><div class="ttname"><a href="#aa8447d62d2aaa48ee855da2aebbabd03">xtd::expressions::expression::and_also</a></div><div class="ttdeci">static constexpr auto and_also(left_t left, right_t right)</div><div class="ttdoc">Logical and the specified left and right operands.</div></div>
 </div><!-- fragment --> </dd></dl>
 
