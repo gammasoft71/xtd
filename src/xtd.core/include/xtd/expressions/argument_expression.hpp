@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::expressions::arg_expression struct.
+/// @brief Contains xtd::expressions::argument_expression struct.
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "expression.hpp"
@@ -8,22 +8,22 @@
 namespace xtd {
   /// @brief The xtd::expressions namespace provides a lightweight, composable expression template framework for building and evaluating lazy, strongly-typed functional expressions from arbitrary callables
   namespace expressions {
-    /// @brief The xtd::expressions::arg_expression is the base class for xtd::expressions::arg.
+    /// @brief The xtd::expressions::argument_expression is the base class for xtd::expressions::arg.
     /// @par Namespace
     /// xtd::expressions
     /// @par Header
     /// ```cpp
-    /// #include <xtd/expressions/arg_expression>
+    /// #include <xtd/expressions/argument_expression>
     /// ```
     /// @par Library
     /// xtd.core
-    /// @ingroup xtd_core expressions
-    struct arg_expression : private expression {
+    /// @ingroup xtd_core
+    struct argument_expression : private expression {
     protected:
       /// @name Protected Constructors
       
       /// @{
-      arg_expression() = default;
+      argument_expression() = default;
       /// @}
     };
   }

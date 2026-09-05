@@ -3,7 +3,7 @@
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "operator_precedence.hpp"
-#include "arg_expression.hpp"
+#include "argument_expression.hpp"
 #include <concepts>
 #include <ostream>
 #include <tuple>
@@ -28,7 +28,7 @@ namespace xtd {
     /// The following example shows how to use xtd::expressions::expression::arg.
     /// @include arg_expression/src/arg_expression.cpp
     template <size_t index>
-    struct argument : arg_expression {
+    struct argument : argument_expression {
       /// @name Public Fields
       
       /// @{
@@ -54,14 +54,25 @@ namespace xtd {
       /// @}
     };
 
+    /// @brief Gets the `index` argument used by expression.
+    /// ```cpp
+    /// #include <xtd/expressions/arg>
+    /// ```
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core expressions
+    /// @remarks The index start from 1 to N.
+    /// @remarks Prefer the xtd::expressions::expression::arg <N> or xtd::expressions::_, xtd::expressions::_1 ... xtd::expressions::_10 instead xtd::expressions::expression::argument<N> {}.
+    /// @par Examples
+    /// The following example shows how to use xtd::expressions::expression::arg.
+    /// @include arg_expression/src/arg_expression.cpp
     template <size_t index>
     constexpr argument<index> arg;
 
     /// @cond
     template <size_t index>
     const argument<index> expression::arg;
-    /// @endcond
-
+    
     template <size_t index>
     inline auto operator <<(std::ostream& os, const argument<index>&) -> std::ostream& {return os << "_" << index;}
     /// @endcond
