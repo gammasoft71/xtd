@@ -9,6 +9,7 @@ add_projects(
   and_expression
   and_also_expression
   arg_expression
+  compare_three_way_expression
   division_expression
   division_expression_with_own_struct
   expression

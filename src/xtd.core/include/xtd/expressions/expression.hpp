@@ -138,31 +138,7 @@ namespace xtd {
       /// @return The result of compare three way.
       /// @par Examples
       /// The following example shows how to use xtd::expressions::expression::compare_three_way.
-      /// ```cpp
-      /// #include <xtd/xtd>
-      ///
-      /// auto main() -> int {
-      ///   // auto compare_three_way1 = [value](auto&& _) {return _ <=> 10;};
-      ///   auto compare_three_way1 = _ <=> 10;
-      ///   println("compare_three_way1 result => {}", compare_three_way1(42));
-      ///   auto compare_three_way2 =  expression::compare_three_way(_, 10);
-      ///   println("compare_three_way2 result => {}", compare_three_way2(42));
-      ///   println();
-      ///   //auto compare_three_way3 = [](auto&& _1, auto&& _2) {return _1 <=> _2;};
-      ///   auto compare_three_way3 = _1 <=> _2;
-      ///   println("compare_three_way3 result => {}", compare_three_way3(42, 42));
-      ///   auto compare_three_way4 =  expression::compare_three_way(_1, _2);
-      ///   println("compare_three_way4 result => {}", compare_three_way4(42, 42));
-      /// }
-      ///
-      /// // This code produces the following output :
-      /// //
-      /// // compare_three_way1 result => greater
-      /// // compare_three_way2 result => greater
-      /// //
-      /// // compare_three_way3 result => equivalent
-      /// // compare_three_way4 result => equivalent
-      /// ```
+      /// @include compare_three_way_expression.cpp
       template<typename left_t, typename right_t>
       requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
       static constexpr auto compare_three_way(left_t left, right_t right);
