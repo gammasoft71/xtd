@@ -55,14 +55,14 @@ namespace xtd {
     ///   | xtd::expressions::expression::logical_and<br>xtd::expressions::expression::and_also | <code>a && b</code>   |
     ///   | xtd::expressions::expression::logical_or<br>xtd::expressions::expression::or_else   | <code>a \|\| b</code> |
     /// @remarks
-    ///   | Bitwise                                   | operator |
-    ///   | ----------------------------------------- | ------------------- |
-    ///   | xtd::expressions::expression::not_        | <code>~a</code>     |
-    ///   | xtd::expressions::expression::and_        | <code>a & b</code>  |
-    ///   | xtd::expressions::expression::or_         | <code>a \| b</code> |
-    ///   | xtd::expressions::expression::xor_        | <code>a ^ b</code>  |
-    ///   | xtd::expressions::expression::left_shift  | <code>a << b</code> |
-    ///   | xtd::expressions::expression::right_shift | <code>a >> b</code> |
+    ///   | Bitwise                                                                          | operator            |
+    ///   | -------------------------------------------------------------------------------- | ------------------- |
+    ///   | xtd::expressions::expression::not_                                               | <code>~a</code>     |
+    ///   | xtd::expressions::expression::and_                                               | <code>a & b</code>  |
+    ///   | xtd::expressions::expression::or_                                                | <code>a \| b</code> |
+    ///   | xtd::expressions::expression::exclusive_or<br>xtd::expressions::expression::xor_ | <code>a ^ b</code>  |
+    ///   | xtd::expressions::expression::left_shift                                         | <code>a << b</code> |
+    ///   | xtd::expressions::expression::right_shift                                        | <code>a >> b</code> |
     /// @remarks
     ///   | Member and pointer                        | operator |
     ///   | ----------------------------------------- | -------- |
@@ -90,7 +90,7 @@ namespace xtd {
       /// @remarks Prefer the xtd::expressions::expression::arg <N> or xtd::expressions::_, xtd::expressions::_1 ... xtd::expressions::_10 instead xtd::expressions::expression::arg.
       /// @par Examples
       /// The following example shows how to use xtd::expressions::expression::arg.
-      /// @include arg_expression/src/arg_expression.cpp
+      /// @include arg_expression.cpp
       template <size_t index>
       static const xtd::expressions::argument<index> arg;
       /// @}

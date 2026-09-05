@@ -26,7 +26,7 @@ namespace xtd {
     /// @remarks Prefer the xtd::expressions::arg <N> or xtd::expressions::_, xtd::expressions::_1 ... xtd::expressions::_10 instead xtd::expressions::arg.
     /// @par Examples
     /// The following example shows how to use xtd::expressions::expression::arg.
-    /// @include arg_expression/src/arg_expression.cpp
+    /// @include arg_expression.cpp
     template <size_t index>
     struct argument : argument_expression {
       /// @name Public Fields
@@ -65,7 +65,7 @@ namespace xtd {
     /// @remarks Prefer the xtd::expressions::expression::arg <N> or xtd::expressions::_, xtd::expressions::_1 ... xtd::expressions::_10 instead xtd::expressions::expression::argument<N> {}.
     /// @par Examples
     /// The following example shows how to use xtd::expressions::expression::arg.
-    /// @include arg_expression/src/arg_expression.cpp
+    /// @include arg_expression.cpp
     template <size_t index>
     constexpr argument<index> arg;
 
