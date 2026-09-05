@@ -110,19 +110,18 @@ document.addEventListener('DOMContentLoaded', () => {
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
-<a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">arg.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="operator__precedence_8hpp_source.html">operator_precedence.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="arg__expression_8hpp_source.html">arg_expression.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="argument__expression_8hpp_source.html">argument_expression.hpp</a>&quot;</code><br />
 <code>#include &lt;concepts&gt;</code><br />
 <code>#include &lt;ostream&gt;</code><br />
 <code>#include &lt;tuple&gt;</code><br />
 <code>#include &lt;type_traits&gt;</code><br />
 </div><a name="details" id="details"></a><h2 id="header-details" class="groupheader">Definition</h2>
-<div class="textblock"><p>Contains <a class="el" href="group__expressions.html#gga418395dc9383e37eb269a52b25b74683a61dd86c2dc75c3f569ec619bd283a33f" title="Represnets the arg operator precedence (_1).">xtd::expressions::arg</a> struct. </p>
+<div class="textblock"><p>Contains <a class="el" href="group__expressions.html#gae947666d0c449c23b2c878a0accc2e08" title="Gets the index argument used by expression.">xtd::expressions::arg</a> struct. </p>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2026 Gammasoft. All rights reserved. </dd></dl>
 </div>
 <p><a href="arg_8hpp_source.html">Go to the source code of this file.</a></p>
@@ -130,7 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:xtd_3A_3Aexpressions_3A_3Aargument_3C_20index_20_3E" id="r_xtd_3A_3Aexpressions_3A_3Aargument_3C_20index_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structxtd_1_1expressions_1_1argument.html">xtd::expressions::argument&lt; index &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="group__expressions.html#gga418395dc9383e37eb269a52b25b74683a61dd86c2dc75c3f569ec619bd283a33f" title="Represnets the arg operator precedence (_1).">xtd::expressions::arg</a> object is arg for all expressions.  <a href="structxtd_1_1expressions_1_1argument.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="group__expressions.html#gae947666d0c449c23b2c878a0accc2e08" title="Gets the index argument used by expression.">xtd::expressions::arg</a> object is arg for all expressions.  <a href="structxtd_1_1expressions_1_1argument.html#details">More...</a><br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
@@ -139,17 +138,11 @@ Namespaces</h2></td></tr>
 <tr class="memitem:xtd_3A_3Aexpressions" id="r_xtd_3A_3Aexpressions"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="namespacextd_1_1expressions.html">xtd::expressions</a></td></tr>
 <tr class="memdesc:namespacextd_1_1expressions"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="namespacextd_1_1expressions.html" title="The xtd::expressions namespace provides a lightweight, composable expression template framework for b...">xtd::expressions</a> namespace provides a lightweight, composable expression template framework for building and evaluating lazy, strongly-typed functional expressions from arbitrary callables. <br /></td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:a792dc3b5901af67332118723c72c3f36" id="r_a792dc3b5901af67332118723c72c3f36"><td class="memTemplParams" colspan="2"><a id="a792dc3b5901af67332118723c72c3f36" name="a792dc3b5901af67332118723c72c3f36"></a>
-template&lt;size_t index&gt; </td></tr>
-<tr class="memitem:a792dc3b5901af67332118723c72c3f36 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><b>xtd::expressions::operator&lt;&lt;</b> (std::ostream &amp;os, const <a class="el" href="structxtd_1_1expressions_1_1argument.html">argument</a>&lt; <a class="el" href="structxtd_1_1index.html">index</a> &gt; &amp;) -&gt; std::ostream &amp;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:ae947666d0c449c23b2c878a0accc2e08" id="r_ae947666d0c449c23b2c878a0accc2e08"><td class="memTemplParams" colspan="2"><a id="ae947666d0c449c23b2c878a0accc2e08" name="ae947666d0c449c23b2c878a0accc2e08"></a>
-template&lt;size_t index&gt; </td></tr>
-<tr class="memitem:ae947666d0c449c23b2c878a0accc2e08 template"><td class="memItemLeft">constexpr <a class="el" href="structxtd_1_1expressions_1_1argument.html">argument</a>&lt; <a class="el" href="structxtd_1_1index.html">index</a> &gt;&#160;</td><td class="memItemRight"><b>xtd::expressions::arg</b></td></tr>
+<tr class="memitem:gae947666d0c449c23b2c878a0accc2e08" id="r_gae947666d0c449c23b2c878a0accc2e08"><td class="memTemplParams" colspan="2">template&lt;size_t index&gt; </td></tr>
+<tr class="memitem:gae947666d0c449c23b2c878a0accc2e08 template"><td class="memItemLeft">constexpr <a class="el" href="structxtd_1_1expressions_1_1argument.html">argument</a>&lt; <a class="el" href="structxtd_1_1index.html">index</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="group__expressions.html#gae947666d0c449c23b2c878a0accc2e08">xtd::expressions::arg</a></td></tr>
+<tr class="memdesc:gae947666d0c449c23b2c878a0accc2e08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the <span class="tt"><a class="el" href="structxtd_1_1index.html" title="Represents a type that can be used to index a collection either from the beginning or the end.">index</a></span> argument used by expression.  <br /></td></tr>
 </table>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
