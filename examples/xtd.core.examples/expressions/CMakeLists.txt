@@ -11,7 +11,7 @@ add_projects(
   arg_expression
   compare_three_way_expression
   constant_expression
-  division_expression
-  division_expression_with_own_struct
+  divide_expression
+  divide_expression_with_own_struct
   expression
 )

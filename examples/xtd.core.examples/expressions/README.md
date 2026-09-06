@@ -9,8 +9,8 @@
 * [arg_expression](arg_expression/README.md) Shows how to use [xtd::expressions::expression::arg](https://gammasoft71.github.io/xtd/reference_guides/latest/structxtd_1_1expressions_1_1expression.html#ad3d423c2956860732b1a624887435e3b) expression.
 * [compare_three_way_expression](compare_three_way_expression/README.md) Shows how to use [xtd::expressions::expression::compare_three_way](https://gammasoft71.github.io/xtd/reference_guides/latest/structxtd_1_1expressions_1_1expression.html#a2f6331e445a905dd2fc6386f911c44f4) expression.
 * [constant_expression](constant_expression/README.md) Shows how to use [xtd::expressions::expression::constant](https://gammasoft71.github.io/xtd/reference_guides/latest/structxtd_1_1expressions_1_1expression.html#a3962a43a6b277819f145124edf446c0a) expression.
-* [division_expression](division_expression/README.md) Shows how to use [xtd::expressions::expression::divide](https://gammasoft71.github.io/xtd/reference_guides/latest/structxtd_1_1expressions_1_1expression.html#a5d636dd68e9216ccbf4ce3b87a5f00c9) expression.
-* [division_expression_with_own_struct](division_expression_with_own_struct/README.md) Shows how to use [xtd::expressions::expression::divide](https://gammasoft71.github.io/xtd/reference_guides/latest/structxtd_1_1expressions_1_1expression.html#a5d636dd68e9216ccbf4ce3b87a5f00c9) expression.
+* [divide_expression](divide_expression/README.md) Shows how to use [xtd::expressions::expression::divide](https://gammasoft71.github.io/xtd/reference_guides/latest/structxtd_1_1expressions_1_1expression.html#a5d636dd68e9216ccbf4ce3b87a5f00c9) expression.
+* [divide_expression_with_own_struct](divide_expression_with_own_struct/README.md) Shows how to use [xtd::expressions::expression::divide](https://gammasoft71.github.io/xtd/reference_guides/latest/structxtd_1_1expressions_1_1expression.html#a5d636dd68e9216ccbf4ce3b87a5f00c9) expression.
 * [expression](expression/README.md) Shows how to use [xtd::expressions::expression](https://gammasoft71.github.io/xtd/reference_guides/latest/structxtd_1_1expressions_1_1expression.html) class.
 
 ## Build and run any project

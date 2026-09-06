@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.20)
 
-project(division_expression)
+project(divide_expression)
 find_package(xtd REQUIRED)
-add_sources(README.md src/division_expression.cpp)
+add_sources(README.md src/divide_expression.cpp)
 target_type(CONSOLE_APPLICATION)
