@@ -782,9 +782,9 @@ namespace xtd::collections::generic::tests {
     
     auto test_method_(sort_with_comparison) {
       auto items = list {1, 5, 3, 4, 2};
-      collection_assert::are_equal({1, 2, 3, 4, 5}, items.sort(comparison<const int&> {delegate_(auto a, auto b) {return a < b ? -1 : a > b ? 1 : 0;}}));
+      collection_assert::are_equal({1, 2, 3, 4, 5}, items.sort(delegate_(const auto& a, const auto& b) {return a < b ? -1 : a > b ? 1 : 0;}));
       collection_assert::are_equal({1, 2, 3, 4, 5}, items);
-      collection_assert::are_equal({5, 4, 3, 2, 1}, items.sort(comparison<const int&> {delegate_(auto a, auto b) {return a < b ? 1 : a > b ? -1 : 0;}}));
+      collection_assert::are_equal({5, 4, 3, 2, 1}, items.sort(delegate_(const auto& a, const auto& b) {return a < b ? 1 : a > b ? -1 : 0;}));
       collection_assert::are_equal({5, 4, 3, 2, 1}, items);
     }
     
