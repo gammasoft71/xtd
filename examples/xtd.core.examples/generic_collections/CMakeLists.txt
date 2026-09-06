@@ -30,6 +30,7 @@ add_projects(
   generic_list_for_each
   generic_list_iterator_vs_vector_iterator
   generic_list_reverse
+  generic_list_sort
   generic_ordered_dictionary
   generic_queue
   generic_stack
