@@ -947,11 +947,32 @@ namespace xtd {
         /// @remarks If comparison is provided, the elements of the xtd::collections::generic::list <type_t> are sorted using the method represented by the delegate.
         /// @remarks This method uses xtd::array::sort, which uses the QuickSort algorithm. This implementation performs an unstable sort; that is, if two elements are equal, their order might not be preserved. In contrast, a stable sort preserves the order of elements that are equal.
         /// @remarks On average, this method is an O(n log n) operation, where n is xtd::collections::generic::list::count; in the worst case it is an O(n ^ 2) operation.
-        auto sort(xtd::comparison<const type_t&> comparison) -> list<type_t>& {
+        /// @par Examples
+        /// Th following example shows how to use xtd::collections::generic::list::sort method :
+        /// @include generic_list_sort.cpp
+        auto sort(xtd::callable<bool, const type_t&, const type_t&> auto&& less_comparison) -> list<type_t>& {
           data_->items.increment_version();
-          std::sort(data_->items.begin(), data_->items.end(), [&](const type_t& x, const type_t& y) {return comparison(x, y) < 0;});
+          std::sort(data_->items.begin(), data_->items.end(), less_comparison);
           return self_;
         }
+        /// @brief Sorts the elements in the entire xtd::collections::generic::list <type_t> using the specified xtd::comparison <type_t>.
+        /// @exception xtd::argument_out_of_range_exception The implementation of comparison caused an error during the sort. For example, comparison might not return 0 when comparing an item with itself.
+        /// @remarks If comparison is provided, the elements of the xtd::collections::generic::list <type_t> are sorted using the method represented by the delegate.
+        /// @remarks This method uses xtd::array::sort, which uses the QuickSort algorithm. This implementation performs an unstable sort; that is, if two elements are equal, their order might not be preserved. In contrast, a stable sort preserves the order of elements that are equal.
+        /// @remarks On average, this method is an O(n log n) operation, where n is xtd::collections::generic::list::count; in the worst case it is an O(n ^ 2) operation.
+        /// @par Examples
+        /// Th following example shows how to use xtd::collections::generic::list::sort method :
+        /// @include generic_list_sort.cpp
+        auto sort(xtd::callable<std::strong_ordering, const type_t&, const type_t&> auto&& ordering_comparison) -> list<type_t>& {return sort([ordering_comparison](const type_t& x, const type_t& y) {return ordering_comparison(x, y) == std::strong_ordering::less;});}
+        /// @brief Sorts the elements in the entire xtd::collections::generic::list <type_t> using the specified xtd::comparison <type_t>.
+        /// @exception xtd::argument_out_of_range_exception The implementation of comparison caused an error during the sort. For example, comparison might not return 0 when comparing an item with itself.
+        /// @remarks If comparison is provided, the elements of the xtd::collections::generic::list <type_t> are sorted using the method represented by the delegate.
+        /// @remarks This method uses xtd::array::sort, which uses the QuickSort algorithm. This implementation performs an unstable sort; that is, if two elements are equal, their order might not be preserved. In contrast, a stable sort preserves the order of elements that are equal.
+        /// @remarks On average, this method is an O(n log n) operation, where n is xtd::collections::generic::list::count; in the worst case it is an O(n ^ 2) operation.
+        /// @par Examples
+        /// Th following example shows how to use xtd::collections::generic::list::sort method :
+        /// @include generic_list_sort.cpp
+        auto sort(xtd::callable<xtd::int32, const type_t&, const type_t&> auto&& comparison) -> list<type_t>& {return sort([comparison](const type_t& x, const type_t& y) {return comparison(x, y) < 0;});}
         
         /// @brief Sorts the elements in the entire xtd::collections::generic::list <type_t> using the specified comparer.
         /// @param comparer The xtd::collections::generic::icomparer <type_t> implementation to use when comparing elements, or null to use the default comparer xtd::collections::generic::comparer::default_comparer.
