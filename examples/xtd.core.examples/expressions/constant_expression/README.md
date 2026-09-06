@@ -18,9 +18,10 @@ xtdc run
 ## Output
 
 ```
-expr1 = greater
-expr2 = greater
+constant1 = 10
+constant2 = 10
+constant3 = 30
+constant4 = 30
 
-expr3 = equivalent
-expr4 = equivalent
+expr1 = 50
 ```
