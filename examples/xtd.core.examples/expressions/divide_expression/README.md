@@ -18,11 +18,9 @@ xtdc run
 ## Output
 
 ```
-div1 resul => 42
+expr1 = 5
+expr2 = 5
 
-div2 resul => 42
-div2 resul => 42
-
-div3 resul => 2
-
+expr3 = 4
+expr4 = 4
 ```

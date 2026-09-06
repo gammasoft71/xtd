@@ -1,37 +1,23 @@
 #include <xtd/xtd>
 
-struct foo {
-  int value;
-  
-  friend auto operator <<(std::ostream& os, const foo& f) -> std::ostream& {return os << f.value;}
-  friend auto operator /(const foo& a, const foo& b) -> foo {return foo {a.value / b.value};}
-};
-
 auto main() -> int {
-  // auto expr1 = [](auto&& a) {return a / 2;}
-  auto expr1 = _ / 2;
-  println("expr1 = {}", expr1(84));
+  // auto expr1 = [](auto&& _) {return _ / 10;};
+  auto expr1 = _ / 10;
+  println("expr1 = {}", expr1(50));
+  auto expr2 = expression::divide(_, 10);
+  println("expr2 = {}", expr2(50));
   println();
-
-  // auto expr2 = [](auto&& a, auto&& b) {return a / b;}
-  auto expr2 = _1 / _2;
-  println("expr2 = {}", expr2(84, 2));
-  println("expr2 = {}", expr2(foo {84}, foo {2}));
-  println();
-
-  // auto expr3 = [](auto&& a, auto&& b, auto&& c) {return a / 2 / b / c;}
-  auto expr3 = _1 / 2 / _2  / _3;
-
-  println("expr3 = {}", expr3(84, 7, 3));
-  println();
+  // auto expr3 = [](auto&& _1, auto&& _2) {return _1 / _2;};
+  auto expr3 = _1 / _2;
+  println("expr3 = {}", expr3(60, 15));
+  auto expr4 = expression::divide(_1, _2);
+  println("expr4 = {}", expr4(60, 15));
 }
 
 // This code produces the following output :
 //
-// expr1 = 42
+// expr1 = 5
+// expr2 = 5
 //
-// expr2 = 42
-// expr2 = 42
-//
-// expr3 = 2
-//
+// expr3 = 4
+// expr4 = 4
