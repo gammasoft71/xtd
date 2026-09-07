@@ -258,11 +258,20 @@ Public Methods</h2></td></tr>
 <tr class="memdesc:a8dbb1a5dabdfd618c478ec27beefa35e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines the index of a specific item in the <a class="el" href="classxtd_1_1basic__array.html" title="Base object that represent array.">xtd::basic_array</a> &lt;type_t&gt;.  <br /></td></tr>
 <tr class="memitem:aca5c8811956342206d87b1fdd0340895" id="r_aca5c8811956342206d87b1fdd0340895"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aca5c8811956342206d87b1fdd0340895">sort</a> () -&gt; basic_array&lt; type_t &gt; &amp;</td></tr>
 <tr class="memdesc:aca5c8811956342206d87b1fdd0340895"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts the elements in the entire <a class="el" href="classxtd_1_1basic__array.html" title="Base object that represent array.">xtd::basic_array</a> &lt;type_t&gt; using the default comparer.  <br /></td></tr>
-<tr class="memitem:aee1b5c908ec6f4fb0d6a44bd1fe236c9" id="r_aee1b5c908ec6f4fb0d6a44bd1fe236c9"><td class="memTemplParams" colspan="2">template&lt;typename comparison_t&gt; </td></tr>
-<tr class="memitem:aee1b5c908ec6f4fb0d6a44bd1fe236c9 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aee1b5c908ec6f4fb0d6a44bd1fe236c9">sort</a> (comparison_t &amp;&amp;comparison<a class="el" href="group__delegates.html#ga6aa9a3d2680df2fc027c12383aa9e7cc">comparison</a>) -&gt; basic_array&lt; type_t &gt; &amp;</td></tr>
-<tr class="memdesc:aee1b5c908ec6f4fb0d6a44bd1fe236c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts the elements in the entire <a class="el" href="classxtd_1_1basic__array.html" title="Base object that represent array.">xtd::basic_array</a> &lt;type_t&gt; using the specified <a class="el" href="group__delegates.html#ga6aa9a3d2680df2fc027c12383aa9e7cc" title="Represents the method that compares two objects of the same type.">xtd::comparison</a> &lt;type_t&gt;.  <br /></td></tr>
+<tr class="memitem:a654c55c07758408d7bbea9038d22fd9c" id="r_a654c55c07758408d7bbea9038d22fd9c"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a654c55c07758408d7bbea9038d22fd9c">sort</a> (<a class="el" href="structxtd_1_1callable.html">xtd::callable</a>&lt; bool, const type_t &amp;, const type_t &amp; &gt; auto &amp;&amp;less_comparison) -&gt; basic_array&lt; type_t &gt; &amp;</td></tr>
+<tr class="memdesc:a654c55c07758408d7bbea9038d22fd9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts the elements in the entire <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; using the specified <a class="el" href="structxtd_1_1callable.html" title="Represents the callable (function, method, xtd::delegate, xtd::event, std::functional) concept.">xtd::callable</a> &lt;bool, type_t, type_t&gt; less comparer <span class="tt">&lt;</span>.  <br /></td></tr>
+<tr class="memitem:ae17998e0ee767347438e7801c4259c76" id="r_ae17998e0ee767347438e7801c4259c76"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ae17998e0ee767347438e7801c4259c76">sort</a> (<a class="el" href="structxtd_1_1callable.html">xtd::callable</a>&lt; std::strong_ordering, const type_t &amp;, const type_t &amp; &gt; auto &amp;&amp;ordering_comparison) -&gt; basic_array&lt; type_t &gt; &amp;</td></tr>
+<tr class="memdesc:ae17998e0ee767347438e7801c4259c76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts the elements in the entire <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; using the specified <a class="el" href="structxtd_1_1callable.html" title="Represents the callable (function, method, xtd::delegate, xtd::event, std::functional) concept.">xtd::callable</a> &lt;std::strong_ordering, type_t, type_t&gt; ordering comparer <span class="tt">&lt;=&gt;</span>.  <br /></td></tr>
+<tr class="memitem:a9c5748b8955ee2051458ac0ecd205b78" id="r_a9c5748b8955ee2051458ac0ecd205b78"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a9c5748b8955ee2051458ac0ecd205b78">sort</a> (<a class="el" href="structxtd_1_1callable.html">xtd::callable</a>&lt; <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a>, const type_t &amp;, const type_t &amp; &gt; auto &amp;&amp;comparison<a class="el" href="group__delegates.html#ga6aa9a3d2680df2fc027c12383aa9e7cc">comparison</a>) -&gt; basic_array&lt; type_t &gt; &amp;</td></tr>
+<tr class="memdesc:a9c5748b8955ee2051458ac0ecd205b78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts the elements in the entire <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; using the specified <a class="el" href="group__delegates.html#ga6aa9a3d2680df2fc027c12383aa9e7cc" title="Represents the method that compares two objects of the same type.">xtd::comparison</a> &lt;type_t&gt; comparison.  <br /></td></tr>
 <tr class="memitem:afb5cf1a38098f5a20583e961eb7eb7a4" id="r_afb5cf1a38098f5a20583e961eb7eb7a4"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#afb5cf1a38098f5a20583e961eb7eb7a4">sort</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1icomparer.html">xtd::collections::generic::icomparer</a>&lt; type_t &gt; &amp;comparer) -&gt; basic_array&lt; type_t &gt; &amp;</td></tr>
 <tr class="memdesc:afb5cf1a38098f5a20583e961eb7eb7a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts the elements in the entire <a class="el" href="classxtd_1_1basic__array.html" title="Base object that represent array.">xtd::basic_array</a> &lt;type_t&gt; using the specified comparer.  <br /></td></tr>
+<tr class="memitem:aba8adae68fb3b6c3b8986d83497189b9" id="r_aba8adae68fb3b6c3b8986d83497189b9"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aba8adae68fb3b6c3b8986d83497189b9">sort</a> (<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> index, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> count, <a class="el" href="structxtd_1_1callable.html">xtd::callable</a>&lt; bool, const type_t &amp;, const type_t &amp; &gt; auto &amp;&amp;less_comparison) -&gt; basic_array&lt; type_t &gt; &amp;</td></tr>
+<tr class="memdesc:aba8adae68fb3b6c3b8986d83497189b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts the elements in a range of elements in <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; using the specified <a class="el" href="structxtd_1_1callable.html" title="Represents the callable (function, method, xtd::delegate, xtd::event, std::functional) concept.">xtd::callable</a> &lt;bool, type_t, type_t&gt; less comparer <span class="tt">&lt;</span>.  <br /></td></tr>
+<tr class="memitem:afeba9eda6f49984acfea157c09608da0" id="r_afeba9eda6f49984acfea157c09608da0"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#afeba9eda6f49984acfea157c09608da0">sort</a> (<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> index, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> count, <a class="el" href="structxtd_1_1callable.html">xtd::callable</a>&lt; std::strong_ordering, const type_t &amp;, const type_t &amp; &gt; auto &amp;&amp;ordering_comparison) -&gt; basic_array&lt; type_t &gt; &amp;</td></tr>
+<tr class="memdesc:afeba9eda6f49984acfea157c09608da0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts the elements in a range of elements in <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; using the specified <a class="el" href="structxtd_1_1callable.html" title="Represents the callable (function, method, xtd::delegate, xtd::event, std::functional) concept.">xtd::callable</a> &lt;std::strong_ordering, type_t, type_t&gt; ordering comparer <span class="tt">&lt;=&gt;</span>.  <br /></td></tr>
+<tr class="memitem:adba16a060faac064756515ca45b7c2f7" id="r_adba16a060faac064756515ca45b7c2f7"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#adba16a060faac064756515ca45b7c2f7">sort</a> (<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> index, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> count, <a class="el" href="structxtd_1_1callable.html">xtd::callable</a>&lt; <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a>, const type_t &amp;, const type_t &amp; &gt; auto &amp;&amp;comparison<a class="el" href="group__delegates.html#ga6aa9a3d2680df2fc027c12383aa9e7cc">comparison</a>) -&gt; basic_array&lt; type_t &gt; &amp;</td></tr>
+<tr class="memdesc:adba16a060faac064756515ca45b7c2f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts the elements in a range of elements in <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; using the specified <a class="el" href="group__delegates.html#ga6aa9a3d2680df2fc027c12383aa9e7cc" title="Represents the method that compares two objects of the same type.">xtd::comparison</a> &lt;type_t&gt; comparison.  <br /></td></tr>
 <tr class="memitem:aa61467d5e5800a03a7064ffe569c9fae" id="r_aa61467d5e5800a03a7064ffe569c9fae"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aa61467d5e5800a03a7064ffe569c9fae">sort</a> (<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> index, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> count, const <a class="el" href="classxtd_1_1collections_1_1generic_1_1icomparer.html">xtd::collections::generic::icomparer</a>&lt; type_t &gt; &amp;comparer) -&gt; basic_array&lt; type_t &gt; &amp;</td></tr>
 <tr class="memdesc:aa61467d5e5800a03a7064ffe569c9fae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts the elements in a range of elements in <a class="el" href="classxtd_1_1basic__array.html" title="Base object that represent array.">xtd::basic_array</a> &lt;type_t&gt; using the specified comparer.  <br /></td></tr>
 <tr class="memitem:a40d1b6c8ecb3e93cd595bcaf3a10da30" id="r_a40d1b6c8ecb3e93cd595bcaf3a10da30"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a40d1b6c8ecb3e93cd595bcaf3a10da30">to_string</a> () const noexcept -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> override</td></tr>
@@ -2031,7 +2040,7 @@ template&lt;typename type_t, typename allocator_t = xtd::collections::generic::h
 </div>
 </div>
 <a id="aca5c8811956342206d87b1fdd0340895" name="aca5c8811956342206d87b1fdd0340895"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aca5c8811956342206d87b1fdd0340895">&#9670;&#160;</a></span>sort() <span class="overload">[1/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aca5c8811956342206d87b1fdd0340895">&#9670;&#160;</a></span>sort() <span class="overload">[1/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2148,18 +2157,89 @@ This method uses <a class="el" href="#aca5c8811956342206d87b1fdd0340895">xtd::ar
 On average, this method is an O(n log n) operation, where n is <a class="el" href="#a63ea4c7a305ecdff5882d1cf2336c739" title="Gets the number of elements contained in the xtd::array &lt;type_t&gt;.">xtd::basic_array::count</a>; in the worst case it is an O(n ^ 2) operation. </dd>
 <dd>
 The following code example demonstrates the <a class="el" href="#aca5c8811956342206d87b1fdd0340895" title="Sorts the elements in the entire xtd::basic_array &lt;type_t&gt; using the default comparer.">xtd::basic_array::sort</a> method overload and the xtd::basic_array::binary_search method overload. A <a class="el" href="classxtd_1_1basic__array.html" title="Base object that represent array.">xtd::basic_array</a> &lt;type_t&gt; of strings is created and populated with four strings, in no particular order. The list is displayed, sorted, and displayed again. </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="#aca5c8811956342206d87b1fdd0340895" title="Sorts the elements in the entire xtd::basic_array &lt;type_t&gt; using the default comparer.">xtd::basic_array::sort</a> method : <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">struct </span>superhero {</div>
+<div class="line">  <span class="keywordtype">string</span> name;</div>
+<div class="line">  <span class="keywordtype">string</span> alter_ego;</div>
+<div class="line">  </div>
+<div class="line">  <span class="keyword">auto</span> <a class="code hl_function" href="#a40d1b6c8ecb3e93cd595bcaf3a10da30">to_string</a>() const noexcept -&gt; <span class="keywordtype">string</span> {<span class="keywordflow">return</span> <a class="code hl_function" href="group__format__parse.html#gab67eb80458cad40e22a5036b84c9a5c7">string::format</a>(<span class="stringliteral">&quot;{}/{}&quot;</span>, name, alter_ego);}</div>
+<div class="line">  <span class="keyword">auto</span> operator&lt;=&gt;(<span class="keyword">const</span> superhero&amp; other) <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; std::strong_ordering {</div>
+<div class="line">    <span class="keyword">auto</span> result = name &lt;=&gt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>.name;</div>
+<div class="line">    <span class="keywordflow">return</span> result != 0 ? result : alter_ego &lt;=&gt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>.alter_ego;</div>
+<div class="line">  }</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">struct </span>supervillain : istringable&lt;supervillain&gt;, icomparable&lt;supervillain&gt; {</div>
+<div class="line">  supervillain() = <span class="keywordflow">default</span>;</div>
+<div class="line">  supervillain(<span class="keywordtype">string</span> name, <span class="keywordtype">string</span> alter_ego) : <a class="code hl_function" href="group__threading.html#ga11053dd7cd30de5f92b108c9f94f8af2">name</a> {<a class="code hl_function" href="group__threading.html#ga11053dd7cd30de5f92b108c9f94f8af2">name</a>}, alter_ego {alter_ego} {}</div>
+<div class="line"> </div>
+<div class="line">  <span class="keywordtype">string</span> <a class="code hl_function" href="group__threading.html#ga11053dd7cd30de5f92b108c9f94f8af2">name</a>;</div>
+<div class="line">  <span class="keywordtype">string</span> alter_ego;</div>
+<div class="line">  </div>
+<div class="line">  <span class="keyword">auto</span> <a class="code hl_function" href="namespacextd.html#a35d0d55a78eddf3d056a0db05fbf8b16">to_string</a>() const noexcept -&gt; <span class="keywordtype">string</span><span class="keyword"> override </span>{<span class="keywordflow">return</span> string::format(<span class="stringliteral">&quot;{}/{}&quot;</span>, name, alter_ego);}</div>
+<div class="line">  <span class="keyword">auto</span> compare_to(<span class="keyword">const</span> supervillain&amp; other) <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; <span class="keywordtype">int</span> <span class="keyword">override</span> {</div>
+<div class="line">    <span class="keyword">auto</span> result = <a class="code hl_function" href="group__threading.html#ga11053dd7cd30de5f92b108c9f94f8af2">name</a>.compare_to(<a class="code hl_enumvalue" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>.name);</div>
+<div class="line">    <span class="keywordflow">return</span> result != 0 ? result : alter_ego.compare_to(<a class="code hl_enumvalue" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>.alter_ego);</div>
+<div class="line">  }</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="keyword">auto</span> numbers = array {10, 6, 5, 7, 8, 2, 9, 3, 1, 4};</div>
+<div class="line">  numbers.sort();</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;numbers = {}&quot;</span>, numbers);</div>
+<div class="line">  </div>
+<div class="line">  <span class="keyword">auto</span> fruits = array&lt;string&gt; {<span class="stringliteral">&quot;Orange&quot;</span>, <span class="stringliteral">&quot;Apple&quot;</span>, <span class="stringliteral">&quot;Banana&quot;</span>, <span class="stringliteral">&quot;Strawberry&quot;</span>, <span class="stringliteral">&quot;Watermelon&quot;</span>, <span class="stringliteral">&quot;Pear&quot;</span>, <span class="stringliteral">&quot;Coconut&quot;</span>, <span class="stringliteral">&quot;Kiwi&quot;</span>, <span class="stringliteral">&quot;Plum&quot;</span>, <span class="stringliteral">&quot;Grapes&quot;</span>};</div>
+<div class="line">  fruits.sort();</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;fruits = {}&quot;</span>, fruits);</div>
+<div class="line">  </div>
+<div class="line">  <span class="keyword">auto</span> superheroes = array&lt;superhero&gt; {</div>
+<div class="line">    {.name = <span class="stringliteral">&quot;Barry Allen&quot;</span>, .alter_ego = <span class="stringliteral">&quot;The Flash&quot;</span>},</div>
+<div class="line">    {.name = <span class="stringliteral">&quot;Oliver Queen&quot;</span>, .alter_ego = <span class="stringliteral">&quot;Arrow&quot;</span>},</div>
+<div class="line">    {.name = <span class="stringliteral">&quot;Hal Jordan&quot;</span>, .alter_ego = <span class="stringliteral">&quot;Green Lantern&quot;</span>},</div>
+<div class="line">    {.name = <span class="stringliteral">&quot;Bruce Wayne&quot;</span>, .alter_ego = <span class="stringliteral">&quot;Batman&quot;</span>},</div>
+<div class="line">    {.name = <span class="stringliteral">&quot;Clark Kent&quot;</span>, .alter_ego = <span class="stringliteral">&quot;Superman&quot;</span>},</div>
+<div class="line">    {.name = <span class="stringliteral">&quot;Jefferson Pierce&quot;</span>, .alter_ego = <span class="stringliteral">&quot;Black Lightning&quot;</span>},</div>
+<div class="line">    {.name = <span class="stringliteral">&quot;Kara Zor-El&quot;</span>, .alter_ego = <span class="stringliteral">&quot;Supergirl&quot;</span>},</div>
+<div class="line">  };</div>
+<div class="line">  superheroes.sort();</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;superheroes = {}&quot;</span>, superheroes);</div>
+<div class="line">  </div>
+<div class="line">  <span class="keyword">auto</span> supervillains = array&lt;supervillain&gt; {</div>
+<div class="line">    {<span class="stringliteral">&quot;Pamela Isley&quot;</span>, <span class="stringliteral">&quot;Poison Ivy&quot;</span>},</div>
+<div class="line">    {<span class="stringliteral">&quot;George Harkness&quot;</span>, <span class="stringliteral">&quot;Captain Boomerang&quot;</span>},</div>
+<div class="line">    {<span class="stringliteral">&quot;El-Kal&quot;</span>, <span class="stringliteral">&quot;Bizarro&quot;</span>},</div>
+<div class="line">    {<span class="stringliteral">&quot;Winslow Schott&quot;</span>, <span class="stringliteral">&quot;Toyman&quot;</span>},</div>
+<div class="line">    {<span class="stringliteral">&quot;Theo Adam&quot;</span>, <span class="stringliteral">&quot;Black Adam&quot;</span>},</div>
+<div class="line">    {<span class="stringliteral">&quot;Joar Mahkent&quot;</span>, <span class="stringliteral">&quot;Icicle&quot;</span>},</div>
+<div class="line">    {<span class="stringliteral">&quot;Caitlin Snow&quot;</span>, <span class="stringliteral">&quot;Killer Frost&quot;</span>}</div>
+<div class="line">  };</div>
+<div class="line">  supervillains.sort();</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;supervillains = {}&quot;</span>, supervillains);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</span></div>
+<div class="line"><span class="comment">// fruits = [Apple, Banana, Coconut, Grapes, Kiwi, Orange, Pear, Plum, Strawberry, Watermelon]</span></div>
+<div class="line"><span class="comment">// superheroes = [Barry Allen/The Flash, Bruce Wayne/Batman, Clark Kent/Superman, Hal Jordan/Green Lantern, Jefferson Pierce/Black Lightning, Kara Zor-El/Supergirl, Oliver Queen/Arrow]</span></div>
+<div class="line"><span class="comment">// supervillains = [Caitlin Snow/Killer Frost, El-Kal/Bizarro, George Harkness/Captain Boomerang, Joar Mahkent/Icicle, Pamela Isley/Poison Ivy, Theo Adam/Black Adam, Winslow Schott/Toyman]</span></div>
+<div class="ttc" id="aclassxtd_1_1basic__array_html_a40d1b6c8ecb3e93cd595bcaf3a10da30"><div class="ttname"><a href="#a40d1b6c8ecb3e93cd595bcaf3a10da30">xtd::basic_array::to_string</a></div><div class="ttdeci">auto to_string() const noexcept -&gt; xtd::string override</div><div class="ttdoc">Returns a xtd::string that represents the current object.</div></div>
+<div class="ttc" id="agroup__format__parse_html_gab67eb80458cad40e22a5036b84c9a5c7"><div class="ttname"><a href="group__format__parse.html#gab67eb80458cad40e22a5036b84c9a5c7">xtd::basic_string&lt; char &gt;::format</a></div><div class="ttdeci">static auto format(const basic_string&lt; char &gt; &amp;fmt, args_t &amp;&amp;... args) -&gt; basic_string</div></div>
+<div class="ttc" id="agroup__threading_html_ga11053dd7cd30de5f92b108c9f94f8af2"><div class="ttname"><a href="group__threading.html#ga11053dd7cd30de5f92b108c9f94f8af2">xtd::threading::this_thread::name</a></div><div class="ttdeci">auto name() noexcept -&gt; xtd::string</div><div class="ttdoc">Gets the thread name of the current thread.</div></div>
+<div class="ttc" id="anamespacextd_html_a35d0d55a78eddf3d056a0db05fbf8b16"><div class="ttname"><a href="namespacextd.html#a35d0d55a78eddf3d056a0db05fbf8b16">xtd::to_string</a></div><div class="ttdeci">auto to_string() const noexcept -&gt; xtd::string override</div><div class="ttdoc">Returns the string representation of this xtd::read_only_span &lt;type_t&gt; object.</div><div class="ttdef"><b>Definition</b> read_only_span.hpp:354</div></div>
+<div class="ttc" id="anamespacextd_html_a9482c5e9fb1d60c658bbe28bfbb17353"><div class="ttname"><a href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">xtd::println</a></div><div class="ttdeci">auto println(FILE *file) -&gt; void</div><div class="ttdoc">Writes the current line terminator to the file output stream using the specified format information.</div><div class="ttdef"><b>Definition</b> println.hpp:15</div></div>
+</div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
-<a id="aee1b5c908ec6f4fb0d6a44bd1fe236c9" name="aee1b5c908ec6f4fb0d6a44bd1fe236c9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aee1b5c908ec6f4fb0d6a44bd1fe236c9">&#9670;&#160;</a></span>sort() <span class="overload">[2/4]</span></h2>
+<a id="a654c55c07758408d7bbea9038d22fd9c" name="a654c55c07758408d7bbea9038d22fd9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a654c55c07758408d7bbea9038d22fd9c">&#9670;&#160;</a></span>sort() <span class="overload">[2/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename type_t, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;type_t&gt;&gt; </div>
-<div class="memtemplate">
-template&lt;typename comparison_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2167,7 +2247,7 @@ template&lt;typename comparison_t&gt; </div>
         <tr>
           <td class="memname">auto <a class="el" href="classxtd_1_1basic__array.html">xtd::basic_array</a>&lt; type_t, allocator_t &gt;::sort </td>
           <td>(</td>
-          <td class="paramtype">comparison_t &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>comparison</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="structxtd_1_1callable.html">xtd::callable</a>&lt; bool, const type_t &amp;, const type_t &amp; &gt; auto &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>less_comparison</em></span></td><td>)</td>
           <td> -&gt; basic_array&lt; type_t &gt; &amp;</td>
         </tr>
       </table>
@@ -2178,23 +2258,302 @@ template&lt;typename comparison_t&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Sorts the elements in the entire <a class="el" href="classxtd_1_1basic__array.html" title="Base object that represent array.">xtd::basic_array</a> &lt;type_t&gt; using the specified <a class="el" href="group__delegates.html#ga6aa9a3d2680df2fc027c12383aa9e7cc" title="Represents the method that compares two objects of the same type.">xtd::comparison</a> &lt;type_t&gt;. </p>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">xtd::argument_exception</td><td>The implementation of comparison caused an error during the sort. For example, comparison might not return 0 when comparing an item with itself. </td></tr>
+<p>Sorts the elements in the entire <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; using the specified <a class="el" href="structxtd_1_1callable.html" title="Represents the callable (function, method, xtd::delegate, xtd::event, std::functional) concept.">xtd::callable</a> &lt;bool, type_t, type_t&gt; less comparer <span class="tt">&lt;</span>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">less_comparer</td><td>The <a class="el" href="structxtd_1_1callable.html" title="Represents the callable (function, method, xtd::delegate, xtd::event, std::functional) concept.">xtd::callable</a> &lt;bool, type_t, type_t&gt; to use when comparing elements. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>If comparison is provided, the elements of the <a class="el" href="classxtd_1_1basic__array.html" title="Base object that represent array.">xtd::basic_array</a> &lt;type_t&gt; are sorted using the method represented by the delegate. </dd>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">xtd::argument_out_of_range_exception</td><td>The implementation of comparison caused an error during the sort. For example, comparison might not return 0 when comparing an item with itself. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>If less_comparison is provided, the elements of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; are sorted using the method represented by the delegate. </dd>
 <dd>
-This method uses <a class="el" href="#aca5c8811956342206d87b1fdd0340895">xtd::array::sort</a>, which uses the QuickSort algorithm. This implementation performs an unstable sort; that is, if two elements are equal, their order might not be preserved. In contrast, a stable sort preserves the order of elements that are equal. </dd>
+This method uses <a href="https://fr.cppreference.com/cpp/algorithm/sort">std::sort</a>. </dd>
 <dd>
-On average, this method is an O(n log n) operation, where n is <a class="el" href="#a63ea4c7a305ecdff5882d1cf2336c739" title="Gets the number of elements contained in the xtd::array &lt;type_t&gt;.">xtd::basic_array::count</a>; in the worst case it is an O(n ^ 2) operation. </dd></dl>
+On average, this method is an O(n log n) operation, where n is <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a0168e83b95232afde2aa19da18350096" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::count</a>; in the worst case it is an O(n ^ 2) operation. </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="#aca5c8811956342206d87b1fdd0340895" title="Sorts the elements in the entire xtd::basic_array &lt;type_t&gt; using the default comparer.">xtd::basic_array::sort</a> method : <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">struct </span>my_own_descending_comparer : icomparer&lt;int&gt; {</div>
+<div class="line">  [[nodiscard]] <span class="keyword">auto</span> compare(<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; x, <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; y) <span class="keyword">const</span> -&gt; <span class="keywordtype">int</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a> &gt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a415290769594460e2e485922904f345d">y</a> ? -1 : <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a> &lt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a415290769594460e2e485922904f345d">y</a> ? 1 : 0;}</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="keyword">auto</span> items = array {10, 6, 5, 7, 8, 2, 9, 3, 1, 4};</div>
+<div class="line">  </div>
+<div class="line">  <span class="comment">// C++ standard</span></div>
+<div class="line">  <span class="comment">//items.sort([](auto&amp;&amp; a, auto&amp;&amp; b) {return a &lt; b;});</span></div>
+<div class="line">  items.sort(_1 &lt; _2);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;ascending sorted items = {}&quot;</span>, items);</div>
+<div class="line">  <span class="comment">//items.sort([](auto&amp;&amp; a, auto&amp;&amp; b) {return a &gt; b;});</span></div>
+<div class="line">  items.sort(_1 &gt; _2);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;descending sorted items = {}&quot;</span>, items);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>();</div>
+<div class="line">  </div>
+<div class="line">  <span class="comment">// C++ modern with ordering</span></div>
+<div class="line">  <span class="comment">//items.sort([](auto&amp;&amp; a, auto&amp;&amp; b) {return a &lt;=&gt; b;});</span></div>
+<div class="line">  items.sort(_1 &lt;=&gt; _2);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;ascending sorted items = {}&quot;</span>, items);</div>
+<div class="line">  <span class="comment">//items.sort([](auto&amp;&amp; a, auto&amp;&amp; b) {return a &lt;=&gt; b == std::strong_ordering::greater;});</span></div>
+<div class="line">  items.sort(_1 &lt;=&gt; _2 == std::strong_ordering::greater);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;descending sorted items = {}&quot;</span>, items);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>();</div>
+<div class="line">  </div>
+<div class="line">  <span class="comment">// C# style</span></div>
+<div class="line">  <span class="comment">//items.sort([](auto&amp;&amp; a, auto&amp;&amp; b) {return a &gt; b ? 1 : a &lt; b ? -1 : 0;});</span></div>
+<div class="line">  items.sort(<a class="code hl_function" href="group__expressions.html#gac8e24bab27398a38ffb15c09270725a9">if_then_else</a>(_1 &gt; _2, 1, <a class="code hl_function" href="group__expressions.html#gac8e24bab27398a38ffb15c09270725a9">if_then_else</a>(_1 &lt; _2, -1, 0)));</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;ascending sorted items = {}&quot;</span>, items);</div>
+<div class="line">  <span class="comment">//items.sort([](auto&amp;&amp; a, auto&amp;&amp; b) {return a &gt; b ? -1 : a &lt; b ? 1 : 0;});</span></div>
+<div class="line">  items.sort([](<span class="keyword">auto</span>&amp;&amp; a, <span class="keyword">auto</span>&amp;&amp; b) {<span class="keywordflow">return</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a> &gt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">b</a> ? -1 : <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a> &lt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">b</a> ? 1 : 0;});</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;descending sorted items = {}&quot;</span>, items);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>();</div>
+<div class="line">  </div>
+<div class="line">  <span class="comment">// C# style with comparer</span></div>
+<div class="line">  items.sort(comparer&lt;int&gt;::default_comparer);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;ascending sorted items = {}&quot;</span>, items);</div>
+<div class="line">  items.sort(my_own_descending_comparer {});</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;descending sorted items = {}&quot;</span>, items);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>();</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// ascending sorted items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</span></div>
+<div class="line"><span class="comment">// descending sorted items = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// ascending sorted items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</span></div>
+<div class="line"><span class="comment">// descending sorted items = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// ascending sorted items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</span></div>
+<div class="line"><span class="comment">// descending sorted items = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// ascending sorted items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</span></div>
+<div class="line"><span class="comment">// descending sorted items = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="ttc" id="agroup__expressions_html_gac8e24bab27398a38ffb15c09270725a9"><div class="ttname"><a href="group__expressions.html#gac8e24bab27398a38ffb15c09270725a9">xtd::expressions::if_then_else</a></div><div class="ttdeci">constexpr auto if_then_else(condition_t condition, then_t then_, else_t else_)</div><div class="ttdoc">If condition is true return then_ else retur nelse_.</div><div class="ttdef"><b>Definition</b> if_then_else_expression.hpp:92</div></div>
+<div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a415290769594460e2e485922904f345d"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a415290769594460e2e485922904f345d">xtd::console_key::y</a></div><div class="ttdeci">@ y</div><div class="ttdoc">The Y key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:136</div></div>
+<div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">xtd::console_key::b</a></div><div class="ttdeci">@ b</div><div class="ttdoc">The B key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:90</div></div>
+<div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">xtd::console_key::x</a></div><div class="ttdeci">@ x</div><div class="ttdoc">The X key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:134</div></div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="ae17998e0ee767347438e7801c4259c76" name="ae17998e0ee767347438e7801c4259c76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae17998e0ee767347438e7801c4259c76">&#9670;&#160;</a></span>sort() <span class="overload">[3/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename type_t, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;type_t&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="classxtd_1_1basic__array.html">xtd::basic_array</a>&lt; type_t, allocator_t &gt;::sort </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structxtd_1_1callable.html">xtd::callable</a>&lt; std::strong_ordering, const type_t &amp;, const type_t &amp; &gt; auto &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>ordering_comparison</em></span></td><td>)</td>
+          <td> -&gt; basic_array&lt; type_t &gt; &amp;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sorts the elements in the entire <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; using the specified <a class="el" href="structxtd_1_1callable.html" title="Represents the callable (function, method, xtd::delegate, xtd::event, std::functional) concept.">xtd::callable</a> &lt;std::strong_ordering, type_t, type_t&gt; ordering comparer <span class="tt">&lt;=&gt;</span>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ordering_comparison</td><td>The <a class="el" href="structxtd_1_1callable.html" title="Represents the callable (function, method, xtd::delegate, xtd::event, std::functional) concept.">xtd::callable</a> &lt;std::strong_ordering, type_t, type_t&gt; to use when comparing elements. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">xtd::argument_out_of_range_exception</td><td>The implementation of comparison caused an error during the sort. For example, comparison might not return 0 when comparing an item with itself. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>If ordering_comparison is provided, the elements of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; are sorted using the method represented by the delegate. </dd>
+<dd>
+This method uses <a href="https://fr.cppreference.com/cpp/algorithm/sort">std::sort</a>. </dd>
+<dd>
+On average, this method is an O(n log n) operation, where n is <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a0168e83b95232afde2aa19da18350096" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::count</a>; in the worst case it is an O(n ^ 2) operation. </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="#aca5c8811956342206d87b1fdd0340895" title="Sorts the elements in the entire xtd::basic_array &lt;type_t&gt; using the default comparer.">xtd::basic_array::sort</a> method : <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">struct </span>my_own_descending_comparer : icomparer&lt;int&gt; {</div>
+<div class="line">  [[nodiscard]] <span class="keyword">auto</span> compare(<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; x, <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; y) <span class="keyword">const</span> -&gt; <span class="keywordtype">int</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a> &gt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a415290769594460e2e485922904f345d">y</a> ? -1 : <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a> &lt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a415290769594460e2e485922904f345d">y</a> ? 1 : 0;}</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="keyword">auto</span> items = array {10, 6, 5, 7, 8, 2, 9, 3, 1, 4};</div>
+<div class="line">  </div>
+<div class="line">  <span class="comment">// C++ standard</span></div>
+<div class="line">  <span class="comment">//items.sort([](auto&amp;&amp; a, auto&amp;&amp; b) {return a &lt; b;});</span></div>
+<div class="line">  items.sort(_1 &lt; _2);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;ascending sorted items = {}&quot;</span>, items);</div>
+<div class="line">  <span class="comment">//items.sort([](auto&amp;&amp; a, auto&amp;&amp; b) {return a &gt; b;});</span></div>
+<div class="line">  items.sort(_1 &gt; _2);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;descending sorted items = {}&quot;</span>, items);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>();</div>
+<div class="line">  </div>
+<div class="line">  <span class="comment">// C++ modern with ordering</span></div>
+<div class="line">  <span class="comment">//items.sort([](auto&amp;&amp; a, auto&amp;&amp; b) {return a &lt;=&gt; b;});</span></div>
+<div class="line">  items.sort(_1 &lt;=&gt; _2);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;ascending sorted items = {}&quot;</span>, items);</div>
+<div class="line">  <span class="comment">//items.sort([](auto&amp;&amp; a, auto&amp;&amp; b) {return a &lt;=&gt; b == std::strong_ordering::greater;});</span></div>
+<div class="line">  items.sort(_1 &lt;=&gt; _2 == std::strong_ordering::greater);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;descending sorted items = {}&quot;</span>, items);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>();</div>
+<div class="line">  </div>
+<div class="line">  <span class="comment">// C# style</span></div>
+<div class="line">  <span class="comment">//items.sort([](auto&amp;&amp; a, auto&amp;&amp; b) {return a &gt; b ? 1 : a &lt; b ? -1 : 0;});</span></div>
+<div class="line">  items.sort(<a class="code hl_function" href="group__expressions.html#gac8e24bab27398a38ffb15c09270725a9">if_then_else</a>(_1 &gt; _2, 1, <a class="code hl_function" href="group__expressions.html#gac8e24bab27398a38ffb15c09270725a9">if_then_else</a>(_1 &lt; _2, -1, 0)));</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;ascending sorted items = {}&quot;</span>, items);</div>
+<div class="line">  <span class="comment">//items.sort([](auto&amp;&amp; a, auto&amp;&amp; b) {return a &gt; b ? -1 : a &lt; b ? 1 : 0;});</span></div>
+<div class="line">  items.sort([](<span class="keyword">auto</span>&amp;&amp; a, <span class="keyword">auto</span>&amp;&amp; b) {<span class="keywordflow">return</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a> &gt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">b</a> ? -1 : <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a> &lt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">b</a> ? 1 : 0;});</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;descending sorted items = {}&quot;</span>, items);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>();</div>
+<div class="line">  </div>
+<div class="line">  <span class="comment">// C# style with comparer</span></div>
+<div class="line">  items.sort(comparer&lt;int&gt;::default_comparer);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;ascending sorted items = {}&quot;</span>, items);</div>
+<div class="line">  items.sort(my_own_descending_comparer {});</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;descending sorted items = {}&quot;</span>, items);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>();</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// ascending sorted items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</span></div>
+<div class="line"><span class="comment">// descending sorted items = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// ascending sorted items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</span></div>
+<div class="line"><span class="comment">// descending sorted items = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// ascending sorted items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</span></div>
+<div class="line"><span class="comment">// descending sorted items = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// ascending sorted items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</span></div>
+<div class="line"><span class="comment">// descending sorted items = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]</span></div>
+<div class="line"><span class="comment">//</span></div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="a9c5748b8955ee2051458ac0ecd205b78" name="a9c5748b8955ee2051458ac0ecd205b78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c5748b8955ee2051458ac0ecd205b78">&#9670;&#160;</a></span>sort() <span class="overload">[4/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename type_t, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;type_t&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="classxtd_1_1basic__array.html">xtd::basic_array</a>&lt; type_t, allocator_t &gt;::sort </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structxtd_1_1callable.html">xtd::callable</a>&lt; <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a>, const type_t &amp;, const type_t &amp; &gt; auto &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>comparison</em></span></td><td>)</td>
+          <td> -&gt; basic_array&lt; type_t &gt; &amp;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sorts the elements in the entire <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; using the specified <a class="el" href="group__delegates.html#ga6aa9a3d2680df2fc027c12383aa9e7cc" title="Represents the method that compares two objects of the same type.">xtd::comparison</a> &lt;type_t&gt; comparison. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">comparison</td><td>The <a class="el" href="group__delegates.html#ga6aa9a3d2680df2fc027c12383aa9e7cc" title="Represents the method that compares two objects of the same type.">xtd::comparison</a> &lt;type_t&gt; to use when comparing elements. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">xtd::argument_out_of_range_exception</td><td>The implementation of comparison caused an error during the sort. For example, comparison might not return 0 when comparing an item with itself. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>If comparison is provided, the elements of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; are sorted using the method represented by the delegate. </dd>
+<dd>
+This method uses <a href="https://fr.cppreference.com/cpp/algorithm/sort">std::sort</a>. </dd>
+<dd>
+On average, this method is an O(n log n) operation, where n is <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a0168e83b95232afde2aa19da18350096" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::count</a>; in the worst case it is an O(n ^ 2) operation. </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="#aca5c8811956342206d87b1fdd0340895" title="Sorts the elements in the entire xtd::basic_array &lt;type_t&gt; using the default comparer.">xtd::basic_array::sort</a> method : <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">struct </span>my_own_descending_comparer : icomparer&lt;int&gt; {</div>
+<div class="line">  [[nodiscard]] <span class="keyword">auto</span> compare(<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; x, <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; y) <span class="keyword">const</span> -&gt; <span class="keywordtype">int</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a> &gt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a415290769594460e2e485922904f345d">y</a> ? -1 : <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a> &lt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a415290769594460e2e485922904f345d">y</a> ? 1 : 0;}</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="keyword">auto</span> items = array {10, 6, 5, 7, 8, 2, 9, 3, 1, 4};</div>
+<div class="line">  </div>
+<div class="line">  <span class="comment">// C++ standard</span></div>
+<div class="line">  <span class="comment">//items.sort([](auto&amp;&amp; a, auto&amp;&amp; b) {return a &lt; b;});</span></div>
+<div class="line">  items.sort(_1 &lt; _2);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;ascending sorted items = {}&quot;</span>, items);</div>
+<div class="line">  <span class="comment">//items.sort([](auto&amp;&amp; a, auto&amp;&amp; b) {return a &gt; b;});</span></div>
+<div class="line">  items.sort(_1 &gt; _2);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;descending sorted items = {}&quot;</span>, items);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>();</div>
+<div class="line">  </div>
+<div class="line">  <span class="comment">// C++ modern with ordering</span></div>
+<div class="line">  <span class="comment">//items.sort([](auto&amp;&amp; a, auto&amp;&amp; b) {return a &lt;=&gt; b;});</span></div>
+<div class="line">  items.sort(_1 &lt;=&gt; _2);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;ascending sorted items = {}&quot;</span>, items);</div>
+<div class="line">  <span class="comment">//items.sort([](auto&amp;&amp; a, auto&amp;&amp; b) {return a &lt;=&gt; b == std::strong_ordering::greater;});</span></div>
+<div class="line">  items.sort(_1 &lt;=&gt; _2 == std::strong_ordering::greater);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;descending sorted items = {}&quot;</span>, items);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>();</div>
+<div class="line">  </div>
+<div class="line">  <span class="comment">// C# style</span></div>
+<div class="line">  <span class="comment">//items.sort([](auto&amp;&amp; a, auto&amp;&amp; b) {return a &gt; b ? 1 : a &lt; b ? -1 : 0;});</span></div>
+<div class="line">  items.sort(<a class="code hl_function" href="group__expressions.html#gac8e24bab27398a38ffb15c09270725a9">if_then_else</a>(_1 &gt; _2, 1, <a class="code hl_function" href="group__expressions.html#gac8e24bab27398a38ffb15c09270725a9">if_then_else</a>(_1 &lt; _2, -1, 0)));</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;ascending sorted items = {}&quot;</span>, items);</div>
+<div class="line">  <span class="comment">//items.sort([](auto&amp;&amp; a, auto&amp;&amp; b) {return a &gt; b ? -1 : a &lt; b ? 1 : 0;});</span></div>
+<div class="line">  items.sort([](<span class="keyword">auto</span>&amp;&amp; a, <span class="keyword">auto</span>&amp;&amp; b) {<span class="keywordflow">return</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a> &gt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">b</a> ? -1 : <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a> &lt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">b</a> ? 1 : 0;});</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;descending sorted items = {}&quot;</span>, items);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>();</div>
+<div class="line">  </div>
+<div class="line">  <span class="comment">// C# style with comparer</span></div>
+<div class="line">  items.sort(comparer&lt;int&gt;::default_comparer);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;ascending sorted items = {}&quot;</span>, items);</div>
+<div class="line">  items.sort(my_own_descending_comparer {});</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;descending sorted items = {}&quot;</span>, items);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>();</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// ascending sorted items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</span></div>
+<div class="line"><span class="comment">// descending sorted items = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// ascending sorted items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</span></div>
+<div class="line"><span class="comment">// descending sorted items = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// ascending sorted items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</span></div>
+<div class="line"><span class="comment">// descending sorted items = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// ascending sorted items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</span></div>
+<div class="line"><span class="comment">// descending sorted items = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]</span></div>
+<div class="line"><span class="comment">//</span></div>
+</div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
 <a id="afb5cf1a38098f5a20583e961eb7eb7a4" name="afb5cf1a38098f5a20583e961eb7eb7a4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afb5cf1a38098f5a20583e961eb7eb7a4">&#9670;&#160;</a></span>sort() <span class="overload">[3/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#afb5cf1a38098f5a20583e961eb7eb7a4">&#9670;&#160;</a></span>sort() <span class="overload">[5/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2239,8 +2598,356 @@ On average, this method is an O(n log n) operation, where n is <a class="el" hre
 
 </div>
 </div>
+<a id="aba8adae68fb3b6c3b8986d83497189b9" name="aba8adae68fb3b6c3b8986d83497189b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba8adae68fb3b6c3b8986d83497189b9">&#9670;&#160;</a></span>sort() <span class="overload">[6/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename type_t, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;type_t&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="classxtd_1_1basic__array.html">xtd::basic_array</a>&lt; type_t, allocator_t &gt;::sort </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>index</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>count</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structxtd_1_1callable.html">xtd::callable</a>&lt; bool, const type_t &amp;, const type_t &amp; &gt; auto &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>less_comparison</em></span>&#160;) -&gt; basic_array&lt; type_t &gt; &amp;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sorts the elements in a range of elements in <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; using the specified <a class="el" href="structxtd_1_1callable.html" title="Represents the callable (function, method, xtd::delegate, xtd::event, std::functional) concept.">xtd::callable</a> &lt;bool, type_t, type_t&gt; less comparer <span class="tt">&lt;</span>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>The zero-based starting index of the range to sort. </td></tr>
+    <tr><td class="paramname">count</td><td>The length of the range to sort. </td></tr>
+    <tr><td class="paramname">less_comparer</td><td>The <a class="el" href="structxtd_1_1callable.html" title="Represents the callable (function, method, xtd::delegate, xtd::event, std::functional) concept.">xtd::callable</a> &lt;bool, type_t, type_t&gt; to use when comparing elements. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">xtd::argument_out_of_range_exception</td><td>The implementation of comparison caused an error during the sort. For example, comparison might not return 0 when comparing an item with itself. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>If comparer is provided, the elements of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; are sorted using the specified <a class="el" href="classxtd_1_1collections_1_1generic_1_1icomparer.html" title="Exposes a method that compares two objects.">xtd::collections::generic::icomparer</a> &lt;type_t&gt; implementation. </dd>
+<dd>
+This method uses <a href="https://fr.cppreference.com/cpp/algorithm/sort">std::sort</a>. </dd>
+<dd>
+On average, this method is an O(n log n) operation, where n is <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a0168e83b95232afde2aa19da18350096" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::count</a>; in the worst case it is an O(n ^ 2) operation. </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="#aca5c8811956342206d87b1fdd0340895" title="Sorts the elements in the entire xtd::basic_array &lt;type_t&gt; using the default comparer.">xtd::basic_array::sort</a> method : <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">struct </span>my_own_descending_comparer : icomparer&lt;int&gt; {</div>
+<div class="line">  [[nodiscard]] <span class="keyword">auto</span> compare(<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; x, <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; y) <span class="keyword">const</span> -&gt; <span class="keywordtype">int</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a> &gt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a415290769594460e2e485922904f345d">y</a> ? -1 : <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a> &lt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a415290769594460e2e485922904f345d">y</a> ? 1 : 0;}</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="keyword">auto</span> items = array {10, 6, 5, 7, 8, 2, 9, 3, 1, 4};</div>
+<div class="line">  </div>
+<div class="line">  <span class="comment">// C++ standard</span></div>
+<div class="line">  <span class="comment">//items.sort(2, 6, [](auto&amp;&amp; a, auto&amp;&amp; b) {return a &lt; b;});</span></div>
+<div class="line">  items.sort(2, 6, _1 &lt; _2);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;ascending sorted items = {}&quot;</span>, items);</div>
+<div class="line">  <span class="comment">//items.sort(2, 6, [](auto&amp;&amp; a, auto&amp;&amp; b) {return a &gt; b;});</span></div>
+<div class="line">  items.sort(2, 6, _1 &gt; _2);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;descending sorted items = {}&quot;</span>, items);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>();</div>
+<div class="line">  </div>
+<div class="line">  <span class="comment">// C++ modern with ordering</span></div>
+<div class="line">  <span class="comment">//items.sort(2, 6, [](auto&amp;&amp; a, auto&amp;&amp; b) {return a &lt;=&gt; b;});</span></div>
+<div class="line">  items.sort(2, 6, _1 &lt;=&gt; _2);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;ascending sorted items = {}&quot;</span>, items);</div>
+<div class="line">  <span class="comment">//items.sort(2, 6, [](auto&amp;&amp; a, auto&amp;&amp; b) {return a &lt;=&gt; b == std::strong_ordering::greater;});</span></div>
+<div class="line">  items.sort(2, 6, _1 &lt;=&gt; _2 == std::strong_ordering::greater);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;descending sorted items = {}&quot;</span>, items);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>();</div>
+<div class="line">  </div>
+<div class="line">  <span class="comment">// C# style</span></div>
+<div class="line">  <span class="comment">//items.sort(2, 6, [](auto&amp;&amp; a, auto&amp;&amp; b) {return a &gt; b ? 1 : a &lt; b ? -1 : 0;});</span></div>
+<div class="line">  items.sort(2, 6, <a class="code hl_function" href="group__expressions.html#gac8e24bab27398a38ffb15c09270725a9">if_then_else</a>(_1 &gt; _2, 1, <a class="code hl_function" href="group__expressions.html#gac8e24bab27398a38ffb15c09270725a9">if_then_else</a>(_1 &lt; _2, -1, 0)));</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;ascending sorted items = {}&quot;</span>, items);</div>
+<div class="line">  <span class="comment">//items.sort(2, 6, [](auto&amp;&amp; a, auto&amp;&amp; b) {return a &gt; b ? -1 : a &lt; b ? 1 : 0;});</span></div>
+<div class="line">  items.sort(2, 6, [](<span class="keyword">auto</span>&amp;&amp; a, <span class="keyword">auto</span>&amp;&amp; b) {<span class="keywordflow">return</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a> &gt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">b</a> ? -1 : <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a> &lt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">b</a> ? 1 : 0;});</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;descending sorted items = {}&quot;</span>, items);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>();</div>
+<div class="line"> </div>
+<div class="line">  <span class="comment">// C# style with comparer</span></div>
+<div class="line">  items.sort(2, 6, comparer&lt;int&gt;::default_comparer);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;ascending sorted items = {}&quot;</span>, items);</div>
+<div class="line">  items.sort(2, 6, my_own_descending_comparer {});</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;descending sorted items = {}&quot;</span>, items);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>();</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// ascending sorted items = [10, 6, 2, 3, 5, 7, 8, 9, 1, 4]</span></div>
+<div class="line"><span class="comment">// descending sorted items = [10, 6, 9, 8, 7, 5, 3, 2, 1, 4]</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// ascending sorted items = [10, 6, 2, 3, 5, 7, 8, 9, 1, 4]</span></div>
+<div class="line"><span class="comment">// descending sorted items = [10, 6, 9, 8, 7, 5, 3, 2, 1, 4]</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// ascending sorted items = [10, 6, 2, 3, 5, 7, 8, 9, 1, 4]</span></div>
+<div class="line"><span class="comment">// descending sorted items = [10, 6, 9, 8, 7, 5, 3, 2, 1, 4]</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// ascending sorted items = [10, 6, 2, 3, 5, 7, 8, 9, 1, 4]</span></div>
+<div class="line"><span class="comment">// descending sorted items = [10, 6, 9, 8, 7, 5, 3, 2, 1, 4]</span></div>
+<div class="line"><span class="comment">//</span></div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="afeba9eda6f49984acfea157c09608da0" name="afeba9eda6f49984acfea157c09608da0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afeba9eda6f49984acfea157c09608da0">&#9670;&#160;</a></span>sort() <span class="overload">[7/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename type_t, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;type_t&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="classxtd_1_1basic__array.html">xtd::basic_array</a>&lt; type_t, allocator_t &gt;::sort </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>index</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>count</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structxtd_1_1callable.html">xtd::callable</a>&lt; std::strong_ordering, const type_t &amp;, const type_t &amp; &gt; auto &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>ordering_comparison</em></span>&#160;) -&gt; basic_array&lt; type_t &gt; &amp;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sorts the elements in a range of elements in <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; using the specified <a class="el" href="structxtd_1_1callable.html" title="Represents the callable (function, method, xtd::delegate, xtd::event, std::functional) concept.">xtd::callable</a> &lt;std::strong_ordering, type_t, type_t&gt; ordering comparer <span class="tt">&lt;=&gt;</span>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>The zero-based starting index of the range to sort. </td></tr>
+    <tr><td class="paramname">count</td><td>The length of the range to sort. </td></tr>
+    <tr><td class="paramname">ordering_comparison</td><td>The <a class="el" href="structxtd_1_1callable.html" title="Represents the callable (function, method, xtd::delegate, xtd::event, std::functional) concept.">xtd::callable</a> &lt;std::strong_ordering, type_t, type_t&gt; to use when comparing elements. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">xtd::argument_out_of_range_exception</td><td>The implementation of comparison caused an error during the sort. For example, comparison might not return 0 when comparing an item with itself. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>If comparer is provided, the elements of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; are sorted using the specified <a class="el" href="classxtd_1_1collections_1_1generic_1_1icomparer.html" title="Exposes a method that compares two objects.">xtd::collections::generic::icomparer</a> &lt;type_t&gt; implementation. </dd>
+<dd>
+This method uses <a href="https://fr.cppreference.com/cpp/algorithm/sort">std::sort</a>. </dd>
+<dd>
+On average, this method is an O(n log n) operation, where n is <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a0168e83b95232afde2aa19da18350096" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::count</a>; in the worst case it is an O(n ^ 2) operation. </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="#aca5c8811956342206d87b1fdd0340895" title="Sorts the elements in the entire xtd::basic_array &lt;type_t&gt; using the default comparer.">xtd::basic_array::sort</a> method : <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">struct </span>my_own_descending_comparer : icomparer&lt;int&gt; {</div>
+<div class="line">  [[nodiscard]] <span class="keyword">auto</span> compare(<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; x, <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; y) <span class="keyword">const</span> -&gt; <span class="keywordtype">int</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a> &gt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a415290769594460e2e485922904f345d">y</a> ? -1 : <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a> &lt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a415290769594460e2e485922904f345d">y</a> ? 1 : 0;}</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="keyword">auto</span> items = array {10, 6, 5, 7, 8, 2, 9, 3, 1, 4};</div>
+<div class="line">  </div>
+<div class="line">  <span class="comment">// C++ standard</span></div>
+<div class="line">  <span class="comment">//items.sort(2, 6, [](auto&amp;&amp; a, auto&amp;&amp; b) {return a &lt; b;});</span></div>
+<div class="line">  items.sort(2, 6, _1 &lt; _2);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;ascending sorted items = {}&quot;</span>, items);</div>
+<div class="line">  <span class="comment">//items.sort(2, 6, [](auto&amp;&amp; a, auto&amp;&amp; b) {return a &gt; b;});</span></div>
+<div class="line">  items.sort(2, 6, _1 &gt; _2);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;descending sorted items = {}&quot;</span>, items);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>();</div>
+<div class="line">  </div>
+<div class="line">  <span class="comment">// C++ modern with ordering</span></div>
+<div class="line">  <span class="comment">//items.sort(2, 6, [](auto&amp;&amp; a, auto&amp;&amp; b) {return a &lt;=&gt; b;});</span></div>
+<div class="line">  items.sort(2, 6, _1 &lt;=&gt; _2);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;ascending sorted items = {}&quot;</span>, items);</div>
+<div class="line">  <span class="comment">//items.sort(2, 6, [](auto&amp;&amp; a, auto&amp;&amp; b) {return a &lt;=&gt; b == std::strong_ordering::greater;});</span></div>
+<div class="line">  items.sort(2, 6, _1 &lt;=&gt; _2 == std::strong_ordering::greater);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;descending sorted items = {}&quot;</span>, items);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>();</div>
+<div class="line">  </div>
+<div class="line">  <span class="comment">// C# style</span></div>
+<div class="line">  <span class="comment">//items.sort(2, 6, [](auto&amp;&amp; a, auto&amp;&amp; b) {return a &gt; b ? 1 : a &lt; b ? -1 : 0;});</span></div>
+<div class="line">  items.sort(2, 6, <a class="code hl_function" href="group__expressions.html#gac8e24bab27398a38ffb15c09270725a9">if_then_else</a>(_1 &gt; _2, 1, <a class="code hl_function" href="group__expressions.html#gac8e24bab27398a38ffb15c09270725a9">if_then_else</a>(_1 &lt; _2, -1, 0)));</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;ascending sorted items = {}&quot;</span>, items);</div>
+<div class="line">  <span class="comment">//items.sort(2, 6, [](auto&amp;&amp; a, auto&amp;&amp; b) {return a &gt; b ? -1 : a &lt; b ? 1 : 0;});</span></div>
+<div class="line">  items.sort(2, 6, [](<span class="keyword">auto</span>&amp;&amp; a, <span class="keyword">auto</span>&amp;&amp; b) {<span class="keywordflow">return</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a> &gt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">b</a> ? -1 : <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a> &lt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">b</a> ? 1 : 0;});</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;descending sorted items = {}&quot;</span>, items);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>();</div>
+<div class="line"> </div>
+<div class="line">  <span class="comment">// C# style with comparer</span></div>
+<div class="line">  items.sort(2, 6, comparer&lt;int&gt;::default_comparer);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;ascending sorted items = {}&quot;</span>, items);</div>
+<div class="line">  items.sort(2, 6, my_own_descending_comparer {});</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;descending sorted items = {}&quot;</span>, items);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>();</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// ascending sorted items = [10, 6, 2, 3, 5, 7, 8, 9, 1, 4]</span></div>
+<div class="line"><span class="comment">// descending sorted items = [10, 6, 9, 8, 7, 5, 3, 2, 1, 4]</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// ascending sorted items = [10, 6, 2, 3, 5, 7, 8, 9, 1, 4]</span></div>
+<div class="line"><span class="comment">// descending sorted items = [10, 6, 9, 8, 7, 5, 3, 2, 1, 4]</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// ascending sorted items = [10, 6, 2, 3, 5, 7, 8, 9, 1, 4]</span></div>
+<div class="line"><span class="comment">// descending sorted items = [10, 6, 9, 8, 7, 5, 3, 2, 1, 4]</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// ascending sorted items = [10, 6, 2, 3, 5, 7, 8, 9, 1, 4]</span></div>
+<div class="line"><span class="comment">// descending sorted items = [10, 6, 9, 8, 7, 5, 3, 2, 1, 4]</span></div>
+<div class="line"><span class="comment">//</span></div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="adba16a060faac064756515ca45b7c2f7" name="adba16a060faac064756515ca45b7c2f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adba16a060faac064756515ca45b7c2f7">&#9670;&#160;</a></span>sort() <span class="overload">[8/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename type_t, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;type_t&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="classxtd_1_1basic__array.html">xtd::basic_array</a>&lt; type_t, allocator_t &gt;::sort </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>index</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>count</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structxtd_1_1callable.html">xtd::callable</a>&lt; <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a>, const type_t &amp;, const type_t &amp; &gt; auto &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>comparison</em></span>&#160;) -&gt; basic_array&lt; type_t &gt; &amp;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sorts the elements in a range of elements in <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; using the specified <a class="el" href="group__delegates.html#ga6aa9a3d2680df2fc027c12383aa9e7cc" title="Represents the method that compares two objects of the same type.">xtd::comparison</a> &lt;type_t&gt; comparison. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>The zero-based starting index of the range to sort. </td></tr>
+    <tr><td class="paramname">count</td><td>The length of the range to sort. </td></tr>
+    <tr><td class="paramname">comparison</td><td>The <a class="el" href="group__delegates.html#ga6aa9a3d2680df2fc027c12383aa9e7cc" title="Represents the method that compares two objects of the same type.">xtd::comparison</a> &lt;type_t&gt; to use when comparing elements. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">xtd::argument_out_of_range_exception</td><td>The implementation of comparison caused an error during the sort. For example, comparison might not return 0 when comparing an item with itself. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>If comparer is provided, the elements of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; are sorted using the specified <a class="el" href="classxtd_1_1collections_1_1generic_1_1icomparer.html" title="Exposes a method that compares two objects.">xtd::collections::generic::icomparer</a> &lt;type_t&gt; implementation. </dd>
+<dd>
+This method uses <a href="https://fr.cppreference.com/cpp/algorithm/sort">std::sort</a>. </dd>
+<dd>
+On average, this method is an O(n log n) operation, where n is <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a0168e83b95232afde2aa19da18350096" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::count</a>; in the worst case it is an O(n ^ 2) operation. </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="#aca5c8811956342206d87b1fdd0340895" title="Sorts the elements in the entire xtd::basic_array &lt;type_t&gt; using the default comparer.">xtd::basic_array::sort</a> method : <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">struct </span>my_own_descending_comparer : icomparer&lt;int&gt; {</div>
+<div class="line">  [[nodiscard]] <span class="keyword">auto</span> compare(<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; x, <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; y) <span class="keyword">const</span> -&gt; <span class="keywordtype">int</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a> &gt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a415290769594460e2e485922904f345d">y</a> ? -1 : <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a> &lt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a415290769594460e2e485922904f345d">y</a> ? 1 : 0;}</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="keyword">auto</span> items = array {10, 6, 5, 7, 8, 2, 9, 3, 1, 4};</div>
+<div class="line">  </div>
+<div class="line">  <span class="comment">// C++ standard</span></div>
+<div class="line">  <span class="comment">//items.sort(2, 6, [](auto&amp;&amp; a, auto&amp;&amp; b) {return a &lt; b;});</span></div>
+<div class="line">  items.sort(2, 6, _1 &lt; _2);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;ascending sorted items = {}&quot;</span>, items);</div>
+<div class="line">  <span class="comment">//items.sort(2, 6, [](auto&amp;&amp; a, auto&amp;&amp; b) {return a &gt; b;});</span></div>
+<div class="line">  items.sort(2, 6, _1 &gt; _2);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;descending sorted items = {}&quot;</span>, items);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>();</div>
+<div class="line">  </div>
+<div class="line">  <span class="comment">// C++ modern with ordering</span></div>
+<div class="line">  <span class="comment">//items.sort(2, 6, [](auto&amp;&amp; a, auto&amp;&amp; b) {return a &lt;=&gt; b;});</span></div>
+<div class="line">  items.sort(2, 6, _1 &lt;=&gt; _2);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;ascending sorted items = {}&quot;</span>, items);</div>
+<div class="line">  <span class="comment">//items.sort(2, 6, [](auto&amp;&amp; a, auto&amp;&amp; b) {return a &lt;=&gt; b == std::strong_ordering::greater;});</span></div>
+<div class="line">  items.sort(2, 6, _1 &lt;=&gt; _2 == std::strong_ordering::greater);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;descending sorted items = {}&quot;</span>, items);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>();</div>
+<div class="line">  </div>
+<div class="line">  <span class="comment">// C# style</span></div>
+<div class="line">  <span class="comment">//items.sort(2, 6, [](auto&amp;&amp; a, auto&amp;&amp; b) {return a &gt; b ? 1 : a &lt; b ? -1 : 0;});</span></div>
+<div class="line">  items.sort(2, 6, <a class="code hl_function" href="group__expressions.html#gac8e24bab27398a38ffb15c09270725a9">if_then_else</a>(_1 &gt; _2, 1, <a class="code hl_function" href="group__expressions.html#gac8e24bab27398a38ffb15c09270725a9">if_then_else</a>(_1 &lt; _2, -1, 0)));</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;ascending sorted items = {}&quot;</span>, items);</div>
+<div class="line">  <span class="comment">//items.sort(2, 6, [](auto&amp;&amp; a, auto&amp;&amp; b) {return a &gt; b ? -1 : a &lt; b ? 1 : 0;});</span></div>
+<div class="line">  items.sort(2, 6, [](<span class="keyword">auto</span>&amp;&amp; a, <span class="keyword">auto</span>&amp;&amp; b) {<span class="keywordflow">return</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a> &gt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">b</a> ? -1 : <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a> &lt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">b</a> ? 1 : 0;});</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;descending sorted items = {}&quot;</span>, items);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>();</div>
+<div class="line"> </div>
+<div class="line">  <span class="comment">// C# style with comparer</span></div>
+<div class="line">  items.sort(2, 6, comparer&lt;int&gt;::default_comparer);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;ascending sorted items = {}&quot;</span>, items);</div>
+<div class="line">  items.sort(2, 6, my_own_descending_comparer {});</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;descending sorted items = {}&quot;</span>, items);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>();</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// ascending sorted items = [10, 6, 2, 3, 5, 7, 8, 9, 1, 4]</span></div>
+<div class="line"><span class="comment">// descending sorted items = [10, 6, 9, 8, 7, 5, 3, 2, 1, 4]</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// ascending sorted items = [10, 6, 2, 3, 5, 7, 8, 9, 1, 4]</span></div>
+<div class="line"><span class="comment">// descending sorted items = [10, 6, 9, 8, 7, 5, 3, 2, 1, 4]</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// ascending sorted items = [10, 6, 2, 3, 5, 7, 8, 9, 1, 4]</span></div>
+<div class="line"><span class="comment">// descending sorted items = [10, 6, 9, 8, 7, 5, 3, 2, 1, 4]</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// ascending sorted items = [10, 6, 2, 3, 5, 7, 8, 9, 1, 4]</span></div>
+<div class="line"><span class="comment">// descending sorted items = [10, 6, 9, 8, 7, 5, 3, 2, 1, 4]</span></div>
+<div class="line"><span class="comment">//</span></div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
 <a id="aa61467d5e5800a03a7064ffe569c9fae" name="aa61467d5e5800a03a7064ffe569c9fae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa61467d5e5800a03a7064ffe569c9fae">&#9670;&#160;</a></span>sort() <span class="overload">[4/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa61467d5e5800a03a7064ffe569c9fae">&#9670;&#160;</a></span>sort() <span class="overload">[9/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
