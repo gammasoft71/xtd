@@ -937,67 +937,105 @@ namespace xtd {
         /// The xtd::collections::generic::list::binary_search method overload is then used to search for two strings that are not in the list, and the xtd::collections::generic::list::insert method is used to insert them. The return value of the xtd::collections::generic::list::binary_search method is gretaer than xtd::collections::generic::list::count in each case, because the strings are not in the list. Taking the bitwise complement of this negative number produces the index of the first element in the list that is larger than the search string, and inserting at this location preserves the sort order. The second search string is larger than any element in the list, so the insertion position is at the end of the list.
         /// @include generic_list_binary_search.cpp
         /// @remarks This method uses the default comparer xtd::collections::generic::comparer::default_comparer for type `type_t` to determine the order of list elements. The xtd::collections::generic::comparer::default_comparer property checks whether type `type_t` implements the xtd::icomparable <type_t> generic interface and uses that implementation, if available. If not, xtd::collections::generic::comparer::default_comparer checks whether type T implements the xtd::icomparable interface. If type `type_t` does not implement either interface, xtd::collections::generic::comparer::default_comparer throws an xtd::invalid_operation_exception.
-        /// @remarks This method uses xtd::array::sort, which uses the QuickSort algorithm. This implementation performs an unstable sort; that is, if two elements are equal, their order might not be preserved. In contrast, a stable sort preserves the order of elements that are equal.
+        /// @remarks This method uses [std::sort](https://fr.cppreference.com/cpp/algorithm/sort).
         /// @remarks On average, this method is an O(n log n) operation, where n is xtd::collections::generic::list::count; in the worst case it is an O(n ^ 2) operation.
         /// @remarks The following code example demonstrates the xtd::collections::generic::list::sort method overload and the xtd::collections::generic::list::binary_search method overload. A xtd::collections::generic::list <type_t> of strings is created and populated with four strings, in no particular order. The list is displayed, sorted, and displayed again.
+        /// @par Examples
+        /// Th following example shows how to use xtd::collections::generic::list::sort method :
+        /// @include generic_list_sort.cpp
         auto sort() -> list<type_t>& {return sort(xtd::collections::generic::comparer<type_t>::default_comparer);}
-        /// @brief Sorts the elements in the entire xtd::collections::generic::list <type_t> using the specified xtd::comparison <type_t>.
+        /// @brief Sorts the elements in the entire xtd::collections::generic::list <type_t> using the specified xtd::callable <bool, type_t, type_t> less comparer `<`.
+        /// @param less_comparer The xtd::callable <bool, type_t, type_t> to use when comparing elements.
         /// @exception xtd::argument_out_of_range_exception The implementation of comparison caused an error during the sort. For example, comparison might not return 0 when comparing an item with itself.
-        /// @remarks If comparison is provided, the elements of the xtd::collections::generic::list <type_t> are sorted using the method represented by the delegate.
-        /// @remarks This method uses xtd::array::sort, which uses the QuickSort algorithm. This implementation performs an unstable sort; that is, if two elements are equal, their order might not be preserved. In contrast, a stable sort preserves the order of elements that are equal.
+        /// @remarks If less_comparison is provided, the elements of the xtd::collections::generic::list <type_t> are sorted using the method represented by the delegate.
+        /// @remarks This method uses [std::sort](https://fr.cppreference.com/cpp/algorithm/sort).
         /// @remarks On average, this method is an O(n log n) operation, where n is xtd::collections::generic::list::count; in the worst case it is an O(n ^ 2) operation.
         /// @par Examples
         /// Th following example shows how to use xtd::collections::generic::list::sort method :
-        /// @include generic_list_sort.cpp
+        /// @include generic_list_sort2.cpp
         auto sort(xtd::callable<bool, const type_t&, const type_t&> auto&& less_comparison) -> list<type_t>& {return sort(0, count(), less_comparison);}
-        /// @brief Sorts the elements in the entire xtd::collections::generic::list <type_t> using the specified xtd::comparison <type_t>.
+        /// @brief Sorts the elements in the entire xtd::collections::generic::list <type_t> using the specified xtd::callable <std::strong_ordering, type_t, type_t> ordering comparer `<=>`.
+        /// @param ordering_comparison The xtd::callable <std::strong_ordering, type_t, type_t> to use when comparing elements.
         /// @exception xtd::argument_out_of_range_exception The implementation of comparison caused an error during the sort. For example, comparison might not return 0 when comparing an item with itself.
-        /// @remarks If comparison is provided, the elements of the xtd::collections::generic::list <type_t> are sorted using the method represented by the delegate.
-        /// @remarks This method uses xtd::array::sort, which uses the QuickSort algorithm. This implementation performs an unstable sort; that is, if two elements are equal, their order might not be preserved. In contrast, a stable sort preserves the order of elements that are equal.
+        /// @remarks If ordering_comparison is provided, the elements of the xtd::collections::generic::list <type_t> are sorted using the method represented by the delegate.
+        /// @remarks This method uses [std::sort](https://fr.cppreference.com/cpp/algorithm/sort).
         /// @remarks On average, this method is an O(n log n) operation, where n is xtd::collections::generic::list::count; in the worst case it is an O(n ^ 2) operation.
         /// @par Examples
         /// Th following example shows how to use xtd::collections::generic::list::sort method :
-        /// @include generic_list_sort.cpp
+        /// @include generic_list_sort2.cpp
         auto sort(xtd::callable<std::strong_ordering, const type_t&, const type_t&> auto&& ordering_comparison) -> list<type_t>& {return sort(0, count(), ordering_comparison);}
-        /// @brief Sorts the elements in the entire xtd::collections::generic::list <type_t> using the specified xtd::comparison <type_t>.
+        /// @brief Sorts the elements in the entire xtd::collections::generic::list <type_t> using the specified xtd::comparison <type_t> comparison.
+        /// @param comparison The xtd::comparison <type_t> to use when comparing elements.
         /// @exception xtd::argument_out_of_range_exception The implementation of comparison caused an error during the sort. For example, comparison might not return 0 when comparing an item with itself.
         /// @remarks If comparison is provided, the elements of the xtd::collections::generic::list <type_t> are sorted using the method represented by the delegate.
-        /// @remarks This method uses xtd::array::sort, which uses the QuickSort algorithm. This implementation performs an unstable sort; that is, if two elements are equal, their order might not be preserved. In contrast, a stable sort preserves the order of elements that are equal.
+        /// @remarks This method uses [std::sort](https://fr.cppreference.com/cpp/algorithm/sort).
         /// @remarks On average, this method is an O(n log n) operation, where n is xtd::collections::generic::list::count; in the worst case it is an O(n ^ 2) operation.
         /// @par Examples
         /// Th following example shows how to use xtd::collections::generic::list::sort method :
-        /// @include generic_list_sort.cpp
+        /// @include generic_list_sort2.cpp
         auto sort(xtd::callable<xtd::int32, const type_t&, const type_t&> auto&& comparison) -> list<type_t>& {return sort(0, count(), comparison);}
-        /// @brief Sorts the elements in a range of elements in xtd::collections::generic::list <type_t> using the specified comparer.
-        /// @param index The zero-based starting index of the range to sort.
-        /// @param count The length of the range to sort.
+        /// @brief Sorts the elements in the entire xtd::collections::generic::list <type_t> using the specified comparer.
         /// @param comparer The xtd::collections::generic::icomparer <type_t> implementation to use when comparing elements, or null to use the default comparer xtd::collections::generic::comparer::default_comparer.
         /// @exception xtd::argument_out_of_range_exception The implementation of comparison caused an error during the sort. For example, comparison might not return 0 when comparing an item with itself.
         /// @remarks If comparer is provided, the elements of the xtd::collections::generic::list <type_t> are sorted using the specified xtd::collections::generic::icomparer <type_t> implementation.
-        /// @remarks This method uses xtd::array::sort, which uses the QuickSort algorithm. This implementation performs an unstable sort; that is, if two elements are equal, their order might not be preserved. In contrast, a stable sort preserves the order of elements that are equal.
+        /// @remarks This method uses [std::sort](https://fr.cppreference.com/cpp/algorithm/sort).
         /// @remarks On average, this method is an O(n log n) operation, where n is xtd::collections::generic::list::count; in the worst case it is an O(n ^ 2) operation.
+        /// @par Examples
+        /// Th following example shows how to use xtd::collections::generic::list::sort method :
+        /// @include generic_list_sort2.cpp
+        auto sort(const xtd::collections::generic::icomparer<type_t>& comparer) -> list<type_t>& {return sort(0, count(), comparer);}
+        /// @brief Sorts the elements in a range of elements in xtd::collections::generic::list <type_t> using the specified xtd::callable <bool, type_t, type_t> less comparer `<`.
+        /// @param index The zero-based starting index of the range to sort.
+        /// @param count The length of the range to sort.
+        /// @param less_comparer The xtd::callable <bool, type_t, type_t> to use when comparing elements.
+        /// @exception xtd::argument_out_of_range_exception The implementation of comparison caused an error during the sort. For example, comparison might not return 0 when comparing an item with itself.
+        /// @remarks If comparer is provided, the elements of the xtd::collections::generic::list <type_t> are sorted using the specified xtd::collections::generic::icomparer <type_t> implementation.
+        /// @remarks This method uses [std::sort](https://fr.cppreference.com/cpp/algorithm/sort).
+        /// @remarks On average, this method is an O(n log n) operation, where n is xtd::collections::generic::list::count; in the worst case it is an O(n ^ 2) operation.
+        /// @par Examples
+        /// Th following example shows how to use xtd::collections::generic::list::sort method :
+        /// @include generic_list_sort3.cpp
         auto sort(xtd::usize index, xtd::usize count, xtd::callable<bool, const type_t&, const type_t&> auto&& less_comparison) -> list<type_t>& {
           if (index + count > self_.count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
           data_->items.increment_version();
           std::sort(data_->items.begin() + index, data_->items.begin() + index + count, less_comparison);
           return self_;
         }
-        auto sort(xtd::usize index, xtd::usize count, xtd::callable<std::strong_ordering, const type_t&, const type_t&> auto&& ordering_comparison) -> list<type_t>& {return sort(index, count, [ordering_comparison](const type_t& x, const type_t& y) {return ordering_comparison(x, y) == std::strong_ordering::less;});}
-        auto sort(xtd::usize index, xtd::usize count, xtd::callable<xtd::int32, const type_t&, const type_t&> auto&& comparison) -> list<type_t>& {return sort(index, count, [comparison](const type_t& x, const type_t& y) {return comparison(x, y) < 0;});}
-        /// @brief Sorts the elements in the entire xtd::collections::generic::list <type_t> using the specified comparer.
-        /// @param comparer The xtd::collections::generic::icomparer <type_t> implementation to use when comparing elements, or null to use the default comparer xtd::collections::generic::comparer::default_comparer.
+        /// @brief Sorts the elements in a range of elements in xtd::collections::generic::list <type_t> using the specified xtd::callable <std::strong_ordering, type_t, type_t> ordering comparer `<=>`.
+        /// @param index The zero-based starting index of the range to sort.
+        /// @param count The length of the range to sort.
+        /// @param ordering_comparison The xtd::callable <std::strong_ordering, type_t, type_t> to use when comparing elements.
+        /// @exception xtd::argument_out_of_range_exception The implementation of comparison caused an error during the sort. For example, comparison might not return 0 when comparing an item with itself.
         /// @remarks If comparer is provided, the elements of the xtd::collections::generic::list <type_t> are sorted using the specified xtd::collections::generic::icomparer <type_t> implementation.
-        /// @remarks This method uses xtd::array::sort, which uses the QuickSort algorithm. This implementation performs an unstable sort; that is, if two elements are equal, their order might not be preserved. In contrast, a stable sort preserves the order of elements that are equal.
+        /// @remarks This method uses [std::sort](https://fr.cppreference.com/cpp/algorithm/sort).
         /// @remarks On average, this method is an O(n log n) operation, where n is xtd::collections::generic::list::count; in the worst case it is an O(n ^ 2) operation.
-        auto sort(const xtd::collections::generic::icomparer<type_t>& comparer) -> list<type_t>& {return sort(0, count(), comparer);}
+        /// @par Examples
+        /// Th following example shows how to use xtd::collections::generic::list::sort method :
+        /// @include generic_list_sort3.cpp
+        auto sort(xtd::usize index, xtd::usize count, xtd::callable<std::strong_ordering, const type_t&, const type_t&> auto&& ordering_comparison) -> list<type_t>& {return sort(index, count, [ordering_comparison](const type_t& x, const type_t& y) {return ordering_comparison(x, y) == std::strong_ordering::less;});}
+        /// @brief Sorts the elements in a range of elements in xtd::collections::generic::list <type_t> using the specified xtd::comparison <type_t> comparison.
+        /// @param index The zero-based starting index of the range to sort.
+        /// @param count The length of the range to sort.
+        /// @param comparison The xtd::comparison <type_t> to use when comparing elements.
+        /// @exception xtd::argument_out_of_range_exception The implementation of comparison caused an error during the sort. For example, comparison might not return 0 when comparing an item with itself.
+        /// @remarks If comparer is provided, the elements of the xtd::collections::generic::list <type_t> are sorted using the specified xtd::collections::generic::icomparer <type_t> implementation.
+        /// @remarks This method uses [std::sort](https://fr.cppreference.com/cpp/algorithm/sort).
+        /// @remarks On average, this method is an O(n log n) operation, where n is xtd::collections::generic::list::count; in the worst case it is an O(n ^ 2) operation.
+        /// @par Examples
+        /// Th following example shows how to use xtd::collections::generic::list::sort method :
+        /// @include generic_list_sort3.cpp
+        auto sort(xtd::usize index, xtd::usize count, xtd::callable<xtd::int32, const type_t&, const type_t&> auto&& comparison) -> list<type_t>& {return sort(index, count, [comparison](const type_t& x, const type_t& y) {return comparison(x, y) < 0;});}
         /// @brief Sorts the elements in a range of elements in xtd::collections::generic::list <type_t> using the specified comparer.
         /// @param index The zero-based starting index of the range to sort.
         /// @param count The length of the range to sort.
         /// @param comparer The xtd::collections::generic::icomparer <type_t> implementation to use when comparing elements, or null to use the default comparer xtd::collections::generic::comparer::default_comparer.
         /// @exception xtd::argument_out_of_range_exception The implementation of comparison caused an error during the sort. For example, comparison might not return 0 when comparing an item with itself.
         /// @remarks If comparer is provided, the elements of the xtd::collections::generic::list <type_t> are sorted using the specified xtd::collections::generic::icomparer <type_t> implementation.
-        /// @remarks This method uses xtd::array::sort, which uses the QuickSort algorithm. This implementation performs an unstable sort; that is, if two elements are equal, their order might not be preserved. In contrast, a stable sort preserves the order of elements that are equal.
+        /// @remarks This method uses [std::sort](https://fr.cppreference.com/cpp/algorithm/sort).
         /// @remarks On average, this method is an O(n log n) operation, where n is xtd::collections::generic::list::count; in the worst case it is an O(n ^ 2) operation.
+        /// @par Examples
+        /// Th following example shows how to use xtd::collections::generic::list::sort method :
+        /// @include generic_list_sort3.cpp
         auto sort(xtd::usize index, xtd::usize count, const xtd::collections::generic::icomparer<type_t>& comparer) -> list<type_t>&  {return sort(index, count, xtd::collections::generic::helpers::lesser<type_t> {comparer});}
 
         /// @brief Copies the elements of the xtd::collections::generic::list <type_t> to a new array.

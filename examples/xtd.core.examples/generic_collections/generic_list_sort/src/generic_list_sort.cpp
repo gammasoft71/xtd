@@ -1,58 +1,67 @@
 #include <xtd/xtd>
 
-struct my_own_descending_comparer : icomparer<int> {
-  [[nodiscard]] auto compare(const int& x, const int& y) const -> int override {return x > y ? -1 : x < y ? 1 : 0;}
+struct superhero {
+  string name;
+  string alter_ego;
+  
+  auto to_string() const noexcept -> string {return string::format("{}/{}", name, alter_ego);}
+  auto operator<=>(const superhero& other) const noexcept -> std::strong_ordering {
+    auto result = name <=> other.name;
+    return result != 0 ? result : alter_ego <=> other.alter_ego;
+  }
+};
+
+struct supervillain : istringable<supervillain>, icomparable<supervillain> {
+  supervillain() = default;
+  supervillain(string name, string alter_ego) : name {name}, alter_ego {alter_ego} {}
+
+  string name;
+  string alter_ego;
+  
+  auto to_string() const noexcept -> string override {return string::format("{}/{}", name, alter_ego);}
+  auto compare_to(const supervillain& other) const noexcept -> int override {
+    auto result = name.compare_to(other.name);
+    return result != 0 ? result : alter_ego.compare_to(other.alter_ego);
+  }
 };
 
 auto main() -> int {
-  auto items = list {10, 6, 5, 7, 8, 2, 9, 3, 1, 4};
+  auto numbers = list {10, 6, 5, 7, 8, 2, 9, 3, 1, 4};
+  numbers.sort();
+  println("numbers = {}", numbers);
   
-  // C++ standard
-  //items.sort([](auto&& a, auto&& b) {return a < b;});
-  items.sort(_1 < _2);
-  println("ascending sorted items = {}", items);
-  //items.sort([](auto&& a, auto&& b) {return a > b;});
-  items.sort(_1 > _2);
-  println("descending sorted items = {}", items);
-  println();
+  auto fruits = list<string> {"Orange", "Apple", "Banana", "Strawberry", "Watermelon", "Pear", "Coconut", "Kiwi", "Plum", "Grapes"};
+  fruits.sort();
+  println("fruits = {}", fruits);
   
-  // C++ modern with ordering
-  //items.sort([](auto&& a, auto&& b) {return a <=> b;});
-  items.sort(_1 <=> _2);
-  println("ascending sorted items = {}", items);
-  //items.sort([](auto&& a, auto&& b) {return a <=> b == std::strong_ordering::greater;});
-  items.sort(_1 <=> _2 == std::strong_ordering::greater);
-  println("descending sorted items = {}", items);
-  println();
+  auto superheroes = list<superhero> {
+    {.name = "Barry Allen", .alter_ego = "The Flash"},
+    {.name = "Oliver Queen", .alter_ego = "Arrow"},
+    {.name = "Hal Jordan", .alter_ego = "Green Lantern"},
+    {.name = "Bruce Wayne", .alter_ego = "Batman"},
+    {.name = "Clark Kent", .alter_ego = "Superman"},
+    {.name = "Jefferson Pierce", .alter_ego = "Black Lightning"},
+    {.name = "Kara Zor-El", .alter_ego = "Supergirl"},
+  };
+  superheroes.sort();
+  println("superheroes = {}", superheroes);
   
-  // C# style
-  //items.sort([](auto&& a, auto&& b) {return a > b ? 1 : a < b ? -1 : 0;});
-  items.sort(if_then_else(_1 > _2, 1, if_then_else(_1 < _2, -1, 0)));
-  println("ascending sorted items = {}", items);
-  //items.sort([](auto&& a, auto&& b) {return a > b ? -1 : a < b ? 1 : 0;});
-  items.sort([](auto&& a, auto&& b) {return a > b ? -1 : a < b ? 1 : 0;});
-  println("descending sorted items = {}", items);
-  println();
-
-  // C# style with comparer
-  items.sort(comparer<int>::default_comparer);
-  println("ascending sorted items = {}", items);
-  items.sort(my_own_descending_comparer {});
-  println("descending sorted items = {}", items);
-  println();
+  auto supervillains = list<supervillain> {
+    {"Pamela Isley", "Poison Ivy"},
+    {"George Harkness", "Captain Boomerang"},
+    {"El-Kal", "Bizarro"},
+    {"Winslow Schott", "Toyman"},
+    {"Theo Adam", "Black Adam"},
+    {"Joar Mahkent", "Icicle"},
+    {"Caitlin Snow", "Killer Frost"}
+  };
+  supervillains.sort();
+  println("supervillains = {}", supervillains);
 }
 
 // This code produces the following output :
 //
-// ascending sorted items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-// descending sorted items = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
-//
-// ascending sorted items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-// descending sorted items = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
-//
-// ascending sorted items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-// descending sorted items = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
-//
-// ascending sorted items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-// descending sorted items = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
-//
+// numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+// fruits = [Apple, Banana, Coconut, Grapes, Kiwi, Orange, Pear, Plum, Strawberry, Watermelon]
+// superheroes = [Barry Allen/The Flash, Bruce Wayne/Batman, Clark Kent/Superman, Hal Jordan/Green Lantern, Jefferson Pierce/Black Lightning, Kara Zor-El/Supergirl, Oliver Queen/Arrow]
+// supervillains = [Caitlin Snow/Killer Frost, El-Kal/Bizarro, George Harkness/Captain Boomerang, Joar Mahkent/Icicle, Pamela Isley/Poison Ivy, Theo Adam/Black Adam, Winslow Schott/Toyman]

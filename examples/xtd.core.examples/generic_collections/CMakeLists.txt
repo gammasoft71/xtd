@@ -31,6 +31,8 @@ add_projects(
   generic_list_iterator_vs_vector_iterator
   generic_list_reverse
   generic_list_sort
+  generic_list_sort2
+  generic_list_sort3
   generic_ordered_dictionary
   generic_queue
   generic_stack
