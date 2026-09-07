@@ -48,9 +48,7 @@ namespace xtd {
       /// @brief Gets the arg value.
       /// @return The arg value.
       template<typename... args_t>
-      constexpr decltype(auto) operator()(args_t&&... args) const {
-        return std::get<index - 1>(std::forward_as_tuple(std::forward<args_t>(args)...));
-      }
+      constexpr auto operator()(args_t&&... args) const {return std::get<index - 1>(std::forward_as_tuple(std::forward<args_t>(args)...));}
       /// @}
     };
 
