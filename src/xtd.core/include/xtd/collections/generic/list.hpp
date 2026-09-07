@@ -865,7 +865,7 @@ namespace xtd {
           data_->items.erase(data_->items.begin() + index, data_->items.begin() + index + count);
         }
         
-        /// @brief Resizes the container to contain `count` elements, does nothing if `count == size().
+        /// @brief Resizes the container to contain `count` elements, does nothing if `count == size()`.
         /// @param count The new size of the container.
         /// @exception xtd::argument_out_of_range_exception xtd::collections::generic::list::capacity is set to a value that is less than xtd::collections::generic::list::count.
         /// @remarks If the current size is greater than `count`, the container is reduced to its first `count` elements.
@@ -875,7 +875,7 @@ namespace xtd {
             resize(count, value_type {});
           } else xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "value_type is not copy constructible.");
         }
-        /// @brief Resizes the container to contain `count` elements, does nothing if `count == size().
+        /// @brief Resizes the container to contain `count` elements, does nothing if `count == size()`.
         /// @param count The new size of the container.
         /// @param value The value to initialize the new elements with.
         /// @exception xtd::argument_out_of_range_exception xtd::collections::generic::list::capacity is set to a value that is less than xtd::collections::generic::list::count.
