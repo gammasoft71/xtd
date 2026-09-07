@@ -38,15 +38,15 @@ namespace xtd {
       template<typename type_t>
       class read_only_collection : public xtd::object, public xtd::collections::generic::ilist<type_t> {
         template<typename list_type_t>
-        class empty_list : public generic::ilist<list_type_t> {
+        class empty_list : public xtd::collections::generic::ilist<list_type_t> {
         public:
-          using iterator = typename generic::ilist<list_type_t>::iterator;
-          using const_iterator = typename generic::ilist<list_type_t>::const_iterator;
+          using iterator = typename xtd::collections::generic::ilist<list_type_t>::iterator;
+          using const_iterator = typename xtd::collections::generic::ilist<list_type_t>::const_iterator;
           
           [[nodiscard]] auto contains(const list_type_t& item) const noexcept -> bool override {return false;}
           auto copy_to(xtd::array<list_type_t>& array, xtd::usize array_index) const -> void override {}
-          [[nodiscard]] generic::enumerator<list_type_t> get_enumerator() const noexcept override {
-            struct empty_list_enumerator : public generic::ienumerator<list_type_t> {
+          [[nodiscard]] xtd::collections::generic::enumerator<list_type_t> get_enumerator() const noexcept override {
+            struct empty_list_enumerator : public xtd::collections::generic::ienumerator<list_type_t> {
               [[nodiscard]] const list_type_t& current() const override {xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);}
               [[nodiscard]] bool move_next() override {return false;}
               void reset() override {}
@@ -91,9 +91,9 @@ namespace xtd {
         /// @brief Represents the const pointer of list value type.
         using const_pointer = const value_type*;
         /// @brief Represents the iterator of list value type.
-        using iterator = typename generic::icollection<type_t>::iterator;
+        using iterator = typename xtd::collections::generic::icollection<type_t>::iterator;
         /// @brief Represents the const iterator of list value type.
-        using const_iterator = typename generic::icollection<type_t>::const_iterator;
+        using const_iterator = typename xtd::collections::generic::icollection<type_t>::const_iterator;
         /// @}
         
         /// @name Public Constructors
@@ -196,7 +196,7 @@ namespace xtd {
         /// @remarks The enumerator does not have exclusive access to the collection; therefore, enumerating through a collection is intrinsically not a thread-safe procedure. To guarantee thread safety during enumeration, you can lock the collection during the entire enumeration. To allow the collection to be accessed by multiple threads for reading and writing, you must implement your own synchronization.
         /// @remarks Default implementations of collections in xtd::collections::generic are not synchronized.
         /// @remarks This method is an O(1) operation
-        [[nodiscard]] generic::enumerator<value_type> get_enumerator() const noexcept override {return items_.get_enumerator();}
+        [[nodiscard]] xtd::collections::generic::enumerator<value_type> get_enumerator() const noexcept override {return items_.get_enumerator();}
         
         /// @brief Searches for the specified object and returns the zero-based index of the first occurrence within the entire xtd::collections::object_model::read_only_collection <type_t>.
         /// @param item The object to locate in the xtd::collections::object_model::read_only_collection <type_t>.
