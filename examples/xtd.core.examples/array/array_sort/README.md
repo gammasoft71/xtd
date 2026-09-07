@@ -1,10 +1,10 @@
-# generic_list_sort
+# array_sort
 
-Shows how to use [xtd::collections::generic::list::sort](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1generic_1_1list.html#a20f55886f3702296928569b3e8e9d82b) method.
+Shows how to use [xtd::basic_array::sort](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1generic_1_1list.html#a20f55886f3702296928569b3e8e9d82b) method.
 
 ## Sources
 
-* [src/generic_list_sort.cpp](src/generic_list_sort.cpp)
+* [src/array_sort.cpp](src/generic_list_sort.cpp)
 * [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run

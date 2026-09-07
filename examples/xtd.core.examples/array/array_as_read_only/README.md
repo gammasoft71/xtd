@@ -1,6 +1,6 @@
 # array_as_read_only
 
-Shows how to use [xtd::array::as_read_only](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1object__model_1_1read__only__collection.html) method.
+Shows how to use [xtd::array::as_read_only](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1array_3_4.html#a7edca610710ffecef0f2f2fa1db6f2b3) method.
 
 ## Sources
 

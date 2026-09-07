@@ -941,7 +941,7 @@ namespace xtd {
         /// @remarks On average, this method is an O(n log n) operation, where n is xtd::collections::generic::list::count; in the worst case it is an O(n ^ 2) operation.
         /// @remarks The following code example demonstrates the xtd::collections::generic::list::sort method overload and the xtd::collections::generic::list::binary_search method overload. A xtd::collections::generic::list <type_t> of strings is created and populated with four strings, in no particular order. The list is displayed, sorted, and displayed again.
         /// @par Examples
-        /// Th following example shows how to use xtd::collections::generic::list::sort method :
+        /// The following example shows how to use xtd::collections::generic::list::sort method :
         /// @include generic_list_sort.cpp
         auto sort() -> list<type_t>& {return sort(xtd::collections::generic::comparer<type_t>::default_comparer);}
         /// @brief Sorts the elements in the entire xtd::collections::generic::list <type_t> using the specified xtd::callable <bool, type_t, type_t> less comparer `<`.
@@ -951,7 +951,7 @@ namespace xtd {
         /// @remarks This method uses [std::sort](https://fr.cppreference.com/cpp/algorithm/sort).
         /// @remarks On average, this method is an O(n log n) operation, where n is xtd::collections::generic::list::count; in the worst case it is an O(n ^ 2) operation.
         /// @par Examples
-        /// Th following example shows how to use xtd::collections::generic::list::sort method :
+        /// The following example shows how to use xtd::collections::generic::list::sort method :
         /// @include generic_list_sort2.cpp
         auto sort(xtd::callable<bool, const type_t&, const type_t&> auto&& less_comparison) -> list<type_t>& {return sort(0, count(), less_comparison);}
         /// @brief Sorts the elements in the entire xtd::collections::generic::list <type_t> using the specified xtd::callable <std::strong_ordering, type_t, type_t> ordering comparer `<=>`.
@@ -961,7 +961,7 @@ namespace xtd {
         /// @remarks This method uses [std::sort](https://fr.cppreference.com/cpp/algorithm/sort).
         /// @remarks On average, this method is an O(n log n) operation, where n is xtd::collections::generic::list::count; in the worst case it is an O(n ^ 2) operation.
         /// @par Examples
-        /// Th following example shows how to use xtd::collections::generic::list::sort method :
+        /// The following example shows how to use xtd::collections::generic::list::sort method :
         /// @include generic_list_sort2.cpp
         auto sort(xtd::callable<std::strong_ordering, const type_t&, const type_t&> auto&& ordering_comparison) -> list<type_t>& {return sort(0, count(), ordering_comparison);}
         /// @brief Sorts the elements in the entire xtd::collections::generic::list <type_t> using the specified xtd::comparison <type_t> comparison.
@@ -971,7 +971,7 @@ namespace xtd {
         /// @remarks This method uses [std::sort](https://fr.cppreference.com/cpp/algorithm/sort).
         /// @remarks On average, this method is an O(n log n) operation, where n is xtd::collections::generic::list::count; in the worst case it is an O(n ^ 2) operation.
         /// @par Examples
-        /// Th following example shows how to use xtd::collections::generic::list::sort method :
+        /// The following example shows how to use xtd::collections::generic::list::sort method :
         /// @include generic_list_sort2.cpp
         auto sort(xtd::callable<xtd::int32, const type_t&, const type_t&> auto&& comparison) -> list<type_t>& {return sort(0, count(), comparison);}
         /// @brief Sorts the elements in the entire xtd::collections::generic::list <type_t> using the specified comparer.
@@ -981,7 +981,7 @@ namespace xtd {
         /// @remarks This method uses [std::sort](https://fr.cppreference.com/cpp/algorithm/sort).
         /// @remarks On average, this method is an O(n log n) operation, where n is xtd::collections::generic::list::count; in the worst case it is an O(n ^ 2) operation.
         /// @par Examples
-        /// Th following example shows how to use xtd::collections::generic::list::sort method :
+        /// The following example shows how to use xtd::collections::generic::list::sort method :
         /// @include generic_list_sort2.cpp
         auto sort(const xtd::collections::generic::icomparer<type_t>& comparer) -> list<type_t>& {return sort(0, count(), comparer);}
         /// @brief Sorts the elements in a range of elements in xtd::collections::generic::list <type_t> using the specified xtd::callable <bool, type_t, type_t> less comparer `<`.
@@ -993,7 +993,7 @@ namespace xtd {
         /// @remarks This method uses [std::sort](https://fr.cppreference.com/cpp/algorithm/sort).
         /// @remarks On average, this method is an O(n log n) operation, where n is xtd::collections::generic::list::count; in the worst case it is an O(n ^ 2) operation.
         /// @par Examples
-        /// Th following example shows how to use xtd::collections::generic::list::sort method :
+        /// The following example shows how to use xtd::collections::generic::list::sort method :
         /// @include generic_list_sort3.cpp
         auto sort(xtd::usize index, xtd::usize count, xtd::callable<bool, const type_t&, const type_t&> auto&& less_comparison) -> list<type_t>& {
           if (index + count > self_.count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
@@ -1010,7 +1010,7 @@ namespace xtd {
         /// @remarks This method uses [std::sort](https://fr.cppreference.com/cpp/algorithm/sort).
         /// @remarks On average, this method is an O(n log n) operation, where n is xtd::collections::generic::list::count; in the worst case it is an O(n ^ 2) operation.
         /// @par Examples
-        /// Th following example shows how to use xtd::collections::generic::list::sort method :
+        /// The following example shows how to use xtd::collections::generic::list::sort method :
         /// @include generic_list_sort3.cpp
         auto sort(xtd::usize index, xtd::usize count, xtd::callable<std::strong_ordering, const type_t&, const type_t&> auto&& ordering_comparison) -> list<type_t>& {return sort(index, count, [ordering_comparison](const type_t& x, const type_t& y) {return ordering_comparison(x, y) == std::strong_ordering::less;});}
         /// @brief Sorts the elements in a range of elements in xtd::collections::generic::list <type_t> using the specified xtd::comparison <type_t> comparison.
@@ -1022,7 +1022,7 @@ namespace xtd {
         /// @remarks This method uses [std::sort](https://fr.cppreference.com/cpp/algorithm/sort).
         /// @remarks On average, this method is an O(n log n) operation, where n is xtd::collections::generic::list::count; in the worst case it is an O(n ^ 2) operation.
         /// @par Examples
-        /// Th following example shows how to use xtd::collections::generic::list::sort method :
+        /// The following example shows how to use xtd::collections::generic::list::sort method :
         /// @include generic_list_sort3.cpp
         auto sort(xtd::usize index, xtd::usize count, xtd::callable<xtd::int32, const type_t&, const type_t&> auto&& comparison) -> list<type_t>& {return sort(index, count, [comparison](const type_t& x, const type_t& y) {return comparison(x, y) < 0;});}
         /// @brief Sorts the elements in a range of elements in xtd::collections::generic::list <type_t> using the specified comparer.
@@ -1034,7 +1034,7 @@ namespace xtd {
         /// @remarks This method uses [std::sort](https://fr.cppreference.com/cpp/algorithm/sort).
         /// @remarks On average, this method is an O(n log n) operation, where n is xtd::collections::generic::list::count; in the worst case it is an O(n ^ 2) operation.
         /// @par Examples
-        /// Th following example shows how to use xtd::collections::generic::list::sort method :
+        /// The following example shows how to use xtd::collections::generic::list::sort method :
         /// @include generic_list_sort3.cpp
         auto sort(xtd::usize index, xtd::usize count, const xtd::collections::generic::icomparer<type_t>& comparer) -> list<type_t>&  {return sort(index, count, xtd::collections::generic::helpers::lesser<type_t> {comparer});}
 
