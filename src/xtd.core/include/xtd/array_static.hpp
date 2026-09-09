@@ -6,6 +6,7 @@
 #error "Do not include this file: Internal use only. Include <xtd/array> or <xtd/array.hpp> instead."
 #endif
 
+#include "collections/generic/helpers/lesser.hpp"
 #include "collections/generic/comparer.hpp"
 #include "helpers/throw_helper.hpp"
 
@@ -74,7 +75,7 @@ namespace xtd {
     /// @param index The starting index of the range to search.
     /// @param length The length of the range to search.
     /// @param value The object to search for.
-    /// @return int32 The index of the specified value in the specified array, if value is found; otherwise, a negative number. If value is not found and value is less than one or more elements in array, the negative number returned is the bitwise complement of the index of the first element that is larger than value. If value is not found and value is greater than all elements in array, the negative number returned is the bitwise complement of (the index of the last element plus 1). If this method is called with a non-sorted array, the return value can be incorrect and a negative number could be returned, even if value is present in array.
+    /// @return The index of the specified value in the specified array, if value is found; otherwise, a negative number. If value is not found and value is less than one or more elements in array, the negative number returned is the bitwise complement of the index of the first element that is larger than value. If value is not found and value is greater than all elements in array, the negative number returned is the bitwise complement of (the index of the last element plus 1). If this method is called with a non-sorted array, the return value can be incorrect and a negative number could be returned, even if value is present in array.
     /// @exception xtd::rank_exception array is multidimensional.
     /// @exception xtd::argument_out_of_range_exception index is less than the lower bound of array. <br>-or-<bre>  length is less than zero.
     /// @exception xtd::argument_exception index and length do not specify a valid range in array. <br>-or-<bre>  value is of a type that is not compatible with the elements of array.
@@ -87,15 +88,15 @@ namespace xtd {
     /// @remarks null can always be compared with any other reference type; therefore, comparisons with null do not generate an exception.
     /// @note For every element tested, value is passed to the appropriate xtd::icomparable implementation, even if value is null. That is, the xtd::icomparable implementation determines how a given element compares to null.
     /// @remarks This method is an O(log n) operation, where n is length.
-    template<typename type_t, typename allocator_t>
-    [[nodiscard]] static auto binary_search(const array<type_t, 1, allocator_t>& array, int32 index, int32 length, const type_t& value) -> xtd::usize {return binary_search(array, index, length, value, xtd::collections::generic::comparer<type_t>::default_comparer);}
+    template<typename type_t, typename allocator_t, typename value_t>
+    [[nodiscard]] static auto binary_search(const array<type_t, 1, allocator_t>& array, int32 index, int32 length, const value_t& value) -> xtd::usize {return binary_search(array, index, length, value, xtd::collections::generic::comparer<type_t>::default_comparer);}
     /// @brief Searches a range of elements in a one-dimensional sorted array for a value, using the specified xtd::icomparer interface.
     /// @param array The sorted one-dimensional array to search.
     /// @param index The starting index of the range to search.
     /// @param length The length of the range to search.
     /// @param value The object to search for.
     /// @param comparer The xtd::icomparer implementation to use when comparing elements. <br>-or-<bre>  null to use the xtd::icomparable implementation of each element.
-    /// @return int32 The index of the specified value in the specified array, if value is found; otherwise, a negative number. If value is not found and value is less than one or more elements in array, the negative number returned is the bitwise complement of the index of the first element that is larger than value. If value is not found and value is greater than all elements in array, the negative number returned is the bitwise complement of (the index of the last element plus 1). If this method is called with a non-sorted array, the return value can be incorrect and a negative number could be returned, even if value is present in array.
+    /// @return The index of the specified value in the specified array, if value is found; otherwise, a negative number. If value is not found and value is less than one or more elements in array, the negative number returned is the bitwise complement of the index of the first element that is larger than value. If value is not found and value is greater than all elements in array, the negative number returned is the bitwise complement of (the index of the last element plus 1). If this method is called with a non-sorted array, the return value can be incorrect and a negative number could be returned, even if value is present in array.
     /// @exception xtd::rank_exception array is multidimensional.
     /// @exception xtd::argument_out_of_range_exception index is less than the lower bound of array. <br>-or-<bre>  length is less than zero.
     /// @exception xtd::argument_exception index and length do not specify a valid range in array. <br>-or-<bre>  value is of a type that is not compatible with the elements of array.
@@ -110,23 +111,23 @@ namespace xtd {
     /// @remarks null can always be compared with any other reference type; therefore, comparisons with null do not generate an exception when using xtd::icomparable.
     /// @note For every element tested, value is passed to the appropriate xtd::icomparable implementation, even if value is null. That is, the xtd::icomparable implementation determines how a given element compares to null.
     /// @remarks This method is an O(log n) operation, where n is length.
-    template<typename type_t, typename allocator_t>
-    [[nodiscard]] static auto binary_search(const array<type_t, 1, allocator_t>& array, xtd::usize index, xtd::usize count, const type_t& value, const xtd::collections::generic::icomparer<type_t>& comparer) -> xtd::usize {
-      if (index + count > array->Length) helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
-      typename std::vector<type_t>::const_iterator first = array.array.begin();
-      typename std::vector<type_t>::const_iterator last = array.array.begin();
+    template<typename type_t, typename allocator_t, typename value_t>
+    [[nodiscard]] static auto binary_search(const array<type_t, 1, allocator_t>& array, xtd::usize index, xtd::usize count, const value_t& value, const xtd::collections::generic::icomparer<type_t>& comparer) -> xtd::usize {
+      if (index + count > array.length()) helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
+      auto first = array.data_->items.begin();
+      auto last = array.data_->items.begin();
       std::advance(first, index);
       std::advance(last, index + count);
-      typename std::vector<type_t>::const_iterator position = std::lower_bound(first, last, value, xtd::array<type_t>::comparer(&comparer));
+      auto position = std::lower_bound(first, last, value, xtd::collections::generic::helpers::lesser<type_t> {comparer});
       
-      if (position != array.array.end() && !comparer->Compare(value, *position))
-        return (int32)std::distance(array.array.begin(), position);
-      return (int32)~std::distance(array.array.begin(), position);
+      if (position != array.data_->items.end() && !comparer.compare(value, *position))
+        return std::distance(array.data_->items.begin(), position);
+      return ~std::distance(array.data_->items.begin(), position);
     }
     /// @brief Searches an entire one-dimensional sorted array for a specific element, using the xtd::icomparable interface implemented by each element of the array and by the specified object.
     /// @param array The sorted one-dimensional array to search.
     /// @param value The object to search for.
-    /// @return int32 The index of the specified value in the specified array, if value is found; otherwise, a negative number. If value is not found and value is less than one or more elements in array, the negative number returned is the bitwise complement of the index of the first element that is larger than value. If value is not found and value is greater than all elements in array, the negative number returned is the bitwise complement of (the index of the last element plus 1). If this method is called with a non-sorted array, the return value can be incorrect and a negative number could be returned, even if value is present in array.
+    /// @return The index of the specified value in the specified array, if value is found; otherwise, a negative number. If value is not found and value is less than one or more elements in array, the negative number returned is the bitwise complement of the index of the first element that is larger than value. If value is not found and value is greater than all elements in array, the negative number returned is the bitwise complement of (the index of the last element plus 1). If this method is called with a non-sorted array, the return value can be incorrect and a negative number could be returned, even if value is present in array.
     /// @exception xtd::rank_exception array is multidimensional.
     /// @exception xtd::argument_exception value is of a type that is not compatible with the elements of array.
     /// @exception xtd::invalid_operation_exception value does not implement the xtd::icomparable interface, and the search encounters an element that does not implement the xtd::icomparable interface.
@@ -137,14 +138,14 @@ namespace xtd {
     /// @remarks Duplicate elements are allowed. If the array contains more than one element equal to value, the method returns the index of only one of the occurrences, and not necessarily the first one.
     /// @remarks null can always be compared with any other reference type; therefore, comparisons with null do not generate an exception.
     /// @note For every element tested, value is passed to the appropriate xtd::icomparable implementation, even if value is null. That is, the xtd::icomparable implementation determines how a given element compares to null.
-    /// @remarks This method is an O(log n) operation, where n is the Length of array.
-    template<typename type_t, typename allocator_t>
-    [[nodiscard]] static auto binary_search(const array<type_t, 1, allocator_t>& array, const type_t& value) -> xtd::usize {return binary_search(array, 0, array.Length, value, xtd::collections::generic::comparer<type_t>::default_comparer.release());}
+    /// @remarks This method is an O(log n) operation, where n is the length of array.
+    template<typename type_t, typename allocator_t, typename value_t>
+    [[nodiscard]] static auto binary_search(const array<type_t, 1, allocator_t>& array, const value_t& value) -> xtd::usize {return binary_search(array, 0, array.length(), value, xtd::collections::generic::comparer<type_t>::default_comparer);}
     /// @brief Searches a range of elements in a one-dimensional sorted array for a value, using the specified xtd::icomparer interface.
     /// @param array The sorted one-dimensional array to search.
     /// @param value The object to search for.
     /// @param comparer The xtd::icomparer implementation to use when comparing elements. <br>-or-<bre>  null to use the xtd::icomparable implementation of each element.
-    /// @return int32 The index of the specified value in the specified array, if value is found; otherwise, a negative number. If value is not found and value is less than one or more elements in array, the negative number returned is the bitwise complement of the index of the first element that is larger than value. If value is not found and value is greater than all elements in array, the negative number returned is the bitwise complement of (the index of the last element plus 1). If this method is called with a non-sorted array, the return value can be incorrect and a negative number could be returned, even if value is present in array.
+    /// @return The index of the specified value in the specified array, if value is found; otherwise, a negative number. If value is not found and value is less than one or more elements in array, the negative number returned is the bitwise complement of the index of the first element that is larger than value. If value is not found and value is greater than all elements in array, the negative number returned is the bitwise complement of (the index of the last element plus 1). If this method is called with a non-sorted array, the return value can be incorrect and a negative number could be returned, even if value is present in array.
     /// @exception xtd::rank_exception array is multidimensional.
     /// @exception xtd::argument_out_of_range_exception index is less than the lower bound of array. <br>-or-<bre>  length is less than zero.
     /// @exception xtd::argument_exception index and length do not specify a valid range in array. <br>-or-<bre>  value is of a type that is not compatible with the elements of array.
@@ -159,8 +160,8 @@ namespace xtd {
     /// @remarks null can always be compared with any other reference type; therefore, comparisons with null do not generate an exception when using xtd::icomparable.
     /// @note For every element tested, value is passed to the appropriate xtd::icomparable implementation, even if value is null. That is, the xtd::icomparable implementation determines how a given element compares to null.
     /// @remarks This method is an O(log n) operation, where n is length.
-    template<typename type_t, typename allocator_t>
-    [[nodiscard]] static auto binary_search(const array<type_t, 1, allocator_t>& array, const type_t& value, const xtd::collections::generic::icomparer<type_t>& comparer) -> xtd::usize {return binary_search(array, 0, array.Length, value, comparer);}
+    template<typename type_t, typename allocator_t, typename value_t>
+    [[nodiscard]] static auto binary_search(const array<type_t, 1, allocator_t>& array, const value_t& value, const xtd::collections::generic::icomparer<type_t>& comparer) -> xtd::usize {return binary_search(array, 0, array.length(), value, comparer);}
     
     /// @brief Clears the contents of an array.
     /// @param array The array to clear.
@@ -375,7 +376,7 @@ namespace xtd {
     /// @param newSize The size of the new array.
     /// @exception xtd::argument_out_of_range_exception newSize is less than zero.
     /// @remarks This method allocates a new array with the specified size, copies elements from the old array to the new one, and then replaces the old array with the new one. array must be a one-dimensional array.
-    /// @remarks If newSize is greater than the Length of the old array, a new array is allocated and all the elements are copied from the old array to the new one. If newSize is less than the Length of the old array, a new array is allocated and elements are copied from the old array to the new one until the new one is filled; the rest of the elements in the old array are ignored. If newSize is equal to the Length of the old array, this method does nothing.
+    /// @remarks If newSize is greater than the length of the old array, a new array is allocated and all the elements are copied from the old array to the new one. If newSize is less than the length of the old array, a new array is allocated and elements are copied from the old array to the new one until the new one is filled; the rest of the elements in the old array are ignored. If newSize is equal to the length of the old array, this method does nothing.
     /// @remarks This method is an O(n) operation, where n is old size.
     template<typename type_t, typename allocator_t>
     static auto resize(xtd::array<type_t, 1, allocator_t>& array, int32 new_size) -> void {array.resize(new_size);}
