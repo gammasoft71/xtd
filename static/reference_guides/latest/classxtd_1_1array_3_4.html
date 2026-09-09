@@ -222,7 +222,7 @@ The <a class="el" href="classxtd_1_1array.html" title="Provides methods for crea
 <div class="line"><span class="comment">// After copying the last two elements of the Object array to the integer array,</span></div>
 <div class="line"><span class="comment">// integer array:  1  2  3  29  30</span></div>
 <div class="line"><span class="comment">// Object array:   1  2  28  29  30</span></div>
-<div class="ttc" id="aclassxtd_1_1array_3_4_html_a40df9fc2a75d0b8c99f32abddb45a47e"><div class="ttname"><a href="#a40df9fc2a75d0b8c99f32abddb45a47e">xtd::array&lt;&gt;::copy</a></div><div class="ttdeci">static auto copy(const array&lt; source_type_t, source_rank, source_allocator_t &gt; &amp;source_array, const array&lt; destination_type_t, destination_rank, destination_allocator_t &gt; &amp;destination_array) -&gt; void</div><div class="ttdoc">Copies a range of elements from an xtd::array starting at the first element and pastes them into anot...</div><div class="ttdef"><b>Definition</b> array_static.hpp:239</div></div>
+<div class="ttc" id="aclassxtd_1_1array_3_4_html_a40df9fc2a75d0b8c99f32abddb45a47e"><div class="ttname"><a href="#a40df9fc2a75d0b8c99f32abddb45a47e">xtd::array&lt;&gt;::copy</a></div><div class="ttdeci">static auto copy(const array&lt; source_type_t, source_rank, source_allocator_t &gt; &amp;source_array, const array&lt; destination_type_t, destination_rank, destination_allocator_t &gt; &amp;destination_array) -&gt; void</div><div class="ttdoc">Copies a range of elements from an xtd::array starting at the first element and pastes them into anot...</div><div class="ttdef"><b>Definition</b> array_static.hpp:240</div></div>
 <div class="ttc" id="aclassxtd_1_1array_html"><div class="ttname"><a href="classxtd_1_1array.html">xtd::array</a></div><div class="ttdoc">Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...</div><div class="ttdef"><b>Definition</b> array.hpp:64</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html_abd86463570c9aa0ca88ce4bb118aef7d"><div class="ttname"><a href="classxtd_1_1console.html#abd86463570c9aa0ca88ce4bb118aef7d">xtd::console::write</a></div><div class="ttdeci">static auto write(arg_t &amp;&amp;value) -&gt; void</div><div class="ttdoc">Writes the text representation of the specified value to the standard output stream.</div><div class="ttdef"><b>Definition</b> console.hpp:490</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae600c08b996905be13225bba0f253a63"><div class="ttname"><a href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">xtd::console::write_line</a></div><div class="ttdeci">static auto write_line() -&gt; void</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
@@ -233,18 +233,18 @@ Public Static Methods</h2></td></tr>
 <tr class="memitem:a7edca610710ffecef0f2f2fa1db6f2b3" id="r_a7edca610710ffecef0f2f2fa1db6f2b3"><td class="memTemplParams" colspan="2">template&lt;typename type_t, typename allocator_t&gt; </td></tr>
 <tr class="memitem:a7edca610710ffecef0f2f2fa1db6f2b3 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a7edca610710ffecef0f2f2fa1db6f2b3">as_read_only</a> (const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; type_t, 1, allocator_t &gt; &amp;array) -&gt; <a class="el" href="classxtd_1_1collections_1_1object__model_1_1read__only__collection.html">xtd::collections::object_model::read_only_collection</a>&lt; type_t &gt;</td></tr>
 <tr class="memdesc:a7edca610710ffecef0f2f2fa1db6f2b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a read-only wrapper for the specified array.  <br /></td></tr>
-<tr class="memitem:a0324b771d1f9bd92f565413122b78399" id="r_a0324b771d1f9bd92f565413122b78399"><td class="memTemplParams" colspan="2">template&lt;typename type_t, typename allocator_t&gt; </td></tr>
-<tr class="memitem:a0324b771d1f9bd92f565413122b78399 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a0324b771d1f9bd92f565413122b78399">binary_search</a> (const array&lt; type_t, 1, allocator_t &gt; &amp;array, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> index, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> length, const type_t &amp;value) -&gt; <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td></tr>
-<tr class="memdesc:a0324b771d1f9bd92f565413122b78399"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searches a range of elements in a one-dimensional sorted array for a value, using the <a class="el" href="classxtd_1_1icomparable.html" title="Defines a generalized comparison method that a value type or class implements to create a type-specif...">xtd::icomparable</a> interface implemented by each element of the array and by the specified value.  <br /></td></tr>
-<tr class="memitem:a2d551d7c3bb11256c48b8190d4577170" id="r_a2d551d7c3bb11256c48b8190d4577170"><td class="memTemplParams" colspan="2">template&lt;typename type_t, typename allocator_t&gt; </td></tr>
-<tr class="memitem:a2d551d7c3bb11256c48b8190d4577170 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a2d551d7c3bb11256c48b8190d4577170">binary_search</a> (const array&lt; type_t, 1, allocator_t &gt; &amp;array, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> index, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> count, const type_t &amp;value, const <a class="el" href="classxtd_1_1collections_1_1generic_1_1icomparer.html">xtd::collections::generic::icomparer</a>&lt; type_t &gt; &amp;comparer) -&gt; <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td></tr>
-<tr class="memdesc:a2d551d7c3bb11256c48b8190d4577170"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searches a range of elements in a one-dimensional sorted array for a value, using the specified xtd::icomparer interface.  <br /></td></tr>
-<tr class="memitem:af7d6d835b28dd7be7f1c68d852b502ce" id="r_af7d6d835b28dd7be7f1c68d852b502ce"><td class="memTemplParams" colspan="2">template&lt;typename type_t, typename allocator_t&gt; </td></tr>
-<tr class="memitem:af7d6d835b28dd7be7f1c68d852b502ce template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#af7d6d835b28dd7be7f1c68d852b502ce">binary_search</a> (const array&lt; type_t, 1, allocator_t &gt; &amp;array, const type_t &amp;value) -&gt; <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td></tr>
-<tr class="memdesc:af7d6d835b28dd7be7f1c68d852b502ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searches an entire one-dimensional sorted array for a specific element, using the <a class="el" href="classxtd_1_1icomparable.html" title="Defines a generalized comparison method that a value type or class implements to create a type-specif...">xtd::icomparable</a> interface implemented by each element of the array and by the specified object.  <br /></td></tr>
-<tr class="memitem:a0344dff580663783da0b661ee6c02c2a" id="r_a0344dff580663783da0b661ee6c02c2a"><td class="memTemplParams" colspan="2">template&lt;typename type_t, typename allocator_t&gt; </td></tr>
-<tr class="memitem:a0344dff580663783da0b661ee6c02c2a template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a0344dff580663783da0b661ee6c02c2a">binary_search</a> (const array&lt; type_t, 1, allocator_t &gt; &amp;array, const type_t &amp;value, const <a class="el" href="classxtd_1_1collections_1_1generic_1_1icomparer.html">xtd::collections::generic::icomparer</a>&lt; type_t &gt; &amp;comparer) -&gt; <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td></tr>
-<tr class="memdesc:a0344dff580663783da0b661ee6c02c2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searches a range of elements in a one-dimensional sorted array for a value, using the specified xtd::icomparer interface.  <br /></td></tr>
+<tr class="memitem:a8bb0505af1b7aa6187ff35c06c8d1f49" id="r_a8bb0505af1b7aa6187ff35c06c8d1f49"><td class="memTemplParams" colspan="2">template&lt;typename type_t, typename allocator_t, typename value_t&gt; </td></tr>
+<tr class="memitem:a8bb0505af1b7aa6187ff35c06c8d1f49 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a8bb0505af1b7aa6187ff35c06c8d1f49">binary_search</a> (const array&lt; type_t, 1, allocator_t &gt; &amp;array, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> index, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> length, const value_t &amp;value) -&gt; <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td></tr>
+<tr class="memdesc:a8bb0505af1b7aa6187ff35c06c8d1f49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searches a range of elements in a one-dimensional sorted array for a value, using the <a class="el" href="classxtd_1_1icomparable.html" title="Defines a generalized comparison method that a value type or class implements to create a type-specif...">xtd::icomparable</a> interface implemented by each element of the array and by the specified value.  <br /></td></tr>
+<tr class="memitem:a3cc3ee2040d93ac189722a90db4665fb" id="r_a3cc3ee2040d93ac189722a90db4665fb"><td class="memTemplParams" colspan="2">template&lt;typename type_t, typename allocator_t, typename value_t&gt; </td></tr>
+<tr class="memitem:a3cc3ee2040d93ac189722a90db4665fb template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a3cc3ee2040d93ac189722a90db4665fb">binary_search</a> (const array&lt; type_t, 1, allocator_t &gt; &amp;array, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> index, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> count, const value_t &amp;value, const <a class="el" href="classxtd_1_1collections_1_1generic_1_1icomparer.html">xtd::collections::generic::icomparer</a>&lt; type_t &gt; &amp;comparer) -&gt; <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td></tr>
+<tr class="memdesc:a3cc3ee2040d93ac189722a90db4665fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searches a range of elements in a one-dimensional sorted array for a value, using the specified xtd::icomparer interface.  <br /></td></tr>
+<tr class="memitem:a579bdfc2955261b2a6912256a53e00e9" id="r_a579bdfc2955261b2a6912256a53e00e9"><td class="memTemplParams" colspan="2">template&lt;typename type_t, typename allocator_t, typename value_t&gt; </td></tr>
+<tr class="memitem:a579bdfc2955261b2a6912256a53e00e9 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a579bdfc2955261b2a6912256a53e00e9">binary_search</a> (const array&lt; type_t, 1, allocator_t &gt; &amp;array, const value_t &amp;value) -&gt; <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td></tr>
+<tr class="memdesc:a579bdfc2955261b2a6912256a53e00e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searches an entire one-dimensional sorted array for a specific element, using the <a class="el" href="classxtd_1_1icomparable.html" title="Defines a generalized comparison method that a value type or class implements to create a type-specif...">xtd::icomparable</a> interface implemented by each element of the array and by the specified object.  <br /></td></tr>
+<tr class="memitem:a0d8c4975a94bb930bf76df47d8bf3718" id="r_a0d8c4975a94bb930bf76df47d8bf3718"><td class="memTemplParams" colspan="2">template&lt;typename type_t, typename allocator_t, typename value_t&gt; </td></tr>
+<tr class="memitem:a0d8c4975a94bb930bf76df47d8bf3718 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a0d8c4975a94bb930bf76df47d8bf3718">binary_search</a> (const array&lt; type_t, 1, allocator_t &gt; &amp;array, const value_t &amp;value, const <a class="el" href="classxtd_1_1collections_1_1generic_1_1icomparer.html">xtd::collections::generic::icomparer</a>&lt; type_t &gt; &amp;comparer) -&gt; <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td></tr>
+<tr class="memdesc:a0d8c4975a94bb930bf76df47d8bf3718"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searches a range of elements in a one-dimensional sorted array for a value, using the specified xtd::icomparer interface.  <br /></td></tr>
 <tr class="memitem:add2262eb78473fe7cce9b85d08869b30" id="r_add2262eb78473fe7cce9b85d08869b30"><td class="memTemplParams" colspan="2">template&lt;typename type_t, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> rank, typename allocator_t&gt; </td></tr>
 <tr class="memitem:add2262eb78473fe7cce9b85d08869b30 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#add2262eb78473fe7cce9b85d08869b30">clear</a> (const array&lt; type_t, <a class="el" href="classxtd_1_1array.html#a45abc39ffb46ab928eb76380b64ecdba">rank</a>, allocator_t &gt; &amp;array) -&gt; void</td></tr>
 <tr class="memdesc:add2262eb78473fe7cce9b85d08869b30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the contents of an array.  <br /></td></tr>
@@ -935,13 +935,13 @@ This method is an O(n) operation. </dd></dl>
 
 </div>
 </div>
-<a id="a0324b771d1f9bd92f565413122b78399" name="a0324b771d1f9bd92f565413122b78399"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0324b771d1f9bd92f565413122b78399">&#9670;&#160;</a></span>binary_search() <span class="overload">[1/4]</span></h2>
+<a id="a8bb0505af1b7aa6187ff35c06c8d1f49" name="a8bb0505af1b7aa6187ff35c06c8d1f49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8bb0505af1b7aa6187ff35c06c8d1f49">&#9670;&#160;</a></span>binary_search() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename type_t, typename allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t, typename value_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -964,7 +964,7 @@ template&lt;typename type_t, typename allocator_t&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const type_t &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;) -&gt; <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>
+          <td class="paramtype">const value_t &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;) -&gt; <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>
         </tr>
       </table>
   </td>
@@ -984,7 +984,7 @@ template&lt;typename type_t, typename allocator_t&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5" title="Represents a 32-bit signed integer.">int32</a> The index of the specified value in the specified array, if value is found; otherwise, a negative number. If value is not found and value is less than one or more elements in array, the negative number returned is the bitwise complement of the index of the first element that is larger than value. If value is not found and value is greater than all elements in array, the negative number returned is the bitwise complement of (the index of the last element plus 1). If this method is called with a non-sorted array, the return value can be incorrect and a negative number could be returned, even if value is present in array. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The index of the specified value in the specified array, if value is found; otherwise, a negative number. If value is not found and value is less than one or more elements in array, the negative number returned is the bitwise complement of the index of the first element that is larger than value. If value is not found and value is greater than all elements in array, the negative number returned is the bitwise complement of (the index of the last element plus 1). If this method is called with a non-sorted array, the return value can be incorrect and a negative number could be returned, even if value is present in array. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">xtd::rank_exception</td><td>array is multidimensional. </td></tr>
@@ -1010,13 +1010,13 @@ null can always be compared with any other reference type; therefore, comparison
 
 </div>
 </div>
-<a id="a2d551d7c3bb11256c48b8190d4577170" name="a2d551d7c3bb11256c48b8190d4577170"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2d551d7c3bb11256c48b8190d4577170">&#9670;&#160;</a></span>binary_search() <span class="overload">[2/4]</span></h2>
+<a id="a3cc3ee2040d93ac189722a90db4665fb" name="a3cc3ee2040d93ac189722a90db4665fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3cc3ee2040d93ac189722a90db4665fb">&#9670;&#160;</a></span>binary_search() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename type_t, typename allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t, typename value_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1039,7 +1039,7 @@ template&lt;typename type_t, typename allocator_t&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const type_t &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
+          <td class="paramtype">const value_t &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1066,7 +1066,7 @@ template&lt;typename type_t, typename allocator_t&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5" title="Represents a 32-bit signed integer.">int32</a> The index of the specified value in the specified array, if value is found; otherwise, a negative number. If value is not found and value is less than one or more elements in array, the negative number returned is the bitwise complement of the index of the first element that is larger than value. If value is not found and value is greater than all elements in array, the negative number returned is the bitwise complement of (the index of the last element plus 1). If this method is called with a non-sorted array, the return value can be incorrect and a negative number could be returned, even if value is present in array. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The index of the specified value in the specified array, if value is found; otherwise, a negative number. If value is not found and value is less than one or more elements in array, the negative number returned is the bitwise complement of the index of the first element that is larger than value. If value is not found and value is greater than all elements in array, the negative number returned is the bitwise complement of (the index of the last element plus 1). If this method is called with a non-sorted array, the return value can be incorrect and a negative number could be returned, even if value is present in array. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">xtd::rank_exception</td><td>array is multidimensional. </td></tr>
@@ -1096,13 +1096,13 @@ null can always be compared with any other reference type; therefore, comparison
 
 </div>
 </div>
-<a id="af7d6d835b28dd7be7f1c68d852b502ce" name="af7d6d835b28dd7be7f1c68d852b502ce"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af7d6d835b28dd7be7f1c68d852b502ce">&#9670;&#160;</a></span>binary_search() <span class="overload">[3/4]</span></h2>
+<a id="a579bdfc2955261b2a6912256a53e00e9" name="a579bdfc2955261b2a6912256a53e00e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a579bdfc2955261b2a6912256a53e00e9">&#9670;&#160;</a></span>binary_search() <span class="overload">[3/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename type_t, typename allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t, typename value_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1115,7 +1115,7 @@ template&lt;typename type_t, typename allocator_t&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const type_t &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;) -&gt; <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>
+          <td class="paramtype">const value_t &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;) -&gt; <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>
         </tr>
       </table>
   </td>
@@ -1133,7 +1133,7 @@ template&lt;typename type_t, typename allocator_t&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5" title="Represents a 32-bit signed integer.">int32</a> The index of the specified value in the specified array, if value is found; otherwise, a negative number. If value is not found and value is less than one or more elements in array, the negative number returned is the bitwise complement of the index of the first element that is larger than value. If value is not found and value is greater than all elements in array, the negative number returned is the bitwise complement of (the index of the last element plus 1). If this method is called with a non-sorted array, the return value can be incorrect and a negative number could be returned, even if value is present in array. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The index of the specified value in the specified array, if value is found; otherwise, a negative number. If value is not found and value is less than one or more elements in array, the negative number returned is the bitwise complement of the index of the first element that is larger than value. If value is not found and value is greater than all elements in array, the negative number returned is the bitwise complement of (the index of the last element plus 1). If this method is called with a non-sorted array, the return value can be incorrect and a negative number could be returned, even if value is present in array. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">xtd::rank_exception</td><td>array is multidimensional. </td></tr>
@@ -1152,17 +1152,17 @@ Either value or every element of array must implement the <a class="el" href="cl
 <dd>
 null can always be compared with any other reference type; therefore, comparisons with null do not generate an exception. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>For every element tested, value is passed to the appropriate <a class="el" href="classxtd_1_1icomparable.html" title="Defines a generalized comparison method that a value type or class implements to create a type-specif...">xtd::icomparable</a> implementation, even if value is null. That is, the <a class="el" href="classxtd_1_1icomparable.html" title="Defines a generalized comparison method that a value type or class implements to create a type-specif...">xtd::icomparable</a> implementation determines how a given element compares to null. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>This method is an O(log n) operation, where n is the Length of array. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>This method is an O(log n) operation, where n is the length of array. </dd></dl>
 
 </div>
 </div>
-<a id="a0344dff580663783da0b661ee6c02c2a" name="a0344dff580663783da0b661ee6c02c2a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0344dff580663783da0b661ee6c02c2a">&#9670;&#160;</a></span>binary_search() <span class="overload">[4/4]</span></h2>
+<a id="a0d8c4975a94bb930bf76df47d8bf3718" name="a0d8c4975a94bb930bf76df47d8bf3718"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d8c4975a94bb930bf76df47d8bf3718">&#9670;&#160;</a></span>binary_search() <span class="overload">[4/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename type_t, typename allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t, typename value_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1175,7 +1175,7 @@ template&lt;typename type_t, typename allocator_t&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const type_t &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
+          <td class="paramtype">const value_t &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1200,7 +1200,7 @@ template&lt;typename type_t, typename allocator_t&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5" title="Represents a 32-bit signed integer.">int32</a> The index of the specified value in the specified array, if value is found; otherwise, a negative number. If value is not found and value is less than one or more elements in array, the negative number returned is the bitwise complement of the index of the first element that is larger than value. If value is not found and value is greater than all elements in array, the negative number returned is the bitwise complement of (the index of the last element plus 1). If this method is called with a non-sorted array, the return value can be incorrect and a negative number could be returned, even if value is present in array. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The index of the specified value in the specified array, if value is found; otherwise, a negative number. If value is not found and value is less than one or more elements in array, the negative number returned is the bitwise complement of the index of the first element that is larger than value. If value is not found and value is greater than all elements in array, the negative number returned is the bitwise complement of (the index of the last element plus 1). If this method is called with a non-sorted array, the return value can be incorrect and a negative number could be returned, even if value is present in array. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">xtd::rank_exception</td><td>array is multidimensional. </td></tr>
@@ -2213,7 +2213,7 @@ template&lt;typename type_t, typename allocator_t&gt; </div>
 </dl>
 <dl class="section remark"><dt>Remarks</dt><dd>This method allocates a new array with the specified size, copies elements from the old array to the new one, and then replaces the old array with the new one. array must be a one-dimensional array. </dd>
 <dd>
-If newSize is greater than the Length of the old array, a new array is allocated and all the elements are copied from the old array to the new one. If newSize is less than the Length of the old array, a new array is allocated and elements are copied from the old array to the new one until the new one is filled; the rest of the elements in the old array are ignored. If newSize is equal to the Length of the old array, this method does nothing. </dd>
+If newSize is greater than the length of the old array, a new array is allocated and all the elements are copied from the old array to the new one. If newSize is less than the length of the old array, a new array is allocated and elements are copied from the old array to the new one until the new one is filled; the rest of the elements in the old array are ignored. If newSize is equal to the length of the old array, this method does nothing. </dd>
 <dd>
 This method is an O(n) operation, where n is old size. </dd></dl>
 

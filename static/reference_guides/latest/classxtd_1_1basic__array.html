@@ -2076,12 +2076,14 @@ template&lt;typename type_t, typename allocator_t = xtd::collections::generic::h
 <div class="line"><span class="keyword">class </span>example {</div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
-<div class="line">    <span class="keyword">auto</span> dinosaurs = <a class="code hl_typedef" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a93d587f2de509aeaa33aa41fd9942e8e">list&lt;string&gt;</a> {};</div>
-<div class="line">    </div>
-<div class="line">    dinosaurs.add(<span class="stringliteral">&quot;Pachycephalosaurus&quot;</span>);</div>
-<div class="line">    dinosaurs.add(<span class="stringliteral">&quot;Amargasaurus&quot;</span>);</div>
-<div class="line">    dinosaurs.add(<span class="stringliteral">&quot;Mamenchisaurus&quot;</span>);</div>
-<div class="line">    dinosaurs.add(<span class="stringliteral">&quot;Deinonychus&quot;</span>);</div>
+<div class="line">    <span class="keyword">auto</span> dinosaurs = array&lt;string&gt; {</div>
+<div class="line">      <span class="stringliteral">&quot;Pachycephalosaurus&quot;</span>,</div>
+<div class="line">      <span class="stringliteral">&quot;Amargasaurus&quot;</span>,</div>
+<div class="line">      <span class="stringliteral">&quot;Tyrannosaurus&quot;</span>,</div>
+<div class="line">      <span class="stringliteral">&quot;Mamenchisaurus&quot;</span>,</div>
+<div class="line">      <span class="stringliteral">&quot;Deinonychus&quot;</span>,</div>
+<div class="line">      <span class="stringliteral">&quot;Edmontosaurus&quot;</span></div>
+<div class="line">    };</div>
 <div class="line">    </div>
 <div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>();</div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> dinosaur : dinosaurs)</div>
@@ -2094,21 +2096,32 @@ template&lt;typename type_t, typename allocator_t = xtd::collections::generic::h
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> dinosaur : dinosaurs)</div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(dinosaur);</div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;\nbinary_search and insert \&quot;Coelophysis\&quot;:&quot;</span>);</div>
-<div class="line">    <span class="keyword">auto</span> <a class="code hl_struct" href="structxtd_1_1index.html">index</a> = dinosaurs.binary_search(<span class="stringliteral">&quot;Coelophysis&quot;</span>);</div>
-<div class="line">    <span class="keywordflow">if</span> (<a class="code hl_struct" href="structxtd_1_1index.html">index</a> &gt; dinosaurs.count()) dinosaurs.insert(~<a class="code hl_struct" href="structxtd_1_1index.html">index</a>, <span class="stringliteral">&quot;Coelophysis&quot;</span>);</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;\nbinary_search for \&quot;Coelophysis\&quot;:&quot;</span>);</div>
+<div class="line">    <span class="keyword">auto</span> <a class="code hl_struct" href="structxtd_1_1index.html">index</a> = <a class="code hl_function" href="classxtd_1_1array_3_4.html#a8bb0505af1b7aa6187ff35c06c8d1f49">array&lt;&gt;::binary_search</a>(dinosaurs, <span class="stringliteral">&quot;Coelophysis&quot;</span>);</div>
+<div class="line">    show_where(dinosaurs, <a class="code hl_struct" href="structxtd_1_1index.html">index</a>);</div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>();</div>
-<div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">string</span> dinosaur : dinosaurs)</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(dinosaur);</div>
-<div class="line">    </div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;\nbinary_search and insert \&quot;Tyrannosaurus\&quot;:&quot;</span>);</div>
-<div class="line">    <a class="code hl_struct" href="structxtd_1_1index.html">index</a> = dinosaurs.binary_search(<span class="stringliteral">&quot;Tyrannosaurus&quot;</span>);</div>
-<div class="line">    <span class="keywordflow">if</span> (<a class="code hl_struct" href="structxtd_1_1index.html">index</a> &gt; dinosaurs.count()) dinosaurs.insert(~<a class="code hl_struct" href="structxtd_1_1index.html">index</a>, <span class="stringliteral">&quot;Tyrannosaurus&quot;</span>);</div>
-<div class="line">    </div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>();</div>
-<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> dinosaur : dinosaurs)</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(dinosaur);</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;\nbinary_search for \&quot;Tyrannosaurus\&quot;:&quot;</span>);</div>
+<div class="line">    <a class="code hl_struct" href="structxtd_1_1index.html">index</a> = <a class="code hl_function" href="classxtd_1_1array_3_4.html#a8bb0505af1b7aa6187ff35c06c8d1f49">array&lt;&gt;::binary_search</a>(dinosaurs, <span class="stringliteral">&quot;Tyrannosaurus&quot;</span>);</div>
+<div class="line">    show_where(dinosaurs, <a class="code hl_struct" href="structxtd_1_1index.html">index</a>);</div>
+<div class="line">  }</div>
+<div class="line">  </div>
+<div class="line">  <span class="keyword">template</span>&lt;<span class="keyword">typename</span> type_t&gt;</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> show_where(<span class="keyword">const</span> array&lt;type_t&gt;&amp; array, usize index) -&gt; <span class="keywordtype">void</span> {</div>
+<div class="line">    <span class="keywordflow">if</span> (index &lt; array.length())</div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot;Found at index {}.&quot;</span>, index);</div>
+<div class="line">    <span class="keywordflow">else</span> {</div>
+<div class="line">      <span class="comment">// If the index is greater or equal then array length, it represents the bitwise complement of the next larger element in the array.</span></div>
+<div class="line">      <span class="comment">//</span></div>
+<div class="line">      index = ~index;</div>
+<div class="line">      </div>
+<div class="line">      console::write(<span class="stringliteral">&quot;Not found. Sorts between: &quot;</span>);</div>
+<div class="line">      </div>
+<div class="line">      <span class="keywordflow">if</span> (index == 0) console::write(<span class="stringliteral">&quot;beginning of array and &quot;</span>);</div>
+<div class="line">      <span class="keywordflow">else</span> console::write(<span class="stringliteral">&quot;{} and &quot;</span>, array[index-1]);</div>
+<div class="line">      </div>
+<div class="line">      <span class="keywordflow">if</span> (index == array.length()) console::write_line(<span class="stringliteral">&quot;end of array.&quot;</span>);</div>
+<div class="line">      <span class="keywordflow">else</span> console::write_line(<span class="stringliteral">&quot;{}.&quot;</span>, array[index]);</div>
+<div class="line">    }</div>
 <div class="line">  }</div>
 <div class="line">};</div>
 <div class="line"> </div>
@@ -2119,33 +2132,26 @@ template&lt;typename type_t, typename allocator_t = xtd::collections::generic::h
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// Pachycephalosaurus</span></div>
 <div class="line"><span class="comment">// Amargasaurus</span></div>
+<div class="line"><span class="comment">// Tyrannosaurus</span></div>
 <div class="line"><span class="comment">// Mamenchisaurus</span></div>
 <div class="line"><span class="comment">// Deinonychus</span></div>
+<div class="line"><span class="comment">// Edmontosaurus</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// sort</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// Amargasaurus</span></div>
 <div class="line"><span class="comment">// Deinonychus</span></div>
-<div class="line"><span class="comment">// Mamenchisaurus</span></div>
-<div class="line"><span class="comment">// Pachycephalosaurus</span></div>
-<div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// binary_search and insert &quot;Coelophysis&quot;:</span></div>
-<div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// Amargasaurus</span></div>
-<div class="line"><span class="comment">// Coelophysis</span></div>
-<div class="line"><span class="comment">// Deinonychus</span></div>
-<div class="line"><span class="comment">// Mamenchisaurus</span></div>
-<div class="line"><span class="comment">// Pachycephalosaurus</span></div>
-<div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// binary_search and insert &quot;Tyrannosaurus&quot;:</span></div>
-<div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// Amargasaurus</span></div>
-<div class="line"><span class="comment">// Coelophysis</span></div>
-<div class="line"><span class="comment">// Deinonychus</span></div>
+<div class="line"><span class="comment">// Edmontosaurus</span></div>
 <div class="line"><span class="comment">// Mamenchisaurus</span></div>
 <div class="line"><span class="comment">// Pachycephalosaurus</span></div>
 <div class="line"><span class="comment">// Tyrannosaurus</span></div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable_html_a93d587f2de509aeaa33aa41fd9942e8e"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a93d587f2de509aeaa33aa41fd9942e8e">xtd::collections::generic::extensions::enumerable&lt; type_t, xtd::collections::generic::ienumerable&lt; type_t &gt; &gt;::list</a></div><div class="ttdeci">typename xtd::linq::enumerable::list&lt; type_t &gt; list</div><div class="ttdef"><b>Definition</b> enumerable.hpp:47</div></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// binary_search for &quot;Coelophysis&quot;:</span></div>
+<div class="line"><span class="comment">// Not found. Sorts between: Amargasaurus and Deinonychus.</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// binary_search for &quot;Tyrannosaurus&quot;:</span></div>
+<div class="line"><span class="comment">// Found at index 5.</span></div>
+<div class="ttc" id="aclassxtd_1_1array_3_4_html_a8bb0505af1b7aa6187ff35c06c8d1f49"><div class="ttname"><a href="classxtd_1_1array_3_4.html#a8bb0505af1b7aa6187ff35c06c8d1f49">xtd::array&lt;&gt;::binary_search</a></div><div class="ttdeci">static auto binary_search(const array&lt; type_t, 1, allocator_t &gt; &amp;array, int32 index, int32 length, const value_t &amp;value) -&gt; xtd::usize</div><div class="ttdoc">Searches a range of elements in a one-dimensional sorted array for a value, using the xtd::icomparabl...</div><div class="ttdef"><b>Definition</b> array_static.hpp:92</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae600c08b996905be13225bba0f253a63"><div class="ttname"><a href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">xtd::console::write_line</a></div><div class="ttdeci">static auto write_line() -&gt; void</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
 <div class="ttc" id="agroup__keywords_html_gaeb9462ec721c9718cf689e93bf11bf56"><div class="ttname"><a href="group__keywords.html#gaeb9462ec721c9718cf689e93bf11bf56">startup_</a></div><div class="ttdeci">#define startup_(...)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:152</div></div>
 <div class="ttc" id="astructxtd_1_1index_html"><div class="ttname"><a href="structxtd_1_1index.html">xtd::index</a></div><div class="ttdoc">Represents a type that can be used to index a collection either from the beginning or the end.</div><div class="ttdef"><b>Definition</b> index.hpp:38</div></div>
