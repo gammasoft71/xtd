@@ -4,7 +4,7 @@ Shows how to use [xtd::basic_array::sort](https://gammasoft71.github.io/xtd/refe
 
 ## Sources
 
-* [src/array_sort.cpp](src/generic_list_sort.cpp)
+* [src/array_sort.cpp](src/array_sort.cpp)
 * [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
