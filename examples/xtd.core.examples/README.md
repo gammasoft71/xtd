@@ -21,6 +21,7 @@
 
 * [array](array/array/README.md) shows how to use how to use [xtd::array](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1array.html) class.
 * [array_as_read_only](array/array_as_read_only/README.md) shows how to use [xtd::array::as_read_only](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1array_3_4.html#a7edca610710ffecef0f2f2fa1db6f2b3) method.
+* [array_binary_search](array/array_binary_search/README.md) shows how to use [xtd::array<>::binary_search](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1array_3_4.html#af7d6d835b28dd7be7f1c68d852b502ce) method.
 * [array_sort](array/array_sort/README.md) shows how to use [xtd:: array::sort](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1basic__array.html#aca5c8811956342206d87b1fdd0340895) method.
 * [array_sort2](array/array_sort2/README.md) shows how to use [xtd:: array::sort](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1basic__array.html#a654c55c07758408d7bbea9038d22fd9c) method.
 * [array_sort3](array/array_sort3/README.md) shows how to use [xtd:: array::sort](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1basic__array.html#aba8adae68fb3b6c3b8986d83497189b9) method.
