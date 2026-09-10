@@ -417,17 +417,6 @@ namespace xtd {
           [[nodiscard]] auto select(auto&& selector) const {
             return xtd::linq::enumerable::select(self(), selector);
           }
-          /// @brief Projects each element of a sequence into a new form by incorporating the element's index.
-          /// @tparam result_t The type of the resulting value.
-          /// @param selector A transform function to apply to each source element; the second parameter of the function represents the index of the source element.
-          /// @return An xtd::collections::generic::ienumerable <type_t> whose elements are the result of invoking the transform function on each element of source.
-          /// @par Examples
-          /// The following code example demonstrates how to use xtd::linq::enumerable::select <value_t, result_t>(const ienumerable <value_t>&, const std::function <result_t(const value_t&, xtd::usize)>&) to project over a sequence of values and use the index of each element.
-          /// @include enumerable_select.cpp
-          template<typename result_t>
-          [[nodiscard]] auto select(auto&& selector) const {
-            return xtd::linq::enumerable::select<result_t>(self(), selector);
-          }
 
           /// @brief Shuffles the order of the elements of a sequence.
           /// @return A sequence whose elements correspond to those of the input sequence in randomized order.
