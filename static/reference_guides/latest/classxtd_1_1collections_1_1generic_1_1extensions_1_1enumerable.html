@@ -269,9 +269,6 @@ requires <a class="el" href="structxtd_1_1numeric.html">xtd::numeric</a>&lt;resu
 <tr class="memdesc:a7c94332452cf0e8abd99d7ab88d8b18f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts the elements of a sequence in ascending order according to a key.  <br /></td></tr>
 <tr class="memitem:a77f28b05a9f794ee4885ddb682c1498d" id="r_a77f28b05a9f794ee4885ddb682c1498d"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a77f28b05a9f794ee4885ddb682c1498d">select</a> (auto &amp;&amp;selector) const</td></tr>
 <tr class="memdesc:a77f28b05a9f794ee4885ddb682c1498d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Projects each element of a sequence into a new form.  <br /></td></tr>
-<tr class="memitem:ab2e62fc5c95202790e98b6e2fa381c42" id="r_ab2e62fc5c95202790e98b6e2fa381c42"><td class="memTemplParams" colspan="2">template&lt;typename result_t&gt; </td></tr>
-<tr class="memitem:ab2e62fc5c95202790e98b6e2fa381c42 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ab2e62fc5c95202790e98b6e2fa381c42">select</a> (auto &amp;&amp;selector) const</td></tr>
-<tr class="memdesc:ab2e62fc5c95202790e98b6e2fa381c42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Projects each element of a sequence into a new form by incorporating the element's index.  <br /></td></tr>
 <tr class="memitem:ac39730381e2aa9f7929923c7a3ce3e09" id="r_ac39730381e2aa9f7929923c7a3ce3e09"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ac39730381e2aa9f7929923c7a3ce3e09">shuffle</a> () const -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; value_t &gt;</td></tr>
 <tr class="memdesc:ac39730381e2aa9f7929923c7a3ce3e09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shuffles the order of the elements of a sequence.  <br /></td></tr>
 <tr class="memitem:aa328bbeb2e5d3a37bf51b2156942130c" id="r_aa328bbeb2e5d3a37bf51b2156942130c"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aa328bbeb2e5d3a37bf51b2156942130c">skip</a> (<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> count) -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; value_t &gt;</td></tr>
@@ -2260,7 +2257,7 @@ template&lt;typename key_t&gt; </div>
 </div>
 </div>
 <a id="a77f28b05a9f794ee4885ddb682c1498d" name="a77f28b05a9f794ee4885ddb682c1498d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a77f28b05a9f794ee4885ddb682c1498d">&#9670;&#160;</a></span>select() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a77f28b05a9f794ee4885ddb682c1498d">&#9670;&#160;</a></span>select()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2292,7 +2289,7 @@ template&lt;typename value_t, typename enumerable_t&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt; whose elements are the result of invoking the transform function on each element of source. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to use <a class="el" href="classxtd_1_1linq_1_1enumerable.html#a54478908a846a024a8efff362627e7d4" title="Projects each element of a sequence into a new form.">xtd::linq::enumerable::select</a> &lt;value_t, result_t&gt;(const ienumerable &lt;value_t&gt;&amp;, const std::function &lt;result_t(const value_t&amp;)&gt;&amp;) to project over a sequence of values. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to use <a class="el" href="classxtd_1_1linq_1_1enumerable.html#ae05a8edde07a1de24cbed3833ae804f7" title="Projects each element of a sequence into a new form.">xtd::linq::enumerable::select</a> &lt;value_t, result_t&gt;(const ienumerable &lt;value_t&gt;&amp;, const std::function &lt;result_t(const value_t&amp;)&gt;&amp;) to project over a sequence of values. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> fruits = <a class="code hl_class" href="classxtd_1_1array.html">array&lt;string&gt;</a> {<span class="stringliteral">&quot;apple&quot;</span>, <span class="stringliteral">&quot;banana&quot;</span>, <span class="stringliteral">&quot;mango&quot;</span>, <span class="stringliteral">&quot;orange&quot;</span>, <span class="stringliteral">&quot;passionfruit&quot;</span>, <span class="stringliteral">&quot;grape&quot;</span>};</div>
@@ -2314,72 +2311,6 @@ template&lt;typename value_t, typename enumerable_t&gt; </div>
 <div class="line"><span class="comment">// { index = 4, str = pass }</span></div>
 <div class="line"><span class="comment">// { index = 5, str = grape }</span></div>
 <div class="ttc" id="astructxtd_1_1index_html"><div class="ttname"><a href="structxtd_1_1index.html">xtd::index</a></div><div class="ttdoc">Represents a type that can be used to index a collection either from the beginning or the end.</div><div class="ttdef"><b>Definition</b> index.hpp:38</div></div>
-</div><!-- fragment --> </dd></dl>
-
-</div>
-</div>
-<a id="ab2e62fc5c95202790e98b6e2fa381c42" name="ab2e62fc5c95202790e98b6e2fa381c42"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab2e62fc5c95202790e98b6e2fa381c42">&#9670;&#160;</a></span>select() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename value_t, typename enumerable_t&gt; </div>
-<div class="memtemplate">
-template&lt;typename result_t&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html">xtd::collections::generic::extensions::enumerable</a>&lt; value_t, enumerable_t &gt;::select </td>
-          <td>(</td>
-          <td class="paramtype">auto &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>selector</em></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Projects each element of a sequence into a new form by incorporating the element's index. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">result_t</td><td>The type of the resulting value. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">selector</td><td>A transform function to apply to each source element; the second parameter of the function represents the index of the source element. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>An <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt; whose elements are the result of invoking the transform function on each element of source. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to use <a class="el" href="classxtd_1_1linq_1_1enumerable.html#a54478908a846a024a8efff362627e7d4" title="Projects each element of a sequence into a new form.">xtd::linq::enumerable::select</a> &lt;value_t, result_t&gt;(const ienumerable &lt;value_t&gt;&amp;, const std::function &lt;result_t(const value_t&amp;, xtd::usize)&gt;&amp;) to project over a sequence of values and use the index of each element. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keyword">auto</span> fruits = <a class="code hl_class" href="classxtd_1_1array.html">array&lt;string&gt;</a> {<span class="stringliteral">&quot;apple&quot;</span>, <span class="stringliteral">&quot;banana&quot;</span>, <span class="stringliteral">&quot;mango&quot;</span>, <span class="stringliteral">&quot;orange&quot;</span>, <span class="stringliteral">&quot;passionfruit&quot;</span>, <span class="stringliteral">&quot;grape&quot;</span>};</div>
-<div class="line">  </div>
-<div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span>&amp; <a class="code hl_enumvalue" href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba1b1cc7f086b3f074da452bc3129981eb">query</a> = fruits.select&lt;std::tuple&lt;usize, string&gt;&gt;([](<span class="keyword">auto</span>&amp;&amp; fruit, <span class="keyword">auto</span> <a class="code hl_struct" href="structxtd_1_1index.html">index</a>) {</div>
-<div class="line">    <span class="keywordflow">return</span> std::make_tuple(<a class="code hl_struct" href="structxtd_1_1index.html">index</a>, fruit.substring(0, <a class="code hl_struct" href="structxtd_1_1index.html">index</a>));</div>
-<div class="line">  });</div>
-<div class="line"> </div>
-<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; [<a class="code hl_struct" href="structxtd_1_1index.html">index</a>, str] : query)</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(<span class="stringliteral">&quot;{{ index = {}, str = {} }}&quot;</span>, <a class="code hl_struct" href="structxtd_1_1index.html">index</a>, str);</div>
-<div class="line">}</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// This code produces the following output :</span></div>
-<div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// { index = 0, str =  }</span></div>
-<div class="line"><span class="comment">// { index = 1, str = b }</span></div>
-<div class="line"><span class="comment">// { index = 2, str = ma }</span></div>
-<div class="line"><span class="comment">// { index = 3, str = ora }</span></div>
-<div class="line"><span class="comment">// { index = 4, str = pass }</span></div>
-<div class="line"><span class="comment">// { index = 5, str = grape }</span></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
