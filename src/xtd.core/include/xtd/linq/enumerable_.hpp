@@ -776,7 +776,7 @@ namespace xtd {
       /// The following code example demonstrates how to use xtd::linq::enumerable::select <source_t, result_t>(const ienumerable <source_t>&, const std::function <result_t(const source_t&)>&) to project over a sequence of values.
       /// @include enumerable_select.cpp
       template<xtd::iterable source_t>
-      [[nodiscard]] static auto select(const source_t& source, auto selector) -> xtd::collections::generic::enumerable_generator<decltype(selector(iterable_value_type<source_t> {}))>;
+      [[nodiscard]] static auto select(source_t&& source, auto&& selector) -> xtd::collections::generic::enumerable_generator<decltype(selector(xtd::iterable_value_type<source_t> {}))>;
       /// @brief Projects each element of a sequence into a new form by incorporating the element's index.
       /// @tparam result_t The type of the resulting value.
       /// @tparam source_t The type of the elements of source.
@@ -787,7 +787,7 @@ namespace xtd {
       /// The following code example demonstrates how to use xtd::linq::enumerable::select <source_t, result_t>(const ienumerable <source_t>&, const std::function <result_t(const source_t&, xtd::usize)>&) to project over a sequence of values and use the index of each element.
       /// @include enumerable_select.cpp
       template<xtd::iterable source_t>
-      [[nodiscard]] static auto select(const source_t& source, auto selector) -> xtd::collections::generic::enumerable_generator<decltype(selector(iterable_value_type<source_t> {}, xtd::usize {}))>;
+      [[nodiscard]] static auto select(source_t&& source, auto&& selector) -> xtd::collections::generic::enumerable_generator<decltype(selector(xtd::iterable_value_type<source_t> {}, xtd::usize {}))>;
 
       /// @brief Shuffles the order of the elements of a sequence.
       /// @param source A sequence of values to shuffle.
