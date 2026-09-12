@@ -3,7 +3,7 @@
 auto main() -> int {
   auto fruits = array<string> {"apple", "passionfruit", "banana", "mango", "orange", "blueberry", "grape", "strawberry"};
   
-  auto lengths = fruits.select<usize>(_*method(&string::length)).to_list();
+  auto lengths = fruits.select(_*method(&string::length)).to_list();
   
   for (auto length : lengths)
     console::write_line(length);
