@@ -596,21 +596,23 @@ auto xtd::linq::enumerable::range(integer_t start, integer_t count, integer_t st
 }
 
 template<xtd::iterable source_t>
-auto xtd::linq::enumerable::select(source_t&& source, auto&& selector) -> xtd::collections::generic::enumerable_generator<decltype(selector(xtd::iterable_value_type<source_t> {}))> {
+auto xtd::linq::enumerable::select(source_t&& source, auto&& selector) -> xtd::collections::generic::enumerable_generator<xtd::raw_type<decltype(selector(xtd::iterable_value_type<source_t> {}))>> {
 //auto source_holder = enumerable_holder<source_t> {std::forward<source_t>(source)};
   //for (const auto& item : source_holder.get())
   for (const auto& item : source)
     co_yield selector(item);
 }
 
+/*
+// WARNING : Comment select with index because is ambigus with xtd::expression.
 template<xtd::iterable source_t>
-auto xtd::linq::enumerable::select(source_t&& source, auto&& selector) -> xtd::collections::generic::enumerable_generator<decltype(selector(xtd::iterable_value_type<source_t> {}, xtd::usize {}))> {
+auto xtd::linq::enumerable::select(source_t&& source, auto&& selector) -> xtd::collections::generic::enumerable_generator<xtd::raw_type<decltype(selector(xtd::iterable_value_type<source_t> {}, xtd::usize {}))>> {
   auto index = xtd::usize {};
   //auto source_holder = enumerable_holder<source_t> {std::forward<source_t>(source)};
   //for (const auto& item : source_holder.get())
   for (const auto& item : source)
     co_yield selector(item, index++);
-}
+}*/
 
 template<xtd::iterable source_t>
 auto xtd::linq::enumerable::skip(source_t&& source, xtd::usize count) -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>> {

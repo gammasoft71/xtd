@@ -370,7 +370,7 @@ namespace xtd {
       /// @param first The first sequence to concatenate.
       /// @param second The sequence to concatenate to the first sequence.
       /// @return An xtd::collections::generic::ienumerable <type_t> that contains the concatenated elements of the two input sequences.
-      template<xtd::iterable first_t,xtd::iterable second_t>
+      template<xtd::iterable first_t, xtd::iterable second_t>
       [[nodiscard]] static auto concat(first_t&& first, second_t&& second) noexcept -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<first_t>>;
       
       /// @brief Determines whether a sequence contains a specified element by using the default equality comparer.
@@ -776,7 +776,8 @@ namespace xtd {
       /// The following code example demonstrates how to use xtd::linq::enumerable::select <source_t, result_t>(const ienumerable <source_t>&, const std::function <result_t(const source_t&)>&) to project over a sequence of values.
       /// @include enumerable_select.cpp
       template<xtd::iterable source_t>
-      [[nodiscard]] static auto select(source_t&& source, auto&& selector) -> xtd::collections::generic::enumerable_generator<decltype(selector(xtd::iterable_value_type<source_t> {}))>;
+      [[nodiscard]] static auto select(source_t&& source, auto&& selector) -> xtd::collections::generic::enumerable_generator<xtd::raw_type<decltype(selector(xtd::iterable_value_type<source_t> {}))>>;
+      /*
       /// @brief Projects each element of a sequence into a new form by incorporating the element's index.
       /// @tparam result_t The type of the resulting value.
       /// @tparam source_t The type of the elements of source.
@@ -787,7 +788,8 @@ namespace xtd {
       /// The following code example demonstrates how to use xtd::linq::enumerable::select <source_t, result_t>(const ienumerable <source_t>&, const std::function <result_t(const source_t&, xtd::usize)>&) to project over a sequence of values and use the index of each element.
       /// @include enumerable_select.cpp
       template<xtd::iterable source_t>
-      [[nodiscard]] static auto select(source_t&& source, auto&& selector) -> xtd::collections::generic::enumerable_generator<decltype(selector(xtd::iterable_value_type<source_t> {}, xtd::usize {}))>;
+      [[nodiscard]] static auto select(source_t&& source, auto&& selector) -> xtd::collections::generic::enumerable_generator<xtd::raw_type<decltype(selector(xtd::iterable_value_type<source_t> {}, xtd::usize {}))>>;
+       */
 
       /// @brief Shuffles the order of the elements of a sequence.
       /// @param source A sequence of values to shuffle.
