@@ -67,7 +67,7 @@ auto main() -> int {
   const ienumerable<string>& student_query2 =
     from(students)
     .where(_*member(&student::id) > 111)
-    .select<string>(_*member(&student::last));
+    .select(_*member(&student::last));
   
   console::write_line();
   console::write_line("student_query2: select range_variable.property");
@@ -78,7 +78,7 @@ auto main() -> int {
   const ienumerable<contact_info>& student_query3 =
     from(students)
     .where(_*member(&student::id) > 111)
-    .select<contact_info>([&](auto&& student) {return student.get_contact_info(contact_list, student.id);});
+    .select([&](auto&& student) {return student.get_contact_info(contact_list, student.id);});
   
   console::write_line();
   console::write_line("student_query3: select range_variable.method");
@@ -89,7 +89,7 @@ auto main() -> int {
   const ienumerable<int>& student_query4 =
     from(students)
     .where(_*member(&student::id) > 111)
-    .select<int>([](auto&& student) {return student.scores[0];});
+    .select([](auto&& student) {return student.scores[0];});
   
   console::write_line();
   console::write_line("student_query4: select range_variable[index]");
@@ -100,7 +100,7 @@ auto main() -> int {
   const ienumerable<double>& student_query5 =
     from(students)
     .where(_*member(&student::id) > 111)
-    .select<double>([](auto&& student) {return student.scores[0] * 1.1;});
+    .select([](auto&& student) {return student.scores[0] * 1.1;});
   
   console::write_line();
   console::write_line("student_query5: select expression");
@@ -111,7 +111,7 @@ auto main() -> int {
   const ienumerable<double>& student_query6 =
     from(students)
     .where(_*member(&student::id) > 111)
-    .select<double>([](auto&& student) {return student.scores.average();});
+    .select([](auto&& student) {return student.scores.average();});
   
   console::write_line();
   console::write_line("student_query6: select expression2");
@@ -122,7 +122,7 @@ auto main() -> int {
   const auto& student_query7 =
     from(students)
     .where(_*member(&student::id) > 111)
-    .select<std::tuple<string, string>>([](auto&& student) {return std::make_tuple(student.first, student.last);});
+    .select([](auto&& student) {return std::make_tuple(student.first, student.last);});
   
   console::write_line();
   console::write_line("student_query7: select tuple type");
@@ -135,7 +135,7 @@ auto main() -> int {
   const auto& student_query8 =
     from(students)
     .where(_*member(&student::id) > 111)
-    .select<score_info>([](auto&& student) {return score_info {.average = student.scores.average(), .id = student.id};});
+    .select([](auto&& student) {return score_info {.average = student.scores.average(), .id = student.id};});
   
   console::write_line();
   console::write_line("student_query8: select named type");
