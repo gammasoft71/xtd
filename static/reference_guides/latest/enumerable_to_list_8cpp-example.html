@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> fruits = array&lt;string&gt; {<span class="stringliteral">&quot;apple&quot;</span>, <span class="stringliteral">&quot;passionfruit&quot;</span>, <span class="stringliteral">&quot;banana&quot;</span>, <span class="stringliteral">&quot;mango&quot;</span>, <span class="stringliteral">&quot;orange&quot;</span>, <span class="stringliteral">&quot;blueberry&quot;</span>, <span class="stringliteral">&quot;grape&quot;</span>, <span class="stringliteral">&quot;strawberry&quot;</span>};</div>
 <div class="line">  </div>
-<div class="line">  <span class="keyword">auto</span> lengths = fruits.select&lt;usize&gt;(_*method(&amp;string::length)).to_list();</div>
+<div class="line">  <span class="keyword">auto</span> lengths = fruits.select(_*method(&amp;string::length)).to_list();</div>
 <div class="line">  </div>
 <div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> length : lengths)</div>
 <div class="line">    console::write_line(length);</div>

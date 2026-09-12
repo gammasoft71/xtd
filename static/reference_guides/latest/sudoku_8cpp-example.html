@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="comment">//auto sudoku1 = sudoku::sudoku::parse(file::read_all_text(&quot;data.txt&quot;));</span></div>
 <div class="line">  <span class="keyword">auto</span> sudoku1 = sudoku::sudoku::make_puzzle(sudoku::sudoku::difficulty::easy);</div>
-<div class="line">  file::write_all_text(<span class="stringliteral">&quot;data.txt&quot;</span>, string::join(<span class="stringliteral">&quot;\n&quot;</span>, sudoku1.to_array().chunk(sudoku1.grid().get_length(0)).select&lt;<span class="keywordtype">string</span>&gt;([](<span class="keyword">auto</span> c){return string::join(<span class="stringliteral">&quot; &quot;</span>, c);})));</div>
+<div class="line">  file::write_all_text(<span class="stringliteral">&quot;data.txt&quot;</span>, string::join(<span class="stringliteral">&quot;\n&quot;</span>, sudoku1.to_array().chunk(sudoku1.grid().get_length(0)).select([](<span class="keyword">auto</span> c){return string::join(<span class="stringliteral">&quot; &quot;</span>, c);})));</div>
 <div class="line">  </div>
 <div class="line">  println(<span class="keywordtype">string</span>(<span class="charliteral">&#39;_&#39;</span>, 25));</div>
 <div class="line">  println(<span class="stringliteral">&quot;{,25}&quot;</span>, <span class="stringliteral">&quot;Puzzle&quot;</span>);</div>
