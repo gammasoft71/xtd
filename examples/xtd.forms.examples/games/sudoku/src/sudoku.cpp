@@ -12,7 +12,7 @@ auto print_grid(const sudoku::sudoku::grid_type& grid) -> void {
 auto main() -> int {
   //auto sudoku1 = sudoku::sudoku::parse(file::read_all_text("data.txt"));
   auto sudoku1 = sudoku::sudoku::make_puzzle(sudoku::sudoku::difficulty::easy);
-  file::write_all_text("data.txt", string::join("\n", sudoku1.to_array().chunk(sudoku1.grid().get_length(0)).select<string>([](auto c){return string::join(" ", c);})));
+  file::write_all_text("data.txt", string::join("\n", sudoku1.to_array().chunk(sudoku1.grid().get_length(0)).select([](auto c){return string::join(" ", c);})));
   
   println(string('_', 25));
   println("{,25}", "Puzzle");
