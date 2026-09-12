@@ -25,7 +25,7 @@ auto main() -> int {
   auto cats = get_cats();
   auto dogs = get_dogs();
   
-  auto query = cats.select<string>(_*member(&pet::name)).concat(dogs.select<string>(_*member(&pet::name)));
+  auto query = cats.select(_*member(&pet::name)).concat(dogs.select(_*member(&pet::name)));
   
   for (const auto& name : query)
     console::write_line(name);
