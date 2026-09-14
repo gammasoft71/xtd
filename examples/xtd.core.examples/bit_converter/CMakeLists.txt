@@ -12,4 +12,5 @@ add_projects(
   bit_converter_to_string
   bit_converter_to_string2
   bit_converter_to_string3
+  bit_converter_to_string4
 )

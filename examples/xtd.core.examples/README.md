@@ -38,6 +38,7 @@
 * [bit_converter_to_string](bit_converter/bit_converter_to_string/README.md) shows how to use [xtd::bit_converter::to_string](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1bit__converter.html#a40a3bfbf49e3e964a052e8ccf99e9927) method.
 * [bit_converter_to_string2](bit_converter/bit_converter_to_string2/README.md) shows how to use [xtd::bit_converter::to_string](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1bit__converter.html#af32f69edc1f217df4307f5e0c6d16f78) method.
 * [bit_converter_to_string3](bit_converter/bit_converter_to_string3/README.md) shows how to use [xtd::bit_converter::to_string](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1bit__converter.html#a8c0029fcc78d5bba5c623ccf9786d21a) and [xtd::bit_converter::to_string](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1bit__converter.html#a260721d1d09a13be378d2a2667f85d39) methods.
+* [bit_converter_to_string4](bit_converter/bit_converter_to_string4/README.md) shows how to use [xtd::bit_converter::to_string](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1bit__converter.html#a6baa470168d21a5668ff105ade7d482f) and [xtd::bit_converter::to_string](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1bit__converter.html#aa38d54dbc0c793f7ad3d8f536c1a27a6) methods.
 
 ## [Boxing and unboxing](boxing/README.md)
 
