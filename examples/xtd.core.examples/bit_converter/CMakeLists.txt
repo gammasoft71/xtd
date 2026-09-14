@@ -11,4 +11,5 @@ add_projects(
   bit_converter_round_trips
   bit_converter_to_string
   bit_converter_to_string2
+  bit_converter_to_string3
 )
