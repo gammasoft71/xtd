@@ -449,7 +449,7 @@ namespace xtd {
     /// @remarks All the elements of value are converted. The order of hexadecimal strings returned by the to_string method depends on whether the computer architecture is little-endian or big-endian.
     /// @par Examples
     /// The following code example converts xtd::byte xtd::arrays to xtd::string objects with the to_string method.
-    /// @include bit_converterto_string.cpp
+    /// @include bit_converter_to_string.cpp
     [[nodiscard]] static auto to_string(const xtd::array<xtd::byte>& value) -> xtd::string;
     /// @brief Converts the numeric value of each element of a specified xtd::array of bytes to its equivalent hexadecimal xtd::string representation.
     /// @param value An xtd::read_only_span of bytes.
@@ -458,7 +458,7 @@ namespace xtd {
     /// @remarks All the elements of value are converted. The order of hexadecimal strings returned by the to_string method depends on whether the computer architecture is little-endian or big-endian.
     /// @par Examples
     /// The following code example converts xtd::byte xtd::arrays to xtd::string objects with the to_string method.
-    /// @include bit_converterto_string.cpp
+    /// @include bit_converter_to_string2.cpp
     [[nodiscard]] static auto to_string(const read_only_span<xtd::byte>& value) -> xtd::string;
     /// @brief Converts the numeric value of each element of a specified sub xtd::array of bytes to its equivalent hexadecimal xtd::string representation.
     /// @param value An xtd::array of bytes.
@@ -469,7 +469,7 @@ namespace xtd {
     /// @remarks The elements from xtd::array position start_index to the end of the xtd::array are converted. The order of hexadecimal strings returned by the to_string method depends on whether the computer architecture is little-endian or big-endian.
     /// @par Examples
     /// The following code example converts xtd::byte xtd::arrays to xtd::string objects with the to_string method.
-    /// @include bit_converterto_string2.cpp
+    /// @include bit_converter_to_string3.cpp
     [[nodiscard]] static auto to_string(const xtd::array<xtd::byte>& value, xtd::usize start_index) -> xtd::string;
     /// @brief Converts the numeric value of each element of a specified sub xtd::array of bytes to its equivalent hexadecimal xtd::string representation.
     /// @param value An xtd::read_only_span of bytes.
@@ -480,7 +480,7 @@ namespace xtd {
     /// @remarks The elements from xtd::array position start_index to the end of the xtd::array are converted. The order of hexadecimal strings returned by the to_string method depends on whether the computer architecture is little-endian or big-endian.
     /// @par Examples
     /// The following code example converts xtd::byte xtd::arrays to xtd::string objects with the to_string method.
-    /// @include bit_converterto_string2.cpp
+    /// @include bit_converter_to_string4.cpp
     [[nodiscard]] static auto to_string(const read_only_span<xtd::byte>& value, xtd::usize start_index) -> xtd::string;
     /// @brief Converts the numeric value of each element of a specified sub xtd::array of bytes to its equivalent hexadecimal xtd::string representation.
     /// @param value An xtd::array of bytes.
@@ -494,7 +494,7 @@ namespace xtd {
     /// @remarks The order of hexadecimal strings returned by the to_string method depends on whether the computer architecture is little-endian or big-endian.
     /// @par Examples
     /// The following code example converts xtd::byte xtd::arrays to xtd::string objects with the to_string method.
-    /// @include bit_converterto_string3.cpp
+    /// @include bit_converter_to_string5.cpp
     [[nodiscard]] static auto to_string(const xtd::array<xtd::byte>& value, xtd::usize start_index, xtd::usize length) -> xtd::string;
     /// @brief Converts the numeric value of each element of a specified sub xtd::array of bytes to its equivalent hexadecimal xtd::string representation.
     /// @param value An xtd::read_only_span of bytes.
@@ -508,7 +508,7 @@ namespace xtd {
     /// @remarks The order of hexadecimal strings returned by the to_string method depends on whether the computer architecture is little-endian or big-endian.
     /// @par Examples
     /// The following code example converts xtd::byte xtd::arrays to xtd::string objects with the to_string method.
-    /// @include bit_converterto_string3.cpp
+    /// @include bit_converter_to_string6.cpp
     [[nodiscard]] static auto to_string(const read_only_span<xtd::byte>& value, xtd::usize start_index, xtd::usize length) -> xtd::string;
     /// @}
   };

@@ -12,7 +12,8 @@ using namespace xtd::native;
 string __xtd_abi_demangle(const string& name) {
   auto status = 0;
   auto demangled_name = __cxa_demangle(name.c_str(), nullptr, 0, &status);
-  auto result = xtd::native::macos::strings::replace(status == 0 && demangled_name ? demangled_name : name, "std::__1::", "std::");
+  if (status || !demangled_name)  return name;
+  auto result = xtd::native::macos::strings::replace(demangled_name, "__1::", "");
   free(demangled_name);
   return result;
 }
