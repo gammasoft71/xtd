@@ -428,7 +428,7 @@ namespace xtd {
           /// @brief Bypasses a specified number of elements in a sequence and then returns the remaining elements.
           /// @param count The number of elements to skip before returning the remaining elements.
           /// @return A sequence that contains the elements that occur after the specified index in the input sequence.
-          [[nodiscard]] auto skip(xtd::usize count) -> xtd::collections::generic::enumerable_generator<value_t> {
+          [[nodiscard]] auto skip(xtd::usize count) const -> xtd::collections::generic::enumerable_generator<value_t> {
             return xtd::linq::enumerable::skip(self(), count);
           }
           
@@ -438,7 +438,7 @@ namespace xtd {
           /// @par Examples
           /// The following code example demonstrates how to use xtd::linq::enumerable::skip_while to skip elements of an array as long as a condition is true.
           /// @include enumerable_skip_while.cpp
-          [[nodiscard]] auto skip_while(auto&& predicate) -> xtd::collections::generic::enumerable_generator<value_t> {
+          [[nodiscard]] auto skip_while(auto&& predicate) const -> xtd::collections::generic::enumerable_generator<value_t> {
             return xtd::linq::enumerable::skip_while(self(), predicate);
           }
           
@@ -446,14 +446,14 @@ namespace xtd {
           /// @param source A sequence of values to return elements from.
           /// @param count The number of elements to return.
           /// @return A sequence that contains the specified number of elements from the start of the input sequence.
-          [[nodiscard]] auto take(xtd::usize count) -> xtd::collections::generic::enumerable_generator<value_t> {
+          [[nodiscard]] auto take(xtd::usize count) const -> xtd::collections::generic::enumerable_generator<value_t> {
             return xtd::linq::enumerable::take(self(), count);
           }
           /// @brief Returns a specified number of contiguous elements from the start of a sequence.
           /// @param source A sequence of values to return elements from.
           /// @param range The range of elements to return.
           /// @return A sequence that contains the specified number of elements from the start of the input sequence.
-          [[nodiscard]] auto take(const xtd::range& range) -> xtd::collections::generic::enumerable_generator<value_t> {
+          [[nodiscard]] auto take(const xtd::range& range) const -> xtd::collections::generic::enumerable_generator<value_t> {
             return xtd::linq::enumerable::take(self(), range);
           }
           
@@ -463,7 +463,7 @@ namespace xtd {
           /// @par Examples
           /// The following code example demonstrates how to use xtd::linq::enumerable::take_while to return elements from the start of a sequence as long as a condition is true.
           /// @include enumerable_take_while.cpp
-          [[nodiscard]] auto take_while(auto&& predicate) -> xtd::collections::generic::enumerable_generator<value_t> {
+          [[nodiscard]] auto take_while(auto&& predicate) const -> xtd::collections::generic::enumerable_generator<value_t> {
             return xtd::linq::enumerable::take_while(self(), predicate);
           }
           
