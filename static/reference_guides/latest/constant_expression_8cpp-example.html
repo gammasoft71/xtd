@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 		<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-		<title>xtd: add_expression.cpp</title>
+		<title>xtd: constant_expression.cpp</title>
     <link href="favicon.png" rel="shortcut icon" type="image/png"/>
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
@@ -103,33 +103,38 @@ document.addEventListener('DOMContentLoaded', () => {
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">add_expression.cpp</div></div>
+  <div class="headertitle"><div class="title">constant_expression.cpp</div></div>
 </div><!--header-->
 <div class="contents">
-<p>Shows how to use <a class="el" href="structxtd_1_1expressions_1_1expression.html#a3db1b12325af413591046bd39d77b807" title="Add the specified left and right operands.">xtd::expressions::expression::add</a> expression.</p>
+<p>Shows how to use <a class="el" href="structxtd_1_1expressions_1_1expression.html#a3962a43a6b277819f145124edf446c0a" title="Gets the constant value.">xtd::expressions::expression::constant</a> expression.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="comment">// auto expr1 = [](auto&amp;&amp; _) {return _ + 10;};</span></div>
-<div class="line">  <span class="keyword">auto</span> expr1 = _ + 10;</div>
-<div class="line">  println(<span class="stringliteral">&quot;expr1 = {}&quot;</span>, expr1(40));</div>
-<div class="line">  <span class="keyword">auto</span> expr2 = expression::add(_, 10);</div>
-<div class="line">  println(<span class="stringliteral">&quot;expr2 = {}&quot;</span>, expr2(40));</div>
+<div class="line">  <span class="comment">// auto constant1 = [] {return 10;};</span></div>
+<div class="line">  <span class="keyword">auto</span> constant1 =  constant&lt;10&gt; {};</div>
+<div class="line">  println(<span class="stringliteral">&quot;constant1 = {}&quot;</span>, constant1());</div>
+<div class="line">  <span class="keyword">auto</span> constant2 =  expression::constant&lt;10&gt;();</div>
+<div class="line">  println(<span class="stringliteral">&quot;constant2 = {}&quot;</span>, constant2());</div>
+<div class="line">  <span class="keyword">constexpr</span> <span class="keyword">auto</span> value = 30;</div>
+<div class="line">  <span class="comment">//auto constant3 = [value] {return value;};</span></div>
+<div class="line">  <span class="keyword">auto</span> constant3 =  constant&lt;value&gt; {};</div>
+<div class="line">  println(<span class="stringliteral">&quot;constant3 = {}&quot;</span>, constant3());</div>
+<div class="line">  <span class="keyword">auto</span> constant4 =  expression::constant&lt;value&gt;();</div>
+<div class="line">  println(<span class="stringliteral">&quot;constant4 = {}&quot;</span>, constant4());</div>
 <div class="line">  println();</div>
-<div class="line">  <span class="comment">// auto expr3 = [](auto&amp;&amp; _1, auto&amp;&amp; _2) {return _1 + _2;};</span></div>
-<div class="line">  <span class="keyword">auto</span> expr3 = _1 + _2;</div>
-<div class="line">  println(<span class="stringliteral">&quot;expr3 = {}&quot;</span>, expr3(40, 20));</div>
-<div class="line">  <span class="keyword">auto</span> expr4 = expression::add(_1, _2);</div>
-<div class="line">  println(<span class="stringliteral">&quot;expr4 = {}&quot;</span>, expr4(40, 20));</div>
+<div class="line">  <span class="comment">//auto expr1 = [value] {return 20 + value;};</span></div>
+<div class="line">  <span class="keyword">auto</span> expr1 = constant&lt;20&gt; {} + expression::constant&lt;value&gt;();</div>
+<div class="line">  println(<span class="stringliteral">&quot;expr1 = {}&quot;</span>, expr1());</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// expr1 = 50</span></div>
-<div class="line"><span class="comment">// expr2 = 50</span></div>
+<div class="line"><span class="comment">// constant1 = 10</span></div>
+<div class="line"><span class="comment">// constant2 = 10</span></div>
+<div class="line"><span class="comment">// constant3 = 30</span></div>
+<div class="line"><span class="comment">// constant4 = 30</span></div>
 <div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// expr3 = 60</span></div>
-<div class="line"><span class="comment">// expr4 = 60</span></div>
+<div class="line"><span class="comment">// expr1 = 50</span></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->

@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 		<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-		<title>xtd: division_expression.cpp</title>
+		<title>xtd: divide_expression.cpp</title>
     <link href="favicon.png" rel="shortcut icon" type="image/png"/>
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
@@ -103,11 +103,34 @@ document.addEventListener('DOMContentLoaded', () => {
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">division_expression.cpp</div></div>
+  <div class="headertitle"><div class="title">divide_expression.cpp</div></div>
 </div><!--header-->
 <div class="contents">
-<p>Shows how to use xtd::expressions::operator / expression.</p>
-<div class="fragment"></div><!-- fragment --> </div><!-- contents -->
+<p>Shows how to use <a class="el" href="structxtd_1_1expressions_1_1expression.html#a5d636dd68e9216ccbf4ce3b87a5f00c9" title="Divide the specified left and right operands.">xtd::expressions::expression::divide</a> expression.</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="comment">// auto expr1 = [](auto&amp;&amp; _) {return _ / 10;};</span></div>
+<div class="line">  <span class="keyword">auto</span> expr1 = _ / 10;</div>
+<div class="line">  println(<span class="stringliteral">&quot;expr1 = {}&quot;</span>, expr1(50));</div>
+<div class="line">  <span class="keyword">auto</span> expr2 = expression::divide(_, 10);</div>
+<div class="line">  println(<span class="stringliteral">&quot;expr2 = {}&quot;</span>, expr2(50));</div>
+<div class="line">  println();</div>
+<div class="line">  <span class="comment">// auto expr3 = [](auto&amp;&amp; _1, auto&amp;&amp; _2) {return _1 / _2;};</span></div>
+<div class="line">  <span class="keyword">auto</span> expr3 = _1 / _2;</div>
+<div class="line">  println(<span class="stringliteral">&quot;expr3 = {}&quot;</span>, expr3(60, 15));</div>
+<div class="line">  <span class="keyword">auto</span> expr4 = expression::divide(_1, _2);</div>
+<div class="line">  println(<span class="stringliteral">&quot;expr4 = {}&quot;</span>, expr4(60, 15));</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// expr1 = 5</span></div>
+<div class="line"><span class="comment">// expr2 = 5</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// expr3 = 4</span></div>
+<div class="line"><span class="comment">// expr4 = 4</span></div>
+</div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 		<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-		<title>xtd: add_expression.cpp</title>
+		<title>xtd: add_expression_with_own_struct.cpp</title>
     <link href="favicon.png" rel="shortcut icon" type="image/png"/>
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
@@ -103,33 +103,37 @@ document.addEventListener('DOMContentLoaded', () => {
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">add_expression.cpp</div></div>
+  <div class="headertitle"><div class="title">add_expression_with_own_struct.cpp</div></div>
 </div><!--header-->
 <div class="contents">
 <p>Shows how to use <a class="el" href="structxtd_1_1expressions_1_1expression.html#a3db1b12325af413591046bd39d77b807" title="Add the specified left and right operands.">xtd::expressions::expression::add</a> expression.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="comment">// auto expr1 = [](auto&amp;&amp; _) {return _ + 10;};</span></div>
-<div class="line">  <span class="keyword">auto</span> expr1 = _ + 10;</div>
-<div class="line">  println(<span class="stringliteral">&quot;expr1 = {}&quot;</span>, expr1(40));</div>
-<div class="line">  <span class="keyword">auto</span> expr2 = expression::add(_, 10);</div>
-<div class="line">  println(<span class="stringliteral">&quot;expr2 = {}&quot;</span>, expr2(40));</div>
-<div class="line">  println();</div>
-<div class="line">  <span class="comment">// auto expr3 = [](auto&amp;&amp; _1, auto&amp;&amp; _2) {return _1 + _2;};</span></div>
-<div class="line">  <span class="keyword">auto</span> expr3 = _1 + _2;</div>
-<div class="line">  println(<span class="stringliteral">&quot;expr3 = {}&quot;</span>, expr3(40, 20));</div>
-<div class="line">  <span class="keyword">auto</span> expr4 = expression::add(_1, _2);</div>
-<div class="line">  println(<span class="stringliteral">&quot;expr4 = {}&quot;</span>, expr4(40, 20));</div>
-<div class="line">}</div>
+<div class="line"><span class="keyword">struct </span>foo {</div>
+<div class="line">  <span class="keywordtype">int</span> value;</div>
+<div class="line">  </div>
+<div class="line">  <span class="keyword">auto</span> operator +(<span class="keyword">const</span> foo&amp; v) -&gt; foo {<span class="keywordflow">return</span> foo {value + v.value};}</div>
+<div class="line">};</div>
 <div class="line"> </div>
-<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="comment">//auto add = [](auto&amp;&amp; _1, auto&amp;&amp; _2) {return _1 + _2;}</span></div>
+<div class="line">  <span class="keyword">auto</span> add = _1 + _2;</div>
+<div class="line"> </div>
+<div class="line">  println(R<span class="stringliteral">&quot;(add(40, 20)) = {})&quot;, add(40, 20));</span></div>
+<div class="line"><span class="stringliteral">  println(R</span><span class="stringliteral">&quot;(add(&quot;Barry &quot;_s, &quot;Allen&quot;_s) = {})&quot;, add(</span><span class="stringliteral">&quot;Barry &quot;</span>_s, <span class="stringliteral">&quot;Allen&quot;</span>_s));</div>
+<div class="line">  println(R<span class="stringliteral">&quot;(add(date_time {2026, 4, 20, 21, 12, 36}, 7_min + 24_s) = {})&quot;, add(date_time {2026, 4, 20, 21, 12, 36}, 7_min + 24_s));</span></div>
+<div class="line"><span class="stringliteral">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(R</span><span class="stringliteral">&quot;(add(foo {{50}}, foo {{30}}) = {})&quot;, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a34ec78fcc91ffb1e54cd85e4a0924332">add</a>(foo {50}, foo {30}).value);</span></div>
+<div class="line"><span class="stringliteral">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>();</span></div>
+<div class="line"><span class="stringliteral">}</span></div>
+<div class="line"><span class="stringliteral"></span> </div>
+<div class="line"><span class="stringliteral"></span><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// expr1 = 50</span></div>
-<div class="line"><span class="comment">// expr2 = 50</span></div>
-<div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// expr3 = 60</span></div>
-<div class="line"><span class="comment">// expr4 = 60</span></div>
+<div class="line"><span class="comment">// add(40, 20)) = 60</span></div>
+<div class="line"><span class="comment">// add(&quot;Barry &quot;_s, &quot;Allen&quot;_s) = Barry Allen</span></div>
+<div class="line"><span class="comment">// add(date_time , 7_min + 24_s) = 4/20/2026 9:20:00 PM</span></div>
+<div class="line"><span class="comment">// add(foo {50}, foo {30}) = 80</span></div>
+<div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a34ec78fcc91ffb1e54cd85e4a0924332"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a34ec78fcc91ffb1e54cd85e4a0924332">xtd::console_key::add</a></div><div class="ttdeci">@ add</div><div class="ttdoc">The Add key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:170</div></div>
+<div class="ttc" id="anamespacextd_html_a9482c5e9fb1d60c658bbe28bfbb17353"><div class="ttname"><a href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">xtd::println</a></div><div class="ttdeci">auto println(FILE *file) -&gt; void</div><div class="ttdoc">Writes the current line terminator to the file output stream using the specified format information.</div><div class="ttdef"><b>Definition</b> println.hpp:15</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->

@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 		<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-		<title>xtd: add_expression.cpp</title>
+		<title>xtd: index_literal.cpp</title>
     <link href="favicon.png" rel="shortcut icon" type="image/png"/>
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
@@ -103,33 +103,61 @@ document.addEventListener('DOMContentLoaded', () => {
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">add_expression.cpp</div></div>
+  <div class="headertitle"><div class="title">index_literal.cpp</div></div>
 </div><!--header-->
 <div class="contents">
-<p>Shows how to use <a class="el" href="structxtd_1_1expressions_1_1expression.html#a3db1b12325af413591046bd39d77b807" title="Add the specified left and right operands.">xtd::expressions::expression::add</a> expression.</p>
+<p>Shows how to use <a class="el" href="structxtd_1_1index.html" title="Represents a type that can be used to index a collection either from the beginning or the end.">xtd::index</a> struct.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="comment">// auto expr1 = [](auto&amp;&amp; _) {return _ + 10;};</span></div>
-<div class="line">  <span class="keyword">auto</span> expr1 = _ + 10;</div>
-<div class="line">  println(<span class="stringliteral">&quot;expr1 = {}&quot;</span>, expr1(40));</div>
-<div class="line">  <span class="keyword">auto</span> expr2 = expression::add(_, 10);</div>
-<div class="line">  println(<span class="stringliteral">&quot;expr2 = {}&quot;</span>, expr2(40));</div>
+<div class="line">  <span class="keyword">auto</span> items = list {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};</div>
+<div class="line">  </div>
+<div class="line">  println(R<span class="stringliteral">&quot;(items[&quot;0&quot;_i] = {})&quot;, items[</span><span class="stringliteral">&quot;0&quot;</span>_i]);</div>
+<div class="line">  println(<span class="stringliteral">&quot;items(1_i) = {}&quot;</span>, items(1_i));</div>
+<div class="line">  println(R<span class="stringliteral">&quot;(items[u8&quot;(2&quot;_i] = {})&quot;, items[u8</span><span class="stringliteral">&quot;2&quot;</span>_i]);</div>
+<div class="line">  println(<span class="stringliteral">&quot;items(3_i) = {}&quot;</span>, items(3_i));</div>
+<div class="line">  println(<span class="stringliteral">&quot;items[4_i] = {}&quot;</span>, items[4_i]);</div>
+<div class="line">  println(<span class="stringliteral">&quot;items(5_i) = {}&quot;</span>, items(5_i));</div>
+<div class="line">  println(<span class="stringliteral">&quot;items[6_i] = {}&quot;</span>, items[6_i]);</div>
+<div class="line">  println(<span class="stringliteral">&quot;items(7_i) = {}&quot;</span>, items(7_i));</div>
+<div class="line">  println(<span class="stringliteral">&quot;items[8_i] = {}&quot;</span>, items[8_i]);</div>
+<div class="line">  println(R<span class="stringliteral">&quot;(items(u&quot;9&quot;_i) = {})&quot;, items(u</span><span class="stringliteral">&quot;9&quot;</span>_i));</div>
 <div class="line">  println();</div>
-<div class="line">  <span class="comment">// auto expr3 = [](auto&amp;&amp; _1, auto&amp;&amp; _2) {return _1 + _2;};</span></div>
-<div class="line">  <span class="keyword">auto</span> expr3 = _1 + _2;</div>
-<div class="line">  println(<span class="stringliteral">&quot;expr3 = {}&quot;</span>, expr3(40, 20));</div>
-<div class="line">  <span class="keyword">auto</span> expr4 = expression::add(_1, _2);</div>
-<div class="line">  println(<span class="stringliteral">&quot;expr4 = {}&quot;</span>, expr4(40, 20));</div>
+<div class="line">  println(R<span class="stringliteral">&quot;(items[&quot;~1&quot;_i] = {})&quot;, items[</span><span class="stringliteral">&quot;~1&quot;</span>_i]);</div>
+<div class="line">  println(<span class="stringliteral">&quot;items(~2_i) = {}&quot;</span>, items(~2_i));</div>
+<div class="line">  println(R<span class="stringliteral">&quot;(items[U&quot;~3&quot;_i] = {})&quot;, items[U</span><span class="stringliteral">&quot;~3&quot;</span>_i]);</div>
+<div class="line">  println(<span class="stringliteral">&quot;items(~4_i) = {}&quot;</span>, items(~4_i));</div>
+<div class="line">  println(<span class="stringliteral">&quot;items[~5_i] = {}&quot;</span>, items[~5_i]);</div>
+<div class="line">  println(<span class="stringliteral">&quot;items(~6_i) = {}&quot;</span>, items(~6_i));</div>
+<div class="line">  println(<span class="stringliteral">&quot;items[~7_i] = {}&quot;</span>, items[~7_i]);</div>
+<div class="line">  println(<span class="stringliteral">&quot;items(~8_i) = {}&quot;</span>, items(~8_i));</div>
+<div class="line">  println(<span class="stringliteral">&quot;items[~9_i] = {}&quot;</span>, items[~9_i]);</div>
+<div class="line">  println(R<span class="stringliteral">&quot;(items(L&quot;~10&quot;_i) = {})&quot;, items(L</span><span class="stringliteral">&quot;~10&quot;</span>_i));</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// expr1 = 50</span></div>
-<div class="line"><span class="comment">// expr2 = 50</span></div>
+<div class="line"><span class="comment">// items[&quot;0&quot;_i] = 1</span></div>
+<div class="line"><span class="comment">// items(1_i) = 2</span></div>
+<div class="line"><span class="comment">// items[u8&quot;2&quot;_i] = 3</span></div>
+<div class="line"><span class="comment">// items(3_i) = 4</span></div>
+<div class="line"><span class="comment">// items[4_i] = 5</span></div>
+<div class="line"><span class="comment">// items(5_i) = 6</span></div>
+<div class="line"><span class="comment">// items[6_i] = 7</span></div>
+<div class="line"><span class="comment">// items(7_i) = 8</span></div>
+<div class="line"><span class="comment">// items[8_i] = 9</span></div>
+<div class="line"><span class="comment">// items(u&quot;9&quot;_i) = 10</span></div>
 <div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// expr3 = 60</span></div>
-<div class="line"><span class="comment">// expr4 = 60</span></div>
+<div class="line"><span class="comment">// items[&quot;~1&quot;_i] = 10</span></div>
+<div class="line"><span class="comment">// items(~2_i) = 9</span></div>
+<div class="line"><span class="comment">// items[U&quot;~3&quot;_i] = 8</span></div>
+<div class="line"><span class="comment">// items(~4_i) = 7</span></div>
+<div class="line"><span class="comment">// items[~5_i] = 6</span></div>
+<div class="line"><span class="comment">// items(~6_i) = 5</span></div>
+<div class="line"><span class="comment">// items[~7_i] = 4</span></div>
+<div class="line"><span class="comment">// items(~8_i) = 3</span></div>
+<div class="line"><span class="comment">// items[~9_i] = 2</span></div>
+<div class="line"><span class="comment">// items(L&quot;~10&quot;_i) = 1</span></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->

@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 		<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-		<title>xtd: add_expression.cpp</title>
+		<title>xtd: and_expression.cpp</title>
     <link href="favicon.png" rel="shortcut icon" type="image/png"/>
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
@@ -103,33 +103,33 @@ document.addEventListener('DOMContentLoaded', () => {
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">add_expression.cpp</div></div>
+  <div class="headertitle"><div class="title">and_expression.cpp</div></div>
 </div><!--header-->
 <div class="contents">
-<p>Shows how to use <a class="el" href="structxtd_1_1expressions_1_1expression.html#a3db1b12325af413591046bd39d77b807" title="Add the specified left and right operands.">xtd::expressions::expression::add</a> expression.</p>
+<p>Shows how to use <a class="el" href="structxtd_1_1expressions_1_1expression.html#a91497147d6e1d49364f7f219d0b74aa7" title="Bitwise and the specified left and right operands.">xtd::expressions::expression::and_</a> expression.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="comment">// auto expr1 = [](auto&amp;&amp; _) {return _ + 10;};</span></div>
-<div class="line">  <span class="keyword">auto</span> expr1 = _ + 10;</div>
-<div class="line">  println(<span class="stringliteral">&quot;expr1 = {}&quot;</span>, expr1(40));</div>
-<div class="line">  <span class="keyword">auto</span> expr2 = expression::add(_, 10);</div>
-<div class="line">  println(<span class="stringliteral">&quot;expr2 = {}&quot;</span>, expr2(40));</div>
+<div class="line">  <span class="comment">// auto expr1 = [](auto&amp;&amp; _) {return _ &amp; 0x0F;};</span></div>
+<div class="line">  <span class="keyword">auto</span> expr1 = _ &amp; 0x0F;</div>
+<div class="line">  println(<span class="stringliteral">&quot;expr1 = {:B}&quot;</span>, expr1(42));</div>
+<div class="line">  <span class="keyword">auto</span> expr2 = expression::and_(_, 0x0F);</div>
+<div class="line">  println(<span class="stringliteral">&quot;expr2 = {:B}&quot;</span>, expr2(42));</div>
 <div class="line">  println();</div>
-<div class="line">  <span class="comment">// auto expr3 = [](auto&amp;&amp; _1, auto&amp;&amp; _2) {return _1 + _2;};</span></div>
-<div class="line">  <span class="keyword">auto</span> expr3 = _1 + _2;</div>
-<div class="line">  println(<span class="stringliteral">&quot;expr3 = {}&quot;</span>, expr3(40, 20));</div>
-<div class="line">  <span class="keyword">auto</span> expr4 = expression::add(_1, _2);</div>
-<div class="line">  println(<span class="stringliteral">&quot;expr4 = {}&quot;</span>, expr4(40, 20));</div>
+<div class="line">  <span class="comment">// auto expr3 = [](auto&amp;&amp; _1, auto&amp;&amp; _2) {return _1 &amp; _2;};</span></div>
+<div class="line">  <span class="keyword">auto</span> expr3 = _1 &amp; _2;</div>
+<div class="line">  println(<span class="stringliteral">&quot;expr3 = {:B}&quot;</span>, expr3(42, 0xF0));</div>
+<div class="line">  <span class="keyword">auto</span> expr4 = expression::and_(_1, _2);</div>
+<div class="line">  println(<span class="stringliteral">&quot;expr4 = {:B}&quot;</span>, expr4(42, 0xF0));</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// expr1 = 50</span></div>
-<div class="line"><span class="comment">// expr2 = 50</span></div>
+<div class="line"><span class="comment">// expr1 = 1010</span></div>
+<div class="line"><span class="comment">// expr2 = 1010</span></div>
 <div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// expr3 = 60</span></div>
-<div class="line"><span class="comment">// expr4 = 60</span></div>
+<div class="line"><span class="comment">// expr3 = 100000</span></div>
+<div class="line"><span class="comment">// expr4 = 100000</span></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
