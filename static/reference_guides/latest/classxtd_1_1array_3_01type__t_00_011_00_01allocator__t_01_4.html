@@ -1625,7 +1625,66 @@ template&lt;typename type_t, typename allocator_t&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example shows how to use operator () to list the elements of an array. <div class="fragment"></div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following code example shows how to use operator [] and operator () to list the elements of an array. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="keyword">auto</span> <a class="code hl_function" href="classxtd_1_1basic__array.html#a4fe92dec108d26e4dadb8b5a5d48b0b6">items</a> = <a class="code hl_function" href="#a5365a16f187dd7945dc0f7154c55cbf3">array</a> {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};</div>
+<div class="line"> </div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;Read with [] operator:&quot;</span>);</div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> <a class="code hl_struct" href="structxtd_1_1index.html">index</a> = 0_z; <a class="code hl_struct" href="structxtd_1_1index.html">index</a> &lt; items.length(); ++<a class="code hl_struct" href="structxtd_1_1index.html">index</a>)</div>
+<div class="line">    <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;  items[{}] = {}&quot;</span>, <a class="code hl_struct" href="structxtd_1_1index.html">index</a>, items[<a class="code hl_struct" href="structxtd_1_1index.html">index</a>]);</div>
+<div class="line"> </div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;\nRead with () operator:&quot;</span>);</div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> <a class="code hl_struct" href="structxtd_1_1index.html">index</a> = 0_z; <a class="code hl_struct" href="structxtd_1_1index.html">index</a> &lt; items.length(); ++<a class="code hl_struct" href="structxtd_1_1index.html">index</a>)</div>
+<div class="line">    <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;  items({}) = {}&quot;</span>, <a class="code hl_struct" href="structxtd_1_1index.html">index</a>, items(<a class="code hl_struct" href="structxtd_1_1index.html">index</a>));</div>
+<div class="line"> </div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;\nWrite with [] operator:&quot;</span>);</div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> <a class="code hl_struct" href="structxtd_1_1index.html">index</a> = 0_z; <a class="code hl_struct" href="structxtd_1_1index.html">index</a> &lt; items.length(); ++<a class="code hl_struct" href="structxtd_1_1index.html">index</a>)</div>
+<div class="line">    items[<a class="code hl_struct" href="structxtd_1_1index.html">index</a>] = <a class="code hl_function" href="group__xtd__core.html#ga58028bb08924d84602be7ccdeffb8225">as&lt;int&gt;</a>(<a class="code hl_struct" href="structxtd_1_1index.html">index</a> + 1) * 10;</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;  items = {}&quot;</span>, items);</div>
+<div class="line"> </div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;\nWrite with () operator:&quot;</span>);</div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> <a class="code hl_struct" href="structxtd_1_1index.html">index</a> = 0_z; <a class="code hl_struct" href="structxtd_1_1index.html">index</a> &lt; items.length(); ++<a class="code hl_struct" href="structxtd_1_1index.html">index</a>)</div>
+<div class="line">    items(<a class="code hl_struct" href="structxtd_1_1index.html">index</a>) = <a class="code hl_function" href="group__xtd__core.html#ga58028bb08924d84602be7ccdeffb8225">as&lt;int&gt;</a>(<a class="code hl_struct" href="structxtd_1_1index.html">index</a> + 1) * 100;</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;  items = {}&quot;</span>, items);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Read with [] operator:</span></div>
+<div class="line"><span class="comment">//   items[0] = 1</span></div>
+<div class="line"><span class="comment">//   items[1] = 2</span></div>
+<div class="line"><span class="comment">//   items[2] = 3</span></div>
+<div class="line"><span class="comment">//   items[3] = 4</span></div>
+<div class="line"><span class="comment">//   items[4] = 5</span></div>
+<div class="line"><span class="comment">//   items[5] = 6</span></div>
+<div class="line"><span class="comment">//   items[6] = 7</span></div>
+<div class="line"><span class="comment">//   items[7] = 8</span></div>
+<div class="line"><span class="comment">//   items[8] = 9</span></div>
+<div class="line"><span class="comment">//   items[9] = 10</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Read with () operator:</span></div>
+<div class="line"><span class="comment">//   items(0) = 1</span></div>
+<div class="line"><span class="comment">//   items(1) = 2</span></div>
+<div class="line"><span class="comment">//   items(2) = 3</span></div>
+<div class="line"><span class="comment">//   items(3) = 4</span></div>
+<div class="line"><span class="comment">//   items(4) = 5</span></div>
+<div class="line"><span class="comment">//   items(5) = 6</span></div>
+<div class="line"><span class="comment">//   items(6) = 7</span></div>
+<div class="line"><span class="comment">//   items(7) = 8</span></div>
+<div class="line"><span class="comment">//   items(8) = 9</span></div>
+<div class="line"><span class="comment">//   items(9) = 10</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Write with [] operator:</span></div>
+<div class="line"><span class="comment">//   items = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Write with () operator:</span></div>
+<div class="line"><span class="comment">//   items = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]</span></div>
+<div class="ttc" id="aclassxtd_1_1basic__array_html_a4fe92dec108d26e4dadb8b5a5d48b0b6"><div class="ttname"><a href="classxtd_1_1basic__array.html#a4fe92dec108d26e4dadb8b5a5d48b0b6">xtd::basic_array&lt; type_t, allocator_t &gt;::items</a></div><div class="ttdeci">virtual auto items() const noexcept -&gt; const base_type &amp;</div><div class="ttdef"><b>Definition</b> basic_array.hpp:111</div></div>
+<div class="ttc" id="agroup__xtd__core_html_ga58028bb08924d84602be7ccdeffb8225"><div class="ttname"><a href="group__xtd__core.html#ga58028bb08924d84602be7ccdeffb8225">xtd::as</a></div><div class="ttdeci">auto as(any_object &amp;o) -&gt; type_t</div><div class="ttdoc">Casts a type into another type.</div><div class="ttdef"><b>Definition</b> __as_any_object.hpp:60</div></div>
+<div class="ttc" id="anamespacextd_html_a9482c5e9fb1d60c658bbe28bfbb17353"><div class="ttname"><a href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">xtd::println</a></div><div class="ttdeci">auto println(FILE *file) -&gt; void</div><div class="ttdoc">Writes the current line terminator to the file output stream using the specified format information.</div><div class="ttdef"><b>Definition</b> println.hpp:15</div></div>
+<div class="ttc" id="astructxtd_1_1index_html"><div class="ttname"><a href="structxtd_1_1index.html">xtd::index</a></div><div class="ttdoc">Represents a type that can be used to index a collection either from the beginning or the end.</div><div class="ttdef"><b>Definition</b> index.hpp:38</div></div>
+</div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
@@ -1669,7 +1728,62 @@ template&lt;typename type_t, typename allocator_t&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example shows how to use operator () to list the elements of an array. <div class="fragment"></div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following code example shows how to use operator [] and operator () to list the elements of an array. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="keyword">auto</span> <a class="code hl_function" href="classxtd_1_1basic__array.html#a4fe92dec108d26e4dadb8b5a5d48b0b6">items</a> = <a class="code hl_function" href="#a5365a16f187dd7945dc0f7154c55cbf3">array</a> {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};</div>
+<div class="line"> </div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;Read with [] operator:&quot;</span>);</div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> <a class="code hl_struct" href="structxtd_1_1index.html">index</a> = 0_z; <a class="code hl_struct" href="structxtd_1_1index.html">index</a> &lt; items.length(); ++<a class="code hl_struct" href="structxtd_1_1index.html">index</a>)</div>
+<div class="line">    <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;  items[{}] = {}&quot;</span>, <a class="code hl_struct" href="structxtd_1_1index.html">index</a>, items[<a class="code hl_struct" href="structxtd_1_1index.html">index</a>]);</div>
+<div class="line"> </div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;\nRead with () operator:&quot;</span>);</div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> <a class="code hl_struct" href="structxtd_1_1index.html">index</a> = 0_z; <a class="code hl_struct" href="structxtd_1_1index.html">index</a> &lt; items.length(); ++<a class="code hl_struct" href="structxtd_1_1index.html">index</a>)</div>
+<div class="line">    <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;  items({}) = {}&quot;</span>, <a class="code hl_struct" href="structxtd_1_1index.html">index</a>, items(<a class="code hl_struct" href="structxtd_1_1index.html">index</a>));</div>
+<div class="line"> </div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;\nWrite with [] operator:&quot;</span>);</div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> <a class="code hl_struct" href="structxtd_1_1index.html">index</a> = 0_z; <a class="code hl_struct" href="structxtd_1_1index.html">index</a> &lt; items.length(); ++<a class="code hl_struct" href="structxtd_1_1index.html">index</a>)</div>
+<div class="line">    items[<a class="code hl_struct" href="structxtd_1_1index.html">index</a>] = <a class="code hl_function" href="group__xtd__core.html#ga58028bb08924d84602be7ccdeffb8225">as&lt;int&gt;</a>(<a class="code hl_struct" href="structxtd_1_1index.html">index</a> + 1) * 10;</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;  items = {}&quot;</span>, items);</div>
+<div class="line"> </div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;\nWrite with () operator:&quot;</span>);</div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> <a class="code hl_struct" href="structxtd_1_1index.html">index</a> = 0_z; <a class="code hl_struct" href="structxtd_1_1index.html">index</a> &lt; items.length(); ++<a class="code hl_struct" href="structxtd_1_1index.html">index</a>)</div>
+<div class="line">    items(<a class="code hl_struct" href="structxtd_1_1index.html">index</a>) = <a class="code hl_function" href="group__xtd__core.html#ga58028bb08924d84602be7ccdeffb8225">as&lt;int&gt;</a>(<a class="code hl_struct" href="structxtd_1_1index.html">index</a> + 1) * 100;</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;  items = {}&quot;</span>, items);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Read with [] operator:</span></div>
+<div class="line"><span class="comment">//   items[0] = 1</span></div>
+<div class="line"><span class="comment">//   items[1] = 2</span></div>
+<div class="line"><span class="comment">//   items[2] = 3</span></div>
+<div class="line"><span class="comment">//   items[3] = 4</span></div>
+<div class="line"><span class="comment">//   items[4] = 5</span></div>
+<div class="line"><span class="comment">//   items[5] = 6</span></div>
+<div class="line"><span class="comment">//   items[6] = 7</span></div>
+<div class="line"><span class="comment">//   items[7] = 8</span></div>
+<div class="line"><span class="comment">//   items[8] = 9</span></div>
+<div class="line"><span class="comment">//   items[9] = 10</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Read with () operator:</span></div>
+<div class="line"><span class="comment">//   items(0) = 1</span></div>
+<div class="line"><span class="comment">//   items(1) = 2</span></div>
+<div class="line"><span class="comment">//   items(2) = 3</span></div>
+<div class="line"><span class="comment">//   items(3) = 4</span></div>
+<div class="line"><span class="comment">//   items(4) = 5</span></div>
+<div class="line"><span class="comment">//   items(5) = 6</span></div>
+<div class="line"><span class="comment">//   items(6) = 7</span></div>
+<div class="line"><span class="comment">//   items(7) = 8</span></div>
+<div class="line"><span class="comment">//   items(8) = 9</span></div>
+<div class="line"><span class="comment">//   items(9) = 10</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Write with [] operator:</span></div>
+<div class="line"><span class="comment">//   items = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Write with () operator:</span></div>
+<div class="line"><span class="comment">//   items = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]</span></div>
+</div><!-- fragment --> </dd></dl>
 
 <p>Reimplemented from <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1list__common.html#a48325e6befa32cb6a4e7e6dda56ecc97">xtd::collections::generic::extensions::list_common&lt; type_t, ilist&lt; type_t &gt; &gt;</a>.</p>
 
@@ -1715,7 +1829,62 @@ template&lt;typename type_t, typename allocator_t&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example shows how to use operator [] to list the elements of an array. <div class="fragment"></div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following code example shows how to use operator [] and operator () to list the elements of an array. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="keyword">auto</span> <a class="code hl_function" href="classxtd_1_1basic__array.html#a4fe92dec108d26e4dadb8b5a5d48b0b6">items</a> = <a class="code hl_function" href="#a5365a16f187dd7945dc0f7154c55cbf3">array</a> {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};</div>
+<div class="line"> </div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;Read with [] operator:&quot;</span>);</div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> <a class="code hl_struct" href="structxtd_1_1index.html">index</a> = 0_z; <a class="code hl_struct" href="structxtd_1_1index.html">index</a> &lt; items.length(); ++<a class="code hl_struct" href="structxtd_1_1index.html">index</a>)</div>
+<div class="line">    <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;  items[{}] = {}&quot;</span>, <a class="code hl_struct" href="structxtd_1_1index.html">index</a>, items[<a class="code hl_struct" href="structxtd_1_1index.html">index</a>]);</div>
+<div class="line"> </div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;\nRead with () operator:&quot;</span>);</div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> <a class="code hl_struct" href="structxtd_1_1index.html">index</a> = 0_z; <a class="code hl_struct" href="structxtd_1_1index.html">index</a> &lt; items.length(); ++<a class="code hl_struct" href="structxtd_1_1index.html">index</a>)</div>
+<div class="line">    <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;  items({}) = {}&quot;</span>, <a class="code hl_struct" href="structxtd_1_1index.html">index</a>, items(<a class="code hl_struct" href="structxtd_1_1index.html">index</a>));</div>
+<div class="line"> </div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;\nWrite with [] operator:&quot;</span>);</div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> <a class="code hl_struct" href="structxtd_1_1index.html">index</a> = 0_z; <a class="code hl_struct" href="structxtd_1_1index.html">index</a> &lt; items.length(); ++<a class="code hl_struct" href="structxtd_1_1index.html">index</a>)</div>
+<div class="line">    items[<a class="code hl_struct" href="structxtd_1_1index.html">index</a>] = <a class="code hl_function" href="group__xtd__core.html#ga58028bb08924d84602be7ccdeffb8225">as&lt;int&gt;</a>(<a class="code hl_struct" href="structxtd_1_1index.html">index</a> + 1) * 10;</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;  items = {}&quot;</span>, items);</div>
+<div class="line"> </div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;\nWrite with () operator:&quot;</span>);</div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> <a class="code hl_struct" href="structxtd_1_1index.html">index</a> = 0_z; <a class="code hl_struct" href="structxtd_1_1index.html">index</a> &lt; items.length(); ++<a class="code hl_struct" href="structxtd_1_1index.html">index</a>)</div>
+<div class="line">    items(<a class="code hl_struct" href="structxtd_1_1index.html">index</a>) = <a class="code hl_function" href="group__xtd__core.html#ga58028bb08924d84602be7ccdeffb8225">as&lt;int&gt;</a>(<a class="code hl_struct" href="structxtd_1_1index.html">index</a> + 1) * 100;</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;  items = {}&quot;</span>, items);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Read with [] operator:</span></div>
+<div class="line"><span class="comment">//   items[0] = 1</span></div>
+<div class="line"><span class="comment">//   items[1] = 2</span></div>
+<div class="line"><span class="comment">//   items[2] = 3</span></div>
+<div class="line"><span class="comment">//   items[3] = 4</span></div>
+<div class="line"><span class="comment">//   items[4] = 5</span></div>
+<div class="line"><span class="comment">//   items[5] = 6</span></div>
+<div class="line"><span class="comment">//   items[6] = 7</span></div>
+<div class="line"><span class="comment">//   items[7] = 8</span></div>
+<div class="line"><span class="comment">//   items[8] = 9</span></div>
+<div class="line"><span class="comment">//   items[9] = 10</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Read with () operator:</span></div>
+<div class="line"><span class="comment">//   items(0) = 1</span></div>
+<div class="line"><span class="comment">//   items(1) = 2</span></div>
+<div class="line"><span class="comment">//   items(2) = 3</span></div>
+<div class="line"><span class="comment">//   items(3) = 4</span></div>
+<div class="line"><span class="comment">//   items(4) = 5</span></div>
+<div class="line"><span class="comment">//   items(5) = 6</span></div>
+<div class="line"><span class="comment">//   items(6) = 7</span></div>
+<div class="line"><span class="comment">//   items(7) = 8</span></div>
+<div class="line"><span class="comment">//   items(8) = 9</span></div>
+<div class="line"><span class="comment">//   items(9) = 10</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Write with [] operator:</span></div>
+<div class="line"><span class="comment">//   items = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Write with () operator:</span></div>
+<div class="line"><span class="comment">//   items = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]</span></div>
+</div><!-- fragment --> </dd></dl>
 
 <p>Implements <a class="el" href="classxtd_1_1collections_1_1generic_1_1ilist.html#a036a0fb9215b5b3b2073134996ad4e05">xtd::collections::generic::ilist&lt; type_t &gt;</a>.</p>
 
@@ -1761,7 +1930,62 @@ template&lt;typename type_t, typename allocator_t&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example shows how to use operator [] to list the elements of an array. <div class="fragment"></div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following code example shows how to use operator [] and operator () to list the elements of an array. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="keyword">auto</span> <a class="code hl_function" href="classxtd_1_1basic__array.html#a4fe92dec108d26e4dadb8b5a5d48b0b6">items</a> = <a class="code hl_function" href="#a5365a16f187dd7945dc0f7154c55cbf3">array</a> {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};</div>
+<div class="line"> </div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;Read with [] operator:&quot;</span>);</div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> <a class="code hl_struct" href="structxtd_1_1index.html">index</a> = 0_z; <a class="code hl_struct" href="structxtd_1_1index.html">index</a> &lt; items.length(); ++<a class="code hl_struct" href="structxtd_1_1index.html">index</a>)</div>
+<div class="line">    <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;  items[{}] = {}&quot;</span>, <a class="code hl_struct" href="structxtd_1_1index.html">index</a>, items[<a class="code hl_struct" href="structxtd_1_1index.html">index</a>]);</div>
+<div class="line"> </div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;\nRead with () operator:&quot;</span>);</div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> <a class="code hl_struct" href="structxtd_1_1index.html">index</a> = 0_z; <a class="code hl_struct" href="structxtd_1_1index.html">index</a> &lt; items.length(); ++<a class="code hl_struct" href="structxtd_1_1index.html">index</a>)</div>
+<div class="line">    <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;  items({}) = {}&quot;</span>, <a class="code hl_struct" href="structxtd_1_1index.html">index</a>, items(<a class="code hl_struct" href="structxtd_1_1index.html">index</a>));</div>
+<div class="line"> </div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;\nWrite with [] operator:&quot;</span>);</div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> <a class="code hl_struct" href="structxtd_1_1index.html">index</a> = 0_z; <a class="code hl_struct" href="structxtd_1_1index.html">index</a> &lt; items.length(); ++<a class="code hl_struct" href="structxtd_1_1index.html">index</a>)</div>
+<div class="line">    items[<a class="code hl_struct" href="structxtd_1_1index.html">index</a>] = <a class="code hl_function" href="group__xtd__core.html#ga58028bb08924d84602be7ccdeffb8225">as&lt;int&gt;</a>(<a class="code hl_struct" href="structxtd_1_1index.html">index</a> + 1) * 10;</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;  items = {}&quot;</span>, items);</div>
+<div class="line"> </div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;\nWrite with () operator:&quot;</span>);</div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> <a class="code hl_struct" href="structxtd_1_1index.html">index</a> = 0_z; <a class="code hl_struct" href="structxtd_1_1index.html">index</a> &lt; items.length(); ++<a class="code hl_struct" href="structxtd_1_1index.html">index</a>)</div>
+<div class="line">    items(<a class="code hl_struct" href="structxtd_1_1index.html">index</a>) = <a class="code hl_function" href="group__xtd__core.html#ga58028bb08924d84602be7ccdeffb8225">as&lt;int&gt;</a>(<a class="code hl_struct" href="structxtd_1_1index.html">index</a> + 1) * 100;</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;  items = {}&quot;</span>, items);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Read with [] operator:</span></div>
+<div class="line"><span class="comment">//   items[0] = 1</span></div>
+<div class="line"><span class="comment">//   items[1] = 2</span></div>
+<div class="line"><span class="comment">//   items[2] = 3</span></div>
+<div class="line"><span class="comment">//   items[3] = 4</span></div>
+<div class="line"><span class="comment">//   items[4] = 5</span></div>
+<div class="line"><span class="comment">//   items[5] = 6</span></div>
+<div class="line"><span class="comment">//   items[6] = 7</span></div>
+<div class="line"><span class="comment">//   items[7] = 8</span></div>
+<div class="line"><span class="comment">//   items[8] = 9</span></div>
+<div class="line"><span class="comment">//   items[9] = 10</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Read with () operator:</span></div>
+<div class="line"><span class="comment">//   items(0) = 1</span></div>
+<div class="line"><span class="comment">//   items(1) = 2</span></div>
+<div class="line"><span class="comment">//   items(2) = 3</span></div>
+<div class="line"><span class="comment">//   items(3) = 4</span></div>
+<div class="line"><span class="comment">//   items(4) = 5</span></div>
+<div class="line"><span class="comment">//   items(5) = 6</span></div>
+<div class="line"><span class="comment">//   items(6) = 7</span></div>
+<div class="line"><span class="comment">//   items(7) = 8</span></div>
+<div class="line"><span class="comment">//   items(8) = 9</span></div>
+<div class="line"><span class="comment">//   items(9) = 10</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Write with [] operator:</span></div>
+<div class="line"><span class="comment">//   items = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Write with () operator:</span></div>
+<div class="line"><span class="comment">//   items = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]</span></div>
+</div><!-- fragment --> </dd></dl>
 
 <p>Implements <a class="el" href="classxtd_1_1collections_1_1generic_1_1ilist.html#adb2fad4c622d75c36e32ce015bcb15f7">xtd::collections::generic::ilist&lt; type_t &gt;</a>.</p>
 
