@@ -228,8 +228,8 @@ namespace xtd {
     /// @exception xtd::argument_exception The current Array does not have exactly one dimension.
     /// @exception xtd::index_out_of_range_exception index is outside the range of valid indexes for the current Array.
     /// @par Examples
-    /// The following code example shows how to use operator () to list the elements of an array.
-    /// @include ArrayArrayOperatorFunctor.cpp
+    /// The following code example shows how to use operator [] and operator () to list the elements of an array.
+    /// @include array_rank_1_index_operator.cpp
     [[nodiscard]] auto operator()(size_type index) -> value_type& override {return xtd::basic_array<type_t, allocator_t>::operator[](index);}
     
     /// @brief Gets the value at the specified position in the one-dimensional Array. The index is specified as a 32-bit integer.
@@ -238,8 +238,8 @@ namespace xtd {
     /// @exception xtd::argument_exception The current Array does not have exactly one dimension.
     /// @exception xtd::index_out_of_range_exception index is outside the range of valid indexes for the current Array.
     /// @par Examples
-    /// The following code example shows how to use operator () to list the elements of an array.
-    /// @include ArrayArrayOperatorFunctor.cpp
+    /// The following code example shows how to use operator [] and operator () to list the elements of an array.
+    /// @include array_rank_1_index_operator.cpp
     [[nodiscard]] auto operator()(size_type index) const -> const value_type& override {return xtd::basic_array<type_t, allocator_t>::operator[](index);}
     
     /// @brief Sets a value to the element at the specified position in the one-dimensional Array. The index is specified as a 32-bit integer.
@@ -248,8 +248,8 @@ namespace xtd {
     /// @exception xtd::argument_exception The current Array does not have exactly one dimension.
     /// @exception xtd::index_out_of_range_exception index is outside the range of valid indexes for the current Array.
     /// @par Examples
-    /// The following code example shows how to use operator [] to list the elements of an array.
-    /// @include ArrayArrayOperator.cpp
+    /// The following code example shows how to use operator [] and operator () to list the elements of an array.
+    /// @include array_rank_1_index_operator.cpp
     [[nodiscard]] auto operator[](size_type index) -> value_type& override {return xtd::basic_array<type_t, allocator_t>::operator[](index);}
     
     /// @brief Gets the element at the specified index.
@@ -258,8 +258,8 @@ namespace xtd {
     /// @exception xtd::argument_exception The current Array does not have exactly one dimension.
     /// @exception xtd::index_out_of_range_exception index is less than 0 or index is equal to or greater than Count.
     /// @par Examples
-    /// The following code example shows how to use operator [] to list the elements of an array.
-    /// @include ArrayArrayOperator.cpp
+    /// The following code example shows how to use operator [] and operator () to list the elements of an array.
+    /// @include array_rank_1_index_operator.cpp
     [[nodiscard]] auto operator[](size_type index) const -> const value_type& override {return xtd::basic_array<type_t, allocator_t>::operator[](index);}
     /// @}
   };
