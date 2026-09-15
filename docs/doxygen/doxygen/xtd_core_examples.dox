@@ -19,6 +19,18 @@
 /// @example array_as_read_only.cpp
 /// Shows how to use xtd::array::as_read_only method.
 ///
+/// @example array_binary_search.cpp
+/// Shows how to use xtd::array<>::binary_search method.
+///
+/// @example array_sort.cpp
+/// Shows how to use xtd::basic_array::sort method.
+///
+/// @example array_sort2.cpp
+/// Shows how to use xtd::basic_array::sort method.
+///
+/// @example array_sort3.cpp
+/// Shows how to use xtd::basic_array::sort method.
+///
 /// @example bit_converter.cpp
 /// Shows how to use xtd::bit_converter class.
 ///
@@ -33,6 +45,18 @@
 ///
 /// @example bit_converter_round_trips.cpp
 /// Shows how to use bit_converter class.
+///
+/// @example bit_converter_to_string.cpp
+/// Shows how to use xtd::bit_converter::to_string method.
+///
+/// @example bit_converter_to_string2.cpp
+/// Shows how to use xtd::bit_converter::to_string method.
+///
+/// @example bit_converter_to_string3.cpp
+/// Shows how to use xtd::bit_converter::to_string and xtd::bit_converter::to_string methods.
+///
+/// @example bit_converter_to_string4.cpp
+/// Shows how to use xtd::bit_converter::to_string and xtd::bit_converter::to_string methods.
 ///
 /// @example boxed_info.cpp
 /// Shows how to use xtd::boxing methods.
@@ -425,10 +449,34 @@
 /// Shows how to use xtd::exception exception.
 ///
 /// @example add_expression.cpp
-/// Shows how to use xtd::expressions::operator + expression.
+/// Shows how to use xtd::expressions::expression::add expression.
 ///
-/// @example division_expression.cpp
-/// Shows how to use xtd::expressions::operator / expression.
+/// @example add_expression_with_own_struct.cpp
+/// Shows how to use xtd::expressions::expression::add expression.
+///
+/// @example and_also_expression.cpp
+/// Shows how to use xtd::expressions::expression::and_also expression.
+///
+/// @example and_expression.cpp
+/// Shows how to use xtd::expressions::expression::and_ expression.
+///
+/// @example arg_expression.cpp
+/// Shows how to use xtd::expressions::expression::arg expression.
+///
+/// @example compare_three_way_expression.cpp
+/// Shows how to use xtd::expressions::expression::compare_three_way expression.
+///
+/// @example constant_expression.cpp
+/// Shows how to use xtd::expressions::expression::constant expression.
+///
+/// @example divide_expression.cpp
+/// Shows how to use xtd::expressions::expression::divide expression.
+///
+/// @example divide_expression_with_own_struct.cpp
+/// Shows how to use xtd::expressions::expression::divide expression.
+///
+/// @example expression.cpp
+/// Shows how to use xtd::expressions::expression class.
 ///
 /// @example format.cpp
 /// Show how to use format xtd::format class.
@@ -601,6 +649,15 @@
 /// @example generic_list_reverse.cpp
 /// Shows how to use xtd::collections::generic::list::reverse method.
 ///
+/// @example generic_list_sort.cpp
+/// Shows how to use xtd::collections::generic::list::sort method.
+///
+/// @example generic_list_sort2.cpp
+/// Shows how to use xtd::collections::generic::list::sort method.
+///
+/// @example generic_list_sort3.cpp
+/// Shows how to use xtd::collections::generic::list::sort method.
+///
 /// @example generic_ordered_dictionary.cpp
 /// Shows how to use xtd::collections::generic::ordered_dictionary class.
 ///
@@ -663,6 +720,24 @@
 ///
 /// @example hello_world_string.cpp
 /// The classic first application "Hello, World!" with xtd::string class.
+///
+/// @example index.cpp
+/// Shows how to use xtd::index struct.
+///
+/// @example index_literal.cpp
+/// Shows how to use xtd::index struct.
+///
+/// @example index_operator.cpp
+/// Shows how to use xtd::index struct as operator.
+///
+/// @example range.cpp
+/// Shows how to use xtd::range struct.
+///
+/// @example range_literal.cpp
+/// Shows how to use xtd::range struct.
+///
+/// @example range_operator.cpp
+/// Shows how to use xtd::range struct as operator.
 ///
 /// @example iasync_result.cpp
 /// Shows how to use xtd:: iasync_result interface.
