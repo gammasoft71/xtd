@@ -6,7 +6,7 @@
 #include "__xtd_std_version.hpp"
 #undef __XTD_STD_INTERNAL__
 
-#if defined(__xtd__cpp_lib_source_location)
+#if defined(__cpp_lib_source_location)
 #include <source_location>
 using __xtd_source_location__ = std::source_location;
 #else
