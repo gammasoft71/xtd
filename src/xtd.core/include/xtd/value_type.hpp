@@ -9,9 +9,6 @@
 #include <concepts>
 #include <iostream>
 #include <type_traits>
-#if defined(__xtd__cpp_lib_format)
-#include <format>
-#endif
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -67,13 +64,3 @@ namespace xtd {
   inline auto operator <<(std::ostream& os, const xtd::value_type<bool>& v) -> std::ostream& {return os << (v ? "true" : "false");}
   /// @endcond
 }
-
-/// @cond
-/// Needed for std::format
-#if defined(__xtd__cpp_lib_format)
-template<typename type_t>
-struct std::formatter<xtd::value_type<type_t>> : std::formatter<type_t> {auto format(const xtd::value_type<type_t>& v, format_context& ctx) const {return std::formatter<type_t>::format(v.value, ctx);}};
-template<>
-struct std::formatter<xtd::value_type<bool>> : std::formatter<bool> {auto format(const xtd::value_type<bool>& v, format_context& ctx) const {return v ? "true" : "false";}};
-#endif
-/// @endcond
