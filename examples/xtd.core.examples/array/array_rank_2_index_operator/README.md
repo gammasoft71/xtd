@@ -1,6 +1,6 @@
 # array
 
-Shows how to use [xtd::array\[\]](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1array_3_01type__t_00_011_00_01allocator__t_01_4.html#ab3efe6c59464c06161e43840e92d73f0) and [xtd::array()](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1array_3_01type__t_00_011_00_01allocator__t_01_4.html#ac17607656c7da9d5c4079f94199a3b77) operators.
+Shows how to use [xtd::array\[\]](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1array_3_01type__t_00_012_00_01allocator__t_01_4.html#afe859dabc4cd807a6269f58a60fb2d19) and [xtd::array()](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1array_3_01type__t_00_011_00_01allocator__t_01_4.html#ac17607656c7da9d5c4079f94199a3b77) operators.
 
 ## Sources
 
