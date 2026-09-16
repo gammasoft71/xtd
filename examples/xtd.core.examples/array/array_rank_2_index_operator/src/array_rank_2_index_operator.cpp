@@ -2,26 +2,27 @@
 
 auto main() -> int {
   // make a 2 dimensions array
-  auto items = array {
-    {11, 12, 13, 14, 15},
-    {21, 22, 23, 24, 25}
-  };
+  auto items = array {{11, 12, 13, 14, 15}, {21, 22, 23, 24, 25}};
 
+#if __cpp_multidimensional_subscript
   println("Read with [,] operator:");
   for (auto index1 = 0_z; index1 < items.get_length(0); ++index1)
     for (auto index2 = 0_z; index2 < items.get_length(1); ++index2)
-      println("  items[{}, {}] = {}", index1, index2, items[index1, index2]); // Work only with C++23
+      println("  items[{}, {}] = {}", index1, index2, items[index1, index2]);
+#endif
   
   println("\nRead with (,) operator:");
   for (auto index1 = 0_z; index1 < items.get_length(0); ++index1)
     for (auto index2 = 0_z; index2 < items.get_length(1); ++index2)
       println("  items({}, {}) = {}", index1, index2, items(index1, index2));
   
+#if __cpp_multidimensional_subscript
   println("\nWrite with [,] operator:");
   for (auto index1 = 0_z; index1 < items.get_length(0); ++index1)
     for (auto index2 = 0_z; index2 < items.get_length(1); ++index2)
-      items[index1, index2] = as<int>(index1 + 1) * 100 + as<int>(index2 + 1) * 10; // Work only with C++23
+      items[index1, index2] = as<int>(index1 + 1) * 100 + as<int>(index2 + 1) * 10;
   println("  items = {}", items);
+#endif
   
   println("\nWrite with (,) operator:");
   for (auto index1 = 0_z; index1 < items.get_length(0); ++index1)
