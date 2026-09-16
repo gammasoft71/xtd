@@ -18,15 +18,26 @@ xtdc run
 ## Output
 
 ```
+Read with xtd::array:
+  items[0, 0] = 11
+  items[0, 1] = 12
+  items[0, 2] = 13
+  items[0, 3] = 14
+  items[0, 4] = 15
+  items[1, 0] = 21
+  items[1, 1] = 22
+  items[1, 2] = 23
+  items[1, 3] = 24
+  items[1, 4] = 25
+
 Read with std::mdspan:
-  view1[0, 0] = 11
-  view1[0, 1] = 12
-  view1[0, 2] = 13
-  view1[0, 3] = 14
-  view1[0, 4] = 15
-  view1[1, 0] = 21
-  view1[1, 1] = 22
-  view1[1, 2] = 23
-  view1[1, 3] = 24
-  view1[1, 4] = 25
+  view[0, 0] = 11
+  view[0, 1] = 12
+  view[0, 2] = 13
+  view[0, 3] = 14
+  view[0, 4] = 15
+  view[1, 0] = 21
+  view[1, 1] = 22
+  view[1, 2] = 23
+  view[1, 3] = 24
 ```
