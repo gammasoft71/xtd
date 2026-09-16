@@ -4,7 +4,7 @@ Shows how to use [xtd::array\[\]](https://gammasoft71.github.io/xtd/reference_gu
 
 ## Sources
 
-* [src/array_rank_2_and_mdspan/cpp](src/array_rank_2_and_mdspan/cpp)
+* [src/array_rank_2_and_mdspan.cpp](src/array_rank_2_and_mdspan.cpp)
 * [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
