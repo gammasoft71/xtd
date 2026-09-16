@@ -95,7 +95,7 @@ namespace xtd {
     template<typename iterator_t>
     read_only_span(iterator_t first, xtd::usize count) : data_ {&(*first)}, length_ {extent != dynamic_extent ? extent : count} {}
      */
-    #if defined(__xtd__cpp_lib_type_identity)
+    #if defined(__cpp_lib_type_identity)
     /// @brief Creates an xtd::read_only_span with specified native array.
     /// @param array The native array to construct a view for.
     template<xtd::usize len>
