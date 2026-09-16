@@ -328,15 +328,15 @@ EXPAND_ONLY_PREDEF     = NO
 SEARCH_INCLUDES        = YES
 INCLUDE_PATH           = 
 INCLUDE_FILE_PATTERNS  = 
-PREDEFINED             = "__cpp_lib_char8_t=true" \
-                         "__cpp_lib_filesystem=true" \
-                         "__cpp_multidimensional_subscript=true" \
-                         "__xtd__cpp_lib_any=true" \
-                         "__xtd__cpp_lib_char8_t=true" \
-                         "__xtd__cpp_lib_format=true" \
-                         "__xtd__cpp_lib_optional=true" \
-                         "__xtd__cpp_lib_semaphore=true" \
-                         "__xtd__cpp_lib_three_way_comparison=true" \
+PREDEFINED             = "__cpp_lib_char8_t=1" \
+                         "__cpp_lib_filesystem=1" \
+                         "__cpp_multidimensional_subscript=1" \
+                         "__xtd__cpp_lib_any=1" \
+                         "__xtd__cpp_lib_char8_t=1" \
+                         "__xtd__cpp_lib_format=1" \
+                         "__xtd__cpp_lib_optional=1" \
+                         "__xtd__cpp_lib_semaphore=1" \
+                         "__xtd__cpp_lib_three_way_comparison=1" \
                          "abstract_=: public xtd::abstract_object" \
                          "abstract_object_=: public xtd::abstract_object" \
                          "assert_=xtd::diagnostics::debug::cassert" \
@@ -356,8 +356,16 @@ PREDEFINED             = "__cpp_lib_char8_t=true" \
                          "typeof_=xtd::__s__::__typeof_" \
                          "unused_=" \
                          "using_="
-EXPAND_AS_DEFINED      = 
-SKIP_FUNCTION_MACROS   = YES
+EXPAND_AS_DEFINED      = __cpp_lib_char8_t \
+                         __cpp_lib_filesystem \
+                         __cpp_multidimensional_subscript \
+                         __xtd__cpp_lib_any=1" \
+                         __xtd__cpp_lib_char8_t \
+                         __xtd__cpp_lib_format \
+                         __xtd__cpp_lib_optional \
+                         __xtd__cpp_lib_semaphore \
+                         __xtd__cpp_lib_three_way_comparison
+SKIP_FUNCTION_MACROS   = NO # Default: YES
 
 #---------------------------------------------------------------------------
 # Configuration options related to external references
