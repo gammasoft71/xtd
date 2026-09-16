@@ -10,7 +10,7 @@
 #include <xtd/tunit/constraints/assert_that>
 #include <xtd/tunit/test_class_attribute>
 #include <xtd/tunit/test_method_attribute>
-#if defined(__xtd__cpp_lib_ranges)
+#if defined(__cpp_lib_ranges)
 #include <ranges>
 #endif
 
@@ -78,7 +78,7 @@ namespace xtd::tests {
       assert_that(stringable<const my_enum_struct_test&>).is().true_();
     }
     
-    #if defined(__xtd__cpp_lib_ranges)
+    #if defined(__cpp_lib_ranges)
     auto test_method_(with_std_ranges) {
       auto items = array {1, 2, 3, 4, 5} | std::views::transform(delegate_(auto v) {return v * v * v;});
       assert_that(stringable<decltype(items)>).is().true_();

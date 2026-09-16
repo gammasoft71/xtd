@@ -23,10 +23,6 @@
 #define __xtd__cpp_lib_format
 #endif
 
-#if defined(__cpp_lib_ranges)
-#define __xtd__cpp_lib_ranges
-#endif
-
 #if defined(__cpp_lib_source_location)
 #define __xtd__cpp_lib_source_location
 #endif

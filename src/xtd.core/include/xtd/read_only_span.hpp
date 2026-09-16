@@ -116,7 +116,7 @@ namespace xtd {
     /// @exception xtd::argument_out_of_range_exception if length is greater than items size.
     template<typename array_type_t>
     constexpr read_only_span(const xtd::array<array_type_t>& items) : read_only_span {items, size_type {0}, items.length()} {}
-    #if defined(__xtd__cpp_lib_ranges)
+    #if defined(__cpp_lib_ranges)
     /// @brief Creates an xtd::read_only_span with specified range.
     /// @param range The range to construct a view for.
     template<typename range_t>
