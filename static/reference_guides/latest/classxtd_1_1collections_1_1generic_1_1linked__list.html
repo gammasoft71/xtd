@@ -380,7 +380,10 @@ The <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html"
 <li>Thanks to <a class="el" href="namespacextd_1_1linq.html" title="Provides classes and interfaces that support queries that use Language-Integrated Query (LINQ).">xtd::linq</a>, <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html" title="Represents a doubly linked list.">xtd::collections::generic::linked_list</a> &lt;type_t&gt; can be manipulated by the classes of <a class="el" href="namespacextd_1_1ranges_1_1views.html" title="The view namesapce contains range views, lightweight objects that indirectly represent iterable seque...">xtd::ranges::views</a> and can be combined with <a href="https://en.cppreference.com/w/cpp/ranges.html">std::ranges</a>. <br  />
 The following example shows the <a class="el" href="namespacextd_1_1ranges_1_1views.html" title="The view namesapce contains range views, lightweight objects that indirectly represent iterable seque...">xtd::ranges::views</a> and <a href="https://en.cppreference.com/w/cpp/ranges.html">std::ranges</a> usage : <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
+<div class="line"><span class="preprocessor">#if __cpp_lib_ranges</span></div>
 <div class="line"><span class="keyword">using namespace </span>std::ranges::views;</div>
+<div class="line"><span class="preprocessor">#endif</span></div>
+<div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span>views;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
@@ -413,12 +416,14 @@ The following example shows the <a class="el" href="namespacextd_1_1ranges_1_1vi
 <div class="line">    | select(_*method(&amp;<a class="code hl_function" href="classxtd_1_1basic__string.html#a2095a4dd9dbf5c5b0945458539b94a3d">string::to_upper</a>));</div>
 <div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(query2);</div>
 <div class="line">  </div>
+<div class="line"><span class="preprocessor">#if __cpp_lib_ranges</span></div>
 <div class="line">  <span class="comment">// std::ranges combined with xtd::ranges query</span></div>
 <div class="line">  <span class="keyword">auto</span> query3 = names</div>
 <div class="line">    | filter(_*method(&amp;<a class="code hl_function" href="classxtd_1_1basic__string.html#a4d8c4c95a122844c62de3feb62a5fa74">string::length</a>) == 5)</div>
 <div class="line">    | order_by(_)</div>
 <div class="line">    | transform(_*method(&amp;<a class="code hl_function" href="classxtd_1_1basic__string.html#a2095a4dd9dbf5c5b0945458539b94a3d">string::to_upper</a>));</div>
 <div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(query3);</div>
+<div class="line"><span class="preprocessor">#endif</span></div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>

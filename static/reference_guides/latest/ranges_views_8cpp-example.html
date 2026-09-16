@@ -109,7 +109,10 @@ document.addEventListener('DOMContentLoaded', () => {
 <p>Shows how to use <a class="el" href="namespacextd_1_1ranges_1_1views.html" title="The view namesapce contains range views, lightweight objects that indirectly represent iterable seque...">xtd::ranges::views</a> views.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
+<div class="line"><span class="preprocessor">#if __cpp_lib_ranges</span></div>
 <div class="line"><span class="keyword">using namespace </span>std::ranges::views;</div>
+<div class="line"><span class="preprocessor">#endif</span></div>
+<div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span>views;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
@@ -142,12 +145,14 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line">    | select(_*method(&amp;string::to_upper));</div>
 <div class="line">  println(query2);</div>
 <div class="line">  </div>
+<div class="line"><span class="preprocessor">#if __cpp_lib_ranges</span></div>
 <div class="line">  <span class="comment">// std::ranges combined with xtd::ranges query</span></div>
 <div class="line">  <span class="keyword">auto</span> query3 = names</div>
 <div class="line">    | filter(_*method(&amp;string::length) == 5)</div>
 <div class="line">    | order_by(_)</div>
 <div class="line">    | transform(_*method(&amp;string::to_upper));</div>
 <div class="line">  println(query3);</div>
+<div class="line"><span class="preprocessor">#endif</span></div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>

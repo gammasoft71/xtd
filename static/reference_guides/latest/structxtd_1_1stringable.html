@@ -182,7 +182,9 @@ struct xtd::stringable&lt; value_t &gt;</div><p>Represents the stringable concep
 <div class="line">  log_to_console(42);</div>
 <div class="line">  log_to_console(std::vector {1, 2, 3, 4, 5});</div>
 <div class="line">  log_to_console(array {1, 2, 3, 4, 5}.select(_ * _));</div>
+<div class="line"><span class="preprocessor">#if __cpp_lib_ranges</span></div>
 <div class="line">  log_to_console(array {1, 2, 3, 4, 5} | std::views::transform(_ * _ * _));</div>
+<div class="line"><span class="preprocessor">#endif</span></div>
 <div class="line">  log_to_console(argument_out_of_range_exception {});</div>
 <div class="line">}</div>
 <div class="line"> </div>
