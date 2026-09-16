@@ -8,6 +8,7 @@ add_projects(
   array_as_read_only
   array_binary_search
   array_rank_1_index_operator
+  array_rank_2_index_operator
   array_sort
   array_sort2
   array_sort3
