@@ -1,6 +1,9 @@
 #include <xtd/xtd>
 
+#if __cpp_lib_ranges
 using namespace std::ranges::views;
+#endif
+
 using namespace views;
 
 auto main() -> int {
@@ -33,12 +36,14 @@ auto main() -> int {
     | select(_*method(&string::to_upper));
   println(query2);
   
+#if __cpp_lib_ranges
   // std::ranges combined with xtd::ranges query
   auto query3 = names
     | filter(_*method(&string::length) == 5)
     | order_by(_)
     | transform(_*method(&string::to_upper));
   println(query3);
+#endif
 }
 
 // This code produces the following output :

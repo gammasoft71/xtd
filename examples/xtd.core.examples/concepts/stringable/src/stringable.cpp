@@ -57,7 +57,9 @@ auto main() -> int {
   log_to_console(42);
   log_to_console(std::vector {1, 2, 3, 4, 5});
   log_to_console(array {1, 2, 3, 4, 5}.select(_ * _));
+#if __cpp_lib_ranges
   log_to_console(array {1, 2, 3, 4, 5} | std::views::transform(_ * _ * _));
+#endif
   log_to_console(argument_out_of_range_exception {});
 }
 
