@@ -25,6 +25,10 @@
 #include "types.hpp"
 #include "string.hpp"
 #include <filesystem>
+#if __cpp_lib_mdspan
+#include <mdspan>
+#endif
+
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -497,6 +501,11 @@ namespace xtd {
   
   template<typename ...args_t>
   inline auto to_string(const std::variant<args_t...>& value, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
+
+#if __cpp_lib_mdspan
+  template<typename type_t, typename extents_t, typename layout_policy_t = std::layout_right, typename accessor_policy_t = std::default_accessor<type_t>>
+  inline auto to_string(const std::mdspan<type_t, extents_t, layout_policy_t, accessor_policy_t>& values, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
+#endif
 
   template<typename type_t>
   inline auto to_string(type_t value, const std::initializer_list<std::pair<type_t, xtd::string>>& il) -> xtd::string;

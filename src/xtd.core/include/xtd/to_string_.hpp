@@ -405,6 +405,25 @@ template<typename ...args_t>
   return std::visit([&](auto && t){return xtd::to_string(t, fmt, loc);}, value);
 }
 
+#if __cpp_lib_mdspan
+template<typename type_t, typename extents_t, typename layout_policy_t, typename accessor_policy_t>
+[[nodiscard]] inline auto xtd::to_string(const std::mdspan<type_t, extents_t, layout_policy_t, accessor_policy_t>& values, const xtd::string& fmt, const std::locale& loc) -> xtd::string {
+  auto indices = std::array<xtd::usize, values.rank()> {};
+  auto format = [&](const auto& self, xtd::usize dimension) -> xtd::string {
+    if (dimension == values.rank()) return xtd::to_string(values[indices], fmt, loc);
+    auto result = xtd::string {"["};
+    for (xtd::usize i = 0; i < values.extent(dimension); ++i) {
+      if (i != 0) result += ", ";
+      indices[dimension] = i;
+      result += self(self, dimension + 1);
+    }
+    result += "]";
+    return result;
+  };
+  return format(format, 0);
+}
+#endif
+
 template<typename type_t>
 [[nodiscard]] inline auto xtd::to_string(type_t value, const std::initializer_list<std::pair<type_t, xtd::string>>& il) -> xtd::string {
   std::map<type_t, xtd::string, std::greater<type_t>> values;
