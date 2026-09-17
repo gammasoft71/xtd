@@ -1225,6 +1225,66 @@ template&lt;typename type_t, typename allocator_t = xtd::collections::generic::h
   </table>
   </dd>
 </dl>
+<dl class="section user"><dt>examples</dt><dd>The following code example shows how to copy an <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> to another <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> print_values(<span class="keyword">const</span> <span class="keyword">auto</span>&amp; my_array, <span class="keyword">const</span> <span class="keyword">auto</span>&amp; separator) -&gt; <span class="keywordtype">void</span> {</div>
+<div class="line">  <span class="keyword">auto</span> enumerator = my_array.get_enumerator();</div>
+<div class="line">  <span class="keyword">auto</span> <a class="code hl_struct" href="structxtd_1_1index.html">index</a> = 0_z;</div>
+<div class="line">  <span class="keyword">auto</span> cols = my_array.get_length(my_array.rank() - 1);</div>
+<div class="line">  <span class="keywordflow">while</span> (enumerator.<a class="code hl_function" href="structxtd_1_1collections_1_1generic_1_1enumerator.html#ad461ec52e959712ab699f6ca3aa5ec3d">move_next</a>()) {</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code hl_struct" href="structxtd_1_1index.html">index</a> &lt; cols) ++<a class="code hl_struct" href="structxtd_1_1index.html">index</a>;</div>
+<div class="line">    <span class="keywordflow">else</span> {</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>();</div>
+<div class="line">      <a class="code hl_struct" href="structxtd_1_1index.html">index</a> = 1;</div>
+<div class="line">    }</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#abd86463570c9aa0ca88ce4bb118aef7d">console::write</a>(<span class="stringliteral">&quot;{}{}&quot;</span>, separator, enumerator.<a class="code hl_function" href="structxtd_1_1collections_1_1generic_1_1enumerator.html#a56ef2e4d105ed3260d33bd1989b43f3b">current</a>());</div>
+<div class="line">  }</div>
+<div class="line">  console::write_line();</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="comment">// Creates and initializes two new arrays.</span></div>
+<div class="line">  <span class="keyword">auto</span> my_source_array = array&lt;string&gt; {6_z};</div>
+<div class="line">  my_source_array.set_value(<span class="stringliteral">&quot;three&quot;</span>, 0);</div>
+<div class="line">  my_source_array.set_value(<span class="stringliteral">&quot;napping&quot;</span>, 1);</div>
+<div class="line">  my_source_array.set_value(<span class="stringliteral">&quot;cats&quot;</span>, 2);</div>
+<div class="line">  my_source_array.set_value(<span class="stringliteral">&quot;in&quot;</span>, 3);</div>
+<div class="line">  my_source_array.set_value(<span class="stringliteral">&quot;the&quot;</span>, 4);</div>
+<div class="line">  my_source_array.set_value(<span class="stringliteral">&quot;barn&quot;</span>, 5);</div>
+<div class="line">  </div>
+<div class="line">  <span class="keyword">auto</span> my_target_array = array&lt;string&gt; {15_z};</div>
+<div class="line">  my_target_array.set_value(<span class="stringliteral">&quot;The&quot;</span>, 0);</div>
+<div class="line">  my_target_array.set_value(<span class="stringliteral">&quot;quick&quot;</span>, 1);</div>
+<div class="line">  my_target_array.set_value(<span class="stringliteral">&quot;brown&quot;</span>, 2);</div>
+<div class="line">  my_target_array.set_value(<span class="stringliteral">&quot;fox&quot;</span>, 3);</div>
+<div class="line">  my_target_array.set_value(<span class="stringliteral">&quot;jumps&quot;</span>, 4);</div>
+<div class="line">  my_target_array.set_value(<span class="stringliteral">&quot;over&quot;</span>, 5);</div>
+<div class="line">  my_target_array.set_value(<span class="stringliteral">&quot;the&quot;</span>, 6);</div>
+<div class="line">  my_target_array.set_value(<span class="stringliteral">&quot;lazy&quot;</span>, 7);</div>
+<div class="line">  my_target_array.set_value(<span class="stringliteral">&quot;dog&quot;</span>, 8);</div>
+<div class="line"> </div>
+<div class="line">  <span class="comment">// Displays the values of the Array.</span></div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;The target array contains the following (before and after copying):&quot;</span>);</div>
+<div class="line">  print_values(my_target_array, <span class="charliteral">&#39; &#39;</span>);</div>
+<div class="line">  </div>
+<div class="line">  <span class="comment">// Copies the source Array to the target Array, starting at index 6.</span></div>
+<div class="line">  my_source_array.copy_to(my_target_array, 6);</div>
+<div class="line">  </div>
+<div class="line">  <span class="comment">// Displays the values of the Array.</span></div>
+<div class="line">  print_values(my_target_array, <span class="charliteral">&#39; &#39;</span>);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// The target array contains the following (before and after copying):</span></div>
+<div class="line"><span class="comment">//  The quick brown fox jumps over the lazy dog</span></div>
+<div class="line"><span class="comment">//  The quick brown fox jumps over three napping cats in the barn</span></div>
+<div class="ttc" id="aclassxtd_1_1console_html_abd86463570c9aa0ca88ce4bb118aef7d"><div class="ttname"><a href="classxtd_1_1console.html#abd86463570c9aa0ca88ce4bb118aef7d">xtd::console::write</a></div><div class="ttdeci">static auto write(arg_t &amp;&amp;value) -&gt; void</div><div class="ttdoc">Writes the text representation of the specified value to the standard output stream.</div><div class="ttdef"><b>Definition</b> console.hpp:490</div></div>
+<div class="ttc" id="aclassxtd_1_1console_html_ae600c08b996905be13225bba0f253a63"><div class="ttname"><a href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">xtd::console::write_line</a></div><div class="ttdeci">static auto write_line() -&gt; void</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
+<div class="ttc" id="astructxtd_1_1collections_1_1generic_1_1enumerator_html_a56ef2e4d105ed3260d33bd1989b43f3b"><div class="ttname"><a href="structxtd_1_1collections_1_1generic_1_1enumerator.html#a56ef2e4d105ed3260d33bd1989b43f3b">xtd::collections::generic::enumerator::current</a></div><div class="ttdeci">const type_t &amp; current() const override</div><div class="ttdoc">Gets the element in the collection at the current position of the enumerator.</div><div class="ttdef"><b>Definition</b> enumerator.hpp:63</div></div>
+<div class="ttc" id="astructxtd_1_1collections_1_1generic_1_1enumerator_html_ad461ec52e959712ab699f6ca3aa5ec3d"><div class="ttname"><a href="structxtd_1_1collections_1_1generic_1_1enumerator.html#ad461ec52e959712ab699f6ca3aa5ec3d">xtd::collections::generic::enumerator::move_next</a></div><div class="ttdeci">bool move_next() override</div><div class="ttdoc">Advances the enumerator to the next element of the collection.</div><div class="ttdef"><b>Definition</b> enumerator.hpp:72</div></div>
+<div class="ttc" id="astructxtd_1_1index_html"><div class="ttname"><a href="structxtd_1_1index.html">xtd::index</a></div><div class="ttdoc">Represents a type that can be used to index a collection either from the beginning or the end.</div><div class="ttdef"><b>Definition</b> index.hpp:38</div></div>
+</div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
@@ -1271,6 +1331,61 @@ template&lt;typename type_t, typename allocator_t = xtd::collections::generic::h
   </table>
   </dd>
 </dl>
+<dl class="section user"><dt>examples</dt><dd>The following code example shows how to copy an <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> to another <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> print_values(<span class="keyword">const</span> <span class="keyword">auto</span>&amp; my_array, <span class="keyword">const</span> <span class="keyword">auto</span>&amp; separator) -&gt; <span class="keywordtype">void</span> {</div>
+<div class="line">  <span class="keyword">auto</span> enumerator = my_array.get_enumerator();</div>
+<div class="line">  <span class="keyword">auto</span> <a class="code hl_struct" href="structxtd_1_1index.html">index</a> = 0_z;</div>
+<div class="line">  <span class="keyword">auto</span> cols = my_array.get_length(my_array.rank() - 1);</div>
+<div class="line">  <span class="keywordflow">while</span> (enumerator.<a class="code hl_function" href="structxtd_1_1collections_1_1generic_1_1enumerator.html#ad461ec52e959712ab699f6ca3aa5ec3d">move_next</a>()) {</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code hl_struct" href="structxtd_1_1index.html">index</a> &lt; cols) ++<a class="code hl_struct" href="structxtd_1_1index.html">index</a>;</div>
+<div class="line">    <span class="keywordflow">else</span> {</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>();</div>
+<div class="line">      <a class="code hl_struct" href="structxtd_1_1index.html">index</a> = 1;</div>
+<div class="line">    }</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#abd86463570c9aa0ca88ce4bb118aef7d">console::write</a>(<span class="stringliteral">&quot;{}{}&quot;</span>, separator, enumerator.<a class="code hl_function" href="structxtd_1_1collections_1_1generic_1_1enumerator.html#a56ef2e4d105ed3260d33bd1989b43f3b">current</a>());</div>
+<div class="line">  }</div>
+<div class="line">  console::write_line();</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="comment">// Creates and initializes two new arrays.</span></div>
+<div class="line">  <span class="keyword">auto</span> my_source_array = array&lt;string&gt; {6_z};</div>
+<div class="line">  my_source_array.set_value(<span class="stringliteral">&quot;three&quot;</span>, 0);</div>
+<div class="line">  my_source_array.set_value(<span class="stringliteral">&quot;napping&quot;</span>, 1);</div>
+<div class="line">  my_source_array.set_value(<span class="stringliteral">&quot;cats&quot;</span>, 2);</div>
+<div class="line">  my_source_array.set_value(<span class="stringliteral">&quot;in&quot;</span>, 3);</div>
+<div class="line">  my_source_array.set_value(<span class="stringliteral">&quot;the&quot;</span>, 4);</div>
+<div class="line">  my_source_array.set_value(<span class="stringliteral">&quot;barn&quot;</span>, 5);</div>
+<div class="line">  </div>
+<div class="line">  <span class="keyword">auto</span> my_target_array = array&lt;string&gt; {15_z};</div>
+<div class="line">  my_target_array.set_value(<span class="stringliteral">&quot;The&quot;</span>, 0);</div>
+<div class="line">  my_target_array.set_value(<span class="stringliteral">&quot;quick&quot;</span>, 1);</div>
+<div class="line">  my_target_array.set_value(<span class="stringliteral">&quot;brown&quot;</span>, 2);</div>
+<div class="line">  my_target_array.set_value(<span class="stringliteral">&quot;fox&quot;</span>, 3);</div>
+<div class="line">  my_target_array.set_value(<span class="stringliteral">&quot;jumps&quot;</span>, 4);</div>
+<div class="line">  my_target_array.set_value(<span class="stringliteral">&quot;over&quot;</span>, 5);</div>
+<div class="line">  my_target_array.set_value(<span class="stringliteral">&quot;the&quot;</span>, 6);</div>
+<div class="line">  my_target_array.set_value(<span class="stringliteral">&quot;lazy&quot;</span>, 7);</div>
+<div class="line">  my_target_array.set_value(<span class="stringliteral">&quot;dog&quot;</span>, 8);</div>
+<div class="line"> </div>
+<div class="line">  <span class="comment">// Displays the values of the Array.</span></div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;The target array contains the following (before and after copying):&quot;</span>);</div>
+<div class="line">  print_values(my_target_array, <span class="charliteral">&#39; &#39;</span>);</div>
+<div class="line">  </div>
+<div class="line">  <span class="comment">// Copies the source Array to the target Array, starting at index 6.</span></div>
+<div class="line">  my_source_array.copy_to(my_target_array, 6);</div>
+<div class="line">  </div>
+<div class="line">  <span class="comment">// Displays the values of the Array.</span></div>
+<div class="line">  print_values(my_target_array, <span class="charliteral">&#39; &#39;</span>);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// The target array contains the following (before and after copying):</span></div>
+<div class="line"><span class="comment">//  The quick brown fox jumps over the lazy dog</span></div>
+<div class="line"><span class="comment">//  The quick brown fox jumps over three napping cats in the barn</span></div>
+</div><!-- fragment --> </dd></dl>
 
 <p>Implements <a class="el" href="classxtd_1_1collections_1_1generic_1_1ilist.html#a48839617476586e222cc4d75730c159a">xtd::collections::generic::ilist&lt; type_t &gt;</a>.</p>
 
@@ -1325,6 +1440,61 @@ template&lt;typename type_t, typename allocator_t = xtd::collections::generic::h
   </table>
   </dd>
 </dl>
+<dl class="section user"><dt>examples</dt><dd>The following code example shows how to copy an <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> to another <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> print_values(<span class="keyword">const</span> <span class="keyword">auto</span>&amp; my_array, <span class="keyword">const</span> <span class="keyword">auto</span>&amp; separator) -&gt; <span class="keywordtype">void</span> {</div>
+<div class="line">  <span class="keyword">auto</span> enumerator = my_array.get_enumerator();</div>
+<div class="line">  <span class="keyword">auto</span> <a class="code hl_struct" href="structxtd_1_1index.html">index</a> = 0_z;</div>
+<div class="line">  <span class="keyword">auto</span> cols = my_array.get_length(my_array.rank() - 1);</div>
+<div class="line">  <span class="keywordflow">while</span> (enumerator.<a class="code hl_function" href="structxtd_1_1collections_1_1generic_1_1enumerator.html#ad461ec52e959712ab699f6ca3aa5ec3d">move_next</a>()) {</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code hl_struct" href="structxtd_1_1index.html">index</a> &lt; cols) ++<a class="code hl_struct" href="structxtd_1_1index.html">index</a>;</div>
+<div class="line">    <span class="keywordflow">else</span> {</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>();</div>
+<div class="line">      <a class="code hl_struct" href="structxtd_1_1index.html">index</a> = 1;</div>
+<div class="line">    }</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#abd86463570c9aa0ca88ce4bb118aef7d">console::write</a>(<span class="stringliteral">&quot;{}{}&quot;</span>, separator, enumerator.<a class="code hl_function" href="structxtd_1_1collections_1_1generic_1_1enumerator.html#a56ef2e4d105ed3260d33bd1989b43f3b">current</a>());</div>
+<div class="line">  }</div>
+<div class="line">  console::write_line();</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="comment">// Creates and initializes two new arrays.</span></div>
+<div class="line">  <span class="keyword">auto</span> my_source_array = array&lt;string&gt; {6_z};</div>
+<div class="line">  my_source_array.set_value(<span class="stringliteral">&quot;three&quot;</span>, 0);</div>
+<div class="line">  my_source_array.set_value(<span class="stringliteral">&quot;napping&quot;</span>, 1);</div>
+<div class="line">  my_source_array.set_value(<span class="stringliteral">&quot;cats&quot;</span>, 2);</div>
+<div class="line">  my_source_array.set_value(<span class="stringliteral">&quot;in&quot;</span>, 3);</div>
+<div class="line">  my_source_array.set_value(<span class="stringliteral">&quot;the&quot;</span>, 4);</div>
+<div class="line">  my_source_array.set_value(<span class="stringliteral">&quot;barn&quot;</span>, 5);</div>
+<div class="line">  </div>
+<div class="line">  <span class="keyword">auto</span> my_target_array = array&lt;string&gt; {15_z};</div>
+<div class="line">  my_target_array.set_value(<span class="stringliteral">&quot;The&quot;</span>, 0);</div>
+<div class="line">  my_target_array.set_value(<span class="stringliteral">&quot;quick&quot;</span>, 1);</div>
+<div class="line">  my_target_array.set_value(<span class="stringliteral">&quot;brown&quot;</span>, 2);</div>
+<div class="line">  my_target_array.set_value(<span class="stringliteral">&quot;fox&quot;</span>, 3);</div>
+<div class="line">  my_target_array.set_value(<span class="stringliteral">&quot;jumps&quot;</span>, 4);</div>
+<div class="line">  my_target_array.set_value(<span class="stringliteral">&quot;over&quot;</span>, 5);</div>
+<div class="line">  my_target_array.set_value(<span class="stringliteral">&quot;the&quot;</span>, 6);</div>
+<div class="line">  my_target_array.set_value(<span class="stringliteral">&quot;lazy&quot;</span>, 7);</div>
+<div class="line">  my_target_array.set_value(<span class="stringliteral">&quot;dog&quot;</span>, 8);</div>
+<div class="line"> </div>
+<div class="line">  <span class="comment">// Displays the values of the Array.</span></div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;The target array contains the following (before and after copying):&quot;</span>);</div>
+<div class="line">  print_values(my_target_array, <span class="charliteral">&#39; &#39;</span>);</div>
+<div class="line">  </div>
+<div class="line">  <span class="comment">// Copies the source Array to the target Array, starting at index 6.</span></div>
+<div class="line">  my_source_array.copy_to(my_target_array, 6);</div>
+<div class="line">  </div>
+<div class="line">  <span class="comment">// Displays the values of the Array.</span></div>
+<div class="line">  print_values(my_target_array, <span class="charliteral">&#39; &#39;</span>);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// The target array contains the following (before and after copying):</span></div>
+<div class="line"><span class="comment">//  The quick brown fox jumps over the lazy dog</span></div>
+<div class="line"><span class="comment">//  The quick brown fox jumps over three napping cats in the barn</span></div>
+</div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
@@ -1383,6 +1553,61 @@ template&lt;typename type_t, typename allocator_t = xtd::collections::generic::h
   </table>
   </dd>
 </dl>
+<dl class="section user"><dt>examples</dt><dd>The following code example shows how to copy an <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> to another <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> print_values(<span class="keyword">const</span> <span class="keyword">auto</span>&amp; my_array, <span class="keyword">const</span> <span class="keyword">auto</span>&amp; separator) -&gt; <span class="keywordtype">void</span> {</div>
+<div class="line">  <span class="keyword">auto</span> enumerator = my_array.get_enumerator();</div>
+<div class="line">  <span class="keyword">auto</span> <a class="code hl_struct" href="structxtd_1_1index.html">index</a> = 0_z;</div>
+<div class="line">  <span class="keyword">auto</span> cols = my_array.get_length(my_array.rank() - 1);</div>
+<div class="line">  <span class="keywordflow">while</span> (enumerator.<a class="code hl_function" href="structxtd_1_1collections_1_1generic_1_1enumerator.html#ad461ec52e959712ab699f6ca3aa5ec3d">move_next</a>()) {</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code hl_struct" href="structxtd_1_1index.html">index</a> &lt; cols) ++<a class="code hl_struct" href="structxtd_1_1index.html">index</a>;</div>
+<div class="line">    <span class="keywordflow">else</span> {</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>();</div>
+<div class="line">      <a class="code hl_struct" href="structxtd_1_1index.html">index</a> = 1;</div>
+<div class="line">    }</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#abd86463570c9aa0ca88ce4bb118aef7d">console::write</a>(<span class="stringliteral">&quot;{}{}&quot;</span>, separator, enumerator.<a class="code hl_function" href="structxtd_1_1collections_1_1generic_1_1enumerator.html#a56ef2e4d105ed3260d33bd1989b43f3b">current</a>());</div>
+<div class="line">  }</div>
+<div class="line">  console::write_line();</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="comment">// Creates and initializes two new arrays.</span></div>
+<div class="line">  <span class="keyword">auto</span> my_source_array = array&lt;string&gt; {6_z};</div>
+<div class="line">  my_source_array.set_value(<span class="stringliteral">&quot;three&quot;</span>, 0);</div>
+<div class="line">  my_source_array.set_value(<span class="stringliteral">&quot;napping&quot;</span>, 1);</div>
+<div class="line">  my_source_array.set_value(<span class="stringliteral">&quot;cats&quot;</span>, 2);</div>
+<div class="line">  my_source_array.set_value(<span class="stringliteral">&quot;in&quot;</span>, 3);</div>
+<div class="line">  my_source_array.set_value(<span class="stringliteral">&quot;the&quot;</span>, 4);</div>
+<div class="line">  my_source_array.set_value(<span class="stringliteral">&quot;barn&quot;</span>, 5);</div>
+<div class="line">  </div>
+<div class="line">  <span class="keyword">auto</span> my_target_array = array&lt;string&gt; {15_z};</div>
+<div class="line">  my_target_array.set_value(<span class="stringliteral">&quot;The&quot;</span>, 0);</div>
+<div class="line">  my_target_array.set_value(<span class="stringliteral">&quot;quick&quot;</span>, 1);</div>
+<div class="line">  my_target_array.set_value(<span class="stringliteral">&quot;brown&quot;</span>, 2);</div>
+<div class="line">  my_target_array.set_value(<span class="stringliteral">&quot;fox&quot;</span>, 3);</div>
+<div class="line">  my_target_array.set_value(<span class="stringliteral">&quot;jumps&quot;</span>, 4);</div>
+<div class="line">  my_target_array.set_value(<span class="stringliteral">&quot;over&quot;</span>, 5);</div>
+<div class="line">  my_target_array.set_value(<span class="stringliteral">&quot;the&quot;</span>, 6);</div>
+<div class="line">  my_target_array.set_value(<span class="stringliteral">&quot;lazy&quot;</span>, 7);</div>
+<div class="line">  my_target_array.set_value(<span class="stringliteral">&quot;dog&quot;</span>, 8);</div>
+<div class="line"> </div>
+<div class="line">  <span class="comment">// Displays the values of the Array.</span></div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;The target array contains the following (before and after copying):&quot;</span>);</div>
+<div class="line">  print_values(my_target_array, <span class="charliteral">&#39; &#39;</span>);</div>
+<div class="line">  </div>
+<div class="line">  <span class="comment">// Copies the source Array to the target Array, starting at index 6.</span></div>
+<div class="line">  my_source_array.copy_to(my_target_array, 6);</div>
+<div class="line">  </div>
+<div class="line">  <span class="comment">// Displays the values of the Array.</span></div>
+<div class="line">  print_values(my_target_array, <span class="charliteral">&#39; &#39;</span>);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// The target array contains the following (before and after copying):</span></div>
+<div class="line"><span class="comment">//  The quick brown fox jumps over the lazy dog</span></div>
+<div class="line"><span class="comment">//  The quick brown fox jumps over three napping cats in the barn</span></div>
+</div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
@@ -1435,6 +1660,61 @@ template&lt;typename type_t, typename allocator_t = xtd::collections::generic::h
   </table>
   </dd>
 </dl>
+<dl class="section user"><dt>examples</dt><dd>The following code example shows how to copy an <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> to another <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> print_values(<span class="keyword">const</span> <span class="keyword">auto</span>&amp; my_array, <span class="keyword">const</span> <span class="keyword">auto</span>&amp; separator) -&gt; <span class="keywordtype">void</span> {</div>
+<div class="line">  <span class="keyword">auto</span> enumerator = my_array.get_enumerator();</div>
+<div class="line">  <span class="keyword">auto</span> <a class="code hl_struct" href="structxtd_1_1index.html">index</a> = 0_z;</div>
+<div class="line">  <span class="keyword">auto</span> cols = my_array.get_length(my_array.rank() - 1);</div>
+<div class="line">  <span class="keywordflow">while</span> (enumerator.<a class="code hl_function" href="structxtd_1_1collections_1_1generic_1_1enumerator.html#ad461ec52e959712ab699f6ca3aa5ec3d">move_next</a>()) {</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code hl_struct" href="structxtd_1_1index.html">index</a> &lt; cols) ++<a class="code hl_struct" href="structxtd_1_1index.html">index</a>;</div>
+<div class="line">    <span class="keywordflow">else</span> {</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>();</div>
+<div class="line">      <a class="code hl_struct" href="structxtd_1_1index.html">index</a> = 1;</div>
+<div class="line">    }</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#abd86463570c9aa0ca88ce4bb118aef7d">console::write</a>(<span class="stringliteral">&quot;{}{}&quot;</span>, separator, enumerator.<a class="code hl_function" href="structxtd_1_1collections_1_1generic_1_1enumerator.html#a56ef2e4d105ed3260d33bd1989b43f3b">current</a>());</div>
+<div class="line">  }</div>
+<div class="line">  console::write_line();</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="comment">// Creates and initializes two new arrays.</span></div>
+<div class="line">  <span class="keyword">auto</span> my_source_array = array&lt;string&gt; {6_z};</div>
+<div class="line">  my_source_array.set_value(<span class="stringliteral">&quot;three&quot;</span>, 0);</div>
+<div class="line">  my_source_array.set_value(<span class="stringliteral">&quot;napping&quot;</span>, 1);</div>
+<div class="line">  my_source_array.set_value(<span class="stringliteral">&quot;cats&quot;</span>, 2);</div>
+<div class="line">  my_source_array.set_value(<span class="stringliteral">&quot;in&quot;</span>, 3);</div>
+<div class="line">  my_source_array.set_value(<span class="stringliteral">&quot;the&quot;</span>, 4);</div>
+<div class="line">  my_source_array.set_value(<span class="stringliteral">&quot;barn&quot;</span>, 5);</div>
+<div class="line">  </div>
+<div class="line">  <span class="keyword">auto</span> my_target_array = array&lt;string&gt; {15_z};</div>
+<div class="line">  my_target_array.set_value(<span class="stringliteral">&quot;The&quot;</span>, 0);</div>
+<div class="line">  my_target_array.set_value(<span class="stringliteral">&quot;quick&quot;</span>, 1);</div>
+<div class="line">  my_target_array.set_value(<span class="stringliteral">&quot;brown&quot;</span>, 2);</div>
+<div class="line">  my_target_array.set_value(<span class="stringliteral">&quot;fox&quot;</span>, 3);</div>
+<div class="line">  my_target_array.set_value(<span class="stringliteral">&quot;jumps&quot;</span>, 4);</div>
+<div class="line">  my_target_array.set_value(<span class="stringliteral">&quot;over&quot;</span>, 5);</div>
+<div class="line">  my_target_array.set_value(<span class="stringliteral">&quot;the&quot;</span>, 6);</div>
+<div class="line">  my_target_array.set_value(<span class="stringliteral">&quot;lazy&quot;</span>, 7);</div>
+<div class="line">  my_target_array.set_value(<span class="stringliteral">&quot;dog&quot;</span>, 8);</div>
+<div class="line"> </div>
+<div class="line">  <span class="comment">// Displays the values of the Array.</span></div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;The target array contains the following (before and after copying):&quot;</span>);</div>
+<div class="line">  print_values(my_target_array, <span class="charliteral">&#39; &#39;</span>);</div>
+<div class="line">  </div>
+<div class="line">  <span class="comment">// Copies the source Array to the target Array, starting at index 6.</span></div>
+<div class="line">  my_source_array.copy_to(my_target_array, 6);</div>
+<div class="line">  </div>
+<div class="line">  <span class="comment">// Displays the values of the Array.</span></div>
+<div class="line">  print_values(my_target_array, <span class="charliteral">&#39; &#39;</span>);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// The target array contains the following (before and after copying):</span></div>
+<div class="line"><span class="comment">//  The quick brown fox jumps over the lazy dog</span></div>
+<div class="line"><span class="comment">//  The quick brown fox jumps over three napping cats in the barn</span></div>
+</div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
@@ -1493,6 +1773,61 @@ template&lt;typename type_t, typename allocator_t = xtd::collections::generic::h
   </table>
   </dd>
 </dl>
+<dl class="section user"><dt>examples</dt><dd>The following code example shows how to copy an <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> to another <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> print_values(<span class="keyword">const</span> <span class="keyword">auto</span>&amp; my_array, <span class="keyword">const</span> <span class="keyword">auto</span>&amp; separator) -&gt; <span class="keywordtype">void</span> {</div>
+<div class="line">  <span class="keyword">auto</span> enumerator = my_array.get_enumerator();</div>
+<div class="line">  <span class="keyword">auto</span> <a class="code hl_struct" href="structxtd_1_1index.html">index</a> = 0_z;</div>
+<div class="line">  <span class="keyword">auto</span> cols = my_array.get_length(my_array.rank() - 1);</div>
+<div class="line">  <span class="keywordflow">while</span> (enumerator.<a class="code hl_function" href="structxtd_1_1collections_1_1generic_1_1enumerator.html#ad461ec52e959712ab699f6ca3aa5ec3d">move_next</a>()) {</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code hl_struct" href="structxtd_1_1index.html">index</a> &lt; cols) ++<a class="code hl_struct" href="structxtd_1_1index.html">index</a>;</div>
+<div class="line">    <span class="keywordflow">else</span> {</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>();</div>
+<div class="line">      <a class="code hl_struct" href="structxtd_1_1index.html">index</a> = 1;</div>
+<div class="line">    }</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#abd86463570c9aa0ca88ce4bb118aef7d">console::write</a>(<span class="stringliteral">&quot;{}{}&quot;</span>, separator, enumerator.<a class="code hl_function" href="structxtd_1_1collections_1_1generic_1_1enumerator.html#a56ef2e4d105ed3260d33bd1989b43f3b">current</a>());</div>
+<div class="line">  }</div>
+<div class="line">  console::write_line();</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="comment">// Creates and initializes two new arrays.</span></div>
+<div class="line">  <span class="keyword">auto</span> my_source_array = array&lt;string&gt; {6_z};</div>
+<div class="line">  my_source_array.set_value(<span class="stringliteral">&quot;three&quot;</span>, 0);</div>
+<div class="line">  my_source_array.set_value(<span class="stringliteral">&quot;napping&quot;</span>, 1);</div>
+<div class="line">  my_source_array.set_value(<span class="stringliteral">&quot;cats&quot;</span>, 2);</div>
+<div class="line">  my_source_array.set_value(<span class="stringliteral">&quot;in&quot;</span>, 3);</div>
+<div class="line">  my_source_array.set_value(<span class="stringliteral">&quot;the&quot;</span>, 4);</div>
+<div class="line">  my_source_array.set_value(<span class="stringliteral">&quot;barn&quot;</span>, 5);</div>
+<div class="line">  </div>
+<div class="line">  <span class="keyword">auto</span> my_target_array = array&lt;string&gt; {15_z};</div>
+<div class="line">  my_target_array.set_value(<span class="stringliteral">&quot;The&quot;</span>, 0);</div>
+<div class="line">  my_target_array.set_value(<span class="stringliteral">&quot;quick&quot;</span>, 1);</div>
+<div class="line">  my_target_array.set_value(<span class="stringliteral">&quot;brown&quot;</span>, 2);</div>
+<div class="line">  my_target_array.set_value(<span class="stringliteral">&quot;fox&quot;</span>, 3);</div>
+<div class="line">  my_target_array.set_value(<span class="stringliteral">&quot;jumps&quot;</span>, 4);</div>
+<div class="line">  my_target_array.set_value(<span class="stringliteral">&quot;over&quot;</span>, 5);</div>
+<div class="line">  my_target_array.set_value(<span class="stringliteral">&quot;the&quot;</span>, 6);</div>
+<div class="line">  my_target_array.set_value(<span class="stringliteral">&quot;lazy&quot;</span>, 7);</div>
+<div class="line">  my_target_array.set_value(<span class="stringliteral">&quot;dog&quot;</span>, 8);</div>
+<div class="line"> </div>
+<div class="line">  <span class="comment">// Displays the values of the Array.</span></div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;The target array contains the following (before and after copying):&quot;</span>);</div>
+<div class="line">  print_values(my_target_array, <span class="charliteral">&#39; &#39;</span>);</div>
+<div class="line">  </div>
+<div class="line">  <span class="comment">// Copies the source Array to the target Array, starting at index 6.</span></div>
+<div class="line">  my_source_array.copy_to(my_target_array, 6);</div>
+<div class="line">  </div>
+<div class="line">  <span class="comment">// Displays the values of the Array.</span></div>
+<div class="line">  print_values(my_target_array, <span class="charliteral">&#39; &#39;</span>);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// The target array contains the following (before and after copying):</span></div>
+<div class="line"><span class="comment">//  The quick brown fox jumps over the lazy dog</span></div>
+<div class="line"><span class="comment">//  The quick brown fox jumps over three napping cats in the barn</span></div>
+</div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
@@ -2152,9 +2487,7 @@ template&lt;typename type_t, typename allocator_t = xtd::collections::generic::h
 <div class="line"><span class="comment">// binary_search for &quot;Tyrannosaurus&quot;:</span></div>
 <div class="line"><span class="comment">// Found at index 5.</span></div>
 <div class="ttc" id="aclassxtd_1_1array_3_4_html_a8bb0505af1b7aa6187ff35c06c8d1f49"><div class="ttname"><a href="classxtd_1_1array_3_4.html#a8bb0505af1b7aa6187ff35c06c8d1f49">xtd::array&lt;&gt;::binary_search</a></div><div class="ttdeci">static auto binary_search(const array&lt; type_t, 1, allocator_t &gt; &amp;array, int32 index, int32 length, const value_t &amp;value) -&gt; xtd::usize</div><div class="ttdoc">Searches a range of elements in a one-dimensional sorted array for a value, using the xtd::icomparabl...</div><div class="ttdef"><b>Definition</b> array_static.hpp:92</div></div>
-<div class="ttc" id="aclassxtd_1_1console_html_ae600c08b996905be13225bba0f253a63"><div class="ttname"><a href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">xtd::console::write_line</a></div><div class="ttdeci">static auto write_line() -&gt; void</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
 <div class="ttc" id="agroup__keywords_html_gaeb9462ec721c9718cf689e93bf11bf56"><div class="ttname"><a href="group__keywords.html#gaeb9462ec721c9718cf689e93bf11bf56">startup_</a></div><div class="ttdeci">#define startup_(...)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:152</div></div>
-<div class="ttc" id="astructxtd_1_1index_html"><div class="ttname"><a href="structxtd_1_1index.html">xtd::index</a></div><div class="ttdoc">Represents a type that can be used to index a collection either from the beginning or the end.</div><div class="ttdef"><b>Definition</b> index.hpp:38</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>This method uses the default comparer <a class="el" href="classxtd_1_1collections_1_1generic_1_1comparer.html#a9a8d918ad60fc9ba6aff540a7ef2b4b0">xtd::collections::generic::comparer::default_comparer</a> for type <span class="tt">type_t</span> to determine the order of list elements. The <a class="el" href="classxtd_1_1collections_1_1generic_1_1comparer.html#a9a8d918ad60fc9ba6aff540a7ef2b4b0">xtd::collections::generic::comparer::default_comparer</a> property checks whether type <span class="tt">type_t</span> implements the <a class="el" href="classxtd_1_1icomparable.html" title="Defines a generalized comparison method that a value type or class implements to create a type-specif...">xtd::icomparable</a> &lt;type_t&gt; generic interface and uses that implementation, if available. If not, <a class="el" href="classxtd_1_1collections_1_1generic_1_1comparer.html#a9a8d918ad60fc9ba6aff540a7ef2b4b0">xtd::collections::generic::comparer::default_comparer</a> checks whether type T implements the <a class="el" href="classxtd_1_1icomparable.html" title="Defines a generalized comparison method that a value type or class implements to create a type-specif...">xtd::icomparable</a> interface. If type <span class="tt">type_t</span> does not implement either interface, <a class="el" href="classxtd_1_1collections_1_1generic_1_1comparer.html#a9a8d918ad60fc9ba6aff540a7ef2b4b0">xtd::collections::generic::comparer::default_comparer</a> throws an <a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a>. </dd>
 <dd>

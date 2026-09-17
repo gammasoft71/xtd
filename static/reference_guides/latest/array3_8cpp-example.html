@@ -109,18 +109,17 @@ document.addEventListener('DOMContentLoaded', () => {
 <p>Shows how to use <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> class.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">template</span>&lt;usize rank&gt;</div>
-<div class="line"><span class="keyword">auto</span> print_values(<span class="keyword">const</span> array&lt;int, rank&gt;&amp; my_arr) {</div>
-<div class="line">  <span class="keyword">auto</span> my_enumerator = my_arr.get_enumerator();</div>
-<div class="line">  <span class="keyword">auto</span> i = 0_z;</div>
-<div class="line">  <span class="keyword">auto</span> cols = my_arr.get_length(my_arr.rank() - 1);</div>
-<div class="line">  <span class="keywordflow">while</span> (my_enumerator.move_next()) {</div>
-<div class="line">    <span class="keywordflow">if</span> (i &lt; cols) ++i;</div>
+<div class="line"><span class="keyword">auto</span> print_values(<span class="keyword">const</span> <span class="keyword">auto</span>&amp; my_array, <span class="keyword">const</span> <span class="keyword">auto</span>&amp; separator) -&gt; <span class="keywordtype">void</span> {</div>
+<div class="line">  <span class="keyword">auto</span> enumerator = my_array.get_enumerator();</div>
+<div class="line">  <span class="keyword">auto</span> index = 0_z;</div>
+<div class="line">  <span class="keyword">auto</span> cols = my_array.get_length(my_array.rank() - 1);</div>
+<div class="line">  <span class="keywordflow">while</span> (enumerator.<a id="a0" name="a0"></a><a class="code hl_function" href="structxtd_1_1collections_1_1generic_1_1enumerator.html#ad461ec52e959712ab699f6ca3aa5ec3d">move_next</a>()) {</div>
+<div class="line">    <span class="keywordflow">if</span> (index &lt; cols) ++index;</div>
 <div class="line">    <span class="keywordflow">else</span> {</div>
 <div class="line">      console::write_line();</div>
-<div class="line">      i = 1;</div>
+<div class="line">      index = 1;</div>
 <div class="line">    }</div>
-<div class="line">    console::write(<span class="stringliteral">&quot;\t{}&quot;</span>, my_enumerator.current());</div>
+<div class="line">    console::write(<span class="stringliteral">&quot;{}{}&quot;</span>, separator, enumerator.<a id="a1" name="a1"></a><a class="code hl_function" href="structxtd_1_1collections_1_1generic_1_1enumerator.html#a56ef2e4d105ed3260d33bd1989b43f3b">current</a>());</div>
 <div class="line">  }</div>
 <div class="line">  console::write_line();</div>
 <div class="line">}</div>
@@ -145,7 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Displays the contents of the Array.</span></div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;The array contains the following values:&quot;</span>);</div>
-<div class="line">  print_values(my_arr);</div>
+<div class="line">  print_values(my_arr, <span class="charliteral">&#39;\t&#39;</span>);</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
@@ -163,6 +162,8 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line"><span class="comment">//         110     111     112     113</span></div>
 <div class="line"><span class="comment">//         120     121     122     123</span></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">xtd::console_key::i</a></div><div class="ttdeci">@ i</div><div class="ttdoc">The I key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:104</div></div>
+<div class="ttc" id="astructxtd_1_1collections_1_1generic_1_1enumerator_html_a56ef2e4d105ed3260d33bd1989b43f3b"><div class="ttname"><a href="structxtd_1_1collections_1_1generic_1_1enumerator.html#a56ef2e4d105ed3260d33bd1989b43f3b">xtd::collections::generic::enumerator::current</a></div><div class="ttdeci">const type_t &amp; current() const override</div><div class="ttdoc">Gets the element in the collection at the current position of the enumerator.</div><div class="ttdef"><b>Definition</b> enumerator.hpp:63</div></div>
+<div class="ttc" id="astructxtd_1_1collections_1_1generic_1_1enumerator_html_ad461ec52e959712ab699f6ca3aa5ec3d"><div class="ttname"><a href="structxtd_1_1collections_1_1generic_1_1enumerator.html#ad461ec52e959712ab699f6ca3aa5ec3d">xtd::collections::generic::enumerator::move_next</a></div><div class="ttdeci">bool move_next() override</div><div class="ttdoc">Advances the enumerator to the next element of the collection.</div><div class="ttdef"><b>Definition</b> enumerator.hpp:72</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
