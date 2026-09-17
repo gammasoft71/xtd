@@ -20,7 +20,7 @@ xtdc run
 ```
 items = [[11, 12, 13, 14, 15], [21, 22, 23, 24, 25]]
 
-Read with xtd::array:
+Read with xtd::array [,] :
   items[0, 0] = 11
   items[0, 1] = 12
   items[0, 2] = 13
@@ -34,7 +34,7 @@ Read with xtd::array:
 
 view = [[11, 12, 13, 14, 15], [21, 22, 23, 24, 25]]
 
-Read with std::mdspan:
+Read with std::mdspan [,] :
   view[0, 0] = 11
   view[0, 1] = 12
   view[0, 2] = 13

@@ -6,7 +6,7 @@ auto main() -> int {
   println("items = {}", items);
 
 #if __cpp_multidimensional_subscript
-  println("\nRead with xtd::array:");
+  println("\nRead with xtd::array [,] :");
   for (auto index1 = 0_z; index1 < items.get_length(0); ++index1)
     for (auto index2 = 0_z; index2 < items.get_length(1); ++index2)
       println("  items[{}, {}] = {}", index1, index2, items[index1, index2]);
@@ -16,7 +16,7 @@ auto main() -> int {
   auto view = std::mdspan(items.data(), items.get_length(0), items.get_length(1));
   println("\nview = {}", view);
   
-  println("\nRead with std::mdspan:");
+  println("\nRead with std::mdspan [,] :");
   for (auto index1 = 0_z; index1 < view.extent(0); ++index1)
     for (auto index2 = 0_z; index2 < view.extent(1); ++index2)
       println("  view[{}, {}] = {}", index1, index2, view[index1, index2]);
@@ -27,7 +27,7 @@ auto main() -> int {
 //
 // items = [[11, 12, 13, 14, 15], [21, 22, 23, 24, 25]]
 //
-// Read with xtd::array:
+// Read with xtd::array [,] :
 //   items[0, 0] = 11
 //   items[0, 1] = 12
 //   items[0, 2] = 13
@@ -41,7 +41,7 @@ auto main() -> int {
 //
 // view = [[11, 12, 13, 14, 15], [21, 22, 23, 24, 25]]
 //
-// Read with std::mdspan:
+// Read with std::mdspan [,] :
 //   view[0, 0] = 11
 //   view[0, 1] = 12
 //   view[0, 2] = 13
