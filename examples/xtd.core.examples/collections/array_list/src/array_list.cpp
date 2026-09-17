@@ -1,7 +1,6 @@
 #include <xtd/xtd>
 
-template<typename collection_t>
-auto print_values(const collection_t& my_list) -> void {
+auto print_values(const iterable auto& my_list) -> void {
   for (auto obj : my_list)
     console::write("   {0}", obj);
   console::write_line();
