@@ -1,6 +1,5 @@
 #include "shape.hpp"
 #include <xtd/math>
-#include <algorithm>
 
 using namespace tetris;
 
@@ -63,7 +62,8 @@ int shape::y(int index) const {
 
 shape shape::generate() noexcept {
   static auto rnd = xtd::random {};
-  static auto [min, max] = std::ranges::minmax(enum_object<>::get_values_as_int32<tetris::tetrominoes>().items());
+  static auto min = enum_object<>::get_values_as_int32<tetris::tetrominoes>().min();
+  static auto max = enum_object<>::get_values_as_int32<tetris::tetrominoes>().max();
   return shape {as<tetris::tetrominoes>(rnd.next(min + 1, max + 1))};
 }
 
