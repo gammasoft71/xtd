@@ -529,25 +529,25 @@ auto xtd::linq::enumerable::max(source_t&& source, selector_t&& selector) -> res
 template<xtd::iterable source_t>
 requires xtd::numeric<xtd::iterable_value_type<source_t>>
 auto xtd::linq::enumerable::min(source_t&& source) -> xtd::iterable_value_type<source_t> {
-  auto result = xtd::optional<source_t> {};
+  auto result = xtd::optional<xtd::iterable_value_type<source_t>> {};
   //auto source_holder = enumerable_holder<source_t> {std::forward<source_t>(source)};
   //for (const auto& item : source_holder.get())
   for (const auto& item : source)
     if (!result || item < result) result = item;
-  return result.value_or(source_t {});
+  return result.value_or(xtd::iterable_value_type<source_t> {});
 }
 
 template<xtd::iterable source_t, xtd::callable<xtd::iterable_value_type<source_t>, xtd::iterable_value_type<source_t>> selector_t>
 requires xtd::numeric<xtd::iterable_value_type<source_t>>
 auto xtd::linq::enumerable::min(source_t&& source, selector_t&& selector) -> xtd::iterable_value_type<source_t> {
-  auto result = xtd::optional<source_t> {};
+  auto result = xtd::optional<xtd::iterable_value_type<source_t>> {};
   //auto source_holder = enumerable_holder<source_t> {std::forward<source_t>(source)};
   //for (const auto& item : source_holder.get())
   for (const auto& item : source) {
     auto val = selector(item);
     if (!result || val < result) result = val;
   }
-  return result.value_or(source_t {});
+  return result.value_or(xtd::iterable_value_type<source_t> {});
 }
 
 template<typename result_t, xtd::iterable source_t, xtd::callable<result_t, xtd::iterable_value_type<source_t>> selector_t>
