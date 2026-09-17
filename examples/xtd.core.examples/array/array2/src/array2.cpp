@@ -1,14 +1,17 @@
 #include <xtd/xtd>
 
-auto print_values(const array<int>& my_arr) {
-  for (auto i : my_arr)
-    console::write("\t{}", i);
-  console::write_line();
-}
-
-auto print_values(const array<any_object>& my_arr) {
-  for (auto o : my_arr)
-    console::write("\t{}", o);
+auto print_values(const auto& my_array, const auto& separator) -> void {
+  auto enumerator = my_array.get_enumerator();
+  auto index = 0_z;
+  auto cols = my_array.get_length(my_array.rank() - 1);
+  while (enumerator.move_next()) {
+    if (index < cols) ++index;
+    else {
+      console::write_line();
+      index = 1;
+    }
+    console::write("{}{}", separator, enumerator.current());
+  }
   console::write_line();
 }
 
@@ -20,9 +23,9 @@ auto main() -> int {
   // Prints the initial values of both arrays.
   console::write_line("Initially,");
   console::write("integer array:");
-  print_values(my_int_array);
+  print_values(my_int_array, '\t');
   console::write("Object array: ");
-  print_values(my_obj_array);
+  print_values(my_obj_array, '\t');
   
   // Copies the first two elements from the integer array to the Object array.
   array<>::copy(my_int_array, my_obj_array, 2);
@@ -30,9 +33,9 @@ auto main() -> int {
   // Prints the values of the modified arrays.
   console::write_line("\nAfter copying the first two elements of the integer array to the Object array,");
   console::write("integer array:");
-  print_values(my_int_array);
+  print_values(my_int_array, '\t');
   console::write("Object array: ");
-  print_values(my_obj_array);
+  print_values(my_obj_array, '\t');
   
   // Copies the last two elements from the object array to the integer array.
   xtd::array<>::copy(my_obj_array, my_obj_array.get_upper_bound(0) - 1, my_int_array, my_int_array.get_upper_bound(0) - 1, 2);
@@ -40,9 +43,9 @@ auto main() -> int {
   // Prints the values of the modified arrays.
   console::write_line("\nAfter copying the last two elements of the Object array to the integer array,");
   console::write("integer array:");
-  print_values(my_int_array);
+  print_values(my_int_array, '\t');
   console::write("Object array: ");
-  print_values(my_obj_array);
+  print_values(my_obj_array, '\t');
 }
 
 // This code produces the following output :
