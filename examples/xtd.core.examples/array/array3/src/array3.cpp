@@ -1,17 +1,16 @@
 #include <xtd/xtd>
 
-template<usize rank>
-auto print_values(const array<int, rank>& my_arr) {
-  auto my_enumerator = my_arr.get_enumerator();
-  auto i = 0_z;
-  auto cols = my_arr.get_length(my_arr.rank() - 1);
-  while (my_enumerator.move_next()) {
-    if (i < cols) ++i;
+auto print_values(const auto& my_array, const auto& separator) -> void {
+  auto enumerator = my_array.get_enumerator();
+  auto index = 0_z;
+  auto cols = my_array.get_length(my_array.rank() - 1);
+  while (enumerator.move_next()) {
+    if (index < cols) ++index;
     else {
       console::write_line();
-      i = 1;
+      index = 1;
     }
-    console::write("\t{}", my_enumerator.current());
+    console::write("{}{}", separator, enumerator.current());
   }
   console::write_line();
 }
@@ -36,7 +35,7 @@ auto main() -> int {
   
   // Displays the contents of the Array.
   console::write_line("The array contains the following values:");
-  print_values(my_arr);
+  print_values(my_arr, '\t');
 }
 
 // This code produces the following output :
