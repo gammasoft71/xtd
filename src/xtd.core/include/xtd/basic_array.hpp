@@ -174,6 +174,9 @@ namespace xtd {
     /// @brief Copies the entire xtd::array <type_t> to a compatible one-dimensional array.
     /// @param array The one-dimensional xtd::array that is the destination of the elements copied from ICollection. The xtd::array must have zero-based indexing.
     /// @exception xtd::argument_exception  The number of elements in the source xtd::array <type_t> is greater than the number of elements that the destination array can contain.
+    /// @par examples
+    /// The following code example shows how to copy an xtd::array to another xtd::array.
+    /// @include array_copy_to.cpp
     auto copy_to(xtd::array<type_t>& array) const -> void requires std::copy_constructible<type_t> {
       copy_to(0, array, 0);
     }
@@ -182,6 +185,9 @@ namespace xtd {
     /// @param array The one-dimensional xtd::array that is the destination of the elements copied from xtd::collections::generic::icollection <type_t>. The xtd::array must have zero-based indexing.
     /// @param array_index The zero-based index in `array` at which copying begins.
     /// @exception xtd::argument_exception The number of elements in the source xtd::array <type_t> is greater than the available space from `array_index` to the end of the destination `array`.
+    /// @par examples
+    /// The following code example shows how to copy an xtd::array to another xtd::array.
+    /// @include array_copy_to.cpp
     auto copy_to(xtd::array<type_t>& array, size_type array_index) const -> void override {
       if constexpr (std::copy_constructible<type_t>) copy_to(0, array, array_index);
       else xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "value_type is not copy constructible.");
@@ -191,6 +197,9 @@ namespace xtd {
     /// @param array The one-dimensional xtd::array that is the destination of the elements copied from xtd::collections::generic::icollection <type_t>. The xtd::array must have zero-based indexing.
     /// @param array_index The zero-based index in `array` at which copying begins.
     /// @exception xtd::argument_exception The number of elements in the source xtd::array <type_t> is greater than the available space from `array_index` to the end of the destination `array`.
+    /// @par examples
+    /// The following code example shows how to copy an xtd::array to another xtd::array.
+    /// @include array_copy_to.cpp
     auto copy_to(const xtd::array<size_type>& indexes, xtd::array<type_t>& array, size_type array_index) const -> void requires std::copy_constructible<type_t> {
       copy_to(compute_index(self_, indexes), array, array_index);
     }
@@ -200,6 +209,9 @@ namespace xtd {
     /// @param array_index The zero-based index in `array` at which copying begins.
     /// @param count The number of elements to copy.
     /// @exception xtd::argument_exception The number of elements in the source xtd::array <type_t> is greater than the available space from `array_index` to the end of the destination `array`.
+    /// @par examples
+    /// The following code example shows how to copy an xtd::array to another xtd::array.
+    /// @include array_copy_to.cpp
     auto copy_to(const xtd::array<size_type>& indexes, xtd::array<type_t>& array, size_type array_index, size_type count) const -> void requires std::copy_constructible<type_t> {
       copy_to(compute_index(self_, indexes), array, array_index, count);
     }
@@ -208,6 +220,9 @@ namespace xtd {
     /// @param array The one-dimensional xtd::array that is the destination of the elements copied from xtd::collections::generic::icollection <type_t>. The xtd::array must have zero-based indexing.
     /// @param array_index The zero-based index in `array` at which copying begins.
     /// @exception xtd::argument_exception The number of elements in the source xtd::array <type_t> is greater than the available space from `array_index` to the end of the destination `array`.
+    /// @par examples
+    /// The following code example shows how to copy an xtd::array to another xtd::array.
+    /// @include array_copy_to.cpp
     auto copy_to(const size_type index, xtd::array<type_t>& array, size_type array_index) const -> void requires std::copy_constructible<type_t> {
       copy_to(index, array, array_index, length() - index);
     }
@@ -217,6 +232,9 @@ namespace xtd {
     /// @param array_index The zero-based index in `array` at which copying begins.
     /// @param count The number of elements to copy.
     /// @exception xtd::argument_exception The number of elements in the source xtd::array <type_t> is greater than the available space from `array_index` to the end of the destination `array`.
+    /// @par examples
+    /// The following code example shows how to copy an xtd::array to another xtd::array.
+    /// @include array_copy_to.cpp
     auto copy_to(const size_type index, xtd::array<type_t>& array, size_type array_index, size_type count) const -> void requires std::copy_constructible<type_t> {
       if (array.rank() != 1) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
       if (index + count > self_.length() || array_index + count > array.length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);

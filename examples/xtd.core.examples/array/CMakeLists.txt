@@ -7,6 +7,7 @@ add_projects(
   array
   array_as_read_only
   array_binary_search
+  array_copy_to
   array_rank_1_index_operator
   array_rank_2_and_mdspan
   array_rank_2_index_operator
