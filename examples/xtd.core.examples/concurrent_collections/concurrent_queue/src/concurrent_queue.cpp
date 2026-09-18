@@ -1,34 +1,41 @@
 #include <xtd/xtd>
 
+using namespace xtd::collections::concurrent;
+
 class example {
 public:
+  // Demonstrates:
+  // concurrent_queue<type_t>::enqueue()
+  // concurrent_queue<type_t>::try_peek()
+  // concurrent_queue<type_t>::try_dequeue()
   static auto main() {
-    auto items = collections::concurrent::concurrent_queue<int> {};
+    // Construct a concurrent_queue.
+    auto cq = concurrent_queue<int> {};
+
+    // Populate the queue.
+    for (auto i = 0; i < 10000; ++i)
+      cq.enqueue(i);
     
-    parallel::invoke(array<action<>> {10_z, delegate_ {
-      for (auto i : views::range(1, 10)) {
-        items.enqueue(as<int>(task<>::current_id()) * 10 + i);
-        thread::sleep(10_ms);
-      }
-    }});
+    // Peek at the first element.
+    auto result = 0;
+    if (!cq.try_peek(result))
+      console::write_line("CQ: try_peek failed when it should have succeeded");
+    else if (result != 0)
+      console::write_line("CQ: Expected try_peek result of 0, got {0}", result);
     
-    auto results = items.distinct().order().to_array();
-    console::write_line("After enqueueing");
-    console::write_line("  items.length = {}", results.length());
-    console::write_line("  items = {}", results.to_array());
+    auto outer_sum = 0;
+    // An action to consume the concurrent_queue.
+    auto action = [&cq, &outer_sum] {
+      auto local_sum = 0;
+      auto local_value = 0;
+      while (cq.try_dequeue(local_value)) local_sum += local_value;
+      interlocked::add(outer_sum, local_sum);
+    };
     
-    parallel::invoke(array<action<>> {10, delegate_ {
-      for ([[maybe_unused]] auto _ : views::range(1, 5)) {
-        auto value = 0;
-        items.try_dequeue(value);
-        thread::sleep(10_ms);
-      }
-    }});
+    // Start 4 concurrent consuming actions.
+    parallel::invoke(action, action, action, action);
     
-    results = items.distinct().order().to_array();
-    console::write_line("After dequeueing");
-    console::write_line("  items.length = {}", results.length());
-    console::write_line("  items = {}", results.to_array());
+    console::write_line("outer_sum = {0}, should be 49995000", outer_sum);
   }
 };
 
@@ -36,9 +43,4 @@ startup_(example::main);
 
 // This code produces the following output :
 //
-// After enqueueing
-//   items.length = 100
-//   items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100]
-// After dequeueing
-//   items.length = 50
-//   items = [6, 7, 8, 9, 10, 16, 17, 18, 19, 20, 26, 27, 28, 29, 30, 36, 37, 38, 39, 40, 46, 47, 48, 49, 50, 56, 57, 58, 59, 60, 66, 67, 68, 69, 70, 76, 77, 78, 79, 80, 86, 87, 88, 89, 90, 96, 97, 98, 99, 100]
+// outer_sum = 49995000, should be 49995000
