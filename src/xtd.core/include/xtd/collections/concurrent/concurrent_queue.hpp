@@ -82,6 +82,15 @@ namespace xtd {
           return {};
         }
         
+        /// @brief Gets a value that indicates whether the xtd::collections::concurrent::concurrent_queue <type_t> is empty.
+        /// @return `true` if the xtd::collections::concurrent::concurrent_queue <type_t> is empty; otherwise, `false`.
+        /// @remarks or determining whether the collection contains any items, use of this property is recommended rather than retrieving the number of items from the xtd::collections::concurrent::concurrent_queue::count property and comparing it to 0. However, as this collection is intended to be accessed concurrently, it may be the case that another thread will modify the collection after xtd::collections::concurrent::concurrent_queue::is_empty returns, thus invalidating the result.
+        [[nodiscard]] auto is_empty() const noexcept -> bool override {
+          lock_guard_(items_)
+          return !items_.count();
+          return {};
+        }
+        
         /// @brief Gets a value indicating whether the xtd::collections::concurrent::concurrent_queue <type_t> is read-only.
         /// @return `true` if the xtd::collections::concurrent::concurrent_queue <type_t> is read-only; otherwise, `false`.
         /// @remarks A collection that is read-only does not allow the addition or removal of elements after the collection is created. Note that read-only in this context does not indicate whether individual elements of the collection can be modified, since the xtd::collections::concurrent::concurrent_queue <type_t> interface only supports addition and removal operations. For example, the xtd::collections::concurrent::concurrent_queue::is_read_only property of an array that is cast or converted to an xtd::collections::concurrent::concurrent_queue <type_t> object returns `true`, even though individual array elements can be modified.
@@ -184,7 +193,7 @@ namespace xtd {
       };
       
       /// @cond
-      // Deduction guides for xtd::collections::generic::hash_set
+      // Deduction guides for xtd::collections::concurrent::concurrent_queue
       // {
       template<typename type_t>
       concurrent_queue(xtd::collections::generic::ienumerable<type_t>) -> concurrent_queue<type_t>;

@@ -24,6 +24,7 @@
 #include "collections/stack.hpp"
 #include "collections/concurrent/concurrent_bag.hpp"
 #include "collections/concurrent/concurrent_queue.hpp"
+#include "collections/concurrent/concurrent_stack.hpp"
 #include "collections/concurrent/iproducer_consumer_collection.hpp"
 #include "collections/generic/extensions/collection_common.hpp"
 #include "collections/generic/extensions/enumerable.hpp"
