@@ -7,4 +7,5 @@ add_projects(
   concurrent_bag
   concurrent_queue
   concurrent_queue2
+  concurrent_stack
 )

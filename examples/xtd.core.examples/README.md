@@ -73,6 +73,7 @@
 * [concurrent_bag](concurrent_collections/concurrent_bag/README.md) shows how to use [xtd::collections::concurrent::concurrent_bag](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1concurrent_1_1concurrent__bag.html) class.
 * [concurrent_queue](concurrent_collections/concurrent_queue/README.md) shows how to use [xtd::collections::concurrent::concurrent_queue](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1concurrent_1_1concurrent__queue.html) class.
 * [concurrent_queue2](concurrent_collections/concurrent_queue2/README.md) shows how to use [xtd::collections::concurrent::concurrent_queue](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1concurrent_1_1concurrent__queue.html) class.
+* [concurrent_stack](concurrent_collections/concurrent_stack/README.md) shows how to use [xtd::collections::concurrent:: concurrent_stack](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1concurrent_1_1concurrent__stack.html) class.
 
 ## [Configuration](configuration/README.md)
 

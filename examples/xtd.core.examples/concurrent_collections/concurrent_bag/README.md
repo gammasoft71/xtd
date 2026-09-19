@@ -18,5 +18,10 @@ xtdc run
 ## Output
 
 ```
-outer_sum = 49995000, should be 49995000
+276
+265
+...
+420
+423
+There were 500 items in the bag
 ```
