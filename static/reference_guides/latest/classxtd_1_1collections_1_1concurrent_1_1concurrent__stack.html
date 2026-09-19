@@ -170,8 +170,8 @@ Public Conctructors</h2></td></tr>
 Public Properties</h2></td></tr>
 <tr class="memitem:a954550cfeb3a979d3e62df41e4500cf2" id="r_a954550cfeb3a979d3e62df41e4500cf2"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a954550cfeb3a979d3e62df41e4500cf2">count</a> () const noexcept -&gt; <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> override</td></tr>
 <tr class="memdesc:a954550cfeb3a979d3e62df41e4500cf2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of elements contained in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a>.  <br /></td></tr>
-<tr class="memitem:a70feb101ab17c3d95ea772d771f28314" id="r_a70feb101ab17c3d95ea772d771f28314"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a70feb101ab17c3d95ea772d771f28314">is_empty</a> () const noexcept -&gt; bool override</td></tr>
-<tr class="memdesc:a70feb101ab17c3d95ea772d771f28314"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value that indicates whether the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__stack.html" title="Represents a thread-safe last in-first out (LIFO) collection.">xtd::collections::concurrent::concurrent_stack</a> &lt;type_t&gt; is empty.  <br /></td></tr>
+<tr class="memitem:a45ff49c76b4f4b3e6cfeb0dece7d5bc1" id="r_a45ff49c76b4f4b3e6cfeb0dece7d5bc1"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a45ff49c76b4f4b3e6cfeb0dece7d5bc1">is_empty</a> () const noexcept -&gt; bool</td></tr>
+<tr class="memdesc:a45ff49c76b4f4b3e6cfeb0dece7d5bc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value that indicates whether the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__stack.html" title="Represents a thread-safe last in-first out (LIFO) collection.">xtd::collections::concurrent::concurrent_stack</a> &lt;type_t&gt; is empty.  <br /></td></tr>
 <tr class="memitem:a313680cb696242015b92f128be050d8a" id="r_a313680cb696242015b92f128be050d8a"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a313680cb696242015b92f128be050d8a">is_read_only</a> () const noexcept -&gt; bool override</td></tr>
 <tr class="memdesc:a313680cb696242015b92f128be050d8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__stack.html" title="Represents a thread-safe last in-first out (LIFO) collection.">xtd::collections::concurrent::concurrent_stack</a> &lt;type_t&gt; is read-only.  <br /></td></tr>
 <tr class="memitem:ac426367f607ec33526625e4ed8e30ce2" id="r_ac426367f607ec33526625e4ed8e30ce2"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ac426367f607ec33526625e4ed8e30ce2">is_synchronized</a> () const noexcept -&gt; bool override</td></tr>
@@ -575,8 +575,8 @@ template&lt;typename type_t&gt; </div>
 
 </div>
 </div>
-<a id="a70feb101ab17c3d95ea772d771f28314" name="a70feb101ab17c3d95ea772d771f28314"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a70feb101ab17c3d95ea772d771f28314">&#9670;&#160;</a></span>is_empty()</h2>
+<a id="a45ff49c76b4f4b3e6cfeb0dece7d5bc1" name="a45ff49c76b4f4b3e6cfeb0dece7d5bc1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45ff49c76b4f4b3e6cfeb0dece7d5bc1">&#9670;&#160;</a></span>is_empty()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -595,14 +595,14 @@ template&lt;typename type_t&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>Gets a value that indicates whether the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__stack.html" title="Represents a thread-safe last in-first out (LIFO) collection.">xtd::collections::concurrent::concurrent_stack</a> &lt;type_t&gt; is empty. </p>
 <dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span> if the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__stack.html" title="Represents a thread-safe last in-first out (LIFO) collection.">xtd::collections::concurrent::concurrent_stack</a> &lt;type_t&gt; is empty; otherwise, <span class="tt">false</span>. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>or determining whether the collection contains any items, use of this property is recommended rather than retrieving the number of items from the <a class="el" href="#a954550cfeb3a979d3e62df41e4500cf2" title="Gets the number of elements contained in the xtd::collections::generic::icollection.">xtd::collections::concurrent::concurrent_stack::count</a> property and comparing it to 0. However, as this collection is intended to be accessed concurrently, it may be the case that another thread will modify the collection after <a class="el" href="#a70feb101ab17c3d95ea772d771f28314" title="Gets a value that indicates whether the xtd::collections::concurrent::concurrent_stack &lt;type_t&gt; is em...">xtd::collections::concurrent::concurrent_stack::is_empty</a> returns, thus invalidating the result. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>or determining whether the collection contains any items, use of this property is recommended rather than retrieving the number of items from the <a class="el" href="#a954550cfeb3a979d3e62df41e4500cf2" title="Gets the number of elements contained in the xtd::collections::generic::icollection.">xtd::collections::concurrent::concurrent_stack::count</a> property and comparing it to 0. However, as this collection is intended to be accessed concurrently, it may be the case that another thread will modify the collection after <a class="el" href="#a45ff49c76b4f4b3e6cfeb0dece7d5bc1" title="Gets a value that indicates whether the xtd::collections::concurrent::concurrent_stack &lt;type_t&gt; is em...">xtd::collections::concurrent::concurrent_stack::is_empty</a> returns, thus invalidating the result. </dd></dl>
 
 </div>
 </div>
