@@ -15,6 +15,7 @@
 * [Boxing](xtd.core.examples/boxing/README.md) contains boxing and unboxing examples.
 * [Collections](xtd.core.examples/collections/README.md) contains collections examples.
 * [Concepts](xtd.core.examples/concepts/README.md) contains concepts examples.
+* [concurrent_collections](xtd.core.examples/concurrent_collections/README.md) contains concurrent collections examples.
 * [Configuration](xtd.core.examples/configuration/README.md) contains configuration examples.
 * [Console](xtd.core.examples/console/README.md) contains console examples.
 * [Convert](xtd.core.examples/convert/README.md) contains convert examples.
@@ -28,7 +29,7 @@
 * [Exceptions](xtd.core.examples/exceptions/README.md) contains exceptions examples.
 * [Expressions](xtd.core.examples/expressions/README.md) contains expressions examples.
 * [Format](xtd.core.examples/format/README.md) contains format examples.
-* [Generic collections](xtd.core.examples/generic_collections/README.md) contains genric collections examples.
+* [Generic collections](xtd.core.examples/generic_collections/README.md) contains generic collections examples.
 * [Globalization](xtd.core.examples/globalization/README.md) contains globalization examples.
 * [Guid](xtd.core.examples/guid/README.md) contains guid examples.
 * [Hash code](xtd.core.examples/hash_code/README.md) contains hash_code examples.
