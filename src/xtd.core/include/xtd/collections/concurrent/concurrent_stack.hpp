@@ -85,7 +85,7 @@ namespace xtd {
         /// @brief Gets a value that indicates whether the xtd::collections::concurrent::concurrent_stack <type_t> is empty.
         /// @return `true` if the xtd::collections::concurrent::concurrent_stack <type_t> is empty; otherwise, `false`.
         /// @remarks or determining whether the collection contains any items, use of this property is recommended rather than retrieving the number of items from the xtd::collections::concurrent::concurrent_stack::count property and comparing it to 0. However, as this collection is intended to be accessed concurrently, it may be the case that another thread will modify the collection after xtd::collections::concurrent::concurrent_stack::is_empty returns, thus invalidating the result.
-        [[nodiscard]] auto is_empty() const noexcept -> bool override {
+        [[nodiscard]] auto is_empty() const noexcept -> bool {
           lock_guard_(items_)
             return !items_.count();
           return {};
@@ -236,7 +236,7 @@ namespace xtd {
         auto remove(const_reference item) -> bool override {return false;}
         [[nodiscard]] auto sync_root() const noexcept -> const object& override {return items_;}
         auto try_add(const_reference item) -> bool override {return false;}
-        auto try_take(reference item) -> bool override {return try_destack(item);}
+        auto try_take(reference item) -> bool override {return try_pop(item);}
         
         collection_type items_;
       };
