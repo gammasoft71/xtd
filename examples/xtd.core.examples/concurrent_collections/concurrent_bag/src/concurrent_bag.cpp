@@ -13,7 +13,7 @@ public:
     // Add to concurrent_bag concurrently
     auto cb = concurrent_bag<int>();
     auto bag_add_tasks = list<task<>>();
-    for (auto i = 0; i < 500; i++) {
+    for (auto i = 0; i < 500; ++i) {
       auto number_to_add = i;
       bag_add_tasks.add(task<>::run([&cb, number_to_add] {cb.add(number_to_add);}));
     }
@@ -24,10 +24,10 @@ public:
     // Consume the items in the bag
     auto bag_consume_tasks = list<task<>>();
     auto items_in_bag = 0;
-    while (!cb.is_empty()) {
+    for (auto i = 0; i < 8; ++i) {
       bag_consume_tasks.add(task<>::run([&cb, &items_in_bag] {
         auto item = 0;
-        if (cb.try_take(item)) {
+        while (cb.try_take(item)) {
           console::write_line(item);
           interlocked::increment(items_in_bag);
         }
