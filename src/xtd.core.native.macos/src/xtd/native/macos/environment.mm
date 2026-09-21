@@ -125,7 +125,7 @@ auto environment::get_desktop_environment() -> string {
 }
 
 auto environment::get_desktop_theme() -> string {
-  return macos::strings::contains(macos::shell_execute::run("defaults", "read -g AppleInterfaceStyle"), "Dark") ? "macos dark" : "macos";
+  return macos::strings::contains(macos::shell_execute::run("defaults", "read -g AppleInterfaceStyle 2>/dev/null"), "Dark") ? "macos dark" : "macos";
 }
 
 auto environment::get_distribution_bug_report() -> string {
