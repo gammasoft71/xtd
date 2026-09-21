@@ -4,7 +4,7 @@ Shows how to use [xtd::collections::concurrent::concurrent_stack](https://gammas
 
 ## Sources
 
-* [src/concurrent_stack2.cpp](src/concurrent_stack.cpp)
+* [src/concurrent_stack2.cpp](src/concurrent_stack2.cpp)
 * [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
