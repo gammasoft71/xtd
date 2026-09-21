@@ -214,7 +214,7 @@ namespace xtd {
           auto result = xtd::usize {0};
           lock_guard_(items_)
             for (auto index = xtd::usize {0}; index < count; ++index) {
-              if (!items_.try_pop(items.begin() + start_index + index)) return result;
+              if (!items_.try_pop(*(items.begin() + start_index + index))) return result;
               ++result;
             }
           return result;
