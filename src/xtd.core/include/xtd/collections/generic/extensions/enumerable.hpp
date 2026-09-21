@@ -246,7 +246,7 @@ namespace xtd {
           /// @par Examples
           /// The following code example demonstrates how to use xtd::linq::enumerable::count_by <value_t>(const ienumerable <value_t>&, const std::function <key_t(const value_t&)>&) to count the number of elements in a sequence grouped by key.
           /// @include enumerable_count_by.cpp
-          template<typename key_t, xtd::callable<key_t, value_t> key_selector_t, xtd::callable<bool, key_t, key_t> key_equater_t>
+          template<typename key_t, xtd::callable<key_t, value_t> key_selector_t, xtd::func_callable<bool, key_t, key_t> key_equater_t>
           [[nodiscard]] auto count_by(key_selector_t&& key_selector, key_equater_t&& key_equater) const noexcept -> xtd::collections::generic::enumerable_generator<xtd::collections::generic::key_value_pair<key_t, xtd::usize>> {
             return xtd::linq::enumerable::count_by<key_t, value_t>(self(), std::forward<key_selector_t>(key_selector), std::forward<key_equater_t>(key_equater));
           }
@@ -469,9 +469,17 @@ namespace xtd {
           }
           /// @brief Determines whether two sequences are equal by comparing their elements by using a specifie the equality comparer.
           /// @param second A sequence of values to compare to first.
+          /// @param equality_comparer An xtd::collections::generic::iequality_comparer <value_t> to use to compare elements.
+          /// @return `true` if the two source sequences are of equal length and their corresponding elements are equal according to the default equality comparer for their type; otherwise, `false`.
+          template<xtd::iterable second_t>
+          [[nodiscard]] auto sequence_equal(second_t&& second, const xtd::collections::generic::iequality_comparer<value_t>& equality_comparer) const -> bool {
+            return xtd::linq::enumerable::sequence_equal(self(), second, equality_comparer);
+          }
+          /// @brief Determines whether two sequences are equal by comparing their elements by using a specifie the equality comparer.
+          /// @param second A sequence of values to compare to first.
           /// @param equality_comparer An xtd::iterable_value_type<first_t>, xtd::iterable_value_type<second_t>> to use to compare elements.
           /// @return `true` if the two source sequences are of equal length and their corresponding elements are equal according to the default equality comparer for their type; otherwise, `false`.
-          template<xtd::iterable second_t, xtd::callable<bool, value_t, xtd::iterable_value_type<second_t>> equality_comparer_t>
+          template<xtd::iterable second_t, xtd::func_callable<bool, value_t, xtd::iterable_value_type<second_t>> equality_comparer_t>
           [[nodiscard]] auto sequence_equal(second_t&& second, equality_comparer_t&& equality_comparer) const -> bool {
             return xtd::linq::enumerable::sequence_equal(self(), second, equality_comparer);
           }

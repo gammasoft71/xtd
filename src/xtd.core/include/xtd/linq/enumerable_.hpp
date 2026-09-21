@@ -458,7 +458,7 @@ namespace xtd {
       /// The following code example demonstrates how to use xtd::linq::enumerable::count_by <source_t>(const ienumerable <source_t>&, const std::function <key_t(const source_t&)>&) to count the number of elements in a sequence grouped by key.
       /// @include enumerable_count_by.cpp
       /// @note Need to include list file `#include <xtd/collections/generic/list>`.
-      template<typename key_t, xtd::iterable source_t, xtd::callable<key_t, xtd::iterable_value_type<source_t>> key_selector_t, xtd::callable<bool, key_t, key_t> key_equater_t>
+      template<typename key_t, xtd::iterable source_t, xtd::callable<key_t, xtd::iterable_value_type<source_t>> key_selector_t, xtd::func_callable<bool, key_t, key_t> key_equater_t>
       [[nodiscard]] static auto count_by(source_t&& source, key_selector_t&& key_selector, key_equater_t&& key_equater) noexcept -> xtd::collections::generic::enumerable_generator<xtd::collections::generic::key_value_pair<key_t, xtd::usize>>; // Defined in include/xtd/collections/generic/list.hpp
 
       /// @brief Returns the elements of the specified sequence or the type parameter's default value in a singleton collection if the sequence is empty.
@@ -492,7 +492,7 @@ namespace xtd {
       /// @param comparer An xtd::collections::generic::iequality_comparer <type_t> to compare values.
       /// @return An enumerable distinct elements from the source sequence.
       template<xtd::iterable source_t>
-      [[nodiscard]] static auto distinct(source_t&& source, const iequality_comparer<source_t>& comparer) noexcept  -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>>;
+      [[nodiscard]] static auto distinct(source_t&& source, const iequality_comparer<xtd::iterable_value_type<source_t>>& comparer) noexcept -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>>;
       /// @brief Returns distinct elements from a sequence by using a specified xtd::collections::generic::iequality_comparer <type_t> to compare values.
       /// @param source The sequence to remove duplicate elements from.
       /// @param equater An equality comparer to compare values.
@@ -839,10 +839,17 @@ namespace xtd {
       /// @brief Determines whether two sequences are equal by comparing their elements by using a specifie the equality comparer.
       /// @param first A sequence of values to compare to second.
       /// @param second A sequence of values to compare to first.
-      /// @param equality_comparer An xtd::iterable_value_type<first_t>, xtd::iterable_value_type<second_t>> to use to compare elements.
+      /// @param comparer An xtd::iterable_value_type<first_t>, xtd::iterable_value_type<second_t>> to use to compare elements.
       /// @return `true` if the two source sequences are of equal length and their corresponding elements are equal according to the default equality comparer for their type; otherwise, `false`.
-      template<xtd::iterable first_t, xtd::iterable second_t, xtd::callable<bool, xtd::iterable_value_type<first_t>, xtd::iterable_value_type<second_t>> equality_comparer_t>
-      [[nodiscard]] static auto sequence_equal(first_t&& first, second_t&& second, equality_comparer_t&& equality_comparer) -> bool;
+      template<xtd::iterable first_t, xtd::iterable second_t>
+      [[nodiscard]] static auto sequence_equal(first_t&& first, second_t&& second, const iequality_comparer<xtd::iterable_value_type<first_t>>& comparer) -> bool;
+      /// @brief Determines whether two sequences are equal by comparing their elements by using a specifie the equality comparer.
+      /// @param first A sequence of values to compare to second.
+      /// @param second A sequence of values to compare to first.
+      /// @param comparer An xtd::collections::generic::iequality_comparer <type_t> to use to compare elements.
+      /// @return `true` if the two source sequences are of equal length and their corresponding elements are equal according to the default equality comparer for their type; otherwise, `false`.
+      template<xtd::iterable first_t, xtd::iterable second_t, xtd::func_callable<bool, xtd::iterable_value_type<first_t>, xtd::iterable_value_type<second_t>> equality_comparer_t>
+      [[nodiscard]] static auto sequence_equal(first_t&& first, second_t&& second, equality_comparer_t&& comparer) -> bool;
 
       /// @brief Shuffles the order of the elements of a sequence.
       /// @param source A sequence of values to shuffle.

@@ -661,13 +661,18 @@ auto xtd::linq::enumerable::sequence_equal(first_t&& first, second_t&& second) -
   return sequence_equal(first, second, [](auto&& f, auto&& s) {return f == s;});
 }
 
-template<xtd::iterable first_t, xtd::iterable second_t, xtd::callable<bool, xtd::iterable_value_type<first_t>, xtd::iterable_value_type<second_t>> equality_comparer_t>
-auto xtd::linq::enumerable::sequence_equal(first_t&& first, second_t&& second, equality_comparer_t&& equality_comparer) -> bool {
+template<xtd::iterable first_t, xtd::iterable second_t>
+auto xtd::linq::enumerable::sequence_equal(first_t&& first, second_t&& second, const iequality_comparer<xtd::iterable_value_type<first_t>>& comparer) -> bool {
+  return sequence_equal(first, second, comparer.equals);
+}
+
+template<xtd::iterable first_t, xtd::iterable second_t, xtd::func_callable<bool, xtd::iterable_value_type<first_t>, xtd::iterable_value_type<second_t>> equality_comparer_t>
+auto xtd::linq::enumerable::sequence_equal(first_t&& first, second_t&& second, equality_comparer_t&& comparer) -> bool {
   // if second is an xtd collection and second is shortest than first an exception will be thrown.
   // if second is not a xtd collection, we need to check the size of second. By checling first if `auto size() const -> xtd::usize` is a member of second.
   try {
     for (auto index = xtd::usize {}; const auto& item : second) {
-      if (!equality_comparer(item, *(first.begin() + index))) return false;
+      if (!comparer(item, *(first.begin() + index))) return false;
       ++index;
     }
     return true;

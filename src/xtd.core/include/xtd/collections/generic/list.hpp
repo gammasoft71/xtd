@@ -1208,7 +1208,7 @@ auto xtd::linq::enumerable::as_enumerable(source_t&& source) noexcept {
   else return xtd::collections::generic::list<xtd::iterable_value_type<source_t>>(std::move(source));
 }
 
-template<typename key_t, xtd::iterable source_t, xtd::callable<key_t, xtd::iterable_value_type<source_t>> key_selector_t, xtd::callable<bool, key_t, key_t> key_equater_t>
+template<typename key_t, xtd::iterable source_t, xtd::callable<key_t, xtd::iterable_value_type<source_t>> key_selector_t, xtd::func_callable<bool, key_t, key_t> key_equater_t>
 auto xtd::linq::enumerable::count_by(source_t&& source, key_selector_t&& key_selector, key_equater_t&& key_equater) noexcept -> xtd::collections::generic::enumerable_generator<xtd::collections::generic::key_value_pair<key_t, xtd::usize>> {
   auto result = list<key_value_pair<key_t, xtd::usize>> {};
   auto keys = list<key_t> {};
@@ -1245,7 +1245,7 @@ auto xtd::linq::enumerable::distinct(source_t&& source) noexcept -> xtd::collect
 }
 
 template<xtd::iterable source_t>
-auto xtd::linq::enumerable::distinct(source_t&& source, const iequality_comparer<source_t>& comparer) noexcept -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>> {
+auto xtd::linq::enumerable::distinct(source_t&& source, const iequality_comparer<xtd::iterable_value_type<source_t>>& comparer) noexcept -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>> {
   auto result = list<xtd::iterable_value_type<source_t>> {};
   //auto source_holder = enumerable_holder<source_t> {std::forward<source_t>(source)};
   //for (const auto& item : source_holder.get())
