@@ -658,7 +658,7 @@ auto xtd::linq::enumerable::select(source_t&& source, auto&& selector) -> xtd::c
 
 template<xtd::iterable first_t, xtd::iterable second_t>
 auto xtd::linq::enumerable::sequence_equal(first_t&& first, second_t&& second) -> bool {
-  return sequence_equal(first, last, [](auto&& f, auto&& s) {return f == s;});
+  return sequence_equal(first, second, [](auto&& f, auto&& s) {return f == s;});
 }
 
 template<xtd::iterable first_t, xtd::iterable second_t, xtd::callable<bool, xtd::iterable_value_type<first_t>, xtd::iterable_value_type<second_t>> equality_comparer_t>
