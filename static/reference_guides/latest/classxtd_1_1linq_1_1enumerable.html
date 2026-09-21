@@ -289,6 +289,12 @@ requires std::same_as&lt;<a class="el" href="group__concepts.html#ga7ffbe4fba341
 <tr class="memitem:a77981da69a9247df9dc649ab15fbbddb" id="r_a77981da69a9247df9dc649ab15fbbddb"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t, <a class="el" href="structxtd_1_1func__callable.html">xtd::func_callable</a>&lt; bool, <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt;, <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; &gt; equater_t&gt; </td></tr>
 <tr class="memitem:a77981da69a9247df9dc649ab15fbbddb template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a77981da69a9247df9dc649ab15fbbddb">distinct</a> (source_t &amp;&amp;source, equater_t &amp;&amp;equater) noexcept -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; &gt;</td></tr>
 <tr class="memdesc:a77981da69a9247df9dc649ab15fbbddb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns distinct elements from a sequence by using a specified <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html" title="Defines methods to support the comparison of objects for equality.">xtd::collections::generic::iequality_comparer</a> &lt;type_t&gt; to compare values.  <br /></td></tr>
+<tr class="memitem:ac6f852bb7cae9c1fe7182cf6a3c03996" id="r_ac6f852bb7cae9c1fe7182cf6a3c03996"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t&gt; </td></tr>
+<tr class="memitem:ac6f852bb7cae9c1fe7182cf6a3c03996 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ac6f852bb7cae9c1fe7182cf6a3c03996">first</a> (source_t &amp;&amp;source) -&gt; <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt;</td></tr>
+<tr class="memdesc:ac6f852bb7cae9c1fe7182cf6a3c03996"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the first element of a sequence.  <br /></td></tr>
+<tr class="memitem:a94755e6e887dad04d13173ac139e5649" id="r_a94755e6e887dad04d13173ac139e5649"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t, <a class="el" href="structxtd_1_1predicate__callable.html">xtd::predicate_callable</a>&lt; <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; &gt; prediacte_t&gt; </td></tr>
+<tr class="memitem:a94755e6e887dad04d13173ac139e5649 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a94755e6e887dad04d13173ac139e5649">first</a> (source_t &amp;&amp;source, prediacte_t &amp;&amp;predicate<a class="el" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab">predicate</a>) -&gt; <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt;</td></tr>
+<tr class="memdesc:a94755e6e887dad04d13173ac139e5649"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the first element in a sequence that satisfies a specified condition.  <br /></td></tr>
 <tr class="memitem:a477bb204cd1f8cbe5496bbdc51c6925f" id="r_a477bb204cd1f8cbe5496bbdc51c6925f"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t, <a class="el" href="structxtd_1_1predicate__callable.html">xtd::predicate_callable</a>&lt; <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; &gt; prediacte_t&gt; </td></tr>
 <tr class="memitem:a477bb204cd1f8cbe5496bbdc51c6925f template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a477bb204cd1f8cbe5496bbdc51c6925f">first_or_default</a> (source_t &amp;&amp;source, prediacte_t &amp;&amp;predicate<a class="el" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab">predicate</a>, <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; &amp;&amp;default_value) noexcept -&gt; <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt;</td></tr>
 <tr class="memdesc:a477bb204cd1f8cbe5496bbdc51c6925f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the first element of the sequence that satisfies a condition, or a specified default value if no such element is found.  <br /></td></tr>
@@ -325,6 +331,12 @@ requires std::same_as&lt;<a class="el" href="group__concepts.html#ga7ffbe4fba341
 <tr class="memitem:ab51623442a981cccb1f599e61c79d56d" id="r_ab51623442a981cccb1f599e61c79d56d"><td class="memTemplParams" colspan="2">template&lt;typename value_t, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> length&gt; </td></tr>
 <tr class="memitem:ab51623442a981cccb1f599e61c79d56d template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ab51623442a981cccb1f599e61c79d56d">from</a> (value_t(&amp;array)[<a class="el" href="namespacextd.html#a84689e2cdf94d64f7e5f33fe4a1be71a">length</a>]) noexcept -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; value_t &gt;</td></tr>
 <tr class="memdesc:ab51623442a981cccb1f599e61c79d56d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the input typed as <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt;.  <br /></td></tr>
+<tr class="memitem:a10393a8c622cc2ede14eec939b48fef2" id="r_a10393a8c622cc2ede14eec939b48fef2"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t&gt; </td></tr>
+<tr class="memitem:a10393a8c622cc2ede14eec939b48fef2 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a10393a8c622cc2ede14eec939b48fef2">last</a> (source_t &amp;&amp;source) -&gt; <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt;</td></tr>
+<tr class="memdesc:a10393a8c622cc2ede14eec939b48fef2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the last element of a sequence.  <br /></td></tr>
+<tr class="memitem:af92f882130bbb74f37e432b75ad6f561" id="r_af92f882130bbb74f37e432b75ad6f561"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t, <a class="el" href="structxtd_1_1predicate__callable.html">xtd::predicate_callable</a>&lt; <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; &gt; prediacte_t&gt; </td></tr>
+<tr class="memitem:af92f882130bbb74f37e432b75ad6f561 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#af92f882130bbb74f37e432b75ad6f561">last</a> (source_t &amp;&amp;source, prediacte_t &amp;&amp;predicate<a class="el" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab">predicate</a>) -&gt; <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt;</td></tr>
+<tr class="memdesc:af92f882130bbb74f37e432b75ad6f561"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the last element in a sequence that satisfies a specified condition.  <br /></td></tr>
 <tr class="memitem:aeb5d92fce049bb3c73f8480f7c25c9ab" id="r_aeb5d92fce049bb3c73f8480f7c25c9ab"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t&gt; <br />
 requires <a class="el" href="structxtd_1_1numeric.html">xtd::numeric</a>&lt;<a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt;source_t&gt;&gt;</td></tr>
 <tr class="memitem:aeb5d92fce049bb3c73f8480f7c25c9ab template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aeb5d92fce049bb3c73f8480f7c25c9ab">max</a> (source_t &amp;&amp;source) -&gt; <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt;</td></tr>
@@ -379,9 +391,18 @@ requires <a class="el" href="structxtd_1_1numeric.html">xtd::numeric</a>&lt;<a c
 <tr class="memitem:ac46941ba21fc5885d6383af549f63b08" id="r_ac46941ba21fc5885d6383af549f63b08"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1integer.html">xtd::integer</a> integer_t&gt; </td></tr>
 <tr class="memitem:ac46941ba21fc5885d6383af549f63b08 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ac46941ba21fc5885d6383af549f63b08">range</a> (integer_t start, integer_t count, integer_t step) -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; integer_t &gt;</td></tr>
 <tr class="memdesc:ac46941ba21fc5885d6383af549f63b08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a sequence of integral numbers within a specified range and step.  <br /></td></tr>
+<tr class="memitem:ad36ee696a2433850deb504f731dd0755" id="r_ad36ee696a2433850deb504f731dd0755"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t&gt; </td></tr>
+<tr class="memitem:ad36ee696a2433850deb504f731dd0755 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ad36ee696a2433850deb504f731dd0755">reverse</a> (source_t &amp;&amp;source) -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; &gt;</td></tr>
+<tr class="memdesc:ad36ee696a2433850deb504f731dd0755"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inverts the order of the elements in a sequence.  <br /></td></tr>
 <tr class="memitem:aeafcacde3212ff973935886edbe1302d" id="r_aeafcacde3212ff973935886edbe1302d"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t&gt; </td></tr>
 <tr class="memitem:aeafcacde3212ff973935886edbe1302d template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aeafcacde3212ff973935886edbe1302d">select</a> (source_t &amp;&amp;source, auto &amp;&amp;selector) -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt; decltype(selector(<a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; {}))&gt; &gt;</td></tr>
 <tr class="memdesc:aeafcacde3212ff973935886edbe1302d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Projects each element of a sequence into a new form.  <br /></td></tr>
+<tr class="memitem:a1356cb623b040cb30e1e7a4e67065b3a" id="r_a1356cb623b040cb30e1e7a4e67065b3a"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> first_t, <a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> second_t&gt; </td></tr>
+<tr class="memitem:a1356cb623b040cb30e1e7a4e67065b3a template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a1356cb623b040cb30e1e7a4e67065b3a">sequence_equal</a> (first_t &amp;&amp;first, second_t &amp;&amp;second) -&gt; bool</td></tr>
+<tr class="memdesc:a1356cb623b040cb30e1e7a4e67065b3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether two sequences are equal by comparing the elements by using the default equality comparer for their type.  <br /></td></tr>
+<tr class="memitem:a24b73bb11191b80477564b211401de4c" id="r_a24b73bb11191b80477564b211401de4c"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> first_t, <a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> second_t, <a class="el" href="structxtd_1_1callable.html">xtd::callable</a>&lt; bool, <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; first_t &gt;, <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; second_t &gt; &gt; equality_comparer_t&gt; </td></tr>
+<tr class="memitem:a24b73bb11191b80477564b211401de4c template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a24b73bb11191b80477564b211401de4c">sequence_equal</a> (first_t &amp;&amp;first, second_t &amp;&amp;second, equality_comparer_t &amp;&amp;equality_comparer) -&gt; bool</td></tr>
+<tr class="memdesc:a24b73bb11191b80477564b211401de4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether two sequences are equal by comparing their elements by using a specifie the equality comparer.  <br /></td></tr>
 <tr class="memitem:a848b8bb65ca7bbca10902d05eaa4ec81" id="r_a848b8bb65ca7bbca10902d05eaa4ec81"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1forward__iterable.html">xtd::forward_iterable</a> source_t&gt; </td></tr>
 <tr class="memitem:a848b8bb65ca7bbca10902d05eaa4ec81 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a848b8bb65ca7bbca10902d05eaa4ec81">shuffle</a> (source_t &amp;&amp;source) -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; &gt;</td></tr>
 <tr class="memdesc:a848b8bb65ca7bbca10902d05eaa4ec81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shuffles the order of the elements of a sequence.  <br /></td></tr>
@@ -1201,7 +1222,7 @@ template&lt;std::forward_iterator iterator_t&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">iterator_t</td>          <td class="paramname"><span class="paramname"><em>last</em></span>&#160;) -&gt;  <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; typename std::decay&lt; decltype(*<a class="el" href="namespacextd.html#a1b3b9846a6a691daf8be0fbbfc746604">first</a>)&gt;<a class="el" href="group__types.html#ga03b6109bac255dc61a3df38c5d80a46c">::type</a> &gt;</td>
+          <td class="paramtype">iterator_t</td>          <td class="paramname"><span class="paramname"><em>last</em></span>&#160;) -&gt;  <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; typename std::decay&lt; decltype(*<a class="el" href="#ac6f852bb7cae9c1fe7182cf6a3c03996">first</a>)&gt;<a class="el" href="group__types.html#ga03b6109bac255dc61a3df38c5d80a46c">::type</a> &gt;</td>
         </tr>
       </table>
   </td>
@@ -2765,6 +2786,97 @@ template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> so
 
 </div>
 </div>
+<a id="ac6f852bb7cae9c1fe7182cf6a3c03996" name="ac6f852bb7cae9c1fe7182cf6a3c03996"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6f852bb7cae9c1fe7182cf6a3c03996">&#9670;&#160;</a></span>first() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto xtd::linq::enumerable::first </td>
+          <td>(</td>
+          <td class="paramtype">source_t &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>source</em></span></td><td>)</td>
+          <td> -&gt;  <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the first element of a sequence. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">source</td><td>The sequence to return an element from. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The first element in the specified sequence. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">xtd::invalid_operation_exception</td><td>The source sequence is empty. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="#ac6f852bb7cae9c1fe7182cf6a3c03996" title="Returns the first element of a sequence.">xtd::linq::enumerable::first</a> &lt;source_t&gt; method throws an exception if source contains no elements. To instead return a default value when the source sequence is empty, use the <a class="el" href="#a477bb204cd1f8cbe5496bbdc51c6925f" title="Returns the first element of the sequence that satisfies a condition, or a specified default value if...">xtd::linq::enumerable::first_or_default</a> method. </dd></dl>
+
+</div>
+</div>
+<a id="a94755e6e887dad04d13173ac139e5649" name="a94755e6e887dad04d13173ac139e5649"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94755e6e887dad04d13173ac139e5649">&#9670;&#160;</a></span>first() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t, <a class="el" href="structxtd_1_1predicate__callable.html">xtd::predicate_callable</a>&lt; <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; &gt; prediacte_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto xtd::linq::enumerable::first </td>
+          <td>(</td>
+          <td class="paramtype">source_t &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>source</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">prediacte_t &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>predicate</em></span>&#160;) -&gt;  <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the first element in a sequence that satisfies a specified condition. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">source</td><td>The sequence to return an element from. </td></tr>
+    <tr><td class="paramname">predicate</td><td>A function to test each element for a condition. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The first element in the specified sequence. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">xtd::invalid_operation_exception</td><td>The source sequence is empty. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="#ac6f852bb7cae9c1fe7182cf6a3c03996" title="Returns the first element of a sequence.">xtd::linq::enumerable::first</a> &lt;source_t&gt; method throws an exception if source contains no elements. To instead return a default value when the source sequence is empty, use the <a class="el" href="#a477bb204cd1f8cbe5496bbdc51c6925f" title="Returns the first element of the sequence that satisfies a condition, or a specified default value if...">xtd::linq::enumerable::first_or_default</a> method. </dd></dl>
+
+</div>
+</div>
 <a id="a477bb204cd1f8cbe5496bbdc51c6925f" name="a477bb204cd1f8cbe5496bbdc51c6925f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a477bb204cd1f8cbe5496bbdc51c6925f">&#9670;&#160;</a></span>first_or_default() <span class="overload">[1/4]</span></h2>
 
@@ -3229,7 +3341,7 @@ template&lt;std::forward_iterator iterator_t&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">iterator_t</td>          <td class="paramname"><span class="paramname"><em>last</em></span>&#160;) -&gt;  <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; typename std::decay&lt; decltype(*<a class="el" href="namespacextd.html#a1b3b9846a6a691daf8be0fbbfc746604">first</a>)&gt;<a class="el" href="group__types.html#ga03b6109bac255dc61a3df38c5d80a46c">::type</a> &gt;</td>
+          <td class="paramtype">iterator_t</td>          <td class="paramname"><span class="paramname"><em>last</em></span>&#160;) -&gt;  <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; typename std::decay&lt; decltype(*<a class="el" href="#ac6f852bb7cae9c1fe7182cf6a3c03996">first</a>)&gt;<a class="el" href="group__types.html#ga03b6109bac255dc61a3df38c5d80a46c">::type</a> &gt;</td>
         </tr>
       </table>
   </td>
@@ -3472,6 +3584,97 @@ template&lt;typename value_t, <a class="el" href="group__types.html#gae60f5a8617
 <div class="line"><span class="comment">// Five</span></div>
 <div class="line"> </div>
 </div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="a10393a8c622cc2ede14eec939b48fef2" name="a10393a8c622cc2ede14eec939b48fef2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10393a8c622cc2ede14eec939b48fef2">&#9670;&#160;</a></span>last() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto xtd::linq::enumerable::last </td>
+          <td>(</td>
+          <td class="paramtype">source_t &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>source</em></span></td><td>)</td>
+          <td> -&gt;  <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the last element of a sequence. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">source</td><td>The sequence to return an element fromreturn an element from. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The last element in the specified sequence. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">xtd::invalid_operation_exception</td><td>The source sequence is empty. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="#a10393a8c622cc2ede14eec939b48fef2" title="Returns the last element of a sequence.">xtd::linq::enumerable::last</a> &lt;source_t&gt; method throws an exception if source contains no elements. To instead return a default value when the source sequence is empty, use the xtd::linq::enumerable::last_or_default method. </dd></dl>
+
+</div>
+</div>
+<a id="af92f882130bbb74f37e432b75ad6f561" name="af92f882130bbb74f37e432b75ad6f561"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af92f882130bbb74f37e432b75ad6f561">&#9670;&#160;</a></span>last() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t, <a class="el" href="structxtd_1_1predicate__callable.html">xtd::predicate_callable</a>&lt; <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; &gt; prediacte_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto xtd::linq::enumerable::last </td>
+          <td>(</td>
+          <td class="paramtype">source_t &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>source</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">prediacte_t &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>predicate</em></span>&#160;) -&gt;  <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the last element in a sequence that satisfies a specified condition. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">source</td><td>The sequence to return an element from. </td></tr>
+    <tr><td class="paramname">predicate</td><td>A function to test each element for a condition. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The last element in the specified sequence. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">xtd::invalid_operation_exception</td><td>The source sequence is empty. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="#a10393a8c622cc2ede14eec939b48fef2" title="Returns the last element of a sequence.">xtd::linq::enumerable::last</a> &lt;source_t&gt; method throws an exception if source contains no elements. To instead return a default value when the source sequence is empty, use the xtd::linq::enumerable::last_or_default method. </dd></dl>
 
 </div>
 </div>
@@ -4191,6 +4394,43 @@ template&lt;<a class="el" href="structxtd_1_1integer.html">xtd::integer</a> inte
 
 </div>
 </div>
+<a id="ad36ee696a2433850deb504f731dd0755" name="ad36ee696a2433850deb504f731dd0755"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad36ee696a2433850deb504f731dd0755">&#9670;&#160;</a></span>reverse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto xtd::linq::enumerable::reverse </td>
+          <td>(</td>
+          <td class="paramtype">source_t &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>source</em></span></td><td>)</td>
+          <td> -&gt;  <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; &gt;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Inverts the order of the elements in a sequence. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">source</td><td>A sequence of values to reverse. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A sequence whose elements correspond to those of the input sequence in reverse order. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>This method is implemented by using deferred execution. The immediate return value is an object that stores all the information that is required to perform the action. The query represented by this method is not executed until the object is enumerated either by calling its get_enumerator method directly or by using for range. </dd></dl>
+
+</div>
+</div>
 <a id="aeafcacde3212ff973935886edbe1302d" name="aeafcacde3212ff973935886edbe1302d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aeafcacde3212ff973935886edbe1302d">&#9670;&#160;</a></span>select()</h2>
 
@@ -4260,6 +4500,94 @@ template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> so
 <div class="line"><span class="comment">// { index = 5, str = grape }</span></div>
 <div class="ttc" id="astructxtd_1_1index_html"><div class="ttname"><a href="structxtd_1_1index.html">xtd::index</a></div><div class="ttdoc">Represents a type that can be used to index a collection either from the beginning or the end.</div><div class="ttdef"><b>Definition</b> index.hpp:38</div></div>
 </div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="a1356cb623b040cb30e1e7a4e67065b3a" name="a1356cb623b040cb30e1e7a4e67065b3a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1356cb623b040cb30e1e7a4e67065b3a">&#9670;&#160;</a></span>sequence_equal() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> first_t, <a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> second_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto xtd::linq::enumerable::sequence_equal </td>
+          <td>(</td>
+          <td class="paramtype">first_t &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>first</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">second_t &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>second</em></span>&#160;) -&gt;  bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Determines whether two sequences are equal by comparing the elements by using the default equality comparer for their type. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">first</td><td>A sequence of values to compare to second. </td></tr>
+    <tr><td class="paramname">second</td><td>A sequence of values to compare to first. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span> if the two source sequences are of equal length and their corresponding elements are equal according to the default equality comparer for their type; otherwise, <span class="tt">false</span>. </dd></dl>
+
+</div>
+</div>
+<a id="a24b73bb11191b80477564b211401de4c" name="a24b73bb11191b80477564b211401de4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24b73bb11191b80477564b211401de4c">&#9670;&#160;</a></span>sequence_equal() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> first_t, <a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> second_t, <a class="el" href="structxtd_1_1callable.html">xtd::callable</a>&lt; bool, <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; first_t &gt;, <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; second_t &gt; &gt; equality_comparer_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto xtd::linq::enumerable::sequence_equal </td>
+          <td>(</td>
+          <td class="paramtype">first_t &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>first</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">second_t &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>second</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">equality_comparer_t &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>equality_comparer</em></span>&#160;) -&gt;  bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Determines whether two sequences are equal by comparing their elements by using a specifie the equality comparer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">first</td><td>A sequence of values to compare to second. </td></tr>
+    <tr><td class="paramname">second</td><td>A sequence of values to compare to first. </td></tr>
+    <tr><td class="paramname">equality_comparer</td><td>An <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0" title="Represents the orward iterable value type.">xtd::iterable_value_type&lt;first_t&gt;</a>, <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0" title="Represents the orward iterable value type.">xtd::iterable_value_type&lt;second_t&gt;</a>&gt; to use to compare elements. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span> if the two source sequences are of equal length and their corresponding elements are equal according to the default equality comparer for their type; otherwise, <span class="tt">false</span>. </dd></dl>
 
 </div>
 </div>
@@ -4397,7 +4725,7 @@ template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> so
 <div class="line"><span class="comment">// 70</span></div>
 <div class="line"><span class="comment">// 59</span></div>
 <div class="line"><span class="comment">// 56</span></div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable_html_a96e347c7dc52732445e9f3521a311010"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a96e347c7dc52732445e9f3521a311010">xtd::collections::generic::extensions::enumerable::order</a></div><div class="ttdeci">auto order() const -&gt; xtd::collections::generic::enumerable_generator&lt; value_t &gt;</div><div class="ttdoc">Sorts the elements of a sequence in ascending order.</div><div class="ttdef"><b>Definition</b> enumerable.hpp:356</div></div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable_html_a96e347c7dc52732445e9f3521a311010"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a96e347c7dc52732445e9f3521a311010">xtd::collections::generic::extensions::enumerable::order</a></div><div class="ttdeci">auto order() const -&gt; xtd::collections::generic::enumerable_generator&lt; value_t &gt;</div><div class="ttdoc">Sorts the elements of a sequence in ascending order.</div><div class="ttdef"><b>Definition</b> enumerable.hpp:390</div></div>
 <div class="ttc" id="anamespacextd_html_a9482c5e9fb1d60c658bbe28bfbb17353"><div class="ttname"><a href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">xtd::println</a></div><div class="ttdeci">auto println(FILE *file) -&gt; void</div><div class="ttdoc">Writes the current line terminator to the file output stream using the specified format information.</div><div class="ttdef"><b>Definition</b> println.hpp:15</div></div>
 </div><!-- fragment --> </dd></dl>
 
@@ -4653,7 +4981,7 @@ template&lt;typename source_t&gt; </div>
 <div class="line"><span class="comment">// 5</span></div>
 <div class="line"><span class="comment">// 10</span></div>
 <div class="ttc" id="aclassxtd_1_1basic__string_html_a4d8c4c95a122844c62de3feb62a5fa74"><div class="ttname"><a href="classxtd_1_1basic__string.html#a4d8c4c95a122844c62de3feb62a5fa74">xtd::basic_string&lt; char &gt;::length</a></div><div class="ttdeci">virtual auto length() const noexcept -&gt; size_type</div><div class="ttdef"><b>Definition</b> basic_string.hpp:365</div></div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable_html_a77f28b05a9f794ee4885ddb682c1498d"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a77f28b05a9f794ee4885ddb682c1498d">xtd::collections::generic::extensions::enumerable::select</a></div><div class="ttdeci">auto select(auto &amp;&amp;selector) const</div><div class="ttdoc">Projects each element of a sequence into a new form.</div><div class="ttdef"><b>Definition</b> enumerable.hpp:417</div></div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable_html_a77f28b05a9f794ee4885ddb682c1498d"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a77f28b05a9f794ee4885ddb682c1498d">xtd::collections::generic::extensions::enumerable::select</a></div><div class="ttdeci">auto select(auto &amp;&amp;selector) const</div><div class="ttdoc">Projects each element of a sequence into a new form.</div><div class="ttdef"><b>Definition</b> enumerable.hpp:458</div></div>
 <div class="ttc" id="anamespacextd_html_a84689e2cdf94d64f7e5f33fe4a1be71a"><div class="ttname"><a href="namespacextd.html#a84689e2cdf94d64f7e5f33fe4a1be71a">xtd::length</a></div><div class="ttdeci">constexpr auto length() const noexcept -&gt; size_type</div><div class="ttdoc">Returns the length of the current read_only_span.</div><div class="ttdef"><b>Definition</b> read_only_span.hpp:209</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>Need to include list file <span class="tt">#include &lt;xtd/collections/generic/list&gt;</span>. </dd></dl>
