@@ -39,7 +39,7 @@ public:
     
     for (auto i = 0; i < num_paralle_tasks; ++i) {
       // Create a sequence we expect to see from the stack taking the last number of the range we inserted
-      auto expected = enumerable::range(result_buffer[i * num_items + num_items - 1], num_items);
+      auto expected = enumerable::range(result_buffer[i * num_items + num_items - 1], num_items).to_array();
       
       // Take the range we inserted, reverse it, and compare to the expected sequence
       auto are_equal = expected.sequence_equal(result_buffer.skip(i * num_items).take(num_items).reverse());
@@ -63,7 +63,7 @@ startup_(example::main);
 // Try pop range expected 1000, got 1000.
 // Try pop range expected 1000, got 1000.
 // Try pop range expected 1000, got 1000.
-// Expected a range of 0 to 999. Got 0 to 999
-// Expected a range of 1000 to 1999. Got 1000 to 1999
 // Expected a range of 3000 to 3999. Got 3000 to 3999
+// Expected a range of 1000 to 1999. Got 1000 to 1999
+// Expected a range of 0 to 999. Got 0 to 999
 // Expected a range of 2000 to 2999. Got 2000 to 2999

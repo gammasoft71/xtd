@@ -26,8 +26,8 @@ Try pop range expected 1000, got 1000.
 Try pop range expected 1000, got 1000.
 Try pop range expected 1000, got 1000.
 Try pop range expected 1000, got 1000.
-Expected a range of 0 to 999. Got 0 to 999
-Expected a range of 1000 to 1999. Got 1000 to 1999
 Expected a range of 3000 to 3999. Got 3000 to 3999
+Expected a range of 1000 to 1999. Got 1000 to 1999
+Expected a range of 0 to 999. Got 0 to 999
 Expected a range of 2000 to 2999. Got 2000 to 2999
 ```
