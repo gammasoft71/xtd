@@ -501,6 +501,22 @@ namespace xtd {
       template<xtd::iterable source_t, xtd::func_callable<bool, xtd::iterable_value_type<source_t>, xtd::iterable_value_type<source_t>> equater_t>
       [[nodiscard]] static auto distinct(source_t&& source, equater_t&& equater) noexcept  -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>>; // Defined in include/xtd/collections/generic/list.hpp
 
+      /// @brief Returns the first element of a sequence.
+      /// @param source The sequence to return an element from.
+      /// @return The first element in the specified sequence.
+      /// @exception xtd::invalid_operation_exception The source sequence is empty.
+      /// @remarks The xtd::linq::enumerable::first <source_t> method throws an exception if source contains no elements. To instead return a default value when the source sequence is empty, use the xtd::linq::enumerable::first_or_default method.
+      template<xtd::iterable source_t>
+      [[nodiscard]] static auto first(source_t&& source) -> xtd::iterable_value_type<source_t>;
+      /// @brief Returns the first element in a sequence that satisfies a specified condition.
+      /// @param source The sequence to return an element from.
+      /// @param predicate A function to test each element for a condition.
+      /// @return The first element in the specified sequence.
+      /// @exception xtd::invalid_operation_exception The source sequence is empty.
+      /// @remarks The xtd::linq::enumerable::first <source_t> method throws an exception if source contains no elements. To instead return a default value when the source sequence is empty, use the xtd::linq::enumerable::first_or_default method.
+      template<xtd::iterable source_t, xtd::predicate_callable<xtd::iterable_value_type<source_t>> prediacte_t>
+      [[nodiscard]] static auto first(source_t&& source, prediacte_t&& predicate) -> xtd::iterable_value_type<source_t>;
+
       /// @brief Returns the first element of the sequence that satisfies a condition, or a specified default value if no such element is found.
       /// @tparam source_t The type of the elements of source.
       /// @param source A sequence of values to return an element from.
@@ -637,6 +653,22 @@ namespace xtd {
       [[nodiscard]] static auto from(std::stack<value_t, container_t>& source) noexcept -> xtd::collections::generic::enumerable_generator<value_t>;
       /// @endcond
 
+      /// @brief Returns the last element of a sequence.
+      /// @param source The sequence to return an element fromreturn an element from.
+      /// @return The last element in the specified sequence.
+      /// @exception xtd::invalid_operation_exception The source sequence is empty.
+      /// @remarks The xtd::linq::enumerable::last <source_t> method throws an exception if source contains no elements. To instead return a default value when the source sequence is empty, use the xtd::linq::enumerable::last_or_default method.
+      template<xtd::iterable source_t>
+      [[nodiscard]] static auto last(source_t&& source) -> xtd::iterable_value_type<source_t>;
+      /// @brief Returns the last element in a sequence that satisfies a specified condition.
+      /// @param source The sequence to return an element from.
+      /// @param predicate A function to test each element for a condition.
+      /// @return The last element in the specified sequence.
+      /// @exception xtd::invalid_operation_exception The source sequence is empty.
+      /// @remarks The xtd::linq::enumerable::last <source_t> method throws an exception if source contains no elements. To instead return a default value when the source sequence is empty, use the xtd::linq::enumerable::last_or_default method.
+      template<xtd::iterable source_t, xtd::predicate_callable<xtd::iterable_value_type<source_t>> prediacte_t>
+      [[nodiscard]] static auto last(source_t&& source, prediacte_t&& predicate) -> xtd::iterable_value_type<source_t>;
+
       /// @brief Returns the maximum value in a sequence of xtd::numeric values.
       /// @param sources A sequence of xtd::numeric values to determine the maximum value of.
       /// @return A value of xtd::numeric that corresponds to the maximum value in the sequence.
@@ -765,7 +797,14 @@ namespace xtd {
       /// @exception xtd::argument_out_of_range_exception `count` is less than 0.
       template<xtd::integer integer_t>
       [[nodiscard]] static auto range(integer_t start, integer_t count, integer_t step) -> xtd::collections::generic::enumerable_generator<integer_t>;
-      
+
+      /// @brief Inverts the order of the elements in a sequence.
+      /// @param source A sequence of values to reverse.
+      /// @return A sequence whose elements correspond to those of the input sequence in reverse order.
+      /// @remarks This method is implemented by using deferred execution. The immediate return value is an object that stores all the information that is required to perform the action. The query represented by this method is not executed until the object is enumerated either by calling its get_enumerator method directly or by using for range.
+      template<xtd::iterable source_t>
+      [[nodiscard]] static auto reverse(source_t&& source) -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>>;
+
       /// @brief Projects each element of a sequence into a new form.
       /// @tparam result_t The type of the resulting value.
       /// @tparam source_t The type of the elements of source.
@@ -790,6 +829,20 @@ namespace xtd {
       template<xtd::iterable source_t>
       [[nodiscard]] static auto select(source_t&& source, auto&& selector) -> xtd::collections::generic::enumerable_generator<xtd::raw_type<decltype(selector(xtd::iterable_value_type<source_t> {}, xtd::usize {}))>>;
        */
+
+      /// @brief Determines whether two sequences are equal by comparing the elements by using the default equality comparer for their type.
+      /// @param first A sequence of values to compare to second.
+      /// @param second A sequence of values to compare to first.
+      /// @return `true` if the two source sequences are of equal length and their corresponding elements are equal according to the default equality comparer for their type; otherwise, `false`.
+      template<xtd::iterable first_t, xtd::iterable second_t>
+      [[nodiscard]] static auto sequence_equal(first_t&& first, second_t&& second) -> bool;
+      /// @brief Determines whether two sequences are equal by comparing their elements by using a specifie the equality comparer.
+      /// @param first A sequence of values to compare to second.
+      /// @param second A sequence of values to compare to first.
+      /// @param equality_comparer An xtd::iterable_value_type<first_t>, xtd::iterable_value_type<second_t>> to use to compare elements.
+      /// @return `true` if the two source sequences are of equal length and their corresponding elements are equal according to the default equality comparer for their type; otherwise, `false`.
+      template<xtd::iterable first_t, xtd::iterable second_t, xtd::callable<bool, xtd::iterable_value_type<first_t>, xtd::iterable_value_type<second_t>> equality_comparer_t>
+      [[nodiscard]] static auto sequence_equal(first_t&& first, second_t&& second, equality_comparer_t&& equality_comparer) -> bool;
 
       /// @brief Shuffles the order of the elements of a sequence.
       /// @param source A sequence of values to shuffle.

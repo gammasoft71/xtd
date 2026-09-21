@@ -403,6 +403,22 @@ auto xtd::linq::enumerable::default_if_empty(source_t&& source, const xtd::itera
     co_yield item;
 }
 
+template<xtd::iterable source_t>
+auto xtd::linq::enumerable::first(source_t&& source) -> xtd::iterable_value_type<source_t> {
+  auto work_items = std::vector<xtd::iterable_value_type<source_t>>(source.begin(), source.end());
+  if (!work_items.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
+  return *work_items.begin();
+}
+
+template<xtd::iterable source_t, xtd::predicate_callable<xtd::iterable_value_type<source_t>> prediacte_t>
+auto xtd::linq::enumerable::first(source_t&& source, prediacte_t&& predicate) -> xtd::iterable_value_type<source_t> {
+  auto work_items = std::vector<xtd::iterable_value_type<source_t>>(source.begin(), source.end());
+  if (!work_items.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
+  for (const auto& item : work_items)
+    if (predicate(item)) return item;
+  xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
+}
+
 template<xtd::iterable source_t, xtd::predicate_callable<xtd::iterable_value_type<source_t>> prediacte_t>
 auto xtd::linq::enumerable::first_or_default(source_t&& source, prediacte_t&& predicate, xtd::iterable_value_type<source_t>&& default_value) noexcept -> xtd::iterable_value_type<source_t> {
   auto result = where(std::forward<source_t>(source), std::forward<prediacte_t>(predicate));
@@ -487,6 +503,24 @@ auto xtd::linq::enumerable::from(const std::stack<value_t, container_t>& source)
 template<typename value_t, typename container_t>
 auto xtd::linq::enumerable::from(std::stack<value_t, container_t>& source) noexcept -> xtd::collections::generic::enumerable_generator<value_t> {
   return as_enumerable(source);
+}
+
+template<xtd::iterable source_t>
+auto xtd::linq::enumerable::last(source_t&& source) -> xtd::iterable_value_type<source_t> {
+  auto reversed = std::vector<xtd::iterable_value_type<source_t>>(source.begin(), source.end());
+  if (!reversed.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
+  std::reverse(reversed.begin(), reversed.end());
+  return *reversed.begin();
+}
+
+template<xtd::iterable source_t, xtd::predicate_callable<xtd::iterable_value_type<source_t>> prediacte_t>
+auto xtd::linq::enumerable::last(source_t&& source, prediacte_t&& predicate) -> xtd::iterable_value_type<source_t> {
+  auto reversed = std::vector<xtd::iterable_value_type<source_t>>(source.begin(), source.end());
+  if (!reversed.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
+  std::reverse(reversed.begin(), reversed.end());
+  for (const auto& item : reversed)
+    if (predicate(item)) return item;
+  xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
 }
 
 template<xtd::iterable source_t>
@@ -596,6 +630,14 @@ auto xtd::linq::enumerable::range(integer_t start, integer_t count, integer_t st
 }
 
 template<xtd::iterable source_t>
+auto xtd::linq::enumerable::reverse(source_t&& source) -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>> {
+  auto reversed = std::vector<xtd::iterable_value_type<source_t>>(source.begin(), source.end());
+  std::reverse(reversed.begin(), reversed.end());
+  for (const auto& item : reversed)
+    co_yield item;
+}
+
+template<xtd::iterable source_t>
 auto xtd::linq::enumerable::select(source_t&& source, auto&& selector) -> xtd::collections::generic::enumerable_generator<xtd::raw_type<decltype(selector(xtd::iterable_value_type<source_t> {}))>> {
 //auto source_holder = enumerable_holder<source_t> {std::forward<source_t>(source)};
   //for (const auto& item : source_holder.get())
@@ -613,6 +655,26 @@ auto xtd::linq::enumerable::select(source_t&& source, auto&& selector) -> xtd::c
   for (const auto& item : source)
     co_yield selector(item, index++);
 }*/
+
+template<xtd::iterable first_t, xtd::iterable second_t>
+auto xtd::linq::enumerable::sequence_equal(first_t&& first, second_t&& second) -> bool {
+  return sequence_equal(first, last, [](auto&& f, auto&& s) {return f == s;});
+}
+
+template<xtd::iterable first_t, xtd::iterable second_t, xtd::callable<bool, xtd::iterable_value_type<first_t>, xtd::iterable_value_type<second_t>> equality_comparer_t>
+auto xtd::linq::enumerable::sequence_equal(first_t&& first, second_t&& second, equality_comparer_t&& equality_comparer) -> bool {
+  // if second is an xtd collection and second is shortest than first an exception will be thrown.
+  // if second is not a xtd collection, we need to check the size of second. By checling first if `auto size() const -> xtd::usize` is a member of second.
+  try {
+    for (auto index = xtd::usize {}; const auto& item : second) {
+      if (!equality_comparer(item, *(first.begin() + index))) return false;
+      ++index;
+    }
+    return true;
+  } catch(...) {
+    return false;
+  }
+}
 
 template<xtd::iterable source_t>
 auto xtd::linq::enumerable::skip(source_t&& source, xtd::usize count) -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>> {
