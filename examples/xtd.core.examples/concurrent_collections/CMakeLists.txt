@@ -8,4 +8,5 @@ add_projects(
   concurrent_queue
   concurrent_queue2
   concurrent_stack
+  concurrent_stack2
 )

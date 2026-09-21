@@ -6,6 +6,7 @@
 * [concurrent_queue](concurrent_queue/README.md) shows how to use [xtd::collections::concurrent::concurrent_queue](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1concurrent_1_1concurrent__queue.html) class.
 * [concurrent_queue2](concurrent_queue2/README.md) shows how to use [xtd::collections::concurrent::concurrent_queue](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1concurrent_1_1concurrent__queue.html) class.
 * [concurrent_stack](concurrent_stack/README.md) shows how to use [xtd::collections::concurrent:: concurrent_stack](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1concurrent_1_1concurrent__stack.html) class.
+* [concurrent_stack2](concurrent_stack2/README.md) shows how to use [xtd::collections::concurrent:: concurrent_stack](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1concurrent_1_1concurrent__stack.html) class.
 
 ## Build and run any project
 
