@@ -204,6 +204,18 @@ namespace xtd::linq::tests {
       collection_assert::are_equal({5}, enumerable::default_if_empty(array<int> {}, 5).to_array());
     }
     
+    auto test_method_(distinct_with_enumerable) {
+      collection_assert::are_equal({1, 2, 3, 4, 5}, enumerable::distinct(array {1, 2, 3, 4, 5, 3, 5, 3}).to_array());
+    }
+    
+    auto test_method_(distinct_with_enumerable_and_iequality_comparer) {
+      collection_assert::are_equal({1, 2, 3, 4, 5}, enumerable::distinct(array {1, 2, 3, 4, 5, 3, 5, 3}, equality_comparer<int>::default_equality_comparer()).to_array());
+    }
+    
+    auto test_method_(distinct_with_enumerable_and_comparer) {
+      collection_assert::are_equal({1, 2, 3, 4, 5}, enumerable::distinct(array {1, 2, 3, 4, 5, 3, 5, 3}, [](auto&& a, auto&& b) {return a == b;}).to_array());
+    }
+
     auto test_method_(first_or_default_with_enumerable_predicate_and_default_value) {
       assert::are_equal(3, enumerable::first_or_default(array {3, 4, 5}, [](int value) {return value <= 3;}, 2));
       assert::are_equal(2, enumerable::first_or_default(array {3, 4, 5}, [](int value) {return value < 3;}, 2));
