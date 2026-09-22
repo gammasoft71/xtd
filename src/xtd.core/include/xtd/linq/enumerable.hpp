@@ -405,16 +405,18 @@ auto xtd::linq::enumerable::default_if_empty(source_t&& source, const xtd::itera
 
 template<xtd::iterable source_t>
 auto xtd::linq::enumerable::first(source_t&& source) -> xtd::iterable_value_type<source_t> {
-  auto work_items = std::vector<xtd::iterable_value_type<source_t>>(source.begin(), source.end());
-  if (!work_items.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
-  return *work_items.begin();
+  //auto source_holder = enumerable_holder<source_t> {std::forward<source_t>(source)};
+  //for (const auto& item : source_holder.get())
+  for (const auto& item : source)
+    return item;
+  xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
 }
 
-template<xtd::iterable source_t, xtd::predicate_callable<xtd::iterable_value_type<source_t>> prediacte_t>
-auto xtd::linq::enumerable::first(source_t&& source, prediacte_t&& predicate) -> xtd::iterable_value_type<source_t> {
-  auto work_items = std::vector<xtd::iterable_value_type<source_t>>(source.begin(), source.end());
-  if (!work_items.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
-  for (const auto& item : work_items)
+template<xtd::iterable source_t, xtd::func_callable<bool, xtd::iterable_value_type<source_t>> predicate_t>
+auto xtd::linq::enumerable::first(source_t&& source, predicate_t&& predicate) -> xtd::iterable_value_type<source_t> {
+  //auto source_holder = enumerable_holder<source_t> {std::forward<source_t>(source)};
+  //for (const auto& item : source_holder.get())
+  for (const auto& item : source)
     if (predicate(item)) return item;
   xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
 }
@@ -508,15 +510,15 @@ auto xtd::linq::enumerable::from(std::stack<value_t, container_t>& source) noexc
 template<xtd::iterable source_t>
 auto xtd::linq::enumerable::last(source_t&& source) -> xtd::iterable_value_type<source_t> {
   auto reversed = std::vector<xtd::iterable_value_type<source_t>>(source.begin(), source.end());
-  if (!reversed.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
   std::reverse(reversed.begin(), reversed.end());
-  return *reversed.begin();
+  for (const auto& item : reversed)
+    return item;
+  xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
 }
 
-template<xtd::iterable source_t, xtd::predicate_callable<xtd::iterable_value_type<source_t>> prediacte_t>
-auto xtd::linq::enumerable::last(source_t&& source, prediacte_t&& predicate) -> xtd::iterable_value_type<source_t> {
-  auto reversed = std::vector<xtd::iterable_value_type<source_t>>(source.begin(), source.end());
-  if (!reversed.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
+template<xtd::iterable source_t, xtd::func_callable<bool, xtd::iterable_value_type<source_t>> predicate_t>
+auto xtd::linq::enumerable::last(source_t&& source, predicate_t&& predicate) -> xtd::iterable_value_type<source_t> {
+  auto reversed = std::vector(source.begin(), source.end());
   std::reverse(reversed.begin(), reversed.end());
   for (const auto& item : reversed)
     if (predicate(item)) return item;

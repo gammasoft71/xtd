@@ -514,8 +514,8 @@ namespace xtd {
       /// @return The first element in the specified sequence.
       /// @exception xtd::invalid_operation_exception The source sequence is empty.
       /// @remarks The xtd::linq::enumerable::first <source_t> method throws an exception if source contains no elements. To instead return a default value when the source sequence is empty, use the xtd::linq::enumerable::first_or_default method.
-      template<xtd::iterable source_t, xtd::predicate_callable<xtd::iterable_value_type<source_t>> prediacte_t>
-      [[nodiscard]] static auto first(source_t&& source, prediacte_t&& predicate) -> xtd::iterable_value_type<source_t>;
+      template<xtd::iterable source_t, xtd::func_callable<bool, xtd::iterable_value_type<source_t>> predicate_t>
+      [[nodiscard]] static auto first(source_t&& source, predicate_t&& predicate) -> xtd::iterable_value_type<source_t>;
 
       /// @brief Returns the first element of the sequence that satisfies a condition, or a specified default value if no such element is found.
       /// @tparam source_t The type of the elements of source.
@@ -666,8 +666,8 @@ namespace xtd {
       /// @return The last element in the specified sequence.
       /// @exception xtd::invalid_operation_exception The source sequence is empty.
       /// @remarks The xtd::linq::enumerable::last <source_t> method throws an exception if source contains no elements. To instead return a default value when the source sequence is empty, use the xtd::linq::enumerable::last_or_default method.
-      template<xtd::iterable source_t, xtd::predicate_callable<xtd::iterable_value_type<source_t>> prediacte_t>
-      [[nodiscard]] static auto last(source_t&& source, prediacte_t&& predicate) -> xtd::iterable_value_type<source_t>;
+      template<xtd::iterable source_t, xtd::func_callable<bool, xtd::iterable_value_type<source_t>> predicate_t>
+      [[nodiscard]] static auto last(source_t&& source, predicate_t&& predicate) -> xtd::iterable_value_type<source_t>;
 
       /// @brief Returns the maximum value in a sequence of xtd::numeric values.
       /// @param sources A sequence of xtd::numeric values to determine the maximum value of.

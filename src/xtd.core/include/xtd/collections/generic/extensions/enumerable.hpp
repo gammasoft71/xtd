@@ -294,7 +294,7 @@ namespace xtd {
           /// @return The first element in the specified sequence.
           /// @exception xtd::invalid_operation_exception The source sequence is empty.
           /// @remarks The xtd::linq::enumerable::first <source_t> method throws an exception if source contains no elements. To instead return a default value when the source sequence is empty, use the xtd::linq::enumerable::first_or_default method.
-          template<xtd::predicate_callable<value_t> prediacte_t>
+          template<xtd::func_callable<bool, value_t> prediacte_t>
           [[nodiscard]] auto first(prediacte_t&& prediacte) const -> value_t {
             return xtd::linq::enumerable::first(self(), std::forward<prediacte_t>(prediacte));
           }
@@ -338,7 +338,7 @@ namespace xtd {
           /// @return The last element in the specified sequence.
           /// @exception xtd::invalid_operation_exception The source sequence is empty.
           /// @remarks The xtd::linq::enumerable::last <source_t> method throws an exception if source contains no elements. To instead return a default value when the source sequence is empty, use the xtd::linq::enumerable::last_or_default method.
-          template<xtd::predicate_callable<value_t> prediacte_t>
+          template<xtd::func_callable<bool, value_t> prediacte_t>
           [[nodiscard]] auto last(prediacte_t&& prediacte) const -> value_t {
             return xtd::linq::enumerable::last(self(), std::forward<prediacte_t>(prediacte));
           }
