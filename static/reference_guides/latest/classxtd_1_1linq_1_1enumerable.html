@@ -292,9 +292,9 @@ requires std::same_as&lt;<a class="el" href="group__concepts.html#ga7ffbe4fba341
 <tr class="memitem:ac6f852bb7cae9c1fe7182cf6a3c03996" id="r_ac6f852bb7cae9c1fe7182cf6a3c03996"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t&gt; </td></tr>
 <tr class="memitem:ac6f852bb7cae9c1fe7182cf6a3c03996 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ac6f852bb7cae9c1fe7182cf6a3c03996">first</a> (source_t &amp;&amp;source) -&gt; <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt;</td></tr>
 <tr class="memdesc:ac6f852bb7cae9c1fe7182cf6a3c03996"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the first element of a sequence.  <br /></td></tr>
-<tr class="memitem:a94755e6e887dad04d13173ac139e5649" id="r_a94755e6e887dad04d13173ac139e5649"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t, <a class="el" href="structxtd_1_1predicate__callable.html">xtd::predicate_callable</a>&lt; <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; &gt; prediacte_t&gt; </td></tr>
-<tr class="memitem:a94755e6e887dad04d13173ac139e5649 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a94755e6e887dad04d13173ac139e5649">first</a> (source_t &amp;&amp;source, prediacte_t &amp;&amp;predicate<a class="el" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab">predicate</a>) -&gt; <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt;</td></tr>
-<tr class="memdesc:a94755e6e887dad04d13173ac139e5649"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the first element in a sequence that satisfies a specified condition.  <br /></td></tr>
+<tr class="memitem:a5acfd03546468e48e7efa1f36f92272b" id="r_a5acfd03546468e48e7efa1f36f92272b"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t, <a class="el" href="structxtd_1_1func__callable.html">xtd::func_callable</a>&lt; bool, <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; &gt; predicate_t&gt; </td></tr>
+<tr class="memitem:a5acfd03546468e48e7efa1f36f92272b template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a5acfd03546468e48e7efa1f36f92272b">first</a> (source_t &amp;&amp;source, predicate_t &amp;&amp;predicate<a class="el" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab">predicate</a>) -&gt; <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt;</td></tr>
+<tr class="memdesc:a5acfd03546468e48e7efa1f36f92272b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the first element in a sequence that satisfies a specified condition.  <br /></td></tr>
 <tr class="memitem:a477bb204cd1f8cbe5496bbdc51c6925f" id="r_a477bb204cd1f8cbe5496bbdc51c6925f"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t, <a class="el" href="structxtd_1_1predicate__callable.html">xtd::predicate_callable</a>&lt; <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; &gt; prediacte_t&gt; </td></tr>
 <tr class="memitem:a477bb204cd1f8cbe5496bbdc51c6925f template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a477bb204cd1f8cbe5496bbdc51c6925f">first_or_default</a> (source_t &amp;&amp;source, prediacte_t &amp;&amp;predicate<a class="el" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab">predicate</a>, <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; &amp;&amp;default_value) noexcept -&gt; <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt;</td></tr>
 <tr class="memdesc:a477bb204cd1f8cbe5496bbdc51c6925f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the first element of the sequence that satisfies a condition, or a specified default value if no such element is found.  <br /></td></tr>
@@ -334,9 +334,9 @@ requires std::same_as&lt;<a class="el" href="group__concepts.html#ga7ffbe4fba341
 <tr class="memitem:a10393a8c622cc2ede14eec939b48fef2" id="r_a10393a8c622cc2ede14eec939b48fef2"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t&gt; </td></tr>
 <tr class="memitem:a10393a8c622cc2ede14eec939b48fef2 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a10393a8c622cc2ede14eec939b48fef2">last</a> (source_t &amp;&amp;source) -&gt; <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt;</td></tr>
 <tr class="memdesc:a10393a8c622cc2ede14eec939b48fef2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the last element of a sequence.  <br /></td></tr>
-<tr class="memitem:af92f882130bbb74f37e432b75ad6f561" id="r_af92f882130bbb74f37e432b75ad6f561"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t, <a class="el" href="structxtd_1_1predicate__callable.html">xtd::predicate_callable</a>&lt; <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; &gt; prediacte_t&gt; </td></tr>
-<tr class="memitem:af92f882130bbb74f37e432b75ad6f561 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#af92f882130bbb74f37e432b75ad6f561">last</a> (source_t &amp;&amp;source, prediacte_t &amp;&amp;predicate<a class="el" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab">predicate</a>) -&gt; <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt;</td></tr>
-<tr class="memdesc:af92f882130bbb74f37e432b75ad6f561"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the last element in a sequence that satisfies a specified condition.  <br /></td></tr>
+<tr class="memitem:a19741d04d37283fdd0f5abd58d3d74b5" id="r_a19741d04d37283fdd0f5abd58d3d74b5"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t, <a class="el" href="structxtd_1_1func__callable.html">xtd::func_callable</a>&lt; bool, <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; &gt; predicate_t&gt; </td></tr>
+<tr class="memitem:a19741d04d37283fdd0f5abd58d3d74b5 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a19741d04d37283fdd0f5abd58d3d74b5">last</a> (source_t &amp;&amp;source, predicate_t &amp;&amp;predicate<a class="el" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab">predicate</a>) -&gt; <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt;</td></tr>
+<tr class="memdesc:a19741d04d37283fdd0f5abd58d3d74b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the last element in a sequence that satisfies a specified condition.  <br /></td></tr>
 <tr class="memitem:aeb5d92fce049bb3c73f8480f7c25c9ab" id="r_aeb5d92fce049bb3c73f8480f7c25c9ab"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t&gt; <br />
 requires <a class="el" href="structxtd_1_1numeric.html">xtd::numeric</a>&lt;<a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt;source_t&gt;&gt;</td></tr>
 <tr class="memitem:aeb5d92fce049bb3c73f8480f7c25c9ab template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aeb5d92fce049bb3c73f8480f7c25c9ab">max</a> (source_t &amp;&amp;source) -&gt; <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt;</td></tr>
@@ -2832,13 +2832,13 @@ template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> so
 
 </div>
 </div>
-<a id="a94755e6e887dad04d13173ac139e5649" name="a94755e6e887dad04d13173ac139e5649"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a94755e6e887dad04d13173ac139e5649">&#9670;&#160;</a></span>first() <span class="overload">[2/2]</span></h2>
+<a id="a5acfd03546468e48e7efa1f36f92272b" name="a5acfd03546468e48e7efa1f36f92272b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5acfd03546468e48e7efa1f36f92272b">&#9670;&#160;</a></span>first() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t, <a class="el" href="structxtd_1_1predicate__callable.html">xtd::predicate_callable</a>&lt; <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; &gt; prediacte_t&gt; </div>
+template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t, <a class="el" href="structxtd_1_1func__callable.html">xtd::func_callable</a>&lt; bool, <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; &gt; predicate_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2851,7 +2851,7 @@ template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> so
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">prediacte_t &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>predicate</em></span>&#160;) -&gt;  <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt;</td>
+          <td class="paramtype">predicate_t &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>predicate</em></span>&#160;) -&gt;  <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt;</td>
         </tr>
       </table>
   </td>
@@ -3633,13 +3633,13 @@ template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> so
 
 </div>
 </div>
-<a id="af92f882130bbb74f37e432b75ad6f561" name="af92f882130bbb74f37e432b75ad6f561"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af92f882130bbb74f37e432b75ad6f561">&#9670;&#160;</a></span>last() <span class="overload">[2/2]</span></h2>
+<a id="a19741d04d37283fdd0f5abd58d3d74b5" name="a19741d04d37283fdd0f5abd58d3d74b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19741d04d37283fdd0f5abd58d3d74b5">&#9670;&#160;</a></span>last() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t, <a class="el" href="structxtd_1_1predicate__callable.html">xtd::predicate_callable</a>&lt; <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; &gt; prediacte_t&gt; </div>
+template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t, <a class="el" href="structxtd_1_1func__callable.html">xtd::func_callable</a>&lt; bool, <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; &gt; predicate_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3652,7 +3652,7 @@ template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> so
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">prediacte_t &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>predicate</em></span>&#160;) -&gt;  <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt;</td>
+          <td class="paramtype">predicate_t &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>predicate</em></span>&#160;) -&gt;  <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt;</td>
         </tr>
       </table>
   </td>

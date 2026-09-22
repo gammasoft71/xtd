@@ -309,7 +309,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>          }</div>
 </div>
 <div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span></div>
-<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>          <span class="keyword">template</span>&lt;xtd::predicate_callable&lt;value_t&gt; prediacte_t&gt;</div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>          <span class="keyword">template</span>&lt;xtd::func_callable&lt;<span class="keywordtype">bool</span>, value_t&gt; prediacte_t&gt;</div>
 <div class="foldopen" id="foldopen00298" data-start="{" data-end="}">
 <div class="line"><a id="l00298" name="l00298"></a><span class="lineno"><a class="line" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a50512c486339bb6442a718e80e301f06">  298</a></span>          [[nodiscard]] <span class="keyword">auto</span> <a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a50512c486339bb6442a718e80e301f06">first</a>(prediacte_t&amp;&amp; prediacte) <span class="keyword">const</span> -&gt; value_t {</div>
 <div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="classxtd_1_1linq_1_1enumerable.html#ac6f852bb7cae9c1fe7182cf6a3c03996">xtd::linq::enumerable::first</a>(self(), std::forward&lt;prediacte_t&gt;(prediacte));</div>
@@ -348,7 +348,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span>          }</div>
 </div>
 <div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span></div>
-<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>          <span class="keyword">template</span>&lt;xtd::predicate_callable&lt;value_t&gt; prediacte_t&gt;</div>
+<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>          <span class="keyword">template</span>&lt;xtd::func_callable&lt;<span class="keywordtype">bool</span>, value_t&gt; prediacte_t&gt;</div>
 <div class="foldopen" id="foldopen00342" data-start="{" data-end="}">
 <div class="line"><a id="l00342" name="l00342"></a><span class="lineno"><a class="line" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a35f1590ca53d9b00688d4a7a2bf62734">  342</a></span>          [[nodiscard]] <span class="keyword">auto</span> <a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a35f1590ca53d9b00688d4a7a2bf62734">last</a>(prediacte_t&amp;&amp; prediacte) <span class="keyword">const</span> -&gt; value_t {</div>
 <div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="classxtd_1_1linq_1_1enumerable.html#a10393a8c622cc2ede14eec939b48fef2">xtd::linq::enumerable::last</a>(self(), std::forward&lt;prediacte_t&gt;(prediacte));</div>
