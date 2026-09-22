@@ -1,5 +1,13 @@
 #include <xtd/linq/enumerable>
-#include <xtd/collections/generic/equality_comparer.hpp>
+#include <xtd/expressions/add.hpp>
+#include <xtd/expressions/equal>
+#include <xtd/expressions/greater_than_or_equal>
+#include <xtd/expressions/less_than_or_equal>
+#include <xtd/expressions/less_than>
+#include <xtd/expressions/modulo>
+#include <xtd/expressions/unary_minus_expression>
+#include <xtd/expressions/args>
+#include <xtd/collections/generic/equality_comparer>
 #include <xtd/collections/generic/list>
 #include <xtd/argument_exception>
 #include <xtd/argument_out_of_range_exception>
@@ -14,26 +22,27 @@
 
 using namespace xtd;
 using namespace xtd::collections::generic;
+using namespace xtd::expressions;
 using namespace xtd::linq;
 using namespace xtd::tunit;
 
 namespace xtd::linq::tests {
   class test_class_(enumerable_tests) {
     auto test_method_(aggregate_with_enumerable_and_func) {
-      assert::are_equal(15, enumerable::aggregate(array {1, 2, 3, 4, 5}, [](int total, int next)->int {return total + next;}));
+      assert::are_equal(15, enumerable::aggregate(array {1, 2, 3, 4, 5}, _1 + _2));
     }
     
     auto test_method_(aggregate_with_enumerable_seed_and_func) {
-      assert::are_equal(25, enumerable::aggregate(array {1, 2, 3, 4, 5}, 10, [](int total, int next) {return total + next;}));
+      assert::are_equal(25, enumerable::aggregate(array {1, 2, 3, 4, 5}, 10, _1 + _2));
     }
     
     auto test_method_(aggregate_with_enumerable_seed_func_and_result_selector) {
-      assert::are_equal(-25, enumerable::aggregate<int>(array {1, 2, 3, 4, 5}, 10, [](int total, int next) {return total + next;}, [](int aggregated) {return -aggregated;}));
+      assert::are_equal(-25, enumerable::aggregate<int>(array {1, 2, 3, 4, 5}, 10, _1 + _2, -_));
     }
     
     auto test_method_(all_with_enumerable_and_predicate) {
-      assert::is_true(enumerable::all(array {2, 4, 6, 8, 10, 12}, [](int next) {return next % 2 == 0;}));
-      assert::is_false(enumerable::all(array {1, 2, 3, 4, 5}, [](int next) {return next % 2 == 0;}));
+      assert::is_true(enumerable::all(array {2, 4, 6, 8, 10, 12}, _1 % 2 == 0));
+      assert::is_false(enumerable::all(array {1, 2, 3, 4, 5}, _1 % 2 == 0));
     }
     
     auto test_method_(any_with_enumerable) {
@@ -42,8 +51,8 @@ namespace xtd::linq::tests {
     }
     
     auto test_method_(any_with_enumerable_and_predicate) {
-      assert::is_true(enumerable::any(array {1, 2, 3, 4, 5}, [](int next) {return next % 2 == 0;}));
-      assert::is_false(enumerable::any(array {1, 3, 5, 7, 9, 11}, [](int next) {return next % 2 == 0;}));
+      assert::is_true(enumerable::any(array {1, 2, 3, 4, 5}, _1 % 2 == 0));
+      assert::is_false(enumerable::any(array {1, 3, 5, 7, 9, 11}, _1 % 2 == 0));
     }
     
     auto test_method_(append_with_enumerable_and_element) {
@@ -177,13 +186,13 @@ namespace xtd::linq::tests {
     }
     
     auto test_method_(count_with_enumerable_and_predicate) {
-      assert::are_equal(3u, enumerable::count(array {1, 2, 3, 4, 5}, [](int value) {return value <= 3;}));
-      assert::are_equal(0u, enumerable::count(array {1, 2, 3, 4, 5}, [](int value) {return value < 0;}));
+      assert::are_equal(3u, enumerable::count(array {1, 2, 3, 4, 5}, _1 <= 3));
+      assert::are_equal(0u, enumerable::count(array {1, 2, 3, 4, 5}, _1 < 0));
     }
     
     auto test_method_(count_by_with_enumerable_and_key_selector) {
       auto items = array {1, 2, 3, 4, 5, 6, 7, 9};
-      auto result = enumerable::count_by<bool>(items, [](int value) {return value % 2 == 0;}).to_array();
+      auto result = enumerable::count_by<bool>(items, _1 % 2 == 0).to_array();
       auto enumerator = result.get_enumerator();
       assert::is_true(enumerator.move_next());
       assert::are_equal(false, enumerator.current().key());
@@ -215,15 +224,27 @@ namespace xtd::linq::tests {
     auto test_method_(distinct_with_enumerable_and_comparer) {
       collection_assert::are_equal({1, 2, 3, 4, 5}, enumerable::distinct(array {1, 2, 3, 4, 5, 3, 5, 3}, [](auto&& a, auto&& b) {return a == b;}).to_array());
     }
+    
+    auto test_method_(first_with_enumerable) {
+      assert::are_equal(1, enumerable::first(array {1, 2, 3, 4, 5}));
+      assert::are_equal(5, enumerable::first(array {5, 4, 3, 2, 1}));
+      assert::throws<invalid_operation_exception>([] {[[maybe_unused]] auto __ = enumerable::first(array<int> {});});
+    }
+    
+    auto test_method_(first_with_enumerable_and_predicate) {
+      assert::are_equal(3, enumerable::first(array {1, 2, 3, 4, 5}, _1 >= 3));
+      assert::are_equal(5, enumerable::first(array {5, 4, 3, 2, 1}, _1 >= 3));
+      assert::throws<invalid_operation_exception>([] {[[maybe_unused]] auto __ = enumerable::first(array<int> {}, _1 >= 3);});
+    }
 
     auto test_method_(first_or_default_with_enumerable_predicate_and_default_value) {
-      assert::are_equal(3, enumerable::first_or_default(array {3, 4, 5}, [](int value) {return value <= 3;}, 2));
-      assert::are_equal(2, enumerable::first_or_default(array {3, 4, 5}, [](int value) {return value < 3;}, 2));
+      assert::are_equal(3, enumerable::first_or_default(array {3, 4, 5}, _1 <= 3, 2));
+      assert::are_equal(2, enumerable::first_or_default(array {3, 4, 5}, _1 < 3, 2));
     }
     
     auto test_method_(first_or_default_with_enumerable_and_predicate) {
-      assert::are_equal(3, enumerable::first_or_default(array {3, 4, 5}, [](int value) {return value <= 3;}));
-      assert::are_equal(0, enumerable::first_or_default(array {3, 4, 5}, [](int value) {return value < 3;}));
+      assert::are_equal(3, enumerable::first_or_default(array {3, 4, 5}, _1 <= 3));
+      assert::are_equal(0, enumerable::first_or_default(array {3, 4, 5}, _1 < 3));
     }
     
     auto test_method_(first_or_default_with_enumerable_and_default_value) {
@@ -236,6 +257,18 @@ namespace xtd::linq::tests {
       assert::are_equal(0, enumerable::first_or_default(array<int> {}));
     }
     
+    auto test_method_(last_with_enumerable) {
+      assert::are_equal(5, enumerable::last(array {1, 2, 3, 4, 5}));
+      assert::are_equal(1, enumerable::last(array {5, 4, 3, 2, 1}));
+      assert::throws<invalid_operation_exception>([] {[[maybe_unused]] auto __ = enumerable::last(array<int> {});});
+    }
+    
+    auto test_method_(last_with_enumerable_and_predicate) {
+      assert::are_equal(5, enumerable::last(array {1, 2, 3, 4, 5}, _1 >= 3));
+      assert::are_equal(3, enumerable::last(array {5, 4, 3, 2, 1}, _1 >= 3));
+      assert::throws<invalid_operation_exception>([] {[[maybe_unused]] auto __ = enumerable::last(array<int> {}, _1 >= 3);});
+    }
+
     auto test_method_(range_with_count) {
       collection_assert::are_equal({0, 1, 2, 3, 4}, enumerable::range(5).to_array());
       assert::is_zero(enumerable::range(0).to_array().count());
