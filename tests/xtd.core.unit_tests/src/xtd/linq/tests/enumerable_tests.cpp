@@ -257,6 +257,39 @@ namespace xtd::linq::tests {
       assert::are_equal(0, enumerable::first_or_default(array<int> {}));
     }
     
+    auto test_method_(from_with_enumerable) {
+      assert::is_instance_of<xtd::collections::generic::ienumerable<int>>(enumerable::from(array {1, 2, 3}));
+      collection_assert::are_equal({1, 2, 3}, enumerable::from(array {1, 2, 3}).to_array());
+    }
+    
+    auto test_method_(from_with_initializer_list) {
+      assert::is_instance_of<xtd::collections::generic::ienumerable<int>>(enumerable::from({1, 2, 3}));
+      collection_assert::are_equal({1, 2, 3}, enumerable::from({1, 2, 3}).to_array());
+    }
+    
+    auto test_method_(from_with_collection) {
+      assert::is_instance_of<xtd::collections::generic::ienumerable<int>>(enumerable::from(std::vector {1, 2, 3}));
+      collection_assert::are_equal({1, 2, 3}, enumerable::from(std::vector {1, 2, 3}).to_array());
+    }
+    
+    auto test_method_(from_with_iterators) {
+      auto s = array {1, 2, 3};
+      assert::is_instance_of<xtd::collections::generic::ienumerable<int>>(enumerable::from(s.begin(), s.end()));
+      collection_assert::are_equal({1, 2, 3}, enumerable::from(s.begin(), s.end()).to_array());
+    }
+    
+    auto test_method_(from_with_iterator_and_length) {
+      auto s = array {1, 2, 3};
+      assert::is_instance_of<xtd::collections::generic::ienumerable<int>>(enumerable::from(s.data(), s.length()));
+      collection_assert::are_equal({1, 2, 3}, enumerable::from(s.data(), s.length()).to_array());
+    }
+    
+    auto test_method_(from_with_native_array) {
+      int s[] = {1, 2, 3};
+      assert::is_instance_of<xtd::collections::generic::ienumerable<int>>(enumerable::from(s));
+      collection_assert::are_equal({1, 2, 3}, enumerable::from(s).to_array());
+    }
+
     auto test_method_(last_with_enumerable) {
       assert::are_equal(5, enumerable::last(array {1, 2, 3, 4, 5}));
       assert::are_equal(1, enumerable::last(array {5, 4, 3, 2, 1}));
