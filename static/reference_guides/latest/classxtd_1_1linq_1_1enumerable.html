@@ -391,6 +391,9 @@ requires <a class="el" href="structxtd_1_1numeric.html">xtd::numeric</a>&lt;<a c
 <tr class="memitem:ac46941ba21fc5885d6383af549f63b08" id="r_ac46941ba21fc5885d6383af549f63b08"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1integer.html">xtd::integer</a> integer_t&gt; </td></tr>
 <tr class="memitem:ac46941ba21fc5885d6383af549f63b08 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ac46941ba21fc5885d6383af549f63b08">range</a> (integer_t start, integer_t count, integer_t step) -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; integer_t &gt;</td></tr>
 <tr class="memdesc:ac46941ba21fc5885d6383af549f63b08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a sequence of integral numbers within a specified range and step.  <br /></td></tr>
+<tr class="memitem:ac3a7f9cde2911a480c570f15a405dbef" id="r_ac3a7f9cde2911a480c570f15a405dbef"><td class="memTemplParams" colspan="2">template&lt;typename element_t&gt; </td></tr>
+<tr class="memitem:ac3a7f9cde2911a480c570f15a405dbef template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ac3a7f9cde2911a480c570f15a405dbef">repeat</a> (const element_t &amp;element, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> count) -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; element_t &gt;</td></tr>
+<tr class="memdesc:ac3a7f9cde2911a480c570f15a405dbef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a sequence that contains one repeated value.  <br /></td></tr>
 <tr class="memitem:ad36ee696a2433850deb504f731dd0755" id="r_ad36ee696a2433850deb504f731dd0755"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t&gt; </td></tr>
 <tr class="memitem:ad36ee696a2433850deb504f731dd0755 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ad36ee696a2433850deb504f731dd0755">reverse</a> (source_t &amp;&amp;source) -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; source_t &gt; &gt;</td></tr>
 <tr class="memdesc:ad36ee696a2433850deb504f731dd0755"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inverts the order of the elements in a sequence.  <br /></td></tr>
@@ -4394,6 +4397,48 @@ template&lt;<a class="el" href="structxtd_1_1integer.html">xtd::integer</a> inte
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="ac3a7f9cde2911a480c570f15a405dbef" name="ac3a7f9cde2911a480c570f15a405dbef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3a7f9cde2911a480c570f15a405dbef">&#9670;&#160;</a></span>repeat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename element_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto xtd::linq::enumerable::repeat </td>
+          <td>(</td>
+          <td class="paramtype">const element_t &amp;</td>          <td class="paramname"><span class="paramname"><em>element</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>count</em></span>&#160;) -&gt;  <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; element_t &gt;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Generates a sequence that contains one repeated value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">element</td><td>The value to be repeated. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> that contains a repeated value. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>This method is implemented by using deferred execution. The immediate return value is an object that stores all the information that is required to perform the action. The query represented by this method is not executed until the object is enumerated either by calling its GetEnumerator method directly or by using for range. </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to use Repeat to generate a sequence of a repeated value. <div class="fragment"></div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
