@@ -27,6 +27,7 @@ add_projects(
   enumerable_default_if_empty2
   enumerable_distinct
   enumerable_range
+  enumerable_repeat
   enumerable_select
   enumerable_select2
   enumerable_skip_while
