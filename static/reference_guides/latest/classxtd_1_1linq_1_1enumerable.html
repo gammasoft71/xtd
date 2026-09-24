@@ -4438,7 +4438,34 @@ template&lt;typename element_t&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> that contains a repeated value. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>This method is implemented by using deferred execution. The immediate return value is an object that stores all the information that is required to perform the action. The query represented by this method is not executed until the object is enumerated either by calling its GetEnumerator method directly or by using for range. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to use Repeat to generate a sequence of a repeated value. <div class="fragment"></div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to use Repeat to generate a sequence of a repeated value. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="keyword">auto</span> strings = <a class="code hl_function" href="#ac3a7f9cde2911a480c570f15a405dbef">enumerable::repeat</a>(<span class="stringliteral">&quot;I like programming.&quot;</span>, 15);</div>
+<div class="line"> </div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; str : strings)</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">console::write_line</a>(str);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// I like programming.</span></div>
+<div class="line"><span class="comment">// I like programming.</span></div>
+<div class="line"><span class="comment">// I like programming.</span></div>
+<div class="line"><span class="comment">// I like programming.</span></div>
+<div class="line"><span class="comment">// I like programming.</span></div>
+<div class="line"><span class="comment">// I like programming.</span></div>
+<div class="line"><span class="comment">// I like programming.</span></div>
+<div class="line"><span class="comment">// I like programming.</span></div>
+<div class="line"><span class="comment">// I like programming.</span></div>
+<div class="line"><span class="comment">// I like programming.</span></div>
+<div class="line"><span class="comment">// I like programming.</span></div>
+<div class="line"><span class="comment">// I like programming.</span></div>
+<div class="line"><span class="comment">// I like programming.</span></div>
+<div class="line"><span class="comment">// I like programming.</span></div>
+<div class="line"><span class="comment">// I like programming.</span></div>
+<div class="ttc" id="aclassxtd_1_1linq_1_1enumerable_html_ac3a7f9cde2911a480c570f15a405dbef"><div class="ttname"><a href="#ac3a7f9cde2911a480c570f15a405dbef">xtd::linq::enumerable::repeat</a></div><div class="ttdeci">static auto repeat(const element_t &amp;element, xtd::usize count) -&gt; xtd::collections::generic::enumerable_generator&lt; element_t &gt;</div><div class="ttdoc">Generates a sequence that contains one repeated value.</div></div>
+</div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
