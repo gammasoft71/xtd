@@ -6,7 +6,7 @@
 
 <br/>
 
-**xtd (pronounced "extend") is a modern C++20 framework to create console (CLI), forms (GUI) and unit test (xUnit) multiplatform applications and libraries.**
+**xtd (pronounced "extend") is a modern C++20/23 framework to create console (CLI), forms (GUI) and unit test (xUnit) multiplatform applications and libraries.**
 
 <br/>
 <div style={{ display: 'flex', justifyContent: 'left', flexWrap: 'wrap', gap: '30px', marginTop: '10px' }}>
