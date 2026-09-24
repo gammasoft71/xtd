@@ -6,7 +6,7 @@
 
 <br/>
 
-**xtd (pronounced "extend") is a modern C++20 framework to create console (CLI), forms (GUI) and unit test (xUnit) multiplatform applications and libraries.**
+**xtd (pronounced "extend") is a modern C++20/23 framework to create console (CLI), forms (GUI) and unit test (xUnit) multiplatform applications and libraries.**
 
 <br/>
 <div style={{ display: 'flex', justifyContent: 'left', flexWrap: 'wrap', gap: '30px', marginTop: '10px' }}>
@@ -38,7 +38,7 @@
 * a collection of native C++ classes libraries, to **extend** std;
 * API close to the .net API with a modern C++ approach and full integration with the std standard;
 * xtd is designed to manage GUI controls and dialogs in pure [native mode](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.forms/Overview/control_appearance) or with [CSS styles](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.forms/Style%20sheets/style_sheets_overview).
-* written in efficient, modern [C++20](https://en.cppreference.com/w/) with [RAII](https://en.cppreference.com/w/cpp/language/raii) programming idiom;
+* written in efficient, modern [C++20/23](https://en.cppreference.com/w/) with [RAII](https://en.cppreference.com/w/cpp/language/raii) programming idiom;
 * and [highly portable](https://gammasoft71.github.io/xtd/docs/documentation/portability) and available on [many different platforms](https://gammasoft71.github.io/xtd/docs/documentation/portability);
 * See [features](https://gammasoft71.github.io/xtd/docs/documentation/features) for more informations.
 
@@ -51,7 +51,7 @@ xtd is composed of several libraries.
 ### xtd.core
 
 [![core](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/xtd.core.png)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html)
-The [xtd.core](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html) library is modern C++20 libraries of classes, interfaces, and value types that provide access to system functionality. It is the foundation on which c++ applications, components, and controls are built.
+The [xtd.core](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html) library is modern C++20/23 libraries of classes, interfaces, and value types that provide access to system functionality. It is the foundation on which c++ applications, components, and controls are built.
 
 ### xtd.drawing
 
