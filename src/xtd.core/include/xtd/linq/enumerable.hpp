@@ -631,6 +631,12 @@ auto xtd::linq::enumerable::range(integer_t start, integer_t count, integer_t st
     co_yield start + (index * step);
 }
 
+template<typename element_t>
+auto xtd::linq::enumerable::repeat(const element_t& element, xtd::usize count) -> xtd::collections::generic::enumerable_generator<element_t> {
+  for (auto index = xtd::usize {}; index < count; ++index)
+    co_yield element;
+}
+
 template<xtd::iterable source_t>
 auto xtd::linq::enumerable::reverse(source_t&& source) -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>> {
   auto reversed = std::vector<xtd::iterable_value_type<source_t>>(source.begin(), source.end());

@@ -798,6 +798,24 @@ namespace xtd {
       template<xtd::integer integer_t>
       [[nodiscard]] static auto range(integer_t start, integer_t count, integer_t step) -> xtd::collections::generic::enumerable_generator<integer_t>;
 
+      /// @brief Generates a sequence that contains one repeated value.
+      /// @param element The value to be repeated.
+      /// @return An xtd::collections::generic::ienumerable that contains a repeated value.
+      /// @remarks This method is implemented by using deferred execution. The immediate return value is an object that stores all the information that is required to perform the action. The query represented by this method is not executed until the object is enumerated either by calling its GetEnumerator method directly or by using for range.
+      /// @par Examples
+      /// The following code example demonstrates how to use Repeat to generate a sequence of a repeated value.
+      /// @include enumerable_repeat.cpp
+      template<typename element_t>
+      [[nodiscard]] static auto repeat(const element_t& element, xtd::usize count) -> xtd::collections::generic::enumerable_generator<element_t>;
+
+      /// @cond
+      [[nodiscard]] static auto repeat(const char* element, xtd::usize count) -> xtd::collections::generic::enumerable_generator<string>; // Defined in include/xtd/string.hpp
+      [[nodiscard]] static auto repeat(const xtd::char16* element, xtd::usize count) -> xtd::collections::generic::enumerable_generator<string>; // Defined in include/xtd/string.hpp
+      [[nodiscard]] static auto repeat(const xtd::char32* element, xtd::usize count) -> xtd::collections::generic::enumerable_generator<string>; // Defined in include/xtd/string.hpp
+      [[nodiscard]] static auto repeat(const xtd::char8* element, xtd::usize count) -> xtd::collections::generic::enumerable_generator<string>; // Defined in include/xtd/string.hpp
+      [[nodiscard]] static auto repeat(const xtd::wchar* element, xtd::usize count) -> xtd::collections::generic::enumerable_generator<string>; // Defined in include/xtd/string.hpp
+      /// @endcond
+
       /// @brief Inverts the order of the elements in a sequence.
       /// @param source A sequence of values to reverse.
       /// @return A sequence whose elements correspond to those of the input sequence in reverse order.

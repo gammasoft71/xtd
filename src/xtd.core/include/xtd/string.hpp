@@ -119,6 +119,31 @@ template<typename type_t>
 template<typename key_t, typename value_t>
 [[nodiscard]] inline auto xtd::collections::generic::key_value_pair<key_t, value_t>::to_string() const noexcept -> xtd::string {return xtd::string::format("({}, {})", first, second);}
 
+inline auto xtd::linq::enumerable::repeat(const char* element, xtd::usize count) -> xtd::collections::generic::enumerable_generator<xtd::string> {
+  for (auto index = xtd::usize {}; index < count; ++index)
+    co_yield element;
+}
+
+inline auto xtd::linq::enumerable::repeat(const xtd::char16* element, xtd::usize count) -> xtd::collections::generic::enumerable_generator<xtd::string> {
+  for (auto index = xtd::usize {}; index < count; ++index)
+    co_yield element;
+}
+
+inline auto xtd::linq::enumerable::repeat(const xtd::char32* element, xtd::usize count) -> xtd::collections::generic::enumerable_generator<xtd::string> {
+  for (auto index = xtd::usize {}; index < count; ++index)
+    co_yield element;
+}
+
+inline auto xtd::linq::enumerable::repeat(const xtd::char8* element, xtd::usize count) -> xtd::collections::generic::enumerable_generator<xtd::string> {
+  for (auto index = xtd::usize {}; index < count; ++index)
+    co_yield element;
+}
+
+inline auto xtd::linq::enumerable::repeat(const xtd::wchar* element, xtd::usize count) -> xtd::collections::generic::enumerable_generator<xtd::string> {
+  for (auto index = xtd::usize {}; index < count; ++index)
+    co_yield element;
+}
+
 template<typename type_t>
 [[nodiscard]] inline auto __opaque_xtd_linq_enumerable_collection__<type_t>::to_string() const -> xtd::string {return xtd::string::format("[{}]", xtd::string::join(", ", *this));}
 
