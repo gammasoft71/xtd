@@ -10,6 +10,7 @@
 #include "object.hpp"
 #include "ticks.hpp"
 #include "string.hpp"
+#include "uint32.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -66,7 +67,7 @@ namespace xtd {
     class transition_time : public xtd::iequatable<transition_time>, public xtd::object {
     public:
       /// @cond
-      transition_time() = default;
+      transition_time();
       transition_time(const transition_time&) = default;
       transition_time(transition_time&&) = default;
       auto operator =(const transition_time&) -> transition_time& = default;
@@ -197,7 +198,7 @@ namespace xtd {
     class adjustment_rule : public xtd::iequatable<adjustment_rule>, public xtd::object {
     public:
       /// @cond
-      adjustment_rule() = default;
+      adjustment_rule();
       adjustment_rule(const adjustment_rule&) = default;
       adjustment_rule(adjustment_rule&&) = default;
       auto operator =(const adjustment_rule&) -> adjustment_rule& = default;

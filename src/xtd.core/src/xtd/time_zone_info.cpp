@@ -12,6 +12,9 @@ using namespace xtd;
 using namespace xtd::collections::generic;
 using namespace xtd::helpers;
 
+time_zone_info::transition_time::transition_time() {
+}
+
 uint32 time_zone_info::transition_time::day() const noexcept {
   return day_;
 }
@@ -69,6 +72,9 @@ bool time_zone_info::transition_time::equals(const time_zone_info::transition_ti
 
 usize time_zone_info::transition_time::get_hash_code() const noexcept {
   return hash_code::combine(day_, day_of_week_, is_fixed_date_rule_, month_, time_of_day_, week_);
+}
+
+time_zone_info::adjustment_rule::adjustment_rule() {
 }
 
 const xtd::date_time& time_zone_info::adjustment_rule::date_end() const noexcept {
