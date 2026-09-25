@@ -308,6 +308,18 @@ requires <a class="el" href="structxtd_1_1numeric.html">xtd::numeric</a>&lt;resu
 <tr class="memdesc:a090281aadc7438b70eb601b1565e2561"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; from an <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt;.  <br /></td></tr>
 <tr class="memitem:af0ef0d15da4f931ee88ec8ad0cbe3334" id="r_af0ef0d15da4f931ee88ec8ad0cbe3334"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#af0ef0d15da4f931ee88ec8ad0cbe3334">where</a> (auto &amp;&amp;predicate<a class="el" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab">predicate</a>) const</td></tr>
 <tr class="memdesc:af0ef0d15da4f931ee88ec8ad0cbe3334"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filters a sequence of values based on a predicate.  <br /></td></tr>
+<tr class="memitem:afd69e6cf6cc8df9809c18ef6d57de4bc" id="r_afd69e6cf6cc8df9809c18ef6d57de4bc"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> second_t&gt; </td></tr>
+<tr class="memitem:afd69e6cf6cc8df9809c18ef6d57de4bc template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#afd69e6cf6cc8df9809c18ef6d57de4bc">zip</a> (second_t &amp;&amp;second) const -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; std::tuple&lt; value_t, <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; second_t &gt; &gt; &gt;</td></tr>
+<tr class="memdesc:afd69e6cf6cc8df9809c18ef6d57de4bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Produces a sequence of tuples with elements from the two specified sequences.  <br /></td></tr>
+<tr class="memitem:a95c90113e0e8883e98f2acb385d42d89" id="r_a95c90113e0e8883e98f2acb385d42d89"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> second_t&gt; </td></tr>
+<tr class="memitem:a95c90113e0e8883e98f2acb385d42d89 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a95c90113e0e8883e98f2acb385d42d89">zip</a> (second_t &amp;&amp;second, auto &amp;&amp;selector) const -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt; decltype(selector(value_t {}, <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; second_t &gt; {}))&gt; &gt;</td></tr>
+<tr class="memdesc:a95c90113e0e8883e98f2acb385d42d89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies a specified function to the corresponding elements of two sequences, producing a sequence of the results.  <br /></td></tr>
+<tr class="memitem:a9404741c1e56be0c8ee622dacd4574d4" id="r_a9404741c1e56be0c8ee622dacd4574d4"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> second_t, <a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> third_t&gt; </td></tr>
+<tr class="memitem:a9404741c1e56be0c8ee622dacd4574d4 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a9404741c1e56be0c8ee622dacd4574d4">zip</a> (second_t &amp;&amp;second, third_t &amp;&amp;third) const -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; std::tuple&lt; value_t, <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; second_t &gt;, <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; third_t &gt; &gt; &gt;</td></tr>
+<tr class="memdesc:a9404741c1e56be0c8ee622dacd4574d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Produces a sequence of tuples with elements from the three specified sequences.  <br /></td></tr>
+<tr class="memitem:a3c3d6110b366ea55461ec2da5fec769c" id="r_a3c3d6110b366ea55461ec2da5fec769c"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> second_t, <a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> third_t&gt; </td></tr>
+<tr class="memitem:a3c3d6110b366ea55461ec2da5fec769c template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a3c3d6110b366ea55461ec2da5fec769c">zip</a> (second_t &amp;&amp;second, third_t &amp;&amp;third, auto &amp;&amp;selector) const -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt; decltype(selector(value_t {}, <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; second_t &gt; {}, <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; third_t &gt; {}))&gt; &gt;</td></tr>
+<tr class="memdesc:a3c3d6110b366ea55461ec2da5fec769c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies a specified function to the corresponding elements of three sequences, producing a sequence of the results.  <br /></td></tr>
 </table>
 <a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Member Typedef Documentation</h2>
 <a id="a6553ca69590bf03693f5f55252689756" name="a6553ca69590bf03693f5f55252689756"></a>
@@ -3016,7 +3028,7 @@ template&lt;typename value_t, typename enumerable_t&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -3065,6 +3077,179 @@ template&lt;typename value_t, typename enumerable_t&gt; </div>
 <div class="line"><span class="comment">// 40</span></div>
 <div class="ttc" id="aconceptxtd_1_1number_html"><div class="ttname"><a href="conceptxtd_1_1number.html">xtd::number</a></div><div class="ttdef"><b>Definition</b> number.hpp:11</div></div>
 </div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="afd69e6cf6cc8df9809c18ef6d57de4bc" name="afd69e6cf6cc8df9809c18ef6d57de4bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd69e6cf6cc8df9809c18ef6d57de4bc">&#9670;&#160;</a></span>zip() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename value_t, typename enumerable_t&gt; </div>
+<div class="memtemplate">
+template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> second_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html">xtd::collections::generic::extensions::enumerable</a>&lt; value_t, enumerable_t &gt;::zip </td>
+          <td>(</td>
+          <td class="paramtype">second_t &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>second</em></span></td><td>)</td>
+          <td> const -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; std::tuple&lt; value_t, <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; second_t &gt; &gt; &gt;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Produces a sequence of tuples with elements from the two specified sequences. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">second</td><td>The second sequence to merge. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html" title="Represents an enumerable generator that supports deferred, lazy iteration over a collection of a spec...">xtd::collections::generic::enumerable_generator</a>&lt;std::tuple&lt;first_value_t, second_value_t&gt; that contains a sequence of tuples with elements taken from the first and second sequences, in that order. </dd></dl>
+
+</div>
+</div>
+<a id="a95c90113e0e8883e98f2acb385d42d89" name="a95c90113e0e8883e98f2acb385d42d89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95c90113e0e8883e98f2acb385d42d89">&#9670;&#160;</a></span>zip() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename value_t, typename enumerable_t&gt; </div>
+<div class="memtemplate">
+template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> second_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html">xtd::collections::generic::extensions::enumerable</a>&lt; value_t, enumerable_t &gt;::zip </td>
+          <td>(</td>
+          <td class="paramtype">second_t &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>second</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">auto &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>selector</em></span>&#160;) const -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt; decltype(selector(value_t {}, <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; second_t &gt; {}))&gt; &gt;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Applies a specified function to the corresponding elements of two sequences, producing a sequence of the results. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">second</td><td>The second sequence to merge. </td></tr>
+    <tr><td class="paramname">result_selector</td><td>A function that specifies how to merge the elements from the two sequences. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html" title="Represents an enumerable generator that supports deferred, lazy iteration over a collection of a spec...">xtd::collections::generic::enumerable_generator</a>&lt;std::tuple&lt;first_value_t, second_value_t&gt; that contains a sequence of tuples with elements taken from the first and second sequences, in that order. </dd></dl>
+
+</div>
+</div>
+<a id="a9404741c1e56be0c8ee622dacd4574d4" name="a9404741c1e56be0c8ee622dacd4574d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9404741c1e56be0c8ee622dacd4574d4">&#9670;&#160;</a></span>zip() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename value_t, typename enumerable_t&gt; </div>
+<div class="memtemplate">
+template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> second_t, <a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> third_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html">xtd::collections::generic::extensions::enumerable</a>&lt; value_t, enumerable_t &gt;::zip </td>
+          <td>(</td>
+          <td class="paramtype">second_t &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>second</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">third_t &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>third</em></span>&#160;) const -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; std::tuple&lt; value_t, <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; second_t &gt;, <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; third_t &gt; &gt; &gt;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Produces a sequence of tuples with elements from the three specified sequences. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">second</td><td>The second sequence to merge. </td></tr>
+    <tr><td class="paramname">third</td><td>The third sequence to merge. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html" title="Represents an enumerable generator that supports deferred, lazy iteration over a collection of a spec...">xtd::collections::generic::enumerable_generator</a>&lt;std::tuple&lt;first_value_t, second_value_t, third_value_t&gt; that contains a sequence of tuples with elements taken from the first, second and third sequences, in that order. </dd></dl>
+
+</div>
+</div>
+<a id="a3c3d6110b366ea55461ec2da5fec769c" name="a3c3d6110b366ea55461ec2da5fec769c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c3d6110b366ea55461ec2da5fec769c">&#9670;&#160;</a></span>zip() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename value_t, typename enumerable_t&gt; </div>
+<div class="memtemplate">
+template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> second_t, <a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> third_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html">xtd::collections::generic::extensions::enumerable</a>&lt; value_t, enumerable_t &gt;::zip </td>
+          <td>(</td>
+          <td class="paramtype">second_t &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>second</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">third_t &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>third</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">auto &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>selector</em></span>&#160;) const -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt; decltype(selector(value_t {}, <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; second_t &gt; {}, <a class="el" href="group__concepts.html#ga7ffbe4fba3419d067ff71494f476a1c0">xtd::iterable_value_type</a>&lt; third_t &gt; {}))&gt; &gt;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Applies a specified function to the corresponding elements of three sequences, producing a sequence of the results. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">second</td><td>The second sequence to merge. </td></tr>
+    <tr><td class="paramname">third</td><td>The third sequence to merge. </td></tr>
+    <tr><td class="paramname">result_selector</td><td>A function that specifies how to merge the elements from the three sequences. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html" title="Represents an enumerable generator that supports deferred, lazy iteration over a collection of a spec...">xtd::collections::generic::enumerable_generator</a>&lt;std::tuple&lt;first_value_t, second_value_t, third_value_t&gt; that contains a sequence of tuples with elements taken from the first, second and third sequences, in that order. </dd></dl>
 
 </div>
 </div>
