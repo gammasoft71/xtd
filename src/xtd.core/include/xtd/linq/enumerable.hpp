@@ -743,6 +743,34 @@ auto xtd::linq::enumerable::where(source_t&& source, auto&& predicate) -> xtd::c
     if (invoke_predicate_with_optional_index(predicate, item, index++)) co_yield item;
 }
 
+template<xtd::iterable first_t, xtd::iterable second_t>
+auto xtd::linq::enumerable::zip(first_t&& first, second_t&& second) -> xtd::collections::generic::enumerable_generator<std::tuple<xtd::iterable_value_type<first_t>, xtd::iterable_value_type<second_t>>> {
+  return zip(std::forward<first_t>(first), std::forward<second_t>(second), [](const auto& first, const auto& second) {return std::make_tuple(first, second);});
+}
+template<xtd::iterable first_t, xtd::iterable second_t>
+auto xtd::linq::enumerable::zip(first_t&& first, second_t&& second, auto&& selector) -> xtd::collections::generic::enumerable_generator<xtd::raw_type<decltype(selector(xtd::iterable_value_type<first_t> {}, xtd::iterable_value_type<second_t> {}))>> {
+  auto index = xtd::usize {};
+  //auto source_holder = enumerable_holder<xtd::raw_type<source_t>> {std::forward<source_t>(source)};
+  //for (const auto& item : source_holder.get())
+  for (const auto& item : first) {
+    co_yield selector(item, *(second.begin() + index));
+    ++index;
+  }
+}
+template<xtd::iterable first_t, xtd::iterable second_t, xtd::iterable third_t>
+auto xtd::linq::enumerable::zip(first_t&& first, second_t&& second, third_t&& third) -> xtd::collections::generic::enumerable_generator<std::tuple<xtd::iterable_value_type<first_t>, xtd::iterable_value_type<second_t>, xtd::iterable_value_type<third_t>>> {
+  return zip(std::forward<first_t>(first), std::forward<second_t>(second), std::forward<third_t>(third), [](const auto& first, const auto& second, const auto& third) {return std::make_tuple(first, second, third);});
+}
+template<xtd::iterable first_t, xtd::iterable second_t, xtd::iterable third_t>
+auto xtd::linq::enumerable::zip(first_t&& first, second_t&& second, third_t&& third, auto&& selector) -> xtd::collections::generic::enumerable_generator<xtd::raw_type<decltype(selector(xtd::iterable_value_type<first_t> {}, xtd::iterable_value_type<second_t> {}, xtd::iterable_value_type<third_t> {}))>> {
+  auto index = xtd::usize {};
+  //auto source_holder = enumerable_holder<xtd::raw_type<source_t>> {std::forward<source_t>(source)};
+  //for (const auto& item : source_holder.get())
+  for (const auto& item : first) {
+    co_yield selector(item, *(second.begin() + index), *(third.begin() + index));
+    ++index;
+  }
+}
 
 template<typename predicate_t, typename value_t>
 constexpr auto xtd::linq::enumerable::invoke_predicate_with_optional_index(predicate_t&& predicate, value_t&& value, xtd::usize index) -> bool {

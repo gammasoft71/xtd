@@ -556,8 +556,41 @@ namespace xtd {
           /// @par Examples
           /// The following code example demonstrates how to use xtd::linq::enumerable::where <value_t>(const ienumerable <value_t>&, const std::function<bool (const value_t&, xtd::usize)>&) to filter a sequence based on a predicate that involves the index of each element.
           /// @include enumerable_where2.cpp
-          auto where(auto&& predicate) const {
+          [[nodiscard]] auto where(auto&& predicate) const {
             return xtd::linq::enumerable::where(self(), predicate);
+          }
+
+          /// @brief Produces a sequence of tuples with elements from the two specified sequences.
+          /// @param second The second sequence to merge.
+          /// @return xtd::collections::generic::enumerable_generator<std::tuple<first_value_t, second_value_t>  that contains a sequence of tuples with elements taken from the first and second sequences, in that order.
+          template<xtd::iterable second_t>
+          [[nodiscard]] auto zip(second_t&& second) const -> xtd::collections::generic::enumerable_generator<std::tuple<value_t, xtd::iterable_value_type<second_t>>> {
+            return xtd::linq::enumerable::zip(self(), std::forward<second_t>(second));
+          }
+          /// @brief Applies a specified function to the corresponding elements of two sequences, producing a sequence of the results.
+          /// @param second The second sequence to merge.
+          /// @param result_selector A function that specifies how to merge the elements from the two sequences.
+          /// @return xtd::collections::generic::enumerable_generator<std::tuple<first_value_t, second_value_t>  that contains a sequence of tuples with elements taken from the first and second sequences, in that order.
+          template<xtd::iterable second_t>
+          [[nodiscard]] auto zip(second_t&& second, auto&& selector) const -> xtd::collections::generic::enumerable_generator<xtd::raw_type<decltype(selector(value_t {}, xtd::iterable_value_type<second_t> {}))>> {
+            return xtd::linq::enumerable::zip(self(), std::forward<second_t>(second), selector);
+          }
+          /// @brief Produces a sequence of tuples with elements from the three specified sequences.
+          /// @param second The second sequence to merge.
+          /// @param third The third sequence to merge.
+          /// @return xtd::collections::generic::enumerable_generator<std::tuple<first_value_t, second_value_t, third_value_t>  that contains a sequence of tuples with elements taken from the first, second and third sequences, in that order.
+          template<xtd::iterable second_t, xtd::iterable third_t>
+          [[nodiscard]] auto zip(second_t&& second, third_t&& third) const -> xtd::collections::generic::enumerable_generator<std::tuple<value_t, xtd::iterable_value_type<second_t>, xtd::iterable_value_type<third_t>>> {
+            return xtd::linq::enumerable::zip(self(), std::forward<second_t>(second), std::forward<third_t>(third));
+          }
+          /// @brief Applies a specified function to the corresponding elements of three sequences, producing a sequence of the results.
+          /// @param second The second sequence to merge.
+          /// @param third The third sequence to merge.
+          /// @param result_selector A function that specifies how to merge the elements from the three sequences.
+          /// @return xtd::collections::generic::enumerable_generator<std::tuple<first_value_t, second_value_t, third_value_t>  that contains a sequence of tuples with elements taken from the first, second and third sequences, in that order.
+          template<xtd::iterable second_t, xtd::iterable third_t>
+          [[nodiscard]] auto zip(second_t&& second, third_t&& third, auto&& selector) const -> xtd::collections::generic::enumerable_generator<xtd::raw_type<decltype(selector(value_t {}, xtd::iterable_value_type<second_t> {}, xtd::iterable_value_type<third_t> {}))>> {
+            return xtd::linq::enumerable::zip(self(), std::forward<second_t>(second), std::forward<third_t>(third), selector);
           }
           /// @}
           

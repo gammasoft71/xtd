@@ -34,6 +34,7 @@
 #include <functional>
 #include <queue>
 #include <stack>
+#include <tuple>
 
 /// @cond
 template<typename type_t>
@@ -954,6 +955,35 @@ namespace xtd {
       /// @include enumerable_where2.cpp
       template<xtd::iterable source_t>
       [[nodiscard]] static auto where(source_t&& source, auto&& predicate) -> xtd::collections::generic::enumerable_generator<xtd::iterable_value_type<source_t>>;
+
+      /// @brief Produces a sequence of tuples with elements from the two specified sequences.
+      /// @param first The first sequence to merge.
+      /// @param second The second sequence to merge.
+      /// @return xtd::collections::generic::enumerable_generator<std::tuple<first_value_t, second_value_t>  that contains a sequence of tuples with elements taken from the first and second sequences, in that order.
+      template<xtd::iterable first_t, xtd::iterable second_t>
+      [[nodiscard]] static auto zip(first_t&& first, second_t&& second) -> xtd::collections::generic::enumerable_generator<std::tuple<xtd::iterable_value_type<first_t>, xtd::iterable_value_type<second_t>>>;
+      /// @brief Applies a specified function to the corresponding elements of two sequences, producing a sequence of the results.
+      /// @param first The first sequence to merge.
+      /// @param second The second sequence to merge.
+      /// @param result_selector A function that specifies how to merge the elements from the two sequences.
+      /// @return xtd::collections::generic::enumerable_generator<std::tuple<first_value_t, second_value_t>  that contains a sequence of tuples with elements taken from the first and second sequences, in that order.
+      template<xtd::iterable first_t, xtd::iterable second_t>
+      [[nodiscard]] static auto zip(first_t&& first, second_t&& second, auto&& result_selector) -> xtd::collections::generic::enumerable_generator<xtd::raw_type<decltype(result_selector(xtd::iterable_value_type<first_t> {}, xtd::iterable_value_type<second_t> {}))>>;
+      /// @brief Produces a sequence of tuples with elements from the three specified sequences.
+      /// @param first The first sequence to merge.
+      /// @param second The second sequence to merge.
+      /// @param third The third sequence to merge.
+      /// @return xtd::collections::generic::enumerable_generator<std::tuple<first_value_t, second_value_t, third_value_t>  that contains a sequence of tuples with elements taken from the first, second and third sequences, in that order.
+      template<xtd::iterable first_t, xtd::iterable second_t, xtd::iterable third_t>
+      [[nodiscard]] static auto zip(first_t&& first, second_t&& second, third_t&& third) -> xtd::collections::generic::enumerable_generator<std::tuple<xtd::iterable_value_type<first_t>, xtd::iterable_value_type<second_t>, xtd::iterable_value_type<third_t>>>;
+      /// @brief Applies a specified function to the corresponding elements of three sequences, producing a sequence of the results.
+      /// @param first The first sequence to merge.
+      /// @param second The second sequence to merge.
+      /// @param third The third sequence to merge.
+      /// @param result_selector A function that specifies how to merge the elements from the three sequences.
+      /// @return xtd::collections::generic::enumerable_generator<std::tuple<first_value_t, second_value_t, third_value_t>  that contains a sequence of tuples with elements taken from the first, second and third sequences, in that order.
+      template<xtd::iterable first_t, xtd::iterable second_t, xtd::iterable third_t>
+      [[nodiscard]] static auto zip(first_t&& first, second_t&& second, third_t&& third, auto&& result_selector) -> xtd::collections::generic::enumerable_generator<xtd::raw_type<decltype(result_selector(xtd::iterable_value_type<first_t> {}, xtd::iterable_value_type<second_t> {}, xtd::iterable_value_type<third_t> {}))>>;
       /// @}
       
     private:      
