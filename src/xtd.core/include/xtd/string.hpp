@@ -9,6 +9,7 @@
 #include "index.hpp"
 #include "collections/generic/enumerable_generator.hpp"
 #include "collections/generic/key_value_pair.hpp"
+#include "linq/enumerable_.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
