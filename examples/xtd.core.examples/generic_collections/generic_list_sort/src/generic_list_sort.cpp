@@ -5,10 +5,7 @@ struct superhero {
   string alter_ego;
   
   auto to_string() const noexcept -> string {return string::format("{}/{}", name, alter_ego);}
-  auto operator<=>(const superhero& other) const noexcept -> std::strong_ordering {
-    auto result = name <=> other.name;
-    return result != 0 ? result : alter_ego <=> other.alter_ego;
-  }
+  auto operator<=>(const superhero& other) const noexcept = default;
 };
 
 struct supervillain : istringable<supervillain>, icomparable<supervillain> {
