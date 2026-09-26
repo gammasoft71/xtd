@@ -108,6 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div id="doc-content">
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="structxtd_1_1collections_1_1generic_1_1enumerable__generator_1_1promise__type-members.html">List of all members</a>  </div>
@@ -120,10 +121,15 @@ struct xtd::collections::generic::enumerable_generator&lt; type_t &gt;::promise_
 <dl class="section remark"><dt>Remarks</dt><dd>This structure acts as the internal bridge between the compiler's coroutine mechanics and the public <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html" title="Represents an enumerable generator that supports deferred, lazy iteration over a collection of a spec...">xtd::collections::generic::enumerable_generator</a> instance. </dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>This structure is used internally by the compiler when processing functions containing the <span class="tt">co_yield</span> keyword. It should not be manipulated directly by application code. </dd></dl>
 </div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a1a7309f91a3a3f35af4880e9c9c8973f" id="r_a1a7309f91a3a3f35af4880e9c9c8973f"><td class="memItemLeft"><a id="a1a7309f91a3a3f35af4880e9c9c8973f" name="a1a7309f91a3a3f35af4880e9c9c8973f"></a>
+using&#160;</td><td class="memItemRight"><b>value_type</b></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a5a451196870b77f0b0fd7bc78ca9e042" id="r_a5a451196870b77f0b0fd7bc78ca9e042"><td class="memItemLeft">type_t&#160;</td><td class="memItemRight"><a class="el" href="#a5a451196870b77f0b0fd7bc78ca9e042">current_value</a></td></tr>
-<tr class="memdesc:a5a451196870b77f0b0fd7bc78ca9e042"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the current value yielded by the coroutine execution state.  <br /></td></tr>
+<tr class="memitem:aa74fb7cdaeaa0f99e3cf92393a69c3d6" id="r_aa74fb7cdaeaa0f99e3cf92393a69c3d6"><td class="memItemLeft">value_type&#160;</td><td class="memItemRight"><a class="el" href="#aa74fb7cdaeaa0f99e3cf92393a69c3d6">current_value</a></td></tr>
+<tr class="memdesc:aa74fb7cdaeaa0f99e3cf92393a69c3d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the current value yielded by the coroutine execution state.  <br /></td></tr>
 <tr class="memitem:abaeadf06948545a537fa356442e2c38e" id="r_abaeadf06948545a537fa356442e2c38e"><td class="memItemLeft">std::exception_ptr&#160;</td><td class="memItemRight"><a class="el" href="#abaeadf06948545a537fa356442e2c38e">exception</a></td></tr>
 <tr class="memdesc:abaeadf06948545a537fa356442e2c38e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the current exception if exception occured.  <br /></td></tr>
 </table><table class="memberdecls">
@@ -139,12 +145,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a372315b4346b632ef4956e33fb149fc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles the completion of a coroutine function that does not return a final value (using <span class="tt">co_return;</span> or reaching the end of the body).  <br /></td></tr>
 <tr class="memitem:af1926939183b73e5f44a435534aefbb0" id="r_af1926939183b73e5f44a435534aefbb0"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#af1926939183b73e5f44a435534aefbb0">unhandled_exception</a> () noexcept</td></tr>
 <tr class="memdesc:af1926939183b73e5f44a435534aefbb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Catches any unhandled exceptions escaped from the coroutine body.  <br /></td></tr>
-<tr class="memitem:ac30875eaf311ad289d9685ddcc7fe95a" id="r_ac30875eaf311ad289d9685ddcc7fe95a"><td class="memItemLeft">std::suspend_always&#160;</td><td class="memItemRight"><a class="el" href="#ac30875eaf311ad289d9685ddcc7fe95a">yield_value</a> (const type_t &amp;value) noexcept</td></tr>
-<tr class="memdesc:ac30875eaf311ad289d9685ddcc7fe95a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Captures the value emitted by a <span class="tt">co_yield</span> expression and suspends the coroutine execution flow.  <br /></td></tr>
-<tr class="memitem:a6a56e40e7c01674e0e21e14690b7b42b" id="r_a6a56e40e7c01674e0e21e14690b7b42b"><td class="memItemLeft">std::suspend_always&#160;</td><td class="memItemRight"><a class="el" href="#a6a56e40e7c01674e0e21e14690b7b42b">yield_value</a> (type_t &amp;value) noexcept</td></tr>
-<tr class="memdesc:a6a56e40e7c01674e0e21e14690b7b42b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Captures the value emitted by a <span class="tt">co_yield</span> expression and suspends the coroutine execution flow.  <br /></td></tr>
-<tr class="memitem:aafdb67e9e4413806560d671fb732be5d" id="r_aafdb67e9e4413806560d671fb732be5d"><td class="memItemLeft">std::suspend_always&#160;</td><td class="memItemRight"><a class="el" href="#aafdb67e9e4413806560d671fb732be5d">yield_value</a> (type_t &amp;&amp;value) noexcept</td></tr>
-<tr class="memdesc:aafdb67e9e4413806560d671fb732be5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Captures the value emitted by a <span class="tt">co_yield</span> expression and suspends the coroutine execution flow.  <br /></td></tr>
+<tr class="memitem:a1a752f7f47b9bcc14df771037c18786f" id="r_a1a752f7f47b9bcc14df771037c18786f"><td class="memTemplParams" colspan="2">template&lt;typename value_t&gt; </td></tr>
+<tr class="memitem:a1a752f7f47b9bcc14df771037c18786f template"><td class="memItemLeft">std::suspend_always&#160;</td><td class="memItemRight"><a class="el" href="#a1a752f7f47b9bcc14df771037c18786f">yield_value</a> (value_t &amp;&amp;value) noexcept</td></tr>
+<tr class="memdesc:a1a752f7f47b9bcc14df771037c18786f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Captures the value emitted by a <span class="tt">co_yield</span> expression and suspends the coroutine execution flow.  <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="a2eeaf81370d0579f5bb0c91e2afe6f7e" name="a2eeaf81370d0579f5bb0c91e2afe6f7e"></a>
@@ -297,13 +300,15 @@ template&lt;typename type_t&gt; </div>
 
 </div>
 </div>
-<a id="ac30875eaf311ad289d9685ddcc7fe95a" name="ac30875eaf311ad289d9685ddcc7fe95a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac30875eaf311ad289d9685ddcc7fe95a">&#9670;&#160;</a></span>yield_value() <span class="overload">[1/3]</span></h2>
+<a id="a1a752f7f47b9bcc14df771037c18786f" name="a1a752f7f47b9bcc14df771037c18786f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a752f7f47b9bcc14df771037c18786f">&#9670;&#160;</a></span>yield_value()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename type_t&gt; </div>
+<div class="memtemplate">
+template&lt;typename value_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -311,81 +316,7 @@ template&lt;typename type_t&gt; </div>
         <tr>
           <td class="memname">std::suspend_always <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; type_t &gt;::promise_type::yield_value </td>
           <td>(</td>
-          <td class="paramtype">const type_t &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Captures the value emitted by a <span class="tt">co_yield</span> expression and suspends the coroutine execution flow. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">value</td><td>The value of type <span class="tt">type_t</span> to be transmitted to the active enumerator or iterator façade. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>An object that instructs the compiler to suspend execution immediately after capturing the value. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The value is efficiently transferred into the state using std::move to minimize overhead and enforce <b>zero-cost abstraction</b> performance. </dd></dl>
-
-</div>
-</div>
-<a id="a6a56e40e7c01674e0e21e14690b7b42b" name="a6a56e40e7c01674e0e21e14690b7b42b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6a56e40e7c01674e0e21e14690b7b42b">&#9670;&#160;</a></span>yield_value() <span class="overload">[2/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename type_t&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::suspend_always <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; type_t &gt;::promise_type::yield_value </td>
-          <td>(</td>
-          <td class="paramtype">type_t &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Captures the value emitted by a <span class="tt">co_yield</span> expression and suspends the coroutine execution flow. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">value</td><td>The value of type <span class="tt">type_t</span> to be transmitted to the active enumerator or iterator façade. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>An object that instructs the compiler to suspend execution immediately after capturing the value. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The value is efficiently transferred into the state using std::move to minimize overhead and enforce <b>zero-cost abstraction</b> performance. </dd></dl>
-
-</div>
-</div>
-<a id="aafdb67e9e4413806560d671fb732be5d" name="aafdb67e9e4413806560d671fb732be5d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aafdb67e9e4413806560d671fb732be5d">&#9670;&#160;</a></span>yield_value() <span class="overload">[3/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename type_t&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::suspend_always <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; type_t &gt;::promise_type::yield_value </td>
-          <td>(</td>
-          <td class="paramtype">type_t &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td class="paramtype">value_t &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -409,8 +340,8 @@ template&lt;typename type_t&gt; </div>
 </div>
 </div>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
-<a id="a5a451196870b77f0b0fd7bc78ca9e042" name="a5a451196870b77f0b0fd7bc78ca9e042"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5a451196870b77f0b0fd7bc78ca9e042">&#9670;&#160;</a></span>current_value</h2>
+<a id="aa74fb7cdaeaa0f99e3cf92393a69c3d6" name="aa74fb7cdaeaa0f99e3cf92393a69c3d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa74fb7cdaeaa0f99e3cf92393a69c3d6">&#9670;&#160;</a></span>current_value</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -418,7 +349,7 @@ template&lt;typename type_t&gt; </div>
 template&lt;typename type_t&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">type_t <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; type_t &gt;::promise_type::current_value</td>
+          <td class="memname">value_type <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a>&lt; type_t &gt;::promise_type::current_value</td>
         </tr>
       </table>
 </div><div class="memdoc">

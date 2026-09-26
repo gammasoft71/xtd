@@ -246,7 +246,7 @@ var searchData=
   ['curling_5fstone_243',['curling_stone',['../classxtd_1_1forms_1_1emoticons.html#a429365ee29a2e9ee74c2819b1de44996',1,'xtd::forms::emoticons']]],
   ['curly_5floop_244',['curly_loop',['../classxtd_1_1forms_1_1emoticons.html#abb0c84f12875cdfa52f6f2957fda7747',1,'xtd::forms::emoticons']]],
   ['currency_5fexchange_245',['currency_exchange',['../classxtd_1_1forms_1_1emoticons.html#ad249edf4c65cc75ff00f83a9189c7a55',1,'xtd::forms::emoticons']]],
-  ['current_5fvalue_246',['current_value',['../structxtd_1_1collections_1_1generic_1_1enumerable__generator_1_1promise__type.html#a5a451196870b77f0b0fd7bc78ca9e042',1,'xtd::collections::generic::enumerable_generator::promise_type']]],
+  ['current_5fvalue_246',['current_value',['../structxtd_1_1collections_1_1generic_1_1enumerable__generator_1_1promise__type.html#aa74fb7cdaeaa0f99e3cf92393a69c3d6',1,'xtd::collections::generic::enumerable_generator::promise_type']]],
   ['curry_5fand_5frice_247',['curry_and_rice',['../classxtd_1_1forms_1_1emoticons.html#a34f18926486c80fcffaf859e7fe0e222',1,'xtd::forms::emoticons']]],
   ['cursor_5fchanged_248',['cursor_changed',['../classxtd_1_1forms_1_1control.html#a58d09542c8e17377b90cad12f8658ee2',1,'xtd::forms::control']]],
   ['custard_249',['custard',['../classxtd_1_1forms_1_1emoticons.html#a03466730585469cd3f9eeef888835c3f',1,'xtd::forms::emoticons']]],
