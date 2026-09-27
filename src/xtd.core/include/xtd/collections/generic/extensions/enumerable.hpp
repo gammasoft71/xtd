@@ -563,6 +563,9 @@ namespace xtd {
           /// @brief Produces a sequence of tuples with elements from the two specified sequences.
           /// @param second The second sequence to merge.
           /// @return xtd::collections::generic::enumerable_generator<std::tuple<first_value_t, second_value_t>  that contains a sequence of tuples with elements taken from the first and second sequences, in that order.
+          /// @par examples
+          /// The following example shows hiow to use xtd::linq::enumerable::zip method :
+          /// @include enumerable_zip.cpp
           template<xtd::iterable second_t>
           [[nodiscard]] auto zip(second_t&& second) const -> xtd::collections::generic::enumerable_generator<std::tuple<value_t, xtd::iterable_value_type<second_t>>> {
             return xtd::linq::enumerable::zip(self(), std::forward<second_t>(second));
@@ -571,6 +574,9 @@ namespace xtd {
           /// @param second The second sequence to merge.
           /// @param result_selector A function that specifies how to merge the elements from the two sequences.
           /// @return xtd::collections::generic::enumerable_generator<std::tuple<first_value_t, second_value_t>  that contains a sequence of tuples with elements taken from the first and second sequences, in that order.
+          /// @par examples
+          /// The following example shows hiow to use xtd::linq::enumerable::zip method :
+          /// @include enumerable_zip2.cpp
           template<xtd::iterable second_t>
           [[nodiscard]] auto zip(second_t&& second, auto&& selector) const -> xtd::collections::generic::enumerable_generator<xtd::raw_type<decltype(selector(value_t {}, xtd::iterable_value_type<second_t> {}))>> {
             return xtd::linq::enumerable::zip(self(), std::forward<second_t>(second), selector);
