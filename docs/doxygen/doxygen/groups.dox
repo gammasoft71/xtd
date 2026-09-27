@@ -24,9 +24,12 @@
     |   |     /// @defgroup xtd_forms xtd.forms
     |   |- xtd_tunit
     |         /// @brief The xtd.tunit library contains components needed for unit testing.
-    |   |     /// @image html xtd_tunit_header.png
+    |         /// @image html xtd_tunit_header.png
     |         /// @ingroup libraries
     |         /// @defgroup xtd_tunit xtd.tunit
+    |- concepts
+    |     /// @brief Contains concepts definitions.
+    |     /// @defgroup concepts concepts
     |- debug
     |     /// @brief All needed for debugging and tracing.
     |     /// @defgroup debug debug
@@ -162,10 +165,6 @@
     |   |         /// @brief Contains specialized collections definitions.
     |   |         /// @ingroup collections
     |   |         /// @defgroup specialized_collections specialized
-    |   |- concepts
-    |   |     /// @brief Contains concepts definitions.
-    |   |     /// @ingroup system
-    |   |     /// @defgroup concepts concepts
     |   |- configuration
     |   |     /// @brief Contains configuration definitions.
     |   |     /// @ingroup system
