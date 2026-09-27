@@ -6,7 +6,9 @@
 #include "internal/__string_definitions.hpp"
 #undef __XTD_CORE_INTERNAL__
 #include "basic_string.hpp"
+#include "character.hpp"
 #include "index.hpp"
+#include "stringable.hpp"
 #include "collections/generic/enumerable_generator.hpp"
 #include "collections/generic/key_value_pair.hpp"
 #include "linq/enumerable_.hpp"
@@ -101,6 +103,37 @@ namespace xtd {
         return result + "]";
       }
     }
+  }
+  
+  template<typename char_t, typename other_t>
+  requires (xtd::stringable<other_t> && !xtd::textual<other_t> && !xtd::character<other_t>)
+  auto operator +=(xtd::basic_string<char_t>& first, const other_t& second) -> xtd::basic_string<char_t>& {
+    first += xtd::string::format("{}", second);
+    return first;
+  }
+  
+  template<typename char_t, typename other_t>
+  requires (xtd::stringable<other_t> && !xtd::textual<other_t> && !xtd::character<other_t>)
+  auto operator +(const xtd::basic_string<char_t>& first, const other_t& second) -> xtd::basic_string<char_t> {
+    return first + xtd::string::format("{}", second);
+  }
+
+  template<typename char_t, typename other_t>
+  requires (xtd::stringable<other_t> && !xtd::textual<other_t> && !xtd::character<other_t>)
+  auto operator +(const char_t* first, const other_t& second) -> xtd::basic_string<char_t> {
+    return first + xtd::string::format("{}", second);
+  }
+
+  template<typename char_t, typename other_t>
+  requires (xtd::stringable<other_t> && !xtd::textual<other_t> && !xtd::character<other_t>)
+  auto operator +(const other_t& first, const xtd::basic_string<char_t>& second) -> xtd::basic_string<char_t> {
+    return xtd::string::format("{}", first) + second;
+  }
+
+  template<typename char_t, typename other_t>
+  requires (xtd::stringable<other_t> && !xtd::textual<other_t> && !xtd::character<other_t>)
+  auto operator +(const other_t& first, const char_t* second) -> xtd::basic_string<char_t> {
+    return xtd::string::format("{}", first) + second;
   }
   /// @endcond
 }
