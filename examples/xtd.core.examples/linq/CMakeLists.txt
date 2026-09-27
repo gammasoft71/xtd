@@ -37,6 +37,7 @@ add_projects(
   enumerable_where
   enumerable_where2
   enumerable_zip
+  enumerable_zip2
   linq_from
   linq_from2
   linq_from3
