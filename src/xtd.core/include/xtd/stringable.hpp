@@ -3,9 +3,11 @@
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "stream_insertable.hpp"
+#include "character.hpp"
 #include "iformatable.hpp"
 #include "istringable.hpp"
 #include "iterable.hpp"
+#include "numeric.hpp"
 #include "object.hpp"
 #include "raw_type.hpp"
 #include "textual.hpp"
@@ -24,5 +26,7 @@ namespace xtd {
     std::derived_from<xtd::raw_type<value_t>, std::exception> ||
     std::is_enum_v<xtd::raw_type<value_t>> ||
     xtd::iterable<xtd::raw_type<value_t>> ||
+    xtd::character<xtd::raw_type<value_t>> ||
+    xtd::numeric<xtd::raw_type<value_t>> ||
     xtd::stream_insertable<value_t>;
 }
