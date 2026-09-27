@@ -28,5 +28,6 @@ namespace xtd {
     xtd::iterable<xtd::raw_type<value_t>> ||
     xtd::character<xtd::raw_type<value_t>> ||
     xtd::numeric<xtd::raw_type<value_t>> ||
+    xtd::textual<xtd::raw_type<value_t>> ||
     xtd::stream_insertable<value_t>;
 }
