@@ -7,6 +7,7 @@
 #include "char16.hpp"
 #include "char32.hpp"
 #include "wchar.hpp"
+#include "character.hpp"
 #include <type_traits>
 #include <concepts>
 
@@ -19,5 +20,6 @@ namespace xtd {
   std::same_as<type_t, const xtd::wchar*> ||
   std::same_as<type_t, const xtd::char8*> ||
   std::same_as<type_t, const xtd::char16*> ||
-  std::same_as<type_t, const xtd::char32*>;
+  std::same_as<type_t, const xtd::char32*> ||
+  (std::is_array_v<type_t> && xtd::character<std::remove_cv_t<std::remove_extent_t<type_t>>>);
 }
