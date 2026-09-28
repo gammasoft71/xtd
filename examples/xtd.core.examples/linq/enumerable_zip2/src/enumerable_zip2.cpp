@@ -4,7 +4,7 @@ auto main() -> int {
   auto numbers = array {1, 2, 3, 4, 5};
   auto words = array {"One", "Two", "Three", "Four", "Five"};
   
-  auto numbers_and_words = numbers.zip(words, [](auto&& number, auto&& word) {return format("{} {}", number, word);});
+  auto numbers_and_words = numbers.zip(words, _1 + " "_s + _2);
   
   for (auto&& item : numbers_and_words)
     println(item);
