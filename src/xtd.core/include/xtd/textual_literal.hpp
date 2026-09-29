@@ -16,6 +16,11 @@ namespace xtd {
   // Since Doxygen does not work properly with the C++ concept, the documentation for this concept is declared in xtd/textual_literal_.hpp
   template<typename type_t>
   concept textual_literal =
+  std::same_as<type_t, xtd::char_*> ||
+  std::same_as<type_t, xtd::wchar*> ||
+  std::same_as<type_t, xtd::char8*> ||
+  std::same_as<type_t, xtd::char16*> ||
+  std::same_as<type_t, xtd::char32*> ||
   std::same_as<type_t, const xtd::char_*> ||
   std::same_as<type_t, const xtd::wchar*> ||
   std::same_as<type_t, const xtd::char8*> ||
