@@ -48,9 +48,8 @@ namespace xtd {
         /// @remarks This structure acts as the internal bridge between the compiler's coroutine mechanics and the public xtd::collections::generic::enumerable_generator instance.
         /// @warning This structure is used internally by the compiler when processing functions containing the `co_yield` keyword. It should not be manipulated directly by application code.
         struct promise_type {
-          using value_type = xtd::raw_type<type_t>;
           /// @brief Represents the current value yielded by the coroutine execution state.
-          value_type current_value;
+          xtd::raw_type<type_t> current_value;
           
           /// @brief Represents the current exception if exception occured.
           std::exception_ptr exception;
@@ -82,8 +81,7 @@ namespace xtd {
           /// @remarks The value is efficiently transferred into the state using std::move to minimize overhead and enforce **zero-cost abstraction** performance.
           template<typename value_t>
           std::suspend_always yield_value(value_t&& value) noexcept {
-            // The following must be refactor.
-            current_value = (decltype(current_value)&)std::forward<value_t>(value);
+            current_value = std::forward<value_t>(value);
             return {};
           }
         };
