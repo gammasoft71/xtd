@@ -125,13 +125,18 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>  <span class="comment">// Since Doxygen does not work properly with the C++ concept, the documentation for this concept is declared in xtd/textual_literal_.hpp</span></div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  <span class="keyword">template</span>&lt;<span class="keyword">typename</span> type_t&gt;</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="conceptxtd_1_1textual__literal.html">   18</a></span>  <span class="keyword">concept </span><a class="code hl_concept" href="conceptxtd_1_1textual__literal.html">textual_literal</a> =</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  std::same_as&lt;type_t, const xtd::char_*&gt; ||</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  std::same_as&lt;type_t, const xtd::wchar*&gt; ||</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  std::same_as&lt;type_t, const xtd::char8*&gt; ||</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  std::same_as&lt;type_t, const xtd::char16*&gt; ||</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  std::same_as&lt;type_t, const xtd::char32*&gt; ||</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  (std::is_array_v&lt;type_t&gt; &amp;&amp; <a class="code hl_concept" href="conceptxtd_1_1character.html">xtd::character&lt;std::remove_cv_t&lt;std::remove_extent_t&lt;type_t&gt;</a>&gt;&gt;);</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>}</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  std::same_as&lt;type_t, xtd::char_*&gt; ||</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  std::same_as&lt;type_t, xtd::wchar*&gt; ||</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  std::same_as&lt;type_t, xtd::char8*&gt; ||</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  std::same_as&lt;type_t, xtd::char16*&gt; ||</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  std::same_as&lt;type_t, xtd::char32*&gt; ||</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  std::same_as&lt;type_t, const xtd::char_*&gt; ||</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  std::same_as&lt;type_t, const xtd::wchar*&gt; ||</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  std::same_as&lt;type_t, const xtd::char8*&gt; ||</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  std::same_as&lt;type_t, const xtd::char16*&gt; ||</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  std::same_as&lt;type_t, const xtd::char32*&gt; ||</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  (std::is_array_v&lt;type_t&gt; &amp;&amp; <a class="code hl_concept" href="conceptxtd_1_1character.html">xtd::character&lt;std::remove_cv_t&lt;std::remove_extent_t&lt;type_t&gt;</a>&gt;&gt;);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>}</div>
 <div class="ttc" id="achar16_8hpp_html"><div class="ttname"><a href="char16_8hpp.html">char16.hpp</a></div><div class="ttdoc">Contains xtd::char16 type.</div></div>
 <div class="ttc" id="achar32_8hpp_html"><div class="ttname"><a href="char32_8hpp.html">char32.hpp</a></div><div class="ttdoc">Contains xtd::char32 type.</div></div>
 <div class="ttc" id="achar8_8hpp_html"><div class="ttname"><a href="char8_8hpp.html">char8.hpp</a></div><div class="ttdoc">Contains xtd::char8 type.</div></div>
