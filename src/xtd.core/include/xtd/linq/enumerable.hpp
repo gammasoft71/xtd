@@ -646,8 +646,8 @@ auto xtd::linq::enumerable::reverse(source_t&& source) -> xtd::collections::gene
 }
 
 template<xtd::iterable source_t>
-auto xtd::linq::enumerable::select(source_t&& source, auto&& selector) -> xtd::collections::generic::enumerable_generator<xtd::raw_type<decltype(selector(xtd::iterable_value_type<source_t> {}))>> {
-//auto source_holder = enumerable_holder<source_t> {std::forward<source_t>(source)};
+auto xtd::linq::enumerable::select(source_t&& source, auto&& selector) -> xtd::collections::generic::enumerable_generator<xtd::raw_type<decltype(selector(std::declval<const xtd::iterable_value_type<source_t>&>()))>> {
+  //auto source_holder = enumerable_holder<source_t> {std::forward<source_t>(source)};
   //for (const auto& item : source_holder.get())
   for (const auto& item : source)
     co_yield selector(item);
@@ -656,7 +656,7 @@ auto xtd::linq::enumerable::select(source_t&& source, auto&& selector) -> xtd::c
 /*
 // WARNING : Comment select with index because is ambigus with xtd::expression.
 template<xtd::iterable source_t>
-auto xtd::linq::enumerable::select(source_t&& source, auto&& selector) -> xtd::collections::generic::enumerable_generator<xtd::raw_type<decltype(selector(xtd::iterable_value_type<source_t> {}, xtd::usize {}))>> {
+auto xtd::linq::enumerable::select(source_t&& source, auto&& selector) -> xtd::collections::generic::enumerable_generator<xtd::raw_type<decltype(selector(std::declval<const xtd::iterable_value_type<source_t>&>(), xtd::usize {}))>> {
   auto index = xtd::usize {};
   //auto source_holder = enumerable_holder<source_t> {std::forward<source_t>(source)};
   //for (const auto& item : source_holder.get())
@@ -747,27 +747,30 @@ template<xtd::iterable first_t, xtd::iterable second_t>
 auto xtd::linq::enumerable::zip(first_t&& first, second_t&& second) -> xtd::collections::generic::enumerable_generator<std::tuple<xtd::iterable_value_type<first_t>, xtd::iterable_value_type<second_t>>> {
   return zip(std::forward<first_t>(first), std::forward<second_t>(second), [](const auto& first, const auto& second) {return std::make_tuple(first, second);});
 }
+
 template<xtd::iterable first_t, xtd::iterable second_t>
-auto xtd::linq::enumerable::zip(first_t&& first, second_t&& second, auto&& selector) -> xtd::collections::generic::enumerable_generator<xtd::raw_type<decltype(selector(xtd::iterable_value_type<first_t> {}, xtd::iterable_value_type<second_t> {}))>> {
+auto xtd::linq::enumerable::zip(first_t&& first, second_t&& second, auto&& result_selector) -> xtd::collections::generic::enumerable_generator<xtd::raw_type<decltype(result_selector(std::declval<const xtd::iterable_value_type<first_t>&>(), std::declval<const xtd::iterable_value_type<second_t>&>()))>> {
   auto index = xtd::usize {};
   //auto source_holder = enumerable_holder<xtd::raw_type<source_t>> {std::forward<source_t>(source)};
   //for (const auto& item : source_holder.get())
   for (const auto& item : first) {
-    co_yield selector(item, *(second.begin() + index));
+    co_yield result_selector(item, *(second.begin() + index));
     ++index;
   }
 }
+
 template<xtd::iterable first_t, xtd::iterable second_t, xtd::iterable third_t>
 auto xtd::linq::enumerable::zip(first_t&& first, second_t&& second, third_t&& third) -> xtd::collections::generic::enumerable_generator<std::tuple<xtd::iterable_value_type<first_t>, xtd::iterable_value_type<second_t>, xtd::iterable_value_type<third_t>>> {
   return zip(std::forward<first_t>(first), std::forward<second_t>(second), std::forward<third_t>(third), [](const auto& first, const auto& second, const auto& third) {return std::make_tuple(first, second, third);});
 }
+
 template<xtd::iterable first_t, xtd::iterable second_t, xtd::iterable third_t>
-auto xtd::linq::enumerable::zip(first_t&& first, second_t&& second, third_t&& third, auto&& selector) -> xtd::collections::generic::enumerable_generator<xtd::raw_type<decltype(selector(xtd::iterable_value_type<first_t> {}, xtd::iterable_value_type<second_t> {}, xtd::iterable_value_type<third_t> {}))>> {
+auto xtd::linq::enumerable::zip(first_t&& first, second_t&& second, third_t&& third, auto&& result_selector) -> xtd::collections::generic::enumerable_generator<xtd::raw_type<decltype(result_selector(std::declval<const xtd::iterable_value_type<first_t>&>(), std::declval<const xtd::iterable_value_type<second_t>&>(), std::declval<const xtd::iterable_value_type<third_t>&>()))>> {
   auto index = xtd::usize {};
   //auto source_holder = enumerable_holder<xtd::raw_type<source_t>> {std::forward<source_t>(source)};
   //for (const auto& item : source_holder.get())
   for (const auto& item : first) {
-    co_yield selector(item, *(second.begin() + index), *(third.begin() + index));
+    co_yield result_selector(item, *(second.begin() + index), *(third.begin() + index));
     ++index;
   }
 }

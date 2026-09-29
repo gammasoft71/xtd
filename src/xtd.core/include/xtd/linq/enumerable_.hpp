@@ -834,7 +834,7 @@ namespace xtd {
       /// The following code example demonstrates how to use xtd::linq::enumerable::select <source_t, result_t>(const ienumerable <source_t>&, const std::function <result_t(const source_t&)>&) to project over a sequence of values.
       /// @include enumerable_select.cpp
       template<xtd::iterable source_t>
-      [[nodiscard]] static auto select(source_t&& source, auto&& selector) -> xtd::collections::generic::enumerable_generator<xtd::raw_type<decltype(selector(xtd::iterable_value_type<source_t> {}))>>;
+      [[nodiscard]] static auto select(source_t&& source, auto&& selector) -> xtd::collections::generic::enumerable_generator<xtd::raw_type<decltype(selector(std::declval<const xtd::iterable_value_type<source_t>&>()))>>;
       /*
       /// @brief Projects each element of a sequence into a new form by incorporating the element's index.
       /// @tparam result_t The type of the resulting value.
@@ -846,7 +846,7 @@ namespace xtd {
       /// The following code example demonstrates how to use xtd::linq::enumerable::select <source_t, result_t>(const ienumerable <source_t>&, const std::function <result_t(const source_t&, xtd::usize)>&) to project over a sequence of values and use the index of each element.
       /// @include enumerable_select.cpp
       template<xtd::iterable source_t>
-      [[nodiscard]] static auto select(source_t&& source, auto&& selector) -> xtd::collections::generic::enumerable_generator<xtd::raw_type<decltype(selector(xtd::iterable_value_type<source_t> {}, xtd::usize {}))>>;
+      [[nodiscard]] static auto select(source_t&& source, auto&& selector) -> xtd::collections::generic::enumerable_generator<xtd::raw_type<decltype(selector(std::declval<const xtd::iterable_value_type<source_t>&>(), xtd::usize {}))>>;
        */
 
       /// @brief Determines whether two sequences are equal by comparing the elements by using the default equality comparer for their type.
@@ -974,7 +974,7 @@ namespace xtd {
       /// The following example shows hiow to use xtd::linq::enumerable::zip method :
       /// @include enumerable_zip2.cpp
       template<xtd::iterable first_t, xtd::iterable second_t>
-      [[nodiscard]] static auto zip(first_t&& first, second_t&& second, auto&& result_selector) -> xtd::collections::generic::enumerable_generator<xtd::raw_type<decltype(result_selector(xtd::iterable_value_type<first_t> {}, xtd::iterable_value_type<second_t> {}))>>;
+      [[nodiscard]] static auto zip(first_t&& first, second_t&& second, auto&& result_selector) -> xtd::collections::generic::enumerable_generator<xtd::raw_type<decltype(result_selector(std::declval<const xtd::iterable_value_type<first_t>&>(), std::declval<const xtd::iterable_value_type<second_t>&>()))>>;
       /// @brief Produces a sequence of tuples with elements from the three specified sequences.
       /// @param first The first sequence to merge.
       /// @param second The second sequence to merge.
@@ -989,7 +989,7 @@ namespace xtd {
       /// @param result_selector A function that specifies how to merge the elements from the three sequences.
       /// @return xtd::collections::generic::enumerable_generator<std::tuple<first_value_t, second_value_t, third_value_t>  that contains a sequence of tuples with elements taken from the first, second and third sequences, in that order.
       template<xtd::iterable first_t, xtd::iterable second_t, xtd::iterable third_t>
-      [[nodiscard]] static auto zip(first_t&& first, second_t&& second, third_t&& third, auto&& result_selector) -> xtd::collections::generic::enumerable_generator<xtd::raw_type<decltype(result_selector(xtd::iterable_value_type<first_t> {}, xtd::iterable_value_type<second_t> {}, xtd::iterable_value_type<third_t> {}))>>;
+      [[nodiscard]] static auto zip(first_t&& first, second_t&& second, third_t&& third, auto&& result_selector) -> xtd::collections::generic::enumerable_generator<xtd::raw_type<decltype(result_selector(std::declval<const xtd::iterable_value_type<first_t>&>(), std::declval<const xtd::iterable_value_type<second_t>&>(), std::declval<const xtd::iterable_value_type<third_t>&>()))>>;
       /// @}
       
     private:      

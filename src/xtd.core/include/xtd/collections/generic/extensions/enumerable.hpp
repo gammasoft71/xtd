@@ -455,7 +455,7 @@ namespace xtd {
           /// @par Examples
           /// The following code example demonstrates how to use xtd::linq::enumerable::select <value_t, result_t>(const ienumerable <value_t>&, const std::function <result_t(const value_t&)>&) to project over a sequence of values.
           /// @include enumerable_select.cpp
-          [[nodiscard]] auto select(auto&& selector) const {
+          [[nodiscard]] auto select(auto&& selector) const -> xtd::collections::generic::enumerable_generator<xtd::raw_type<decltype(selector(std::declval<const value_t&>()))>> {
             return xtd::linq::enumerable::select(self(), selector);
           }
 
@@ -578,7 +578,7 @@ namespace xtd {
           /// The following example shows hiow to use xtd::linq::enumerable::zip method :
           /// @include enumerable_zip2.cpp
           template<xtd::iterable second_t>
-          [[nodiscard]] auto zip(second_t&& second, auto&& selector) const -> xtd::collections::generic::enumerable_generator<xtd::raw_type<decltype(selector(value_t {}, xtd::iterable_value_type<second_t> {}))>> {
+          [[nodiscard]] auto zip(second_t&& second, auto&& selector) const -> xtd::collections::generic::enumerable_generator<xtd::raw_type<decltype(result_selector(std::declval<const value_t&>(), std::declval<const xtd::iterable_value_type<second_t&>>()))>> {
             return xtd::linq::enumerable::zip(self(), std::forward<second_t>(second), selector);
           }
           /// @brief Produces a sequence of tuples with elements from the three specified sequences.
@@ -595,7 +595,7 @@ namespace xtd {
           /// @param result_selector A function that specifies how to merge the elements from the three sequences.
           /// @return xtd::collections::generic::enumerable_generator<std::tuple<first_value_t, second_value_t, third_value_t>  that contains a sequence of tuples with elements taken from the first, second and third sequences, in that order.
           template<xtd::iterable second_t, xtd::iterable third_t>
-          [[nodiscard]] auto zip(second_t&& second, third_t&& third, auto&& selector) const -> xtd::collections::generic::enumerable_generator<xtd::raw_type<decltype(selector(value_t {}, xtd::iterable_value_type<second_t> {}, xtd::iterable_value_type<third_t> {}))>> {
+          [[nodiscard]] auto zip(second_t&& second, third_t&& third, auto&& selector) const -> xtd::collections::generic::enumerable_generator<xtd::raw_type<decltype(result_selector(std::declval<const value_t&>(), std::declval<const xtd::iterable_value_type<second_t>&>(), std::declval<const xtd::iterable_value_type<third_t>&>()))>> {
             return xtd::linq::enumerable::zip(self(), std::forward<second_t>(second), std::forward<third_t>(third), selector);
           }
           /// @}
