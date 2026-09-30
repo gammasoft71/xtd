@@ -38,6 +38,7 @@ namespace xtd {
         friend class ienumerable;
         
         ienumerable_abstract() = default;
+        virtual ~ienumerable_abstract() = default;
       };
     }
   }
