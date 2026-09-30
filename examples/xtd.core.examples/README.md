@@ -60,6 +60,14 @@
 * [ienumerator](collections/ienumerator/README.md) shows how to use [xtd::collections::ienumerator](https://gammasoft71.github.io/xtd/reference_guides/latest/group__interfaces_ga1871d17c4798e1f712e5c7f09ff36506.html#ga1871d17c4798e1f712e5c7f09ff36506) interface.
 * [ilist](collections/ilist/README.md) shows how to use [xtd::collections::ilist](https://gammasoft71.github.io/xtd/reference_guides/latest/group__interfaces_gaf2cca35e1002dd44cdfa244b0654d6b4.html#gaf2cca35e1002dd44cdfa244b0654d6b4) interface.
 
+## [collections_concurrent](collections_concurrent/README.md)
+
+* [concurrent_bag](collections_concurrent/concurrent_bag/README.md) shows how to use [xtd::collections::concurrent::concurrent_bag](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1concurrent_1_1concurrent__bag.html) class.
+* [concurrent_queue](collections_concurrent/concurrent_queue/README.md) shows how to use [xtd::collections::concurrent::concurrent_queue](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1concurrent_1_1concurrent__queue.html) class.
+* [concurrent_queue2](collections_concurrent/concurrent_queue2/README.md) shows how to use [xtd::collections::concurrent::concurrent_queue](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1concurrent_1_1concurrent__queue.html) class.
+* [concurrent_stack](collections_concurrent/concurrent_stack/README.md) shows how to use [xtd::collections::concurrent:: concurrent_stack](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1concurrent_1_1concurrent__stack.html) class.
+* [concurrent_stack2](collections_concurrent/concurrent_stack2/README.md) shows how to use [xtd::collections::concurrent:: concurrent_stack](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1concurrent_1_1concurrent__stack.html) class.
+
 ## [collections_generic](collections_generic/README.md)
 
 * [generic_dictionary](collections_generic/generic_dictionary/README.md) shows how to use [xtd::collections::generic::dictionary](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1generic_1_1dictionary.html) class.
@@ -102,14 +110,6 @@
 * [forward_iterable](concepts/forward_iterable/README.md) shows how to use how to use [xtd::forward_iterable](https://gammasoft71.github.io/xtd/reference_guides/latest/structxtd_1_1forward__iterable.html) concept.
 * [iterable](concepts/iterable/README.md) shows how to use how to use [xtd::iterable](https://gammasoft71.github.io/xtd/reference_guides/latest/structxtd_1_1iterable.html) concept.
 * [stringable](concepts/stringable/README.md) shows how to use how to use [xtd::stringable](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1stringable.html) concept.
-
-## [concurrent_collections](concurrent_collections/README.md)
-
-* [concurrent_bag](concurrent_collections/concurrent_bag/README.md) shows how to use [xtd::collections::concurrent::concurrent_bag](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1concurrent_1_1concurrent__bag.html) class.
-* [concurrent_queue](concurrent_collections/concurrent_queue/README.md) shows how to use [xtd::collections::concurrent::concurrent_queue](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1concurrent_1_1concurrent__queue.html) class.
-* [concurrent_queue2](concurrent_collections/concurrent_queue2/README.md) shows how to use [xtd::collections::concurrent::concurrent_queue](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1concurrent_1_1concurrent__queue.html) class.
-* [concurrent_stack](concurrent_collections/concurrent_stack/README.md) shows how to use [xtd::collections::concurrent:: concurrent_stack](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1concurrent_1_1concurrent__stack.html) class.
-* [concurrent_stack2](concurrent_collections/concurrent_stack2/README.md) shows how to use [xtd::collections::concurrent:: concurrent_stack](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1concurrent_1_1concurrent__stack.html) class.
 
 ## [Configuration](configuration/README.md)
 

@@ -10,9 +10,9 @@ add_projects(
   bit_converter
   boxing
   collections
+  collections_concurrent
   collections_generic
   concepts
-  concurrent_collections
   configuration
   console
   convert
