@@ -12,6 +12,7 @@ add_projects(
   collections
   collections_concurrent
   collections_generic
+  collections_object_model
   concepts
   configuration
   console
@@ -40,7 +41,6 @@ add_projects(
   memory_information
   network
   object
-  object_model_collections
   parse
   processes
   random

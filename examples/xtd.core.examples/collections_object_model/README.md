@@ -1,4 +1,4 @@
-# objecto model collections examples
+# collections object model examples
 
 [This folder](.) contains collections examples used by [Reference Guide](https://gammasoft71.github.io/xtd/reference_guides/latest/) and more.
 

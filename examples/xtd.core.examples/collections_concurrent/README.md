@@ -1,4 +1,4 @@
-# concurrent collections examples
+# collections concurrent examples
 
 [This folder](.) contains concurrent collections examples used by [Reference Guide](https://gammasoft71.github.io/xtd/reference_guides/latest/) and more.
 

@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.20)
 
-project(object_model_collections)
+project(collections_object_model)
 find_package(xtd REQUIRED)
 
 add_projects(

@@ -103,6 +103,10 @@
 * [generic_stack](collections_generic/generic_stack/README.md) shows how to use [xtd::collections::generic::stack](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1generic_1_1stack.html) clss.
 * [mix_generic_list_and_std_vector_api](collections_generic/mix_generic_list_and_std_vector_api/README.md) shows how to use [xtd::collections::generic::list](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1generic_1_1list.html) class.
 
+## [collections_object_model](collections_object_model/README.md)
+
+* [read_only_collection](collections_object_model/README.md) shows how to use [xtd::collections::object_model::read_only_collection](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1object__model_1_1read__only__collection.html) class.
+
 ## [Concepts](concepts/README.md)
 
 * [comparable](concepts/comparable/README.md) shows how to use how to use [xtd::comparable](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1comparable.html) concept.
@@ -465,10 +469,6 @@
 * [object_memberwise_clone](object/object_memberwise_clone/README.md) shows how to use [xtd::object::memberwise_clone](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1object.html#af734e36ea583a842339d7c4444fb6d86) method.
 * [object_reference_equals](object/object_reference_equals/README.md) shows hows how to use [xtd::object::reference_equals](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1object.html#a1ee13700465eead7934f450749b952d7) static method.
 * [object_to_string](object/object_to_string/README.md) shows hows how to use [xtd::object::to_string](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1object.html#a5682215ee76ab97c48580ab162c49507) method.
-
-## [object_model_Collections](object_model_Collections/README.md)
-
-* [read_only_collection](object_model_Collections/README.md) shows how to use [xtd::collections::object_model::read_only_collection](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1object__model_1_1read__only__collection.html) class.
 
 ## [Parse](parse/README.md)
 
