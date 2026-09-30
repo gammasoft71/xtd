@@ -47,20 +47,16 @@ namespace xtd {
         enumerator(ptr<ienumerator<type_t>> enumerator) : enumerator_ {enumerator} {} // Can't be explicit by design.
         /// @}
         
-        /// @cond
-        enumerator(enumerator&& enumerator) = default;
-        enumerator(const enumerator& enumerator) = default;
-        enumerator& operator = (enumerator && enumerator) = default;
-        enumerator& operator = (const enumerator& enumerator) = default;
-        /// @endcond
-        
         /// @{
         /// @name Public Properties
         
         /// @{
         /// @brief Gets the element in the collection at the current position of the enumerator.
         /// @return The element in the collection at the current position of the enumerator.
-        [[nodiscard]] const type_t& current() const override {return enumerator_->current();}
+        [[nodiscard]] const type_t& current() const override {
+          if (!enumerator_) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
+          return enumerator_->current();
+        }
         /// @}
         
         /// @name Public Methods
@@ -69,12 +65,12 @@ namespace xtd {
         /// @brief Advances the enumerator to the next element of the collection.
         /// @return `true` if the enumerator was successfully advanced to the next element; `false` if the enumerator has passed the end of the collection.
         /// @exception xtd::invalid_operation_exception The collection was modified after the enumerator was created.
-        [[nodiscard]] bool move_next() override {return enumerator_->move_next();}
+        [[nodiscard]] bool move_next() override {return enumerator_ ? enumerator_->move_next() : false;}
         
         /// @brief Sets the enumerator to its initial position, which is before the first element in the collection.
         /// @exception xtd::invalid_operation_exception The collection was modified after the enumerator was created.
         /// @exception xtd::not_supported_exception The enumerator does not support being reset.
-        void reset() override {enumerator_->reset();}
+        void reset() override {if (enumerator_) enumerator_->reset();}
         /// @}
         
       private:
