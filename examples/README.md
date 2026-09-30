@@ -16,6 +16,8 @@
 * [Collections](xtd.core.examples/collections/README.md) contains collections examples.
 * [Collections concurrent](xtd.core.examples/concurrent_collections/README.md) contains concurrent collections examples.
 * [Collections generic](xtd.core.examples/collections_generic/README.md) contains generic collections examples.
+* [Collections object model](xtd.core.examples/collections_object_model/README.md) contains object model collections examples.
+* [Collections specialized](xtd.core.examples/collections_object_model/README.md) contains specialized collections examples.
 * [Concepts](xtd.core.examples/concepts/README.md) contains concepts examples.
 * [Configuration](xtd.core.examples/configuration/README.md) contains configuration examples.
 * [Console](xtd.core.examples/console/README.md) contains console examples.
@@ -44,7 +46,6 @@
 * [Memory information](xtd.core.examples/memory_information/README.md) contains memory information examples.
 * [Network](xtd.core.examples/network/README.md) contains network examples.
 * [Object](xtd.core.examples/object/README.md) contains object examples.
-* [Object model collections](xtd.core.examples/object_model_collections/README.md) contains object model collections examples.
 * [Parse](xtd.core.examples/parse/README.md) contains parse examples.
 * [Processes](xtd.core.examples/processes/README.md) contains process examples.
 * [Random](xtd.core.examples/random/README.md) contains random examples.

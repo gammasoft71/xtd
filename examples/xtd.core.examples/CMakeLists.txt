@@ -13,6 +13,7 @@ add_projects(
   collections_concurrent
   collections_generic
   collections_object_model
+  collections_specialized
   concepts
   configuration
   console
@@ -47,7 +48,6 @@ add_projects(
   ranges
   settings
   span
-  specialized_collections
   sprintf
   startups
   strings

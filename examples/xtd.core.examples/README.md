@@ -107,6 +107,10 @@
 
 * [read_only_collection](collections_object_model/README.md) shows how to use [xtd::collections::object_model::read_only_collection](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1object__model_1_1read__only__collection.html) class.
 
+## [collections_specialized](collections_specialized/README.md)
+
+* [specialized_ordered_dictionary](collections_specialized/specialized_ordered_dictionary/README.md) shows how to use [xtd::collections::specialized::ordered_dictionary](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1specialized_1_1ordered__dictionary.html) class.
+
 ## [Concepts](concepts/README.md)
 
 * [comparable](concepts/comparable/README.md) shows how to use how to use [xtd::comparable](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1comparable.html) concept.
