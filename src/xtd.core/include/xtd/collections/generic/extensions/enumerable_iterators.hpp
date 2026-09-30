@@ -3,12 +3,11 @@
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "../enumerator.hpp"
-#include "../../../icomparable.hpp"
-#include "../../../iequatable.hpp"
 #include "../../../npos.hpp"
 #include "../../../ptrdiff.hpp"
 #include "../../../self.hpp"
 #include "../../../usize.hpp"
+#include <compare>
 #include <limits>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -50,7 +49,7 @@ namespace xtd {
         class enumerable_iterators {
           /// @cond
           template<typename iterator_enumerable_t>
-          class enumerable_iterator : public xtd::icomparable<enumerable_iterator<iterator_enumerable_t>>, public xtd::iequatable<enumerable_iterator<iterator_enumerable_t >> {
+          class enumerable_iterator {
           public:
             using value_type = type_t;
             using iterator_category = std::forward_iterator_tag;
@@ -74,9 +73,8 @@ namespace xtd {
               return const_cast<enumerable_iterator&>(*this);
             }
             
-            auto compare_to(const enumerable_iterator& rhs) const noexcept -> xtd::int32 override {return pos_ < rhs.pos_ ? -1 : pos_ > rhs.pos_ ? 1 : 0;}
-            auto equals(const enumerable_iterator& rhs) const noexcept -> bool override {return pos_ == rhs.pos_;}
-            
+            auto operator <=>(const enumerable_iterator& rhs) const noexcept -> std::strong_ordering {return pos_ <=> rhs.pos_;}
+            auto operator ==(const enumerable_iterator& rhs) const noexcept -> bool {return pos_ == rhs.pos_;}
             auto operator *() const -> reference {return const_cast<value_type&>(enumerator_.current());}
             auto operator ->() const -> pointer {return &operator*();}
             
@@ -144,25 +142,25 @@ namespace xtd {
           /// @{
           /// @brief Returns an iterator to the first element of the enumerable.
           /// @return Iterator to the first element.
-          virtual auto begin() const -> const_iterator {return cbegin();}
+          auto begin() const -> const_iterator {return cbegin();}
           /// @brief Returns an iterator to the first element of the enumerable.
           /// @return Iterator to the first element.
-          virtual auto begin() -> iterator {return iterator {self(), 0};}
+          auto begin() -> iterator {return iterator {self(), 0};}
           
           /// @brief Returns an iterator to the first element of the enumerable.
           /// @return Iterator to the first element.
-          virtual auto cbegin() const -> const_iterator {return const_iterator {self(), 0};}
+          auto cbegin() const -> const_iterator {return const_iterator {self(), 0};}
           
           /// @brief Returns an iterator to the element following the last element of the enumerable.
           /// @return Iterator to the element following the last element.
-          virtual auto cend() const -> const_iterator {return const_iterator {self(), const_iterator::npos()};}
+          auto cend() const -> const_iterator {return const_iterator {self(), const_iterator::npos()};}
           
           /// @brief Returns an iterator to the element following the last element of the enumerable.
           /// @return Iterator to the element following the last element.
-          virtual auto end() const -> const_iterator {return cend();}
+          auto end() const -> const_iterator {return cend();}
           /// @brief Returns an iterator to the element following the last element of the enumerable.
           /// @return Iterator to the element following the last element.
-          virtual auto end() -> iterator {return iterator {self(), iterator::npos()};}
+          auto end() -> iterator {return iterator {self(), iterator::npos()};}
           /// @}
           
           /// @name Public Static Methods
