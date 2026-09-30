@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line">  <span class="keywordtype">string</span> alter_ego;</div>
 <div class="line">  </div>
 <div class="line">  <span class="keyword">auto</span> to_string() <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; <span class="keywordtype">string</span> {<span class="keywordflow">return</span> string::format(<span class="stringliteral">&quot;{}/{}&quot;</span>, name, alter_ego);}</div>
-<div class="line">  <span class="keyword">auto</span> operator&lt;=&gt;(<span class="keyword">const</span> superhero&amp; other) <span class="keyword">const</span> <span class="keyword">noexcept</span> = <span class="keywordflow">default</span>;</div>
+<div class="line">  <span class="keyword">auto</span> operator &lt;=&gt;(<span class="keyword">const</span> superhero&amp; other) <span class="keyword">const</span> <span class="keyword">noexcept</span> = <span class="keywordflow">default</span>;</div>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">struct </span>supervillain : istringable&lt;supervillain&gt;, icomparable&lt;supervillain&gt; {</div>
