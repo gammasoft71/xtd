@@ -35,6 +35,7 @@
 #include <queue>
 #include <stack>
 #include <tuple>
+#include <utility>
 
 /// @cond
 template<typename type_t>
