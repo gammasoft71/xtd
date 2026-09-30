@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.20)
 
-project(generic_collections)
+project(collections_generic)
 find_package(xtd REQUIRED)
 
 add_projects(

@@ -10,6 +10,7 @@ add_projects(
   bit_converter
   boxing
   collections
+  collections_generic
   concepts
   concurrent_collections
   configuration
@@ -25,7 +26,6 @@ add_projects(
   exceptions
   expressions
   format
-  generic_collections
   globalization
   guid
   hash_code
