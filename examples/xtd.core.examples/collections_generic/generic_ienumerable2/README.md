@@ -18,4 +18,15 @@ xtdc run
 ## Output
 
 ```
+box [length=10, width=20, height=30]
+box [length=20, width=5, height=10]
+box [length=12, width=3, height=7]
+
+box [length=10, width=20, height=30]
+box [length=20, width=5, height=10]
+box [length=12, width=3, height=7]
+
+box [length=10, width=20, height=30]
+box [length=20, width=5, height=10]
+box [length=12, width=3, height=7]
 ```

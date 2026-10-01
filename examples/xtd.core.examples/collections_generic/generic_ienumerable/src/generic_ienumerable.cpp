@@ -109,7 +109,7 @@ startup_(program::main);
 // This code produces the following output :
 //
 // Found: 2
-// Memory Used With Iterator =   0 kb
+// Memory Used With Iterator =   64 kb
 // ---
 // Found: 2
-// Memory Used Without Iterator =   64 kb
+// Memory Used Without Iterator =   16 kb
