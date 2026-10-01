@@ -268,7 +268,7 @@ Inheritance diagram for xtd::expressions::expression:</div>
 <td class="markdownTableBodyNone"><a class="el" href="#ad3d423c2956860732b1a624887435e3b" title="Gets the index argument used by expression.">xtd::expressions::expression::arg</a>  </td><td class="markdownTableBodyNone"></td></tr>
 </table>
 </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="structxtd_1_1expressions_1_1expression.html" title="Provides the base class from which the classes that represent expression tree nodes are derived....">xtd::expressions::expression</a> class. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates how to use <a class="el" href="structxtd_1_1expressions_1_1expression.html" title="Provides the base class from which the classes that represent expression tree nodes are derived....">xtd::expressions::expression</a> class. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> <a class="code hl_function" href="#ab60c84b43ed66b9d27be1678fcc0a305">value</a> = 30;</div>
@@ -470,7 +470,7 @@ requires std::is_base_of_v&lt;expression, std::decay_t&lt;left_t&gt;&gt; || std:
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The result of add. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="#a3db1b12325af413591046bd39d77b807" title="Add the specified left and right operands.">xtd::expressions::expression::add</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates how to use <a class="el" href="#a3db1b12325af413591046bd39d77b807" title="Add the specified left and right operands.">xtd::expressions::expression::add</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="comment">// auto expr1 = [](auto&amp;&amp; _) {return _ + 10;};</span></div>
@@ -537,7 +537,7 @@ requires std::is_base_of_v&lt;expression, std::decay_t&lt;left_t&gt;&gt; || std:
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The result of bitwise and. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="#a91497147d6e1d49364f7f219d0b74aa7" title="Bitwise and the specified left and right operands.">xtd::expressions::expression::and_</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates how to use <a class="el" href="#a91497147d6e1d49364f7f219d0b74aa7" title="Bitwise and the specified left and right operands.">xtd::expressions::expression::and_</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="comment">// auto expr1 = [](auto&amp;&amp; _) {return _ &amp; 0x0F;};</span></div>
@@ -605,7 +605,7 @@ requires std::is_base_of_v&lt;expression, std::decay_t&lt;left_t&gt;&gt; || std:
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The result of logical and. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd><a class="el" href="#aa8447d62d2aaa48ee855da2aebbabd03" title="Logical and the specified left and right operands.">xtd::expressions::expression::and_also</a> is an alias on <a class="el" href="#ac059fe51fa900047f9394a727226b2d3" title="Logical and the specified left and right operands.">xtd::expressions::expression::logical_and</a> </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="#aa8447d62d2aaa48ee855da2aebbabd03" title="Logical and the specified left and right operands.">xtd::expressions::expression::and_also</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates how to use <a class="el" href="#aa8447d62d2aaa48ee855da2aebbabd03" title="Logical and the specified left and right operands.">xtd::expressions::expression::and_also</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> <a class="code hl_function" href="#ab60c84b43ed66b9d27be1678fcc0a305">value</a> = <span class="keyword">true</span>;</div>
@@ -673,7 +673,7 @@ requires std::is_base_of_v&lt;expression, std::decay_t&lt;left_t&gt;&gt; || std:
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The result of compare three way. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="#a2f6331e445a905dd2fc6386f911c44f4" title="Compare three way the specified left and right operands.">xtd::expressions::expression::compare_three_way</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates how to use <a class="el" href="#a2f6331e445a905dd2fc6386f911c44f4" title="Compare three way the specified left and right operands.">xtd::expressions::expression::compare_three_way</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="comment">// auto expr1 = [](auto&amp;&amp; _) {return _ &lt;=&gt; 10;};</span></div>
@@ -734,7 +734,7 @@ template&lt;auto constant_value&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The constant value expression. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="#a3962a43a6b277819f145124edf446c0a" title="Gets the constant value.">xtd::expressions::expression::constant</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates how to use <a class="el" href="#a3962a43a6b277819f145124edf446c0a" title="Gets the constant value.">xtd::expressions::expression::constant</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="comment">// auto constant1 = [] {return 10;};</span></div>
@@ -808,7 +808,7 @@ requires std::is_base_of_v&lt;expression, std::decay_t&lt;left_t&gt;&gt; || std:
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The result of devide. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="#a5d636dd68e9216ccbf4ce3b87a5f00c9" title="Divide the specified left and right operands.">xtd::expressions::expression::divide</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates how to use <a class="el" href="#a5d636dd68e9216ccbf4ce3b87a5f00c9" title="Divide the specified left and right operands.">xtd::expressions::expression::divide</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="comment">// auto expr1 = [](auto&amp;&amp; _) {return _ / 10;};</span></div>
@@ -875,7 +875,7 @@ requires std::is_base_of_v&lt;expression, std::decay_t&lt;left_t&gt;&gt; || std:
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The result of equal. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="#a364a67214a10e0a3aae67af8f9d98645" title="Equal the specified left and right operands.">xtd::expressions::expression::equal</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates how to use <a class="el" href="#a364a67214a10e0a3aae67af8f9d98645" title="Equal the specified left and right operands.">xtd::expressions::expression::equal</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="comment">// auto equal1 = [](auto&amp;&amp; _) {return _ == 10;};</span></div>
@@ -942,7 +942,7 @@ requires std::is_base_of_v&lt;expression, std::decay_t&lt;left_t&gt;&gt; || std:
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The result of bitwise xor. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="#acfe0d2f599bc6e14fd1d9c1a70e82123" title="Bitwise xor the specified left and right operands.">xtd::expressions::expression::xor_</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates how to use <a class="el" href="#acfe0d2f599bc6e14fd1d9c1a70e82123" title="Bitwise xor the specified left and right operands.">xtd::expressions::expression::xor_</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="comment">// auto or1 = [](auto&amp;&amp; _) {return _ ^ 0x0F;};</span></div>
@@ -1009,7 +1009,7 @@ requires std::is_base_of_v&lt;expression, std::decay_t&lt;left_t&gt;&gt; || std:
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The result of greater than. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="#afb92910685870054e650f1d78568bfa2" title="Greater than the specified left and right operands.">xtd::expressions::expression::greater_than</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates how to use <a class="el" href="#afb92910685870054e650f1d78568bfa2" title="Greater than the specified left and right operands.">xtd::expressions::expression::greater_than</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="comment">// auto greater_than1 = [](auto&amp;&amp; _) {return _ &gt; 10;};</span></div>
@@ -1076,7 +1076,7 @@ requires std::is_base_of_v&lt;expression, std::decay_t&lt;left_t&gt;&gt; || std:
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The result of greater than or equal. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="#a425b2af8d82d60da36f0394c5fe72af7" title="Greater than or equzl the specified left and right operands.">xtd::expressions::expression::greater_than_or_equal</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates how to use <a class="el" href="#a425b2af8d82d60da36f0394c5fe72af7" title="Greater than or equzl the specified left and right operands.">xtd::expressions::expression::greater_than_or_equal</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="comment">// auto greater_than_or_equal1 = [](auto&amp;&amp; _) {return _ &gt;= 10;};</span></div>
@@ -1143,7 +1143,7 @@ requires std::is_base_of_v&lt;expression, std::decay_t&lt;left_t&gt;&gt; || std:
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The result of left shift. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="#ae63466127501f8d220de58fd04001e94" title="Left shift the specified left and right operands.">xtd::expressions::expression::left_shift</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates how to use <a class="el" href="#ae63466127501f8d220de58fd04001e94" title="Left shift the specified left and right operands.">xtd::expressions::expression::left_shift</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="comment">// auto left_shift1 = [](auto&amp;&amp; _) {return _ &lt;&lt; 2;};</span></div>
@@ -1210,7 +1210,7 @@ requires std::is_base_of_v&lt;expression, std::decay_t&lt;left_t&gt;&gt; || std:
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The result of less than. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="#a2a729e349f7e4246cdc8baee15e32083" title="Less than the specified left and right operands.">xtd::expressions::expression::less_than</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates how to use <a class="el" href="#a2a729e349f7e4246cdc8baee15e32083" title="Less than the specified left and right operands.">xtd::expressions::expression::less_than</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="comment">// auto less_than1 = [](auto&amp;&amp; _) {return _ &lt; 10;};</span></div>
@@ -1277,7 +1277,7 @@ requires std::is_base_of_v&lt;expression, std::decay_t&lt;left_t&gt;&gt; || std:
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The result of less than or equal. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="#a06ad2a73a953053da2b70ec9530c9707" title="Less than or equal the specified left and right operands.">xtd::expressions::expression::less_than_or_equal</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates how to use <a class="el" href="#a06ad2a73a953053da2b70ec9530c9707" title="Less than or equal the specified left and right operands.">xtd::expressions::expression::less_than_or_equal</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="comment">// auto less_than_or_equal1 = [](auto&amp;&amp; _) {return _ &lt;= 10;};</span></div>
@@ -1345,7 +1345,7 @@ requires std::is_base_of_v&lt;expression, std::decay_t&lt;left_t&gt;&gt; || std:
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The result of logical and. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd><a class="el" href="#aa8447d62d2aaa48ee855da2aebbabd03" title="Logical and the specified left and right operands.">xtd::expressions::expression::and_also</a> is an alias on <a class="el" href="#ac059fe51fa900047f9394a727226b2d3" title="Logical and the specified left and right operands.">xtd::expressions::expression::logical_and</a> </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="#ac059fe51fa900047f9394a727226b2d3" title="Logical and the specified left and right operands.">xtd::expressions::expression::logical_and</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates how to use <a class="el" href="#ac059fe51fa900047f9394a727226b2d3" title="Logical and the specified left and right operands.">xtd::expressions::expression::logical_and</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> <a class="code hl_function" href="#ab60c84b43ed66b9d27be1678fcc0a305">value</a> = <span class="keyword">true</span>;</div>
@@ -1410,7 +1410,7 @@ requires std::is_base_of_v&lt;expression, std::decay_t&lt;value_t&gt;&gt;</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The result of logical not. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd><a class="el" href="#aa8447d62d2aaa48ee855da2aebbabd03" title="Logical and the specified left and right operands.">xtd::expressions::expression::and_also</a> is an alias on <a class="el" href="#a6319b40fe93d3b69eaa8eec6c5cf2fbc" title="Logical not the specified left and right operands.">xtd::expressions::expression::logical_not</a> </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="#a6319b40fe93d3b69eaa8eec6c5cf2fbc" title="Logical not the specified left and right operands.">xtd::expressions::expression::logical_not</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates how to use <a class="el" href="#a6319b40fe93d3b69eaa8eec6c5cf2fbc" title="Logical not the specified left and right operands.">xtd::expressions::expression::logical_not</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="comment">// auto logical_not1 = [value](auto&amp;&amp; _) {return !_;};</span></div>
@@ -1469,7 +1469,7 @@ requires std::is_base_of_v&lt;expression, std::decay_t&lt;left_t&gt;&gt; || std:
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The result of logical or. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd><a class="el" href="#aa8447d62d2aaa48ee855da2aebbabd03" title="Logical and the specified left and right operands.">xtd::expressions::expression::and_also</a> is an alias on <a class="el" href="#a7a95e2be1dbecf32ca4eda984c2efa5f" title="Logical or the specified left and right operands.">xtd::expressions::expression::logical_or</a> </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="#a7a95e2be1dbecf32ca4eda984c2efa5f" title="Logical or the specified left and right operands.">xtd::expressions::expression::logical_or</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates how to use <a class="el" href="#a7a95e2be1dbecf32ca4eda984c2efa5f" title="Logical or the specified left and right operands.">xtd::expressions::expression::logical_or</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> <a class="code hl_function" href="#ab60c84b43ed66b9d27be1678fcc0a305">value</a> = <span class="keyword">true</span>;</div>
@@ -1537,7 +1537,7 @@ requires std::is_base_of_v&lt;expression, std::decay_t&lt;left_t&gt;&gt; || std:
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The result of modulo. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="#a62641d845565ca8a7cccf335ef151814" title="Modulo the specified left and right operands.">xtd::expressions::expression::modulo</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates how to use <a class="el" href="#a62641d845565ca8a7cccf335ef151814" title="Modulo the specified left and right operands.">xtd::expressions::expression::modulo</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="comment">// auto modulo1 = [](auto&amp;&amp; _) {return _ % 10;};</span></div>
@@ -1604,7 +1604,7 @@ requires std::is_base_of_v&lt;expression, std::decay_t&lt;left_t&gt;&gt; || std:
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The result of multiply. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="#af70b4b60cbdf0ba2c023ef73e63c4c9d" title="Multiply the specified left and right operands.">xtd::expressions::expression::multiply</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates how to use <a class="el" href="#af70b4b60cbdf0ba2c023ef73e63c4c9d" title="Multiply the specified left and right operands.">xtd::expressions::expression::multiply</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="comment">// auto multiply1 = [](auto&amp;&amp; _) {return _ * 10;};</span></div>
@@ -1667,7 +1667,7 @@ requires std::is_base_of_v&lt;expression, std::decay_t&lt;value_t&gt;&gt;</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The result of unary minus. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd><a class="el" href="#aa8447d62d2aaa48ee855da2aebbabd03" title="Logical and the specified left and right operands.">xtd::expressions::expression::and_also</a> is an alias on <a class="el" href="#aec71dc4ac60c7113353ce6d90d9d096b" title="Unary minus the specified left and right operands.">xtd::expressions::expression::negate</a> </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="#aec71dc4ac60c7113353ce6d90d9d096b" title="Unary minus the specified left and right operands.">xtd::expressions::expression::negate</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates how to use <a class="el" href="#aec71dc4ac60c7113353ce6d90d9d096b" title="Unary minus the specified left and right operands.">xtd::expressions::expression::negate</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="comment">// auto negate1 = [value](auto&amp;&amp; _) {return -_;};</span></div>
@@ -1722,7 +1722,7 @@ requires std::is_base_of_v&lt;expression, std::decay_t&lt;value_t&gt;&gt;</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The result of bistwise not. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd><a class="el" href="#aa8447d62d2aaa48ee855da2aebbabd03" title="Logical and the specified left and right operands.">xtd::expressions::expression::and_also</a> is an alias on <a class="el" href="#a335a62ee03bcbbad0bfeebbeee1532aa" title="Bitwise not the specified left and right operands.">xtd::expressions::expression::not_</a> </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="#a335a62ee03bcbbad0bfeebbeee1532aa" title="Bitwise not the specified left and right operands.">xtd::expressions::expression::not_</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates how to use <a class="el" href="#a335a62ee03bcbbad0bfeebbeee1532aa" title="Bitwise not the specified left and right operands.">xtd::expressions::expression::not_</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="comment">//auto not1 = [](auto _) {return static_cast&lt;decltype(_)&gt;(~_);};</span></div>
@@ -1780,7 +1780,7 @@ requires std::is_base_of_v&lt;expression, std::decay_t&lt;left_t&gt;&gt; || std:
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The result of not equal. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="#ac157c15d9ac4697c445752e794995f4c" title="Not equal the specified left and right operands.">xtd::expressions::expression::not_equal</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates how to use <a class="el" href="#ac157c15d9ac4697c445752e794995f4c" title="Not equal the specified left and right operands.">xtd::expressions::expression::not_equal</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="comment">// auto not_equal1 = [](auto&amp;&amp; _) {return _ != 10;};</span></div>
@@ -1847,7 +1847,7 @@ requires std::is_base_of_v&lt;expression, std::decay_t&lt;left_t&gt;&gt; || std:
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The result of bitwise or. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="#a5f4d1a3fe1579445f440a9bc4a54ffcf" title="Bitwise or the specified left and right operands.">xtd::expressions::expression::or_</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates how to use <a class="el" href="#a5f4d1a3fe1579445f440a9bc4a54ffcf" title="Bitwise or the specified left and right operands.">xtd::expressions::expression::or_</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="comment">// auto or1 = [](auto&amp;&amp; _) {return _ | 0x0F;};</span></div>
@@ -1915,7 +1915,7 @@ requires std::is_base_of_v&lt;expression, std::decay_t&lt;left_t&gt;&gt; || std:
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The result of logical or. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd><a class="el" href="#aa8447d62d2aaa48ee855da2aebbabd03" title="Logical and the specified left and right operands.">xtd::expressions::expression::and_also</a> is an alias on <a class="el" href="#aefe64077f2e81320bb012a6255575280" title="Logical or the specified left and right operands.">xtd::expressions::expression::or_else</a> </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="#aefe64077f2e81320bb012a6255575280" title="Logical or the specified left and right operands.">xtd::expressions::expression::or_else</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates how to use <a class="el" href="#aefe64077f2e81320bb012a6255575280" title="Logical or the specified left and right operands.">xtd::expressions::expression::or_else</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> <a class="code hl_function" href="#ab60c84b43ed66b9d27be1678fcc0a305">value</a> = <span class="keyword">true</span>;</div>
@@ -1983,7 +1983,7 @@ requires std::is_base_of_v&lt;expression, std::decay_t&lt;left_t&gt;&gt; || std:
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The result of right shift. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="#aa513aeb5191aea1ab56ce14ebad66624" title="Right shift the specified left and right operands.">xtd::expressions::expression::right_shift</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates how to use <a class="el" href="#aa513aeb5191aea1ab56ce14ebad66624" title="Right shift the specified left and right operands.">xtd::expressions::expression::right_shift</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="comment">// auto right_shift1 = [](auto&amp;&amp; _) {return _ &gt;&gt; 2;};</span></div>
@@ -2050,7 +2050,7 @@ requires std::is_base_of_v&lt;expression, std::decay_t&lt;left_t&gt;&gt; || std:
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The result of compare three way. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="#ab87830761974392c95897ea567109407" title="Compare three way the specified left and right operands.">xtd::expressions::expression::spaceship</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates how to use <a class="el" href="#ab87830761974392c95897ea567109407" title="Compare three way the specified left and right operands.">xtd::expressions::expression::spaceship</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="comment">// auto cspaceship1 = [value](auto&amp;&amp; _) {return _ &lt;=&gt; 10;};</span></div>
@@ -2117,7 +2117,7 @@ requires std::is_base_of_v&lt;expression, std::decay_t&lt;left_t&gt;&gt; || std:
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The result of subtract. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="#a3c1ee33b7b4f1f71f7965d4d5e52587e" title="Subtract the specified left and right operands.">xtd::expressions::expression::subtract</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates how to use <a class="el" href="#a3c1ee33b7b4f1f71f7965d4d5e52587e" title="Subtract the specified left and right operands.">xtd::expressions::expression::subtract</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="comment">// auto subtract1 = [](auto&amp;&amp; _) {return _ - 10;};</span></div>
@@ -2181,7 +2181,7 @@ requires std::is_base_of_v&lt;expression, std::decay_t&lt;value_t&gt;&gt;</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The result of unary minus. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd><a class="el" href="#aa8447d62d2aaa48ee855da2aebbabd03" title="Logical and the specified left and right operands.">xtd::expressions::expression::and_also</a> is an alias on <a class="el" href="#a2f9d67c0ef59dfa67ddc24743739c453" title="Unary minus the specified left and right operands.">xtd::expressions::expression::unary_minus</a> </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="#a2f9d67c0ef59dfa67ddc24743739c453" title="Unary minus the specified left and right operands.">xtd::expressions::expression::unary_minus</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates how to use <a class="el" href="#a2f9d67c0ef59dfa67ddc24743739c453" title="Unary minus the specified left and right operands.">xtd::expressions::expression::unary_minus</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="comment">// auto unary_minus1 = [value](auto&amp;&amp; _) {return -_;};</span></div>
@@ -2236,7 +2236,7 @@ requires std::is_base_of_v&lt;expression, std::decay_t&lt;value_t&gt;&gt;</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The result of unary plus. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd><a class="el" href="#aa8447d62d2aaa48ee855da2aebbabd03" title="Logical and the specified left and right operands.">xtd::expressions::expression::and_also</a> is an alias on <a class="el" href="#aceca40d9be4660864ea08f4e2bdfa97f" title="Unary plus the specified left and right operands.">xtd::expressions::expression::unary_plus</a> </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="#aceca40d9be4660864ea08f4e2bdfa97f" title="Unary plus the specified left and right operands.">xtd::expressions::expression::unary_plus</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates how to use <a class="el" href="#aceca40d9be4660864ea08f4e2bdfa97f" title="Unary plus the specified left and right operands.">xtd::expressions::expression::unary_plus</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="comment">// auto unary_plus1 = [value](auto&amp;&amp; _) {return +_;};</span></div>
@@ -2288,7 +2288,7 @@ template&lt;typename type_t&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The value value expression. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="#ab60c84b43ed66b9d27be1678fcc0a305" title="Gets the value value.">xtd::expressions::expression::value</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates how to use <a class="el" href="#ab60c84b43ed66b9d27be1678fcc0a305" title="Gets the value value.">xtd::expressions::expression::value</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="comment">// auto value1 = [] {return 10;};</span></div>
@@ -2359,7 +2359,7 @@ requires std::is_base_of_v&lt;expression, std::decay_t&lt;left_t&gt;&gt; || std:
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The result of bitwise xor. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="#acfe0d2f599bc6e14fd1d9c1a70e82123" title="Bitwise xor the specified left and right operands.">xtd::expressions::expression::xor_</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates how to use <a class="el" href="#acfe0d2f599bc6e14fd1d9c1a70e82123" title="Bitwise xor the specified left and right operands.">xtd::expressions::expression::xor_</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="comment">// auto or1 = [](auto&amp;&amp; _) {return _ ^ 0x0F;};</span></div>
@@ -2414,7 +2414,7 @@ template&lt;size_t index&gt; </div>
 <dl class="section remark"><dt>Remarks</dt><dd>The index start from 1 to N. </dd>
 <dd>
 Prefer the <a class="el" href="#ad3d423c2956860732b1a624887435e3b" title="Gets the index argument used by expression.">xtd::expressions::expression::arg</a> &lt;N&gt; or <a class="el" href="group__expressions.html#ga130423906ed7125e321bf42e00dafae9" title="The xtd::expressions::_ arg instance is used by expression that have only one argument.">xtd::expressions::_</a>, <a class="el" href="group__expressions.html#gafe769e4a8371075920e4ecf343d399ab" title="The xtd::expressions::_1 arg instance is first argument used by expression.">xtd::expressions::_1</a> ... <a class="el" href="group__expressions.html#ga84127de44e98b57262eba686d337e700" title="The xtd::expressions::_10 arg instance is tenth argument used by expression.">xtd::expressions::_10</a> instead <a class="el" href="#ad3d423c2956860732b1a624887435e3b" title="Gets the index argument used by expression.">xtd::expressions::expression::arg</a>. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="#ad3d423c2956860732b1a624887435e3b" title="Gets the index argument used by expression.">xtd::expressions::expression::arg</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates how to use <a class="el" href="#ad3d423c2956860732b1a624887435e3b" title="Gets the index argument used by expression.">xtd::expressions::expression::arg</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="comment">// auto arg1 = [](auto&amp;&amp; _1) {return _1;};</span></div>

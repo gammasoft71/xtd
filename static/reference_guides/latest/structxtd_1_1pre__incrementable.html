@@ -123,7 +123,7 @@ struct xtd::pre_incrementable&lt; type_t &gt;</div><p>Represents the post decrem
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code shows how to use <a class="el" href="structxtd_1_1pre__incrementable.html" title="Represents the post decrementable concept.">xtd::pre_incrementable</a> concept <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following code demonstrates how to use <a class="el" href="structxtd_1_1pre__incrementable.html" title="Represents the post decrementable concept.">xtd::pre_incrementable</a> concept <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> print_is_pre_incrementable(<span class="keyword">auto</span> value) <span class="keyword">noexcept</span> {</div>
 <div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;{} ({}) {} pre_incrementable&quot;</span>, value, type_of(value), <a class="code hl_concept" href="conceptxtd_1_1pre__incrementable.html">pre_incrementable</a>&lt;<span class="keyword">decltype</span>(value)&gt; ? <span class="stringliteral">&quot;is&quot;</span> : <span class="stringliteral">&quot;is not&quot;</span>);</div>
