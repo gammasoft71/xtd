@@ -18,4 +18,34 @@ xtdc run
 ## Output
 
 ```
+Tyrannosaurus
+Amargasaurus
+Deinonychus
+Compsognathus
+
+count: 4
+
+contains("Deinonychus"): true
+
+read_only_dinosaurs[3]: Compsognathus
+
+index_of("Compsognathus"): 3
+
+Insert into the wrapped List:
+insert(2, "Oviraptor")
+
+Tyrannosaurus
+Amargasaurus
+Oviraptor
+Deinonychus
+Compsognathus
+
+Copied array has 7 elements:
+""
+"Tyrannosaurus"
+"Amargasaurus"
+"Oviraptor"
+"Deinonychus"
+"Compsognathus"
+""
 ```
