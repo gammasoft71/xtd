@@ -257,7 +257,7 @@ namespace xtd {
               return value_;
             }
             
-            bool move_next() override {
+            [[nodiscard]] bool move_next() override {
               if (version_ != items_.data_->version) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
               if (index_++ && iterator_ != items_.data_->items.cend()) ++iterator_;
               else iterator_ = items_.items().cbegin();

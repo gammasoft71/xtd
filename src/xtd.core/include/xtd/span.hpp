@@ -301,7 +301,7 @@ namespace xtd {
       public:
         explicit span_enumerator(const_pointer data, xtd::usize length) : data_(data), length_(length) {}
         const type_t& current() const override {return *(data_ + index_);}
-        bool move_next() override {return ++index_ < length_;}
+        [[nodiscard]] bool move_next() override {return ++index_ < length_;}
         void reset() override {index_ = xtd::npos;}
         
       protected:

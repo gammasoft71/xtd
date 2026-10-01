@@ -36,7 +36,7 @@ namespace xtd {
       ///   explicit box_enumerator(const box_collection& boxes) : boxes {boxes} {}
       ///
       ///   const box& current() const override {return boxes[cur_index];}
-      ///   bool move_next() override {return ++cur_index < boxes.count() ? true : false;}
+      ///   [[nodiscard]] bool move_next() override {return ++cur_index < boxes.count() ? true : false;}
       ///   void reset() override {cur_index = box_integer<usize>::max_value;}
       ///
       /// private:
@@ -77,7 +77,7 @@ namespace xtd {
         ///
         ///   explicit people_enum(const list<person>& people) : people {people} {}
         ///
-        ///   bool move_next() override {
+        ///   [[nodiscard]] bool move_next() override {
         ///     ++position_;
         ///     return position < people.count();
         ///   }
@@ -124,7 +124,7 @@ namespace xtd {
         ///
         ///   explicit people_enum(const list<person>& people) : people {people} {}
         ///
-        ///   bool move_next() override {
+        ///   [[nodiscard]] bool move_next() override {
         ///     ++position_;
         ///     return position < people.count();
         ///   }
@@ -163,7 +163,7 @@ namespace xtd {
         ///
         ///   explicit people_enum(const list<person>& people) : people {people} {}
         ///
-        ///   bool move_next() override {
+        ///   [[nodiscard]] bool move_next() override {
         ///     ++position_;
         ///     return position < people.count();
         ///   }

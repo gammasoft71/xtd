@@ -110,7 +110,7 @@ namespace xtd {
               if (!started_) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
               return handle_.promise().current_value;
             }
-            bool move_next() override {
+            [[nodiscard]] bool move_next() override {
               started_ = true;
               if (!handle_ || handle_.done()) return false;
               

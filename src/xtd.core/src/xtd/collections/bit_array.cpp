@@ -147,7 +147,7 @@ auto bit_array::get_enumerator() const -> generic::enumerator<bool> {
       return items_[index_];
     }
     
-    bool move_next() override {return ++index_ < items_.length();}
+    [[nodiscard]] bool move_next() override {return ++index_ < items_.length();}
     void reset() override {index_ = npos;}
     
   private:

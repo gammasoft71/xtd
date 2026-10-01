@@ -195,7 +195,7 @@ namespace xtd {
           if (index_ >= items_.length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
           return items_[index_];
         }
-        bool move_next() override {return ++index_ < items_.count();}
+        [[nodiscard]] bool move_next() override {return ++index_ < items_.count();}
         void reset() override {index_ = xtd::npos;}
         
       private:

@@ -470,7 +470,7 @@ namespace xtd {
           if (index_ >= chars_.length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
           return chars_[index_];
         }
-        bool move_next() override {return ++index_ < chars_.length();}
+        [[nodiscard]] bool move_next() override {return ++index_ < chars_.length();}
         void reset() override {index_ = basic_string::npos;}
         
       private:
