@@ -325,7 +325,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>              <span class="keywordflow">return</span> items_[index_];</div>
 <div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>            }</div>
 <div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>            </div>
-<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>            <span class="keywordtype">bool</span> move_next()<span class="keyword"> override </span>{</div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>            [[nodiscard]] <span class="keywordtype">bool</span> move_next()<span class="keyword"> override </span>{</div>
 <div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>              <span class="keywordflow">if</span> (version_ != items_.items().version()) <a class="code hl_function" href="classxtd_1_1helpers_1_1throw__helper.html#a986c08b3b386fae3db9406136afd34b7">xtd::helpers::throw_helper::throws</a>(<a class="code hl_enumvalue" href="group__helpers.html#gga9449ffb8e13ad8c25c987085078568dcaf1203e404fb6b2467cd1884faa2c71c2">xtd::helpers::exception_case::invalid_operation</a>, <span class="stringliteral">&quot;Collection was modified; enumeration operation may not execute.&quot;</span>);</div>
 <div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>              <span class="keywordflow">return</span> ++index_ &lt; items_.count();</div>
 <div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>            }</div>
