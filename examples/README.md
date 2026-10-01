@@ -16,6 +16,7 @@
 * [Collections](xtd.core.examples/collections/README.md) contains collections examples.
 * [Collections concurrent](xtd.core.examples/collections_concurrent/README.md) contains concurrent collections examples.
 * [Collections generic](xtd.core.examples/collections_generic/README.md) contains generic collections examples.
+* [Collections generic extensions](xtd.core.examples/collections_generic_extensions/README.md) contains extensions generic collections examples.
 * [Collections object model](xtd.core.examples/collections_object_model/README.md) contains object model collections examples.
 * [Collections specialized](xtd.core.examples/collections_object_model/README.md) contains specialized collections examples.
 * [Concepts](xtd.core.examples/concepts/README.md) contains concepts examples.

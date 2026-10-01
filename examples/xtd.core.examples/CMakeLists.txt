@@ -12,6 +12,7 @@ add_projects(
   collections
   collections_concurrent
   collections_generic
+  collections_generic_extensions
   collections_object_model
   collections_specialized
   concepts
