@@ -1,6 +1,6 @@
 # assert_are_not_equal
 
-Shows how to use [xtd::tunit::assert::are_not_equal](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1valid.html#a6d6ad4a4285106ef8e00d783fb1aca39) method.
+Demonstrates how to use [xtd::tunit::assert::are_not_equal](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1valid.html#a6d6ad4a4285106ef8e00d783fb1aca39) method.
 
 ## Sources
 

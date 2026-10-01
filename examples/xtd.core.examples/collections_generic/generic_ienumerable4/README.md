@@ -1,6 +1,6 @@
 # generic_ienumerable4
 
-Shows how to use [xtd::collections::generic::ienumerable](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1generic_1_1ienumerable.html) interface.
+Demonstrates how to use [xtd::collections::generic::ienumerable](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1generic_1_1ienumerable.html) interface.
 
 ## Sources
 

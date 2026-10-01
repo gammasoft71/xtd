@@ -1,6 +1,6 @@
 # concurrent_bag
 
-Shows how to use [xtd::collections::concurrent::concurrent_bag](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1concurrent_1_1concurrent__bag.html) class.
+Demonstrates how to use [xtd::collections::concurrent::concurrent_bag](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1concurrent_1_1concurrent__bag.html) class.
 
 ## Sources
 

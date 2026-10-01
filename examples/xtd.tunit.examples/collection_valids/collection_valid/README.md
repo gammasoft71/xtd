@@ -1,6 +1,6 @@
 # collection_valid
 
-Shows how to use [xtd::tunit::collection_valid](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1collection__valid.html) class.
+Demonstrates how to use [xtd::tunit::collection_valid](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1collection__valid.html) class.
 
 ## Sources
 

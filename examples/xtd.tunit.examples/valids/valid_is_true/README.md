@@ -1,6 +1,6 @@
 # valid_is_true
 
-Shows how to use [xtd::tunit::valid::is_true](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1valid.html#a731700803a9b9e74e46e6dcf0f140161) method.
+Demonstrates how to use [xtd::tunit::valid::is_true](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1valid.html#a731700803a9b9e74e46e6dcf0f140161) method.
 
 ## Sources
 

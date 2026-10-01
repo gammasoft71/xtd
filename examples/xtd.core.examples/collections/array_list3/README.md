@@ -1,6 +1,6 @@
 # array_list3
 
-Shows how to use [xtd::collections::array_list](https://gammasoft71.github.io/xtd/reference_guides/latest/group__collections.html#gaf18249e78122f5f0f0f09003cf6abc5c) alias.
+Demonstrates how to use [xtd::collections::array_list](https://gammasoft71.github.io/xtd/reference_guides/latest/group__collections.html#gaf18249e78122f5f0f0f09003cf6abc5c) alias.
 
 ## Sources
 

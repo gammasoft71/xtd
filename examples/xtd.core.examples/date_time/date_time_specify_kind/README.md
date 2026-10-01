@@ -1,6 +1,6 @@
 # date_time_specify_kind
 
-Shows how to use [xtd::date_time::specify_kind](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html#adcb67f5e68f1830781c7d2b4e90f757c) method.
+Demonstrates how to use [xtd::date_time::specify_kind](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html#adcb67f5e68f1830781c7d2b4e90f757c) method.
 
 ## Sources
 

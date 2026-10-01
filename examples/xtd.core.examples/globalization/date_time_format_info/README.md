@@ -1,6 +1,6 @@
 # date_time_format_info
 
-Shows how to use [xtd::globalization::date_time_format](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1globalization_1_1date__time__format__info.html) class.
+Demonstrates how to use [xtd::globalization::date_time_format](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1globalization_1_1date__time__format__info.html) class.
 
 ## Sources
 

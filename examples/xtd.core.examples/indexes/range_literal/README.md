@@ -1,6 +1,6 @@
 # range_literal
 
-Shows how to use [xtd::range](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1range.html) struct.
+Demonstrates how to use [xtd::range](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1range.html) struct.
 
 ## Sources
 

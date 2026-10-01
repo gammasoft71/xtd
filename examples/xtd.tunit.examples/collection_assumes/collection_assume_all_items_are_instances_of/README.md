@@ -1,6 +1,6 @@
 # collection_assume_all_items_are_instances_of
 
-Shows how to use [xtd::tunit::collection_assume::all_items_are_instances_of](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1collection__assume.html#a76fefbb4774d2ada9c0f74fbc9efe1fc) method.
+Demonstrates how to use [xtd::tunit::collection_assume::all_items_are_instances_of](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1collection__assume.html#a76fefbb4774d2ada9c0f74fbc9efe1fc) method.
 
 ## Sources
 

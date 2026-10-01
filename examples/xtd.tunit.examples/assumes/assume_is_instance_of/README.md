@@ -1,6 +1,6 @@
 # assume_is_instance_of
 
-Shows how to use [xtd::tunit::assume::is_instance_of](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assume.html#a4a507fca67fdd13672a40d376e9b2250) method.
+Demonstrates how to use [xtd::tunit::assume::is_instance_of](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assume.html#a4a507fca67fdd13672a40d376e9b2250) method.
 
 ## Sources
 

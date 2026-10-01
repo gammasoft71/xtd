@@ -1,6 +1,6 @@
 # assume_is_positive
 
-Shows how to use [xtd::tunit::assume::is_positive](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assume.html#a16309851aaa0b65893dd10500188ecf7) method.
+Demonstrates how to use [xtd::tunit::assume::is_positive](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assume.html#a16309851aaa0b65893dd10500188ecf7) method.
 
 ## Sources
 

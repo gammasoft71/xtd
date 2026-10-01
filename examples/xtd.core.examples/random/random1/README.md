@@ -1,6 +1,6 @@
 # random1
 
-Shows how to use [xtd::random::next_bytes](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1random.html#a1075ee5aac60100ca2c6e60d2ac065d1) method.
+Demonstrates how to use [xtd::random::next_bytes](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1random.html#a1075ee5aac60100ca2c6e60d2ac065d1) method.
 
 ## Sources
 

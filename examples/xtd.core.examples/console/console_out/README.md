@@ -1,6 +1,6 @@
 # console_out
 
-Shows how to use [xtd::console::out](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1console.html#a923837ac84baf01726703e0474ca4888) stream.
+Demonstrates how to use [xtd::console::out](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1console.html#a923837ac84baf01726703e0474ca4888) stream.
 
 ## Sources
 

@@ -1,6 +1,6 @@
 # socket_tcp_ip_v4_without_thread
 
-Shows how to use [xtd::net::sockets::socket](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1net_1_1sockets_1_1socket.html) class.
+Demonstrates how to use [xtd::net::sockets::socket](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1net_1_1sockets_1_1socket.html) class.
 
 ## Sources
 

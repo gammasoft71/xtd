@@ -1,6 +1,6 @@
 # generic_list_for_each
 
-Shows how to use [xtd::collections::generic::list::for_each](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1generic_1_1list.html) method.
+Demonstrates how to use [xtd::collections::generic::list::for_each](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1generic_1_1list.html) method.
 
 ## Sources
 

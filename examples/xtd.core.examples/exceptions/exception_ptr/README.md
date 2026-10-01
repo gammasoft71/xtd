@@ -1,6 +1,6 @@
 # exception_ptr
 
-Shows how to use [std::exception_ptr](https://en.cppreference.com/w/cpp/error/exception_ptr) and [invalid_operation_exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1invalid__operation__exception.html) exception.
+Demonstrates how to use [std::exception_ptr](https://en.cppreference.com/w/cpp/error/exception_ptr) and [invalid_operation_exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1invalid__operation__exception.html) exception.
 
 ## Sources
 

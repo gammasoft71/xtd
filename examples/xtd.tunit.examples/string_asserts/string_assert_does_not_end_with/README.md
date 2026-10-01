@@ -1,6 +1,6 @@
 # string_assert_does_not_end_with
 
-Shows how to use [xtd::tunit::string_assert::does_not_end_with](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1string__assert.html#a236fdb191c3b0126f7649dd6ef0a8519) method.
+Demonstrates how to use [xtd::tunit::string_assert::does_not_end_with](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1string__assert.html#a236fdb191c3b0126f7649dd6ef0a8519) method.
 
 ## Sources
 

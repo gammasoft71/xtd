@@ -2,23 +2,23 @@
 
 [This folder](.) contains keywords examples used by [Reference Guide](https://gammasoft71.github.io/xtd/reference_guides/latest/) and more.
 
-* [block_scope](block_scope/README.md) shows how to use [block_scope_](https://gammasoft71.github.io/xtd/reference_guides/latest/block__scope_8h.html) method.
-* [call_once](call_once/README.md) shows how to use [call_once_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#gaf3084b419b4cc718142c35ab8ac5ac85) keyword.
-* [call_once2](call_once2/README.md) shows how to use [call_once](https://gammasoft71.github.io/xtd/reference_guides/latest/structxtd_1_1call__once.html) struct.
-* [interface](interface/README.md) shows how to use [interface_](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1interface.html) method.
-* [interface2](interface2/README.md) shows how to use [xtd::interface](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1interface.html) method.
-* [lock](lock/README.md) shows how to use [lock_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#gacd9906b29d877eb1eb0a8c7bc4ab774a) method.
-* [lock_guard_keyword](lock_guard_keyword/README.md) shows how to use [lock_guard_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#gacd9906b29d877eb1eb0a8c7bc4ab774a) method.
-* [nameof](nameof/README.md) shows how to use [nameof_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#gabe3976c5f529fab9b255e38ced18b281) keyword.
-* [self](self/README.md) shows how to use [self_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#ga05d1212dca8562cec36b4ebb03dd897f) keyword.
-* [sizeof](sizeof/README.md) shows how to use [sizeof_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#gacff264255bb80f00c1447fda6524b0ec) keyword.
-* [startup_keyword](startup_keyword/README.md) shows how to use [startup_](https://gammasoft71.github.io/xtd/reference_guides/latest/startup_8h.html) method.
-* [static](static/README.md) shows how to use [static_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#ga28796443ec37b938df7072c79595e3f6) keyword.
-* [static_object](static_object/README.md) shows how to use [static_object_](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1static__object.html) keyword.
-* [typeof](typeof/README.md) shows how to use [typeof_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#gafa2ffd9b4a6568b57ab2731bec095d99) keyword.
-* [unused](unused/README.md) shows how to use [__](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#ga0ee680d2ff7ec14c0dc73da3bb2e5c91) keyword.
-* [unused](unused2/README.md) shows how to use [unused_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#ga0ee680d2ff7ec14c0dc73da3bb2e5c91) keyword.
-* [using](using/README.md) shows how to use [using_](https://gammasoft71.github.io/xtd/reference_guides/latest/using_8h.html) method.
+* [block_scope](block_scope/README.md) demonstrates how to use [block_scope_](https://gammasoft71.github.io/xtd/reference_guides/latest/block__scope_8h.html) method.
+* [call_once](call_once/README.md) demonstrates how to use [call_once_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#gaf3084b419b4cc718142c35ab8ac5ac85) keyword.
+* [call_once2](call_once2/README.md) demonstrates how to use [call_once](https://gammasoft71.github.io/xtd/reference_guides/latest/structxtd_1_1call__once.html) struct.
+* [interface](interface/README.md) demonstrates how to use [interface_](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1interface.html) method.
+* [interface2](interface2/README.md) demonstrates how to use [xtd::interface](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1interface.html) method.
+* [lock](lock/README.md) demonstrates how to use [lock_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#gacd9906b29d877eb1eb0a8c7bc4ab774a) method.
+* [lock_guard_keyword](lock_guard_keyword/README.md) demonstrates how to use [lock_guard_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#gacd9906b29d877eb1eb0a8c7bc4ab774a) method.
+* [nameof](nameof/README.md) demonstrates how to use [nameof_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#gabe3976c5f529fab9b255e38ced18b281) keyword.
+* [self](self/README.md) demonstrates how to use [self_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#ga05d1212dca8562cec36b4ebb03dd897f) keyword.
+* [sizeof](sizeof/README.md) demonstrates how to use [sizeof_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#gacff264255bb80f00c1447fda6524b0ec) keyword.
+* [startup_keyword](startup_keyword/README.md) demonstrates how to use [startup_](https://gammasoft71.github.io/xtd/reference_guides/latest/startup_8h.html) method.
+* [static](static/README.md) demonstrates how to use [static_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#ga28796443ec37b938df7072c79595e3f6) keyword.
+* [static_object](static_object/README.md) demonstrates how to use [static_object_](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1static__object.html) keyword.
+* [typeof](typeof/README.md) demonstrates how to use [typeof_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#gafa2ffd9b4a6568b57ab2731bec095d99) keyword.
+* [unused](unused/README.md) demonstrates how to use [__](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#ga0ee680d2ff7ec14c0dc73da3bb2e5c91) keyword.
+* [unused](unused2/README.md) demonstrates how to use [unused_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#ga0ee680d2ff7ec14c0dc73da3bb2e5c91) keyword.
+* [using](using/README.md) demonstrates how to use [using_](https://gammasoft71.github.io/xtd/reference_guides/latest/using_8h.html) method.
 
 ## Build and run any project
 

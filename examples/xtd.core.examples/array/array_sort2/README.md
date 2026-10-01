@@ -1,6 +1,6 @@
 # array_sort2
 
-Shows how to use [xtd::basic_array::sort](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1basic__array.html#a654c55c07758408d7bbea9038d22fd9c) method.
+Demonstrates how to use [xtd::basic_array::sort](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1basic__array.html#a654c55c07758408d7bbea9038d22fd9c) method.
 
 ## Sources
 

@@ -1,6 +1,6 @@
 # directory_valid_are_equal
 
-Shows how to use [xtd::tunit::directory_valid::are_equal](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1directory__valid.html#a1f33cee10e467037525d6a0a0d3db7a9) method.
+Demonstrates how to use [xtd::tunit::directory_valid::are_equal](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1directory__valid.html#a1f33cee10e467037525d6a0a0d3db7a9) method.
 
 ## Sources
 

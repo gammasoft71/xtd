@@ -1,6 +1,6 @@
 # block_scope
 
-Shows how to use [xtd::block_scope](https://gammasoft71.github.io/xtd/reference_guides/latest/block__scope_8h.html) class.
+Demonstrates how to use [xtd::block_scope](https://gammasoft71.github.io/xtd/reference_guides/latest/block__scope_8h.html) class.
 
 ## Sources
 

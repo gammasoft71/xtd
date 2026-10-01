@@ -1,6 +1,6 @@
 # countdown_event
 
-Shows how to use [xtd::threading::countdown_event](https:gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1countdown__event.html) class.
+Demonstrates how to use [xtd::threading::countdown_event](https:gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1countdown__event.html) class.
 
 ## Sources
 

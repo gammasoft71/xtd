@@ -1,6 +1,6 @@
 # valid_is_less
 
-Shows how to use [xtd::tunit::valid::is_less](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1valid.html#a919ed90c86a9eb75bc5dd79e13f2fc8d) method.
+Demonstrates how to use [xtd::tunit::valid::is_less](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1valid.html#a919ed90c86a9eb75bc5dd79e13f2fc8d) method.
 
 ## Sources
 

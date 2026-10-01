@@ -1,6 +1,6 @@
 # valid_is_null
 
-Shows how to use [xtd::tunit::valid::is_null](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1valid.html#a27d63fc9c4cdc41ad374e652752e4023) method.
+Demonstrates how to use [xtd::tunit::valid::is_null](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1valid.html#a27d63fc9c4cdc41ad374e652752e4023) method.
 
 ## Sources
 

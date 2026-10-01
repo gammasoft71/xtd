@@ -1,6 +1,6 @@
 # collection_assert_are_equal
 
-Shows how to use [xtd::tunit::collection_assert::are_equal](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1collection__assume.html#a7ecd95170ccc9e601963ff97e56126ba) method.
+Demonstrates how to use [xtd::tunit::collection_assert::are_equal](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1collection__assume.html#a7ecd95170ccc9e601963ff97e56126ba) method.
 
 ## Sources
 

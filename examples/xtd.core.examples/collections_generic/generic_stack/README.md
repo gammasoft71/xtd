@@ -1,6 +1,6 @@
 # generic_stack
 
-Shows how to use [xtd::collections::generic::stack](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1generic_1_1stack.html) class.
+Demonstrates how to use [xtd::collections::generic::stack](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1generic_1_1stack.html) class.
 
 ## Sources
 

@@ -1,6 +1,6 @@
 # draw_line
 
-shows how to draw line in paint event using [xtd::drawing::graphics::draw_line](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1drawing_1_1graphics.html#a3d3f9a51a80264a1ce81fb38aef83a36).
+demonstrates how to draw line in paint event using [xtd::drawing::graphics::draw_line](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1drawing_1_1graphics.html#a3d3f9a51a80264a1ce81fb38aef83a36).
 
 ## Sources
 

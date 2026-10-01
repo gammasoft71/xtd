@@ -1,6 +1,6 @@
 # image_converter
 
-shows how to use [xtd::drawing::graphics::imaging::image_effector](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1drawing_1_1imaging_1_1image__effector.html) class.
+demonstrates how to use [xtd::drawing::graphics::imaging::image_effector](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1drawing_1_1imaging_1_1image__effector.html) class.
 
 ## Sources
 

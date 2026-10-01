@@ -5,9 +5,9 @@
 * [animation](animation/README.md) represents a [xtd::forms::animation](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1animation.html) control.
 * [bitmap_button](bitmap_button/README.md) demonstrates the use of [xtd::forms::button](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1button.html) control with [xtd::drawing::image](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1drawing_1_1image.html).
 * [button](button/README.md) represents a Windows [xtd::forms::button](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1button.html) control.
-* [buttons](buttons/README.md) shows how to use buttons factory with [xtd::forms::buttons](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1buttons.html) control.
+* [buttons](buttons/README.md) demonstrates how to use buttons factory with [xtd::forms::buttons](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1buttons.html) control.
 * [check_box](check_box/README.md) represents a Windows [xtd::forms::check_box](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1check__box.html) control.
-* [check_boxes](check_boxes/README.md) shows how to use check boxes factory with [xtd::forms::check_boxes](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1check__boxes.html) factory.
+* [check_boxes](check_boxes/README.md) demonstrates how to use check boxes factory with [xtd::forms::check_boxes](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1check__boxes.html) factory.
 * [checked_list_box](checked_list_box/README.md) represents a Windows control to display a list of check box.
 * [choice](choice/README.md) represents a [xtd::forms::choice](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1choice.html) control.
 * [color_picker](color_picker/README.md) represents a Windows control that allows the user to select and display a color.
@@ -36,7 +36,7 @@
 * [picture_box](picture_box/README.md) represents a Windows picture box control for displaying an image.
 * [progress_bar](progress_bar/README.md) represents a Windows [xtd::forms::progress_bar](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1progress__bar.html) control.
 * [radio_button](radio_button/README.md) enables the user to select a single option from a group of choices when paired with other [xtd::forms::radio_button](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1radio__button.html) controls.
-* [radio_buttons](radio_buttons/README.md) shows how to use radio buttons factory with [xtd::forms::radio_buttons](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1radio__buttons.html) factory.
+* [radio_buttons](radio_buttons/README.md) demonstrates how to use radio buttons factory with [xtd::forms::radio_buttons](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1radio__buttons.html) factory.
 * **rich_text_box** represents a Windows rich text box control.
 * [seven_segment_display](seven_segment_display/README.md) represents a [xtd::forms::seven_segment_display](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1seven__segment__display.html) control.
 * [sixteen_segment_display](sixteen_segment_display/README.md) represents a [xtd::forms::sixteen_segment_display](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1sixteen__segment__display.html) control.
@@ -45,7 +45,7 @@
 * [text_box](text_box/README.md) represents a Windows [xtd::forms::text_box](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1text__box.html) control.
 * **tool_tip** Represents a small rectangular pop-up window that displays a brief description of a control's purpose when the user rests the pointer on the control.
 * [toggle_button](toggle_button/README.md) represents a [xtd::forms::toggle_button](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1toggle__button.html) control.
-* [toggle_buttons](toggle_buttons/README.md) shows how to use toggle buttons factory with [xtd::forms::toggle_buttons](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1toggle__buttons.html) factory.
+* [toggle_buttons](toggle_buttons/README.md) demonstrates how to use toggle buttons factory with [xtd::forms::toggle_buttons](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1toggle__buttons.html) factory.
 * [track_bar](track_bar/README.md) represents a standard Windows [xtd::forms::track_bar](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1track__bar.html).
 * **tree_view** displays a hierarchical collection of labeled items, each represented by a TreeNode.
 * [up_down_button](up_down_button/README.md) represents a Windows spin button.

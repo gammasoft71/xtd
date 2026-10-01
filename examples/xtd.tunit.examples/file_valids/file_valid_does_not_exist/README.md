@@ -1,6 +1,6 @@
 # file_valid_does_not_exist
 
-Shows how to use [xtd::tunit::file_valid::does_not_exist](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1file__valid.html#a80323f3e7b79c83017d86e0fde1cdb77) method.
+Demonstrates how to use [xtd::tunit::file_valid::does_not_exist](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1file__valid.html#a80323f3e7b79c83017d86e0fde1cdb77) method.
 
 ## Sources
 

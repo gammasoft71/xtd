@@ -1,6 +1,6 @@
 # collection_assert_all_items_are_unique
 
-Shows how to use [xtd::tunit::collection_assert::all_items_are_unique](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1collection__assume.html#a27bcdcd1d0c91869ba1115f91ef01780) method.
+Demonstrates how to use [xtd::tunit::collection_assert::all_items_are_unique](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1collection__assume.html#a27bcdcd1d0c91869ba1115f91ef01780) method.
 
 ## Sources
 

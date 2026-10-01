@@ -1,6 +1,6 @@
 # string_valid_does_not_contain
 
-Shows how to use [xtd::tunit::string_valid::does_not_contain](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1string__valid.html#adcfa8ec54d91a565d4b99a1dbad989a2) method.
+Demonstrates how to use [xtd::tunit::string_valid::does_not_contain](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1string__valid.html#adcfa8ec54d91a565d4b99a1dbad989a2) method.
 
 ## Sources
 

@@ -1,6 +1,6 @@
 # valid_is_not_instance_of
 
-Shows how to use [xtd::tunit::valid::is_not_instance_of](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1valid.html#a2b1acd4a95add6d5d61828cf58026bad) method.
+Demonstrates how to use [xtd::tunit::valid::is_not_instance_of](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1valid.html#a2b1acd4a95add6d5d61828cf58026bad) method.
 
 ## Sources
 

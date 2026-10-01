@@ -1,6 +1,6 @@
 # math_assert
 
-Shows how to create your own [xtd::tunit::assert](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assert.html) class.
+Demonstrates how to create your own [xtd::tunit::assert](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assert.html) class.
 
 ## Sources
 

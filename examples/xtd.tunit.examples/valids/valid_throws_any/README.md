@@ -1,6 +1,6 @@
 # valid_throws_any
 
-Shows how to use [xtd::tunit::valid::throws_any](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1valid.html#a1efbf499859e744ebeb073ba0c84e642) method.
+Demonstrates how to use [xtd::tunit::valid::throws_any](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1valid.html#a1efbf499859e744ebeb073ba0c84e642) method.
 
 ## Sources
 

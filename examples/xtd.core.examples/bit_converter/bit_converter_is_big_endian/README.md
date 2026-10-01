@@ -1,6 +1,6 @@
 # bit_converter_is_big_endian
 
-Shows how to use [bit_converter::is_big_endian](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1bit__converter.html#a604c4e12079655a803ed3a3e78dde225) method.
+Demonstrates how to use [bit_converter::is_big_endian](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1bit__converter.html#a604c4e12079655a803ed3a3e78dde225) method.
 
 ## Sources
 

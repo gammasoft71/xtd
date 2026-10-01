@@ -1,6 +1,6 @@
 # enumerable_sequence_equal
 
-Shows how to use [xtd::linq::enumerable::sequence_equal](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1linq_1_1enumerable.html#a1356cb623b040cb30e1e7a4e67065b3a) method.
+Demonstrates how to use [xtd::linq::enumerable::sequence_equal](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1linq_1_1enumerable.html#a1356cb623b040cb30e1e7a4e67065b3a) method.
 
 ## Sources
 

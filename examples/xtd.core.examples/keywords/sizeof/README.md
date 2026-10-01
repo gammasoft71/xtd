@@ -1,6 +1,6 @@
 # sizeof
 
-Shows how to use [sizeof_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#gacff264255bb80f00c1447fda6524b0ec) keyword.
+Demonstrates how to use [sizeof_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#gacff264255bb80f00c1447fda6524b0ec) keyword.
 
 ## Sources
 

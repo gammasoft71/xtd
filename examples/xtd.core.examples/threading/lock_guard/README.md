@@ -1,6 +1,6 @@
 # lock_guard
 
-Shows how to use [xtd::threading::lock_guard](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1lock__guard.html) class.
+Demonstrates how to use [xtd::threading::lock_guard](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1lock__guard.html) class.
 
 ## Sources
 

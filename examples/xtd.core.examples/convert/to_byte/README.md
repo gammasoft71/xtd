@@ -1,6 +1,6 @@
 # to_byte
 
-Shows how to use [xtd::convert::to_byte](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1convert.html#a31ae0aaad2259a0d02bce9c06a5df2c1) method.
+Demonstrates how to use [xtd::convert::to_byte](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1convert.html#a31ae0aaad2259a0d02bce9c06a5df2c1) method.
 
 ## Sources
 

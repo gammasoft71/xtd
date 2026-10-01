@@ -1,6 +1,6 @@
 # collection_assert_is_ordered
 
-Shows how to use [xtd::tunit::collection_assert::is_ordered](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1collection__assert.html#a5af8ad7461b20cf4a1b6528377a5be0f) method.
+Demonstrates how to use [xtd::tunit::collection_assert::is_ordered](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1collection__assert.html#a5af8ad7461b20cf4a1b6528377a5be0f) method.
 
 ## Sources
 

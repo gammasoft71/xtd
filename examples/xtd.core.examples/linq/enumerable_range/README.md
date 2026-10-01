@@ -1,6 +1,6 @@
 # enumerable_range
 
-Shows how to use [xtd::linq::enumerable::range](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1linq_1_1enumerable.html#a2ad0f9812852378c4ed08a50f39396cd) method.
+Demonstrates how to use [xtd::linq::enumerable::range](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1linq_1_1enumerable.html#a2ad0f9812852378c4ed08a50f39396cd) method.
 
 ## Sources
 

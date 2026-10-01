@@ -1,6 +1,6 @@
 # valid_is_instance_of
 
-Shows how to use [xtd::tunit::valid::is_instance_of](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1valid.html#ac7457d49af1c34f16346fcae1a9fc022) method.
+Demonstrates how to use [xtd::tunit::valid::is_instance_of](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1valid.html#ac7457d49af1c34f16346fcae1a9fc022) method.
 
 ## Sources
 

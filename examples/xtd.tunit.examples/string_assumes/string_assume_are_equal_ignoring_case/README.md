@@ -1,6 +1,6 @@
 # string_assume_are_equal_ignoring_case
 
-Shows how to use [xtd::tunit::string_assume::are_equal_ignoring_case](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1string__assume.html#a23d3241ef65211b87f9f67cbd63efc40) method.
+Demonstrates how to use [xtd::tunit::string_assume::are_equal_ignoring_case](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1string__assume.html#a23d3241ef65211b87f9f67cbd63efc40) method.
 
 ## Sources
 

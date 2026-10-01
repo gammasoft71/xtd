@@ -1,6 +1,6 @@
 # collection_valid_are_not_equivalent
 
-Shows how to use [xtd::tunit::collection_valid::are_not_equivalent](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1collection__valid.html#ac2637f79665451999e8e54701152a3f3) method.
+Demonstrates how to use [xtd::tunit::collection_valid::are_not_equivalent](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1collection__valid.html#ac2637f79665451999e8e54701152a3f3) method.
 
 ## Sources
 

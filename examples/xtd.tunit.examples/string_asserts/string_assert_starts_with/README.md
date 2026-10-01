@@ -1,6 +1,6 @@
 # string_assert_starts_with
 
-Shows how to use [xtd::tunit::string_assert::starts_with](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1string__assert.html#a798f3ad026c80669f79045b8f5e96bee) method.
+Demonstrates how to use [xtd::tunit::string_assert::starts_with](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1string__assert.html#a798f3ad026c80669f79045b8f5e96bee) method.
 
 ## Sources
 

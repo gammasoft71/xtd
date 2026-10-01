@@ -1,6 +1,6 @@
 # exception_dispatch_info
 
-Shows how to use [xtd::exception_services::exception_dispatch_info](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1exception__services_1_1exception__dispatch__info.html) class.
+Demonstrates how to use [xtd::exception_services::exception_dispatch_info](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1exception__services_1_1exception__dispatch__info.html) class.
 
 ## Sources
 

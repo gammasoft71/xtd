@@ -1,6 +1,6 @@
 # culture_info_is_neutral_culture
 
-Shows how to use [xtd::globalization::culture_info::is_neutral_culture](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1globalization_1_1culture__info.html) property.
+Demonstrates how to use [xtd::globalization::culture_info::is_neutral_culture](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1globalization_1_1culture__info.html) property.
 
 ## Sources
 

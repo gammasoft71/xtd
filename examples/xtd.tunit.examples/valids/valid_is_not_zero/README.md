@@ -1,6 +1,6 @@
 # valid_is_not_zero
 
-Shows how to use [xtd::tunit::valid::is_not_zero](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1valid.html#a2b6ced238a6f4dfefc171c39f330cb78) method.
+Demonstrates how to use [xtd::tunit::valid::is_not_zero](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1valid.html#a2b6ced238a6f4dfefc171c39f330cb78) method.
 
 ## Sources
 

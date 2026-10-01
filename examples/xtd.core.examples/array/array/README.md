@@ -1,6 +1,6 @@
 # array
 
-Shows how to use [xtd::array](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1array.html) class.
+Demonstrates how to use [xtd::array](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1array.html) class.
 
 ## Sources
 

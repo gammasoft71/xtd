@@ -1,6 +1,6 @@
 # collection_assume_contains
 
-Shows how to use [xtd::tunit::collection_assume::contains](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1collection__assume.html#a56947f8d21589b3c4b4df83fee0a7b33) method.
+Demonstrates how to use [xtd::tunit::collection_assume::contains](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1collection__assume.html#a56947f8d21589b3c4b4df83fee0a7b33) method.
 
 ## Sources
 

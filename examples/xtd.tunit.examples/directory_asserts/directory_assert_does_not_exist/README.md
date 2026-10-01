@@ -1,6 +1,6 @@
 # directory_assert_does_not_exist
 
-Shows how to use [xtd::tunit::directory_assert::does_not_exist](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1directory__assert.html#a844fc0ffa68b7425a90afba83168e313) method.
+Demonstrates how to use [xtd::tunit::directory_assert::does_not_exist](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1directory__assert.html#a844fc0ffa68b7425a90afba83168e313) method.
 
 ## Sources
 

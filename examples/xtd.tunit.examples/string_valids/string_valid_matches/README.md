@@ -1,6 +1,6 @@
 # string_valid_matches
 
-Shows how to use [xtd::tunit::string_valid::matches](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1string__valid.html#a96767fa89a4c5d96149b6abbd5752a70) method.
+Demonstrates how to use [xtd::tunit::string_valid::matches](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1string__valid.html#a96767fa89a4c5d96149b6abbd5752a70) method.
 
 ## Sources
 

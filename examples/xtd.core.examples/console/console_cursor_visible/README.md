@@ -1,6 +1,6 @@
 # console_cursor_visible
 
-Shows how to use [xtd::console::cursor_visible](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1console.html#a415a3993f5a358a3c90a52ad78ccdbf5) property.
+Demonstrates how to use [xtd::console::cursor_visible](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1console.html#a415a3993f5a358a3c90a52ad78ccdbf5) property.
 
 ## Sources
 

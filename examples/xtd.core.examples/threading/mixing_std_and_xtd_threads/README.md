@@ -1,6 +1,6 @@
 # mixing_std_and_xtd_threads
 
-Shows how to use and mixing [xtd::threading::thread](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1thread.html) and [std::thread](https://en.cppreference.com/w/cpp/thread/thread) classes.
+Demonstrates how to use and mixing [xtd::threading::thread](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1thread.html) and [std::thread](https://en.cppreference.com/w/cpp/thread/thread) classes.
 
 ## Sources
 

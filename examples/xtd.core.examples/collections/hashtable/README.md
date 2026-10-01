@@ -1,6 +1,6 @@
 # hashtable
 
-Shows how to use [hashtable](https://gammasoft71.github.io/xtd/reference_guides/latest/group__collections.html#gaf18249e78122f5f0f0f09003cf6abc5c) alias.
+Demonstrates how to use [hashtable](https://gammasoft71.github.io/xtd/reference_guides/latest/group__collections.html#gaf18249e78122f5f0f0f09003cf6abc5c) alias.
 
 ## Sources
 

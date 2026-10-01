@@ -1,6 +1,6 @@
 # range_operator
 
-Shows how to use [xtd::range](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1range.html) struct as operator.
+Demonstrates how to use [xtd::range](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1range.html) struct as operator.
 
 ## Sources
 

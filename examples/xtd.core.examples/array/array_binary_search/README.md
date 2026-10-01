@@ -1,6 +1,6 @@
 # array_binary_search
 
-Shows how to use [xtd::array<>::binary_search](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1array_3_4.html#af7d6d835b28dd7be7f1c68d852b502ce) method.
+Demonstrates how to use [xtd::array<>::binary_search](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1array_3_4.html#af7d6d835b28dd7be7f1c68d852b502ce) method.
 
 ## Sources
 

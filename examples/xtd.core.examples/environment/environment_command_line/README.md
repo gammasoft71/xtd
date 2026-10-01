@@ -1,6 +1,6 @@
 # environment_command_line
 
-Shows how to use [xtd::environment::command_line](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1environment.html#a9e675a5b7bfbb96f8df5bca48051c0ee) method.
+Demonstrates how to use [xtd::environment::command_line](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1environment.html#a9e675a5b7bfbb96f8df5bca48051c0ee) method.
 
 ## Sources
 

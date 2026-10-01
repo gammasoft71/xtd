@@ -1,6 +1,6 @@
 # index_literal
 
-Shows how to use [xtd::index](https://gammasoft71.github.io/xtd/reference_guides/latest/structxtd_1_1index.html) struct.
+Demonstrates how to use [xtd::index](https://gammasoft71.github.io/xtd/reference_guides/latest/structxtd_1_1index.html) struct.
 
 ## Sources
 

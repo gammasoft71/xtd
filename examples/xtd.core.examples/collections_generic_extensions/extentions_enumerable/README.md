@@ -1,6 +1,6 @@
 # extentions_enumerable
 
-Shows how to use [xtd::collections::generic::extensions::enumerable](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html) class.
+Demonstrates how to use [xtd::collections::generic::extensions::enumerable](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html) class.
 
 ## Sources
 

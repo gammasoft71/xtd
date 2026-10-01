@@ -1,6 +1,6 @@
 # generic_list_sort3
 
-Shows how to use [xtd::collections::generic::list::sort](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1generic_1_1list.html#a9a22f137ea0a902320be43d8d494b1a8) method.
+Demonstrates how to use [xtd::collections::generic::list::sort](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1generic_1_1list.html#a9a22f137ea0a902320be43d8d494b1a8) method.
 
 ## Sources
 

@@ -1,6 +1,6 @@
 # typeof
 
-Shows how to use [typeof_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#gafa2ffd9b4a6568b57ab2731bec095d99) keyword.
+Demonstrates how to use [typeof_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#gafa2ffd9b4a6568b57ab2731bec095d99) keyword.
 
 ## Sources
 

@@ -1,6 +1,6 @@
 # directory_assert_are_not_equal
 
-Shows how to use [xtd::tunit::directory_assert::are_not_equal](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1directory__assert.html#adb6a94ab27ef36eaec266d8abc4cc60d) method.
+Demonstrates how to use [xtd::tunit::directory_assert::are_not_equal](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1directory__assert.html#adb6a94ab27ef36eaec266d8abc4cc60d) method.
 
 ## Sources
 

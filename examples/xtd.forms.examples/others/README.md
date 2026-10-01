@@ -17,7 +17,7 @@
 * [colored_forms](colored_forms/README.md) demonstrates the use of [xtd::forms::form](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1form.html) control and xtd::drawing::color class.
 * [colored_tab_pages](colored_tab_pages/README.md) demonstrates the use of [xtd::forms::tab_control](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1tab__control.html) and colored [xtd::forms::tab_page](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1tab__page.html) controls.
 * [colors](colors/README.md) demonstrates the use of [xtd::forms::user_control](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1user__control.html) control with xtd::drawing::color.
-* [control_with_name_operator](control_with_name_operator/README.md) shows how to use [xtd::forms::control::name](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html#a4ae2e76ab88ca4f8a08c4280d4ea639a) property and [xtd::forms::layout::arranged_element_collection::operator\[\]](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control_1_1control__collection.html#ac25fcb076d440f3867c26c45001920c9) name operator.
+* [control_with_name_operator](control_with_name_operator/README.md) demonstrates how to use [xtd::forms::control::name](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html#a4ae2e76ab88ca4f8a08c4280d4ea639a) property and [xtd::forms::layout::arranged_element_collection::operator\[\]](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control_1_1control__collection.html#ac25fcb076d440f3867c26c45001920c9) name operator.
 * [docked_panels](docked_panels/README.md) demonstrates the use of [xtd::forms::panel](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1panel.html).
 * [emplace](emplace/README.md) demonstrates the use of [xtd::forms::control::control_collection::emplace](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control_1_1control__collection.html), [xtd::forms::control::control_collection::emplace_at](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control_1_1control__collection.html), [xtd::forms::control::control_collection::emplace_back](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control_1_1control__collection.html) methods.
 * [flat_button](flat_button/README.md) demonstrates the use of [xtd::forms::button](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1button.html) control with flat style.
@@ -27,7 +27,7 @@
 * [form_background_image](form_background_image/README.md) demonstrates how to use [xtd::forms::form](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1form.html) class with image_background property.
 * [form_background_image2](form_background_image2/README.md) demonstrates how to use [xtd::forms::form](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1form.html) class with image_background property.
 * [form_decoration](form_decoration/README.md) demonstrates the use of [xtd::forms::form](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1form.html).
-* [form_resize](form_resize/README.md) shows how to set minimum size, set maximum size, move and resize a form.
+* [form_resize](form_resize/README.md) demonstrates how to set minimum size, set maximum size, move and resize a form.
 * [form_show](form_show/README.md) demonstrates how to launch form as normal window, model-less window and modal window.
 * [form_show_hide](form_show_hide/README.md) demonstrates the use of [xtd::forms::form](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1form.html) show, hide and close methods.
 * [form_window_state](form_window_state/README.md) demonstrates the use of [xtd::forms::form](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1form.html) window state.
@@ -48,7 +48,7 @@
 * [lcd_label3](lcd_label3/README.md) represents the use of [xtd::forms::lcd_label](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1lcd__label.html) control.
 * [main_menu_create_standard_items](main_menu_create_standard_items/README.md) demonstrates the use of [xtd::forms::main_menu::create_standard_items](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1main__menu.html#a6bbc2f6a58ca79e0329f882c3cef77e1) method.
 * [painting](painting/README.md) demonstrates the use of xtd::forms::form, xtd::forms::panel, [xtd::forms::track_bar](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1track__bar.html) and [xtd::forms::button](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1button.html) controls with mouse_down, mouse_move and paint events..
-* [screen_informations](screen_informations/README.md) shows how to get screen information of [xtd::forms::screen](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1screen.html) control.
+* [screen_informations](screen_informations/README.md) demonstrates how to get screen information of [xtd::forms::screen](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1screen.html) control.
 * [smileys](smileys/README.md) demonstrates the use of [xtd::forms::label](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1label.html) control.
 * [some_controls](some_controls/README.md) demonstrates the use of some controls.
 * [some_system_controls](some_system_controls/README.md) demonstrates the use of some system controls.
@@ -61,7 +61,7 @@
 * [text_box_password2](text_box_password2/README.md) represents a Windows [xtd::forms::text_box](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1text__box.html) control.
 * [toggle_button2](toggle_button2/README.md) represents a [xtd::forms::toggle_button](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1toggle__button.html) control.
 * [track_bar2](track_bar2/README.md) represents a standard Windows [xtd::forms::track_bar](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1track__bar.html).
-* [wiggly](wiggly/README.md) shows how to animate a user control using timer and timer::event. In addition, the example demonstrates how to use graphics::measure_string to determine the size of text on screen.
+* [wiggly](wiggly/README.md) demonstrates how to animate a user control using timer and timer::event. In addition, the example demonstrates how to use graphics::measure_string to determine the size of text on screen.
 
 ## Build and run any project
 

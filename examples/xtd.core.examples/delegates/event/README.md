@@ -1,6 +1,6 @@
 # event
 
-Shows how to use [xtd::event](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1event.html) class.
+Demonstrates how to use [xtd::event](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1event.html) class.
 
 ## Sources
 

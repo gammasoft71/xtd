@@ -1,6 +1,6 @@
 # debug_assert
 
-Shows how to use [debug::assert](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1diagnostics_1_1debug.html#acdb0d00e4b12fccc037cf3f965110d72) method.
+Demonstrates how to use [debug::assert](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1diagnostics_1_1debug.html#acdb0d00e4b12fccc037cf3f965110d72) method.
 
 ## Sources
 

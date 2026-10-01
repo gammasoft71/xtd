@@ -1,6 +1,6 @@
 # array_rank_2_and_mdspan
 
-Shows how to use [xtd::array\[\]](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1array_3_01type__t_00_012_00_01allocator__t_01_4.html) class.
+Demonstrates how to use [xtd::array\[\]](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1array_3_01type__t_00_012_00_01allocator__t_01_4.html) class.
 
 ## Sources
 

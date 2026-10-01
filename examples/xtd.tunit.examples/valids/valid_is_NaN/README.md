@@ -1,6 +1,6 @@
 # valid_is_NaN
 
-Shows how to use [xtd::tunit::valid::is_NaN](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1valid.html#afcd9ae5eef87fde316c19d2c47f631f7) method.
+Demonstrates how to use [xtd::tunit::valid::is_NaN](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1valid.html#afcd9ae5eef87fde316c19d2c47f631f7) method.
 
 ## Sources
 

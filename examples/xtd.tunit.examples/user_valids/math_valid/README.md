@@ -1,6 +1,6 @@
 # math_valid
 
-Shows how to create your own [xtd::tunit::valid](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1valid.html) class.
+Demonstrates how to create your own [xtd::tunit::valid](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1valid.html) class.
 
 ## Sources
 

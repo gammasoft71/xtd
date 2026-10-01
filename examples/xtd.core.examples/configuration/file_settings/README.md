@@ -1,6 +1,6 @@
 # file_settings
 
-Shows how to use [xtd::consiguration::file_settings](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1configuration_1_1file__settings.html) object.
+Demonstrates how to use [xtd::consiguration::file_settings](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1configuration_1_1file__settings.html) object.
 
 ## Sources
 

@@ -1,6 +1,6 @@
 # collection_assume_is_ordered
 
-Shows how to use [xtd::tunit::collection_assume::is_ordered](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1collection__assume.html#a2526324a21a6bc7e3cdf36bed4d446aa) method.
+Demonstrates how to use [xtd::tunit::collection_assume::is_ordered](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1collection__assume.html#a2526324a21a6bc7e3cdf36bed4d446aa) method.
 
 ## Sources
 

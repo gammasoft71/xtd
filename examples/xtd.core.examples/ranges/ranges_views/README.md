@@ -1,6 +1,6 @@
 # ranges_views
 
-Shows how to use [xtd::ranges::views](https://gammasoft71.github.io/xtd/reference_guides/latest/namespacextd_1_1ranges_1_1views.html) views.
+Demonstrates how to use [xtd::ranges::views](https://gammasoft71.github.io/xtd/reference_guides/latest/namespacextd_1_1ranges_1_1views.html) views.
 
 ## Sources
 

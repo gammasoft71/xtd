@@ -1,6 +1,6 @@
 # valid_does_not_throw
 
-Shows how to use [xtd::tunit::valid::does_not_throw](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1valid.html#ad5daf4889e0f44e20ad12e1db802e94f) method.
+Demonstrates how to use [xtd::tunit::valid::does_not_throw](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1valid.html#ad5daf4889e0f44e20ad12e1db802e94f) method.
 
 ## Sources
 

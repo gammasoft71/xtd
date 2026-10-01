@@ -1,6 +1,6 @@
 # collection_valid_all_items_are_instances_of
 
-Shows how to use [xtd::tunit::collection_valid::all_items_are_instances_of](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1collection__valid.html#a5d611d868616b1dd96dfbb105fb713d8) method.
+Demonstrates how to use [xtd::tunit::collection_valid::all_items_are_instances_of](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1collection__valid.html#a5d611d868616b1dd96dfbb105fb713d8) method.
 
 ## Sources
 

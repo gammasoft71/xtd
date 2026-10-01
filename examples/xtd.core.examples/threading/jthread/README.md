@@ -1,6 +1,6 @@
 # jthread
 
-Shows how to use [xtd::threading::jthread](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1jthread.html) class.
+Demonstrates how to use [xtd::threading::jthread](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1jthread.html) class.
 
 ## Sources
 

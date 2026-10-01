@@ -1,6 +1,6 @@
 # directory_assume_are_not_equal
 
-Shows how to use [xtd::tunit::directory_assume::are_not_equal](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1directory__assume.html#aa17faed41f0382ec9659a48f3f401ee8) method.
+Demonstrates how to use [xtd::tunit::directory_assume::are_not_equal](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1directory__assume.html#aa17faed41f0382ec9659a48f3f401ee8) method.
 
 ## Sources
 

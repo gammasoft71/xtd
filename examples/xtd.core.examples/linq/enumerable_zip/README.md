@@ -1,6 +1,6 @@
 # enumerable_zip
 
-Shows how to use [xtd::linq::enumerable::zip](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1linq_1_1enumerable.html#a16ff1e79529d05214b13f211ff1182bd) method.
+Demonstrates how to use [xtd::linq::enumerable::zip](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1linq_1_1enumerable.html#a16ff1e79529d05214b13f211ff1182bd) method.
 
 ## Sources
 

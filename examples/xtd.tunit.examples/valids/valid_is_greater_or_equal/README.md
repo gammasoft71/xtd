@@ -1,6 +1,6 @@
 # valid_is_greater_or_equal
 
-Shows how to use [xtd::tunit::valid::is_greater_or_equal](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1valid.html#a6f92b97c65ad6d9a94831b74abf09068) method.
+Demonstrates how to use [xtd::tunit::valid::is_greater_or_equal](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1valid.html#a6f92b97c65ad6d9a94831b74abf09068) method.
 
 ## Sources
 

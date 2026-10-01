@@ -1,6 +1,6 @@
 # guid
 
-Shows how to use [xtd::guid](https://gammasoft71.github.io/xtd/reference_guides/latest/structxtd_1_1guid.html) class.
+Demonstrates how to use [xtd::guid](https://gammasoft71.github.io/xtd/reference_guides/latest/structxtd_1_1guid.html) class.
 
 ## Sources
 

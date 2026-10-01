@@ -1,6 +1,6 @@
 # auto_reset_event
 
-Shows how to use [xtd::threading::auto_reset_event](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1auto_reset_event.html) class.
+Demonstrates how to use [xtd::threading::auto_reset_event](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1auto_reset_event.html) class.
 
 ## Sources
 

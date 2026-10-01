@@ -1,6 +1,6 @@
 # ienumerator
 
-Shows how to use [xtd::collections::ienumerator](https://gammasoft71.github.io/xtd/reference_guides/latest/group__interfaces_ga1871d17c4798e1f712e5c7f09ff36506.html#ga1871d17c4798e1f712e5c7f09ff36506) interface.
+Demonstrates how to use [xtd::collections::ienumerator](https://gammasoft71.github.io/xtd/reference_guides/latest/group__interfaces_ga1871d17c4798e1f712e5c7f09ff36506.html#ga1871d17c4798e1f712e5c7f09ff36506) interface.
 
 ## Sources
 

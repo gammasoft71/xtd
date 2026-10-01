@@ -1,6 +1,6 @@
 # timers_timer
 
-Shows how to use [xtd::timers::timer](https:gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1timers_1_1thimer.html) class.
+Demonstrates how to use [xtd::timers::timer](https:gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1timers_1_1thimer.html) class.
 
 ## Sources
 

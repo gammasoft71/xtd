@@ -1,6 +1,6 @@
 # file_valid_exists
 
-Shows how to use [xtd::tunit::file_valid::exists](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1file__valid.html#a59ee89d189f39f33115da632f6045b6b) method.
+Demonstrates how to use [xtd::tunit::file_valid::exists](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1file__valid.html#a59ee89d189f39f33115da632f6045b6b) method.
 
 ## Sources
 

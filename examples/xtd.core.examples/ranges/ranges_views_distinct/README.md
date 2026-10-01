@@ -1,6 +1,6 @@
 # ranges_views_distinct
 
-Shows how to use [xtd::ranges::views::distinct_view](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1ranges_1_1views_1_1distinct__view.html) class.
+Demonstrates how to use [xtd::ranges::views::distinct_view](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1ranges_1_1views_1_1distinct__view.html) class.
 
 ## Sources
 

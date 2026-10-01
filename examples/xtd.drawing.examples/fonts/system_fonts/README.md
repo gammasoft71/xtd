@@ -1,6 +1,6 @@
 # system_fonts
 
-Shows how to use [xtd::drawing::system_fonts](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1drawing_1_1system__fonts.html) class.
+Demonstrates how to use [xtd::drawing::system_fonts](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1drawing_1_1system__fonts.html) class.
 
 ## Sources
 

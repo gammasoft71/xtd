@@ -1,6 +1,6 @@
 # hash_code
 
-Shows how to use [xtd::hash_code](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1hash__code.html) class.
+Demonstrates how to use [xtd::hash_code](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1hash__code.html) class.
 
 ## Sources
 

@@ -1,6 +1,6 @@
 # file_assume_does_not_exist
 
-Shows how to use [xtd::tunit::file_assume::does_not_exist](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1file__assume.html#aa4fbfe0459fdf170107ae21736cd0ff6) method.
+Demonstrates how to use [xtd::tunit::file_assume::does_not_exist](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1file__assume.html#aa4fbfe0459fdf170107ae21736cd0ff6) method.
 
 ## Sources
 

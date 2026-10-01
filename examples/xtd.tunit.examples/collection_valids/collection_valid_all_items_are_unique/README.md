@@ -1,6 +1,6 @@
 # collection_valid_all_items_are_unique
 
-Shows how to use [xtd::tunit::collection_valid::all_items_are_unique](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1collection__valid.html#a4ab5dbda7248000d856488f784ecba1f) method.
+Demonstrates how to use [xtd::tunit::collection_valid::all_items_are_unique](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1collection__valid.html#a4ab5dbda7248000d856488f784ecba1f) method.
 
 ## Sources
 

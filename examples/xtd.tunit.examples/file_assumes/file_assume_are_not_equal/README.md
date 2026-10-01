@@ -1,6 +1,6 @@
 # file_assume_are_not_equal
 
-Shows how to use [xtd::tunit::file_assume::are_not_equal](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1file__assume.html#a2f028d4c7ebe85856bbf37d19de47f9c) method.
+Demonstrates how to use [xtd::tunit::file_assume::are_not_equal](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1file__assume.html#a2f028d4c7ebe85856bbf37d19de47f9c) method.
 
 ## Sources
 

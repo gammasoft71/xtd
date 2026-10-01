@@ -1,6 +1,6 @@
 # string_assert_does_not_contain
 
-Shows how to use [xtd::tunit::string_assert::does_not_contain](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1string__assert.html#a45a645260827fdfe499f279a87b77311) method.
+Demonstrates how to use [xtd::tunit::string_assert::does_not_contain](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1string__assert.html#a45a645260827fdfe499f279a87b77311) method.
 
 ## Sources
 

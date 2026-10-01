@@ -1,6 +1,6 @@
 # strings
 
-Shows how to use [xtd::basic_string](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1basic__string.html) constructors.
+Demonstrates how to use [xtd::basic_string](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1basic__string.html) constructors.
 
 ## Sources
 

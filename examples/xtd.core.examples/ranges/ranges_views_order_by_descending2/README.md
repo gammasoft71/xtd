@@ -1,6 +1,6 @@
 # ranges_views_order_by_descending2
 
-Shows how to use [xtd::ranges::views::order_by_descending_view](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1ranges_1_1views_1_1order__by__descending__view.html) class.
+Demonstrates how to use [xtd::ranges::views::order_by_descending_view](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1ranges_1_1views_1_1order__by__descending__view.html) class.
 
 ## Sources
 

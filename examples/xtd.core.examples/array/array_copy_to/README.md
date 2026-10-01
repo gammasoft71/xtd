@@ -1,6 +1,6 @@
 # array_copy_to
 
-Shows how to use [xtd::array::copy_to](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1basic__array.html#abd262a2d9966d3ca515eed19afc35470) method.
+Demonstrates how to use [xtd::array::copy_to](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1basic__array.html#abd262a2d9966d3ca515eed19afc35470) method.
 
 ## Sources
 

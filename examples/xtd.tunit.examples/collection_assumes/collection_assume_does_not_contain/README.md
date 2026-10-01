@@ -1,6 +1,6 @@
 # collection_assume_does_not_contain
 
-Shows how to use [xtd::tunit::collection_assume::does_not_contain](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1collection__assume.html#a6ec054c9987281a9e6f3aa2743bbef75) method.
+Demonstrates how to use [xtd::tunit::collection_assume::does_not_contain](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1collection__assume.html#a6ec054c9987281a9e6f3aa2743bbef75) method.
 
 ## Sources
 

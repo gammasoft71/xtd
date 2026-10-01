@@ -1,6 +1,6 @@
 # generic_ienumerator
 
-Shows how to use [xtd::collections::generic::ienumerator](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1generic_1_1ienumerator.html) interface.
+Demonstrates how to use [xtd::collections::generic::ienumerator](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1generic_1_1ienumerator.html) interface.
 
 ## Sources
 

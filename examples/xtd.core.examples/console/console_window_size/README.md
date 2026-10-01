@@ -1,6 +1,6 @@
 # console_window_size
 
-Shows how to use [xtd::console::set_window_size](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1console.html#a390011ad7e02c84804983afe83e40ad5) method.
+Demonstrates how to use [xtd::console::set_window_size](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1console.html#a390011ad7e02c84804983afe83e40ad5) method.
 
 ## Sources
 

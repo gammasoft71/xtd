@@ -1,6 +1,6 @@
 # xtd_collection_indexer
 
-Shows how to use indexing operators with [xtd::index](https://gammasoft71.github.io/xtd/reference_guides/latest/group__system.html#gae5b63301b69ce281ee7db98e2e61941f) (xtd::index::start, xtd::index::start + 1, xtd::index::start + 2), [xtd::xtd::index::last](https://gammasoft71.github.io/xtd/reference_guides/latest/group__system.html#gaa99759e66edbafa9f3ed0b523c924b5c) (xtd::index::last, xtd::index::last - 1, xtd::index::last - 2, ...) and bitwise operators (~1_z, ~2_z, ...) with xtd collections like [xtd::collections::generic::list](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1generic_1_1list.html).
+Demonstrates how to use indexing operators with [xtd::index](https://gammasoft71.github.io/xtd/reference_guides/latest/group__system.html#gae5b63301b69ce281ee7db98e2e61941f) (xtd::index::start, xtd::index::start + 1, xtd::index::start + 2), [xtd::xtd::index::last](https://gammasoft71.github.io/xtd/reference_guides/latest/group__system.html#gaa99759e66edbafa9f3ed0b523c924b5c) (xtd::index::last, xtd::index::last - 1, xtd::index::last - 2, ...) and bitwise operators (~1_z, ~2_z, ...) with xtd collections like [xtd::collections::generic::list](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1generic_1_1list.html).
 
 ## Sources
 

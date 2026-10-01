@@ -1,6 +1,6 @@
 # interface2
 
-Shows how to use [xtd::interface](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1interface.html) class.
+Demonstrates how to use [xtd::interface](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1interface.html) class.
 
 ## Sources
 

@@ -1,6 +1,6 @@
 # graphics
 
-Shows how to use [xtd::drawing::graphics](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1drawing_1_1graphics.html) class.
+Demonstrates how to use [xtd::drawing::graphics](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1drawing_1_1graphics.html) class.
 
 ## Sources
 

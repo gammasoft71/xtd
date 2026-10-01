@@ -1,6 +1,6 @@
 # assume_is_NaN
 
-Shows how to use [xtd::tunit::assume::is_NaN](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assume.html#ae0feb57a4c084d50894849e18d085788) method.
+Demonstrates how to use [xtd::tunit::assume::is_NaN](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assume.html#ae0feb57a4c084d50894849e18d085788) method.
 
 ## Sources
 

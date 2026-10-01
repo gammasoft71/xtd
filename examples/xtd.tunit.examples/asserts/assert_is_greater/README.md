@@ -1,6 +1,6 @@
 # assert_is_greater
 
-Shows how to use [xtd::tunit::assert::is_greater](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assert.html#ac53259e09185becf30c2f96619653025) method.
+Demonstrates how to use [xtd::tunit::assert::is_greater](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assert.html#ac53259e09185becf30c2f96619653025) method.
 
 ## Sources
 

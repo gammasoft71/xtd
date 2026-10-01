@@ -1,6 +1,6 @@
 # settings_without_cmake
 
-Shows how to use [xtd::configuration::settingd](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1configuration_1_1settings.html) directly without CMake commands.
+Demonstrates how to use [xtd::configuration::settingd](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1configuration_1_1settings.html) directly without CMake commands.
 
 ## Sources
 

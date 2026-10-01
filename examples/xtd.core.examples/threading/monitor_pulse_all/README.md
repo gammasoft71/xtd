@@ -1,6 +1,6 @@
 # monitor_pulse_all
 
-Shows how to use [xtd::threading::monitor::pulse_all](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1monitor.html#a362df17ae1c2d6e99ae2d272805c2dcb) method.
+Demonstrates how to use [xtd::threading::monitor::pulse_all](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1monitor.html#a362df17ae1c2d6e99ae2d272805c2dcb) method.
 
 ## Sources
 

@@ -1,6 +1,6 @@
 # assert_syntax
 
-Shows how to use [xtd.tunit](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__tunit.html).
+Demonstrates how to use [xtd.tunit](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__tunit.html).
 
 ## Sources
 

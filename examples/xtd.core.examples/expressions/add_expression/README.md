@@ -1,6 +1,6 @@
 # add_expression
 
-Shows how to use [xtd::expressions::expression::add](https://gammasoft71.github.io/xtd/reference_guides/latest/structxtd_1_1expressions_1_1expression.html#a3db1b12325af413591046bd39d77b807) expression.
+Demonstrates how to use [xtd::expressions::expression::add](https://gammasoft71.github.io/xtd/reference_guides/latest/structxtd_1_1expressions_1_1expression.html#a3db1b12325af413591046bd39d77b807) expression.
 
 ## Sources
 

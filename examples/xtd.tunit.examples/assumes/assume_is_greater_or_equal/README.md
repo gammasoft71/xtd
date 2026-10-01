@@ -1,6 +1,6 @@
 # assume_is_greater_or_equal
 
-Shows how to use [xtd::tunit::assume::is_greater_or_equal](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assume.html#a3b7e300416362c4661f4d3758d84561b) method.
+Demonstrates how to use [xtd::tunit::assume::is_greater_or_equal](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assume.html#a3b7e300416362c4661f4d3758d84561b) method.
 
 ## Sources
 

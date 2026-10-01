@@ -1,6 +1,6 @@
 # directory_assume_are_equal
 
-Shows how to use [xtd::tunit::directory_assume::are_equal](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1directory__assume.html#a410f1118dbe61c023150589c267821f8) method.
+Demonstrates how to use [xtd::tunit::directory_assume::are_equal](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1directory__assume.html#a410f1118dbe61c023150589c267821f8) method.
 
 ## Sources
 

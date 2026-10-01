@@ -1,6 +1,6 @@
 # date_time_subtract
 
-Shows how to use [xtd::date_time::subtract](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html#aaf1f38f9b51733e38b5db3b5dfde6bb6) method.
+Demonstrates how to use [xtd::date_time::subtract](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html#aaf1f38f9b51733e38b5db3b5dfde6bb6) method.
 
 ## Sources
 

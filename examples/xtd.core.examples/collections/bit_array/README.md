@@ -1,6 +1,6 @@
 # bit_array
 
-Shows how to use [xtd::collections::bit_array](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1bit__array.html) class.
+Demonstrates how to use [xtd::collections::bit_array](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1bit__array.html) class.
 
 ## Sources
 

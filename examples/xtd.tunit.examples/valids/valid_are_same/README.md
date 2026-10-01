@@ -1,6 +1,6 @@
 # valid_are_same
 
-Shows how to use [xtd::tunit::valid::are_same](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1valid.html#ae5549dcd1098cbba42fe513de727c4ec) method.
+Demonstrates how to use [xtd::tunit::valid::are_same](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1valid.html#ae5549dcd1098cbba42fe513de727c4ec) method.
 
 ## Sources
 

@@ -1,6 +1,6 @@
 # bit_converter
 
-Shows how to use [xtd::bit_converter](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1bit__converter.html) class.
+Demonstrates how to use [xtd::bit_converter](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1bit__converter.html) class.
 
 ## Sources
 

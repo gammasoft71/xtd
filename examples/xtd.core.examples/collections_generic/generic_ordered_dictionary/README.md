@@ -1,6 +1,6 @@
 # generic_ordered_dictionary
 
-Shows how to use [xtd::collections::generic::ordered_dictionary](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html) class.
+Demonstrates how to use [xtd::collections::generic::ordered_dictionary](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html) class.
 
 ## Sources
 

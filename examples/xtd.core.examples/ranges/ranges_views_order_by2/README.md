@@ -1,6 +1,6 @@
 # ranges_views_order_by2
 
-Shows how to use [xtd::ranges::views::order_by_view](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1ranges_1_1views_1_1order__by__view.html) class.
+Demonstrates how to use [xtd::ranges::views::order_by_view](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1ranges_1_1views_1_1order__by__view.html) class.
 
 ## Sources
 

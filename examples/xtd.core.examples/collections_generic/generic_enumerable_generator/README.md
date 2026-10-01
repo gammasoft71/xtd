@@ -1,6 +1,6 @@
 # generic_enumerable_generator
 
-Shows how to use [xtd::collections::generic::enumerable_generator](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1generic_1_1enumerable__generator.html) generator.
+Demonstrates how to use [xtd::collections::generic::enumerable_generator](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1generic_1_1enumerable__generator.html) generator.
 
 ## Sources
 

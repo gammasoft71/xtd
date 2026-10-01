@@ -1,6 +1,6 @@
 # monitor_pulse
 
-Shows how to use [xtd::threading::monitor::pulse](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1monitor.html#a02075512c6dc3fb73840910466cca815) pulse.
+Demonstrates how to use [xtd::threading::monitor::pulse](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1monitor.html#a02075512c6dc3fb73840910466cca815) pulse.
 
 ## Sources
 

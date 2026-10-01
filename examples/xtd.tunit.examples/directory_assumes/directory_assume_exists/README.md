@@ -1,6 +1,6 @@
 # directory_assume_exists
 
-Shows how to use [xtd::tunit::directory_assume::exists](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1directory__assume.html#ad1a19a732791903f424e012018d6c72d) method.
+Demonstrates how to use [xtd::tunit::directory_assume::exists](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1directory__assume.html#ad1a19a732791903f424e012018d6c72d) method.
 
 ## Sources
 

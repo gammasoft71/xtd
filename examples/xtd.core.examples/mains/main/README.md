@@ -1,6 +1,6 @@
 # main
 
-Shows how to use [xtd::startup](https://gammasoft71.github.io/xtd/reference_guides/latest/startup_8h.html) class.
+Demonstrates how to use [xtd::startup](https://gammasoft71.github.io/xtd/reference_guides/latest/startup_8h.html) class.
 
 ## Sources
 

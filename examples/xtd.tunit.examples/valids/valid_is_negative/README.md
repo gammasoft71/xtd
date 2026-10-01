@@ -1,6 +1,6 @@
 # valid_is_negative
 
-Shows how to use [xtd::tunit::valid::is_negative](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1valid.html#aed095681e8c47aa686b95ccd33732792) method.
+Demonstrates how to use [xtd::tunit::valid::is_negative](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1valid.html#aed095681e8c47aa686b95ccd33732792) method.
 
 ## Sources
 

@@ -1,6 +1,6 @@
 # environment_program_exit
 
-Shows how to use [xtd::environment::program_stopped](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1environment.html#abe21c5dab4d3c803aba05dd5743cea13) event.
+Demonstrates how to use [xtd::environment::program_stopped](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1environment.html#abe21c5dab4d3c803aba05dd5743cea13) event.
 
 ## Sources
 

@@ -1,6 +1,6 @@
 # string_assert_does_not_start_with
 
-Shows how to use [xtd::tunit::string_assert::does_not_start_with](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1string__assert.html#a05dbec1544cbbfe17cd6933abece0775) method.
+Demonstrates how to use [xtd::tunit::string_assert::does_not_start_with](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1string__assert.html#a05dbec1544cbbfe17cd6933abece0775) method.
 
 ## Sources
 

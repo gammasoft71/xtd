@@ -1,6 +1,6 @@
 # assume_is_less_or_equal
 
-Shows how to use [xtd::tunit::assume::is_less_or_equal](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assume.html#a060c37995bc74f03ff246e336ef20a92) method.
+Demonstrates how to use [xtd::tunit::assume::is_less_or_equal](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assume.html#a060c37995bc74f03ff246e336ef20a92) method.
 
 ## Sources
 

@@ -1,6 +1,6 @@
 # collection_assert_are_not_equivalent
 
-Shows how to use [xtd::tunit::collection_assert::are_not_equivalent](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1collection__assert.html#a7daf01c760fb75d277dc53aac0027993) method.
+Demonstrates how to use [xtd::tunit::collection_assert::are_not_equivalent](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1collection__assert.html#a7daf01c760fb75d277dc53aac0027993) method.
 
 ## Sources
 

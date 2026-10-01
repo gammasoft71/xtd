@@ -1,6 +1,6 @@
 # assume_are_same
 
-Shows how to use [xtd::tunit::assume::are_same](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assume.html#a1628a6dc2392b247c2034c84c03d08df) method.
+Demonstrates how to use [xtd::tunit::assume::are_same](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assume.html#a1628a6dc2392b247c2034c84c03d08df) method.
 
 ## Sources
 

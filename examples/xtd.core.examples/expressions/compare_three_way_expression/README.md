@@ -1,6 +1,6 @@
 # compare_three_way_expression
 
-Shows how to use [xtd::expressions::expression::compare_three_way](https://gammasoft71.github.io/xtd/reference_guides/latest/structxtd_1_1expressions_1_1expression.html#a2f6331e445a905dd2fc6386f911c44f4) expression.
+Demonstrates how to use [xtd::expressions::expression::compare_three_way](https://gammasoft71.github.io/xtd/reference_guides/latest/structxtd_1_1expressions_1_1expression.html#a2f6331e445a905dd2fc6386f911c44f4) expression.
 
 ## Sources
 

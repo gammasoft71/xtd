@@ -1,6 +1,6 @@
 # source_location_invoked_directly
 
-Shows how to use [xtd::source_location](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1source__location.html) class.
+Demonstrates how to use [xtd::source_location](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1source__location.html) class.
 
 ## Sources
 

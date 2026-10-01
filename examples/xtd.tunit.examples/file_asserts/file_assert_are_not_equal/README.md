@@ -1,6 +1,6 @@
 # file_assert_are_not_equal
 
-Shows how to use [xtd::tunit::file_assert::are_not_equal](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1file__assert.html#a21c91ba00241ff7cfc030b445c1895a4) method.
+Demonstrates how to use [xtd::tunit::file_assert::are_not_equal](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1file__assert.html#a21c91ba00241ff7cfc030b445c1895a4) method.
 
 ## Sources
 

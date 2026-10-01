@@ -1,6 +1,6 @@
 # collection_assume_is_empty
 
-Shows how to use [xtd::tunit::collection_assume::is_empty](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1collection__assume.html#aeed2e256901e10a0fd49a7d2e833f55c) method.
+Demonstrates how to use [xtd::tunit::collection_assume::is_empty](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1collection__assume.html#aeed2e256901e10a0fd49a7d2e833f55c) method.
 
 ## Sources
 

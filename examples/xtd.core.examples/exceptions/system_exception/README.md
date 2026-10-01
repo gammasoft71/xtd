@@ -1,6 +1,6 @@
 # system_exception
 
-Shows how to use [system_exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1system__exception.html) exception.
+Demonstrates how to use [system_exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1system__exception.html) exception.
 
 ## Sources
 

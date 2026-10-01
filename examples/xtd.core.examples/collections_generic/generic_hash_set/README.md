@@ -1,6 +1,6 @@
 # generic_hash_set
 
-Shows how to use [xtd::collections::generic::hash_set](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1generic_1_1hash__set.html) class.
+Demonstrates how to use [xtd::collections::generic::hash_set](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1generic_1_1hash__set.html) class.
 
 ## Sources
 

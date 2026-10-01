@@ -1,6 +1,6 @@
 # math_assume
 
-Shows how to create your own [xtd::tunit::assume](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assume.html) class.
+Demonstrates how to create your own [xtd::tunit::assume](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assume.html) class.
 
 ## Sources
 

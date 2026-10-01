@@ -1,6 +1,6 @@
 # collection_assert_is_empty
 
-Shows how to use [xtd::tunit::collection_assert::is_empty](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1collection__assert.html#a9c7837d7a624e3dda086f3eceaf6fd4e) method.
+Demonstrates how to use [xtd::tunit::collection_assert::is_empty](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1collection__assert.html#a9c7837d7a624e3dda086f3eceaf6fd4e) method.
 
 ## Sources
 

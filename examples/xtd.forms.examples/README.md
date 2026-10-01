@@ -17,13 +17,13 @@
 
 ## [Application](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1application.html)
 
-* [application](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1application.html) shows how to create an application with [xtd::forms::application](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1application.html) class.
-* [application_and_assert](applications/application_and_assert/README.md) shows how to create an application with [xtd::forms::application](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1application.html) class and hot to manage assert.
-* [application_and_exception](applications/application_and_exception/README.md) shows how to create an application with [xtd::forms::application](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1application.html) class and hot to manage exception.
-* [application_context](applications/application_context/README.md) shows how to create an application with [xtd::forms::application](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1application.html) class.
-* [application_restart](applications/application_restart/README.md) shows how to restart application with [xtd::forms::application::restart](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1application.html#a9d1de5b2f5e8ee4b46a24aa8f556a5c2) method.
-* [application_use_wait_cursor](applications/application_use_wait_cursor/README.md) shows how to show and hide wait cursor application with [xtd::forms::application::use_wait_cursor](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1use__wait__cursor.html) method.
-* [application_thread_exception]( pplications/application_thread_exception/README.md) shows how to use [xtd::forms::application::thread_exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1application.html#a557675a7003dbb78378c86d2b3ae0a3e) event.
+* [application](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1application.html) demonstrates how to create an application with [xtd::forms::application](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1application.html) class.
+* [application_and_assert](applications/application_and_assert/README.md) demonstrates how to create an application with [xtd::forms::application](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1application.html) class and hot to manage assert.
+* [application_and_exception](applications/application_and_exception/README.md) demonstrates how to create an application with [xtd::forms::application](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1application.html) class and hot to manage exception.
+* [application_context](applications/application_context/README.md) demonstrates how to create an application with [xtd::forms::application](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1application.html) class.
+* [application_restart](applications/application_restart/README.md) demonstrates how to restart application with [xtd::forms::application::restart](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1application.html#a9d1de5b2f5e8ee4b46a24aa8f556a5c2) method.
+* [application_use_wait_cursor](applications/application_use_wait_cursor/README.md) demonstrates how to show and hide wait cursor application with [xtd::forms::application::use_wait_cursor](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1use__wait__cursor.html) method.
+* [application_thread_exception]( pplications/application_thread_exception/README.md) demonstrates how to use [xtd::forms::application::thread_exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1application.html#a557675a7003dbb78378c86d2b3ae0a3e) event.
 * [application_with_cmake_assembly_info](applications/application_with_cmake_assembly_info/README.md) demonstrates the use of [xtd::reflection::assembly](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1reflection_1_1assembly.html) attributes, [xtd::forms::form](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1form.html) classes.
 * [application_with_manual_assembly_info](applications/application_with_manual_assembly_info/README.md) demonstrates the use of [xtd::reflection::assembly](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1reflection_1_1assembly.html) attributes, [xtd::forms::form](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1form.html) classes.
 
@@ -155,9 +155,9 @@
 * [button_images](components/button_images/README.md) represents common images collection can be used for button.
 * [button_renderer](components/button_renderer/README.md) show how to use [xtd::forms::button_renderer](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1button__renderer.html) renderer.
 * [check_box_renderer](components/check_box_renderer/README.md) show how to use [xtd::forms::check_box_renderer](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1check__box__renderer.html) renderer.
-* [countries](components/countries/README.md) shows how to use [xtd::forms::countries](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1countries.html) collection and [xtd::forms::country](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1country.html) component.
-* [cursors](components/cursors/README.md) shows how to used [xtd::forms::cursors](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1cursors.html) collection and [xtd::forms::cursor](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1cursor.html) component.
-* [emoticons](components/emoticons/README.md) shows how to used [xtd::forms::emoticons](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1emoticons.html) collection and [xtd::forms::emoticon](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1emoticon.html) component.
+* [countries](components/countries/README.md) demonstrates how to use [xtd::forms::countries](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1countries.html) collection and [xtd::forms::country](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1country.html) component.
+* [cursors](components/cursors/README.md) demonstrates how to used [xtd::forms::cursors](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1cursors.html) collection and [xtd::forms::cursor](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1cursor.html) component.
+* [emoticons](components/emoticons/README.md) demonstrates how to used [xtd::forms::emoticons](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1emoticons.html) collection and [xtd::forms::emoticon](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1emoticon.html) component.
 * **directory_entry** The DirectoryEntry class encapsulates a node or object in the Active Directory Domain Services hierarchy.
 * **directory_searcher** performs queries against Active Directory Domain Services.
 * **error_provider** provides a user interface for indicating that a control on a form has an error associated with it.
@@ -173,11 +173,11 @@
 * [screen](components/screen/README.md) represents a display device or multiple display devices on a single system.
 * **serial_port** represents a serial port resource.
 * **service_controller** represents a Windows service and allows you to connect to a running or stopped service, manipulate it, or get information about it.
-* [texts](components/texts/README.md) shows how to used [xtd::forms::system_texts](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1system__texts.html) collection.
+* [texts](components/texts/README.md) demonstrates how to used [xtd::forms::system_texts](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1system__texts.html) collection.
 * [timer](components/forms_timer/README.md) implements a timer that raises an event at user-defined intervals. This timer is optimized for use in Windows Forms applications and must be used in a window.
 * [translator](components/translator/README.md) demonstrates the use of [xtd::forms::translator](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1translator.html) strings.
 * [translator_with_language](components/translator_with_language/README.md) demonstrates the use of [xtd::forms::translator](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1translator.html) strings.
-* [use_wait_cursor](components/use_wait_cursor/README.md) shows how to use [xtd::forms::use_wait_cursor](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1use__wait__cursor.html) component.
+* [use_wait_cursor](components/use_wait_cursor/README.md) demonstrates how to use [xtd::forms::use_wait_cursor](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1use__wait__cursor.html) component.
 
 ## [Datas](datas/README.md)
 
@@ -197,14 +197,14 @@
 
 ## [Themes](themes/README.md)
 
-* [application_enable_dark_mode](themes/application_enable_dark_mode/README.md) shows how to enable dark mode with [xtd::forms::application](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1application.html) class.
-* [application_enable_light_mode](themes/application_enable_light_mode/README.md) shows how to enable light mode with [xtd::forms::application](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1application.html) class.
-* [themes](themes/themes/README.md) shows how to use [xtd::forms::theme](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1style__sheets_1_1theme.html) class.
+* [application_enable_dark_mode](themes/application_enable_dark_mode/README.md) demonstrates how to enable dark mode with [xtd::forms::application](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1application.html) class.
+* [application_enable_light_mode](themes/application_enable_light_mode/README.md) demonstrates how to enable light mode with [xtd::forms::application](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1application.html) class.
+* [themes](themes/themes/README.md) demonstrates how to use [xtd::forms::theme](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1style__sheets_1_1theme.html) class.
 
 ## [Events](events/README.md)
 
-* [application_add_message_filter](events/application_add_message_filter/README.md) shows how to create an application with  [xtd::forms::application::add_message_filter](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1application.html#a4f8eac12a2e3e29b5308846260788d14) method.
-* [application_application_exit](events/application_application_exit/README.md) shows how to use [xtd::forms::application::application_exit](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1application.html#af1adab6813016a8eea1ea6382abeeadc) event.
+* [application_add_message_filter](events/application_add_message_filter/README.md) demonstrates how to create an application with  [xtd::forms::application::add_message_filter](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1application.html#a4f8eac12a2e3e29b5308846260788d14) method.
+* [application_application_exit](events/application_application_exit/README.md) demonstrates how to use [xtd::forms::application::application_exit](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1application.html#af1adab6813016a8eea1ea6382abeeadc) event.
 * [application_events](events/application_events/README.md) demonstrates the use of [xtd::forms::application](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1application.html) events.
 * [application_idle](events/application_idle/README.md) demonstrates the use of [xtd::forms::application::idle](https://codedocs.xyz/gammasoft71/xtd/group__events.html#ga936f2c887b42e06ecb7e81d4d1bc33ba) event.
 * [enable_changed_event](events/enable_changed_event/README.md) demonstrates the use of [enable_changed](https://codedocs.xyz/gammasoft71/xtd/group__events.html#ga34c92d7fb3eb02179db90c13669b6a70) event.
@@ -241,17 +241,17 @@
 
 ## [Drawing](drawing/README.md)
 
-* [draw_ellipse](drawing/draw_ellipse/README.md) shows how to draw ellipse in paint event.
-* [draw_image](drawing/draw_image/README.md) shows how to draw image in paint event.
-* [draw_line](drawing/draw_line/README.md) shows how to draw line in paint event.
-* [draw_point](drawing/draw_point/README.md) shows how to draw point in paint event.
-* [draw_rectangle](drawing/draw_rectangle/README.md) shows how to draw rectangle in paint event.
-* [draw_rounded_rectangle](drawing/draw_rounded_rectangle/README.md) shows how to draw rounded rectangle in paint event.
-* [fill_ellipse](drawing/fill_ellipse/README.md) shows how to fill ellipse in paint event.
-* [fill_rectangle](drawing/fill_rectangle/README.md) shows how to fill rectangle in paint event.
-* [fill_rounded_rectangle](drawing/fill_rounded_rectangle/README.md) shows how to fill rounded rectangle in paint event.
-* [image_effects](drawing/image_effects/README.md) shows how to use [xtd::drawing::graphics::imaging::image_effector](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1drawing_1_1imaging_1_1image__effector.html) class.
-* [screenshot](drawing/screenshot/README.md) shows how to fill ellipse in paint event using [xtd::drawing::graphics::copy_from_screen](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1drawing_1_1graphics.html#adb069509105190a2d1d0f8a04db2d7db).
+* [draw_ellipse](drawing/draw_ellipse/README.md) demonstrates how to draw ellipse in paint event.
+* [draw_image](drawing/draw_image/README.md) demonstrates how to draw image in paint event.
+* [draw_line](drawing/draw_line/README.md) demonstrates how to draw line in paint event.
+* [draw_point](drawing/draw_point/README.md) demonstrates how to draw point in paint event.
+* [draw_rectangle](drawing/draw_rectangle/README.md) demonstrates how to draw rectangle in paint event.
+* [draw_rounded_rectangle](drawing/draw_rounded_rectangle/README.md) demonstrates how to draw rounded rectangle in paint event.
+* [fill_ellipse](drawing/fill_ellipse/README.md) demonstrates how to fill ellipse in paint event.
+* [fill_rectangle](drawing/fill_rectangle/README.md) demonstrates how to fill rectangle in paint event.
+* [fill_rounded_rectangle](drawing/fill_rounded_rectangle/README.md) demonstrates how to fill rounded rectangle in paint event.
+* [image_effects](drawing/image_effects/README.md) demonstrates how to use [xtd::drawing::graphics::imaging::image_effector](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1drawing_1_1imaging_1_1image__effector.html) class.
+* [screenshot](drawing/screenshot/README.md) demonstrates how to fill ellipse in paint event using [xtd::drawing::graphics::copy_from_screen](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1drawing_1_1graphics.html#adb069509105190a2d1d0f8a04db2d7db).
 
 ## [Games](games/README.md)
 
@@ -277,7 +277,7 @@
 * [colored_forms](others/colored_forms/README.md) demonstrates the use of [xtd::forms::form](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1form.html) control and xtd::drawing::color class.
 * [colored_tab_pages](others/colored_tab_pages/README.md) demonstrates the use of [xtd::forms::tab_control](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1tab__control.html) and colored [xtd::forms::tab_page](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1tab__page.html) controls.
 * [colors](others/colors/README.md) demonstrates the use of [xtd::forms::user_control](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1user__control.html) control with xtd::drawing::color.
-* [control_with_name_operator](others/control_with_name_operator/README.md) shows how to use [xtd::forms::control::name](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#a4ae2e76ab88ca4f8a08c4280d4ea639a) property and [xtd::forms::layout::arranged_element_collection::operator\[\]](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control_1_1control__collection.html#ac25fcb076d440f3867c26c45001920c9) name operator.
+* [control_with_name_operator](others/control_with_name_operator/README.md) demonstrates how to use [xtd::forms::control::name](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#a4ae2e76ab88ca4f8a08c4280d4ea639a) property and [xtd::forms::layout::arranged_element_collection::operator\[\]](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control_1_1control__collection.html#ac25fcb076d440f3867c26c45001920c9) name operator.
 * [docked_panels](others/docked_panels/README.md) demonstrates the use of [xtd::forms::panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1panel.html).
 * [emplace](others/emplace/README.md) demonstrates the use of [xtd::forms::control::control_collection::emplace](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control_1_1control__collection.html), [xtd::forms::control::control_collection::emplace_at](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control_1_1control__collection.html), [xtd::forms::control::control_collection::emplace_back](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control_1_1control__collection.html) methods.
 * [flat_button](others/flat_button/README.md) demonstrates the use of [xtd::forms::button](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1button.html) control with flat style.
@@ -287,7 +287,7 @@
 * [form_background_image](others/form_background_image/README.md) demonstrates how to use [xtd::forms::form](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1form.html) class with image_background property.
 * [form_background_image2](others/form_background_image2/README.md) demonstrates how to use [xtd::forms::form](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1form.html) class with image_background property.
 * [form_decoration](others/form_decoration/README.md) demonstrates the use of [xtd::forms::form](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1form.html).
-* [form_resize](others/form_resize/README.md) shows how to set minimum size, set maximum size, move and resize a form.
+* [form_resize](others/form_resize/README.md) demonstrates how to set minimum size, set maximum size, move and resize a form.
 * [form_show](others/form_show/README.md) demonstrates how to launch form as normal window, model-less window and modal window.
 * [form_show_hide](others/form_show_hide/README.md) demonstrates the use of [xtd::forms::form](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1form.html) show, hide and close methods.
 * [form_window_state](others/form_window_state/README.md) demonstrates the use of [xtd::forms::form](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1form.html) window state.
@@ -308,7 +308,7 @@
 * [lcd_label3](others/lcd_label3/README.md) represents the use of [xtd::forms::lcd_label](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1lcd__label.html) control.
 * [main_menu_create_standard_items](others/main_menu_create_standard_items/README.md) demonstrates the use of [xtd::forms::main_menu::create_standard_items](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1main__menu.html#a6bbc2f6a58ca79e0329f882c3cef77e1) method.
 * [painting](others/painting/README.md) demonstrates the use of xtd::forms::form, xtd::forms::panel, [xtd::forms::track_bar](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1track__bar.html) and [xtd::forms::button](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1button.html) controls with mouse_down, mouse_move and paint events..
-* [screen_informations](others/screen_informations/README.md) shows how to get screen information of [xtd::forms::screen](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1screen.html) control.
+* [screen_informations](others/screen_informations/README.md) demonstrates how to get screen information of [xtd::forms::screen](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1screen.html) control.
 * [smileys](others/smileys/README.md) demonstrates the use of [xtd::forms::label](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1label.html) control.
 * [some_controls](others/some_controls/README.md) demonstrates the use of some controls.
 * [some_system_controls](others/some_system_controls/README.md) demonstrates the use of some system controls.
@@ -321,7 +321,7 @@
 * [text_box_password2](others/text_box_password2/README.md) represents a Windows [xtd::forms::text_box](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1text__box.html) control.
 * [toggle_button2](others/toggle_button2/README.md) represents a [xtd::forms::toggle_button](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1toggle__button.html) control.
 * [track_bar2](others/track_bar2/README.md) represents a standard Windows [xtd::forms::track_bar](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1track__bar.html).
-* [wiggly](others/wiggly/README.md) shows how to animate a user control using timer and timer::event. In addition, the example demonstrates how to use graphics::measure_string to determine the size of text on screen.
+* [wiggly](others/wiggly/README.md) demonstrates how to animate a user control using timer and timer::event. In addition, the example demonstrates how to use graphics::measure_string to determine the size of text on screen.
 
 * [All](.) You can see all examples here. 
 

@@ -1,6 +1,6 @@
 # comparable
 
-Shows how to use [xtd::comparable](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1comparable.html) concept.
+Demonstrates how to use [xtd::comparable](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1comparable.html) concept.
 
 ## Sources
 

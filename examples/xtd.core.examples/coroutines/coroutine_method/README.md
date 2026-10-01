@@ -1,6 +1,6 @@
 # coroutine_method
 
-Shows how to use coroutine with method and [task](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1tasks_1_1task_3_01void_01_4.html).
+Demonstrates how to use coroutine with method and [task](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1tasks_1_1task_3_01void_01_4.html).
 
 ## Sources
 

@@ -1,6 +1,6 @@
 # valid_contains
 
-Shows how to use [xtd::tunit::valid::contains](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1valid.html#a3ac34fba7dcf30ee9d2205f361ab1857) method.
+Demonstrates how to use [xtd::tunit::valid::contains](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1valid.html#a3ac34fba7dcf30ee9d2205f361ab1857) method.
 
 ## Sources
 

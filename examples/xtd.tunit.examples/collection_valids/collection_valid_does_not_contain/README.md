@@ -1,6 +1,6 @@
 # collection_valid_does_not_contain
 
-Shows how to use [xtd::tunit::collection_valid::does_not_contain](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1collection__valid.html#afd25628a4dbdb35e0e9363edb7e3af38) method.
+Demonstrates how to use [xtd::tunit::collection_valid::does_not_contain](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1collection__valid.html#afd25628a4dbdb35e0e9363edb7e3af38) method.
 
 ## Sources
 

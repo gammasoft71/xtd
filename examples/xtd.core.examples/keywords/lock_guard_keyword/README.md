@@ -1,6 +1,6 @@
 # lock_guard_keyword
 
-Shows how to use [lock_guard_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#gacd9906b29d877eb1eb0a8c7bc4ab774a) class.
+Demonstrates how to use [lock_guard_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#gacd9906b29d877eb1eb0a8c7bc4ab774a) class.
 
 ## Sources
 

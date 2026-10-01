@@ -1,6 +1,6 @@
 # redirect_output
 
-Shows how to use [xtd::console](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1console.html) class.
+Demonstrates how to use [xtd::console](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1console.html) class.
 
 ## Sources
 

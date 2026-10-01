@@ -1,6 +1,6 @@
 # console_firework
 
-Shows how to use some [xtd::console](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1console.html) methods.
+Demonstrates how to use some [xtd::console](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1console.html) methods.
 
 ## Sources
 

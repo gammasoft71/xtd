@@ -1,6 +1,6 @@
 # image_png
 
-Shows how to use [xtd::drawing::image](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1drawing_1_1image.html) class with png image.
+Demonstrates how to use [xtd::drawing::image](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1drawing_1_1image.html) class with png image.
 
 ## Sources
 

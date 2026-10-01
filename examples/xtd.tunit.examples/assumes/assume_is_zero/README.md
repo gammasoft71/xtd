@@ -1,6 +1,6 @@
 # assume_is_zero
 
-Shows how to use [xtd::tunit::assume::is_zero](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assume.html#a0383fc973d1fcc289da4b2573cdaaefb) method.
+Demonstrates how to use [xtd::tunit::assume::is_zero](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assume.html#a0383fc973d1fcc289da4b2573cdaaefb) method.
 
 ## Sources
 

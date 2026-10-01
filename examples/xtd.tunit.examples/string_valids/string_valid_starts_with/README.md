@@ -1,6 +1,6 @@
 # string_valid_starts_with
 
-Shows how to use [xtd::tunit::string_valid::starts_with](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1string__valid.html#a4095a956cb2d28231f29258166351a4f) method.
+Demonstrates how to use [xtd::tunit::string_valid::starts_with](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1string__valid.html#a4095a956cb2d28231f29258166351a4f) method.
 
 ## Sources
 

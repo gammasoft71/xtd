@@ -1,6 +1,6 @@
 # string_assume_does_not_contain
 
-Shows how to use [xtd::tunit::string_assume::does_not_contain](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1string__assume.html#a9c2ac5bdb0a9983d7c32d4cd21f97d0e) method.
+Demonstrates how to use [xtd::tunit::string_assume::does_not_contain](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1string__assume.html#a9c2ac5bdb0a9983d7c32d4cd21f97d0e) method.
 
 ## Sources
 

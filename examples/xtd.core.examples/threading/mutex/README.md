@@ -1,6 +1,6 @@
 # mutex
 
-Shows how to use [xtd::threading::mutex](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1mutex.html) class.
+Demonstrates how to use [xtd::threading::mutex](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1mutex.html) class.
 
 ## Sources
 

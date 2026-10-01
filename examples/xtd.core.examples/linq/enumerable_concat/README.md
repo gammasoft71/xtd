@@ -1,6 +1,6 @@
 # enumerable_concat
 
-Shows how to use [xtd::linq::concat](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#ae2eef33ad8482265d75b6c9e88214269) method.
+Demonstrates how to use [xtd::linq::concat](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#ae2eef33ad8482265d75b6c9e88214269) method.
 
 ## Sources
 

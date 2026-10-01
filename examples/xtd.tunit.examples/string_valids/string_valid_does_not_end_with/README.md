@@ -1,6 +1,6 @@
 # string_valid_does_not_end_with
 
-Shows how to use [xtd::tunit::string_valid::does_not_end_with](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1string__valid.html#a71db17dcbe97716e0fc761bf0be199ac) method.
+Demonstrates how to use [xtd::tunit::string_valid::does_not_end_with](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1string__valid.html#a71db17dcbe97716e0fc761bf0be199ac) method.
 
 ## Sources
 

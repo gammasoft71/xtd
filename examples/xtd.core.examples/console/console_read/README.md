@@ -1,6 +1,6 @@
 # console_read
 
-Shows how to use [xtd::console::read](https:gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1console.html#ab89501d1732741a45d43b62ed28ef7b9) method.
+Demonstrates how to use [xtd::console::read](https:gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1console.html#ab89501d1732741a45d43b62ed28ef7b9) method.
 
 ## Sources
 

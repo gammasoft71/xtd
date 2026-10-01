@@ -1,6 +1,6 @@
 # string_assume_matches
 
-Shows how to use [xtd::tunit::string_assume::matches](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1string__assume.html#a35ff6c7843355b2efd042b829d1991ce) method.
+Demonstrates how to use [xtd::tunit::string_assume::matches](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1string__assume.html#a35ff6c7843355b2efd042b829d1991ce) method.
 
 ## Sources
 

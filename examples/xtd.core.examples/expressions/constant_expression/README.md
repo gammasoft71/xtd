@@ -1,6 +1,6 @@
 # constant_expression
 
-Shows how to use [xtd::expressions::expression::constant](https://gammasoft71.github.io/xtd/reference_guides/latest/structxtd_1_1expressions_1_1expression.html#a3962a43a6b277819f145124edf446c0a) expression.
+Demonstrates how to use [xtd::expressions::expression::constant](https://gammasoft71.github.io/xtd/reference_guides/latest/structxtd_1_1expressions_1_1expression.html#a3962a43a6b277819f145124edf446c0a) expression.
 
 ## Sources
 

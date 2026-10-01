@@ -1,6 +1,6 @@
 # and_also_expression
 
-Shows how to use [xtd::expressions::expression::and_also](https://gammasoft71.github.io/xtd/reference_guides/latest/structxtd_1_1expressions_1_1expression.html#aa8447d62d2aaa48ee855da2aebbabd03) expression.
+Demonstrates how to use [xtd::expressions::expression::and_also](https://gammasoft71.github.io/xtd/reference_guides/latest/structxtd_1_1expressions_1_1expression.html#aa8447d62d2aaa48ee855da2aebbabd03) expression.
 
 ## Sources
 

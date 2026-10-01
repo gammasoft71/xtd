@@ -1,6 +1,6 @@
 # enumerable_all
 
-Shows how to use [xtd::linq::enumerable::all](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1linq_1_1enumerable.html#a3aeb62875d4858df7f852a61ccbb9053) method.
+Demonstrates how to use [xtd::linq::enumerable::all](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1linq_1_1enumerable.html#a3aeb62875d4858df7f852a61ccbb9053) method.
 
 ## Sources
 

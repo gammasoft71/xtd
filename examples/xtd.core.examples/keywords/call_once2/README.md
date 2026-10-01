@@ -1,6 +1,6 @@
 # call_once2
 
-Shows how to use [call_once](https://gammasoft71.github.io/xtd/reference_guides/latest/structxtd_1_1call__once.html) struct.
+Demonstrates how to use [call_once](https://gammasoft71.github.io/xtd/reference_guides/latest/structxtd_1_1call__once.html) struct.
 
 ## Sources
 

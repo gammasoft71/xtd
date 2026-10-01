@@ -1,6 +1,6 @@
 # environment
 
-Shows how to use [xtd::environment](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1environment.html) class.
+Demonstrates how to use [xtd::environment](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1environment.html) class.
 
 ## Sources
 

@@ -1,6 +1,6 @@
 # assume_are_not_equal
 
-Shows how to use [xtd::tunit::assume::are_not_equal](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assume.html#a18979db548114b94daa0a137c154acb2) method.
+Demonstrates how to use [xtd::tunit::assume::are_not_equal](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assume.html#a18979db548114b94daa0a137c154acb2) method.
 
 ## Sources
 

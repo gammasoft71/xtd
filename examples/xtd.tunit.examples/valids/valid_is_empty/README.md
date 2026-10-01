@@ -1,6 +1,6 @@
 # valid_is_empty
 
-Shows how to use [xtd::tunit::valid::is_empty](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1valid.html#ab54a71b2edaedb16b959d67cf65ac97e) method.
+Demonstrates how to use [xtd::tunit::valid::is_empty](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1valid.html#ab54a71b2edaedb16b959d67cf65ac97e) method.
 
 ## Sources
 

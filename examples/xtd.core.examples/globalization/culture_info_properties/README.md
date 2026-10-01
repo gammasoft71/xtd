@@ -1,6 +1,6 @@
 # culture_info_properties
 
-Shows how to use [xtd::globalization::culture_info](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1globalization_1_1culture__info.html) properties.
+Demonstrates how to use [xtd::globalization::culture_info](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1globalization_1_1culture__info.html) properties.
 
 ## Sources
 

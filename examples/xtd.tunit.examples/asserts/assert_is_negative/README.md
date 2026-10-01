@@ -1,6 +1,6 @@
 # assert_is_negative
 
-Shows how to use [xtd::tunit::assert::is_negative](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assert.html#a8abb7245e1167d5ac35b5ee71a80944d) method.
+Demonstrates how to use [xtd::tunit::assert::is_negative](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assert.html#a8abb7245e1167d5ac35b5ee71a80944d) method.
 
 ## Sources
 

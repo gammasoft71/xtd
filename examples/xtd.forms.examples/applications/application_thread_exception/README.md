@@ -1,6 +1,6 @@
 # application_thread_exception
 
-Shows how to use [xtd::forms::application::thread_exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1application.html#a557675a7003dbb78378c86d2b3ae0a3e) event.
+Demonstrates how to use [xtd::forms::application::thread_exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1application.html#a557675a7003dbb78378c86d2b3ae0a3e) event.
 
 ## Sources
 

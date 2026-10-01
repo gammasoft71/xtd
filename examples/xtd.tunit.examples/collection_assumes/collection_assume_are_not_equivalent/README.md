@@ -1,6 +1,6 @@
 # collection_assume_are_not_equivalent
 
-Shows how to use [xtd::tunit::collection_assume::are_not_equivalent](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1collection__assume.html#a492ebfef1da82a41743e24260db2ebc0) method.
+Demonstrates how to use [xtd::tunit::collection_assume::are_not_equivalent](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1collection__assume.html#a492ebfef1da82a41743e24260db2ebc0) method.
 
 ## Sources
 

@@ -1,6 +1,6 @@
 # file_assert_exists
 
-Shows how to use [xtd::tunit::file_assert::exists](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1file__assert.html#a29d3524322acb9b566cd442a2adb7538) method.
+Demonstrates how to use [xtd::tunit::file_assert::exists](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1file__assert.html#a29d3524322acb9b566cd442a2adb7538) method.
 
 ## Sources
 

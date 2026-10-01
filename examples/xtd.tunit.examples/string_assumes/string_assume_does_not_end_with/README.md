@@ -1,6 +1,6 @@
 # string_assume_does_not_end_with
 
-Shows how to use [xtd::tunit::string_assume::does_not_end_with](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1string__assume.html#a3b553b206df8cfb0684898713b569141) method.
+Demonstrates how to use [xtd::tunit::string_assume::does_not_end_with](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1string__assume.html#a3b553b206df8cfb0684898713b569141) method.
 
 ## Sources
 

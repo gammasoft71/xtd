@@ -1,6 +1,6 @@
 # assume_is_empty
 
-Shows how to use [xtd::tunit::assume::is_empty](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assume.html#af6a6e19301a54df50339a84d425ed037) method.
+Demonstrates how to use [xtd::tunit::assume::is_empty](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assume.html#af6a6e19301a54df50339a84d425ed037) method.
 
 ## Sources
 

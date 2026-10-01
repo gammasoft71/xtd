@@ -1,6 +1,6 @@
 # static
 
-Shows how to use [xtd::static](https://gammasoft71.github.io/xtd/reference_guides/latest/static_8h.html) class.
+Demonstrates how to use [xtd::static](https://gammasoft71.github.io/xtd/reference_guides/latest/static_8h.html) class.
 
 ## Sources
 

@@ -1,6 +1,6 @@
 # collection_assert_contains
 
-Shows how to use [xtd::tunit::collection_assert::contains](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1collection__assert.html#abf1433eff0dea381a6b7a3d90be8f706) method.
+Demonstrates how to use [xtd::tunit::collection_assert::contains](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1collection__assert.html#abf1433eff0dea381a6b7a3d90be8f706) method.
 
 ## Sources
 

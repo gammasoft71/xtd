@@ -1,6 +1,6 @@
 # assume_contains
 
-Shows how to use [xtd::tunit::assume::contains](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assume.html#af46db342cef45ea859709a544922585d) method.
+Demonstrates how to use [xtd::tunit::assume::contains](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assume.html#af46db342cef45ea859709a544922585d) method.
 
 ## Sources
 

@@ -1,6 +1,6 @@
 # bit_converter_to_string
 
-Shows how to use [xtd::bit_converter::to_string](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1bit__converter.html#a40a3bfbf49e3e964a052e8ccf99e9927) method.
+Demonstrates how to use [xtd::bit_converter::to_string](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1bit__converter.html#a40a3bfbf49e3e964a052e8ccf99e9927) method.
 
 ## Sources
 

@@ -1,6 +1,6 @@
 # user_defined_exception
 
-Shows how to use [xtd::exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1exception.html) exception.
+Demonstrates how to use [xtd::exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1exception.html) exception.
 
 ## Sources
 

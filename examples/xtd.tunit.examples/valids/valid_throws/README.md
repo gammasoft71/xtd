@@ -1,6 +1,6 @@
 # valid_throws
 
-Shows how to use [xtd::tunit::valid::throws](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1valid.html#adaefe0145f2f2c4dd21a5c8f307f8278) method.
+Demonstrates how to use [xtd::tunit::valid::throws](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1valid.html#adaefe0145f2f2c4dd21a5c8f307f8278) method.
 
 ## Sources
 

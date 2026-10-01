@@ -1,6 +1,6 @@
 # string_assume_contains
 
-Shows how to use [xtd::tunit::string_assume::contains](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1string__assume.html#a8f9c13834c29daf12f503b48589c33d9) method.
+Demonstrates how to use [xtd::tunit::string_assume::contains](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1string__assume.html#a8f9c13834c29daf12f503b48589c33d9) method.
 
 ## Sources
 

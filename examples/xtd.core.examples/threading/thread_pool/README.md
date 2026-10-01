@@ -1,6 +1,6 @@
 # thread_pool
 
-Shows how to use [xtd::threading::thread_pool](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1thread__pool.html) class.
+Demonstrates how to use [xtd::threading::thread_pool](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1thread__pool.html) class.
 
 ## Sources
 

@@ -1,6 +1,6 @@
 # task_completion_source
 
-Shows how to use [xtd::threading::tasks:task_completion_source](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1tasks_1_1task_1_1completion_1_1source.html) class.
+Demonstrates how to use [xtd::threading::tasks:task_completion_source](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1tasks_1_1task_1_1completion_1_1source.html) class.
 
 ## Sources
 

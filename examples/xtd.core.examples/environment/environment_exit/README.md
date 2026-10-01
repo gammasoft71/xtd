@@ -1,6 +1,6 @@
 # environment_exit
 
-Shows how to use [xtd::environment::exit](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1environment.html#a30c41e47904509a5228c9815bb42fc92) method.
+Demonstrates how to use [xtd::environment::exit](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1environment.html#a30c41e47904509a5228c9815bb42fc92) method.
 
 ## Sources
 

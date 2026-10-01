@@ -1,6 +1,6 @@
 # string_valid_contains
 
-Shows how to use [xtd::tunit::string_valid::contains](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1string__valid.html#a0799b37471d8dd62f5db65935bcf15a2) method.
+Demonstrates how to use [xtd::tunit::string_valid::contains](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1string__valid.html#a0799b37471d8dd62f5db65935bcf15a2) method.
 
 ## Sources
 

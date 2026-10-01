@@ -1,6 +1,6 @@
 # enumerable_default_if_empty2
 
-Shows how to use [xtd::linq::enumerable::default_if_empty](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1linq_1_1enumerable.html#a77cd5c4f6280710bd7422cb5bb6ca0d1) method.
+Demonstrates how to use [xtd::linq::enumerable::default_if_empty](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1linq_1_1enumerable.html#a77cd5c4f6280710bd7422cb5bb6ca0d1) method.
 
 ## Sources
 

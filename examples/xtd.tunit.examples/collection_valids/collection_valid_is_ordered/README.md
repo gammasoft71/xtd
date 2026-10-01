@@ -1,6 +1,6 @@
 # collection_valid_is_ordered
 
-Shows how to use [xtd::tunit::collection_valid::is_ordered](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1collection__valid.html#abab68a7c738a9c696db3d6e8195d11d8) method.
+Demonstrates how to use [xtd::tunit::collection_valid::is_ordered](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1collection__valid.html#abab68a7c738a9c696db3d6e8195d11d8) method.
 
 ## Sources
 

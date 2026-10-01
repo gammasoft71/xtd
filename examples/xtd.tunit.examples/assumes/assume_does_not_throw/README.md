@@ -1,6 +1,6 @@
 # assume_does_not_throw
 
-Shows how to use [xtd::tunit::assume::does_not_throw](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assume.html#a37d29a60f5757e6afe290d7c6e6cb7ca) method.
+Demonstrates how to use [xtd::tunit::assume::does_not_throw](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assume.html#a37d29a60f5757e6afe290d7c6e6cb7ca) method.
 
 ## Sources
 

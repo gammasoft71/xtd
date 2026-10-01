@@ -1,6 +1,6 @@
 # culture_info_current_culture
 
-Shows how to use [xtd::globalization::culture_info::current_culture](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1globalization_1_1culture__info.html) property.
+Demonstrates how to use [xtd::globalization::culture_info::current_culture](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1globalization_1_1culture__info.html) property.
 
 ## Sources
 

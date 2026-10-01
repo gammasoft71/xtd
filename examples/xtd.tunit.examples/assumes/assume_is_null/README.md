@@ -1,6 +1,6 @@
 # assume_is_null
 
-Shows how to use [xtd::tunit::assume::is_null](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assume.html#aa6bec68f958ef34957406d26146067de) method.
+Demonstrates how to use [xtd::tunit::assume::is_null](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assume.html#aa6bec68f958ef34957406d26146067de) method.
 
 ## Sources
 

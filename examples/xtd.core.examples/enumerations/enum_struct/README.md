@@ -1,6 +1,6 @@
 # enum_struct
 
-* Shows how to use [xtd::enum_object](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1enum__object.html) class and [enum_struct_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#ga85a4f5366ae461ca1e20872d39a0b440) helper.
+* Demonstrates how to use [xtd::enum_object](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1enum__object.html) class and [enum_struct_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#ga85a4f5366ae461ca1e20872d39a0b440) helper.
 
 
 ## Sources

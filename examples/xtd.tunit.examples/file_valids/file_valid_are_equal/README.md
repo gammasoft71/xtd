@@ -1,6 +1,6 @@
 # file_valid_are_equal
 
-Shows how to use [xtd::tunit::file_valid::are_equal](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1file__valid.html#afd1bb97a8f86b14d617c43a56d732ab6) method.
+Demonstrates how to use [xtd::tunit::file_valid::are_equal](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1file__valid.html#afd1bb97a8f86b14d617c43a56d732ab6) method.
 
 ## Sources
 

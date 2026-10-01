@@ -1,6 +1,6 @@
 # string_valid_are_equal_ignoring_case
 
-Shows how to use [xtd::tunit::string_valid::are_equal_ignoring_case](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1string__valid.html#aea1d973e130006518fdff24cd790b272) method.
+Demonstrates how to use [xtd::tunit::string_valid::are_equal_ignoring_case](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1string__valid.html#aea1d973e130006518fdff24cd790b272) method.
 
 ## Sources
 

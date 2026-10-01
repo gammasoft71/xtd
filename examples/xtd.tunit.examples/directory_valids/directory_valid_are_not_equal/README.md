@@ -1,6 +1,6 @@
 # directory_valid_does_not_exist
 
-Shows how to use [xtd::tunit::directory_valid::does_not_exist](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1directory__valid.html#afee3f5ebab426eb33a8d4d37df2696c5) method.
+Demonstrates how to use [xtd::tunit::directory_valid::does_not_exist](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1directory__valid.html#afee3f5ebab426eb33a8d4d37df2696c5) method.
 
 ## Sources
 

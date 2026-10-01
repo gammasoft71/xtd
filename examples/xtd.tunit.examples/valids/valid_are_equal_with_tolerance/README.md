@@ -1,6 +1,6 @@
 # valid_are_equal_with_validerance
 
-Shows how to use [xtd::tunit::valid::are_equal_with_validerance](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1valid.html#a189d508560ad830081bd12de04543862) method.
+Demonstrates how to use [xtd::tunit::valid::are_equal_with_validerance](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1valid.html#a189d508560ad830081bd12de04543862) method.
 
 ## Sources
 

@@ -1,6 +1,6 @@
 # collection_valid_contains
 
-Shows how to use [xtd::tunit::collection_valid::contains](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1collection__valid.html#ac26f059decbb4f74cd87dee6685024e4) method.
+Demonstrates how to use [xtd::tunit::collection_valid::contains](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1collection__valid.html#ac26f059decbb4f74cd87dee6685024e4) method.
 
 ## Sources
 

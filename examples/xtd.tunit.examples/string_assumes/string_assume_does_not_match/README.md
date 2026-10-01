@@ -1,6 +1,6 @@
 # string_assume_does_not_matche
 
-Shows how to use [xtd::tunit::string_assume::does_not_matche](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1string__assume.html#a08556d17db06f45bb96bc4ff3c794679) method.
+Demonstrates how to use [xtd::tunit::string_assume::does_not_matche](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1string__assume.html#a08556d17db06f45bb96bc4ff3c794679) method.
 
 ## Sources
 

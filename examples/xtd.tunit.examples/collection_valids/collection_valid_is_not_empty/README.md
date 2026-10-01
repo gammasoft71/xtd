@@ -1,6 +1,6 @@
 # collection_valid_is_not_empty
 
-Shows how to use [xtd::tunit::collection_valid::is_not_empty](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1collection__valid.html#a988063d96e516913628f442aec6c95b3) method.
+Demonstrates how to use [xtd::tunit::collection_valid::is_not_empty](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1collection__valid.html#a988063d96e516913628f442aec6c95b3) method.
 
 ## Sources
 

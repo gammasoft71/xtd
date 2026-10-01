@@ -1,6 +1,6 @@
 # directory_assert_exists
 
-Shows how to use [xtd::tunit::directory_assert::exists](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1directory__assert.html#ae7975e954f3fc3b6314c139ab191e9e2) method.
+Demonstrates how to use [xtd::tunit::directory_assert::exists](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1directory__assert.html#ae7975e954f3fc3b6314c139ab191e9e2) method.
 
 ## Sources
 

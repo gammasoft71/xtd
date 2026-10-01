@@ -1,6 +1,6 @@
 # wait_handle
 
-Shows how to use [xtd::threading::wait_handle](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1wait_handle.html) class.
+Demonstrates how to use [xtd::threading::wait_handle](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1wait_handle.html) class.
 
 ## Sources
 

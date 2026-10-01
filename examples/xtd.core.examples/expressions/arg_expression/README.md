@@ -1,6 +1,6 @@
 # arg_expression
 
-Shows how to use [xtd::expressions::expression::arg](https://gammasoft71.github.io/xtd/reference_guides/latest/structxtd_1_1expressions_1_1expression.html#ad3d423c2956860732b1a624887435e3b) expression.
+Demonstrates how to use [xtd::expressions::expression::arg](https://gammasoft71.github.io/xtd/reference_guides/latest/structxtd_1_1expressions_1_1expression.html#ad3d423c2956860732b1a624887435e3b) expression.
 
 ## Sources
 

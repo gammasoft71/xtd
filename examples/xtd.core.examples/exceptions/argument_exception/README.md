@@ -1,6 +1,6 @@
 # argument_exception
 
-Shows how to use [argument_exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1argument__exception.html) exception.
+Demonstrates how to use [argument_exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1argument__exception.html) exception.
 
 ## Sources
 

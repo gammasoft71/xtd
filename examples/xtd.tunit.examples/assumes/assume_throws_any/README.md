@@ -1,6 +1,6 @@
 # assume_throws_any
 
-Shows how to use [xtd::tunit::assume::throws_any](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assume.html#aaf380ce0f01ac3a31feb94956590f33c) method.
+Demonstrates how to use [xtd::tunit::assume::throws_any](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assume.html#aaf380ce0f01ac3a31feb94956590f33c) method.
 
 ## Sources
 

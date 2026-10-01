@@ -1,6 +1,6 @@
 # enumerable_distinct
 
-Shows how to use [xtd::linq::enumerable::distinct](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1linq_1_1enumerable.html#a4cc700fbc3281508f048620b36aad840) method.
+Demonstrates how to use [xtd::linq::enumerable::distinct](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1linq_1_1enumerable.html#a4cc700fbc3281508f048620b36aad840) method.
 
 ## Sources
 

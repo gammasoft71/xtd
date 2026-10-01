@@ -2,12 +2,12 @@
 
 [This folder](.) contains indexes examples used by [Reference Guide](https://gammasoft71.github.io/xtd/reference_guides/latest/) and more.
 
-* [index](index/README.md) shows how to use how to use [xtd:index](https://gammasoft71.github.io/xtd/reference_guides/latest/structxtd_1_1index.html) struct.
-* [index_literal](index_literal/README.md) shows how to use how to use [xtd:index](https://gammasoft71.github.io/xtd/reference_guides/latest/structxtd_1_1index.html) struct.
-* [index_operator](index_operator/README.md) shows how to use how to use [xtd:index](https://gammasoft71.github.io/xtd/reference_guides/latest/structxtd_1_1index.html) struct as operator.
-* [range](range/README.md) shows how to use how to use [xtd:range](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1range.html) struct.
-* [range_literal](range_literal/README.md) shows how to use how to use [xtd:range](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1range.html) struct.
-* [range_operator](range_operator/README.md) shows how to use how to use [xtd:range](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1range.html) struct as operator.
+* [index](index/README.md) demonstrates how to use how to use [xtd:index](https://gammasoft71.github.io/xtd/reference_guides/latest/structxtd_1_1index.html) struct.
+* [index_literal](index_literal/README.md) demonstrates how to use how to use [xtd:index](https://gammasoft71.github.io/xtd/reference_guides/latest/structxtd_1_1index.html) struct.
+* [index_operator](index_operator/README.md) demonstrates how to use how to use [xtd:index](https://gammasoft71.github.io/xtd/reference_guides/latest/structxtd_1_1index.html) struct as operator.
+* [range](range/README.md) demonstrates how to use how to use [xtd:range](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1range.html) struct.
+* [range_literal](range_literal/README.md) demonstrates how to use how to use [xtd:range](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1range.html) struct.
+* [range_operator](range_operator/README.md) demonstrates how to use how to use [xtd:range](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1range.html) struct as operator.
 
 ## Build and run any project
 

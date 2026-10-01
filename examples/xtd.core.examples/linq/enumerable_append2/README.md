@@ -1,6 +1,6 @@
 # enumerable_append2
 
-Shows how to use [xtd::linq::enumerable::append](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1linq_1_1enumerable.html#a33b3a348f1b0aba3f3aec5afdca7ea46) method.
+Demonstrates how to use [xtd::linq::enumerable::append](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1linq_1_1enumerable.html#a33b3a348f1b0aba3f3aec5afdca7ea46) method.
 
 ## Sources
 

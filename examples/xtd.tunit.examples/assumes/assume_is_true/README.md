@@ -1,6 +1,6 @@
 # assume_is_true
 
-Shows how to use [xtd::tunit::assume::is_true](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assume.html#a5c48682d12f9aa2e4d1a2f3a8f5d3f37) method.
+Demonstrates how to use [xtd::tunit::assume::is_true](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assume.html#a5c48682d12f9aa2e4d1a2f3a8f5d3f37) method.
 
 ## Sources
 
