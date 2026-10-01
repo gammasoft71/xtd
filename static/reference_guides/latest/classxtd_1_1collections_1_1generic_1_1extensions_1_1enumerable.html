@@ -137,7 +137,50 @@ class xtd::collections::generic::extensions::enumerable&lt; value_t, enumerable_
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/linq/generic/extensions/enumerable&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1linq.html" title="Provides classes and interfaces that support queries that use Language-Integrated Query (LINQ).">xtd::linq</a> </dd></dl>
-<dl class="section user"><dt>Library</dt><dd>xtd.core </dd></dl>
+<dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>You don’t need to inherit from the <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html" title="Provides a set of static methods for querying objects that implement ienumerable &lt;type_t&gt;.">xtd::collections::generic::extensions::enumerable</a> class when using the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> interface. </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use CRTP inheritance with the <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html" title="Provides a set of static methods for querying objects that implement ienumerable &lt;type_t&gt;.">xtd::collections::generic::extensions::enumerable</a> class. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">struct </span>person {</div>
+<div class="line">  <span class="keywordtype">string</span> first_name;</div>
+<div class="line">  <span class="keywordtype">string</span> last_name;</div>
+<div class="line">  </div>
+<div class="line">  <span class="keyword">friend</span> <span class="keyword">auto</span> operator &lt;&lt;(std::ostream&amp; os, <span class="keyword">const</span> person&amp; p) <span class="keyword">noexcept</span> -&gt; std::ostream&amp; {<span class="keywordflow">return</span> os &lt;&lt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a83878c91171338902e0fe0fb97a8c47a">p</a>.first_name &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a83878c91171338902e0fe0fb97a8c47a">p</a>.last_name;}</div>
+<div class="line">  <span class="keyword">friend</span> <span class="keyword">auto</span> operator &lt;=&gt;(<span class="keyword">const</span> person&amp;, <span class="keyword">const</span> person&amp;) <span class="keyword">noexcept</span> = <span class="keywordflow">default</span>;</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">struct </span>people : <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html">xtd::collections::generic::extensions::enumerable_iterators</a>&lt;person, people&gt;, <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html">xtd::collections::generic::extensions::enumerable</a>&lt;person, people&gt; {</div>
+<div class="line">  <span class="keyword">explicit</span> people(<a class="code hl_concept" href="conceptxtd_1_1iterable.html">iterable</a> <span class="keyword">auto</span>&amp;&amp; persons) : people_ {persons} {}</div>
+<div class="line">  </div>
+<div class="line">  <span class="keyword">auto</span> get_enumerator() const -&gt; <a class="code hl_typedef" href="group__collections.html#ga2633655cae697fc737d19f6a541167d7">enumerator</a>&lt;person&gt; {<span class="keywordflow">return</span> people_.get_enumerator();}</div>
+<div class="line">  </div>
+<div class="line"><span class="keyword">private</span>:</div>
+<div class="line">  list&lt;person&gt; people_;</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="keyword">auto</span> people_values = {</div>
+<div class="line">    person {.first_name = <span class="stringliteral">&quot;john&quot;</span>, .last_name = <span class="stringliteral">&quot;smith&quot;</span>},</div>
+<div class="line">    person {.first_name = <span class="stringliteral">&quot;sue&quot;</span>, .last_name = <span class="stringliteral">&quot;rabon&quot;</span>},</div>
+<div class="line">    person {.first_name = <span class="stringliteral">&quot;jim&quot;</span>, .last_name = <span class="stringliteral">&quot;johnson&quot;</span>},</div>
+<div class="line">  };</div>
+<div class="line">  </div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp;&amp; person : people {people_values}.select([](<span class="keyword">auto</span>&amp;&amp; p) {<span class="keywordflow">return</span> person {<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a83878c91171338902e0fe0fb97a8c47a">p</a>.first_name.to_title_case(), <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a83878c91171338902e0fe0fb97a8c47a">p</a>.last_name.to_upper()};}).order())</div>
+<div class="line">    <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(person);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Jim JOHNSON</span></div>
+<div class="line"><span class="comment">// John SMITH</span></div>
+<div class="line"><span class="comment">// Sue RABON</span></div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html">xtd::collections::generic::extensions::enumerable_iterators</a></div><div class="ttdoc">Internal enumerable iterators definition.</div><div class="ttdef"><b>Definition</b> enumerable_iterators.hpp:52</div></div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html">xtd::collections::generic::extensions::enumerable</a></div><div class="ttdoc">Provides a set of static methods for querying objects that implement ienumerable &lt;type_t&gt;.</div><div class="ttdef"><b>Definition</b> enumerable.hpp:36</div></div>
+<div class="ttc" id="aconceptxtd_1_1iterable_html"><div class="ttname"><a href="conceptxtd_1_1iterable.html">xtd::iterable</a></div><div class="ttdef"><b>Definition</b> iterable.hpp:15</div></div>
+<div class="ttc" id="agroup__collections_html_ga2633655cae697fc737d19f6a541167d7"><div class="ttname"><a href="group__collections.html#ga2633655cae697fc737d19f6a541167d7">xtd::collections::enumerator</a></div><div class="ttdeci">generic::enumerator&lt; xtd::any_object &gt; enumerator</div><div class="ttdoc">Supports a simple iteration over a non-generic collection.</div><div class="ttdef"><b>Definition</b> enumerator.hpp:28</div></div>
+<div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a83878c91171338902e0fe0fb97a8c47a"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a83878c91171338902e0fe0fb97a8c47a">xtd::console_key::p</a></div><div class="ttdeci">@ p</div><div class="ttdoc">The P key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:118</div></div>
+<div class="ttc" id="anamespacextd_html_a9482c5e9fb1d60c658bbe28bfbb17353"><div class="ttname"><a href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">xtd::println</a></div><div class="ttdeci">auto println(FILE *file) -&gt; void</div><div class="ttdoc">Writes the current line terminator to the file output stream using the specified format information.</div><div class="ttdef"><b>Definition</b> println.hpp:15</div></div>
+</div><!-- fragment --> </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Aliases</h2></td></tr>
@@ -519,7 +562,7 @@ template&lt;typename accumulate_t, <a class="el" href="structxtd_1_1func__callab
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// The number of even integers is: 6</span></div>
 <div class="ttc" id="aclassxtd_1_1array_html"><div class="ttname"><a href="classxtd_1_1array.html">xtd::array</a></div><div class="ttdoc">Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...</div><div class="ttdef"><b>Definition</b> array.hpp:64</div></div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable_html_ae52b5352798588d992f7a20b7736208b"><div class="ttname"><a href="#ae52b5352798588d992f7a20b7736208b">xtd::collections::generic::extensions::enumerable::aggregate</a></div><div class="ttdeci">auto aggregate(func_t &amp;&amp;func) const -&gt; value_t</div><div class="ttdoc">Applies an accumulator function over a sequence.</div><div class="ttdef"><b>Definition</b> enumerable.hpp:60</div></div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable_html_ae52b5352798588d992f7a20b7736208b"><div class="ttname"><a href="#ae52b5352798588d992f7a20b7736208b">xtd::collections::generic::extensions::enumerable::aggregate</a></div><div class="ttdeci">auto aggregate(func_t &amp;&amp;func) const -&gt; value_t</div><div class="ttdoc">Applies an accumulator function over a sequence.</div><div class="ttdef"><b>Definition</b> enumerable.hpp:64</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -662,7 +705,7 @@ template&lt;<a class="el" href="structxtd_1_1predicate__callable.html">xtd::pred
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// Not all pet names start with &#39;B&#39;.</span></div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable_html_ab0df621ab1e82dd659dcb0664e734e7d"><div class="ttname"><a href="#ab0df621ab1e82dd659dcb0664e734e7d">xtd::collections::generic::extensions::enumerable::all</a></div><div class="ttdeci">auto all(predicate_t &amp;&amp;predicate) const -&gt; bool</div><div class="ttdoc">Determines whether all elements of a sequence satisfy a condition.</div><div class="ttdef"><b>Definition</b> enumerable.hpp:97</div></div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable_html_ab0df621ab1e82dd659dcb0664e734e7d"><div class="ttname"><a href="#ab0df621ab1e82dd659dcb0664e734e7d">xtd::collections::generic::extensions::enumerable::all</a></div><div class="ttdeci">auto all(predicate_t &amp;&amp;predicate) const -&gt; bool</div><div class="ttdoc">Determines whether all elements of a sequence satisfy a condition.</div><div class="ttdef"><b>Definition</b> enumerable.hpp:101</div></div>
 <div class="ttc" id="aclassxtd_1_1object_html"><div class="ttname"><a href="classxtd_1_1object.html">xtd::object</a></div><div class="ttdoc">Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....</div><div class="ttdef"><b>Definition</b> object.hpp:40</div></div>
 </div><!-- fragment --> </dd></dl>
 
@@ -707,7 +750,7 @@ template&lt;typename value_t, typename enumerable_t&gt; </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// The list is not empty.</span></div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable_html_a93d587f2de509aeaa33aa41fd9942e8e"><div class="ttname"><a href="#a93d587f2de509aeaa33aa41fd9942e8e">xtd::collections::generic::extensions::enumerable::list</a></div><div class="ttdeci">typename xtd::linq::enumerable::list&lt; type_t &gt; list</div><div class="ttdoc">Represents the list value type.</div><div class="ttdef"><b>Definition</b> enumerable.hpp:47</div></div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable_html_a93d587f2de509aeaa33aa41fd9942e8e"><div class="ttname"><a href="#a93d587f2de509aeaa33aa41fd9942e8e">xtd::collections::generic::extensions::enumerable::list</a></div><div class="ttdeci">typename xtd::linq::enumerable::list&lt; type_t &gt; list</div><div class="ttdoc">Represents the list value type.</div><div class="ttdef"><b>Definition</b> enumerable.hpp:51</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -2787,8 +2830,7 @@ template&lt;typename value_t, typename enumerable_t&gt; </div>
 <div class="line"><span class="comment">// 70</span></div>
 <div class="line"><span class="comment">// 59</span></div>
 <div class="line"><span class="comment">// 56</span></div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable_html_a96e347c7dc52732445e9f3521a311010"><div class="ttname"><a href="#a96e347c7dc52732445e9f3521a311010">xtd::collections::generic::extensions::enumerable::order</a></div><div class="ttdeci">auto order() const -&gt; xtd::collections::generic::enumerable_generator&lt; value_t &gt;</div><div class="ttdoc">Sorts the elements of a sequence in ascending order.</div><div class="ttdef"><b>Definition</b> enumerable.hpp:390</div></div>
-<div class="ttc" id="anamespacextd_html_a9482c5e9fb1d60c658bbe28bfbb17353"><div class="ttname"><a href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">xtd::println</a></div><div class="ttdeci">auto println(FILE *file) -&gt; void</div><div class="ttdoc">Writes the current line terminator to the file output stream using the specified format information.</div><div class="ttdef"><b>Definition</b> println.hpp:15</div></div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable_html_a96e347c7dc52732445e9f3521a311010"><div class="ttname"><a href="#a96e347c7dc52732445e9f3521a311010">xtd::collections::generic::extensions::enumerable::order</a></div><div class="ttdeci">auto order() const -&gt; xtd::collections::generic::enumerable_generator&lt; value_t &gt;</div><div class="ttdoc">Sorts the elements of a sequence in ascending order.</div><div class="ttdef"><b>Definition</b> enumerable.hpp:394</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -3002,7 +3044,7 @@ template&lt;typename value_t, typename enumerable_t&gt; </div>
 <div class="line"><span class="comment">// 5</span></div>
 <div class="line"><span class="comment">// 10</span></div>
 <div class="ttc" id="aclassxtd_1_1basic__string_html_a4d8c4c95a122844c62de3feb62a5fa74"><div class="ttname"><a href="classxtd_1_1basic__string.html#a4d8c4c95a122844c62de3feb62a5fa74">xtd::basic_string&lt; char &gt;::length</a></div><div class="ttdeci">virtual auto length() const noexcept -&gt; size_type</div><div class="ttdef"><b>Definition</b> basic_string.hpp:366</div></div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable_html_a77f28b05a9f794ee4885ddb682c1498d"><div class="ttname"><a href="#a77f28b05a9f794ee4885ddb682c1498d">xtd::collections::generic::extensions::enumerable::select</a></div><div class="ttdeci">auto select(auto &amp;&amp;selector) const</div><div class="ttdoc">Projects each element of a sequence into a new form.</div><div class="ttdef"><b>Definition</b> enumerable.hpp:458</div></div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable_html_a77f28b05a9f794ee4885ddb682c1498d"><div class="ttname"><a href="#a77f28b05a9f794ee4885ddb682c1498d">xtd::collections::generic::extensions::enumerable::select</a></div><div class="ttdeci">auto select(auto &amp;&amp;selector) const</div><div class="ttdoc">Projects each element of a sequence into a new form.</div><div class="ttdef"><b>Definition</b> enumerable.hpp:462</div></div>
 <div class="ttc" id="anamespacextd_html_a84689e2cdf94d64f7e5f33fe4a1be71a"><div class="ttname"><a href="namespacextd.html#a84689e2cdf94d64f7e5f33fe4a1be71a">xtd::length</a></div><div class="ttdeci">constexpr auto length() const noexcept -&gt; size_type</div><div class="ttdoc">Returns the length of the current read_only_span.</div><div class="ttdef"><b>Definition</b> read_only_span.hpp:209</div></div>
 </div><!-- fragment --> </dd></dl>
 
@@ -3134,7 +3176,7 @@ template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> se
 <div class="line"><span class="comment">// number = 3, word = Three</span></div>
 <div class="line"><span class="comment">// number = 4, word = Four</span></div>
 <div class="line"><span class="comment">// number = 5, word = Five</span></div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable_html_afd69e6cf6cc8df9809c18ef6d57de4bc"><div class="ttname"><a href="#afd69e6cf6cc8df9809c18ef6d57de4bc">xtd::collections::generic::extensions::enumerable::zip</a></div><div class="ttdeci">auto zip(second_t &amp;&amp;second) const -&gt; xtd::collections::generic::enumerable_generator&lt; std::tuple&lt; value_t, xtd::iterable_value_type&lt; second_t &gt; &gt; &gt;</div><div class="ttdoc">Produces a sequence of tuples with elements from the two specified sequences.</div><div class="ttdef"><b>Definition</b> enumerable.hpp:570</div></div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable_html_afd69e6cf6cc8df9809c18ef6d57de4bc"><div class="ttname"><a href="#afd69e6cf6cc8df9809c18ef6d57de4bc">xtd::collections::generic::extensions::enumerable::zip</a></div><div class="ttdeci">auto zip(second_t &amp;&amp;second) const -&gt; xtd::collections::generic::enumerable_generator&lt; std::tuple&lt; value_t, xtd::iterable_value_type&lt; second_t &gt; &gt; &gt;</div><div class="ttdoc">Produces a sequence of tuples with elements from the two specified sequences.</div><div class="ttdef"><b>Definition</b> enumerable.hpp:574</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
