@@ -34,7 +34,7 @@ namespace xtd {
     /// @ingroup xtd_tunit tunit
     /// @remarks The class test_class must be the base class for all test classes defined in a test unit.
     /// @par Examples
-    /// The following example shows how to use xtd::tunit::test_class class.
+    /// The following example demonstrates how to use xtd::tunit::test_class class.
     /// @include test_class_without_helpers.cpp
     class tunit_export_ test_class {
     public:

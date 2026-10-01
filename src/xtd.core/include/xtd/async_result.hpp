@@ -14,7 +14,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// The following example shows how to use xtd::async_result.
+  /// The following example demonstrates how to use xtd::async_result.
   /// @include iasync_result.cpp
   using async_result = xtd::sptr<xtd::iasync_result>;
 }

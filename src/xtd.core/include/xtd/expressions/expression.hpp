@@ -79,7 +79,7 @@ namespace xtd {
     ///   | xtd::expressions::expression::value       |          |
     ///   | xtd::expressions::expression::arg         |          |
     /// @par Examples
-    /// The following example shows how to use xtd::expressions::expression class.
+    /// The following example demonstrates how to use xtd::expressions::expression class.
     /// @include expression/src/expression.cpp
     struct expression {
       /// @name Public Static Fields
@@ -89,7 +89,7 @@ namespace xtd {
       /// @remarks The index start from 1 to N.
       /// @remarks Prefer the xtd::expressions::expression::arg <N> or xtd::expressions::_, xtd::expressions::_1 ... xtd::expressions::_10 instead xtd::expressions::expression::arg.
       /// @par Examples
-      /// The following example shows how to use xtd::expressions::expression::arg.
+      /// The following example demonstrates how to use xtd::expressions::expression::arg.
       /// @include arg_expression.cpp
       template <size_t index>
       static const xtd::expressions::argument<index> arg;
@@ -103,7 +103,7 @@ namespace xtd {
       /// @param right The right operand.
       /// @return The result of add.
       /// @par Examples
-      /// The following example shows how to use xtd::expressions::expression::add.
+      /// The following example demonstrates how to use xtd::expressions::expression::add.
       /// @include add_expression.cpp
       template<typename left_t, typename right_t>
       requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
@@ -114,7 +114,7 @@ namespace xtd {
       /// @param right The right operand.
       /// @return The result of bitwise and.
       /// @par Examples
-      /// The following example shows how to use xtd::expressions::expression::and_.
+      /// The following example demonstrates how to use xtd::expressions::expression::and_.
       /// @include and_expression.cpp
       template<typename left_t, typename right_t>
       requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
@@ -126,7 +126,7 @@ namespace xtd {
       /// @return The result of logical and.
       /// @remarks xtd::expressions::expression::and_also is an alias on xtd::expressions::expression::logical_and
       /// @par Examples
-      /// The following example shows how to use xtd::expressions::expression::and_also.
+      /// The following example demonstrates how to use xtd::expressions::expression::and_also.
       /// @include and_also_expression.cpp
       template<typename left_t, typename right_t>
       requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
@@ -137,7 +137,7 @@ namespace xtd {
       /// @param right The right operand.
       /// @return The result of compare three way.
       /// @par Examples
-      /// The following example shows how to use xtd::expressions::expression::compare_three_way.
+      /// The following example demonstrates how to use xtd::expressions::expression::compare_three_way.
       /// @include compare_three_way_expression.cpp
       template<typename left_t, typename right_t>
       requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
@@ -147,7 +147,7 @@ namespace xtd {
       /// @param value The constnt value.
       /// @return The constant value expression.
       /// @par Examples
-      /// The following example shows how to use xtd::expressions::expression::constant.
+      /// The following example demonstrates how to use xtd::expressions::expression::constant.
       /// @include constant_expression.cpp
       template <auto constant_value>
       static constexpr auto constant();
@@ -157,7 +157,7 @@ namespace xtd {
       /// @param right The right operand.
       /// @return The result of devide.
       /// @par Examples
-      /// The following example shows how to use xtd::expressions::expression::divide.
+      /// The following example demonstrates how to use xtd::expressions::expression::divide.
       /// @include divide_expression.cpp
       template<typename left_t, typename right_t>
       requires std::is_base_of_v<expression, std::decay_t<left_t>> || std::is_base_of_v<expression, std::decay_t<right_t>>
@@ -168,7 +168,7 @@ namespace xtd {
       /// @param right The right operand.
       /// @return The result of equal.
       /// @par Examples
-      /// The following example shows how to use xtd::expressions::expression::equal.
+      /// The following example demonstrates how to use xtd::expressions::expression::equal.
       /// ```cpp
       /// #include <xtd/xtd>
       ///
@@ -203,7 +203,7 @@ namespace xtd {
       /// @param right The right operand.
       /// @return The result of bitwise xor.
       /// @par Examples
-      /// The following example shows how to use xtd::expressions::expression::xor_.
+      /// The following example demonstrates how to use xtd::expressions::expression::xor_.
       /// ```cpp
       /// #include <xtd/xtd>
       ///
@@ -238,7 +238,7 @@ namespace xtd {
       /// @param right The right operand.
       /// @return The result of greater than.
       /// @par Examples
-      /// The following example shows how to use xtd::expressions::expression::greater_than.
+      /// The following example demonstrates how to use xtd::expressions::expression::greater_than.
       /// ```cpp
       /// #include <xtd/xtd>
       ///
@@ -273,7 +273,7 @@ namespace xtd {
       /// @param right The right operand.
       /// @return The result of greater than or equal.
       /// @par Examples
-      /// The following example shows how to use xtd::expressions::expression::greater_than_or_equal.
+      /// The following example demonstrates how to use xtd::expressions::expression::greater_than_or_equal.
       /// ```cpp
       /// #include <xtd/xtd>
       ///
@@ -308,7 +308,7 @@ namespace xtd {
       /// @param right The right operand.
       /// @return The result of left shift.
       /// @par Examples
-      /// The following example shows how to use xtd::expressions::expression::left_shift.
+      /// The following example demonstrates how to use xtd::expressions::expression::left_shift.
       /// ```cpp
       /// #include <xtd/xtd>
       ///
@@ -343,7 +343,7 @@ namespace xtd {
       /// @param right The right operand.
       /// @return The result of less than.
       /// @par Examples
-      /// The following example shows how to use xtd::expressions::expression::less_than.
+      /// The following example demonstrates how to use xtd::expressions::expression::less_than.
       /// ```cpp
       /// #include <xtd/xtd>
       ///
@@ -378,7 +378,7 @@ namespace xtd {
       /// @param right The right operand.
       /// @return The result of less than or equal.
       /// @par Examples
-      /// The following example shows how to use xtd::expressions::expression::less_than_or_equal.
+      /// The following example demonstrates how to use xtd::expressions::expression::less_than_or_equal.
       /// ```cpp
       /// #include <xtd/xtd>
       ///
@@ -414,7 +414,7 @@ namespace xtd {
       /// @return The result of logical and.
       /// @remarks xtd::expressions::expression::and_also is an alias on xtd::expressions::expression::logical_and
       /// @par Examples
-      /// The following example shows how to use xtd::expressions::expression::logical_and.
+      /// The following example demonstrates how to use xtd::expressions::expression::logical_and.
       /// ```cpp
       /// #include <xtd/xtd>
       ///
@@ -451,7 +451,7 @@ namespace xtd {
       /// @return The result of logical not.
       /// @remarks xtd::expressions::expression::and_also is an alias on xtd::expressions::expression::logical_not
       /// @par Examples
-      /// The following example shows how to use xtd::expressions::expression::logical_not.
+      /// The following example demonstrates how to use xtd::expressions::expression::logical_not.
       /// ```cpp
       /// #include <xtd/xtd>
       ///
@@ -478,7 +478,7 @@ namespace xtd {
       /// @return The result of logical or.
       /// @remarks xtd::expressions::expression::and_also is an alias on xtd::expressions::expression::logical_or
       /// @par Examples
-      /// The following example shows how to use xtd::expressions::expression::logical_or.
+      /// The following example demonstrates how to use xtd::expressions::expression::logical_or.
       /// ```cpp
       /// #include <xtd/xtd>
       ///
@@ -514,7 +514,7 @@ namespace xtd {
       /// @param right The right operand.
       /// @return The result of modulo.
       /// @par Examples
-      /// The following example shows how to use xtd::expressions::expression::modulo.
+      /// The following example demonstrates how to use xtd::expressions::expression::modulo.
       /// ```cpp
       /// #include <xtd/xtd>
       ///
@@ -549,7 +549,7 @@ namespace xtd {
       /// @param right The right operand.
       /// @return The result of multiply.
       /// @par Examples
-      /// The following example shows how to use xtd::expressions::expression::multiply.
+      /// The following example demonstrates how to use xtd::expressions::expression::multiply.
       /// ```cpp
       /// #include <xtd/xtd>
       ///
@@ -585,7 +585,7 @@ namespace xtd {
       /// @return The result of unary minus.
       /// @remarks xtd::expressions::expression::and_also is an alias on xtd::expressions::expression::negate
       /// @par Examples
-      /// The following example shows how to use xtd::expressions::expression::negate.
+      /// The following example demonstrates how to use xtd::expressions::expression::negate.
       /// ```cpp
       /// #include <xtd/xtd>
       ///
@@ -612,7 +612,7 @@ namespace xtd {
       /// @return The result of bistwise not.
       /// @remarks xtd::expressions::expression::and_also is an alias on xtd::expressions::expression::not_
       /// @par Examples
-      /// The following example shows how to use xtd::expressions::expression::not_.
+      /// The following example demonstrates how to use xtd::expressions::expression::not_.
       /// ```cpp
       /// #include <xtd/xtd>
       ///
@@ -638,7 +638,7 @@ namespace xtd {
       /// @param right The right operand.
       /// @return The result of not equal.
       /// @par Examples
-      /// The following example shows how to use xtd::expressions::expression::not_equal.
+      /// The following example demonstrates how to use xtd::expressions::expression::not_equal.
       /// ```cpp
       /// #include <xtd/xtd>
       ///
@@ -673,7 +673,7 @@ namespace xtd {
       /// @param right The right operand.
       /// @return The result of bitwise or.
       /// @par Examples
-      /// The following example shows how to use xtd::expressions::expression::or_.
+      /// The following example demonstrates how to use xtd::expressions::expression::or_.
       /// ```cpp
       /// #include <xtd/xtd>
       ///
@@ -709,7 +709,7 @@ namespace xtd {
       /// @return The result of logical or.
       /// @remarks xtd::expressions::expression::and_also is an alias on xtd::expressions::expression::or_else
       /// @par Examples
-      /// The following example shows how to use xtd::expressions::expression::or_else.
+      /// The following example demonstrates how to use xtd::expressions::expression::or_else.
       /// ```cpp
       /// #include <xtd/xtd>
       ///
@@ -745,7 +745,7 @@ namespace xtd {
       /// @param right The right operand.
       /// @return The result of right shift.
       /// @par Examples
-      /// The following example shows how to use xtd::expressions::expression::right_shift.
+      /// The following example demonstrates how to use xtd::expressions::expression::right_shift.
       /// ```cpp
       /// #include <xtd/xtd>
       ///
@@ -780,7 +780,7 @@ namespace xtd {
       /// @param right The right operand.
       /// @return The result of compare three way.
       /// @par Examples
-      /// The following example shows how to use xtd::expressions::expression::spaceship.
+      /// The following example demonstrates how to use xtd::expressions::expression::spaceship.
       /// ```cpp
       /// #include <xtd/xtd>
       ///
@@ -815,7 +815,7 @@ namespace xtd {
       /// @param right The right operand.
       /// @return The result of subtract.
       /// @par Examples
-      /// The following example shows how to use xtd::expressions::expression::subtract.
+      /// The following example demonstrates how to use xtd::expressions::expression::subtract.
       /// ```cpp
       /// #include <xtd/xtd>
       ///
@@ -851,7 +851,7 @@ namespace xtd {
       /// @return The result of unary minus.
       /// @remarks xtd::expressions::expression::and_also is an alias on xtd::expressions::expression::unary_minus
       /// @par Examples
-      /// The following example shows how to use xtd::expressions::expression::unary_minus.
+      /// The following example demonstrates how to use xtd::expressions::expression::unary_minus.
       /// ```cpp
       /// #include <xtd/xtd>
       ///
@@ -878,7 +878,7 @@ namespace xtd {
       /// @return The result of unary plus.
       /// @remarks xtd::expressions::expression::and_also is an alias on xtd::expressions::expression::unary_plus
       /// @par Examples
-      /// The following example shows how to use xtd::expressions::expression::unary_plus.
+      /// The following example demonstrates how to use xtd::expressions::expression::unary_plus.
       /// ```cpp
       /// #include <xtd/xtd>
       ///
@@ -903,7 +903,7 @@ namespace xtd {
       /// @param value The value value.
       /// @return The value value expression.
       /// @par Examples
-      /// The following example shows how to use xtd::expressions::expression::value.
+      /// The following example demonstrates how to use xtd::expressions::expression::value.
       /// ```cpp
       /// #include <xtd/xtd>
       ///
@@ -942,7 +942,7 @@ namespace xtd {
       /// @param right The right operand.
       /// @return The result of bitwise xor.
       /// @par Examples
-      /// The following example shows how to use xtd::expressions::expression::xor_.
+      /// The following example demonstrates how to use xtd::expressions::expression::xor_.
       /// ```cpp
       /// #include <xtd/xtd>
       ///

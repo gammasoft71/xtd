@@ -24,7 +24,7 @@ namespace xtd {
   /// @return `true` if value_t is derived from xtd::iformatable, or value_t has output stream operator `<<`; otherwise `false`.
   /// @remarks If a type has only a xtd::to_string specialisation, it is always considered not formatable.
   /// @par Examples
-  /// The following code shows how to use xtd::formatbale concept
+  /// The following code demonstrates how to use xtd::formatbale concept
   /// @include formatbale.cpp
   template<typename value_t>
   struct formatable;

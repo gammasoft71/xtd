@@ -303,7 +303,7 @@ namespace xtd {
       /// @note To guarantee that no activations of this event are missed, you must attach a handler before you call application::run.
       /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
       /// @par Examples
-      /// The following exemple shows how to use xtd::application::thread_exception event.
+      /// The following exemple demonstrates how to use xtd::application::thread_exception event.
       /// @include application_thread_exception.cpp
       static event<application, threading::thread_exception_event_handler> thread_exception;
       

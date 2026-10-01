@@ -77,7 +77,7 @@
 /// @image html application_restart_gd.png
 ///
 /// @example application_thread_exception.cpp
-/// Shows how to use xtd::forms::application::thread_exception event.
+/// demonstrates how to use xtd::forms::application::thread_exception event.
 /// @par Windows
 /// @image html application_thread_exception_w.png
 /// <br>
@@ -1892,7 +1892,7 @@
 /// @image html fill_rounded_rectangle_gd.png
 ///
 /// @example image_effects.cpp
-/// shows how to use xtd::drawing::graphics::imaging::image_effector class.
+/// demonstrates how to use xtd::drawing::graphics::imaging::image_effector class.
 /// @par Windows
 /// @image html image_effects_w.png
 /// <br>
@@ -2717,7 +2717,7 @@
 /// @image html colors_gd.png
 ///
 /// @example control_with_name_operator.cpp
-/// shows how to use xtd::forms::control::name property and xtd::forms::layout::arranged_element_collection::operator\[\] name operator.
+/// demonstrates how to use xtd::forms::control::name property and xtd::forms::layout::arranged_element_collection::operator\[\] name operator.
 /// @par Windows
 /// @image html control_with_name_operator_w.png
 /// <br>
@@ -3452,7 +3452,7 @@
 /// @image html application_enable_light_mode_gd.png
 ///
 /// @example themes.cpp
-/// Shows how to use xtd::forms::theme class.
+/// demonstrates how to use xtd::forms::theme class.
 /// @par Windows
 /// @image html themes_w.png
 /// <br>

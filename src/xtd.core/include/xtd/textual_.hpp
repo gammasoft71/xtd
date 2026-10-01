@@ -22,7 +22,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core concepts
   /// @par Examples
-  /// The following code shows how to use xtd::textual concept
+  /// The following code demonstrates how to use xtd::textual concept
   /// ```cpp
   /// #include <xtd/xtd>
   ///

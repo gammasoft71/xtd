@@ -30,9 +30,9 @@ namespace xtd {
       /// xtd.core
       /// @ingroup xtd_core ranges
       /// @par Examples
-      /// The following example shows how to use xtd::ranges::views::where instance :
+      /// The following example demonstrates how to use xtd::ranges::views::where instance :
       /// @include ranges_views_where.cpp
-      /// The following example shows how to use xtd::ranges::views::where_view class :
+      /// The following example demonstrates how to use xtd::ranges::views::where_view class :
       /// @include ranges_views_where2.cpp
       class where_view {
         template<typename predicate_t>

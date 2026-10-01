@@ -24,7 +24,7 @@ namespace xtd {
   /// @return `true` if value_t is derived from xtd::object, or value_t is derived from xtd::istringable, or value_t is derived from xtd::iformatable, or value_t is derived from std::exception, or value_t is an enum, value_t is xtd::iterable, or value_t has output stream operator `<<`; otherwise `false`.
   /// @remarks If a type has only a xtd::to_string specialisation, it is always considered not stringable.
   /// @par Examples
-  /// The following code shows how to use xtd::stringable concept
+  /// The following code demonstrates how to use xtd::stringable concept
   /// @include stringable.cpp
   template<typename value_t>
   struct stringable;

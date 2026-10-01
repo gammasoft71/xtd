@@ -20,7 +20,7 @@ namespace xtd {
   /// @remarks An object that supports the xtd::iasync_result interface stores state information for an asynchronous operation and provides a synchronization object to allow threads to be signaled when the operation completes.
   /// @note The async_result class is the implementation of xtd::iasync_result that is returned by the begin_invoke method when you use a delegate to call a method asynchronously.
   /// @par Examples
-  /// The following example shows how to use xtd::iasync_result interface.
+  /// The following example demonstrates how to use xtd::iasync_result interface.
   /// @include iasync_result.cpp
   class iasync_result interface_ {
   public:

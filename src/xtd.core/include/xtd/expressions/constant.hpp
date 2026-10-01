@@ -20,7 +20,7 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core
     /// @par Examples
-    /// The following example shows how to use xtd::expressions::expression::constant.
+    /// The following example demonstrates how to use xtd::expressions::expression::constant.
     /// ```cpp
     /// #include <xtd/xtd>
     ///

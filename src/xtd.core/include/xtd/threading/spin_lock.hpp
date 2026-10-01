@@ -23,7 +23,7 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core threading
     /// @par Examples
-    /// The following example shows how to use a xtd::threading::spin_lock:
+    /// The following example demonstrates how to use a xtd::threading::spin_lock:
     /// @include spin_lock.cpp
     /// @remarks Spin locks can be used for leaf-level locks where the object allocation implied by using a xtd::threading::monitor, in size, is overly expensive. A spin lock can be useful to avoid blocking; however, if you expect a significant amount of blocking, you should probably not use spin locks due to excessive spinning. Spinning can be beneficial when locks are fine-grained and large in number (for example, a lock per node in a linked list) and also when lock hold-times are always extremely short. In general, while holding a spin lock, one should avoid any of these actions:
     /// * blocking,

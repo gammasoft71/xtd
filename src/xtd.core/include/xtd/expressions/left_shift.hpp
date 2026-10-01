@@ -96,7 +96,7 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core expressions
     /// @par Examples
-    /// The following example shows how to use xtd::expressions::expression::left_shift.
+    /// The following example demonstrates how to use xtd::expressions::expression::left_shift.
     /// ```cpp
     /// #include <xtd/xtd>
     ///

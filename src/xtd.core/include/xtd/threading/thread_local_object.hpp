@@ -28,7 +28,7 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core threading
     /// @par Examples
-    /// The following example shows how to use a xtd::threading::thread_local_object:
+    /// The following example demonstrates how to use a xtd::threading::thread_local_object:
     /// @include thread_local_object.cpp
     /// @remarks All public and protected members of xtd::threading::thread_local_object are thread-safe and may be used concurrently from multiple threads. The value returned for the xtd::threading::thread_local_object::value and xtd::threading::thread_local_object::is_value_created properties is specific for the thread on which the property is accessed.
     /// @remarks The differences between the thread_local_object class and the C++ thread_local keyword are :

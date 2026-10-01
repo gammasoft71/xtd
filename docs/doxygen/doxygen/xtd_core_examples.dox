@@ -2,301 +2,301 @@
 /// @brief Contains xtd.core examples.
 ///
 /// @example any.cpp
-/// Shows how to use xtd::any_object class.
+/// demonstrates how to use xtd::any_object class.
 ///
 /// @example any_info.cpp
-/// Shows how to use xtd::any_object class.
+/// demonstrates how to use xtd::any_object class.
 ///
 /// @example array.cpp
-/// Shows how to use xtd::array class.
+/// demonstrates how to use xtd::array class.
 ///
 /// @example array2.cpp
-/// Shows how to use xtd::array class.
+/// demonstrates how to use xtd::array class.
 ///
 /// @example array3.cpp
-/// Shows how to use xtd::array class.
+/// demonstrates how to use xtd::array class.
 ///
 /// @example array_as_read_only.cpp
-/// Shows how to use xtd::array::as_read_only method.
+/// demonstrates how to use xtd::array::as_read_only method.
 ///
 /// @example array_binary_search.cpp
-/// Shows how to use xtd::array<>::binary_search method.
+/// demonstrates how to use xtd::array<>::binary_search method.
 ///
 /// @example array_sort.cpp
-/// Shows how to use xtd::basic_array::sort method.
+/// demonstrates how to use xtd::basic_array::sort method.
 ///
 /// @example array_sort2.cpp
-/// Shows how to use xtd::basic_array::sort method.
+/// demonstrates how to use xtd::basic_array::sort method.
 ///
 /// @example array_sort3.cpp
-/// Shows how to use xtd::basic_array::sort method.
+/// demonstrates how to use xtd::basic_array::sort method.
 ///
 /// @example bit_converter.cpp
-/// Shows how to use xtd::bit_converter class.
+/// demonstrates how to use xtd::bit_converter class.
 ///
 /// @example bit_converter_endianness.cpp
-/// Shows how to use bit_converter::endianness method.
+/// demonstrates how to use bit_converter::endianness method.
 ///
 /// @example bit_converter_is_big_endian.cpp
-/// Shows how to use bit_converter::is_big_endian method.
+/// demonstrates how to use bit_converter::is_big_endian method.
 ///
 /// @example bit_converter_is_little_endian.cpp
-/// Shows how to use bit_converter::is_little_endian method.
+/// demonstrates how to use bit_converter::is_little_endian method.
 ///
 /// @example bit_converter_round_trips.cpp
-/// Shows how to use bit_converter class.
+/// demonstrates how to use bit_converter class.
 ///
 /// @example bit_converter_to_string.cpp
-/// Shows how to use xtd::bit_converter::to_string method.
+/// demonstrates how to use xtd::bit_converter::to_string method.
 ///
 /// @example bit_converter_to_string2.cpp
-/// Shows how to use xtd::bit_converter::to_string method.
+/// demonstrates how to use xtd::bit_converter::to_string method.
 ///
 /// @example bit_converter_to_string3.cpp
-/// Shows how to use xtd::bit_converter::to_string and xtd::bit_converter::to_string methods.
+/// demonstrates how to use xtd::bit_converter::to_string and xtd::bit_converter::to_string methods.
 ///
 /// @example bit_converter_to_string4.cpp
-/// Shows how to use xtd::bit_converter::to_string and xtd::bit_converter::to_string methods.
+/// demonstrates how to use xtd::bit_converter::to_string and xtd::bit_converter::to_string methods.
 ///
 /// @example boxed_info.cpp
-/// Shows how to use xtd::boxing methods.
+/// demonstrates how to use xtd::boxing methods.
 ///
 /// @example boxing.cpp
-/// Shows how to use xtd::boxing methods.
+/// demonstrates how to use xtd::boxing methods.
 ///
 /// @example array_list.cpp
-/// Shows how to use array_list alias.
+/// demonstrates how to use array_list alias.
 ///
 /// @example array_list2.cpp
-/// Shows how to use xtd::collections::array_list alias.
+/// demonstrates how to use xtd::collections::array_list alias.
 ///
 /// @example array_list3.cpp
-/// Shows how to use xtd::collections::array_list alias.
+/// demonstrates how to use xtd::collections::array_list alias.
 ///
 /// @example bit_array.cpp
-/// Shows how to use xtd::collections::bit_array class.
+/// demonstrates how to use xtd::collections::bit_array class.
 ///
 /// @example hashtable.cpp
-/// Shows how to use hashtable alias.
+/// demonstrates how to use hashtable alias.
 ///
 /// @example hashtable2.cpp
-/// Shows how to use hashtable alias.
+/// demonstrates how to use hashtable alias.
 ///
 /// @example ienumerable.cpp
-/// Shows how to use xtd::collections::ienumerable interface.
+/// demonstrates how to use xtd::collections::ienumerable interface.
 ///
 /// @example ienumerator.cpp
-/// Shows how to use xtd::collections::ienumerator interface.
+/// demonstrates how to use xtd::collections::ienumerator interface.
 ///
 /// @example ilist.cpp
-/// Shows how to use xtd::collections::ilist interface.
+/// demonstrates how to use xtd::collections::ilist interface.
 ///
 /// @example comparable.cpp
-/// Shows how to use xtd::comparable concept.
+/// demonstrates how to use xtd::comparable concept.
 ///
 /// @example enumerable.cpp
-/// Shows how to use xtd::collections::generic::enumerable concept.
+/// demonstrates how to use xtd::collections::generic::enumerable concept.
 ///
 /// @example forward_iterable.cpp
-/// Shows how to use xtd::forward_iterable concept.
+/// demonstrates how to use xtd::forward_iterable concept.
 ///
 /// @example iterable.cpp
-/// Shows how to use xtd::iterable concept.
+/// demonstrates how to use xtd::iterable concept.
 ///
 /// @example stringable.cpp
-/// Shows how to use xtd::stringable concept.
+/// demonstrates how to use xtd::stringable concept.
 ///
 /// @example concurrent_queue.cpp
-/// Shows how to use xtd::collections::concurrent::concurrent_queue class.
+/// demonstrates how to use xtd::collections::concurrent::concurrent_queue class.
 ///
 /// @example file_settings.cpp
-/// Shows how to use xtd::consiguration::file_settings object.
+/// demonstrates how to use xtd::consiguration::file_settings object.
 ///
 /// @example console_background_color.cpp
-/// Shows how to use xtd::console::background_color property.
+/// demonstrates how to use xtd::console::background_color property.
 ///
 /// @example console_beep.cpp
-/// Shows how to use xtd::console::beep method.
+/// demonstrates how to use xtd::console::beep method.
 ///
 /// @example console_buffer.cpp
-/// Shows how to use xtd::console::buffer_height and xtd::console::buffer_width methods.
+/// demonstrates how to use xtd::console::buffer_height and xtd::console::buffer_width methods.
 ///
 /// @example console_clear.cpp
-/// Shows how to use xtd::console::clear method.
+/// demonstrates how to use xtd::console::clear method.
 ///
 /// @example console_color.cpp
-/// Shows how to use xtd::console::background_color and xtd::console::foreground_color methods.
+/// demonstrates how to use xtd::console::background_color and xtd::console::foreground_color methods.
 ///
 /// @example console_cursor.cpp
-/// Shows how to use xtd::console::set_cursor_position, xtd::console::cursor_top and xtd::console::cursor_left methods.
+/// demonstrates how to use xtd::console::set_cursor_position, xtd::console::cursor_top and xtd::console::cursor_left methods.
 ///
 /// @example console_cursor_size.cpp
-/// Shows how to use xtd::console::cursor_size property.
+/// demonstrates how to use xtd::console::cursor_size property.
 ///
 /// @example console_cursor_visible.cpp
-/// Shows how to use xtd::console::cursor_visible property.
+/// demonstrates how to use xtd::console::cursor_visible property.
 ///
 /// @example console_firework.cpp
-/// Shows how to use some xtd::console methods.
+/// demonstrates how to use some xtd::console methods.
 ///
 /// @example console_in_out.cpp
-/// Shows how to use xtd::console::in and xtd::console::out streams.
+/// demonstrates how to use xtd::console::in and xtd::console::out streams.
 ///
 /// @example console_info.cpp
-/// Shows how to use xtd::console class.
+/// demonstrates how to use xtd::console class.
 ///
 /// @example console_key_available.cpp
-/// Shows how to use xtd::console::key_available and xtd::console::read_key methods.
+/// demonstrates how to use xtd::console::key_available and xtd::console::read_key methods.
 ///
 /// @example console_out.cpp
-/// Shows how to use xtd::console::out stream.
+/// demonstrates how to use xtd::console::out stream.
 ///
 /// @example console_read.cpp
-/// Shows how to use xtd::console::read method.
+/// demonstrates how to use xtd::console::read method.
 ///
 /// @example console_read_key.cpp
-/// Shows how to use xtd::console::read_key and xtd::console::key_available methods.
+/// demonstrates how to use xtd::console::read_key and xtd::console::key_available methods.
 ///
 /// @example console_read_line.cpp
-/// Shows how to use xtd::console::in stream.
+/// demonstrates how to use xtd::console::in stream.
 ///
 /// @example console_song.cpp
-/// Shows how to use xtd::console::beep method.
+/// demonstrates how to use xtd::console::beep method.
 ///
 /// @example console_title.cpp
-/// Shows how to use xtd::console::title method.
+/// demonstrates how to use xtd::console::title method.
 ///
 /// @example console_unicode.cpp
-/// Shows how to use xtd::console with unicode characters.
+/// demonstrates how to use xtd::console with unicode characters.
 ///
 /// @example console_window_size.cpp
-/// Shows how to use xtd::console::set_window_size method.
+/// demonstrates how to use xtd::console::set_window_size method.
 ///
 /// @example redirect_output.cpp
-/// Shows how to use xtd::console class.
+/// demonstrates how to use xtd::console class.
 ///
 /// @example wconsole.cpp
-/// Shows how to use xtd::console class.
+/// demonstrates how to use xtd::console class.
 ///
 /// @example as.cpp
-/// Shows how to use xtd::as operator.
+/// demonstrates how to use xtd::as operator.
 ///
 /// @example to_byte.cpp
-/// Shows how to use xtd::convert::to_byte method.
+/// demonstrates how to use xtd::convert::to_byte method.
 ///
 /// @example to_int32.cpp
-/// Shows how to use xtd::convert::to_int32 method.
+/// demonstrates how to use xtd::convert::to_int32 method.
 ///
 /// @example to_string.cpp
-/// Shows how to use xtd::convert::to_string method and xtd::convert_string class.
+/// demonstrates how to use xtd::convert::to_string method and xtd::convert_string class.
 ///
 /// @example unsafe_as.cpp
-/// Shows how to use xtd::unsafe::as operator.
+/// demonstrates how to use xtd::unsafe::as operator.
 ///
 /// @example variant.cpp
-/// Shows how to use xtd::as operator with std::variant.
+/// demonstrates how to use xtd::as operator with std::variant.
 ///
 /// @example as_string.cpp
-/// Shows how to use xtd::as operator.
+/// demonstrates how to use xtd::as operator.
 ///
 /// @example convert_string.cpp
-/// Shows how to use xtd::as operator.
+/// demonstrates how to use xtd::as operator.
 ///
 /// @example string_to_string.cpp
-/// Shows how to use xtd::as operator.
+/// demonstrates how to use xtd::as operator.
 ///
 /// @example coroutine_delegate.cpp
-/// Shows how to use coroutine with delegate and task.
+/// demonstrates how to use coroutine with delegate and task.
 ///
 /// @example coroutine_lambda.cpp
-/// Shows how to use coroutine with lambda expression and task.
+/// demonstrates how to use coroutine with lambda expression and task.
 ///
 /// @example coroutine_method.cpp
-/// Shows how to use coroutine with method and task.
+/// demonstrates how to use coroutine with method and task.
 ///
 /// @example coroutine_task.cpp
-/// Shows how to use coroutine with task.
+/// demonstrates how to use coroutine with task.
 ///
 /// @example date_time.cpp
-/// Shows how to use xtd::date_time class.
+/// demonstrates how to use xtd::date_time class.
 ///
 /// @example date_time_add.cpp
-/// Shows how to use xtd::date_time::add method.
+/// demonstrates how to use xtd::date_time::add method.
 ///
 /// @example date_time_add_days.cpp
-/// Shows how to use xtd::date_time::add_days method.
+/// demonstrates how to use xtd::date_time::add_days method.
 ///
 /// @example date_time_add_hours.cpp
-/// Shows how to use xtd::date_time::add_hours method.
+/// demonstrates how to use xtd::date_time::add_hours method.
 ///
 /// @example date_time_add_milliseconds.cpp
-/// Shows how to use xtd::date_time::add_milliseconds method.
+/// demonstrates how to use xtd::date_time::add_milliseconds method.
 ///
 /// @example date_time_add_minutes.cpp
-/// Shows how to use xtd::date_time::add_minutes method.
+/// demonstrates how to use xtd::date_time::add_minutes method.
 ///
 /// @example date_time_add_months.cpp
-/// Shows how to use xtd::date_time::add_months method.
+/// demonstrates how to use xtd::date_time::add_months method.
 ///
 /// @example date_time_add_seconds.cpp
-/// Shows how to use xtd::date_time::add_seconds method.
+/// demonstrates how to use xtd::date_time::add_seconds method.
 ///
 /// @example date_time_add_years.cpp
-/// Shows how to use xtd::date_time::add_years method.
+/// demonstrates how to use xtd::date_time::add_years method.
 ///
 /// @example date_time_date.cpp
-/// Shows how to use xtd::date_time::date property.
+/// demonstrates how to use xtd::date_time::date property.
 ///
 /// @example date_time_day_of_week.cpp
-/// Shows how to use xtd::date_time::day_of_week property.
+/// demonstrates how to use xtd::date_time::day_of_week property.
 ///
 /// @example date_time_day_of_year.cpp
-/// Shows how to use xtd::date_time::date_time_day_of_year property.
+/// demonstrates how to use xtd::date_time::date_time_day_of_year property.
 ///
 /// @example date_time_days_in_month.cpp
-/// Shows how to use xtd::date_time::days_in_month method.
+/// demonstrates how to use xtd::date_time::days_in_month method.
 ///
 /// @example date_time_days_in_month2.cpp
-/// Shows how to use xtd::date_time::days_in_month method.
+/// demonstrates how to use xtd::date_time::days_in_month method.
 ///
 /// @example date_time_max_value.cpp
-/// Shows how to use xtd::date_time::max_value field.
+/// demonstrates how to use xtd::date_time::max_value field.
 ///
 /// @example date_time_min_value.cpp
-/// Shows how to use xtd::date_time::min_value field.
+/// demonstrates how to use xtd::date_time::min_value field.
 ///
 /// @example date_time_now.cpp
-/// Shows how to use xtd::date_time::now property.
+/// demonstrates how to use xtd::date_time::now property.
 ///
 /// @example date_time_now2.cpp
-/// Shows how to use xtd::date_time::now property.
+/// demonstrates how to use xtd::date_time::now property.
 ///
 /// @example date_time_specify_kind.cpp
-/// Shows how to use xtd::date_time::specify_kind method.
+/// demonstrates how to use xtd::date_time::specify_kind method.
 ///
 /// @example date_time_sprintf.cpp
-/// Shows how to use xtd::date_time::sprintf method.
+/// demonstrates how to use xtd::date_time::sprintf method.
 ///
 /// @example date_time_subtract.cpp
-/// Shows how to use xtd::date_time::subtract method.
+/// demonstrates how to use xtd::date_time::subtract method.
 ///
 /// @example date_time_ticks.cpp
-/// Shows how to use xtd::date_time class with ticks constructors.
+/// demonstrates how to use xtd::date_time class with ticks constructors.
 ///
 /// @example date_time_ticks2.cpp
-/// Shows how to use xtd::date_time class with ticks constructors.
+/// demonstrates how to use xtd::date_time class with ticks constructors.
 ///
 /// @example date_time_time_of_day.cpp
-/// Shows how to use xtd::date_time::time_of_day property.
+/// demonstrates how to use xtd::date_time::time_of_day property.
 ///
 /// @example date_time_to_string_format.cpp
-/// Shows how to use xtd::date_time::to_string with format method.
+/// demonstrates how to use xtd::date_time::to_string with format method.
 ///
 /// @example date_time_today.cpp
-/// Shows how to use xtd::date_time::today property.
+/// demonstrates how to use xtd::date_time::today property.
 ///
 /// @example action.cpp
-/// Shows how to use xtd::action alias.
+/// demonstrates how to use xtd::action alias.
 ///
 /// @example action1.cpp
 /// This example simplifies this code by instantiating the xtd::action delegate instead of explicitly defining a new delegate and assigning a named method to it.
@@ -308,175 +308,175 @@
 /// This example simplifies this code by instantiating the xtd::action delegate instead of explicitly defining a new delegate and assigning a named method to it.
 ///
 /// @example delegate.cpp
-/// Shows how to use xtd::delegate class.
+/// demonstrates how to use xtd::delegate class.
 ///
 /// @example delegate_begin_invoke.cpp
-/// Shows how to use xtd::delegate::begin_invoke, xtd::delegate::end_invoke and xtd::delegate::invoke methods.
+/// demonstrates how to use xtd::delegate::begin_invoke, xtd::delegate::end_invoke and xtd::delegate::invoke methods.
 ///
 /// @example delegate_begin_invoke2.cpp
-/// Shows how to use xtd::delegate::begin_invoke, xtd::delegate::end_invoke and xtd::delegate::invoke methods.
+/// demonstrates how to use xtd::delegate::begin_invoke, xtd::delegate::end_invoke and xtd::delegate::invoke methods.
 ///
 /// @example delegate_lambda.cpp
-/// Shows how to use xtd::delegate class.
+/// demonstrates how to use xtd::delegate class.
 ///
 /// @example delegate_member_method.cpp
-/// Shows how to use xtd::delegate class.
+/// demonstrates how to use xtd::delegate class.
 ///
 /// @example delegate_multicast.cpp
-/// Shows how to use xtd::delegate class.
+/// demonstrates how to use xtd::delegate class.
 ///
 /// @example event.cpp
-/// Shows how to use xtd::event class.
+/// demonstrates how to use xtd::event class.
 ///
 /// @example assert_.cpp
-/// Shows how to use assert_ macro.
+/// demonstrates how to use assert_ macro.
 ///
 /// @example assert_with_message.cpp
-/// Shows how to use assert_ macro.
+/// demonstrates how to use assert_ macro.
 ///
 /// @example console_trace_listener.cpp
-/// Shows how to use xtd::diagnostics::console_trace_listener class.
+/// demonstrates how to use xtd::diagnostics::console_trace_listener class.
 ///
 /// @example debug.cpp
-/// Shows how to use debug class.
+/// demonstrates how to use debug class.
 ///
 /// @example debug_assert.cpp
-/// Shows how to use debug::assert method.
+/// demonstrates how to use debug::assert method.
 ///
 /// @example default_trace_listener.cpp
-/// Shows how to use xtd::diagnostics::default_trace_listener class.
+/// demonstrates how to use xtd::diagnostics::default_trace_listener class.
 ///
 /// @example source_location_invoked_directly.cpp
-/// Shows how to use xtd::source_location class.
+/// demonstrates how to use xtd::source_location class.
 ///
 /// @example stack_frame.cpp
-/// Shows how to use xtd::diagnostics::stack_frame class.
+/// demonstrates how to use xtd::diagnostics::stack_frame class.
 ///
 /// @example stack_trace.cpp
-/// Shows how to use xtd::diagnostics::stack_trace class.
+/// demonstrates how to use xtd::diagnostics::stack_trace class.
 ///
 /// @example stack_trace_simple.cpp
 /// Demonstrates how to create a simple xtd::diagnostics::stack_trace class and iterate through its frames to obtain debugging and diagnostic information.
 ///
 /// @example stopwatch.cpp
-/// Shows how to use xtd::diagnostics::stopwatch class.
+/// demonstrates how to use xtd::diagnostics::stopwatch class.
 ///
 /// @example stopwatch_constructor.cpp
 /// Initializes a xtd::diagnostics::stopwatch instance by using a simple class constructor.
 ///
 /// @example trace.cpp
-/// Shows how to use trace class.
+/// demonstrates how to use trace class.
 ///
 /// @example trace_assert.cpp
-/// Shows how to use trace::assert_ method.
+/// demonstrates how to use trace::assert_ method.
 ///
 /// @example enum.cpp
-/// * Shows how to use xtd::enum_object class and enum_ helper.
+/// * demonstrates how to use xtd::enum_object class and enum_ helper.
 ///
 /// @example enum_class.cpp
-/// * Shows how to use xtd::enum_object class and enum_class_ helper.
+/// * demonstrates how to use xtd::enum_object class and enum_class_ helper.
 ///
 /// @example enum_class_flags.cpp
-/// * Shows how to use xtd::enum_object class, enum_class_ and flags_attribute_ helpers.
+/// * demonstrates how to use xtd::enum_object class, enum_class_ and flags_attribute_ helpers.
 ///
 /// @example enum_class_flags_introspection.cpp
 /// * Shows how the introspection works with enum_class_ helper.
 ///
 /// @example enum_class_flags_without_helpers.cpp
-/// * Shows how to use xtd::enum_object an xtd::enum_register classes.
+/// * demonstrates how to use xtd::enum_object an xtd::enum_register classes.
 ///
 /// @example enum_class_parse.cpp
-/// * Shows how to use xtd::enum_object::parse method.
+/// * demonstrates how to use xtd::enum_object::parse method.
 ///
 /// @example enum_class_ut.cpp
-/// * Shows how to use xtd::enum_object class and enum_class_ut_ helper.
+/// * demonstrates how to use xtd::enum_object class and enum_class_ut_ helper.
 ///
 /// @example enum_class_without_helper.cpp
-/// * Shows how to use xtd::enum_object and enum_register classes.
+/// * demonstrates how to use xtd::enum_object and enum_register classes.
 ///
 /// @example enum_struct.cpp
-/// * Shows how to use xtd::enum_object class and enum_struct_ helper.
+/// * demonstrates how to use xtd::enum_object class and enum_struct_ helper.
 ///
 /// @example enum_struct_ut.cpp
-/// * Shows how to use xtd::enum_object class and enum_struct_ut_ helper.
+/// * demonstrates how to use xtd::enum_object class and enum_struct_ut_ helper.
 ///
 /// @example enum_ut.cpp
-/// * Shows how to use xtd::enum_object class and enum_ut_ helper.
+/// * demonstrates how to use xtd::enum_object class and enum_ut_ helper.
 ///
 /// @example environment.cpp
-/// Shows how to use xtd::environment class.
+/// demonstrates how to use xtd::environment class.
 ///
 /// @example environment_cancel_signal.cpp
-/// Shows how to use xtd::environment::cancel_signal event.
+/// demonstrates how to use xtd::environment::cancel_signal event.
 ///
 /// @example environment_command_line.cpp
-/// Shows how to use xtd::environment::command_line method.
+/// demonstrates how to use xtd::environment::command_line method.
 ///
 /// @example environment_current_directory.cpp
-/// Shows how to use xtd::environment::current_directory method.
+/// demonstrates how to use xtd::environment::current_directory method.
 ///
 /// @example environment_exit.cpp
-/// Shows how to use xtd::environment::exit method.
+/// demonstrates how to use xtd::environment::exit method.
 ///
 /// @example environment_exit_code.cpp
-/// Shows how to use xtd::environment::exit_code method.
+/// demonstrates how to use xtd::environment::exit_code method.
 ///
 /// @example environment_expand_environment_variables.cpp
-/// Shows how to use xtd::environment::expand_environment_variables method.
+/// demonstrates how to use xtd::environment::expand_environment_variables method.
 ///
 /// @example environment_program_exit.cpp
-/// Shows how to use xtd::environment::program_stopped event.
+/// demonstrates how to use xtd::environment::program_stopped event.
 ///
 /// @example environment_stack_trace.cpp
-/// Shows how to use xtd::environment class.
+/// demonstrates how to use xtd::environment class.
 ///
 /// @example environment_tick_count.cpp
-/// Shows how to use xtd::environment::tick_count method.
+/// demonstrates how to use xtd::environment::tick_count method.
 ///
 /// @example argument_exception.cpp
-/// Shows how to use argument_exception exception.
+/// demonstrates how to use argument_exception exception.
 ///
 /// @example exception_dispatch_info.cpp
-/// Shows how to use xtd::exception_services::exception_dispatch_info class.
+/// demonstrates how to use xtd::exception_services::exception_dispatch_info class.
 ///
 /// @example exception_ptr.cpp
-/// Shows how to use std::exception_ptr and invalid_operation_exception exception.
+/// demonstrates how to use std::exception_ptr and invalid_operation_exception exception.
 ///
 /// @example system_exception.cpp
-/// Shows how to use system_exception exception.
+/// demonstrates how to use system_exception exception.
 ///
 /// @example user_defined_exception.cpp
-/// Shows how to use xtd::exception exception.
+/// demonstrates how to use xtd::exception exception.
 ///
 /// @example add_expression.cpp
-/// Shows how to use xtd::expressions::expression::add expression.
+/// demonstrates how to use xtd::expressions::expression::add expression.
 ///
 /// @example add_expression_with_own_struct.cpp
-/// Shows how to use xtd::expressions::expression::add expression.
+/// demonstrates how to use xtd::expressions::expression::add expression.
 ///
 /// @example and_also_expression.cpp
-/// Shows how to use xtd::expressions::expression::and_also expression.
+/// demonstrates how to use xtd::expressions::expression::and_also expression.
 ///
 /// @example and_expression.cpp
-/// Shows how to use xtd::expressions::expression::and_ expression.
+/// demonstrates how to use xtd::expressions::expression::and_ expression.
 ///
 /// @example arg_expression.cpp
-/// Shows how to use xtd::expressions::expression::arg expression.
+/// demonstrates how to use xtd::expressions::expression::arg expression.
 ///
 /// @example compare_three_way_expression.cpp
-/// Shows how to use xtd::expressions::expression::compare_three_way expression.
+/// demonstrates how to use xtd::expressions::expression::compare_three_way expression.
 ///
 /// @example constant_expression.cpp
-/// Shows how to use xtd::expressions::expression::constant expression.
+/// demonstrates how to use xtd::expressions::expression::constant expression.
 ///
 /// @example divide_expression.cpp
-/// Shows how to use xtd::expressions::expression::divide expression.
+/// demonstrates how to use xtd::expressions::expression::divide expression.
 ///
 /// @example divide_expression_with_own_struct.cpp
-/// Shows how to use xtd::expressions::expression::divide expression.
+/// demonstrates how to use xtd::expressions::expression::divide expression.
 ///
 /// @example expression.cpp
-/// Shows how to use xtd::expressions::expression class.
+/// demonstrates how to use xtd::expressions::expression class.
 ///
 /// @example format.cpp
 /// Show how to use format xtd::format class.
@@ -572,136 +572,136 @@
 /// Show how to use format xtd::format class with order.
 ///
 /// @example generic_dictionary.cpp
-/// Shows how to use xtd::collections::generic::dictionary class.
+/// demonstrates how to use xtd::collections::generic::dictionary class.
 ///
 /// @example generic_dictionary_constructor_with_idicationary.cpp
-/// Shows how to use xtd::collections::generic::dictionary class.
+/// demonstrates how to use xtd::collections::generic::dictionary class.
 ///
 /// @example generic_enumerable_generator.cpp
-/// Shows how to use xtd::collections::generic::enumerable_generator generator.
+/// demonstrates how to use xtd::collections::generic::enumerable_generator generator.
 ///
 /// @example generic_enumerable_generator2.cpp
-/// Shows how to use xtd::collections::generic::enumerable_generator generator.
+/// demonstrates how to use xtd::collections::generic::enumerable_generator generator.
 ///
 /// @example generic_hash_set.cpp
-/// Shows how to use xtd::collections::generic::hash_set class.
+/// demonstrates how to use xtd::collections::generic::hash_set class.
 ///
 /// @example generic_hash_set2.cpp
-/// Shows how to use xtd::collections::generic::hash_set class.
+/// demonstrates how to use xtd::collections::generic::hash_set class.
 ///
 /// @example generic_icollection.cpp
-/// Shows how to use xtd::collections::generic::icollection interface.
+/// demonstrates how to use xtd::collections::generic::icollection interface.
 ///
 /// @example generic_ienumerable.cpp
-/// Shows how to use xtd::collections::generic::ienumerable interface.
+/// demonstrates how to use xtd::collections::generic::ienumerable interface.
 ///
 /// @example generic_ienumerable2.cpp
-/// Shows how to use xtd::collections::generic::ienumerable interface.
+/// demonstrates how to use xtd::collections::generic::ienumerable interface.
 ///
 /// @example generic_ienumerable3.cpp
-/// Shows how to use xtd::collections::generic::ienumerable interface.
+/// demonstrates how to use xtd::collections::generic::ienumerable interface.
 ///
 /// @example generic_ienumerator.cpp
-/// Shows how to use xtd::collections::generic::ienumerator interface.
+/// demonstrates how to use xtd::collections::generic::ienumerator interface.
 ///
 /// @example generic_ilist.cpp
-/// Shows how to use xtd::collections::generic::ilist interface.
+/// demonstrates how to use xtd::collections::generic::ilist interface.
 ///
 /// @example generic_linked_list.cpp
-/// Shows how to use xtd::collections::generic::linked_list class.
+/// demonstrates how to use xtd::collections::generic::linked_list class.
 ///
 /// @example generic_linked_list_node.cpp
-/// Shows how to use xtd::collections::generic::linked_list_node class.
+/// demonstrates how to use xtd::collections::generic::linked_list_node class.
 ///
 /// @example generic_list.cpp
-/// Shows how to use xtd::collections::generic::list class.
+/// demonstrates how to use xtd::collections::generic::list class.
 ///
 /// @example generic_list2.cpp
-/// Shows how to use xtd::collections::generic::list class.
+/// demonstrates how to use xtd::collections::generic::list class.
 ///
 /// @example generic_list3.cpp
-/// Shows how to use xtd::collections::generic::list class.
+/// demonstrates how to use xtd::collections::generic::list class.
 ///
 /// @example generic_list4.cpp
-/// Shows how to use xtd::collections::generic::list class.
+/// demonstrates how to use xtd::collections::generic::list class.
 ///
 /// @example generic_list_as_read_only.cpp
-/// Shows how to use xtd::collections::generic::list class.
+/// demonstrates how to use xtd::collections::generic::list class.
 ///
 /// @example generic_list_binary_search.cpp
-/// Shows how to use xtd::collections::generic::list::binary_search class.
+/// demonstrates how to use xtd::collections::generic::list::binary_search class.
 ///
 /// @example generic_list_conversions_to_vector.cpp
 /// Shows how to convert xtd::collections::generic::list to std::vector and std::vector to xtd::collections::generic::list.
 ///
 /// @example generic_list_convert_all.cpp
-/// Shows how to use xtd::collections::generic::list::convert_all method.
+/// demonstrates how to use xtd::collections::generic::list::convert_all method.
 ///
 /// @example generic_list_exists.cpp
-/// Shows how to use xtd::collections::generic::list::exists method.
+/// demonstrates how to use xtd::collections::generic::list::exists method.
 ///
 /// @example generic_list_for_each.cpp
-/// Shows how to use xtd::collections::generic::list::for_each method.
+/// demonstrates how to use xtd::collections::generic::list::for_each method.
 ///
 /// @example generic_list_iterator_vs_vector_iterator.cpp
 /// Highlights the difference between xtd::collections::generic::list and std::vector when modifying a collection during iteration.
 ///
 /// @example generic_list_reverse.cpp
-/// Shows how to use xtd::collections::generic::list::reverse method.
+/// demonstrates how to use xtd::collections::generic::list::reverse method.
 ///
 /// @example generic_list_sort.cpp
-/// Shows how to use xtd::collections::generic::list::sort method.
+/// demonstrates how to use xtd::collections::generic::list::sort method.
 ///
 /// @example generic_list_sort2.cpp
-/// Shows how to use xtd::collections::generic::list::sort method.
+/// demonstrates how to use xtd::collections::generic::list::sort method.
 ///
 /// @example generic_list_sort3.cpp
-/// Shows how to use xtd::collections::generic::list::sort method.
+/// demonstrates how to use xtd::collections::generic::list::sort method.
 ///
 /// @example generic_ordered_dictionary.cpp
-/// Shows how to use xtd::collections::generic::ordered_dictionary class.
+/// demonstrates how to use xtd::collections::generic::ordered_dictionary class.
 ///
 /// @example generic_queue.cpp
-/// Shows how to use xtd::collections::generic::queue class.
+/// demonstrates how to use xtd::collections::generic::queue class.
 ///
 /// @example generic_stack.cpp
-/// Shows how to use xtd::collections::generic::stack class.
+/// demonstrates how to use xtd::collections::generic::stack class.
 ///
 /// @example mix_generic_list_and_std_vector_api.cpp
-/// Shows how to use xtd::collections::generic::list class.
+/// demonstrates how to use xtd::collections::generic::list class.
 ///
 /// @example culture_info_culture_types.cpp
-/// Shows how to use xtd::globalization::culture_info class.
+/// demonstrates how to use xtd::globalization::culture_info class.
 ///
 /// @example culture_info_current_culture.cpp
-/// Shows how to use xtd::globalization::culture_info::current_culture property.
+/// demonstrates how to use xtd::globalization::culture_info::current_culture property.
 ///
 /// @example culture_info_date_time_format.cpp
-/// Shows how to use xtd::globalization::culture_info::date_time_format property.
+/// demonstrates how to use xtd::globalization::culture_info::date_time_format property.
 ///
 /// @example culture_info_is_neutral_culture.cpp
-/// Shows how to use xtd::globalization::culture_info::is_neutral_culture property.
+/// demonstrates how to use xtd::globalization::culture_info::is_neutral_culture property.
 ///
 /// @example culture_info_lcid.cpp
-/// Shows how to use xtd::globalization::culture_info::lcid property.
+/// demonstrates how to use xtd::globalization::culture_info::lcid property.
 ///
 /// @example culture_info_parent.cpp
-/// Shows how to use xtd::globalization::culture_info::parent property.
+/// demonstrates how to use xtd::globalization::culture_info::parent property.
 ///
 /// @example culture_info_properties.cpp
-/// Shows how to use xtd::globalization::culture_info properties.
+/// demonstrates how to use xtd::globalization::culture_info properties.
 ///
 /// @example culture_info_with_name.cpp
-/// Shows how to use xtd::globalization::culture_info class.
+/// demonstrates how to use xtd::globalization::culture_info class.
 ///
 /// @example date_time_format_info.cpp
-/// Shows how to use xtd::globalization::date_time_format class.
+/// demonstrates how to use xtd::globalization::date_time_format class.
 ///
 /// @example guid.cpp
-/// Shows how to use xtd::guid class.
+/// demonstrates how to use xtd::guid class.
 ///
 /// @example hash_code.cpp
-/// Shows how to use xtd::hash_code class.
+/// demonstrates how to use xtd::hash_code class.
 ///
 /// @example hello_world_console.cpp
 /// The classic first application "Hello, World!" with xtd::console class.
@@ -722,49 +722,49 @@
 /// The classic first application "Hello, World!" with xtd::string class.
 ///
 /// @example index.cpp
-/// Shows how to use xtd::index struct.
+/// demonstrates how to use xtd::index struct.
 ///
 /// @example index_literal.cpp
-/// Shows how to use xtd::index struct.
+/// demonstrates how to use xtd::index struct.
 ///
 /// @example index_operator.cpp
-/// Shows how to use xtd::index struct as operator.
+/// demonstrates how to use xtd::index struct as operator.
 ///
 /// @example range.cpp
-/// Shows how to use xtd::range struct.
+/// demonstrates how to use xtd::range struct.
 ///
 /// @example range_literal.cpp
-/// Shows how to use xtd::range struct.
+/// demonstrates how to use xtd::range struct.
 ///
 /// @example range_operator.cpp
-/// Shows how to use xtd::range struct as operator.
+/// demonstrates how to use xtd::range struct as operator.
 ///
 /// @example iasync_result.cpp
-/// Shows how to use xtd:: iasync_result interface.
+/// demonstrates how to use xtd:: iasync_result interface.
 ///
 /// @example iclonable.cpp
-/// Shows how to use xtd::iequatable interface.
+/// demonstrates how to use xtd::iequatable interface.
 ///
 /// @example icomparable.cpp
-/// Shows how to use xtd::iequatable interface.
+/// demonstrates how to use xtd::iequatable interface.
 ///
 /// @example iequatable.cpp
-/// Shows how to use xtd::iequatable interface.
+/// demonstrates how to use xtd::iequatable interface.
 ///
 /// @example iformatable.cpp
-/// Shows how to use xtd::iformatable interface.
+/// demonstrates how to use xtd::iformatable interface.
 ///
 /// @example iformatable_vs_to_string.cpp
-/// Shows how to use xtd::iformatable interface and xtd::to_string method.
+/// demonstrates how to use xtd::iformatable interface and xtd::to_string method.
 ///
 /// @example iobservable_iobserver.cpp
-/// Shows how to use xtd::iobservable and xtd::iobserver interfaces.
+/// demonstrates how to use xtd::iobservable and xtd::iobserver interfaces.
 ///
 /// @example iprogress.cpp
-/// Shows how to use xtd::iprogress interface.
+/// demonstrates how to use xtd::iprogress interface.
 ///
 /// @example istringable.cpp
-/// Shows how to use xtd::istringable interface.
+/// demonstrates how to use xtd::istringable interface.
 ///
 /// @example binary_reader.cpp
 /// Show how to use xtd::io::binary_reader class.
@@ -809,187 +809,187 @@
 /// Show how to use xtd::io::file_info::replace method.
 ///
 /// @example assert_.cpp
-/// Shows how to use assert_ macro.
+/// demonstrates how to use assert_ macro.
 ///
 /// @example assert_with_message.cpp
-/// Shows how to use assert_ macro.
+/// demonstrates how to use assert_ macro.
 ///
 /// @example block_scope.cpp
-/// Shows how to use xtd::block_scope class.
+/// demonstrates how to use xtd::block_scope class.
 ///
 /// @example call_once.cpp
-/// Shows how to use call_once_ keyword.
+/// demonstrates how to use call_once_ keyword.
 ///
 /// @example call_once2.cpp
-/// Shows how to use call_once struct.
+/// demonstrates how to use call_once struct.
 ///
 /// @example interface.cpp
-/// Shows how to use xtd::interface class.
+/// demonstrates how to use xtd::interface class.
 ///
 /// @example interface2.cpp
-/// Shows how to use xtd::interface class.
+/// demonstrates how to use xtd::interface class.
 ///
 /// @example lock.cpp
-/// Shows how to use xtd::lock class.
+/// demonstrates how to use xtd::lock class.
 ///
 /// @example lock_guard_keyword.cpp
-/// Shows how to use lock_guard_ class.
+/// demonstrates how to use lock_guard_ class.
 ///
 /// @example nameof.cpp
-/// Shows how to use nameof_ keyword.
+/// demonstrates how to use nameof_ keyword.
 ///
 /// @example self.cpp
-/// Shows how to use self_ keyword.
+/// demonstrates how to use self_ keyword.
 ///
 /// @example sizeof.cpp
-/// Shows how to use sizeof_ keyword.
+/// demonstrates how to use sizeof_ keyword.
 ///
 /// @example startup_keyword.cpp
-/// Shows how to use xtd::startup class.
+/// demonstrates how to use xtd::startup class.
 ///
 /// @example static.cpp
-/// Shows how to use xtd::static class.
+/// demonstrates how to use xtd::static class.
 ///
 /// @example static_object.cpp
-/// Shows how to use static_object_ keyword.
+/// demonstrates how to use static_object_ keyword.
 ///
 /// @example typeof.cpp
-/// Shows how to use typeof_ keyword.
+/// demonstrates how to use typeof_ keyword.
 ///
 /// @example unused.cpp
-/// Shows how to use __ keyword.
+/// demonstrates how to use __ keyword.
 ///
 /// @example unused2.cpp
-/// Shows how to use unused_ keyword.
+/// demonstrates how to use unused_ keyword.
 ///
 /// @example using.cpp
-/// Shows how to use xtd::using class.
+/// demonstrates how to use xtd::using class.
 ///
 /// @example enumerable_aggregate.cpp
-/// Shows how to use xtd::linq::enumerable::aggregate method.
+/// demonstrates how to use xtd::linq::enumerable::aggregate method.
 ///
 /// @example enumerable_aggregate2.cpp
-/// Shows how to use xtd::linq::enumerable::aggregate method.
+/// demonstrates how to use xtd::linq::enumerable::aggregate method.
 ///
 /// @example enumerable_aggregate3.cpp
-/// Shows how to use xtd::linq::enumerable::aggregate method.
+/// demonstrates how to use xtd::linq::enumerable::aggregate method.
 ///
 /// @example enumerable_aggregate4.cpp
-/// Shows how to use xtd::linq::enumerable::aggregate method.
+/// demonstrates how to use xtd::linq::enumerable::aggregate method.
 ///
 /// @example enumerable_aggregate5.cpp
-/// Shows how to use xtd::linq::enumerable::aggregate method.
+/// demonstrates how to use xtd::linq::enumerable::aggregate method.
 ///
 /// @example enumerable_aggregate6.cpp
-/// Shows how to use xtd::linq::enumerable::aggregate method.
+/// demonstrates how to use xtd::linq::enumerable::aggregate method.
 ///
 /// @example enumerable_all.cpp
-/// Shows how to use xtd::linq::enumerable::all method.
+/// demonstrates how to use xtd::linq::enumerable::all method.
 ///
 /// @example enumerable_all2.cpp
-/// Shows how to use xtd::linq::enumerable::all method.
+/// demonstrates how to use xtd::linq::enumerable::all method.
 ///
 /// @example enumerable_any.cpp
-/// Shows how to use xtd::linq::enumerable::any method.
+/// demonstrates how to use xtd::linq::enumerable::any method.
 ///
 /// @example enumerable_any2.cpp
-/// Shows how to use xtd::linq::enumerable::any method.
+/// demonstrates how to use xtd::linq::enumerable::any method.
 ///
 /// @example enumerable_any3.cpp
-/// Shows how to use xtd::linq::enumerable::any method.
+/// demonstrates how to use xtd::linq::enumerable::any method.
 ///
 /// @example enumerable_any4.cpp
-/// Shows how to use xtd::linq::enumerable::any method.
+/// demonstrates how to use xtd::linq::enumerable::any method.
 ///
 /// @example enumerable_append.cpp
-/// Shows how to use xtd::linq::enumerable::append method.
+/// demonstrates how to use xtd::linq::enumerable::append method.
 ///
 /// @example enumerable_append2.cpp
-/// Shows how to use xtd::linq::enumerable::append method.
+/// demonstrates how to use xtd::linq::enumerable::append method.
 ///
 /// @example enumerable_concat.cpp
-/// Shows how to use xtd::linq::concat method.
+/// demonstrates how to use xtd::linq::concat method.
 ///
 /// @example enumerable_count.cpp
-/// Shows how to use xtd::linq::enumerable::count method.
+/// demonstrates how to use xtd::linq::enumerable::count method.
 ///
 /// @example enumerable_count2.cpp
-/// Shows how to use xtd::linq::enumerable::count method.
+/// demonstrates how to use xtd::linq::enumerable::count method.
 ///
 /// @example enumerable_count_by.cpp
-/// Shows how to use xtd::linq::enumerable::count_by method.
+/// demonstrates how to use xtd::linq::enumerable::count_by method.
 ///
 /// @example enumerable_count_by2.cpp
-/// Shows how to use xtd::linq::enumerable::count_by method.
+/// demonstrates how to use xtd::linq::enumerable::count_by method.
 ///
 /// @example enumerable_default_if_empty.cpp
-/// Shows how to use xtd::linq::enumerable::default_if_empty method.
+/// demonstrates how to use xtd::linq::enumerable::default_if_empty method.
 ///
 /// @example enumerable_default_if_empty2.cpp
-/// Shows how to use xtd::linq::enumerable::default_if_empty method.
+/// demonstrates how to use xtd::linq::enumerable::default_if_empty method.
 ///
 /// @example enumerable_distinct.cpp
-/// Shows how to use xtd::linq::enumerable::distinct method.
+/// demonstrates how to use xtd::linq::enumerable::distinct method.
 ///
 /// @example enumerable_range.cpp
-/// Shows how to use xtd::linq::enumerable::range method.
+/// demonstrates how to use xtd::linq::enumerable::range method.
 ///
 /// @example enumerable_select.cpp
-/// Shows how to use xtd::linq::enumerable::select method.
+/// demonstrates how to use xtd::linq::enumerable::select method.
 ///
 /// @example enumerable_select2.cpp
-/// Shows how to use xtd::linq::enumerable::select method.
+/// demonstrates how to use xtd::linq::enumerable::select method.
 ///
 /// @example enumerable_skip_while.cpp
-/// Shows how to use xtd::linq::skip_while method.
+/// demonstrates how to use xtd::linq::skip_while method.
 ///
 /// @example enumerable_take_while.cpp
-/// Shows how to use xtd::linq::take_while method.
+/// demonstrates how to use xtd::linq::take_while method.
 ///
 /// @example enumerable_to_list.cpp
-/// Shows how to use xtd::linq::enumerable::to_list method.
+/// demonstrates how to use xtd::linq::enumerable::to_list method.
 ///
 /// @example enumerable_where.cpp
-/// Shows how to use xtd::linq::enumerable::where method.
+/// demonstrates how to use xtd::linq::enumerable::where method.
 ///
 /// @example enumerable_where2.cpp
-/// Shows how to use xtd::linq::enumerable::where method.
+/// demonstrates how to use xtd::linq::enumerable::where method.
 ///
 /// @example linq_from.cpp
-/// Shows how to use xtd::linq::from method.
+/// demonstrates how to use xtd::linq::from method.
 ///
 /// @example linq_from2.cpp
-/// Shows how to use xtd::linq::from method.
+/// demonstrates how to use xtd::linq::from method.
 ///
 /// @example linq_from3.cpp
-/// Shows how to use xtd::linq::from method.
+/// demonstrates how to use xtd::linq::from method.
 ///
 /// @example linq_from4.cpp
-/// Shows how to use xtd::linq::from method.
+/// demonstrates how to use xtd::linq::from method.
 ///
 /// @example linq_from5.cpp
-/// Shows how to use xtd::linq::from method.
+/// demonstrates how to use xtd::linq::from method.
 ///
 /// @example linq_from6.cpp
-/// Shows how to use xtd::linq::from method.
+/// demonstrates how to use xtd::linq::from method.
 ///
 /// @example main.cpp
-/// Shows how to use xtd::startup class.
+/// demonstrates how to use xtd::startup class.
 ///
 /// @example main1.cpp
-/// Shows how to use xtd::startup class.
+/// demonstrates how to use xtd::startup class.
 ///
 /// @example main2.cpp
-/// Shows how to use xtd::startup class.
+/// demonstrates how to use xtd::startup class.
 ///
 /// @example main3.cpp
-/// Shows how to use xtd::startup class.
+/// demonstrates how to use xtd::startup class.
 ///
 /// @example main4.cpp
-/// Shows how to use xtd::startup class.
+/// demonstrates how to use xtd::startup class.
 ///
 /// @example main5.cpp
-/// Shows how to use xtd::startup class.
+/// demonstrates how to use xtd::startup class.
 ///
 /// @example math.cpp
 /// This example uses several mathematical and trigonometric functions from the xtd::math class to calculate the inner angles of a trapezoid.
@@ -998,46 +998,46 @@
 /// Shows how tto use xtd::media::system_sounds and xtd::media::system_sounds classes.
 ///
 /// @example memory_information.cpp
-/// Shows how to use xtd::memory_information class.
+/// demonstrates how to use xtd::memory_information class.
 ///
 /// @example dns_get_host_addresses.cpp
-/// Shows how to use xtd::net::dns class.
+/// demonstrates how to use xtd::net::dns class.
 ///
 /// @example dns_get_host_entry.cpp
-/// Shows how to use xtd::net::dns class.
+/// demonstrates how to use xtd::net::dns class.
 ///
 /// @example ip_address.cpp
-/// Shows how to use xtd::net::dns class.
+/// demonstrates how to use xtd::net::dns class.
 ///
 /// @example network_stream.cpp
-/// Shows how to use xtd::net::sockets::network_stream class.
+/// demonstrates how to use xtd::net::sockets::network_stream class.
 ///
 /// @example socket_tcp_ip_v4.cpp
-/// Shows how to use xtd::net::sockets::socket class.
+/// demonstrates how to use xtd::net::sockets::socket class.
 ///
 /// @example socket_tcp_ip_v4_without_thread.cpp
-/// Shows how to use xtd::net::sockets::socket class.
+/// demonstrates how to use xtd::net::sockets::socket class.
 ///
 /// @example socket_tcp_ip_v6.cpp
-/// Shows how to use xtd::net::sockets::socket class.
+/// demonstrates how to use xtd::net::sockets::socket class.
 ///
 /// @example socket_udp_ip_v4.cpp
-/// Shows how to use xtd::net::sockets::socket class.
+/// demonstrates how to use xtd::net::sockets::socket class.
 ///
 /// @example socket_udp_ip_v6.cpp
-/// Shows how to use xtd::net::sockets::socket class.
+/// demonstrates how to use xtd::net::sockets::socket class.
 ///
 /// @example tcp_client_ip_v4.cpp
-/// Shows how to use xtd::net::sockets::tcp_client class.
+/// demonstrates how to use xtd::net::sockets::tcp_client class.
 ///
 /// @example tcp_client_ip_v6.cpp
-/// Shows how to use xtd::net::sockets::tcp_client class.
+/// demonstrates how to use xtd::net::sockets::tcp_client class.
 ///
 /// @example udp_client_ip_v4.cpp
-/// Shows how to use xtd::net::sockets::udp_client class.
+/// demonstrates how to use xtd::net::sockets::udp_client class.
 ///
 /// @example udp_client_ip_v6.cpp
-/// Shows how to use xtd::net::sockets::udp_client class.
+/// demonstrates how to use xtd::net::sockets::udp_client class.
 ///
 /// @example object.cpp
 /// Shows hows how to use xtd::object class.
@@ -1064,40 +1064,40 @@
 /// Shows hows how to use xtd::object::to_string method.
 ///
 /// @example read_only_collection.cpp
-/// Shows how to use xtd::collections::object_model::read_only_collection class.
+/// demonstrates how to use xtd::collections::object_model::read_only_collection class.
 ///
 /// @example console_background_color2.cpp
-/// Shows how to use xtd::console::background_color method.
+/// demonstrates how to use xtd::console::background_color method.
 ///
 /// @example console_background_color3.cpp
-/// Shows how to use xtd::console::background_color method.
+/// demonstrates how to use xtd::console::background_color method.
 ///
 /// @example console_beep2.cpp
-/// Shows how to use xtd::console::beep method.
+/// demonstrates how to use xtd::console::beep method.
 ///
 /// @example console_beep3.cpp
-/// Shows how to use xtd::console::beep method.
+/// demonstrates how to use xtd::console::beep method.
 ///
 /// @example console_color2.cpp
-/// Shows how to use xtd::console::background_color and  xtd::console::foreground_color methods.
+/// demonstrates how to use xtd::console::background_color and  xtd::console::foreground_color methods.
 ///
 /// @example console_color3.cpp
-/// Shows how to use xtd::console::background_color and  xtd::console::foreground_color methods.
+/// demonstrates how to use xtd::console::background_color and  xtd::console::foreground_color methods.
 ///
 /// @example console_color4.cpp
-/// Shows how to use xtd::console::background_color4 and  xtd::console::foreground_color methods.
+/// demonstrates how to use xtd::console::background_color4 and  xtd::console::foreground_color methods.
 ///
 /// @example console_read_line2.cpp
-/// Shows how to use xtd::console::read_line method.
+/// demonstrates how to use xtd::console::read_line method.
 ///
 /// @example console_song2.cpp
-/// Shows how to use xtd::beep class.
+/// demonstrates how to use xtd::beep class.
 ///
 /// @example console_song3.cpp
-/// Shows how to use xtd::beep class.
+/// demonstrates how to use xtd::beep class.
 ///
 /// @example fibonacci_series.cpp
-/// Shows how to use xtd::console, xtd::string classes.
+/// demonstrates how to use xtd::console, xtd::string classes.
 ///
 /// @example hello_world_console2.cpp
 /// The classic first application "Hello, World!" with xtd::console class.
@@ -1112,82 +1112,82 @@
 /// The classic first application "Hello, World!" with xtd::environment class.
 ///
 /// @example wconsole2.cpp
-/// Shows how to use xtd::wconsole class.
+/// demonstrates how to use xtd::wconsole class.
 ///
 /// @example parse_boolean.cpp
-/// Shows how to use format xtd::parse<bool> method with boolean values.
+/// demonstrates how to use format xtd::parse<bool> method with boolean values.
 ///
 /// @example parse_enum.cpp
-/// Shows how to use format xtd::parse<enum> method with enum values.
+/// demonstrates how to use format xtd::parse<enum> method with enum values.
 ///
 /// @example parse_enum_class.cpp
-/// Shows how to use format xtd::parse<num class> method with enum class values.
+/// demonstrates how to use format xtd::parse<num class> method with enum class values.
 ///
 /// @example parse_enum_struct.cpp
-/// Shows how to use format xtd::parse<num struct> method with enum struct values.
+/// demonstrates how to use format xtd::parse<num struct> method with enum struct values.
 ///
 /// @example parse_floating_point.cpp
-/// Shows how to use format xtd::parse method with floating point values (float, double and decimal).
+/// demonstrates how to use format xtd::parse method with floating point values (float, double and decimal).
 ///
 /// @example parse_numeric.cpp
-/// Shows how to use format xtd::parse method with numeric values (int8, int16, int32, int64, uint8, uint16, uint32 and uint64).
+/// demonstrates how to use format xtd::parse method with numeric values (int8, int16, int32, int64, uint8, uint16, uint32 and uint64).
 ///
 /// @example process.cpp
-/// Shows how to use xtd::process class with standard output redirection.
+/// demonstrates how to use xtd::process class with standard output redirection.
 ///
 /// @example process_start_info.cpp
-/// Shows how to use xtd::diagnostics::process_start_info class.
+/// demonstrates how to use xtd::diagnostics::process_start_info class.
 ///
 /// @example process_with_standard_output_redirection.cpp
-/// Shows how to use xtd::process class with standard output redirection.
+/// demonstrates how to use xtd::process class with standard output redirection.
 ///
 /// @example random1.cpp
-/// Shows how to use xtd::random::next_bytes method.
+/// demonstrates how to use xtd::random::next_bytes method.
 ///
 /// @example random2.cpp
-/// Shows how to use xtd::random class.
+/// demonstrates how to use xtd::random class.
 ///
 /// @example random3.cpp
-/// Shows how to use xtd::random::next method.
+/// demonstrates how to use xtd::random::next method.
 ///
 /// @example ranges_views.cpp
-/// Shows how to use xtd::ranges::views views.
+/// demonstrates how to use xtd::ranges::views views.
 ///
 /// @example ranges_views_distinct.cpp
-/// Shows how to use xtd::ranges::views::distinct_view class.
+/// demonstrates how to use xtd::ranges::views::distinct_view class.
 ///
 /// @example ranges_views_distinct2.cpp
-/// Shows how to use xtd::ranges::views::distinct_view class.
+/// demonstrates how to use xtd::ranges::views::distinct_view class.
 ///
 /// @example ranges_views_order_by.cpp
-/// Shows how to use xtd::ranges::views::order_by_view class.
+/// demonstrates how to use xtd::ranges::views::order_by_view class.
 ///
 /// @example ranges_views_order_by2.cpp
-/// Shows how to use xtd::ranges::views::order_by_view class.
+/// demonstrates how to use xtd::ranges::views::order_by_view class.
 ///
 /// @example ranges_views_order_by_descending.cpp
-/// Shows how to use xtd::ranges::views::order_by_descending_view class.
+/// demonstrates how to use xtd::ranges::views::order_by_descending_view class.
 ///
 /// @example ranges_views_order_by_descending2.cpp
-/// Shows how to use xtd::ranges::views::order_by_descending_view class.
+/// demonstrates how to use xtd::ranges::views::order_by_descending_view class.
 ///
 /// @example ranges_views_select.cpp
-/// Shows how to use xtd::ranges::views::select_view class.
+/// demonstrates how to use xtd::ranges::views::select_view class.
 ///
 /// @example ranges_views_select2.cpp
-/// Shows how to use xtd::ranges::views::select_view class.
+/// demonstrates how to use xtd::ranges::views::select_view class.
 ///
 /// @example ranges_views_where.cpp
-/// Shows how to use xtd::ranges::views::where_view class.
+/// demonstrates how to use xtd::ranges::views::where_view class.
 ///
 /// @example ranges_views_where2.cpp
-/// Shows how to use xtd::ranges::views::where_view class.
+/// demonstrates how to use xtd::ranges::views::where_view class.
 ///
 /// @example settings_with_cmake.cpp
-/// Shows how to use xtd::configuration::settingd with CMake commands.
+/// demonstrates how to use xtd::configuration::settingd with CMake commands.
 ///
 /// @example settings_without_cmake.cpp
-/// Shows how to use xtd::configuration::settingd directly without CMake commands.
+/// demonstrates how to use xtd::configuration::settingd directly without CMake commands.
 ///
 /// @example span_from_memory.cpp
 /// Create a xtd::span from memory.
@@ -1196,187 +1196,187 @@
 /// Create a xtd::span over an array.
 ///
 /// @example specialized_ordered_dictionary.cpp
-/// Shows how to use xtd::collections::specialized::ordered_dictionary class.
+/// demonstrates how to use xtd::collections::specialized::ordered_dictionary class.
 ///
 /// @example sprintf.cpp
-/// Shows how to use xtd::string::sprintf method.
+/// demonstrates how to use xtd::string::sprintf method.
 ///
 /// @example sprintf_boolean.cpp
-/// Shows how to use xtd::string::sprintf method.
+/// demonstrates how to use xtd::string::sprintf method.
 ///
 /// @example sprintf_character.cpp
-/// Shows how to use xtd::string::sprintf method.
+/// demonstrates how to use xtd::string::sprintf method.
 ///
 /// @example sprintf_class.cpp
-/// Shows how to use xtd::string::sprintf method.
+/// demonstrates how to use xtd::string::sprintf method.
 ///
 /// @example sprintf_class_with_specified_formating.cpp
-/// Shows how to use xtd::string::sprintf method.
+/// demonstrates how to use xtd::string::sprintf method.
 ///
 /// @example sprintf_class_with_specified_formating_with_to_string.cpp
 /// Show how to use format xtd::format class.
 ///
 /// @example sprintf_date_time.cpp
-/// Shows how to use xtd::string::sprintf method.
+/// demonstrates how to use xtd::string::sprintf method.
 ///
 /// @example sprintf_duration.cpp
-/// Shows how to use xtd::ustring::sprintf method.
+/// demonstrates how to use xtd::ustring::sprintf method.
 ///
 /// @example sprintf_enum.cpp
-/// Shows how to use xtd::ustring::sprintf method.
+/// demonstrates how to use xtd::ustring::sprintf method.
 ///
 /// @example sprintf_enum_class.cpp
-/// Shows how to use xtd::ustring::sprintf method.
+/// demonstrates how to use xtd::ustring::sprintf method.
 ///
 /// @example sprintf_floating_point.cpp
-/// Shows how to use xtd::string::sprintf method.
+/// demonstrates how to use xtd::string::sprintf method.
 ///
 /// @example sprintf_numeric.cpp
-/// Shows how to use xtd::string::sprintf method.
+/// demonstrates how to use xtd::string::sprintf method.
 ///
 /// @example sprintf_string.cpp
-/// Shows how to use xtd::ustring::sprintf method.
+/// demonstrates how to use xtd::ustring::sprintf method.
 ///
 /// @example sprintf_with_alignment.cpp
-/// Shows how to use xtd::ustring::sprintf method.
+/// demonstrates how to use xtd::ustring::sprintf method.
 ///
 /// @example startup.cpp
-/// Shows how to use xtd::startup class.
+/// demonstrates how to use xtd::startup class.
 ///
 /// @example startup1.cpp
-/// Shows how to use xtd::startup class.
+/// demonstrates how to use xtd::startup class.
 ///
 /// @example startup2.cpp
-/// Shows how to use xtd::startup class.
+/// demonstrates how to use xtd::startup class.
 ///
 /// @example startup3.cpp
-/// Shows how to use xtd::startup class.
+/// demonstrates how to use xtd::startup class.
 ///
 /// @example startup4.cpp
-/// Shows how to use xtd::startup class.
+/// demonstrates how to use xtd::startup class.
 ///
 /// @example compare.cpp
-/// Shows how to use xtd::string::compare method.
+/// demonstrates how to use xtd::string::compare method.
 ///
 /// @example compare_ignore_case.cpp
-/// Shows how to use xtd::string::compare method.
+/// demonstrates how to use xtd::string::compare method.
 ///
 /// @example concat.cpp
-/// Shows how to use xtd::string::concat method.
+/// demonstrates how to use xtd::string::concat method.
 ///
 /// @example concat_collection.cpp
-/// Shows how to use xtd::string::concat method.
+/// demonstrates how to use xtd::string::concat method.
 ///
 /// @example contains.cpp
-/// Shows how to use xtd::string::contains method.
+/// demonstrates how to use xtd::string::contains method.
 ///
 /// @example join.cpp
-/// Shows how to use xtd::string::join method.
+/// demonstrates how to use xtd::string::join method.
 ///
 /// @example split.cpp
-/// Shows how to use xtd::string::split method.
+/// demonstrates how to use xtd::string::split method.
 ///
 /// @example string_format.cpp
-/// Shows how to use xtd::string::format method.
+/// demonstrates how to use xtd::string::format method.
 ///
 /// @example string_format_with_order.cpp
-/// Shows how to use xtd::string::format method.
+/// demonstrates how to use xtd::string::format method.
 ///
 /// @example string_unicode.cpp
-/// Shows how to use xtd::string method.
+/// demonstrates how to use xtd::string method.
 ///
 /// @example strings.cpp
-/// Shows how to use xtd::basic_string constructors.
+/// demonstrates how to use xtd::basic_string constructors.
 ///
 /// @example task.cpp
-/// Shows how to use xtd::threading::tasks:task class.
+/// demonstrates how to use xtd::threading::tasks:task class.
 ///
 /// @example task_completion_source.cpp
-/// Shows how to use xtd::threading::tasks:task_completion_source class.
+/// demonstrates how to use xtd::threading::tasks:task_completion_source class.
 ///
 /// @example task_delay.cpp
-/// Shows how to use xtd::threading::tasks:task::delay method.
+/// demonstrates how to use xtd::threading::tasks:task::delay method.
 ///
 /// @example tasks.cpp
-/// Shows how to use xtd::threading::tasks:task class.
+/// demonstrates how to use xtd::threading::tasks:task class.
 ///
 /// @example test_console.cpp
 /// Shows how to set target startup with cmake xtd::console.
 ///
 /// @example string_builder_append.cpp
-/// Shows how to use xtd::text::basic_string_builder::append method.
+/// demonstrates how to use xtd::text::basic_string_builder::append method.
 ///
 /// @example auto_reset_event.cpp
-/// Shows how to use xtd::threading::auto_reset_event class.
+/// demonstrates how to use xtd::threading::auto_reset_event class.
 ///
 /// @example barrier.cpp
-/// Shows how to use xtd::threading::barrier class.
+/// demonstrates how to use xtd::threading::barrier class.
 ///
 /// @example barrier_simple.cpp
-/// Shows how to use xtd::threading::barrier class.
+/// demonstrates how to use xtd::threading::barrier class.
 ///
 /// @example countdown_event.cpp
-/// Shows how to use xtd::threading::countdown_event class.
+/// demonstrates how to use xtd::threading::countdown_event class.
 ///
 /// @example event_wait_handle.cpp
-/// Shows how to use xtd::threading::event_wait_handle class.
+/// demonstrates how to use xtd::threading::event_wait_handle class.
 ///
 /// @example interlocked.cpp
-/// Shows how to use xtd::threading::interlocked class.
+/// demonstrates how to use xtd::threading::interlocked class.
 ///
 /// @example interlocked_decrement.cpp
-/// Shows how to use xtd::threading::interlocked::decrement and xtd::threading::interlocked::increment methods.
+/// demonstrates how to use xtd::threading::interlocked::decrement and xtd::threading::interlocked::increment methods.
 ///
 /// @example jthread.cpp
-/// Shows how to use xtd::threading::jthread class.
+/// demonstrates how to use xtd::threading::jthread class.
 ///
 /// @example lock_guard.cpp
-/// Shows how to use xtd::threading::lock_guard class.
+/// demonstrates how to use xtd::threading::lock_guard class.
 ///
 /// @example manual_reset_event.cpp
-/// Shows how to use xtd::threading::manual_reset_event class.
+/// demonstrates how to use xtd::threading::manual_reset_event class.
 ///
 /// @example mixing_std_and_xtd_threads.cpp
-/// Shows how to use and mixing xtd::threading::thread and std::thread classes.
+/// demonstrates how to use and mixing xtd::threading::thread and std::thread classes.
 ///
 /// @example monitor.cpp
-/// Shows how to use xtd::threading::monitor class.
+/// demonstrates how to use xtd::threading::monitor class.
 ///
 /// @example monitor_lock.cpp
-/// Shows how to use xtd::threading::monitor class.
+/// demonstrates how to use xtd::threading::monitor class.
 ///
 /// @example monitor_pulse.cpp
-/// Shows how to use xtd::threading::monitor::pulse pulse.
+/// demonstrates how to use xtd::threading::monitor::pulse pulse.
 ///
 /// @example monitor_pulse_all.cpp
-/// Shows how to use xtd::threading::monitor::pulse_all method.
+/// demonstrates how to use xtd::threading::monitor::pulse_all method.
 ///
 /// @example mutex.cpp
-/// Shows how to use xtd::threading::mutex class.
+/// demonstrates how to use xtd::threading::mutex class.
 ///
 /// @example semaphore.cpp
-/// Shows how to use xtd::threading::semaphore class.
+/// demonstrates how to use xtd::threading::semaphore class.
 ///
 /// @example thread.cpp
-/// Shows how to use xtd::threading::thread class.
+/// demonstrates how to use xtd::threading::thread class.
 ///
 /// @example thread2.cpp
-/// Shows how to use xtd::threading::thread class.
+/// demonstrates how to use xtd::threading::thread class.
 ///
 /// @example thread_pool.cpp
-/// Shows how to use xtd::threading::thread_pool class.
+/// demonstrates how to use xtd::threading::thread_pool class.
 ///
 /// @example thread_pool2.cpp
-/// Shows how to use xtd::threading::thread_pool class.
+/// demonstrates how to use xtd::threading::thread_pool class.
 ///
 /// @example timeout.cpp
-/// Shows how to use xtd::threading::timeout class.
+/// demonstrates how to use xtd::threading::timeout class.
 ///
 /// @example timer.cpp
-/// Shows how to use xtd::threading::timer class.
+/// demonstrates how to use xtd::threading::timer class.
 ///
 /// @example wait_handle.cpp
-/// Shows how to use xtd::threading::wait_handle class.
+/// demonstrates how to use xtd::threading::wait_handle class.
 ///
 /// @example time_span.cpp
 /// Demonstrates the xtd::time_span struct.
@@ -1388,19 +1388,19 @@
 /// Demonstrates the xtd::time_span::from_days method.
 ///
 /// @example timers_timer.cpp
-/// Shows how to use xtd::timers::timer class.
+/// demonstrates how to use xtd::timers::timer class.
 ///
 /// @example timers_timer_synchronizing_object.cpp
-/// Shows how to use xtd::timers::timer::synchronizing_object property.
+/// demonstrates how to use xtd::timers::timer::synchronizing_object property.
 ///
 /// @example binary_reader_and_binary_writer.cpp
 /// Demonstrates that binary files created with xtd::io::binary_writer and read with xtd::io::binary_reader are fully compatible with .NET's BinaryWriter and BinaryReader. The files produced by xtd and .NET are identical, ensuring seamless cross-language interoperability.
 ///
 /// @example using_xtd_tunit_assert_without_tunit_app.cpp
-/// Shows how to use xtd.tunit assert methods like xtd::tunit::assert in a xtd.console or xtd.forms application.
+/// demonstrates how to use xtd.tunit assert methods like xtd::tunit::assert in a xtd.console or xtd.forms application.
 ///
 /// @example xtd_collection_indexer.cpp
-/// Shows how to use indexing operators with xtd::index (xtd::index::start, xtd::index::start + 1, xtd::index::start + 2), xtd::xtd::index::last (xtd::index::last, xtd::index::last - 1, xtd::index::last - 2, ...) and bitwise operators (~1_z, ~2_z, ...) with xtd collections like xtd::collections::generic::list.
+/// demonstrates how to use indexing operators with xtd::index (xtd::index::start, xtd::index::start + 1, xtd::index::start + 2), xtd::xtd::index::last (xtd::index::last, xtd::index::last - 1, xtd::index::last - 2, ...) and bitwise operators (~1_z, ~2_z, ...) with xtd collections like xtd::collections::generic::list.
 ///
 /// @example uri.cpp
 /// Demonstrates the xtd::uri various properties.
@@ -1409,11 +1409,11 @@
 /// Demonstrates the xtd::version constructor, and major, minor, build, revision, major_revision, and minor_revision properties.
 ///
 /// @example version_os.cpp
-/// Shows how to use xtd::version to get the Operating System version.
+/// demonstrates how to use xtd::version to get the Operating System version.
 ///
 /// @example css_reader.cpp
-/// Shows how to use xtd::web::css:css_reader class.
+/// demonstrates how to use xtd::web::css:css_reader class.
 ///
 /// @example css_writer.cpp
-/// Shows how to use xtd::web::css:css_writer class.
+/// demonstrates how to use xtd::web::css:css_writer class.
 ///

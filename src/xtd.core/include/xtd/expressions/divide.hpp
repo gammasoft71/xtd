@@ -23,7 +23,7 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core
     /// @par Examples
-    /// The following example shows how to use xtd::expressions::expression::divide.
+    /// The following example demonstrates how to use xtd::expressions::expression::divide.
     /// ```cpp
     /// #include <xtd/xtd>
     ///
@@ -117,7 +117,7 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core expressions
     /// @par Examples
-    /// The following example shows how to use xtd::expressions::expression::divide.
+    /// The following example demonstrates how to use xtd::expressions::expression::divide.
     /// ```cpp
     /// #include <xtd/xtd>
     ///

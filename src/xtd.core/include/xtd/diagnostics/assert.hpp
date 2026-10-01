@@ -18,10 +18,10 @@
   /// @param message (optional) The brief message to send to the xtd::diagnostics::debug::listeners collection.
   /// @param detail_message (optional) The detail message to send to the xtd::diagnostics::debug::listeners collection.
   /// @par Examples
-  /// The following example shows how to use #assert_ macro.
+  /// The following example demonstrates how to use #assert_ macro.
   /// @include assert_.cpp
   /// @par Examples
-  /// The following example shows how to use #assert_ macro with message.
+  /// The following example demonstrates how to use #assert_ macro with message.
   /// @include assert_with_message.cpp
   #define assert_(...) \
     if (xtd::diagnostics::debug::__should_aborted__(xtd::diagnostics::stack_frame::current(), __VA_ARGS__)) debug_break_()
@@ -38,10 +38,10 @@
   /// @param message (optional) The brief message to send to the xtd::diagnostics::debug::listeners collection.
   /// @param detail_message (optional) The detail message to send to the xtd::diagnostics::debug::listeners collection.
   /// @par Examples
-  /// The following example shows how to use #assert_ macro.
+  /// The following example demonstrates how to use #assert_ macro.
   /// @include assert_.cpp
   /// @par Examples
-  /// The following example shows how to use #assert_ macro with message.
+  /// The following example demonstrates how to use #assert_ macro with message.
   /// @include assert_with_message.cpp
   #define assert_(...) \
     ((void)0)

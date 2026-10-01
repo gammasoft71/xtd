@@ -16,7 +16,7 @@ namespace xtd {
     /// @ingroup xtd_tunit tunit
     /// @remarks The class initialization method is the method that is called just before the start of all tests. It is called only once.
     /// @par Examples
-    /// The following example shows how to use xtd::tunit::class_initialize_attribute class.
+    /// The following example demonstrates how to use xtd::tunit::class_initialize_attribute class.
     /// @include test_class_without_helpers.cpp
     class class_initialize_attribute {
     public:
@@ -41,7 +41,7 @@ namespace xtd {
 /// xtd.tunit
 /// @ingroup xtd_tunit tunit
 /// @par Examples
-/// The following example shows how to use #class_initialize_ helper.
+/// The following example demonstrates how to use #class_initialize_ helper.
 /// @include test_class.cpp
 #define class_initialize_(method_name) \
   __##method_name##_static() {} \

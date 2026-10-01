@@ -16,7 +16,7 @@ namespace xtd {
   /// @remarks This interface is implemented by types whose values can be hashed (for example, the numeric and string classes). A value type or class implements the `get_hash_code` method to create a type-specific method suitable for determining the hash code of the instance.
   /// @remarks The xtd::ihashable interface defines the xtd::ihashable::get_hash_code method, which determines the hash code of the instance.
   /// @par Examples
-  /// The following example shows how to use xtd::ihashable interface.
+  /// The following example demonstrates how to use xtd::ihashable interface.
   /// @include ihashable.cpp
   class ihashable interface_ {
   public:

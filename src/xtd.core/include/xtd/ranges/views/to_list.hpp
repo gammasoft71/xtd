@@ -33,9 +33,9 @@ namespace xtd {
       /// xtd.core
       /// @ingroup xtd_core ranges
       /// @par Examples
-      /// The following example shows how to use xtd::ranges::views::to_list instance :
+      /// The following example demonstrates how to use xtd::ranges::views::to_list instance :
       /// @include ranges_views_to_list.cpp
-      /// The following example shows how to use xtd::ranges::views::to_list_view class :
+      /// The following example demonstrates how to use xtd::ranges::views::to_list_view class :
       /// @include ranges_views_to_list2.cpp
       inline constexpr auto to_list = to_list_view {};
     }

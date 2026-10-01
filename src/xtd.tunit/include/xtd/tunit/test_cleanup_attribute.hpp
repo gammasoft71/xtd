@@ -16,7 +16,7 @@ namespace xtd {
     /// @ingroup xtd_tunit tunit
     /// @remarks The test cleanup method is the method that is called right after a test method is finished. It is called for each test.
     /// @par Examples
-    /// The following example shows how to use xtd::tunit::test_cleanup_attribute class.
+    /// The following example demonstrates how to use xtd::tunit::test_cleanup_attribute class.
     /// @include test_class_without_helpers.cpp
     class test_cleanup_attribute {
     public:
@@ -39,7 +39,7 @@ namespace xtd {
 /// @param method_name The test cleanup method to add.
 /// @ingroup xtd_tunit tunit
 /// @par Examples
-/// The following example shows how to use #test_cleanup_ helper.
+/// The following example demonstrates how to use #test_cleanup_ helper.
 /// @include test_class.cpp
 #define test_cleanup_(method_name) \
   __##method_name##_unused() = delete; \

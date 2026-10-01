@@ -42,7 +42,7 @@ namespace xtd {
       ///
       /// The example uses the xtd::collections::generic::dictionary::operator [] to retrieve values, demonstrating that a xtd::collections::generic::key_not_found_exception is thrown when a requested key is not present, and showing that the value associated with a key can be replaced.
       ///
-      /// The example shows how to use the xtd::collections::generic::dictionary::try_get_vValue method as a more efficient way to retrieve values if a program often must try key values that are not in the dictionary, and it shows how to use the xtd::collections::generic::dictionary::contains_key method to test whether a key exists before calling the xtd::collections::generic::dictionary::add method.
+      /// The example demonstrates how to use the xtd::collections::generic::dictionary::try_get_vValue method as a more efficient way to retrieve values if a program often must try key values that are not in the dictionary, and it demonstrates how to use the xtd::collections::generic::dictionary::contains_key method to test whether a key exists before calling the xtd::collections::generic::dictionary::add method.
       ///
       /// The example shows how to enumerate the keys and values in the dictionary and how to enumerate the keys and values alone using the xtd::collections::generic::dictionary::keys property and the xtd::collections::generic::dictionary::values property.
       ///

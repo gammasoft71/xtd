@@ -17,7 +17,7 @@
 /// @ingroup xtd_core keywords
 /// @remarks Same as C++26 feature [_](https://cppreference.com/cpp/language/conflicting_declarations#Potentially-conflict_declarations) but for C++20 and later.
 /// @par Examples
-/// The following code shows how to use #unsued_ keyword.
+/// The following code demonstrates how to use #unsued_ keyword.
 /// @include keyword_
 #  define unused_ _
 #else
@@ -43,7 +43,7 @@
 /// @ingroup xtd_core keywords
 /// @remarks Same as C++26 feature [_](https://cppreference.com/cpp/language/conflicting_declarations#Potentially-conflict_declarations) but for C++20 and later.
 /// @par Examples
-/// The following code shows how to use #unsued_ keyword.
+/// The following code demonstrates how to use #unsued_ keyword.
 /// @include keyword_
 #  define unused_ __xtd_unused_concat_(__xtd_no_name_, __xtd_unused_unique_id_)
 #endif
@@ -60,6 +60,6 @@
 /// @ingroup xtd_core keywords
 /// @remarks Same as C++26 feature [_](https://cppreference.com/cpp/language/conflicting_declarations#Potentially-conflict_declarations) but for C++20 and later.
 /// @par Examples
-/// The following code shows how to use #__ keyword.
+/// The following code demonstrates how to use #__ keyword.
 /// @include keyword_
 #define __ unused_

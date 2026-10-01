@@ -12,7 +12,7 @@ namespace xtd {
     /// @brief Represents a test initialize attribute.
     /// @remarks The test initialize method is the method that is called just before a test method starts.
     /// @par Examples
-    /// The following example shows how to use xtd::tunit::test_initialize_attribute class.
+    /// The following example demonstrates how to use xtd::tunit::test_initialize_attribute class.
     /// @include test_class_without_helpers.cpp
     class test_initialize_attribute {
     public:
@@ -35,7 +35,7 @@ namespace xtd {
 /// @param method_name The name of the test initialize method.
 /// @ingroup xtd_tunit tunit
 /// @par Examples
-/// The following example shows how to use #test_initialize_ helper.
+/// The following example demonstrates how to use #test_initialize_ helper.
 /// @include test_class.cpp
 #define test_initialize_(method_name) \
   __##method_name##_unused() = delete; \

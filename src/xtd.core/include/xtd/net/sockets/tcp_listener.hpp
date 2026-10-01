@@ -32,10 +32,10 @@ namespace xtd {
       /// @remarks Call the xtd::net::sockets::tcp_listener::stop method to close the xtd::net::sockets::tcp_listener.
       /// @note The xtd::net::sockets::tcp_listener::stop method does not close any accepted connections. You are responsible for closing these separately.
       /// @par Examples
-      /// The following example shows how to use IPv4 xtd::net::sockets::tcp_listener class with use xtd::net::sockets::tcp_client, xtd::net::sockets::network_stream, xtd::net::sockets::socket, xtd::io::stream_reader and xtd::io::stream_writer classes.
+      /// The following example demonstrates how to use IPv4 xtd::net::sockets::tcp_listener class with use xtd::net::sockets::tcp_client, xtd::net::sockets::network_stream, xtd::net::sockets::socket, xtd::io::stream_reader and xtd::io::stream_writer classes.
       /// @include tcp_client_ip_v4.cpp
       /// @par Examples
-      /// The following example shows how to use IPv6 xtd::net::sockets::tcp_listener class with use xtd::net::sockets::tcp_client, xtd::net::sockets::network_stream, xtd::net::sockets::socket, xtd::io::stream_reader and xtd::io::stream_writer classes.
+      /// The following example demonstrates how to use IPv6 xtd::net::sockets::tcp_listener class with use xtd::net::sockets::tcp_client, xtd::net::sockets::network_stream, xtd::net::sockets::socket, xtd::io::stream_reader and xtd::io::stream_writer classes.
       /// @include tcp_client_ip_v6.cpp
       class core_export_ tcp_listener : public xtd::object, public xtd::iequatable<tcp_listener> {
         class async_result_socket : public xtd::object, public xtd::iasync_result {

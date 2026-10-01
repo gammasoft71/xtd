@@ -117,7 +117,7 @@ namespace xtd {
     /// @brief Checks if the stored reference is empty.
     /// @return `true`if stored reference is empty; otherwise `false`.
     /// @par Examples
-    /// The following code shows how to use xtd::reference_wrapper_object::get and xtd::reference_wrapper_object::is_empty
+    /// The following code demonstrates how to use xtd::reference_wrapper_object::get and xtd::reference_wrapper_object::is_empty
     /// @code
     /// template<typename value_t>
     /// void print_value(const reference_wrapper_object<value_t>& value) {
@@ -179,7 +179,7 @@ namespace xtd {
     /// @return The stored reference.
     /// @exception xtd::null_pointer_exception If xtd::reference_wrapper_object is empty.
     /// @par Examples
-    /// The following code shows how to use xtd::reference_wrapper_object::get and xtd::reference_wrapper_object::is_empty
+    /// The following code demonstrates how to use xtd::reference_wrapper_object::get and xtd::reference_wrapper_object::is_empty
     /// @code
     /// template<typename value_t>
     /// void print_value(const reference_wrapper_object<value_t>& value) {
@@ -217,7 +217,7 @@ namespace xtd {
     /// @return The stored object.
     /// @exception xtd::null_pointer_exception If xtd::reference_wrapper_object is empty.
     /// @par Examples
-    /// The following code shows how to use xtd::reference_wrapper_object::to_object and xtd::reference_wrapper_object::is_empty
+    /// The following code demonstrates how to use xtd::reference_wrapper_object::to_object and xtd::reference_wrapper_object::is_empty
     /// @code
     /// template<typename value_t>
     /// void print_value(const reference_wrapper_object<value_t>& value) {
@@ -328,7 +328,7 @@ namespace xtd {
     /// @return The stored object.
     /// @exception xtd::null_pointer_exception If xtd::reference_wrapper_object is empty.
     /// @par Examples
-    /// The following code shows how to use xtd::reference_wrapper_object::operator type& and xtd::reference_wrapper_object::is_empty
+    /// The following code demonstrates how to use xtd::reference_wrapper_object::operator type& and xtd::reference_wrapper_object::is_empty
     /// @code
     /// template<typename value_t>
     /// void print_value(const reference_wrapper_object<value_t>& value) {

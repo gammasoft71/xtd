@@ -23,7 +23,7 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core
     /// @par Examples
-    /// The following example shows how to use xtd::expressions::expression::add.
+    /// The following example demonstrates how to use xtd::expressions::expression::add.
     /// @include add_expression.cpp
     /// @remarks The xtd::expressions::add struct is used by xtd::expressions::expression::add expression.
     template<typename left_t, typename right_t>
@@ -93,7 +93,7 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core expressions
     /// @par Examples
-    /// The following example shows how to use xtd::expressions::expression::add.
+    /// The following example demonstrates how to use xtd::expressions::expression::add.
     /// @include add_expression.cpp
     template<typename left_t, typename right_t>
     requires expression_operand<left_t> || expression_operand<right_t>

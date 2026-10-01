@@ -22,7 +22,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core system concepts
   /// @par Examples
-  /// The following code shows how to use xtd::forward_iterable_value_type concept
+  /// The following code demonstrates how to use xtd::forward_iterable_value_type concept
   /// @include forward_iterable_value_type.cpp
   template <xtd::forward_iterable forward_iterable_t>
   using forward_iterable_value_type = xtd::iterable_value_type<forward_iterable_t>;

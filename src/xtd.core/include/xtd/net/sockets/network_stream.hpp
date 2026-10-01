@@ -33,7 +33,7 @@ namespace xtd {
       /// @remarks The xtd::net::sockets::network_stream does not support random access to the network data stream.
       /// @remarks std::iostream::read and std::iostream::write operations can be performed simultaneously on an instance of the xtd::net::sockets::network_stream class without the need for synchronization. As long as there is one unique thread for the write operations and one unique thread for the read operations, there will be no cross-interference between read and write threads and no synchronization is required.
       /// @par Examples
-      /// The following example shows how to use xtd::net::sockets::network_stream class with xtd::net::sockets::socket, xtd::io::stream_reader and xtd::io::stream_writer classes.
+      /// The following example demonstrates how to use xtd::net::sockets::network_stream class with xtd::net::sockets::socket, xtd::io::stream_reader and xtd::io::stream_writer classes.
       /// @include network_stream.cpp
       class core_export_ network_stream : public xtd::io::stream {
       public:

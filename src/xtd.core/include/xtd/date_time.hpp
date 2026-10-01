@@ -753,7 +753,7 @@ namespace xtd {
     /// @return A string representation of value of the current xtd::date_time object as specified by format.
     /// @exception xtd::format_exception The length of format is 1, and it is not a valid format characters<br>-or-<br>The length is greater than 1.
     /// @par Examples
-    /// The following example shows how to use xtd::date_time::to_string with different formats.
+    /// The following example demonstrates how to use xtd::date_time::to_string with different formats.
     /// @include date_time_to_string_format.cpp
     /// @remarks The standard formatting codes for xtd::date_time::to_string (const xtd::string& format) are listed below:
     /// | Format                     | Description                                                                      | Examples                                                                                                                                                                                                                                                      |
@@ -890,7 +890,7 @@ namespace xtd {
     /// @return A string representation of value of the current xtd::date_time object as specified by format.
     /// @exception xtd::format_exception The length of format is 1, and it is not a valid format characters<br>-or-<br>The length is greater than 1.
     /// @par Examples
-    /// The following example shows how to use xtd::date_time::to_string with different formats.
+    /// The following example demonstrates how to use xtd::date_time::to_string with different formats.
     /// @include date_time_to_string_format.cpp
     /// @remarks The standard formatting codes for xtd::date_time::to_string (const xtd::string& format, const xtd::globalization::culture_info& culture) are listed below:
     /// | Format                     | Description                                                                      | Examples                                                                                                                                                                                                                                                      |
@@ -1235,7 +1235,7 @@ namespace xtd {
     /// @param value The xtd::date_time object to format.
     /// @return A xtd::string that represents the current xtd::date_time.
     /// @par Examples
-    /// The following example shows how to use xtd::date_time::sprintf with different formats.
+    /// The following example demonstrates how to use xtd::date_time::sprintf with different formats.
     /// @include date_time_sprintf.cpp
     /// @remarks The put string formatting codes for xtd::date_time::sprintf (const xtd::string& format, const xtd::date_time& value) are listed below (See [std::put_time](https://en.cppreference.com/w/cpp/io/manip/put_time) for more information.) :
     /// | Format              | Description                                                                                                                   | Examples                                                                                                                                                                                  |
@@ -1304,7 +1304,7 @@ namespace xtd {
     /// @param culture An xtd::globalization::culture_info object that contains culture information.
     /// @return A xtd::string that represents the current xtd::date_time.
     /// @par Examples
-    /// The following example shows how to use xtd::date_time::sprintf with different formats.
+    /// The following example demonstrates how to use xtd::date_time::sprintf with different formats.
     /// @include date_time_sprintf.cpp
     /// @remarks The put string formatting codes for xtd::date_time::sprintf (const xtd::string& format, const xtd::date_time& value, const xtd::globalization::culture_info& culture) are listed below (See [std::put_time](https://en.cppreference.com/w/cpp/io/manip/put_time) for more information.) :
     /// | Format              | Description                                                                                                                   | Examples                                                                                                                                                                                  |

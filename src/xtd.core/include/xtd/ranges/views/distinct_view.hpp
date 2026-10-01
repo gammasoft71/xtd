@@ -30,9 +30,9 @@ namespace xtd {
       /// xtd.core
       /// @ingroup xtd_core ranges
       /// @par Examples
-      /// The following example shows how to use xtd::ranges::views::distinct instance :
+      /// The following example demonstrates how to use xtd::ranges::views::distinct instance :
       /// @include ranges_views_distinct.cpp
-      /// The following example shows how to use xtd::ranges::views::distinct_view class :
+      /// The following example demonstrates how to use xtd::ranges::views::distinct_view class :
       /// @include ranges_views_distinct2.cpp
       class distinct_view {
         template<typename comparer_t>

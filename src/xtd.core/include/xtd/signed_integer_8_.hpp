@@ -22,7 +22,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core concepts
   /// @par Examples
-  /// The following code shows how to use xtd::signed_integer_8 concept
+  /// The following code demonstrates how to use xtd::signed_integer_8 concept
   /// ```cpp
   /// #include <xtd/xtd>
   ///

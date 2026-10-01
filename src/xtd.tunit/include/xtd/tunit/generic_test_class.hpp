@@ -9,7 +9,7 @@
 /// @param ... type list.
 /// @ingroup xtd_tunit tunit
 /// @par Examples
-/// The following example shows how to use #generic_test_class_ helper.
+/// The following example demonstrates how to use #generic_test_class_ helper.
 /// ```cpp
 /// #include <xtd/tunit/tunit>
 ///

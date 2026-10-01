@@ -97,7 +97,7 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core expressions
     /// @par Examples
-    /// The following example shows how to use xtd::expressions::expression::or_.
+    /// The following example demonstrates how to use xtd::expressions::expression::or_.
     /// ```cpp
     /// #include <xtd/xtd>
     ///

@@ -30,9 +30,9 @@ namespace xtd {
       /// xtd.core
       /// @ingroup xtd_core ranges
       /// @par Examples
-      /// The following example shows how to use xtd::ranges::views::to_array instance :
+      /// The following example demonstrates how to use xtd::ranges::views::to_array instance :
       /// @include ranges_views_to_array.cpp
-      /// The following example shows how to use xtd::ranges::views::to_array_view class :
+      /// The following example demonstrates how to use xtd::ranges::views::to_array_view class :
       /// @include ranges_views_to_array2.cpp
       class to_array_view {
       public:

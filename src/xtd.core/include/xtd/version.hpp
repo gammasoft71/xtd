@@ -39,7 +39,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core system
   /// @par Examples
-  /// The following example shows how to use xtd::version to get the version of the Operating System.
+  /// The following example demonstrates how to use xtd::version to get the version of the Operating System.
   /// @include version_os.cpp
   /// @remarks xtd::version numbers consist of two to four components: major, minor, build, and revision. The major and minor components are required; the build and revision components are optional, but the build component is required if the revision component is defined. All defined components must be integers greater than or equal to 0. The format of the version number is as follows (optional components are shown in square brackets ([ and ]):
   /// @verbatim major.minor[.build[.revision]] @endverbatim
@@ -276,7 +276,7 @@ namespace xtd {
     /// @return The xtd::uint64 representation of the values of the major, minor, build, and revision components of the current xtd::version object.
     /// @exception xtd::invalid_cast if xtd::version::minor or xtd::version::build or xtd::version::revision are greater than 99.
     /// @par Examples
-    /// The following code shows how to use xtd::version::to_uint64 method.
+    /// The following code demonstrates how to use xtd::version::to_uint64 method.
     /// ```cpp
     /// #include <xtd/xtd>
     ///
@@ -300,7 +300,7 @@ namespace xtd {
     /// @remarks The 64-bit integer representation must follow the format: `major * 1'000'000 + minor * 10'000 + build * 100 + revision`.
     /// @remarks Components beyond build and revision may be omitted (e.g., 1020000 is equivalent to version 1.2).
     /// @par Examples
-    /// The following code shows how to use the from_uint64 method.
+    /// The following code demonstrates how to use the from_uint64 method.
     /// @code
     /// #include <xtd/xtd>
     ///

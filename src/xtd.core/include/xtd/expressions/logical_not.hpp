@@ -24,7 +24,7 @@ namespace xtd {
     /// @ingroup xtd_core
     /// @remarks The xtd::expressions::logical_not struct is used by xtd::expressions::expression::logical_not expression.
     /// @par Examples
-    /// The following example shows how to use xtd::expressions::logical_not.
+    /// The following example demonstrates how to use xtd::expressions::logical_not.
     /// ```cpp
     /// #include <xtd/xtd>
     ///
@@ -104,7 +104,7 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core expressions
     /// @par Examples
-    /// The following example shows how to use xtd::expressions::expression::logical_not.
+    /// The following example demonstrates how to use xtd::expressions::expression::logical_not.
     /// ```cpp
     /// #include <xtd/xtd>
     ///

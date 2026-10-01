@@ -90,7 +90,7 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core expressions
     /// @par Examples
-    /// The following example shows how to use xtd::expressions::expression::not_equal.
+    /// The following example demonstrates how to use xtd::expressions::expression::not_equal.
     /// ```cpp
     /// #include <xtd/xtd>
     ///

@@ -73,7 +73,7 @@ namespace xtd {
       /// xtd.core
       /// @ingroup xtd_core keywords
       /// @par Examples
-      /// The following example shows how to use assembly information manually.
+      /// The following example demonstrates how to use assembly information manually.
       /// @include application_with_manual_assembly_info.cpp
       /// @include assembly_info.cpp
       static auto create(const string& name) -> assembly_name_attribute;
@@ -104,7 +104,7 @@ auto __assembly_name_attribute__() -> xtd::sptr<xtd::reflection::assembly_name_a
 /// xtd.core
 /// @ingroup xtd_core keywords
 /// @par Examples
-/// The following example shows how to use assembly information manually.
+/// The following example demonstrates how to use assembly information manually.
 /// @include application_with_manual_assembly_info.cpp
 /// @include assembly_info.cpp
 #define assembly_name_(name) \

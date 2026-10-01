@@ -18,7 +18,7 @@
 /// xtd.core
 /// @ingroup xtd_core keywords
 /// @par Examples
-/// The following example shows how to use #foreach_ keyword with an xtd::collections::generic::list <type_t> of xtd::string.
+/// The following example demonstrates how to use #foreach_ keyword with an xtd::collections::generic::list <type_t> of xtd::string.
 /// ```cpp
 /// foreach_(const auto& item, list<string> {"one", "two", "three", "four"})
 ///   console::write_line(item);

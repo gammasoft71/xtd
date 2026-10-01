@@ -29,9 +29,9 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core system
   /// @par Examples
-  /// The following example shows how to use xtd::range with a xtd::collections::generic::list.
+  /// The following example demonstrates how to use xtd::range with a xtd::collections::generic::list.
   /// @include range.cpp
-  /// The following example shows how to use range literal operator.
+  /// The following example demonstrates how to use range literal operator.
   /// @include range_literal.cpp
   /// The following example shows how to create your own collection with xtd::range operator.
   /// @include range_operator.cpp

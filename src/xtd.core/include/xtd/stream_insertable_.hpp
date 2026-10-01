@@ -23,7 +23,7 @@ namespace xtd {
   /// @ingroup xtd_core concepts
   /// @return `true` if value_t has stream insertion operator `<<` specialization.
   /// @par Examples
-  /// The following code shows how to use xtd::stream_insertable concept
+  /// The following code demonstrates how to use xtd::stream_insertable concept
   /// @include stream_insertable.cpp
   template<typename value_t>
   struct stream_insertable;

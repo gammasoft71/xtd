@@ -22,7 +22,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core concepts
   /// @par Examples
-  /// The following code shows how to use xtd::post_incrementable concept
+  /// The following code demonstrates how to use xtd::post_incrementable concept
   /// ```cpp
   /// #include <xtd/xtd>
   ///

@@ -221,7 +221,7 @@ namespace xtd {
       /// @param p The xtd::drawing::point used offset this xtd::drawing::point.
       /// @remarks This method adjusts the xtd::drawing::point::x and xtd::drawing::point::y values of this xtd::drawing::point to the sum of the xtd::drawing::point::x and xtd::drawing::point::y values of this xtd::drawing::point and p.
       /// @par Examples
-      /// The following example shows how to use the Offset method. To run this example, paste it into a Windows Form. Handle the form's xtd::forms::control::paint event and call the Offsetpoint method from the xtd::forms::control::paint event-handling method, passing e as xtd::forms::paint_event_args.
+      /// The following example demonstrates how to use the Offset method. To run this example, paste it into a Windows Form. Handle the form's xtd::forms::control::paint event and call the Offsetpoint method from the xtd::forms::control::paint event-handling method, passing e as xtd::forms::paint_event_args.
       /// ```cpp
       /// void offset_point(paint_event_args& e) {
       ///   point point1(10, 10);
@@ -246,7 +246,7 @@ namespace xtd {
       /// @return The xtd::drawing::point that is the result of the addition operation.
       /// @remarks The xtd::drawing::point::add adds the xtd::drawing::size::width and xtd::drawing::size::height of the specified size to the xtd::drawing::point::x and xtd::drawing::point::y values of the specified xtd::drawing::point.
       /// @par Examples
-      /// The following example shows how to use the add method. To run this example, paste it into a Windows Form (xtd::forms. Handle the form's xtd::forms::control::paint event and call the add_point method from the paint event-handling method, passing e as paint_event_args.
+      /// The following example demonstrates how to use the add method. To run this example, paste it into a Windows Form (xtd::forms. Handle the form's xtd::forms::control::paint event and call the add_point method from the paint event-handling method, passing e as paint_event_args.
       /// ```cpp
       /// void add_point(paint_event_args& e) {
       ///   point point1(10, 10);

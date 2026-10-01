@@ -25,7 +25,7 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core diagnostics debug
     /// @par Examples
-    /// The following example shows how to use xtd::diagnostics::console_trace_listener class.
+    /// The following example demonstrates how to use xtd::diagnostics::console_trace_listener class.
     /// @include console_trace_listener.cpp
     class core_export_ console_trace_listener : public xtd::diagnostics::ostream_trace_listener {
     public:

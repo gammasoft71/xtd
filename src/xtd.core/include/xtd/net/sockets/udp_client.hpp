@@ -37,10 +37,10 @@ namespace xtd {
       /// @note Do not call xtd::net::sockets::udp_client::send using a host name or xtd::net::ip_end_point if you have already specified a default remote host. If you do, xtd::net::sockets::udp_client will throw an exception.
       /// @remarks xtd::net::sockets::udp_client methods also allow you to send and receive multicast datagrams. Use the xtd::net::sockets::udp_client::join_multicast_group method to subscribe a xtd::net::sockets::udp_client to a multicast group. Use the xtd::net::sockets::udp_client::drop_multicast_group method to unsubscribe a xtd::net::sockets::udp_client from a multicast group.
       /// @par Examples
-      /// The following example shows how to use IPv4 xtd::net::sockets::udp_client class.
+      /// The following example demonstrates how to use IPv4 xtd::net::sockets::udp_client class.
       /// @include udp_client_ip_v4.cpp
       /// @par Examples
-      /// The following example shows how to use IPv6 xtd::net::sockets::udp_client class.
+      /// The following example demonstrates how to use IPv6 xtd::net::sockets::udp_client class.
       /// @include udp_client_ip_v6.cpp
       class core_export_ udp_client : public xtd::object, public xtd::iequatable<udp_client> {
         class async_result_socket : public xtd::object, public xtd::iasync_result {

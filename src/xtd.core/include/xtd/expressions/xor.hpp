@@ -25,7 +25,7 @@ namespace xtd {
     /// @ingroup xtd_core
     /// @remarks The xtd::expressions::xor_ struct is used by xtd::expressions::expression::xor_ expression.
     /// @par Examples
-    /// The following example shows how to use xtd::expressions::xor_.
+    /// The following example demonstrates how to use xtd::expressions::xor_.
     /// ```cpp
     /// #include <xtd/xtd>
     ///
@@ -123,7 +123,7 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core expressions
     /// @par Examples
-    /// The following example shows how to use xtd::expressions::expression::xor_.
+    /// The following example demonstrates how to use xtd::expressions::expression::xor_.
     /// ```cpp
     /// #include <xtd/xtd>
     ///

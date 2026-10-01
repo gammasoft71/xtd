@@ -23,7 +23,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core system concepts
   /// @par Examples
-  /// The following code shows how to use xtd::iterable_value_type concept
+  /// The following code demonstrates how to use xtd::iterable_value_type concept
   /// @include iterable_value_type.cpp
   template <xtd::iterable iterable_t>
   using iterable_value_type = xtd::raw_type<decltype(*std::begin(std::declval<iterable_t&>()))>;

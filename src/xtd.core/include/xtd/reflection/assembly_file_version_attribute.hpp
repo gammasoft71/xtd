@@ -66,7 +66,7 @@ namespace xtd {
       /// @remarks Use CMake assembly macro if you want create assembly informations with CMake scripts.
       /// @param version The file version information.
       /// @par Examples
-      /// The following example shows how to use assembly information manually.
+      /// The following example demonstrates how to use assembly information manually.
       /// @include application_with_manual_assembly_info.cpp
       /// @include assembly_info.cpp
       static auto create(const string& version) -> assembly_file_version_attribute;
@@ -97,7 +97,7 @@ auto __assembly_file_version_attribute__() -> xtd::sptr<xtd::reflection::assembl
 /// xtd.core
 /// @ingroup xtd_core keywords
 /// @par Examples
-/// The following example shows how to use assembly information manually.
+/// The following example demonstrates how to use assembly information manually.
 /// @include application_with_manual_assembly_info.cpp
 /// @include assembly_info.cpp
 #define assembly_file_version_(version) \

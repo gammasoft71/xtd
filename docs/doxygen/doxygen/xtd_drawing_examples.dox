@@ -2,71 +2,71 @@
 /// @brief Contains xtd.drawing examples.
 ///
 /// @example color.cpp
-/// Shows how to use xtd::drawing::color class.
+/// demonstrates how to use xtd::drawing::color class.
 ///
 /// @example font.cpp
-/// Shows how to use xtd::drawing::font class.
+/// demonstrates how to use xtd::drawing::font class.
 ///
 /// @example system_fonts.cpp
-/// Shows how to use xtd::drawing::system_fonts class.
+/// demonstrates how to use xtd::drawing::system_fonts class.
 ///
 /// @example graphics.cpp
-/// Shows how to use xtd::drawing::graphics class.
+/// demonstrates how to use xtd::drawing::graphics class.
 ///
 /// @example hello_world_png.cpp
 /// The classic first application "Hello, World!" with GDI+ drawing objects.
 ///
 /// @example image.cpp
-/// Shows how to use xtd::drawing::image class.
+/// demonstrates how to use xtd::drawing::image class.
 ///
 /// @example image_ani.cpp
-/// Shows how to use xtd::drawing::image class with ani image.
+/// demonstrates how to use xtd::drawing::image class with ani image.
 ///
 /// @example image_bmp.cpp
-/// Shows how to use xtd::drawing::image class with bmp image.
+/// demonstrates how to use xtd::drawing::image class with bmp image.
 ///
 /// @example image_cur.cpp
-/// Shows how to use xtd::drawing::image class with cursor image.
+/// demonstrates how to use xtd::drawing::image class with cursor image.
 ///
 /// @example image_emf.cpp
-/// Shows how to use xtd::drawing::image class with emf image.
+/// demonstrates how to use xtd::drawing::image class with emf image.
 ///
 /// @example image_gif.cpp
-/// Shows how to use xtd::drawing::image class with gif image.
+/// demonstrates how to use xtd::drawing::image class with gif image.
 ///
 /// @example image_icns.cpp
-/// Shows how to use xtd::drawing::image class with icns image.
+/// demonstrates how to use xtd::drawing::image class with icns image.
 ///
 /// @example image_ico.cpp
-/// Shows how to use xtd::drawing::image class with ico image.
+/// demonstrates how to use xtd::drawing::image class with ico image.
 ///
 /// @example image_iif.cpp
-/// Shows how to use xtd::drawing::image class with iif image.
+/// demonstrates how to use xtd::drawing::image class with iif image.
 ///
 /// @example image_jpeg.cpp
-/// Shows how to use xtd::drawing::image class with jpeg image.
+/// demonstrates how to use xtd::drawing::image class with jpeg image.
 ///
 /// @example image_pcx.cpp
-/// Shows how to use xtd::drawing::image class with pcx image.
+/// demonstrates how to use xtd::drawing::image class with pcx image.
 ///
 /// @example image_png.cpp
-/// Shows how to use xtd::drawing::image class with png image.
+/// demonstrates how to use xtd::drawing::image class with png image.
 ///
 /// @example image_pnm.cpp
-/// Shows how to use xtd::drawing::image class with pnm image.
+/// demonstrates how to use xtd::drawing::image class with pnm image.
 ///
 /// @example image_tga.cpp
-/// Shows how to use xtd::drawing::image class with tga image.
+/// demonstrates how to use xtd::drawing::image class with tga image.
 ///
 /// @example image_tiff.cpp
-/// Shows how to use xtd::drawing::image class with tiff image.
+/// demonstrates how to use xtd::drawing::image class with tiff image.
 ///
 /// @example image_wmf.cpp
-/// Shows how to use xtd::drawing::image class with wmf image.
+/// demonstrates how to use xtd::drawing::image class with wmf image.
 ///
 /// @example image_xpm.cpp
-/// Shows how to use xtd::drawing::image class with xpm image.
+/// demonstrates how to use xtd::drawing::image class with xpm image.
 ///
 /// @example point.cpp
-/// Shows how to use xtd::drawing::point class.
+/// demonstrates how to use xtd::drawing::point class.
 ///

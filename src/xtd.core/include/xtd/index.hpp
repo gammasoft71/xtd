@@ -29,9 +29,9 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core system
   /// @par Examples
-  /// The following example shows how to use xtd::index with xtd::collections::generic::list.
+  /// The following example demonstrates how to use xtd::index with xtd::collections::generic::list.
   /// @include index.cpp
-  /// The following example shows how to use index literal operator.
+  /// The following example demonstrates how to use index literal operator.
   /// @include index_literal.cpp
   /// The following example shows how to create your own collection with xtd::index operator.
   /// @include index_operator.cpp

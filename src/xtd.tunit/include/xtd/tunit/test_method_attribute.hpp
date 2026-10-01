@@ -18,7 +18,7 @@ namespace xtd {
     /// @ingroup xtd_tunit tunit
     /// @remarks The test method is the method that performs the unit test.
     /// @par Examples
-    /// The following example shows how to use xtd::tunit::test_method_attribute class.
+    /// The following example demonstrates how to use xtd::tunit::test_method_attribute class.
     /// @include test_class_without_helpers.cpp
     class test_method_attribute {
     public:
@@ -52,7 +52,7 @@ namespace xtd {
 /// @ingroup xtd_tunit tunit
 /// @remarks This helper is used to ingor a test method. You can use the xtd::tunit::assert::ignore method instead.
 /// @par Examples
-/// The following example shows how to use #ignore_test_method_ helper.
+/// The following example demonstrates how to use #ignore_test_method_ helper.
 /// @include test_class.cpp
 #define ignore_test_method_(method_name) \
   __##method_name##_unused() = delete; \
@@ -67,7 +67,7 @@ namespace xtd {
 /// xtd.tunit
 /// @ingroup xtd_tunit tunit
 /// @par Examples
-/// The following example shows how to use #test_method_ helper.
+/// The following example demonstrates how to use #test_method_ helper.
 /// @include test_class.cpp
 #define test_method_(method_name) \
   __##method_name##_unused() = delete; \

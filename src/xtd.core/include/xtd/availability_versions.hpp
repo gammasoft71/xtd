@@ -16,7 +16,7 @@
 // #define __XTD_1_2_3__ 1020300
 
 // Example
-// The following code shows how to used availability versions.
+// The following code demonstrates how to used availability versions.
 //
 // #include <xtd/xtd>
 //

@@ -1156,7 +1156,7 @@ namespace xtd {
     /// @param name The name to demangle.
     /// @return The demangled basic_string of name.
     /// @par Examples
-    /// The following example shows how to use xtd::basic_string::demangle.
+    /// The following example demonstrates how to use xtd::basic_string::demangle.
     /// ```cpp
     /// #include <xtd/xtd>
     ///

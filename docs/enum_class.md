@@ -42,7 +42,7 @@ This does not prevent you, of course, from using them in your own projects. As x
 
 * [magic_enum](https://github.com/Neargye/magic_enum)
 
-The following code shows how to use `enum class` with magic_enum and xtd:
+The following code demonstrates how to use `enum class` with magic_enum and xtd:
 
 ```cpp
 #include <magic_enum/magic_enum.hpp>
@@ -86,7 +86,7 @@ entries = [(0, value_one), (1, value_two), (2, value_three), (3, value_four)]
 
 * [nav](https://github.com/codeinred/nav) with xtd
 
-The following code shows how to use `enum class` with nav and xtd:
+The following code demonstrates how to use `enum class` with nav and xtd:
 
 ```cpp
 #include <nav/nav_core.hpp>
@@ -136,7 +136,7 @@ The advantage is that it has no limitation and the disadvantage is that it is mo
 
 ### Examples
 
-The following code shows how to use `enum class` with [xtd::enum_register](https://gammasoft71.github.io/xtd/reference_guides/latest/structxtd_1_1enum__register.html):
+The following code demonstrates how to use `enum class` with [xtd::enum_register](https://gammasoft71.github.io/xtd/reference_guides/latest/structxtd_1_1enum__register.html):
 
 ```cpp
 #include <xtd/xtd>
@@ -312,7 +312,7 @@ The [flags_attribute helper](https://gammasoft71.github.io/xtd/reference_guides/
 
 See [operators](https://en.cppreference.com/w/cpp/language/operators) for more information about operators.
 
-The following code shows how to use [flags_attribute_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#gaea49fae71107df8769685efb159c181a) helper.
+The following code demonstrates how to use [flags_attribute_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#gaea49fae71107df8769685efb159c181a) helper.
 
 ```cpp
 #include <xtd/xtd.core.h>
@@ -356,7 +356,7 @@ You can use the [xtd::enum_object::to_string](https://gammasoft71.github.io/xtd/
 
 See [Enumeraton format strings](https://github.com/gammasoft71/xtd/blob/master/docs/format_enumeration_format_strings.md) for more information about enum class format.
 
-The following code shows how to use `enum class` with format.
+The following code demonstrates how to use `enum class` with format.
 
 ```cpp
 #include <xtd/xtd>
@@ -484,7 +484,7 @@ The introspection helpers have one limitiation :
 
 This helper provides the registration struct for `enum`.
 
-Thr following example shows how to use [enum_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#ga6c6a896cbec833fa1fac13b700cf8691) helper.
+Thr following example demonstrates how to use [enum_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#ga6c6a896cbec833fa1fac13b700cf8691) helper.
 
 ```cpp
 #include <xtd/xtd>
@@ -521,7 +521,7 @@ auto main() -> int {
 
 This helper provides the registration struct for `enum` with specified underlying type.
 
-Thr following example shows how to use [enum_ut_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#gabe13d52c924723772f27878f606210cd) helper.
+Thr following example demonstrates how to use [enum_ut_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#gabe13d52c924723772f27878f606210cd) helper.
 
 ```cpp
 #include <xtd/xtd>
@@ -558,7 +558,7 @@ auto main() -> int {
 
 This helper provides the registration struct for `enum class`.
 
-Thr following example shows how to use [enum_class_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#gade4794e2743558ee1eb5bbad10c7f6d4) helper.
+Thr following example demonstrates how to use [enum_class_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#gade4794e2743558ee1eb5bbad10c7f6d4) helper.
 
 ```cpp
 #include <xtd/xtd>
@@ -595,7 +595,7 @@ auto main() -> int {
 
 This helper provides the registration struct for `enum class` with specified underlying type.
 
-Thr following example shows how to use [enum_class_ut_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#ga6918e267c2970d28460e6c42a3b03f4a) helper.
+Thr following example demonstrates how to use [enum_class_ut_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#ga6918e267c2970d28460e6c42a3b03f4a) helper.
 
 ```cpp
 #include <xtd/xtd>
@@ -632,7 +632,7 @@ auto main() -> int {
 
 This helper provides the registration struct for `enum struct`.
 
-Thr following example shows how to use [enum_struct_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#ga85a4f5366ae461ca1e20872d39a0b440) helper.
+Thr following example demonstrates how to use [enum_struct_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#ga85a4f5366ae461ca1e20872d39a0b440) helper.
 
 ```cpp
 #include <xtd/xtd>
@@ -669,7 +669,7 @@ auto main() -> int {
 
 This helper provides the registration struct for `enum struct` with specified underlying type.
 
-Thr following example shows how to use [enum_struct_ut_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#ga341342381ae697a142233d256948df84) helper.
+Thr following example demonstrates how to use [enum_struct_ut_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#ga341342381ae697a142233d256948df84) helper.
 
 ```cpp
 #include <xtd/xtd>

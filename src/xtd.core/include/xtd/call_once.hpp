@@ -14,7 +14,7 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @remarks See also #call_once_ keyword helper.
   /// @par Examples
-  /// The following example shows how to use xtd::call_once struct.
+  /// The following example demonstrates how to use xtd::call_once struct.
   /// @include call_once2.cpp
   struct call_once {
   };
@@ -45,6 +45,6 @@ namespace xtd {
 /// @ingroup xtd_core keywords
 /// @remarks See also xtd::call_once struct.
 /// @par Examples
-/// The following example shows how to use #call_once_ keyword.
+/// The following example demonstrates how to use #call_once_ keyword.
 /// @include call_once.cpp
 #define call_once_ [[maybe_unused]] static auto __xtd_call_once_id__(__xtd__call_once__, __LINE__) = xtd::call_once {} + [&]

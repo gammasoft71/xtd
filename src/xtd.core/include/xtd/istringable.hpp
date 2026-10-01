@@ -18,7 +18,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core interfaces
   /// @par Examples
-  /// The following exemple shows how to use xtd::istringable interface.
+  /// The following exemple demonstrates how to use xtd::istringable interface.
   /// @include istringable.cpp
   /// @remarks Types inheriting from xtd::object should not implement the xtd::istringable interface. For more info, see xtd::object::to_string Method.
   /// @remarks Implementing xtd::istringable<T> automatically enables stream insertion (operator<<) using the to_string() representation.
