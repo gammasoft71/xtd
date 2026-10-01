@@ -103,6 +103,11 @@
 * [generic_stack](collections_generic/generic_stack/README.md) shows how to use [xtd::collections::generic::stack](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1generic_1_1stack.html) clss.
 * [mix_generic_list_and_std_vector_api](collections_generic/mix_generic_list_and_std_vector_api/README.md) shows how to use [xtd::collections::generic::list](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1generic_1_1list.html) class.
 
+## [collections_generic_extensions](collections_generic_extensions/README.md)
+
+* [enumerable_iterator](collections_generic_extensions/enumerable_iterator/README.md) shows how to use [xtd::collections::generic::extensions::enumerable_iterator](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html) class.
+* [enumerable](collections_generic_extensions/enumerable/README.md) shows how to use [xtd::collections::generic::extensions::enumerable](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html) class.
+
 ## [collections_object_model](collections_object_model/README.md)
 
 * [read_only_collection](collections_object_model/README.md) shows how to use [xtd::collections::object_model::read_only_collection](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1object__model_1_1read__only__collection.html) class.

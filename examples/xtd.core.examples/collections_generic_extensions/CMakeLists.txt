@@ -4,5 +4,6 @@ project(collections_geneirc_extentions)
 find_package(xtd REQUIRED)
 
 add_projects(
-  enumerable_iterator
+  extentions_enumerable_iterator
+  extentions_enumerable
 )
