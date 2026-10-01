@@ -44,7 +44,10 @@ namespace xtd {
         /// for (const auto& part : parts)
         ///   console::write_line(part);
         /// ```
-        /// @warning Internal use only for xtd::collections::generic::ienumerable interfece.
+        /// @remarks You don’t need to inherit from the xtd::collections::generic::extensions::enumerable class when using the xtd::collections::generic::ienumerable interface.
+        /// @par Examples
+        /// The following example shows how to use CRTP inheritance with the xtd::collections::generic::extensions::enumerable_iterators class.
+        /// @include extentions_enumerable_iterator.cpp
         template<typename type_t, typename enumerable_t>
         class enumerable_iterators {
           /// @cond
