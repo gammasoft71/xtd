@@ -32,6 +32,9 @@ namespace xtd {
         /// @par Examples
         /// The following example shows how to use CRTP inheritance with the xtd::collections::generic::extensions::enumerable class.
         /// @include extentions_enumerable.cpp
+        /// @par Examples
+        /// The following example is the same example but with xtd::collections::generic::ienumerable interface..
+        /// @include generic_ienumerable4.cpp
         template<typename value_t, typename enumerable_t>
         class enumerable {
         public:

@@ -48,6 +48,9 @@ namespace xtd {
         /// @par Examples
         /// The following example shows how to use CRTP inheritance with the xtd::collections::generic::extensions::enumerable_iterators class.
         /// @include extentions_enumerable_iterator.cpp
+        /// @par Examples
+        /// The following example is the same example but with xtd::collections::generic::ienumerable interface..
+        /// @include generic_ienumerable5.cpp
         template<typename type_t, typename enumerable_t>
         class enumerable_iterators {
           /// @cond
