@@ -1,0 +1,67 @@
+xtd.forms: 0.2.0
+
+controls:
+  - name: form1
+    control: form
+    visible: true
+    width: 350
+    height: 120
+    text: Hello world
+    controls:
+      - name: label1
+        control: label
+        dock: fill
+        text: Hello, World!
+        fore_color: green
+        font:
+          size: 32
+          style: [bold, italic]
+        shadow: true
+        text_align: middle_center
+
+  - name: form2
+    control: form
+    main_form: true
+    back_color: dodger blue
+    width: 300
+    height: 300
+    text: form2
+    controls:
+      - name: button1
+        control: button
+        left: 50
+        top: 50
+        text: Button 1
+
+      - name: button2
+        control: button
+        left: 50
+        top: 100
+        width: 200
+        height: 75
+        text: Button 2
+        style_sheet: |
+          button {
+            border-radius: 10px;
+            border-style: solid;
+            border-width: 2px;
+            border-color: darkblue;
+            color: darkblue;
+          }
+          button:pressed {
+            border-style: inset;
+          }
+
+      - name: label1
+        control: label
+        left: 50
+        top: 200
+        auto_size: true
+        text: Button 1 clicked 0 times
+
+      - name: label2
+        control: label
+        left: 50
+        top: 230
+        auto_size: true
+        text: Button 2 clicked 0 times
