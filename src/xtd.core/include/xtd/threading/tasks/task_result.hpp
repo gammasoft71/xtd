@@ -20,9 +20,9 @@ namespace xtd {
       class task : public xtd::threading::tasks::basic_task<result_t> {
       public:
         struct promise_type {
-          xtd::exception_services::exception_dispatch_info exception;
-          sptr<xtd::threading::tasks::task<result_t>> task;
-          std::coroutine_handle<promise_type> self;
+          xtd::exception_services::exception_dispatch_info exception_;
+          sptr<xtd::threading::tasks::task<result_t>> task_;
+          std::coroutine_handle<promise_type> this_;
 
           auto final_suspend() noexcept {
             struct final_awaiter {
@@ -31,30 +31,31 @@ namespace xtd {
               bool await_ready() noexcept {return false;}
               void await_resume() noexcept {}
               void await_suspend(std::coroutine_handle<promise_type> handle) noexcept {
-                promise.task->start();
-                promise.self.destroy();
+                promise.task_->start();
+                promise.this_.destroy();
               }
             };
             return final_awaiter {*this};
           }
           xtd::threading::tasks::task<result_t> get_return_object() {
-            this->task = xtd::new_ptr<xtd::threading::tasks::task<result_t>>();
-            self = std::coroutine_handle<promise_type>::from_promise(*this);
-            return *this->task;
+            task_ = xtd::new_ptr<xtd::threading::tasks::task<result_t>>();
+            this_ = std::coroutine_handle<promise_type>::from_promise(*this);
+            return *task_;
           }
           std::suspend_never initial_suspend() {return {};}
-          void return_value(const result_t& result) { this->task->template basic_task<result_t>::data_->result = result;}
-          void unhandled_exception() {exception = this->task->template basic_task<result_t>::data_->exception;}
+          void return_value(const result_t& result) {task_->template basic_task<result_t>::data_->result = result;}
+          void unhandled_exception() {exception_ = task_->template basic_task<result_t>::data_->exception;}
         };
         
         struct awaiter {
-          xtd::threading::tasks::task<result_t>& task;
+          xtd::threading::tasks::task<result_t>& task_;
           
-          bool await_ready() const noexcept {return this->task.is_completed();}
-          void await_suspend(std::coroutine_handle<> handle) {this->task.continue_with([handle] {handle.resume();});}
+          bool await_ready() const noexcept {return this->task_.is_completed();}
+          void await_suspend(std::coroutine_handle<> handle) {task_.continue_with([handle] {handle.resume();});}
           const result_t& await_resume() {
-            if (this->task.is_faulted()) this->task.rethrow_exception();
-            return this->task.result();
+            task_.on_await_resume();
+            if (task_.is_faulted()) task_.rethrow_exception();
+            return task_.result();
           }
         };
         

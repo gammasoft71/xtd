@@ -20,9 +20,9 @@ namespace xtd {
       class task<void> : public xtd::threading::tasks::basic_task<> {
       public:
         struct promise_type {
-          xtd::exception_services::exception_dispatch_info exception;
+          xtd::exception_services::exception_dispatch_info exception_;
           xtd::ptr<xtd::threading::tasks::task<>> task_;
-          std::coroutine_handle<promise_type> self;
+          std::coroutine_handle<promise_type> this_;
 
           auto final_suspend() noexcept {
             struct final_awaiter {
@@ -32,26 +32,29 @@ namespace xtd {
               void await_resume() noexcept {}
               void await_suspend(std::coroutine_handle<promise_type> handle) noexcept {
                 promise.task_->start();
-                promise.self.destroy();
+                promise.this_.destroy();
               }
             };
             return final_awaiter {*this};
           }
           xtd::threading::tasks::task<> get_return_object() {
             task_ = xtd::new_ptr<xtd::threading::tasks::task<>>();
-            self = std::coroutine_handle<promise_type>::from_promise(*this);
+            this_ = std::coroutine_handle<promise_type>::from_promise(*this);
             return *task_;
           }
           std::suspend_never initial_suspend() {return {};}
           void return_void() {}
-          void unhandled_exception() {exception = task_->xtd::threading::tasks::basic_task<>::data_->exception;}
+          void unhandled_exception() {exception_ = task_->xtd::threading::tasks::basic_task<>::data_->exception;}
         };
         
         struct awaiter {
           xtd::threading::tasks::task<void>& task_;
           
           bool await_ready() const noexcept {return task_.is_completed();}
-          void await_resume() {if (task_.is_faulted()) task_.rethrow_exception();}
+          void await_resume() {
+            task_.on_await_resume();
+            if (task_.is_faulted()) task_.rethrow_exception();
+          }
           void await_suspend(std::coroutine_handle<> handle) {task_.continue_with([handle] {handle.resume();});}
         };
         

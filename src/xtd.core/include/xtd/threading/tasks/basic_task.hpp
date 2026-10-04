@@ -55,7 +55,7 @@ namespace xtd {
       /// xtd.core
       /// @ingroup xtd_core tasks
       /// @remarks This is tha base class for xtd::threading::tasks::task <> and xtd::threading::tasks::task <result_t>.
-      template<typename result_t = void>
+      template<typename result_t>
       class basic_task : public xtd::threading::tasks::task_object, public xtd::threading::tasks::itask, public xtd::iasync_result {
       public:
         struct yield_awaiter;
@@ -168,6 +168,8 @@ namespace xtd {
         auto start() -> void override {
           if (is_completed()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Start may not be called on a task that has completed.");
           data_->status = xtd::threading::tasks::task_status::waiting_for_activation;
+          data_->caller_thread = &xtd::threading::thread::current_thread();
+          data_->caller_id = &current_id_;
           thread_pool::register_wait_for_single_object(data_->start_event, data_->task_proc, *data_->state, xtd::threading::timeout::infinite, true);
           data_->status = xtd::threading::tasks::task_status::waiting_to_run;
           data_->start_event.set();
@@ -422,7 +424,14 @@ namespace xtd {
         static auto fill_task_pointers(std::vector<itask*>& itask_pointer, item_t& item) -> void {
           itask_pointer.push_back(&item);
         }
-
+        
+        auto on_await_resume() -> void {
+          if (data_->caller_thread->is_main_thread()) thread::set_main_managed_thread_id(xtd::threading::thread::current_thread().get_managed_thread_id());
+          // a bad idea that seems like a good one
+          // std::swap(data_->caller_thread->get_managed_thread_id(), xtd::threading::thread::current_thread().get_managed_thread_id());
+          std::swap(*data_->caller_id, current_id_);
+        }
+        
         struct data {
           using result_type = std::conditional_t<std::is_same_v<result_t, void>, std::uint8_t, result_t>;
           
@@ -444,7 +453,9 @@ namespace xtd {
           xtd::threading::auto_reset_event start_event;
           xtd::threading::tasks::task_status status = xtd::threading::tasks::task_status::created;
           xtd::object sync_root;
-          
+          xtd::threading::thread* caller_thread = null;
+          xtd::usize* caller_id = null;
+
           xtd::threading::wait_or_timer_callback task_proc {delegate_(const xtd::any_object& state, bool timed_out) {
             previous_current_id = current_id_;
             current_id_ = id;
