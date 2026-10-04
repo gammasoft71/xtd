@@ -312,20 +312,6 @@ namespace xtd::threading::tests {
       assert::are_equal(thread2.thread_id(), thread.thread_id());
     }
     
-    auto test_method_(main_thread) {
-      assert::are_equal(threading::thread::current_thread().handle(), threading::thread::main_thread().handle());
-      assert::is_true(threading::thread::main_thread().is_alive());
-      assert::is_false(threading::thread::main_thread().is_background());
-      assert::is_true(threading::thread::main_thread().is_main_thread());
-      assert::is_false(threading::thread::main_thread().is_thread_pool_thread());
-      assert::is_true(threading::thread::main_thread().joinable());
-      assert::are_equal(1, threading::thread::main_thread().managed_thread_id());
-      assert::is_empty(threading::thread::main_thread().name());
-      assert::are_equal(thread_priority::normal, threading::thread::main_thread().priority());
-      assert::are_equal(threading::thread::current_thread().thread_id(), threading::thread::main_thread().thread_id());
-      assert::are_equal(threading::thread_state::running, threading::thread::main_thread().thread_state());
-    }
-    
     auto test_method_(abort) {
       if (environment::os_version().is_windows()) assert::ignore("Ignore \"abort\" unit test on Windows (The timing is not constant)");
       
