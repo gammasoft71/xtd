@@ -38,7 +38,7 @@ var searchData=
   ['basic_5fstring_5fcomparer_3c_20xtd_3a_3achar8_20_3e_35',['basic_string_comparer&lt; xtd::char8 &gt;',['../classxtd_1_1basic__string__comparer.html',1,'xtd']]],
   ['basic_5fstring_5fcomparer_3c_20xtd_3a_3awchar_20_3e_36',['basic_string_comparer&lt; xtd::wchar &gt;',['../classxtd_1_1basic__string__comparer.html',1,'xtd']]],
   ['basic_5ftask_37',['basic_task',['../classxtd_1_1threading_1_1tasks_1_1basic__task.html',1,'xtd::threading::tasks']]],
-  ['basic_5ftask_3c_20result_5ft_20_3e_38',['basic_task&lt; result_t &gt;',['../classxtd_1_1threading_1_1tasks_1_1basic__task.html',1,'xtd::threading::tasks']]],
+  ['basic_5ftask_3c_3e_38',['basic_task&lt;&gt;',['../classxtd_1_1threading_1_1tasks_1_1basic__task.html',1,'xtd::threading::tasks']]],
   ['beep_39',['beep',['../classxtd_1_1beep.html',1,'xtd']]],
   ['binary_5fexpression_40',['binary_expression',['../structxtd_1_1expressions_1_1binary__expression.html',1,'xtd::expressions']]],
   ['binary_5freader_41',['binary_reader',['../classxtd_1_1io_1_1binary__reader.html',1,'xtd::io']]],

@@ -116,7 +116,7 @@ var searchData=
   ['basic_5fstring_5fview_2ehpp_113',['basic_string_view.hpp',['../basic__string__view_8hpp.html',1,'']]],
   ['basic_5ftask_114',['basic_task',['../classxtd_1_1threading_1_1tasks_1_1basic__task.html',1,'xtd::threading::tasks::basic_task&lt; result_t &gt;'],['../classxtd_1_1threading_1_1tasks_1_1basic__task.html#a4e9591c1d2f26a2f014ff8cf860f08e9',1,'xtd::threading::tasks::basic_task::basic_task()']]],
   ['basic_5ftask_2ehpp_115',['basic_task.hpp',['../basic__task_8hpp.html',1,'']]],
-  ['basic_5ftask_3c_20result_5ft_20_3e_116',['basic_task&lt; result_t &gt;',['../classxtd_1_1threading_1_1tasks_1_1basic__task.html',1,'xtd::threading::tasks']]],
+  ['basic_5ftask_3c_3e_116',['basic_task&lt;&gt;',['../classxtd_1_1threading_1_1tasks_1_1basic__task.html',1,'xtd::threading::tasks']]],
   ['basket_117',['basket',['../classxtd_1_1forms_1_1emoticons.html#a78e9c9be7050e499e19fe5e6cd3b2481',1,'xtd::forms::emoticons']]],
   ['basketball_5fand_5fhoop_118',['basketball_and_hoop',['../classxtd_1_1forms_1_1emoticons.html#a83d6a590291ff99043f4f8722007567c',1,'xtd::forms::emoticons']]],
   ['bat_119',['bat',['../classxtd_1_1forms_1_1emoticons.html#ab372c4edef8106dd9d99d8dffcfe779b',1,'xtd::forms::emoticons']]],

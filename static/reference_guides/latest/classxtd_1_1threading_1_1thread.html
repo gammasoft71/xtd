@@ -292,8 +292,6 @@ Public Methods</h2></td></tr>
 Public Static Properties</h2></td></tr>
 <tr class="memitem:a56cf6a462e943a302e4c93a28bb9caaf" id="r_a56cf6a462e943a302e4c93a28bb9caaf"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a56cf6a462e943a302e4c93a28bb9caaf">current_thread</a> () noexcept -&gt; <a class="el" href="#a01ebb1fb46c9f74b982192f216f8951f">thread</a> &amp;</td></tr>
 <tr class="memdesc:a56cf6a462e943a302e4c93a28bb9caaf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the currently running thread.  <br /></td></tr>
-<tr class="memitem:a55d07b1ba8b8c2d2457dc51b56e600d2" id="r_a55d07b1ba8b8c2d2457dc51b56e600d2"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a55d07b1ba8b8c2d2457dc51b56e600d2">main_thread</a> () -&gt; <a class="el" href="#a01ebb1fb46c9f74b982192f216f8951f">thread</a> &amp;</td></tr>
-<tr class="memdesc:a55d07b1ba8b8c2d2457dc51b56e600d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the main thread.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Static Methods</h2></td></tr>
@@ -1118,35 +1116,6 @@ Works only on Windows and Linux operating syetms, no effect on others. </dd></dl
 
 <p>Gets the currently running thread. </p>
 <dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="classxtd_1_1threading_1_1thread.html" title="Creates and controls a thread, sets its priority, and gets its status.">xtd::threading::thread</a> that is the representation of the currently running thread. </dd></dl>
-
-</div>
-</div>
-<a id="a55d07b1ba8b8c2d2457dc51b56e600d2" name="a55d07b1ba8b8c2d2457dc51b56e600d2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a55d07b1ba8b8c2d2457dc51b56e600d2">&#9670;&#160;</a></span>main_thread()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto xtd::threading::thread::main_thread </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> -&gt;  <a class="el" href="#a01ebb1fb46c9f74b982192f216f8951f">thread</a> &amp;</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Gets the main thread. </p>
-<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="classxtd_1_1threading_1_1thread.html" title="Creates and controls a thread, sets its priority, and gets its status.">xtd::threading::thread</a> that is the representation of the main thread. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>if the thread is not started this method return <a class="el" href="#a5d3f07807d378451068228c15457a3a0" title="Represents an invalid native operating system handle. This field is read-only.">xtd::threading::thread::invalid_handle</a>. </dd></dl>
 
 </div>
 </div>

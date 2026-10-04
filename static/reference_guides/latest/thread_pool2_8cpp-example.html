@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  thread::main_thread().name(<span class="stringliteral">&quot;Thread Main&quot;</span>);</div>
+<div class="line">  thread::current_thread().name(<span class="stringliteral">&quot;Thread Main&quot;</span>);</div>
 <div class="line">  <span class="keyword">constexpr</span> <span class="keyword">auto</span> max_number = 10;</div>
 <div class="line">  println(<span class="stringliteral">&quot;({} {}) -&gt; start&quot;</span>, thread::current_thread().name(), thread::current_thread().managed_thread_id());</div>
 <div class="line">  thread_pool::queue_user_work_item([&amp;] {</div>
