@@ -151,89 +151,7 @@ The objective is for any collection inheriting from the <a class="el" href="clas
 </div><!-- fragment --> </dd>
 <dd>
 You don’t need to inherit from the <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html" title="Provides a set of static methods for querying objects that implement ienumerable &lt;type_t&gt;.">xtd::collections::generic::extensions::enumerable</a> class when using the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> interface. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates how to use CRTP inheritance with the <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html" title="Internal enumerable iterators definition.">xtd::collections::generic::extensions::enumerable_iterators</a> class. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">struct </span>person {</div>
-<div class="line">  <span class="keywordtype">string</span> first_name;</div>
-<div class="line">  <span class="keywordtype">string</span> last_name;</div>
-<div class="line">  </div>
-<div class="line">  <span class="keyword">auto</span> <a class="code hl_function" href="namespacextd.html#a35d0d55a78eddf3d056a0db05fbf8b16">to_string</a>() const noexcept -&gt; <span class="keywordtype">string</span> {<span class="keywordflow">return</span> first_name + <span class="stringliteral">&quot; &quot;</span> + last_name;}</div>
-<div class="line">};</div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">struct </span>people : <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html">xtd::collections::generic::extensions::enumerable_iterators</a>&lt;person, people&gt; {</div>
-<div class="line">  <span class="keyword">explicit</span> people(<a class="code hl_concept" href="conceptxtd_1_1iterable.html">iterable</a> <span class="keyword">auto</span>&amp;&amp; persons) : people_ {persons} {}</div>
-<div class="line">  </div>
-<div class="line">  <span class="keyword">auto</span> get_enumerator() const -&gt; <a class="code hl_typedef" href="group__collections.html#ga2633655cae697fc737d19f6a541167d7">enumerator</a>&lt;person&gt; {<span class="keywordflow">return</span> people_.get_enumerator();}</div>
-<div class="line">  </div>
-<div class="line"><span class="keyword">private</span>:</div>
-<div class="line">  list&lt;person&gt; people_;</div>
-<div class="line">};</div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keyword">auto</span> people_values = {</div>
-<div class="line">    person {.first_name = <span class="stringliteral">&quot;john&quot;</span>, .last_name = <span class="stringliteral">&quot;smith&quot;</span>},</div>
-<div class="line">    person {.first_name = <span class="stringliteral">&quot;sue&quot;</span>, .last_name = <span class="stringliteral">&quot;rabon&quot;</span>},</div>
-<div class="line">    person {.first_name = <span class="stringliteral">&quot;jim&quot;</span>, .last_name = <span class="stringliteral">&quot;johnson&quot;</span>},</div>
-<div class="line">  };</div>
-<div class="line">  </div>
-<div class="line">  <span class="keyword">auto</span> people_list = people {people_values};</div>
-<div class="line"> </div>
-<div class="line">  <a class="code hl_define" href="group__keywords.html#ga73249a3d4ad48e36724bccf5f3e48f2f">using_</a> (<span class="keyword">auto</span> enumerator = people_list.get_enumerator()) {</div>
-<div class="line">    <span class="keywordflow">if</span> (!<a class="code hl_typedef" href="group__collections.html#ga2633655cae697fc737d19f6a541167d7">enumerator</a>.<a class="code hl_function" href="structxtd_1_1collections_1_1generic_1_1enumerator.html#ad461ec52e959712ab699f6ca3aa5ec3d">move_next</a>()) <span class="keywordflow">break</span>;</div>
-<div class="line">    <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<a class="code hl_typedef" href="group__collections.html#ga2633655cae697fc737d19f6a541167d7">enumerator</a>.<a class="code hl_function" href="structxtd_1_1collections_1_1generic_1_1enumerator.html#a56ef2e4d105ed3260d33bd1989b43f3b">current</a>());</div>
-<div class="line">    <span class="keywordflow">if</span> (!<a class="code hl_typedef" href="group__collections.html#ga2633655cae697fc737d19f6a541167d7">enumerator</a>.<a class="code hl_function" href="structxtd_1_1collections_1_1generic_1_1enumerator.html#ad461ec52e959712ab699f6ca3aa5ec3d">move_next</a>()) <span class="keywordflow">break</span>;</div>
-<div class="line">    <span class="keywordflow">if</span> (!<a class="code hl_typedef" href="group__collections.html#ga2633655cae697fc737d19f6a541167d7">enumerator</a>.<a class="code hl_function" href="structxtd_1_1collections_1_1generic_1_1enumerator.html#ad461ec52e959712ab699f6ca3aa5ec3d">move_next</a>()) <span class="keywordflow">break</span>;</div>
-<div class="line">    <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<a class="code hl_typedef" href="group__collections.html#ga2633655cae697fc737d19f6a541167d7">enumerator</a>.<a class="code hl_function" href="structxtd_1_1collections_1_1generic_1_1enumerator.html#a56ef2e4d105ed3260d33bd1989b43f3b">current</a>());</div>
-<div class="line">  }</div>
-<div class="line">  </div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="keywordtype">string</span>(<span class="charliteral">&#39;_&#39;</span>, 15));</div>
-<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> enumerator = people_list.get_enumerator(); <a class="code hl_typedef" href="group__collections.html#ga2633655cae697fc737d19f6a541167d7">enumerator</a>.<a class="code hl_function" href="structxtd_1_1collections_1_1generic_1_1enumerator.html#ad461ec52e959712ab699f6ca3aa5ec3d">move_next</a>();)</div>
-<div class="line">    <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<a class="code hl_typedef" href="group__collections.html#ga2633655cae697fc737d19f6a541167d7">enumerator</a>.<a class="code hl_function" href="structxtd_1_1collections_1_1generic_1_1enumerator.html#a56ef2e4d105ed3260d33bd1989b43f3b">current</a>());</div>
-<div class="line"> </div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="keywordtype">string</span>(<span class="charliteral">&#39;_&#39;</span>, 15));</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(*people_list.begin());</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(*(people_list.begin()+2));</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(*people_list.cbegin());</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(*(people_list.cbegin()+2));</div>
-<div class="line">  </div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="keywordtype">string</span>(<span class="charliteral">&#39;_&#39;</span>, 15));</div>
-<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> iterator = people_list.begin(); iterator &lt; people_list.end(); ++iterator)</div>
-<div class="line">    <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(*iterator);</div>
-<div class="line">  </div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="keywordtype">string</span>(<span class="charliteral">&#39;_&#39;</span>, 15));</div>
-<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp;&amp; person : people_list)</div>
-<div class="line">    <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(person);</div>
-<div class="line">}</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// This code produces the following output :</span></div>
-<div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// john smith</span></div>
-<div class="line"><span class="comment">// jim johnson</span></div>
-<div class="line"><span class="comment">// _______________</span></div>
-<div class="line"><span class="comment">// john smith</span></div>
-<div class="line"><span class="comment">// sue rabon</span></div>
-<div class="line"><span class="comment">// jim johnson</span></div>
-<div class="line"><span class="comment">// _______________</span></div>
-<div class="line"><span class="comment">// john smith</span></div>
-<div class="line"><span class="comment">// jim johnson</span></div>
-<div class="line"><span class="comment">// john smith</span></div>
-<div class="line"><span class="comment">// jim johnson</span></div>
-<div class="line"><span class="comment">// _______________</span></div>
-<div class="line"><span class="comment">// john smith</span></div>
-<div class="line"><span class="comment">// sue rabon</span></div>
-<div class="line"><span class="comment">// jim johnson</span></div>
-<div class="line"><span class="comment">// _______________</span></div>
-<div class="line"><span class="comment">// john smith</span></div>
-<div class="line"><span class="comment">// sue rabon</span></div>
-<div class="line"><span class="comment">// jim johnson</span></div>
-<div class="ttc" id="aconceptxtd_1_1iterable_html"><div class="ttname"><a href="conceptxtd_1_1iterable.html">xtd::iterable</a></div><div class="ttdef"><b>Definition</b> iterable.hpp:15</div></div>
-<div class="ttc" id="agroup__collections_html_ga2633655cae697fc737d19f6a541167d7"><div class="ttname"><a href="group__collections.html#ga2633655cae697fc737d19f6a541167d7">xtd::collections::enumerator</a></div><div class="ttdeci">generic::enumerator&lt; xtd::any_object &gt; enumerator</div><div class="ttdoc">Supports a simple iteration over a non-generic collection.</div><div class="ttdef"><b>Definition</b> enumerator.hpp:28</div></div>
-<div class="ttc" id="agroup__keywords_html_ga73249a3d4ad48e36724bccf5f3e48f2f"><div class="ttname"><a href="group__keywords.html#ga73249a3d4ad48e36724bccf5f3e48f2f">using_</a></div><div class="ttdeci">#define using_(...)</div><div class="ttdoc">The specified expression is cleared automatically when the scope is ended.</div><div class="ttdef"><b>Definition</b> using.hpp:36</div></div>
-<div class="ttc" id="anamespacextd_html_a35d0d55a78eddf3d056a0db05fbf8b16"><div class="ttname"><a href="namespacextd.html#a35d0d55a78eddf3d056a0db05fbf8b16">xtd::to_string</a></div><div class="ttdeci">auto to_string() const noexcept -&gt; xtd::string override</div><div class="ttdoc">Returns the string representation of this xtd::read_only_span &lt;type_t&gt; object.</div><div class="ttdef"><b>Definition</b> read_only_span.hpp:354</div></div>
-<div class="ttc" id="anamespacextd_html_a9482c5e9fb1d60c658bbe28bfbb17353"><div class="ttname"><a href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">xtd::println</a></div><div class="ttdeci">auto println(FILE *file) -&gt; void</div><div class="ttdoc">Writes the current line terminator to the file output stream using the specified format information.</div><div class="ttdef"><b>Definition</b> println.hpp:15</div></div>
-<div class="ttc" id="astructxtd_1_1collections_1_1generic_1_1enumerator_html_a56ef2e4d105ed3260d33bd1989b43f3b"><div class="ttname"><a href="structxtd_1_1collections_1_1generic_1_1enumerator.html#a56ef2e4d105ed3260d33bd1989b43f3b">xtd::collections::generic::enumerator::current</a></div><div class="ttdeci">const type_t &amp; current() const override</div><div class="ttdoc">Gets the element in the collection at the current position of the enumerator.</div><div class="ttdef"><b>Definition</b> enumerator.hpp:56</div></div>
-<div class="ttc" id="astructxtd_1_1collections_1_1generic_1_1enumerator_html_ad461ec52e959712ab699f6ca3aa5ec3d"><div class="ttname"><a href="structxtd_1_1collections_1_1generic_1_1enumerator.html#ad461ec52e959712ab699f6ca3aa5ec3d">xtd::collections::generic::enumerator::move_next</a></div><div class="ttdeci">bool move_next() override</div><div class="ttdoc">Advances the enumerator to the next element of the collection.</div><div class="ttdef"><b>Definition</b> enumerator.hpp:68</div></div>
-</div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates how to use CRTP inheritance with the <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html" title="Internal enumerable iterators definition.">xtd::collections::generic::extensions::enumerable_iterators</a> class. <div class="fragment"></div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example is the same example but with <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> interface.. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">struct </span>person {</div>
@@ -247,7 +165,7 @@ You don’t need to inherit from the <a class="el" href="classxtd_1_1collections
 <div class="line"><span class="keyword">struct </span>people : <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt;person&gt; {</div>
 <div class="line">  <span class="keyword">explicit</span> people(<a class="code hl_concept" href="conceptxtd_1_1iterable.html">iterable</a> <span class="keyword">auto</span>&amp;&amp; persons) : people_ {persons} {}</div>
 <div class="line">  </div>
-<div class="line">  <span class="keyword">auto</span> get_enumerator() const -&gt; <a class="code hl_typedef" href="group__collections.html#ga2633655cae697fc737d19f6a541167d7">enumerator</a>&lt;person&gt; {<span class="keywordflow">return</span> people_.get_enumerator();}</div>
+<div class="line">  <span class="keyword">auto</span> <a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html#a3247cf34dfb04a70d3efae2dce7ac8a7">get_enumerator</a>() const -&gt; <a class="code hl_typedef" href="group__collections.html#ga2633655cae697fc737d19f6a541167d7">enumerator</a>&lt;person&gt; {<span class="keywordflow">return</span> people_.get_enumerator();}</div>
 <div class="line">  </div>
 <div class="line"><span class="keyword">private</span>:</div>
 <div class="line">  list&lt;person&gt; people_;</div>
@@ -311,7 +229,14 @@ You don’t need to inherit from the <a class="el" href="classxtd_1_1collections
 <div class="line"><span class="comment">// sue rabon</span></div>
 <div class="line"><span class="comment">// jim johnson</span></div>
 <div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1ienumerable_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a></div><div class="ttdoc">Exposes the enumerator, which supports a simple iteration over a collection of a specified type.</div><div class="ttdef"><b>Definition</b> ienumerable.hpp:46</div></div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1ienumerable_html_a3247cf34dfb04a70d3efae2dce7ac8a7"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1ienumerable.html#a3247cf34dfb04a70d3efae2dce7ac8a7">xtd::collections::generic::ienumerable::get_enumerator</a></div><div class="ttdeci">virtual auto get_enumerator() const -&gt; xtd::collections::generic::enumerator&lt; type_t &gt;=0</div><div class="ttdoc">Returns an enumerator that iterates through a collection.</div></div>
+<div class="ttc" id="aconceptxtd_1_1iterable_html"><div class="ttname"><a href="conceptxtd_1_1iterable.html">xtd::iterable</a></div><div class="ttdef"><b>Definition</b> iterable.hpp:15</div></div>
+<div class="ttc" id="agroup__collections_html_ga2633655cae697fc737d19f6a541167d7"><div class="ttname"><a href="group__collections.html#ga2633655cae697fc737d19f6a541167d7">xtd::collections::enumerator</a></div><div class="ttdeci">generic::enumerator&lt; xtd::any_object &gt; enumerator</div><div class="ttdoc">Supports a simple iteration over a non-generic collection.</div><div class="ttdef"><b>Definition</b> enumerator.hpp:28</div></div>
+<div class="ttc" id="agroup__keywords_html_ga73249a3d4ad48e36724bccf5f3e48f2f"><div class="ttname"><a href="group__keywords.html#ga73249a3d4ad48e36724bccf5f3e48f2f">using_</a></div><div class="ttdeci">#define using_(...)</div><div class="ttdoc">The specified expression is cleared automatically when the scope is ended.</div><div class="ttdef"><b>Definition</b> using.hpp:36</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a83878c91171338902e0fe0fb97a8c47a"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a83878c91171338902e0fe0fb97a8c47a">xtd::console_key::p</a></div><div class="ttdeci">@ p</div><div class="ttdoc">The P key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:118</div></div>
+<div class="ttc" id="anamespacextd_html_a9482c5e9fb1d60c658bbe28bfbb17353"><div class="ttname"><a href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">xtd::println</a></div><div class="ttdeci">auto println(FILE *file) -&gt; void</div><div class="ttdoc">Writes the current line terminator to the file output stream using the specified format information.</div><div class="ttdef"><b>Definition</b> println.hpp:15</div></div>
+<div class="ttc" id="astructxtd_1_1collections_1_1generic_1_1enumerator_html_a56ef2e4d105ed3260d33bd1989b43f3b"><div class="ttname"><a href="structxtd_1_1collections_1_1generic_1_1enumerator.html#a56ef2e4d105ed3260d33bd1989b43f3b">xtd::collections::generic::enumerator::current</a></div><div class="ttdeci">const type_t &amp; current() const override</div><div class="ttdoc">Gets the element in the collection at the current position of the enumerator.</div><div class="ttdef"><b>Definition</b> enumerator.hpp:56</div></div>
+<div class="ttc" id="astructxtd_1_1collections_1_1generic_1_1enumerator_html_ad461ec52e959712ab699f6ca3aa5ec3d"><div class="ttname"><a href="structxtd_1_1collections_1_1generic_1_1enumerator.html#ad461ec52e959712ab699f6ca3aa5ec3d">xtd::collections::generic::enumerator::move_next</a></div><div class="ttdeci">bool move_next() override</div><div class="ttdoc">Advances the enumerator to the next element of the collection.</div><div class="ttdef"><b>Definition</b> enumerator.hpp:68</div></div>
 </div><!-- fragment --> </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
