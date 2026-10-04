@@ -1,10 +1,10 @@
-# extentions_enumerable
+# extensions_enumerable
 
 Demonstrates how to use [xtd::collections::generic::extensions::enumerable](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html) class.
 
 ## Sources
 
-* [src/extentions_enumerable.cpp](src/extentions_enumerable.cpp)
+* [src/extensions_enumerable.cpp](src/extensions_enumerable.cpp)
 * [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
