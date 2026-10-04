@@ -1,6 +1,6 @@
 # graphics_draw_ellipse
 
-Demonstrates how to use [xtd::drawing::graphics::draw_ellipse](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1drawing_1_1graphics.html#a3c0b6631304e46df68b99073d62863b1) method.
+Demonstrates how to use [xtd::drawing::graphics::draw_ellipse](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1drawing_1_1graphics.html#a57f5cd2c3b2cde43b74c002ef511d470) method.
 
 ## Sources
 
