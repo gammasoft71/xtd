@@ -1,7 +1,7 @@
 #include <xtd/xtd>
 
 auto main() -> int {
-  thread::main_thread().name("Thread Main");
+  thread::current_thread().name("Thread Main");
   constexpr auto max_number = 10;
   println("({} {}) -> start", thread::current_thread().name(), thread::current_thread().managed_thread_id());
   thread_pool::queue_user_work_item([&] {
