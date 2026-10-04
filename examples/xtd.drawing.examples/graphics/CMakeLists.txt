@@ -9,4 +9,5 @@ add_projects(
   graphics_draw_arc
   graphics_draw_rectangle
   graphics_fill_pie
+  graphics_fill_rectangle
 )
