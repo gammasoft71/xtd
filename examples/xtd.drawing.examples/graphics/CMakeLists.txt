@@ -7,5 +7,6 @@ add_projects(
   graphics
   graphics_clear
   graphics_draw_arc
+  graphics_draw_rectangle
   graphics_fill_pie
 )
