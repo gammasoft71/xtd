@@ -24,6 +24,10 @@ namespace xtd {
   /// @brief The xtd::threading namespace provides classes and interfaces that enable multithreaded programming. In addition to classes for synchronizing thread activities and access to data ( xtd::threading::mutex, xtd::threading::monitor, xtd::threading::interlocked, xtd::threading::auto_reset_event, and so on), this namespace includes a xtd::threading::thread_pool class that allows you to use a pool of system-supplied threads, and a xtd::threading::timer class that executes callback methods on thread pool threads.
   namespace threading {
     /// @cond
+    namespace tasks {
+      template<typename result_t = void>
+      class basic_task;
+    }
     class thread_pool;
     /// @endcond
     
@@ -231,11 +235,6 @@ namespace xtd {
       /// @brief Gets the currently running thread.
       /// @return A xtd::threading::thread that is the representation of the currently running thread.
       [[nodiscard]] static auto current_thread() noexcept -> thread&;
-      
-      /// @brief Gets the main thread.
-      /// @return A xtd::threading::thread that is the representation of the main thread.
-      /// @remarks if the thread is not started this method return xtd::threading::thread::invalid_handle.
-      [[nodiscard]] static auto main_thread() -> thread&;
       /// @}
       
       /// @name Public Methods
@@ -419,6 +418,8 @@ namespace xtd {
     private:
       friend class thread_pool;
       friend class wait_handle;
+      template<typename result_t>
+      friend class tasks::basic_task;
       
       void close();
       static auto do_wait(wait_handle& wait_handle, int32 milliseconds_timeout) -> bool;
@@ -427,6 +428,7 @@ namespace xtd {
       [[nodiscard]] static auto get_current_thread_id() noexcept -> intptr;
       [[nodiscard]] static auto get_static_data() -> static_data&;
       [[nodiscard]] static auto get_thread(intptr thread_id) -> thread&;
+      [[nodiscard]] auto get_managed_thread_id() noexcept -> int32&;
       auto interrupt_internal() -> void;
       [[nodiscard]] auto is_aborted() const noexcept -> bool;
       [[nodiscard]] auto is_stopped() const noexcept -> bool;
@@ -436,10 +438,12 @@ namespace xtd {
       [[nodiscard]] auto is_unstarted() const noexcept -> bool;
       [[nodiscard]] auto is_wait_sleep_join() const noexcept -> bool;
       static auto join_all_ptr(const xtd::array<thread*>& threads, int32 milliseconds_timeout) -> bool;
+      [[nodiscard]] static auto main_thread() -> thread&;
+      static auto set_main_managed_thread_id(int32 id) -> void {main_managed_thread_id = id;}
       auto thread_proc() -> void;
       [[nodiscard]] static auto unmanaged_thread() -> thread&;
       
-      static constexpr int32 main_managed_thread_id = 1;
+      inline static int32 main_managed_thread_id = 1;
       static constexpr int32 unmanaged_thread_id = 0;
       
       xtd::sptr<data> data_;

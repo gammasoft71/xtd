@@ -12,6 +12,7 @@
 #include "../../../include/xtd/diagnostics/stopwatch.hpp"
 #include "../../../include/xtd/argument_exception.hpp"
 #include "../../../include/xtd/as.hpp"
+#include "../../../include/xtd/call_once.hpp"
 #include "../../../include/xtd/environment.hpp"
 #include "../../../include/xtd/finally.hpp"
 #include "../../../include/xtd/int32_object.hpp"
@@ -149,19 +150,6 @@ bool thread::is_thread_pool_thread() const noexcept {
 
 bool thread::joinable() const noexcept {
   return data_ && data_->joinable && !is_background();
-}
-
-thread& thread::main_thread() {
-  static auto main_thread = threading::thread {};
-  if (main_thread.data_->managed_thread_id != main_managed_thread_id) {
-    main_thread.data_->end_thread_event.set();
-    main_thread.data_->handle = get_current_thread_handle();
-    main_thread.data_->joinable = true;
-    main_thread.data_->managed_thread_id = main_managed_thread_id;
-    main_thread.data_->state &= ~threading::thread_state::unstarted;
-    main_thread.data_->thread_id = get_current_thread_id();
-  }
-  return main_thread;
 }
 
 int32 thread::managed_thread_id() const noexcept {
@@ -507,6 +495,10 @@ thread& thread::get_thread(intptr thread_id) {
   }
 }
 
+auto thread::get_managed_thread_id() noexcept -> int32& {
+  return data_->managed_thread_id;
+}
+
 void thread::interrupt_internal() {
   struct cancel_thread {
     ~cancel_thread() {
@@ -566,6 +558,21 @@ bool thread::join_all_ptr(const array<thread*>& threads, int32 milliseconds_time
     if (sw.elapsed_milliseconds() > milliseconds_timeout || (thread->joinable() && thread->join(milliseconds_timeout - as<int32>(sw.elapsed_milliseconds())) == false)) return false;
   }
   return true;
+}
+
+thread& thread::main_thread() {
+  static auto main_thread = threading::thread {};
+  call_once_ {
+    main_thread.data_->end_thread_event.set();
+    main_thread.data_->handle = get_current_thread_handle();
+    main_thread.data_->joinable = true;
+    main_thread.data_->managed_thread_id = main_managed_thread_id;
+    main_thread.data_->state &= ~threading::thread_state::unstarted;
+    main_thread.data_->thread_id = get_current_thread_id();
+  };
+  
+  if (main_thread.data_->managed_thread_id != main_managed_thread_id) main_thread.data_->managed_thread_id = main_managed_thread_id;
+  return main_thread;
 }
 
 void thread::thread_proc() {
