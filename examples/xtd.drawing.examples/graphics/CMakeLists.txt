@@ -6,4 +6,5 @@ find_package(xtd REQUIRED)
 add_projects(
   graphics
   graphics_clear
+  graphics_draw_arc
 )
