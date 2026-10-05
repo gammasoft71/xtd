@@ -3,6 +3,7 @@ cmake_minimum_required(VERSION 3.20)
 project(minesweeper)
 find_package(xtd REQUIRED)
 add_sources(
+  README.md 
   src/cell_state.hpp
   src/cell.hpp
   src/cell.cpp
