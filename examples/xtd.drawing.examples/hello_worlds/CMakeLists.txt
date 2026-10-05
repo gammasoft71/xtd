@@ -4,5 +4,6 @@ project(hello_worlds)
 find_package(xtd REQUIRED)
 
 add_projects(
+  hello_world_phylactery
   hello_world_png
 )

@@ -2,7 +2,8 @@
 
 [This folder](.) contains xtd.drawing "Hello, World!" examples.
 
-* [hello_world_png](hello_world_png/README.md) The classic first application "Hello, World!" with GDI+ drawing objects and write png.
+* [hello_world_png](hello_world_png/README.md) The classic first application "Hello, World!" with [GDI+ drawing](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__drawing.html) objects.
+* [hello_world_phylactery](hello_world_phylactery/README.md) The classic first application "Hello, World!" with [GDI+ drawing](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__drawing.html) objects.
 
 ## Build and run any project
 
