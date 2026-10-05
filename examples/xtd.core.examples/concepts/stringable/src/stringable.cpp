@@ -1,4 +1,7 @@
 #include <xtd/xtd>
+#if __cpp_lib_ranges
+#include <ranges>
+#endif
 
 struct my_formatable_string : iformatable {
   my_formatable_string(const string& value) : value {value} {}
