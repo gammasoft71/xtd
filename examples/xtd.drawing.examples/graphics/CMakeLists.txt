@@ -8,6 +8,7 @@ add_projects(
   graphics_clear
   graphics_draw_arc
   graphics_draw_ellipse
+  graphics_draw_line
   graphics_draw_rectangle
   graphics_fill_ellipse
   graphics_fill_pie
