@@ -161,24 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line">    println(<span class="stringliteral">&quot;a[~6_i] Throws {}&quot;</span>, e);</div>
 <div class="line">  }</div>
 <div class="line">  println();</div>
-<div class="line">  </div>
-<div class="line">  <span class="keywordflow">try</span> {</div>
-<div class="line">    println(<span class="stringliteral">&quot;a[-1_i] = {}&quot;</span>, a[-1_i]);</div>
-<div class="line">  } <span class="keywordflow">catch</span> (<span class="keyword">const</span> index_out_of_range_exception&amp; e) {</div>
-<div class="line">    println(<span class="stringliteral">&quot;a[-1_i] Throws {}&quot;</span>, e);</div>
-<div class="line">  }</div>
-<div class="line">  println(<span class="stringliteral">&quot;a[-2_i] = {}&quot;</span>, a[-2_i]);</div>
-<div class="line">  println(<span class="stringliteral">&quot;a[-3_i] = {}&quot;</span>, a[-3_i]);</div>
-<div class="line">  println(<span class="stringliteral">&quot;a[-4_i] = {}&quot;</span>, a[-4_i]);</div>
-<div class="line">  println(<span class="stringliteral">&quot;a[-5_i] = {}&quot;</span>, a[-5_i]);</div>
-<div class="line">  println(<span class="stringliteral">&quot;a[-6_i] = {}&quot;</span>, a[-6_i]);</div>
-<div class="line">  <span class="keywordflow">try</span> {</div>
-<div class="line">    println(<span class="stringliteral">&quot;a[-7_i] = {}&quot;</span>, a[-7_i]);</div>
-<div class="line">  } <span class="keywordflow">catch</span> (<span class="keyword">const</span> index_out_of_range_exception&amp; e) {</div>
-<div class="line">    println(<span class="stringliteral">&quot;a[-7_i] Throws {}&quot;</span>, e);</div>
-<div class="line">  }</div>
-<div class="line">  println();</div>
-<div class="line">  </div>
+<div class="line">    </div>
 <div class="line">  <span class="keywordflow">try</span> {</div>
 <div class="line">    println(<span class="stringliteral">&quot;a[xtd::index::last+1] = {}&quot;</span>, a[<a id="_a1" name="_a1"></a><a class="code hl_variable" href="structxtd_1_1index.html#a6c22e60b7cb28284487e3575a990e792">xtd::index::last</a>+1]);</div>
 <div class="line">  } <span class="keywordflow">catch</span> (<span class="keyword">const</span> index_out_of_range_exception&amp; e) {</div>
@@ -206,10 +189,10 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// a[-1] Throws xtd::index_out_of_range_exception : Index was outside the bounds of the array.</span></div>
-<div class="line"><span class="comment">//    at xtd::index_out_of_range_exception::index_out_of_range_exception(xtd::diagnostics::stack_frame const&amp;) in index_out_of_range_exception.hpp:line 26</span></div>
-<div class="line"><span class="comment">//    at xtd::helpers::throw_helper::throws(xtd::helpers::exception_case, std::source_location const&amp;) in throw_helper.cpp:line 80</span></div>
-<div class="line"><span class="comment">//    at xtd::basic_array&lt;int, std::allocator&lt;int&gt;&gt;::operator[](unsigned long) in basic_array.hpp:line 0</span></div>
-<div class="line"><span class="comment">//    at xtd::array&lt;int, 1ul, std::allocator&lt;int&gt;&gt;::operator[](unsigned long) in array_1.hpp:line 249</span></div>
+<div class="line"><span class="comment">//    at xtd::index_out_of_range_exception::index_out_of_range_exception(xtd::diagnostics::stack_frame const&amp;) in index_out_of_range_exception.cpp:line 6</span></div>
+<div class="line"><span class="comment">//    at xtd::helpers::throw_helper::throws(xtd::helpers::exception_case, std::__1::source_location const&amp;) in throw_helper.cpp:line 82</span></div>
+<div class="line"><span class="comment">//    at xtd::basic_array&lt;int, std::__1::allocator&lt;int&gt;&gt;::operator[](unsigned long) in basic_array.hpp:line 0</span></div>
+<div class="line"><span class="comment">//    at xtd::array&lt;int, 1ul, std::__1::allocator&lt;int&gt;&gt;::operator[](unsigned long) in array_1.hpp:line 253</span></div>
 <div class="line"><span class="comment">//    at main in xtd_collection_indexer.cpp:line 6</span></div>
 <div class="line"><span class="comment">// a[0] = 1</span></div>
 <div class="line"><span class="comment">// a[1] = 2</span></div>
@@ -217,17 +200,18 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line"><span class="comment">// a[3] = 4</span></div>
 <div class="line"><span class="comment">// a[4] = 5</span></div>
 <div class="line"><span class="comment">// a[5] Throws xtd::index_out_of_range_exception : Index was outside the bounds of the array.</span></div>
-<div class="line"><span class="comment">//    at xtd::index_out_of_range_exception::index_out_of_range_exception(xtd::diagnostics::stack_frame const&amp;) in index_out_of_range_exception.hpp:line 26</span></div>
-<div class="line"><span class="comment">//    at xtd::helpers::throw_helper::throws(xtd::helpers::exception_case, std::source_location const&amp;) in throw_helper.cpp:line 80</span></div>
-<div class="line"><span class="comment">//    at xtd::basic_array&lt;int, std::allocator&lt;int&gt;&gt;::operator[](unsigned long) in basic_array.hpp:line 0</span></div>
-<div class="line"><span class="comment">//    at xtd::array&lt;int, 1ul, std::allocator&lt;int&gt;&gt;::operator[](unsigned long) in array_1.hpp:line 249</span></div>
+<div class="line"><span class="comment">//    at xtd::index_out_of_range_exception::index_out_of_range_exception(xtd::diagnostics::stack_frame const&amp;) in index_out_of_range_exception.cpp:line 6</span></div>
+<div class="line"><span class="comment">//    at xtd::helpers::throw_helper::throws(xtd::helpers::exception_case, std::__1::source_location const&amp;) in throw_helper.cpp:line 82</span></div>
+<div class="line"><span class="comment">//    at xtd::basic_array&lt;int, std::__1::allocator&lt;int&gt;&gt;::operator[](unsigned long) in basic_array.hpp:line 0</span></div>
+<div class="line"><span class="comment">//    at xtd::array&lt;int, 1ul, std::__1::allocator&lt;int&gt;&gt;::operator[](unsigned long) in array_1.hpp:line 253</span></div>
 <div class="line"><span class="comment">//    at main in xtd_collection_indexer.cpp:line 16</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// a[xtd::index::start-1] Throws xtd::index_out_of_range_exception : Index was outside the bounds of the array.</span></div>
-<div class="line"><span class="comment">//    at xtd::index_out_of_range_exception::index_out_of_range_exception(xtd::diagnostics::stack_frame const&amp;) in index_out_of_range_exception.hpp:line 26</span></div>
-<div class="line"><span class="comment">//    at xtd::helpers::throw_helper::throws(xtd::helpers::exception_case, std::source_location const&amp;) in throw_helper.cpp:line 80</span></div>
-<div class="line"><span class="comment">//    at xtd::basic_array&lt;int, std::allocator&lt;int&gt;&gt;::operator[](unsigned long) in basic_array.hpp:line 0</span></div>
-<div class="line"><span class="comment">//    at xtd::array&lt;int, 1ul, std::allocator&lt;int&gt;&gt;::operator[](unsigned long) in array_1.hpp:line 249</span></div>
+<div class="line"><span class="comment">//    at xtd::index_out_of_range_exception::index_out_of_range_exception(xtd::diagnostics::stack_frame const&amp;) in index_out_of_range_exception.cpp:line 6</span></div>
+<div class="line"><span class="comment">//    at xtd::helpers::throw_helper::throws(xtd::helpers::exception_case, std::__1::source_location const&amp;) in throw_helper.cpp:line 82</span></div>
+<div class="line"><span class="comment">//    at xtd::basic_array&lt;int, std::__1::allocator&lt;int&gt;&gt;::operator[](unsigned long) in basic_array.hpp:line 0</span></div>
+<div class="line"><span class="comment">//    at xtd::array&lt;int, 1ul, std::__1::allocator&lt;int&gt;&gt;::operator[](unsigned long) in array_1.hpp:line 253</span></div>
+<div class="line"><span class="comment">//    at xtd::collections::generic::extensions::list_common&lt;int, xtd::collections::generic::ilist&lt;int&gt;&gt;::operator[](xtd::index const&amp;) in index.hpp:line 231</span></div>
 <div class="line"><span class="comment">//    at main in xtd_collection_indexer.cpp:line 23</span></div>
 <div class="line"><span class="comment">// a[xtd::index::start]   = 1</span></div>
 <div class="line"><span class="comment">// a[xtd::index::start+1] = 2</span></div>
@@ -235,17 +219,19 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line"><span class="comment">// a[xtd::index::start+3] = 4</span></div>
 <div class="line"><span class="comment">// a[xtd::index::start+4] = 5</span></div>
 <div class="line"><span class="comment">// a[xtd::index::start+5] Throws xtd::index_out_of_range_exception : Index was outside the bounds of the array.</span></div>
-<div class="line"><span class="comment">//    at xtd::index_out_of_range_exception::index_out_of_range_exception(xtd::diagnostics::stack_frame const&amp;) in index_out_of_range_exception.hpp:line 26</span></div>
-<div class="line"><span class="comment">//    at xtd::helpers::throw_helper::throws(xtd::helpers::exception_case, std::source_location const&amp;) in throw_helper.cpp:line 80</span></div>
-<div class="line"><span class="comment">//    at xtd::basic_array&lt;int, std::allocator&lt;int&gt;&gt;::operator[](unsigned long) in basic_array.hpp:line 0</span></div>
-<div class="line"><span class="comment">//    at xtd::array&lt;int, 1ul, std::allocator&lt;int&gt;&gt;::operator[](unsigned long) in array_1.hpp:line 249</span></div>
+<div class="line"><span class="comment">//    at xtd::index_out_of_range_exception::index_out_of_range_exception(xtd::diagnostics::stack_frame const&amp;) in index_out_of_range_exception.cpp:line 6</span></div>
+<div class="line"><span class="comment">//    at xtd::helpers::throw_helper::throws(xtd::helpers::exception_case, std::__1::source_location const&amp;) in throw_helper.cpp:line 82</span></div>
+<div class="line"><span class="comment">//    at xtd::basic_array&lt;int, std::__1::allocator&lt;int&gt;&gt;::operator[](unsigned long) in basic_array.hpp:line 0</span></div>
+<div class="line"><span class="comment">//    at xtd::array&lt;int, 1ul, std::__1::allocator&lt;int&gt;&gt;::operator[](unsigned long) in array_1.hpp:line 253</span></div>
+<div class="line"><span class="comment">//    at xtd::collections::generic::extensions::list_common&lt;int, xtd::collections::generic::ilist&lt;int&gt;&gt;::operator[](xtd::index const&amp;) in index.hpp:line 231</span></div>
 <div class="line"><span class="comment">//    at main in xtd_collection_indexer.cpp:line 33</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// a[~0_i] Throws xtd::index_out_of_range_exception : Index was outside the bounds of the array.</span></div>
-<div class="line"><span class="comment">//    at xtd::index_out_of_range_exception::index_out_of_range_exception(xtd::diagnostics::stack_frame const&amp;) in index_out_of_range_exception.hpp:line 26</span></div>
-<div class="line"><span class="comment">//    at xtd::helpers::throw_helper::throws(xtd::helpers::exception_case, std::source_location const&amp;) in throw_helper.cpp:line 80</span></div>
-<div class="line"><span class="comment">//    at xtd::basic_array&lt;int, std::allocator&lt;int&gt;&gt;::operator[](unsigned long) in basic_array.hpp:line 0</span></div>
-<div class="line"><span class="comment">//    at xtd::array&lt;int, 1ul, std::allocator&lt;int&gt;&gt;::operator[](unsigned long) in array_1.hpp:line 249</span></div>
+<div class="line"><span class="comment">//    at xtd::index_out_of_range_exception::index_out_of_range_exception(xtd::diagnostics::stack_frame const&amp;) in index_out_of_range_exception.cpp:line 6</span></div>
+<div class="line"><span class="comment">//    at xtd::helpers::throw_helper::throws(xtd::helpers::exception_case, std::__1::source_location const&amp;) in throw_helper.cpp:line 82</span></div>
+<div class="line"><span class="comment">//    at xtd::basic_array&lt;int, std::__1::allocator&lt;int&gt;&gt;::operator[](unsigned long) in basic_array.hpp:line 0</span></div>
+<div class="line"><span class="comment">//    at xtd::array&lt;int, 1ul, std::__1::allocator&lt;int&gt;&gt;::operator[](unsigned long) in array_1.hpp:line 253</span></div>
+<div class="line"><span class="comment">//    at xtd::collections::generic::extensions::list_common&lt;int, xtd::collections::generic::ilist&lt;int&gt;&gt;::operator[](xtd::index const&amp;) in index.hpp:line 231</span></div>
 <div class="line"><span class="comment">//    at main in xtd_collection_indexer.cpp:line 40</span></div>
 <div class="line"><span class="comment">// a[~1_i] = 5</span></div>
 <div class="line"><span class="comment">// a[~2_i] = 4</span></div>
@@ -253,54 +239,40 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line"><span class="comment">// a[~4_i] = 2</span></div>
 <div class="line"><span class="comment">// a[~5_i] = 1</span></div>
 <div class="line"><span class="comment">// a[~6_i] Throws xtd::index_out_of_range_exception : Index was outside the bounds of the array.</span></div>
-<div class="line"><span class="comment">//    at xtd::index_out_of_range_exception::index_out_of_range_exception(xtd::diagnostics::stack_frame const&amp;) in index_out_of_range_exception.hpp:line 26</span></div>
-<div class="line"><span class="comment">//    at xtd::helpers::throw_helper::throws(xtd::helpers::exception_case, std::source_location const&amp;) in throw_helper.cpp:line 80</span></div>
-<div class="line"><span class="comment">//    at xtd::basic_array&lt;int, std::allocator&lt;int&gt;&gt;::operator[](unsigned long) in basic_array.hpp:line 0</span></div>
-<div class="line"><span class="comment">//    at xtd::array&lt;int, 1ul, std::allocator&lt;int&gt;&gt;::operator[](unsigned long) in array_1.hpp:line 249</span></div>
+<div class="line"><span class="comment">//    at xtd::index_out_of_range_exception::index_out_of_range_exception(xtd::diagnostics::stack_frame const&amp;) in index_out_of_range_exception.cpp:line 6</span></div>
+<div class="line"><span class="comment">//    at xtd::helpers::throw_helper::throws(xtd::helpers::exception_case, std::__1::source_location const&amp;) in throw_helper.cpp:line 82</span></div>
+<div class="line"><span class="comment">//    at xtd::basic_array&lt;int, std::__1::allocator&lt;int&gt;&gt;::operator[](unsigned long) in basic_array.hpp:line 0</span></div>
+<div class="line"><span class="comment">//    at xtd::array&lt;int, 1ul, std::__1::allocator&lt;int&gt;&gt;::operator[](unsigned long) in array_1.hpp:line 253</span></div>
+<div class="line"><span class="comment">//    at xtd::collections::generic::extensions::list_common&lt;int, xtd::collections::generic::ilist&lt;int&gt;&gt;::operator[](xtd::index const&amp;) in index.hpp:line 231</span></div>
 <div class="line"><span class="comment">//    at main in xtd_collection_indexer.cpp:line 50</span></div>
 <div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// a[-1_i] Throws xtd::index_out_of_range_exception : Index was outside the bounds of the array.</span></div>
-<div class="line"><span class="comment">//    at xtd::index_out_of_range_exception::index_out_of_range_exception(xtd::diagnostics::stack_frame const&amp;) in index_out_of_range_exception.hpp:line 26</span></div>
-<div class="line"><span class="comment">//    at xtd::helpers::throw_helper::throws(xtd::helpers::exception_case, std::source_location const&amp;) in throw_helper.cpp:line 80</span></div>
-<div class="line"><span class="comment">//    at xtd::basic_array&lt;int, std::allocator&lt;int&gt;&gt;::operator[](unsigned long) in basic_array.hpp:line 0</span></div>
-<div class="line"><span class="comment">//    at xtd::array&lt;int, 1ul, std::allocator&lt;int&gt;&gt;::operator[](unsigned long) in array_1.hpp:line 249</span></div>
-<div class="line"><span class="comment">//    at main in xtd_collection_indexer.cpp:line 57</span></div>
-<div class="line"><span class="comment">// a[-2_i] = 5</span></div>
-<div class="line"><span class="comment">// a[-3_i] = 4</span></div>
-<div class="line"><span class="comment">// a[-4_i] = 3</span></div>
-<div class="line"><span class="comment">// a[-5_i] = 2</span></div>
-<div class="line"><span class="comment">// a[-6_i] = 1</span></div>
-<div class="line"><span class="comment">// a[-7_i] Throws xtd::index_out_of_range_exception : Index was outside the bounds of the array.</span></div>
-<div class="line"><span class="comment">//    at xtd::index_out_of_range_exception::index_out_of_range_exception(xtd::diagnostics::stack_frame const&amp;) in index_out_of_range_exception.hpp:line 26</span></div>
-<div class="line"><span class="comment">//    at xtd::helpers::throw_helper::throws(xtd::helpers::exception_case, std::source_location const&amp;) in throw_helper.cpp:line 80</span></div>
-<div class="line"><span class="comment">//    at xtd::basic_array&lt;int, std::allocator&lt;int&gt;&gt;::operator[](unsigned long) in basic_array.hpp:line 0</span></div>
-<div class="line"><span class="comment">//    at xtd::array&lt;int, 1ul, std::allocator&lt;int&gt;&gt;::operator[](unsigned long) in array_1.hpp:line 249</span></div>
-<div class="line"><span class="comment">//    at main in xtd_collection_indexer.cpp:line 67</span></div>
-<div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// a[xtd::index::last+1] Throws xtd::index_out_of_range_exception : Index was outside the bounds of the array.</span></div>
-<div class="line"><span class="comment">//    at xtd::index_out_of_range_exception::index_out_of_range_exception(xtd::diagnostics::stack_frame const&amp;) in index_out_of_range_exception.hpp:line 26</span></div>
-<div class="line"><span class="comment">//    at xtd::helpers::throw_helper::throws(xtd::helpers::exception_case, std::source_location const&amp;) in throw_helper.cpp:line 80</span></div>
-<div class="line"><span class="comment">//    at xtd::basic_array&lt;int, std::allocator&lt;int&gt;&gt;::operator[](unsigned long) in basic_array.hpp:line 0</span></div>
-<div class="line"><span class="comment">//    at xtd::array&lt;int, 1ul, std::allocator&lt;int&gt;&gt;::operator[](unsigned long) in array_1.hpp:line 249</span></div>
-<div class="line"><span class="comment">//    at main in xtd_collection_indexer.cpp:line 74</span></div>
+<div class="line"><span class="comment">//    at xtd::index_out_of_range_exception::index_out_of_range_exception(xtd::diagnostics::stack_frame const&amp;) in index_out_of_range_exception.cpp:line 6</span></div>
+<div class="line"><span class="comment">//    at xtd::helpers::throw_helper::throws(xtd::helpers::exception_case, std::__1::source_location const&amp;) in throw_helper.cpp:line 82</span></div>
+<div class="line"><span class="comment">//    at xtd::basic_array&lt;int, std::__1::allocator&lt;int&gt;&gt;::operator[](unsigned long) in basic_array.hpp:line 0</span></div>
+<div class="line"><span class="comment">//    at xtd::array&lt;int, 1ul, std::__1::allocator&lt;int&gt;&gt;::operator[](unsigned long) in array_1.hpp:line 253</span></div>
+<div class="line"><span class="comment">//    at xtd::collections::generic::extensions::list_common&lt;int, xtd::collections::generic::ilist&lt;int&gt;&gt;::operator[](xtd::index const&amp;) in index.hpp:line 231</span></div>
+<div class="line"><span class="comment">//    at main in xtd_collection_indexer.cpp:line 57</span></div>
 <div class="line"><span class="comment">// a[xtd::index::last]   = 5</span></div>
 <div class="line"><span class="comment">// a[xtd::index::last-1] = 4</span></div>
 <div class="line"><span class="comment">// a[xtd::index::last-2] = 3</span></div>
 <div class="line"><span class="comment">// a[xtd::index::last-3] = 2</span></div>
 <div class="line"><span class="comment">// a[xtd::index::last-4] = 1</span></div>
 <div class="line"><span class="comment">// a[xtd::index::last-5] Throws xtd::index_out_of_range_exception : Index was outside the bounds of the array.</span></div>
-<div class="line"><span class="comment">//    at xtd::index_out_of_range_exception::index_out_of_range_exception(xtd::diagnostics::stack_frame const&amp;) in index_out_of_range_exception.hpp:line 26</span></div>
-<div class="line"><span class="comment">//    at xtd::helpers::throw_helper::throws(xtd::helpers::exception_case, std::source_location const&amp;) in throw_helper.cpp:line 80</span></div>
-<div class="line"><span class="comment">//    at xtd::basic_array&lt;int, std::allocator&lt;int&gt;&gt;::operator[](unsigned long) in basic_array.hpp:line 0</span></div>
-<div class="line"><span class="comment">//    at xtd::array&lt;int, 1ul, std::allocator&lt;int&gt;&gt;::operator[](unsigned long) in array_1.hpp:line 249</span></div>
-<div class="line"><span class="comment">//    at main in xtd_collection_indexer.cpp:line 84</span></div>
+<div class="line"><span class="comment">//    at xtd::index_out_of_range_exception::index_out_of_range_exception(xtd::diagnostics::stack_frame const&amp;) in index_out_of_range_exception.cpp:line 6</span></div>
+<div class="line"><span class="comment">//    at xtd::helpers::throw_helper::throws(xtd::helpers::exception_case, std::__1::source_location const&amp;) in throw_helper.cpp:line 82</span></div>
+<div class="line"><span class="comment">//    at xtd::basic_array&lt;int, std::__1::allocator&lt;int&gt;&gt;::operator[](unsigned long) in basic_array.hpp:line 0</span></div>
+<div class="line"><span class="comment">//    at xtd::array&lt;int, 1ul, std::__1::allocator&lt;int&gt;&gt;::operator[](unsigned long) in array_1.hpp:line 253</span></div>
+<div class="line"><span class="comment">//    at xtd::collections::generic::extensions::list_common&lt;int, xtd::collections::generic::ilist&lt;int&gt;&gt;::operator[](xtd::index const&amp;) in index.hpp:line 231</span></div>
+<div class="line"><span class="comment">//    at main in xtd_collection_indexer.cpp:line 67</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// a[xtd::index::end] Throws xtd::index_out_of_range_exception : Index was outside the bounds of the array.</span></div>
-<div class="line"><span class="comment">//    at xtd::index_out_of_range_exception::index_out_of_range_exception(xtd::diagnostics::stack_frame const&amp;) in index_out_of_range_exception.hpp:line 26</span></div>
-<div class="line"><span class="comment">//    at xtd::helpers::throw_helper::throws(xtd::helpers::exception_case, std::source_location const&amp;) in throw_helper.cpp:line 80</span></div>
-<div class="line"><span class="comment">//    at xtd::basic_array&lt;int, std::allocator&lt;int&gt;&gt;::operator[](unsigned long) in basic_array.hpp:line 0</span></div>
-<div class="line"><span class="comment">//    at xtd::array&lt;int, 1ul, std::allocator&lt;int&gt;&gt;::operator[](unsigned long) in array_1.hpp:line 249</span></div>
-<div class="line"><span class="comment">//    at main in xtd_collection_indexer.cpp:line 91</span></div>
+<div class="line"><span class="comment">//    at xtd::index_out_of_range_exception::index_out_of_range_exception(xtd::diagnostics::stack_frame const&amp;) in index_out_of_range_exception.cpp:line 6</span></div>
+<div class="line"><span class="comment">//    at xtd::helpers::throw_helper::throws(xtd::helpers::exception_case, std::__1::source_location const&amp;) in throw_helper.cpp:line 82</span></div>
+<div class="line"><span class="comment">//    at xtd::basic_array&lt;int, std::__1::allocator&lt;int&gt;&gt;::operator[](unsigned long) in basic_array.hpp:line 0</span></div>
+<div class="line"><span class="comment">//    at xtd::array&lt;int, 1ul, std::__1::allocator&lt;int&gt;&gt;::operator[](unsigned long) in array_1.hpp:line 253</span></div>
+<div class="line"><span class="comment">//    at xtd::collections::generic::extensions::list_common&lt;int, xtd::collections::generic::ilist&lt;int&gt;&gt;::operator[](xtd::index const&amp;) in index.hpp:line 231</span></div>
+<div class="line"><span class="comment">//    at main in xtd_collection_indexer.cpp:line 74</span></div>
 <div class="ttc" id="astructxtd_1_1index_html_a48020f8854906f34d4b0fc6c5fb5ade7"><div class="ttname"><a href="structxtd_1_1index.html#a48020f8854906f34d4b0fc6c5fb5ade7">xtd::index::start</a></div><div class="ttdeci">static const index start</div><div class="ttdoc">Represents the index of the first valid element in a collection.</div><div class="ttdef"><b>Definition</b> index.hpp:172</div></div>
 <div class="ttc" id="astructxtd_1_1index_html_a6354a96d41d98a27eefa8ce6784d95e2"><div class="ttname"><a href="structxtd_1_1index.html#a6354a96d41d98a27eefa8ce6784d95e2">xtd::index::end</a></div><div class="ttdeci">static const index end</div><div class="ttdoc">Represents a value that is not a valid position in a collection.</div><div class="ttdef"><b>Definition</b> index.hpp:136</div></div>
 <div class="ttc" id="astructxtd_1_1index_html_a6c22e60b7cb28284487e3575a990e792"><div class="ttname"><a href="structxtd_1_1index.html#a6c22e60b7cb28284487e3575a990e792">xtd::index::last</a></div><div class="ttdeci">static const index last</div><div class="ttdoc">Represents the index of the last valid element in a collection.</div><div class="ttdef"><b>Definition</b> index.hpp:154</div></div>

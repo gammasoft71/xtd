@@ -108,6 +108,9 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="contents">
 <p>demonstrates how to use <a class="el" href="structxtd_1_1stringable.html" title="Represents the stringable concept.">xtd::stringable</a> concept.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"><span class="preprocessor">#if __cpp_lib_ranges</span></div>
+<div class="line"><span class="preprocessor">#include &lt;ranges&gt;</span></div>
+<div class="line"><span class="preprocessor">#endif</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">struct </span>my_formatable_string : iformatable {</div>
 <div class="line">  my_formatable_string(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; value) : value {value} {}</div>
