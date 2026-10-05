@@ -2,8 +2,8 @@
 #include <xtd/array>
 #include <xtd/istringable>
 #include <xtd/random>
-#include <xtd/expressions/divide_expression>
-#include <xtd/expressions/multiply_expression>
+#include <xtd/expressions/divide>
+#include <xtd/expressions/multiply>
 
 namespace sudoku {
   class sudoku : public xtd::istringable<sudoku> {
