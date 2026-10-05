@@ -1,6 +1,8 @@
 #include <xtd/xtd>
 
 #if __cpp_lib_ranges
+#include <ranges>
+
 using namespace std::ranges::views;
 #endif
 
