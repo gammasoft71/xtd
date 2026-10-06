@@ -11,6 +11,7 @@
 #include "stringable.hpp"
 #include "collections/generic/enumerable_generator.hpp"
 #include "collections/generic/key_value_pair.hpp"
+#include "expressions/expression_operand.hpp"
 #include "linq/enumerable_.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -105,32 +106,32 @@ namespace xtd {
     }
   }
   template<typename char_t, typename other_t>
-  requires (xtd::stringable<other_t> && !xtd::textual<other_t> && !xtd::character<other_t>)
+  requires (xtd::stringable<other_t> && !xtd::textual<other_t> && !xtd::character<other_t> && !xtd::expressions::expression_operand<other_t>)
   auto operator +=(xtd::basic_string<char_t>& first, const other_t& second) -> xtd::basic_string<char_t>& {
     first += xtd::string::format("{}", second);
     return first;
   }
   
   template<typename char_t, typename other_t>
-  requires (xtd::stringable<other_t> && !xtd::textual<other_t> && !xtd::character<other_t>)
+  requires (xtd::stringable<other_t> && !xtd::textual<other_t> && !xtd::character<other_t> && !xtd::expressions::expression_operand<other_t>)
   auto operator +(const xtd::basic_string<char_t>& first, const other_t& second) -> xtd::basic_string<char_t> {
     return xtd::string::format("{}{}", first, second);
   }
 
   template<typename char_t, typename other_t>
-  requires (xtd::stringable<other_t> && !xtd::textual<other_t> && !xtd::character<other_t>)
+  requires (xtd::stringable<other_t> && !xtd::textual<other_t> && !xtd::character<other_t> && !xtd::expressions::expression_operand<other_t>)
   auto operator +(const char_t* first, const other_t& second) -> xtd::basic_string<char_t> {
     return xtd::string::format("{}{}", first, second);
   }
 
   template<typename char_t, typename other_t>
-  requires (xtd::stringable<other_t> && !xtd::textual<other_t> && !xtd::character<other_t>)
+  requires (xtd::stringable<other_t> && !xtd::textual<other_t> && !xtd::character<other_t> && !xtd::expressions::expression_operand<other_t>)
   auto operator +(const other_t& first, const xtd::basic_string<char_t>& second) -> xtd::basic_string<char_t> {
     return xtd::string::format("{}{}", first, second);
   }
 
   template<typename char_t, typename other_t>
-  requires (xtd::stringable<other_t> && !xtd::textual<other_t> && !xtd::character<other_t>)
+  requires (xtd::stringable<other_t> && !xtd::textual<other_t> && !xtd::character<other_t> && !xtd::expressions::expression_operand<other_t>)
   auto operator +(const other_t& first, const char_t* second) -> xtd::basic_string<char_t> {
     return xtd::string::format("{}{}", first, second);
   }
