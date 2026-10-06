@@ -2,7 +2,6 @@
 
 using namespace xtd::drawing;
 using namespace xtd::drawing::drawing_2d;
-using namespace xtd::drawing::text;
 
 auto main() -> int {
   auto drawing_bitmap = bitmap {640, 480};
