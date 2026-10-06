@@ -1,4 +1,4 @@
-/* The standard CSS for doxygen 1.17.0*/
+/* The standard CSS for doxygen 1.18.0*/
 
 body {
 	background-color: white;
@@ -229,7 +229,6 @@ dt.alphachar{
 
 a {
 	color: #3D578C;
-	font-weight: normal;
 	text-decoration: none;
 }
 
@@ -380,6 +379,10 @@ span.tt {
         white-space: pre;
 	font-family: 'JetBrains Mono',Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace,fixed;
 	background-color: #FBFCFD;
+}
+
+.label span.tt {
+	background: none;
 }
 
 .clipboard {
@@ -596,6 +599,11 @@ img.formulaInl, img.inline {
 	vertical-align: middle;
 }
 
+div.toc img.inline {
+	float: none;
+	vertical-align: top;
+	max-height: 14px;
+}
 div.center {
 	text-align: center;
 	margin-top: 0px;
@@ -719,6 +727,11 @@ hr.footer {
 table.memberdecls {
 	border-spacing: 0px;
 	padding: 0px;
+}
+
+table.memberdecls-inline {
+	border: 1px solid #A8B8D9;
+	border-radius: 4px;
 }
 
 .memberdecls td, .fieldtable tr {
@@ -1375,7 +1388,11 @@ table.fieldtable {
 	border-bottom: none;
 }
 
-.fieldtable th {
+.memberdecls-inline th h3 {
+  margin-left: 15px;
+}
+
+.memberdecls-inline th, .fieldtable th {
 	background-color: #E2E8F2;
 	font-size: 90%;
 	color: #253555;
@@ -2146,10 +2163,40 @@ details[open]>summary::before {
         transform: rotate(0deg);
 }
 
+.spacer {
+  width: 16px;
+  display: inline-block;
+}
+
+
+#searchBoxPos1 {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  height: 36px;
+}
+
+#searchBoxPos2 {
+  float: right;
+}
+
+#splitbar {
+  -moz-user-select: none;
+  user-select: none;
+}
+
+.dynheader {
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
 html {
---datetime: 'Tue Oct 6 2026 09:31:23';
+--datetime: 'Tue Oct 6 2026 18:03:45';
 --date: 'Tue Oct 6 2026';
---time: '09:31:23';
+--time: '18:03:45';
 --year: '2026';
 }
 span.datetime { content: ' '; }
