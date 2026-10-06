@@ -73,9 +73,8 @@ namespace xtd {
       /// @{
       /// @brief Gets the constant value.
       /// @return The constant value.
-      constexpr auto operator()(auto&&...) const {
-        return value_;
-      }
+      template<typename... args_t>
+      constexpr auto operator()(args_t&&...) const {return value_;}
       /// @}
       
       /// @cond
