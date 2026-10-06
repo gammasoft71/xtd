@@ -7,7 +7,7 @@ auto main() -> int {
   auto words = sentence.split(' ');
   
   // Prepend each word to the beginning of the new sentence to reverse the word order.
-  auto reversed = words.aggregate(_2 + " " + _1);
+  auto reversed = words.aggregate(_2 + ' ' + _1);
 
   console::write_line(reversed.quoted());
 }
