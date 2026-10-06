@@ -4,6 +4,7 @@
 #pragma once
 #include "args.hpp"
 #include "value.hpp"
+#include "expression.hpp"
 #include "expression_operand.hpp"
 #include "../usize.hpp"
 #include <type_traits>
