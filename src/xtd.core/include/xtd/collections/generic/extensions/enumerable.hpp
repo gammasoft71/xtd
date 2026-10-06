@@ -63,9 +63,8 @@ namespace xtd {
           /// @par Examples
           /// The following code example demonstrates how to reverse the order of words in a string by using enumerable::aggregate.
           /// @include enumerable_aggregate.cpp
-          template<xtd::func_callable<value_t, value_t, value_t> func_t>
-          [[nodiscard]] auto aggregate(func_t&& func) const -> value_t {
-            return xtd::linq::enumerable::aggregate(self(), std::forward<func_t>(func));
+          [[nodiscard]] auto aggregate(auto&& func) const -> value_t {
+            return xtd::linq::enumerable::aggregate(self(), func);
           }
           /// @brief Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value.
           /// @tparam accumulate_t The type of the accumulator value.
@@ -75,9 +74,8 @@ namespace xtd {
           /// @par Examples
           /// The following code example demonstrates how to use xtd::linq::enumerable::aggregate to apply an accumulator function and use a seed value.
           /// @include enumerable_aggregate2.cpp
-          template<typename accumulate_t, xtd::func_callable<accumulate_t, accumulate_t, value_t> func_t>
-          [[nodiscard]] auto aggregate(accumulate_t&& seed, func_t&& func) const -> accumulate_t {
-            return xtd::linq::enumerable::aggregate(self(), std::forward<accumulate_t>(seed), std::forward<func_t>(func));
+          [[nodiscard]] auto aggregate(value_t&& seed, auto&& func) const -> value_t {
+            return xtd::linq::enumerable::aggregate(self(), std::forward<value_t>(seed), func);
           }
           /// @brief Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value, and the specified function is used to select the result value.
           /// @tparam result_t The type of the resulting value.
@@ -89,9 +87,8 @@ namespace xtd {
           /// @par Examples
           /// The following code example demonstrates how to use xtd::linq::enumerable::aggregate to apply an accumulator function and use a seed value.
           /// @include enumerable_aggregate3.cpp
-          template<typename result_t, typename accumulate_t, xtd::func_callable<accumulate_t, accumulate_t, value_t> func_t, xtd::func_callable<result_t, value_t> result_selector_t>
-          [[nodiscard]] auto aggregate(accumulate_t&& seed, func_t&& func, result_selector_t&& result_selector) const -> result_t {
-            return xtd::linq::enumerable::aggregate(self(), std::forward<accumulate_t>(seed), std::forward<func_t>(func), std::forward<result_selector_t>(result_selector));
+          [[nodiscard]] auto aggregate(value_t&& seed, auto&& func, auto&& result_selector) const -> xtd::raw_type<decltype(result_selector(std::declval<const value_t&>()))> {
+            return xtd::linq::enumerable::aggregate(self(), std::forward<value_t>(seed), func, result_selector);
           }
           
           /// @brief Determines whether all elements of a sequence satisfy a condition.

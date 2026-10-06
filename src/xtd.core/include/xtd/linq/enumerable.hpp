@@ -35,8 +35,8 @@ auto xtd::linq::enumerable::aggregate(source_t&& source, func_t&& func) -> xtd::
   return aggregated;
 }
 
-template<typename accumulate_t, xtd::iterable source_t, xtd::func_callable<accumulate_t, accumulate_t, xtd::iterable_value_type<source_t>> func_t>
-auto xtd::linq::enumerable::aggregate(source_t&& source, accumulate_t&& seed, func_t&& func) -> accumulate_t {
+template<xtd::iterable source_t, xtd::func_callable<xtd::iterable_value_type<source_t>, xtd::iterable_value_type<source_t>, xtd::iterable_value_type<source_t>> func_t>
+auto xtd::linq::enumerable::aggregate(source_t&& source, xtd::iterable_value_type<source_t>&& seed, func_t&& func) -> xtd::iterable_value_type<source_t> {
   auto aggregated = std::move(seed);
   //auto source_holder = enumerable_holder<source_t> {std::forward<source_t>(source)};
   //for (const auto& item : source_holder.get())
@@ -45,8 +45,8 @@ auto xtd::linq::enumerable::aggregate(source_t&& source, accumulate_t&& seed, fu
   return aggregated;
 }
 
-template<typename result_t, typename accumulate_t, xtd::iterable source_t, xtd::func_callable<accumulate_t, accumulate_t, xtd::iterable_value_type<source_t>> func_t, xtd::func_callable<result_t, accumulate_t> result_selector_t>
-auto xtd::linq::enumerable::aggregate(source_t&& source, accumulate_t&& seed, func_t&& func, result_selector_t&& result_selector) -> result_t {
+template<xtd::iterable source_t, xtd::func_callable<xtd::iterable_value_type<source_t>, xtd::iterable_value_type<source_t>, xtd::iterable_value_type<source_t>> func_t>
+auto xtd::linq::enumerable::aggregate(source_t&& source, xtd::iterable_value_type<source_t>&& seed, func_t&& func, auto&& result_selector) -> xtd::raw_type<decltype(result_selector(std::declval<const xtd::iterable_value_type<source_t>&>()))> {
   auto aggregated = std::move(seed);
   //auto source_holder = enumerable_holder<source_t> {std::forward<source_t>(source)};
   //for (const auto& item : source_holder.get())

@@ -123,8 +123,8 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates how to use xtd::linq::enumerable::aggregate to apply an accumulator function and use a seed value.
       /// @include enumerable_aggregate2.cpp
-      template<typename accumulate_t, xtd::iterable source_t, xtd::func_callable<accumulate_t, accumulate_t, xtd::iterable_value_type<source_t>> func_t>
-      [[nodiscard]] static auto aggregate(source_t&& source, accumulate_t&& seed, func_t&& func) -> accumulate_t;
+      template<xtd::iterable source_t, xtd::func_callable<xtd::iterable_value_type<source_t>, xtd::iterable_value_type<source_t>, xtd::iterable_value_type<source_t>> func_t>
+      [[nodiscard]] static auto aggregate(source_t&& source, xtd::iterable_value_type<source_t>&& seed, func_t&& func) -> xtd::iterable_value_type<source_t>;
       /// @brief Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value, and the specified function is used to select the result value.
       /// @tparam result_t The type of the resulting value.
       /// @tparam accumulate_t The type of the accumulator value.
@@ -137,8 +137,8 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates how to use xtd::linq::enumerable::aggregate to apply an accumulator function and use a seed value.
       /// @include enumerable_aggregate3.cpp
-      template<typename result_t, typename accumulate_t, xtd::iterable source_t, xtd::func_callable<accumulate_t, accumulate_t, xtd::iterable_value_type<source_t>> func_t, xtd::func_callable<result_t, accumulate_t> result_selector_t>
-      [[nodiscard]] static auto aggregate(source_t&& source, accumulate_t&& seed, func_t&& func, result_selector_t&& result_selector) -> result_t;
+      template<xtd::iterable source_t, xtd::func_callable<xtd::iterable_value_type<source_t>, xtd::iterable_value_type<source_t>, xtd::iterable_value_type<source_t>> func_t>
+      [[nodiscard]] static auto aggregate(source_t&& source, xtd::iterable_value_type<source_t>&& seed, func_t&& func, auto&& result_selector) -> xtd::raw_type<decltype(result_selector(std::declval<const xtd::iterable_value_type<source_t>&>()))>;
       
       /// @brief Determines whether all elements of a sequence satisfy a condition.
       /// @tparam source_t The type of the elements of source.
