@@ -37,7 +37,7 @@ namespace xtd::linq::tests {
     }
     
     auto test_method_(aggregate_with_enumerable_seed_func_and_result_selector) {
-      assert::are_equal(-25, enumerable::aggregate<int>(array {1, 2, 3, 4, 5}, 10, _1 + _2, -_));
+      assert::are_equal(-25, enumerable::aggregate(array {1, 2, 3, 4, 5}, 10, _1 + _2, -_));
     }
     
     auto test_method_(all_with_enumerable_and_predicate) {
