@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <div class="line">      </div>
 <div class="line">      paint += <a id="_a0" name="_a0"></a><a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a>(<span class="keywordtype">object</span>&amp; sender, paint_event_args&amp; e) {</div>
 <div class="line">        e.graphics().clear(color::light_blue);</div>
-<div class="line">        e.graphics().draw_string(<span class="stringliteral">&quot;Hello, World!&quot;</span>, {system_fonts::default_font(), 32, font_style::bold | font_style::italic}, solid_brush {color_converter::dark(color::light_blue)}, rectangle::offset(e.clip_rectangle(), {2, 2}), string_format().alignment(string_alignment::center).line_alignment(string_alignment::center));</div>
+<div class="line">        e.graphics().draw_string(<span class="stringliteral">&quot;Hello, World!&quot;</span>, {system_fonts::default_font(), 32, font_style::bold | font_style::italic}, solid_brush {color_converter::dark(colors::light_steel_blue())}, rectangle::offset(e.clip_rectangle(), {2, 2}), string_format().alignment(string_alignment::center).line_alignment(string_alignment::center));</div>
 <div class="line">        e.graphics().draw_string(<span class="stringliteral">&quot;Hello, World!&quot;</span>, {system_fonts::default_font(), 32, font_style::bold | font_style::italic}, brushes::dark_blue(), rectangle::inflate(e.clip_rectangle(), {-2, -2}), string_format().alignment(string_alignment::center).line_alignment(string_alignment::center));</div>
 <div class="line">      };</div>
 <div class="line">    }</div>
