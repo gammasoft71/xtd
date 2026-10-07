@@ -14,6 +14,7 @@
 * [apple_colors](colors/apple_colors/README.md) Demonstrates how to use [xtd::drawing::apple_colors](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1drawing_1_1apple__colors.html) class.
 * [basic_colors](colors/basic_colors/README.md) Demonstrates how to use [xtd::drawing::basic_colors](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1drawing_1_1basic__colors.html) class.
 * [color](colors/color/README.md) Demonstrates how to use [xtd::drawing::color](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1drawing_1_1color.html) class.
+* [colors](colors/colors/README.md) Demonstrates how to use [xtd::drawing::colors](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1drawing_1_1colors.html) class.
 
 ## [Fonts](fonts/README.md)
 
