@@ -4,7 +4,7 @@ Demonstrates how to use [xtd::drawing::apple_colors](https://gammasoft71.github.
 
 ## Sources
 
-* [src/color.cpp](src/color.cpp)
+* [src/apple_colors.cpp](src/apple_colors.cpp)
 * [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
