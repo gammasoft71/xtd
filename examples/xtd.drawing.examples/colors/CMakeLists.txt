@@ -4,5 +4,6 @@ project(colors)
 find_package(xtd REQUIRED)
 
 add_projects(
+  apple_colors
   color
 )
