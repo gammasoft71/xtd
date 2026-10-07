@@ -200,8 +200,8 @@ Public Static Methods</h2></td></tr>
 <tr class="memdesc:a16258eba9cd179071493869edfcdd439"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies an accumulator function over a sequence.  <br /></td></tr>
 <tr class="memitem:a857a825203c3c8419324ce60fef2f2cf" id="r_a857a825203c3c8419324ce60fef2f2cf"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a857a825203c3c8419324ce60fef2f2cf">aggregate</a> (value_t &amp;&amp;seed, auto &amp;&amp;func<a class="el" href="group__delegates.html#ga17814178399a734d83f7c7ee1ca15365">func</a>) const -&gt; value_t</td></tr>
 <tr class="memdesc:a857a825203c3c8419324ce60fef2f2cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value.  <br /></td></tr>
-<tr class="memitem:a009c9ce10077e0f82a4e01f3e0cf5c85" id="r_a009c9ce10077e0f82a4e01f3e0cf5c85"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a009c9ce10077e0f82a4e01f3e0cf5c85">aggregate</a> (value_t &amp;&amp;seed, auto &amp;&amp;func<a class="el" href="group__delegates.html#ga17814178399a734d83f7c7ee1ca15365">func</a>, auto &amp;&amp;result_selector) const -&gt; <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt; decltype(result_selector(std::declval&lt; const value_t &amp; &gt;()))&gt;</td></tr>
-<tr class="memdesc:a009c9ce10077e0f82a4e01f3e0cf5c85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value, and the specified function is used to select the result value.  <br /></td></tr>
+<tr class="memitem:a4619fd6cdfa2681a9bc1c0f62426ecb0" id="r_a4619fd6cdfa2681a9bc1c0f62426ecb0"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a4619fd6cdfa2681a9bc1c0f62426ecb0">aggregate</a> (value_t &amp;&amp;seed, auto &amp;&amp;func<a class="el" href="group__delegates.html#ga17814178399a734d83f7c7ee1ca15365">func</a>, auto &amp;&amp;result_selector) const</td></tr>
+<tr class="memdesc:a4619fd6cdfa2681a9bc1c0f62426ecb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value, and the specified function is used to select the result value.  <br /></td></tr>
 <tr class="memitem:ab0df621ab1e82dd659dcb0664e734e7d" id="r_ab0df621ab1e82dd659dcb0664e734e7d"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1predicate__callable.html">xtd::predicate_callable</a>&lt; value_t &gt; predicate_t&gt; </td></tr>
 <tr class="memitem:ab0df621ab1e82dd659dcb0664e734e7d template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ab0df621ab1e82dd659dcb0664e734e7d">all</a> (predicate_t &amp;&amp;predicate<a class="el" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab">predicate</a>) const -&gt; bool</td></tr>
 <tr class="memdesc:ab0df621ab1e82dd659dcb0664e734e7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether all elements of a sequence satisfy a condition.  <br /></td></tr>
@@ -559,8 +559,8 @@ template&lt;typename value_t, typename enumerable_t&gt; </div>
 
 </div>
 </div>
-<a id="a009c9ce10077e0f82a4e01f3e0cf5c85" name="a009c9ce10077e0f82a4e01f3e0cf5c85"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a009c9ce10077e0f82a4e01f3e0cf5c85">&#9670;&#160;</a></span>aggregate() <span class="overload">[3/3]</span></h2>
+<a id="a4619fd6cdfa2681a9bc1c0f62426ecb0" name="a4619fd6cdfa2681a9bc1c0f62426ecb0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4619fd6cdfa2681a9bc1c0f62426ecb0">&#9670;&#160;</a></span>aggregate() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -583,7 +583,7 @@ template&lt;typename value_t, typename enumerable_t&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">auto &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>result_selector</em></span>&#160;) const -&gt; <a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt; decltype(result_selector(std::declval&lt; const value_t &amp; &gt;()))&gt;</td>
+          <td class="paramtype">auto &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>result_selector</em></span>&#160;) const</td>
         </tr>
       </table>
   </td>
