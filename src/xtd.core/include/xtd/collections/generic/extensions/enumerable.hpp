@@ -87,7 +87,7 @@ namespace xtd {
           /// @par Examples
           /// The following code example demonstrates how to use xtd::linq::enumerable::aggregate to apply an accumulator function and use a seed value.
           /// @include enumerable_aggregate3.cpp
-          [[nodiscard]] auto aggregate(value_t&& seed, auto&& func, auto&& result_selector) const -> xtd::raw_type<decltype(result_selector(std::declval<const value_t&>()))> {
+          [[nodiscard]] auto aggregate(value_t&& seed, auto&& func, auto&& result_selector) const {
             return xtd::linq::enumerable::aggregate(self(), std::forward<value_t>(seed), func, result_selector);
           }
           
