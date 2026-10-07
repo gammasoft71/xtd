@@ -19,7 +19,6 @@ add_projects(
   clock
   colored_forms
   colored_tab_pages
-  colors
   control_with_name_operator
   docked_panels
   emplace
@@ -30,6 +29,7 @@ add_projects(
   form_and_thread
   form_background_image
   form_background_image2
+  form_colors
   form_decoration
   form_resize
   form_show

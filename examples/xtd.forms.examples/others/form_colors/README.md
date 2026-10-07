@@ -1,4 +1,4 @@
-# colors
+# form_colors
 
 demonstrates the use of [xtd::forms::user_control](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1user__control.html) control with xtd::drawing::color.
 
@@ -6,7 +6,7 @@ demonstrates the use of [xtd::forms::user_control](https://gammasoft71.github.io
 
 * [src/color_chooser.hpp](src/color_chooser.hpp)
 * [src/color_editor.hpp](src/color_editor.hpp)
-* [src/colors.cpp](src/colors.cpp)
+* [src/form_colors.cpp](src/form_colors.cpp)
 * [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
@@ -21,18 +21,18 @@ xtdc run
 
 ### Windows :
 
-![Screenshot](../../../../docs/pictures/examples/colors_w.png)
+![Screenshot](../../../../docs/pictures/examples/form_colors_w.png)
 
-![Screenshot](../../../../docs/pictures/examples/colors_wd.png)
+![Screenshot](../../../../docs/pictures/examples/form_colors_wd.png)
 
 ### macOS :
 
-![Screenshot](../../../../docs/pictures/examples/colors_m.png)
+![Screenshot](../../../../docs/pictures/examples/form_colors_m.png)
 
-![Screenshot](../../../../docs/pictures/examples/colors_md.png)
+![Screenshot](../../../../docs/pictures/examples/form_colors_md.png)
 
 ### Gnome :
 
-![Screenshot](../../../../docs/pictures/examples/colors_g.png)
+![Screenshot](../../../../docs/pictures/examples/form_colors_g.png)
 
-![Screenshot](../../../../docs/pictures/examples/colors_gd.png)
+![Screenshot](../../../../docs/pictures/examples/form_colors_gd.png)
