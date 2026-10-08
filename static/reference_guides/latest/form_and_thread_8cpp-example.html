@@ -135,31 +135,30 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  form_thread() {</div>
 <div class="line">    text(<span class="stringliteral">&quot;Form and thread example&quot;</span>);</div>
-<div class="line">    form_closed += <a id="_a0" name="_a0"></a><a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
-<div class="line">      closed = <span class="keyword">true</span>;</div>
-<div class="line">    };</div>
+<div class="line">    form_closed += <a id="_a0" name="_a0"></a><a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {closed = <span class="keyword">true</span>;};</div>
+<div class="line">    messages.parent(*this).dock(dock_style::fill);</div>
 <div class="line">    </div>
-<div class="line">    messages.parent(*<span class="keyword">this</span>);</div>
-<div class="line">    messages.dock(dock_style::fill);</div>
-<div class="line">    </div>
-<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> index = 0_z; index &lt; environment::processor_count() - 1; ++index) {</div>
-<div class="line">      thread::start_new([&amp;] {</div>
-<div class="line">        <span class="keyword">auto</span> counter = 0u;</div>
-<div class="line">        <span class="keyword">auto</span> thread_name = string::format(<span class="stringliteral">&quot;thread {}&quot;</span>, thread::current_thread().managed_thread_id());</div>
-<div class="line">        thread::current_thread().name(thread_name);</div>
-<div class="line">        <span class="keywordflow">while</span> (!closed) {</div>
-<div class="line">          thread::sleep(50_ms);</div>
-<div class="line">          ++counter;</div>
-<div class="line">          messages.begin_invoke([&amp;, counter, thread_name] {</div>
-<div class="line">            messages.items().add(string::format(<span class="stringliteral">&quot;{}: counter: {}&quot;</span>, thread_name, counter));</div>
-<div class="line">            messages.selected_index(messages.items().count() - 1);</div>
-<div class="line">          });</div>
-<div class="line">        }</div>
-<div class="line">      });</div>
-<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> _ : enumerable::range(environment::processor_count() - 1))</div>
+<div class="line">      thread::start_new({<a id="_a1" name="_a1"></a><a class="code hl_define" href="group__keywords.html#ga05d1212dca8562cec36b4ebb03dd897f">self_</a>, &amp;form_thread::thread_proc});</div>
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line"><span class="keyword">private</span>:</div>
+<div class="line">  <span class="keyword">auto</span> thread_proc() -&gt; <span class="keywordtype">void</span> {</div>
+<div class="line">    <span class="keyword">auto</span> counter = 0;</div>
+<div class="line">    <span class="keyword">auto</span> thread_name = string::format(<span class="stringliteral">&quot;thread {}&quot;</span>, interlocked::increment(unique_id));</div>
+<div class="line">    </div>
+<div class="line">    <span class="keywordflow">while</span> (!closed) {</div>
+<div class="line">      thread::sleep(50_ms);</div>
+<div class="line">      ++counter;</div>
+<div class="line">      </div>
+<div class="line">      messages.begin_invoke(<a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
+<div class="line">        messages.items().add(string::format(<span class="stringliteral">&quot;{}: counter: {}&quot;</span>, thread_name, counter));</div>
+<div class="line">        messages.selected_index(messages.items().count() - 1);</div>
+<div class="line">      });</div>
+<div class="line">    }</div>
+<div class="line">  }</div>
+<div class="line">    </div>
+<div class="line">  int32 unique_id = 0;</div>
 <div class="line">  list_box messages;</div>
 <div class="line">  <span class="keywordtype">bool</span> closed = <span class="keyword">false</span>;</div>
 <div class="line">};</div>
@@ -167,6 +166,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  application::run(form_thread());</div>
 <div class="line">}</div>
+<div class="ttc" id="agroup__keywords_html_ga05d1212dca8562cec36b4ebb03dd897f"><div class="ttname"><a href="group__keywords.html#ga05d1212dca8562cec36b4ebb03dd897f">self_</a></div><div class="ttdeci">#define self_</div><div class="ttdoc">The self_ expression is a reference value expression whose value is the reference of the implicit obj...</div><div class="ttdef"><b>Definition</b> self.hpp:20</div></div>
 <div class="ttc" id="agroup__keywords_html_gac0b0b1a17f583a897eb6b424f2475363"><div class="ttname"><a href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a></div><div class="ttdeci">#define delegate_</div><div class="ttdoc">The declaration of a delegate type is similar to a method signature. It has a return value and any nu...</div><div class="ttdef"><b>Definition</b> delegate.hpp:1018</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
