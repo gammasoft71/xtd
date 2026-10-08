@@ -8,18 +8,17 @@ public:
     messages.parent(*this).dock(dock_style::fill);
     
     for (auto _ : enumerable::range(environment::processor_count() - 1))
-      task_run_async().start();
+      task_runner_async().start();
   }
   
 private:
-  auto task_run_async() async_ {
+  auto task_runner_async() async_ {
     auto counter = 0;
     auto task_name = string::format("task {}", interlocked::increment(unique_id));
     
     while (!closed) {
       /// simulate work...
       co_await task<>::delay(50_ms);
-      thread::sleep(50_ms);
       ++counter;
       
       /// call invoke method to update UI in the main thread.
