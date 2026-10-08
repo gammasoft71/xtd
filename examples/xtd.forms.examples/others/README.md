@@ -23,6 +23,7 @@
 * [flat_button](flat_button/README.md) demonstrates the use of [xtd::forms::button](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1button.html) control with flat style.
 * [font_families](font_families/README.md) demonstrates the use of xtd::drawing::font_family class.
 * [form_and_main](form_and_main/README.md) demonstrates how to use startup_ keyword.
+* [form_and_task](form_and_task/README.md) demonstrates how a task can update ui with [xtd::forms::control::invoke](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html#a17ec51282322d8387937dc8dad438e32) method.
 * [form_and_thread](form_and_thread/README.md) demonstrates how a thread can update ui with [xtd::forms::control::invoke](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html#a17ec51282322d8387937dc8dad438e32) method.
 * [form_background_image](form_background_image/README.md) demonstrates how to use [xtd::forms::form](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1form.html) class with image_background property.
 * [form_background_image2](form_background_image2/README.md) demonstrates how to use [xtd::forms::form](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1form.html) class with image_background property.
