@@ -10,9 +10,10 @@
 #include "../auto_reset_event.hpp"
 #include "../lock.hpp"
 #include "../thread_pool.hpp"
+#include "../../collections/generic/list.hpp"
 #include "../../diagnostics/stopwatch.hpp"
-#include "../../helpers/throw_helper.hpp"
 #include "../../exception_services/exception_dispatch_info.hpp"
+#include "../../helpers/throw_helper.hpp"
 #include "../../action.hpp"
 #include "../../aggregate_exception.hpp"
 #include "../../func.hpp"
@@ -110,6 +111,14 @@ namespace xtd {
           data_->parameterized_func = func;
           data_->state = &state;
           data_->cancellation_token = cancellation_token;
+        }
+        
+        ~basic_task() {
+          lock_(data_->sync_root) {
+            if (!data_ && data_.is_unique() && !is_completed()) return;
+            auto task = static_data_.tasks.first_or_default([this](auto&& task) {return task->data_->unique_id == data_->unique_id;});
+            if (task && task->data_->unique_id == data_->unique_id) static_data_.tasks.remove(task);
+          }
         }
         /// @endcond
 
@@ -429,7 +438,7 @@ namespace xtd {
           if (data_->caller_thread->is_main_thread()) thread::set_main_managed_thread_id(xtd::threading::thread::current_thread().get_managed_thread_id());
           // a bad idea that seems like a good one
           // std::swap(data_->caller_thread->get_managed_thread_id(), xtd::threading::thread::current_thread().get_managed_thread_id());
-          std::swap(*data_->caller_id, current_id_);
+          //std::swap(*data_->caller_id, current_id_);
         }
         
         struct data {
@@ -453,6 +462,7 @@ namespace xtd {
           xtd::threading::auto_reset_event start_event;
           xtd::threading::tasks::task_status status = xtd::threading::tasks::task_status::created;
           xtd::object sync_root;
+          xtd::usize unique_id = generate_unique_id();
           xtd::threading::thread* caller_thread = null;
           xtd::usize* caller_id = null;
 
@@ -494,7 +504,12 @@ namespace xtd {
           }};
         };
         
+        struct static_data {
+          xtd::collections::generic::list<sptr<basic_task>> tasks;
+        };
+        
         xtd::sptr<data> data_ = xtd::new_sptr<data>();
+        inline static static_data static_data_;
       };
     }
   }

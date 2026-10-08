@@ -60,7 +60,7 @@ namespace xtd {
         };
         
         /// @cond
-        task() = default;
+        task();
         task(task&&) = default;
         task(const task&) = default;
         auto operator=(task&&) -> task& = default;
@@ -109,6 +109,15 @@ namespace xtd {
       private:
         xtd::ptr<std::coroutine_handle<promise_type>> handle_ = xtd::new_ptr<std::coroutine_handle<promise_type>>();
       };
+
+      /// @cond
+      template<typename result_t>
+      inline task<result_t>::task() {
+        lock_(this->data_->sync_root) {
+          this->static_data_.tasks.add(new_sptr<task<result_t>>(*this));
+        }
+      }
+      /// @endcond
     }
   }
 }

@@ -31,7 +31,7 @@ namespace xtd {
               bool await_ready() noexcept {return false;}
               void await_resume() noexcept {}
               void await_suspend(std::coroutine_handle<promise_type> handle) noexcept {
-                promise.task_->start();
+                if (!promise.task_->is_completed()) promise.task_->start();
                 promise.this_.destroy();
               }
             };
@@ -59,7 +59,7 @@ namespace xtd {
         };
         
         /// @cond
-        task() = default;
+        task();
         task(task&&) = default;
         task(const task&) = default;
         auto operator=(task&&) -> task& = default;
@@ -92,6 +92,14 @@ namespace xtd {
         auto operator co_await() noexcept {return awaiter {*this};}
         /// @}
       };
+
+      /// @cond
+      inline task<void>::task() {
+        lock_(this->data_->sync_root) {
+          this->static_data_.tasks.add(new_sptr<task<>>(*this));
+        }
+      }
+      /// @endcond
     }
   }
 }
