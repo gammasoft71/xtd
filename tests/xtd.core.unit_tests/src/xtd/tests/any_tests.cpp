@@ -121,13 +121,13 @@ namespace xtd::tests {
       any a1 = "string"_s;
       assert::are_equal("string", string::format("{}", a1));
       any a2 = u8"string"_s;
-      assert::are_equal("string", string::format("{}", a2));
+      assert::are_equal(u8"string", string::format("{}", a2));
       any a3 = u"string"_s;
-      assert::are_equal("string", string::format("{}", a3));
+      assert::are_equal(u"string", string::format("{}", a3));
       any a4 = U"string"_s;
-      assert::are_equal("string", string::format("{}", a4));
+      assert::are_equal(U"string", string::format("{}", a4));
       any a5 = L"string"_s;
-      assert::are_equal("string", string::format("{}", a5));
+      assert::are_equal(L"string", string::format("{}", a5));
     }
     
     auto test_method_(format_wchar) {
