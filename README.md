@@ -29,7 +29,7 @@
 * [xtd 1.0.0 will require C++20 as the minimum standard](https://gammasoft71.github.io/xtd/docs/news/20250615) - Posted on June 15, 2025
 * [Release xtd 0.1.2 (beta)](https://gammasoft71.github.io/xtd/docs/news/20240312) - Posted on March 12, 2024
 * [The xtd 1.0.0 is growing](https://gammasoft71.github.io/xtd/docs/news/20231112) - Posted on November 12, 2023
-* [Release xtd 0.1.1 (beta)](https://gammasoft71.github.io/xtd/docs/news/20230717) - Posted on Jully 17, 2023
+* [Release xtd 0.1.1 (beta)](https://gammasoft71.github.io/xtd/docs/news/20230717) - Posted on July 17, 2023
 * [All news](https://gammasoft71.github.io/xtd/docs/news)
 
 ## Features
@@ -40,13 +40,13 @@
 * xtd is designed to manage GUI controls and dialogs in pure [native mode](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.forms/Overview/control_appearance) or with [CSS styles](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.forms/Style%20sheets/style_sheets_overview).
 * written in efficient, modern [C++20/23](https://en.cppreference.com/w/) with [RAII](https://en.cppreference.com/w/cpp/language/raii) programming idiom;
 * and [highly portable](https://gammasoft71.github.io/xtd/docs/documentation/portability) and available on [many different platforms](https://gammasoft71.github.io/xtd/docs/documentation/portability);
-* See [features](https://gammasoft71.github.io/xtd/docs/documentation/features) for more informations.
+* See [features](https://gammasoft71.github.io/xtd/docs/documentation/features) for more information.
 
 ## xtd libraries architecture
 
 [![architecture_logo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/block_diagram_onion.png)](https://gammasoft71.github.io/xtd/docs/documentation/guides/Overview/Libraries/hierarchy)
 
-xtd is composed of several libraries.
+xtd consists of several libraries.
 
 ### xtd.core
 
@@ -61,7 +61,7 @@ The [xtd.drawing](https://gammasoft71.github.io/xtd/reference_guides/latest/grou
 ### xtd.forms
 
 [![forms](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/xtd.forms.png)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html)
-The [xtd.forms](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html) library contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows, Apple macOS and linux base operating system.
+The [xtd.forms](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html) library contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows, Apple macOS and linux-based operating system.
 
 ### xtd.tunit
 
@@ -86,7 +86,7 @@ The [xtd.tunit](https://gammasoft71.github.io/xtd/reference_guides/latest/group_
 
 [![GitHub milestone](https://img.shields.io/github/milestones/progress/gammasoft71/xtd/1?color=004080&style=for-the-badge)](https://github.com/gammasoft71/xtd/milestone/1) [![GitHub milestone](https://img.shields.io/github/milestones/progress-percent/gammasoft71/xtd/1?color=004080&label=complete%20&style=for-the-badge)](https://github.com/gammasoft71/xtd/milestone/1)
   
-This project is an open source project. The developers who participate do so on their own time. It is therefore difficult to fix realese dates. 
+This project is an open source project. The developers who participate do so on their own time. It is therefore difficult to set release dates. 
 
 But you can follow the evolution of the development. We keep the status up to date.
 
@@ -134,6 +134,8 @@ _(**) There is only one enhancement for xtd 0.1.0, as project management was not
 The classic first application 'Hello World'.
 
 ### Console (CLI)
+
+> This example demonstrates how to display a simple message in the console using xtd.
 
 #### hello_world_console.cpp
 
@@ -188,6 +190,8 @@ xtdc run
 
 ### Coroutines C++20 with xtd::threading::tasks
 
+> This example asynchronously prints a greeting for each world in parallel, then waits for all greetings to be printed.
+
 #### hello_world_coroutine.cpp
 
 ```cpp
@@ -204,9 +208,7 @@ public:
   }
 };
 
-auto main() -> int {
-  return startup::run(program::main);
-}
+startup_(program::main);
 ```
 
 **or simply**
@@ -260,6 +262,8 @@ Hello, Mundo!
 ```
 
 ### Forms (GUI like WinForms)
+
+> This example demonstrates how to create a simple graphical application using xtd forms.
 
 #### hello_world_forms.cpp
 
@@ -343,6 +347,8 @@ xtdc run
 ![Screenshot](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/hello_world_gd.png)
 
 ### tunit (Unit tests like Microsoft Unit Testing Framework)
+
+> This example demonstrates how to write and run unit tests using xtd.tunit.
 
 #### hello_world_test.cpp
 
@@ -484,7 +490,7 @@ The [authors file](https://github.com/gammasoft71/xtd/blob/master/AUTHORS.md) li
 
 * First read [Code of conduct](https://github.com/gammasoft71/xtd/blob/master/CODE_OF_CONDUCT.md) and the [design guidelines](https://gammasoft71.github.io/xtd/docs/documentation/design_guidelines) to make sure your contribution follows the rules.
 * [Fork](https://github.com/gammasoft71/xtd/fork) the project and use a pull request for adding your contribution.
-* If you face any problems feel free to open an issue at the [issues tracker](https://github.com/gammasoft71/xtd/issues), If you feel like there is a missing feature, please raise a ticket on Github. Pull request are also welcome.
+* If you encounter any problems, feel free to open an issue in the [issues tracker](https://github.com/gammasoft71/xtd/issues). If you feel like there is a missing feature, please raise a ticket on Github. Pull requests are also welcome.
 
 **Your feedback is important for the evolution of the project.**
 
