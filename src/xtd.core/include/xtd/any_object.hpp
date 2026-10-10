@@ -3,6 +3,7 @@
 #pragma once
 #include "collections/generic/helpers/comparer.hpp"
 #include "boxing.hpp"
+#include "character.hpp"
 #include "enum_object.hpp"
 #include "icomparable.hpp"
 #include "iequatable.hpp"
@@ -45,6 +46,14 @@ namespace xtd {
     /// @param value The value to initialize the contained value with.
     template<typename type_t> // Can't be explicit by design.
     any_object(const type_t& value) noexcept : value_(boxing_ptr(value)) {}
+    /// @brief Initializes a new instance of the xtd::any_object class with specified value.
+    /// @param value The value to initialize the contained value with.
+    template<xtd::character type_t> // Can't be explicit by design.
+    any_object(const type_t* value) noexcept : value_(boxing_ptr(value)) {}
+    /// @brief Initializes a new instance of the xtd::any_object class with specified value.
+    /// @param value The value to initialize the contained value with.
+    template<xtd::character type_t> // Can't be explicit by design.
+    any_object(type_t* value) noexcept : value_(boxing_ptr(value)) {}
     /// @}
     
     /// @cond
