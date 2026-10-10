@@ -48,19 +48,19 @@ ptr<object> any_object::boxing_ptr(const char* value) noexcept {
 }
 
 ptr<object> any_object::boxing_ptr(const char8* value) noexcept {
-  return new_ptr<string>(value);
+  return new_ptr<u8string>(value);
 }
 
 ptr<object> any_object::boxing_ptr(const char16* value) noexcept {
-  return new_ptr<string>(value);
+  return new_ptr<u16string>(value);
 }
 
 ptr<object> any_object::boxing_ptr(const char32* value) noexcept {
-  return new_ptr<string>(value);
+  return new_ptr<u32string>(value);
 }
 
 ptr<object> any_object::boxing_ptr(const wchar* value) noexcept {
-  return new_ptr<string>(value);
+  return new_ptr<wstring>(value);
 }
 
 ptr<object> any_object::boxing_ptr(const char& value) noexcept {
