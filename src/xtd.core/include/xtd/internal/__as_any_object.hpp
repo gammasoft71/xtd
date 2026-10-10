@@ -105,7 +105,7 @@ namespace xtd {
   /// bool result = as<bool>(value);
   /// ```
   template<typename type_t>
-  requires (!std::integral<type_t> || std::same_as<type_t, bool>)
+  requires (!xtd::integer<type_t> || std::same_as<type_t, bool>)
   [[nodiscard]] inline auto as(const any_object& o) -> type_t {
     if (is<box<type_t>>(o.value())) return as<box<type_t >> (o.value()).value;
     return __polymorphic_any_object__<type_t, typename std::is_polymorphic<type_t>::type> {}(o);
@@ -113,7 +113,7 @@ namespace xtd {
  
   /// @cond
   template<typename type_t>
-  requires (std::integral<type_t> && !std::same_as<type_t, bool>)
+  requires (xtd::integer<type_t> && !std::same_as<type_t, bool>)
   [[nodiscard]] inline auto as(const any_object& o) -> type_t {
     if (xtd::is<xtd::box_integer<xtd::byte>>(o.value())) return xtd::as<type_t>(static_cast<const xtd::box_integer<xtd::byte>&>(o.value()).value);
     if (xtd::is<xtd::box_integer<xtd::int16>>(o.value())) return xtd::as<type_t>(static_cast<const xtd::box_integer<xtd::int16>&>(o.value()).value);
@@ -180,4 +180,111 @@ namespace xtd {
   [[nodiscard]] inline auto as<string>(const xtd::any_object& value) -> string {
     return xtd::convert::to_string(value);
   }
+
+  /// @cond
+  template<>
+  [[nodiscard]] inline auto as<char*>(xtd::any_object& value) -> char* {
+    if (dynamic_cast<const xtd::string*>(&value.value()) == nullptr) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
+    return const_cast<char*>(dynamic_cast<const xtd::string*>(&value.value())->c_str());
+  }
+  template<>
+  [[nodiscard]] inline auto as<char*>(const xtd::any_object& value) -> char* {
+    if (dynamic_cast<const xtd::string*>(&value.value()) == nullptr) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
+    return const_cast<char*>(dynamic_cast<const xtd::string*>(&value.value())->c_str());
+  }
+  template<>
+  [[nodiscard]] inline auto as<const char*>(xtd::any_object& value) -> const char* {
+    if (dynamic_cast<const xtd::string*>(&value.value()) == nullptr) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
+    return dynamic_cast<const xtd::string*>(&value.value())->c_str();
+  }
+  template<>
+  [[nodiscard]] inline auto as<const char*>(const xtd::any_object& value) -> const char* {
+    if (dynamic_cast<const xtd::string*>(&value.value()) == nullptr) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
+    return dynamic_cast<const xtd::string*>(&value.value())->c_str();
+  }
+
+  template<>
+  [[nodiscard]] inline auto as<xtd::char8*>(xtd::any_object& value) -> xtd::char8* {
+    if (dynamic_cast<const xtd::u8string*>(&value.value()) == nullptr) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
+    return const_cast<xtd::char8*>(dynamic_cast<const xtd::u8string*>(&value.value())->c_str());
+  }
+  template<>
+  [[nodiscard]] inline auto as<xtd::char8*>(const xtd::any_object& value) -> xtd::char8* {
+    if (dynamic_cast<const xtd::u8string*>(&value.value()) == nullptr) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
+    return const_cast<xtd::char8*>(dynamic_cast<const xtd::u8string*>(&value.value())->c_str());
+  }
+  template<>
+  [[nodiscard]] inline auto as<const xtd::char8*>(xtd::any_object& value) -> const xtd::char8* {
+    if (dynamic_cast<const xtd::u8string*>(&value.value()) == nullptr) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
+    return dynamic_cast<const xtd::u8string*>(&value.value())->c_str();
+  }
+  template<>
+  [[nodiscard]] inline auto as<const xtd::char8*>(const xtd::any_object& value) -> const xtd::char8* {
+    if (dynamic_cast<const u8string*>(&value.value()) == nullptr) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
+    return dynamic_cast<const xtd::u8string*>(&value.value())->c_str();
+  }
+
+  template<>
+  [[nodiscard]] inline auto as<xtd::char16*>(xtd::any_object& value) -> xtd::char16* {
+    if (dynamic_cast<const xtd::u16string*>(&value.value()) == nullptr) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
+    return const_cast<xtd::char16*>(dynamic_cast<const xtd::u16string*>(&value.value())->c_str());
+  }
+  template<>
+  [[nodiscard]] inline auto as<xtd::char16*>(const xtd::any_object& value) -> xtd::char16* {
+    if (dynamic_cast<const xtd::u16string*>(&value.value()) == nullptr) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
+    return const_cast<xtd::char16*>(dynamic_cast<const xtd::u16string*>(&value.value())->c_str());
+  }
+  template<>
+  [[nodiscard]] inline auto as<const xtd::char16*>(xtd::any_object& value) -> const xtd::char16* {
+    if (dynamic_cast<const xtd::u16string*>(&value.value()) == nullptr) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
+    return dynamic_cast<const xtd::u16string*>(&value.value())->c_str();
+  }
+  template<>
+  [[nodiscard]] inline auto as<const xtd::char16*>(const xtd::any_object& value) -> const xtd::char16* {
+    if (dynamic_cast<const u16string*>(&value.value()) == nullptr) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
+    return dynamic_cast<const xtd::u16string*>(&value.value())->c_str();
+  }
+
+  template<>
+  [[nodiscard]] inline auto as<xtd::char32*>(xtd::any_object& value) -> xtd::char32* {
+    if (dynamic_cast<const xtd::u32string*>(&value.value()) == nullptr) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
+    return const_cast<xtd::char32*>(dynamic_cast<const xtd::u32string*>(&value.value())->c_str());
+  }
+  template<>
+  [[nodiscard]] inline auto as<xtd::char32*>(const xtd::any_object& value) -> xtd::char32* {
+    if (dynamic_cast<const xtd::u32string*>(&value.value()) == nullptr) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
+    return const_cast<xtd::char32*>(dynamic_cast<const xtd::u32string*>(&value.value())->c_str());
+  }
+  template<>
+  [[nodiscard]] inline auto as<const xtd::char32*>(xtd::any_object& value) -> const xtd::char32* {
+    if (dynamic_cast<const xtd::u32string*>(&value.value()) == nullptr) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
+    return dynamic_cast<const xtd::u32string*>(&value.value())->c_str();
+  }
+  template<>
+  [[nodiscard]] inline auto as<const xtd::char32*>(const xtd::any_object& value) -> const xtd::char32* {
+    if (dynamic_cast<const u32string*>(&value.value()) == nullptr) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
+    return dynamic_cast<const xtd::u32string*>(&value.value())->c_str();
+  }
+
+  template<>
+  [[nodiscard]] inline auto as<xtd::wchar*>(xtd::any_object& value) -> xtd::wchar* {
+    if (dynamic_cast<const xtd::wstring*>(&value.value()) == nullptr) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
+    return const_cast<xtd::wchar*>(dynamic_cast<const xtd::wstring*>(&value.value())->c_str());
+  }
+  template<>
+  [[nodiscard]] inline auto as<xtd::wchar*>(const xtd::any_object& value) -> xtd::wchar* {
+    if (dynamic_cast<const xtd::wstring*>(&value.value()) == nullptr) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
+    return const_cast<xtd::wchar*>(dynamic_cast<const xtd::wstring*>(&value.value())->c_str());
+  }
+  template<>
+  [[nodiscard]] inline auto as<const xtd::wchar*>(xtd::any_object& value) -> const xtd::wchar* {
+    if (dynamic_cast<const xtd::wstring*>(&value.value()) == nullptr) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
+    return dynamic_cast<const xtd::wstring*>(&value.value())->c_str();
+  }
+  template<>
+  [[nodiscard]] inline auto as<const xtd::wchar*>(const xtd::any_object& value) -> const xtd::wchar* {
+    if (dynamic_cast<const wstring*>(&value.value()) == nullptr) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
+    return dynamic_cast<const xtd::wstring*>(&value.value())->c_str();
+  }
+  /// @endcond
 }
