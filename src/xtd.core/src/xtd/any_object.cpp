@@ -47,7 +47,8 @@ ptr<object> any_object::boxing_ptr(const char* value) noexcept {
   return new_ptr<string>(value);
 }
 
-ptr<object> any_object::boxing_ptr(const char8* value) noexcept {return  new_ptr<string>(value);
+ptr<object> any_object::boxing_ptr(const char8* value) noexcept {
+  return new_ptr<string>(value);
 }
 
 ptr<object> any_object::boxing_ptr(const char16* value) noexcept {
