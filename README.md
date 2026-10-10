@@ -186,37 +186,27 @@ xtdc run
 ![Screenshot](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/examples/hello_world_console.png)
 
 
-### Coroutines C++20 with xtd
+### Coroutines C++20 with xtd::threading::tasks
 
 #### hello_world_coroutine.cpp
 
 ```cpp
 #include <xtd/xtd>
 
-class example {
+class program {
 public:
   static auto main() async_ {
-    println("[main], thread {}] -> start", thread::current_thread().managed_thread_id());
-    
-    auto message = co_await get_message();
-    auto length = co_await get_size(message);
-    
-    println("message : {}", message);
-    println("length  : {}", length);
-    println("[main, thread {}] -> end", thread::current_thread().managed_thread_id());
-  }
-  
-private:
-  static auto get_message() -> task<string> {
-    co_return "Hello, World!";
-  }
-  
-  static auto get_size(auto message) -> task<size> {
-    co_return message.length();
+    auto worlds = {u8"World"_s, u8"Mundo"_s, u8"Monde"_s, u8"Mondo"_s, u8"モンド"_s, u8"世界"_s, u8"Welt"_s, u8"Мир"_s};
+    co_await parallel::for_each_async(worlds, [](auto world) async_ {
+      co_await task<>::delay(100_ms);
+      println("Hello, {}!", world);
+    });
   }
 };
 
-startup_(example::main);
+auto main() -> int {
+  return startup::run(program::main);
+}
 ```
 
 **or simply**
@@ -224,27 +214,16 @@ startup_(example::main);
 ```cpp
 #include <xtd/xtd>
 
-auto get_message() -> task<string> {
-  co_return "Hello, World!";
-}
-
-auto get_size(auto message) -> task<size> {
-  co_return message.length();
-}
-
 auto main_async() -> task<> {
-  println("[main], thread {}] -> start", thread::current_thread().managed_thread_id());
-  
-  auto message = co_await get_message();
-  auto length = co_await get_size(message);
-  
-  println("message : {}", message);
-  println("length  : {}", length);
-  println("[main, thread {}] -> end", thread::current_thread().managed_thread_id());
+  auto worlds = {u8"World"_s, u8"Mundo"_s, u8"Monde"_s, u8"Mondo"_s, u8"モンド"_s, u8"世界"_s, u8"Welt"_s, u8"Мир"_s};
+  co_await parallel::for_each_async(worlds, [](auto world) -> task<> {
+    co_await task<>::delay(100_ms);
+    println("Hello, {}!", world);
+  });
 }
 
 auto main() -> int {
-  main_async().wait();
+  return startup::run(main_async);
 }
 ```
 
@@ -270,10 +249,14 @@ xtdc run
 #### Output
 
 ```
-[main], thread 1] -> start
-message : Hello, World!
-length  : 13
-[main, thread 3] -> end
+Hello, 世界!
+Hello, Мир!
+Hello, World!
+Hello, Welt!
+Hello, Mondo!
+Hello, Monde!
+Hello, モンド!
+Hello, Mundo!
 ```
 
 ### Forms (GUI like WinForms)
