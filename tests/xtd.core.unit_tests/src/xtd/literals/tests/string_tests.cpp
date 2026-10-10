@@ -19,26 +19,26 @@ namespace xtd {
         
         auto test_method_(_s_operator_on_char8_ptr) {
           auto v = u8"string"_s;
-          assert::is_instance_of<string>(v);
-          assert::are_equal("string", v);
+          assert::is_instance_of<u8string>(v);
+          assert::are_equal(u8"string", v);
         }
         
         auto test_method_(_s_operator_on_char16_ptr) {
           auto v = u"string"_s;
-          assert::is_instance_of<string>(v);
-          assert::are_equal("string", v);
+          assert::is_instance_of<u16string>(v);
+          assert::are_equal(u"string", v);
         }
         
         auto test_method_(_s_operator_on_char32_ptr) {
           auto v = U"string"_s;
-          assert::is_instance_of<string>(v);
-          assert::are_equal("string", v);
+          assert::is_instance_of<u32string>(v);
+          assert::are_equal(U"string", v);
         }
         
         auto test_method_(_s_operator_on_wchar_ptr) {
           auto v = L"string"_s;
-          assert::is_instance_of<string>(v);
-          assert::are_equal("string", v);
+          assert::is_instance_of<wstring>(v);
+          assert::are_equal(L"string", v);
         }
         
         auto test_method_(_sb_operator_on_long_double) {
