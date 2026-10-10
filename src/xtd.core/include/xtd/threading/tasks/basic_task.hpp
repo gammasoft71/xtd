@@ -114,12 +114,14 @@ namespace xtd {
         }
         
         ~basic_task() {
+          /*
           if (!data_) return;
           lock_(data_->sync_root) {
             if (!data_ && data_.is_unique() && !is_completed()) return;
             auto task = static_data_.tasks.first_or_default([this](auto&& task) {return task->data_ && task->data_->unique_id == data_->unique_id;});
             if (task && task->data_->unique_id == data_->unique_id) static_data_.tasks.remove(task);
           }
+           */
         }
         /// @endcond
 
