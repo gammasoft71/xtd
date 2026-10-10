@@ -4,6 +4,7 @@
 #pragma once
 #include "task_factory.hpp"
 #include "../../collections/generic/list.hpp"
+#include "../../action_callable.hpp"
 #include "../../array.hpp"
 #include "../../static.hpp"
 
@@ -21,6 +22,71 @@ namespace xtd {
       /// @ingroup xtd_core threading tasks
       class parallel static_ {
       public:
+        template<xtd::iterable source_t>
+        static auto for_each(source_t&& source, auto&& body) -> void {
+          for_each_async(std::forward<source_t>(source), body).wait();
+        }
+        
+        template<xtd::iterable source_t>
+        static auto for_each(source_t&& source, auto&& body, const xtd::threading::cancellation_token& cancellation_token) -> void {
+          for_each_async(std::forward<source_t>(source), body, cancellation_token).wait();
+        }
+        
+        /// @brief Executes a for-each operation on an xtd::iterable in which iterations may run in parallel.
+        /// @param source An enumerable data source.
+        /// @param body An asynchronous delegate that is invoked once per element in the data source.
+        /// @return A task that represents the entire for-each operation.
+        /// @remarks The operation will execute at most ProcessorCount operations in parallel.
+        template<xtd::iterable source_t>
+        static auto for_each_async(source_t&& source, auto&& body) -> xtd::threading::tasks::task<> {
+          using result_t = xtd::raw_type<decltype(body(std::declval<const xtd::iterable_value_type<source_t>&>()))>;
+          xtd::collections::generic::list<xtd::threading::tasks::task<result_t>> tasks;
+          
+          for(const auto& item : source)
+            tasks.add(xtd::threading::tasks::task<>::factory().start_new([body](auto state) -> result_t {return body(as<xtd::iterable_value_type<source_t>>(state));}, xtd::any_object(item)));
+          
+          co_await xtd::threading::tasks::task<result_t>::when_all(tasks);
+        }
+        
+        /// @brief Executes a for-each operation on an xtd::iterable in which iterations may run in parallel.
+        /// @param source An enumerable data source.
+        /// @param body An asynchronous delegate that is invoked once per element in the data source.
+        /// @param cancellation_token 
+        /// @return A task that represents the entire for-each operation.
+        /// @remarks The operation will execute at most ProcessorCount operations in parallel.
+        template<xtd::iterable source_t>
+        static auto for_each_async(source_t&& source, auto&& body, const xtd::threading::cancellation_token& cancellation_token) -> xtd::threading::tasks::task<> {
+          using result_t = xtd::raw_type<decltype(body(std::declval<const xtd::iterable_value_type<source_t>&>()))>;
+          xtd::collections::generic::list<xtd::threading::tasks::task<result_t>> tasks;
+          
+          for(const auto& item : source)
+            tasks.add(xtd::threading::tasks::task<>::factory().start_new([body](auto state) -> result_t {return body(as<xtd::iterable_value_type<source_t>>(state));}, xtd::any_object(item), cancellation_token));
+          
+          co_await xtd::threading::tasks::task<result_t>::when_all(tasks);
+        }
+        
+        /// @cond
+        template<typename type_t>
+        static auto for_each(std::initializer_list<type_t>&& source, auto&& body) -> void {
+          for_each(xtd::collections::generic::list<type_t>(source), body);
+        }
+        
+        template<typename type_t>
+        static auto for_each(std::initializer_list<type_t>&& source, auto&& body, const xtd::threading::cancellation_token& cancellation_token) -> void {
+          for_each(xtd::collections::generic::list<type_t>(source), body, cancellation_token);
+        }
+        
+        template<typename type_t>
+        static auto for_each_async(std::initializer_list<type_t>&& source, auto&& body) -> xtd::threading::tasks::task<> {
+          return for_each_async(xtd::collections::generic::list<type_t>(source), body);
+        }
+        
+        template<typename type_t>
+        static auto for_each_async(std::initializer_list<type_t>&& source, auto&& body, const xtd::threading::cancellation_token& cancellation_token) -> xtd::threading::tasks::task<> {
+          return for_each_async(xtd::collections::generic::list<type_t>(source), body, cancellation_token);
+        }
+        /// @endcond
+
         /// @brief Executes each of the provided actions, possibly in parallel.
         /// @par Library
         /// Switch.Core
