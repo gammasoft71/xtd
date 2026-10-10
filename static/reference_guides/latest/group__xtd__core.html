@@ -2602,10 +2602,10 @@ Functions</h2></td></tr>
 requires (!std::integral&lt;type_t&gt; || std::same_as&lt;type_t, bool&gt;)</td></tr>
 <tr class="memitem:ga58028bb08924d84602be7ccdeffb8225 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ga58028bb08924d84602be7ccdeffb8225">xtd::as</a> (<a class="el" href="classxtd_1_1any__object.html">any_object</a> &amp;o) -&gt; type_t</td></tr>
 <tr class="memdesc:ga58028bb08924d84602be7ccdeffb8225"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
-<tr class="memitem:ga9fcfa910b6aeb8e35a1477f55f5b7383" id="r_ga9fcfa910b6aeb8e35a1477f55f5b7383"><td class="memTemplParams" colspan="2">template&lt;typename type_t&gt; <br />
-requires (!std::integral&lt;type_t&gt; || std::same_as&lt;type_t, bool&gt;)</td></tr>
-<tr class="memitem:ga9fcfa910b6aeb8e35a1477f55f5b7383 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ga9fcfa910b6aeb8e35a1477f55f5b7383">xtd::as</a> (const <a class="el" href="classxtd_1_1any__object.html">any_object</a> &amp;o) -&gt; type_t</td></tr>
-<tr class="memdesc:ga9fcfa910b6aeb8e35a1477f55f5b7383"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
+<tr class="memitem:gae3b27d22cc5015611b62df321030a3aa" id="r_gae3b27d22cc5015611b62df321030a3aa"><td class="memTemplParams" colspan="2">template&lt;typename type_t&gt; <br />
+requires (!<a class="el" href="structxtd_1_1integer.html">xtd::integer</a>&lt;type_t&gt; || std::same_as&lt;type_t, bool&gt;)</td></tr>
+<tr class="memitem:gae3b27d22cc5015611b62df321030a3aa template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#gae3b27d22cc5015611b62df321030a3aa">xtd::as</a> (const <a class="el" href="classxtd_1_1any__object.html">any_object</a> &amp;o) -&gt; type_t</td></tr>
+<tr class="memdesc:gae3b27d22cc5015611b62df321030a3aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
 <tr class="memitem:ga8f0ffc9a1e465047e6d46ad87aa1557b" id="r_ga8f0ffc9a1e465047e6d46ad87aa1557b"><td class="memItemLeft">template&lt;&gt; </td></tr>
 <tr class="memitem:ga8f0ffc9a1e465047e6d46ad87aa1557b template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ga8f0ffc9a1e465047e6d46ad87aa1557b">xtd::as&lt; string &gt;</a> (<a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> &amp;value) -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">string</a></td></tr>
 <tr class="memdesc:ga8f0ffc9a1e465047e6d46ad87aa1557b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
@@ -11621,14 +11621,14 @@ requires (!std::integral&lt;type_t&gt; || std::same_as&lt;type_t, bool&gt;)</div
 
 </div>
 </div>
-<a id="ga9fcfa910b6aeb8e35a1477f55f5b7383" name="ga9fcfa910b6aeb8e35a1477f55f5b7383"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga9fcfa910b6aeb8e35a1477f55f5b7383">&#9670;&#160;</a></span>as() <span class="overload">[2/53]</span></h2>
+<a id="gae3b27d22cc5015611b62df321030a3aa" name="gae3b27d22cc5015611b62df321030a3aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae3b27d22cc5015611b62df321030a3aa">&#9670;&#160;</a></span>as() <span class="overload">[2/53]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename type_t&gt; <br />
-requires (!std::integral&lt;type_t&gt; || std::same_as&lt;type_t, bool&gt;)</div>
+requires (!<a class="el" href="structxtd_1_1integer.html">xtd::integer</a>&lt;type_t&gt; || std::same_as&lt;type_t, bool&gt;)</div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -11720,7 +11720,7 @@ template&lt;&gt; </div>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_class" href="classxtd_1_1any__object.html">xtd::any_object</a> value = <span class="keyword">true</span>;</div>
 <div class="line"><a class="code hl_typedef" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> result = <a class="code hl_function" href="#ga58028bb08924d84602be7ccdeffb8225">as&lt;string&gt;</a>(value);</div>
-<div class="ttc" id="aclassxtd_1_1any__object_html"><div class="ttname"><a href="classxtd_1_1any__object.html">xtd::any_object</a></div><div class="ttdoc">Represent a polymorphic wrapper capable of holding any type.</div><div class="ttdef"><b>Definition</b> any_object.hpp:29</div></div>
+<div class="ttc" id="aclassxtd_1_1any__object_html"><div class="ttname"><a href="classxtd_1_1any__object.html">xtd::any_object</a></div><div class="ttdoc">Represent a polymorphic wrapper capable of holding any type.</div><div class="ttdef"><b>Definition</b> any_object.hpp:30</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>

@@ -128,6 +128,18 @@ Inheritance diagram for xtd::threading::tasks::parallel:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a21af8201449946c41158bbd87868590c" id="r_a21af8201449946c41158bbd87868590c"><td class="memTemplParams" colspan="2"><a id="a21af8201449946c41158bbd87868590c" name="a21af8201449946c41158bbd87868590c"></a>
+template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t&gt; </td></tr>
+<tr class="memitem:a21af8201449946c41158bbd87868590c template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><b>for_each</b> (source_t &amp;&amp;source, auto &amp;&amp;body) -&gt; void</td></tr>
+<tr class="memitem:a9c226adc6ac0a7fcac93896c13e3be12" id="r_a9c226adc6ac0a7fcac93896c13e3be12"><td class="memTemplParams" colspan="2"><a id="a9c226adc6ac0a7fcac93896c13e3be12" name="a9c226adc6ac0a7fcac93896c13e3be12"></a>
+template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t&gt; </td></tr>
+<tr class="memitem:a9c226adc6ac0a7fcac93896c13e3be12 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><b>for_each</b> (source_t &amp;&amp;source, auto &amp;&amp;body, const <a class="el" href="classxtd_1_1threading_1_1cancellation__token.html">xtd::threading::cancellation_token</a> &amp;cancellation_token) -&gt; void</td></tr>
+<tr class="memitem:a17cc7e1f51a6d5fb9d1614686d1a893c" id="r_a17cc7e1f51a6d5fb9d1614686d1a893c"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t&gt; </td></tr>
+<tr class="memitem:a17cc7e1f51a6d5fb9d1614686d1a893c template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a17cc7e1f51a6d5fb9d1614686d1a893c">for_each_async</a> (source_t &amp;&amp;source, auto &amp;&amp;body) -&gt; <a class="el" href="classxtd_1_1threading_1_1tasks_1_1task.html">xtd::threading::tasks::task</a>&lt;&gt;</td></tr>
+<tr class="memdesc:a17cc7e1f51a6d5fb9d1614686d1a893c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes a for-each operation on an <a class="el" href="structxtd_1_1iterable.html" title="Represents the iterable concept.">xtd::iterable</a> in which iterations may run in parallel.  <br /></td></tr>
+<tr class="memitem:a6e3de4f6a5fc4308dc8f979a33bafcfa" id="r_a6e3de4f6a5fc4308dc8f979a33bafcfa"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t&gt; </td></tr>
+<tr class="memitem:a6e3de4f6a5fc4308dc8f979a33bafcfa template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a6e3de4f6a5fc4308dc8f979a33bafcfa">for_each_async</a> (source_t &amp;&amp;source, auto &amp;&amp;body, const <a class="el" href="classxtd_1_1threading_1_1cancellation__token.html">xtd::threading::cancellation_token</a> &amp;cancellation_token) -&gt; <a class="el" href="classxtd_1_1threading_1_1tasks_1_1task.html">xtd::threading::tasks::task</a>&lt;&gt;</td></tr>
+<tr class="memdesc:a6e3de4f6a5fc4308dc8f979a33bafcfa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes a for-each operation on an <a class="el" href="structxtd_1_1iterable.html" title="Represents the iterable concept.">xtd::iterable</a> in which iterations may run in parallel.  <br /></td></tr>
 <tr class="memitem:af72ffc426d1198282e3a0b7424e8ffcb" id="r_af72ffc426d1198282e3a0b7424e8ffcb"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#af72ffc426d1198282e3a0b7424e8ffcb">invoke</a> (<a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; xtd::action&lt;&gt; &gt; &amp;&amp;actions) -&gt; void</td></tr>
 <tr class="memdesc:af72ffc426d1198282e3a0b7424e8ffcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes each of the provided actions, possibly in parallel.  <br /></td></tr>
 <tr class="memitem:a2876ecf980aaa7a25da8a676d15e6bd3" id="r_a2876ecf980aaa7a25da8a676d15e6bd3"><td class="memTemplParams" colspan="2">template&lt;typename collection_t&gt; </td></tr>
@@ -146,6 +158,96 @@ template&lt;typename ... args_t&gt; </td></tr>
 <tr class="memitem:abc2b25b6c64715f9ebdcf17d7bc61c63 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><b>invoke_async</b> (args_t &amp;&amp;... args) -&gt; <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="classxtd_1_1threading_1_1tasks_1_1task.html">xtd::threading::tasks::task</a>&lt;&gt; &gt;</td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a17cc7e1f51a6d5fb9d1614686d1a893c" name="a17cc7e1f51a6d5fb9d1614686d1a893c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17cc7e1f51a6d5fb9d1614686d1a893c">&#9670;&#160;</a></span>for_each_async() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto xtd::threading::tasks::parallel::for_each_async </td>
+          <td>(</td>
+          <td class="paramtype">source_t &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>source</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">auto &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>body</em></span>&#160;) -&gt; <a class="el" href="classxtd_1_1threading_1_1tasks_1_1task.html">xtd::threading::tasks::task</a>&lt;&gt;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Executes a for-each operation on an <a class="el" href="structxtd_1_1iterable.html" title="Represents the iterable concept.">xtd::iterable</a> in which iterations may run in parallel. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">source</td><td>An enumerable data source. </td></tr>
+    <tr><td class="paramname">body</td><td>An asynchronous delegate that is invoked once per element in the data source. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A task that represents the entire for-each operation. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The operation will execute at most ProcessorCount operations in parallel. </dd></dl>
+
+</div>
+</div>
+<a id="a6e3de4f6a5fc4308dc8f979a33bafcfa" name="a6e3de4f6a5fc4308dc8f979a33bafcfa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e3de4f6a5fc4308dc8f979a33bafcfa">&#9670;&#160;</a></span>for_each_async() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> source_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto xtd::threading::tasks::parallel::for_each_async </td>
+          <td>(</td>
+          <td class="paramtype">source_t &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>source</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">auto &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>body</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1threading_1_1cancellation__token.html">xtd::threading::cancellation_token</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>cancellation_token</em></span>&#160;) -&gt; <a class="el" href="classxtd_1_1threading_1_1tasks_1_1task.html">xtd::threading::tasks::task</a>&lt;&gt;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Executes a for-each operation on an <a class="el" href="structxtd_1_1iterable.html" title="Represents the iterable concept.">xtd::iterable</a> in which iterations may run in parallel. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">source</td><td>An enumerable data source. </td></tr>
+    <tr><td class="paramname">body</td><td>An asynchronous delegate that is invoked once per element in the data source. </td></tr>
+    <tr><td class="paramname">cancellation_token</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A task that represents the entire for-each operation. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The operation will execute at most ProcessorCount operations in parallel. </dd></dl>
+
+</div>
+</div>
 <a id="af72ffc426d1198282e3a0b7424e8ffcb" name="af72ffc426d1198282e3a0b7424e8ffcb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af72ffc426d1198282e3a0b7424e8ffcb">&#9670;&#160;</a></span>invoke() <span class="overload">[1/3]</span></h2>
 
