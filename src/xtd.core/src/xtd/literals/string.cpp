@@ -7,20 +7,20 @@ auto xtd::literals::operator""_s(const char* s, usize n) -> string {
   return string(s, s + n);
 }
 
-auto xtd::literals::operator""_s(const char8* s, usize n) -> string {
-  return string(s, s + n);
+auto xtd::literals::operator""_s(const char8* s, usize n) -> u8string {
+  return u8string(s, s + n);
 }
 
-auto xtd::literals::operator""_s(const char16* s, usize n) -> string {
-  return string(std::u16string(s, s + n));
+auto xtd::literals::operator""_s(const char16* s, usize n) -> u16string {
+  return u16string(std::u16string(s, s + n));
 }
 
-auto xtd::literals::operator""_s(const char32* s, usize n) -> string {
-  return string(std::u32string(s, s + n));
+auto xtd::literals::operator""_s(const char32* s, usize n) -> u32string {
+  return u32string(std::u32string(s, s + n));
 }
 
-auto xtd::literals::operator""_s(const wchar* s, usize n) -> string {
-  return string(std::wstring(s, s + n));
+auto xtd::literals::operator""_s(const wchar* s, usize n) -> wstring {
+  return wstring(std::wstring(s, s + n));
 }
 
 auto xtd::literals::operator""_sb(long double s) -> string {
