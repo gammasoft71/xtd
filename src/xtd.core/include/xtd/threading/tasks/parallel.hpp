@@ -6,6 +6,7 @@
 #include "../../collections/generic/list.hpp"
 #include "../../action_callable.hpp"
 #include "../../array.hpp"
+#include "../../integer.hpp"
 #include "../../static.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -22,6 +23,26 @@ namespace xtd {
       /// @ingroup xtd_core threading tasks
       class parallel static_ {
       public:
+        template<xtd::integer integer_t>
+        static auto for_(integer_t from_inclusive, integer_t to_exclusive, auto&& body) -> void {
+          for_each(xtd::linq::enumerable::range(from_inclusive, to_exclusive - from_inclusive), body);
+        }
+        
+        template<xtd::integer integer_t>
+        static auto for_(integer_t from_inclusive, integer_t to_exclusive, auto&& body, const xtd::threading::cancellation_token& cancellation_token) -> void {
+          for_each(xtd::linq::enumerable::range(from_inclusive, to_exclusive - from_inclusive), body, cancellation_token).wait();
+        }
+
+        template<xtd::integer integer_t>
+        static auto for_async(integer_t from_inclusive, integer_t to_exclusive, auto&& body) -> xtd::threading::tasks::task<> {
+          return for_each_async(xtd::linq::enumerable::range(from_inclusive, to_exclusive - from_inclusive), body);
+        }
+        
+        template<xtd::integer integer_t>
+        static auto for_async(integer_t from_inclusive, integer_t to_exclusive, auto&& body, const xtd::threading::cancellation_token& cancellation_token) -> xtd::threading::tasks::task<> {
+          return for_each_async(xtd::linq::enumerable::range(from_inclusive, to_exclusive - from_inclusive), body, cancellation_token);
+        }
+        
         template<xtd::iterable source_t>
         static auto for_each(source_t&& source, auto&& body) -> void {
           for_each_async(std::forward<source_t>(source), body).wait();
@@ -31,7 +52,7 @@ namespace xtd {
         static auto for_each(source_t&& source, auto&& body, const xtd::threading::cancellation_token& cancellation_token) -> void {
           for_each_async(std::forward<source_t>(source), body, cancellation_token).wait();
         }
-        
+
         /// @brief Executes a for-each operation on an xtd::iterable in which iterations may run in parallel.
         /// @param source An enumerable data source.
         /// @param body An asynchronous delegate that is invoked once per element in the data source.
