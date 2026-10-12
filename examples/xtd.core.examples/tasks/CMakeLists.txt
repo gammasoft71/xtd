@@ -4,6 +4,7 @@ project(tasks)
 find_package(xtd REQUIRED)
 
 add_projects(
+  parallel_for_async
   tasks
   task
   task_completion_source
