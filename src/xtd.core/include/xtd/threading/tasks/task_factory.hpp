@@ -51,7 +51,7 @@ namespace xtd {
         /// @param action The action delegate to execute asynchronously.
         /// @return The started task.
         /// @remarks Calling StartNew is functionally equivalent to creating a task by using one of its constructors, and then calling the Task.Start method to schedule the task for execution.
-        [[nodiscard]] auto start_new(auto&& action, const xtd::any_object& state) const -> xtd::threading::tasks::task<xtd::raw_type<decltype(action(std::declval<const xtd::any_object&>()))>> {
+        [[nodiscard]] auto start_new(auto&& action, const xtd::any_object& state) const -> xtd::threading::tasks::task<xtd::raw_type<decltype(std::declval<decltype(action)>()(std::declval<const xtd::any_object&>()))>> {
           auto t = xtd::threading::tasks::task<xtd::raw_type<decltype(std::declval<decltype(action)>()(std::declval<const xtd::any_object&>()))>> {action, state};
           t.start();
           return t;
