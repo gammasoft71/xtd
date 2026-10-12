@@ -33,8 +33,8 @@ namespace xtd {
         /// @param action The action delegate to execute asynchronously.
         /// @return The started task.
         /// @remarks Calling StartNew is functionally equivalent to creating a task by using one of its constructors, and then calling the Task.Start method to schedule the task for execution.
-        [[nodiscard]] auto start_new(auto&& action) const -> xtd::threading::tasks::task<xtd::raw_type<decltype(action())>> {
-          auto t = xtd::threading::tasks::task<xtd::raw_type<decltype(action())>> {action};
+        [[nodiscard]] auto start_new(auto&& action) const -> xtd::threading::tasks::task<xtd::raw_type<decltype(std::declval<decltype(action)>()())>> {
+          auto t = xtd::threading::tasks::task<xtd::raw_type<decltype(std::declval<decltype(action)>()())>> {action};
           t.start();
           return t;
         }
@@ -42,8 +42,8 @@ namespace xtd {
         /// @param action The action delegate to execute asynchronously.
         /// @return The started task.
         /// @remarks Calling StartNew is functionally equivalent to creating a task by using one of its constructors, and then calling the Task.Start method to schedule the task for execution.
-        [[nodiscard]] auto start_new(auto&& action, const xtd::threading::cancellation_token& cancellation_token) const -> xtd::threading::tasks::task<xtd::raw_type<decltype(action())>> {
-          auto t = xtd::threading::tasks::task<xtd::raw_type<decltype(action())>> {action, cancellation_token};
+        [[nodiscard]] auto start_new(auto&& action, const xtd::threading::cancellation_token& cancellation_token) const -> xtd::threading::tasks::task<xtd::raw_type<decltype(std::declval<decltype(action)>()())>> {
+          auto t = xtd::threading::tasks::task<xtd::raw_type<decltype(std::declval<decltype(action)>()())>> {action, cancellation_token};
           t.start();
           return t;
         }
@@ -52,7 +52,7 @@ namespace xtd {
         /// @return The started task.
         /// @remarks Calling StartNew is functionally equivalent to creating a task by using one of its constructors, and then calling the Task.Start method to schedule the task for execution.
         [[nodiscard]] auto start_new(auto&& action, const xtd::any_object& state) const -> xtd::threading::tasks::task<xtd::raw_type<decltype(action(std::declval<const xtd::any_object&>()))>> {
-          auto t = xtd::threading::tasks::task<xtd::raw_type<decltype(action(std::declval<const xtd::any_object&>()))>> {action, state};
+          auto t = xtd::threading::tasks::task<xtd::raw_type<decltype(std::declval<decltype(action)>()(std::declval<const xtd::any_object&>()))>> {action, state};
           t.start();
           return t;
         }
@@ -62,7 +62,7 @@ namespace xtd {
         /// @remarks Calling StartNew is functionally equivalent to creating a task by using one of its constructors, and then calling the Task.Start method to schedule the task for execution.
         template<typename result_t>
         [[nodiscard]] auto start_new(auto&& action, const xtd::any_object& state, const xtd::threading::cancellation_token& cancellation_token) const -> xtd::threading::tasks::task<xtd::raw_type<decltype(action(std::declval<const xtd::any_object&>()))>> {
-          auto t = xtd::threading::tasks::task<xtd::raw_type<decltype(action(std::declval<const xtd::any_object&>()))>> {action, state, cancellation_token};
+          auto t = xtd::threading::tasks::task<xtd::raw_type<decltype(std::declval<decltype(action)>()(std::declval<const xtd::any_object&>()))>> {action, state, cancellation_token};
           t.start();
           return t;
         }
