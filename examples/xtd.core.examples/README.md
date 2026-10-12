@@ -569,6 +569,7 @@
 
 * [parallel_for_](tasks/parallel_for_/README.md) demonstrates how to use [xtd::threading::tasks:parallel::for_](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1tasks_1_1parallel.html#a17cc7e1f51a6d5fb9d1614686d1a893c) method.
 * [parallel_for_async](tasks/parallel_for_async/README.md) demonstrates how to use [xtd::threading::tasks:parallel::for_async](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1tasks_1_1parallel.html#a17cc7e1f51a6d5fb9d1614686d1a893c) method.
+* [parallel_for_each](tasks/parallel_for_each/README.md) demonstrates how to use [xtd::threading::tasks:parallel::for_each](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1tasks_1_1parallel.html#a17cc7e1f51a6d5fb9d1614686d1a893c) method.
 * [parallel_for_each_async](tasks/parallel_for_each_async/README.md) demonstrates how to use [xtd::threading::tasks:parallel::for_each_async](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1tasks_1_1parallel.html#a17cc7e1f51a6d5fb9d1614686d1a893c) method.
 * [tasks](tasks/tasks/README.md) demonstrates how to use [xtd::threading::tasks:task](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1tasks_1_1task_3_01void_01_4.html) class.
 * [task](tasks/task/README.md) demonstrates how to use [xtd::threading::tasks:task](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1tasks_1_1task_3_01void_01_4.html) class.

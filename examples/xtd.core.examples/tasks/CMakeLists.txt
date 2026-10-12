@@ -6,6 +6,7 @@ find_package(xtd REQUIRED)
 add_projects(
   parallel_for_
   parallel_for_async
+  parallel_for_each
   parallel_for_each_async
   tasks
   task
