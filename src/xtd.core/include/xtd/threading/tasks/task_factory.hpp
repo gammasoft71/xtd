@@ -17,7 +17,7 @@ namespace xtd {
       /// xtd.core
       /// @ingroup xtd_core threading tasks
       /// @par Examples
-      /// The following example uses the static xtd::threading::tasks::tbasic_task::factory property to make two calls to the xtd::threading::tasks::task_factory::start_new method. The first populates an array with the names of files in the user's MyDocuments directory, while the second populates an array with the names of subdirectories of the user's MyDocuments directory. It then calls the xtd::threading::tasks::task_factory::continue_when_all method, which displays information about the number of files and directories in the two arrays after the first two tasks have completed execution.
+      /// The following example uses the static xtd::threading::tasks::basic_task::factory property to make two calls to the xtd::threading::tasks::task_factory::start_new method. The first populates an array with the names of files in the user's MyDocuments directory, while the second populates an array with the names of subdirectories of the user's MyDocuments directory. It then calls the xtd::threading::tasks::task_factory::continue_when_all method, which displays information about the number of files and directories in the two arrays after the first two tasks have completed execution.
       /// @include task_factory.cpp
       class task_factory : public xtd::object {
       public:
