@@ -29,6 +29,58 @@ namespace xtd {
         /// @name Public Methods
         
         /// @{
+        [[nodiscard]] auto continue_when_all(xtd::iterable auto&& tasks, auto&& action) const -> xtd::threading::tasks::task<xtd::raw_type<decltype(std::declval<decltype(action)>()())>> {
+          task<>::when_all(tasks).wait();;
+          auto t = xtd::threading::tasks::task<xtd::raw_type<decltype(std::declval<decltype(action)>()())>> {action};
+          t.start();
+          return t;
+        }
+        [[nodiscard]] auto continue_when_all(xtd::iterable auto&& tasks, auto&& action, const xtd::threading::cancellation_token& cancellation_token) const -> xtd::threading::tasks::task<xtd::raw_type<decltype(std::declval<decltype(action)>()())>> {
+          task<>::when_all(tasks).wait();;
+          auto t = xtd::threading::tasks::task<xtd::raw_type<decltype(std::declval<decltype(action)>()())>> {action, cancellation_token};
+          t.start();
+          return t;
+        }
+        [[nodiscard]] auto continue_when_all(xtd::iterable auto&& tasks, auto&& action, const xtd::any_object& state) const -> xtd::threading::tasks::task<xtd::raw_type<decltype(std::declval<decltype(action)>()(std::declval<const xtd::any_object&>()))>> {
+          task<>::when_all(tasks).wait();;
+          auto t = xtd::threading::tasks::task<xtd::raw_type<decltype(std::declval<decltype(action)>()(std::declval<const xtd::any_object&>()))>> {action, state};
+          t.start();
+          return t;
+        }
+        template<typename result_t>
+        [[nodiscard]] auto continue_when_all(xtd::iterable auto&& tasks, auto&& action, const xtd::any_object& state, const xtd::threading::cancellation_token& cancellation_token) const -> xtd::threading::tasks::task<xtd::raw_type<decltype(action(std::declval<const xtd::any_object&>()))>> {
+          task<>::when_all(tasks).wait();;
+          auto t = xtd::threading::tasks::task<xtd::raw_type<decltype(std::declval<decltype(action)>()(std::declval<const xtd::any_object&>()))>> {action, state, cancellation_token};
+          t.start();
+          return t;
+        }
+
+        [[nodiscard]] auto continue_when_any(xtd::iterable auto&& tasks, auto&& action) const -> xtd::threading::tasks::task<xtd::raw_type<decltype(std::declval<decltype(action)>()())>> {
+          task<>::when_any(tasks).wait();;
+          auto t = xtd::threading::tasks::task<xtd::raw_type<decltype(std::declval<decltype(action)>()())>> {action};
+          t.start();
+          return t;
+        }
+        [[nodiscard]] auto continue_when_any(xtd::iterable auto&& tasks, auto&& action, const xtd::threading::cancellation_token& cancellation_token) const -> xtd::threading::tasks::task<xtd::raw_type<decltype(std::declval<decltype(action)>()())>> {
+          task<>::when_any(tasks).wait();;
+          auto t = xtd::threading::tasks::task<xtd::raw_type<decltype(std::declval<decltype(action)>()())>> {action, cancellation_token};
+          t.start();
+          return t;
+        }
+        [[nodiscard]] auto continue_when_any(xtd::iterable auto&& tasks, auto&& action, const xtd::any_object& state) const -> xtd::threading::tasks::task<xtd::raw_type<decltype(std::declval<decltype(action)>()(std::declval<const xtd::any_object&>()))>> {
+          task<>::when_any(tasks).wait();;
+          auto t = xtd::threading::tasks::task<xtd::raw_type<decltype(std::declval<decltype(action)>()(std::declval<const xtd::any_object&>()))>> {action, state};
+          t.start();
+          return t;
+        }
+        template<typename result_t>
+        [[nodiscard]] auto continue_when_any(xtd::iterable auto&& tasks, auto&& action, const xtd::any_object& state, const xtd::threading::cancellation_token& cancellation_token) const -> xtd::threading::tasks::task<xtd::raw_type<decltype(action(std::declval<const xtd::any_object&>()))>> {
+          task<>::when_any(tasks).wait();;
+          auto t = xtd::threading::tasks::task<xtd::raw_type<decltype(std::declval<decltype(action)>()(std::declval<const xtd::any_object&>()))>> {action, state, cancellation_token};
+          t.start();
+          return t;
+        }
+        
         /// @brief Creates and starts a task.
         /// @param action The action delegate to execute asynchronously.
         /// @return The started task.
