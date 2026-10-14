@@ -1,7 +1,26 @@
 var searchData=
 [
-  ['deprecated_20list_0',['Deprecated List',['../deprecated.html',1,'']]],
-  ['devices_20context_1',['&quot;Devices&quot; context',['../_images_appearances_page.html#DevicesContext',1,'']]],
-  ['dialogs_20appearances_2',['Dialogs appearances',['../_dialogs_appearances_page.html',1,'']]],
-  ['drawing_3',['xtd.drawing',['../index.html#DrawingSubSection',1,'']]]
+  ['c_2020_20with_20xtd_3a_3athreading_3a_3atasks_0',['Coroutines C++20 with xtd::threading::tasks',['../index.html#ExamplesCoroutinesSubsection',1,'']]],
+  ['categories_20context_1',['&quot;Categories&quot; context',['../_images_appearances_page.html#CategoriesContext',1,'']]],
+  ['choice_5foptions_2',['choice_options',['../_c_make_commands.html#ChoiceOptionsSubSection',1,'']]],
+  ['cli_3',['Console (CLI)',['../index.html#ExamplesConsoleSubsection',1,'']]],
+  ['cmake_20build_20options_4',['CMake build options',['../_c_make_build_option.html',1,'']]],
+  ['cmake_20commands_5',['CMake commands',['../_c_make_commands.html',1,'']]],
+  ['code_20examples_6',['Code Examples',['../_format_page.html#CodeExamplesSection',1,'']]],
+  ['colors_7',['Colors',['../_colors_page.html',1,'']]],
+  ['colors_8',['colors',['../_colors_page.html#AppleColors',1,'Apple colors'],['../_colors_page.html#BasicColors',1,'Basic colors'],['../_colors_page.html#SubBsicColors',1,'Basic colors'],['../_colors_page.html#BlueColors',1,'Blue colors'],['../_colors_page.html#BrownColors',1,'Brown colors'],['../_colors_page.html#CrayonsColors',1,'Crayons colors'],['../_colors_page.html#CyanColors',1,'Cyan colors'],['../_colors_page.html#ExtendedColors',1,'Extended colors'],['../_colors_page.html#GrayColors',1,'Gray colors'],['../_colors_page.html#GreenColors',1,'Green colors'],['../_colors_page.html#OrangeColors',1,'Orange colors'],['../_colors_page.html#PinkColors',1,'Pink colors'],['../_colors_page.html#PurpleColors',1,'Purple colors'],['../_colors_page.html#RedColors',1,'Red colors'],['../_system_colors_page.html',1,'System colors'],['../_colors_page.html#WebColors',1,'Web colors'],['../_colors_page.html#whiteColors',1,'White colors'],['../_colors_page.html#YellowColors',1,'Yellow colors']]],
+  ['commands_9',['commands',['../_c_make_commands.html#AssemblyInformationsCommandsSection',1,'Assembly informations commands'],['../_c_make_commands.html#BuildOptionsCommandsSection',1,'Build options commands'],['../_c_make_commands.html',1,'CMake commands'],['../_c_make_commands.html#GenericCommandsSection',1,'Generic commands'],['../_c_make_commands.html#InstallCommandsSection',1,'Install commands'],['../_c_make_commands.html#ProjectCommandsSection',1,'Project commands'],['../_c_make_commands.html#TargetPropertiesCommandsSection',1,'Target properties commands']]],
+  ['component_10',['Component',['../_format_page.html#AlignmentComponentSection',1,'Alignment Component'],['../_format_page.html#FormatStringComponentSection',1,'Format String Component'],['../_format_page.html#IndexComponentSection',1,'Index Component']]],
+  ['composite_20format_20string_11',['Composite Format String',['../_format_page.html#CompositeFormatStringSection',1,'']]],
+  ['composite_20formatting_12',['Composite Formatting',['../_format_page.html#CompositeFormattingSection',1,'']]],
+  ['console_20cli_13',['Console (CLI)',['../index.html#ExamplesConsoleSubsection',1,'']]],
+  ['containers_20appearances_14',['Containers appearances',['../_conatiners_appearances_page.html',1,'']]],
+  ['context_15',['context',['../_images_appearances_page.html#ActionsContext',1,'&quot;Actions&quot; context'],['../_images_appearances_page.html#AnimationsContext',1,'&quot;Animations&quot; context'],['../_images_appearances_page.html#ApplicationsContext',1,'&quot;Applications&quot; context'],['../_images_appearances_page.html#CategoriesContext',1,'&quot;Categories&quot; context'],['../_images_appearances_page.html#DevicesContext',1,'&quot;Devices&quot; context'],['../_images_appearances_page.html#EmblemsContext',1,'&quot;Emblems&quot; context'],['../_images_appearances_page.html#EmotesContext',1,'&quot;Emotes&quot; context'],['../_images_appearances_page.html#MimeTypesContext',1,'&quot;MimeTypes&quot; context'],['../_images_appearances_page.html#PlacesContext',1,'&quot;Places&quot; context'],['../_images_appearances_page.html#StatusContext',1,'&quot;Status&quot; context'],['../_images_appearances_page.html#xtdContext',1,'&quot;xtd&quot; context']]],
+  ['controls_20appearances_16',['Controls appearances',['../_controls_appearances_page.html',1,'']]],
+  ['core_17',['xtd.core',['../index.html#coreSubSection',1,'']]],
+  ['coroutines_20c_2020_20with_20xtd_3a_3athreading_3a_3atasks_18',['Coroutines C++20 with xtd::threading::tasks',['../index.html#ExamplesCoroutinesSubsection',1,'']]],
+  ['countries_20flags_20appearances_19',['Countries flags appearances',['../_countries_flags_page.html',1,'']]],
+  ['crayons_20colors_20',['Crayons colors',['../_colors_page.html#CrayonsColors',1,'']]],
+  ['cursors_20appearances_21',['Cursors appearances',['../_cursors_appearances_page.html',1,'']]],
+  ['cyan_20colors_22',['Cyan colors',['../_colors_page.html#CyanColors',1,'']]]
 ];

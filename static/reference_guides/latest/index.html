@@ -165,7 +165,10 @@ Getting Started</h1>
 Examples</h1>
 <p>The classic first application 'Hello World'.</p>
 <h2 class="doxsection"><a class="anchor" id="ExamplesConsoleSubsection"></a>
-Console</h2>
+Console (CLI)</h2>
+<blockquote class="doxtable">
+<p>This example demonstrates how to display a simple message in the console using <a href="https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html">xtd.core</a>. </p>
+</blockquote>
 <p>hello_world_console.cpp: </p><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
@@ -194,8 +197,68 @@ Build and run</h3>
 </div><!-- fragment --><h3 class="doxsection"><a class="anchor" id="ExamplesConsoleOutputSubsubsection"></a>
 Output</h3>
 <div class="fragment"><div class="line">Hello, World!</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="ExamplesCoroutinesSubsection"></a>
+Coroutines C++20 with xtd::threading::tasks</h2>
+<blockquote class="doxtable">
+<p>This example asynchronously prints a greeting for each world in parallel, then waits for all greetings to be printed using <a href="https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html">xtd.core</a>. </p>
+</blockquote>
+<p>hello_world_coroutine.cpp:</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">class </span>program {</div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() async_ {</div>
+<div class="line">    <span class="keyword">auto</span> worlds = {u8<span class="stringliteral">&quot;World&quot;</span>_s, u8<span class="stringliteral">&quot;Mundo&quot;</span>_s, u8<span class="stringliteral">&quot;Monde&quot;</span>_s, u8<span class="stringliteral">&quot;Mondo&quot;</span>_s, u8<span class="stringliteral">&quot;モンド&quot;</span>_s, u8<span class="stringliteral">&quot;世界&quot;</span>_s, u8<span class="stringliteral">&quot;Welt&quot;</span>_s, u8<span class="stringliteral">&quot;Мир&quot;</span>_s};</div>
+<div class="line">    <span class="keyword">co_await</span> parallel::for_each_async(worlds, [](<span class="keyword">auto</span> world) async_ {</div>
+<div class="line">      <span class="keyword">co_await</span> task&lt;&gt;::delay(100_ms);</div>
+<div class="line">      <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;Hello, {}!&quot;</span>, world);</div>
+<div class="line">    });</div>
+<div class="line">  }</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#gaeb9462ec721c9718cf689e93bf11bf56">startup_</a>(program::main);</div>
+<div class="ttc" id="agroup__keywords_html_gaeb9462ec721c9718cf689e93bf11bf56"><div class="ttname"><a href="group__keywords.html#gaeb9462ec721c9718cf689e93bf11bf56">startup_</a></div><div class="ttdeci">#define startup_(...)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:152</div></div>
+<div class="ttc" id="anamespacextd_html_a9482c5e9fb1d60c658bbe28bfbb17353"><div class="ttname"><a href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">xtd::println</a></div><div class="ttdeci">auto println(FILE *file) -&gt; void</div><div class="ttdoc">Writes the current line terminator to the file output stream using the specified format information.</div><div class="ttdef"><b>Definition</b> println.hpp:15</div></div>
+</div><!-- fragment --><p><b>or simply</b></p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main_async() -&gt; task&lt;&gt; {</div>
+<div class="line">  <span class="keyword">auto</span> worlds = {u8<span class="stringliteral">&quot;World&quot;</span>_s, u8<span class="stringliteral">&quot;Mundo&quot;</span>_s, u8<span class="stringliteral">&quot;Monde&quot;</span>_s, u8<span class="stringliteral">&quot;Mondo&quot;</span>_s, u8<span class="stringliteral">&quot;モンド&quot;</span>_s, u8<span class="stringliteral">&quot;世界&quot;</span>_s, u8<span class="stringliteral">&quot;Welt&quot;</span>_s, u8<span class="stringliteral">&quot;Мир&quot;</span>_s};</div>
+<div class="line">  <span class="keyword">co_await</span> parallel::for_each_async(worlds, [](<span class="keyword">auto</span> world) -&gt; task&lt;&gt; {</div>
+<div class="line">    <span class="keyword">co_await</span> task&lt;&gt;::delay(100_ms);</div>
+<div class="line">    <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;Hello, {}!&quot;</span>, world);</div>
+<div class="line">  });</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="keywordflow">return</span> <a class="code hl_function" href="classxtd_1_1startup.html#a7624e2c8f2849db66af3fc26525424d0">startup::run</a>(main_async);</div>
+<div class="line">}</div>
+<div class="ttc" id="aclassxtd_1_1startup_html_a7624e2c8f2849db66af3fc26525424d0"><div class="ttname"><a href="classxtd_1_1startup.html#a7624e2c8f2849db66af3fc26525424d0">xtd::startup::run</a></div><div class="ttdeci">static auto run(auto main_function) -&gt; int</div><div class="ttdoc">Safely call the specified application&#39;s main entry point.</div><div class="ttdef"><b>Definition</b> startup.hpp:45</div></div>
+</div><!-- fragment --><p>CMakeLists.txt:</p>
+<div class="fragment"><div class="line">cmake_minimum_required(VERSION 3.20)</div>
+<div class="line"> </div>
+<div class="line">project(hello_world_coroutine)</div>
+<div class="line">find_package(xtd REQUIRED)</div>
+<div class="line">add_sources(hello_world_coroutine.cpp)</div>
+<div class="line">target_type(CONSOLE_APPLICATION)</div>
+</div><!-- fragment --><h3 class="doxsection"><a class="anchor" id="ExamplesCoroutinesBuildAndRunSubsubsection"></a>
+Build and run</h3>
+<p>Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following: </p><div class="fragment"><div class="line">xtdc run</div>
+</div><!-- fragment --><h3 class="doxsection"><a class="anchor" id="ExamplesCoroutinesOutputSubsubsection"></a>
+Output</h3>
+<div class="fragment"><div class="line">Hello, 世界!</div>
+<div class="line">Hello, Мир!</div>
+<div class="line">Hello, World!</div>
+<div class="line">Hello, Welt!</div>
+<div class="line">Hello, Mondo!</div>
+<div class="line">Hello, Monde!</div>
+<div class="line">Hello, モンド!</div>
+<div class="line">Hello, Mundo!</div>
 </div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="ExamplesFormsSubsection"></a>
-Forms</h2>
+Forms (GUI like WinForms)</h2>
+<blockquote class="doxtable">
+<p>This example demonstrates how to create a simple graphical application using <a href="https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html">xtd.forms</a>. </p>
+</blockquote>
 <p>hello_world_forms.cpp: </p><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
@@ -260,7 +323,10 @@ Output</h3>
 <img src="hello_world_gd.png" alt=""/>
 </div>
 <h2 class="doxsection"><a class="anchor" id="ExamplesUnitTestSubsection"></a>
-Unit tests</h2>
+tunit (Unit tests like Microsoft Unit Testing Framework)</h2>
+<blockquote class="doxtable">
+<p>This example demonstrates how to write and run unit tests using <a href="https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__tunit.html">xtd.tunit</a>. </p>
+</blockquote>
 <p>hello_world_test.cpp: </p><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
