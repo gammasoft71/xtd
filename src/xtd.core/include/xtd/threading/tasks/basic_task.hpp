@@ -154,17 +154,9 @@ namespace xtd {
         /// @name Public Methods
         
         /// @{
-        auto continue_with(xtd::action<> continuation) -> void {
-          auto call_now = false;
-          
-          lock_(data_->sync_root) {
-            if (is_completed()) call_now = true;
-            else data_->continuation = continuation;
-          }
-          
-          if (call_now) continuation();
-        }
-        
+        auto continue_with(xtd::action<>&& continuation) -> xtd::threading::tasks::task<>;
+        auto continue_with(xtd::func<xtd::threading::tasks::task<>>&& continuation_async) -> xtd::threading::tasks::task<xtd::threading::tasks::task<>>;
+
         [[noreturn]] auto rethrow_exception() -> void {
           if (is_faulted () && data_->exception) throw *data_->exception.source_exception();
           xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "This task is not faulted.");
@@ -412,6 +404,20 @@ namespace xtd {
         static auto yield() -> task<result_t>;
         /// @endcond
         
+      protected:
+        /// @cond
+        auto continue_with_(xtd::action<>&& continuation) -> void {
+          auto call_now = false;
+          
+          lock_(data_->sync_root) {
+            if (is_completed()) call_now = true;
+            else data_->internal_continuation = continuation;
+          }
+          
+          if (call_now) continuation();
+        }
+        /// @encond
+        
       private:
         template<typename task_result_t>
         friend class task;
@@ -444,6 +450,8 @@ namespace xtd {
           //std::swap(*data_->caller_id, current_id_);
         }
         
+        static auto run_continuation(auto continuation) -> void;
+
         struct data {
           using result_type = std::conditional_t<std::is_same_v<result_t, void>, std::uint8_t, result_t>;
           
@@ -451,7 +459,9 @@ namespace xtd {
           xtd::threading::manual_reset_event async_event;
           xtd::any_object async_state;
           xtd::optional<xtd::threading::cancellation_token> cancellation_token;
-          xtd::action<> continuation;
+          xtd::action<> internal_continuation;
+          xtd::sptr<xtd::threading::tasks::task<>> continuation;
+          xtd::sptr<xtd::threading::tasks::task<xtd::threading::tasks::task<>>> continuation_async;
           xtd::threading::tasks::task_creation_options creation_options = xtd::threading::tasks::task_creation_options::none;
           const xtd::any_object empty_state;
           xtd::threading::auto_reset_event end_event;
@@ -475,7 +485,9 @@ namespace xtd {
             
             scope_exit_ {
               end_event.set();
-              if (!continuation.is_empty()) continuation();
+              if (!internal_continuation.is_empty()) internal_continuation();
+              if (continuation) basic_task<result_t>::run_continuation(continuation);
+              else if (continuation_async) basic_task<result_t>::run_continuation(continuation_async);
               current_id_ = previous_current_id;
             };
             
@@ -506,7 +518,7 @@ namespace xtd {
             }
           }};
         };
-        
+
         struct static_data {
           xtd::collections::generic::list<sptr<basic_task>> tasks;
         };

@@ -133,7 +133,7 @@ namespace xtd {
         yield_awaiter() {task_.start();};
         bool await_ready() const noexcept {return task_.is_completed();}
         void await_resume() {if (task_.is_faulted()) task_.rethrow_exception();}
-        void await_suspend(std::coroutine_handle<> handle) {task_.continue_with([handle] {handle.resume();});}
+        void await_suspend(std::coroutine_handle<> handle) {task_.continue_with_([handle] {handle.resume();});}
       };
 
       template<typename result_t>
@@ -142,6 +142,32 @@ namespace xtd {
         task.basic_task<result_t>::data_->status = xtd::threading::tasks::task_status::ran_to_completion;
         task.basic_task<result_t>::data_->end_event.set();
         return task;
+      }
+
+      template<typename result_t>
+      auto basic_task<result_t>::continue_with(xtd::action<>&& continuation) -> xtd::threading::tasks::task<> {
+        auto call_now = false;
+        
+        lock_(data_->sync_root) {
+          data_->continuation = xtd::new_sptr<xtd::threading::tasks::task<>>(continuation);
+          if (is_completed()) call_now = true;
+        }
+        
+        if (call_now) run_continuation(data_->continuation_async);
+        return *data_->continuation;
+      }
+      
+      template<typename result_t>
+      auto basic_task<result_t>::continue_with(xtd::func<xtd::threading::tasks::task<>>&& continuation_async) -> xtd::threading::tasks::task<xtd::threading::tasks::task<>> {
+        auto call_now = false;
+        
+        lock_(data_->sync_root) {
+          data_->continuation_async = xtd::new_sptr<xtd::threading::tasks::task<xtd::threading::tasks::task<>>>(continuation_async);
+          if (is_completed()) call_now = true;
+        }
+        
+        if (call_now) run_continuation(data_->continuation_async);
+        return *data_->continuation_async;
       }
 
       template<typename result_t>
@@ -212,6 +238,12 @@ namespace xtd {
       template<typename result_t>
       auto xtd::threading::tasks::basic_task<result_t>::yield() -> task<result_t> {
         co_await yield_awaiter {};
+      }
+
+      template<typename result_t>
+      auto xtd::threading::tasks::basic_task<result_t>::run_continuation(auto continuation) -> void {
+        continuation->start();
+        continuation->wait();
       }
 
       template<typename result1_t, typename result2_t>

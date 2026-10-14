@@ -55,7 +55,7 @@ namespace xtd {
             task_.on_await_resume();
             if (task_.is_faulted()) task_.rethrow_exception();
           }
-          void await_suspend(std::coroutine_handle<> handle) {task_.continue_with([handle] {handle.resume();});}
+          void await_suspend(std::coroutine_handle<> handle) {task_.continue_with_([handle] {handle.resume();});}
         };
         
         /// @cond

@@ -51,7 +51,7 @@ namespace xtd {
           xtd::threading::tasks::task<result_t>& task_;
           
           bool await_ready() const noexcept {return this->task_.is_completed();}
-          void await_suspend(std::coroutine_handle<> handle) {task_.continue_with([handle] {handle.resume();});}
+          void await_suspend(std::coroutine_handle<> handle) {task_.continue_with_([handle] {handle.resume();});}
           const result_t& await_resume() {
             task_.on_await_resume();
             if (task_.is_faulted()) task_.rethrow_exception();
