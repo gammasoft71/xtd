@@ -50,7 +50,10 @@
 /// @section ExamplesSection Examples
 /// The classic first application 'Hello World'.
 ///
-/// @subsection ExamplesConsoleSubsection Console
+/// @subsection ExamplesConsoleSubsection Console (CLI)
+///
+/// > This example demonstrates how to display a simple message in the console using [xtd.core](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html).
+///
 /// hello_world_console.cpp:
 /// ```cpp
 /// #include <xtd/xtd>
@@ -85,7 +88,80 @@
 /// Hello, World!
 /// ```
 ///
-/// @subsection ExamplesFormsSubsection Forms
+/// @subsection ExamplesCoroutinesSubsection Coroutines C++20 with xtd::threading::tasks
+///
+/// > This example asynchronously prints a greeting for each world in parallel, then waits for all greetings to be printed using [xtd.core](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html).
+/// 
+/// hello_world_coroutine.cpp:
+///
+/// ```cpp
+/// #include <xtd/xtd>
+/// 
+/// class program {
+/// public:
+///   static auto main() async_ {
+///     auto worlds = {u8"World"_s, u8"Mundo"_s, u8"Monde"_s, u8"Mondo"_s, u8"モンド"_s, u8"世界"_s, u8"Welt"_s, u8"Мир"_s};
+///     co_await parallel::for_each_async(worlds, [](auto world) async_ {
+///       co_await task<>::delay(100_ms);
+///       println("Hello, {}!", world);
+///     });
+///   }
+/// };
+/// 
+/// startup_(program::main);
+/// ```
+/// 
+/// **or simply**
+/// 
+/// ```cpp
+/// #include <xtd/xtd>
+/// 
+/// auto main_async() -> task<> {
+///   auto worlds = {u8"World"_s, u8"Mundo"_s, u8"Monde"_s, u8"Mondo"_s, u8"モンド"_s, u8"世界"_s, u8"Welt"_s, u8"Мир"_s};
+///   co_await parallel::for_each_async(worlds, [](auto world) -> task<> {
+///     co_await task<>::delay(100_ms);
+///     println("Hello, {}!", world);
+///   });
+/// }
+/// 
+/// auto main() -> int {
+///   return startup::run(main_async);
+/// }
+/// ```
+/// 
+/// CMakeLists.txt:
+///
+/// ```cmake
+/// cmake_minimum_required(VERSION 3.20)
+/// 
+/// project(hello_world_coroutine)
+/// find_package(xtd REQUIRED)
+/// add_sources(hello_world_coroutine.cpp)
+/// target_type(CONSOLE_APPLICATION)
+/// ```
+/// 
+/// @subsubsection ExamplesCoroutinesBuildAndRunSubsubsection Build and run
+/// Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
+/// ```shell
+/// xtdc run
+/// ```
+///
+/// @subsubsection ExamplesCoroutinesOutputSubsubsection Output
+/// ```
+/// Hello, 世界!
+/// Hello, Мир!
+/// Hello, World!
+/// Hello, Welt!
+/// Hello, Mondo!
+/// Hello, Monde!
+/// Hello, モンド!
+/// Hello, Mundo!
+/// ```
+///
+/// @subsection ExamplesFormsSubsection Forms (GUI like WinForms)
+///
+/// > This example demonstrates how to create a simple graphical application using [xtd.forms](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html).
+///
 /// hello_world_forms.cpp:
 /// ```cpp
 /// #include <xtd/xtd>
@@ -147,7 +223,10 @@
 /// <br>
 ///  @image html hello_world_gd.png
 ///
-/// @subsection ExamplesUnitTestSubsection Unit tests
+/// @subsection ExamplesUnitTestSubsection tunit (Unit tests like Microsoft Unit Testing Framework)
+///
+/// > This example demonstrates how to write and run unit tests using [xtd.tunit](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__tunit.html).
+///
 /// hello_world_test.cpp:
 /// ```cpp
 /// #include <xtd/xtd>
