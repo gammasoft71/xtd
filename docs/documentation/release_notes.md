@@ -10,7 +10,7 @@ The release note of the latest development version is also available.
 
 ## Current development version
 
-* [![0.1.0](/pictures/releases/version_1_0_0.png) Planned for Q3 2026 (TBD)](/docs/documentation/release_notes/v1.0.0_release_note)
+* [![1.0.0](/pictures/releases/version_1_0_0.png) Planned for Q1 2027 (TBD)](/docs/documentation/release_notes/v1.0.0_release_note)
 
 ## Latest beta version
 
