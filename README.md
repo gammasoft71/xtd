@@ -72,7 +72,7 @@ The [xtd.tunit](https://gammasoft71.github.io/xtd/reference_guides/latest/group_
 
 * [Installation](https://gammasoft71.github.io/xtd/docs/downloads) provides download, install and uninstall documentation.
 * [Guides](https://gammasoft71.github.io/xtd/docs/documentation/guides) provides xtd guides and tutorials.
-* [Examples](https://github.com/gammasoft71/xtd/blob/master/examples/README.md) provides over 1'000 examples to help you use xtd, grouped by libraries and topics.
+* [Examples](https://github.com/gammasoft71/xtd/blob/master/examples/README.md) provides 1k examples to help you use xtd, grouped by libraries and topics.
 
 ## Development status
 
@@ -135,7 +135,7 @@ The classic first application 'Hello World'.
 
 ### Console (CLI)
 
-> This example demonstrates how to display a simple message in the console using xtd.
+> This example demonstrates how to display a simple message in the console using [xtd.core](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html).
 
 #### hello_world_console.cpp
 
@@ -187,10 +187,9 @@ xtdc run
 
 ![Screenshot](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/examples/hello_world_console.png)
 
-
 ### Coroutines C++20 with xtd::threading::tasks
 
-> This example asynchronously prints a greeting for each world in parallel, then waits for all greetings to be printed.
+> This example asynchronously prints a greeting for each world in parallel, then waits for all greetings to be printed using [xtd.core](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html).
 
 #### hello_world_coroutine.cpp
 
@@ -263,7 +262,7 @@ Hello, Mundo!
 
 ### Forms (GUI like WinForms)
 
-> This example demonstrates how to create a simple graphical application using xtd forms.
+> This example demonstrates how to create a simple graphical application using [xtd.forms](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html).
 
 #### hello_world_forms.cpp
 
@@ -348,7 +347,7 @@ xtdc run
 
 ### tunit (Unit tests like Microsoft Unit Testing Framework)
 
-> This example demonstrates how to write and run unit tests using xtd.tunit.
+> This example demonstrates how to write and run unit tests using [xtd.tunit](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__tunit.html).
 
 #### hello_world_test.cpp
 
