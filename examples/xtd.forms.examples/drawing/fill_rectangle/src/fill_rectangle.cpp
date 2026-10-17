@@ -14,27 +14,28 @@ namespace fill_rectangle_example {
       
       auto back_color = color::navy;
       auto fore_color = color::white;
+      auto outline_pen = pen {fore_color, 4.0f};
+
+      e.graphics().fill_rectangle(solid_brush {color::transparent}, rectangle_f {10.0f, 10.0f, 150.0f, 150.0f});
+      e.graphics().draw_rectangle(outline_pen, rectangle_f {10.0f, 10.0f, 150.0f, 150.0f});
       
-      e.graphics().fill_rectangle(solid_brush {color::transparent}, rectangle {10, 10, 150, 150});
-      e.graphics().draw_rectangle(pen {fore_color, 4}, rectangle {10, 10, 150, 150});
+      e.graphics().fill_rectangle(solid_brush {back_color}, rectangle_f {180.0f, 10.0f, 150.0f, 150.0f});
+      e.graphics().draw_rectangle(outline_pen, rectangle_f {180.0f, 10.0f, 150.0f, 150.0f});
       
-      e.graphics().fill_rectangle(solid_brush {back_color}, rectangle {180, 10, 150, 150});
-      e.graphics().draw_rectangle(pen {fore_color, 4}, rectangle {180, 10, 150, 150});
+      e.graphics().fill_rectangle(texture_brush {create_circle_texture(fore_color, back_color)}, rectangle_f {350.0f, 10.0f, 150.0f, 150.0f});
+      e.graphics().draw_rectangle(outline_pen, rectangle_f {350.0f, 10.0f, 150.0f, 150.0f});
       
-      e.graphics().fill_rectangle(texture_brush {create_circle_texture(fore_color, back_color)}, rectangle {350, 10, 150, 150});
-      e.graphics().draw_rectangle(pen {fore_color, 4}, rectangle {350, 10, 150, 150});
+      e.graphics().fill_rectangle(drawing_2d::hatch_brush {drawing_2d::hatch_style::diagonal_brick, color::white, back_color}, rectangle_f {520.0f, 10.0f, 150.0f, 150.0f});
+      e.graphics().draw_rectangle(outline_pen, rectangle_f {520.0f, 10.0f, 150.0f, 150.0f});
       
-      e.graphics().fill_rectangle(drawing_2d::hatch_brush {drawing_2d::hatch_style::diagonal_brick, color::white, back_color}, rectangle {520, 10, 150, 150});
-      e.graphics().draw_rectangle(pen {color::white, 4}, rectangle {520, 10, 150, 150});
+      e.graphics().fill_rectangle(drawing_2d::conical_gradient_brush {point_f {85.0f, 255.0f}, back_color, fore_color, 0.0f}, rectangle_f {10.0f, 180.0f, 150.0f, 150.0f});
+      e.graphics().draw_rectangle(outline_pen, rectangle_f {10.0f, 180.0f, 150.0f, 150.0f});
       
-      e.graphics().fill_rectangle(drawing_2d::conical_gradient_brush {point {85, 255}, back_color, fore_color, 0}, rectangle {10, 180, 150, 150});
-      e.graphics().draw_rectangle(pen {color::white, 4}, rectangle {10, 180, 150, 150});
+      e.graphics().fill_rectangle(drawing_2d::linear_gradient_brush {rectangle_f {180.0f, 180.0f, 150.0f, 150.0f}, back_color, fore_color, 315.0f}, rectangle_f {180.0f, 180.0f, 150.0f, 150.0f});
+      e.graphics().draw_rectangle(outline_pen, rectangle_f {180.0f, 180.0f, 150.0f, 150.0f});
       
-      e.graphics().fill_rectangle(drawing_2d::linear_gradient_brush {rectangle {180, 180, 150, 150}, back_color, fore_color, 315}, rectangle {180, 180, 150, 150});
-      e.graphics().draw_rectangle(pen {color::white, 4}, rectangle {180, 180, 150, 150});
-      
-      e.graphics().fill_rectangle(drawing_2d::radial_gradient_brush {point {425, 255}, fore_color, back_color, 73}, rectangle {350, 180, 150, 150});
-      e.graphics().draw_rectangle(pen {color::white, 4}, rectangle {350, 180, 150, 150});
+      e.graphics().fill_rectangle(drawing_2d::radial_gradient_brush {point_f {425.0f, 255.0f}, fore_color, back_color, 73.0f}, rectangle_f {350.0f, 180.0f, 150.0f, 150.0f});
+      e.graphics().draw_rectangle(outline_pen, rectangle_f {350.0f, 180.0f, 150.0f, 150.0f});
     }
     
   private:
