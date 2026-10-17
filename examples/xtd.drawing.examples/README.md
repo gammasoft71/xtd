@@ -9,6 +9,10 @@
 * [hello_world_png](hello_worlds/hello_world_png/README.md) The classic first application "Hello, World!" with [GDI+ drawing](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__drawing.html) objects.
 * [hello_world_phylactery](hello_worlds/hello_world_phylactery/README.md) The classic first application "Hello, World!" with [GDI+ drawing](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__drawing.html) objects.
 
+## [Brushes](brushes/README.md)
+
+* [brushes](brushes/brushes/README.md) Demonstrates how to use [brushes](https://gammasoft71.github.io/xtd/reference_guides/latest/_brushes_page.html) classes.
+
 ## [Colors](colors/README.md)
 
 * [apple_colors](colors/apple_colors/README.md) Demonstrates how to use [xtd::drawing::apple_colors](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1drawing_1_1apple__colors.html) class.
