@@ -14,21 +14,22 @@ namespace fill_rounded_rectangle_example {
       
       auto back_color = color::navy;
       auto fore_color = color::white;
-      
+      auto outline_pen = pen {fore_color, 4.0f};
+
       e.graphics().fill_rounded_rectangle(solid_brush {color::transparent}, rectangle {10, 10, 150, 150}, 20);
-      e.graphics().draw_rounded_rectangle(pen {fore_color, 4}, rectangle {10, 10, 150, 150}, 20);
+      e.graphics().draw_rounded_rectangle(outline_pen, rectangle {10, 10, 150, 150}, 20);
       
       e.graphics().fill_rounded_rectangle(solid_brush {back_color}, rectangle {180, 10, 150, 150}, 20);
-      e.graphics().draw_rounded_rectangle(pen {fore_color, 4}, rectangle {180, 10, 150, 150}, 20);
+      e.graphics().draw_rounded_rectangle(outline_pen, rectangle {180, 10, 150, 150}, 20);
       
       e.graphics().fill_rounded_rectangle(texture_brush {create_circle_texture(fore_color, back_color)}, rectangle {350, 10, 150, 150}, 20);
-      e.graphics().draw_rounded_rectangle(pen {fore_color, 4}, rectangle {350, 10, 150, 150}, 20);
+      e.graphics().draw_rounded_rectangle(outline_pen, rectangle {350, 10, 150, 150}, 20);
       
       e.graphics().fill_rounded_rectangle(drawing_2d::hatch_brush {drawing_2d::hatch_style::diagonal_brick, color::white, back_color}, rectangle {520, 10, 150, 150}, 20);
-      e.graphics().draw_rounded_rectangle(pen {color::white, 4}, rectangle(520, 10, 150, 150), 20);
+      e.graphics().draw_rounded_rectangle(outline_pen, rectangle {520, 10, 150, 150}, 20);
       
       e.graphics().fill_rounded_rectangle(drawing_2d::conical_gradient_brush {point {85, 255}, back_color, fore_color, 0}, rectangle {10, 180, 150, 150}, 20);
-      e.graphics().draw_rounded_rectangle(pen {color::white, 4}, rectangle {10, 180, 150, 150}, 20);
+      e.graphics().draw_rounded_rectangle(outline_pen, rectangle {10, 180, 150, 150}, 20);
       
       e.graphics().fill_rounded_rectangle(drawing_2d::linear_gradient_brush {rectangle {180, 180, 150, 150}, back_color, fore_color, 315}, rectangle {180, 180, 150, 150}, 20);
       e.graphics().draw_rounded_rectangle(pen {color::white, 4}, rectangle {180, 180, 150, 150}, 20);
