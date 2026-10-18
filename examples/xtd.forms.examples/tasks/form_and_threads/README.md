@@ -19,18 +19,18 @@ xtdc run
 
 ### Windows :
 
-![Screenshot](../../../../docs/pictures/examples/form_and_threadw_w.png)
+![Screenshot](../../../../docs/pictures/examples/form_and_threads_w.png)
 
-![Screenshot](../../../../docs/pictures/examples/form_and_threadw_wd.png)
+![Screenshot](../../../../docs/pictures/examples/form_and_threads_wd.png)
 
 ### macOS :
 
-![Screenshot](../../../../docs/pictures/examples/form_and_threadw_m.png)
+![Screenshot](../../../../docs/pictures/examples/form_and_threads_m.png)
 
 ![Screenshot](../../../../docs/pictures/examples/form_and_threadw_md.png)
 
 ### Gnome :
 
-![Screenshot](../../../../docs/pictures/examples/form_and_threadw_g.png)
+![Screenshot](../../../../docs/pictures/examples/form_and_threads_g.png)
 
-![Screenshot](../../../../docs/pictures/examples/form_and_threadw_gd.png)
+![Screenshot](../../../../docs/pictures/examples/form_and_threads_gd.png)
