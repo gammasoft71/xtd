@@ -27,7 +27,7 @@ xtdc run
 
 ![Screenshot](../../../../docs/pictures/examples/form_and_threads_m.png)
 
-![Screenshot](../../../../docs/pictures/examples/form_and_threadw_md.png)
+![Screenshot](../../../../docs/pictures/examples/form_and_threads_md.png)
 
 ### Gnome :
 
