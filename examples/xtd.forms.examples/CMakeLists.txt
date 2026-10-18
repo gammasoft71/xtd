@@ -21,6 +21,7 @@ add_projects(
   user_controls
   drawing
   games
+  tasks
   others
   tests
   demos

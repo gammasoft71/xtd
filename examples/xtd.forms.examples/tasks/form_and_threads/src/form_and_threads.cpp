@@ -3,7 +3,7 @@
 class form_thread : public form {
 public:
   form_thread() {
-    text("Form and thread example");
+    text("Form and threads");
     form_closed += delegate_ {closed = true;};
     messages.parent(*this).dock(dock_style::fill);
     

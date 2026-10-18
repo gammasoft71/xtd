@@ -100,6 +100,7 @@
 * [User Controls](xtd.forms.examples/user_controls/README.md) contains custom controls examples.
 * [Drawing](xtd.forms.examples/drawing/README.md) contains drawing examples.
 * [Games](xtd.forms.examples/games/README.md) contains games examples.
+* [Tasks](xtd.forms.examples/tasks/README.md) contains threads and tasks examples.
 * [Others](xtd.forms.examples/others/README.md) contains others examples.
 
 ## [xtd.tunit](xtd.tunit.examples/README.md)

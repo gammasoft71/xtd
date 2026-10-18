@@ -26,8 +26,6 @@ add_projects(
   font_families
   form2
   form_and_main
-  form_and_task
-  form_and_thread
   form_background_image
   form_background_image2
   form_colors
