@@ -261,8 +261,8 @@
 
 ## [Tasks](tasks/README.md)
 
-* [form_and_task](tasks/form_and_task/README.md) demonstrates how tasks can update ui with [xtd::forms::control::invoke](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#a17ec51282322d8387937dc8dad438e32) method.
-* [form_and_thread](tasks/form_and_thread/README.md) demonstrates how threads can update ui with [xtd::forms::control::invoke](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#a17ec51282322d8387937dc8dad438e32) method.
+* [form_and_tasks](tasks/form_and_tasks/README.md) demonstrates how tasks can update ui with [xtd::forms::control::invoke](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#a17ec51282322d8387937dc8dad438e32) method.
+* [form_and_threads](tasks/form_and_threads/README.md) demonstrates how threads can update ui with [xtd::forms::control::invoke](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1control.html#a17ec51282322d8387937dc8dad438e32) method.
 
 ## [Others](others/README.md)
 
