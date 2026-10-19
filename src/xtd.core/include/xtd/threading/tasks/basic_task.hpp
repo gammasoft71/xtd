@@ -139,6 +139,7 @@ namespace xtd {
         [[nodiscard]] auto id() const noexcept -> xtd::usize override {return data_->id;}
         [[nodiscard]] auto is_canceled() const noexcept -> bool {return data_->status == xtd::threading::tasks::task_status::canceled;}
         [[nodiscard]] auto is_completed() const noexcept -> bool override {return is_faulted() || is_canceled() || data_->status == xtd::threading::tasks::task_status::ran_to_completion;}
+        [[nodiscard]] auto is_empty() const noexcept -> bool {return data_->func.is_empty();}
         [[nodiscard]] auto is_faulted() const noexcept -> bool {return data_->status == xtd::threading::tasks::task_status::faulted;}
         [[nodiscard]] auto status() const noexcept -> xtd::threading::tasks::task_status {return data_->status;}
         /// @}
@@ -206,6 +207,12 @@ namespace xtd {
         /// @param timeout A xtd::time_span that represents the number of milliseconds to wait, or a xtd::threading::timeout::infinite_time_span that represents -1 milliseconds to wait indefinitely.
         /// @return `true` if the xtd::threading::tasks::task completed execution within the allotted time; otherwise, `false`.
         auto wait(const xtd::time_span& timeout, xtd::threading::cancellation_token& cancellation_token) -> bool override {return wait(xtd::as<xtd::int32>(timeout.total_milliseconds_duration().count()), cancellation_token);}
+        /// @}
+        
+        /// @name Public Operators
+        
+        /// @{
+        operator bool() const noexcept {return !is_empty();}
         /// @}
         
         /// @name Public Static Methods
