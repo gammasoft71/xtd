@@ -97,6 +97,7 @@ void background_worker::run_worker_async() {
       on_do_work(e);
       data_->invoker->begin_invoke([&] {
         on_run_worker_completed(run_worker_completed_event_args(any_object {}, std::nullopt, data_->cancellation_pending));
+        data_->invoker->destroy_control();
         data_->invoker = nullptr;
         data_->cancellation_pending = false;
       });
