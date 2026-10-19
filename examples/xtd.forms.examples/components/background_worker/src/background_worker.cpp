@@ -11,8 +11,9 @@ namespace background_worker_example {
       text("Background worker example");
       auto_size_mode(forms::auto_size_mode::grow_and_shrink);
       auto_size(true);
-      form_closed += delegate_ {
-        cancel_button.perform_click();
+      form_closing += delegate_(auto& sender, auto& e) {
+        e.cancel(worker.is_busy());
+        if (e.cancel()) message_box::show(self_, "Cancel worker before cloe form", "Background worker example", message_box_buttons::ok, message_box_icon::error);
       };
       
       command_panel.parent(*this);
