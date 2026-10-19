@@ -79,12 +79,11 @@ void background_worker::report_progress(int32 percent_progress) {
 }
 
 void background_worker::report_progress(int32 percent_progress, const xtd::any_object& user_state) {
-  if (data_->worker_reports_progress) {
-    data_->event = {percent_progress, user_state};
-    data_->invoker->begin_invoke([&] {
-      on_progress_changed(data_->event);
-    });
-  }
+  if (!data_->worker_reports_progress) return;
+  data_->event = {percent_progress, user_state};
+  data_->invoker->begin_invoke([&] {
+    on_progress_changed(data_->event);
+  });
 }
 
 void background_worker::run_worker_async() {
