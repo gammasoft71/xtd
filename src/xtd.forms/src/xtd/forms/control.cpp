@@ -2128,7 +2128,7 @@ void control::on_parent_size_changed(object& sender, const event_args& e) {
 }
 
 void control::post_recreate_handle() noexcept {
-  if (data_->handle)
+  if (is_handle_created())
     data_->recreate_handle_posted = true;
 }
 
