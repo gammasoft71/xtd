@@ -6,5 +6,6 @@ find_package(xtd REQUIRED)
 add_projects(
   form_and_task
   form_and_tasks
+  form_and_thread
   form_and_threads
 )
