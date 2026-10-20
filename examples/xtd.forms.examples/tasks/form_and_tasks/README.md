@@ -1,6 +1,6 @@
 # form_and_tasks
 
-demonstrates how a thread can update ui with [xtd::forms::control::invoke](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html#a17ec51282322d8387937dc8dad438e32) method.
+demonstrates how to tasks can update ui with [xtd::forms::control::invoke](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html#a17ec51282322d8387937dc8dad438e32) method.
 
 ## Sources
 
