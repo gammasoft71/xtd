@@ -61,10 +61,6 @@ namespace xtd {
         
         /// @cond
         task();
-        task(task&&) = default;
-        task(const task&) = default;
-        auto operator=(task&&) -> task& = default;
-        auto operator=(const task&) -> task& = default;
         task(const std::coroutine_handle<typename task<result_t>::promise_type>& handle) { {*handle_ = handle;}}
         ~task() {if (handle_.is_unique() && *handle_) handle_->destroy();}
 
@@ -73,10 +69,10 @@ namespace xtd {
         /// @name Public Constructors
         
         /// @{
-        task(const xtd::func<result_t>& func) : basic_task<result_t> {func} {}
-        task(const xtd::func<result_t>& func, const xtd::threading::cancellation_token& cancellation_token) : basic_task<result_t> {func, cancellation_token} {}
-        task(const xtd::func<result_t, const xtd::any_object&>& func, const xtd::any_object& state) : basic_task<result_t> {func, state} {}
-        task(const xtd::func<result_t, const xtd::any_object&>& func, const xtd::any_object& state, const xtd::threading::cancellation_token& cancellation_token) : basic_task<result_t> {func, state, cancellation_token} {}
+        task(auto func);
+        task(auto func, const xtd::threading::cancellation_token& cancellation_token);
+        task(auto func, const xtd::any_object& state);
+        task(auto func, const xtd::any_object& state, const xtd::threading::cancellation_token& cancellation_token);
         /// @}
 
         /// @name Public Properties
@@ -113,10 +109,39 @@ namespace xtd {
       /// @cond
       template<typename result_t>
       inline task<result_t>::task() {
-        lock_(this->data_->sync_root) {
+        lock_(this->static_data_.sync_root) {
           this->static_data_.tasks.add(new_sptr<task<result_t>>(*this));
         }
       }
+      
+      template<typename result_t>
+      inline task<result_t>::task(auto func) : basic_task<result_t> {func} {
+        lock_(this->static_data_.sync_root) {
+          this->static_data_.tasks.add(new_sptr<task<result_t>>(*this));
+        }
+      }
+
+      template<typename result_t>
+      inline task<result_t>::task(auto func, const xtd::threading::cancellation_token& cancellation_token) : basic_task<result_t> {func, cancellation_token} {
+        lock_(this->static_data_.sync_root) {
+          this->static_data_.tasks.add(new_sptr<task<result_t>>(*this));
+        }
+      }
+
+      template<typename result_t>
+      inline task<result_t>::task(auto func, const xtd::any_object& state) : basic_task<result_t> {func, state} {
+        lock_(this->static_data_.sync_root) {
+          this->static_data_.tasks.add(new_sptr<task<result_t>>(*this));
+        }
+      }
+
+      template<typename result_t>
+      inline task<result_t>::task(auto func, const xtd::any_object& state, const xtd::threading::cancellation_token& cancellation_token) : basic_task<result_t> {func, state, cancellation_token} {
+        lock_(this->static_data_.sync_root) {
+          this->static_data_.tasks.add(new_sptr<task<result_t>>(*this));
+        }
+      }
+
       /// @endcond
     }
   }

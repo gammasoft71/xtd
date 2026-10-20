@@ -112,17 +112,6 @@ namespace xtd {
           data_->state = &state;
           data_->cancellation_token = cancellation_token;
         }
-        
-        ~basic_task() {
-          /*
-          if (!data_) return;
-          lock_(data_->sync_root) {
-            if (!data_ && data_.is_unique() && !is_completed()) return;
-            auto task = static_data_.tasks.first_or_default([this](auto&& task) {return task->data_ && task->data_->unique_id == data_->unique_id;});
-            if (task && task->data_->unique_id == data_->unique_id) static_data_.tasks.remove(task);
-          }
-           */
-        }
         /// @endcond
 
         
@@ -496,6 +485,10 @@ namespace xtd {
               if (continuation) basic_task<result_t>::run_continuation(continuation);
               else if (continuation_async) basic_task<result_t>::run_continuation(continuation_async);
               current_id_ = previous_current_id;
+              lock_(static_data_.sync_root) {
+                auto task = static_data_.tasks.first_or_default([this](auto&& item) {return item->data_ && item->data_->unique_id == unique_id;});
+                if (task && task->data_->unique_id == unique_id) static_data_.tasks.remove(task);
+              }
             };
             
             status = xtd::threading::tasks::task_status::running;
@@ -527,6 +520,7 @@ namespace xtd {
         };
 
         struct static_data {
+          xtd::object sync_root;
           xtd::collections::generic::list<sptr<basic_task>> tasks;
         };
         

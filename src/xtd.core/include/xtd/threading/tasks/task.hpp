@@ -60,19 +60,15 @@ namespace xtd {
         
         /// @cond
         task();
-        task(task&&) = default;
-        task(const task&) = default;
-        auto operator=(task&&) -> task& = default;
-        auto operator=(const task&) -> task& = default;
         /// @endcond
         
         /// @name Public Constructors
         
         /// @{
-        task(const xtd::action<>& action) : basic_task<> {action} {}
-        task(const xtd::action<>& action, const xtd::threading::cancellation_token& cancellation_token) : basic_task<> {action, cancellation_token} {}
-        task(const xtd::action<const xtd::any_object&>& action, const xtd::any_object& state) : basic_task<> {action, state} {}
-        task(const xtd::action<const xtd::any_object&>& action, const xtd::any_object& state, const xtd::threading::cancellation_token& cancellation_token) : basic_task<> {action, state, cancellation_token} {}
+        task(auto action);
+        task(auto action, const xtd::threading::cancellation_token& cancellation_token);
+        task(auto action, const xtd::any_object& state);
+        task(auto action, const xtd::any_object& state, const xtd::threading::cancellation_token& cancellation_token);
         /// @}
         
         /// @name Public Static Methods
@@ -95,7 +91,27 @@ namespace xtd {
 
       /// @cond
       inline task<void>::task() {
-        lock_(this->data_->sync_root) {
+        lock_(this->static_data_.sync_root) {
+          this->static_data_.tasks.add(new_sptr<task<>>(*this));
+        }
+      }
+      inline task<void>::task(auto action) : basic_task<> {action} {
+        lock_(this->static_data_.sync_root) {
+          this->static_data_.tasks.add(new_sptr<task<>>(*this));
+        }
+      }
+      inline task<void>::task(auto action, const xtd::threading::cancellation_token& cancellation_token) : basic_task<> {action, cancellation_token} {
+        lock_(this->static_data_.sync_root) {
+          this->static_data_.tasks.add(new_sptr<task<>>(*this));
+        }
+      }
+      inline task<void>::task(auto action, const xtd::any_object& state) : basic_task<> {action, state} {
+        lock_(this->static_data_.sync_root) {
+          this->static_data_.tasks.add(new_sptr<task<>>(*this));
+        }
+      }
+      inline task<void>::task(auto action, const xtd::any_object& state, const xtd::threading::cancellation_token& cancellation_token) : basic_task<> {action, state, cancellation_token} {
+        lock_(this->static_data_.sync_root) {
           this->static_data_.tasks.add(new_sptr<task<>>(*this));
         }
       }
