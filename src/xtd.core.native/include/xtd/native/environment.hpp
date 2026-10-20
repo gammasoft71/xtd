@@ -158,7 +158,7 @@ namespace xtd {
       /// @brief Gets the number of processors on the current machine.
       /// @return The 32-bit unsigned integer that specifies the number of processors on the current machine. There is no default. If the current machine contains multiple processor groups, this property returns the number of logical processors that are available for use.
       /// @warning Internal use only
-      [[nodiscard]] static auto get_processor_count() -> std::uint32_t;
+      [[nodiscard]] static auto get_processor_count() -> std::size_t;
       /// @brief Gets the path of the resources folder.
       /// @return A string that represents the path of the resources folder.
       /// @warning Internal use only

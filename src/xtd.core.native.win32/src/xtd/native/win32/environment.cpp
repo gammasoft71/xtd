@@ -289,7 +289,7 @@ void environment::get_os_version(int32_t& major, int32_t& minor, int32_t& build,
   return get_windows_version(major, minor, build, revision, server);
 }
 
-uint32_t environment::get_processor_count() {
+size_t environment::get_processor_count() {
   auto system_info = SYSTEM_INFO {};
   GetNativeSystemInfo(&system_info);
   return system_info.dwNumberOfProcessors;

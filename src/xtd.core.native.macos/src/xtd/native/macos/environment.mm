@@ -260,7 +260,7 @@ auto environment::get_os_version(int32_t& major, int32_t& minor, int32_t& build,
   if (numbers.size() < 4 || !macos::strings::try_parse(numbers[3], revision)) revision = 0;
 }
 
-auto environment::get_processor_count() -> uint32_t {
+auto environment::get_processor_count() -> size_t {
   return thread::hardware_concurrency();
 }
 

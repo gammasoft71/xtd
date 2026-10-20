@@ -99,7 +99,7 @@ namespace xtd::tests {
     }
     
     auto test_method_(processor_count) {
-      assert::is_greater_or_equal(environment::processor_count(), 1u);
+      assert::is_greater_or_equal(environment::processor_count(), 1_z);
     }
     
     auto test_method_(processor_information) {

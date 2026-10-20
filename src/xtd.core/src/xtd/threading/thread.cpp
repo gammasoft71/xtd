@@ -189,7 +189,7 @@ thread& thread::processor_affinity(const xtd::array<xtd::usize>& value) {
   if (is_aborted() || is_stopped()) throw_helper::throws(exception_case::thread_state);
   
   if (data_->processor_affinity == value) return self_;
-  if (!value.all([](usize value) {return value < as<usize>(environment::processor_count());})) throw_helper::throws(exception_case::argument);
+  if (!value.all([](usize value) {return value < environment::processor_count();})) throw_helper::throws(exception_case::argument);
   data_->processor_affinity = list<usize> {value}.sort().distinct().to_array();
   if (data_->handle != native::types::invalid_handle()) native::thread::set_processor_affinity(data_->handle, value.items());
   return self_;

@@ -25,7 +25,7 @@ namespace xtd {
     /// @param architecture One of xtd::architectuure_id valuues.
     /// @param is_64_bit `true` if 64 bit architecture; otherwise `false`.
     /// @param core_count THe number of cores.
-    processor(xtd::architecture_id architecture, bool is_64_bit, uint32 core_count);
+    processor(xtd::architecture_id architecture, bool is_64_bit, xtd::usize core_count);
     /// @}
     
     /// @cond
@@ -47,7 +47,7 @@ namespace xtd {
     
     /// @brief Gets the number of processors on the current machine.
     /// @return The 32-bit unsigned integer that specifies the number of processors on the current machine. There is no default. If the current machine contains multiple processor groups, this property returns the number of logical processors that are available for use.
-    [[nodiscard]] auto core_count() const noexcept -> xtd::uint32;
+    [[nodiscard]] auto core_count() const noexcept -> xtd::usize;
     
     /// @brief Determines whether the current operating system is a 64-bit operating system.
     /// @return `true` if the operating system is 64-bit; otherwise, `false`.
