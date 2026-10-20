@@ -110,38 +110,37 @@ namespace xtd {
       template<typename result_t>
       inline task<result_t>::task() {
         lock_(this->static_data_.sync_root) {
-          this->static_data_.tasks.add(new_sptr<task<result_t>>(*this));
+          this->static_data_.tasks.add(this->data_->unique_id, new_sptr<task<result_t>>(*this));
         }
       }
       
       template<typename result_t>
       inline task<result_t>::task(auto func) : basic_task<result_t> {func} {
         lock_(this->static_data_.sync_root) {
-          this->static_data_.tasks.add(new_sptr<task<result_t>>(*this));
+          this->static_data_.tasks.add(this->data_->unique_id, new_sptr<task<result_t>>(*this));
         }
       }
 
       template<typename result_t>
       inline task<result_t>::task(auto func, const xtd::threading::cancellation_token& cancellation_token) : basic_task<result_t> {func, cancellation_token} {
         lock_(this->static_data_.sync_root) {
-          this->static_data_.tasks.add(new_sptr<task<result_t>>(*this));
+          this->static_data_.tasks.add(this->data_->unique_id, new_sptr<task<result_t>>(*this));
         }
       }
 
       template<typename result_t>
       inline task<result_t>::task(auto func, const xtd::any_object& state) : basic_task<result_t> {func, state} {
         lock_(this->static_data_.sync_root) {
-          this->static_data_.tasks.add(new_sptr<task<result_t>>(*this));
+          this->static_data_.tasks.add(this->data_->unique_id, new_sptr<task<result_t>>(*this));
         }
       }
 
       template<typename result_t>
       inline task<result_t>::task(auto func, const xtd::any_object& state, const xtd::threading::cancellation_token& cancellation_token) : basic_task<result_t> {func, state, cancellation_token} {
         lock_(this->static_data_.sync_root) {
-          this->static_data_.tasks.add(new_sptr<task<result_t>>(*this));
+          this->static_data_.tasks.add(this->data_->unique_id, new_sptr<task<result_t>>(*this));
         }
       }
-
       /// @endcond
     }
   }

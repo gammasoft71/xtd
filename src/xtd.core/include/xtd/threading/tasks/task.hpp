@@ -92,27 +92,27 @@ namespace xtd {
       /// @cond
       inline task<void>::task() {
         lock_(this->static_data_.sync_root) {
-          this->static_data_.tasks.add(new_sptr<task<>>(*this));
+          this->static_data_.tasks.add(this->data_->unique_id, new_sptr<task<>>(*this));
         }
       }
       inline task<void>::task(auto action) : basic_task<> {action} {
         lock_(this->static_data_.sync_root) {
-          this->static_data_.tasks.add(new_sptr<task<>>(*this));
+          this->static_data_.tasks.add(this->data_->unique_id, new_sptr<task<>>(*this));
         }
       }
       inline task<void>::task(auto action, const xtd::threading::cancellation_token& cancellation_token) : basic_task<> {action, cancellation_token} {
         lock_(this->static_data_.sync_root) {
-          this->static_data_.tasks.add(new_sptr<task<>>(*this));
+          this->static_data_.tasks.add(this->data_->unique_id, new_sptr<task<>>(*this));
         }
       }
       inline task<void>::task(auto action, const xtd::any_object& state) : basic_task<> {action, state} {
         lock_(this->static_data_.sync_root) {
-          this->static_data_.tasks.add(new_sptr<task<>>(*this));
+          this->static_data_.tasks.add(this->data_->unique_id, new_sptr<task<>>(*this));
         }
       }
       inline task<void>::task(auto action, const xtd::any_object& state, const xtd::threading::cancellation_token& cancellation_token) : basic_task<> {action, state, cancellation_token} {
         lock_(this->static_data_.sync_root) {
-          this->static_data_.tasks.add(new_sptr<task<>>(*this));
+          this->static_data_.tasks.add(this->data_->unique_id, new_sptr<task<>>(*this));
         }
       }
       /// @endcond

@@ -10,7 +10,7 @@
 #include "../auto_reset_event.hpp"
 #include "../lock.hpp"
 #include "../thread_pool.hpp"
-#include "../../collections/generic/list.hpp"
+#include "../../collections/generic/dictionary.hpp"
 #include "../../diagnostics/stopwatch.hpp"
 #include "../../exception_services/exception_dispatch_info.hpp"
 #include "../../helpers/throw_helper.hpp"
@@ -486,8 +486,7 @@ namespace xtd {
               else if (continuation_async) basic_task<result_t>::run_continuation(continuation_async);
               current_id_ = previous_current_id;
               lock_(static_data_.sync_root) {
-                auto task = static_data_.tasks.first_or_default([this](auto&& item) {return item->data_ && item->data_->unique_id == unique_id;});
-                if (task && task->data_->unique_id == unique_id) static_data_.tasks.remove(task);
+                if (static_data_.tasks.contains_key(unique_id)) static_data_.tasks.remove(unique_id);
               }
             };
             
@@ -521,7 +520,7 @@ namespace xtd {
 
         struct static_data {
           xtd::object sync_root;
-          xtd::collections::generic::list<sptr<basic_task>> tasks;
+          xtd::collections::generic::dictionary<xtd::usize, sptr<basic_task>> tasks;
         };
         
         xtd::sptr<data> data_ = xtd::new_sptr<data>();
