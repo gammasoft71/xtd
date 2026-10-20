@@ -1,39 +1,40 @@
 #include <xtd/xtd>
 
-class form_thread : public form {
+class form_and_tasks : public form {
 public:
-  form_thread() {
+  form_and_tasks() {
     text("Form and tasks");
     form_closed += delegate_ {closed = true;};
-    messages.parent(*this).dock(dock_style::fill);
+    messages.parent(self_).dock(dock_style::fill);
     
-    for (auto _ : enumerable::range(environment::processor_count() - 1))
-      task_runner_async().start();
+    for (auto id : enumerable::range(1_z, environment::processor_count() - 1_z))
+      task_runner_async(id);
   }
   
 private:
-  auto task_runner_async() async_ {
-    auto counter = 0;
-    auto task_name = string::format("task {}", interlocked::increment(unique_id));
-    
-    while (!closed) {
-      /// simulate work...
-      co_await task<>::delay(50_ms);
-      ++counter;
+  auto task_runner_async(auto id) async_ {
+    return task<>::factory().start_new([&, id] {
+      auto counter = 0;
+      auto task_name = string::format("task {}", id);
       
-      /// call invoke method to update UI in the main thread.
-      messages.begin_invoke(delegate_ {
-        messages.items().add(string::format("{}: counter: {}", task_name, counter));
-        messages.selected_index(messages.items().count() - 1);
-      });
-    }
+      while (!closed) {
+        /// simulate work...
+        thread::sleep(50_ms);
+        ++counter;
+        
+        /// call xtd::foms::control::begin_invoke method to update UI in the main thread.
+        begin_invoke(delegate_ {
+          messages.items().add(string::format("{}: counter: {}", task_name, counter));
+          messages.selected_index(messages.items().count() - 1);
+        });
+      }
+    });
   }
   
-  int32 unique_id = 0;
   list_box messages;
   bool closed = false;
 };
 
 auto main() -> int {
-  application::run(form_thread());
+  application::run(form_and_tasks());
 }
