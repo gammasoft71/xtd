@@ -73,7 +73,7 @@ namespace xtd {
   private:
     xtd::architecture_id architecture_ = xtd::architecture_id::unknown;
     bool is_64_bit_ = false;
-    uint32 core_count_ = 1;
+    xtd::usize core_count_ = 1;
     mutable xtd::string architecture_string_;
   };
 }
