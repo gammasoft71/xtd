@@ -37,5 +37,5 @@ private:
 };
 
 auto main() -> int {
-  application::run(form_and_threads());
+  application::run(form_and_threads {});
 }
