@@ -130,6 +130,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 </div>
 </dd></dl>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;atomic&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">namespace </span>task_example {</div>
 <div class="line">  <span class="keyword">class </span>form1 : <span class="keyword">public</span> form {</div>
@@ -218,7 +219,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <div class="line">      });</div>
 <div class="line">    }</div>
 <div class="line">    </div>
-<div class="line">    <span class="keywordtype">bool</span> worker_cancellation = <span class="keyword">false</span>;</div>
+<div class="line">    std::atomic&lt;bool&gt; worker_cancellation = <span class="keyword">false</span>;</div>
 <div class="line">    thread worker;</div>
 <div class="line">    panel command_panel;</div>
 <div class="line">    panel progress_panel;</div>
