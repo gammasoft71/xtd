@@ -25,7 +25,7 @@ namespace xtd {
     ///
     /// auto main() -> int {
     ///   //auto expr1 = [](auto&& operand_one, auto&& operand_two) {return operand_one + operand_two;};
-    ///   auto [operand_one, operand_two] = args<2>();
+    ///   auto [operand_one, operand_two] = arguments<2>();
     ///   auto expr1 = operand_one + operand_two;
     ///   println("expr1 result => {}", expr1(10, 20));
     ///   //auto expr2 = [](auto&& _1, auto&& _2) {return _1 + _2;};
@@ -39,7 +39,7 @@ namespace xtd {
     /// // expr2 result => 30
     /// ```
     template <size_t count>
-    struct args {
+    struct arguments {
       template <size_t index>
       constexpr auto get() const noexcept {
         return argument<index + 1> {};
@@ -324,17 +324,17 @@ namespace xtd {
 /// @cond
 namespace std {
   template <size_t count>
-  struct tuple_size<xtd::expressions::args<count>> : std::integral_constant<size_t, count> {};
+  struct tuple_size<xtd::expressions::arguments<count>> : std::integral_constant<size_t, count> {};
   
   template <size_t index, size_t count>
-  struct tuple_element<index, xtd::expressions::args<count>> {
+  struct tuple_element<index, xtd::expressions::arguments<count>> {
     using type = argument<index + 1>;
   };
 }
 
 namespace xtd::expressions {
   template <size_t index, size_t count>
-  constexpr auto get(xtd::expressions::args<count> const& p) noexcept {
+  constexpr auto get(xtd::expressions::arguments<count> const& p) noexcept {
     return p.template get<index>();
   }
 }
