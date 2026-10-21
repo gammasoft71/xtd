@@ -79,7 +79,7 @@ The [xtd.tunit](https://gammasoft71.github.io/xtd/reference_guides/latest/group_
 * [Release notes](https://gammasoft71.github.io/xtd/docs/documentation/release_notes) provides release notes information.
 * [Roadmap](https://gammasoft71.github.io/xtd/docs/documentation/roadmap) provides a view of the xtd roadmap.
 * [Kanban board](https://github.com/users/gammasoft71/projects/3) provides a Kanban view for all tasks (enhancements, pull requests, bugs, questions,...).
-* [Development status](https://gammasoft71.github.io/xtd/docs/documentation/development_status)) provides information about classes and libraries development status.
+* [Development status](https://gammasoft71.github.io/xtd/docs/documentation/development_status) provides information about classes and libraries development status.
 * [Translation status](https://gammasoft71.github.io/xtd/docs/documentation/translation_status) provides information about translations status.
 
 ## Current release status
