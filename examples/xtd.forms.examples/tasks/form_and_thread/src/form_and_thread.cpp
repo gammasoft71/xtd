@@ -1,7 +1,7 @@
 #include <xtd/xtd>
 #include <atomic>
 
-namespace task_example {
+namespace thread_example {
   class form1 : public form {
   public:
     static void main() {
@@ -100,4 +100,4 @@ namespace task_example {
   };
 }
 
-startup_(task_example::form1::main);
+startup_(thread_example::form1::main);
