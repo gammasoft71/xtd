@@ -1,4 +1,5 @@
 #include <xtd/xtd>
+#include <atomic>
 
 class form_and_threads : public form {
 public:
@@ -32,7 +33,7 @@ private:
   }
     
   list_box messages;
-  bool closed = false;
+  std::atomic<bool> closed = false;
 };
 
 auto main() -> int {
