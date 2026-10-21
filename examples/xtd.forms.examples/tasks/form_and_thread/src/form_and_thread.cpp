@@ -1,4 +1,5 @@
 #include <xtd/xtd>
+#include <atomic>
 
 namespace task_example {
   class form1 : public form {
@@ -87,7 +88,7 @@ namespace task_example {
       });
     }
     
-    bool worker_cancellation = false;
+    std::atomic<bool> worker_cancellation = false;
     thread worker;
     panel command_panel;
     panel progress_panel;
