@@ -2,6 +2,7 @@
 #include "../../../include/xtd/forms/application.hpp"
 #include <xtd/action>
 #include <xtd/invalid_operation_exception>
+#include <atomic>
 
 using namespace xtd;
 using namespace xtd::forms;
@@ -9,10 +10,10 @@ using namespace xtd::helpers;
 
 struct background_worker::data {
   any_object argument;
-  bool cancellation_pending = false;
-  bool is_busy = false;
-  bool worker_reports_progress = false;
-  bool worker_supports_cancellation = false;
+  std::atomic<bool> cancellation_pending = false;
+  std::atomic<bool> is_busy = false;
+  std::atomic<bool> worker_reports_progress = false;
+  std::atomic<bool> worker_supports_cancellation = false;
   progress_changed_event_args event {0, any_object {}};
   xtd::uptr<form> invoker;
   action<> worker;
