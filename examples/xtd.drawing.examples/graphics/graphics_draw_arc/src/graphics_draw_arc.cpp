@@ -7,7 +7,7 @@ auto main() -> int {
   auto drawing_bitmap = bitmap {640, 480};
   auto graphics = graphics::from_image(drawing_bitmap);
   
-  auto start_angle = 45.0f; // 45°
+  auto start_angle = 0.0f; // 0°
   auto sweep_angle = 90.0f; // 90°
   graphics.draw_arc(pens::dodger_blue(20.0f), rectangle {120, 40, 400, 400}, start_angle, sweep_angle);
   graphics.draw_arc(pens::red(20.0f), rectangle {120, 40, 400, 400}, 180.0f, 90.0f);
