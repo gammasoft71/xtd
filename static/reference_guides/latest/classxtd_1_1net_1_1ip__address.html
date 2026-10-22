@@ -140,7 +140,7 @@ Inheritance diagram for xtd::net::ip_address:</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">class </span>test_ip_address {</div>
 <div class="line"><span class="keyword">public</span>:</div>
-<div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main(<span class="keyword">const</span> <a class="code hl_typedef" href="group__xtd__core.html#gabf5d378737c3b0846431d6b51496ebfa">argument_collection</a>&amp; args) {</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main(<span class="keyword">const</span> <a class="code hl_typedef" href="group__xtd__core.html#gabf5d378737c3b0846431d6b51496ebfa">argument_collection</a>&amp; <a class="code hl_function" href="namespacextd.html#a6e2284978d6d07b19ff5ba8440e14215">args</a>) {</div>
 <div class="line">    <span class="keyword">auto</span> server = <a class="code hl_typedef" href="group__strings.html#ga80050d927e8b925c2668c1faebf0b941">text::string_builder</a> {};</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// Define a regular expression to parse user&#39;s input.</span></div>
@@ -148,7 +148,7 @@ Inheritance diagram for xtd::net::ip_address:</div>
 <div class="line">    <span class="comment">// alphanumeric input string between 2 to 40 character long.</span></div>
 <div class="line">    <span class="keyword">auto</span> rex = std::regex {R<span class="stringliteral">&quot;(^[a-zA-Z]\w{1,39}$)&quot;};</span></div>
 <div class="line"><span class="stringliteral">    </span></div>
-<div class="line"><span class="stringliteral">    </span><span class="keywordflow">if</span> (args.<a class="code hl_function" href="classxtd_1_1basic__array.html#a9d5d3b513ccae2470ae034fac4cb85ad">length</a>() &lt; 1) {</div>
+<div class="line"><span class="stringliteral">    </span><span class="keywordflow">if</span> (<a class="code hl_function" href="namespacextd.html#a6e2284978d6d07b19ff5ba8440e14215">args</a>.length() &lt; 1) {</div>
 <div class="line">      <span class="comment">// If no server name is passed as an argument to this program, use the current</span></div>
 <div class="line">      <span class="comment">// server name as default.</span></div>
 <div class="line">      server = <a class="code hl_function" href="classxtd_1_1net_1_1dns.html#a3c476eaaf93bfec088f0a82fde71f81b">net::dns::get_host_name</a>();</div>
@@ -250,7 +250,6 @@ Inheritance diagram for xtd::net::ip_address:</div>
 <div class="line"><span class="comment">// ip_v6_none: ::</span></div>
 <div class="line"><span class="comment">// is_loopback(ip_v6_loopback): true</span></div>
 <div class="line"><span class="comment">// is_loopback(loopback):true</span></div>
-<div class="ttc" id="aclassxtd_1_1basic__array_html_a9d5d3b513ccae2470ae034fac4cb85ad"><div class="ttname"><a href="classxtd_1_1basic__array.html#a9d5d3b513ccae2470ae034fac4cb85ad">xtd::basic_array::length</a></div><div class="ttdeci">virtual auto length() const noexcept -&gt; size_type</div><div class="ttdoc">Gets a size that represents the total number of elements in all the dimensions of the array.</div><div class="ttdef"><b>Definition</b> basic_array.hpp:122</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html_abd86463570c9aa0ca88ce4bb118aef7d"><div class="ttname"><a href="classxtd_1_1console.html#abd86463570c9aa0ca88ce4bb118aef7d">xtd::console::write</a></div><div class="ttdeci">static auto write(arg_t &amp;&amp;value) -&gt; void</div><div class="ttdoc">Writes the text representation of the specified value to the standard output stream.</div><div class="ttdef"><b>Definition</b> console.hpp:490</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae600c08b996905be13225bba0f253a63"><div class="ttname"><a href="classxtd_1_1console.html#ae600c08b996905be13225bba0f253a63">xtd::console::write_line</a></div><div class="ttdeci">static auto write_line() -&gt; void</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
 <div class="ttc" id="aclassxtd_1_1net_1_1dns_html_a1728b0ce52a52a0f25e9eebb9a0e0aba"><div class="ttname"><a href="classxtd_1_1net_1_1dns.html#a1728b0ce52a52a0f25e9eebb9a0e0aba">xtd::net::dns::get_host_entry</a></div><div class="ttdeci">static auto get_host_entry(const xtd::net::ip_address &amp;address) -&gt; xtd::net::ip_host_entry</div><div class="ttdoc">Resolves an IP address to an xtd::net::ip_host_entry instance.</div></div>
@@ -259,6 +258,7 @@ Inheritance diagram for xtd::net::ip_address:</div>
 <div class="ttc" id="agroup__strings_html_ga80050d927e8b925c2668c1faebf0b941"><div class="ttname"><a href="group__strings.html#ga80050d927e8b925c2668c1faebf0b941">xtd::text::string_builder</a></div><div class="ttdeci">xtd::text::basic_string_builder&lt; char &gt; string_builder</div><div class="ttdoc">Represents a mutable string of characters of UTF-8 code units. This class cannot be inherited.</div><div class="ttdef"><b>Definition</b> string_builder.hpp:19</div></div>
 <div class="ttc" id="agroup__xtd__core_html_gabf5d378737c3b0846431d6b51496ebfa"><div class="ttname"><a href="group__xtd__core.html#gabf5d378737c3b0846431d6b51496ebfa">xtd::argument_collection</a></div><div class="ttdeci">xtd::array&lt; xtd::string &gt; argument_collection</div><div class="ttdoc">Represents the collection of arguments passed to the main entry point method.</div><div class="ttdef"><b>Definition</b> argument_collection.hpp:19</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">xtd::console_key::i</a></div><div class="ttdeci">@ i</div><div class="ttdoc">The I key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:104</div></div>
+<div class="ttc" id="anamespacextd_html_a6e2284978d6d07b19ff5ba8440e14215"><div class="ttname"><a href="namespacextd.html#a6e2284978d6d07b19ff5ba8440e14215">xtd::args</a></div><div class="ttdeci">auto args() -&gt; xtd::argument_collection</div><div class="ttdoc">Returns a string array containing the command-line arguments for the current process.</div><div class="ttdef"><b>Definition</b> environment.hpp:706</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1net_1_1ip__address.html" title="Provides an Internet Protocol (IP) address.">xtd::net::ip_address</a> class contains the address of a computer on an IP network. </dd></dl>
 </div><table class="memberdecls">

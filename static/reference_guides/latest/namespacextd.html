@@ -118,9 +118,9 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <p>The xtd namespace contains all fundamental classes to access Hardware, OS, System, and more.</p>
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000022">Todo</a></b></dt><dd>remove when sorted_dictionay is developped. </dd></dl>
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000023">Todo</a></b></dt><dd>remove when sorted_dictionay is developped. </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000041">Todo</a></b></dt><dd>to remove </dd></dl>
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000043">Todo</a></b></dt><dd>to remove </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000044">Todo</a></b></dt><dd>to remove </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000045">Todo</a></b></dt><dd>to remove </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000046">Todo</a></b></dt><dd>to remove </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
@@ -1456,6 +1456,16 @@ Functions</h2></td></tr>
 <tr class="memitem:gab15efd87e15a37332a081be4508b0a61" id="r_gab15efd87e15a37332a081be4508b0a61"><td class="memTemplParams" colspan="2">template&lt;typename type_t&gt; </td></tr>
 <tr class="memitem:gab15efd87e15a37332a081be4508b0a61 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="group__xtd__core.html#gab15efd87e15a37332a081be4508b0a61">delete_uptr</a> (<a class="el" href="group__types.html#ga6c0a708a117d3b2967d6767f96b82baf">uptr</a>&lt; type_t &gt; &amp;ptr<a class="el" href="group__types.html#gabe4e3c1a0746e729140994ae7098d6e9">ptr</a>) -&gt; void</td></tr>
 <tr class="memdesc:gab15efd87e15a37332a081be4508b0a61"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="group__xtd__core.html#gab15efd87e15a37332a081be4508b0a61" title="xtd::delete_uptr operator delete a xtd::uptr object.">xtd::delete_uptr</a> operator delete a <a class="el" href="group__types.html#ga6c0a708a117d3b2967d6767f96b82baf" title="The xtd::uptr object is a unique pointer.">xtd::uptr</a> object.  <br /></td></tr>
+<tr class="memitem:a6e2284978d6d07b19ff5ba8440e14215" id="r_a6e2284978d6d07b19ff5ba8440e14215"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a6e2284978d6d07b19ff5ba8440e14215">args</a> () -&gt; <a class="el" href="group__xtd__core.html#gabf5d378737c3b0846431d6b51496ebfa">xtd::argument_collection</a></td></tr>
+<tr class="memdesc:a6e2284978d6d07b19ff5ba8440e14215"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a string array containing the command-line arguments for the current process.  <br /></td></tr>
+<tr class="memitem:adadb13b54fc58216870705db9c76c56a" id="r_adadb13b54fc58216870705db9c76c56a"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#adadb13b54fc58216870705db9c76c56a">envs</a> () -&gt; <a class="el" href="group__specialized__collections.html#ga5b478839a9ae14f854103b14c7951dc7">xtd::collections::specialized::string_dictionary</a></td></tr>
+<tr class="memdesc:adadb13b54fc58216870705db9c76c56a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves all environment variable names and their values from the current process.  <br /></td></tr>
+<tr class="memitem:aeaba554fd3dbd7dc1419a27cf78ed8d6" id="r_aeaba554fd3dbd7dc1419a27cf78ed8d6"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aeaba554fd3dbd7dc1419a27cf78ed8d6">envs</a> (<a class="el" href="group__xtd__core.html#ga83c52fe4c5b8fa21b9bf0bba21b0634d">xtd::environment_variable_target</a> target) -&gt; <a class="el" href="group__specialized__collections.html#ga5b478839a9ae14f854103b14c7951dc7">xtd::collections::specialized::string_dictionary</a></td></tr>
+<tr class="memdesc:aeaba554fd3dbd7dc1419a27cf78ed8d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves all environment variable names and their values from the current process, or from the Windows operating system registry key for the current user or local machine.  <br /></td></tr>
+<tr class="memitem:aca65fa9bcaa4fbb91b10c8ff954a40d1" id="r_aca65fa9bcaa4fbb91b10c8ff954a40d1"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aca65fa9bcaa4fbb91b10c8ff954a40d1">env</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;variable) -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td></tr>
+<tr class="memdesc:aca65fa9bcaa4fbb91b10c8ff954a40d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the value of an environment variable from the current process.  <br /></td></tr>
+<tr class="memitem:a783c127f5f3045779c896b47a02167f6" id="r_a783c127f5f3045779c896b47a02167f6"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a783c127f5f3045779c896b47a02167f6">env</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;variable, <a class="el" href="group__xtd__core.html#ga83c52fe4c5b8fa21b9bf0bba21b0634d">xtd::environment_variable_target</a> target) -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td></tr>
+<tr class="memdesc:a783c127f5f3045779c896b47a02167f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the value of an environment variable from the current process or from the Windows operating system registry key for the current user or local machine.  <br /></td></tr>
 <tr class="memitem:gab742c10192ef06aa7ca460264da512d1" id="r_gab742c10192ef06aa7ca460264da512d1"><td class="memTemplParams" colspan="2">template&lt;typename ... args_t&gt; </td></tr>
 <tr class="memitem:gab742c10192ef06aa7ca460264da512d1 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="group__format__parse.html#gab742c10192ef06aa7ca460264da512d1">format</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;fmt, args_t &amp;&amp;... args) -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td></tr>
 <tr class="memdesc:gab742c10192ef06aa7ca460264da512d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the text representation of the specified arguments list, to string using the specified format information.  <br /></td></tr>
@@ -6465,6 +6475,214 @@ template&lt;typename type_t&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The const pointer of <span class="tt"><a class="el" href="group__types.html#ga03b6109bac255dc61a3df38c5d80a46c" title="Stores information about a type.">type</a></span>. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Forms lvalue pointer to const type of <span class="tt"><a class="el" href="group__types.html#ga03b6109bac255dc61a3df38c5d80a46c" title="Stores information about a type.">type</a></span>. </dd></dl>
+
+</div>
+</div>
+<a id="a6e2284978d6d07b19ff5ba8440e14215" name="a6e2284978d6d07b19ff5ba8440e14215"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e2284978d6d07b19ff5ba8440e14215">&#9670;&#160;</a></span>args()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto xtd::args </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> -&gt; <a class="el" href="group__xtd__core.html#gabf5d378737c3b0846431d6b51496ebfa">xtd::argument_collection</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a string array containing the command-line arguments for the current process. </p>
+<dl class="section return"><dt>Returns</dt><dd>An array of string where each element contains a command-line argument. The first element is the executable file name, and the following zero or more elements contain the remaining command-line arguments. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The first element in the array contains the file name of the executing program. If the file name is not available, the first element is equal to string empty "". The remaining elements contain any additional tokens entered on the command line. </dd>
+<dd>
+The program file name can, but is not required to, include path information. </dd>
+<dd>
+Command line arguments are delimited by spaces. You can use double quotation marks (") to include spaces within an argument. The single quotation mark ('), however, does not provide this functionality.
+@remarks If a double quotation mark follows two or an even number of backslashes, each proceeding backslash pair is replaced with one backslash and the double quotation mark is removed. If a double quotation mark follows an odd number of backslashes, including just one, each preceding pair is replaced with one backslash and the remaining backslash is removed; however, in this case the double quotation mark is not removed.
+@remarks The following table shows how command line arguments can be delimited, and assumes MyApp as the current executing application.
+&lt;table class="markdownTable"&gt;
+  &lt;tr class="markdownTableHead"&gt;    &lt;th class="markdownTableHeadNone"&gt; Input at the command line  </dd></dl>
+<p>Resulting command line arguments  </p>
+<p>MyApp alpha beta  </p>
+<p>MyApp, alpha, beta  </p>
+<p>MyApp "alpha with spaces" "beta with spaces"  </p>
+<p>MyApp, alpha with spaces, beta with spaces  </p>
+<p>MyApp 'alpha with spaces' beta  </p>
+<p>MyApp, 'alpha, with, spaces', beta  </p>
+<p>MyApp \\alpha \\"beta  </p>
+<p>MyApp, \\alpha, \beta  </p>
+<p>MyApp \\"alpha "beta  </p>
+<p>MyApp, \"alpha, "beta  </p>
+<dl class="section remark"><dt>Remarks</dt><dd>To obtain the command line as a single string, use the <a class="el" href="classxtd_1_1environment.html#ae61bce6f05e6c16abe335bfdb81f6711" title="Gets the command line for this process.">xtd::environment::command_line</a> method. </dd></dl>
+
+</div>
+</div>
+<a id="adadb13b54fc58216870705db9c76c56a" name="adadb13b54fc58216870705db9c76c56a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adadb13b54fc58216870705db9c76c56a">&#9670;&#160;</a></span>envs() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto xtd::envs </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> -&gt; <a class="el" href="group__specialized__collections.html#ga5b478839a9ae14f854103b14c7951dc7">xtd::collections::specialized::string_dictionary</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retrieves all environment variable names and their values from the current process. </p>
+<dl class="section return"><dt>Returns</dt><dd>std::map A dictionary that contains all environment variable names and their values; otherwise, an empty dictionary if no environment variables are found. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The names and values for the environment variables are stored as key-value pairs in the returned <a class="el" href="group__specialized__collections.html#ga5b478839a9ae14f854103b14c7951dc7" title="Represents a xtd::collections::generic::dictionary with the key and the value strongly typed to be st...">xtd::collections::specialized::string_dictionary</a>. </dd></dl>
+
+</div>
+</div>
+<a id="aeaba554fd3dbd7dc1419a27cf78ed8d6" name="aeaba554fd3dbd7dc1419a27cf78ed8d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeaba554fd3dbd7dc1419a27cf78ed8d6">&#9670;&#160;</a></span>envs() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto xtd::envs </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__xtd__core.html#ga83c52fe4c5b8fa21b9bf0bba21b0634d">xtd::environment_variable_target</a></td>          <td class="paramname"><span class="paramname"><em>target</em></span></td><td>)</td>
+          <td> -&gt; <a class="el" href="group__specialized__collections.html#ga5b478839a9ae14f854103b14c7951dc7">xtd::collections::specialized::string_dictionary</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retrieves all environment variable names and their values from the current process, or from the Windows operating system registry key for the current user or local machine. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">target</td><td>One of the <a class="el" href="group__xtd__core.html#ga83c52fe4c5b8fa21b9bf0bba21b0634d" title="Specifies the location where an environment variable is stored or retrieved in a set or get operation...">environment_variable_target</a> values. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::map A dictionary that contains all environment variable names and their values from the source specified by the target parameter; otherwise, an empty dictionary if no environment variables are found. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>target is not a valid <a class="el" href="group__xtd__core.html#ga83c52fe4c5b8fa21b9bf0bba21b0634d" title="Specifies the location where an environment variable is stored or retrieved in a set or get operation...">environment_variable_target</a> value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The names and values for the environment variables are stored as key-value pairs in the returned <a class="el" href="group__specialized__collections.html#ga5b478839a9ae14f854103b14c7951dc7" title="Represents a xtd::collections::generic::dictionary with the key and the value strongly typed to be st...">xtd::collections::specialized::string_dictionary</a>.</dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000025">Todo</a></b></dt><dd>Add xtd::registry and uncomment lines. </dd></dl>
+
+</div>
+</div>
+<a id="aca65fa9bcaa4fbb91b10c8ff954a40d1" name="aca65fa9bcaa4fbb91b10c8ff954a40d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca65fa9bcaa4fbb91b10c8ff954a40d1">&#9670;&#160;</a></span>env() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto xtd::env </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>variable</em></span></td><td>)</td>
+          <td> -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retrieves the value of an environment variable from the current process. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">variable</td><td>The name of the environment variable. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> The value of the environment variable specified by variable, or empty "" if the environment variable is not found. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The get_environment_variable(xtd::string) method retrieves an environment variable from the environment block of the current process only. It is equivalent to calling the xtd::environment::get_environment_variable(xtd::string, xtd::environment_variable_target) method with a target value of <a class="el" href="group__xtd__core.html#gga83c52fe4c5b8fa21b9bf0bba21b0634da5075140835d0bc504791c76b04c33d2b" title="The environment variable is stored or retrieved from the environment block associated with the curren...">xtd::environment_variable_target::process</a>. </dd>
+<dd>
+To retrieve all environment variables along with their values, call the <a class="el" href="classxtd_1_1environment.html#a58fca977c02c022c4872b17784a83f42" title="Retrieves all environment variable names and their values from the current process.">xtd::environment::get_environment_variables</a> method. </dd>
+<dd>
+Environment variable names are case-sensitive on Linux and macOS but are not case-sensitive on Windows. </dd></dl>
+
+</div>
+</div>
+<a id="a783c127f5f3045779c896b47a02167f6" name="a783c127f5f3045779c896b47a02167f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a783c127f5f3045779c896b47a02167f6">&#9670;&#160;</a></span>env() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto xtd::env </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>variable</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__xtd__core.html#ga83c52fe4c5b8fa21b9bf0bba21b0634d">xtd::environment_variable_target</a></td>          <td class="paramname"><span class="paramname"><em>target</em></span>&#160;) -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retrieves the value of an environment variable from the current process or from the Windows operating system registry key for the current user or local machine. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">variable</td><td>The name of an environment variable. </td></tr>
+    <tr><td class="paramname">target</td><td>One of the EnvironmentVariableTarget values. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>target is not a valid <a class="el" href="group__xtd__core.html#ga83c52fe4c5b8fa21b9bf0bba21b0634d" title="Specifies the location where an environment variable is stored or retrieved in a set or get operation...">environment_variable_target</a> value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> The value of the environment variable specified by the variable and target parameters, or empty "" if the environment variable is not found. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>To retrieve all environment variables along with their values, call the <a class="el" href="classxtd_1_1environment.html#a58fca977c02c022c4872b17784a83f42" title="Retrieves all environment variable names and their values from the current process.">xtd::environment::get_environment_variables</a> method. </dd>
+<dd>
+Environment variable names are case-sensitive on Linux and macOS but are not case-sensitive on Windows.</dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000026">Todo</a></b></dt><dd>Add xtd::registry and uncomment lines. </dd></dl>
 
 </div>
 </div>

@@ -858,8 +858,8 @@ The <a class="el" href="#a5cae4facc4186e5a89bc400c25ed3006" title="Returns an en
 <div class="line"> </div>
 <div class="line"><span class="keyword">class </span>program {</div>
 <div class="line"><span class="keyword">public</span>:</div>
-<div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main(<span class="keyword">const</span> <a class="code hl_typedef" href="group__xtd__core.html#gabf5d378737c3b0846431d6b51496ebfa">argument_collection</a>&amp; args) {</div>
-<div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">string</span> <a class="code hl_class" href="classxtd_1_1io_1_1path.html">path</a> : args) {</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main(<span class="keyword">const</span> <a class="code hl_typedef" href="group__xtd__core.html#gabf5d378737c3b0846431d6b51496ebfa">argument_collection</a>&amp; <a class="code hl_function" href="namespacextd.html#a6e2284978d6d07b19ff5ba8440e14215">args</a>) {</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">string</span> <a class="code hl_class" href="classxtd_1_1io_1_1path.html">path</a> : <a class="code hl_function" href="namespacextd.html#a6e2284978d6d07b19ff5ba8440e14215">args</a>) {</div>
 <div class="line">      <span class="keywordflow">if</span> (<a class="code hl_function" href="classxtd_1_1io_1_1file.html#a178c4938dbf396e1b4230c4d699fc58b">file::exists</a>(<a class="code hl_class" href="classxtd_1_1io_1_1path.html">path</a>)) {</div>
 <div class="line">        <span class="comment">// This path is a file</span></div>
 <div class="line">        process_file(<a class="code hl_class" href="classxtd_1_1io_1_1path.html">path</a>);</div>
@@ -898,6 +898,7 @@ The <a class="el" href="#a5cae4facc4186e5a89bc400c25ed3006" title="Returns an en
 <div class="ttc" id="aclassxtd_1_1io_1_1path_html"><div class="ttname"><a href="classxtd_1_1io_1_1path.html">xtd::io::path</a></div><div class="ttdoc">Performs operations on std::basic_string instances that contain file or directory path information....</div><div class="ttdef"><b>Definition</b> path.hpp:33</div></div>
 <div class="ttc" id="agroup__xtd__core_html_gabf5d378737c3b0846431d6b51496ebfa"><div class="ttname"><a href="group__xtd__core.html#gabf5d378737c3b0846431d6b51496ebfa">xtd::argument_collection</a></div><div class="ttdeci">xtd::array&lt; xtd::string &gt; argument_collection</div><div class="ttdoc">Represents the collection of arguments passed to the main entry point method.</div><div class="ttdef"><b>Definition</b> argument_collection.hpp:19</div></div>
 <div class="ttc" id="anamespacextd_1_1collections_1_1generic_html"><div class="ttname"><a href="namespacextd_1_1collections_1_1generic.html">xtd::collections::generic</a></div><div class="ttdoc">The xtd::collections::generic namespace contains interfaces and classes that define generic collectio...</div><div class="ttdef"><b>Definition</b> comparer.hpp:16</div></div>
+<div class="ttc" id="anamespacextd_html_a6e2284978d6d07b19ff5ba8440e14215"><div class="ttname"><a href="namespacextd.html#a6e2284978d6d07b19ff5ba8440e14215">xtd::args</a></div><div class="ttdeci">auto args() -&gt; xtd::argument_collection</div><div class="ttdoc">Returns a string array containing the command-line arguments for the current process.</div><div class="ttdef"><b>Definition</b> environment.hpp:706</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The path parameter is permitted to specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. </dd>
 <dd>
