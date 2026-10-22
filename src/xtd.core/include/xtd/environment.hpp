@@ -657,7 +657,7 @@ namespace xtd {
     /// | MyApp \\\\\"alpha \"beta                     | MyApp, \\"alpha, "beta                     |
     /// @remarks To obtain the command line as a single string, use the xtd::environment::command_line method.
     static auto set_command_line_args(const xtd::argument_collection& args) -> void;
-
+    
     /// @brief Creates, modifies, or deletes an environment variable stored in the current process.
     /// @param variable The name of an environment variable.
     /// @param value A value to assign to variable.
@@ -686,6 +686,53 @@ namespace xtd {
     static signal_catcher signal_catcher_;
     static xtd::argument_collection args_;
   };
+  
+  
+  /// @brief Returns a string array containing the command-line arguments for the current process.
+  /// @return An array of string where each element contains a command-line argument. The first element is the executable file name, and the following zero or more elements contain the remaining command-line arguments.
+  /// @remarks The first element in the array contains the file name of the executing program. If the file name is not available, the first element is equal to string empty "". The remaining elements contain any additional tokens entered on the command line.
+  /// @remarks The program file name can, but is not required to, include path information.
+  /// @remarks Command line arguments are delimited by spaces. You can use double quotation marks (") to include spaces within an argument. The single quotation mark ('), however, does not provide this functionality.
+  /// @remarks If a double quotation mark follows two or an even number of backslashes, each proceeding backslash pair is replaced with one backslash and the double quotation mark is removed. If a double quotation mark follows an odd number of backslashes, including just one, each preceding pair is replaced with one backslash and the remaining backslash is removed; however, in this case the double quotation mark is not removed.
+  /// @remarks The following table shows how command line arguments can be delimited, and assumes MyApp as the current executing application.
+  /// | Input at the command line                    | Resulting command line arguments           |
+  /// | -------------------------------------------- | ------------------------------------------ |
+  /// | MyApp alpha beta                             | MyApp, alpha, beta                         |
+  /// | MyApp "alpha with spaces" "beta with spaces" | MyApp, alpha with spaces, beta with spaces |
+  /// | MyApp 'alpha with spaces' beta               | MyApp, 'alpha, with, spaces', beta         |
+  /// | MyApp \\\alpha \\\\"beta                     | MyApp, \\\alpha, \\beta                    |
+  /// | MyApp \\\\\"alpha \"beta                     | MyApp, \\"alpha, "beta                     |
+  /// @remarks To obtain the command line as a single string, use the xtd::environment::command_line method.
+  [[nodiscard]] inline auto args() -> xtd::argument_collection {return xtd::environment::get_command_line_args();}
+  
+  /// @brief Retrieves all environment variable names and their values from the current process.
+  /// @return std::map A dictionary that contains all environment variable names and their values; otherwise, an empty dictionary if no environment variables are found.
+  /// @remarks The names and values for the environment variables are stored as key-value pairs in the returned xtd::collections::specialized::string_dictionary.
+  [[nodiscard]] inline auto envs() -> xtd::collections::specialized::string_dictionary {return xtd::environment::get_environment_variables();}
+  /// @brief Retrieves all environment variable names and their values from the current process, or from the Windows operating system registry key for the current user or local machine.
+  /// @param target One of the environment_variable_target values.
+  /// @return std::map A dictionary that contains all environment variable names and their values from the source specified by the target parameter; otherwise, an empty dictionary if no environment variables are found.
+  /// @exception std::invalid_argument target is not a valid environment_variable_target value.
+  /// @remarks The names and values for the environment variables are stored as key-value pairs in the returned xtd::collections::specialized::string_dictionary.
+  /// @todo Add xtd::registry and uncomment lines.
+  [[nodiscard]] inline auto envs(xtd::environment_variable_target target) -> xtd::collections::specialized::string_dictionary {return xtd::environment::get_environment_variables(target);}
+
+  /// @brief Retrieves the value of an environment variable from the current process.
+  /// @param variable The name of the environment variable.
+  /// @return xtd::string The value of the environment variable specified by variable, or empty "" if the environment variable is not found.
+  /// @remarks The get_environment_variable(xtd::string) method retrieves an environment variable from the environment block of the current process only. It is equivalent to calling the xtd::environment::get_environment_variable(xtd::string, xtd::environment_variable_target) method with a target value of xtd::environment_variable_target::process.
+  /// @remarks To retrieve all environment variables along with their values, call the xtd::environment::get_environment_variables method.
+  /// @remarks Environment variable names are case-sensitive on Linux and macOS but are not case-sensitive on Windows.
+  [[nodiscard]] inline auto env(const xtd::string& variable) -> xtd::string {return xtd::environment::get_environment_variable(variable);}
+  /// @brief Retrieves the value of an environment variable from the current process or from the Windows operating system registry key for the current user or local machine.
+  /// @param variable The name of an environment variable.
+  /// @param target One of the EnvironmentVariableTarget values.
+  /// @exception std::invalid_argument target is not a valid environment_variable_target value.
+  /// @return xtd::string The value of the environment variable specified by the variable and target parameters, or empty "" if the environment variable is not found.
+  /// @remarks To retrieve all environment variables along with their values, call the xtd::environment::get_environment_variables method.
+  /// @remarks Environment variable names are case-sensitive on Linux and macOS but are not case-sensitive on Windows.
+  /// @todo Add xtd::registry and uncomment lines.
+  [[nodiscard]] inline auto env(const xtd::string& variable, xtd::environment_variable_target target) -> xtd::string {return xtd::environment::get_environment_variable(variable, target);}
 }
 
 /// @cond
