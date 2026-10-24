@@ -30,7 +30,7 @@ namespace xtd {
       /// @par Library
       /// xtd.core
       /// @ingroup xtd_core concurrent_collections
-      template<typename type_t>
+      template<typename type_t, typename container_t = std::deque<type_t>>
       class concurrent_stack : public xtd::object, public xtd::collections::concurrent::iproducer_consumer_collection<type_t> {
       public:
         /// @name Public Aliases
@@ -43,7 +43,7 @@ namespace xtd {
         /// @brief Represents the const reference of list value type.
         using const_reference = const value_type&;
         /// @brief Represents the concurrent bag collection type.
-        using collection_type = xtd::collections::generic::stack<value_type>;
+        using collection_type = xtd::collections::generic::stack<type_t, container_t>;
         /// @}
         
         /// @name Public Conctructors
