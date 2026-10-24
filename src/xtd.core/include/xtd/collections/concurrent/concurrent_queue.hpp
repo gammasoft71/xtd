@@ -23,7 +23,7 @@ namespace xtd {
       /// ```
       /// @par Header
       /// ```cpp
-      /// #include <xtd/collections/concurrent/iproducer_consumer_collection>
+      /// #include <xtd/collections/concurrent/concurrent_queue>
       /// ```
       /// @par Namespace
       /// xtd::collections::concurrent
