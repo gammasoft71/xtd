@@ -33,7 +33,7 @@ namespace xtd {
       /// @par Library
       /// xtd.core
       /// @ingroup xtd_core concurrent_collections
-      template<typename type_t, typename container_t = std::deque<type_t>, typename hasher_t = xtd::collections::generic::helpers::hasher<xtd::intptr>, typename equator_t = xtd::collections::generic::helpers::equator<xtd::intptr>>
+      template<typename type_t, typename container_t = std::deque<type_t>, typename hasher_t = xtd::collections::generic::helpers::hasher<xtd::intptr>, typename equator_t = xtd::collections::generic::helpers::equator<xtd::intptr>, template<typename> typename allocator_t = xtd::collections::generic::helpers::allocator>
       class concurrent_bag : public xtd::object, public xtd::collections::concurrent::iproducer_consumer_collection<type_t> {
       public:
         /// @name Public Aliases
@@ -50,7 +50,7 @@ namespace xtd {
         /// @brief Represents the concurrent bag collection type.
         using local_storage_type = collection_type*;
         /// @brief Represents the concurrent bag collection type.
-        using storage_type = xtd::collections::generic::dictionary<xtd::intptr, xtd::ptr<collection_type>, hasher_t, equator_t>;
+        using storage_type = xtd::collections::generic::dictionary<xtd::intptr, xtd::ptr<collection_type>, hasher_t, equator_t, allocator_t<std::pair<const xtd::intptr, xtd::ptr<collection_type>>>>;
         /// @}
 
         /// @name Public Conctructors
