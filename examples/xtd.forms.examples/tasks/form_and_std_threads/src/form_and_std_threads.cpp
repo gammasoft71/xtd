@@ -5,7 +5,7 @@
 class form_and_threads : public form {
 public:
   form_and_threads() {
-    text("Form and threads");
+    text("Form and threads (std::thread)");
     form_closed += delegate_ {closed = true;};
     messages.parent(self_).dock(dock_style::fill);
    
