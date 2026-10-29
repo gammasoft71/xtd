@@ -127,7 +127,7 @@ namespace xtd {
     /// if (items.index_of(50) == index::end)
     ///   console::write_line("Value not found");
     /// ```
-    /// The wollowing exemple shows the same example with bitwise operator as index.
+    /// The wollowing example shows the same example with bitwise operator as index.
     /// ```cpp
     /// auto items = array {10, 20, 30, 40};
     /// if (items.index_of(50) == ~0_i)
@@ -145,7 +145,7 @@ namespace xtd {
     /// console::write_line(items[index::last]); // Prints 40
     /// console::write_line(items[index::last - 1]); // Prints 30
     /// ```
-    /// The wollowing exemple shows the same example with bitwise operator as index.
+    /// The wollowing example shows the same example with bitwise operator as index.
     /// ```cpp
     /// auto items = array {10, 20, 30, 40};
     /// console::write_line(items[~1_i]); // Prints 40
@@ -163,7 +163,7 @@ namespace xtd {
     /// println(items[index::start]); // Prints 10
     /// println(items[index::start + 1]); // Prints 20
     /// ```
-    /// The wollowing exemple shows the same example without index.
+    /// The wollowing example shows the same example without index.
     /// ```cpp
     /// auto items = array {10, 20, 30, 40};
     /// console::write_line(items[0]); // Prints 10

@@ -613,25 +613,25 @@ main_form::main_form() {
       }
     } else if (open_xtd_examples_panel_.visible()) {
       auto xtd_example = xtd_example_item();
-      string exemple_subproject_path;
+      string example_subproject_path;
       if (open_xtd_example_tab_control_.selected_index() == 0) {
         xtd_example = as<xtd_example_item>(open_xtd_example_core_list_box_.selected_item().tag());
-        exemple_subproject_path = "xtd.core.examples";
+        example_subproject_path = "xtd.core.examples";
       } else if (open_xtd_example_tab_control_.selected_index() == 1) {
         xtd_example = as<xtd_example_item>(open_xtd_example_drawing_list_box_.selected_item().tag());
-        exemple_subproject_path = "xtd.drawing.examples";
+        example_subproject_path = "xtd.drawing.examples";
       } else if (open_xtd_example_tab_control_.selected_index() == 2) {
         xtd_example = as<xtd_example_item>(open_xtd_example_forms_list_box_.selected_item().tag());
-        exemple_subproject_path = "xtd.forms.examples";
+        example_subproject_path = "xtd.forms.examples";
       } else if (open_xtd_example_tab_control_.selected_index() == 3) {
         xtd_example = as<xtd_example_item>(open_xtd_example_tunit_list_box_.selected_item().tag());
-        exemple_subproject_path = "xtd.tunit.examples";
+        example_subproject_path = "xtd.tunit.examples";
       } else if (open_xtd_example_tab_control_.selected_index() == 4) {
         xtd_example = as<xtd_example_item>(open_xtd_example_cmake_list_box_.selected_item().tag());
-        exemple_subproject_path = "xtd.cmake.examples";
+        example_subproject_path = "xtd.cmake.examples";
       }
       
-      auto target_path = path::combine(path::get_temp_path(), exemple_subproject_path, path::get_file_name(xtd_example.path()));
+      auto target_path = path::combine(path::get_temp_path(), example_subproject_path, path::get_file_name(xtd_example.path()));
       if (directory::exists(target_path)) directory::remove(target_path, true);
       directory::create_directory(target_path);
       copy_directory(xtd_example.path(), target_path, true);
