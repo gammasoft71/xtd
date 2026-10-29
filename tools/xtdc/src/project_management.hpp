@@ -142,7 +142,7 @@ namespace xtdc_command {
       generate_project(name);
       return last_exit_code() == EXIT_SUCCESS ? operation_status::success : operation_status::error;
     }
-    
+
     operation_status build(const xtd::string& target, bool clean_first, bool release, bool verbose = true) const {
       if (!is_path_already_exist_and_not_empty(path_)) return operation_status::not_exist;
       if (clean_first) clean(release, verbose);
@@ -157,7 +157,7 @@ namespace xtdc_command {
         launch_and_wait_process("cmake", xtd::string::format("--build {}{}{}", xtd::io::path::combine(build_path(), release ? "Release" : "Debug"), xtd::string::is_empty(target) ? "" : xtd::string::format(" --target {}", target), clean_first ? xtd::string::format(" --clean-first {}", target) : "", xtd::string::format(" -- -j {}", xtd::environment::processor_count())), false, verbose);
       return last_exit_code() == EXIT_SUCCESS ? operation_status::success : operation_status::error;
     }
-    
+
     operation_status clean(bool release, bool verbose = true) const {
       if (!is_path_already_exist_and_not_empty(path_)) return operation_status::not_exist;
       auto build_path = xtd::environment::os_version().is_unix_platform() && !xtd::environment::os_version().is_macos_platform() ? xtd::io::path::combine(this->build_path(), release ? "Release" : "Debug") : this->build_path();
@@ -323,7 +323,17 @@ namespace xtdc_command {
       if (xtd::environment::os_version().is_linux()) return xtd::io::path::combine(build_path(), release ? "Release" : "Debug", target);
       return xtd::io::path::combine(build_path(), release ? "Release" : "Debug", target, target);
     }
-    
+
+    static auto get_toolchain() noexcept -> xtd::string {
+      constexpr auto vcpkg_root = "VCPKG_ROOT";
+      const auto& envs = xtd::environment::get_environment_variables();
+
+      if (!envs.contains_key(vcpkg_root)) return "";
+      auto toolchain = xtd::io::path::combine(envs[vcpkg_root], "scripts", "buildsystems", "vcpkg.cmake");
+      if (!xtd::io::file::exists(toolchain)) return "";
+      return " --toolchain=" + toolchain.quoted();
+    }
+
     xtd::string get_first_target_path(bool release) const {
       for (const auto& line : get_system_information())
         if (line.index_of("_BINARY_DIR:STATIC=") != xtd::string::npos) return make_platform_target_path(line.replace(xtd::string::format("{}_BINARY_DIR:STATIC=", line.substring(0, line.index_of("_BINARY_DIR:STATIC="))), xtd::string::empty_string), line.substring(0, line.index_of("_BINARY_DIR:STATIC=")), release);
@@ -560,20 +570,20 @@ namespace xtdc_command {
       change_current_directory current_directory {build_path()};
       if (!first_generation && xtd::string::is_empty(name)) name = get_name();
       if (xtd::environment::os_version().is_windows_platform() && (first_generation || (!xtd::io::file::exists(xtd::io::path::combine(build_path(), xtd::string::format("{}.slnx", name))) && !xtd::io::file::exists(xtd::io::path::combine(build_path(), xtd::string::format("{}.sln", name))))))
-        launch_and_wait_process("cmake", xtd::string::format("-S {} -B {}", path_, build_path()), false, verbose);
+        launch_and_wait_process("cmake", xtd::string::format("-S {} -B {}{}", path_, build_path(), get_toolchain()), false, verbose);
       else if (xtd::environment::os_version().is_macos_platform() && (first_generation || !xtd::io::directory::exists(xtd::io::path::combine(build_path(), xtd::string::format("{}.xcodeproj", name)))))
-        launch_and_wait_process("cmake", xtd::string::format("-S {} -B {} -G \"Xcode\"", path_, build_path()), false, verbose);
+        launch_and_wait_process("cmake", xtd::string::format("-S {} -B {} -G \"Xcode\"{}", path_, build_path(), get_toolchain()), false, verbose);
       else if (xtd::environment::os_version().is_unix_platform() && !xtd::environment::os_version().is_macos_platform()) {
         if (first_generation || !xtd::io::file::exists(xtd::io::path::combine(build_path(), "Debug", "makefile"))) {
           xtd::io::directory::create_directory(xtd::io::path::combine(build_path(), "Debug"));
           change_current_directory current_directory_debug {xtd::io::path::combine(build_path(), "Debug")};
-          launch_and_wait_process("cmake", xtd::string::format("-S {} -B {} -G \"Unix Makefiles\"", path_, xtd::io::path::combine(build_path(), "Debug")), false, verbose);
+          launch_and_wait_process("cmake", xtd::string::format("-S {} -B {} -G \"Unix Makefiles\"{}", path_, xtd::io::path::combine(build_path(), "Debug"), get_toolchain()), false, verbose);
         }
         
         if (first_generation || !xtd::io::file::exists(xtd::io::path::combine(build_path(), "Release", "makefile"))) {
           xtd::io::directory::create_directory(xtd::io::path::combine(build_path(), "Release"));
           change_current_directory current_directory_release {xtd::io::path::combine(build_path(), "Release")};
-          launch_and_wait_process("cmake", xtd::string::format("-S {} -B {} -G \"Unix Makefiles\"", path_, xtd::io::path::combine(build_path(), "Release")), false, verbose);
+          launch_and_wait_process("cmake", xtd::string::format("-S {} -B {} -G \"Unix Makefiles\"", path_, xtd::io::path::combine(build_path(), "Release"), get_toolchain()), false, verbose);
         }
       }
     }
