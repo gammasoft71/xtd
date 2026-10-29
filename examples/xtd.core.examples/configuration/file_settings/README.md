@@ -19,7 +19,7 @@ xtdc run
 
 ```
 ----------------------------------------
-"exemple.ini" file content :
+"example.ini" file content :
 # Settings file used by file_settings example.
 # Copyright (c) 2024 Gammasoft. All rights reserved.
 

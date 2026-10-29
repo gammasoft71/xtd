@@ -45,7 +45,7 @@ public:
   form1() {
     controls().add_range({button_dialog, input_text});
     size({800, 450});
-    text("User dialog exemple");
+    text("User dialog example");
     
     input_text.auto_size(true);
     input_text.location({10, 50});

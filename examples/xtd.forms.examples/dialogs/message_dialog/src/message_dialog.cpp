@@ -6,7 +6,7 @@ public:
     controls().add_range({button_show_message, label_dialog_result});
     location({400, 200});
     start_position(form_start_position::manual);
-    text("Message dialog exemple");
+    text("Message dialog example");
     
     button_show_message.location({10, 10});
     button_show_message.text("Message...");

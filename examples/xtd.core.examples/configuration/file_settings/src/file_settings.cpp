@@ -17,7 +17,7 @@ auto reset_file_settings() {
 auto read_file_settings() {
   auto file = configuration::file_settings {"example.ini"};
   console::write_line("----------------------------------------");
-  console::write_line("\"exemple.ini\" file content :");
+  console::write_line("\"example.ini\" file content :");
   console::write_line(file.to_string());
   console::write_line("----------------------------------------");
   console::write_line("read keys :");
@@ -37,7 +37,7 @@ auto main() -> int {
 // This code produces the following output :
 //
 // ----------------------------------------
-// "exemple.ini" file content :
+// "example.ini" file content :
 // # Settings file used by file_settings example.
 // # Copyright (c) 2024 Gammasoft. All rights reserved.
 //
