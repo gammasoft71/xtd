@@ -83,7 +83,7 @@ intptr xtd::drawing::native::toolkit::initialize() {
   #else
   as<wx_application>(wxApp::GetInstance())->CallOnInit();
   #endif
-  //#if defined(_WIN32) && wxCHECK_VERSION(3, 3, 0)
+  //#if defined(_WIN32) && wxVERSION_NUMBER >= 3300
   //wxTheApp->SetAppearance(wxApp::Appearance::System);
   //#endif
   wxTheApp->SetExitOnFrameDelete(false);
