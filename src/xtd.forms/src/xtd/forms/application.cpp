@@ -103,11 +103,11 @@ namespace {
   }
 }
 
+application_appearance application::application_appearance_ = application_appearance::system;
+bool application::button_images_ = true;
 xtd::forms::application_context application::internal_context_;
 xtd::forms::application_context* application::context_ = &application::internal_context_;
-bool application::button_images_ = true;
 bool application::font_size_correction_ = true;
-bool application::light_mode_ = false;
 bool application::menu_images_ = true;
 bool application::message_loop_ = false;
 bool application::raise_idle_ = false;
@@ -135,7 +135,21 @@ bool application::allow_quit() noexcept {
   }
 }
 
-xtd::forms::application_context& application::application_context() {
+auto application::application_appearance(xtd::forms::application_appearance appearance) -> void {
+  if (application_appearance_ == appearance) return;
+  application_appearance_ = appearance;
+  switch(application_appearance_) {
+    case application_appearance::system: native::application::enable_dark_mode(false); native::application::enable_light_mode(false); break;
+    case application_appearance::dark: native::application::enable_dark_mode(true); break;
+    case application_appearance::light: native::application::enable_light_mode(true); break;
+  }
+}
+
+auto application::application_appearance() noexcept -> xtd::forms::application_appearance {
+  return application_appearance_;
+}
+
+xtd::forms::application_context& application::application_context() noexcept {
   return *context_;
 }
 
@@ -176,20 +190,6 @@ xtd::string application::company_name() noexcept {
   }
 }
 
-bool application::dark_mode() noexcept {
-  try {
-    return native::application::dark_mode_enabled();
-  } catch (...) {
-    return false;
-  }
-}
-
-void application::dark_mode(bool value) {
-  if (application::application::message_loop_ == true) throw_helper::throws(exception_case::invalid_operation, "Call xtd::application::light_mode() before application::run()");
-  if (dark_mode() == value) return;
-  native::application::enable_dark_mode(value);
-}
-
 xtd::string application::executable_name() noexcept {
   return io::path::get_file_name(application::executable_path());
 }
@@ -209,22 +209,24 @@ void application::font_size_correction(bool value) {
   native::application::enable_font_size_correction(value);
 }
 
-bool application::light_mode() noexcept {
-  return !dark_mode();
+bool application::is_dark_appearance() noexcept {
+  try {
+    return native::application::dark_mode_enabled();
+  } catch (...) {
+    return false;
+  }
 }
 
-void application::light_mode(bool value) {
-  if (application::application::message_loop_ == true) throw_helper::throws(exception_case::invalid_operation, "Call xtd::application::light_mode() before application::run()");
-  if (light_mode() == value) return;
-  native::application::enable_light_mode(value);
+bool application::is_light_appearance() noexcept {
+  return !is_dark_appearance();
 }
 
 bool application::dark_mode_enabled() noexcept {
-  return dark_mode();
+  return is_dark_appearance();
 }
 
 bool application::light_mode_enabled() noexcept {
-  return light_mode();
+  return is_light_appearance();
 }
 
 std::optional<form_ref> application::main_form() {
@@ -363,11 +365,11 @@ void application::enable_button_images() {
 }
 
 void application::enable_dark_mode() {
-  dark_mode(true);
+  application_appearance(application_appearance::dark);
 }
 
 void application::enable_light_mode() {
-  light_mode(true);
+  application_appearance(application_appearance::light);
 }
 
 void application::enable_menu_images() {

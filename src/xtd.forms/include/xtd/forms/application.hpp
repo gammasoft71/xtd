@@ -6,6 +6,7 @@
 #include "../forms_namespace_aliases.hpp"
 #include "../threading/thread_exception_event_handler.hpp"
 #include "style_sheets/style_sheet.hpp"
+#include "application_appearance.hpp"
 #include "application_context.hpp"
 #include "form_collection.hpp"
 #include "imessage_filter.hpp"
@@ -59,10 +60,25 @@ namespace xtd {
       /// @remarks This method returns `false` if it is called from a control being hosted within a Web browser. Thus, the control cannot quit the application.
       [[nodiscard]] static auto allow_quit() noexcept -> bool;
       
+      /// @brief Sets application appearance.
+      /// @param value One of xtd::forms::application_appearance values. THe default is xtd::forms::application_appearance::system.
+      /// @remarks The application appearance determine how the application is shown:
+      /// * xtd::control::application_appearance::system : The appearance of the application is determined by the user's operating system.
+      /// * xtd::control::application_appearance::light : The appearance of the application is forced to light.
+      /// * xtd::control::application_appearance::dark : The appearance of the application is forced to dark.
+      static auto application_appearance(xtd::forms::application_appearance appearance) -> void;
+      /// @brief Gets application appearance.
+      /// @return One of xtd::forms::application_appearance values. THe default is xtd::forms::application_appearance::system.
+      /// @remarks The application appearance determine how the application is shown:
+      /// * xtd::control::application_appearance::system : The appearance of the application is determined by the user's operating system.
+      /// * xtd::control::application_appearance::light : The appearance of the application is forced to light.
+      /// * xtd::control::application_appearance::dark : The appearance of the application is forced to dark.
+      [[nodiscard]] static auto application_appearance() noexcept -> xtd::forms::application_appearance;
+
       /// @brief Gets the application context associate to the application.
       /// @return An application context.
       /// @remarks The application context can be created by the user and sent to the application when the xtd::forms::application::run method is called.
-      [[nodiscard]] static auto application_context() -> xtd::forms::application_context&;
+      [[nodiscard]] static auto application_context() noexcept -> xtd::forms::application_context&;
       
       /// @brief Gets button images are enabled.
       /// @return `true` if button images aree enabled; otherwise `false`.
@@ -101,14 +117,6 @@ namespace xtd {
       /// ```
       [[nodiscard]] static auto company_name() noexcept -> xtd::string;
       
-      /// @brief Gets a value indicating whether dark mode is enabled for the application.
-      /// @return True is dark mode enabled; otherwise `false`.
-      [[nodiscard]] static auto dark_mode() noexcept -> bool;
-      /// @brief Sets a value indicating whether dark mode is enabled for the application.
-      /// @param value True is dark mode enabled; otherwise `false`.
-      /// @exception xtd::invalid_operation_exception If this method is called after xtd::forms::application::run.
-      static auto dark_mode(bool value) -> void;
-      
       /// @brief Gets the executable name for the executable file that started the application, including the executable extension.
       /// @return The executable name and executable name for the executable file that started the application.<br><br>
       [[nodiscard]] static auto executable_name() noexcept -> xtd::string;
@@ -132,13 +140,13 @@ namespace xtd {
       /// @remarks This method has an effect only on non Windows operating system.
       static auto font_size_correction(bool value) -> void;
       
-      /// @brief Gets a value indicating whether light mode is enabled for the application.
-      /// @return True is light mode enabled; otherwise `false`.
-      [[nodiscard]] static auto light_mode() noexcept -> bool;
-      /// @brief Sets a value indicating whether light mode is enabled for the application.
-      /// @param value True is light mode enabled; otherwise `false`.
-      /// @exception xtd::invalid_operation_exception If this method is called after xtd::forms::application::run.
-      static auto light_mode(bool value) -> void;
+      /// @brief Gets a value indicating whether application appearance is dark.
+      /// @return `true` if appearance is dark; otherwise `false`.
+      [[nodiscard]] static auto is_dark_appearance() noexcept -> bool;
+      
+      /// @brief Gets a value indicating whether application appearance is light.
+      /// @return `true` if appearance is light; otherwise `false`.
+      [[nodiscard]] static auto is_light_appearance() noexcept -> bool;
       
       /// @brief Gets the optional main form owned by the application.
       /// @return The optional main form.
@@ -439,13 +447,13 @@ namespace xtd {
       /// @brief Return `true` if dark mode is enabled for the application; otherwise return `false`.
       /// @return True is dark mode enabled; otherwise `false`.
       /// @deprecated Replaced by xtd::application::dark_mode - Will be removed in version 1.2.0.
-      [[deprecated("Replaced by xtd::application::dark_mode - Will be removed in version 1.2.0.")]]
+      [[deprecated("Replaced by xtd::application::is_dark_appearance - Will be removed in version 1.2.0.")]]
       [[nodiscard]] static auto dark_mode_enabled() noexcept -> bool;
       
       /// @brief Return `true` if dark mode is enabled for the application; otherwise return `false`.
       /// @return True is light mode enabled; otherwise `false`.
       /// @deprecated Replaced by xtd::application::light_mode - Will be removed in version 1.2.0.
-      [[deprecated("Replaced by xtd::application::light_mode - Will be removed in version 1.2.0.")]]
+      [[deprecated("Replaced by xtd::application::is_light_appearance - Will be removed in version 1.2.0.")]]
       [[nodiscard]] static auto light_mode_enabled() noexcept -> bool;
       
       /// @brief Gets a value that indicates whether visual styles are enabled for the application.
@@ -471,7 +479,7 @@ namespace xtd {
       /// @remarks By default, the dark mode is enabled automatically if the system is in dark mode.
       /// @remarks xtd::forms::application::enable_dark_mode sets the application in dark mode even if your system is in light mode.
       /// @deprecated Replaced by xtd::application::dark_mode - Will be removed in version 1.2.0.
-      [[deprecated("Replaced by xtd::application::dark_mode - Will be removed in version 1.2.0.")]]
+      [[deprecated("Replaced by xtd::application::application_appearance - Will be removed in version 1.2.0.")]]
       static auto enable_dark_mode() -> void;
       
       /// @brief Enables light mode for the application.
@@ -479,7 +487,7 @@ namespace xtd {
       /// @remarks By default, the light mode is enabled automatically if the system is in light mode.
       /// @remarks xtd::forms::application::enable_light_mode sets the application in light mode even if your system is in dark mode.
       /// @deprecated Replaced by xtd::application::light_mode - Will be removed in version 1.2.0.
-      [[deprecated("Replaced by xtd::application::light_mode - Will be removed in version 1.2.0.")]]
+      [[deprecated("Replaced by xtd::application::application_appearance - Will be removed in version 1.2.0.")]]
       static auto enable_light_mode() -> void;
       
       /// @brief Enables menu images  for the application.
@@ -508,10 +516,10 @@ namespace xtd {
       static auto wm_app_idle(message& message) -> void;
       static auto wm_quit(message& message) -> void;
       
+      static xtd::forms::application_appearance application_appearance_;
+      static bool button_images_;
       static xtd::forms::application_context internal_context_;
       static xtd::forms::application_context* context_;
-      static bool button_images_;
-      static bool light_mode_;
       static bool font_size_correction_;
       static bool menu_images_;
       static bool message_loop_;
