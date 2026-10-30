@@ -129,17 +129,17 @@ void application::enable_button_images(bool value) {
 }
 
 void application::enable_dark_mode(bool value) {
-  #if wxCHECK_VERSION(3, 3, 0)
+  initialize(); // Must be first
+  #if wxVERSION_NUMBER >= 3300
   wxTheApp->SetAppearance(value ? wxApp::Appearance::Dark : wxApp::Appearance::System);
-  #else
+  #endif
+
   #if defined(__WXMSW__)
   __xtd_win32_enable_dark_mode__ = value ? 1 : 0;
   #elif defined(__WXGTK__)
-  __xtd_gtk_enable_dark_mode__ = value;
+  __xtd_gtk_enable_dark_mode__ =  = value ? 1 : 0;
   #elif defined(__WXOSX__)
-  initialize();
-  __xtd_macos_enable_dark_mode__();
-  #endif
+  if (value) __xtd_macos_enable_dark_mode__();
   #endif
 }
 
@@ -148,17 +148,17 @@ void application::enable_font_size_correction(bool value) {
 }
 
 void application::enable_light_mode(bool value) {
-  #if wxCHECK_VERSION(3, 3, 0)
-  wxTheApp->SetAppearance(value ? wxApp::Appearance::Dark : wxApp::Appearance::System);
-  #else
+  initialize(); // Must be first
+  #if wxVERSION_NUMBER >= 3300
+  wxTheApp->SetAppearance(value ? wxApp::Appearance::Light : wxApp::Appearance::System);
+  #endif
+  
   #if defined(__WXMSW__)
   __xtd_win32_enable_dark_mode__ = value ? 0 : 1;
   #elif defined(__WXGTK__)
-  __xtd_gtk_enable_dark_mode__ = value;
+  __xtd_gtk_enable_dark_mode__ = value ? 0 : 1;
   #elif defined(__WXOSX__)
-  initialize(); // Must be first
   if (value) __xtd_macos_enable_light_mode__();
-  #endif
   #endif
 }
 
