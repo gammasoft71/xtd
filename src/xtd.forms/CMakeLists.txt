@@ -29,6 +29,8 @@ add_sources(
   "include/xtd/forms/appearance"
   "include/xtd/forms/application.hpp"
   "include/xtd/forms/application"
+  "include/xtd/forms/application_appearance.hpp"
+  "include/xtd/forms/application_appearance"
   "include/xtd/forms/application_context.hpp"
   "include/xtd/forms/application_context"
   "include/xtd/forms/arrange_direction.hpp"
