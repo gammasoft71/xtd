@@ -44,5 +44,10 @@ namespace button_example {
 }
 
 auto main() -> int {
+  application::application_appearance(application_appearance::system);
+  //application::system_controls(true);
+  diagnostics::debug::write_line("application::application_appearance = "_s + application::application_appearance());
+  diagnostics::debug::write_line("application::is_dark_appearance = "_s + application::is_dark_appearance());
+  diagnostics::debug::write_line("application::is_light_appearance = "_s + application::is_light_appearance());
   application::run(button_example::form1 {});
 }
