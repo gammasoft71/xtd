@@ -137,7 +137,7 @@ void application::enable_dark_mode(bool value) {
   #if defined(__WXMSW__)
   __xtd_win32_enable_dark_mode__ = value ? 1 : 0;
   #elif defined(__WXGTK__)
-  __xtd_gtk_enable_dark_mode__ =  = value ? 1 : 0;
+  __xtd_gtk_enable_dark_mode__ = value;
   #elif defined(__WXOSX__)
   if (value) __xtd_macos_enable_dark_mode__();
   #endif
@@ -156,7 +156,7 @@ void application::enable_light_mode(bool value) {
   #if defined(__WXMSW__)
   __xtd_win32_enable_dark_mode__ = value ? 0 : 1;
   #elif defined(__WXGTK__)
-  __xtd_gtk_enable_dark_mode__ = value ? 0 : 1;
+  __xtd_gtk_enable_dark_mode__ = !value;
   #elif defined(__WXOSX__)
   if (value) __xtd_macos_enable_light_mode__();
   #endif
