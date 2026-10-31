@@ -113,7 +113,7 @@ struct input_dialog::data {
 };
 
 input_dialog::input_dialog() : data_(xtd::new_sptr<data>()) {
-  data_->dialog_appearance = application::system_controls() ? forms::dialog_appearance::system : forms::dialog_appearance::standard;
+  data_->dialog_appearance = application::control_appearance() == control_appearance::system ? forms::dialog_appearance::system : forms::dialog_appearance::standard;
 }
 
 xtd::forms::character_casing input_dialog::character_casing() const noexcept {
@@ -202,7 +202,7 @@ input_dialog& input_dialog::word_wrap(bool word_wrap) {
 
 void input_dialog::reset() noexcept {
   data_->character_casing = xtd::forms::character_casing::normal;
-  data_->dialog_appearance = application::system_controls() ? forms::dialog_appearance::system : forms::dialog_appearance::standard;
+  data_->dialog_appearance = application::control_appearance() == control_appearance::system ? forms::dialog_appearance::system : forms::dialog_appearance::standard;
   data_->message = "";
   data_->multiline = false;
   data_->text = "";

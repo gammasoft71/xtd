@@ -107,15 +107,16 @@ application_appearance application::application_appearance_ = application_appear
 bool application::button_images_ = true;
 xtd::forms::application_context application::internal_context_;
 xtd::forms::application_context* application::context_ = &application::internal_context_;
+#if defined(__XTD_USE_SYSTEM_CONTROLS__)
+control_appearance application::control_appearance_ = control_appearance::system;
+#else
+control_appearance application::control_appearance_ = control_appearance::standard;
+#endif
+
 bool application::font_size_correction_ = true;
 bool application::menu_images_ = true;
 bool application::message_loop_ = false;
 bool application::raise_idle_ = false;
-#if defined(__XTD_USE_SYSTEM_CONTROLS__)
-bool application::system_controls_ = true;
-#else
-bool application::system_controls_ = false;
-#endif
 bool application::system_font_size_ = false;
 bool application::use_wait_cursor_ = false;
 bool application::visual_styles_ = false;
@@ -135,9 +136,9 @@ bool application::allow_quit() noexcept {
   }
 }
 
-auto application::application_appearance(xtd::forms::application_appearance appearance) -> void {
-  if (application_appearance_ == appearance) return;
-  application_appearance_ = appearance;
+auto application::application_appearance(xtd::forms::application_appearance value) -> void {
+  if (application_appearance_ == value) return;
+  application_appearance_ = value;
   switch(application_appearance_) {
     case application_appearance::system: native::application::enable_dark_mode(false); native::application::enable_light_mode(false); break;
     case application_appearance::dark: native::application::enable_dark_mode(true); break;
@@ -188,6 +189,15 @@ xtd::string application::company_name() noexcept {
   } catch (...) {
     return assembly::get_executing_assembly().company();
   }
+}
+
+auto application::control_appearance(xtd::forms::control_appearance value) -> void {
+  if (control_appearance_ == value) return;
+  control_appearance_ = value;
+}
+
+auto application::control_appearance() noexcept -> xtd::forms::control_appearance {
+  return control_appearance_;
 }
 
 xtd::string application::executable_name() noexcept {
@@ -284,15 +294,6 @@ const xtd::forms::style_sheets::style_sheet::style_sheets_t& application::style_
 
 const xtd::forms::style_sheets::style_sheet::style_sheet_names_t& application::style_sheet_names() noexcept {
   return xtd::forms::style_sheets::style_sheet::style_sheet_names();
-}
-
-bool application::system_controls() noexcept {
-  return system_controls_;
-}
-
-void application::system_controls(bool value) {
-  if (application::application::message_loop_ == true) throw_helper::throws(exception_case::invalid_operation, "Call application::system_controls() before application::run()");
-  system_controls_ = value;
 }
 
 bool application::system_font_size() noexcept {

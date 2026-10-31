@@ -199,7 +199,7 @@ control::control()  {
   data_ = xtd::new_sptr<data>(*this);
   static auto id = 1u;
   data_->id = id++;
-  if (application::system_controls()) data_->control_appearance = xtd::forms::control_appearance::system;
+  data_->control_appearance = application::control_appearance();
   native::application::initialize();
   set_state(state::enabled, true);
   set_state(state::visible, true);

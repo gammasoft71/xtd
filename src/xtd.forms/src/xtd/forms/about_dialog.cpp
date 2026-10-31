@@ -271,7 +271,7 @@ struct about_dialog::data {
 };
 
 about_dialog::about_dialog() : data_(xtd::new_sptr<data>()) {
-  data_->dialog_appearance = application::system_controls() ? forms::dialog_appearance::system : forms::dialog_appearance::standard;
+  data_->dialog_appearance = application::control_appearance() == control_appearance::system ? forms::dialog_appearance::system : forms::dialog_appearance::standard;
 }
 
 about_dialog::~about_dialog() {
@@ -452,7 +452,7 @@ about_dialog about_dialog::from_executing_assembly_informations() {
 }
 
 void about_dialog::reset() noexcept {
-  data_->dialog_appearance = application::system_controls() ? forms::dialog_appearance::system : forms::dialog_appearance::standard;
+  data_->dialog_appearance = application::control_appearance() == control_appearance::system ? forms::dialog_appearance::system : forms::dialog_appearance::standard;
   data_->icon = image::empty;
   data_->artists.clear();
   data_->authors.clear();

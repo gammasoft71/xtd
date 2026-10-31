@@ -499,13 +499,13 @@ namespace xtd {
       virtual auto context_menu(xtd::null_ptr) -> control&;
       
       /// @brief Gets control appearance.
-      /// @return One of xtd::forms::control_appearance values. THe default is xtd::forms::control_appearance::standard.
+      /// @return One of xtd::forms::control_appearance values. The default is xtd::forms::control_appearance::standard.
       /// @remarks The control appearance determine how the control is drawed :
       /// * xtd::control::control_appearance::standard : The appearance of the control is determined by current theme of xtd.
       /// * xtd::control::control_appearance::system : The appearance of the control is determined by the user's operating system.
       [[nodiscard]] virtual auto control_appearance() const noexcept -> xtd::forms::control_appearance;
       /// @brief Sets control appearance.
-      /// @param value One of xtd::forms::control_appearance values. THe default is xtd::forms::control_appearance::standard.
+      /// @param value One of xtd::forms::control_appearance values. The default is xtd::forms::control_appearance::standard.
       /// @remarks The control appearance determine how the control is drawed :
       /// * xtd::control::control_appearance::standard : The appearance of the control is determined by current theme of xtd.
       /// * xtd::control::control_appearance::system : The appearance of the control is determined by the user's operating system.

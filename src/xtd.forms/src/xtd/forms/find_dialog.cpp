@@ -31,7 +31,7 @@ struct find_dialog::data {
 };
 
 find_dialog::find_dialog() : data_(xtd::new_sptr<data>()) {
-  data_->dialog_appearance = application::system_controls() ? forms::dialog_appearance::system : forms::dialog_appearance::standard;
+  data_->dialog_appearance = application::control_appearance() == control_appearance::system ? forms::dialog_appearance::system : forms::dialog_appearance::standard;
 }
 
 find_dialog::~find_dialog() {
@@ -144,7 +144,7 @@ void find_dialog::close() {
 }
 
 void find_dialog::reset() noexcept {
-  data_->dialog_appearance = application::system_controls() ? forms::dialog_appearance::system : forms::dialog_appearance::standard;
+  data_->dialog_appearance = application::control_appearance() == control_appearance::system ? forms::dialog_appearance::system : forms::dialog_appearance::standard;
   data_->location.reset();
   data_->title = "";
   data_->find_string = "";

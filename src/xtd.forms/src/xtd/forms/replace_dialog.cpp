@@ -30,7 +30,7 @@ struct replace_dialog::data {
 };
 
 replace_dialog::replace_dialog() : data_(xtd::new_sptr<data>()) {
-  data_->dialog_appearance = application::system_controls() ? forms::dialog_appearance::system : forms::dialog_appearance::standard;
+  data_->dialog_appearance = application::control_appearance() == control_appearance::system ? forms::dialog_appearance::system : forms::dialog_appearance::standard;
 }
 
 replace_dialog::~replace_dialog() {
@@ -132,7 +132,7 @@ void replace_dialog::close() {
 }
 
 void replace_dialog::reset() noexcept {
-  data_->dialog_appearance = application::system_controls() ? forms::dialog_appearance::system : forms::dialog_appearance::standard;
+  data_->dialog_appearance = application::control_appearance() == control_appearance::system ? forms::dialog_appearance::system : forms::dialog_appearance::standard;
   data_->location.reset();
   data_->title = "";
   data_->find_string = "";

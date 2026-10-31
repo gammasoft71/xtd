@@ -26,7 +26,7 @@ struct progress_dialog::data {
 };
 
 progress_dialog::progress_dialog() : data_(xtd::new_sptr<data>()) {
-  data_->dialog_appearance = application::system_controls() ? forms::dialog_appearance::system : forms::dialog_appearance::standard;
+  data_->dialog_appearance = application::control_appearance() == control_appearance::system ? forms::dialog_appearance::system : forms::dialog_appearance::standard;
 }
 
 progress_dialog::~progress_dialog() {
@@ -233,7 +233,7 @@ void progress_dialog::perform_step() {
 }
 
 void progress_dialog::reset() noexcept {
-  data_->dialog_appearance = application::system_controls() ? forms::dialog_appearance::system : forms::dialog_appearance::standard;
+  data_->dialog_appearance = application::control_appearance() == control_appearance::system ? forms::dialog_appearance::system : forms::dialog_appearance::standard;
   data_->informations = array<xtd::string> {};
   data_->marquee_animation_speed = 100;
   data_->maximum = 100;

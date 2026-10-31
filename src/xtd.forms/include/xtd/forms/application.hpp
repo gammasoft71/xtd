@@ -8,6 +8,7 @@
 #include "style_sheets/style_sheet.hpp"
 #include "application_appearance.hpp"
 #include "application_context.hpp"
+#include "control_appearance.hpp"
 #include "form_collection.hpp"
 #include "imessage_filter.hpp"
 #include "message.hpp"
@@ -66,7 +67,7 @@ namespace xtd {
       /// * xtd::control::application_appearance::system : The appearance of the application is determined by the user's operating system.
       /// * xtd::control::application_appearance::light : The appearance of the application is forced to light.
       /// * xtd::control::application_appearance::dark : The appearance of the application is forced to dark.
-      static auto application_appearance(xtd::forms::application_appearance appearance) -> void;
+      static auto application_appearance(xtd::forms::application_appearance value) -> void;
       /// @brief Gets application appearance.
       /// @return One of xtd::forms::application_appearance values. THe default is xtd::forms::application_appearance::system.
       /// @remarks The application appearance determine how the application is shown:
@@ -116,7 +117,20 @@ namespace xtd {
       /// }
       /// ```
       [[nodiscard]] static auto company_name() noexcept -> xtd::string;
-      
+
+      /// @brief Sets control appearance  by default.
+      /// @param value One of xtd::forms::control_appearance values. THe default is xtd::forms::control_appearance::standard.
+      /// @remarks The control appearance determine how the control is drawed :
+      /// * xtd::control::control_appearance::standard : The appearance of the control is determined by current theme of xtd.
+      /// * xtd::control::control_appearance::system : The appearance of the control is determined by the user's operating system.
+      static auto control_appearance(xtd::forms::control_appearance value) -> void;
+      /// @brief Gets control appearance  by default.
+      /// @return One of xtd::forms::control_appearance values. THe default is xtd::forms::control_appearance::standard.
+      /// @remarks The control appearance determine how the control is drawed :
+      /// * xtd::control::control_appearance::standard : The appearance of the control is determined by current theme of xtd.
+      /// * xtd::control::control_appearance::system : The appearance of the control is determined by the user's operating system.
+      static auto control_appearance() noexcept -> xtd::forms::control_appearance;
+
       /// @brief Gets the executable name for the executable file that started the application, including the executable extension.
       /// @return The executable name and executable name for the executable file that started the application.<br><br>
       [[nodiscard]] static auto executable_name() noexcept -> xtd::string;
@@ -204,18 +218,6 @@ namespace xtd {
       /// @return The installed xtd::forms::style_sheets::style_sheet names.
       /// @remarks For more information, see [Style sheets overview](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.forms/Style%20sheets/style_sheets_overview).
       [[nodiscard]] static auto style_sheet_names() noexcept -> const xtd::forms::style_sheets::style_sheet::style_sheet_names_t&;
-      
-      /// @brief Gets a value indicating whether the system control is enabled.
-      /// @return `true` if system control is enabled; otherwise `false`.
-      /// @remarks By default, xtd uses the standard control (xtd::forms::control_appearance::standard) with this method you can change to force the use of system control (xtd::forms::control_appearance::system) instead.
-      /// @remarks The xtd::forms::control::control_appearance method can still be used to modify the control's appearance on the fly.
-      [[nodiscard]] static auto system_controls() noexcept -> bool;
-      /// @brief Sets a value indicating whether the system control is enabled.
-      /// @param value `true` if system control is enabled; otherwise `false`.
-      /// @exception xtd::invalid_operation_exception If this method is called after xtd::forms::application::run.
-      /// @remarks By default, xtd uses the standard control (xtd::forms::control_appearance::standard) with this method you can change to force the use of system control (xtd::forms::control_appearance::system) instead.
-      /// @remarks The xtd::forms::control::control_appearance method can still be used to modify the control's appearance on the fly.
-      static auto system_controls(bool value) -> void;
       
       /// @brief Gets a value indicating whether the system font size is enabled.
       /// @return `true` if the system font size is enabled; otherwise `false`.
@@ -520,11 +522,11 @@ namespace xtd {
       static bool button_images_;
       static xtd::forms::application_context internal_context_;
       static xtd::forms::application_context* context_;
+      static xtd::forms::control_appearance control_appearance_;
       static bool font_size_correction_;
       static bool menu_images_;
       static bool message_loop_;
       static bool raise_idle_;
-      static bool system_controls_;
       static bool system_font_size_;
       static bool use_wait_cursor_;
       static bool visual_styles_;
