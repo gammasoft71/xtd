@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <div class="line">  <span class="keyword">class </span>form1 : <span class="keyword">public</span> form {</div>
 <div class="line">  <span class="keyword">public</span>:</div>
 <div class="line">    form1() {</div>
-<div class="line">      background_image(application::dark_mode() ? properties::resources::bliss_night() : properties::resources::bliss_day());</div>
+<div class="line">      background_image(application::is_dark_appearance() ? properties::resources::bliss_night() : properties::resources::bliss_day());</div>
 <div class="line">      client_size({600, 450});</div>
 <div class="line">      controls().add_range({bliss_url, image_layout_choice});</div>
 <div class="line">      double_buffered(<span class="keyword">true</span>);</div>
@@ -164,7 +164,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <div class="line">  <span class="keyword">protected</span>:</div>
 <div class="line">    <span class="keywordtype">void</span> on_system_colors_changed(<span class="keyword">const</span> event_args &amp;e)<span class="keyword"> override </span>{</div>
 <div class="line">      form::on_system_colors_changed(e);</div>
-<div class="line">      background_image(application::dark_mode() ? properties::resources::bliss_night() : properties::resources::bliss_day());</div>
+<div class="line">      background_image(application::is_dark_appearance() ? properties::resources::bliss_night() : properties::resources::bliss_day());</div>
 <div class="line">      bliss_url.back_color(color::from_argb(64, system_colors::control()));</div>
 <div class="line">    }</div>
 <div class="line"> </div>

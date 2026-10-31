@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <div class="line">  <span class="keyword">protected</span>:</div>
 <div class="line">    <span class="keywordtype">void</span> on_paint(paint_event_args&amp; e)<span class="keyword"> override </span>{</div>
 <div class="line">      <span class="keyword">auto</span> accentuate_color = [](<span class="keyword">const</span> color &amp; c, <span class="keywordtype">float</span> percent) {</div>
-<div class="line">        <span class="keywordflow">return</span> application::dark_mode() ? control_paint::light(c, percent) : control_paint::dark(c, percent);</div>
+<div class="line">        <span class="keywordflow">return</span> application::is_dark_appearance() ? control_paint::light(c, percent) : control_paint::dark(c, percent);</div>
 <div class="line">      };</div>
 <div class="line">      <span class="keyword">auto</span> background_color = get_back_color().value_or(application::style_sheet().system_colors().control());</div>
 <div class="line">      <span class="keyword">auto</span> foreground_color = get_fore_color().value_or(application::style_sheet().system_colors().control_text());</div>
