@@ -5,23 +5,23 @@ button {
   margin: 2px 0px 1px 0px;
   border-style: outset;
   border-color: system-color(control-dark);
-  border-width: 1px;
+  border-width: 0px;
   border-radius: 5px;
-  background-image: linear-gradient(system-color(button-face), system-color(button-face));
+  background-image: linear-gradient(rgba(255, 255, 255, 0.076), rgba(255, 255, 255, 0.076));
   padding: 1px 1px 3px 1px;
   color: system-color(control-text);
 }
 
 button:hover {
-  background-image: linear-gradient(system-color(button-face), system-color(button-face));
+  background-image: linear-gradient(rgba(255, 255, 255, 0.076), rgba(255, 255, 255, 0.076));
 }
 
 button:pressed {
-  background-image: linear-gradient(rgba(255, 255, 255, 0.365), rgba(255, 255, 255, 0.365));
+  background-image: linear-gradient(rgba(255, 255, 255, 0.164), rgba(255, 255, 255, 0.164));
 }
 
 button:checked {
-  background-image: linear-gradient(rgba(255, 255, 255, 0.365), rgba(255, 255, 255, 0.365));
+  background-image: linear-gradient(rgba(255, 255, 255, 0.164), rgba(255, 255, 255, 0.164));
 }
 
 button:disabled {
