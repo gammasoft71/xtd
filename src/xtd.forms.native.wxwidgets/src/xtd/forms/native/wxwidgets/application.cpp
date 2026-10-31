@@ -45,12 +45,13 @@ static void __on_timer_system_color_detection__(wxTimerEvent& e) {
 }
 
 #elif defined(__WXGTK__)
-bool __xtd_gtk_enable_dark_mode__ = false;
-bool __xtd_gtk_enable_button_images__ = true;
-bool __xtd_gtk_enable_menu_images__ = true;
+bool __gtk_application_prefer_dark_theme__();
+void __gtk_application_prefer_dark_theme__(bool prefer_dark_theme);
 void __gtk_button_images__(bool enable);
 void __gtk_menu_images__(bool enable);
-void __gtk_application_prefer_dark_theme__(bool prefer_dark_theme);
+
+bool __xtd_gtk_enable_button_images__ = true;
+bool __xtd_gtk_enable_menu_images__ = true;
 #elif defined(__WXOSX__)
 void __xtd_macos_enable_dark_mode__();
 void __xtd_macos_enable_light_mode__();
@@ -137,7 +138,7 @@ void application::enable_dark_mode(bool value) {
   #if defined(__WXMSW__)
   __xtd_win32_enable_dark_mode__ = value ? 1 : 0;
   #elif defined(__WXGTK__)
-  __xtd_gtk_enable_dark_mode__ = value;
+  __gtk_application_prefer_dark_theme__(value);
   #elif defined(__WXOSX__)
   if (value) __xtd_macos_enable_dark_mode__();
   #endif
@@ -156,7 +157,7 @@ void application::enable_light_mode(bool value) {
   #if defined(__WXMSW__)
   __xtd_win32_enable_dark_mode__ = value ? 0 : 1;
   #elif defined(__WXGTK__)
-  __xtd_gtk_enable_dark_mode__ = !value;
+  __gtk_application_prefer_dark_theme__(!value);
   #elif defined(__WXOSX__)
   if (value) __xtd_macos_enable_light_mode__();
   #endif
@@ -206,7 +207,6 @@ void application::initialize() {
   __gtk_button_images__(__xtd_gtk_enable_button_images__);
   // This option does not work with wxWidgets...
   //__gtk_menu_images__(__xtd_gtk_enable_menu_images__);
-  __gtk_application_prefer_dark_theme__(__xtd_gtk_enable_dark_mode__);
   #elif defined(__WXOSX__)
   wxMenuBar::MacSetCommonMenuBar(__create_default_menu_bar__());
   #endif
