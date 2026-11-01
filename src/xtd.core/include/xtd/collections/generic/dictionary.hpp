@@ -278,7 +278,7 @@ namespace xtd {
         /// @brief Gets the xtd::collections::generic::iequality_comparer <type_t> that is used to determine equality of keys for the dictionary.
         /// @return The xtd::collections::generic::iequality_comparer <type_t> generic interface implementation that is used to determine equality of keys for the current xtd::collections::generic::dictionary <key_t, value_t> and to provide hash values for the keys.
         /// @remarks xtd::collections::generic::dictionary <key_t, value_t> requires an equality implementation to determine whether keys are equal. You can specify an implementation of the xtd::collections::generic::iequality_comparer <type_t> generic interface by using a constructor that accepts a comparer parameter; if you do not specify one, the default generic equality comparer td::collections::generic::equality_comparer::default_equality_comparer is used.
-        [[nodiscard]] auto comparer() const noexcept -> const iequality_comparer < key_t >& {
+        [[nodiscard]] auto comparer() const noexcept -> const xtd::collections::generic::iequality_comparer < key_t >& {
           if (!data_->comparer) return equality_comparer <key_type>::default_equality_comparer();
           return *data_->comparer;
         }
