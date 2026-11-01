@@ -872,6 +872,8 @@ add_sources(
   "include/xtd/collections/vector_list"
   "include/xtd/collections/concurrent/concurrent_bag.hpp"
   "include/xtd/collections/concurrent/concurrent_bag"
+  "include/xtd/collections/concurrent/concurrent_dictionary.hpp"
+  "include/xtd/collections/concurrent/concurrent_dictionary"
   "include/xtd/collections/concurrent/concurrent_queue.hpp"
   "include/xtd/collections/concurrent/concurrent_queue"
   "include/xtd/collections/concurrent/concurrent_stack.hpp"
