@@ -131,7 +131,7 @@ namespace xtd {
         /// @par Examples
         /// The following code example demonstrates how to use the xtd::collections::generic::dictionary <key_t, value_t>(xtd::collections::generic::iequality_comparer <key_t>) constructor to initialize a xtd::collections::generic::dictionary <key_t, value_t> with sorted content from another dictionary. The code example creates a xtd::collections::generic::sorted_dictionary <key_t, value_t> and populates it with data in random order, then passes the xtd::collections::generic::sorted_dictionary <key_t, value_t> to the xtd::collections::generic::dictionary <key_t, value_t>(xtd::collections::generic::iequality_comparer <key_t>) constructor, creating a xtd::collections::generic::dictionary <key_t, value_t> that is sorted. This is useful if you need to build a sorted dictionary that at some point becomes static; copying the data from a xtd::collections::generic::sorted_dictionary <key_t, value_t> to a xtd::collections::generic::dictionary <key_t, value_t> improves retrieval speed.
         /// @include generic_dictionary_constructor_with_idicationary.cpp
-        dictionary(const xtd::collections::generic::idictionary < key_t, value_t >& dictionary) {
+        dictionary(const xtd::collections::generic::idictionary<key_t, value_t>& dictionary) {
           ensure_capacity(dictionary.count());
           for (const auto& item : dictionary)
             add(item);
@@ -139,14 +139,13 @@ namespace xtd {
         /// @brief Initializes a new instance of the xtd::collections::generic::dictionary <key_t, value_t> class that contains elements copied from the specified xtd::collections::generic::ienumerable <type_t>.
         /// @param collection The xtd::collections::generic::ienumerable <type_t> whose elements are copied to the new xtd::collections::generic::dictionary <key_t, value_t>
         /// @exception xtd::argument_exception `dictionary` contains one or more duplicate keys.
-        dictionary(const xtd::collections::generic::ienumerable < value_type >& collection) {
+        dictionary(const xtd::collections::generic::ienumerable<value_type>& collection) {
           for (const auto& item : collection)
             add(item);
         }
         /// @brief Initializes a new instance of the xtd::iterable that contains elements copied from the specified collection and has sufficient capacity to accommodate the number of elements copied.
         /// @param items The iterable whose elements are copied to the new xtd::collections::generic::dictionary <key_t, value_t>.
-        template<xtd::iterable iterable_t>
-        dictionary(iterable_t&& items) {
+        dictionary(xtd::iterable auto&& items) {
           for (const auto& [key, value] : items)
             add({key, value});
         }
@@ -621,22 +620,22 @@ namespace xtd {
       // Deduction guides for xtd::collections::generic::dictionary
       // {
       template<typename key_t, typename value_t >
-      dictionary(idictionary<key_t, value_t>) -> dictionary<key_t, value_t>;
+      dictionary(xtd::collections::generic::idictionary<key_t, value_t>) -> dictionary<key_t, value_t>;
       
       template<typename key_t, typename value_t >
-      dictionary(ienumerable<key_value_pair<key_t, value_t>>) -> dictionary<key_t, value_t>;
+      dictionary(xtd::collections::generic::ienumerable<key_value_pair<key_t, value_t>>) -> dictionary<key_t, value_t>;
       
       template<xtd::iterable iterable_t>
       dictionary(iterable_t&&) -> dictionary<std::remove_const_t<std::tuple_element_t<0, xtd::iterable_value_type<iterable_t>>>, std::remove_const_t<std::tuple_element_t<1, xtd::iterable_value_type<iterable_t>>>>;
       
       template<typename key_t, typename value_t >
-      dictionary(std::initializer_list < key_value_pair < key_t, value_t>>) -> dictionary<key_t, value_t>;
+      dictionary(std::initializer_list<xtd::collections::generic::key_value_pair<key_t, value_t>>) -> dictionary<key_t, value_t>;
       
       template<typename key_t, typename value_t >
-      dictionary(std::initializer_list < std::pair < key_t, value_t>>) -> dictionary<key_t, value_t>;
+      dictionary(std::initializer_list<std::pair<key_t, value_t>>) -> dictionary<key_t, value_t>;
       
       template<typename input_iterator_t >
-      dictionary(input_iterator_t, input_iterator_t) -> dictionary<helpers::iterator_key_t<input_iterator_t>, helpers::iterator_mapped_t<input_iterator_t>>;
+      dictionary(input_iterator_t, input_iterator_t) -> dictionary<xtd::collections::generic::helpers::iterator_key_t<input_iterator_t>, xtd::collections::generic::helpers::iterator_mapped_t<input_iterator_t>>;
       // }
       /// @endcond
     }
