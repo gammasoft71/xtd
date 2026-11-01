@@ -231,6 +231,19 @@ namespace xtd {
           return to_array().to_string();
         }
         
+        /// @brief Attempts to add the specified key and value to the xtd::collections::concurrent::concurrent_dictionary<key_t,value_t>.
+        /// @param key The key of the element to add.
+        /// @param value The value of the element to add. The value can be null for reference types.
+        /// @return `true` if the key/value pair was added to the xtd::collections::concurrent::concurrent_dictionary<key_t,value_t> successfully; `false` if the key already exists.
+        auto try_add(const key_t& key, const value_t& value) -> bool {
+          lock_guard_(items_) {
+            if (contains_key(key)) return false;
+            items_.add(key, value);
+            return true;
+          }
+          return {};
+        }
+        
         /// @brief Attempts to get the value associated with the specified key from the xtd::collections::concurrent::concurrent_dictionary <key_t,value_t>.
         /// @param key The key of the value to get.
         /// @return value When this method returns, contains the object from the xtd::collections::concurrent::concurrent_dictionary<key_t,value_t> that has the specified key, or the default value of the type if the operation failed.
