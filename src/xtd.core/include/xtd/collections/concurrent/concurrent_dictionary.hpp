@@ -276,6 +276,20 @@ namespace xtd {
           }
           return {};
         }
+        
+        /// @brief Updates the value associated with key to `new_value` if the existing value with `key` is equal to `comparison_value`.
+        /// @param key The key of the value that is compared with `comparison_value` and possibly replaced.
+        /// @param new_value The value that replaces the value of the element that has the specified key if the comparison results in equality.
+        /// @param comparison_value The value that is compared with the value of the element that has the specified `key`.
+        /// @return `true` if the value with key was equal to `comparison_value` and was replaced with `new_value`; otherwise, `false`.
+        auto try_update(const key_t& key, const value_t& new_value, const value_t& comparison_value) -> bool {
+          lock_guard_(items_) {
+            if (!items_.contains({key, comparison_value})) return false;
+            items_[key] = new_value;
+            return true;
+          }
+          return {};
+        }
         /// @}
         
         /// @name Public Operators
