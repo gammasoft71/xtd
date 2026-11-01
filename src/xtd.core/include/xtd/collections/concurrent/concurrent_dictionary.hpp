@@ -237,7 +237,7 @@ namespace xtd {
         /// @return `true` if the key/value pair was added to the xtd::collections::concurrent::concurrent_dictionary<key_t,value_t> successfully; `false` if the key already exists.
         auto try_add(const key_t& key, const value_t& value) -> bool {
           lock_guard_(items_) {
-            if (contains_key(key)) return false;
+            if (items_.contains_key(key)) return false;
             items_.add(key, value);
             return true;
           }
@@ -250,6 +250,18 @@ namespace xtd {
         auto try_get_value(const key_t& key, value_t& value) const -> bool override {
           lock_guard_(items_)
             return items_.try_get_value(key, value);
+          return {};
+        }
+
+        /// @brief Attempts to remove and return the value that has the specified key from the xtd::collections::concurrent::concurrent_dictionary <key_t,value_t>.
+        /// @param key The key of the element to remove and return.
+        /// @param value When this method returns, contains the object removed from the xtd::collections::concurrent::concurrent_dictionary <key_t,value_t>, or the default value of the `value_t` type if key does not exist.
+        /// @return `true` if the object was removed successfully; otherwise, `false`.
+        auto try_remove(const key_t& key, value_t& value) -> bool {
+          lock_guard_(items_) {
+            if (!items_.try_get_value(key, value)) return false;
+            return items_.remove(key);
+          }
           return {};
         }
         /// @}
