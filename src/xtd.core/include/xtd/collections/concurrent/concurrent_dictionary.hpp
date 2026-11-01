@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::collections::concurrent::concurrent_dictionary <type_t> class.
+/// @brief Contains xtd::collections::concurrent::concurrent_dictionary <key_t, value_t> class.
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "iproducer_consumer_collection.hpp"
@@ -99,14 +99,14 @@ namespace xtd {
               items_.add(item);
           }
         }
-        /// @brief Initializes a new instance of the xtd::collections::concurrent::concurrent_dictionary <type_t> class that contains elements copied from the specified collection.
+        /// @brief Initializes a new instance of the xtd::collections::concurrent::concurrent_dictionary <key_t, value_t> class that contains elements copied from the specified collection.
         concurrent_dictionary(xtd::collections::generic::ienumerable<value_type>&& collection) {
           lock_guard_(items_)
             for (const auto& item : collection)
               items_.add(item);
         }
         /// @brief Initializes a new instance of the xtd::iterable that contains elements copied from the specified collection and has sufficient capacity to accommodate the number of elements copied.
-        /// @param items The iterable whose elements are copied to the new xtd::collections::concurrent::concurrent_dictionary <type_t>.
+        /// @param items The iterable whose elements are copied to the new xtd::collections::concurrent::concurrent_dictionary <key_t, value_t>.
         concurrent_dictionary(xtd::iterable auto&& items) {
           for (const auto& item : items)
             items_add(item);
@@ -116,6 +116,13 @@ namespace xtd {
         /// @name Public Properties
         
         /// @{
+        /// @brief Gets the xtd::collections::generic::iequality_comparer <type_t> that is used to determine equality of keys for the dictionary.
+        /// @return The xtd::collections::generic::iequality_comparer <type_t> generic interface implementation that is used to determine equality of keys for the current xtd::collections::generic::dictionary <key_t, value_t> and to provide hash values for the keys.
+        /// @remarks xtd::collections::generic::dictionary <key_t, value_t> requires an equality implementation to determine whether keys are equal. You can specify an implementation of the xtd::collections::generic::iequality_comparer <type_t> generic interface by using a constructor that accepts a comparer parameter; if you do not specify one, the default generic equality comparer td::collections::generic::equality_comparer::default_equality_comparer is used.
+        [[nodiscard]] auto comparer() const noexcept -> const xtd::collections::generic::iequality_comparer<key_t>& {
+          return items_.comparer();
+        }
+
         /// @brief Gets the number of elements contained in the xtd::collections::generic::icollection.
         /// @return The number of elements contained in the xtd::collections::generic::icollection.
         [[nodiscard]] auto count() const noexcept -> xtd::usize override {
@@ -124,8 +131,8 @@ namespace xtd {
           return {};
         }
         
-        /// @brief Gets a value that indicates whether the xtd::collections::concurrent::concurrent_dictionary <type_t> is empty.
-        /// @return `true` if the xtd::collections::concurrent::concurrent_dictionary <type_t> is empty; otherwise, `false`.
+        /// @brief Gets a value that indicates whether the xtd::collections::concurrent::concurrent_dictionary <key_t, value_t> is empty.
+        /// @return `true` if the xtd::collections::concurrent::concurrent_dictionary <key_t, value_t> is empty; otherwise, `false`.
         /// @remarks or determining whether the collection contains any items, use of this property is recommended rather than retrieving the number of items from the xtd::collections::concurrent::concurrent_dictionary::count property and comparing it to 0. However, as this collection is intended to be accessed concurrently, it may be the case that another thread will modify the collection after xtd::collections::concurrent::concurrent_dictionary::is_empty returns, thus invalidating the result.
         [[nodiscard]] auto is_empty() const noexcept -> bool {
           lock_guard_(items_)
@@ -133,12 +140,12 @@ namespace xtd {
           return {};
         }
         
-        /// @brief Gets a value indicating whether the xtd::collections::concurrent::concurrent_dictionary <type_t> is read-only.
-        /// @return `true` if the xtd::collections::concurrent::concurrent_dictionary <type_t> is read-only; otherwise, `false`.
-        /// @remarks A collection that is read-only does not allow the addition or removal of elements after the collection is created. Note that read-only in this context does not indicate whether individual elements of the collection can be modified, since the xtd::collections::concurrent::concurrent_dictionary <type_t> interface only supports addition and removal operations. For example, the xtd::collections::concurrent::concurrent_dictionary::is_read_only property of an array that is cast or converted to an xtd::collections::concurrent::concurrent_dictionary <type_t> object returns `true`, even though individual array elements can be modified.
+        /// @brief Gets a value indicating whether the xtd::collections::concurrent::concurrent_dictionary <key_t, value_t> is read-only.
+        /// @return `true` if the xtd::collections::concurrent::concurrent_dictionary <key_t, value_t> is read-only; otherwise, `false`.
+        /// @remarks A collection that is read-only does not allow the addition or removal of elements after the collection is created. Note that read-only in this context does not indicate whether individual elements of the collection can be modified, since the xtd::collections::concurrent::concurrent_dictionary <key_t, value_t> interface only supports addition and removal operations. For example, the xtd::collections::concurrent::concurrent_dictionary::is_read_only property of an array that is cast or converted to an xtd::collections::concurrent::concurrent_dictionary <key_t, value_t> object returns `true`, even though individual array elements can be modified.
         [[nodiscard]] auto is_read_only() const noexcept -> bool override {return false;}
         
-        /// @brief Gets a value indicating whether access to the xtd::collections::concurrent::concurrent_dictionary <type_t> is synchronized (thread safe).
+        /// @brief Gets a value indicating whether access to the xtd::collections::concurrent::concurrent_dictionary <key_t, value_t> is synchronized (thread safe).
         /// @return `true` if access to the ICollection is synchronized (thread safe); otherwise, `false`.
         /// @remarks xtd::collections::concurrent::iproducer_consumer_collection::sync_root returns an object, which can be used to synchronize access to the xtd::collections::generic::icollection.
         /// @remarks Most collection classes in the xtd::collections namespace also implement a Synchronized method, which provides a synchronized wrapper around the underlying collection.
@@ -191,10 +198,10 @@ namespace xtd {
           return {};
         }
         
-        /// @brief Copies the elements of the xtd::collections::concurrent::concurrent_dictionary <type_t> to an xtd::array, starting at a particular xtd::array index.
-        /// @param array The one-dimensional xtd::array that is the destination of the elements copied from xtd::collections::concurrent::concurrent_dictionary <type_t>. The xtd::array must have zero-based indexing.
+        /// @brief Copies the elements of the xtd::collections::concurrent::concurrent_dictionary <key_t, value_t> to an xtd::array, starting at a particular xtd::array index.
+        /// @param array The one-dimensional xtd::array that is the destination of the elements copied from xtd::collections::concurrent::concurrent_dictionary <key_t, value_t>. The xtd::array must have zero-based indexing.
         /// @param array_index The zero-based index in `array` at which copying begins.
-        /// @exception xtd::argument_exception The number of elements in the source xtd::collections::concurrent::concurrent_dictionary <type_t> is greater than the available space from `array_index` to the end of the destination `array`.
+        /// @exception xtd::argument_exception The number of elements in the source xtd::collections::concurrent::concurrent_dictionary <key_t, value_t> is greater than the available space from `array_index` to the end of the destination `array`.
         auto copy_to(xtd::array<value_type>& array, xtd::usize array_index) const -> void override {
           lock_guard_(items_)
             items_.copy_to(array, array_index);
@@ -209,7 +216,7 @@ namespace xtd {
           return items.get_enumerator();
         }
         
-        /// @brief Copies the elements contained in the xtd::collections::concurrent::concurrent_dictionary <type_t> to a new array.
+        /// @brief Copies the elements contained in the xtd::collections::concurrent::concurrent_dictionary <key_t, value_t> to a new array.
         /// @return A new array containing the elements copied from the xtd::collections::concurrent::iproducer_consumer_collection <type_t.
         /// @remarks The method provides a snapshot of the underlying collection. It is possible for other threads to add or remove items immediately after the array is made.
         [[nodiscard]] auto to_array() const -> xtd::array<value_type> {
