@@ -264,6 +264,18 @@ namespace xtd {
           }
           return {};
         }
+        /// @brief Removes a key and value from the dictionary.
+        /// @pram item The xtd::collections::generic::key_value_pair<key_t,value_t> representing the key and value to remove.
+        /// @return `true` if the key and value represented by item are successfully found and removed; otherwise, `false`.
+        /// @remarks Both the specifed key and value must match the entry in the dictionary for it to be removed.
+        /// @remarks The key is compared using the dictionary's comparer (or the default comparer for `key_t` if no comparer was provided to the dictionary when it was constructed). The value is compared using the default comparer for `value_t`.
+        auto try_remove(const xtd::collections::generic::key_value_pair<key_t, value_t>& item) -> bool {
+          lock_guard_(items_) {
+            if (!items_.contains(item)) return false;
+            return items_.remove(item);
+          }
+          return {};
+        }
         /// @}
         
         /// @name Public Operators
