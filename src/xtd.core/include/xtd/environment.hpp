@@ -561,6 +561,36 @@ namespace xtd {
     /// @remarks Replacement only occurs for environment variables that are set. For example, suppose name is "MyENV = %MyENV%". If the environment variable, MyENV, is set to 42, this method returns "MyENV = 42". If MyENV is not set, no change occurs; this method returns "MyENV = %MyENV%".
     [[nodiscard]] static auto expand_environment_variables(const xtd::string& name) -> xtd::string;
     
+    /// @brief Immediately terminates the process .
+    /// @remarks This method terminates a process without running any active #exit_scope_ or #finally_ blocks or finalizers.
+    /// @remarks Use the xtd::environment::fail_fast method instead of the xtd::environment::exit method to terminate your application if the state of your application is damaged beyond repair, and executing your application's #exit_scope_ or #finally_ blocks and finalizers will corrupt program resources.
+    [[noreturn]] static auto fail_fast() noexcept -> void {fail_fast_(xtd::diagnostics::stack_trace {false}, xtd::null, &string::empty_string);}
+    /// @brief Immediately terminates the process before reporting an error message. For Windows, the error message is written to the Windows Application event log, and the message is included in error reporting to Microsoft. For Unix-like systems, the message, alongside the stack trace, is written to the standard error stream.
+    /// @param message A message that explains why the process was terminated, or null if no explanation is provided.
+    /// @remarks This method terminates a process without running any active #exit_scope_ or #finally_ blocks or finalizers.
+    /// @remarks On Windows, the xtd::environment::fail_fast method writes the message string to the Windows Application event log, creates a dump of your application, and then terminates the current process. The message string is also included in error reporting to Microsoft via Windows Error Reporting. For more information, see [Windows Error Reporting: Getting Started](https://learn.microsoft.com/en-us/windows-hardware/drivers/dashboard/).
+    /// @remarks On Unix-like systems, the message is written to the standard error stream, alongside the stack trace information.
+    /// @remarks Use the xtd::environment::fail_fast method instead of the xtd::environment::exit method to terminate your application if the state of your application is damaged beyond repair, and executing your application's #exit_scope_ or #finally_ blocks and finalizers will corrupt program resources.
+    [[noreturn]] static auto fail_fast(const xtd::string& message) noexcept -> void {fail_fast_(xtd::diagnostics::stack_trace {false}, &message, &string::empty_string);}
+    /// @brief Immediately terminates the process before reporting an error message. For Windows, the error message is written to the Windows Application event log, and the message and exception information is included in error reporting to Microsoft. For Unix-like systems, the message alongside the stack trace is written to the standard error stream.
+    /// @param message A message that explains why the process was terminated, or null if no explanation is provided.
+    /// @param exception An exception that represents the error that caused the termination. This is typically the exception in a catch block.
+    /// @remarks This method terminates the process without running any active #exit_scope_ or #finally_ blocks or finalizers.
+    /// @remarks On Windows, the Environment.FailFast method writes the message string to the Windows Application event log, creates a dump of your application, and then terminates the current process.
+    /// @remarks Information is reported to Microsoft by using Windows Error Reporting. For more information, see [Windows Error Reporting: Getting Started](https://learn.microsoft.com/en-us/windows-hardware/drivers/dashboard/). Error reporting to Microsoft includes message and exception information, which provides details used to classify the error. Although exception is not handled because the process is terminated, the contextual information that raised the exception is still obtained.
+    /// @remarks On Unix-like systems, the message is written to the standard error stream, alongside the stack trace information.
+    /// @remarks Use the xtd::environment::fail_fast method instead of the xtd::environment::exit method to terminate your application if the state of your application is damaged beyond repair, and executing your application's #exit_scope_ or #finally_ blocks and finalizers will corrupt program resources.
+    template<typename exception_t>
+    requires std::derived_from<xtd::raw_type<exception_t>, std::exception>
+    [[noreturn]] static auto fail_fast(const xtd::string& message, const exception_t& exception) -> void {fail_fast_(xtd::diagnostics::stack_trace {false}, &message, &exception);}
+    /// @brief Immediately terminates the process..
+    /// @param exception An exception that represents the error that caused the termination. This is typically the exception in a catch block.
+    /// @remarks This method terminates the process without running any active #exit_scope_ or #finally_ blocks or finalizers.
+    /// @remarks Use the xtd::environment::fail_fast method instead of the xtd::environment::exit method to terminate your application if the state of your application is damaged beyond repair, and executing your application's #exit_scope_ or #finally_ blocks and finalizers will corrupt program resources.
+    template<typename exception_t>
+    requires std::derived_from<xtd::raw_type<exception_t>, std::exception>
+    [[noreturn]] static auto fail_fast(const exception_t& exception) noexcept -> void {fail_fast_(xtd::diagnostics::stack_trace {false}, xtd::null, &exception);}
+
     /// @brief Returns a string array containing the command-line arguments for the current process.
     /// @return An array of string where each element contains a command-line argument. The first element is the executable file name, and the following zero or more elements contain the remaining command-line arguments.
     /// @remarks The first element in the array contains the file name of the executing program. If the file name is not available, the first element is equal to string empty "". The remaining elements contain any additional tokens entered on the command line.
@@ -680,7 +710,23 @@ namespace xtd {
   private:
     static auto on_cancel_signal(xtd::signal_cancel_event_args& e) -> void;
     static auto on_program_exit(const xtd::program_exit_event_args& e) -> void;
-    
+
+    [[noreturn]] static auto fail_fast_exit() -> void;
+    static auto fail_fast_flush() -> void;
+    static auto fail_fast_write_line(const xtd::string& str) -> void;
+    template<typename exception_t>
+    [[noreturn]] static auto fail_fast_(const xtd::diagnostics::stack_trace& st, const xtd::string* message, const exception_t* exception) -> void {
+      fail_fast_write_line("\n\nProcess terminated.");
+      if (message && !xtd::string::is_empty(*message)) fail_fast_write_line(*message);
+      fail_fast_write_line(st.to_string());
+      if (exception) {
+        if constexpr (std::derived_from<xtd::raw_type<exception_t>, xtd::exception>) fail_fast_write_line(xtd::string::format("{}: {} (Parameter '{}')", type_of<xtd::raw_type<exception_t>>(), xtd::raw_type<exception_t> {}.message(),  exception->message()));
+        else if constexpr (std::derived_from<xtd::raw_type<exception_t>, std::exception>) fail_fast_write_line(xtd::string::format("{} (Parameter '{}')", type_of<xtd::raw_type<exception_t>>(),  exception->what()));
+      }
+      fail_fast_flush();
+      fail_fast_exit();
+    }
+
     [[nodiscard]] static auto get_folder_path_(environment::special_folder folder, environment::special_folder_option option, bool is_gui_application = target_type().is_gui_application()) -> xtd::string;
     [[nodiscard]] static auto xtd_root_path() -> xtd::string {return xtd::io::path::get_full_path(string::is_empty(__XTD_ROOT_PATH__) ? (string::is_empty(get_environment_variable("XTD_ROOT_PATH")) ? io::path::get_full_path(io::path::combine(io::path::get_directory_name(xtd::diagnostics::source_location::current().file_name()), "..", "..")) : get_environment_variable("XTD_ROOT_PATH")) : __XTD_ROOT_PATH__);}
     static signal_catcher signal_catcher_;

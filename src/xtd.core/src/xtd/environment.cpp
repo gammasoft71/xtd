@@ -1,3 +1,4 @@
+#include "../../include/xtd/diagnostics/default_trace_listener.hpp"
 #include "../../include/xtd/io/directory.hpp"
 #include "../../include/xtd/io/path.hpp"
 //#include "../../include/xtd/threading/thread_abort_exception"
@@ -35,6 +36,7 @@ struct __update__macos_path__ {
 } __updmacpath__;
 
 using namespace xtd;
+using namespace xtd::diagnostics;
 using namespace xtd::collections::specialized;
 using namespace xtd::helpers;
 using namespace xtd::io;
@@ -430,6 +432,18 @@ void environment::on_program_exit(const program_exit_event_args& e) {
   auto safe_program_exit = program_exit;
   if (safe_program_exit.is_empty()) return;
   safe_program_exit(e);
+}
+
+[[noreturn]] auto environment::fail_fast_exit() -> void {
+  std::_Exit(0);
+}
+
+auto environment::fail_fast_flush() -> void {
+  default_trace_listener {}.flush();
+}
+
+auto environment::fail_fast_write_line(const xtd::string& str) -> void {
+  default_trace_listener {}.write_line(str);
 }
 
 string environment::get_folder_path_(environment::special_folder folder, environment::special_folder_option option, bool is_gui_application) {
