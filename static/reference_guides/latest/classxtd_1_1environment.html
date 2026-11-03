@@ -258,7 +258,7 @@ Inheritance diagram for xtd::environment:</div>
 <div class="ttc" id="aclassxtd_1_1environment_html_ad7e33c9e831589785d5452b5d5ad50f6"><div class="ttname"><a href="#ad7e33c9e831589785d5452b5d5ad50f6">xtd::environment::machine_name</a></div><div class="ttdeci">static auto machine_name() -&gt; xtd::string</div><div class="ttdoc">Gets the NetBIOS name of this local computer.</div></div>
 <div class="ttc" id="aclassxtd_1_1environment_html_ae61bce6f05e6c16abe335bfdb81f6711"><div class="ttname"><a href="#ae61bce6f05e6c16abe335bfdb81f6711">xtd::environment::command_line</a></div><div class="ttdeci">static auto command_line() noexcept -&gt; xtd::string</div><div class="ttdoc">Gets the command line for this process.</div></div>
 <div class="ttc" id="aclassxtd_1_1environment_html_ae69a770aee6c1e992b5b7461070c5ebe"><div class="ttname"><a href="#ae69a770aee6c1e992b5b7461070c5ebe">xtd::environment::user_name</a></div><div class="ttdeci">static auto user_name() -&gt; xtd::string</div><div class="ttdoc">Gets the user name of the person who is currently logged on to the operating system.</div></div>
-<div class="ttc" id="aclassxtd_1_1environment_html_aecae02977991ca63077b48ad5b1228c2"><div class="ttname"><a href="#aecae02977991ca63077b48ad5b1228c2">xtd::environment::get_folder_path</a></div><div class="ttdeci">static auto get_folder_path(environment::special_folder folder) -&gt; xtd::string</div><div class="ttdoc">Gets the path to the system special folder that is identified by the specified enumeration.</div><div class="ttdef"><b>Definition</b> environment.hpp:616</div></div>
+<div class="ttc" id="aclassxtd_1_1environment_html_aecae02977991ca63077b48ad5b1228c2"><div class="ttname"><a href="#aecae02977991ca63077b48ad5b1228c2">xtd::environment::get_folder_path</a></div><div class="ttdeci">static auto get_folder_path(environment::special_folder folder) -&gt; xtd::string</div><div class="ttdoc">Gets the path to the system special folder that is identified by the specified enumeration.</div><div class="ttdef"><b>Definition</b> environment.hpp:646</div></div>
 <div class="ttc" id="aclassxtd_1_1environment_html_af15178dea424d7fcfcbd7cecc9675466"><div class="ttname"><a href="#af15178dea424d7fcfcbd7cecc9675466">xtd::environment::new_line</a></div><div class="ttdeci">static auto new_line() noexcept -&gt; xtd::string</div><div class="ttdoc">Gets the newline string defined for this environment.</div></div>
 <div class="ttc" id="aclassxtd_1_1environment_html_af3c327dc575863b4e3d376ce8fc5d2c3"><div class="ttname"><a href="#af3c327dc575863b4e3d376ce8fc5d2c3">xtd::environment::exit_code</a></div><div class="ttdeci">static auto exit_code() noexcept -&gt; xtd::int32</div><div class="ttdoc">Gets the exit code of the process.</div></div>
 <div class="ttc" id="agroup__format__parse_html_gab67eb80458cad40e22a5036b84c9a5c7"><div class="ttname"><a href="group__format__parse.html#gab67eb80458cad40e22a5036b84c9a5c7">xtd::basic_string&lt; char &gt;::format</a></div><div class="ttdeci">static auto format(const basic_string&lt; char &gt; &amp;fmt, args_t &amp;&amp;... args) -&gt; basic_string</div></div>
@@ -510,6 +510,18 @@ Public Static Methods</h2></td></tr>
 <tr class="memdesc:a4a1c1894d329ef551bb7160769c8bcbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Terminates this process and returns an exit status to the operating system.  <br /></td></tr>
 <tr class="memitem:aaf6a56542c6841ae175d3a19cf1505bb" id="r_aaf6a56542c6841ae175d3a19cf1505bb"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aaf6a56542c6841ae175d3a19cf1505bb">expand_environment_variables</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;name) -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td></tr>
 <tr class="memdesc:aaf6a56542c6841ae175d3a19cf1505bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replaces the name of each environment variable embedded in the specified string with the string equivalent of the value of the variable, then returns the resulting string.  <br /></td></tr>
+<tr class="memitem:a676d042ff30472e10924918da3d47aee" id="r_a676d042ff30472e10924918da3d47aee"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a676d042ff30472e10924918da3d47aee">fail_fast</a> () noexcept -&gt; void</td></tr>
+<tr class="memdesc:a676d042ff30472e10924918da3d47aee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Immediately terminates the process .  <br /></td></tr>
+<tr class="memitem:a6a69ebbe559d36bc470bb217fcfae609" id="r_a6a69ebbe559d36bc470bb217fcfae609"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a6a69ebbe559d36bc470bb217fcfae609">fail_fast</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;message) noexcept -&gt; void</td></tr>
+<tr class="memdesc:a6a69ebbe559d36bc470bb217fcfae609"><td class="mdescLeft">&#160;</td><td class="mdescRight">Immediately terminates the process before reporting an error message. For Windows, the error message is written to the Windows Application event log, and the message is included in error reporting to Microsoft. For Unix-like systems, the message, alongside the stack trace, is written to the standard error stream.  <br /></td></tr>
+<tr class="memitem:a949b2af9a19a371e6aff4c6ddad3f8a3" id="r_a949b2af9a19a371e6aff4c6ddad3f8a3"><td class="memTemplParams" colspan="2">template&lt;typename exception_t&gt; <br />
+requires std::derived_from&lt;<a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt;exception_t&gt;, std::exception&gt;</td></tr>
+<tr class="memitem:a949b2af9a19a371e6aff4c6ddad3f8a3 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a949b2af9a19a371e6aff4c6ddad3f8a3">fail_fast</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;message, const exception_t &amp;exception) -&gt; void</td></tr>
+<tr class="memdesc:a949b2af9a19a371e6aff4c6ddad3f8a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Immediately terminates the process before reporting an error message. For Windows, the error message is written to the Windows Application event log, and the message and exception information is included in error reporting to Microsoft. For Unix-like systems, the message alongside the stack trace is written to the standard error stream.  <br /></td></tr>
+<tr class="memitem:ac5846d42a59b4d71a230529a8d710c51" id="r_ac5846d42a59b4d71a230529a8d710c51"><td class="memTemplParams" colspan="2">template&lt;typename exception_t&gt; <br />
+requires std::derived_from&lt;<a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt;exception_t&gt;, std::exception&gt;</td></tr>
+<tr class="memitem:ac5846d42a59b4d71a230529a8d710c51 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ac5846d42a59b4d71a230529a8d710c51">fail_fast</a> (const exception_t &amp;exception) noexcept -&gt; void</td></tr>
+<tr class="memdesc:ac5846d42a59b4d71a230529a8d710c51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Immediately terminates the process..  <br /></td></tr>
 <tr class="memitem:a3202b3818d14003ae00e1de34e662f96" id="r_a3202b3818d14003ae00e1de34e662f96"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a3202b3818d14003ae00e1de34e662f96">get_command_line_args</a> () -&gt; const <a class="el" href="group__xtd__core.html#gabf5d378737c3b0846431d6b51496ebfa">xtd::argument_collection</a> &amp;</td></tr>
 <tr class="memdesc:a3202b3818d14003ae00e1de34e662f96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a string array containing the command-line arguments for the current process.  <br /></td></tr>
 <tr class="memitem:a0733d98112ce14a9e0d99e227f7d776f" id="r_a0733d98112ce14a9e0d99e227f7d776f"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a0733d98112ce14a9e0d99e227f7d776f">get_environment_variable</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;variable) -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td></tr>
@@ -2031,6 +2043,165 @@ Return always <span class="tt">true</span> for now.</dd></dl>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A string with each environment variable replaced by its value. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Replacement only occurs for environment variables that are set. For example, suppose name is "MyENV = %MyENV%". If the environment variable, MyENV, is set to 42, this method returns "MyENV = 42". If MyENV is not set, no change occurs; this method returns "MyENV = %MyENV%". </dd></dl>
+
+</div>
+</div>
+<a id="a676d042ff30472e10924918da3d47aee" name="a676d042ff30472e10924918da3d47aee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a676d042ff30472e10924918da3d47aee">&#9670;&#160;</a></span>fail_fast() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto xtd::environment::fail_fast </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> -&gt; void</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Immediately terminates the process . </p>
+<dl class="section remark"><dt>Remarks</dt><dd>This method terminates a process without running any active #exit_scope_ or <a class="el" href="group__keywords.html#gaa1d4feda5380aa7b0daa9b38c8f2251f" title="Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...">finally_</a> blocks or finalizers. </dd>
+<dd>
+Use the <a class="el" href="#a676d042ff30472e10924918da3d47aee" title="Immediately terminates the process .">xtd::environment::fail_fast</a> method instead of the <a class="el" href="#a0e295700d732e6d310d060a2caa0932d" title="Terminates this process and returns an exit code to the operating system.">xtd::environment::exit</a> method to terminate your application if the state of your application is damaged beyond repair, and executing your application's #exit_scope_ or <a class="el" href="group__keywords.html#gaa1d4feda5380aa7b0daa9b38c8f2251f" title="Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...">finally_</a> blocks and finalizers will corrupt program resources. </dd></dl>
+
+</div>
+</div>
+<a id="a6a69ebbe559d36bc470bb217fcfae609" name="a6a69ebbe559d36bc470bb217fcfae609"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a69ebbe559d36bc470bb217fcfae609">&#9670;&#160;</a></span>fail_fast() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto xtd::environment::fail_fast </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>message</em></span></td><td>)</td>
+          <td> -&gt; void</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Immediately terminates the process before reporting an error message. For Windows, the error message is written to the Windows Application event log, and the message is included in error reporting to Microsoft. For Unix-like systems, the message, alongside the stack trace, is written to the standard error stream. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td>A message that explains why the process was terminated, or null if no explanation is provided. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>This method terminates a process without running any active #exit_scope_ or <a class="el" href="group__keywords.html#gaa1d4feda5380aa7b0daa9b38c8f2251f" title="Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...">finally_</a> blocks or finalizers. </dd>
+<dd>
+On Windows, the <a class="el" href="#a676d042ff30472e10924918da3d47aee" title="Immediately terminates the process .">xtd::environment::fail_fast</a> method writes the message string to the Windows Application event log, creates a dump of your application, and then terminates the current process. The message string is also included in error reporting to Microsoft via Windows Error Reporting. For more information, see <a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/dashboard/">Windows Error Reporting: Getting Started</a>. </dd>
+<dd>
+On Unix-like systems, the message is written to the standard error stream, alongside the stack trace information. </dd>
+<dd>
+Use the <a class="el" href="#a676d042ff30472e10924918da3d47aee" title="Immediately terminates the process .">xtd::environment::fail_fast</a> method instead of the <a class="el" href="#a0e295700d732e6d310d060a2caa0932d" title="Terminates this process and returns an exit code to the operating system.">xtd::environment::exit</a> method to terminate your application if the state of your application is damaged beyond repair, and executing your application's #exit_scope_ or <a class="el" href="group__keywords.html#gaa1d4feda5380aa7b0daa9b38c8f2251f" title="Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...">finally_</a> blocks and finalizers will corrupt program resources. </dd></dl>
+
+</div>
+</div>
+<a id="a949b2af9a19a371e6aff4c6ddad3f8a3" name="a949b2af9a19a371e6aff4c6ddad3f8a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a949b2af9a19a371e6aff4c6ddad3f8a3">&#9670;&#160;</a></span>fail_fast() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename exception_t&gt; <br />
+requires std::derived_from&lt;<a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt;exception_t&gt;, std::exception&gt;</div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto xtd::environment::fail_fast </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>message</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const exception_t &amp;</td>          <td class="paramname"><span class="paramname"><em>exception</em></span>&#160;) -&gt; void</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Immediately terminates the process before reporting an error message. For Windows, the error message is written to the Windows Application event log, and the message and exception information is included in error reporting to Microsoft. For Unix-like systems, the message alongside the stack trace is written to the standard error stream. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td>A message that explains why the process was terminated, or null if no explanation is provided. </td></tr>
+    <tr><td class="paramname">exception</td><td>An exception that represents the error that caused the termination. This is typically the exception in a catch block. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>This method terminates the process without running any active #exit_scope_ or <a class="el" href="group__keywords.html#gaa1d4feda5380aa7b0daa9b38c8f2251f" title="Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...">finally_</a> blocks or finalizers. </dd>
+<dd>
+On Windows, the Environment.FailFast method writes the message string to the Windows Application event log, creates a dump of your application, and then terminates the current process. </dd>
+<dd>
+Information is reported to Microsoft by using Windows Error Reporting. For more information, see <a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/dashboard/">Windows Error Reporting: Getting Started</a>. Error reporting to Microsoft includes message and exception information, which provides details used to classify the error. Although exception is not handled because the process is terminated, the contextual information that raised the exception is still obtained. </dd>
+<dd>
+On Unix-like systems, the message is written to the standard error stream, alongside the stack trace information. </dd>
+<dd>
+Use the <a class="el" href="#a676d042ff30472e10924918da3d47aee" title="Immediately terminates the process .">xtd::environment::fail_fast</a> method instead of the <a class="el" href="#a0e295700d732e6d310d060a2caa0932d" title="Terminates this process and returns an exit code to the operating system.">xtd::environment::exit</a> method to terminate your application if the state of your application is damaged beyond repair, and executing your application's #exit_scope_ or <a class="el" href="group__keywords.html#gaa1d4feda5380aa7b0daa9b38c8f2251f" title="Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...">finally_</a> blocks and finalizers will corrupt program resources. </dd></dl>
+
+</div>
+</div>
+<a id="ac5846d42a59b4d71a230529a8d710c51" name="ac5846d42a59b4d71a230529a8d710c51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5846d42a59b4d71a230529a8d710c51">&#9670;&#160;</a></span>fail_fast() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename exception_t&gt; <br />
+requires std::derived_from&lt;<a class="el" href="group__xtd__core.html#ga22e964c2bb3dc8503ff50274e5f7ebbe">xtd::raw_type</a>&lt;exception_t&gt;, std::exception&gt;</div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto xtd::environment::fail_fast </td>
+          <td>(</td>
+          <td class="paramtype">const exception_t &amp;</td>          <td class="paramname"><span class="paramname"><em>exception</em></span></td><td>)</td>
+          <td> -&gt; void</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Immediately terminates the process.. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">exception</td><td>An exception that represents the error that caused the termination. This is typically the exception in a catch block. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>This method terminates the process without running any active #exit_scope_ or <a class="el" href="group__keywords.html#gaa1d4feda5380aa7b0daa9b38c8f2251f" title="Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...">finally_</a> blocks or finalizers. </dd>
+<dd>
+Use the <a class="el" href="#a676d042ff30472e10924918da3d47aee" title="Immediately terminates the process .">xtd::environment::fail_fast</a> method instead of the <a class="el" href="#a0e295700d732e6d310d060a2caa0932d" title="Terminates this process and returns an exit code to the operating system.">xtd::environment::exit</a> method to terminate your application if the state of your application is damaged beyond repair, and executing your application's #exit_scope_ or <a class="el" href="group__keywords.html#gaa1d4feda5380aa7b0daa9b38c8f2251f" title="Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...">finally_</a> blocks and finalizers will corrupt program resources. </dd></dl>
 
 </div>
 </div>
