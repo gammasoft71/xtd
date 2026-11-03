@@ -258,7 +258,7 @@ Inheritance diagram for xtd::environment:</div>
 <div class="ttc" id="aclassxtd_1_1environment_html_ad7e33c9e831589785d5452b5d5ad50f6"><div class="ttname"><a href="#ad7e33c9e831589785d5452b5d5ad50f6">xtd::environment::machine_name</a></div><div class="ttdeci">static auto machine_name() -&gt; xtd::string</div><div class="ttdoc">Gets the NetBIOS name of this local computer.</div></div>
 <div class="ttc" id="aclassxtd_1_1environment_html_ae61bce6f05e6c16abe335bfdb81f6711"><div class="ttname"><a href="#ae61bce6f05e6c16abe335bfdb81f6711">xtd::environment::command_line</a></div><div class="ttdeci">static auto command_line() noexcept -&gt; xtd::string</div><div class="ttdoc">Gets the command line for this process.</div></div>
 <div class="ttc" id="aclassxtd_1_1environment_html_ae69a770aee6c1e992b5b7461070c5ebe"><div class="ttname"><a href="#ae69a770aee6c1e992b5b7461070c5ebe">xtd::environment::user_name</a></div><div class="ttdeci">static auto user_name() -&gt; xtd::string</div><div class="ttdoc">Gets the user name of the person who is currently logged on to the operating system.</div></div>
-<div class="ttc" id="aclassxtd_1_1environment_html_aecae02977991ca63077b48ad5b1228c2"><div class="ttname"><a href="#aecae02977991ca63077b48ad5b1228c2">xtd::environment::get_folder_path</a></div><div class="ttdeci">static auto get_folder_path(environment::special_folder folder) -&gt; xtd::string</div><div class="ttdoc">Gets the path to the system special folder that is identified by the specified enumeration.</div><div class="ttdef"><b>Definition</b> environment.hpp:646</div></div>
+<div class="ttc" id="aclassxtd_1_1environment_html_aecae02977991ca63077b48ad5b1228c2"><div class="ttname"><a href="#aecae02977991ca63077b48ad5b1228c2">xtd::environment::get_folder_path</a></div><div class="ttdeci">static auto get_folder_path(environment::special_folder folder) -&gt; xtd::string</div><div class="ttdoc">Gets the path to the system special folder that is identified by the specified enumeration.</div><div class="ttdef"><b>Definition</b> environment.hpp:658</div></div>
 <div class="ttc" id="aclassxtd_1_1environment_html_af15178dea424d7fcfcbd7cecc9675466"><div class="ttname"><a href="#af15178dea424d7fcfcbd7cecc9675466">xtd::environment::new_line</a></div><div class="ttdeci">static auto new_line() noexcept -&gt; xtd::string</div><div class="ttdoc">Gets the newline string defined for this environment.</div></div>
 <div class="ttc" id="aclassxtd_1_1environment_html_af3c327dc575863b4e3d376ce8fc5d2c3"><div class="ttname"><a href="#af3c327dc575863b4e3d376ce8fc5d2c3">xtd::environment::exit_code</a></div><div class="ttdeci">static auto exit_code() noexcept -&gt; xtd::int32</div><div class="ttdoc">Gets the exit code of the process.</div></div>
 <div class="ttc" id="agroup__format__parse_html_gab67eb80458cad40e22a5036b84c9a5c7"><div class="ttname"><a href="group__format__parse.html#gab67eb80458cad40e22a5036b84c9a5c7">xtd::basic_string&lt; char &gt;::format</a></div><div class="ttdeci">static auto format(const basic_string&lt; char &gt; &amp;fmt, args_t &amp;&amp;... args) -&gt; basic_string</div></div>
@@ -2073,6 +2073,29 @@ Return always <span class="tt">true</span> for now.</dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>This method terminates a process without running any active #exit_scope_ or <a class="el" href="group__keywords.html#gaa1d4feda5380aa7b0daa9b38c8f2251f" title="Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...">finally_</a> blocks or finalizers. </dd>
 <dd>
 Use the <a class="el" href="#a676d042ff30472e10924918da3d47aee" title="Immediately terminates the process .">xtd::environment::fail_fast</a> method instead of the <a class="el" href="#a0e295700d732e6d310d060a2caa0932d" title="Terminates this process and returns an exit code to the operating system.">xtd::environment::exit</a> method to terminate your application if the state of your application is damaged beyond repair, and executing your application's #exit_scope_ or <a class="el" href="group__keywords.html#gaa1d4feda5380aa7b0daa9b38c8f2251f" title="Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...">finally_</a> blocks and finalizers will corrupt program resources. </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates how to use <a class="el" href="#a676d042ff30472e10924918da3d47aee" title="Immediately terminates the process .">xtd::environment::fail_fast</a> method. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <a class="code hl_define" href="group__keywords.html#ga523a9defb7ea3de88cc956948015ef98">scope_exit_</a> <span class="keyword">noexcept</span> {</div>
+<div class="line">    <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;End application&quot;</span>);</div>
+<div class="line">  };</div>
+<div class="line">  </div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;Start application&quot;</span>);</div>
+<div class="line">  </div>
+<div class="line">  <a class="code hl_function" href="#a676d042ff30472e10924918da3d47aee">environment::fail_fast</a>();</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Start application</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Process terminated.</span></div>
+<div class="line"><span class="comment">//    at xtd::environment::fail_fast()</span></div>
+<div class="line"><span class="comment">//    at main</span></div>
+<div class="ttc" id="aclassxtd_1_1environment_html_a676d042ff30472e10924918da3d47aee"><div class="ttname"><a href="#a676d042ff30472e10924918da3d47aee">xtd::environment::fail_fast</a></div><div class="ttdeci">static auto fail_fast() noexcept -&gt; void</div><div class="ttdoc">Immediately terminates the process .</div><div class="ttdef"><b>Definition</b> environment.hpp:570</div></div>
+<div class="ttc" id="agroup__keywords_html_ga523a9defb7ea3de88cc956948015ef98"><div class="ttname"><a href="group__keywords.html#ga523a9defb7ea3de88cc956948015ef98">scope_exit_</a></div><div class="ttdeci">#define scope_exit_</div><div class="ttdoc">Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...</div><div class="ttdef"><b>Definition</b> scope_exit.hpp:137</div></div>
+<div class="ttc" id="anamespacextd_html_a9482c5e9fb1d60c658bbe28bfbb17353"><div class="ttname"><a href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">xtd::println</a></div><div class="ttdeci">auto println(FILE *file) -&gt; void</div><div class="ttdoc">Writes the current line terminator to the file output stream using the specified format information.</div><div class="ttdef"><b>Definition</b> println.hpp:15</div></div>
+</div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
@@ -2113,6 +2136,27 @@ On Windows, the <a class="el" href="#a676d042ff30472e10924918da3d47aee" title="I
 On Unix-like systems, the message is written to the standard error stream, alongside the stack trace information. </dd>
 <dd>
 Use the <a class="el" href="#a676d042ff30472e10924918da3d47aee" title="Immediately terminates the process .">xtd::environment::fail_fast</a> method instead of the <a class="el" href="#a0e295700d732e6d310d060a2caa0932d" title="Terminates this process and returns an exit code to the operating system.">xtd::environment::exit</a> method to terminate your application if the state of your application is damaged beyond repair, and executing your application's #exit_scope_ or <a class="el" href="group__keywords.html#gaa1d4feda5380aa7b0daa9b38c8f2251f" title="Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...">finally_</a> blocks and finalizers will corrupt program resources. </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates how to use <a class="el" href="#a676d042ff30472e10924918da3d47aee" title="Immediately terminates the process .">xtd::environment::fail_fast</a> method with specified message.. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <a class="code hl_define" href="group__keywords.html#ga523a9defb7ea3de88cc956948015ef98">scope_exit_</a> <span class="keyword">noexcept</span> {</div>
+<div class="line">    <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;End application&quot;</span>);</div>
+<div class="line">  };</div>
+<div class="line">  </div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;Start application&quot;</span>);</div>
+<div class="line">  </div>
+<div class="line">  <a class="code hl_function" href="#a676d042ff30472e10924918da3d47aee">environment::fail_fast</a>(<span class="stringliteral">&quot;User message.&quot;</span>);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Start application</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Process terminated.</span></div>
+<div class="line"><span class="comment">// User message.</span></div>
+<div class="line"><span class="comment">//    at xtd::environment::fail_fast(xtd::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt;&gt; const&amp;)</span></div>
+<div class="line"><span class="comment">//    at main</span></div>
+</div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
@@ -2163,6 +2207,51 @@ Information is reported to Microsoft by using Windows Error Reporting. For more 
 On Unix-like systems, the message is written to the standard error stream, alongside the stack trace information. </dd>
 <dd>
 Use the <a class="el" href="#a676d042ff30472e10924918da3d47aee" title="Immediately terminates the process .">xtd::environment::fail_fast</a> method instead of the <a class="el" href="#a0e295700d732e6d310d060a2caa0932d" title="Terminates this process and returns an exit code to the operating system.">xtd::environment::exit</a> method to terminate your application if the state of your application is damaged beyond repair, and executing your application's #exit_scope_ or <a class="el" href="group__keywords.html#gaa1d4feda5380aa7b0daa9b38c8f2251f" title="Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...">finally_</a> blocks and finalizers will corrupt program resources. </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates how to use <a class="el" href="#a676d042ff30472e10924918da3d47aee" title="Immediately terminates the process .">xtd::environment::fail_fast</a> method with specified message and xtd exception. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <a class="code hl_define" href="group__keywords.html#ga523a9defb7ea3de88cc956948015ef98">scope_exit_</a> <span class="keyword">noexcept</span> {</div>
+<div class="line">    <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;End application&quot;</span>);</div>
+<div class="line">  };</div>
+<div class="line">  </div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;Start application&quot;</span>);</div>
+<div class="line">  </div>
+<div class="line">  <a class="code hl_function" href="#a676d042ff30472e10924918da3d47aee">environment::fail_fast</a>(<span class="stringliteral">&quot;User message.&quot;</span>, <a class="code hl_class" href="classxtd_1_1argument__out__of__range__exception.html">argument_out_of_range_exception</a> {<span class="stringliteral">&quot;This is a test exception for fail_fast.&quot;</span>});</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Start application</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Process terminated.</span></div>
+<div class="line"><span class="comment">// User message.</span></div>
+<div class="line"><span class="comment">//    at void xtd::environment::fail_fast&lt;xtd::argument_out_of_range_exception&gt;(xtd::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt;&gt; const&amp;, xtd::argument_out_of_range_exception const&amp;)</span></div>
+<div class="line"><span class="comment">//    at main</span></div>
+<div class="line"><span class="comment">// xtd::argument_out_of_range_exception: Specified argument is out of range of valid values. (Parameter &#39;This is a test exception for FailFast.&#39;)</span></div>
+<div class="ttc" id="aclassxtd_1_1argument__out__of__range__exception_html"><div class="ttname"><a href="classxtd_1_1argument__out__of__range__exception.html">xtd::argument_out_of_range_exception</a></div><div class="ttdoc">The exception that is thrown when one of the arguments provided to a method is out of range.</div><div class="ttdef"><b>Definition</b> argument_out_of_range_exception.hpp:22</div></div>
+</div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates how to use <a class="el" href="#a676d042ff30472e10924918da3d47aee" title="Immediately terminates the process .">xtd::environment::fail_fast</a> method with specified message and std exception. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <a class="code hl_define" href="group__keywords.html#ga523a9defb7ea3de88cc956948015ef98">scope_exit_</a> <span class="keyword">noexcept</span> {</div>
+<div class="line">    <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;End application&quot;</span>);</div>
+<div class="line">  };</div>
+<div class="line">  </div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;Start application&quot;</span>);</div>
+<div class="line">  </div>
+<div class="line">  <a class="code hl_function" href="#a676d042ff30472e10924918da3d47aee">environment::fail_fast</a>(<span class="stringliteral">&quot;User message.&quot;</span>, std::invalid_argument {<span class="stringliteral">&quot;This is a test exception for fail_fast.&quot;</span>});</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Start application</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Process terminated.</span></div>
+<div class="line"><span class="comment">// User message.</span></div>
+<div class="line"><span class="comment">//    at void xtd::environment::fail_fast&lt;std::invalid_argument&gt;(xtd::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt;&gt; const&amp;, std::invalid_argument const&amp;)</span></div>
+<div class="line"><span class="comment">//    at main</span></div>
+<div class="line"><span class="comment">// std::invalid_argument (Parameter &#39;This is a test exception for fail_fast.&#39;)</span></div>
+</div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
