@@ -11,6 +11,10 @@ add_projects(
   environment_exit
   environment_exit_code
   environment_expand_environment_variables
+  environment_fail_fast
+  environment_fail_fast_with_message
+  environment_fail_fast_with_message_and_std_exception
+  environment_fail_fast_with_message_and_xtd_exception
   environment_program_exit
   environment_stack_trace
   environment_tick_count
