@@ -2,6 +2,7 @@
 /// @brief Contains #scope_exit_ keyword.
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
+#include "action_callable.hpp"
 #include "unused.hpp"
 #include <exception>
 #include <utility>
@@ -65,13 +66,15 @@ namespace xtd {
   
   /// @cond
   template<typename function_t>
+  requires xtd::action_callable<function_t> && std::is_nothrow_invocable_v<function_t&>
   struct __xtd_scope_exit_object__ {
     __xtd_scope_exit_object__(function_t&& f) : function(std::forward<function_t>(f)) {}
-    ~__xtd_scope_exit_object__() { function(); }
+    ~__xtd_scope_exit_object__() noexcept { function(); }
     function_t function;
   };
   
   template<typename function_t>
+  requires xtd::action_callable<function_t> && std::is_nothrow_invocable_v<function_t&>
   auto operator +(scope_exit, function_t&& function) {
     return __xtd_scope_exit_object__<function_t> {std::forward<function_t>(function)};
   }
@@ -132,4 +135,4 @@ namespace xtd {
 /// // caught exception!
 /// ```
 #define scope_exit_ \
-  [[maybe_unused]] auto __ = xtd::scope_exit {} + [&]
+[[maybe_unused]] auto __ = xtd::scope_exit {} + [&]()

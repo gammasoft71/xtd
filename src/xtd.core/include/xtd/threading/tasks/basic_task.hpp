@@ -479,7 +479,7 @@ namespace xtd {
             previous_current_id = current_id_;
             current_id_ = id;
             
-            scope_exit_ {
+            scope_exit_ noexcept {
               end_event.set();
               if (!internal_continuation.is_empty()) internal_continuation();
               if (continuation) basic_task<result_t>::run_continuation(continuation);
