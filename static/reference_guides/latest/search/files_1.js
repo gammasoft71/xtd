@@ -40,7 +40,7 @@ var searchData=
   ['architecture_5fid_2ehpp_37',['architecture_id.hpp',['../architecture__id_8hpp.html',1,'']]],
   ['arg_2ehpp_38',['arg.hpp',['../arg_8hpp.html',1,'']]],
   ['argb_2ehpp_39',['argb.hpp',['../argb_8hpp.html',1,'']]],
-  ['args_2ehpp_40',['args.hpp',['../args_8hpp.html',1,'']]],
+  ['args_2ehpp_40',['args.hpp',['../args_8hpp.html',1,'(Global Namespace)'],['../expressions_2args_8hpp.html',1,'(Global Namespace)']]],
   ['argument_5fcollection_2ehpp_41',['argument_collection.hpp',['../argument__collection_8hpp.html',1,'']]],
   ['argument_5fexception_2ehpp_42',['argument_exception.hpp',['../argument__exception_8hpp.html',1,'']]],
   ['argument_5fexpression_2ehpp_43',['argument_expression.hpp',['../argument__expression_8hpp.html',1,'']]],

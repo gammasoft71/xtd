@@ -114,6 +114,8 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 Macros</h2></td></tr>
 <tr class="memitem:ga8c203f08ddf277e496fa11b6e3e5d0ef" id="r_ga8c203f08ddf277e496fa11b6e3e5d0ef"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#ga8c203f08ddf277e496fa11b6e3e5d0ef">export_</a></td></tr>
 <tr class="memdesc:ga8c203f08ddf277e496fa11b6e3e5d0ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define shared library export.  <br /></td></tr>
+<tr class="memitem:gae68c39c548b25841e1e59b1068787660" id="r_gae68c39c548b25841e1e59b1068787660"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#gae68c39c548b25841e1e59b1068787660">args_</a></td></tr>
+<tr class="memdesc:gae68c39c548b25841e1e59b1068787660"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a string array containing the command-line arguments for the current process.  <br /></td></tr>
 <tr class="memitem:ga44b59fc4162de826a0dbd3697c8def1b" id="r_ga44b59fc4162de826a0dbd3697c8def1b"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#ga44b59fc4162de826a0dbd3697c8def1b">block_scope_</a></td></tr>
 <tr class="memdesc:ga44b59fc4162de826a0dbd3697c8def1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The specified expression is cleared automatically when the scope is ended.  <br /></td></tr>
 <tr class="memitem:gaf3084b419b4cc718142c35ab8ac5ac85" id="r_gaf3084b419b4cc718142c35ab8ac5ac85"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#gaf3084b419b4cc718142c35ab8ac5ac85">call_once_</a></td></tr>
@@ -138,6 +140,10 @@ Macros</h2></td></tr>
 <tr class="memdesc:ga3844e63da56dbd2107788b5396857216"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides the registration struct for enum with specified underlying type.  <br /></td></tr>
 <tr class="memitem:ga59ea5f69803bcfb367107f1cf66e5fff" id="r_ga59ea5f69803bcfb367107f1cf66e5fff"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#ga59ea5f69803bcfb367107f1cf66e5fff">enum_struct_</a>(namespace_name,  enum_struct_t, ...)</td></tr>
 <tr class="memdesc:ga59ea5f69803bcfb367107f1cf66e5fff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides the registration struct for enum struct.  <br /></td></tr>
+<tr class="memitem:ga743c6547e213d6ee5cfee7ca6af3336c" id="r_ga743c6547e213d6ee5cfee7ca6af3336c"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#ga743c6547e213d6ee5cfee7ca6af3336c">env_</a>(...)</td></tr>
+<tr class="memdesc:ga743c6547e213d6ee5cfee7ca6af3336c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the value of an environment variable from the current process or from the Windows operating system registry key for the current user or local machine.  <br /></td></tr>
+<tr class="memitem:gafce5ef7de9279bb04cb4110505957421" id="r_gafce5ef7de9279bb04cb4110505957421"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#gafce5ef7de9279bb04cb4110505957421">envs_</a></td></tr>
+<tr class="memdesc:gafce5ef7de9279bb04cb4110505957421"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves all environment variable names and their values from the current process.  <br /></td></tr>
 <tr class="memitem:gaa1d4feda5380aa7b0daa9b38c8f2251f" id="r_gaa1d4feda5380aa7b0daa9b38c8f2251f"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#gaa1d4feda5380aa7b0daa9b38c8f2251f">finally_</a></td></tr>
 <tr class="memdesc:gaa1d4feda5380aa7b0daa9b38c8f2251f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (<a href="https://en.cppreference.com/w/cpp/language/raii">RAII</a>) technique. It binds resource acquisition and release to initialization and destruction of a variable that holds the resource. There are times when writing a special class for such a variable is not worth the effort. This is when xtd <a class="el" href="#gaa1d4feda5380aa7b0daa9b38c8f2251f" title="Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...">finally_</a> comes into play. <a class="el" href="#gaa1d4feda5380aa7b0daa9b38c8f2251f" title="Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...">finally_</a> is always executed at the end of the scope.  <br /></td></tr>
 <tr class="memitem:gaea49fae71107df8769685efb159c181a" id="r_gaea49fae71107df8769685efb159c181a"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#gaea49fae71107df8769685efb159c181a">flags_attribute_</a>(namespace_name,  enum_type)</td></tr>
@@ -227,6 +233,51 @@ Public Static Methods</h2></td></tr>
 
 <p>Define shared library export. </p>
 <dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="gae68c39c548b25841e1e59b1068787660" name="gae68c39c548b25841e1e59b1068787660"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae68c39c548b25841e1e59b1068787660">&#9670;&#160;</a></span>args_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define args_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="args_8hpp.html">args.hpp</a>&gt;</code></p>
+
+<p>Returns a string array containing the command-line arguments for the current process. </p>
+<dl class="section return"><dt>Returns</dt><dd>An array of string where each element contains a command-line argument. The first element is the executable file name, and the following zero or more elements contain the remaining command-line arguments. <div class="fragment"><div class="line"><span class="preprocessor">#define args_</span></div>
+</div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/args&gt;</span></div>
+</div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
+<dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The first element in the array contains the file name of the executing program. If the file name is not available, the first element is equal to string empty "". The remaining elements contain any additional tokens entered on the command line. </dd>
+<dd>
+The program file name can, but is not required to, include path information. </dd>
+<dd>
+Command line arguments are delimited by spaces. You can use double quotation marks (") to include spaces within an argument. The single quotation mark ('), however, does not provide this functionality.
+    @remarks If a double quotation mark follows two or an even number of backslashes, each proceeding backslash pair is replaced with one backslash and the double quotation mark is removed. If a double quotation mark follows an odd number of backslashes, including just one, each preceding pair is replaced with one backslash and the remaining backslash is removed; however, in this case the double quotation mark is not removed.
+    @remarks The following table shows how command line arguments can be delimited, and assumes MyApp as the current executing application.
+&lt;table class="markdownTable"&gt;
+  &lt;tr class="markdownTableHead"&gt;    &lt;th class="markdownTableHeadNone"&gt; Input at the command line  </dd></dl>
+<p>Resulting command line arguments  </p>
+<p>MyApp alpha beta  </p>
+<p>MyApp, alpha, beta  </p>
+<p>MyApp "alpha with spaces" "beta with spaces"  </p>
+<p>MyApp, alpha with spaces, beta with spaces  </p>
+<p>MyApp 'alpha with spaces' beta  </p>
+<p>MyApp, 'alpha, with, spaces', beta  </p>
+<p>MyApp \\alpha \\"beta  </p>
+<p>MyApp, \\alpha, \beta  </p>
+<p>MyApp \\"alpha "beta  </p>
+<p>MyApp, \"alpha, "beta  </p>
+<dl class="section remark"><dt>Remarks</dt><dd>To obtain the command line as a single string, use the <a class="el" href="classxtd_1_1environment.html#ae61bce6f05e6c16abe335bfdb81f6711" title="Gets the command line for this process.">xtd::environment::command_line</a> method. </dd></dl>
 
 </div>
 </div>
@@ -888,6 +939,74 @@ Public Static Methods</h2></td></tr>
 </div><!-- fragment --> </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="enum_struct_8cpp-example.html#_a0">enum_struct.cpp</a>, and <a class="el" href="parse_enum_struct_8cpp-example.html#_a0">parse_enum_struct.cpp</a>.</dd>
 </dl>
+
+</div>
+</div>
+<a id="ga743c6547e213d6ee5cfee7ca6af3336c" name="ga743c6547e213d6ee5cfee7ca6af3336c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga743c6547e213d6ee5cfee7ca6af3336c">&#9670;&#160;</a></span>env_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define env_</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em></em></span>...</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="env_8hpp.html">env.hpp</a>&gt;</code></p>
+
+<p>Retrieves the value of an environment variable from the current process or from the Windows operating system registry key for the current user or local machine. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">variable</td><td>The name of an environment variable. </td></tr>
+    <tr><td class="paramname">target</td><td>One of the <a class="el" href="group__xtd__core.html#ga83c52fe4c5b8fa21b9bf0bba21b0634d" title="Specifies the location where an environment variable is stored or retrieved in a set or get operation...">xtd::environment_variable_target</a> values. Optional by default if not specified is xtd:environment_variable_target::process. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>target is not a valid environment_variable_target value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> The value of the environment variable specified by the variable and target parameters, or empty "" if the environment variable is not found. <div class="fragment"><div class="line"><span class="preprocessor">#define env_</span></div>
+</div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/env&gt;</span></div>
+</div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
+<dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>To retrieve all environment variables along with their values, call the <a class="el" href="classxtd_1_1environment.html#a58fca977c02c022c4872b17784a83f42" title="Retrieves all environment variable names and their values from the current process.">xtd::environment::get_environment_variables</a> method. </dd>
+<dd>
+Environment variable names are case-sensitive on Linux and macOS but are not case-sensitive on Windows. </dd></dl>
+
+</div>
+</div>
+<a id="gafce5ef7de9279bb04cb4110505957421" name="gafce5ef7de9279bb04cb4110505957421"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gafce5ef7de9279bb04cb4110505957421">&#9670;&#160;</a></span>envs_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define envs_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="envs_8hpp.html">envs.hpp</a>&gt;</code></p>
+
+<p>Retrieves all environment variable names and their values from the current process. </p>
+<dl class="section return"><dt>Returns</dt><dd>std::map A dictionary that contains all environment variable names and their values; otherwise, an empty dictionary if no environment variables are found. <div class="fragment"><div class="line"><span class="preprocessor">#define envs_</span></div>
+</div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/envs&gt;</span></div>
+</div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
+<dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The names and values for the environment variables are stored as key-value pairs in the returned <a class="el" href="group__specialized__collections.html#ga5b478839a9ae14f854103b14c7951dc7" title="Represents a xtd::collections::generic::dictionary with the key and the value strongly typed to be st...">xtd::collections::specialized::string_dictionary</a>. </dd></dl>
 
 </div>
 </div>
