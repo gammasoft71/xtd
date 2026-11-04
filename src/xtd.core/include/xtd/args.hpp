@@ -23,6 +23,7 @@ namespace xtd {
   /// @remarks Command line arguments are delimited by spaces. You can use double quotation marks (") to include spaces within an argument. The single quotation mark ('), however, does not provide this functionality.
   /// @remarks If a double quotation mark follows two or an even number of backslashes, each proceeding backslash pair is replaced with one backslash and the double quotation mark is removed. If a double quotation mark follows an odd number of backslashes, including just one, each preceding pair is replaced with one backslash and the remaining backslash is removed; however, in this case the double quotation mark is not removed.
   /// @remarks The following table shows how command line arguments can be delimited, and assumes MyApp as the current executing application.
+  ///
   /// | Input at the command line                    | Resulting command line arguments           |
   /// | -------------------------------------------- | ------------------------------------------ |
   /// | MyApp alpha beta                             | MyApp, alpha, beta                         |
