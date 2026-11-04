@@ -293,6 +293,42 @@ namespace xtd {
           return items.get_enumerator();
         }
         
+        /// @brief Adds a key/value pair to the xtd::collections::concurrent::concurrent_dictionary <key_t, value_t> by using the specified function if the key does not already exist. Returns the new value, or the existing value if the key exists.
+        /// @param key The key of the element to add.
+        /// @param ad_value_factory The function used to generate a value for the key.
+        /// @return The value for the key. This will be either the existing value for the key if the key is already in the dictionary, or the new value if the key was not in the dictionary.
+        [[nodiscard]] auto get_or_add(const key_t& key, xtd::callable<value_t, key_t> auto&& add_value_factory) -> const value_t& {
+          lock_guard_(items_) {
+            if (!items_.contains_key(key)) items_.add(key, add_value_factory(key));
+            return items_[key];
+          }
+          xtd::environment::fail_fast("This line is never executed.");
+        }
+        /// @brief Adds a key/value pair to the xtd::collections::concurrent::concurrent_dictionary <key_t, value_t> if the key does not already exist. Returns the new value, or the existing value if the key exists.
+        /// @param key  The key of the element to add.
+        /// @param add_value The value to be added, if the key does not already exist.
+        /// @return The value for the key. This will be either the existing value for the key if the key is already in the dictionary, or the new value if the key was not in the dictionary.
+        [[nodiscard]] auto get_or_add(const key_t& key, const value_t& add_value) -> const value_t& {
+          lock_guard_(items_) {
+            if (!items_.contains_key(key)) items_.add(key, add_value);
+            return items_[key];
+          }
+          xtd::environment::fail_fast("This line is never executed.");
+        }
+        /// @brief Adds a key/value pair to the xtd::collections::concurrent::concurrent_dictionary <key_t, value_t> by using the specified function and an argument if the key does not already exist, or returns the existing value if the key exists.
+        /// @param key The key of the element to add.
+        /// @param ad_value_factory The function used to generate a value for the key.
+        /// @param factory_argument An argument value to pass into valueFactory.
+        /// @return The value for the key. This will be either the existing value for the key if the key is already in the dictionary, or the new value if the key was not in the dictionary.
+        template<typename arg_t>
+        [[nodiscard]] auto get_or_add(const key_t& key, xtd::callable<value_t, key_t, arg_t> auto&& add_value_factory, arg_t&& factory_argument) -> const value_t& {
+          lock_guard_(items_) {
+            if (!items_.contains_key(key)) items_.add(key, add_value_factory(key, factory_argument));
+            return items_[key];
+          }
+          xtd::environment::fail_fast("This line is never executed.");
+        }
+
         /// @brief Copies the elements contained in the xtd::collections::concurrent::concurrent_dictionary <key_t, value_t> to a new array.
         /// @return A new array containing the elements copied from the xtd::collections::concurrent::iproducer_consumer_collection <type_t.
         /// @remarks The method provides a snapshot of the underlying collection. It is possible for other threads to add or remove items immediately after the array is made.
