@@ -58,25 +58,69 @@ namespace xtd {
         /// @name Public Conctructors
         
         /// @{
-        /// @brief Initializes a new instance of the xtd::collections::concurrent::concurrent_dictionary<TKey,TValue> class that is empty, has the default concurrency level, has the default initial capacity, and uses the default comparer for the key type.
+        /// @brief Initializes a new instance of the xtd::collections::concurrent::concurrent_dictionary<key_t,value_t> class that is empty, has the default concurrency level, has the default initial capacity, and uses the default comparer for the key type.
+        /// @remarks The default concurrency level is equal to the number of CPUs. The higher the concurrency level is, the more concurrent write operations can take place without interference and blocking. Higher concurrency level values also cause operations that require all locks (for example, table resizing, ToArray and Count) to become more expensive. The default capacity (DEFAULT_CAPACITY), which represents the initial number of buckets, is a trade-off between the size of a very small dictionary and the number of resizes when constructing a large dictionary. Also, the capacity should not be divisible by a small prime number. The default capacity is 31.
         concurrent_dictionary() = default;
-        /// @brief Initializes a new instance of the xtd::collections::generic::dictionary <key_t, value_t> class that contains elements copied from the specified xtd::collections::generic::idictionary <key_t, value_t> and uses the default equality comparer for the key type.
-        /// @param dictionary The xtd::collections::generic::idictionary <key_t, value_t> whose elements are copied to the new xtd::collections::generic::dictionary <key_t, value_t>.
-        /// @exception xtd::argument_exception `dictionary` contains one or more duplicate keys.
-        /// @remarks Every key in a xtd::collections::generic::dictionary <key_t, value_t> must be unique according to the default equality comparer; likewise, every key in the source `dictionary` must also be unique according to the default equality comparer.
-        /// @remarks The initial capacity of the new xtd::collections::generic::dictionary <key_t, value_t> is large enough to contain all the elements in dictionary.
-        /// @remarks xtd::collections::generic::dictionary <key_t, value_t> requires an equality implementation to determine whether keys are equal. This constructor uses the default generic equality comparer, xtd::collections::generic::equality_comparer::default_equality_comparer. If type `key_t` implements the xtd::iequatable <type_t> generic interface, the default equality comparer uses that implementation. Alternatively, you can specify an implementation of the xtd::collections::generic::iequality_comparer <type_t> generic interface by using a constructor that accepts a comparer parameter.
-        /// @remarks This constructor is an O(`n`) operation, where `n` is the number of elements in dictionary.
-        /// @par Examples
-        /// The following code example demonstrates how to use the xtd::collections::generic::dictionary <key_t, value_t>(xtd::collections::generic::iequality_comparer <key_t>) constructor to initialize a xtd::collections::generic::dictionary <key_t, value_t> with sorted content from another dictionary. The code example creates a xtd::collections::generic::sorted_dictionary <key_t, value_t> and populates it with data in random order, then passes the xtd::collections::generic::sorted_dictionary <key_t, value_t> to the xtd::collections::generic::dictionary <key_t, value_t>(xtd::collections::generic::iequality_comparer <key_t>) constructor, creating a xtd::collections::generic::dictionary <key_t, value_t> that is sorted. This is useful if you need to build a sorted dictionary that at some point becomes static; copying the data from a xtd::collections::generic::sorted_dictionary <key_t, value_t> to a xtd::collections::generic::dictionary <key_t, value_t> improves retrieval speed.
-        /// @include generic_dictionary_constructor_with_idicationary.cpp
-        concurrent_dictionary(const xtd::collections::generic::idictionary<key_t, value_t>& dictionary) {
-          lock_guard_(items_) {
-            ensure_capacity(dictionary.count());
-            for (const auto& item : dictionary)
-              items_.add(item);
-          }
+        /// @brief Initializes a new instance of the xtd::collections::concurrent::concurrent_dictionary<key_t,value_t> class that contains elements copied from the specified xtd::collections::generic::ienumerable<value_type>, has the default concurrency level, has the default initial capacity, and uses the default comparer for the key type.
+        /// @param collection The xtd::collections::generic::ienumerable<value_type> whose elements are copied to the new xtd::collections::concurrent::concurrent_dictionary<key_t,value_t>.
+        concurrent_dictionary(xtd::collections::generic::ienumerable<value_type>&& collection) {
+          lock_guard_(items_)
+          for (const auto& item : collection)
+            items_.add(item);
         }
+        /// @brief Initializes a new instance of the xtd::collections::concurrent::concurrent_dictionary<key_t,value_t> class that contains elements copied from the specified xtd::iterable, has the default concurrency level, has the default initial capacity, and uses the default comparer for the key type.
+        /// @param collection The xtd::iterable whose elements are copied to the new xtd::collections::concurrent::concurrent_dictionary<key_t,value_t>.
+        concurrent_dictionary(xtd::iterable auto&& collection) {
+          lock_guard_(items_)
+          for (const auto& item : collection)
+            items_add(item);
+        }
+        /// @brief Initializes a new instance of the xtd::collections::concurrent::concurrent_dictionary<key_t,value_t> class that is empty, has the default concurrency level and capacity, and uses the specified xtd::collections::generic::iequality_comparer<key_type>.
+        /// @param comparer The equality comparison implementation to use when comparing keys.
+        concurrent_dictionary(const xtd::collections::generic::iequality_comparer<key_type>& comparer) : items_ {comparer} {}
+        /// @brief Initializes a new instance of the xtd::collections::concurrent::concurrent_dictionary<key_t,value_t> class that contains elements copied from the specified xtd::collections::generic::ienumerable has the default concurrency level, has the default initial capacity, and uses the specified xtd::collections::generic::iequality_comparer<key_type>.
+        /// @param collection The xtd::collections::generic::ienumerable<value_type> whose elements are copied to the new xtd::collections::concurrent::concurrent_dictionary<key_t,value_t>.
+        /// @param comparer The equality comparison implementation to use when comparing keys.
+        concurrent_dictionary(xtd::collections::generic::ienumerable<value_type>&& collection, const xtd::collections::generic::iequality_comparer<key_type>& comparer) : items_ {comparer} {
+          lock_guard_(items_)
+          for (const auto& item : collection)
+            items_.add(item);
+        }
+        /// @brief Initializes a new instance of the xtd::collections::concurrent::concurrent_dictionary<key_t,value_t> class that contains elements copied from the specified xtd::iterable has the default concurrency level, has the default initial capacity, and uses the specified xtd::collections::generic::iequality_comparer<key_type>.
+        /// @param collection The xtd::iterable whose elements are copied to the new xtd::collections::concurrent::concurrent_dictionary<key_t,value_t>.
+        /// @param comparer The equality comparison implementation to use when comparing keys.
+        concurrent_dictionary(xtd::iterable auto&& collection, const xtd::collections::generic::iequality_comparer<key_type>& comparer) : items_ {comparer} {
+          lock_guard_(items_)
+          for (const auto& item : collection)
+            items_add(item);
+        }
+        /// @brief Initializes a new instance of the xtd::collections::concurrent::concurrent_dictionary<key_t,value_t> class that is empty, has the specified concurrency level and capacity, and uses the default comparer for the key type.
+        /// @param concurrent_level The estimated number of threads that will update the xtd::collections::concurrent::concurrent_dictionary<key_t,value_t> concurrently,.
+        /// @param capacity The initial number of elements that the xtd::collections::concurrent::concurrent_dictionary<key_t,value_t> can contain.
+        concurrent_dictionary(xtd::usize concurrent_level, xtd::usize capacity) : items_ {capacity}, concurrent_level_ {concurrent_level} {}
+        /// @brief Initializes a new instance of the xtd::collections::concurrent::concurrent_dictionary<key_t,value_t> class that contains elements copied from the specified xtd::collections::generic::ienumerable, and uses the specified xtd::collections::generic::iequality_comparer<key_type>.
+        /// @param concurrent_level The estimated number of threads that will update the xtd::collections::concurrent::concurrent_dictionary<key_t,value_t> concurrently,.
+        /// @param collection The xtd::collections::generic::ienumerable<value_type> whose elements are copied to the new xtd::collections::concurrent::concurrent_dictionary<key_t,value_t>.
+        /// @param comparer The equality comparison implementation to use when comparing keys.
+        concurrent_dictionary(xtd::usize concurrent_level, xtd::collections::generic::ienumerable<value_type>&& collection, const xtd::collections::generic::iequality_comparer<key_type>& comparer) : items_ {comparer} {
+          lock_guard_(items_)
+          for (const auto& item : collection)
+            items_.add(item);
+        }
+        /// @brief Initializes a new instance of the xtd::collections::concurrent::concurrent_dictionary<key_t,value_t> class that contains elements copied from the specified xtd::iterable, and uses the specified xtd::collections::generic::iequality_comparer<key_type>.
+        /// @param concurrent_level The estimated number of threads that will update the xtd::collections::concurrent::concurrent_dictionary<key_t,value_t> concurrently,.
+        /// @param collection The xtd::iterable whose elements are copied to the new xtd::collections::concurrent::concurrent_dictionary<key_t,value_t>.
+        /// @param comparer The equality comparison implementation to use when comparing keys.
+        concurrent_dictionary(xtd::usize concurrent_level, xtd::iterable auto&& collection, const xtd::collections::generic::iequality_comparer<key_type>& comparer) : items_ {comparer} {
+          lock_guard_(items_)
+          for (const auto& item : collection)
+            items_add(item);
+        }
+        /// @brief Initializes a new instance of the xtd::collections::concurrent::concurrent_dictionary<key_t,value_t> class that is empty, has the specified concurrency level and capacity, and uses the specified xtd::collections::generic::iequality_comparer<key_type>.
+        /// @param concurrent_level The estimated number of threads that will update the xtd::collections::concurrent::concurrent_dictionary<key_t,value_t> concurrently,.
+        /// @param capacity The initial number of elements that the xtd::collections::concurrent::concurrent_dictionary<key_t,value_t> can contain.
+        /// @param comparer The equality comparison implementation to use when comparing keys.
+        concurrent_dictionary(xtd::usize concurrent_level, xtd::usize capacity, const xtd::collections::generic::iequality_comparer<key_type>& comparer) : items_ {capacity, comparer}, concurrent_level_ {concurrent_level} {}
         /// @brief Initializes instance of the xtd::collections::generic::dictionary <key_t, value_t> class from a variety of data sources.
         /// @param init Initializer list to initialize the elements of the container with.
         /// @exception xtd::argument_exception `dictionary` contains one or more duplicate keys.
@@ -99,19 +143,6 @@ namespace xtd {
             for (const auto& item : items)
               items_.add(item);
           }
-        }
-        /// @brief Initializes a new instance of the xtd::collections::concurrent::concurrent_dictionary <key_t, value_t> class that contains elements copied from the specified collection.
-        concurrent_dictionary(xtd::collections::generic::ienumerable<value_type>&& collection) {
-          lock_guard_(items_)
-            for (const auto& item : collection)
-              items_.add(item);
-        }
-        /// @brief Initializes a new instance of the xtd::iterable that contains elements copied from the specified collection and has sufficient capacity to accommodate the number of elements copied.
-        /// @param items The iterable whose elements are copied to the new xtd::collections::concurrent::concurrent_dictionary <key_t, value_t>.
-        concurrent_dictionary(xtd::iterable auto&& items) {
-          lock_guard_(items_)
-            for (const auto& item : items)
-              items_add(item);
         }
         /// @}
         
@@ -397,6 +428,7 @@ namespace xtd {
         }
         
         collection_type items_;
+        xtd::usize concurrent_level_ = xtd::environment::processor_count();
       };
       
       /// @cond
