@@ -133,7 +133,7 @@ Inheritance diagram for xtd::collections::concurrent::concurrent_dictionary&lt; 
 class xtd::collections::concurrent::concurrent_dictionary&lt; key_t, value_t, hasher_t, equator_t, allocator_t &gt;</div><p>Represents a thread-safe collection of key/value pairs that can be accessed by multiple threads concurrently. </p>
 <dl class="section user"><dt>Definition</dt><dd><div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> type_t&gt;</div>
 <div class="line"><span class="keyword">class </span><a class="code hl_function" href="#aa3357cc8e49f6059ca984ca83c077a11">concurrent_dictionary</a> : pulic <a class="code hl_class" href="classxtd_1_1object.html">xtd::object</a>, <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary.html">xtd::collections::concurrent::concurrent_dictionary</a> &lt;key_t, value_t&gt;</div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary_html"><div class="ttname"><a href="classxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary.html">xtd::collections::concurrent::concurrent_dictionary</a></div><div class="ttdoc">Represents a thread-safe collection of key/value pairs that can be accessed by multiple threads concu...</div><div class="ttdef"><b>Definition</b> concurrent_dictionary.hpp:34</div></div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary_html"><div class="ttname"><a href="classxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary.html">xtd::collections::concurrent::concurrent_dictionary</a></div><div class="ttdoc">Represents a thread-safe collection of key/value pairs that can be accessed by multiple threads concu...</div><div class="ttdef"><b>Definition</b> concurrent_dictionary.hpp:35</div></div>
 <div class="ttc" id="aclassxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary_html_aa3357cc8e49f6059ca984ca83c077a11"><div class="ttname"><a href="#aa3357cc8e49f6059ca984ca83c077a11">xtd::collections::concurrent::concurrent_dictionary::concurrent_dictionary</a></div><div class="ttdeci">concurrent_dictionary()=default</div><div class="ttdoc">Initializes a new instance of the xtd::collections::concurrent::concurrent_dictionary&lt;TKey,...</div></div>
 <div class="ttc" id="aclassxtd_1_1object_html"><div class="ttname"><a href="classxtd_1_1object.html">xtd::object</a></div><div class="ttdoc">Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....</div><div class="ttdef"><b>Definition</b> object.hpp:40</div></div>
 </div><!-- fragment --> </dd></dl>
@@ -195,6 +195,13 @@ Public Properties</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Methods</h2></td></tr>
+<tr class="memitem:a9486af2fbda23c5544ea404b97aff135" id="r_a9486af2fbda23c5544ea404b97aff135"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a9486af2fbda23c5544ea404b97aff135">add_or_update</a> (const key_t &amp;key, <a class="el" href="structxtd_1_1callable.html">xtd::callable</a>&lt; value_t, key_t &gt; auto &amp;&amp;add_value_factory, <a class="el" href="structxtd_1_1callable.html">xtd::callable</a>&lt; value_t, key_t, value_t &gt; auto &amp;&amp;update_value_factory) -&gt; const value_t &amp;</td></tr>
+<tr class="memdesc:a9486af2fbda23c5544ea404b97aff135"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uses the specified functions to add a key/value pair to the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary.html" title="Represents a thread-safe collection of key/value pairs that can be accessed by multiple threads concu...">xtd::collections::concurrent::concurrent_dictionary&lt;key_t,value_t&gt;</a> if the key does not already exist, or to update a key/value pair in the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary.html" title="Represents a thread-safe collection of key/value pairs that can be accessed by multiple threads concu...">xtd::collections::concurrent::concurrent_dictionary&lt;key_t,value_t&gt;</a> if the key already exists.  <br /></td></tr>
+<tr class="memitem:aa2148d165dee5760987afa8d552e59c8" id="r_aa2148d165dee5760987afa8d552e59c8"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aa2148d165dee5760987afa8d552e59c8">add_or_update</a> (const key_t &amp;key, const value_t &amp;add_value, <a class="el" href="structxtd_1_1callable.html">xtd::callable</a>&lt; value_t, key_t, value_t &gt; auto &amp;&amp;update_value_factory) -&gt; const value_t &amp;</td></tr>
+<tr class="memdesc:aa2148d165dee5760987afa8d552e59c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a key/value pair to the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary.html" title="Represents a thread-safe collection of key/value pairs that can be accessed by multiple threads concu...">xtd::collections::concurrent::concurrent_dictionary&lt;key_t,value_t&gt;</a> if the key does not already exist, or updates a key/value pair in the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary.html" title="Represents a thread-safe collection of key/value pairs that can be accessed by multiple threads concu...">xtd::collections::concurrent::concurrent_dictionary&lt;key_t,value_t&gt;</a> by using the specified function if the key already exists.  <br /></td></tr>
+<tr class="memitem:a77bca84049d2bc08a5e7cd91a93e71cf" id="r_a77bca84049d2bc08a5e7cd91a93e71cf"><td class="memTemplParams" colspan="2">template&lt;typename arg_t&gt; </td></tr>
+<tr class="memitem:a77bca84049d2bc08a5e7cd91a93e71cf template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a77bca84049d2bc08a5e7cd91a93e71cf">add_or_update</a> (const key_t &amp;key, <a class="el" href="structxtd_1_1callable.html">xtd::callable</a>&lt; value_t, key_t, arg_t &gt; auto &amp;&amp;add_value_factory, <a class="el" href="structxtd_1_1callable.html">xtd::callable</a>&lt; value_t, key_t, value_t, arg_t &gt; auto &amp;&amp;update_value_factory, arg_t &amp;&amp;factory_argument) -&gt; const value_t &amp;</td></tr>
+<tr class="memdesc:a77bca84049d2bc08a5e7cd91a93e71cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uses the specified functions and argument to add a key/value pair to the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary.html" title="Represents a thread-safe collection of key/value pairs that can be accessed by multiple threads concu...">xtd::collections::concurrent::concurrent_dictionary&lt;key_t,value_t&gt;</a> if the key does not already exist, or to update a key/value pair in the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary.html" title="Represents a thread-safe collection of key/value pairs that can be accessed by multiple threads concu...">xtd::collections::concurrent::concurrent_dictionary&lt;key_t,value_t&gt;</a> if the key already exists.  <br /></td></tr>
 <tr class="memitem:a049d3663fea51dc54818d07a3eb7e2b0" id="r_a049d3663fea51dc54818d07a3eb7e2b0"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a049d3663fea51dc54818d07a3eb7e2b0">clear</a> () -&gt; void override</td></tr>
 <tr class="memdesc:a049d3663fea51dc54818d07a3eb7e2b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes all keys and values from the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary.html" title="Represents a thread-safe collection of key/value pairs that can be accessed by multiple threads concu...">xtd::collections::concurrent::concurrent_dictionary&lt;key_t,value_t&gt;</a>.  <br /></td></tr>
 <tr class="memitem:af1e63c1cbeed6fcebaff156d419a04a3" id="r_af1e63c1cbeed6fcebaff156d419a04a3"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#af1e63c1cbeed6fcebaff156d419a04a3">contains_key</a> (const key_t &amp;key) const noexcept -&gt; bool override</td></tr>
@@ -1007,6 +1014,157 @@ template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collectio
 <dl class="section remark"><dt>Remarks</dt><dd>The property returns a copy of all the values. It's not kept in sync with <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary.html" title="Represents a thread-safe collection of key/value pairs that can be accessed by multiple threads concu...">xtd::collections::concurrent::concurrent_dictionary&lt;key_t,value_t&gt;</a>. </dd></dl>
 
 <p>Implements <a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html#af1d844a119f4bba91f90c02e46a68c05">xtd::collections::generic::idictionary&lt; key_t, value_t &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a9486af2fbda23c5544ea404b97aff135" name="a9486af2fbda23c5544ea404b97aff135"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9486af2fbda23c5544ea404b97aff135">&#9670;&#160;</a></span>add_or_update() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary.html">xtd::collections::concurrent::concurrent_dictionary</a>&lt; key_t, value_t, hasher_t, equator_t, allocator_t &gt;::add_or_update </td>
+          <td>(</td>
+          <td class="paramtype">const key_t &amp;</td>          <td class="paramname"><span class="paramname"><em>key</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structxtd_1_1callable.html">xtd::callable</a>&lt; value_t, key_t &gt; auto &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>add_value_factory</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structxtd_1_1callable.html">xtd::callable</a>&lt; value_t, key_t, value_t &gt; auto &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>update_value_factory</em></span>&#160;) -&gt; const value_t &amp;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Uses the specified functions to add a key/value pair to the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary.html" title="Represents a thread-safe collection of key/value pairs that can be accessed by multiple threads concu...">xtd::collections::concurrent::concurrent_dictionary&lt;key_t,value_t&gt;</a> if the key does not already exist, or to update a key/value pair in the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary.html" title="Represents a thread-safe collection of key/value pairs that can be accessed by multiple threads concu...">xtd::collections::concurrent::concurrent_dictionary&lt;key_t,value_t&gt;</a> if the key already exists. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>The key to be added or whose value should be updated. </td></tr>
+    <tr><td class="paramname">add_value_factory</td><td></td></tr>
+    <tr><td class="paramname">update_value_factory</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The new value for the key. This will be either be the result of <span class="tt">add_value_factory</span> (if the key was absent) or the result of <span class="tt">update_value_factory</span> (if the key was present). </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>If you call <a class="el" href="#a9486af2fbda23c5544ea404b97aff135" title="Uses the specified functions to add a key/value pair to the xtd::collections::concurrent::concurrent_...">xtd::collections::concurrent::concurrent_dictionary::add_or_update</a> simultaneously on different threads, addValueFactory may be called multiple times, but its key/value pair might not be added to the dictionary for every call. </dd></dl>
+
+</div>
+</div>
+<a id="aa2148d165dee5760987afa8d552e59c8" name="aa2148d165dee5760987afa8d552e59c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2148d165dee5760987afa8d552e59c8">&#9670;&#160;</a></span>add_or_update() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary.html">xtd::collections::concurrent::concurrent_dictionary</a>&lt; key_t, value_t, hasher_t, equator_t, allocator_t &gt;::add_or_update </td>
+          <td>(</td>
+          <td class="paramtype">const key_t &amp;</td>          <td class="paramname"><span class="paramname"><em>key</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const value_t &amp;</td>          <td class="paramname"><span class="paramname"><em>add_value</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structxtd_1_1callable.html">xtd::callable</a>&lt; value_t, key_t, value_t &gt; auto &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>update_value_factory</em></span>&#160;) -&gt; const value_t &amp;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adds a key/value pair to the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary.html" title="Represents a thread-safe collection of key/value pairs that can be accessed by multiple threads concu...">xtd::collections::concurrent::concurrent_dictionary&lt;key_t,value_t&gt;</a> if the key does not already exist, or updates a key/value pair in the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary.html" title="Represents a thread-safe collection of key/value pairs that can be accessed by multiple threads concu...">xtd::collections::concurrent::concurrent_dictionary&lt;key_t,value_t&gt;</a> by using the specified function if the key already exists. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>The key to be added or whose value should be updated. </td></tr>
+    <tr><td class="paramname">value</td><td>The value to be added for an absent key. </td></tr>
+    <tr><td class="paramname">update_value_factory</td><td>The function used to generate a new value for an existing key based on the key's existing value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The new value for the key. This will be either be <span class="tt">add_value</span> (if the key was absent) or the result of <span class="tt">update_value_factory</span> (if the key was present). </dd></dl>
+
+</div>
+</div>
+<a id="a77bca84049d2bc08a5e7cd91a93e71cf" name="a77bca84049d2bc08a5e7cd91a93e71cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77bca84049d2bc08a5e7cd91a93e71cf">&#9670;&#160;</a></span>add_or_update() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+<div class="memtemplate">
+template&lt;typename arg_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary.html">xtd::collections::concurrent::concurrent_dictionary</a>&lt; key_t, value_t, hasher_t, equator_t, allocator_t &gt;::add_or_update </td>
+          <td>(</td>
+          <td class="paramtype">const key_t &amp;</td>          <td class="paramname"><span class="paramname"><em>key</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structxtd_1_1callable.html">xtd::callable</a>&lt; value_t, key_t, arg_t &gt; auto &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>add_value_factory</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structxtd_1_1callable.html">xtd::callable</a>&lt; value_t, key_t, value_t, arg_t &gt; auto &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>update_value_factory</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">arg_t &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>factory_argument</em></span>&#160;) -&gt; const value_t &amp;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Uses the specified functions and argument to add a key/value pair to the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary.html" title="Represents a thread-safe collection of key/value pairs that can be accessed by multiple threads concu...">xtd::collections::concurrent::concurrent_dictionary&lt;key_t,value_t&gt;</a> if the key does not already exist, or to update a key/value pair in the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary.html" title="Represents a thread-safe collection of key/value pairs that can be accessed by multiple threads concu...">xtd::collections::concurrent::concurrent_dictionary&lt;key_t,value_t&gt;</a> if the key already exists. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>The key to be added or whose value should be updated. </td></tr>
+    <tr><td class="paramname">add_value_factory</td><td>The function used to generate a value for an absent key. </td></tr>
+    <tr><td class="paramname">update_value_factory</td><td>The function used to generate a new value for an existing key based on the key's existing value. </td></tr>
+    <tr><td class="paramname">factory_argument</td><td>An argument to pass into <span class="tt">add_value_factory</span> and <span class="tt">update_value_factory</span>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The new value for the key. This will be either be the result of <span class="tt">add_value_factory</span> (if the key was absent) or the result of <span class="tt">update_value_factory</span> (if the key was present). </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>If you call <a class="el" href="#a9486af2fbda23c5544ea404b97aff135" title="Uses the specified functions to add a key/value pair to the xtd::collections::concurrent::concurrent_...">xtd::collections::concurrent::concurrent_dictionary::add_or_update</a> simultaneously on different threads, addValueFactory may be called multiple times, but its key/value pair might not be added to the dictionary for every call. </dd></dl>
 
 </div>
 </div>
