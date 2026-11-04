@@ -562,7 +562,7 @@ namespace xtd {
     [[nodiscard]] static auto expand_environment_variables(const xtd::string& name) -> xtd::string;
     
     /// @brief Immediately terminates the process .
-    /// @remarks This method terminates a process without running any active #exit_scope_ or #finally_ blocks or finalizers.
+    /// @remarks This method terminates a process without running any active #scope_exit_ or #finally_ blocks or finalizers.
     /// @remarks Use the xtd::environment::fail_fast method instead of the xtd::environment::exit method to terminate your application if the state of your application is damaged beyond repair, and executing your application's #exit_scope_ or #finally_ blocks and finalizers will corrupt program resources.
     /// @par Examples
     /// The following example demonstrates how to use xtd::environment::fail_fast method.
@@ -570,7 +570,7 @@ namespace xtd {
     [[noreturn]] static auto fail_fast() noexcept -> void {fail_fast_(xtd::diagnostics::stack_trace {false}, xtd::null, &string::empty_string);}
     /// @brief Immediately terminates the process before reporting an error message. For Windows, the error message is written to the Windows Application event log, and the message is included in error reporting to Microsoft. For Unix-like systems, the message, alongside the stack trace, is written to the standard error stream.
     /// @param message A message that explains why the process was terminated, or null if no explanation is provided.
-    /// @remarks This method terminates a process without running any active #exit_scope_ or #finally_ blocks or finalizers.
+    /// @remarks This method terminates a process without running any active #scope_exit_ or #finally_ blocks or finalizers.
     /// @remarks On Windows, the xtd::environment::fail_fast method writes the message string to the Windows Application event log, creates a dump of your application, and then terminates the current process. The message string is also included in error reporting to Microsoft via Windows Error Reporting. For more information, see [Windows Error Reporting: Getting Started](https://learn.microsoft.com/en-us/windows-hardware/drivers/dashboard/).
     /// @remarks On Unix-like systems, the message is written to the standard error stream, alongside the stack trace information.
     /// @remarks Use the xtd::environment::fail_fast method instead of the xtd::environment::exit method to terminate your application if the state of your application is damaged beyond repair, and executing your application's #exit_scope_ or #finally_ blocks and finalizers will corrupt program resources.
@@ -581,7 +581,7 @@ namespace xtd {
     /// @brief Immediately terminates the process before reporting an error message. For Windows, the error message is written to the Windows Application event log, and the message and exception information is included in error reporting to Microsoft. For Unix-like systems, the message alongside the stack trace is written to the standard error stream.
     /// @param message A message that explains why the process was terminated, or null if no explanation is provided.
     /// @param exception An exception that represents the error that caused the termination. This is typically the exception in a catch block.
-    /// @remarks This method terminates the process without running any active #exit_scope_ or #finally_ blocks or finalizers.
+    /// @remarks This method terminates the process without running any active #scope_exit_ or #finally_ blocks or finalizers.
     /// @remarks On Windows, the Environment.FailFast method writes the message string to the Windows Application event log, creates a dump of your application, and then terminates the current process.
     /// @remarks Information is reported to Microsoft by using Windows Error Reporting. For more information, see [Windows Error Reporting: Getting Started](https://learn.microsoft.com/en-us/windows-hardware/drivers/dashboard/). Error reporting to Microsoft includes message and exception information, which provides details used to classify the error. Although exception is not handled because the process is terminated, the contextual information that raised the exception is still obtained.
     /// @remarks On Unix-like systems, the message is written to the standard error stream, alongside the stack trace information.
@@ -597,7 +597,7 @@ namespace xtd {
     [[noreturn]] static auto fail_fast(const xtd::string& message, const exception_t& exception) -> void {fail_fast_(xtd::diagnostics::stack_trace {false}, &message, &exception);}
     /// @brief Immediately terminates the process..
     /// @param exception An exception that represents the error that caused the termination. This is typically the exception in a catch block.
-    /// @remarks This method terminates the process without running any active #exit_scope_ or #finally_ blocks or finalizers.
+    /// @remarks This method terminates the process without running any active #scope_exit_ or #finally_ blocks or finalizers.
     /// @remarks Use the xtd::environment::fail_fast method instead of the xtd::environment::exit method to terminate your application if the state of your application is damaged beyond repair, and executing your application's #exit_scope_ or #finally_ blocks and finalizers will corrupt program resources.
     template<typename exception_t>
     requires std::derived_from<xtd::raw_type<exception_t>, std::exception>
