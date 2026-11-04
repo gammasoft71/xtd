@@ -2070,7 +2070,7 @@ Return always <span class="tt">true</span> for now.</dd></dl>
 </div><div class="memdoc">
 
 <p>Immediately terminates the process . </p>
-<dl class="section remark"><dt>Remarks</dt><dd>This method terminates a process without running any active #exit_scope_ or <a class="el" href="group__keywords.html#gaa1d4feda5380aa7b0daa9b38c8f2251f" title="Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...">finally_</a> blocks or finalizers. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>This method terminates a process without running any active <a class="el" href="group__keywords.html#ga523a9defb7ea3de88cc956948015ef98" title="Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...">scope_exit_</a> or <a class="el" href="group__keywords.html#gaa1d4feda5380aa7b0daa9b38c8f2251f" title="Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...">finally_</a> blocks or finalizers. </dd>
 <dd>
 Use the <a class="el" href="#a676d042ff30472e10924918da3d47aee" title="Immediately terminates the process .">xtd::environment::fail_fast</a> method instead of the <a class="el" href="#a0e295700d732e6d310d060a2caa0932d" title="Terminates this process and returns an exit code to the operating system.">xtd::environment::exit</a> method to terminate your application if the state of your application is damaged beyond repair, and executing your application's #exit_scope_ or <a class="el" href="group__keywords.html#gaa1d4feda5380aa7b0daa9b38c8f2251f" title="Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...">finally_</a> blocks and finalizers will corrupt program resources. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example demonstrates how to use <a class="el" href="#a676d042ff30472e10924918da3d47aee" title="Immediately terminates the process .">xtd::environment::fail_fast</a> method. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
@@ -2129,7 +2129,7 @@ Use the <a class="el" href="#a676d042ff30472e10924918da3d47aee" title="Immediate
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>This method terminates a process without running any active #exit_scope_ or <a class="el" href="group__keywords.html#gaa1d4feda5380aa7b0daa9b38c8f2251f" title="Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...">finally_</a> blocks or finalizers. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>This method terminates a process without running any active <a class="el" href="group__keywords.html#ga523a9defb7ea3de88cc956948015ef98" title="Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...">scope_exit_</a> or <a class="el" href="group__keywords.html#gaa1d4feda5380aa7b0daa9b38c8f2251f" title="Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...">finally_</a> blocks or finalizers. </dd>
 <dd>
 On Windows, the <a class="el" href="#a676d042ff30472e10924918da3d47aee" title="Immediately terminates the process .">xtd::environment::fail_fast</a> method writes the message string to the Windows Application event log, creates a dump of your application, and then terminates the current process. The message string is also included in error reporting to Microsoft via Windows Error Reporting. For more information, see <a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/dashboard/">Windows Error Reporting: Getting Started</a>. </dd>
 <dd>
@@ -2198,7 +2198,7 @@ requires std::derived_from&lt;<a class="el" href="group__xtd__core.html#ga22e964
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>This method terminates the process without running any active #exit_scope_ or <a class="el" href="group__keywords.html#gaa1d4feda5380aa7b0daa9b38c8f2251f" title="Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...">finally_</a> blocks or finalizers. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>This method terminates the process without running any active <a class="el" href="group__keywords.html#ga523a9defb7ea3de88cc956948015ef98" title="Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...">scope_exit_</a> or <a class="el" href="group__keywords.html#gaa1d4feda5380aa7b0daa9b38c8f2251f" title="Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...">finally_</a> blocks or finalizers. </dd>
 <dd>
 On Windows, the Environment.FailFast method writes the message string to the Windows Application event log, creates a dump of your application, and then terminates the current process. </dd>
 <dd>
@@ -2288,7 +2288,7 @@ requires std::derived_from&lt;<a class="el" href="group__xtd__core.html#ga22e964
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>This method terminates the process without running any active #exit_scope_ or <a class="el" href="group__keywords.html#gaa1d4feda5380aa7b0daa9b38c8f2251f" title="Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...">finally_</a> blocks or finalizers. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>This method terminates the process without running any active <a class="el" href="group__keywords.html#ga523a9defb7ea3de88cc956948015ef98" title="Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...">scope_exit_</a> or <a class="el" href="group__keywords.html#gaa1d4feda5380aa7b0daa9b38c8f2251f" title="Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...">finally_</a> blocks or finalizers. </dd>
 <dd>
 Use the <a class="el" href="#a676d042ff30472e10924918da3d47aee" title="Immediately terminates the process .">xtd::environment::fail_fast</a> method instead of the <a class="el" href="#a0e295700d732e6d310d060a2caa0932d" title="Terminates this process and returns an exit code to the operating system.">xtd::environment::exit</a> method to terminate your application if the state of your application is damaged beyond repair, and executing your application's #exit_scope_ or <a class="el" href="group__keywords.html#gaa1d4feda5380aa7b0daa9b38c8f2251f" title="Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...">finally_</a> blocks and finalizers will corrupt program resources. </dd></dl>
 
