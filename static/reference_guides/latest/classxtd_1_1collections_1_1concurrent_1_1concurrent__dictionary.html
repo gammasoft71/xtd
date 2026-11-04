@@ -134,7 +134,7 @@ class xtd::collections::concurrent::concurrent_dictionary&lt; key_t, value_t, ha
 <dl class="section user"><dt>Definition</dt><dd><div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> type_t&gt;</div>
 <div class="line"><span class="keyword">class </span><a class="code hl_function" href="#aa3357cc8e49f6059ca984ca83c077a11">concurrent_dictionary</a> : pulic <a class="code hl_class" href="classxtd_1_1object.html">xtd::object</a>, <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary.html">xtd::collections::concurrent::concurrent_dictionary</a> &lt;key_t, value_t&gt;</div>
 <div class="ttc" id="aclassxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary_html"><div class="ttname"><a href="classxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary.html">xtd::collections::concurrent::concurrent_dictionary</a></div><div class="ttdoc">Represents a thread-safe collection of key/value pairs that can be accessed by multiple threads concu...</div><div class="ttdef"><b>Definition</b> concurrent_dictionary.hpp:35</div></div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary_html_aa3357cc8e49f6059ca984ca83c077a11"><div class="ttname"><a href="#aa3357cc8e49f6059ca984ca83c077a11">xtd::collections::concurrent::concurrent_dictionary::concurrent_dictionary</a></div><div class="ttdeci">concurrent_dictionary()=default</div><div class="ttdoc">Initializes a new instance of the xtd::collections::concurrent::concurrent_dictionary&lt;TKey,...</div></div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary_html_aa3357cc8e49f6059ca984ca83c077a11"><div class="ttname"><a href="#aa3357cc8e49f6059ca984ca83c077a11">xtd::collections::concurrent::concurrent_dictionary::concurrent_dictionary</a></div><div class="ttdeci">concurrent_dictionary()=default</div><div class="ttdoc">Initializes a new instance of the xtd::collections::concurrent::concurrent_dictionary&lt;key_t,...</div></div>
 <div class="ttc" id="aclassxtd_1_1object_html"><div class="ttname"><a href="classxtd_1_1object.html">xtd::object</a></div><div class="ttdoc">Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....</div><div class="ttdef"><b>Definition</b> object.hpp:40</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/collections/concurrent/concurrent_dictionary&gt;</span></div>
@@ -164,17 +164,29 @@ Public Aliases</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Conctructors</h2></td></tr>
 <tr class="memitem:aa3357cc8e49f6059ca984ca83c077a11" id="r_aa3357cc8e49f6059ca984ca83c077a11"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aa3357cc8e49f6059ca984ca83c077a11">concurrent_dictionary</a> ()=default</td></tr>
-<tr class="memdesc:aa3357cc8e49f6059ca984ca83c077a11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary.html" title="Represents a thread-safe collection of key/value pairs that can be accessed by multiple threads concu...">xtd::collections::concurrent::concurrent_dictionary&lt;TKey,TValue&gt;</a> class that is empty, has the default concurrency level, has the default initial capacity, and uses the default comparer for the key type.  <br /></td></tr>
-<tr class="memitem:aa517269c6575de89a41b8bf8bcc0f89b" id="r_aa517269c6575de89a41b8bf8bcc0f89b"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aa517269c6575de89a41b8bf8bcc0f89b">concurrent_dictionary</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html">xtd::collections::generic::idictionary</a>&lt; key_t, value_t &gt; &amp;dictionary)</td></tr>
-<tr class="memdesc:aa517269c6575de89a41b8bf8bcc0f89b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class that contains elements copied from the specified <a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html" title="Represents a generic collection of key/value pairs.">xtd::collections::generic::idictionary</a> &lt;key_t, value_t&gt; and uses the default equality comparer for the key type.  <br /></td></tr>
+<tr class="memdesc:aa3357cc8e49f6059ca984ca83c077a11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary.html" title="Represents a thread-safe collection of key/value pairs that can be accessed by multiple threads concu...">xtd::collections::concurrent::concurrent_dictionary&lt;key_t,value_t&gt;</a> class that is empty, has the default concurrency level, has the default initial capacity, and uses the default comparer for the key type.  <br /></td></tr>
+<tr class="memitem:afcac45184a8e0a718dce5785af6d0e8d" id="r_afcac45184a8e0a718dce5785af6d0e8d"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#afcac45184a8e0a718dce5785af6d0e8d">concurrent_dictionary</a> (<a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; <a class="el" href="#a4f3ce8dcf5b7fb66ebe09e74a503de3a">value_type</a> &gt; &amp;&amp;collection)</td></tr>
+<tr class="memdesc:afcac45184a8e0a718dce5785af6d0e8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary.html" title="Represents a thread-safe collection of key/value pairs that can be accessed by multiple threads concu...">xtd::collections::concurrent::concurrent_dictionary&lt;key_t,value_t&gt;</a> class that contains elements copied from the specified <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable&lt;value_type&gt;</a>, has the default concurrency level, has the default initial capacity, and uses the default comparer for the key type.  <br /></td></tr>
+<tr class="memitem:a69907d6b822b623856d48b203203473b" id="r_a69907d6b822b623856d48b203203473b"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a69907d6b822b623856d48b203203473b">concurrent_dictionary</a> (<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> auto &amp;&amp;collection)</td></tr>
+<tr class="memdesc:a69907d6b822b623856d48b203203473b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary.html" title="Represents a thread-safe collection of key/value pairs that can be accessed by multiple threads concu...">xtd::collections::concurrent::concurrent_dictionary&lt;key_t,value_t&gt;</a> class that contains elements copied from the specified <a class="el" href="structxtd_1_1iterable.html" title="Represents the iterable concept.">xtd::iterable</a>, has the default concurrency level, has the default initial capacity, and uses the default comparer for the key type.  <br /></td></tr>
+<tr class="memitem:a277235de391526bd06e066fd6869aae4" id="r_a277235de391526bd06e066fd6869aae4"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a277235de391526bd06e066fd6869aae4">concurrent_dictionary</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html">xtd::collections::generic::iequality_comparer</a>&lt; <a class="el" href="#a2f094754f268a087eb0b94805c0ea8b6">key_type</a> &gt; &amp;comparer<a class="el" href="group__collections.html#ga65aa6014ffed4ba75756a8be6778e6b6">comparer</a>)</td></tr>
+<tr class="memdesc:a277235de391526bd06e066fd6869aae4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary.html" title="Represents a thread-safe collection of key/value pairs that can be accessed by multiple threads concu...">xtd::collections::concurrent::concurrent_dictionary&lt;key_t,value_t&gt;</a> class that is empty, has the default concurrency level and capacity, and uses the specified <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html">xtd::collections::generic::iequality_comparer&lt;key_type&gt;</a>.  <br /></td></tr>
+<tr class="memitem:aad62ff987110db21fa352ec4efb01c28" id="r_aad62ff987110db21fa352ec4efb01c28"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aad62ff987110db21fa352ec4efb01c28">concurrent_dictionary</a> (<a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; <a class="el" href="#a4f3ce8dcf5b7fb66ebe09e74a503de3a">value_type</a> &gt; &amp;&amp;collection, const <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html">xtd::collections::generic::iequality_comparer</a>&lt; <a class="el" href="#a2f094754f268a087eb0b94805c0ea8b6">key_type</a> &gt; &amp;comparer<a class="el" href="group__collections.html#ga65aa6014ffed4ba75756a8be6778e6b6">comparer</a>)</td></tr>
+<tr class="memdesc:aad62ff987110db21fa352ec4efb01c28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary.html" title="Represents a thread-safe collection of key/value pairs that can be accessed by multiple threads concu...">xtd::collections::concurrent::concurrent_dictionary&lt;key_t,value_t&gt;</a> class that contains elements copied from the specified <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> has the default concurrency level, has the default initial capacity, and uses the specified <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html">xtd::collections::generic::iequality_comparer&lt;key_type&gt;</a>.  <br /></td></tr>
+<tr class="memitem:a147ed09db73bd1f98ec34bba9bfce086" id="r_a147ed09db73bd1f98ec34bba9bfce086"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a147ed09db73bd1f98ec34bba9bfce086">concurrent_dictionary</a> (<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> auto &amp;&amp;collection, const <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html">xtd::collections::generic::iequality_comparer</a>&lt; <a class="el" href="#a2f094754f268a087eb0b94805c0ea8b6">key_type</a> &gt; &amp;comparer<a class="el" href="group__collections.html#ga65aa6014ffed4ba75756a8be6778e6b6">comparer</a>)</td></tr>
+<tr class="memdesc:a147ed09db73bd1f98ec34bba9bfce086"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary.html" title="Represents a thread-safe collection of key/value pairs that can be accessed by multiple threads concu...">xtd::collections::concurrent::concurrent_dictionary&lt;key_t,value_t&gt;</a> class that contains elements copied from the specified <a class="el" href="structxtd_1_1iterable.html" title="Represents the iterable concept.">xtd::iterable</a> has the default concurrency level, has the default initial capacity, and uses the specified <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html">xtd::collections::generic::iequality_comparer&lt;key_type&gt;</a>.  <br /></td></tr>
+<tr class="memitem:aa86598ed873c7342e9e7658a9a99a032" id="r_aa86598ed873c7342e9e7658a9a99a032"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aa86598ed873c7342e9e7658a9a99a032">concurrent_dictionary</a> (<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> concurrent_level, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> capacity)</td></tr>
+<tr class="memdesc:aa86598ed873c7342e9e7658a9a99a032"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary.html" title="Represents a thread-safe collection of key/value pairs that can be accessed by multiple threads concu...">xtd::collections::concurrent::concurrent_dictionary&lt;key_t,value_t&gt;</a> class that is empty, has the specified concurrency level and capacity, and uses the default comparer for the key type.  <br /></td></tr>
+<tr class="memitem:a3e91717e96b9446f16e4e35b7e9a8aac" id="r_a3e91717e96b9446f16e4e35b7e9a8aac"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a3e91717e96b9446f16e4e35b7e9a8aac">concurrent_dictionary</a> (<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> concurrent_level, <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; <a class="el" href="#a4f3ce8dcf5b7fb66ebe09e74a503de3a">value_type</a> &gt; &amp;&amp;collection, const <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html">xtd::collections::generic::iequality_comparer</a>&lt; <a class="el" href="#a2f094754f268a087eb0b94805c0ea8b6">key_type</a> &gt; &amp;comparer<a class="el" href="group__collections.html#ga65aa6014ffed4ba75756a8be6778e6b6">comparer</a>)</td></tr>
+<tr class="memdesc:a3e91717e96b9446f16e4e35b7e9a8aac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary.html" title="Represents a thread-safe collection of key/value pairs that can be accessed by multiple threads concu...">xtd::collections::concurrent::concurrent_dictionary&lt;key_t,value_t&gt;</a> class that contains elements copied from the specified <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a>, and uses the specified <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html">xtd::collections::generic::iequality_comparer&lt;key_type&gt;</a>.  <br /></td></tr>
+<tr class="memitem:a6800a5c30d518d9a98d9e448cc3ca5cd" id="r_a6800a5c30d518d9a98d9e448cc3ca5cd"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a6800a5c30d518d9a98d9e448cc3ca5cd">concurrent_dictionary</a> (<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> concurrent_level, <a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> auto &amp;&amp;collection, const <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html">xtd::collections::generic::iequality_comparer</a>&lt; <a class="el" href="#a2f094754f268a087eb0b94805c0ea8b6">key_type</a> &gt; &amp;comparer<a class="el" href="group__collections.html#ga65aa6014ffed4ba75756a8be6778e6b6">comparer</a>)</td></tr>
+<tr class="memdesc:a6800a5c30d518d9a98d9e448cc3ca5cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary.html" title="Represents a thread-safe collection of key/value pairs that can be accessed by multiple threads concu...">xtd::collections::concurrent::concurrent_dictionary&lt;key_t,value_t&gt;</a> class that contains elements copied from the specified <a class="el" href="structxtd_1_1iterable.html" title="Represents the iterable concept.">xtd::iterable</a>, and uses the specified <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html">xtd::collections::generic::iequality_comparer&lt;key_type&gt;</a>.  <br /></td></tr>
+<tr class="memitem:a35961af7b41235ae9cf54b2e4ec1e890" id="r_a35961af7b41235ae9cf54b2e4ec1e890"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a35961af7b41235ae9cf54b2e4ec1e890">concurrent_dictionary</a> (<a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> concurrent_level, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> capacity, const <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html">xtd::collections::generic::iequality_comparer</a>&lt; <a class="el" href="#a2f094754f268a087eb0b94805c0ea8b6">key_type</a> &gt; &amp;comparer<a class="el" href="group__collections.html#ga65aa6014ffed4ba75756a8be6778e6b6">comparer</a>)</td></tr>
+<tr class="memdesc:a35961af7b41235ae9cf54b2e4ec1e890"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary.html" title="Represents a thread-safe collection of key/value pairs that can be accessed by multiple threads concu...">xtd::collections::concurrent::concurrent_dictionary&lt;key_t,value_t&gt;</a> class that is empty, has the specified concurrency level and capacity, and uses the specified <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html">xtd::collections::generic::iequality_comparer&lt;key_type&gt;</a>.  <br /></td></tr>
 <tr class="memitem:af1270c6e7d7d162b9c965ade34e348e6" id="r_af1270c6e7d7d162b9c965ade34e348e6"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#af1270c6e7d7d162b9c965ade34e348e6">concurrent_dictionary</a> (std::initializer_list&lt; std::pair&lt; key_t, value_t &gt; &gt; items)</td></tr>
 <tr class="memdesc:af1270c6e7d7d162b9c965ade34e348e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class from a variety of data sources.  <br /></td></tr>
 <tr class="memitem:abca045273fa7dc296d32dc6692d17e2b" id="r_abca045273fa7dc296d32dc6692d17e2b"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#abca045273fa7dc296d32dc6692d17e2b">concurrent_dictionary</a> (std::initializer_list&lt; <a class="el" href="#a4f3ce8dcf5b7fb66ebe09e74a503de3a">value_type</a> &gt; items)</td></tr>
 <tr class="memdesc:abca045273fa7dc296d32dc6692d17e2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the container with the contents of the specified initializer list, and allocator.  <br /></td></tr>
-<tr class="memitem:afcac45184a8e0a718dce5785af6d0e8d" id="r_afcac45184a8e0a718dce5785af6d0e8d"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#afcac45184a8e0a718dce5785af6d0e8d">concurrent_dictionary</a> (<a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; <a class="el" href="#a4f3ce8dcf5b7fb66ebe09e74a503de3a">value_type</a> &gt; &amp;&amp;collection)</td></tr>
-<tr class="memdesc:afcac45184a8e0a718dce5785af6d0e8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary.html" title="Represents a thread-safe collection of key/value pairs that can be accessed by multiple threads concu...">xtd::collections::concurrent::concurrent_dictionary</a> &lt;key_t, value_t&gt; class that contains elements copied from the specified collection.  <br /></td></tr>
-<tr class="memitem:a6ce03b9dba004c58b0996f2574654f05" id="r_a6ce03b9dba004c58b0996f2574654f05"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a6ce03b9dba004c58b0996f2574654f05">concurrent_dictionary</a> (<a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> auto &amp;&amp;items)</td></tr>
-<tr class="memdesc:a6ce03b9dba004c58b0996f2574654f05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="structxtd_1_1iterable.html" title="Represents the iterable concept.">xtd::iterable</a> that contains elements copied from the specified collection and has sufficient capacity to accommodate the number of elements copied.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Properties</h2></td></tr>
@@ -210,6 +222,13 @@ Public Methods</h2></td></tr>
 <tr class="memdesc:aa7b6948bde70a7c04373454c1aa05fcf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the elements of the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary.html" title="Represents a thread-safe collection of key/value pairs that can be accessed by multiple threads concu...">xtd::collections::concurrent::concurrent_dictionary</a> &lt;key_t, value_t&gt; to an <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a>, starting at a particular <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> index.  <br /></td></tr>
 <tr class="memitem:a07beee113def2ca4ac65b6f1acf78bf4" id="r_a07beee113def2ca4ac65b6f1acf78bf4"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a07beee113def2ca4ac65b6f1acf78bf4">get_enumerator</a> () const -&gt; <a class="el" href="structxtd_1_1collections_1_1generic_1_1enumerator.html">xtd::collections::generic::enumerator</a>&lt; <a class="el" href="#a4f3ce8dcf5b7fb66ebe09e74a503de3a">value_type</a> &gt; override</td></tr>
 <tr class="memdesc:a07beee113def2ca4ac65b6f1acf78bf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an enumerator that iterates through a collection.  <br /></td></tr>
+<tr class="memitem:a5956c079324b169fd84e48811a25a6d0" id="r_a5956c079324b169fd84e48811a25a6d0"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a5956c079324b169fd84e48811a25a6d0">get_or_add</a> (const key_t &amp;key, <a class="el" href="structxtd_1_1callable.html">xtd::callable</a>&lt; value_t, key_t &gt; auto &amp;&amp;add_value_factory) -&gt; const value_t &amp;</td></tr>
+<tr class="memdesc:a5956c079324b169fd84e48811a25a6d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a key/value pair to the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary.html" title="Represents a thread-safe collection of key/value pairs that can be accessed by multiple threads concu...">xtd::collections::concurrent::concurrent_dictionary</a> &lt;key_t, value_t&gt; by using the specified function if the key does not already exist. Returns the new value, or the existing value if the key exists.  <br /></td></tr>
+<tr class="memitem:a2e18dc9ee11e0c70d8dc795fcdcfc01e" id="r_a2e18dc9ee11e0c70d8dc795fcdcfc01e"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a2e18dc9ee11e0c70d8dc795fcdcfc01e">get_or_add</a> (const key_t &amp;key, const value_t &amp;add_value) -&gt; const value_t &amp;</td></tr>
+<tr class="memdesc:a2e18dc9ee11e0c70d8dc795fcdcfc01e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a key/value pair to the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary.html" title="Represents a thread-safe collection of key/value pairs that can be accessed by multiple threads concu...">xtd::collections::concurrent::concurrent_dictionary</a> &lt;key_t, value_t&gt; if the key does not already exist. Returns the new value, or the existing value if the key exists.  <br /></td></tr>
+<tr class="memitem:ae2d39707ff370442e662a0fbb2786539" id="r_ae2d39707ff370442e662a0fbb2786539"><td class="memTemplParams" colspan="2">template&lt;typename arg_t&gt; </td></tr>
+<tr class="memitem:ae2d39707ff370442e662a0fbb2786539 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ae2d39707ff370442e662a0fbb2786539">get_or_add</a> (const key_t &amp;key, <a class="el" href="structxtd_1_1callable.html">xtd::callable</a>&lt; value_t, key_t, arg_t &gt; auto &amp;&amp;add_value_factory, arg_t &amp;&amp;factory_argument) -&gt; const value_t &amp;</td></tr>
+<tr class="memdesc:ae2d39707ff370442e662a0fbb2786539"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a key/value pair to the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary.html" title="Represents a thread-safe collection of key/value pairs that can be accessed by multiple threads concu...">xtd::collections::concurrent::concurrent_dictionary</a> &lt;key_t, value_t&gt; by using the specified function and an argument if the key does not already exist, or returns the existing value if the key exists.  <br /></td></tr>
 <tr class="memitem:a6c773c1a1c802b1f79e2c51072145359" id="r_a6c773c1a1c802b1f79e2c51072145359"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a6c773c1a1c802b1f79e2c51072145359">to_array</a> () const -&gt; <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="#a4f3ce8dcf5b7fb66ebe09e74a503de3a">value_type</a> &gt;</td></tr>
 <tr class="memdesc:a6c773c1a1c802b1f79e2c51072145359"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the elements contained in the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary.html" title="Represents a thread-safe collection of key/value pairs that can be accessed by multiple threads concu...">xtd::collections::concurrent::concurrent_dictionary</a> &lt;key_t, value_t&gt; to a new array.  <br /></td></tr>
 <tr class="memitem:aa29e8fc515e7471b91b27ff69f592e30" id="r_aa29e8fc515e7471b91b27ff69f592e30"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aa29e8fc515e7471b91b27ff69f592e30">to_string</a> () const noexcept -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> override</td></tr>
@@ -523,7 +542,7 @@ template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collectio
 </div>
 <a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aa3357cc8e49f6059ca984ca83c077a11" name="aa3357cc8e49f6059ca984ca83c077a11"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa3357cc8e49f6059ca984ca83c077a11">&#9670;&#160;</a></span>concurrent_dictionary() <span class="overload">[1/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3357cc8e49f6059ca984ca83c077a11">&#9670;&#160;</a></span>concurrent_dictionary() <span class="overload">[1/12]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -547,12 +566,13 @@ template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collectio
 </table>
 </div><div class="memdoc">
 
-<p>Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary.html" title="Represents a thread-safe collection of key/value pairs that can be accessed by multiple threads concu...">xtd::collections::concurrent::concurrent_dictionary&lt;TKey,TValue&gt;</a> class that is empty, has the default concurrency level, has the default initial capacity, and uses the default comparer for the key type. </p>
+<p>Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary.html" title="Represents a thread-safe collection of key/value pairs that can be accessed by multiple threads concu...">xtd::collections::concurrent::concurrent_dictionary&lt;key_t,value_t&gt;</a> class that is empty, has the default concurrency level, has the default initial capacity, and uses the default comparer for the key type. </p>
+<dl class="section remark"><dt>Remarks</dt><dd>The default concurrency level is equal to the number of CPUs. The higher the concurrency level is, the more concurrent write operations can take place without interference and blocking. Higher concurrency level values also cause operations that require all locks (for example, table resizing, ToArray and Count) to become more expensive. The default capacity (DEFAULT_CAPACITY), which represents the initial number of buckets, is a trade-off between the size of a very small dictionary and the number of resizes when constructing a large dictionary. Also, the capacity should not be divisible by a small prime number. The default capacity is 31. </dd></dl>
 
 </div>
 </div>
-<a id="aa517269c6575de89a41b8bf8bcc0f89b" name="aa517269c6575de89a41b8bf8bcc0f89b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa517269c6575de89a41b8bf8bcc0f89b">&#9670;&#160;</a></span>concurrent_dictionary() <span class="overload">[2/6]</span></h2>
+<a id="afcac45184a8e0a718dce5785af6d0e8d" name="afcac45184a8e0a718dce5785af6d0e8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afcac45184a8e0a718dce5785af6d0e8d">&#9670;&#160;</a></span>concurrent_dictionary() <span class="overload">[2/12]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -565,7 +585,7 @@ template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collectio
         <tr>
           <td class="memname"><a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary.html">xtd::collections::concurrent::concurrent_dictionary</a>&lt; key_t, value_t, hasher_t, equator_t, allocator_t &gt;::concurrent_dictionary </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html">xtd::collections::generic::idictionary</a>&lt; key_t, value_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>dictionary</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; <a class="el" href="#a4f3ce8dcf5b7fb66ebe09e74a503de3a">value_type</a> &gt; &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>collection</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -576,66 +596,346 @@ template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collectio
 </table>
 </div><div class="memdoc">
 
-<p>Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class that contains elements copied from the specified <a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html" title="Represents a generic collection of key/value pairs.">xtd::collections::generic::idictionary</a> &lt;key_t, value_t&gt; and uses the default equality comparer for the key type. </p>
+<p>Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary.html" title="Represents a thread-safe collection of key/value pairs that can be accessed by multiple threads concu...">xtd::collections::concurrent::concurrent_dictionary&lt;key_t,value_t&gt;</a> class that contains elements copied from the specified <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable&lt;value_type&gt;</a>, has the default concurrency level, has the default initial capacity, and uses the default comparer for the key type. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">dictionary</td><td>The <a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html" title="Represents a generic collection of key/value pairs.">xtd::collections::generic::idictionary</a> &lt;key_t, value_t&gt; whose elements are copied to the new <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt;. </td></tr>
+    <tr><td class="paramname">collection</td><td>The <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable&lt;value_type&gt;</a> whose elements are copied to the new <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary.html" title="Represents a thread-safe collection of key/value pairs that can be accessed by multiple threads concu...">xtd::collections::concurrent::concurrent_dictionary&lt;key_t,value_t&gt;</a>. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::argument_exception</a></td><td><span class="tt">dictionary</span> contains one or more duplicate keys. </td></tr>
+
+</div>
+</div>
+<a id="a69907d6b822b623856d48b203203473b" name="a69907d6b822b623856d48b203203473b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69907d6b822b623856d48b203203473b">&#9670;&#160;</a></span>concurrent_dictionary() <span class="overload">[3/12]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary.html">xtd::collections::concurrent::concurrent_dictionary</a>&lt; key_t, value_t, hasher_t, equator_t, allocator_t &gt;::concurrent_dictionary </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> auto &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>collection</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary.html" title="Represents a thread-safe collection of key/value pairs that can be accessed by multiple threads concu...">xtd::collections::concurrent::concurrent_dictionary&lt;key_t,value_t&gt;</a> class that contains elements copied from the specified <a class="el" href="structxtd_1_1iterable.html" title="Represents the iterable concept.">xtd::iterable</a>, has the default concurrency level, has the default initial capacity, and uses the default comparer for the key type. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">collection</td><td>The <a class="el" href="structxtd_1_1iterable.html" title="Represents the iterable concept.">xtd::iterable</a> whose elements are copied to the new <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary.html" title="Represents a thread-safe collection of key/value pairs that can be accessed by multiple threads concu...">xtd::collections::concurrent::concurrent_dictionary&lt;key_t,value_t&gt;</a>. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>Every key in a <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; must be unique according to the default equality comparer; likewise, every key in the source <span class="tt">dictionary</span> must also be unique according to the default equality comparer. </dd>
-<dd>
-The initial capacity of the new <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; is large enough to contain all the elements in dictionary. </dd>
-<dd>
-<a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; requires an equality implementation to determine whether keys are equal. This constructor uses the default generic equality comparer, <a class="el" href="classxtd_1_1collections_1_1generic_1_1equality__comparer.html#a261204ebf69e1698aefa68d22a0755a4" title="Gets the default equality comparer for the type specified by the generic argument.">xtd::collections::generic::equality_comparer::default_equality_comparer</a>. If type <span class="tt">key_t</span> implements the <a class="el" href="classxtd_1_1iequatable.html" title="Defines a generalized method that a value type or class implements to create a type-specific method f...">xtd::iequatable</a> &lt;type_t&gt; generic interface, the default equality comparer uses that implementation. Alternatively, you can specify an implementation of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html" title="Defines methods to support the comparison of objects for equality.">xtd::collections::generic::iequality_comparer</a> &lt;type_t&gt; generic interface by using a constructor that accepts a comparer parameter. </dd>
-<dd>
-This constructor is an O(<span class="tt">n</span>) operation, where <span class="tt">n</span> is the number of elements in dictionary. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to use the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt;(<a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html" title="Defines methods to support the comparison of objects for equality.">xtd::collections::generic::iequality_comparer</a> &lt;key_t&gt;) constructor to initialize a <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; with sorted content from another dictionary. The code example creates a <a class="el" href="group__generic__collections.html#ga49fc8f84e06c44f96cbc96b8d7705a5b" title="Represents a collection of key/value pairs that are sorted on the key.">xtd::collections::generic::sorted_dictionary</a> &lt;key_t, value_t&gt; and populates it with data in random order, then passes the <a class="el" href="group__generic__collections.html#ga49fc8f84e06c44f96cbc96b8d7705a5b" title="Represents a collection of key/value pairs that are sorted on the key.">xtd::collections::generic::sorted_dictionary</a> &lt;key_t, value_t&gt; to the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt;(<a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html" title="Defines methods to support the comparison of objects for equality.">xtd::collections::generic::iequality_comparer</a> &lt;key_t&gt;) constructor, creating a <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; that is sorted. This is useful if you need to build a sorted dictionary that at some point becomes static; copying the data from a <a class="el" href="group__generic__collections.html#ga49fc8f84e06c44f96cbc96b8d7705a5b" title="Represents a collection of key/value pairs that are sorted on the key.">xtd::collections::generic::sorted_dictionary</a> &lt;key_t, value_t&gt; to a <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; improves retrieval speed. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">class </span>example {</div>
-<div class="line"><span class="keyword">public</span>:</div>
-<div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
-<div class="line">    <span class="comment">// Create a new sorted dictionary of strings, with string keys.</span></div>
-<div class="line">    <span class="keyword">auto</span> open_with = sorted_dictionary&lt;string, string&gt; {};</div>
-<div class="line">    </div>
-<div class="line">    <span class="comment">// Add some elements to the dictionary.</span></div>
-<div class="line">    open_with.insert({<span class="stringliteral">&quot;txt&quot;</span>, <span class="stringliteral">&quot;notepad.exe&quot;</span>});</div>
-<div class="line">    open_with.insert({<span class="stringliteral">&quot;bmp&quot;</span>, <span class="stringliteral">&quot;paint.exe&quot;</span>});</div>
-<div class="line">    open_with.insert({<span class="stringliteral">&quot;dib&quot;</span>, <span class="stringliteral">&quot;paint.exe&quot;</span>});</div>
-<div class="line">    open_with.insert({<span class="stringliteral">&quot;rtf&quot;</span>, <span class="stringliteral">&quot;wordpad.exe&quot;</span>});</div>
-<div class="line">    </div>
-<div class="line">    <span class="comment">// Create a dictionary of strings with string keys, and</span></div>
-<div class="line">    <span class="comment">// initialize it with the contents of the sorted dictionary.</span></div>
-<div class="line">    <span class="keyword">auto</span> copy = dictionary&lt;string, string&gt;(open_with.begin(), open_with.end());</div>
-<div class="line">    </div>
-<div class="line">    <span class="comment">// List the contents of the copy.</span></div>
-<div class="line">    console::write_line();</div>
-<div class="line">    <span class="keywordflow">for</span>(<span class="keyword">const</span> key_value_pair&lt;string, string&gt;&amp; kvp : copy)</div>
-<div class="line">      console::write_line(<span class="stringliteral">&quot;key = {0}, value = {1}&quot;</span>, kvp.key(), kvp.value());</div>
-<div class="line">  }</div>
-<div class="line">};</div>
-<div class="line"> </div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#gaeb9462ec721c9718cf689e93bf11bf56">startup_</a>(example::main);</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// This code can produce the following output :</span></div>
-<div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// key = txt, value = notepad.exe</span></div>
-<div class="line"><span class="comment">// key = bmp, value = paint.exe</span></div>
-<div class="line"><span class="comment">// key = dib, value = paint.exe</span></div>
-<div class="line"><span class="comment">// key = rtf, value = wordpad.exe</span></div>
-<div class="ttc" id="agroup__keywords_html_gaeb9462ec721c9718cf689e93bf11bf56"><div class="ttname"><a href="group__keywords.html#gaeb9462ec721c9718cf689e93bf11bf56">startup_</a></div><div class="ttdeci">#define startup_(...)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:152</div></div>
-</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="a277235de391526bd06e066fd6869aae4" name="a277235de391526bd06e066fd6869aae4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a277235de391526bd06e066fd6869aae4">&#9670;&#160;</a></span>concurrent_dictionary() <span class="overload">[4/12]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary.html">xtd::collections::concurrent::concurrent_dictionary</a>&lt; key_t, value_t, hasher_t, equator_t, allocator_t &gt;::concurrent_dictionary </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html">xtd::collections::generic::iequality_comparer</a>&lt; <a class="el" href="#a2f094754f268a087eb0b94805c0ea8b6">key_type</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>comparer</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary.html" title="Represents a thread-safe collection of key/value pairs that can be accessed by multiple threads concu...">xtd::collections::concurrent::concurrent_dictionary&lt;key_t,value_t&gt;</a> class that is empty, has the default concurrency level and capacity, and uses the specified <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html">xtd::collections::generic::iequality_comparer&lt;key_type&gt;</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">comparer</td><td>The equality comparison implementation to use when comparing keys. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aad62ff987110db21fa352ec4efb01c28" name="aad62ff987110db21fa352ec4efb01c28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad62ff987110db21fa352ec4efb01c28">&#9670;&#160;</a></span>concurrent_dictionary() <span class="overload">[5/12]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary.html">xtd::collections::concurrent::concurrent_dictionary</a>&lt; key_t, value_t, hasher_t, equator_t, allocator_t &gt;::concurrent_dictionary </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; <a class="el" href="#a4f3ce8dcf5b7fb66ebe09e74a503de3a">value_type</a> &gt; &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>collection</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html">xtd::collections::generic::iequality_comparer</a>&lt; <a class="el" href="#a2f094754f268a087eb0b94805c0ea8b6">key_type</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>comparer</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary.html" title="Represents a thread-safe collection of key/value pairs that can be accessed by multiple threads concu...">xtd::collections::concurrent::concurrent_dictionary&lt;key_t,value_t&gt;</a> class that contains elements copied from the specified <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> has the default concurrency level, has the default initial capacity, and uses the specified <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html">xtd::collections::generic::iequality_comparer&lt;key_type&gt;</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">collection</td><td>The <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable&lt;value_type&gt;</a> whose elements are copied to the new <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary.html" title="Represents a thread-safe collection of key/value pairs that can be accessed by multiple threads concu...">xtd::collections::concurrent::concurrent_dictionary&lt;key_t,value_t&gt;</a>. </td></tr>
+    <tr><td class="paramname">comparer</td><td>The equality comparison implementation to use when comparing keys. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a147ed09db73bd1f98ec34bba9bfce086" name="a147ed09db73bd1f98ec34bba9bfce086"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a147ed09db73bd1f98ec34bba9bfce086">&#9670;&#160;</a></span>concurrent_dictionary() <span class="overload">[6/12]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary.html">xtd::collections::concurrent::concurrent_dictionary</a>&lt; key_t, value_t, hasher_t, equator_t, allocator_t &gt;::concurrent_dictionary </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> auto &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>collection</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html">xtd::collections::generic::iequality_comparer</a>&lt; <a class="el" href="#a2f094754f268a087eb0b94805c0ea8b6">key_type</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>comparer</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary.html" title="Represents a thread-safe collection of key/value pairs that can be accessed by multiple threads concu...">xtd::collections::concurrent::concurrent_dictionary&lt;key_t,value_t&gt;</a> class that contains elements copied from the specified <a class="el" href="structxtd_1_1iterable.html" title="Represents the iterable concept.">xtd::iterable</a> has the default concurrency level, has the default initial capacity, and uses the specified <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html">xtd::collections::generic::iequality_comparer&lt;key_type&gt;</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">collection</td><td>The <a class="el" href="structxtd_1_1iterable.html" title="Represents the iterable concept.">xtd::iterable</a> whose elements are copied to the new <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary.html" title="Represents a thread-safe collection of key/value pairs that can be accessed by multiple threads concu...">xtd::collections::concurrent::concurrent_dictionary&lt;key_t,value_t&gt;</a>. </td></tr>
+    <tr><td class="paramname">comparer</td><td>The equality comparison implementation to use when comparing keys. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa86598ed873c7342e9e7658a9a99a032" name="aa86598ed873c7342e9e7658a9a99a032"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa86598ed873c7342e9e7658a9a99a032">&#9670;&#160;</a></span>concurrent_dictionary() <span class="overload">[7/12]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary.html">xtd::collections::concurrent::concurrent_dictionary</a>&lt; key_t, value_t, hasher_t, equator_t, allocator_t &gt;::concurrent_dictionary </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>concurrent_level</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>capacity</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary.html" title="Represents a thread-safe collection of key/value pairs that can be accessed by multiple threads concu...">xtd::collections::concurrent::concurrent_dictionary&lt;key_t,value_t&gt;</a> class that is empty, has the specified concurrency level and capacity, and uses the default comparer for the key type. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">concurrent_level</td><td>The estimated number of threads that will update the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary.html" title="Represents a thread-safe collection of key/value pairs that can be accessed by multiple threads concu...">xtd::collections::concurrent::concurrent_dictionary&lt;key_t,value_t&gt;</a> concurrently,. </td></tr>
+    <tr><td class="paramname">capacity</td><td>The initial number of elements that the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary.html" title="Represents a thread-safe collection of key/value pairs that can be accessed by multiple threads concu...">xtd::collections::concurrent::concurrent_dictionary&lt;key_t,value_t&gt;</a> can contain. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a3e91717e96b9446f16e4e35b7e9a8aac" name="a3e91717e96b9446f16e4e35b7e9a8aac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e91717e96b9446f16e4e35b7e9a8aac">&#9670;&#160;</a></span>concurrent_dictionary() <span class="overload">[8/12]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary.html">xtd::collections::concurrent::concurrent_dictionary</a>&lt; key_t, value_t, hasher_t, equator_t, allocator_t &gt;::concurrent_dictionary </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>concurrent_level</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; <a class="el" href="#a4f3ce8dcf5b7fb66ebe09e74a503de3a">value_type</a> &gt; &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>collection</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html">xtd::collections::generic::iequality_comparer</a>&lt; <a class="el" href="#a2f094754f268a087eb0b94805c0ea8b6">key_type</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>comparer</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary.html" title="Represents a thread-safe collection of key/value pairs that can be accessed by multiple threads concu...">xtd::collections::concurrent::concurrent_dictionary&lt;key_t,value_t&gt;</a> class that contains elements copied from the specified <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a>, and uses the specified <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html">xtd::collections::generic::iequality_comparer&lt;key_type&gt;</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">concurrent_level</td><td>The estimated number of threads that will update the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary.html" title="Represents a thread-safe collection of key/value pairs that can be accessed by multiple threads concu...">xtd::collections::concurrent::concurrent_dictionary&lt;key_t,value_t&gt;</a> concurrently,. </td></tr>
+    <tr><td class="paramname">collection</td><td>The <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable&lt;value_type&gt;</a> whose elements are copied to the new <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary.html" title="Represents a thread-safe collection of key/value pairs that can be accessed by multiple threads concu...">xtd::collections::concurrent::concurrent_dictionary&lt;key_t,value_t&gt;</a>. </td></tr>
+    <tr><td class="paramname">comparer</td><td>The equality comparison implementation to use when comparing keys. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a6800a5c30d518d9a98d9e448cc3ca5cd" name="a6800a5c30d518d9a98d9e448cc3ca5cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6800a5c30d518d9a98d9e448cc3ca5cd">&#9670;&#160;</a></span>concurrent_dictionary() <span class="overload">[9/12]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary.html">xtd::collections::concurrent::concurrent_dictionary</a>&lt; key_t, value_t, hasher_t, equator_t, allocator_t &gt;::concurrent_dictionary </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>concurrent_level</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> auto &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>collection</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html">xtd::collections::generic::iequality_comparer</a>&lt; <a class="el" href="#a2f094754f268a087eb0b94805c0ea8b6">key_type</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>comparer</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary.html" title="Represents a thread-safe collection of key/value pairs that can be accessed by multiple threads concu...">xtd::collections::concurrent::concurrent_dictionary&lt;key_t,value_t&gt;</a> class that contains elements copied from the specified <a class="el" href="structxtd_1_1iterable.html" title="Represents the iterable concept.">xtd::iterable</a>, and uses the specified <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html">xtd::collections::generic::iequality_comparer&lt;key_type&gt;</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">concurrent_level</td><td>The estimated number of threads that will update the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary.html" title="Represents a thread-safe collection of key/value pairs that can be accessed by multiple threads concu...">xtd::collections::concurrent::concurrent_dictionary&lt;key_t,value_t&gt;</a> concurrently,. </td></tr>
+    <tr><td class="paramname">collection</td><td>The <a class="el" href="structxtd_1_1iterable.html" title="Represents the iterable concept.">xtd::iterable</a> whose elements are copied to the new <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary.html" title="Represents a thread-safe collection of key/value pairs that can be accessed by multiple threads concu...">xtd::collections::concurrent::concurrent_dictionary&lt;key_t,value_t&gt;</a>. </td></tr>
+    <tr><td class="paramname">comparer</td><td>The equality comparison implementation to use when comparing keys. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a35961af7b41235ae9cf54b2e4ec1e890" name="a35961af7b41235ae9cf54b2e4ec1e890"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35961af7b41235ae9cf54b2e4ec1e890">&#9670;&#160;</a></span>concurrent_dictionary() <span class="overload">[10/12]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary.html">xtd::collections::concurrent::concurrent_dictionary</a>&lt; key_t, value_t, hasher_t, equator_t, allocator_t &gt;::concurrent_dictionary </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>concurrent_level</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>          <td class="paramname"><span class="paramname"><em>capacity</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html">xtd::collections::generic::iequality_comparer</a>&lt; <a class="el" href="#a2f094754f268a087eb0b94805c0ea8b6">key_type</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>comparer</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary.html" title="Represents a thread-safe collection of key/value pairs that can be accessed by multiple threads concu...">xtd::collections::concurrent::concurrent_dictionary&lt;key_t,value_t&gt;</a> class that is empty, has the specified concurrency level and capacity, and uses the specified <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html">xtd::collections::generic::iequality_comparer&lt;key_type&gt;</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">concurrent_level</td><td>The estimated number of threads that will update the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary.html" title="Represents a thread-safe collection of key/value pairs that can be accessed by multiple threads concu...">xtd::collections::concurrent::concurrent_dictionary&lt;key_t,value_t&gt;</a> concurrently,. </td></tr>
+    <tr><td class="paramname">capacity</td><td>The initial number of elements that the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary.html" title="Represents a thread-safe collection of key/value pairs that can be accessed by multiple threads concu...">xtd::collections::concurrent::concurrent_dictionary&lt;key_t,value_t&gt;</a> can contain. </td></tr>
+    <tr><td class="paramname">comparer</td><td>The equality comparison implementation to use when comparing keys. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
 <a id="af1270c6e7d7d162b9c965ade34e348e6" name="af1270c6e7d7d162b9c965ade34e348e6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af1270c6e7d7d162b9c965ade34e348e6">&#9670;&#160;</a></span>concurrent_dictionary() <span class="overload">[3/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#af1270c6e7d7d162b9c965ade34e348e6">&#9670;&#160;</a></span>concurrent_dictionary() <span class="overload">[11/12]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -678,7 +978,7 @@ template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collectio
 </div>
 </div>
 <a id="abca045273fa7dc296d32dc6692d17e2b" name="abca045273fa7dc296d32dc6692d17e2b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abca045273fa7dc296d32dc6692d17e2b">&#9670;&#160;</a></span>concurrent_dictionary() <span class="overload">[4/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#abca045273fa7dc296d32dc6692d17e2b">&#9670;&#160;</a></span>concurrent_dictionary() <span class="overload">[12/12]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -706,70 +1006,6 @@ template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collectio
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">items</td><td>The initializer list to initialize the elements of the container with. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="afcac45184a8e0a718dce5785af6d0e8d" name="afcac45184a8e0a718dce5785af6d0e8d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afcac45184a8e0a718dce5785af6d0e8d">&#9670;&#160;</a></span>concurrent_dictionary() <span class="overload">[5/6]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary.html">xtd::collections::concurrent::concurrent_dictionary</a>&lt; key_t, value_t, hasher_t, equator_t, allocator_t &gt;::concurrent_dictionary </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; <a class="el" href="#a4f3ce8dcf5b7fb66ebe09e74a503de3a">value_type</a> &gt; &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>collection</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary.html" title="Represents a thread-safe collection of key/value pairs that can be accessed by multiple threads concu...">xtd::collections::concurrent::concurrent_dictionary</a> &lt;key_t, value_t&gt; class that contains elements copied from the specified collection. </p>
-
-</div>
-</div>
-<a id="a6ce03b9dba004c58b0996f2574654f05" name="a6ce03b9dba004c58b0996f2574654f05"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6ce03b9dba004c58b0996f2574654f05">&#9670;&#160;</a></span>concurrent_dictionary() <span class="overload">[6/6]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary.html">xtd::collections::concurrent::concurrent_dictionary</a>&lt; key_t, value_t, hasher_t, equator_t, allocator_t &gt;::concurrent_dictionary </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structxtd_1_1iterable.html">xtd::iterable</a> auto &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>items</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Initializes a new instance of the <a class="el" href="structxtd_1_1iterable.html" title="Represents the iterable concept.">xtd::iterable</a> that contains elements copied from the specified collection and has sufficient capacity to accommodate the number of elements copied. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">items</td><td>The iterable whose elements are copied to the new <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary.html" title="Represents a thread-safe collection of key/value pairs that can be accessed by multiple threads concu...">xtd::collections::concurrent::concurrent_dictionary</a> &lt;key_t, value_t&gt;. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1313,6 +1549,137 @@ template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collectio
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000020">Todo</a></b></dt><dd>: use enumerator with a snapshot of the collection instead reference : enumerator {items_, enumerator_mode::snapshot}; </dd></dl>
 
 <p>Implements <a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html#a8d0a93ddf639f8c35c5627713068917d">xtd::collections::generic::idictionary&lt; key_t, value_t &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a5956c079324b169fd84e48811a25a6d0" name="a5956c079324b169fd84e48811a25a6d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5956c079324b169fd84e48811a25a6d0">&#9670;&#160;</a></span>get_or_add() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary.html">xtd::collections::concurrent::concurrent_dictionary</a>&lt; key_t, value_t, hasher_t, equator_t, allocator_t &gt;::get_or_add </td>
+          <td>(</td>
+          <td class="paramtype">const key_t &amp;</td>          <td class="paramname"><span class="paramname"><em>key</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structxtd_1_1callable.html">xtd::callable</a>&lt; value_t, key_t &gt; auto &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>add_value_factory</em></span>&#160;) -&gt; const value_t &amp;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adds a key/value pair to the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary.html" title="Represents a thread-safe collection of key/value pairs that can be accessed by multiple threads concu...">xtd::collections::concurrent::concurrent_dictionary</a> &lt;key_t, value_t&gt; by using the specified function if the key does not already exist. Returns the new value, or the existing value if the key exists. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>The key of the element to add. </td></tr>
+    <tr><td class="paramname">ad_value_factory</td><td>The function used to generate a value for the key. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The value for the key. This will be either the existing value for the key if the key is already in the dictionary, or the new value if the key was not in the dictionary. </dd></dl>
+
+</div>
+</div>
+<a id="a2e18dc9ee11e0c70d8dc795fcdcfc01e" name="a2e18dc9ee11e0c70d8dc795fcdcfc01e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e18dc9ee11e0c70d8dc795fcdcfc01e">&#9670;&#160;</a></span>get_or_add() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary.html">xtd::collections::concurrent::concurrent_dictionary</a>&lt; key_t, value_t, hasher_t, equator_t, allocator_t &gt;::get_or_add </td>
+          <td>(</td>
+          <td class="paramtype">const key_t &amp;</td>          <td class="paramname"><span class="paramname"><em>key</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const value_t &amp;</td>          <td class="paramname"><span class="paramname"><em>add_value</em></span>&#160;) -&gt; const value_t &amp;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adds a key/value pair to the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary.html" title="Represents a thread-safe collection of key/value pairs that can be accessed by multiple threads concu...">xtd::collections::concurrent::concurrent_dictionary</a> &lt;key_t, value_t&gt; if the key does not already exist. Returns the new value, or the existing value if the key exists. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>The key of the element to add. </td></tr>
+    <tr><td class="paramname">add_value</td><td>The value to be added, if the key does not already exist. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The value for the key. This will be either the existing value for the key if the key is already in the dictionary, or the new value if the key was not in the dictionary. </dd></dl>
+
+</div>
+</div>
+<a id="ae2d39707ff370442e662a0fbb2786539" name="ae2d39707ff370442e662a0fbb2786539"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2d39707ff370442e662a0fbb2786539">&#9670;&#160;</a></span>get_or_add() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+<div class="memtemplate">
+template&lt;typename arg_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary.html">xtd::collections::concurrent::concurrent_dictionary</a>&lt; key_t, value_t, hasher_t, equator_t, allocator_t &gt;::get_or_add </td>
+          <td>(</td>
+          <td class="paramtype">const key_t &amp;</td>          <td class="paramname"><span class="paramname"><em>key</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structxtd_1_1callable.html">xtd::callable</a>&lt; value_t, key_t, arg_t &gt; auto &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>add_value_factory</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">arg_t &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>factory_argument</em></span>&#160;) -&gt; const value_t &amp;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adds a key/value pair to the <a class="el" href="classxtd_1_1collections_1_1concurrent_1_1concurrent__dictionary.html" title="Represents a thread-safe collection of key/value pairs that can be accessed by multiple threads concu...">xtd::collections::concurrent::concurrent_dictionary</a> &lt;key_t, value_t&gt; by using the specified function and an argument if the key does not already exist, or returns the existing value if the key exists. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>The key of the element to add. </td></tr>
+    <tr><td class="paramname">ad_value_factory</td><td>The function used to generate a value for the key. </td></tr>
+    <tr><td class="paramname">factory_argument</td><td>An argument value to pass into valueFactory. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The value for the key. This will be either the existing value for the key if the key is already in the dictionary, or the new value if the key was not in the dictionary. </dd></dl>
 
 </div>
 </div>
