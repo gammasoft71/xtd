@@ -3428,35 +3428,34 @@ See also <a class="el" href="structxtd_1_1scope__success.html" title="Nowadays, 
 <dl class="section remark"><dt>Remarks</dt><dd><a class="el" href="#ga05d1212dca8562cec36b4ebb03dd897f" title="The self_ expression is a reference value expression whose value is the reference of the implicit obj...">self_</a> is equivalent to *this. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example demonstrates how to use the <a class="el" href="#ga05d1212dca8562cec36b4ebb03dd897f" title="The self_ expression is a reference value expression whose value is the reference of the implicit obj...">self_</a> keyword <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">struct </span>coordinate {</div>
+<div class="line"><span class="keyword">struct </span>point {</div>
 <div class="line">  <span class="keywordtype">int</span> x = 0;</div>
 <div class="line">  <span class="keywordtype">int</span> y = 0;</div>
 <div class="line">  </div>
-<div class="line">  <span class="keyword">auto</span> translate(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y) <span class="keyword">noexcept</span> -&gt; coordinate&amp; {</div>
+<div class="line">  <span class="keyword">auto</span> offset(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y) <span class="keyword">noexcept</span> -&gt; point&amp; {</div>
 <div class="line">    <a class="code hl_define" href="#ga05d1212dca8562cec36b4ebb03dd897f">self_</a>.x += x;</div>
 <div class="line">    <a class="code hl_define" href="#ga05d1212dca8562cec36b4ebb03dd897f">self_</a>.y += y;</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code hl_define" href="#ga05d1212dca8562cec36b4ebb03dd897f">self_</a>;</div>
 <div class="line">  }</div>
 <div class="line">  </div>
-<div class="line">  <span class="keyword">auto</span> to_string() const noexcept -&gt; <span class="keywordtype">string</span> {<span class="keywordflow">return</span> <span class="stringliteral">&quot;coordinate {x=&quot;</span>_s + x + <span class="stringliteral">&quot;, y=&quot;</span> + y + <span class="stringliteral">&quot;}&quot;</span>;}</div>
+<div class="line">  <span class="keyword">auto</span> to_string() const noexcept -&gt; <span class="keywordtype">string</span> {<span class="keywordflow">return</span> <span class="stringliteral">&quot;point {x=&quot;</span>_s + x + <span class="stringliteral">&quot;, y=&quot;</span> + y + <span class="stringliteral">&quot;}&quot;</span>;}</div>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a4a8a08f09d37b73795649038408b5f33">c</a> = coordinate {.x = 200, .y = 100};</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;c =&gt; {}&quot;</span>, c);</div>
-<div class="line"> </div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;translate&quot;</span>);</div>
-<div class="line">  <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a4a8a08f09d37b73795649038408b5f33">c</a>.translate(50, 20);</div>
-<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;c =&gt; {}&quot;</span>, c);</div>
+<div class="line">  <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a4a8a08f09d37b73795649038408b5f33">c</a> = <a class="code hl_enumvalue" href="group__xtd__drawing.html#gga35e450ae5d06c5a8ef29e54c607add86a78ee54aa8f813885fe2fe20d232518b9">point</a> {.x = 200, .y = 100};</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;c =&gt; &quot;</span> + c);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;offset&quot;</span>);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;c =&gt; &quot;</span> + <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a4a8a08f09d37b73795649038408b5f33">c</a>.offset(50, 20));</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code can produce the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// c =&gt; coordinate {x=200, y=100}</span></div>
-<div class="line"><span class="comment">// translate</span></div>
-<div class="line"><span class="comment">// c =&gt; coordinate {x=250, y=120}</span></div>
+<div class="line"><span class="comment">// c =&gt; point {x=200, y=100}</span></div>
+<div class="line"><span class="comment">// offset</span></div>
+<div class="line"><span class="comment">// c =&gt; point {x=250, y=120}</span></div>
 <div class="ttc" id="agroup__keywords_html_ga05d1212dca8562cec36b4ebb03dd897f"><div class="ttname"><a href="#ga05d1212dca8562cec36b4ebb03dd897f">self_</a></div><div class="ttdeci">#define self_</div><div class="ttdoc">The self_ expression is a reference value expression whose value is the reference of the implicit obj...</div><div class="ttdef"><b>Definition</b> self.hpp:20</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a4a8a08f09d37b73795649038408b5f33"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a4a8a08f09d37b73795649038408b5f33">xtd::console_key::c</a></div><div class="ttdeci">@ c</div><div class="ttdoc">The C key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:92</div></div>
+<div class="ttc" id="agroup__xtd__drawing_html_gga35e450ae5d06c5a8ef29e54c607add86a78ee54aa8f813885fe2fe20d232518b9"><div class="ttname"><a href="group__xtd__drawing.html#gga35e450ae5d06c5a8ef29e54c607add86a78ee54aa8f813885fe2fe20d232518b9">xtd::drawing::graphics_unit::point</a></div><div class="ttdeci">@ point</div><div class="ttdoc">Specifies a printer&#39;s point (1/72 inch) as the unit of measure.</div><div class="ttdef"><b>Definition</b> graphics_unit.hpp:25</div></div>
 <div class="ttc" id="anamespacextd_html_a9482c5e9fb1d60c658bbe28bfbb17353"><div class="ttname"><a href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">xtd::println</a></div><div class="ttdeci">auto println(FILE *file) -&gt; void</div><div class="ttdoc">Writes the current line terminator to the file output stream using the specified format information.</div><div class="ttdef"><b>Definition</b> println.hpp:15</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="application_add_message_filter_8cpp-example.html#_a1">application_add_message_filter.cpp</a>, <a class="el" href="application_idle_8cpp-example.html#_a0">application_idle.cpp</a>, <a class="el" href="application_thread_exception_8cpp-example.html#_a1">application_thread_exception.cpp</a>, <a class="el" href="assert_dialog_8cpp-example.html#_a1">assert_dialog.cpp</a>, <a class="el" href="background_worker_8cpp-example.html#_a1">background_worker.cpp</a>, <a class="el" href="busy_box_8cpp-example.html#_a0">busy_box.cpp</a>, <a class="el" href="busy_dialog_8cpp-example.html#_a0">busy_dialog.cpp</a>, <a class="el" href="color_box_8cpp-example.html#_a1">color_box.cpp</a>, <a class="el" href="color_dialog_8cpp-example.html#_a1">color_dialog.cpp</a>, <a class="el" href="enable_changed_event_8cpp-example.html#_a0">enable_changed_event.cpp</a>, <a class="el" href="form_and_thread_8cpp-example.html#_a1">form_and_thread.cpp</a>, <a class="el" href="forms_timer_8cpp-example.html#_a0">forms_timer.cpp</a>, <a class="el" href="list_box_8cpp-example.html#_a0">list_box.cpp</a>, <a class="el" href="panel_8cpp-example.html#_a0">panel.cpp</a>, <a class="el" href="phylactery_8cpp-example.html#_a0">phylactery.cpp</a>, <a class="el" href="self_8cpp-example.html#_a0">self.cpp</a>, <a class="el" href="split_container_8cpp-example.html#_a0">split_container.cpp</a>, and <a class="el" href="texts_8cpp-example.html#_a0">texts.cpp</a>.</dd>
