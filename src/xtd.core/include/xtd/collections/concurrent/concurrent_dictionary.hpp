@@ -7,7 +7,7 @@
 #include "../../threading/lock_guard.hpp"
 #include "../../environment.hpp"
 #include "../../object.hpp"
-#include "../../unused.hpp"
+#include "../../unreachable.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -164,7 +164,7 @@ namespace xtd {
         [[nodiscard]] auto count() const noexcept -> xtd::usize override {
           lock_guard_(items_)
             return items_.count();
-          xtd::environment::fail_fast("This line is never executed.");
+          unreachable_();
         }
         
         /// @brief Gets a value that indicates whether the xtd::collections::concurrent::concurrent_dictionary <key_t, value_t> is empty.
@@ -173,7 +173,7 @@ namespace xtd {
         [[nodiscard]] auto is_empty() const noexcept -> bool {
           lock_guard_(items_)
             return items_.is_empty();
-          xtd::environment::fail_fast("This line is never executed.");
+          unreachable_();
         }
         
         /// @brief Gets a value indicating whether the xtd::collections::concurrent::concurrent_dictionary <key_t, value_t> is read-only.
@@ -203,7 +203,7 @@ namespace xtd {
         auto keys() const noexcept -> key_collection override {
           lock_guard_(items_)
             return items_.keys();
-          xtd::environment::fail_fast("This line is never executed.");
+          unreachable_();
         }
         
         /// @brief Gets a collection that contains the values in the xtd::collections::generic::ictionary<key_t,value_t>.
@@ -212,7 +212,7 @@ namespace xtd {
         auto values() const noexcept -> value_collection override {
           lock_guard_(items_)
             return items_.values();
-          xtd::environment::fail_fast("This line is never executed.");
+          unreachable_();
         }
         /// @}
         
@@ -231,7 +231,7 @@ namespace xtd {
             else items_[key] = update_value_factory(key, items_[key]);
             return items_[key];
           }
-          xtd::environment::fail_fast("This line is never executed.");
+          unreachable_();
         }
         /// @brief Adds a key/value pair to the xtd::collections::concurrent::concurrent_dictionary<key_t,value_t> if the key does not already exist, or updates a key/value pair in the xtd::collections::concurrent::concurrent_dictionary<key_t,value_t> by using the specified function if the key already exists.
         /// @param key The key to be added or whose value should be updated.
@@ -244,7 +244,7 @@ namespace xtd {
             else items_[key] = update_value_factory(key, items_[key]);
             return items_[key];
           }
-          xtd::environment::fail_fast("This line is never executed.");
+          unreachable_();
         }
         /// @brief Uses the specified functions and argument to add a key/value pair to the xtd::collections::concurrent::concurrent_dictionary<key_t,value_t> if the key does not already exist, or to update a key/value pair in the xtd::collections::concurrent::concurrent_dictionary<key_t,value_t> if the key already exists.
         /// @param key The key to be added or whose value should be updated.
@@ -260,7 +260,7 @@ namespace xtd {
             else items_[key] = update_value_factory(key, items_[key], factory_argument);
             return items_[key];
           }
-          xtd::environment::fail_fast("This line is never executed.");
+          unreachable_();
         }
 
         /// @brief Removes all keys and values from the xtd::collections::concurrent::concurrent_dictionary<key_t,value_t>.
@@ -275,7 +275,7 @@ namespace xtd {
         auto contains_key(const key_t& key) const noexcept -> bool override {
           lock_guard_(items_)
             return items_.contains_key(key);
-          xtd::environment::fail_fast("This line is never executed.");
+          unreachable_();
         }
         
         /// @brief Copies the elements of the xtd::collections::concurrent::concurrent_dictionary <key_t, value_t> to an xtd::array, starting at a particular xtd::array index.
@@ -305,7 +305,7 @@ namespace xtd {
             if (!items_.contains_key(key)) items_.add(key, add_value_factory(key));
             return items_[key];
           }
-          xtd::environment::fail_fast("This line is never executed.");
+          unreachable_();
         }
         /// @brief Adds a key/value pair to the xtd::collections::concurrent::concurrent_dictionary <key_t, value_t> if the key does not already exist. Returns the new value, or the existing value if the key exists.
         /// @param key  The key of the element to add.
@@ -316,7 +316,7 @@ namespace xtd {
             if (!items_.contains_key(key)) items_.add(key, add_value);
             return items_[key];
           }
-          xtd::environment::fail_fast("This line is never executed.");
+          unreachable_();
         }
         /// @brief Adds a key/value pair to the xtd::collections::concurrent::concurrent_dictionary <key_t, value_t> by using the specified function and an argument if the key does not already exist, or returns the existing value if the key exists.
         /// @param key The key of the element to add.
@@ -329,7 +329,7 @@ namespace xtd {
             if (!items_.contains_key(key)) items_.add(key, add_value_factory(key, factory_argument));
             return items_[key];
           }
-          xtd::environment::fail_fast("This line is never executed.");
+          unreachable_();
         }
 
         /// @brief Copies the elements contained in the xtd::collections::concurrent::concurrent_dictionary <key_t, value_t> to a new array.
@@ -338,7 +338,7 @@ namespace xtd {
         [[nodiscard]] auto to_array() const -> xtd::array<value_type> {
           lock_guard_(items_)
             return items_.to_array();
-          xtd::environment::fail_fast("This line is never executed.");
+          unreachable_();
         }
         
         /// @brief Returns a xtd::string that represents the current object.
@@ -357,7 +357,7 @@ namespace xtd {
             items_.add(key, value);
             return true;
           }
-          xtd::environment::fail_fast("This line is never executed.");
+          unreachable_();
         }
         
         /// @brief Attempts to get the value associated with the specified key from the xtd::collections::concurrent::concurrent_dictionary <key_t,value_t>.
@@ -366,7 +366,7 @@ namespace xtd {
         auto try_get_value(const key_t& key, value_t& value) const -> bool override {
           lock_guard_(items_)
             return items_.try_get_value(key, value);
-          xtd::environment::fail_fast("This line is never executed.");
+          unreachable_();
         }
 
         /// @brief Attempts to remove and return the value that has the specified key from the xtd::collections::concurrent::concurrent_dictionary <key_t,value_t>.
@@ -378,7 +378,7 @@ namespace xtd {
             if (!items_.try_get_value(key, value)) return false;
             return items_.remove(key);
           }
-          xtd::environment::fail_fast("This line is never executed.");
+          unreachable_();
         }
         /// @brief Removes a key and value from the dictionary.
         /// @pram item The xtd::collections::generic::key_value_pair<key_t,value_t> representing the key and value to remove.
@@ -390,7 +390,7 @@ namespace xtd {
             if (!items_.contains(item)) return false;
             return items_.remove(item);
           }
-          xtd::environment::fail_fast("This line is never executed.");
+          unreachable_();
         }
         
         /// @brief Updates the value associated with key to `new_value` if the existing value with `key` is equal to `comparison_value`.
@@ -404,7 +404,7 @@ namespace xtd {
             items_[key] = new_value;
             return true;
           }
-          xtd::environment::fail_fast("This line is never executed.");
+          unreachable_();
         }
         /// @}
         
@@ -421,7 +421,7 @@ namespace xtd {
         auto operator [](const key_t& key) const -> const value_t& override {
           lock_guard_(items_)
             return items_.operator [](key);
-          xtd::environment::fail_fast("This line is never executed.");
+          unreachable_();
         }
         /// @brief Sets the element with the specified key.
         /// @param key The key of the element to set.
@@ -432,7 +432,7 @@ namespace xtd {
         auto operator [](const key_t& key) -> value_t& override {
           lock_guard_(items_)
             return items_.operator [](key);
-          xtd::environment::fail_fast("This line is never executed.");
+          unreachable_();
         }
         /// @}
         
@@ -451,19 +451,19 @@ namespace xtd {
         auto contains(const xtd::collections::generic::key_value_pair<key_t, value_t>& item) const noexcept -> bool override {
           lock_guard_(items_)
             return items_.contains(item);
-          xtd::environment::fail_fast("This line is never executed.");
+          unreachable_();
         }
 
         auto remove(const xtd::collections::generic::key_value_pair<key_t, value_t>& item) -> bool override {
           lock_guard_(items_)
             return items_.remove(item);
-          xtd::environment::fail_fast("This line is never executed.");
+          unreachable_();
         }
         
         auto remove(const key_t& key) noexcept -> bool override {
           lock_guard_(items_)
             return items_.remove(key);
-          xtd::environment::fail_fast("This line is never executed.");
+          unreachable_();
         }
         
         collection_type items_;
