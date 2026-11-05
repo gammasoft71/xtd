@@ -18,7 +18,7 @@ xtdc run
 ## Output
 
 ```
-c => coordinate {x=200, y=100}
-translate
-c => coordinate {x=250, y=120}
+c => point {x=200, y=100}
+offset
+c => point {x=250, y=120}
 ```
