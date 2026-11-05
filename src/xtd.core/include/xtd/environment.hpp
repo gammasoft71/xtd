@@ -40,7 +40,9 @@
 #include "internal/__compiler_id.hpp"
 #include "internal/__compiler_version.hpp"
 #include "internal/__cpp_language.hpp"
+#include "internal/__xtd_unreachable.hpp"
 #undef __XTD_CORE_INTERNAL__
+#include <cassert>
 
 /// @cond
 // The following constant is defined in the file xtd_command.cmake.
@@ -717,6 +719,30 @@ namespace xtd {
     /// @remarks If value is empty and the environment variable named by variable exists, the environment variable is deleted. If variable does not exist, no error occurs even though the operation cannot be performed.
     /// @todo Add xtd::registry and uncomment lines.
     static auto set_environment_variable(const xtd::string& variable, const xtd::string& value, xtd::environment_variable_target target) -> void;
+
+    /// @brief The function unreachable expands to a void expression. Executing unreachable() results in undefined behavior.
+    /// @remarks An implementation may use this to optimize impossible code branches away (typically, in optimized builds) or to trap them to prevent further execution (typically, in debug builds).
+    /// @par Header
+    /// ```cpp
+    /// #include <xtd/diagnostics/unreachable>
+    /// ```
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core debug
+    /// @par Examples
+    /// The following code example demonstrates how to stop the debugger at the call to write_line.
+    /// ```cpp
+    ///  switch (value) {
+    ///   case 128: [[fallthrough]];
+    ///   case 256: [[fallthrough]];
+    ///   case 512: return  "good";
+    ///   default:  unreachable();
+    /// }
+    /// ```
+    [[noreturn]] static auto unreachable() -> void {
+      assert(false && "xtd::environment::unreachable() was reached");
+      __xtd_unreachable();
+    }
     /// @}
     
   private:
