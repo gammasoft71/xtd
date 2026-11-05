@@ -88,32 +88,6 @@ auto debug::unindent() noexcept -> void {
   if (indent_level() != 0) indent_level(indent_level() - 1);
 }
 
-auto debug::fail__(const string& message) -> void {
-  for (auto listener : listeners()) {
-    if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
-    if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);
-    if (!listener->is_thread_safe() && use_global_lock_) {
-      std::lock_guard<std::recursive_mutex> lock {__debug_mutex__};
-      listener->fail(message);
-    } else
-      listener->fail(message);
-  }
-  if (auto_flush_) flush();
-}
-
-auto debug::fail__(const string& message, const string& detail_message) -> void {
-  for (auto listener : listeners()) {
-    if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
-    if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);
-    if (!listener->is_thread_safe() && use_global_lock_) {
-      std::lock_guard<std::recursive_mutex> lock {__debug_mutex__};
-      listener->fail(message, detail_message);
-    } else
-      listener->fail(message, detail_message);
-  }
-  if (auto_flush_) flush();
-}
-
 auto debug::flush_() -> void {
   for (auto listener : listeners())
     listener->flush();

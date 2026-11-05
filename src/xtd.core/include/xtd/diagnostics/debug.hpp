@@ -195,7 +195,7 @@ namespace xtd {
       /// @note The display of the message box is dependent on the presence of the xtd::diagnostics::default_trace_listener. If the xtd::diagnostics::default_trace_listener is not in the xtd::diagnostics::debug::listeners collection, the message box is not displayed. The xtd::diagnostics::default_trace_listener can be removed by the <clear>, the <erase>, or by calling the clear method on the xtd::diagnostics::debug::listeners property (xtd::diagnostics::trace::listeners().clear()).
       static auto fail(const xtd::string& message) -> void {
         #if DEBUG
-        fail__(message);
+        xtd::environment::fail_fast(message);
         #endif
       }
       /// @brief Emits an error message and a detailed error message.
@@ -205,7 +205,7 @@ namespace xtd {
       /// @note The display of the message box is dependent on the presence of the default_trace_listener. If the default_trace_listener is not in the listeners collection, the message box is not displayed. The default_trace_listener can be removed by the <clear>, the <remove>, or by calling the clear method on the listeners property (xtd::diagnostics::trace::listeners().clear()).
       static auto fail(const xtd::string& message, const xtd::string& detail_message) -> void {
         #if DEBUG
-        fail__(message, detail_message);
+        xtd::environment::fail_fast(message + environment::new_line() + detail_message);
         #endif
       }
       
@@ -523,8 +523,6 @@ namespace xtd {
       static auto assert_dialog(bool condition, const xtd::string& message, const xtd::string& detail_message, const xtd::diagnostics::stack_frame& stack_frame) -> xtd::diagnostics::assert_dialog_result;
       static auto assert_dialog_caption() -> xtd::string;
       static auto internal_show_assert_dialog() noexcept -> bool;
-      static auto fail__(const xtd::string& message) -> void;
-      static auto fail__(const xtd::string& message, const xtd::string& detail_message) -> void;
       static auto flush_() -> void;
       static auto trace_event_(xtd::diagnostics::trace_event_type trace_event_type, const xtd::string& message) -> void;
       static auto write_(const xtd::string& message) -> void;
