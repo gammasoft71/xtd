@@ -163,6 +163,12 @@ template<typename value_t>
   return to_string(value, fmt, std::locale());
 }
 
+template<typename type_t>
+[[nodiscard]] inline auto xtd::to_string(const std::atomic<type_t>& value, const xtd::string& fmt, const std::locale& loc) -> xtd::string {
+  if (!value) return "(null)";
+  return to_string(value.load(), fmt, loc);
+}
+
 template<>
 [[nodiscard]] inline auto xtd::to_string(const std::partial_ordering& value, const xtd::string& fmt, const std::locale& loc) -> xtd::string {
   if (value == std::partial_ordering::less) return "less";

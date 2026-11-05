@@ -390,6 +390,9 @@ namespace xtd {
   /// @cond
   inline auto to_string(const char*  value, const xtd::string& fmt) -> xtd::string;
   
+  template<typename type_t>
+  inline auto to_string(const std::atomic<type_t>& value, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
+
   template<>
   inline auto to_string(const std::partial_ordering& value, const xtd::string& fmt, const std::locale& loc) -> xtd::string;
   
