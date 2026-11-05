@@ -31,6 +31,9 @@ namespace xtd {
       /// @par Library
       /// xtd.core
       /// @ingroup xtd_core concurrent_collections
+      /// @par Examples
+      /// The following example shows how to construct a xtd::collections::concurrent::concurrent_dictionary <key_t, value_t> object.
+      /// @include concurrent_dictionary.cpp
       template<typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher<key_t>, typename equator_t = xtd::collections::generic::helpers::equator<key_t>, typename allocator_t = xtd::collections::generic::helpers::allocator<std::pair<const key_t, value_t>>>
       class concurrent_dictionary : public xtd::object, public xtd::collections::generic::idictionary<key_t, value_t> {
       public:
