@@ -157,6 +157,8 @@ Macros</h2></td></tr>
 <tr class="memdesc:gad1e9d87aeb065b1eec47e92a49fd01e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks for a condition; if the condition is <span class="tt">false</span>, displays a message box that shows the call stack.  <br /></td></tr>
 <tr class="memitem:ga7a5088b030211d28a0a24ecc924f57b6" id="r_ga7a5088b030211d28a0a24ecc924f57b6"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#ga7a5088b030211d28a0a24ecc924f57b6">debug_break_</a>()</td></tr>
 <tr class="memdesc:ga7a5088b030211d28a0a24ecc924f57b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signals a breakpoint to an attached debugger.  <br /></td></tr>
+<tr class="memitem:gab421bcc6deef6244dc70899628421a8b" id="r_gab421bcc6deef6244dc70899628421a8b"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#gab421bcc6deef6244dc70899628421a8b">unreachable_</a>()</td></tr>
+<tr class="memdesc:gab421bcc6deef6244dc70899628421a8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function-like macro unreachable expands to a void expression. Executing unreachable() results in undefined behavior.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
@@ -229,6 +231,39 @@ Variables</h2></td></tr>
 </div><!-- fragment --> </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="application_and_assert_8cpp-example.html#_a1">application_and_assert.cpp</a>.</dd>
 </dl>
+
+</div>
+</div>
+<a id="gab421bcc6deef6244dc70899628421a8b" name="gab421bcc6deef6244dc70899628421a8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab421bcc6deef6244dc70899628421a8b">&#9670;&#160;</a></span>unreachable_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define unreachable_</td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="unreachable_8hpp.html">unreachable.hpp</a>&gt;</code></p>
+
+<p>The function-like macro unreachable expands to a void expression. Executing unreachable() results in undefined behavior. </p>
+<dl class="section remark"><dt>Remarks</dt><dd>An implementation may use this to optimize impossible code branches away (typically, in optimized builds) or to trap them to prevent further execution (typically, in debug builds). </dd></dl>
+<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/diagnostics/unreachable&gt;</span></div>
+</div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to stop the debugger at the call to write_line. <div class="fragment"><div class="line"> <span class="keywordflow">switch</span> (value) {</div>
+<div class="line">  <span class="keywordflow">case</span> 128: [[fallthrough]];</div>
+<div class="line">  <span class="keywordflow">case</span> 256: [[fallthrough]];</div>
+<div class="line">  <span class="keywordflow">case</span> 512: <span class="keywordflow">return</span>  <span class="stringliteral">&quot;good&quot;</span>;</div>
+<div class="line">  <span class="keywordflow">default</span>:  <a class="code hl_define" href="#gab421bcc6deef6244dc70899628421a8b">unreachable_</a>();</div>
+<div class="line">}</div>
+<div class="ttc" id="agroup__debug_html_gab421bcc6deef6244dc70899628421a8b"><div class="ttname"><a href="#gab421bcc6deef6244dc70899628421a8b">unreachable_</a></div><div class="ttdeci">#define unreachable_()</div><div class="ttdoc">The function-like macro unreachable expands to a void expression. Executing unreachable() results in ...</div><div class="ttdef"><b>Definition</b> unreachable.hpp:29</div></div>
+</div><!-- fragment --> </dd></dl>
 
 </div>
 </div>

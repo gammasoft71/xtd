@@ -64,5 +64,6 @@ var searchData=
   ['_5f_5fxtd_5fdebugbreak_2ehpp_61',['__xtd_debugbreak.hpp',['../____xtd__debugbreak_8hpp.html',1,'']]],
   ['_5f_5fxtd_5fsource_5flocation_2ehpp_62',['__xtd_source_location.hpp',['../____xtd__source__location_8hpp.html',1,'']]],
   ['_5f_5fxtd_5fstd_5fformat_2ehpp_63',['__xtd_std_format.hpp',['../____xtd__std__format_8hpp.html',1,'']]],
-  ['_5f_5fxtd_5fstd_5fversion_2ehpp_64',['__xtd_std_version.hpp',['../____xtd__std__version_8hpp.html',1,'']]]
+  ['_5f_5fxtd_5fstd_5fversion_2ehpp_64',['__xtd_std_version.hpp',['../____xtd__std__version_8hpp.html',1,'']]],
+  ['_5f_5fxtd_5funreachable_2ehpp_65',['__xtd_unreachable.hpp',['../____xtd__unreachable_8hpp.html',1,'']]]
 ];
