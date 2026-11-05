@@ -108,24 +108,21 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <p>demonstrates how to use self_ keyword.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">struct </span>coordinate : <span class="keyword">public</span> istringable&lt;coordinate&gt; {</div>
+<div class="line"><span class="keyword">struct </span>coordinate {</div>
 <div class="line">  <span class="keywordtype">int</span> x = 0;</div>
 <div class="line">  <span class="keywordtype">int</span> y = 0;</div>
 <div class="line">  </div>
-<div class="line">  coordinate() <span class="keyword">noexcept</span> = <span class="keywordflow">default</span>;</div>
-<div class="line">  coordinate(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y) noexcept : x {x}, y {y} {}</div>
-<div class="line"> </div>
-<div class="line">  coordinate&amp; translate(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y) <span class="keyword">noexcept</span> {</div>
+<div class="line">  <span class="keyword">auto</span> translate(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y) <span class="keyword">noexcept</span> -&gt; coordinate&amp; {</div>
 <div class="line">    <a id="_a0" name="_a0"></a><a class="code hl_define" href="group__keywords.html#ga05d1212dca8562cec36b4ebb03dd897f">self_</a>.x += x;</div>
 <div class="line">    <a class="code hl_define" href="group__keywords.html#ga05d1212dca8562cec36b4ebb03dd897f">self_</a>.y += y;</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code hl_define" href="group__keywords.html#ga05d1212dca8562cec36b4ebb03dd897f">self_</a>;</div>
 <div class="line">  }</div>
 <div class="line">  </div>
-<div class="line">  <span class="keywordtype">string</span> to_string() <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> string::format(<span class="stringliteral">&quot;{{x={}, y={}}}&quot;</span>, x, y);}</div>
+<div class="line">  <span class="keyword">auto</span> to_string() <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; <span class="keywordtype">string</span> {<span class="keywordflow">return</span> <span class="stringliteral">&quot;coordinate {x=&quot;</span>_s + x + <span class="stringliteral">&quot;, y=&quot;</span> + y + <span class="stringliteral">&quot;}&quot;</span>;}</div>
 <div class="line">};</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
-<div class="line">  <span class="keyword">auto</span> c = coordinate {200, 100};</div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="keyword">auto</span> c = coordinate {.x = 200, .y = 100};</div>
 <div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;c =&gt; {}&quot;</span>, c);</div>
 <div class="line"> </div>
 <div class="line">  <a class="code hl_function" href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">println</a>(<span class="stringliteral">&quot;translate&quot;</span>);</div>
@@ -135,9 +132,9 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code can produce the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// c =&gt; {x=200, y=100}</span></div>
+<div class="line"><span class="comment">// c =&gt; coordinate {x=200, y=100}</span></div>
 <div class="line"><span class="comment">// translate</span></div>
-<div class="line"><span class="comment">// c =&gt; {x=250, y=120}</span></div>
+<div class="line"><span class="comment">// c =&gt; coordinate {x=250, y=120}</span></div>
 <div class="ttc" id="agroup__keywords_html_ga05d1212dca8562cec36b4ebb03dd897f"><div class="ttname"><a href="group__keywords.html#ga05d1212dca8562cec36b4ebb03dd897f">self_</a></div><div class="ttdeci">#define self_</div><div class="ttdoc">The self_ expression is a reference value expression whose value is the reference of the implicit obj...</div><div class="ttdef"><b>Definition</b> self.hpp:20</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a4a8a08f09d37b73795649038408b5f33"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a4a8a08f09d37b73795649038408b5f33">xtd::console_key::c</a></div><div class="ttdeci">@ c</div><div class="ttdoc">The C key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:92</div></div>
 <div class="ttc" id="anamespacextd_html_a9482c5e9fb1d60c658bbe28bfbb17353"><div class="ttname"><a href="namespacextd.html#a9482c5e9fb1d60c658bbe28bfbb17353">xtd::println</a></div><div class="ttdeci">auto println(FILE *file) -&gt; void</div><div class="ttdoc">Writes the current line terminator to the file output stream using the specified format information.</div><div class="ttdef"><b>Definition</b> println.hpp:15</div></div>
