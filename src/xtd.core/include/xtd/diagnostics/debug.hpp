@@ -12,7 +12,6 @@
 #include "debugger.hpp"
 #include "stack_trace.hpp"
 #include "trace_listener_collection.hpp"
-#include <cassert>
 
 /// @cond
 #if defined(assert)
