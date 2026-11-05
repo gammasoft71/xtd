@@ -5,6 +5,8 @@ find_package(xtd REQUIRED)
 
 add_projects(
   concurrent_bag
+  concurrent_dictionary_add_or_update
+  concurrent_dictionary_add_or_update2
   concurrent_queue
   concurrent_queue2
   concurrent_stack
