@@ -670,6 +670,7 @@
 #include "unsigned_integer_32.hpp"
 #include "unsigned_integer_64.hpp"
 #include "unsigned_integer_8.hpp"
+#include "unreachable.hpp"
 #include "uptr.hpp"
 #include "uri.hpp"
 #include "uri_components.hpp"
