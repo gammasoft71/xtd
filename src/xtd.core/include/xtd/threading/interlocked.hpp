@@ -3,7 +3,7 @@
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "../core_export.hpp"
-#include "../lock.hpp"
+#include "../lock_guard.hpp"
 #include "../object.hpp"
 #include "../static.hpp"
 #include "../types.hpp"
@@ -80,18 +80,22 @@ namespace xtd {
       /// @param comparand The value that is compared to the value at location.
       /// @return The original value in location.
       static auto compare_exchange(void*& location, void* value, void* comparand) noexcept -> void*;
-      /// @brief Compares two objects for equality and, if they are equal, replaces one of them.
+      /// @brief Compares two instances of the specified reference type type_t for equality and, if they are equal, replaces one of them.
       /// @param location The destination, whose value is compared with comparand and possibly replaced.
       /// @param value The value that replaces the destination value if the comparison results in equality.
       /// @param comparand The value that is compared to the value at location.
       /// @return The original value in location.
       template<typename type_t>
-      static auto compare_exchange(object& location, const object& value, const object& comparand) noexcept -> type_t {
-        type_t retValue = location;
-        lock_(location) {
-          if (location.equals(comparand)) location = value;
+      requires (!std::is_enum_v<type_t>)
+      static auto compare_exchange(type_t& location, type_t value, type_t comparand) noexcept -> type_t {
+        lock_guard_(location) {
+          if (location == comparand) {
+            type_t original = location;
+            location = value;
+            return original;
+          }
         }
-        return retValue;
+        return location;
       }
       /// @brief Compares two instances of the specified reference type type_t for equality and, if they are equal, replaces one of them.
       /// @param location The destination, whose value is compared with comparand and possibly replaced.
@@ -99,12 +103,10 @@ namespace xtd {
       /// @param comparand The value that is compared to the value at location.
       /// @return The original value in location.
       template<typename type_t>
+      requires std::is_enum_v<type_t>
       static auto compare_exchange(type_t& location, type_t value, type_t comparand) noexcept -> type_t {
-        type_t retValue = location;
-        lock_(location) {
-          if (location == comparand) location = value;
-        }
-        return retValue;
+        auto* location_ptr = reinterpret_cast<std::underlying_type<type_t>::type*>(&location);
+        return static_cast<type_t>(compare_exchange(*location_ptr, static_cast<std::underlying_type<type_t>::type>(value), static_cast<std::underlying_type<type_t>::type>(comparand)));
       }
       /// @brief Compares two Single for equality and, if they are equal, replaces one of the values.
       /// @param location The destination, whose value is compared with comparand and possibly replaced.
@@ -130,11 +132,22 @@ namespace xtd {
       /// @param value The value to which the location parameter is set.
       /// @return The original value of location.
       template<typename type_t>
+      requires (!std::is_enum_v<type_t>)
       static auto exchange(type_t& location, type_t value) -> type_t {
         type_t original = location;
-        lock_(location)
-        location = value;
+        lock_guard_(location)
+          location = value;
         return original;
+      }
+      /// @brief Sets an object to a specified value and returns the original value, as an atomic operation.
+      /// @param location The variable to set to the specified value.
+      /// @param value The value to which the location parameter is set.
+      /// @return The original value of location.
+      template<typename type_t>
+      requires std::is_enum_v<type_t>
+      static auto exchange(type_t& location, const type_t& value) noexcept -> type_t {
+        auto* location_ptr = reinterpret_cast<std::underlying_type<type_t>::type*>(&location);
+        return static_cast<type_t>(exchange(*location_ptr, static_cast<std::underlying_type<type_t>::type>(value)));
       }
       /// @brief Sets a double-precision floating point number to a specified value and returns the original value, as an atomic operation.
       /// @param location The variable to set to the specified value.
@@ -162,17 +175,6 @@ namespace xtd {
       /// @param value The value to which the location parameter is set.
       /// @return The original value of location.
       static auto exchange(void*& location, void* value) noexcept -> void*;
-      /// @brief Sets an object to a specified value and returns the original value, as an atomic operation.
-      /// @param location The variable to set to the specified value.
-      /// @param value The value to which the location parameter is set.
-      /// @return The original value of location.
-      template<typename type_t>
-      static auto exchange(object& location, const object& value) noexcept -> type_t {
-        type_t original = location;
-        lock_(location)
-        location = value;
-        return original;
-      }
       /// @brief Sets a double-precision floating point number to a specified value and returns the original value, as an atomic operation.
       /// @param location The variable to set to the specified value.
       /// @param value The value to which the location_f parameter is set.
@@ -194,7 +196,7 @@ namespace xtd {
       /// @brief Synchronizes memory access as follows: The processor that executes the current thread cannot reorder instructions in such a way that memory accesses before the call to xtd::threading::interlocked::memory_barrier execute after memory accesses that follow the call to xtd::threading::interlocked::memory_barrier.
       /// @remarks This method was added to the xtd::threading::interlocked class as a convenience; it's a wrapper for the xtd::threading::thread::memory_barrier method.
       /// @remarks xtd::threading::interlocked::memory_barrier is required only on multiprocessor systems that have weak memory ordering (for example, a system that employs multiple Intel Itanium processors).
-      /// @remarks For most purposes, the lock_ statement, or the Monitor class provide easier ways to synchronize data.
+      /// @remarks For most purposes, the lock_guard_ statement, or the Monitor class provide easier ways to synchronize data.
       static auto memory_barrier() noexcept -> void;
       
       /// @brief Returns a 64-bit value, loaded as an atomic operation.

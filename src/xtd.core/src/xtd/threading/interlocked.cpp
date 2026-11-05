@@ -18,7 +18,7 @@ int64 interlocked::add(int64& location, int64 value) noexcept {
 
 double interlocked::compare_exchange(double& location, double value, double comparand) noexcept {
   auto result = location;
-  lock_(location) {
+  lock_guard_(location) {
     if (location == comparand) location = value;
   }
   return result;
@@ -42,7 +42,7 @@ void* interlocked::compare_exchange(void*& location, void* value, void* comparan
 
 float interlocked::compare_exchange(float& location, float value, float comparand) noexcept {
   auto result = location;
-  lock_(location) {
+  lock_guard_(location) {
     if (location == comparand) location = value;
   }
   return result;
@@ -58,7 +58,7 @@ int64 interlocked::decrement(int64& location) noexcept {
 
 double interlocked::exchange(double& location, double value) noexcept {
   auto original = location;
-  lock_(location) location = value;
+  lock_guard_(location) location = value;
   return original;
 }
 
@@ -80,7 +80,7 @@ void* interlocked::exchange(void*& location, void* value) noexcept {
 
 float interlocked::exchange(float& location, float value) noexcept {
   auto original = location;
-  lock_(location) location = value;
+  lock_guard_(location) location = value;
   return original;
 }
 
