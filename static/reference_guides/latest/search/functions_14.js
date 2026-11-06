@@ -27,7 +27,7 @@ var searchData=
   ['united_5fstates_5fvirgin_5fislands_24',['united_states_virgin_islands',['../classxtd_1_1forms_1_1countries.html#a1da969e7a7d122462da15438ccf3e031',1,'xtd::forms::countries']]],
   ['unlock_25',['unlock',['../classxtd_1_1threading_1_1mutex.html#ac874134eafbe5b5a8dd82eb46212f211',1,'xtd::threading::mutex']]],
   ['unlock_5fbits_26',['unlock_bits',['../classxtd_1_1drawing_1_1bitmap.html#a1c1b83b4d75ce6834361b6650bf78966',1,'xtd::drawing::bitmap']]],
-  ['unreachable_27',['unreachable',['../group__debug.html#gad2b8d4635a125553b29ce65964ed4a89',1,'xtd::environment::unreachable()'],['../group__debug.html#ga20870fbe0eed9e56c22897aac79e4daf',1,'xtd::unreachable()']]],
+  ['unreachable_27',['unreachable',['../group__debug.html#gad2b8d4635a125553b29ce65964ed4a89',1,'xtd::environment']]],
   ['unregister_28',['unregister',['../classxtd_1_1threading_1_1registered__wait__handle.html#a6d1f2c3e7426e6c17426f54d315c395f',1,'xtd::threading::registered_wait_handle::unregister() -&gt; bool'],['../classxtd_1_1threading_1_1registered__wait__handle.html#a282d36c0a71b78c41af74f8842830bdb',1,'xtd::threading::registered_wait_handle::unregister(wait_handle &amp;wait_obbject) -&gt; bool']]],
   ['unregister_5fany_5fstringer_29',['unregister_any_stringer',['../group__system.html#ga770af697f7e6af6b26732a9a388f983d',1,'xtd']]],
   ['unsubscribe_30',['unsubscribe',['../classxtd_1_1iobservable.html#a3349f4aacedd111165a895d3d8289ccf',1,'xtd::iobservable']]],
