@@ -72,4 +72,4 @@ namespace xtd {
 /// @brief Signals a breakpoint to an attached debugger.
 /// @deprecated Replaced by xtd::diagnostics::debugger::debug_break() - Will be removed in version 1.2.0.
 [[deprecated("Replaced by xtd::diagnostics::debugger::debug_break() - Will be removed in version 1.2.0.")]]
-auto debug_break_() -> void {xtd::diagnostics::debugger::debug_break();}
+inline auto debug_break_() -> void {xtd::diagnostics::debugger::debug_break();}
