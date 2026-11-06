@@ -114,13 +114,19 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#define __XTD_CORE_INTERNAL__</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="____xtd__unreachable_8hpp.html">internal/__xtd_unreachable.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#undef __XTD_CORE_INTERNAL__</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;cassert&gt;</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span></div>
-<div class="foldopen" id="foldopen00029" data-start="" data-end="">
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="group__debug.html#gab421bcc6deef6244dc70899628421a8b">   29</a></span><span class="preprocessor">#define unreachable_() \</span></div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">  __xtd_unreachable()</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a> {</div>
+<div class="foldopen" id="foldopen00031" data-start="{" data-end="}">
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="group__debug.html#ga20870fbe0eed9e56c22897aac79e4daf">   31</a></span>  [[noreturn]] <span class="keyword">inline</span> <span class="keyword">auto</span> <a class="code hl_function" href="group__debug.html#ga20870fbe0eed9e56c22897aac79e4daf">unreachable</a>() -&gt; <span class="keywordtype">void</span> {</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    assert(<span class="keyword">false</span> &amp;&amp; <span class="stringliteral">&quot;xtd::unreachable() was reached&quot;</span>);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    __xtd_unreachable();</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  }</div>
 </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>}</div>
 <div class="ttc" id="a____xtd__unreachable_8hpp_html"><div class="ttname"><a href="____xtd__unreachable_8hpp.html">__xtd_unreachable.hpp</a></div></div>
+<div class="ttc" id="agroup__debug_html_ga20870fbe0eed9e56c22897aac79e4daf"><div class="ttname"><a href="group__debug.html#ga20870fbe0eed9e56c22897aac79e4daf">xtd::unreachable</a></div><div class="ttdeci">auto unreachable() -&gt; void</div><div class="ttdoc">The function unreachable expands to a void expression. Executing unreachable() results in undefined b...</div><div class="ttdef"><b>Definition</b> unreachable.hpp:31</div></div>
+<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->

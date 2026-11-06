@@ -105,6 +105,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">debug </div></div>
 </div><!--header-->
@@ -157,8 +158,11 @@ Macros</h2></td></tr>
 <tr class="memdesc:gad1e9d87aeb065b1eec47e92a49fd01e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks for a condition; if the condition is <span class="tt">false</span>, displays a message box that shows the call stack.  <br /></td></tr>
 <tr class="memitem:ga7a5088b030211d28a0a24ecc924f57b6" id="r_ga7a5088b030211d28a0a24ecc924f57b6"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#ga7a5088b030211d28a0a24ecc924f57b6">debug_break_</a>()</td></tr>
 <tr class="memdesc:ga7a5088b030211d28a0a24ecc924f57b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signals a breakpoint to an attached debugger.  <br /></td></tr>
-<tr class="memitem:gab421bcc6deef6244dc70899628421a8b" id="r_gab421bcc6deef6244dc70899628421a8b"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#gab421bcc6deef6244dc70899628421a8b">unreachable_</a>()</td></tr>
-<tr class="memdesc:gab421bcc6deef6244dc70899628421a8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function-like macro unreachable expands to a void expression. Executing unreachable() results in undefined behavior.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga20870fbe0eed9e56c22897aac79e4daf" id="r_ga20870fbe0eed9e56c22897aac79e4daf"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ga20870fbe0eed9e56c22897aac79e4daf">xtd::unreachable</a> () -&gt; void</td></tr>
+<tr class="memdesc:ga20870fbe0eed9e56c22897aac79e4daf"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function unreachable expands to a void expression. Executing <a class="el" href="#ga20870fbe0eed9e56c22897aac79e4daf" title="The function unreachable expands to a void expression. Executing unreachable() results in undefined b...">unreachable()</a> results in undefined behavior.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
@@ -166,6 +170,11 @@ Variables</h2></td></tr>
 <tr class="memdesc:ga208cd246390887de6b38b2e5315ef1f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">A <a class="el" href="classxtd_1_1debugstreambuf.html" title="Provides an std::stringbuf for xtd::diagnostics::debug.">xtd::debugstreambuf</a> variable used by xtd::cdebug ostream.  <br /></td></tr>
 <tr class="memitem:ga5109f1e0974753a7c8c19b5eb0e46f7d" id="r_ga5109f1e0974753a7c8c19b5eb0e46f7d"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ga5109f1e0974753a7c8c19b5eb0e46f7d">xtd::ctracestreambuf</a></td></tr>
 <tr class="memdesc:ga5109f1e0974753a7c8c19b5eb0e46f7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">A <a class="el" href="classxtd_1_1tracestreambuf.html" title="Provides an std::stringbuf for xtd::diagnostics::trace.">xtd::tracestreambuf</a> variable used by xtd::ctrace ostream.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
+Public Static Methods</h2></td></tr>
+<tr class="memitem:gad2b8d4635a125553b29ce65964ed4a89" id="r_gad2b8d4635a125553b29ce65964ed4a89"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#gad2b8d4635a125553b29ce65964ed4a89">xtd::environment::unreachable</a> () -&gt; void</td></tr>
+<tr class="memdesc:gad2b8d4635a125553b29ce65964ed4a89"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function unreachable expands to a void expression. Executing <a class="el" href="#gad2b8d4635a125553b29ce65964ed4a89" title="The function unreachable expands to a void expression. Executing unreachable() results in undefined b...">unreachable()</a> results in undefined behavior.  <br /></td></tr>
 </table>
 <a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Macro Definition Documentation</h2>
 <a id="gad1e9d87aeb065b1eec47e92a49fd01e9" name="gad1e9d87aeb065b1eec47e92a49fd01e9"></a>
@@ -234,24 +243,33 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="gab421bcc6deef6244dc70899628421a8b" name="gab421bcc6deef6244dc70899628421a8b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gab421bcc6deef6244dc70899628421a8b">&#9670;&#160;</a></span>unreachable_</h2>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
+<a id="gad2b8d4635a125553b29ce65964ed4a89" name="gad2b8d4635a125553b29ce65964ed4a89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad2b8d4635a125553b29ce65964ed4a89">&#9670;&#160;</a></span>unreachable() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">#define unreachable_</td>
+          <td class="memname">auto xtd::environment::unreachable </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt; void</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;<a class="el" href="unreachable_8hpp.html">unreachable.hpp</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="environment_8hpp.html">environment.hpp</a>&gt;</code></p>
 
-<p>The function-like macro unreachable expands to a void expression. Executing unreachable() results in undefined behavior. </p>
+<p>The function unreachable expands to a void expression. Executing <a class="el" href="#gad2b8d4635a125553b29ce65964ed4a89" title="The function unreachable expands to a void expression. Executing unreachable() results in undefined b...">unreachable()</a> results in undefined behavior. </p>
 <dl class="section remark"><dt>Remarks</dt><dd>An implementation may use this to optimize impossible code branches away (typically, in optimized builds) or to trap them to prevent further execution (typically, in debug builds). </dd></dl>
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/diagnostics/unreachable&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
@@ -260,9 +278,50 @@ Variables</h2></td></tr>
 <div class="line">  <span class="keywordflow">case</span> 128: [[fallthrough]];</div>
 <div class="line">  <span class="keywordflow">case</span> 256: [[fallthrough]];</div>
 <div class="line">  <span class="keywordflow">case</span> 512: <span class="keywordflow">return</span>  <span class="stringliteral">&quot;good&quot;</span>;</div>
-<div class="line">  <span class="keywordflow">default</span>:  <a class="code hl_define" href="#gab421bcc6deef6244dc70899628421a8b">unreachable_</a>();</div>
+<div class="line">  <span class="keywordflow">default</span>:  <a class="code hl_function" href="#gad2b8d4635a125553b29ce65964ed4a89">xtd::environment::unreachable</a>();</div>
 <div class="line">}</div>
-<div class="ttc" id="agroup__debug_html_gab421bcc6deef6244dc70899628421a8b"><div class="ttname"><a href="#gab421bcc6deef6244dc70899628421a8b">unreachable_</a></div><div class="ttdeci">#define unreachable_()</div><div class="ttdoc">The function-like macro unreachable expands to a void expression. Executing unreachable() results in ...</div><div class="ttdef"><b>Definition</b> unreachable.hpp:29</div></div>
+<div class="ttc" id="agroup__debug_html_gad2b8d4635a125553b29ce65964ed4a89"><div class="ttname"><a href="#gad2b8d4635a125553b29ce65964ed4a89">xtd::environment::unreachable</a></div><div class="ttdeci">static auto unreachable() -&gt; void</div><div class="ttdoc">The function unreachable expands to a void expression. Executing unreachable() results in undefined b...</div><div class="ttdef"><b>Definition</b> environment.hpp:742</div></div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="ga20870fbe0eed9e56c22897aac79e4daf" name="ga20870fbe0eed9e56c22897aac79e4daf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga20870fbe0eed9e56c22897aac79e4daf">&#9670;&#160;</a></span>unreachable() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto xtd::unreachable </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> -&gt; void</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="unreachable_8hpp.html">unreachable.hpp</a>&gt;</code></p>
+
+<p>The function unreachable expands to a void expression. Executing <a class="el" href="#ga20870fbe0eed9e56c22897aac79e4daf" title="The function unreachable expands to a void expression. Executing unreachable() results in undefined b...">unreachable()</a> results in undefined behavior. </p>
+<dl class="section remark"><dt>Remarks</dt><dd>An implementation may use this to optimize impossible code branches away (typically, in optimized builds) or to trap them to prevent further execution (typically, in debug builds). </dd></dl>
+<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/diagnostics/unreachable&gt;</span></div>
+</div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to stop the debugger at the call to write_line. <div class="fragment"><div class="line"> <span class="keywordflow">switch</span> (value) {</div>
+<div class="line">  <span class="keywordflow">case</span> 128: [[fallthrough]];</div>
+<div class="line">  <span class="keywordflow">case</span> 256: [[fallthrough]];</div>
+<div class="line">  <span class="keywordflow">case</span> 512: <span class="keywordflow">return</span>  <span class="stringliteral">&quot;good&quot;</span>;</div>
+<div class="line">  <span class="keywordflow">default</span>:  <a class="code hl_function" href="#ga20870fbe0eed9e56c22897aac79e4daf">xtd::unreachable</a>();</div>
+<div class="line">}</div>
+<div class="ttc" id="agroup__debug_html_ga20870fbe0eed9e56c22897aac79e4daf"><div class="ttname"><a href="#ga20870fbe0eed9e56c22897aac79e4daf">xtd::unreachable</a></div><div class="ttdeci">auto unreachable() -&gt; void</div><div class="ttdoc">The function unreachable expands to a void expression. Executing unreachable() results in undefined b...</div><div class="ttdef"><b>Definition</b> unreachable.hpp:31</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
