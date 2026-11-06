@@ -25,7 +25,7 @@ namespace xtd {
   ///   case 128: [[fallthrough]];
   ///   case 256: [[fallthrough]];
   ///   case 512: return  "good";
-  ///   default:  unreachable();
+  ///   default:  xtd::unreachable();
   /// }
   /// ```
   [[noreturn]] inline auto unreachable() -> void {

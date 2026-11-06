@@ -736,7 +736,7 @@ namespace xtd {
     ///   case 128: [[fallthrough]];
     ///   case 256: [[fallthrough]];
     ///   case 512: return  "good";
-    ///   default:  unreachable();
+    ///   default:  xtd::environment::unreachable();
     /// }
     /// ```
     [[noreturn]] static auto unreachable() -> void {
