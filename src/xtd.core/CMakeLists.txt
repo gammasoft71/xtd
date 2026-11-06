@@ -790,7 +790,6 @@ add_sources(
   "include/xtd/unsigned_integer_8.hpp"
   "include/xtd/unsigned_integer_8_.hpp"
   "include/xtd/unsigned_integer_8"
-  "include/xtd/unreachable.hpp"
   "include/xtd/uptr"
   "include/xtd/uri.hpp"
   "include/xtd/uri"

@@ -7,7 +7,6 @@
 #include "../../threading/lock_guard.hpp"
 #include "../../environment.hpp"
 #include "../../object.hpp"
-#include "../../unreachable.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
