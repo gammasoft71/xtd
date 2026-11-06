@@ -42,10 +42,10 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates how to stop the debugger at the call to write_line.
       /// ```cpp
-      /// debugger_break_();
+      /// xtd::diagnostics::debugger::debug_break();
       /// console::write_line("Hello, world.");
       /// ```
-      static auto debug_break() -> void;
+      static auto debug_break() -> void {if (launch()) __xtd_debugbreak();}
       
       /// @brief Checks to see if logging is enabled by an attached debugger.
       /// @return `true` if a debugger is attached and logging is enabled; otherwise, `false`.
@@ -68,3 +68,8 @@ namespace xtd {
     };
   }
 }
+
+/// @brief Signals a breakpoint to an attached debugger.
+/// @deprecated Replaced by xtd::diagnostics::debugger::debug_break() - Will be removed in version 1.2.0.
+[[deprecated("Replaced by xtd::diagnostics::debugger::debug_break() - Will be removed in version 1.2.0.")]]
+auto debug_break_() -> void {xtd::diagnostics::debugger::debug_break();}

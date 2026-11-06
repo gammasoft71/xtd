@@ -1008,8 +1008,6 @@ add_sources(
   "include/xtd/diagnostics/data_received_event_handler"
   "include/xtd/diagnostics/debug.hpp"
   "include/xtd/diagnostics/debug"
-  "include/xtd/diagnostics/debug_break.hpp"
-  "include/xtd/diagnostics/debug_break"
   "include/xtd/diagnostics/debugger.hpp"
   "include/xtd/diagnostics/debugger"
   "include/xtd/diagnostics/default_trace_listener.hpp"

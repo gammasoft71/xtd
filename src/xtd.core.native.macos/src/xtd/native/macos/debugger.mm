@@ -14,7 +14,7 @@
 using namespace xtd::native;
 
 void debugger::debug_break() {
-  std::abort();
+  __builtin_trap();
 }
 
 bool debugger::is_attached() {

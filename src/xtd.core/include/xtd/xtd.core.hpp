@@ -88,7 +88,6 @@
 #include "diagnostics/data_received_event_args.hpp"
 #include "diagnostics/data_received_event_handler.hpp"
 #include "diagnostics/debug.hpp"
-#include "diagnostics/debug_break.hpp"
 #include "diagnostics/debugger.hpp"
 #include "diagnostics/default_trace_listener.hpp"
 #include "diagnostics/event_type_filter.hpp"

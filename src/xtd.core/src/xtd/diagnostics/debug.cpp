@@ -1,6 +1,6 @@
 #include "../../../include/xtd/collections/specialized/string_dictionary.hpp"
 #include "../../../include/xtd/diagnostics/debug.hpp"
-#include "../../../include/xtd/diagnostics/debug_break.hpp"
+#include "../../../include/xtd/diagnostics/debugger.hpp"
 #include "../../../include/xtd/diagnostics/default_trace_listener.hpp"
 #include "../../../include/xtd/reflection/assembly.hpp"
 #include "../../../include/xtd/call_once.hpp"

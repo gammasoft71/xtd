@@ -8,7 +8,6 @@
 #include "../static.hpp"
 #include "../string.hpp"
 #include "assert_dialog_result.hpp"
-#include "debug_break.hpp"
 #include "debugger.hpp"
 #include "stack_trace.hpp"
 #include "trace_listener_collection.hpp"
@@ -131,7 +130,7 @@ namespace xtd {
       /// @param stack_frame The (optional) stack frame corresponding to the generated assert.
       static auto assert(bool condition, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) -> void {
         #if DEBUG
-        if (__should_aborted__(stack_frame, condition, string::empty_string)) debug_break_();
+        if (__should_aborted__(stack_frame, condition, string::empty_string)) xtd::diagnostics::debugger::debug_break();
         #endif
       }
       /// @brief Checks for a condition; if the condition is `false`, displays a message box that shows the call stack.
@@ -140,7 +139,7 @@ namespace xtd {
       /// @param stack_frame The (optional) stack frame corresponding to the generated assert.
       static auto assert(bool condition, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) -> void {
         #if DEBUG
-        if (__should_aborted__(stack_frame, condition, message)) debug_break_();
+        if (__should_aborted__(stack_frame, condition, message)) xtd::diagnostics::debugger::debug_break();
         #endif
       }
       /// @brief Checks for a condition; if the condition is `false`, displays a message box that shows the call stack.
@@ -150,7 +149,7 @@ namespace xtd {
       /// @param stack_frame The (optional) stack frame corresponding to the generated assert.
       static auto assert(bool condition, const xtd::string& message, const xtd::string& detail_message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) -> void {
         #if DEBUG
-        if (__should_aborted__(stack_frame, condition, message, detail_message)) debug_break_();
+        if (__should_aborted__(stack_frame, condition, message, detail_message)) xtd::diagnostics::debugger::debug_break();
         #endif
       }
 
@@ -161,7 +160,7 @@ namespace xtd {
       [[deprecated("Use xtd::diagnostics::debug::assert method - Will be removed in version 1.2.0.)")]]
       static auto cassert(bool condition, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) -> void {
         #if DEBUG
-        if (__should_aborted__(stack_frame, condition, string::empty_string)) debug_break_();
+        if (__should_aborted__(stack_frame, condition, string::empty_string)) xtd::diagnostics::debugger::debug_break();
         #endif
       }
       /// @brief Checks for a condition; if the condition is `false`, displays a message box that shows the call stack.
@@ -172,7 +171,7 @@ namespace xtd {
       [[deprecated("Use xtd::diagnostics::debug::assert method - Will be removed in version 1.2.0.)")]]
       static auto cassert(bool condition, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) -> void {
         #if DEBUG
-        if (__should_aborted__(stack_frame, condition, message)) debug_break_();
+        if (__should_aborted__(stack_frame, condition, message)) xtd::diagnostics::debugger::debug_break();
         #endif
       }
       /// @brief Checks for a condition; if the condition is `false`, displays a message box that shows the call stack.
@@ -184,7 +183,7 @@ namespace xtd {
       [[deprecated("Use xtd::diagnostics::debug::assert method - Will be removed in version 1.2.0.)")]]
       static auto cassert(bool condition, const xtd::string& message, const xtd::string& detail_message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) -> void {
         #if DEBUG
-        if (__should_aborted__(stack_frame, condition, message, detail_message)) debug_break_();
+        if (__should_aborted__(stack_frame, condition, message, detail_message)) xtd::diagnostics::debugger::debug_break();
         #endif
       }
       

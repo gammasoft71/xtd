@@ -3,7 +3,7 @@
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "debug.hpp"
-#include "debug_break.hpp"
+#include "debugger.hpp"
 
 #if DEBUG
   /// @brief Checks for a condition; if the condition is `false`, displays a message box that shows the call stack.
@@ -24,7 +24,7 @@
   /// The following example demonstrates how to use #assert_ macro with message.
   /// @include assert_with_message.cpp
   #define assert_(...) \
-    if (xtd::diagnostics::debug::__should_aborted__(xtd::diagnostics::stack_frame::current(), __VA_ARGS__)) debug_break_()
+    if (xtd::diagnostics::debug::__should_aborted__(xtd::diagnostics::stack_frame::current(), __VA_ARGS__)) xtd::diagnostics::debugger::debug_break()
 #else
   /// @brief Checks for a condition; if the condition is `false`, displays a message box that shows the call stack.
   /// @par Header

@@ -6,6 +6,7 @@
 #ifdef _MSC_VER
 #  include "intrin.h"
 #endif
+#include <version>
 #include <algorithm>
 #include <any>
 #include <array>

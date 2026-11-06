@@ -141,7 +141,7 @@ namespace xtd {
           auto msg = message != xtd::string {""} ? message : xtd::string {"assertion failed!"}; // Force asyle do not remove {}
           assert_(false, msg);
         } else { /*if (xtd::environment::target_type().is_test_application())*/
-          if (settings::default_settings().break_on_failure() && xtd::diagnostics::debugger::is_attached()) debug_break_();
+          if (settings::default_settings().break_on_failure() && xtd::diagnostics::debugger::is_attached()) xtd::diagnostics::debugger::debug_break();
           throw assert_error(message != xtd::string {""} ? message : xtd::string {"assertion failed!"});
         }
       }

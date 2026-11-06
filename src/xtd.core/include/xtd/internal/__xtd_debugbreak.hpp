@@ -9,11 +9,11 @@
 
 /// @cond
 #if defined(_MSC_VER)
-#define __xtd_debugbreak __debugbreak
+#define __xtd_debugbreak() (__debugbreak())
 #elif defined(__clang__) || defined(__GNUC__)
-#define __xtd_debugbreak __builtin_trap
+#define __xtd_debugbreak() (__builtin_trap())
 #else
 #include <cstdlib>
-#define __xtd_debugbreak std::abort
+#define __xtd_debugbreak() (std::abort())
 #endif
 /// @endcond

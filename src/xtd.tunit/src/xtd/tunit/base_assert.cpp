@@ -36,7 +36,7 @@ void base_assert::fail(const string& message, const stack_frame& stack_frame) {
 void base_assert::error() {
   settings::default_settings().exit_status(EXIT_FAILURE);
   if (!test::has_current_unit_test()) {
-    if (settings::default_settings().break_on_failure()) debug_break_();
+    if (settings::default_settings().break_on_failure()) xtd::diagnostics::debugger::debug_break();
     throw assert_error("Test failed"_s);
   } else test::current_unit_test().event_listener_->on_test_failed(test_event_args(test::current_test(), test::current_test_class(), test::current_unit_test()));
 }
@@ -44,7 +44,7 @@ void base_assert::error() {
 void base_assert::error(const string& message) {
   settings::default_settings().exit_status(EXIT_FAILURE);
   if (!test::has_current_unit_test()) {
-    if (settings::default_settings().break_on_failure()) debug_break_();
+    if (settings::default_settings().break_on_failure()) xtd::diagnostics::debugger::debug_break();
     throw assert_error(!xtd::string::is_empty(message) ? message : "Test failed"_s);
   } else test::current_unit_test().event_listener_->on_test_failed(test_event_args(test::current_test(), test::current_test_class(), test::current_unit_test()));
 }
