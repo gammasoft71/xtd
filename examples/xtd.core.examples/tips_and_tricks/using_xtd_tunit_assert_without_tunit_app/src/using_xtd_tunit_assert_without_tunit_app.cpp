@@ -6,9 +6,8 @@ public:
     auto items = array {10, 20, 30};
     
     tunit::assert::is_greater_or_equal(items.count(), 4, "The items count is less than 4");
-    // Same as two following lines
+    // Same as the following line
     //diagnostics::debug::assert(items.count() >= 4, "The items count is less than 4");
-    //assert_(items.count() >= 4, "The items count is less than 4");
     println(items[3]);
   }
 };

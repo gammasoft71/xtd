@@ -2,7 +2,7 @@
 #include "../../../include/xtd/tunit/settings.hpp"
 #include "../../../include/xtd/tunit/unit_test.hpp"
 #include "../../../include/xtd/tunit/test.hpp"
-#include <xtd/diagnostics/assert>
+#include <xtd/diagnostics/debug>
 #include <xtd/environment>
 
 using namespace xtd;

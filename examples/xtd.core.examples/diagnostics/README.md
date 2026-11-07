@@ -2,8 +2,6 @@
 
 [This folder](.) contains diagnostics examples used by [Reference Guide](https://gammasoft71.github.io/xtd/reference_guides/latest/) and more.
 
-* [assert](assert_/README.md) demonstrates how to use [assert_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__debug.html#gad1e9d87aeb065b1eec47e92a49fd01e9) macro.
-* [assert_with_message](assert_with_message/README.md) demonstrates how to use [assert_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__debug.html#gad1e9d87aeb065b1eec47e92a49fd01e9) macro wth message.
 * [console_trace_listener](console_trace_listener/README.md) demonstrates how to use [xtd::diagnostics::console_trace_listener](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1diagnostics_1_1console__trace__listener.html) class.
 * [debug](debug/README.md) demonstrates how to use [xtd::diagnostics::debug](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1diagnostics_1_1debug.html) class.
 * [debug_assert](debug_assert/README.md) demonstrates how to use [xtd::diagnostics::debug::assert](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1diagnostics_1_1debug.html#acdb0d00e4b12fccc037cf3f965110d72) method.

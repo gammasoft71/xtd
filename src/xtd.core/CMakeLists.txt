@@ -994,8 +994,6 @@ add_sources(
   "include/xtd/configuration/file_settings"
   "include/xtd/configuration/settings.hpp"
   "include/xtd/configuration/settings"
-  "include/xtd/diagnostics/assert.hpp"
-  "include/xtd/diagnostics/assert"
   "include/xtd/diagnostics/assert_dialog_result.hpp"
   "include/xtd/diagnostics/assert_dialog_result"
   "include/xtd/diagnostics/boolean_switch.hpp"

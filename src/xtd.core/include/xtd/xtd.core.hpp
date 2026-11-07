@@ -81,7 +81,6 @@
 #include "configuration/ini_file_settings.hpp"
 #include "configuration/file_settings.hpp"
 #include "configuration/settings.hpp"
-#include "diagnostics/assert.hpp"
 #include "diagnostics/assert_dialog_result.hpp"
 #include "diagnostics/boolean_switch.hpp"
 #include "diagnostics/console_trace_listener.hpp"

@@ -17,7 +17,7 @@
 #include <xtd/types>
 #include <xtd/typeof>
 #include <xtd/string>
-#include <xtd/diagnostics/assert>
+#include <xtd/diagnostics/debug>
 #include <xtd/diagnostics/stack_frame>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -139,7 +139,7 @@ namespace xtd {
       static auto fail(const xtd::string& actual, const xtd::string& expected, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) -> void {
         if (!test_fail(actual, expected, message, stack_frame) && xtd::environment::compiler_version().build_type() == build_type::debug) {
           auto msg = message != xtd::string {""} ? message : xtd::string {"assertion failed!"}; // Force asyle do not remove {}
-          assert_(false, msg);
+          xtd::diagnostics::debug::assert(false, msg);
         } else { /*if (xtd::environment::target_type().is_test_application())*/
           if (settings::default_settings().break_on_failure() && xtd::diagnostics::debugger::is_attached()) xtd::diagnostics::debugger::debug_break();
           throw assert_error(message != xtd::string {""} ? message : xtd::string {"assertion failed!"});

@@ -4,8 +4,6 @@ project(diagnostics)
 find_package(xtd REQUIRED)
 
 add_projects(
-  assert_
-  assert_with_message
   console_trace_listener
   debug
   debug_assert

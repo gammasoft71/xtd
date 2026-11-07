@@ -328,12 +328,6 @@
 /// @example event.cpp
 /// demonstrates how to use xtd::event class.
 ///
-/// @example assert_.cpp
-/// demonstrates how to use assert_ macro.
-///
-/// @example assert_with_message.cpp
-/// demonstrates how to use assert_ macro.
-///
 /// @example console_trace_listener.cpp
 /// demonstrates how to use xtd::diagnostics::console_trace_listener class.
 ///
@@ -368,7 +362,7 @@
 /// demonstrates how to use trace class.
 ///
 /// @example trace_assert.cpp
-/// demonstrates how to use trace::assert_ method.
+/// demonstrates how to use trace::assert method.
 ///
 /// @example enum.cpp
 /// * demonstrates how to use xtd::enum_object class and enum_ helper.
@@ -807,12 +801,6 @@
 ///
 /// @example file_info_replace.cpp
 /// Show how to use xtd::io::file_info::replace method.
-///
-/// @example assert_.cpp
-/// demonstrates how to use assert_ macro.
-///
-/// @example assert_with_message.cpp
-/// demonstrates how to use assert_ macro.
 ///
 /// @example block_scope.cpp
 /// demonstrates how to use xtd::block_scope class.

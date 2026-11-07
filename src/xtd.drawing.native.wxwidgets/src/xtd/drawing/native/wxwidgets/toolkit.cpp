@@ -8,7 +8,7 @@
 #include <xtd/drawing/native/toolkit>
 #include <xtd/drawing/native/wx_application>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
-#include <xtd/diagnostics/assert>
+#include <xtd/diagnostics/debug>
 #include <xtd/diagnostics/boolean_switch>
 #include <xtd/call_once>
 #include <xtd/delegate>

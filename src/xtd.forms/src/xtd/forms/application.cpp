@@ -3,7 +3,7 @@
 #include "../../../include/xtd/forms/exception_box.hpp"
 #include "../../../include/xtd/forms/message_box.hpp"
 #include "../../../include/xtd/forms/trace_form_base.hpp"
-#include <xtd/diagnostics/assert>
+#include <xtd/diagnostics/debug>
 #include <xtd/diagnostics/debugger>
 #include <xtd/diagnostics/process>
 #include <xtd/diagnostics/stopwatch>
@@ -171,7 +171,7 @@ xtd::string application::common_app_data_path() noexcept {
     if (!io::directory::exists(common_app_data_path))
       io::directory::create_directory(common_app_data_path);
   } catch (...) {
-    assert_(io::directory::exists(common_app_data_path), string::format("The {} path does not exist.", common_app_data_path));
+    debug::assert(io::directory::exists(common_app_data_path), string::format("The {} path does not exist.", common_app_data_path));
   }
   return common_app_data_path;
 }
@@ -317,7 +317,7 @@ xtd::string application::user_app_data_path() noexcept {
     if (!io::directory::exists(user_app_data_path))
       io::directory::create_directory(user_app_data_path);
   } catch (...) {
-    assert_(io::directory::exists(user_app_data_path), string::format("The {} path does not exist.", user_app_data_path));
+    debug::assert(io::directory::exists(user_app_data_path), string::format("The {} path does not exist.", user_app_data_path));
   }
   return user_app_data_path;
 }

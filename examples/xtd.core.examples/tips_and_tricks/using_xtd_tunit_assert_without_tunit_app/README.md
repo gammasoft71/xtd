@@ -3,7 +3,7 @@
 Demonstrates how to use xtd.tunit assert methods like [xtd::tunit::assert](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assert) in a xtd.console or xtd.forms application.
 
 Normally, the classes [xtd::tunit::assert](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assert), [xtd::tunit::collection_assert](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1collection__assert), and [xtd::tunit::file_assert](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1file__assert) are mainly used when writing unit tests with xtd.tunit.
-However, you can also use them as a complement to [assert_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__debug.html#gad1e9d87aeb065b1eec47e92a49fd01e9) in order to validate that a variable, state, or condition is exactly as expected.  
+However, you can also use them as a complement to [xtd::diagnostics::debug::assert](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1diagnostics_1_1debug.html#a0537a9e7353899b7ae9d06e0fb7f9abf) in order to validate that a variable, state, or condition is exactly as expected.  
 
 If the condition is not met, an assertion is raised in **Debug** mode, while nothing happens in **Release** mode.  
 
