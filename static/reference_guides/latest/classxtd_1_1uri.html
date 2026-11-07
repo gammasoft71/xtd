@@ -265,7 +265,8 @@ With the growth of the Internet, there is a growing need to identify resources u
 </ul>
 </dd></dl>
 <dl class="section user"><dt>Implicit File Path Support</dt><dd><a class="el" href="classxtd_1_1uri.html" title="Provides an object representation of a uniform resource identifier (URI) and easy access to the parts...">xtd::uri</a> can also be used to represent local file system paths. These paths can be represented explicitly in URIs that begin with the <a href="file://">file://</a> scheme, and implicitly in URIs that do not have the <a href="file://">file://</a> scheme. As a concrete example, the following two URIs are both valid, and represent the same file path: <div class="fragment"><div class="line"><span class="keyword">auto</span> uri1 = <a class="code hl_function" href="#a4e9abcaee8852c7e0722e8bd8d78440d">uri</a>(<span class="stringliteral">&quot;C:/test/path/file.txt&quot;</span>) <span class="comment">// Implicit file path.</span></div>
-<div class="line">auto uri2 = <a class="code hl_function" href="#a4e9abcaee8852c7e0722e8bd8d78440d">uri</a>(<span class="stringliteral">&quot;file:///C:/test/path/file.txt&quot;</span>) <span class="comment">// Explicit file path.</span></div>
+<div class="line"><a class="code hl_function" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a> uri2 = <a class="code hl_function" href="#a4e9abcaee8852c7e0722e8bd8d78440d">uri</a>(<span class="stringliteral">&quot;file:///C:/test/path/file.txt&quot;</span>) <span class="comment">// Explicit file path.</span></div>
+<div class="ttc" id="adebugger_8hpp_html_ae9368ce0234da295a667ff8303ae02b3"><div class="ttname"><a href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a></div><div class="ttdeci">auto() -&gt; void</div><div class="ttdoc">Signals a breakpoint to an attached debugger.</div><div class="ttdef"><b>Definition</b> debugger.hpp:75</div></div>
 </div><!-- fragment --> These implicit file paths are not compliant with the URI specification and so should be avoided when possible. When using Unix-based systems, implicit file paths can be especially problematic, because an absolute implicit file path is indistinguishable from a relative path. When such ambiguity is present, <a class="el" href="classxtd_1_1uri.html" title="Provides an object representation of a uniform resource identifier (URI) and easy access to the parts...">xtd::uri</a> default to interpreting the path as an absolute URI. </dd></dl>
 <dl class="section user"><dt>Security Considerations</dt><dd>Because of security concerns, your application should use caution when accepting <a class="el" href="classxtd_1_1uri.html" title="Provides an object representation of a uniform resource identifier (URI) and easy access to the parts...">xtd::uri</a> instances from untrusted sources and with dont_escape set to <span class="tt">true</span> in the constructor. You can check a URI string for validity by calling the <a class="el" href="#a41892b16c6ca5baa7ebbdb64a5758e12" title="Indicates whether the string used to construct this xtd::uri was well-formed and is not required to b...">xtd::uri::is_well_formed_original_string</a> method. <br  />
 <br  />
@@ -325,105 +326,105 @@ Public Constructors</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Properties</h2></td></tr>
-<tr class="memitem:ad86a26fadaf76c7820785fa1dee8f1cd" id="r_ad86a26fadaf76c7820785fa1dee8f1cd"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ad86a26fadaf76c7820785fa1dee8f1cd">absolute_path</a> () const -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td></tr>
+<tr class="memitem:ad86a26fadaf76c7820785fa1dee8f1cd" id="r_ad86a26fadaf76c7820785fa1dee8f1cd"><td class="memItemLeft"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a>&#160;</td><td class="memItemRight"><a class="el" href="#ad86a26fadaf76c7820785fa1dee8f1cd">absolute_path</a> () const -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td></tr>
 <tr class="memdesc:ad86a26fadaf76c7820785fa1dee8f1cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the absolute path of the URI.  <br /></td></tr>
-<tr class="memitem:a4cc0209324618d1975cb63b2fb8ed21a" id="r_a4cc0209324618d1975cb63b2fb8ed21a"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a4cc0209324618d1975cb63b2fb8ed21a">absolute_uri</a> () -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td></tr>
+<tr class="memitem:a4cc0209324618d1975cb63b2fb8ed21a" id="r_a4cc0209324618d1975cb63b2fb8ed21a"><td class="memItemLeft"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a>&#160;</td><td class="memItemRight"><a class="el" href="#a4cc0209324618d1975cb63b2fb8ed21a">absolute_uri</a> () -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td></tr>
 <tr class="memdesc:a4cc0209324618d1975cb63b2fb8ed21a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the absolute URI.  <br /></td></tr>
-<tr class="memitem:abab80f97b3df87c9b43d08c9477fdc25" id="r_abab80f97b3df87c9b43d08c9477fdc25"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#abab80f97b3df87c9b43d08c9477fdc25">authority</a> () const -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td></tr>
+<tr class="memitem:abab80f97b3df87c9b43d08c9477fdc25" id="r_abab80f97b3df87c9b43d08c9477fdc25"><td class="memItemLeft"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a>&#160;</td><td class="memItemRight"><a class="el" href="#abab80f97b3df87c9b43d08c9477fdc25">authority</a> () const -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td></tr>
 <tr class="memdesc:abab80f97b3df87c9b43d08c9477fdc25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the Domain Name System (DNS) host name or IP address and the port number for a server.  <br /></td></tr>
-<tr class="memitem:a209d40bb399126232c404af948b419e2" id="r_a209d40bb399126232c404af948b419e2"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a209d40bb399126232c404af948b419e2">dns_safe_host</a> () const -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td></tr>
+<tr class="memitem:a209d40bb399126232c404af948b419e2" id="r_a209d40bb399126232c404af948b419e2"><td class="memItemLeft"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a>&#160;</td><td class="memItemRight"><a class="el" href="#a209d40bb399126232c404af948b419e2">dns_safe_host</a> () const -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td></tr>
 <tr class="memdesc:a209d40bb399126232c404af948b419e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets an unescaped host name that is safe to use for DNS resolution.  <br /></td></tr>
-<tr class="memitem:ae4fad83526d7da9d4891effecb7ae2ae" id="r_ae4fad83526d7da9d4891effecb7ae2ae"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ae4fad83526d7da9d4891effecb7ae2ae">fragment</a> () const -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td></tr>
+<tr class="memitem:ae4fad83526d7da9d4891effecb7ae2ae" id="r_ae4fad83526d7da9d4891effecb7ae2ae"><td class="memItemLeft"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a>&#160;</td><td class="memItemRight"><a class="el" href="#ae4fad83526d7da9d4891effecb7ae2ae">fragment</a> () const -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td></tr>
 <tr class="memdesc:ae4fad83526d7da9d4891effecb7ae2ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the escaped URI fragment.  <br /></td></tr>
-<tr class="memitem:a393f9f575ccdba4eb92adf13263139ae" id="r_a393f9f575ccdba4eb92adf13263139ae"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a393f9f575ccdba4eb92adf13263139ae">host</a> () const -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td></tr>
+<tr class="memitem:a393f9f575ccdba4eb92adf13263139ae" id="r_a393f9f575ccdba4eb92adf13263139ae"><td class="memItemLeft"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a>&#160;</td><td class="memItemRight"><a class="el" href="#a393f9f575ccdba4eb92adf13263139ae">host</a> () const -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td></tr>
 <tr class="memdesc:a393f9f575ccdba4eb92adf13263139ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the host component of this instance.  <br /></td></tr>
-<tr class="memitem:a4a56adf0f4e7f2e1c9e7c5ac1e3dc04f" id="r_a4a56adf0f4e7f2e1c9e7c5ac1e3dc04f"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a4a56adf0f4e7f2e1c9e7c5ac1e3dc04f">host_name_type</a> () const -&gt; <a class="el" href="group__xtd__core.html#gafe4a8fc632bf2e0c34471b38e9d453b1">xtd::uri_host_name_type</a></td></tr>
+<tr class="memitem:a4a56adf0f4e7f2e1c9e7c5ac1e3dc04f" id="r_a4a56adf0f4e7f2e1c9e7c5ac1e3dc04f"><td class="memItemLeft"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a>&#160;</td><td class="memItemRight"><a class="el" href="#a4a56adf0f4e7f2e1c9e7c5ac1e3dc04f">host_name_type</a> () const -&gt; <a class="el" href="group__xtd__core.html#gafe4a8fc632bf2e0c34471b38e9d453b1">xtd::uri_host_name_type</a></td></tr>
 <tr class="memdesc:a4a56adf0f4e7f2e1c9e7c5ac1e3dc04f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the type of the host name specified in the URI.  <br /></td></tr>
-<tr class="memitem:a18d73332ffc5007c5bd30d6fb3adffde" id="r_a18d73332ffc5007c5bd30d6fb3adffde"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a18d73332ffc5007c5bd30d6fb3adffde">idn_host</a> () const -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td></tr>
+<tr class="memitem:a18d73332ffc5007c5bd30d6fb3adffde" id="r_a18d73332ffc5007c5bd30d6fb3adffde"><td class="memItemLeft"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a>&#160;</td><td class="memItemRight"><a class="el" href="#a18d73332ffc5007c5bd30d6fb3adffde">idn_host</a> () const -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td></tr>
 <tr class="memdesc:a18d73332ffc5007c5bd30d6fb3adffde"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the RFC 3490 compliant International Domain Name of the host, using Punycode as appropriate. This string, after being unescaped if necessary, is safe to use for DNS resolution.  <br /></td></tr>
-<tr class="memitem:ade279b402b7159f59877939613c6b57c" id="r_ade279b402b7159f59877939613c6b57c"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ade279b402b7159f59877939613c6b57c">is_absolute_uri</a> () const -&gt; bool</td></tr>
+<tr class="memitem:ade279b402b7159f59877939613c6b57c" id="r_ade279b402b7159f59877939613c6b57c"><td class="memItemLeft"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a>&#160;</td><td class="memItemRight"><a class="el" href="#ade279b402b7159f59877939613c6b57c">is_absolute_uri</a> () const -&gt; bool</td></tr>
 <tr class="memdesc:ade279b402b7159f59877939613c6b57c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets whether the <a class="el" href="classxtd_1_1uri.html" title="Provides an object representation of a uniform resource identifier (URI) and easy access to the parts...">xtd::uri</a> instance is absolute.  <br /></td></tr>
-<tr class="memitem:ae0c98c1bb2de97eeec92a6592ea14678" id="r_ae0c98c1bb2de97eeec92a6592ea14678"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ae0c98c1bb2de97eeec92a6592ea14678">is_default_port</a> () const -&gt; bool</td></tr>
+<tr class="memitem:ae0c98c1bb2de97eeec92a6592ea14678" id="r_ae0c98c1bb2de97eeec92a6592ea14678"><td class="memItemLeft"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a>&#160;</td><td class="memItemRight"><a class="el" href="#ae0c98c1bb2de97eeec92a6592ea14678">is_default_port</a> () const -&gt; bool</td></tr>
 <tr class="memdesc:ae0c98c1bb2de97eeec92a6592ea14678"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets whether the port value of the URI is the default for this scheme.  <br /></td></tr>
-<tr class="memitem:a5f62175a01dd0f4cf04e9ce4fafa36dc" id="r_a5f62175a01dd0f4cf04e9ce4fafa36dc"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a5f62175a01dd0f4cf04e9ce4fafa36dc">is_file</a> () const -&gt; bool</td></tr>
+<tr class="memitem:a5f62175a01dd0f4cf04e9ce4fafa36dc" id="r_a5f62175a01dd0f4cf04e9ce4fafa36dc"><td class="memItemLeft"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a>&#160;</td><td class="memItemRight"><a class="el" href="#a5f62175a01dd0f4cf04e9ce4fafa36dc">is_file</a> () const -&gt; bool</td></tr>
 <tr class="memdesc:a5f62175a01dd0f4cf04e9ce4fafa36dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether the specified <a class="el" href="classxtd_1_1uri.html" title="Provides an object representation of a uniform resource identifier (URI) and easy access to the parts...">xtd::uri</a> is a file URI.  <br /></td></tr>
-<tr class="memitem:a768f1514553896893a8ab4ce0640a5aa" id="r_a768f1514553896893a8ab4ce0640a5aa"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a768f1514553896893a8ab4ce0640a5aa">is_loopback</a> () const -&gt; bool</td></tr>
+<tr class="memitem:a768f1514553896893a8ab4ce0640a5aa" id="r_a768f1514553896893a8ab4ce0640a5aa"><td class="memItemLeft"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a>&#160;</td><td class="memItemRight"><a class="el" href="#a768f1514553896893a8ab4ce0640a5aa">is_loopback</a> () const -&gt; bool</td></tr>
 <tr class="memdesc:a768f1514553896893a8ab4ce0640a5aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets whether the specified <a class="el" href="classxtd_1_1uri.html" title="Provides an object representation of a uniform resource identifier (URI) and easy access to the parts...">xtd::uri</a> references the local host.  <br /></td></tr>
-<tr class="memitem:adbc4c547d0f636de7048b0d56da9a189" id="r_adbc4c547d0f636de7048b0d56da9a189"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#adbc4c547d0f636de7048b0d56da9a189">is_unc</a> () const -&gt; bool</td></tr>
+<tr class="memitem:adbc4c547d0f636de7048b0d56da9a189" id="r_adbc4c547d0f636de7048b0d56da9a189"><td class="memItemLeft"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a>&#160;</td><td class="memItemRight"><a class="el" href="#adbc4c547d0f636de7048b0d56da9a189">is_unc</a> () const -&gt; bool</td></tr>
 <tr class="memdesc:adbc4c547d0f636de7048b0d56da9a189"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets whether the specified <a class="el" href="classxtd_1_1uri.html" title="Provides an object representation of a uniform resource identifier (URI) and easy access to the parts...">xtd::uri</a> is a universal naming convention (UNC) path.  <br /></td></tr>
-<tr class="memitem:a2e8881699c296052814938ddb81082c4" id="r_a2e8881699c296052814938ddb81082c4"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a2e8881699c296052814938ddb81082c4">local_path</a> () const -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td></tr>
+<tr class="memitem:a2e8881699c296052814938ddb81082c4" id="r_a2e8881699c296052814938ddb81082c4"><td class="memItemLeft"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a>&#160;</td><td class="memItemRight"><a class="el" href="#a2e8881699c296052814938ddb81082c4">local_path</a> () const -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td></tr>
 <tr class="memdesc:a2e8881699c296052814938ddb81082c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the original URI string that was passed to the <a class="el" href="classxtd_1_1uri.html" title="Provides an object representation of a uniform resource identifier (URI) and easy access to the parts...">xtd::uri</a> constructor.  <br /></td></tr>
-<tr class="memitem:a3f9ead606aa40bdbd152526fa5523e94" id="r_a3f9ead606aa40bdbd152526fa5523e94"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a3f9ead606aa40bdbd152526fa5523e94">original_string</a> () const -&gt; const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td></tr>
+<tr class="memitem:a3f9ead606aa40bdbd152526fa5523e94" id="r_a3f9ead606aa40bdbd152526fa5523e94"><td class="memItemLeft"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a>&#160;</td><td class="memItemRight"><a class="el" href="#a3f9ead606aa40bdbd152526fa5523e94">original_string</a> () const -&gt; const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td></tr>
 <tr class="memdesc:a3f9ead606aa40bdbd152526fa5523e94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the original URI string that was passed to the <a class="el" href="classxtd_1_1uri.html" title="Provides an object representation of a uniform resource identifier (URI) and easy access to the parts...">xtd::uri</a> constructor.  <br /></td></tr>
-<tr class="memitem:a385752f60deabde4306de992a3beaa2b" id="r_a385752f60deabde4306de992a3beaa2b"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a385752f60deabde4306de992a3beaa2b">path_and_query</a> () const -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td></tr>
+<tr class="memitem:a385752f60deabde4306de992a3beaa2b" id="r_a385752f60deabde4306de992a3beaa2b"><td class="memItemLeft"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a>&#160;</td><td class="memItemRight"><a class="el" href="#a385752f60deabde4306de992a3beaa2b">path_and_query</a> () const -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td></tr>
 <tr class="memdesc:a385752f60deabde4306de992a3beaa2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the absolute_path and query properties separated by a question mark (?).  <br /></td></tr>
-<tr class="memitem:a958cc8eb6e6e4a0548a003b5b5fd670f" id="r_a958cc8eb6e6e4a0548a003b5b5fd670f"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a958cc8eb6e6e4a0548a003b5b5fd670f">port</a> () const -&gt; <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td></tr>
+<tr class="memitem:a958cc8eb6e6e4a0548a003b5b5fd670f" id="r_a958cc8eb6e6e4a0548a003b5b5fd670f"><td class="memItemLeft"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a>&#160;</td><td class="memItemRight"><a class="el" href="#a958cc8eb6e6e4a0548a003b5b5fd670f">port</a> () const -&gt; <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td></tr>
 <tr class="memdesc:a958cc8eb6e6e4a0548a003b5b5fd670f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the port number of this URI.  <br /></td></tr>
-<tr class="memitem:a8f63463933d1862832aab0eb94e5b08b" id="r_a8f63463933d1862832aab0eb94e5b08b"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a8f63463933d1862832aab0eb94e5b08b">query</a> () const -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td></tr>
+<tr class="memitem:a8f63463933d1862832aab0eb94e5b08b" id="r_a8f63463933d1862832aab0eb94e5b08b"><td class="memItemLeft"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a>&#160;</td><td class="memItemRight"><a class="el" href="#a8f63463933d1862832aab0eb94e5b08b">query</a> () const -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td></tr>
 <tr class="memdesc:a8f63463933d1862832aab0eb94e5b08b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets any query information included in the specified URI.  <br /></td></tr>
-<tr class="memitem:aaadeaf4ce487bdaa1867b8af7f3a0141" id="r_aaadeaf4ce487bdaa1867b8af7f3a0141"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aaadeaf4ce487bdaa1867b8af7f3a0141">scheme</a> () const -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td></tr>
+<tr class="memitem:aaadeaf4ce487bdaa1867b8af7f3a0141" id="r_aaadeaf4ce487bdaa1867b8af7f3a0141"><td class="memItemLeft"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a>&#160;</td><td class="memItemRight"><a class="el" href="#aaadeaf4ce487bdaa1867b8af7f3a0141">scheme</a> () const -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td></tr>
 <tr class="memdesc:aaadeaf4ce487bdaa1867b8af7f3a0141"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the scheme name for this URI.  <br /></td></tr>
-<tr class="memitem:aec7e35c1bee32325bbfdcf747a83f651" id="r_aec7e35c1bee32325bbfdcf747a83f651"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aec7e35c1bee32325bbfdcf747a83f651">segments</a> () const -&gt; <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &gt;</td></tr>
+<tr class="memitem:aec7e35c1bee32325bbfdcf747a83f651" id="r_aec7e35c1bee32325bbfdcf747a83f651"><td class="memItemLeft"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a>&#160;</td><td class="memItemRight"><a class="el" href="#aec7e35c1bee32325bbfdcf747a83f651">segments</a> () const -&gt; <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &gt;</td></tr>
 <tr class="memdesc:aec7e35c1bee32325bbfdcf747a83f651"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets an array containing the path segments that make up the specified URI.  <br /></td></tr>
-<tr class="memitem:a78ec221971956c6ff949153b14f82efd" id="r_a78ec221971956c6ff949153b14f82efd"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a78ec221971956c6ff949153b14f82efd">user_info</a> () const -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td></tr>
+<tr class="memitem:a78ec221971956c6ff949153b14f82efd" id="r_a78ec221971956c6ff949153b14f82efd"><td class="memItemLeft"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a>&#160;</td><td class="memItemRight"><a class="el" href="#a78ec221971956c6ff949153b14f82efd">user_info</a> () const -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td></tr>
 <tr class="memdesc:a78ec221971956c6ff949153b14f82efd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the user name, password, or other user-specific information associated with the specified URI.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Methods</h2></td></tr>
-<tr class="memitem:a26fb7435b155426b26f7b2cd34fa7a50" id="r_a26fb7435b155426b26f7b2cd34fa7a50"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a26fb7435b155426b26f7b2cd34fa7a50">get_components</a> (<a class="el" href="group__xtd__core.html#ga20b51d7977f3ffaaca44c6075ad021db">xtd::uri_components</a> components, <a class="el" href="group__xtd__core.html#ga7da9f3ee4e3c3993026ff4b01f659535">xtd::uri_format</a> format) const -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td></tr>
+<tr class="memitem:a26fb7435b155426b26f7b2cd34fa7a50" id="r_a26fb7435b155426b26f7b2cd34fa7a50"><td class="memItemLeft"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a>&#160;</td><td class="memItemRight"><a class="el" href="#a26fb7435b155426b26f7b2cd34fa7a50">get_components</a> (<a class="el" href="group__xtd__core.html#ga20b51d7977f3ffaaca44c6075ad021db">xtd::uri_components</a> components, <a class="el" href="group__xtd__core.html#ga7da9f3ee4e3c3993026ff4b01f659535">xtd::uri_format</a> format) const -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td></tr>
 <tr class="memdesc:a26fb7435b155426b26f7b2cd34fa7a50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the specified components of the current instance using the specified escaping for special characters.  <br /></td></tr>
-<tr class="memitem:aac8a9fe2adfa4b142095ea4595fded4c" id="r_aac8a9fe2adfa4b142095ea4595fded4c"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aac8a9fe2adfa4b142095ea4595fded4c">get_left_part</a> (<a class="el" href="group__xtd__core.html#gae28bc955b84c3c42c759ee1eb4717b6a">xtd::uri_partial</a> part) const -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td></tr>
+<tr class="memitem:aac8a9fe2adfa4b142095ea4595fded4c" id="r_aac8a9fe2adfa4b142095ea4595fded4c"><td class="memItemLeft"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a>&#160;</td><td class="memItemRight"><a class="el" href="#aac8a9fe2adfa4b142095ea4595fded4c">get_left_part</a> (<a class="el" href="group__xtd__core.html#gae28bc955b84c3c42c759ee1eb4717b6a">xtd::uri_partial</a> part) const -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td></tr>
 <tr class="memdesc:aac8a9fe2adfa4b142095ea4595fded4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the specified portion of a <a class="el" href="classxtd_1_1uri.html" title="Provides an object representation of a uniform resource identifier (URI) and easy access to the parts...">xtd::uri</a> instance.  <br /></td></tr>
-<tr class="memitem:a0e8609de9485dac0c213f0064e7d57a7" id="r_a0e8609de9485dac0c213f0064e7d57a7"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a0e8609de9485dac0c213f0064e7d57a7">is_base_of</a> (const <a class="el" href="classxtd_1_1uri.html">xtd::uri</a> &amp;uri) const -&gt; bool</td></tr>
+<tr class="memitem:a0e8609de9485dac0c213f0064e7d57a7" id="r_a0e8609de9485dac0c213f0064e7d57a7"><td class="memItemLeft"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a>&#160;</td><td class="memItemRight"><a class="el" href="#a0e8609de9485dac0c213f0064e7d57a7">is_base_of</a> (const <a class="el" href="classxtd_1_1uri.html">xtd::uri</a> &amp;uri) const -&gt; bool</td></tr>
 <tr class="memdesc:a0e8609de9485dac0c213f0064e7d57a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the current <a class="el" href="classxtd_1_1uri.html" title="Provides an object representation of a uniform resource identifier (URI) and easy access to the parts...">xtd::uri</a> instance is a base of the specified <a class="el" href="classxtd_1_1uri.html" title="Provides an object representation of a uniform resource identifier (URI) and easy access to the parts...">xtd::uri</a> instance.  <br /></td></tr>
-<tr class="memitem:a41892b16c6ca5baa7ebbdb64a5758e12" id="r_a41892b16c6ca5baa7ebbdb64a5758e12"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a41892b16c6ca5baa7ebbdb64a5758e12">is_well_formed_original_string</a> () -&gt; bool</td></tr>
+<tr class="memitem:a41892b16c6ca5baa7ebbdb64a5758e12" id="r_a41892b16c6ca5baa7ebbdb64a5758e12"><td class="memItemLeft"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a>&#160;</td><td class="memItemRight"><a class="el" href="#a41892b16c6ca5baa7ebbdb64a5758e12">is_well_formed_original_string</a> () -&gt; bool</td></tr>
 <tr class="memdesc:a41892b16c6ca5baa7ebbdb64a5758e12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the string used to construct this <a class="el" href="classxtd_1_1uri.html" title="Provides an object representation of a uniform resource identifier (URI) and easy access to the parts...">xtd::uri</a> was well-formed and is not required to be further escaped.  <br /></td></tr>
-<tr class="memitem:aa0c994f67051291e1d6744d7b0b94472" id="r_aa0c994f67051291e1d6744d7b0b94472"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aa0c994f67051291e1d6744d7b0b94472">equals</a> (const <a class="el" href="classxtd_1_1object.html">xtd::object</a> &amp;obj) const noexcept -&gt; bool override</td></tr>
+<tr class="memitem:aa0c994f67051291e1d6744d7b0b94472" id="r_aa0c994f67051291e1d6744d7b0b94472"><td class="memItemLeft"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a>&#160;</td><td class="memItemRight"><a class="el" href="#aa0c994f67051291e1d6744d7b0b94472">equals</a> (const <a class="el" href="classxtd_1_1object.html">xtd::object</a> &amp;obj) const noexcept -&gt; bool override</td></tr>
 <tr class="memdesc:aa0c994f67051291e1d6744d7b0b94472"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
-<tr class="memitem:a4ede441f330ac21ddc340f6023d9861a" id="r_a4ede441f330ac21ddc340f6023d9861a"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a4ede441f330ac21ddc340f6023d9861a">equals</a> (const <a class="el" href="classxtd_1_1uri.html">xtd::uri</a> &amp;uri) const noexcept -&gt; bool override</td></tr>
+<tr class="memitem:a4ede441f330ac21ddc340f6023d9861a" id="r_a4ede441f330ac21ddc340f6023d9861a"><td class="memItemLeft"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a>&#160;</td><td class="memItemRight"><a class="el" href="#a4ede441f330ac21ddc340f6023d9861a">equals</a> (const <a class="el" href="classxtd_1_1uri.html">xtd::uri</a> &amp;uri) const noexcept -&gt; bool override</td></tr>
 <tr class="memdesc:a4ede441f330ac21ddc340f6023d9861a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
-<tr class="memitem:a6ce7196edc664f92c856cffddf3c1941" id="r_a6ce7196edc664f92c856cffddf3c1941"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a6ce7196edc664f92c856cffddf3c1941">get_hash_code</a> () const noexcept -&gt; <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> override</td></tr>
+<tr class="memitem:a6ce7196edc664f92c856cffddf3c1941" id="r_a6ce7196edc664f92c856cffddf3c1941"><td class="memItemLeft"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a>&#160;</td><td class="memItemRight"><a class="el" href="#a6ce7196edc664f92c856cffddf3c1941">get_hash_code</a> () const noexcept -&gt; <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> override</td></tr>
 <tr class="memdesc:a6ce7196edc664f92c856cffddf3c1941"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a particular type.  <br /></td></tr>
-<tr class="memitem:a4a2722c4475b5c07bdd3aeaaef368ed8" id="r_a4a2722c4475b5c07bdd3aeaaef368ed8"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a4a2722c4475b5c07bdd3aeaaef368ed8">to_string</a> () const noexcept -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> override</td></tr>
+<tr class="memitem:a4a2722c4475b5c07bdd3aeaaef368ed8" id="r_a4a2722c4475b5c07bdd3aeaaef368ed8"><td class="memItemLeft"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a>&#160;</td><td class="memItemRight"><a class="el" href="#a4a2722c4475b5c07bdd3aeaaef368ed8">to_string</a> () const noexcept -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> override</td></tr>
 <tr class="memdesc:a4a2722c4475b5c07bdd3aeaaef368ed8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a canonical string representation for the specified <a class="el" href="classxtd_1_1uri.html" title="Provides an object representation of a uniform resource identifier (URI) and easy access to the parts...">xtd::uri</a> instance.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Static Methods</h2></td></tr>
-<tr class="memitem:a20f8d0798e1de8b05c646a2ed782bfbd" id="r_a20f8d0798e1de8b05c646a2ed782bfbd"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a20f8d0798e1de8b05c646a2ed782bfbd">check_scheme_name</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;scheme) -&gt; bool</td></tr>
+<tr class="memitem:a20f8d0798e1de8b05c646a2ed782bfbd" id="r_a20f8d0798e1de8b05c646a2ed782bfbd"><td class="memItemLeft">static <a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a>&#160;</td><td class="memItemRight"><a class="el" href="#a20f8d0798e1de8b05c646a2ed782bfbd">check_scheme_name</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;scheme) -&gt; bool</td></tr>
 <tr class="memdesc:a20f8d0798e1de8b05c646a2ed782bfbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified scheme name is valid.  <br /></td></tr>
-<tr class="memitem:ac2043986cc750205fd25dbd6d301e049" id="r_ac2043986cc750205fd25dbd6d301e049"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ac2043986cc750205fd25dbd6d301e049">escape_data_string</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;value) -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td></tr>
+<tr class="memitem:ac2043986cc750205fd25dbd6d301e049" id="r_ac2043986cc750205fd25dbd6d301e049"><td class="memItemLeft">static <a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a>&#160;</td><td class="memItemRight"><a class="el" href="#ac2043986cc750205fd25dbd6d301e049">escape_data_string</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;value) -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td></tr>
 <tr class="memdesc:ac2043986cc750205fd25dbd6d301e049"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a string to its escaped representation.  <br /></td></tr>
-<tr class="memitem:ad70e72355a2e9f48c6a43305941ec48f" id="r_ad70e72355a2e9f48c6a43305941ec48f"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ad70e72355a2e9f48c6a43305941ec48f">escape_uri_string</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;value) -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td></tr>
+<tr class="memitem:ad70e72355a2e9f48c6a43305941ec48f" id="r_ad70e72355a2e9f48c6a43305941ec48f"><td class="memItemLeft">static <a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a>&#160;</td><td class="memItemRight"><a class="el" href="#ad70e72355a2e9f48c6a43305941ec48f">escape_uri_string</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;value) -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td></tr>
 <tr class="memdesc:ad70e72355a2e9f48c6a43305941ec48f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a URI string to its escaped representation.  <br /></td></tr>
-<tr class="memitem:a60e117500efd0d364a0ea07504b6a93e" id="r_a60e117500efd0d364a0ea07504b6a93e"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a60e117500efd0d364a0ea07504b6a93e">from_hex</a> (char digit) -&gt; <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td></tr>
+<tr class="memitem:a60e117500efd0d364a0ea07504b6a93e" id="r_a60e117500efd0d364a0ea07504b6a93e"><td class="memItemLeft">static <a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a>&#160;</td><td class="memItemRight"><a class="el" href="#a60e117500efd0d364a0ea07504b6a93e">from_hex</a> (char digit) -&gt; <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td></tr>
 <tr class="memdesc:a60e117500efd0d364a0ea07504b6a93e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the decimal value of a hexadecimal digit.  <br /></td></tr>
-<tr class="memitem:a536b694c9a0df9c2069c8027d4ea68f0" id="r_a536b694c9a0df9c2069c8027d4ea68f0"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a536b694c9a0df9c2069c8027d4ea68f0">hex_escape</a> (char character) -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td></tr>
+<tr class="memitem:a536b694c9a0df9c2069c8027d4ea68f0" id="r_a536b694c9a0df9c2069c8027d4ea68f0"><td class="memItemLeft">static <a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a>&#160;</td><td class="memItemRight"><a class="el" href="#a536b694c9a0df9c2069c8027d4ea68f0">hex_escape</a> (char character) -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td></tr>
 <tr class="memdesc:a536b694c9a0df9c2069c8027d4ea68f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a specified character into its hexadecimal equivalent.  <br /></td></tr>
-<tr class="memitem:ace30180e682c53c72a705abe71ccfa0f" id="r_ace30180e682c53c72a705abe71ccfa0f"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ace30180e682c53c72a705abe71ccfa0f">hex_unescape</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;pattern, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> &amp;index) -&gt; char</td></tr>
+<tr class="memitem:ace30180e682c53c72a705abe71ccfa0f" id="r_ace30180e682c53c72a705abe71ccfa0f"><td class="memItemLeft">static <a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a>&#160;</td><td class="memItemRight"><a class="el" href="#ace30180e682c53c72a705abe71ccfa0f">hex_unescape</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;pattern, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> &amp;index) -&gt; char</td></tr>
 <tr class="memdesc:ace30180e682c53c72a705abe71ccfa0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a specified hexadecimal representation of a character to the character.  <br /></td></tr>
-<tr class="memitem:a5e1a1fc05e2e6898f74766d3b0f6227f" id="r_a5e1a1fc05e2e6898f74766d3b0f6227f"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a5e1a1fc05e2e6898f74766d3b0f6227f">is_hex_digit</a> (char character) -&gt; bool</td></tr>
+<tr class="memitem:a5e1a1fc05e2e6898f74766d3b0f6227f" id="r_a5e1a1fc05e2e6898f74766d3b0f6227f"><td class="memItemLeft">static <a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a>&#160;</td><td class="memItemRight"><a class="el" href="#a5e1a1fc05e2e6898f74766d3b0f6227f">is_hex_digit</a> (char character) -&gt; bool</td></tr>
 <tr class="memdesc:a5e1a1fc05e2e6898f74766d3b0f6227f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether a specified character is a valid hexadecimal digit.  <br /></td></tr>
-<tr class="memitem:afabd3e538100bad0f8d4f3210fde22ba" id="r_afabd3e538100bad0f8d4f3210fde22ba"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#afabd3e538100bad0f8d4f3210fde22ba">is_hex_encoding</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;pattern, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> index) -&gt; bool</td></tr>
+<tr class="memitem:afabd3e538100bad0f8d4f3210fde22ba" id="r_afabd3e538100bad0f8d4f3210fde22ba"><td class="memItemLeft">static <a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a>&#160;</td><td class="memItemRight"><a class="el" href="#afabd3e538100bad0f8d4f3210fde22ba">is_hex_encoding</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;pattern, <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a> index) -&gt; bool</td></tr>
 <tr class="memdesc:afabd3e538100bad0f8d4f3210fde22ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether a character in a string is hexadecimal encoded.  <br /></td></tr>
-<tr class="memitem:a0ec0be33f7e35873efb176cf29c2723d" id="r_a0ec0be33f7e35873efb176cf29c2723d"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a0ec0be33f7e35873efb176cf29c2723d">is_well_formed_uri_string</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;uri_string, <a class="el" href="group__xtd__core.html#gae9d50cbb5fd3604642f86b6aba857ae7">xtd::uri_kind</a> uri_kind<a class="el" href="group__xtd__core.html#gae9d50cbb5fd3604642f86b6aba857ae7">uri_kind</a>) -&gt; bool</td></tr>
+<tr class="memitem:a0ec0be33f7e35873efb176cf29c2723d" id="r_a0ec0be33f7e35873efb176cf29c2723d"><td class="memItemLeft">static <a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a>&#160;</td><td class="memItemRight"><a class="el" href="#a0ec0be33f7e35873efb176cf29c2723d">is_well_formed_uri_string</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;uri_string, <a class="el" href="group__xtd__core.html#gae9d50cbb5fd3604642f86b6aba857ae7">xtd::uri_kind</a> uri_kind<a class="el" href="group__xtd__core.html#gae9d50cbb5fd3604642f86b6aba857ae7">uri_kind</a>) -&gt; bool</td></tr>
 <tr class="memdesc:a0ec0be33f7e35873efb176cf29c2723d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the string is well-formed by attempting to construct a URI with the string and ensures that the string does not require further escaping.  <br /></td></tr>
-<tr class="memitem:ac1d919d0f8fe83574ee309f25852ddab" id="r_ac1d919d0f8fe83574ee309f25852ddab"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ac1d919d0f8fe83574ee309f25852ddab">unescape_data_string</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;value) -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td></tr>
+<tr class="memitem:ac1d919d0f8fe83574ee309f25852ddab" id="r_ac1d919d0f8fe83574ee309f25852ddab"><td class="memItemLeft">static <a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a>&#160;</td><td class="memItemRight"><a class="el" href="#ac1d919d0f8fe83574ee309f25852ddab">unescape_data_string</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;value) -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td></tr>
 <tr class="memdesc:ac1d919d0f8fe83574ee309f25852ddab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a string to its unescaped representation.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="memitem:ad2cab851376bb6ca085b567bf5da0f5f" id="r_ad2cab851376bb6ca085b567bf5da0f5f"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">object</a> ()=default</td></tr>
 <tr class="memdesc:ad2cab851376bb6ca085b567bf5da0f5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new instance of the ultimate base class object.  <br /></td></tr>
-<tr class="memitem:af61724b0e7644ebd79a01995e0505f2d" id="r_af61724b0e7644ebd79a01995e0505f2d"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#af61724b0e7644ebd79a01995e0505f2d">get_type</a> () const noexcept -&gt; <a class="el" href="classxtd_1_1type__object.html">type_object</a></td></tr>
+<tr class="memitem:af61724b0e7644ebd79a01995e0505f2d" id="r_af61724b0e7644ebd79a01995e0505f2d"><td class="memItemLeft">virtual <a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a>&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#af61724b0e7644ebd79a01995e0505f2d">get_type</a> () const noexcept -&gt; <a class="el" href="classxtd_1_1type__object.html">type_object</a></td></tr>
 <tr class="memdesc:af61724b0e7644ebd79a01995e0505f2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the type of the current instance.  <br /></td></tr>
 <tr class="memitem:a3dcdc5069d11bada985f1e34914e92e2" id="r_a3dcdc5069d11bada985f1e34914e92e2"><td class="memTemplParams" colspan="2">template&lt;typename object_t&gt; </td></tr>
-<tr class="memitem:a3dcdc5069d11bada985f1e34914e92e2 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a3dcdc5069d11bada985f1e34914e92e2">memberwise_clone</a> () const -&gt; xtd::unique_ptr_object&lt; object_t &gt;</td></tr>
+<tr class="memitem:a3dcdc5069d11bada985f1e34914e92e2 template"><td class="memItemLeft"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a>&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a3dcdc5069d11bada985f1e34914e92e2">memberwise_clone</a> () const -&gt; xtd::unique_ptr_object&lt; object_t &gt;</td></tr>
 <tr class="memdesc:a3dcdc5069d11bada985f1e34914e92e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a shallow copy of the current object.  <br /></td></tr>
 <tr class="memitem:aef39d8952f92922c11e94ad920043c6a" id="r_aef39d8952f92922c11e94ad920043c6a"><td class="memTemplParams" colspan="2">template&lt;typename object_a_t, typename object_b_t&gt; </td></tr>
-<tr class="memitem:aef39d8952f92922c11e94ad920043c6a template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#aef39d8952f92922c11e94ad920043c6a">equals</a> (const object_a_t &amp;object_a, const object_b_t &amp;object_b) noexcept -&gt; bool</td></tr>
+<tr class="memitem:aef39d8952f92922c11e94ad920043c6a template"><td class="memItemLeft">static <a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a>&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#aef39d8952f92922c11e94ad920043c6a">equals</a> (const object_a_t &amp;object_a, const object_b_t &amp;object_b) noexcept -&gt; bool</td></tr>
 <tr class="memdesc:aef39d8952f92922c11e94ad920043c6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object instances are considered equal.  <br /></td></tr>
 <tr class="memitem:a7a5f3affd9a2d72f0a13659c2cb7e6a0" id="r_a7a5f3affd9a2d72f0a13659c2cb7e6a0"><td class="memTemplParams" colspan="2">template&lt;typename object_a_t, typename object_b_t&gt; </td></tr>
-<tr class="memitem:a7a5f3affd9a2d72f0a13659c2cb7e6a0 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a7a5f3affd9a2d72f0a13659c2cb7e6a0">reference_equals</a> (const object_a_t &amp;object_a, const object_b_t &amp;object_b) noexcept -&gt; bool</td></tr>
+<tr class="memitem:a7a5f3affd9a2d72f0a13659c2cb7e6a0 template"><td class="memItemLeft">static <a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a>&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a7a5f3affd9a2d72f0a13659c2cb7e6a0">reference_equals</a> (const object_a_t &amp;object_a, const object_b_t &amp;object_b) noexcept -&gt; bool</td></tr>
 <tr class="memdesc:a7a5f3affd9a2d72f0a13659c2cb7e6a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object instances are the same instance.  <br /></td></tr>
 </table>
 <a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -752,7 +753,7 @@ This constructor does not ensure that the <a class="el" href="classxtd_1_1uri.ht
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto xtd::uri::absolute_path </td>
+          <td class="memname"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a> xtd::uri::absolute_path </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const -&gt;  <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td>
@@ -794,7 +795,7 @@ The path information does not include the scheme, host name, or query portion of
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto xtd::uri::absolute_uri </td>
+          <td class="memname"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a> xtd::uri::absolute_uri </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> -&gt;  <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td>
@@ -833,7 +834,7 @@ The path information does not include the scheme, host name, or query portion of
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto xtd::uri::authority </td>
+          <td class="memname"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a> xtd::uri::authority </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const -&gt;  <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td>
@@ -873,7 +874,7 @@ The path information does not include the scheme, host name, or query portion of
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto xtd::uri::dns_safe_host </td>
+          <td class="memname"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a> xtd::uri::dns_safe_host </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const -&gt;  <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td>
@@ -919,7 +920,7 @@ The path information does not include the scheme, host name, or query portion of
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto xtd::uri::fragment </td>
+          <td class="memname"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a> xtd::uri::fragment </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const -&gt;  <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td>
@@ -956,7 +957,7 @@ The fragment property is not considered in any equals comparison. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto xtd::uri::host </td>
+          <td class="memname"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a> xtd::uri::host </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const -&gt;  <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td>
@@ -991,7 +992,7 @@ The fragment property is not considered in any equals comparison. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto xtd::uri::host_name_type </td>
+          <td class="memname"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a> xtd::uri::host_name_type </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const -&gt;  <a class="el" href="group__xtd__core.html#gafe4a8fc632bf2e0c34471b38e9d453b1">xtd::uri_host_name_type</a></td>
@@ -1025,7 +1026,7 @@ The fragment property is not considered in any equals comparison. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto xtd::uri::idn_host </td>
+          <td class="memname"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a> xtd::uri::idn_host </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const -&gt;  <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td>
@@ -1064,7 +1065,7 @@ If you used an escaped string to construct this instance (for example, "http://[
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto xtd::uri::is_absolute_uri </td>
+          <td class="memname"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a> xtd::uri::is_absolute_uri </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const -&gt;  bool</td>
@@ -1093,7 +1094,7 @@ If you used an escaped string to construct this instance (for example, "http://[
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto xtd::uri::is_default_port </td>
+          <td class="memname"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a> xtd::uri::is_default_port </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const -&gt;  bool</td>
@@ -1127,7 +1128,7 @@ If you used an escaped string to construct this instance (for example, "http://[
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto xtd::uri::is_file </td>
+          <td class="memname"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a> xtd::uri::is_file </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const -&gt;  bool</td>
@@ -1162,7 +1163,7 @@ If you used an escaped string to construct this instance (for example, "http://[
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto xtd::uri::is_loopback </td>
+          <td class="memname"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a> xtd::uri::is_loopback </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const -&gt;  bool</td>
@@ -1197,7 +1198,7 @@ If you used an escaped string to construct this instance (for example, "http://[
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto xtd::uri::is_unc </td>
+          <td class="memname"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a> xtd::uri::is_unc </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const -&gt;  bool</td>
@@ -1232,7 +1233,7 @@ If you used an escaped string to construct this instance (for example, "http://[
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto xtd::uri::local_path </td>
+          <td class="memname"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a> xtd::uri::local_path </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const -&gt;  <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td>
@@ -1275,7 +1276,7 @@ When a <a class="el" href="classxtd_1_1uri.html" title="Provides an object repre
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto xtd::uri::original_string </td>
+          <td class="memname"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a> xtd::uri::original_string </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const -&gt;  const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>
@@ -1318,7 +1319,7 @@ When a <a class="el" href="classxtd_1_1uri.html" title="Provides an object repre
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto xtd::uri::path_and_query </td>
+          <td class="memname"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a> xtd::uri::path_and_query </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const -&gt;  <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td>
@@ -1357,7 +1358,7 @@ For more information on URI support, see the Remarks section for the <a class="e
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto xtd::uri::port </td>
+          <td class="memname"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a> xtd::uri::port </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const -&gt;  <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td>
@@ -1392,7 +1393,7 @@ For more information on URI support, see the Remarks section for the <a class="e
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto xtd::uri::query </td>
+          <td class="memname"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a> xtd::uri::query </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const -&gt;  <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td>
@@ -1431,7 +1432,7 @@ For more information on URI support, see the Remarks section for the <a class="e
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto xtd::uri::scheme </td>
+          <td class="memname"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a> xtd::uri::scheme </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const -&gt;  <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td>
@@ -1498,7 +1499,7 @@ The following table shows examples of some possible values returned by the schem
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto xtd::uri::segments </td>
+          <td class="memname"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a> xtd::uri::segments </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const -&gt;  <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &gt;</td>
@@ -1561,7 +1562,7 @@ Note that because the absolute path starts with a '/', the first segment contain
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto xtd::uri::user_info </td>
+          <td class="memname"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a> xtd::uri::user_info </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const -&gt;  <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td>
@@ -1596,7 +1597,7 @@ Note that because the absolute path starts with a '/', the first segment contain
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto xtd::uri::get_components </td>
+          <td class="memname"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a> xtd::uri::get_components </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__xtd__core.html#ga20b51d7977f3ffaaca44c6075ad021db">xtd::uri_components</a></td>          <td class="paramname"><span class="paramname"><em>components</em></span>, </td>
         </tr>
@@ -1648,7 +1649,7 @@ For more information on URI support, see the Remarks section for the <a class="e
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto xtd::uri::get_left_part </td>
+          <td class="memname"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a> xtd::uri::get_left_part </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__xtd__core.html#gae28bc955b84c3c42c759ee1eb4717b6a">xtd::uri_partial</a></td>          <td class="paramname"><span class="paramname"><em>part</em></span></td><td>)</td>
           <td> const -&gt;  <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td>
@@ -1718,7 +1719,7 @@ The following examples show a URI and the results of calling get_left_part with 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto xtd::uri::is_base_of </td>
+          <td class="memname"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a> xtd::uri::is_base_of </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1uri.html">xtd::uri</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>uri</em></span></td><td>)</td>
           <td> const -&gt;  bool</td>
@@ -1781,7 +1782,7 @@ The following examples show a URI and the results of calling get_left_part with 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto xtd::uri::is_well_formed_original_string </td>
+          <td class="memname"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a> xtd::uri::is_well_formed_original_string </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> -&gt;  bool</td>
@@ -1834,7 +1835,7 @@ For more information on URI support, see the Remarks section for the <a class="e
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto xtd::uri::equals </td>
+          <td class="memname"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a> xtd::uri::equals </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1object.html">xtd::object</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
           <td> const -&gt;  bool</td>
@@ -1870,7 +1871,7 @@ For more information on URI support, see the Remarks section for the <a class="e
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto xtd::uri::equals </td>
+          <td class="memname"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a> xtd::uri::equals </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1uri.html">xtd::uri</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>uri</em></span></td><td>)</td>
           <td> const -&gt;  bool</td>
@@ -1906,7 +1907,7 @@ For more information on URI support, see the Remarks section for the <a class="e
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto xtd::uri::get_hash_code </td>
+          <td class="memname"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a> xtd::uri::get_hash_code </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const -&gt;  <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td>
@@ -1936,7 +1937,7 @@ For more information on URI support, see the Remarks section for the <a class="e
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto xtd::uri::to_string </td>
+          <td class="memname"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a> xtd::uri::to_string </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const -&gt;  <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td>
@@ -1967,7 +1968,7 @@ For more information on URI support, see the Remarks section for the <a class="e
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto xtd::uri::check_scheme_name </td>
+          <td class="memname"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a> xtd::uri::check_scheme_name </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>scheme</em></span></td><td>)</td>
           <td> -&gt;  bool</td>
@@ -2004,7 +2005,7 @@ For more information on URI support, see the Remarks section for the <a class="e
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto xtd::uri::escape_data_string </td>
+          <td class="memname"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a> xtd::uri::escape_data_string </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
           <td> -&gt;  <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td>
@@ -2051,7 +2052,7 @@ For more information on URI support, see the Remarks section for the <a class="e
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto xtd::uri::escape_uri_string </td>
+          <td class="memname"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a> xtd::uri::escape_uri_string </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
           <td> -&gt;  <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td>
@@ -2100,7 +2101,7 @@ For more information on URI support, see the Remarks section for the <a class="e
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto xtd::uri::from_hex </td>
+          <td class="memname"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a> xtd::uri::from_hex </td>
           <td>(</td>
           <td class="paramtype">char</td>          <td class="paramname"><span class="paramname"><em>digit</em></span></td><td>)</td>
           <td> -&gt;  <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td>
@@ -2141,7 +2142,7 @@ For more information on URI support, see the Remarks section for the <a class="e
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto xtd::uri::hex_escape </td>
+          <td class="memname"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a> xtd::uri::hex_escape </td>
           <td>(</td>
           <td class="paramtype">char</td>          <td class="paramname"><span class="paramname"><em>character</em></span></td><td>)</td>
           <td> -&gt;  <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td>
@@ -2181,7 +2182,7 @@ For more information on URI support, see the Remarks section for the <a class="e
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto xtd::uri::hex_unescape </td>
+          <td class="memname"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a> xtd::uri::hex_unescape </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>pattern</em></span>, </td>
         </tr>
@@ -2226,7 +2227,7 @@ For more information on URI support, see the Remarks section for the <a class="e
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto xtd::uri::is_hex_digit </td>
+          <td class="memname"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a> xtd::uri::is_hex_digit </td>
           <td>(</td>
           <td class="paramtype">char</td>          <td class="paramname"><span class="paramname"><em>character</em></span></td><td>)</td>
           <td> -&gt;  bool</td>
@@ -2261,7 +2262,7 @@ For more information on URI support, see the Remarks section for the <a class="e
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto xtd::uri::is_hex_encoding </td>
+          <td class="memname"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a> xtd::uri::is_hex_encoding </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>pattern</em></span>, </td>
         </tr>
@@ -2301,7 +2302,7 @@ For more information on URI support, see the Remarks section for the <a class="e
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto xtd::uri::is_well_formed_uri_string </td>
+          <td class="memname"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a> xtd::uri::is_well_formed_uri_string </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>uri_string</em></span>, </td>
         </tr>
@@ -2361,7 +2362,7 @@ For more information on URI support, see the Remarks section for the <a class="e
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto xtd::uri::unescape_data_string </td>
+          <td class="memname"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a> xtd::uri::unescape_data_string </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
           <td> -&gt;  <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td>

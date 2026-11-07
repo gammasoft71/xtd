@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 		<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-		<title>xtd: xtd.core/include/xtd/diagnostics/debug_break.hpp Source File</title>
+		<title>xtd: xtd.tunit/include/xtd/tunit/assert.hpp File Reference</title>
     <link href="favicon.png" rel="shortcut icon" type="image/png"/>
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
@@ -101,24 +101,39 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>xtd.core</b></li><li class="navelem"><b>include</b></li><li class="navelem"><b>xtd</b></li><li class="navelem"><b>diagnostics</b></li>  </ul>
+<li class="navelem"><b>xtd.tunit</b></li><li class="navelem"><b>include</b></li><li class="navelem"><b>xtd</b></li><li class="navelem"><b>tunit</b></li>  </ul>
 </div>
 </div><!-- top -->
 <div id="doc-content">
 <div class="header">
-  <div class="headertitle"><div class="title">debug_break.hpp</div></div>
+  <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#namespaces">Namespaces</a>  </div>
+  <div class="headertitle"><div class="title">assert.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="debug__break_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="debugger_8hpp.html">debugger.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span></div>
-<div class="foldopen" id="foldopen00021" data-start="" data-end="">
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="group__debug.html#ga7a5088b030211d28a0a24ecc924f57b6">   21</a></span><span class="preprocessor">#define debug_break_() \</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">  if (xtd::diagnostics::debugger::launch()) __xtd_debugbreak()</span></div>
+<div class="textblock"><code>#include &quot;<a class="el" href="base__assert_8hpp_source.html">base_assert.hpp</a>&quot;</code><br />
+<code>#include &lt;cassert&gt;</code><br />
+<code>#include &lt;functional&gt;</code><br />
+</div><a name="details" id="details"></a><h2 id="header-details" class="groupheader">Definition</h2>
+<div class="textblock"><p>Contains <a class="el" href="classxtd_1_1tunit_1_1assert.html" title="The assert class contains a collection of static methods that implement the most common assertions us...">xtd::tunit::assert</a> class. </p>
+<dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2026 Gammasoft. All rights reserved. </dd></dl>
 </div>
-<div class="ttc" id="adebugger_8hpp_html"><div class="ttname"><a href="debugger_8hpp.html">debugger.hpp</a></div><div class="ttdoc">Contains xtd::diagnostics::debugger class.</div></div>
-</div><!-- fragment --></div><!-- contents -->
+<p><a href="assert_8hpp_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:xtd_3A_3Atunit_3A_3Aassert" id="r_xtd_3A_3Atunit_3A_3Aassert"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1tunit_1_1assert.html">xtd::tunit::assert</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The assert class contains a collection of static methods that implement the most common assertions used in xtd::tUnit.  <a href="classxtd_1_1tunit_1_1assert.html#details">More...</a><br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:xtd" id="r_xtd"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="namespacextd.html">xtd</a></td></tr>
+<tr class="memdesc:namespacextd"><td class="mdescLeft">&#160;</td><td class="mdescRight">The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more. <br /></td></tr>
+<tr class="memitem:xtd_3A_3Atunit" id="r_xtd_3A_3Atunit"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="namespacextd_1_1tunit.html">xtd::tunit</a></td></tr>
+<tr class="memdesc:namespacextd_1_1tunit"><td class="mdescLeft">&#160;</td><td class="mdescRight">The tunit namespace contains a unit test library. <br /></td></tr>
+</table>
+</div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -151,48 +151,48 @@ Public Constructors</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Properties</h2></td></tr>
-<tr class="memitem:a19718ae1b7842899e700686d4e3aa79e" id="r_a19718ae1b7842899e700686d4e3aa79e"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a19718ae1b7842899e700686d4e3aa79e">is_held</a> () const noexcept -&gt; bool</td></tr>
+<tr class="memitem:a19718ae1b7842899e700686d4e3aa79e" id="r_a19718ae1b7842899e700686d4e3aa79e"><td class="memItemLeft"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a>&#160;</td><td class="memItemRight"><a class="el" href="#a19718ae1b7842899e700686d4e3aa79e">is_held</a> () const noexcept -&gt; bool</td></tr>
 <tr class="memdesc:a19718ae1b7842899e700686d4e3aa79e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets whether the lock is currently held by any thread.  <br /></td></tr>
-<tr class="memitem:a526f8b2c77b8f9722ff5174166333a05" id="r_a526f8b2c77b8f9722ff5174166333a05"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a526f8b2c77b8f9722ff5174166333a05">is_held_by_current_thread</a> () const noexcept -&gt; bool</td></tr>
+<tr class="memitem:a526f8b2c77b8f9722ff5174166333a05" id="r_a526f8b2c77b8f9722ff5174166333a05"><td class="memItemLeft"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a>&#160;</td><td class="memItemRight"><a class="el" href="#a526f8b2c77b8f9722ff5174166333a05">is_held_by_current_thread</a> () const noexcept -&gt; bool</td></tr>
 <tr class="memdesc:a526f8b2c77b8f9722ff5174166333a05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets whether the lock is held by the current thread.  <br /></td></tr>
-<tr class="memitem:a8e4f73b3f9f45bee5451d1a1cff3f7ad" id="r_a8e4f73b3f9f45bee5451d1a1cff3f7ad"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a8e4f73b3f9f45bee5451d1a1cff3f7ad">is_thread_owner_tracking_enabled</a> () const noexcept -&gt; bool</td></tr>
+<tr class="memitem:a8e4f73b3f9f45bee5451d1a1cff3f7ad" id="r_a8e4f73b3f9f45bee5451d1a1cff3f7ad"><td class="memItemLeft"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a>&#160;</td><td class="memItemRight"><a class="el" href="#a8e4f73b3f9f45bee5451d1a1cff3f7ad">is_thread_owner_tracking_enabled</a> () const noexcept -&gt; bool</td></tr>
 <tr class="memdesc:a8e4f73b3f9f45bee5451d1a1cff3f7ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets whether thread ownership tracking is enabled for this instance.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Methods</h2></td></tr>
-<tr class="memitem:a0598fbe7628988fc545359f061b67e08" id="r_a0598fbe7628988fc545359f061b67e08"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a0598fbe7628988fc545359f061b67e08">enter</a> (bool &amp;lock_taken) -&gt; void</td></tr>
+<tr class="memitem:a0598fbe7628988fc545359f061b67e08" id="r_a0598fbe7628988fc545359f061b67e08"><td class="memItemLeft"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a>&#160;</td><td class="memItemRight"><a class="el" href="#a0598fbe7628988fc545359f061b67e08">enter</a> (bool &amp;lock_taken) -&gt; void</td></tr>
 <tr class="memdesc:a0598fbe7628988fc545359f061b67e08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Acquires the lock in a reliable manner, such that even if an exception occurs within the method call, lock_taken can be examined reliably to determine whether the lock was acquired.  <br /></td></tr>
-<tr class="memitem:a11f3d7ce3560f3495d64d07fb34fb959" id="r_a11f3d7ce3560f3495d64d07fb34fb959"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a11f3d7ce3560f3495d64d07fb34fb959">exit</a> () -&gt; void</td></tr>
+<tr class="memitem:a11f3d7ce3560f3495d64d07fb34fb959" id="r_a11f3d7ce3560f3495d64d07fb34fb959"><td class="memItemLeft"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a>&#160;</td><td class="memItemRight"><a class="el" href="#a11f3d7ce3560f3495d64d07fb34fb959">exit</a> () -&gt; void</td></tr>
 <tr class="memdesc:a11f3d7ce3560f3495d64d07fb34fb959"><td class="mdescLeft">&#160;</td><td class="mdescRight">Releases the lock.  <br /></td></tr>
-<tr class="memitem:aaf718a0d1305a192573f94d0430cd343" id="r_aaf718a0d1305a192573f94d0430cd343"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aaf718a0d1305a192573f94d0430cd343">exit</a> (bool use_memory_barrier) -&gt; void</td></tr>
+<tr class="memitem:aaf718a0d1305a192573f94d0430cd343" id="r_aaf718a0d1305a192573f94d0430cd343"><td class="memItemLeft"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a>&#160;</td><td class="memItemRight"><a class="el" href="#aaf718a0d1305a192573f94d0430cd343">exit</a> (bool use_memory_barrier) -&gt; void</td></tr>
 <tr class="memdesc:aaf718a0d1305a192573f94d0430cd343"><td class="mdescLeft">&#160;</td><td class="mdescRight">Releases the lock.  <br /></td></tr>
-<tr class="memitem:a68fc665da7d8c36cb9dca3f295aafa43" id="r_a68fc665da7d8c36cb9dca3f295aafa43"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a68fc665da7d8c36cb9dca3f295aafa43">try_enter</a> (bool &amp;lock_taken) -&gt; void</td></tr>
+<tr class="memitem:a68fc665da7d8c36cb9dca3f295aafa43" id="r_a68fc665da7d8c36cb9dca3f295aafa43"><td class="memItemLeft"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a>&#160;</td><td class="memItemRight"><a class="el" href="#a68fc665da7d8c36cb9dca3f295aafa43">try_enter</a> (bool &amp;lock_taken) -&gt; void</td></tr>
 <tr class="memdesc:a68fc665da7d8c36cb9dca3f295aafa43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempts to acquire the lock in a reliable manner, such that even if an exception occurs within the method call, lock_taken can be examined reliably to determine whether the lock was acquired.  <br /></td></tr>
-<tr class="memitem:a5c60351f4d252649587f515b731a9255" id="r_a5c60351f4d252649587f515b731a9255"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a5c60351f4d252649587f515b731a9255">try_enter</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> milliseconds_timeout, bool &amp;lock_taken) -&gt; void</td></tr>
+<tr class="memitem:a5c60351f4d252649587f515b731a9255" id="r_a5c60351f4d252649587f515b731a9255"><td class="memItemLeft"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a>&#160;</td><td class="memItemRight"><a class="el" href="#a5c60351f4d252649587f515b731a9255">try_enter</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> milliseconds_timeout, bool &amp;lock_taken) -&gt; void</td></tr>
 <tr class="memdesc:a5c60351f4d252649587f515b731a9255"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempts to acquire the lock in a reliable manner, such that even if an exception occurs within the method call, lock_taken can be examined reliably to determine whether the lock was acquired.  <br /></td></tr>
-<tr class="memitem:ae9ac0e0c4ee7df93820ec12ad6639bb9" id="r_ae9ac0e0c4ee7df93820ec12ad6639bb9"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ae9ac0e0c4ee7df93820ec12ad6639bb9">try_enter</a> (const <a class="el" href="classxtd_1_1time__span.html">time_span</a> &amp;timeout, bool &amp;lock_taken) -&gt; void</td></tr>
+<tr class="memitem:ae9ac0e0c4ee7df93820ec12ad6639bb9" id="r_ae9ac0e0c4ee7df93820ec12ad6639bb9"><td class="memItemLeft"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a>&#160;</td><td class="memItemRight"><a class="el" href="#ae9ac0e0c4ee7df93820ec12ad6639bb9">try_enter</a> (const <a class="el" href="classxtd_1_1time__span.html">time_span</a> &amp;timeout, bool &amp;lock_taken) -&gt; void</td></tr>
 <tr class="memdesc:ae9ac0e0c4ee7df93820ec12ad6639bb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempts to acquire the lock in a reliable manner, such that even if an exception occurs within the method call, lock_taken can be examined reliably to determine whether the lock was acquired.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="memitem:ad2cab851376bb6ca085b567bf5da0f5f" id="r_ad2cab851376bb6ca085b567bf5da0f5f"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">object</a> ()=default</td></tr>
 <tr class="memdesc:ad2cab851376bb6ca085b567bf5da0f5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new instance of the ultimate base class object.  <br /></td></tr>
-<tr class="memitem:a7d6bef3a3d8b4d071c801e9f74c2f6b2" id="r_a7d6bef3a3d8b4d071c801e9f74c2f6b2"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a7d6bef3a3d8b4d071c801e9f74c2f6b2">equals</a> (const <a class="el" href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">object</a> &amp;obj) const noexcept -&gt; bool</td></tr>
+<tr class="memitem:a7d6bef3a3d8b4d071c801e9f74c2f6b2" id="r_a7d6bef3a3d8b4d071c801e9f74c2f6b2"><td class="memItemLeft">virtual <a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a>&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a7d6bef3a3d8b4d071c801e9f74c2f6b2">equals</a> (const <a class="el" href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">object</a> &amp;obj) const noexcept -&gt; bool</td></tr>
 <tr class="memdesc:a7d6bef3a3d8b4d071c801e9f74c2f6b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
-<tr class="memitem:a4818d9d8dba01bffd5e642fd66117d1c" id="r_a4818d9d8dba01bffd5e642fd66117d1c"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a4818d9d8dba01bffd5e642fd66117d1c">get_hash_code</a> () const noexcept -&gt; <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td></tr>
+<tr class="memitem:a4818d9d8dba01bffd5e642fd66117d1c" id="r_a4818d9d8dba01bffd5e642fd66117d1c"><td class="memItemLeft">virtual <a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a>&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a4818d9d8dba01bffd5e642fd66117d1c">get_hash_code</a> () const noexcept -&gt; <a class="el" href="group__types.html#gae60f5a861761019d824a87291f85d525">xtd::usize</a></td></tr>
 <tr class="memdesc:a4818d9d8dba01bffd5e642fd66117d1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a particular type.  <br /></td></tr>
-<tr class="memitem:af61724b0e7644ebd79a01995e0505f2d" id="r_af61724b0e7644ebd79a01995e0505f2d"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#af61724b0e7644ebd79a01995e0505f2d">get_type</a> () const noexcept -&gt; <a class="el" href="classxtd_1_1type__object.html">type_object</a></td></tr>
+<tr class="memitem:af61724b0e7644ebd79a01995e0505f2d" id="r_af61724b0e7644ebd79a01995e0505f2d"><td class="memItemLeft">virtual <a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a>&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#af61724b0e7644ebd79a01995e0505f2d">get_type</a> () const noexcept -&gt; <a class="el" href="classxtd_1_1type__object.html">type_object</a></td></tr>
 <tr class="memdesc:af61724b0e7644ebd79a01995e0505f2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the type of the current instance.  <br /></td></tr>
 <tr class="memitem:a3dcdc5069d11bada985f1e34914e92e2" id="r_a3dcdc5069d11bada985f1e34914e92e2"><td class="memTemplParams" colspan="2">template&lt;typename object_t&gt; </td></tr>
-<tr class="memitem:a3dcdc5069d11bada985f1e34914e92e2 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a3dcdc5069d11bada985f1e34914e92e2">memberwise_clone</a> () const -&gt; xtd::unique_ptr_object&lt; object_t &gt;</td></tr>
+<tr class="memitem:a3dcdc5069d11bada985f1e34914e92e2 template"><td class="memItemLeft"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a>&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a3dcdc5069d11bada985f1e34914e92e2">memberwise_clone</a> () const -&gt; xtd::unique_ptr_object&lt; object_t &gt;</td></tr>
 <tr class="memdesc:a3dcdc5069d11bada985f1e34914e92e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a shallow copy of the current object.  <br /></td></tr>
-<tr class="memitem:a4a2f2b475b43f587551ec12d10f1715d" id="r_a4a2f2b475b43f587551ec12d10f1715d"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a4a2f2b475b43f587551ec12d10f1715d">to_string</a> () const -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td></tr>
+<tr class="memitem:a4a2f2b475b43f587551ec12d10f1715d" id="r_a4a2f2b475b43f587551ec12d10f1715d"><td class="memItemLeft">virtual <a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a>&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a4a2f2b475b43f587551ec12d10f1715d">to_string</a> () const -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td></tr>
 <tr class="memdesc:a4a2f2b475b43f587551ec12d10f1715d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> that represents the current object.  <br /></td></tr>
 <tr class="memitem:aef39d8952f92922c11e94ad920043c6a" id="r_aef39d8952f92922c11e94ad920043c6a"><td class="memTemplParams" colspan="2">template&lt;typename object_a_t, typename object_b_t&gt; </td></tr>
-<tr class="memitem:aef39d8952f92922c11e94ad920043c6a template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#aef39d8952f92922c11e94ad920043c6a">equals</a> (const object_a_t &amp;object_a, const object_b_t &amp;object_b) noexcept -&gt; bool</td></tr>
+<tr class="memitem:aef39d8952f92922c11e94ad920043c6a template"><td class="memItemLeft">static <a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a>&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#aef39d8952f92922c11e94ad920043c6a">equals</a> (const object_a_t &amp;object_a, const object_b_t &amp;object_b) noexcept -&gt; bool</td></tr>
 <tr class="memdesc:aef39d8952f92922c11e94ad920043c6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object instances are considered equal.  <br /></td></tr>
 <tr class="memitem:a7a5f3affd9a2d72f0a13659c2cb7e6a0" id="r_a7a5f3affd9a2d72f0a13659c2cb7e6a0"><td class="memTemplParams" colspan="2">template&lt;typename object_a_t, typename object_b_t&gt; </td></tr>
-<tr class="memitem:a7a5f3affd9a2d72f0a13659c2cb7e6a0 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a7a5f3affd9a2d72f0a13659c2cb7e6a0">reference_equals</a> (const object_a_t &amp;object_a, const object_b_t &amp;object_b) noexcept -&gt; bool</td></tr>
+<tr class="memitem:a7a5f3affd9a2d72f0a13659c2cb7e6a0 template"><td class="memItemLeft">static <a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a>&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a7a5f3affd9a2d72f0a13659c2cb7e6a0">reference_equals</a> (const object_a_t &amp;object_a, const object_b_t &amp;object_b) noexcept -&gt; bool</td></tr>
 <tr class="memdesc:a7a5f3affd9a2d72f0a13659c2cb7e6a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object instances are the same instance.  <br /></td></tr>
 </table>
 <a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -252,7 +252,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto xtd::threading::spin_lock::is_held </td>
+          <td class="memname"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a> xtd::threading::spin_lock::is_held </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const -&gt;  bool</td>
@@ -280,7 +280,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto xtd::threading::spin_lock::is_held_by_current_thread </td>
+          <td class="memname"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a> xtd::threading::spin_lock::is_held_by_current_thread </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const -&gt;  bool</td>
@@ -309,7 +309,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto xtd::threading::spin_lock::is_thread_owner_tracking_enabled </td>
+          <td class="memname"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a> xtd::threading::spin_lock::is_thread_owner_tracking_enabled </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const -&gt;  bool</td>
@@ -334,7 +334,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">auto xtd::threading::spin_lock::enter </td>
+          <td class="memname"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a> xtd::threading::spin_lock::enter </td>
           <td>(</td>
           <td class="paramtype">bool &amp;</td>          <td class="paramname"><span class="paramname"><em>lock_taken</em></span></td><td>)</td>
           <td> -&gt;  void</td>
@@ -366,7 +366,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">auto xtd::threading::spin_lock::exit </td>
+          <td class="memname"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a> xtd::threading::spin_lock::exit </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> -&gt;  void</td>
@@ -394,7 +394,7 @@ If you call <a class="el" href="#a11f3d7ce3560f3495d64d07fb34fb959" title="Relea
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">auto xtd::threading::spin_lock::exit </td>
+          <td class="memname"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a> xtd::threading::spin_lock::exit </td>
           <td>(</td>
           <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>use_memory_barrier</em></span></td><td>)</td>
           <td> -&gt;  void</td>
@@ -428,7 +428,7 @@ If you call <a class="el" href="#a11f3d7ce3560f3495d64d07fb34fb959" title="Relea
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">auto xtd::threading::spin_lock::try_enter </td>
+          <td class="memname"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a> xtd::threading::spin_lock::try_enter </td>
           <td>(</td>
           <td class="paramtype">bool &amp;</td>          <td class="paramname"><span class="paramname"><em>lock_taken</em></span></td><td>)</td>
           <td> -&gt;  void</td>
@@ -460,7 +460,7 @@ If you call <a class="el" href="#a11f3d7ce3560f3495d64d07fb34fb959" title="Relea
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">auto xtd::threading::spin_lock::try_enter </td>
+          <td class="memname"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a> xtd::threading::spin_lock::try_enter </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>milliseconds_timeout</em></span>, </td>
         </tr>
@@ -497,7 +497,7 @@ If you call <a class="el" href="#a11f3d7ce3560f3495d64d07fb34fb959" title="Relea
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">auto xtd::threading::spin_lock::try_enter </td>
+          <td class="memname"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a> xtd::threading::spin_lock::try_enter </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1time__span.html">time_span</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>timeout</em></span>, </td>
         </tr>
