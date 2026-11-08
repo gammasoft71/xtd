@@ -10,7 +10,7 @@
 #include "../auto_reset_event.hpp"
 #include "../lock.hpp"
 #include "../thread_pool.hpp"
-#include "../../collections/generic/dictionary.hpp"
+#include "../../collections/concurrent/concurrent_dictionary.hpp"
 #include "../../diagnostics/stopwatch.hpp"
 #include "../../exception_services/exception_dispatch_info.hpp"
 #include "../../helpers/throw_helper.hpp"
@@ -475,6 +475,8 @@ namespace xtd {
           xtd::threading::thread* caller_thread = null;
           xtd::usize* caller_id = null;
 
+          inline static xtd::collections::concurrent::concurrent_dictionary<xtd::usize, sptr<basic_task>> tasks;
+
           xtd::threading::wait_or_timer_callback task_proc {delegate_(const xtd::any_object& state, bool timed_out) {
             previous_current_id = current_id_;
             current_id_ = id;
@@ -485,9 +487,7 @@ namespace xtd {
               if (continuation) basic_task<result_t>::run_continuation(continuation);
               else if (continuation_async) basic_task<result_t>::run_continuation(continuation_async);
               current_id_ = previous_current_id;
-              lock_(static_data_.sync_root) {
-                if (static_data_.tasks.contains_key(unique_id)) static_data_.tasks.remove(unique_id);
-              }
+              tasks.try_remove(unique_id);
             };
             
             status = xtd::threading::tasks::task_status::running;
@@ -517,14 +517,8 @@ namespace xtd {
             }
           }};
         };
-
-        struct static_data {
-          xtd::object sync_root;
-          xtd::collections::generic::dictionary<xtd::usize, sptr<basic_task>> tasks;
-        };
         
         xtd::sptr<data> data_ = xtd::new_sptr<data>();
-        inline static static_data static_data_;
       };
     }
   }
