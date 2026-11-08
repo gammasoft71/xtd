@@ -370,6 +370,13 @@ namespace xtd {
 
         /// @brief Attempts to remove and return the value that has the specified key from the xtd::collections::concurrent::concurrent_dictionary <key_t,value_t>.
         /// @param key The key of the element to remove and return.
+        /// @return `true` if the object was removed successfully; otherwise, `false`.
+        auto try_remove(const key_t& key) -> bool {
+          auto value = value_t {};
+          return try_remove(key, value);
+        }
+        /// @brief Attempts to remove and return the value that has the specified key from the xtd::collections::concurrent::concurrent_dictionary <key_t,value_t>.
+        /// @param key The key of the element to remove and return.
         /// @param value When this method returns, contains the object removed from the xtd::collections::concurrent::concurrent_dictionary <key_t,value_t>, or the default value of the `value_t` type if key does not exist.
         /// @return `true` if the object was removed successfully; otherwise, `false`.
         auto try_remove(const key_t& key, value_t& value) -> bool {
