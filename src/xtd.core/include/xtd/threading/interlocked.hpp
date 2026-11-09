@@ -71,6 +71,12 @@ namespace xtd {
       /// @param comparand The value that is compared to the value at location.
       /// @return The original value in location.
       static auto compare_exchange(int64& location, int64 value, int64 comparand) noexcept -> int64;
+      /// @brief Compares two bool for equality and, if they are equal, replaces one of the values.
+      /// @param location The destination, whose value is compared with comparand and possibly replaced.
+      /// @param value The value that replaces the destination value if the comparison results in equality.
+      /// @param comparand The value that is compared to the value at location.
+      /// @return The original value in location.
+      static auto compare_exchange(bool& location, bool value, bool comparand) noexcept -> bool;
       /// @cond
       static auto compare_exchange(slong& location, slong value, slong comparand) noexcept -> slong;
       /// @endcond
@@ -80,23 +86,6 @@ namespace xtd {
       /// @param comparand The value that is compared to the value at location.
       /// @return The original value in location.
       static auto compare_exchange(void*& location, void* value, void* comparand) noexcept -> void*;
-      /// @brief Compares two instances of the specified reference type type_t for equality and, if they are equal, replaces one of them.
-      /// @param location The destination, whose value is compared with comparand and possibly replaced.
-      /// @param value The value that replaces the destination value if the comparison results in equality.
-      /// @param comparand The value that is compared to the value at location.
-      /// @return The original value in location.
-      template<typename type_t>
-      requires (!std::is_enum_v<type_t>)
-      static auto compare_exchange(type_t& location, type_t value, type_t comparand) noexcept -> type_t {
-        lock_guard_(location) {
-          if (location == comparand) {
-            type_t original = location;
-            location = value;
-            return original;
-          }
-        }
-        return location;
-      }
       /// @brief Compares two instances of the specified reference type type_t for equality and, if they are equal, replaces one of them.
       /// @param location The destination, whose value is compared with comparand and possibly replaced.
       /// @param value The value that replaces the destination value if the comparison results in equality.
@@ -127,18 +116,6 @@ namespace xtd {
       /// @return The decremented value.
       static auto decrement(int64& location) noexcept -> int64;
       
-      /// @brief Sets a variable of the specified type type_t to a specified value and returns the original value, as an atomic operation.
-      /// @param location The variable to set to the specified value.
-      /// @param value The value to which the location parameter is set.
-      /// @return The original value of location.
-      template<typename type_t>
-      requires (!std::is_enum_v<type_t>)
-      static auto exchange(type_t& location, type_t value) -> type_t {
-        type_t original = location;
-        lock_guard_(location)
-          location = value;
-        return original;
-      }
       /// @brief Sets an object to a specified value and returns the original value, as an atomic operation.
       /// @param location The variable to set to the specified value.
       /// @param value The value to which the location parameter is set.
@@ -162,11 +139,16 @@ namespace xtd {
       /// The following code example shows a thread-safe resource locking mechanism.
       /// @include interlocked.cpp
       static auto exchange(int32& location, int32 value) noexcept -> int32;
-      /// @briefautoSets a 64-bit signed integer to a specified value and returns the original value, as an atomic operation.
+      /// @brief Sets a 64-bit signed integer to a specified value and returns the original value, as an atomic operation.
       /// @param location The variable to set to the specified value.
       /// @param value The value to which the location parameter is set.
       /// @return The original value of location.
       static auto exchange(int64& location, int64 value) noexcept -> int64;
+      /// @brief Sets a bool to a specified value and returns the original value, as an atomic operation.
+      /// @param location The variable to set to the specified value.
+      /// @param value The value to which the location parameter is set.
+      /// @return The original value of location.
+      static auto exchange(bool& location, bool value) noexcept -> bool;
       /// @cond
       static auto exchange(slong& location, slong value) noexcept -> slong;
       /// @endcond

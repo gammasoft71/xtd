@@ -98,18 +98,6 @@ namespace xtd::threading::tests {
       assert::are_equal(0.42f, location);
     }
     
-    auto test_method_(compare_exchange_string_if_comparand_equal) {
-      string location = "str1";
-      assert::are_equal("str1", interlocked::compare_exchange(location, "str2"_s, "str1"_s));
-      assert::are_equal("str2", location);
-    }
-    
-    auto test_method_(compare_exchange_string_if_comparand_different) {
-      string location = "str1";
-      assert::are_equal("str1", interlocked::compare_exchange(location, "str2"_s, "str"_s));
-      assert::are_equal("str1", location);
-    }
-    
     auto test_method_(decrement_int32) {
       int32 location = 42;
       assert::are_equal(41, interlocked::decrement(location));
@@ -158,12 +146,6 @@ namespace xtd::threading::tests {
       float location = 0.42f;
       assert::are_equal(0.42f, interlocked::exchange(location, 0.24f));
       assert::are_equal(0.24f, location);
-    }
-    
-    auto test_method_(exchange_string) {
-      string location = "str1";
-      assert::are_equal("str1", interlocked::exchange(location, "str2"_s));
-      assert::are_equal("str2", location);
     }
     
     auto test_method_(increment_int32) {
