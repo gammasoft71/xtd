@@ -33,8 +33,10 @@ int64 interlocked::compare_exchange(int64& location, int64 value, int64 comparan
 }
 
 bool interlocked::compare_exchange(bool& location, bool value, bool comparand) noexcept {
-  auto location_ptr = reinterpret_cast<int32*>(&location);
-  return static_cast<bool>(native::interlocked::compare_exchange(*location_ptr, static_cast<int32>(value), static_cast<int32>(comparand)));
+  auto location_int = static_cast<int32>(location);
+  auto result = static_cast<bool>(native::interlocked::compare_exchange(location_int, static_cast<int32>(value), static_cast<int32>(comparand)));
+  location = static_cast<bool>(location_int);
+  return result;
 }
 
 slong interlocked::compare_exchange(slong& location, slong value, slong comparand) noexcept {
@@ -76,10 +78,11 @@ int64 interlocked::exchange(int64& location, int64 value) noexcept {
 }
 
 bool interlocked::exchange(bool& location, bool value) noexcept {
-  auto location_ptr = reinterpret_cast<int32*>(&location);
-  return static_cast<bool>(native::interlocked::exchange(*location_ptr, static_cast<int32>(value)));
+  auto location_int = static_cast<int32>(location);
+  auto result = static_cast<bool>(native::interlocked::exchange(location_int, static_cast<int32>(value)));
+  location = static_cast<bool>(location_int);
+  return result;
 }
-
 
 slong interlocked::exchange(slong& location, slong value) noexcept {
   return native::interlocked::exchange(location, value);
