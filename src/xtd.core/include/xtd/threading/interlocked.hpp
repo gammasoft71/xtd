@@ -95,7 +95,9 @@ namespace xtd {
       requires std::is_enum_v<type_t>
       static auto compare_exchange(type_t& location, type_t value, type_t comparand) noexcept -> type_t {
         auto* location_ptr = reinterpret_cast<std::underlying_type<type_t>::type*>(&location);
-        return static_cast<type_t>(compare_exchange(*location_ptr, static_cast<std::underlying_type<type_t>::type>(value), static_cast<std::underlying_type<type_t>::type>(comparand)));
+        auto result = static_cast<type_t>(compare_exchange(*location_ptr, static_cast<std::underlying_type<type_t>::type>(value), static_cast<std::underlying_type<type_t>::type>(comparand)));
+        location = static_cast<type_t>(*location_ptr);
+        return result;
       }
       /// @brief Compares two Single for equality and, if they are equal, replaces one of the values.
       /// @param location The destination, whose value is compared with comparand and possibly replaced.
@@ -124,7 +126,9 @@ namespace xtd {
       requires std::is_enum_v<type_t>
       static auto exchange(type_t& location, const type_t& value) noexcept -> type_t {
         auto* location_ptr = reinterpret_cast<std::underlying_type<type_t>::type*>(&location);
-        return static_cast<type_t>(exchange(*location_ptr, static_cast<std::underlying_type<type_t>::type>(value)));
+        auto result = static_cast<type_t>(exchange(*location_ptr, static_cast<std::underlying_type<type_t>::type>(value)));
+        location = static_cast<type_t>(*location_ptr);
+        return result;
       }
       /// @brief Sets a double-precision floating point number to a specified value and returns the original value, as an atomic operation.
       /// @param location The variable to set to the specified value.
