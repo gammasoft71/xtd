@@ -3,7 +3,6 @@
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "../core_export.hpp"
-#include "../lock_guard.hpp"
 #include "../object.hpp"
 #include "../static.hpp"
 #include "../types.hpp"

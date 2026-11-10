@@ -17,11 +17,10 @@ int64 interlocked::add(int64& location, int64 value) noexcept {
 }
 
 double interlocked::compare_exchange(double& location, double value, double comparand) noexcept {
-  auto result = location;
-  lock_guard_(location) {
-    if (location == comparand) location = value;
-  }
-  return result;
+  auto location_int = reinterpret_cast<int64*>(&location);
+  auto result = native::interlocked::compare_exchange(*location_int, *reinterpret_cast<int64*>(&value), *reinterpret_cast<int64*>(&comparand));
+  location = *reinterpret_cast<double*>(location_int);
+  return *reinterpret_cast<double*>(&result);
 }
 
 int32 interlocked::compare_exchange(int32& location, int32 value, int32 comparand) noexcept {
@@ -48,11 +47,10 @@ void* interlocked::compare_exchange(void*& location, void* value, void* comparan
 }
 
 float interlocked::compare_exchange(float& location, float value, float comparand) noexcept {
-  auto result = location;
-  lock_guard_(location) {
-    if (location == comparand) location = value;
-  }
-  return result;
+  auto location_int = reinterpret_cast<int32*>(&location);
+  auto result = native::interlocked::compare_exchange(*location_int, *reinterpret_cast<int32*>(&value), *reinterpret_cast<int32*>(&comparand));
+  location = *reinterpret_cast<float*>(location_int);
+  return *reinterpret_cast<float*>(&result);
 }
 
 int32 interlocked::decrement(int32& location) noexcept {
@@ -64,9 +62,10 @@ int64 interlocked::decrement(int64& location) noexcept {
 }
 
 double interlocked::exchange(double& location, double value) noexcept {
-  auto original = location;
-  lock_guard_(location) location = value;
-  return original;
+  auto location_int = reinterpret_cast<int64*>(&location);
+  auto result = native::interlocked::exchange(*location_int, *reinterpret_cast<int64*>(&value));
+  location = *reinterpret_cast<double*>(location_int);
+  return *reinterpret_cast<double*>(&result);
 }
 
 int32 interlocked::exchange(int32& location, int32 value) noexcept {
@@ -93,9 +92,10 @@ void* interlocked::exchange(void*& location, void* value) noexcept {
 }
 
 float interlocked::exchange(float& location, float value) noexcept {
-  auto original = location;
-  lock_guard_(location) location = value;
-  return original;
+  auto location_int = reinterpret_cast<int32*>(&location);
+  auto result = native::interlocked::exchange(*location_int, *reinterpret_cast<int32*>(&value));
+  location = *reinterpret_cast<float*>(location_int);
+  return *reinterpret_cast<float*>(&result);
 }
 
 int32 interlocked::increment(int32& location) noexcept {
