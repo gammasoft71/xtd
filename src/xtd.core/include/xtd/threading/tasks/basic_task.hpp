@@ -440,7 +440,7 @@ namespace xtd {
         }
         
         auto on_await_resume() -> void {
-          if (data_->caller_thread->is_main_thread()) thread::set_main_managed_thread_id(xtd::threading::thread::current_thread().get_managed_thread_id());
+          if (data_->caller_thread->is_main_thread()) thread::set_main_thread_id(xtd::threading::thread::current_thread().thread_id());
           // a bad idea that seems like a good one
           // std::swap(data_->caller_thread->get_managed_thread_id(), xtd::threading::thread::current_thread().get_managed_thread_id());
           //std::swap(*data_->caller_id, current_id_);

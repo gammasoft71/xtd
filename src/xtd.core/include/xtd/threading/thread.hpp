@@ -9,7 +9,6 @@
 #include "thread_state.hpp"
 #include "../as.hpp"
 #include "../core_export.hpp"
-//#include "../date_time.hpp"
 #include "../intptr.hpp"
 #include "../object.hpp"
 #include "../time_span.hpp"
@@ -51,10 +50,7 @@ namespace xtd {
     /// @include thread.cpp
     /// @remarks When a process starts, the system automatically creates a single foreground thread to execute application code. Along with this main foreground thread, a process can create one or more threads to execute a portion of the program code associated with the process. These threads can execute either in the foreground or in the background. In addition, you can use the xtd::threading::thread_pool class to execute code on worker threads that are managed by the framework xrd.
     class core_export_ thread : public object {
-      struct data;
-      
-      struct static_data;
-      
+      struct data;      
     public:
       /// @name Public Fields
       
@@ -102,10 +98,6 @@ namespace xtd {
       explicit thread(start_t start) : thread(parameterized_thread_start {start}) {}
       template<typename start_t>
       thread(start_t start, int32 max_stack_size) : thread(parameterized_thread_start {start}, max_stack_size) {}
-      thread(thread&&) = default;
-      thread(const thread&) = default;
-      auto operator=(thread&&) -> thread& = default;
-      auto operator=(const thread&) -> thread&;
       ~thread();
       /// @endcond
       
@@ -303,12 +295,12 @@ namespace xtd {
       /// @brief Create and immedialtely start a xtd::threading::thread with specified method.
       /// @param start A delegate that represents the methods to be invoked when this thread begins executing.
       /// @exception xtd::argument_exception The start parameter is empty.
-      static auto start_new(const xtd::threading::thread_start& start) -> thread;
+      [[nodiscard]] static auto start_new(const xtd::threading::thread_start& start) -> thread;
       /// @brief Create and immedialtely start a xtd::threading::thread with specified method.
       /// @param start A delegate that represents the methods to be invoked when this thread begins executing.
       /// @param obj An object that contains data to be used by the method the thread executes.
       /// @exception xtd::argument_exception The start parameter is empty.
-      static auto start_new(const xtd::threading::parameterized_thread_start& start, const xtd::any_object& obj) -> thread;
+      [[nodiscard]] static auto start_new(const xtd::threading::parameterized_thread_start& start, const xtd::any_object& obj) -> thread;
       
       /// @brief Blocks the calling thread until all joinable threads terminate.
       /// @exception xtd::threading::thread_state_exception The caller attempted to join a thread that is in the xtd::threading::thread_state::unstarted state.
@@ -426,8 +418,7 @@ namespace xtd {
       [[nodiscard]] static auto generate_managed_thread_id() noexcept -> int32;
       [[nodiscard]] static auto get_current_thread_handle() -> intptr;
       [[nodiscard]] static auto get_current_thread_id() noexcept -> intptr;
-      [[nodiscard]] static auto get_static_data() -> static_data&;
-      [[nodiscard]] static auto get_thread(intptr thread_id) -> thread&;
+      [[nodiscard]] static auto get_thread(intptr thread_handle) -> thread&;
       [[nodiscard]] auto get_managed_thread_id() noexcept -> int32&;
       auto interrupt_internal() -> void;
       [[nodiscard]] auto is_aborted() const noexcept -> bool;
@@ -439,13 +430,10 @@ namespace xtd {
       [[nodiscard]] auto is_wait_sleep_join() const noexcept -> bool;
       static auto join_all_ptr(const xtd::array<thread*>& threads, int32 milliseconds_timeout) -> bool;
       [[nodiscard]] static auto main_thread() -> thread&;
-      static auto set_main_managed_thread_id(int32 id) -> void {main_managed_thread_id = id;}
+      static auto set_main_thread_id(intptr id) -> void;
       auto thread_proc() -> void;
       [[nodiscard]] static auto unmanaged_thread() -> thread&;
-      
-      inline static int32 main_managed_thread_id = 1;
-      static constexpr int32 unmanaged_thread_id = 0;
-      
+            
       xtd::sptr<data> data_;
       static intptr main_thread_id_;
     };
