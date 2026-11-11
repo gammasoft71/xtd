@@ -1,7 +1,5 @@
 #include <xtd/xtd>
 
-#include <xtd/xtd>
-
 class example {
 public:
   static auto main() async_ {
