@@ -599,7 +599,7 @@ void thread::thread_proc() {
 }
 
 thread& thread::unmanaged_thread() {
-  static auto unmanaged_thread = threading::thread {};
+  thread_local static auto unmanaged_thread = threading::thread {};
   if (unmanaged_thread.is_unstarted()) {
     interlocked::exchange(unmanaged_thread.data_->state, unmanaged_thread.data_->state & ~threading::thread_state::unstarted);
     interlocked::exchange(unmanaged_thread.data_->state, unmanaged_thread.data_->state | threading::thread_state::background);
