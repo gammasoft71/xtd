@@ -234,13 +234,9 @@ bool thread::join(int32 milliseconds_timeout) {
   auto result = data_->end_thread_event.wait_one(milliseconds_timeout);
   if (result == true) {
     auto current_thread = thread::current_thread();
-    try {
-      interlocked::exchange(data_->state, data_->state | threading::thread_state::wait_sleep_join);
-      native::thread::join(data_->handle);
-      interlocked::exchange(data_->state, data_->state & ~threading::thread_state::wait_sleep_join);
-    } catch (...) {
-      interlocked::exchange(data_->state, data_->state & ~threading::thread_state::wait_sleep_join);
-    }
+    interlocked::exchange(data_->state, data_->state | threading::thread_state::wait_sleep_join);
+    native::thread::join(data_->handle);
+    interlocked::exchange(data_->state, data_->state & ~threading::thread_state::wait_sleep_join);
     interlocked::exchange(data_->joinable, false);
   }
   return result;
@@ -445,14 +441,9 @@ bool thread::do_wait(wait_handle& wait_handle, int32 milliseconds_timeout) {
   else {
     interlocked::exchange(current_thread.data_->state, current_thread.data_->state | threading::thread_state::wait_sleep_join);
     if (current_thread.data_->interrupted) current_thread.interrupt_internal();
-    try {
-      auto result = wait_handle.wait(milliseconds_timeout);
-      interlocked::exchange(current_thread.data_->state, current_thread.data_->state & ~threading::thread_state::wait_sleep_join);
-      return result;
-    } catch (...) {
-      interlocked::exchange(current_thread.data_->state, current_thread.data_->state & ~threading::thread_state::wait_sleep_join);
-      throw;
-    }
+    auto result = wait_handle.wait(milliseconds_timeout);
+    interlocked::exchange(current_thread.data_->state, current_thread.data_->state & ~threading::thread_state::wait_sleep_join);
+    return result;
   }
 }
 
