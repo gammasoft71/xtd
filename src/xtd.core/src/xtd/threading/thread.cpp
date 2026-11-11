@@ -101,6 +101,7 @@ bool thread::auto_join() const noexcept {
 }
 
 thread& thread::auto_join(bool value) {
+  if (is_main_thread()) throw_helper::throws(exception_case::thread_state);
   if (is_aborted() || is_stopped()) throw_helper::throws(exception_case::thread_state);
   interlocked::exchange(data_->auto_join, value);
   return self_;
@@ -470,19 +471,22 @@ intptr thread::get_current_thread_id() noexcept {
 }
 
 thread& thread::get_thread(intptr thread_id) {
-  thread_local static auto t = thread {};
   if (thread_id == data::main_thread_id) {
-    t = main_thread();;
-    return t;
+    static auto main_thread = thread {};
+    main_thread = thread::main_thread();;
+    return main_thread;
   }
+
   using_(auto lock = std::lock_guard<std::recursive_mutex> {data::threads_mutex}) {
     if (data::threads.contains_key(thread_id)) {
-      auto& t = data::threads[thread_id];
-      return t;
+      auto& thread = data::threads[thread_id];
+      return thread;
     }
   }
-  t = unmanaged_thread();;
-  return t;
+
+  thread_local static auto unmanaged_thread = thread {};
+  unmanaged_thread = thread::unmanaged_thread();
+  return unmanaged_thread;
 }
 
 auto thread::get_managed_thread_id() noexcept -> int32& {
