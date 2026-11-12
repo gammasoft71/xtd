@@ -23,6 +23,7 @@ add_projects(
   semaphore
   thread
   thread2
+  threads
   thread_pool
   thread_pool2
   timeout
