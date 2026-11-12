@@ -102,6 +102,7 @@ bool thread::auto_join() const noexcept {
 
 thread& thread::auto_join(bool value) {
   if (is_main_thread()) throw_helper::throws(exception_case::thread_state);
+  if (is_unmanaged_thread()) throw_helper::throws(exception_case::thread_state);
   if (is_aborted() || is_stopped()) throw_helper::throws(exception_case::thread_state);
   interlocked::exchange(data_->auto_join, value);
   return self_;
@@ -120,6 +121,7 @@ bool thread::is_background() const noexcept {
 }
 
 thread& thread::is_background(bool value) {
+  if (is_unmanaged_thread()) throw_helper::throws(exception_case::thread_state);
   if (value) interlocked::exchange(data_->state, data_->state | threading::thread_state::background);
   else interlocked::exchange(data_->state, data_->state & ~threading::thread_state::background);
   return self_;
@@ -216,6 +218,7 @@ usize thread::get_hash_code() const noexcept {
 }
 
 void thread::interrupt() {
+  if (is_unmanaged_thread()) throw_helper::throws(exception_case::thread_state);
   interlocked::exchange(data_->interrupted, true);
 }
 
@@ -225,6 +228,7 @@ void thread::join() {
 
 bool thread::join(int32 milliseconds_timeout) {
   if (is_unstarted()) throw_helper::throws(exception_case::thread_state);
+  if (is_unmanaged_thread()) throw_helper::throws(exception_case::thread_state);
   if (thread_id() == get_current_thread_id()) throw_helper::throws(exception_case::thread_state);
   if (milliseconds_timeout < timeout::infinite) throw_helper::throws(exception_case::argument);
   
@@ -258,7 +262,7 @@ bool thread::join_all(int32 milliseconds_timeout) {
   auto threads = decltype(data::threads)::value_collection {};
   using_(auto lock = std::lock_guard<std::recursive_mutex> {data::threads_mutex}) {
     for(auto& item : data::threads.values())
-      if (item.thread_id() != get_current_thread_id()) threads.add(item);
+      if (item.thread_id() != get_current_thread_id() && !item.is_unmanaged_thread()) threads.add(item);
   }
   if (milliseconds_timeout != timeout::infinite && sw.elapsed_milliseconds() > milliseconds_timeout) milliseconds_timeout = 0;
   else if (milliseconds_timeout != timeout::infinite && sw.elapsed_milliseconds() < milliseconds_timeout) milliseconds_timeout -= as<int32>(sw.elapsed_milliseconds());
@@ -277,6 +281,7 @@ bool thread::join_all(const time_span& timeout) {
 }
 
 void thread::resume() {
+  if (is_unmanaged_thread()) throw_helper::throws(exception_case::thread_state);
   if (is_unstarted() || !is_suspended()) throw_helper::throws(exception_case::thread_state);
   
   native::thread::resume(data_->handle);
@@ -308,6 +313,7 @@ void thread::spin_wait(int32 iterations) {
 
 void thread::start() {
   if (!is_unstarted()) throw_helper::throws(exception_case::thread_state);
+  if (is_unmanaged_thread()) throw_helper::throws(exception_case::thread_state);
   if (data_->thread_start.is_empty() && data_->parameterized_thread_start.is_empty()) throw_helper::throws(exception_case::invalid_operation);
   interlocked::exchange(data_->state, data_->state &= ~threading::thread_state::unstarted);
   interlocked::exchange(data_->joinable, true);
@@ -325,6 +331,7 @@ void thread::start() {
 
 void thread::start(const xtd::any_object& param) {
   if (!is_unstarted()) throw_helper::throws(exception_case::thread_state);
+  if (is_unmanaged_thread()) throw_helper::throws(exception_case::thread_state);
   if (data_->parameterized_thread_start.is_empty()) throw_helper::throws(exception_case::invalid_operation);
   interlocked::exchange(data_->state, data_->state &= ~threading::thread_state::unstarted);
   interlocked::exchange(data_->joinable, true);
@@ -353,6 +360,7 @@ thread thread::start_new(const parameterized_thread_start& start, const any_obje
 }
 
 void thread::suspend() {
+  if (is_unmanaged_thread()) throw_helper::throws(exception_case::thread_state);
   if (!is_alive()) throw_helper::throws(exception_case::thread_state);
   
   interlocked::exchange(data_->state, data_->state | threading::thread_state::suspend_requested);
