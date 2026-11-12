@@ -650,7 +650,7 @@ namespace xtd::threading::tests {
         
       constexpr auto max_count_thread = 1000ul;
       for (auto index = 0_z; index < max_count_thread; ++index)
-        thread::start_new(thread_proc);
+        auto t = thread::start_new(thread_proc);
         
       thread::sleep(40);
       thread::join_all();
