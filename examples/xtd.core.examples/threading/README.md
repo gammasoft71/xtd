@@ -20,6 +20,8 @@
 * [semaphore](semaphore/README.md) demonstrates how to use [xtd::threading:semaphore](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1semaphore.html) class.
 * [thread](thread/README.md) shows hows how to use [xtd::threading::thread](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1thread.html) class.
 * [thread2](thread2/README.md) shows hows how to use [xtd::threading::thread](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1thread.html) class.
+* [thread_and_exception](thread_and_exception/README.md) shows hows how to use [xtd::threading::thread](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1thread.html) class and exception.
+* [thread_and_exception2](thread_and_exception2/README.md) shows hows how to use [xtd::threading::thread](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1thread.html) class and exception.
 * [threads](threads/README.md) shows hows how to use [xtd::threading::thread](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1thread.html) class.
 * [thread_pool](thread_pool/README.md) shows hows how to use [xtd::threading::thread_pool](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1thread__pool.html) class.
 * [thread_pool2](thread_pool2/README.md) shows hows how to use [xtd::threading::thread_pool](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1thread__pool.html) class.
