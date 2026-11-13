@@ -2,6 +2,7 @@
 /// @brief Contains #finally_ keyword.
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
+#include "action_callable.hpp"
 #include "unused.hpp"
 #include <exception>
 #include <utility>
@@ -67,11 +68,12 @@ namespace xtd {
   template<typename function_t>
   struct __xtd_finally_object__ {
     __xtd_finally_object__(function_t&& f) : function(std::forward<function_t>(f)) {}
-    ~__xtd_finally_object__() { function(); }
+    ~__xtd_finally_object__() noexcept { function(); }
     function_t function;
   };
   
   template<typename function_t>
+  requires xtd::action_callable<function_t> && std::is_nothrow_invocable_v<function_t&>
   auto operator +(finally, function_t&& function) {
     return __xtd_finally_object__<function_t> {std::forward<function_t>(function)};
   }
@@ -121,4 +123,4 @@ namespace xtd {
 /// // always (finally)
 /// ```
 #define finally_ \
-  [[maybe_unused]] auto __ = xtd::finally {} + [&]
+  [[maybe_unused]] auto __ = xtd::finally {} + [&]() noexcept
