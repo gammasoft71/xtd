@@ -128,7 +128,7 @@ thread& thread::is_background(bool value) {
 }
 
 bool thread::is_main_thread() const noexcept {
-  return data_->thread_id == data::main_thread_id;
+  return data_ && data_->thread_id == data::main_thread_id;
 }
 
 bool thread::is_thread_pool_thread() const noexcept {
