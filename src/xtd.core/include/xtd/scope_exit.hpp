@@ -135,4 +135,4 @@ namespace xtd {
 /// // caught exception!
 /// ```
 #define scope_exit_ \
-[[maybe_unused]] auto __ = xtd::scope_exit {} + [&]()
+[[maybe_unused]] auto __ = xtd::scope_exit {} + [&]() noexcept

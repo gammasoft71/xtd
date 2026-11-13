@@ -50,7 +50,7 @@ namespace xtd {
           };
           auto pre_process_filer = PreProcessFilter {};
           
-          scope_exit_ noexcept {
+          scope_exit_ {
             wxTheApp->OnExit();
           };
           

@@ -1,7 +1,7 @@
 #include <xtd/xtd>
 
 auto main() -> int {
-  scope_exit_ noexcept {
+  scope_exit_ {
     println("End application");
   };
   
