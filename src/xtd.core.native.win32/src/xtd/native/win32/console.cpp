@@ -7,6 +7,8 @@
 #undef __XTD_CORE_NATIVE_LIBRARY__
 
 #include <csignal>
+#include <iostream>
+#include <map>
 #include <conio.h>
 #include <Windows.h>
 
@@ -42,13 +44,18 @@ namespace {
   bool init_treat_control_c_as_input = []()-> bool {
     SetConsoleCtrlHandler(&__handler_routine, TRUE);
     return false;
-  }();
+    }();
+  bool init_onsole_colors = []() -> bool {
+    __default_background_color();
+    __default_foreground_color();
+    return true;
+    }();
   bool echo_off = []()-> bool {
     auto mode = DWORD {};
     GetConsoleMode(GetStdHandle(STD_INPUT_HANDLE), &mode);
     return SetConsoleMode(GetStdHandle(STD_INPUT_HANDLE), mode & ~ENABLE_ECHO_INPUT) == TRUE;
-  }();
-  
+    }();
+
   bool treat_control_c_as_input =  false;
   auto background_color = CONSOLE_COLOR_DEFAULT;
   auto foreground_color = CONSOLE_COLOR_DEFAULT;
@@ -69,7 +76,7 @@ namespace {
   auto window_left = 0;
   auto window_top = 0;
   auto window_width = -1;
-  auto disable_virtual_terminal_processing_on_reset_console = false;
+  auto disable_virtual_terminal_processing_on_reset_terminal_mode = false;
   
   bool is_windows_terminal() {
     return std::getenv("WT_SESSION") != nullptr;
@@ -82,6 +89,15 @@ int32_t console::background_color() {
 
 bool console::background_color(int32_t color) {
   ::background_color = color;
+
+  if (is_ansi_escape_sequence_supported()) {
+    static auto colors = std::map<int32_t, const char*> {{CONSOLE_COLOR_DEFAULT, "\x1b[49m"}, {CONSOLE_COLOR_BLACK, "\x1b[40m"}, {CONSOLE_COLOR_DARK_BLUE, "\x1b[44m"}, {CONSOLE_COLOR_DARK_GREEN, "\x1b[42m"}, {CONSOLE_COLOR_DARK_CYAN, "\x1b[46m"}, {CONSOLE_COLOR_DARK_RED, "\x1b[41m"}, {CONSOLE_COLOR_DARK_MAGENTA, "\x1b[45m"}, {CONSOLE_COLOR_DARK_YELLOW, "\x1b[43m"}, {CONSOLE_COLOR_GRAY, "\x1b[47m"}, {CONSOLE_COLOR_DARK_GRAY, "\x1b[100m"}, {CONSOLE_COLOR_BLUE, "\x1b[104m"}, {CONSOLE_COLOR_GREEN, "\x1b[102m"}, {CONSOLE_COLOR_CYAN, "\x1b[106m"}, {CONSOLE_COLOR_RED, "\x1b[101m"}, {CONSOLE_COLOR_MAGENTA, "\x1b[105m"}, {CONSOLE_COLOR_YELLOW, "\x1b[103m"}, {CONSOLE_COLOR_WHITE, "\x1b[107m"}};
+    auto it = colors.find(color);
+    if (it == colors.end()) return false;
+    std::cout << it->second << std::flush;
+    return true;
+  }
+
   auto csbi = CONSOLE_SCREEN_BUFFER_INFO {};
   GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
   
@@ -206,6 +222,14 @@ int32_t console::foreground_color() {
 
 bool console::foreground_color(int32_t color) {
   ::foreground_color = color;
+
+  if (is_ansi_escape_sequence_supported()) {
+    static auto colors = std::map<int32_t, const char*> {{CONSOLE_COLOR_DEFAULT, "\x1b[39m"}, {CONSOLE_COLOR_BLACK, "\x1b[30m"}, {CONSOLE_COLOR_DARK_BLUE, "\x1b[34m"}, {CONSOLE_COLOR_DARK_GREEN, "\x1b[32m"}, {CONSOLE_COLOR_DARK_CYAN, "\x1b[36m"}, {CONSOLE_COLOR_DARK_RED, "\x1b[31m"}, {CONSOLE_COLOR_DARK_MAGENTA, "\x1b[35m"}, {CONSOLE_COLOR_DARK_YELLOW, "\x1b[33m"}, {CONSOLE_COLOR_GRAY, "\x1b[37m"}, {CONSOLE_COLOR_DARK_GRAY, "\x1b[90m"}, {CONSOLE_COLOR_BLUE, "\x1b[94m"}, {CONSOLE_COLOR_GREEN, "\x1b[92m"}, {CONSOLE_COLOR_CYAN, "\x1b[96m"}, {CONSOLE_COLOR_RED, "\x1b[91m"}, {CONSOLE_COLOR_MAGENTA, "\x1b[95m"}, {CONSOLE_COLOR_YELLOW, "\x1b[93m"}, {CONSOLE_COLOR_WHITE, "\x1b[97m"}};
+    auto it = colors.find(color);
+    if (it == colors.end()) return false;
+    std::cout << it->second << std::flush;
+    return true;
+  }
   auto csbi = CONSOLE_SCREEN_BUFFER_INFO {};
   GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
   
@@ -232,9 +256,8 @@ bool console::input_code_page(int32_t code_page) {
   if (!GetConsoleMode(GetStdHandle(STD_OUTPUT_HANDLE), &mode)) return false;
   if ((mode & ENABLE_VIRTUAL_TERMINAL_PROCESSING) == ENABLE_VIRTUAL_TERMINAL_PROCESSING) return true;
   
-  auto result = SetConsoleMode(GetStdHandle(STD_OUTPUT_HANDLE), mode | ENABLE_VIRTUAL_TERMINAL_PROCESSING) == TRUE;
-  disable_virtual_terminal_processing_on_reset_console = result;
-  return result;
+  disable_virtual_terminal_processing_on_reset_terminal_mode = SetConsoleMode(GetStdHandle(STD_OUTPUT_HANDLE), mode | ENABLE_VIRTUAL_TERMINAL_PROCESSING) == TRUE;
+  return disable_virtual_terminal_processing_on_reset_terminal_mode;
 }
 
 bool console::key_available() {
@@ -293,17 +316,16 @@ bool console::reset_color() {
 }
 
 bool console::reset_console() {
-  auto result = true;
-  if (disable_virtual_terminal_processing_on_reset_console) {
-    auto mode = DWORD {};
-    if (!GetConsoleMode(GetStdHandle(STD_OUTPUT_HANDLE), &mode)) result = false;
-    else result = SetConsoleMode(GetStdHandle(STD_OUTPUT_HANDLE), mode & ~ENABLE_VIRTUAL_TERMINAL_PROCESSING) == TRUE;
-  }
-  return result && console::background_color(CONSOLE_COLOR_DEFAULT) && console::foreground_color(CONSOLE_COLOR_DEFAULT);
+  reset_color();
+  reset_terminal_mode();
+  return true;
 }
 
 void console::reset_terminal_mode() {
-  // Nothing on Windows
+  if (!disable_virtual_terminal_processing_on_reset_terminal_mode) return;
+  auto mode = DWORD {};
+  if (GetConsoleMode(GetStdHandle(STD_OUTPUT_HANDLE), &mode) == FALSE) return;
+  SetConsoleMode(GetStdHandle(STD_OUTPUT_HANDLE), mode & ~ENABLE_VIRTUAL_TERMINAL_PROCESSING);
 }
 
 bool console::set_cursor_position(int32_t left, int32_t top) {
