@@ -77,18 +77,16 @@ namespace xtd {
         /// @brief Gets the number of elements contained in the xtd::collections::generic::icollection.
         /// @return The number of elements contained in the xtd::collections::generic::icollection.
         [[nodiscard]] auto count() const noexcept -> xtd::usize override {
-          lock_guard_(items_)
-            return items_.count();
-          return {};
+          auto lock = xtd::threading::lock_guard {items_};
+          return items_.count();
         }
 
         /// @brief Gets a value that indicates whether the xtd::collections::concurrent::concurrent_stack <type_t> is empty.
         /// @return `true` if the xtd::collections::concurrent::concurrent_stack <type_t> is empty; otherwise, `false`.
         /// @remarks or determining whether the collection contains any items, use of this property is recommended rather than retrieving the number of items from the xtd::collections::concurrent::concurrent_stack::count property and comparing it to 0. However, as this collection is intended to be accessed concurrently, it may be the case that another thread will modify the collection after xtd::collections::concurrent::concurrent_stack::is_empty returns, thus invalidating the result.
         [[nodiscard]] auto is_empty() const noexcept -> bool {
-          lock_guard_(items_)
-            return !items_.count();
-          return {};
+          auto lock = xtd::threading::lock_guard {items_};
+          return !items_.count();
         }
 
         /// @brief Gets a value indicating whether the xtd::collections::concurrent::concurrent_stack <type_t> is read-only.
@@ -117,8 +115,8 @@ namespace xtd {
         
         /// @{
         auto clear() -> void override {
-          lock_guard_(items_)
-            items_.clear();
+          auto lock = xtd::threading::lock_guard {items_};
+          items_.clear();
         }
         
         /// @brief Copies the elements of the xtd::collections::concurrent::concurrent_stack <type_t> to an xtd::array, starting at a particular xtd::array index.
@@ -126,16 +124,16 @@ namespace xtd {
         /// @param array_index The zero-based index in `array` at which copying begins.
         /// @exception xtd::argument_exception The number of elements in the source xtd::collections::concurrent::concurrent_stack <type_t> is greater than the available space from `array_index` to the end of the destination `array`.
         auto copy_to(xtd::array<value_type>& array, xtd::usize array_index) const -> void override {
-          lock_guard_(items_)
-            items_.copy_to(array, array_index);
+          auto lock = xtd::threading::lock_guard {items_};
+          items_.copy_to(array, array_index);
         }
         
         /// @brief Adds an item to the end of the xtd::collections::concurrent::concurrent_stack <type_t>.
         /// @param item The object to add to the xtd::collections::concurrent::concurrent_stack <type_t>.
         /// @exception xtd::not_supported_exception The xtd::collections::concurrent::concurrent_stack <type_t> is read-only.
         virtual auto push(const_reference item) -> void {
-          lock_guard_(items_)
-            items_.push(item);
+          auto lock = xtd::threading::lock_guard {items_};
+          items_.push(item);
         }
         
         /// @brief Inserts multiple objects at the top of the xtd::collections::concurrent::concurrent_stack <type_t> atomically.
@@ -155,8 +153,8 @@ namespace xtd {
         template <xtd::iterable iterable_t>
         auto push_range(const iterable_t& items, xtd::usize start_index, xtd::usize count) -> void {
           if (start_index + count > items.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
-          lock_guard_(items_)
-            std::for_each(items.begin()+start_index, items.begin()+start_index+count, [this](auto&& item) {items_.push(item);});
+          auto lock = xtd::threading::lock_guard {items_};
+          std::for_each(items.begin()+start_index, items.begin()+start_index+count, [this](auto&& item) {items_.push(item);});
         }
 
         /// @brief Returns an enumerator that iterates through a collection.
@@ -172,9 +170,8 @@ namespace xtd {
         /// @return A new array containing the elements copied from the xtd::collections::concurrent::iproducer_consumer_collection <type_t.
         /// @remarks The method provides a snapshot of the underlying collection. It is possible for other threads to add or remove items immediately after the array is made.
         [[nodiscard]] auto to_array() const -> xtd::array<value_type> override {
-          lock_guard_(items_)
-            return items_.to_array();
-          return {};
+          auto lock = xtd::threading::lock_guard {items_};
+          return items_.to_array();
         }
         
         /// @brief Returns a xtd::string that represents the current object.
@@ -187,9 +184,8 @@ namespace xtd {
         /// @param item When this method returns, if the operation was successful, result contains the object removed. If no object was available to be removed, the value is unspecified.
         /// @return `true` if an element was removed and returned from the beginning of the xtd::collections::concurrent::concurrent_stack <type_t> successfully; otherwise, `false`.
         virtual auto try_pop(reference result) -> bool {
-          lock_guard_(items_)
-            return items_.try_pop(result);
-          return false;
+          auto lock = xtd::threading::lock_guard {items_};
+          return items_.try_pop(result);
         }
         
         /// @brief Attempts to pop and return multiple objects from the top of the xtd::collections::concurrent::concurrent_stack <type_t> atomically.
@@ -212,11 +208,11 @@ namespace xtd {
         auto try_pop_range(iterable_t& items, xtd::usize start_index, xtd::usize count) -> xtd::usize {
           if (start_index + count > items.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
           auto result = xtd::usize {0};
-          lock_guard_(items_)
-            for (auto index = xtd::usize {0}; index < count; ++index) {
-              if (!items_.try_pop(*(items.begin() + start_index + index))) return result;
-              ++result;
-            }
+          auto lock = xtd::threading::lock_guard {items_};
+          for (auto index = xtd::usize {0}; index < count; ++index) {
+            if (!items_.try_pop(*(items.begin() + start_index + index))) return result;
+            ++result;
+          }
           return result;
         }
         
@@ -224,9 +220,8 @@ namespace xtd {
         /// @param result When this method returns, result contains an object from the beginning of the xtd::collections::concurrent::concurrent_stack <type_t> or an unspecified value if the operation failed.
         /// @return `true` if an object was returned successfully; otherwise, `false`.
         auto try_peek(reference result) const -> bool {
-          lock_guard_(items_)
-            return items_.try_peek(result);
-          return false;
+          auto lock = xtd::threading::lock_guard {items_};
+          return items_.try_peek(result);
         }
         /// @}
         

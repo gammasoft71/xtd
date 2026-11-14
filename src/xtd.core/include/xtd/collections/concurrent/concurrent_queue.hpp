@@ -77,18 +77,16 @@ namespace xtd {
         /// @brief Gets the number of elements contained in the xtd::collections::generic::icollection.
         /// @return The number of elements contained in the xtd::collections::generic::icollection.
         [[nodiscard]] auto count() const noexcept -> xtd::usize override {
-          lock_guard_(items_)
+          auto lock = xtd::threading::lock_guard {items_};
           return items_.count();
-          return {};
         }
         
         /// @brief Gets a value that indicates whether the xtd::collections::concurrent::concurrent_queue <type_t> is empty.
         /// @return `true` if the xtd::collections::concurrent::concurrent_queue <type_t> is empty; otherwise, `false`.
         /// @remarks or determining whether the collection contains any items, use of this property is recommended rather than retrieving the number of items from the xtd::collections::concurrent::concurrent_queue::count property and comparing it to 0. However, as this collection is intended to be accessed concurrently, it may be the case that another thread will modify the collection after xtd::collections::concurrent::concurrent_queue::is_empty returns, thus invalidating the result.
         [[nodiscard]] auto is_empty() const noexcept -> bool {
-          lock_guard_(items_)
+          auto lock = xtd::threading::lock_guard {items_};
           return !items_.count();
-          return {};
         }
         
         /// @brief Gets a value indicating whether the xtd::collections::concurrent::concurrent_queue <type_t> is read-only.
@@ -117,7 +115,7 @@ namespace xtd {
         
         /// @{
         auto clear() -> void override {
-          lock_guard_(items_)
+          auto lock = xtd::threading::lock_guard {items_};
           items_.clear();
         }
         
@@ -126,7 +124,7 @@ namespace xtd {
         /// @param array_index The zero-based index in `array` at which copying begins.
         /// @exception xtd::argument_exception The number of elements in the source xtd::collections::concurrent::concurrent_queue <type_t> is greater than the available space from `array_index` to the end of the destination `array`.
         auto copy_to(xtd::array<value_type>& array, xtd::usize array_index) const -> void override {
-          lock_guard_(items_)
+          auto lock = xtd::threading::lock_guard {items_};
           items_.copy_to(array, array_index);
         }
         
@@ -134,7 +132,7 @@ namespace xtd {
         /// @param item The object to add to the xtd::collections::concurrent::concurrent_queue <type_t>.
         /// @exception xtd::not_supported_exception The xtd::collections::concurrent::concurrent_queue <type_t> is read-only.
         virtual auto enqueue(const_reference item) -> void {
-          lock_guard_(items_)
+          auto lock = xtd::threading::lock_guard {items_};
           items_.enqueue(item);
         }
         
@@ -151,9 +149,8 @@ namespace xtd {
         /// @return A new array containing the elements copied from the xtd::collections::concurrent::iproducer_consumer_collection <type_t.
         /// @remarks The method provides a snapshot of the underlying collection. It is possible for other threads to add or remove items immediately after the array is made.
         [[nodiscard]] auto to_array() const -> xtd::array<value_type> override {
-          lock_guard_(items_)
+          auto lock = xtd::threading::lock_guard {items_};
           return items_.to_array();
-          return {};
         }
         
         /// @brief Returns a xtd::string that represents the current object.
@@ -166,18 +163,16 @@ namespace xtd {
         /// @param item When this method returns, if the operation was successful, result contains the object removed. If no object was available to be removed, the value is unspecified.
         /// @return `true` if an element was removed and returned from the beginning of the xtd::collections::concurrent::concurrent_queue <type_t> successfully; otherwise, `false`.
         virtual auto try_dequeue(reference result) -> bool {
-          lock_guard_(items_)
+          auto lock = xtd::threading::lock_guard {items_};
           return items_.try_dequeue(result);
-          return false;
         }
         
         /// @brief Tries to return an object from the beginning of the xtd::collections::concurrent::concurrent_queue <type_t> without removing it.
         /// @param result When this method returns, result contains an object from the beginning of the xtd::collections::concurrent::concurrent_queue <type_t> or an unspecified value if the operation failed.
         /// @return `true` if an object was returned successfully; otherwise, `false`.
         auto try_peek(reference result) const -> bool {
-          lock_guard_(items_)
+          auto lock = xtd::threading::lock_guard {items_};
           return items_.try_peek(result);
-          return false;
         }
         /// @}
         

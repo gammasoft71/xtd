@@ -145,10 +145,9 @@ namespace xtd {
         /// @remarks The method provides a snapshot of the underlying collection. It is possible for other threads to add or remove items immediately after the array is made.
         [[nodiscard]] auto to_array() const -> xtd::array<value_type> override {
           auto result = xtd::collections::generic::list<value_type> {};
-          lock_guard_(storages_) {
-            for (const auto& [thread_id, storage] : storages_)
-              result.add_range(*storage);
-          }
+          auto lock = xtd::threading::lock_guard {storages_};
+          for (const auto& [thread_id, storage] : storages_)
+            result.add_range(*storage);
           return result.to_array();
         }
         
@@ -171,11 +170,9 @@ namespace xtd {
         /// @return `true` if an object was returned successfully; otherwise, `false`.
         auto try_peek(reference item) const -> bool {
           if (current_local_storage()->count()) return current_local_storage()->try_peek(item);
-          lock_guard_(storages_) {
-            for (auto& [thread_id, storage] : storages_) {
-              if (storage->count()) return storage->try_peek(item);
-            }
-          }
+          auto lock = xtd::threading::lock_guard {storages_};
+          for (auto& [thread_id, storage] : storages_)
+            if (storage->count()) return storage->try_peek(item);
           return false;
         }
         
@@ -190,14 +187,13 @@ namespace xtd {
               return true;
             }
           }
-          lock_guard_(storages_) {
-            for (auto& [thread_id, storage] : storages_) {
-              if (storage->count()) {
-                auto result = storage->try_dequeue(item);
-                if (result) {
-                  xtd::threading::interlocked::decrement(count_);
-                  return true;
-                }
+          auto lock = xtd::threading::lock_guard {storages_};
+          for (auto& [thread_id, storage] : storages_) {
+            if (storage->count()) {
+              auto result = storage->try_dequeue(item);
+              if (result) {
+                xtd::threading::interlocked::decrement(count_);
+                return true;
               }
             }
           }
@@ -212,14 +208,12 @@ namespace xtd {
         
         auto current_local_storage() const -> local_storage_type {
           if (thread_local_storages_.contains_key(instance_id_)) return thread_local_storages_[instance_id_];
-          lock_guard_(storages_) {
-            auto id = xtd::threading::thread::current_thread().thread_id();
-            if (!storages_.contains_key(id)) storages_.add(id, new_ptr<collection_type>());
-            auto storage = storages_[id].get();
-            thread_local_storages_[instance_id_] = storage;
-            return storage;
-          }
-          return thread_local_storages_[instance_id_];
+          auto lock = xtd::threading::lock_guard {storages_};
+          auto id = xtd::threading::thread::current_thread().thread_id();
+          if (!storages_.contains_key(id)) storages_.add(id, new_ptr<collection_type>());
+          auto storage = storages_[id].get();
+          thread_local_storages_[instance_id_] = storage;
+          return storage;
         }
 
         inline static thread_local xtd::collections::generic::dictionary<xtd::uint64, local_storage_type> thread_local_storages_;

@@ -66,14 +66,14 @@ namespace xtd {
         /// @brief Initializes a new instance of the xtd::collections::concurrent::concurrent_dictionary<key_t,value_t> class that contains elements copied from the specified xtd::collections::generic::ienumerable<value_type>, has the default concurrency level, has the default initial capacity, and uses the default comparer for the key type.
         /// @param collection The xtd::collections::generic::ienumerable<value_type> whose elements are copied to the new xtd::collections::concurrent::concurrent_dictionary<key_t,value_t>.
         concurrent_dictionary(xtd::collections::generic::ienumerable<value_type>&& collection) {
-          lock_guard_(items_)
+          auto lock = xtd::threading::lock_guard {items_};
           for (const auto& item : collection)
             items_.add(item);
         }
         /// @brief Initializes a new instance of the xtd::collections::concurrent::concurrent_dictionary<key_t,value_t> class that contains elements copied from the specified xtd::iterable, has the default concurrency level, has the default initial capacity, and uses the default comparer for the key type.
         /// @param collection The xtd::iterable whose elements are copied to the new xtd::collections::concurrent::concurrent_dictionary<key_t,value_t>.
         concurrent_dictionary(xtd::iterable auto&& collection) {
-          lock_guard_(items_)
+          auto lock = xtd::threading::lock_guard {items_};
           for (const auto& item : collection)
             items_add(item);
         }
@@ -84,7 +84,7 @@ namespace xtd {
         /// @param collection The xtd::collections::generic::ienumerable<value_type> whose elements are copied to the new xtd::collections::concurrent::concurrent_dictionary<key_t,value_t>.
         /// @param comparer The equality comparison implementation to use when comparing keys.
         concurrent_dictionary(xtd::collections::generic::ienumerable<value_type>&& collection, const xtd::collections::generic::iequality_comparer<key_type>& comparer) : items_ {comparer} {
-          lock_guard_(items_)
+          auto lock = xtd::threading::lock_guard {items_};
           for (const auto& item : collection)
             items_.add(item);
         }
@@ -92,7 +92,7 @@ namespace xtd {
         /// @param collection The xtd::iterable whose elements are copied to the new xtd::collections::concurrent::concurrent_dictionary<key_t,value_t>.
         /// @param comparer The equality comparison implementation to use when comparing keys.
         concurrent_dictionary(xtd::iterable auto&& collection, const xtd::collections::generic::iequality_comparer<key_type>& comparer) : items_ {comparer} {
-          lock_guard_(items_)
+          auto lock = xtd::threading::lock_guard {items_};
           for (const auto& item : collection)
             items_add(item);
         }
@@ -105,7 +105,7 @@ namespace xtd {
         /// @param collection The xtd::collections::generic::ienumerable<value_type> whose elements are copied to the new xtd::collections::concurrent::concurrent_dictionary<key_t,value_t>.
         /// @param comparer The equality comparison implementation to use when comparing keys.
         concurrent_dictionary(xtd::usize concurrent_level, xtd::collections::generic::ienumerable<value_type>&& collection, const xtd::collections::generic::iequality_comparer<key_type>& comparer) : items_ {comparer} {
-          lock_guard_(items_)
+          auto lock = xtd::threading::lock_guard {items_};
           for (const auto& item : collection)
             items_.add(item);
         }
@@ -114,7 +114,7 @@ namespace xtd {
         /// @param collection The xtd::iterable whose elements are copied to the new xtd::collections::concurrent::concurrent_dictionary<key_t,value_t>.
         /// @param comparer The equality comparison implementation to use when comparing keys.
         concurrent_dictionary(xtd::usize concurrent_level, xtd::iterable auto&& collection, const xtd::collections::generic::iequality_comparer<key_type>& comparer) : items_ {comparer} {
-          lock_guard_(items_)
+          auto lock = xtd::threading::lock_guard {items_};
           for (const auto& item : collection)
             items_add(item);
         }
@@ -131,20 +131,18 @@ namespace xtd {
         /// concurrent_dictionary(init.begin(), init.end())
         /// ```
         concurrent_dictionary(std::initializer_list<std::pair<key_t, value_t>> items) {
-          lock_guard_(items_) {
-            items_.ensure_capacity(items.size());
-            for (const auto& [key, value] : items)
-              items_.add(key, value);
-          }
+          auto lock = xtd::threading::lock_guard {items_};
+          items_.ensure_capacity(items.size());
+          for (const auto& [key, value] : items)
+            items_.add(key, value);
         }
         /// @brief Constructs the container with the contents of the specified initializer list, and allocator.
         /// @param items The initializer list to initialize the elements of the container with.
         concurrent_dictionary(std::initializer_list<value_type> items) {
-          lock_guard_(items_) {
-            items_.ensure_capacity(items.size());
-            for (const auto& item : items)
-              items_.add(item);
-          }
+          auto lock = xtd::threading::lock_guard {items_};
+          items_.ensure_capacity(items.size());
+          for (const auto& item : items)
+            items_.add(item);
         }
         /// @}
         
@@ -161,18 +159,16 @@ namespace xtd {
         /// @brief Gets the number of elements contained in the xtd::collections::generic::icollection.
         /// @return The number of elements contained in the xtd::collections::generic::icollection.
         [[nodiscard]] auto count() const noexcept -> xtd::usize override {
-          lock_guard_(items_)
-            return items_.count();
-          xtd::environment::unreachable();
+          auto lock = xtd::threading::lock_guard {items_};
+          return items_.count();
         }
         
         /// @brief Gets a value that indicates whether the xtd::collections::concurrent::concurrent_dictionary <key_t, value_t> is empty.
         /// @return `true` if the xtd::collections::concurrent::concurrent_dictionary <key_t, value_t> is empty; otherwise, `false`.
         /// @remarks or determining whether the collection contains any items, use of this property is recommended rather than retrieving the number of items from the xtd::collections::concurrent::concurrent_dictionary::count property and comparing it to 0. However, as this collection is intended to be accessed concurrently, it may be the case that another thread will modify the collection after xtd::collections::concurrent::concurrent_dictionary::is_empty returns, thus invalidating the result.
         [[nodiscard]] auto is_empty() const noexcept -> bool {
-          lock_guard_(items_)
-            return items_.is_empty();
-          xtd::environment::unreachable();
+          auto lock = xtd::threading::lock_guard {items_};
+          return items_.is_empty();
         }
         
         /// @brief Gets a value indicating whether the xtd::collections::concurrent::concurrent_dictionary <key_t, value_t> is read-only.
@@ -200,18 +196,16 @@ namespace xtd {
         /// @return A collection of keys in the xtd::collections::generic::ictionary<key_t,value_t>.
         /// @remarks The property returns a copy of all the keys. It's not kept in sync with xtd::collections::concurrent::concurrent_dictionary<key_t,value_t>.
         auto keys() const noexcept -> key_collection override {
-          lock_guard_(items_)
-            return items_.keys();
-          xtd::environment::unreachable();
+          auto lock = xtd::threading::lock_guard {items_};
+          return items_.keys();
         }
         
         /// @brief Gets a collection that contains the values in the xtd::collections::generic::ictionary<key_t,value_t>.
         /// @return A collection that contains the values in the xtd::collections::generic::ictionary<key_t,value_t>.
         /// @remarks The property returns a copy of all the values. It's not kept in sync with xtd::collections::concurrent::concurrent_dictionary<key_t,value_t>.
         auto values() const noexcept -> value_collection override {
-          lock_guard_(items_)
-            return items_.values();
-          xtd::environment::unreachable();
+          auto lock = xtd::threading::lock_guard {items_};
+          return items_.values();
         }
         /// @}
         
@@ -225,12 +219,10 @@ namespace xtd {
         /// @return The new value for the key. This will be either be the result of `add_value_factory` (if the key was absent) or the result of `update_value_factory` (if the key was present).
         /// @remarks If you call xtd::collections::concurrent::concurrent_dictionary::add_or_update simultaneously on different threads, addValueFactory may be called multiple times, but its key/value pair might not be added to the dictionary for every call.
         auto add_or_update(const key_t& key, xtd::callable<value_t, key_t> auto&& add_value_factory, xtd::callable<value_t, key_t, value_t> auto&& update_value_factory) -> const value_t& {
-          lock_guard_(items_) {
-            if (!items_.contains_key(key)) items_.add(key, add_value_factory(key));
-            else items_[key] = update_value_factory(key, items_[key]);
-            return items_[key];
-          }
-          xtd::environment::unreachable();
+          auto lock = xtd::threading::lock_guard {items_};
+          if (!items_.contains_key(key)) items_.add(key, add_value_factory(key));
+          else items_[key] = update_value_factory(key, items_[key]);
+          return items_[key];
         }
         /// @brief Adds a key/value pair to the xtd::collections::concurrent::concurrent_dictionary<key_t,value_t> if the key does not already exist, or updates a key/value pair in the xtd::collections::concurrent::concurrent_dictionary<key_t,value_t> by using the specified function if the key already exists.
         /// @param key The key to be added or whose value should be updated.
@@ -238,12 +230,10 @@ namespace xtd {
         /// @param update_value_factory The function used to generate a new value for an existing key based on the key's existing value.
         /// @return The new value for the key. This will be either be `add_value` (if the key was absent) or the result of `update_value_factory` (if the key was present).
         auto add_or_update(const key_t& key, const value_t& add_value, xtd::callable<value_t, key_t, value_t> auto&& update_value_factory) -> const value_t& {
-          lock_guard_(items_) {
-            if (!items_.contains_key(key)) items_.add(key, add_value);
-            else items_[key] = update_value_factory(key, items_[key]);
-            return items_[key];
-          }
-          xtd::environment::unreachable();
+          auto lock = xtd::threading::lock_guard {items_};
+          if (!items_.contains_key(key)) items_.add(key, add_value);
+          else items_[key] = update_value_factory(key, items_[key]);
+          return items_[key];
         }
         /// @brief Uses the specified functions and argument to add a key/value pair to the xtd::collections::concurrent::concurrent_dictionary<key_t,value_t> if the key does not already exist, or to update a key/value pair in the xtd::collections::concurrent::concurrent_dictionary<key_t,value_t> if the key already exists.
         /// @param key The key to be added or whose value should be updated.
@@ -254,27 +244,24 @@ namespace xtd {
         /// @remarks If you call xtd::collections::concurrent::concurrent_dictionary::add_or_update simultaneously on different threads, addValueFactory may be called multiple times, but its key/value pair might not be added to the dictionary for every call.
         template<typename arg_t>
         auto add_or_update(const key_t& key, xtd::callable<value_t, key_t, arg_t> auto&& add_value_factory, xtd::callable<value_t, key_t, value_t, arg_t> auto&& update_value_factory, arg_t&& factory_argument) -> const value_t& {
-          lock_guard_(items_) {
-            if (!items_.contains_key(key)) items_.add(key, add_value_factory(key, factory_argument));
-            else items_[key] = update_value_factory(key, items_[key], factory_argument);
-            return items_[key];
-          }
-          xtd::environment::unreachable();
+          auto lock = xtd::threading::lock_guard {items_};
+          if (!items_.contains_key(key)) items_.add(key, add_value_factory(key, factory_argument));
+          else items_[key] = update_value_factory(key, items_[key], factory_argument);
+          return items_[key];
         }
 
         /// @brief Removes all keys and values from the xtd::collections::concurrent::concurrent_dictionary<key_t,value_t>.
         auto clear() -> void override {
-          lock_guard_(items_)
-            items_.clear();
+          auto lock = xtd::threading::lock_guard {items_};
+          items_.clear();
         }
         
         /// @brief Determines whether the xtd::collections::concurrent::concurrent_dictionary<key_t,value_t> contains the specified key.
         /// @param key The key to locate in the xtd::collections::concurrent::concurrent_dictionary<key_t,value_t>.
         /// @return `true` if the xtd::collections::concurrent::concurrent_dictionary<key_t,value_t> contains an element with the specified key; otherwise, `false`.
         auto contains_key(const key_t& key) const noexcept -> bool override {
-          lock_guard_(items_)
-            return items_.contains_key(key);
-          xtd::environment::unreachable();
+          auto lock = xtd::threading::lock_guard {items_};
+          return items_.contains_key(key);
         }
         
         /// @brief Copies the elements of the xtd::collections::concurrent::concurrent_dictionary <key_t, value_t> to an xtd::array, starting at a particular xtd::array index.
@@ -282,8 +269,8 @@ namespace xtd {
         /// @param array_index The zero-based index in `array` at which copying begins.
         /// @exception xtd::argument_exception The number of elements in the source xtd::collections::concurrent::concurrent_dictionary <key_t, value_t> is greater than the available space from `array_index` to the end of the destination `array`.
         auto copy_to(xtd::array<value_type>& array, xtd::usize array_index) const -> void override {
-          lock_guard_(items_)
-            items_.copy_to(array, array_index);
+          auto lock = xtd::threading::lock_guard {items_};
+          items_.copy_to(array, array_index);
         }
         
         /// @brief Returns an enumerator that iterates through a collection.
@@ -300,22 +287,18 @@ namespace xtd {
         /// @param ad_value_factory The function used to generate a value for the key.
         /// @return The value for the key. This will be either the existing value for the key if the key is already in the dictionary, or the new value if the key was not in the dictionary.
         [[nodiscard]] auto get_or_add(const key_t& key, xtd::callable<value_t, key_t> auto&& add_value_factory) -> const value_t& {
-          lock_guard_(items_) {
-            if (!items_.contains_key(key)) items_.add(key, add_value_factory(key));
-            return items_[key];
-          }
-          xtd::environment::unreachable();
+          auto lock = xtd::threading::lock_guard {items_};
+          if (!items_.contains_key(key)) items_.add(key, add_value_factory(key));
+          return items_[key];
         }
         /// @brief Adds a key/value pair to the xtd::collections::concurrent::concurrent_dictionary <key_t, value_t> if the key does not already exist. Returns the new value, or the existing value if the key exists.
         /// @param key  The key of the element to add.
         /// @param add_value The value to be added, if the key does not already exist.
         /// @return The value for the key. This will be either the existing value for the key if the key is already in the dictionary, or the new value if the key was not in the dictionary.
         [[nodiscard]] auto get_or_add(const key_t& key, const value_t& add_value) -> const value_t& {
-          lock_guard_(items_) {
-            if (!items_.contains_key(key)) items_.add(key, add_value);
-            return items_[key];
-          }
-          xtd::environment::unreachable();
+          auto lock = xtd::threading::lock_guard {items_};
+          if (!items_.contains_key(key)) items_.add(key, add_value);
+          return items_[key];
         }
         /// @brief Adds a key/value pair to the xtd::collections::concurrent::concurrent_dictionary <key_t, value_t> by using the specified function and an argument if the key does not already exist, or returns the existing value if the key exists.
         /// @param key The key of the element to add.
@@ -324,20 +307,17 @@ namespace xtd {
         /// @return The value for the key. This will be either the existing value for the key if the key is already in the dictionary, or the new value if the key was not in the dictionary.
         template<typename arg_t>
         [[nodiscard]] auto get_or_add(const key_t& key, xtd::callable<value_t, key_t, arg_t> auto&& add_value_factory, arg_t&& factory_argument) -> const value_t& {
-          lock_guard_(items_) {
-            if (!items_.contains_key(key)) items_.add(key, add_value_factory(key, factory_argument));
-            return items_[key];
-          }
-          xtd::environment::unreachable();
+          auto lock = xtd::threading::lock_guard {items_};
+          if (!items_.contains_key(key)) items_.add(key, add_value_factory(key, factory_argument));
+          return items_[key];
         }
 
         /// @brief Copies the elements contained in the xtd::collections::concurrent::concurrent_dictionary <key_t, value_t> to a new array.
         /// @return A new array containing the elements copied from the xtd::collections::concurrent::iproducer_consumer_collection <type_t.
         /// @remarks The method provides a snapshot of the underlying collection. It is possible for other threads to add or remove items immediately after the array is made.
         [[nodiscard]] auto to_array() const -> xtd::array<value_type> {
-          lock_guard_(items_)
-            return items_.to_array();
-          xtd::environment::unreachable();
+          auto lock = xtd::threading::lock_guard {items_};
+          return items_.to_array();
         }
         
         /// @brief Returns a xtd::string that represents the current object.
@@ -351,21 +331,18 @@ namespace xtd {
         /// @param value The value of the element to add. The value can be null for reference types.
         /// @return `true` if the key/value pair was added to the xtd::collections::concurrent::concurrent_dictionary<key_t,value_t> successfully; `false` if the key already exists.
         auto try_add(const key_t& key, const value_t& value) -> bool {
-          lock_guard_(items_) {
-            if (items_.contains_key(key)) return false;
-            items_.add(key, value);
-            return true;
-          }
-          xtd::environment::unreachable();
+          auto lock = xtd::threading::lock_guard {items_};
+          if (items_.contains_key(key)) return false;
+          items_.add(key, value);
+          return true;
         }
         
         /// @brief Attempts to get the value associated with the specified key from the xtd::collections::concurrent::concurrent_dictionary <key_t,value_t>.
         /// @param key The key of the value to get.
         /// @return value When this method returns, contains the object from the xtd::collections::concurrent::concurrent_dictionary<key_t,value_t> that has the specified key, or the default value of the type if the operation failed.
         auto try_get_value(const key_t& key, value_t& value) const -> bool override {
-          lock_guard_(items_)
-            return items_.try_get_value(key, value);
-          xtd::environment::unreachable();
+          auto lock = xtd::threading::lock_guard {items_};
+          return items_.try_get_value(key, value);
         }
 
         /// @brief Attempts to remove and return the value that has the specified key from the xtd::collections::concurrent::concurrent_dictionary <key_t,value_t>.
@@ -380,11 +357,9 @@ namespace xtd {
         /// @param value When this method returns, contains the object removed from the xtd::collections::concurrent::concurrent_dictionary <key_t,value_t>, or the default value of the `value_t` type if key does not exist.
         /// @return `true` if the object was removed successfully; otherwise, `false`.
         auto try_remove(const key_t& key, value_t& value) -> bool {
-          lock_guard_(items_) {
-            if (!items_.try_get_value(key, value)) return false;
-            return items_.remove(key);
-          }
-          xtd::environment::unreachable();
+          auto lock = xtd::threading::lock_guard {items_};
+          if (!items_.try_get_value(key, value)) return false;
+          return items_.remove(key);
         }
         /// @brief Removes a key and value from the dictionary.
         /// @pram item The xtd::collections::generic::key_value_pair<key_t,value_t> representing the key and value to remove.
@@ -392,11 +367,9 @@ namespace xtd {
         /// @remarks Both the specifed key and value must match the entry in the dictionary for it to be removed.
         /// @remarks The key is compared using the dictionary's comparer (or the default comparer for `key_t` if no comparer was provided to the dictionary when it was constructed). The value is compared using the default comparer for `value_t`.
         auto try_remove(const xtd::collections::generic::key_value_pair<key_t, value_t>& item) -> bool {
-          lock_guard_(items_) {
-            if (!items_.contains(item)) return false;
-            return items_.remove(item);
-          }
-          xtd::environment::unreachable();
+          auto lock = xtd::threading::lock_guard {items_};
+          if (!items_.contains(item)) return false;
+          return items_.remove(item);
         }
         
         /// @brief Updates the value associated with key to `new_value` if the existing value with `key` is equal to `comparison_value`.
@@ -405,12 +378,10 @@ namespace xtd {
         /// @param comparison_value The value that is compared with the value of the element that has the specified `key`.
         /// @return `true` if the value with key was equal to `comparison_value` and was replaced with `new_value`; otherwise, `false`.
         auto try_update(const key_t& key, const value_t& new_value, const value_t& comparison_value) -> bool {
-          lock_guard_(items_) {
-            if (!items_.contains({key, comparison_value})) return false;
-            items_[key] = new_value;
-            return true;
-          }
-          xtd::environment::unreachable();
+          auto lock = xtd::threading::lock_guard {items_};
+          if (!items_.contains({key, comparison_value})) return false;
+          items_[key] = new_value;
+          return true;
         }
         /// @}
         
@@ -425,9 +396,8 @@ namespace xtd {
         /// @remarks This property provides the ability to access a specific element in the collection by using the following syntax: `my_collection[key]`.
         /// @remarks You can also use the `operator []` to add new elements by setting the value of a key that does not exist in the dictionary; for example, `my_collection["my_nonexistent_key"] = my_value`. However, if the specified key already exists in the dictionary, setting the `operator []` overwrites the old value. In contrast, the xtd::collections::generic::dictionary::add method does not modify existing elements.
         auto operator [](const key_t& key) const -> const value_t& override {
-          lock_guard_(items_)
-            return items_.operator [](key);
-          xtd::environment::unreachable();
+          auto lock = xtd::threading::lock_guard {items_};
+          return items_.operator [](key);
         }
         /// @brief Sets the element with the specified key.
         /// @param key The key of the element to set.
@@ -436,9 +406,8 @@ namespace xtd {
         /// @remarks This property provides the ability to access a specific element in the collection by using the following syntax: `my_collection[key]`.
         /// @remarks You can also use the `operator []` to add new elements by setting the value of a key that does not exist in the dictionary; for example, `my_collection["my_nonexistent_key"] = my_value`. However, if the specified key already exists in the dictionary, setting the `operator []` overwrites the old value. In contrast, the xtd::collections::generic::dictionary::add method does not modify existing elements.
         auto operator [](const key_t& key) -> value_t& override {
-          lock_guard_(items_)
-            return items_.operator [](key);
-          xtd::environment::unreachable();
+          auto lock = xtd::threading::lock_guard {items_};
+          return items_.operator [](key);
         }
         /// @}
         
@@ -446,30 +415,27 @@ namespace xtd {
         auto sync_root() const noexcept -> const xtd::object& override {return xtd::as<xtd::collections::generic::idictionary<key_t, value_t>>(items_).sync_root();}
         
         auto add(const xtd::collections::generic::key_value_pair<key_t, value_t>& item) -> void override {
-          lock_guard_(items_)
-            items_.add(item);
+          auto lock = xtd::threading::lock_guard {items_};
+          items_.add(item);
         }
         auto add(const key_t& key, const value_t& value) -> void override {
-          lock_guard_(items_)
-            items_.add(key, value);
+          auto lock = xtd::threading::lock_guard {items_};
+          items_.add(key, value);
         }
         
         auto contains(const xtd::collections::generic::key_value_pair<key_t, value_t>& item) const noexcept -> bool override {
-          lock_guard_(items_)
-            return items_.contains(item);
-          xtd::environment::unreachable();
+          auto lock = xtd::threading::lock_guard {items_};
+          return items_.contains(item);
         }
 
         auto remove(const xtd::collections::generic::key_value_pair<key_t, value_t>& item) -> bool override {
-          lock_guard_(items_)
-            return items_.remove(item);
-          xtd::environment::unreachable();
+          auto lock = xtd::threading::lock_guard {items_};
+          return items_.remove(item);
         }
         
         auto remove(const key_t& key) noexcept -> bool override {
-          lock_guard_(items_)
-            return items_.remove(key);
-          xtd::environment::unreachable();
+          auto lock = xtd::threading::lock_guard {items_};
+          return items_.remove(key);
         }
         
         collection_type items_;
