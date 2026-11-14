@@ -78,6 +78,17 @@ namespace xtd {
     /// The following example saves the values of the xtd::console_color enumeration to an array and stores the current values of the xtd::console::background_color and xtd::console::foreground_color properties to variables. It then changes the foreground color to each color in the xtd::console_color enumeration except to the color that matches the current background, and it changes the background color to each color in the xtd::console_color enumeration except to the color that matches the current foreground. (If the foreground color is the same as the background color, the text isn't visible.) Finally, it calls the xtd::console::reset_color method to restore the original console colors.
     /// @include console_color2.cpp
     static auto background_color(console_color color) -> void;
+    /// @brief Sets the background color of the console.
+    /// @param r The R component of RGB color.
+    /// @param g The G component of RGB color.
+    /// @param b The B component of RGB color.
+    /// @remarks This method is available only if xtd::console::is_ansi_escape_sequence_supported return `true`otherwise this method has no effect.
+     static auto background_color(xtd::byte r, xtd::byte g, xtd::byte b) -> void;
+    /// @brief Sets the background color of the console.
+    /// @param color The RGB color.
+    /// @remarks This method is available only if xtd::console::is_ansi_escape_sequence_supported return `true`otherwise this method has no effect.
+    /// @remarks If the specified color is in ARGB format, the alpha component is ignored.
+    static auto background_color(xtd::uint32 color) -> void;
     
     /// @brief Gets the height of the buffer area.
     /// @return The current height, in rows, of the buffer area.
@@ -180,6 +191,17 @@ namespace xtd {
     /// The following example saves the values of the console_color enumeration to an array and stores the current values of the background_color and foreground_color properties to variables. It then changes the foreground color to each color in the ConsoleColor enumeration except to the color that matches the current background, and it changes the background color to each color in the console_color enumeration except to the color that matches the current foreground. (If the foreground color is the same as the background color, the text isn't visible.) Finally, it calls the reset_color method to restore the original console colors.
     /// @include console_color4.cpp
     static auto foreground_color(console_color color) -> bool;
+    /// @brief Sets the foreground color of the console.
+    /// @param r The R component of RGB color.
+    /// @param g The G component of RGB color.
+    /// @param b The B component of RGB color.
+    /// @remarks This method is available only if xtd::console::is_ansi_escape_sequence_supported return `true`otherwise this method has no effect.
+    static auto foreground_color(xtd::byte r, xtd::byte g, xtd::byte b) -> void;
+    /// @brief Sets the foreground color of the console.
+    /// @param color The RGB color.
+    /// @remarks This method is available only if xtd::console::is_ansi_escape_sequence_supported return `true`otherwise this method has no effect.
+    /// @remarks If the specified color is in ARGB format, the alpha component is ignored.
+    static auto foreground_color(xtd::uint32 color) -> void;
     
     /// @brief Gets the code page the console uses to read input.
     /// @return The code page used to read console input.
@@ -213,7 +235,11 @@ namespace xtd {
     /// | 65000     | utf-7      | Unicode (UTF-7)             |
     /// | 65001     | utf-8      | Unicode (UTF-8)             |
     static auto input_code_page(int32 code_page) -> void;
-    
+
+    /// @brief Gets a value indicating whether a ANSI escape sequence is supported.
+    /// @return `true` if ANSI escape sequence is supported; otherwise, `false`
+    [[nodiscard]] static auto is_ansi_escape_sequence_supported() noexcept -> bool;
+
     /// @brief Gets a value that indicates whether the error output stream has been redirected from the standard error stream.
     /// @return `true` if error output is redirected; otherwise, `false`.
     [[nodiscard]] static auto is_error_redirected() -> bool;

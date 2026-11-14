@@ -21,6 +21,17 @@ using namespace xtd::io;
 using namespace xtd::threading;
 
 namespace {
+  struct __argb {
+    xtd::byte a = 0;
+    xtd::byte r = 0;
+    xtd::byte g = 0;
+    xtd::byte b = 0;
+    
+    [[nodiscard]] static auto from_uint32(xtd::uint32 value) noexcept -> __argb {
+      return __argb {.a = static_cast<xtd::byte>((value & 0xFF000000) >> 24), .r = static_cast<xtd::byte>((value & 0x00FF0000) >> 16), .g = static_cast<xtd::byte>((value & 0x0000FF00) >> 8), .b = static_cast<xtd::byte>(value & 0x000000FF)};
+    }
+  };
+
   std::streambuf* __get_err_rdbuf() {
     static auto rdbuf = std::cerr.rdbuf();
     return rdbuf;
@@ -63,6 +74,18 @@ void console::background_color(console_color color) {
   register_cancel_key_press(); // Must be first...
   native::console::background_color(as<int32>(color));
 }
+
+auto console::background_color(byte r, byte g, byte b) -> void {
+  if (!xtd::console::is_ansi_escape_sequence_supported()) return;
+  xtd::console::out << xtd::string::format("\x1b[48;2;{};{};{}m", r, g, b);
+  xtd::console::out.flush();
+}
+
+auto console::background_color(uint32 color) -> void {
+  auto [_, r, g, b] = __argb::from_uint32(color);
+  background_color(r, g, b);
+}
+
 
 int32 console::buffer_height() {
   register_cancel_key_press(); // Must be first...
@@ -143,6 +166,17 @@ bool console::foreground_color(console_color color) {
   return native::console::foreground_color(as<int32>(color));
 }
 
+auto console::foreground_color(byte r, byte g, byte b) -> void {
+  if (!xtd::console::is_ansi_escape_sequence_supported()) return;
+  xtd::console::out << xtd::string::format("\x1b[38;2;{};{};{}m", r, g, b);
+  xtd::console::out.flush();
+}
+
+auto console::foreground_color(uint32 color) -> void {
+  auto [_, r, g, b] = __argb::from_uint32(color);
+  foreground_color(r, g, b);
+}
+
 int32 console::input_code_page() {
   register_cancel_key_press(); // Must be first...
   return native::console::input_code_page();
@@ -151,6 +185,10 @@ int32 console::input_code_page() {
 void console::input_code_page(int32 code_page) {
   register_cancel_key_press(); // Must be first...
   if (!native::console::input_code_page(code_page)) throw_helper::throws(exception_case::io);
+}
+
+[[nodiscard]] auto console::is_ansi_escape_sequence_supported() noexcept -> bool {
+  return native::console::is_ansi_escape_sequence_supported();
 }
 
 bool console::is_error_redirected() {
