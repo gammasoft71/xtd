@@ -69,6 +69,7 @@ namespace {
   auto window_left = 0;
   auto window_top = 0;
   auto window_width = -1;
+  auto disable_virtual_terminal_processing_on_reset_console = false;
   
   bool is_windows_terminal() {
     return std::getenv("WT_SESSION") != nullptr;
@@ -223,6 +224,19 @@ bool console::input_code_page(int32_t code_page) {
   return SetConsoleCP(code_page) == TRUE;
 }
 
+[[nodiscard]] auto console::is_ansi_escape_sequence_supported() noexcept -> bool {
+  const char* no_color = std::getenv("NO_COLOR");
+  if (no_color != nullptr && no_color[0] != '\0') return false;
+  
+  auto mode = DWORD {};
+  if (!GetConsoleMode(GetStdHandle(STD_OUTPUT_HANDLE), &mode)) return false;
+  if ((mode & ENABLE_VIRTUAL_TERMINAL_PROCESSING) == ENABLE_VIRTUAL_TERMINAL_PROCESSING) return true;
+  
+  auto result = SetConsoleMode(GetStdHandle(STD_OUTPUT_HANDLE), mode | ENABLE_VIRTUAL_TERMINAL_PROCESSING) == TRUE;
+  disable_virtual_terminal_processing_on_reset_console = result;
+  return result;
+}
+
 bool console::key_available() {
   return _kbhit() != 0;
 }
@@ -279,7 +293,13 @@ bool console::reset_color() {
 }
 
 bool console::reset_console() {
-  return console::background_color(CONSOLE_COLOR_DEFAULT) && console::foreground_color(CONSOLE_COLOR_DEFAULT);
+  auto result = true;
+  if (disable_virtual_terminal_processing_on_reset_console) {
+    auto mode = DWORD {};
+    if (!GetConsoleMode(GetStdHandle(STD_OUTPUT_HANDLE), &mode)) result = false;
+    else result = SetConsoleMode(GetStdHandle(STD_OUTPUT_HANDLE), mode & ~ENABLE_VIRTUAL_TERMINAL_PROCESSING) == TRUE;
+  }
+  return result && console::background_color(CONSOLE_COLOR_DEFAULT) && console::foreground_color(CONSOLE_COLOR_DEFAULT);
 }
 
 void console::reset_terminal_mode() {

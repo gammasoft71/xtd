@@ -139,6 +139,11 @@ namespace xtd {
       /// @warning Internal use only
       static auto input_code_page(std::int32_t codePage) -> bool;
       
+      /// @brief Gets a value indicating whether a ANSI escape sequence is supported.
+      /// @return `true` if ANSI escape sequence is supported; otherwise, `false`
+      /// @warning Internal use only
+      [[nodiscard]] static auto is_ansi_escape_sequence_supported() noexcept -> bool;
+      
       /// @brief Gets a value indicating whether a key press is available in the input stream.
       /// @return `true` if a key press is available; otherwise, `false`
       /// @warning Internal use only

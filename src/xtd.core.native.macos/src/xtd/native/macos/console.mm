@@ -103,9 +103,19 @@ namespace {
       return tcsetattr(0, TCSANOW, &status) == 0;
     }
     
-    static auto is_ansi_supported() -> bool {
-      static auto terminal = std::string {getenv("TERM") == nullptr ? "" : getenv("TERM")};
-      return isatty(fileno(stdout)) && (terminal == "xterm" || terminal == "xterm-color" || terminal == "xterm-256color" || terminal == "screen" || terminal == "screen-256color" || terminal == "linux" || terminal == "cygwin");
+    static auto is_ansi_escape_sequence_supported() -> bool {
+      const char* no_color = std::getenv("NO_COLOR");
+      if (no_color != nullptr && no_color[0] != '\0') return false;
+      
+      if (!isatty(fileno(stdout))) return false;
+      
+      const char* term_env = std::getenv("TERM");
+      if (term_env == nullptr) return false;
+      
+      std::string_view term(term_env);
+      if (term.empty() || term == "dumb") return false;
+      
+      return true;
     }
     
     static auto reset_terminal_mode() -> void {
@@ -562,7 +572,7 @@ bool console::background_color(std::int32_t color) {
   auto it = colors.find(color);
   if (it == colors.end()) return false;
   ::background_color = color;
-  if (terminal::is_ansi_supported()) std::cout << it->second << std::flush;
+  if (terminal::is_ansi_escape_sequence_supported()) std::cout << it->second << std::flush;
   return true;
 }
 
@@ -703,12 +713,12 @@ bool console::caps_lock() {
 }
 
 bool console::clear() {
-  if (terminal::is_ansi_supported()) std::cout << "\x1b[H\x1b[2J" << std::flush;
+  if (terminal::is_ansi_escape_sequence_supported()) std::cout << "\x1b[H\x1b[2J" << std::flush;
   return set_cursor_position(0, 0);
 }
 
 int32_t console::cursor_left() {
-  if (!terminal::is_ansi_supported()) return ::cursor_left;
+  if (!terminal::is_ansi_escape_sequence_supported()) return ::cursor_left;
   std::cout << "\x1b[6n" << std::flush;
   terminal::getch();
   terminal::getch();
@@ -726,14 +736,14 @@ int32_t console::cursor_size() {
 
 bool console::cursor_size(std::int32_t size) {
   ::cursor_size = size;
-  if (!terminal::is_ansi_supported()) return true;
+  if (!terminal::is_ansi_escape_sequence_supported()) return true;
   if (size < 50) std::cout << "\x1b[4 q" << std::flush;
   else std::cout << "\x1b[2 q" << std::flush;
   return true;
 }
 
 int32_t console::cursor_top() {
-  if (!terminal::is_ansi_supported()) return ::cursor_top;
+  if (!terminal::is_ansi_escape_sequence_supported()) return ::cursor_top;
   std::cout << "\x1b[6n" << std::flush;
   terminal::getch();
   terminal::getch();
@@ -751,12 +761,12 @@ bool console::cursor_visible() {
 
 bool console::cursor_visible(bool visible) {
   ::cursor_visible = visible;
-  if (terminal::is_ansi_supported()) std::cout << (::cursor_visible ? "\x1b[?25h" : "\x1b[?25l") << std::flush;
+  if (terminal::is_ansi_escape_sequence_supported()) std::cout << (::cursor_visible ? "\x1b[?25h" : "\x1b[?25l") << std::flush;
   return true;
 }
 
 bool console::echo(bool on) {
-  if (!terminal::is_ansi_supported()) return false;
+  if (!terminal::is_ansi_escape_sequence_supported()) return false;
   return terminal::echo(on);
 }
 
@@ -769,7 +779,7 @@ bool console::foreground_color(std::int32_t color) {
   auto it = colors.find(color);
   if (it == colors.end()) return false;
   ::foreground_color = color;
-  if (terminal::is_ansi_supported()) std::cout << it->second << std::flush;
+  if (terminal::is_ansi_escape_sequence_supported()) std::cout << it->second << std::flush;
   return true;
 }
 
@@ -784,6 +794,10 @@ bool console::input_code_page(std::int32_t code_page) {
   // By default, the console input code page is in UTF-8.
   ::input_code_page = code_page;
   return true;
+}
+
+[[nodiscard]] auto console::is_ansi_escape_sequence_supported() noexcept -> bool {
+  return terminal::is_ansi_escape_sequence_supported();
 }
 
 bool console::key_available() {
@@ -845,7 +859,7 @@ void console::reset_terminal_mode() {
 bool console::set_cursor_position(std::int32_t left, std::int32_t top) {
   ::cursor_left = left;
   ::cursor_top = top;
-  if (terminal::is_ansi_supported()) std::cout << "\x1b[" << top + 1 << ";" << left + 1 << "f" << std::flush;
+  if (terminal::is_ansi_escape_sequence_supported()) std::cout << "\x1b[" << top + 1 << ";" << left + 1 << "f" << std::flush;
   return true;
 }
 
@@ -866,7 +880,7 @@ std::string console::title() {
 
 bool console::title(const std::string& title) {
   ::title = title;
-  if (terminal::is_ansi_supported()) std::cout << "\x1b]0;" << title.c_str() << "\x7" << std::flush;
+  if (terminal::is_ansi_escape_sequence_supported()) std::cout << "\x1b]0;" << title.c_str() << "\x7" << std::flush;
   return true;
 }
 
@@ -880,7 +894,7 @@ bool console::treat_control_c_as_input(bool treat_control_c_as_input) {
 }
 
 int32_t console::window_height() {
-  if (!terminal::is_ansi_supported()) return ::window_height;
+  if (!terminal::is_ansi_escape_sequence_supported()) return ::window_height;
   auto top = console::cursor_top();
   console::set_cursor_position(console::cursor_left(), 999);
   auto height = console::cursor_top() + 1;
@@ -918,7 +932,7 @@ bool console::window_top(std::int32_t top) {
 }
 
 int32_t console::window_width() {
-  if (!terminal::is_ansi_supported()) return ::window_width;
+  if (!terminal::is_ansi_escape_sequence_supported()) return ::window_width;
   auto left = console::cursor_left();
   console::set_cursor_position(999, console::cursor_top());
   auto width = console::cursor_left() + 1;
