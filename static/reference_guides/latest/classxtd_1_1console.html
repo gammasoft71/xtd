@@ -144,7 +144,7 @@ Inheritance diagram for xtd::console:</div>
 <div class="line"><span class="comment">// Enter your name: James</span></div>
 <div class="line"><span class="comment">// Good day, James!</span></div>
 <div class="ttc" id="aclassxtd_1_1console_html_a85d69fe536a28002ecdc2b52600a0530"><div class="ttname"><a href="#a85d69fe536a28002ecdc2b52600a0530">xtd::console::read_line</a></div><div class="ttdeci">static auto read_line() -&gt; xtd::string</div><div class="ttdoc">Reads the next line of characters from the standard input stream.</div></div>
-<div class="ttc" id="aclassxtd_1_1console_html_abd86463570c9aa0ca88ce4bb118aef7d"><div class="ttname"><a href="#abd86463570c9aa0ca88ce4bb118aef7d">xtd::console::write</a></div><div class="ttdeci">static auto write(arg_t &amp;&amp;value) -&gt; void</div><div class="ttdoc">Writes the text representation of the specified value to the standard output stream.</div><div class="ttdef"><b>Definition</b> console.hpp:516</div></div>
+<div class="ttc" id="aclassxtd_1_1console_html_abd86463570c9aa0ca88ce4bb118aef7d"><div class="ttname"><a href="#abd86463570c9aa0ca88ce4bb118aef7d">xtd::console::write</a></div><div class="ttdeci">static auto write(arg_t &amp;&amp;value) -&gt; void</div><div class="ttdoc">Writes the text representation of the specified value to the standard output stream.</div><div class="ttdef"><b>Definition</b> console.hpp:545</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae600c08b996905be13225bba0f253a63"><div class="ttname"><a href="#ae600c08b996905be13225bba0f253a63">xtd::console::write_line</a></div><div class="ttdeci">static auto write_line() -&gt; void</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
 </div><!-- fragment --> <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
@@ -166,8 +166,8 @@ Inheritance diagram for xtd::console:</div>
 <div class="line"><span class="comment">// What is your name: James</span></div>
 <div class="line"><span class="comment">// Buenos Dias, James!</span></div>
 <div class="ttc" id="aclassxtd_1_1basic__string_html_a0ae9e9b0cbe9df3f4fc03f7e4682ef2e"><div class="ttname"><a href="classxtd_1_1basic__string.html#a0ae9e9b0cbe9df3f4fc03f7e4682ef2e">xtd::basic_string&lt; char &gt;::empty_string</a></div><div class="ttdeci">static const basic_string empty_string</div><div class="ttdef"><b>Definition</b> basic_string.hpp:119</div></div>
-<div class="ttc" id="aclassxtd_1_1console_html_a7c103233b3e74cb63538b48616b7fd02"><div class="ttname"><a href="#a7c103233b3e74cb63538b48616b7fd02">xtd::console::in</a></div><div class="ttdeci">static std::istream in</div><div class="ttdoc">Gets the standard input stream. A std::basic_istream&lt;char_t&gt; that represents the standard input strea...</div><div class="ttdef"><b>Definition</b> console.hpp:48</div></div>
-<div class="ttc" id="aclassxtd_1_1console_html_a923837ac84baf01726703e0474ca4888"><div class="ttname"><a href="#a923837ac84baf01726703e0474ca4888">xtd::console::out</a></div><div class="ttdeci">static std::ostream out</div><div class="ttdoc">Gets the standard output stream. A std::basic_ostream&lt;char_t&gt; that represents the standard output str...</div><div class="ttdef"><b>Definition</b> console.hpp:53</div></div>
+<div class="ttc" id="aclassxtd_1_1console_html_a7c103233b3e74cb63538b48616b7fd02"><div class="ttname"><a href="#a7c103233b3e74cb63538b48616b7fd02">xtd::console::in</a></div><div class="ttdeci">static std::istream in</div><div class="ttdoc">Gets the standard input stream. A std::basic_istream&lt;char_t&gt; that represents the standard input strea...</div><div class="ttdef"><b>Definition</b> console.hpp:49</div></div>
+<div class="ttc" id="aclassxtd_1_1console_html_a923837ac84baf01726703e0474ca4888"><div class="ttname"><a href="#a923837ac84baf01726703e0474ca4888">xtd::console::out</a></div><div class="ttdeci">static std::ostream out</div><div class="ttdoc">Gets the standard output stream. A std::basic_ostream&lt;char_t&gt; that represents the standard output str...</div><div class="ttdef"><b>Definition</b> console.hpp:54</div></div>
 <div class="ttc" id="aclassxtd_1_1environment_html_af15178dea424d7fcfcbd7cecc9675466"><div class="ttname"><a href="classxtd_1_1environment.html#af15178dea424d7fcfcbd7cecc9675466">xtd::environment::new_line</a></div><div class="ttdeci">static auto new_line() noexcept -&gt; xtd::string</div><div class="ttdoc">Gets the newline string defined for this environment.</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ga59b26eda7fb7d0dc8c9968f4a2f78984"><div class="ttname"><a href="group__xtd__core.html#ga59b26eda7fb7d0dc8c9968f4a2f78984">xtd::is</a></div><div class="ttdeci">auto is(xtd::any value) -&gt; bool</div><div class="ttdoc">Checks if the result of an expression is compatible with a given type.</div><div class="ttdef"><b>Definition</b> is.hpp:485</div></div>
 </div><!-- fragment --> </dd></dl>
@@ -194,6 +194,10 @@ Public Static Properties</h2></td></tr>
 <tr class="memdesc:abe8758036403f32c5bc0a740a2bca15c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a value indicating whether the <a class="el" href="#a923837ac84baf01726703e0474ca4888" title="Gets the standard output stream. A std::basic_ostream&lt;char_t&gt; that represents the standard output str...">xtd::console::out</a> will flush its buffer to the underlying stream after every call to <a class="el" href="#abd86463570c9aa0ca88ce4bb118aef7d" title="Writes the text representation of the specified value to the standard output stream.">xtd::console::write</a> and <a class="el" href="#ae600c08b996905be13225bba0f253a63" title="Writes the current line terminator to the standard output stream using the specified format informati...">xtd::console::write_line</a>.  <br /></td></tr>
 <tr class="memitem:ac7748cc96e3a9175f09607742cf3e962" id="r_ac7748cc96e3a9175f09607742cf3e962"><td class="memItemLeft">static <a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a>&#160;</td><td class="memItemRight"><a class="el" href="#ac7748cc96e3a9175f09607742cf3e962">background_color</a> () -&gt; <a class="el" href="group__xtd__core.html#gab60a2a64b74b91771b667e4a079681f2">console_color</a></td></tr>
 <tr class="memdesc:ac7748cc96e3a9175f09607742cf3e962"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the background color of the console.  <br /></td></tr>
+<tr class="memitem:aad1d6e01ab07afc44d9367b347109875" id="r_aad1d6e01ab07afc44d9367b347109875"><td class="memItemLeft">static <a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a>&#160;</td><td class="memItemRight"><a class="el" href="#aad1d6e01ab07afc44d9367b347109875">background_color_rgb</a> ()</td></tr>
+<tr class="memdesc:aad1d6e01ab07afc44d9367b347109875"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the background color of the console.  <br /></td></tr>
+<tr class="memitem:a799da283b2e727ceeee2dd764fea9124" id="r_a799da283b2e727ceeee2dd764fea9124"><td class="memItemLeft">static <a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a>&#160;</td><td class="memItemRight"><a class="el" href="#a799da283b2e727ceeee2dd764fea9124">background_color_uint32</a> () -&gt; <a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">xtd::uint32</a></td></tr>
+<tr class="memdesc:a799da283b2e727ceeee2dd764fea9124"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the background color of the console.  <br /></td></tr>
 <tr class="memitem:a16b6ad1907d729856f48894f0bbe47b8" id="r_a16b6ad1907d729856f48894f0bbe47b8"><td class="memItemLeft">static <a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a>&#160;</td><td class="memItemRight"><a class="el" href="#a16b6ad1907d729856f48894f0bbe47b8">background_color</a> (<a class="el" href="group__xtd__core.html#gab60a2a64b74b91771b667e4a079681f2">console_color</a> color) -&gt; void</td></tr>
 <tr class="memdesc:a16b6ad1907d729856f48894f0bbe47b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the background color of the console.  <br /></td></tr>
 <tr class="memitem:aaf5d2d58fa4b6177013775cd10853a97" id="r_aaf5d2d58fa4b6177013775cd10853a97"><td class="memItemLeft">static <a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a>&#160;</td><td class="memItemRight"><a class="el" href="#aaf5d2d58fa4b6177013775cd10853a97">background_color</a> (<a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> r, <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> g, <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> b) -&gt; void</td></tr>
@@ -228,6 +232,10 @@ Public Static Properties</h2></td></tr>
 <tr class="memdesc:af334542eff987d979c1c93b37ff7584e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a value indicating whether the cursor is visible.  <br /></td></tr>
 <tr class="memitem:a356cc51385da6fa60e75d10a8c01b6ab" id="r_a356cc51385da6fa60e75d10a8c01b6ab"><td class="memItemLeft">static <a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a>&#160;</td><td class="memItemRight"><a class="el" href="#a356cc51385da6fa60e75d10a8c01b6ab">foreground_color</a> () -&gt; <a class="el" href="group__xtd__core.html#gab60a2a64b74b91771b667e4a079681f2">console_color</a></td></tr>
 <tr class="memdesc:a356cc51385da6fa60e75d10a8c01b6ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the foreground color of the console.  <br /></td></tr>
+<tr class="memitem:a640e9db18ff9817d18518d28f28b6640" id="r_a640e9db18ff9817d18518d28f28b6640"><td class="memItemLeft">static <a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a>&#160;</td><td class="memItemRight"><a class="el" href="#a640e9db18ff9817d18518d28f28b6640">foreground_color_rgb</a> ()</td></tr>
+<tr class="memdesc:a640e9db18ff9817d18518d28f28b6640"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the foreground color of the console.  <br /></td></tr>
+<tr class="memitem:a789389073d545c844fed4df9844f4136" id="r_a789389073d545c844fed4df9844f4136"><td class="memItemLeft">static <a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a>&#160;</td><td class="memItemRight"><a class="el" href="#a789389073d545c844fed4df9844f4136">foreground_color_uint32</a> () -&gt; <a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">xtd::uint32</a></td></tr>
+<tr class="memdesc:a789389073d545c844fed4df9844f4136"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the foreground color of the console.  <br /></td></tr>
 <tr class="memitem:a3bef1d89595f0546fb9ed888989c7dea" id="r_a3bef1d89595f0546fb9ed888989c7dea"><td class="memItemLeft">static <a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a>&#160;</td><td class="memItemRight"><a class="el" href="#a3bef1d89595f0546fb9ed888989c7dea">foreground_color</a> (<a class="el" href="group__xtd__core.html#gab60a2a64b74b91771b667e4a079681f2">console_color</a> color) -&gt; bool</td></tr>
 <tr class="memdesc:a3bef1d89595f0546fb9ed888989c7dea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the foreground color of the console.  <br /></td></tr>
 <tr class="memitem:acdda66d92889e86918f8628ed4006419" id="r_acdda66d92889e86918f8628ed4006419"><td class="memItemLeft">static <a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a>&#160;</td><td class="memItemRight"><a class="el" href="#acdda66d92889e86918f8628ed4006419">foreground_color</a> (<a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> r, <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> g, <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> b) -&gt; void</td></tr>
@@ -553,10 +561,66 @@ template&lt;typename string_t&gt; </td></tr>
 <div class="ttc" id="aclassxtd_1_1console_html_ac068660c7820020683cf45cd766410fc"><div class="ttname"><a href="#ac068660c7820020683cf45cd766410fc">xtd::console::output_code_page</a></div><div class="ttdeci">static auto output_code_page() -&gt; int32</div><div class="ttdoc">Gets the code page the console uses to write output.</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html_ac7748cc96e3a9175f09607742cf3e962"><div class="ttname"><a href="#ac7748cc96e3a9175f09607742cf3e962">xtd::console::background_color</a></div><div class="ttdeci">static auto background_color() -&gt; console_color</div><div class="ttdoc">Gets the background color of the console.</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html_acdbb3d8e30bdc88dbda1d84f8d99109a"><div class="ttname"><a href="#acdbb3d8e30bdc88dbda1d84f8d99109a">xtd::console::reset_color</a></div><div class="ttdeci">static auto reset_color() -&gt; bool</div><div class="ttdoc">Sets the foreground and background console colors to their defaults.</div></div>
-<div class="ttc" id="agroup__xtd__core_html_ggab60a2a64b74b91771b667e4a079681f2a27e3a57f752eac25c69739545fccef73"><div class="ttname"><a href="group__xtd__core.html#ggab60a2a64b74b91771b667e4a079681f2a27e3a57f752eac25c69739545fccef73">xtd::console_color::dark_blue</a></div><div class="ttdeci">@ dark_blue</div><div class="ttdoc">The color dark blue.</div><div class="ttdef"><b>Definition</b> console_color.hpp:26</div></div>
-<div class="ttc" id="agroup__xtd__core_html_ggab60a2a64b74b91771b667e4a079681f2ad508fe45cecaf653904a0e774084bb5c"><div class="ttname"><a href="group__xtd__core.html#ggab60a2a64b74b91771b667e4a079681f2ad508fe45cecaf653904a0e774084bb5c">xtd::console_color::white</a></div><div class="ttdeci">@ white</div><div class="ttdoc">The color white.</div><div class="ttdef"><b>Definition</b> console_color.hpp:54</div></div>
+<div class="ttc" id="agroup__xtd__core_html_ggab60a2a64b74b91771b667e4a079681f2a27e3a57f752eac25c69739545fccef73"><div class="ttname"><a href="group__xtd__core.html#ggab60a2a64b74b91771b667e4a079681f2a27e3a57f752eac25c69739545fccef73">xtd::console_color::dark_blue</a></div><div class="ttdeci">@ dark_blue</div><div class="ttdoc">The color dark blue.</div><div class="ttdef"><b>Definition</b> console_color.hpp:28</div></div>
+<div class="ttc" id="agroup__xtd__core_html_ggab60a2a64b74b91771b667e4a079681f2ad508fe45cecaf653904a0e774084bb5c"><div class="ttname"><a href="group__xtd__core.html#ggab60a2a64b74b91771b667e4a079681f2ad508fe45cecaf653904a0e774084bb5c">xtd::console_color::white</a></div><div class="ttdeci">@ white</div><div class="ttdoc">The color white.</div><div class="ttdef"><b>Definition</b> console_color.hpp:56</div></div>
 <div class="ttc" id="astructxtd_1_1index_html"><div class="ttname"><a href="structxtd_1_1index.html">xtd::index</a></div><div class="ttdoc">Represents a type that can be used to index a collection either from the beginning or the end.</div><div class="ttdef"><b>Definition</b> index.hpp:38</div></div>
 </div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="aad1d6e01ab07afc44d9367b347109875" name="aad1d6e01ab07afc44d9367b347109875"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad1d6e01ab07afc44d9367b347109875">&#9670;&#160;</a></span>background_color_rgb()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a> xtd::console::background_color_rgb </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the background color of the console. </p>
+<dl class="section return"><dt>Returns</dt><dd>Anonymous <span class="tt">struct {<a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4" title="Represents a 8-bit unsigned integer.">xtd::byte</a>; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4" title="Represents a 8-bit unsigned integer.">xtd::byte</a> r; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4" title="Represents a 8-bit unsigned integer.">xtd::byte</a> g;}</span> that represent the RBG background color. </dd></dl>
+
+</div>
+</div>
+<a id="a799da283b2e727ceeee2dd764fea9124" name="a799da283b2e727ceeee2dd764fea9124"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a799da283b2e727ceeee2dd764fea9124">&#9670;&#160;</a></span>background_color_uint32()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a> xtd::console::background_color_uint32 </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> -&gt;  <a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">xtd::uint32</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the background color of the console. </p>
+<dl class="section return"><dt>Returns</dt><dd>An unsigned 32 bits integer that represent the RBG background color. </dd></dl>
 
 </div>
 </div>
@@ -1823,8 +1887,64 @@ If the specified color is in ARGB format, the alpha component is ignored. </dd><
 <div class="ttc" id="aclassxtd_1_1background__color_html"><div class="ttname"><a href="classxtd_1_1background__color.html">xtd::background_color</a></div><div class="ttdoc">Represent background color output manipulator class.</div><div class="ttdef"><b>Definition</b> background_color.hpp:24</div></div>
 <div class="ttc" id="aclassxtd_1_1foreground__color_html"><div class="ttname"><a href="classxtd_1_1foreground__color.html">xtd::foreground_color</a></div><div class="ttdoc">Represent foreground color output manipulator class.</div><div class="ttdef"><b>Definition</b> foreground_color.hpp:20</div></div>
 <div class="ttc" id="aclassxtd_1_1reset__color_html"><div class="ttname"><a href="classxtd_1_1reset__color.html">xtd::reset_color</a></div><div class="ttdoc">Represent reset color output manipulator class.</div><div class="ttdef"><b>Definition</b> reset_color.hpp:20</div></div>
-<div class="ttc" id="agroup__xtd__core_html_ggab60a2a64b74b91771b667e4a079681f2a49dba686026a18435dd23b5e83eb5cfd"><div class="ttname"><a href="group__xtd__core.html#ggab60a2a64b74b91771b667e4a079681f2a49dba686026a18435dd23b5e83eb5cfd">xtd::console_color::dark_gray</a></div><div class="ttdeci">@ dark_gray</div><div class="ttdoc">The color dark gray.</div><div class="ttdef"><b>Definition</b> console_color.hpp:40</div></div>
+<div class="ttc" id="agroup__xtd__core_html_ggab60a2a64b74b91771b667e4a079681f2a49dba686026a18435dd23b5e83eb5cfd"><div class="ttname"><a href="group__xtd__core.html#ggab60a2a64b74b91771b667e4a079681f2a49dba686026a18435dd23b5e83eb5cfd">xtd::console_color::dark_gray</a></div><div class="ttdeci">@ dark_gray</div><div class="ttdoc">The color dark gray.</div><div class="ttdef"><b>Definition</b> console_color.hpp:42</div></div>
 </div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="a640e9db18ff9817d18518d28f28b6640" name="a640e9db18ff9817d18518d28f28b6640"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a640e9db18ff9817d18518d28f28b6640">&#9670;&#160;</a></span>foreground_color_rgb()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a> xtd::console::foreground_color_rgb </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the foreground color of the console. </p>
+<dl class="section return"><dt>Returns</dt><dd>Anonymous <span class="tt">struct {<a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4" title="Represents a 8-bit unsigned integer.">xtd::byte</a>; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4" title="Represents a 8-bit unsigned integer.">xtd::byte</a> r; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4" title="Represents a 8-bit unsigned integer.">xtd::byte</a> g;}</span> that represent the RBG foreground color. </dd></dl>
+
+</div>
+</div>
+<a id="a789389073d545c844fed4df9844f4136" name="a789389073d545c844fed4df9844f4136"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a789389073d545c844fed4df9844f4136">&#9670;&#160;</a></span>foreground_color_uint32()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a> xtd::console::foreground_color_uint32 </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> -&gt;  <a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">xtd::uint32</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the foreground color of the console. </p>
+<dl class="section return"><dt>Returns</dt><dd>An unsigned 32 bits integer that represent the RBG foreground color. </dd></dl>
 
 </div>
 </div>
@@ -3121,9 +3241,9 @@ When the Clear method is called, the cursor automatically scrolls to the top-lef
 <div class="line"> </div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#gaeb9462ec721c9718cf689e93bf11bf56">startup_</a>(console_clear_example::program::main);</div>
 <div class="ttc" id="agroup__types_html_gafab2aed44c397da401a7bc0b6ba53ca9"><div class="ttname"><a href="group__types.html#gafab2aed44c397da401a7bc0b6ba53ca9">xtd::char32</a></div><div class="ttdeci">char32_t char32</div><div class="ttdoc">Represents a 32-bit unicode character.</div><div class="ttdef"><b>Definition</b> char32.hpp:23</div></div>
-<div class="ttc" id="agroup__xtd__core_html_ggab60a2a64b74b91771b667e4a079681f2a1ffd9e753c8054cc61456ac7fac1ac89"><div class="ttname"><a href="group__xtd__core.html#ggab60a2a64b74b91771b667e4a079681f2a1ffd9e753c8054cc61456ac7fac1ac89">xtd::console_color::black</a></div><div class="ttdeci">@ black</div><div class="ttdoc">The color black.</div><div class="ttdef"><b>Definition</b> console_color.hpp:24</div></div>
-<div class="ttc" id="agroup__xtd__core_html_ggab60a2a64b74b91771b667e4a079681f2a9c2398f188d23be4d9676cadf1c2909f"><div class="ttname"><a href="group__xtd__core.html#ggab60a2a64b74b91771b667e4a079681f2a9c2398f188d23be4d9676cadf1c2909f">xtd::console_color::dark_red</a></div><div class="ttdeci">@ dark_red</div><div class="ttdoc">The color dark red.</div><div class="ttdef"><b>Definition</b> console_color.hpp:32</div></div>
-<div class="ttc" id="agroup__xtd__core_html_ggab60a2a64b74b91771b667e4a079681f2afddf450fe464ed50b0e09d81ba8c7bf2"><div class="ttname"><a href="group__xtd__core.html#ggab60a2a64b74b91771b667e4a079681f2afddf450fe464ed50b0e09d81ba8c7bf2">xtd::console_color::dark_yellow</a></div><div class="ttdeci">@ dark_yellow</div><div class="ttdoc">The color dark yellow (ochre).</div><div class="ttdef"><b>Definition</b> console_color.hpp:36</div></div>
+<div class="ttc" id="agroup__xtd__core_html_ggab60a2a64b74b91771b667e4a079681f2a1ffd9e753c8054cc61456ac7fac1ac89"><div class="ttname"><a href="group__xtd__core.html#ggab60a2a64b74b91771b667e4a079681f2a1ffd9e753c8054cc61456ac7fac1ac89">xtd::console_color::black</a></div><div class="ttdeci">@ black</div><div class="ttdoc">The color black.</div><div class="ttdef"><b>Definition</b> console_color.hpp:26</div></div>
+<div class="ttc" id="agroup__xtd__core_html_ggab60a2a64b74b91771b667e4a079681f2a9c2398f188d23be4d9676cadf1c2909f"><div class="ttname"><a href="group__xtd__core.html#ggab60a2a64b74b91771b667e4a079681f2a9c2398f188d23be4d9676cadf1c2909f">xtd::console_color::dark_red</a></div><div class="ttdeci">@ dark_red</div><div class="ttdoc">The color dark red.</div><div class="ttdef"><b>Definition</b> console_color.hpp:34</div></div>
+<div class="ttc" id="agroup__xtd__core_html_ggab60a2a64b74b91771b667e4a079681f2afddf450fe464ed50b0e09d81ba8c7bf2"><div class="ttname"><a href="group__xtd__core.html#ggab60a2a64b74b91771b667e4a079681f2afddf450fe464ed50b0e09d81ba8c7bf2">xtd::console_color::dark_yellow</a></div><div class="ttdeci">@ dark_yellow</div><div class="ttdoc">The color dark yellow (ochre).</div><div class="ttdef"><b>Definition</b> console_color.hpp:38</div></div>
 </div><!-- fragment --> The example relies on a get_key_press method to validate the user's selection of a foreground and background color. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>This example demonstrates the cursor_left and cursor_top properties, and the set_cursor_position and clear methods. The example positions the cursor, which determines where the next write will occur, to draw a 5 character by 5 character rectangle using a combination of "+", "|", and "-" strings. Note that the rectangle could be drawn with fewer steps using a combination of other strings. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
