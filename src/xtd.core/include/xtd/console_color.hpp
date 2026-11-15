@@ -18,6 +18,8 @@ namespace xtd {
   /// @brief Specifies constants that define foreground and background colors for the console.
   /// @see console
   enum class console_color {
+    /// @brief The other color (RGB color).
+    other_color = -2,
     /// @brief The default color.
     default_color = -1,
     /// @brief The color black.
@@ -57,6 +59,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::console_color> {
-  static auto values() noexcept {return xtd::enum_collection<xtd::console_color> {{xtd::console_color::default_color, "default_color"}, {xtd::console_color::black, "black"}, {xtd::console_color::dark_blue, "dark_blue"}, {xtd::console_color::dark_green, "dark_green"}, {xtd::console_color::dark_cyan, "dark_cyan"}, {xtd::console_color::dark_red, "dark_red"}, {xtd::console_color::dark_magenta, "dark_magenta"}, {xtd::console_color::dark_yellow, "dark_yellow"}, {xtd::console_color::gray, "gray"}, {xtd::console_color::dark_gray, "dark_gray"}, {xtd::console_color::blue, "blue"}, {xtd::console_color::green, "green"}, {xtd::console_color::cyan, "cyan"}, {xtd::console_color::red, "red"}, {xtd::console_color::magenta, "magenta"}, {xtd::console_color::yellow, "yellow"}, {xtd::console_color::white, "white"}};}
+  static auto values() noexcept {return xtd::enum_collection<xtd::console_color> {{xtd::console_color::other_color, "other_color"}, {xtd::console_color::default_color, "default_color"}, {xtd::console_color::black, "black"}, {xtd::console_color::dark_blue, "dark_blue"}, {xtd::console_color::dark_green, "dark_green"}, {xtd::console_color::dark_cyan, "dark_cyan"}, {xtd::console_color::dark_red, "dark_red"}, {xtd::console_color::dark_magenta, "dark_magenta"}, {xtd::console_color::dark_yellow, "dark_yellow"}, {xtd::console_color::gray, "gray"}, {xtd::console_color::dark_gray, "dark_gray"}, {xtd::console_color::blue, "blue"}, {xtd::console_color::green, "green"}, {xtd::console_color::cyan, "cyan"}, {xtd::console_color::red, "red"}, {xtd::console_color::magenta, "magenta"}, {xtd::console_color::yellow, "yellow"}, {xtd::console_color::white, "white"}};}
 };
 /// @endcond

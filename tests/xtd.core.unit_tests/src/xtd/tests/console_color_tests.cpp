@@ -8,6 +8,12 @@ using namespace xtd::tunit;
 
 namespace xtd::tests {
   class test_class_(console_color_tests) {
+    auto test_method_(other_color) {
+      assert::are_equal(-2, enum_object<>::to_int32(console_color::other_color));
+      assert::are_equal("other_color", enum_object<>::to_string(console_color::other_color));
+      assert::are_equal(console_color::other_color, enum_object<>::parse<console_color>("other_color"));
+    }
+    
     auto test_method_(default_color) {
       assert::are_equal(-1, enum_object<>::to_int32(console_color::default_color));
       assert::are_equal("default_color", enum_object<>::to_string(console_color::default_color));
