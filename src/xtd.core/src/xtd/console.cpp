@@ -3,6 +3,7 @@
 #include "../../include/xtd/call_once.hpp"
 #include "../../include/xtd/console.hpp"
 #include "../../include/xtd/int16_object.hpp"
+#include "../../include/xtd/optional.hpp"
 #include "../../include/xtd/lock.hpp"
 #include "../../include/xtd/io/io_exception.hpp"
 #include "../../include/xtd/io/stream_reader.hpp"
@@ -21,16 +22,9 @@ using namespace xtd::io;
 using namespace xtd::threading;
 
 namespace {
-  struct __argb {
-    xtd::byte a = 0;
-    xtd::byte r = 0;
-    xtd::byte g = 0;
-    xtd::byte b = 0;
-    
-    [[nodiscard]] static auto from_uint32(xtd::uint32 value) noexcept -> __argb {
-      return __argb {.a = static_cast<xtd::byte>((value & 0xFF000000) >> 24), .r = static_cast<xtd::byte>((value & 0x00FF0000) >> 16), .g = static_cast<xtd::byte>((value & 0x0000FF00) >> 8), .b = static_cast<xtd::byte>(value & 0x000000FF)};
-    }
-  };
+  [[nodiscard]] static auto argb_to_uint32(byte a, byte r, byte g, byte b) noexcept -> xtd::uint32 {
+    return (static_cast<xtd::uint32>(a) << 24) + (static_cast<xtd::uint32>(r) << 16) + (static_cast<xtd::uint32>(g) << 8) + static_cast<xtd::uint32>(b);
+  }
 
   std::streambuf* __get_err_rdbuf() {
     static auto rdbuf = std::cerr.rdbuf();
@@ -47,8 +41,34 @@ namespace {
     return rdbuf;
   }
   
+  auto to_uint32(console_color color) -> uint32 {
+    switch (color) {
+      case console_color::dark_blue: return 0xFF000080;
+      case console_color::dark_green: return 0xFF008000;
+      case console_color::dark_cyan: return 0xFF008080;
+      case console_color::dark_red: return 0xFF800000;
+      case console_color::dark_magenta: return 0xFF800080;
+      case console_color::dark_yellow: return 0xFF808000;
+      case console_color::gray: return 0xFFC0C0C0;
+      case console_color::dark_gray: return 0xFF808080;
+      case console_color::blue: return 0xFF0000FF;
+      case console_color::green: return 0xFF00FF00;
+      case console_color::cyan: return 0xFF00FFFF;
+      case console_color::red: return 0xFFFF0000;
+      case console_color::magenta: return 0xFFFF00FF;
+      case console_color::yellow: return 0xFFFFFF00;
+      case console_color::white: return 0xFFFFFFFF;
+      case console_color::other_color:
+      case console_color::default_color:
+      case console_color::black:
+      default: return 0xFF000000;
+    }
+  }
+  
   auto __auto_flush_out = true;
   auto __console_mutex__ = std::recursive_mutex {};
+  auto __console_background_color = optional<uint32> {};
+  auto __console_foreground_color = optional<uint32> {};
 }
 
 std::ostream console::error {__get_err_rdbuf()};
@@ -66,26 +86,34 @@ void console::auto_flush_out(bool value) {
 
 console_color console::background_color() {
   register_cancel_key_press(); // Must be first...
+  if (__console_background_color) return console_color::other_color;
   return as<console_color>(native::console::background_color());
+}
+
+auto console::background_color_uint32() -> uint32 {
+  register_cancel_key_press(); // Must be first...
+  return __console_background_color ? *__console_background_color : to_uint32(background_color());
 }
 
 void console::background_color(console_color color) {
   if (!enum_object<>::is_defined(color)) throw_helper::throws(exception_case::argument);
   register_cancel_key_press(); // Must be first...
+  __console_background_color = nullopt;
+  if (color == console_color::other_color) color = console_color::default_color;
   native::console::background_color(as<int32>(color));
 }
 
 auto console::background_color(byte r, byte g, byte b) -> void {
   if (!xtd::console::is_ansi_escape_sequence_supported()) return;
+  __console_background_color = argb_to_uint32(255, r, g, b);
   xtd::console::out << xtd::string::format("\x1b[48;2;{};{};{}m", r, g, b);
   xtd::console::out.flush();
 }
 
 auto console::background_color(uint32 color) -> void {
-  auto [_, r, g, b] = __argb::from_uint32(color);
+  auto [_, r, g, b] = argb_from_uint32(color);
   background_color(r, g, b);
 }
-
 
 int32 console::buffer_height() {
   register_cancel_key_press(); // Must be first...
@@ -157,23 +185,32 @@ void console::cursor_visible(bool visible) {
 
 console_color console::foreground_color() {
   register_cancel_key_press(); // Must be first...
+  if (__console_foreground_color) return console_color::other_color;
   return as<console_color>(native::console::foreground_color());
+}
+
+auto console::foreground_color_uint32() ->uint32 {
+  register_cancel_key_press(); // Must be first...
+  return __console_foreground_color ? *__console_foreground_color : to_uint32(foreground_color());
 }
 
 bool console::foreground_color(console_color color) {
   register_cancel_key_press(); // Must be first...
   if (!enum_object<>::is_defined(color)) throw_helper::throws(exception_case::argument);
+  __console_foreground_color = nullopt;
+  if (color == console_color::other_color) color = console_color::default_color;
   return native::console::foreground_color(as<int32>(color));
 }
 
 auto console::foreground_color(byte r, byte g, byte b) -> void {
   if (!xtd::console::is_ansi_escape_sequence_supported()) return;
+  __console_foreground_color = argb_to_uint32(255, r, g, b);
   xtd::console::out << xtd::string::format("\x1b[38;2;{};{};{}m", r, g, b);
   xtd::console::out.flush();
 }
 
 auto console::foreground_color(uint32 color) -> void {
-  auto [_, r, g, b] = __argb::from_uint32(color);
+  auto [_, r, g, b] = argb_from_uint32(color);
   foreground_color(r, g, b);
 }
 

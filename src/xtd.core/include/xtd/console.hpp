@@ -13,6 +13,7 @@
 #include "static.hpp"
 #include "types.hpp"
 #include "string.hpp"
+#include <tuple>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -70,6 +71,20 @@ namespace xtd {
     /// The following example saves the values of the xtd::console_color enumeration to an array and stores the current values of the xtd::console::background_color and xtd::console::foreground_color properties to variables. It then changes the foreground color to each color in the xtd::console_color enumeration except to the color that matches the current background, and it changes the background color to each color in the xtd::console_color enumeration except to the color that matches the current foreground. (If the foreground color is the same as the background color, the text isn't visible.) Finally, it calls the xtd::console::reset_color method to restore the original console colors.
     /// @include console_color2.cpp
     [[nodiscard]] static auto background_color() -> console_color;
+    /// @brief Gets the background color of the console.
+    /// @return Anonymous `struct {xtd::byte; xtd::byte r; xtd::byte g;}` that represent the RBG background color.
+    [[nodiscard]] static auto background_color_rgb() {
+      struct rgb {
+        byte r;
+        byte g;
+        byte b;
+      };
+      auto [_, r, g, b] = argb_from_uint32(background_color_uint32());
+      return rgb {r, g, b};
+    }
+    /// @brief Gets the background color of the console.
+    /// @return An unsigned 32 bits integer that represent the RBG background color.
+    [[nodiscard]] static auto background_color_uint32() -> xtd::uint32;
     /// @brief Sets the background color of the console.
     /// @param color A xtd::console_color that specifies the background color of the console; that is, the color that appears behind each character.
     /// @exception xtd::argument_exception The color specified in a set operation is not a valid member of xtd::console_color.
@@ -89,7 +104,7 @@ namespace xtd {
     /// @remarks This method is available only if xtd::console::is_ansi_escape_sequence_supported return `true`otherwise this method has no effect.
     /// @remarks If the specified color is in ARGB format, the alpha component is ignored.
     static auto background_color(xtd::uint32 color) -> void;
-    
+
     /// @brief Gets the height of the buffer area.
     /// @return The current height, in rows, of the buffer area.
     /// @par Examples
@@ -184,6 +199,20 @@ namespace xtd {
     /// The following example saves the values of the console_color enumeration to an array and stores the current values of the background_color and foreground_color properties to variables. It then changes the foreground color to each color in the ConsoleColor enumeration except to the color that matches the current background, and it changes the background color to each color in the console_color enumeration except to the color that matches the current foreground. (If the foreground color is the same as the background color, the text isn't visible.) Finally, it calls the reset_color method to restore the original console colors.
     /// @include console_color4.cpp
     [[nodiscard]] static auto foreground_color() -> console_color;
+    /// @brief Gets the foreground color of the console.
+    /// @return Anonymous `struct {xtd::byte; xtd::byte r; xtd::byte g;}` that represent the RBG foreground color.
+    [[nodiscard]] static auto foreground_color_rgb() {
+      struct rgb {
+        byte r;
+        byte g;
+        byte b;
+      };
+      auto [_, r, g, b] = argb_from_uint32(foreground_color_uint32());
+      return rgb {r, g, b};
+    }
+    /// @brief Gets the foreground color of the console.
+    /// @return An unsigned 32 bits integer that represent the RBG foreground color.
+    [[nodiscard]] static auto foreground_color_uint32() -> xtd::uint32;
     /// @brief Sets the foreground color of the console.
     /// @param color A console_color that specifies the foreground color of the console; that is, the color of each character that is displayed.
     /// @exception xtd::argument_exception The color specified in a set operation is not a valid member of xtd::console_color.
@@ -595,6 +624,7 @@ namespace xtd {
     
   private:
     friend class xtd::environment;
+    [[nodiscard]] static auto argb_from_uint32(xtd::uint32 value) noexcept -> std::tuple<xtd::byte, xtd::byte, xtd::byte, xtd::byte> {return std::make_tuple(static_cast<xtd::byte>(255), static_cast<xtd::byte>((value & 0x00FF0000) >> 16), static_cast<xtd::byte>((value & 0x0000FF00) >> 8), static_cast<xtd::byte>(value & 0x000000FF));}
     [[nodiscard]] static auto on_cancel_key_press(int32 special_key) -> bool;
     static auto register_cancel_key_press() -> void;
     
