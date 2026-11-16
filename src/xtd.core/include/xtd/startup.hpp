@@ -62,9 +62,10 @@ namespace xtd {
     /// @par
     /// This example show a main_function with argument and return code
     /// @include startup4.cpp
-    static auto run(auto main_function) -> int {
+    template<typename main_function_t>
+    static auto run(main_function_t&& main_function) -> int {
       try {
-        auto exit_code = internal_run(main_function);
+        auto exit_code = internal_run(std::forward<main_function_t>(main_function));
         xtd::threading::thread::join_all();
         return exit_code;
       } catch (const std::exception& e) {
@@ -92,26 +93,26 @@ namespace xtd {
       return argv;
     }
     
-    static auto internal_run(xtd::callable<void> auto main_function) -> int {main_function(); return xtd::environment::exit_code();}
-    static auto internal_run(xtd::callable<int> auto main_function) -> int {return main_function();}
-    static auto internal_run(xtd::callable<xtd::threading::tasks::task<>> auto main_function) -> int {main_function().wait(); return xtd::environment::exit_code();}
-    static auto internal_run(xtd::callable<xtd::threading::tasks::task<int>> auto main_function) -> int {return main_function().result();}
-    static auto internal_run(xtd::callable<xtd::threading::tasks::wtask<>> auto main_function) -> int {main_function().wait(); return xtd::environment::exit_code();}
-    static auto internal_run(xtd::callable<xtd::threading::tasks::wtask<int>> auto main_function) -> int {return main_function().result();}
+    static auto internal_run(xtd::callable<void> auto&& main_function) -> int {main_function(); return xtd::environment::exit_code();}
+    static auto internal_run(xtd::callable<int> auto&& main_function) -> int {return main_function();}
+    static auto internal_run(xtd::callable<xtd::threading::tasks::task<>> auto&& main_function) -> int {main_function().wait(); return xtd::environment::exit_code();}
+    static auto internal_run(xtd::callable<xtd::threading::tasks::task<int>> auto&& main_function) -> int {return main_function().result();}
+    static auto internal_run(xtd::callable<xtd::threading::tasks::wtask<>> auto&& main_function) -> int {main_function(); return xtd::environment::exit_code();}
+    static auto internal_run(xtd::callable<xtd::threading::tasks::wtask<int>> auto&& main_function) -> int {return main_function().result();}
 
-    static auto internal_run(xtd::callable<void, const xtd::argument_collection&> auto main_function) -> int {main_function(args()); return xtd::environment::exit_code();}
-    static auto internal_run(xtd::callable<int, const xtd::argument_collection&> auto main_function) -> int {return main_function(args());}
-    static auto internal_run(xtd::callable<xtd::threading::tasks::task<>, const xtd::argument_collection&> auto main_function) -> int {main_function(args()).wait(); return xtd::environment::exit_code();}
-    static auto internal_run(xtd::callable<xtd::threading::tasks::task<int>, const xtd::argument_collection&> auto main_function) -> int {return main_function(args()).result();}
-    static auto internal_run(xtd::callable<xtd::threading::tasks::wtask<>, const xtd::argument_collection&> auto main_function) -> int {main_function(args()).wait(); return xtd::environment::exit_code();}
-    static auto internal_run(xtd::callable<xtd::threading::tasks::wtask<int>, const xtd::argument_collection&> auto main_function) -> int {return main_function(args()).result();}
+    static auto internal_run(xtd::callable<void, const xtd::argument_collection&> auto&& main_function) -> int {main_function(args()); return xtd::environment::exit_code();}
+    static auto internal_run(xtd::callable<int, const xtd::argument_collection&> auto&& main_function) -> int {return main_function(args());}
+    static auto internal_run(xtd::callable<xtd::threading::tasks::task<>, const xtd::argument_collection&> auto&& main_function) -> int {main_function(args()).wait(); return xtd::environment::exit_code();}
+    static auto internal_run(xtd::callable<xtd::threading::tasks::task<int>, const xtd::argument_collection&> auto&& main_function) -> int {return main_function(args()).result();}
+    static auto internal_run(xtd::callable<xtd::threading::tasks::wtask<>, const xtd::argument_collection&> auto&& main_function) -> int {main_function(args()); return xtd::environment::exit_code();}
+    static auto internal_run(xtd::callable<xtd::threading::tasks::wtask<int>, const xtd::argument_collection&> auto&& main_function) -> int {return main_function(args()).result();}
 
-    static auto internal_run(xtd::callable<void, int, char* []> auto main_function) -> int {main_function(argv_length(), argv_data()); return xtd::environment::exit_code();}
-    static auto internal_run(xtd::callable<int, int, char* []> auto main_function) -> int {return main_function(argv_length(), argv_data());}
-    static auto internal_run(xtd::callable<xtd::threading::tasks::task<>, int, char* []> auto main_function) -> int {main_function(argv_length(), argv_data()).wait(); return xtd::environment::exit_code();}
-    static auto internal_run(xtd::callable<xtd::threading::tasks::task<int>, int, char* []> auto main_function) -> int {return main_function(argv_length(), argv_data()).result();}
-    static auto internal_run(xtd::callable<xtd::threading::tasks::wtask<>, int, char* []> auto main_function) -> int {main_function(argv_length(), argv_data()).wait(); return xtd::environment::exit_code();}
-    static auto internal_run(xtd::callable<xtd::threading::tasks::wtask<int>, int, char* []> auto main_function) -> int {return main_function(argv_length(), argv_data()).result();}
+    static auto internal_run(xtd::callable<void, int, char* []> auto&& main_function) -> int {main_function(argv_length(), argv_data()); return xtd::environment::exit_code();}
+    static auto internal_run(xtd::callable<int, int, char* []> auto&& main_function) -> int {return main_function(argv_length(), argv_data());}
+    static auto internal_run(xtd::callable<xtd::threading::tasks::task<>, int, char* []> auto&& main_function) -> int {main_function(argv_length(), argv_data()).wait(); return xtd::environment::exit_code();}
+    static auto internal_run(xtd::callable<xtd::threading::tasks::task<int>, int, char* []> auto&& main_function) -> int {return main_function(argv_length(), argv_data()).result();}
+    static auto internal_run(xtd::callable<xtd::threading::tasks::wtask<>, int, char* []> auto&& main_function) -> int {main_function(argv_length(), argv_data()); return xtd::environment::exit_code();}
+    static auto internal_run(xtd::callable<xtd::threading::tasks::wtask<int>, int, char* []> auto&& main_function) -> int {return main_function(argv_length(), argv_data()).result();}
   };
 }
 
