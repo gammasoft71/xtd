@@ -178,14 +178,14 @@ namespace xtd {
     /// @param reports A bitwise combination of the xtd::system_report::reports values.
     /// @return An json format string report.
     /// @todo Implement json report
-    static xtd::string to_json(reports reports) noexcept;
+    static xtd::string to_json(xtd::system_report::reports reports) noexcept;
     /// @brief Generates string report.
     /// @return A string report.
     static xtd::string to_string() noexcept;
     /// @brief Generates string report.
     /// @param reports A bitwise combination of the xtd::system_report::reports values.
     /// @return A string report.
-    static xtd::string to_string(reports reports) noexcept;
+    static xtd::string to_string(xtd::system_report::reports reports) noexcept;
     /// @brief Generates xml format string report.
     /// @return An xml format string report.
     /// @todo Implement xml report
@@ -194,7 +194,7 @@ namespace xtd {
     /// @param reports A bitwise combination of the xtd::system_report::reports values.
     /// @return An xml format string report.
     /// @todo Implement xml report
-    static xtd::string to_xml(reports reports) noexcept;
+    static xtd::string to_xml(xtd::system_report::reports reports) noexcept;
     /// @}
   };
 }
