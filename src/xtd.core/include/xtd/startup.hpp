@@ -29,8 +29,7 @@ namespace xtd {
     /// @remarks The main_function is called in try and catch. If an exception occurs, a generic message is displayed.
     /// @remarks The xtd::threading::thread::join_all method are call before exit. See xtd::threading::thread::join_all for more information.
     /// @remarks The xtd::startup::run method is used by the keyword #startup_.
-    /// @note
-    /// `main_function` can be one of following signature
+    /// @remarks `main_function` can be one of following signatures :
     /// * @verbatim auto main_function() -> void {} @endverbatim
     /// * @verbatim auto main_function() -> int {} @endverbatim
     /// * @verbatim auto main_function() -> xtd::threading::tasks::task<> {} @endverbatim
@@ -129,6 +128,27 @@ namespace xtd {
 ///   return xtd::startup::run(main_method);
 /// }
 /// ```
+/// @remarks `main_function` can be one of following signatures :
+/// * @verbatim auto main_function() -> void {} @endverbatim
+/// * @verbatim auto main_function() -> int {} @endverbatim
+/// * @verbatim auto main_function() -> xtd::threading::tasks::task<> {} @endverbatim
+/// * @verbatim auto main_function() -> xtd::threading::tasks::task<int> {} @endverbatim
+/// * @verbatim auto main_function() -> xtd::threading::tasks::wtask<> {} @endverbatim
+/// * @verbatim auto main_function() -> xtd::threading::tasks::wtask<int> {} @endverbatim
+///
+/// * @verbatim auto main_function(const xtd::argument_collection& args) -> void {} @endverbatim
+/// * @verbatim auto main_function(const xtd::argument_collection& args) -> int {} @endverbatim
+/// * @verbatim auto main_function(const xtd::argument_collection& args) -> xtd::threading::tasks::task<> {} @endverbatim
+/// * @verbatim auto main_function(const xtd::argument_collection& args) -> xtd::threading::tasks::task<int> {} @endverbatim
+/// * @verbatim auto main_function(const xtd::argument_collection& args) -> xtd::threading::tasks::wtask<> {} @endverbatim
+/// * @verbatim auto main_function(const xtd::argument_collection& args) -> xtd::threading::tasks::wtask<int> {} @endverbatim
+///
+/// * @verbatim auto main_function(int argc, char* argv[]) -> void {} @endverbatim
+/// * @verbatim auto main_function(int argc, char* argv[]) -> int {} @endverbatim
+/// * @verbatim auto main_function(int argc, char* argv[]) -> xtd::threading::tasks::task<> {} @endverbatim
+/// * @verbatim auto main_function(int argc, char* argv[]) -> xtd::threading::tasks::task<int> {} @endverbatim
+/// * @verbatim auto main_function(int argc, char* argv[]) -> xtd::threading::tasks::wtask<> {} @endverbatim
+/// * @verbatim auto main_function(int argc, char* argv[]) -> xtd::threading::tasks::wtask<int> {} @endverbatim
 /// @par Examples
 /// This example show a main method without arguments and without return code
 /// @include main1.cpp
