@@ -66,7 +66,7 @@ namespace xtd {
         wtask(const xtd::func<result_t, const xtd::any_object&>& func, const xtd::any_object& state) : task<result_t>(func, state) {}
         /// @}
         
-        ~wtask() {task<result_t>::wait();}
+        ~wtask() {if (!basic_task<result_t>::is_completed()) task<result_t>::wait();}
         /// @endcond
         
         /// @name Public Operators
