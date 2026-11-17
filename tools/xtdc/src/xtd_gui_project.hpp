@@ -100,18 +100,12 @@ namespace xtdc_command {
     
     void create_source(const xtd::string& name, const xtd::string& path) const {
       auto lines = xtd::array<xtd::string> {
-        "/// @file",
-        xtd::string::format("/// @brief Contains {}::form1 class.", name),
-        xtd::string::format("/// @copyright Copyright (c) {} YourCompanyName. All rights reserved.", xtd::date_time::now().year()),
         "#include <xtd/xtd>",
         "",
-        "/// @brief Represents the namespace that contains application objects.",
         xtd::string::format("namespace {} {{", name),
         "  /// @brief Represents the main form.",
-        xtd::string::format("  /// @remarks Contains the {}::form1::main entry point method;", name),
         "  class form1 : public form {",
         "  public:",
-        xtd::string::format("    /// @brief Initializes a new instance of the {}::form1 class.", name),
         "    form1() {",
         "      client_size({800, 450});",
         "      text(\"form1\");",
@@ -124,8 +118,7 @@ namespace xtdc_command {
         "  };",
         "}",
         "",
-        "/// @brief The entry point to call when the application loads (equivalent to [main](https://en.cppreference.com/c/language/main_function)).",
-        xtd::string::format("/// @remarks The Implementation of `startup_({0}::form1::main);` is simply `auto main() -> int {{return xtd::startup::run({0}::form1::main);}}`.", name),
+        xtd::string::format("/// @brief The entry point to call when the application loads. The Implementation of `startup_({0}::form1::main);` is simply `auto main() -> int {{return xtd::startup::run({0}::form1::main);}}`.", name),
         xtd::string::format("startup_({}::form1::main);", name),
       };
       
