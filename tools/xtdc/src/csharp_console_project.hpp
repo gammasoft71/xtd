@@ -62,7 +62,7 @@ namespace xtdc_command {
         "  /// @brief Represents the main class.",
         "  class Program {",
         "    /// @brief The main entry point for the application.",
-        "    static void Main(string[] args) {",
+        "    static void Main() {",
         "      Console.WriteLine(\"Hello, World!\");",
         "    }",
         "  }",
