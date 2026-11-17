@@ -13,7 +13,6 @@ namespace xtdc_command {
       create_xtd_console_application_properties(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
       create_assembly_info(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
       create_xtd_console_cmakelists_txt(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
-      create_xtd_console_include(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
       create_xtd_console_source(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
     }
     
@@ -43,7 +42,6 @@ namespace xtdc_command {
       auto lines = xtd::array<xtd::string> {
         xtd::string::format("target_default_namespace(\"{}\")", name),
         xtd::string::format("target_name(\"{}\")", name),
-        xtd::string::format("target_startup(\"{}::program::main\" src/program.hpp)", name),
       };
       
       xtd::io::file::write_all_lines(xtd::io::path::combine(path, "properties", "target_properties.cmake"), lines);
@@ -82,7 +80,6 @@ namespace xtdc_command {
         xtd::string::format("project({})", name),
         "find_package(xtd REQUIRED)",
         "add_sources(",
-        "  src/program.hpp",
         "  src/program.cpp",
         ")",
         "target_type(CONSOLE_APPLICATION)",
@@ -94,12 +91,11 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(xtd::io::path::combine(path, "CMakeLists.txt"), lines);
     }
     
-    void create_xtd_console_include(const xtd::string& name, const xtd::string& path) const {
+    void create_xtd_console_source(const xtd::string& name, const xtd::string& path) const {
       auto lines = xtd::array<xtd::string> {
         "/// @file",
         xtd::string::format("/// @brief Contains {}::program class.", name),
         xtd::string::format("/// @copyright Copyright (c) {} YourCompanyName. All rights reserved.", xtd::date_time::now().year()),
-        "#pragma once",
         "#include <xtd/xtd>",
         "",
         "/// @brief Represents the namespace that contains application objects.",
@@ -109,24 +105,15 @@ namespace xtdc_command {
         "  class program {",
         "  public:",
         "    /// @brief The main entry point for the application.",
-        "    /// @param args The collection of arguments for the main entry point.",
-        "    static auto main(const argument_collection& args) -> void;",
+        "    static auto main() {",
+        "      println(\"Hello, World!\");",
+        "    }",
         "  };",
         "}",
-      };
-      
-      xtd::io::file::write_all_lines(xtd::io::path::combine(path, "src", "program.hpp"), lines);
-    }
-    
-    void create_xtd_console_source(const xtd::string& name, const xtd::string& path) const {
-      auto lines = xtd::array<xtd::string> {
-        "#include \"program.hpp\"",
         "",
-        xtd::string::format("using namespace {};", name),
-        "",
-        "auto program::main(const argument_collection& args) -> void {",
-        "  println(\"Hello, World!\");",
-        "}",
+        "/// @brief The entry point to call when the application loads (equivalent to [main](https://en.cppreference.com/c/language/main_function)).",
+        xtd::string::format("/// @remarks The Implementation of `startup_({0}::program::main);` is simply `auto main() -> int {{return xtd::startup::run({0}::program::main);}}`.", name),
+        xtd::string::format("startup_({}::program::main);", name),
       };
       
       xtd::io::file::write_all_lines(xtd::io::path::combine(path, "src", "program.cpp"), lines);
