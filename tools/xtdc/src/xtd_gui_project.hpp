@@ -17,7 +17,6 @@ namespace xtdc_command {
       create_application_properties(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
       create_assembly_info(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
       create_cmakelists_txt(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
-      create_include(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
       create_source(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
     }
     
@@ -50,7 +49,6 @@ namespace xtdc_command {
         xtd::string::format("target_default_namespace(\"{}\")", name),
         xtd::string::format("target_icon(resources/{})", name),
         xtd::string::format("target_name(\"{}\")", name),
-        xtd::string::format("target_startup(\"{}::form1::main\" src/form1.hpp)", name),
       };
       
       xtd::io::file::write_all_lines(xtd::io::path::combine(path, "properties", "target_properties.cmake"), lines);
@@ -64,7 +62,6 @@ namespace xtdc_command {
         xtd::string::format("project({})", name),
         "find_package(xtd REQUIRED)",
         "add_sources(",
-        "  src/form1.hpp",
         "  src/form1.cpp",
         ")",
         "target_type(GUI_APPLICATION)",
@@ -101,12 +98,11 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(xtd::io::path::combine(path, "properties", "assembly_info.cmake"), lines);
     }
     
-    void create_include(const xtd::string& name, const xtd::string& path) const {
+    void create_source(const xtd::string& name, const xtd::string& path) const {
       auto lines = xtd::array<xtd::string> {
         "/// @file",
         xtd::string::format("/// @brief Contains {}::form1 class.", name),
         xtd::string::format("/// @copyright Copyright (c) {} YourCompanyName. All rights reserved.", xtd::date_time::now().year()),
-        "#pragma once",
         "#include <xtd/xtd>",
         "",
         "/// @brief Represents the namespace that contains application objects.",
@@ -116,31 +112,21 @@ namespace xtdc_command {
         "  class form1 : public form {",
         "  public:",
         xtd::string::format("    /// @brief Initializes a new instance of the {}::form1 class.", name),
-        "    form1();",
+        "    form1() {",
+        "      client_size({800, 450});",
+        "      text(\"form1\");",
+        "    }",
         "",
         "    /// @brief The main entry point for the application.",
-        "    static auto main() -> void;",
+        "    static auto main() {",
+        "      application::run(form1 {});",
+        "    }",
         "  };",
         "}",
-      };
-      
-      xtd::io::file::write_all_lines(xtd::io::path::combine(path, "src", "form1.hpp"), lines);
-    }
-    
-    void create_source(const xtd::string& name, const xtd::string& path) const {
-      auto lines = xtd::array<xtd::string> {
-        "#include \"form1.hpp\"",
         "",
-        xtd::string::format("using namespace {};", name),
-        "",
-        "form1::form1() {",
-        "  text(\"form1\");",
-        "  client_size({800, 450});",
-        "}",
-        "",
-        "auto form1::main() -> void {",
-        "  application::run(form1 {});",
-        "}",
+        "/// @brief The entry point to call when the application loads (equivalent to [main](https://en.cppreference.com/c/language/main_function)).",
+        xtd::string::format("/// @remarks The Implementation of `startup_({0}::form1::main);` is simply `auto main() -> int {{return xtd::startup::run({0}::form1::main);}}`.", name),
+        xtd::string::format("startup_({}::form1::main);", name),
       };
       
       xtd::io::file::write_all_lines(xtd::io::path::combine(path, "src", "form1.cpp"), lines);
