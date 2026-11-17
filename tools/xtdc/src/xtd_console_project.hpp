@@ -93,15 +93,10 @@ namespace xtdc_command {
     
     void create_xtd_console_source(const xtd::string& name, const xtd::string& path) const {
       auto lines = xtd::array<xtd::string> {
-        "/// @file",
-        xtd::string::format("/// @brief Contains {}::program class.", name),
-        xtd::string::format("/// @copyright Copyright (c) {} YourCompanyName. All rights reserved.", xtd::date_time::now().year()),
         "#include <xtd/xtd>",
         "",
-        "/// @brief Represents the namespace that contains application objects.",
         xtd::string::format("namespace {} {{", name),
         "  /// @brief Represents the main class.",
-        xtd::string::format("  /// @remarks Contains the {}::program::main entry point method;", name),
         "  class program {",
         "  public:",
         "    /// @brief The main entry point for the application.",
@@ -111,8 +106,7 @@ namespace xtdc_command {
         "  };",
         "}",
         "",
-        "/// @brief The entry point to call when the application loads (equivalent to [main](https://en.cppreference.com/c/language/main_function)).",
-        xtd::string::format("/// @remarks The Implementation of `startup_({0}::program::main);` is simply `auto main() -> int {{return xtd::startup::run({0}::program::main);}}`.", name),
+        xtd::string::format("/// @brief The entry point to call when the application loads. The Implementation of `startup_({0}::program::main);` is simply `auto main() -> int {{return xtd::startup::run({0}::program::main);}}`.", name),
         xtd::string::format("startup_({}::program::main);", name),
       };
       
