@@ -41,7 +41,7 @@ namespace xtdc_command {
         "source_group(src FILES ${SOURCES})",
         "",
         "# Options",
-        "set(CMAKE_C_STANDARD 11)",
+        "set(CMAKE_C_STANDARD 17)",
         "set(CMAKE_C_STANDARD_REQUIRED ON)",
         "set_property(GLOBAL PROPERTY USE_FOLDERS ON)",
         "",
