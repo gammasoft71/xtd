@@ -431,7 +431,7 @@ namespace xtd {
       static auto join_all_ptr(const xtd::array<thread*>& threads, int32 milliseconds_timeout) -> bool;
       [[nodiscard]] static auto main_thread() -> thread&;
       static auto set_main_thread_id(intptr id) -> void;
-      auto thread_proc() -> void;
+      auto thread_proc() noexcept -> void;
       [[nodiscard]] static auto unmanaged_thread() -> thread&;
             
       xtd::sptr<data> data_;

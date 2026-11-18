@@ -576,7 +576,7 @@ auto thread::set_main_thread_id(intptr id) -> void {
   data::main_thread_id = id;
 }
 
-void thread::thread_proc() {
+void thread::thread_proc() noexcept {
   try {
     using_(auto lock = std::lock_guard<std::recursive_mutex> {data::threads_mutex}) {
       interlocked::exchange(data_->thread_id, get_current_thread_id());
@@ -598,7 +598,7 @@ void thread::thread_proc() {
   } catch (...) {
     xtd::exception::show_exception();
   }
-  
+
   interlocked::exchange(data_->state, data_->state | threading::thread_state::stopped);
   data_->end_thread_event.set();
   using_(auto lock = std::lock_guard<std::recursive_mutex> {data::threads_mutex}) {
