@@ -64,7 +64,7 @@ namespace xtd {
     /// This example show a main_function with argument and return code
     /// @include startup4.cpp
     template<typename main_function_t>
-    static auto run(main_function_t&& main_function) -> int {
+    [[nodiscard]] static auto run(main_function_t&& main_function) noexcept -> int {
       try {
         scope_exit_ {xtd::threading::thread::join_all();};
         return internal_run(std::forward<main_function_t>(main_function));
