@@ -207,8 +207,6 @@ namespace xtd {
         
         template<typename control_t>
         auto add(control_t& value) -> void {
-          for (const auto& control : items())
-            if (control.get() == value) return;
           base::add(value);
         }
         
@@ -236,8 +234,6 @@ namespace xtd {
         
         template<typename control_t>
         auto insert(xtd::usize index, control_t& value) -> void {
-          for (const auto& control : items())
-            if (control.get() == value) return;
           base::insert(index, value);
         }
 
