@@ -3522,9 +3522,9 @@ See also <a class="el" href="structxtd_1_1scope__success.html" title="Nowadays, 
   </dd>
 </dl>
 <dl class="section user"><dt>Implementation</dt><dd><div class="fragment"><div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keywordflow">return</span> <a class="code hl_function" href="classxtd_1_1startup.html#a4c3dc69bf8aaa1afa0ab39f91a5de487">xtd::startup::run</a>(main_function);</div>
+<div class="line">  <span class="keywordflow">return</span> <a class="code hl_function" href="classxtd_1_1startup.html#ad75340df6f8cae98270d1c912f484ff9">xtd::startup::run</a>(main_function);</div>
 <div class="line">}</div>
-<div class="ttc" id="aclassxtd_1_1startup_html_a4c3dc69bf8aaa1afa0ab39f91a5de487"><div class="ttname"><a href="classxtd_1_1startup.html#a4c3dc69bf8aaa1afa0ab39f91a5de487">xtd::startup::run</a></div><div class="ttdeci">static auto run(main_function_t &amp;&amp;main_function) -&gt; int</div><div class="ttdoc">Safely call the specified application&#39;s main entry point.</div><div class="ttdef"><b>Definition</b> startup.hpp:67</div></div>
+<div class="ttc" id="aclassxtd_1_1startup_html_ad75340df6f8cae98270d1c912f484ff9"><div class="ttname"><a href="classxtd_1_1startup.html#ad75340df6f8cae98270d1c912f484ff9">xtd::startup::run</a></div><div class="ttdeci">static auto run(main_function_t &amp;&amp;main_function) noexcept -&gt; int</div><div class="ttdoc">Safely call the specified application&#39;s main entry point.</div><div class="ttdef"><b>Definition</b> startup.hpp:67</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd><span class="tt">main_function</span> can be one of following signatures :<ul>
 <li><pre class="fragment">auto main_function() -&gt; void {} </pre></li>

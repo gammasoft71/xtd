@@ -127,13 +127,13 @@ Inheritance diagram for xtd::startup:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Static Methods</h2></td></tr>
-<tr class="memitem:a4c3dc69bf8aaa1afa0ab39f91a5de487" id="r_a4c3dc69bf8aaa1afa0ab39f91a5de487"><td class="memTemplParams" colspan="2">template&lt;typename main_function_t&gt; </td></tr>
-<tr class="memitem:a4c3dc69bf8aaa1afa0ab39f91a5de487 template"><td class="memItemLeft">static <a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a>&#160;</td><td class="memItemRight"><a class="el" href="#a4c3dc69bf8aaa1afa0ab39f91a5de487">run</a> (main_function_t &amp;&amp;main_function) -&gt; int</td></tr>
-<tr class="memdesc:a4c3dc69bf8aaa1afa0ab39f91a5de487"><td class="mdescLeft">&#160;</td><td class="mdescRight">Safely call the specified application's main entry point.  <br /></td></tr>
+<tr class="memitem:ad75340df6f8cae98270d1c912f484ff9" id="r_ad75340df6f8cae98270d1c912f484ff9"><td class="memTemplParams" colspan="2">template&lt;typename main_function_t&gt; </td></tr>
+<tr class="memitem:ad75340df6f8cae98270d1c912f484ff9 template"><td class="memItemLeft">static <a class="el" href="debugger_8hpp.html#ae9368ce0234da295a667ff8303ae02b3">auto</a>&#160;</td><td class="memItemRight"><a class="el" href="#ad75340df6f8cae98270d1c912f484ff9">run</a> (main_function_t &amp;&amp;main_function) noexcept -&gt; int</td></tr>
+<tr class="memdesc:ad75340df6f8cae98270d1c912f484ff9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Safely call the specified application's main entry point.  <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a4c3dc69bf8aaa1afa0ab39f91a5de487" name="a4c3dc69bf8aaa1afa0ab39f91a5de487"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4c3dc69bf8aaa1afa0ab39f91a5de487">&#9670;&#160;</a></span>run()</h2>
+<a id="ad75340df6f8cae98270d1c912f484ff9" name="ad75340df6f8cae98270d1c912f484ff9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad75340df6f8cae98270d1c912f484ff9">&#9670;&#160;</a></span>run()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -152,7 +152,7 @@ template&lt;typename main_function_t&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -168,7 +168,7 @@ template&lt;typename main_function_t&gt; </div>
 <dd>
 The <a class="el" href="classxtd_1_1threading_1_1thread.html#aa03ec5ab6d35f7445f3e590fd1c20468" title="Blocks the calling thread until all joinable threads terminate.">xtd::threading::thread::join_all</a> method are call before exit. See <a class="el" href="classxtd_1_1threading_1_1thread.html#aa03ec5ab6d35f7445f3e590fd1c20468" title="Blocks the calling thread until all joinable threads terminate.">xtd::threading::thread::join_all</a> for more information. </dd>
 <dd>
-The <a class="el" href="#a4c3dc69bf8aaa1afa0ab39f91a5de487" title="Safely call the specified application&#39;s main entry point.">xtd::startup::run</a> method is used by the keyword <a class="el" href="group__keywords.html#gaeb9462ec721c9718cf689e93bf11bf56" title="Defines the entry point to be called when the application loads. Generally this is set either to the ...">startup_</a>. </dd>
+The <a class="el" href="#ad75340df6f8cae98270d1c912f484ff9" title="Safely call the specified application&#39;s main entry point.">xtd::startup::run</a> method is used by the keyword <a class="el" href="group__keywords.html#gaeb9462ec721c9718cf689e93bf11bf56" title="Defines the entry point to be called when the application loads. Generally this is set either to the ...">startup_</a>. </dd>
 <dd>
 <span class="tt">main_function</span> can be one of following signatures :<ul>
 <li><pre class="fragment">auto main_function() -&gt; void {} </pre></li>
