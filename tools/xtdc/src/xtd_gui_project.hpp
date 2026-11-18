@@ -100,7 +100,9 @@ namespace xtdc_command {
     
     void create_source(const xtd::string& name, const xtd::string& path) const {
       auto lines = xtd::array<xtd::string> {
-        "#include <xtd/xtd>",
+        "#include <xtd/forms/application>",
+        "#include <xtd/forms/form>",
+        "#include <xtd/startup>",
         "",
         xtd::string::format("namespace {} {{", name),
         "  /// @brief Represents the main form.",
@@ -118,8 +120,9 @@ namespace xtdc_command {
         "  };",
         "}",
         "",
-        xtd::string::format("/// @brief The entry point to call when the application loads. The Implementation of `startup_({0}::form1::main);` is simply `auto main() -> int {{return xtd::startup::run({0}::form1::main);}}`.", name),
-        xtd::string::format("startup_({}::form1::main);", name),
+        "auto main() -> int {",
+        xtd::string::format("  return startup::run({}::form1::main);", name),
+        "}",
       };
       
       xtd::io::file::write_all_lines(xtd::io::path::combine(path, "src", "form1.cpp"), lines);
