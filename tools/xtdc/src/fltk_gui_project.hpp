@@ -10,9 +10,7 @@ namespace xtdc_command {
       xtd::io::directory::create_directory(create_solution ? xtd::io::path::combine(current_path(), name, "src") : xtd::io::path::combine(current_path(), "src"));
       if (create_solution) create_solution_cmakelists_txt(name);
       create_cmakelists_txt(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
-      create_include(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
       create_source(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
-      create_main(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
     }
     
     void generate(const xtd::string& name) const {
@@ -38,9 +36,7 @@ namespace xtdc_command {
         "# Project",
         xtd::string::format("project({} VERSION 1.0.0)", name),
         "set(SOURCES",
-        "  src/Window1.hpp",
         "  src/Window1.cpp",
-        "  src/Program.cpp",
         ")",
         "source_group(src FILES ${SOURCES})",
         "find_package(FLTK REQUIRED)",
@@ -67,57 +63,30 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(xtd::io::path::combine(path, "CMakeLists.txt"), lines);
     }
     
-    void create_include(const xtd::string& name, const xtd::string& path) const {
+    void create_source(const xtd::string& name, const xtd::string& path) const {
       auto lines = xtd::array<xtd::string> {
-        "/// @file",
-        "/// @brief Contains Window1 class.",
-        "#pragma once",
+        "#include <FL/Fl.H>",
         "#include <FL/Fl_Window.H>",
         "",
         xtd::string::format("namespace {} {{", name),
         "  /// @brief Represent the main window",
         "  class Window1 : public Fl_Window {",
         "  public:",
-        "    /// @brief Initializes a new instance of the Window1 class.",
-        "    Window1();",
+        "    Window1() : Fl_Window(100, 100, 800, 450, \"Window1\") {",
+        "    }",
         "  };",
         "}",
-      };
-      
-      xtd::io::file::write_all_lines(xtd::io::path::combine(path, "src", "Window1.hpp"), lines);
-    }
-    
-    void create_source(const xtd::string& name, const xtd::string& path) const {
-      auto lines = xtd::array<xtd::string> {
-        "#include \"Window1.hpp\"",
-        "",
-        xtd::string::format("using namespace {};", name),
-        "",
-        "Window1::Window1() : Fl_Window(100, 100, 800, 450, \"Window1\") {",
-        "}",
-      };
-      
-      xtd::io::file::write_all_lines(xtd::io::path::combine(path, "src", "Window1.cpp"), lines);
-    }
-    
-    void create_main(const xtd::string& name, const xtd::string& path) const {
-      auto lines = xtd::array<xtd::string> {
-        "#include \"Window1.hpp\"",
-        "#include <FL/Fl.H>",
-        "",
-        xtd::string::format("using namespace {};", name),
         "",
         "// The main entry point for the application.",
         "auto main(int argc, char* argv[]) -> int {",
-        "  Window1 window;",
+        xtd::string::format("  auto window = {}::Window1 {{}};", name),
         "  window.show(argc, argv);",
         "  return Fl::run();",
         "}",
       };
-      
-      xtd::io::file::write_all_lines(xtd::io::path::combine(path, "src", "Program.cpp"), lines);
+
+      xtd::io::file::write_all_lines(xtd::io::path::combine(path, "src", "Window1.cpp"), lines);
     }
-    
     void generate_cmakelists_txt(const xtd::string& name, const xtd::string& path) const {
       auto lines = xtd::collections::generic::list<xtd::string> {};
       lines.add("cmake_minimum_required(VERSION 3.20)");
