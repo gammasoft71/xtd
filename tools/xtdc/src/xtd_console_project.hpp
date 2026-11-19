@@ -101,7 +101,7 @@ namespace xtdc_command {
         "  class program {",
         "  public:",
         "    /// @brief The main entry point for the application.",
-        "    static auto main() {",
+        "    static auto main(const argument_collection& args) {",
         "      println(\"Hello, World!\");",
         "    }",
         "  };",
