@@ -77,6 +77,7 @@ namespace xtdc_command {
         "    Q_OBJECT",
         "  public:",
         "    Window1() {",
+        "      move(100, 100);",
         "      resize(800, 450);",
         "      setWindowTitle(\"Window1\");",
         "    }",
