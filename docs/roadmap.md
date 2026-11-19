@@ -229,8 +229,8 @@ see [Issues](https://github.com/gammasoft71/xtd/issues?q=is%3Aissue+-label%3Aenh
 
 | Issue                                                 | Library                 | Enhancements                             | Developer | status                                           |
 | ----------------------------------------------------- | ----------------------- | ---------------------------------------- | --------- | ------------------------------------------------ |
-|                                                       | xtd.drawing.native.gtk4 | Implementation of the Gtk4 toolkit       | Gammasoft |                                                  |
-|                                                       | xtd.forms.native.gtk4   | Implementation of the Gtk4 toolkit       | Gammasoft |                                                  |
+|                                                       | xtd.drawing.native.gtk4 | Implementation of the Gtk toolkit        | Gammasoft |                                                  |
+|                                                       | xtd.forms.native.gtk4   | Implementation of the Gtk toolkit        | Gammasoft |                                                  |
 
 ## Release 5.0.0
 
@@ -251,8 +251,8 @@ see [Issues](https://github.com/gammasoft71/xtd/issues?q=is%3Aissue+-label%3Aenh
 
 | Issue                                                 | Library                | Enhancements                               | Developer | status                                           |
 | ----------------------------------------------------- | ---------------------- | ------------------------------------------ | --------- | ------------------------------------------------ |
-|                                                       | xtd.drawing.native.qt6 | Implementation of the Qt6 toolkit          | Gammasoft |                                                  |
-|                                                       | xtd.forms.native.qt6   | Implementation of the Qt6 toolkit          | Gammasoft |                                                  |
+|                                                       | xtd.drawing.native.qt6 | Implementation of the Qt toolkit           | Gammasoft |                                                  |
+|                                                       | xtd.forms.native.qt6   | Implementation of the Qt toolkit           | Gammasoft |                                                  |
 
 ______________________________________________________________________________________________
 
