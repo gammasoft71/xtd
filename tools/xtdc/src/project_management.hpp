@@ -79,12 +79,12 @@ namespace xtdc_command {
     static xtd::array<project_sdk> get_valid_sdks(project_type type) {
       switch (type) {
         case project_type::unknown: return {project_sdk::none};
-        case project_type::blank_solution: return {project_sdk::xtd, project_sdk::xtd_c};
-        case project_type::console: return {project_sdk::none, project_sdk::xtd, project_sdk::xtd_c};
-        case project_type::gui: return {project_sdk::cocoa, project_sdk::fltk, project_sdk::gtk, project_sdk::gtkmm, project_sdk::qt, project_sdk::win32, project_sdk::win32_c, project_sdk::winforms, project_sdk::wpf, project_sdk::wxwidgets, project_sdk::xtd, project_sdk::xtd_c};
-        case project_type::shared_library: return {project_sdk::none, project_sdk::xtd, project_sdk::xtd_c};
-        case project_type::static_library: return {project_sdk::none, project_sdk::xtd, project_sdk::xtd_c};
-        case project_type::unit_test_application: return {project_sdk::catch2, project_sdk::gtest, project_sdk::xtd, project_sdk::xtd_c};
+        case project_type::blank_solution: return {project_sdk::xtd/*, project_sdk::xtd_c*/};
+        case project_type::console: return {project_sdk::none, project_sdk::xtd/*, project_sdk::xtd_c*/};
+        case project_type::gui: return {project_sdk::cocoa, project_sdk::fltk, project_sdk::gtk, project_sdk::gtkmm, project_sdk::qt, project_sdk::win32, project_sdk::win32_c, project_sdk::winforms, project_sdk::wpf, project_sdk::wxwidgets, project_sdk::xtd/*, project_sdk::xtd_c*/};
+        case project_type::shared_library: return {project_sdk::none, project_sdk::xtd/*, project_sdk::xtd_c*/};
+        case project_type::static_library: return {project_sdk::none, project_sdk::xtd/*, project_sdk::xtd_c*/};
+        case project_type::unit_test_application: return {project_sdk::catch2, project_sdk::gtest, project_sdk::xtd/*, project_sdk::xtd_c*/};
       }
       xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument, "type is not project_type valid value");
     }
@@ -105,7 +105,7 @@ namespace xtdc_command {
         case project_sdk::wpf: return {project_language::csharp};
         case project_sdk::wxwidgets: return {project_language::cpp};
         case project_sdk::xtd: return {project_language::cpp};
-        case project_sdk::xtd_c: return {project_language::c};
+        //case project_sdk::xtd_c: return {project_language::c};
       }
       xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument, "sdk is not project_sdk valid value");
     }
@@ -399,14 +399,14 @@ namespace xtdc_command {
       std::map<project_sdk, xtd::action<const xtd::string&, bool>> {
         {project_sdk::none, {blank_solution_project {path_}, &blank_solution_project::create}},
         {project_sdk::xtd, {xtd_blank_solution_project {path_}, &xtd_blank_solution_project::create}},
-        {project_sdk::xtd_c, {xtd_c_blank_solution_project {path_}, &xtd_c_blank_solution_project::create}}
+        //{project_sdk::xtd_c, {xtd_c_blank_solution_project {path_}, &xtd_c_blank_solution_project::create}}
       } [sdk](name, create_solution);
     }
     
     void create_console(const xtd::string& name, project_sdk sdk, project_language language, bool create_solution) const {
       switch (sdk) {
         case project_sdk::xtd: xtd_console_project(path_).create(name, create_solution); break;
-        case project_sdk::xtd_c: xtd_c_console_project(path_).create(name, create_solution); break;
+        //case project_sdk::xtd_c: xtd_c_console_project(path_).create(name, create_solution); break;
         default: std::map<project_language, xtd::action<const xtd::string&, bool>> {
             {project_language::c, {c_console_project {path_}, &c_console_project::create}},
             {project_language::cpp, {cpp_console_project {path_}, &cpp_console_project::create}},
@@ -429,14 +429,14 @@ namespace xtdc_command {
         {project_sdk::wpf, {wpf_gui_project {path_}, &wpf_gui_project::create}},
         {project_sdk::wxwidgets, {wxwidgets_gui_project {path_}, &wxwidgets_gui_project::create}},
         {project_sdk::xtd, {xtd_gui_project {path_}, &xtd_gui_project::create}},
-        {project_sdk::xtd_c, {xtd_c_gui_project {path_}, &xtd_c_gui_project::create}}
+        //{project_sdk::xtd_c, {xtd_c_gui_project {path_}, &xtd_c_gui_project::create}}
       } [sdk](name, create_solution);
     }
     
     void create_shared_library(const xtd::string& name, project_sdk sdk, project_language language, bool create_solution) const {
       switch (sdk) {
         case project_sdk::xtd: xtd_shared_library_project(path_).create(name, create_solution); break;
-        case project_sdk::xtd_c: xtd_c_shared_library_project(path_).create(name, create_solution); break;
+        //case project_sdk::xtd_c: xtd_c_shared_library_project(path_).create(name, create_solution); break;
         default: std::map<project_language, xtd::action<const xtd::string&, bool>> {
             {project_language::c, {c_shared_library_project {path_}, &c_shared_library_project::create}},
             {project_language::cpp, {cpp_shared_library_project {path_}, &cpp_shared_library_project::create}},
@@ -449,7 +449,7 @@ namespace xtdc_command {
     void create_static_library(const xtd::string& name, project_sdk sdk, project_language language, bool create_solution) const {
       switch (sdk) {
         case project_sdk::xtd: xtd_static_library_project(path_).create(name, create_solution); break;
-        case project_sdk::xtd_c: xtd_c_static_library_project(path_).create(name, create_solution); break;
+        //case project_sdk::xtd_c: xtd_c_static_library_project(path_).create(name, create_solution); break;
         default: std::map<project_language, xtd::action<const xtd::string&, bool>> {
             {project_language::c, {c_static_library_project {path_}, &c_static_library_project::create}},
             {project_language::cpp, {cpp_static_library_project {path_}, &cpp_static_library_project::create}},
@@ -464,7 +464,7 @@ namespace xtdc_command {
         {project_sdk::catch2, {catch2_unit_test_application_project {path_}, &catch2_unit_test_application_project::create}},
         {project_sdk::gtest, {gtest_unit_test_application_project {path_}, &gtest_unit_test_application_project::create}},
         {project_sdk::xtd, {xtd_unit_test_application_project {path_}, &xtd_unit_test_application_project::create}},
-        {project_sdk::xtd_c, {xtd_c_unit_test_application_project {path_}, &xtd_c_unit_test_application_project::create}}
+        //{project_sdk::xtd_c, {xtd_c_unit_test_application_project {path_}, &xtd_c_unit_test_application_project::create}}
       } [sdk](name, create_solution);
     }
     
@@ -483,14 +483,14 @@ namespace xtdc_command {
       std::map<project_sdk, xtd::action<const xtd::string&>> {
         {project_sdk::none, {blank_solution_project {path_}, &blank_solution_project::generate}},
         {project_sdk::xtd, {xtd_blank_solution_project {path_}, &xtd_blank_solution_project::generate}},
-        {project_sdk::xtd_c, {xtd_c_blank_solution_project {path_}, &xtd_c_blank_solution_project::generate}}
+        //{project_sdk::xtd_c, {xtd_c_blank_solution_project {path_}, &xtd_c_blank_solution_project::generate}}
       } [sdk](name);
     }
     
     void generate_console(const xtd::string& name, project_sdk sdk, project_language language) const {
       switch (sdk) {
         case project_sdk::xtd: xtd_console_project(path_).generate(name); break;
-        case project_sdk::xtd_c: xtd_c_console_project(path_).generate(name); break;
+        //case project_sdk::xtd_c: xtd_c_console_project(path_).generate(name); break;
         default: std::map<project_language, xtd::action<const xtd::string&>> {
             {project_language::c, {c_console_project {path_}, &c_console_project::generate}},
             {project_language::cpp, {cpp_console_project {path_}, &cpp_console_project::generate}},
@@ -513,14 +513,14 @@ namespace xtdc_command {
         {project_sdk::wpf, {wpf_gui_project {path_}, &wpf_gui_project::generate}},
         {project_sdk::wxwidgets, {wxwidgets_gui_project {path_}, &wxwidgets_gui_project::generate}},
         {project_sdk::xtd, {xtd_gui_project {path_}, &xtd_gui_project::generate}},
-        {project_sdk::xtd_c, {xtd_c_gui_project {path_}, &xtd_c_gui_project::generate}}
+        //{project_sdk::xtd_c, {xtd_c_gui_project {path_}, &xtd_c_gui_project::generate}}
       } [sdk](name);
     }
     
     void generate_shared_library(const xtd::string& name, project_sdk sdk, project_language language) const {
       switch (sdk) {
         case project_sdk::xtd: xtd_shared_library_project(path_).generate(name); break;
-        case project_sdk::xtd_c: xtd_c_shared_library_project(path_).generate(name); break;
+        //case project_sdk::xtd_c: xtd_c_shared_library_project(path_).generate(name); break;
         default: std::map<project_language, xtd::action<const xtd::string&>> {
             {project_language::c, {c_shared_library_project {path_}, &c_shared_library_project::generate}},
             {project_language::cpp, {cpp_shared_library_project {path_}, &cpp_shared_library_project::generate}},
@@ -533,7 +533,7 @@ namespace xtdc_command {
     void generate_static_library(const xtd::string& name, project_sdk sdk, project_language language) const {
       switch (sdk) {
         case project_sdk::xtd: xtd_static_library_project(path_).generate(name); break;
-        case project_sdk::xtd_c: xtd_c_static_library_project(path_).generate(name); break;
+        //case project_sdk::xtd_c: xtd_c_static_library_project(path_).generate(name); break;
         default: std::map<project_language, xtd::action<const xtd::string&>> {
             {project_language::c, {c_static_library_project {path_}, &c_static_library_project::generate}},
             {project_language::cpp, {cpp_static_library_project {path_}, &cpp_static_library_project::generate}},
@@ -548,7 +548,7 @@ namespace xtdc_command {
         {project_sdk::catch2, {catch2_unit_test_application_project {path_}, &catch2_unit_test_application_project::generate}},
         {project_sdk::gtest, {gtest_unit_test_application_project {path_}, &gtest_unit_test_application_project::generate}},
         {project_sdk::xtd, {xtd_unit_test_application_project {path_}, &xtd_unit_test_application_project::generate}},
-        {project_sdk::xtd_c, {xtd_c_unit_test_application_project {path_}, &xtd_c_unit_test_application_project::generate}}
+        //{project_sdk::xtd_c, {xtd_c_unit_test_application_project {path_}, &xtd_c_unit_test_application_project::generate}}
       } [sdk](name);
     }
     

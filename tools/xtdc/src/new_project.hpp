@@ -49,8 +49,8 @@ namespace xtdc_command {
       }
       
       auto project_type = xtd::collections::generic::dictionary<xtd::string, xtdc_command::project_type> {{"sln", project_type::blank_solution}, {"gui", project_type::gui}, {"console", project_type::console}, {"sharedlib", project_type::shared_library}, {"staticlib", project_type::static_library}, {"test", project_type::unit_test_application}} [type];
-      auto project_sdk = xtd::collections::generic::dictionary<xtd::string, xtdc_command::project_sdk> {{"none", xtdc_command::project_sdk::none}, {"catch2", xtdc_command::project_sdk::catch2}, {"cocoa", xtdc_command::project_sdk::cocoa}, {"fltk", xtdc_command::project_sdk::fltk}, {"gtest", xtdc_command::project_sdk::gtest}, {"gtk", xtdc_command::project_sdk::gtk}, {"gtkmm", xtdc_command::project_sdk::gtkmm}, {"qt", xtdc_command::project_sdk::qt}, {"win32", xtdc_command::project_sdk::win32}, {"win32_c", xtdc_command::project_sdk::win32_c}, {"winforms", xtdc_command::project_sdk::winforms}, {"wpf", xtdc_command::project_sdk::wpf}, {"wxwidgets", xtdc_command::project_sdk::wxwidgets}, {"xtd", xtdc_command::project_sdk::xtd}, {"xtd_c", xtdc_command::project_sdk::xtd_c}} [sdk];
-      auto project_language = xtd::collections::generic::dictionary<xtd::string, xtdc_command::project_language> {{"cocoa", xtdc_command::project_language::objectivec}, {"fltk", xtdc_command::project_language::cpp}, {"gtk", xtdc_command::project_language::cpp}, {"gtkmm", xtdc_command::project_language::cpp}, {"qt", xtdc_command::project_language::cpp}, {"win32", xtdc_command::project_language::cpp}, {"win32_c", xtdc_command::project_language::c}, {"winforms", xtdc_command::project_language::csharp}, {"wpf", xtdc_command::project_language::csharp}, {"wxwidgets", xtdc_command::project_language::cpp}, {"xtd", xtdc_command::project_language::cpp}, {"xtd_c", xtdc_command::project_language::c}, {"c++", xtdc_command::project_language::cpp}, {"cpp", xtdc_command::project_language::cpp}, {"c", xtdc_command::project_language::c}, {"c#", xtdc_command::project_language::csharp}, {"csharp", xtdc_command::project_language::csharp}, {"objective-c", xtdc_command::project_language::objectivec}, {"objectivec", xtdc_command::project_language::objectivec}} [sdk];
+      auto project_sdk = xtd::collections::generic::dictionary<xtd::string, xtdc_command::project_sdk> {{"none", xtdc_command::project_sdk::none}, {"catch2", xtdc_command::project_sdk::catch2}, {"cocoa", xtdc_command::project_sdk::cocoa}, {"fltk", xtdc_command::project_sdk::fltk}, {"gtest", xtdc_command::project_sdk::gtest}, {"gtk", xtdc_command::project_sdk::gtk}, {"gtkmm", xtdc_command::project_sdk::gtkmm}, {"qt", xtdc_command::project_sdk::qt}, {"win32", xtdc_command::project_sdk::win32}, {"win32_c", xtdc_command::project_sdk::win32_c}, {"winforms", xtdc_command::project_sdk::winforms}, {"wpf", xtdc_command::project_sdk::wpf}, {"wxwidgets", xtdc_command::project_sdk::wxwidgets}, {"xtd", xtdc_command::project_sdk::xtd}/*, {"xtd_c", xtdc_command::project_sdk::xtd_c}*/} [sdk];
+      auto project_language = xtd::collections::generic::dictionary<xtd::string, xtdc_command::project_language> {{"cocoa", xtdc_command::project_language::objectivec}, {"fltk", xtdc_command::project_language::cpp}, {"gtk", xtdc_command::project_language::cpp}, {"gtkmm", xtdc_command::project_language::cpp}, {"qt", xtdc_command::project_language::cpp}, {"win32", xtdc_command::project_language::cpp}, {"win32_c", xtdc_command::project_language::c}, {"winforms", xtdc_command::project_language::csharp}, {"wpf", xtdc_command::project_language::csharp}, {"wxwidgets", xtdc_command::project_language::cpp}, {"xtd", xtdc_command::project_language::cpp}/*, {"xtd_c", xtdc_command::project_language::c}*/, {"c++", xtdc_command::project_language::cpp}, {"cpp", xtdc_command::project_language::cpp}, {"c", xtdc_command::project_language::c}, {"c#", xtdc_command::project_language::csharp}, {"csharp", xtdc_command::project_language::csharp}, {"objective-c", xtdc_command::project_language::objectivec}, {"objectivec", xtdc_command::project_language::objectivec}} [sdk];
       auto status = project_management(get_project_full_path_from_path(path)).create(name, project_type, project_sdk, project_language);
       switch (status) {
         case operation_status::success: console::write_line("\n** CREATE SUCCEEDED **\n\n"); break;
@@ -75,14 +75,20 @@ namespace xtdc_command {
         "  A template short name of the following table. If no short name specified, gui is used.",
         "  Templates               Short Name     SDK/Language                         ",
         "  ----------------------------------------------------------------------------",
-        "  Console Application     console        [xtd], xtd_c, c++, c, c#, objective-c",
-        "  GUI Application         gui            [xtd], xtd_c, cocoa, fltk, gtk, gtkmm",
-        "                                         wxwidgets, qt, win32, win32_c,       ",
+//        "  Console Application     console        [xtd], xtd_c, c++, c, c#, objective-c",
+        "  Console Application     console        [xtd], c++, c, c#, objective-c",
+//        "  GUI Application         gui            [xtd], xtd_c, cocoa, fltk, gtk, gtkmm,",
+        "  GUI Application         gui            [xtd], cocoa, fltk, gtk, gtkmm,",
+        "                                         wxwidgets, qt, win32, win32_c,",
         "                                         winforms, wpf",
-        "  Shared library          sharedlib      [xtd], xtd_c, c++, c, c#, objective-c",
-        "  Static library          staticlib      [xtd], xtd_c, c++, c, c#, objective-c",
-        "  Unit Test Project       test           [xtd], xtd_c, gtest, catch2",
-        "  Solution File           sln            [xtd], xtd_c",
+//        "  Shared library          sharedlib      [xtd], xtd_c, c++, c, c#, objective-c",
+        "  Shared library          sharedlib      [xtd], c++, c, c#, objective-c",
+//        "  Static library          staticlib      [xtd], xtd_c, c++, c, c#, objective-c",
+        "  Static library          staticlib      [xtd], c++, c, c#, objective-c",
+//        "  Unit Test Project       test           [xtd], xtd_c, gtest, catch2",
+        "  Unit Test Project       test           [xtd], gtest, catch2",
+//        "  Solution File           sln            [xtd], xtd_c",
+        "  Solution File           sln            [xtd]",
         "",
         "path:",
         "  Location to place the generated output. If no path is specified, the current path is used.",

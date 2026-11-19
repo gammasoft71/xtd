@@ -15,6 +15,6 @@ namespace xtdc_command {
     wpf,
     wxwidgets,
     xtd,
-    xtd_c,
+    //xtd_c,
   };
 }
