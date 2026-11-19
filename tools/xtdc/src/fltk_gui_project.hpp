@@ -76,7 +76,7 @@ namespace xtdc_command {
         "    }",
         "",
         "    /// @brief The main entry point for the application.",
-        "    static auto main(int argc, char* argv[])< {",
+        "    [[nodiscard]] static auto main(int argc, char* argv[])< {",
         "      auto window = fltk_gui_app::Window1 {};",
         "      window.show(argc, argv);",
         "      return Fl::run();",
