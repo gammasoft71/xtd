@@ -100,7 +100,7 @@ namespace xtdc_command {
       lines.add("source_group(src FILES ${SOURCES})");
       lines.add("");
       lines.add("# Options");
-      lines.add("set(CMAKE_C_STANDARD 11)");
+      lines.add("set(CMAKE_C_STANDARD 17)");
       lines.add("set(CMAKE_C_STANDARD_REQUIRED ON)");
       lines.add("set_property(GLOBAL PROPERTY USE_FOLDERS ON)");
       lines.add("");

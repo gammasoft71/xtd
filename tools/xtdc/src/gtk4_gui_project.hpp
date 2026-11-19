@@ -46,7 +46,7 @@ namespace xtdc_command {
         "link_libraries(${GTK_LIBRARIES})",
         "",
         "# Options",
-        "set(CMAKE_C_STANDARD 11)",
+        "set(CMAKE_C_STANDARD 17)",
         "set(CMAKE_C_STANDARD_REQUIRED ON)",
         "set_property(GLOBAL PROPERTY USE_FOLDERS ON)",
         "",
@@ -99,23 +99,7 @@ namespace xtdc_command {
       lines.add("link_libraries(${GTK_LIBRARIES})");
       lines.add("");
       lines.add("# Options");
-      lines.add("set(CMAKE_C_STANDARD 11)");
-      lines.add("set(CMAKE_C_STANDARD_REQUIRED ON)");
-      lines.add("set_property(GLOBAL PROPERTY USE_FOLDERS ON)");
-      lines.add("");
-      lines.add("# Application properties");
-      lines.add("add_executable(${PROJECT_NAME} WIN32 MACOSX_BUNDLE ${SOURCES})");
-      lines.add("  src/program.c");
-      lines.add(")");
-      lines.add("source_group(src FILES ${SOURCES})");
-      lines.add("find_package(PkgConfig)");
-      lines.add("pkg_check_modules(GTK gtk+-4.0)");
-      lines.add("include_directories(${GTK_INCLUDE_DIRS})");
-      lines.add("link_directories(${GTK_LIBRARY_DIRS})");
-      lines.add("link_libraries(${GTK_LIBRARIES})");
-      lines.add("");
-      lines.add("# Options");
-      lines.add("set(CMAKE_C_STANDARD 11)");
+      lines.add("set(CMAKE_C_STANDARD 17)");
       lines.add("set(CMAKE_C_STANDARD_REQUIRED ON)");
       lines.add("set_property(GLOBAL PROPERTY USE_FOLDERS ON)");
       lines.add("");

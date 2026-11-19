@@ -72,7 +72,7 @@ namespace xtdc_command {
         "  /// @brief Represent the main window",
         "  class Window1 : public Fl_Window {",
         "  public:",
-        "    Window1() : Fl_Window {800, 450, \"Window1\"} {",
+        "    Window1() : Fl_Window {100, 100, 800, 450, \"Window1\"} {",
         "    }",
         "",
         "    /// @brief The main entry point for the application.",
