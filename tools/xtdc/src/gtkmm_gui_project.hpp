@@ -10,9 +10,7 @@ namespace xtdc_command {
       xtd::io::directory::create_directory(create_solution ? xtd::io::path::combine(current_path(), name, "src") : xtd::io::path::combine(current_path(), "src"));
       if (create_solution) create_solution_cmakelists_txt(name);
       create_cmakelists_txt(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
-      create_include(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
       create_source(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
-      create_main(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
     }
     
     void generate(const xtd::string& name) const {
@@ -38,9 +36,7 @@ namespace xtdc_command {
         "# Project",
         xtd::string::format("project({} VERSION 1.0.0)", name),
         "set(SOURCES",
-        "  src/Window1.hpp",
         "  src/Window1.cpp",
-        "  src/Program.cpp",
         ")",
         "source_group(src FILES ${SOURCES})",
         "find_package(PkgConfig)",
@@ -71,8 +67,11 @@ namespace xtdc_command {
         "  /// @brief Represent the main window",
         "  class Window1 : public Gtk::Window {",
         "  public:",
-        "    /// @brief Initializes a new instance of the Window1 class.",
-        "    Window1();",
+        "    Window1() {",
+        "      set_title(\"Window1\");",
+        "      move(100, 100);",
+        "      resize(800, 450);",
+        "    }",
         "  };",
         "}",
       };
@@ -82,15 +81,32 @@ namespace xtdc_command {
     
     void create_source(const xtd::string& name, const xtd::string& path) const {
       auto lines = xtd::array<xtd::string> {
-        "#include \"Window1.hpp\"",
+        "#include <gtkmm.h>",
         "",
         "using namespace Gtk;",
-        xtd::string::format("using namespace {};", name),
         "",
-        "Window1::Window1() {",
-        "  set_title(\"Window1\");",
-        "  move(100, 100);",
-        "  resize(800, 450);",
+        xtd::string::format("namespace {} {{", name),
+        "  /// @brief Represent the main window",
+        "  class Window1 : public Window {",
+        "  public:",
+        "    Window1() {",
+        "      set_title(\"Window1\");",
+        "      move(100, 100);",
+        "      resize(800, 450);",
+        "    }",
+        "",
+        "    // @brief The main entry point for the application.",
+        "    [[nodiscard]] static auto Main(int argc, char* argv[]) {",
+        "      auto application = Application::create(argc, argv);",
+        xtd::string::format("      auto window1 = {}::Window1 {{}};", name),
+        "      window1.show_all();",
+        "      return application->run(window1);",
+        "    }",
+        "  };",
+        "}",
+        "",
+        "auto main(int argc, char* argv[]) -> int {",
+        xtd::string::format("  return {}::Window1::Main(argc, argv);", name),
         "}",
       };
       
@@ -105,12 +121,6 @@ namespace xtdc_command {
         xtd::string::format("using namespace {};", name),
         "",
         "// The main entry point for the application.",
-        "auto main(int argc, char* argv[]) -> int {",
-        "  auto application = Application::create(argc, argv);",
-        xtd::string::format("  auto window1 = {}::Window1 {{}};", name),
-        "  window1.show_all();",
-        "  return application->run(window1);",
-        "}",
       };
       
       xtd::io::file::write_all_lines(xtd::io::path::combine(path, "src", "Program.cpp"), lines);
