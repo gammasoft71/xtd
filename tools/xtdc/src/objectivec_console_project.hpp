@@ -59,7 +59,6 @@ namespace xtdc_command {
         "  @autoreleasepool {",
         "    NSLog(@\"Hello, World!\");",
         "  }",
-        "  return 0;",
         "}",
       };
       
