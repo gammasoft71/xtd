@@ -10,9 +10,7 @@ namespace xtdc_command {
       xtd::io::directory::create_directory(create_solution ? xtd::io::path::combine(current_path(), name, "src") : xtd::io::path::combine(current_path(), "src"));
       if (create_solution) create_solution_cmakelists_txt(name);
       create_cmakelists_txt(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
-      create_include(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
       create_source(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
-      create_main(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
     }
     
     void generate(const xtd::string& name) const {
@@ -38,9 +36,7 @@ namespace xtdc_command {
         "# Project",
         xtd::string::format("project({} VERSION 1.0.0)", name),
         "set(SOURCES",
-        "  src/Frame1.hpp",
         "  src/Frame1.cpp",
-        "  src/Program.cpp",
         ")",
         "source_group(src FILES ${SOURCES})",
         "find_package(wxWidgets REQUIRED)",
@@ -59,59 +55,33 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(xtd::io::path::combine(path, "CMakeLists.txt"), lines);
     }
     
-    void create_include(const xtd::string& name, const xtd::string& path) const {
+    void create_source(const xtd::string& name, const xtd::string& path) const {
       auto lines = xtd::array<xtd::string> {
-        "/// @file",
-        "/// @brief Contains Frame1 class.",
-        "#pragma once",
+        "#include <wx/app.h>",
         "#include <wx/frame.h>",
         "",
         xtd::string::format("namespace {} {{", name),
         "  /// @brief Represent the main window",
         "  class Frame1 : public wxFrame {",
         "  public:",
-        "    /// @brief Initializes a new instance of the Frame1 class.",
-        "    Frame1();",
+        "    Frame1() : wxFrame {nullptr, wxID_ANY, \"Frame1\", wxDefaultPosition, {800, 450}} {",
+        "    }",
         "  };",
-        "}",
-      };
-      
-      xtd::io::file::write_all_lines(xtd::io::path::combine(path, "src", "Frame1.hpp"), lines);
-    }
-    
-    void create_source(const xtd::string& name, const xtd::string& path) const {
-      auto lines = xtd::array<xtd::string> {
-        "#include \"Frame1.hpp\"",
         "",
-        xtd::string::format("using namespace {};", name),
-        "",
-        "Frame1::Frame1() : wxFrame(nullptr, wxID_ANY, \"Frame1\", wxDefaultPosition, {800, 450}) {",
-        "}",
-      };
-      
-      xtd::io::file::write_all_lines(xtd::io::path::combine(path, "src", "Frame1.cpp"), lines);
-    }
-    
-    void create_main(const xtd::string& name, const xtd::string& path) const {
-      auto lines = xtd::array<xtd::string> {
-        "#include \"Frame1.hpp\"",
-        "#include <wx/app.h>",
-        "",
-        xtd::string::format("namespace {} {{", name),
-        "  // Represent the application",
+        "  // @brief Represent the application",
         "  class Application : public wxApp {",
-        "    bool OnInit() override {",
-        "      (new Frame1())->Show();",
+        "    auto OnInit() -> bool override {",
+        "      (new Frame1 {})->Show();",
         "      return true;",
         "    }",
         "  };",
         "}",
         "",
-        "// The main entry point for the application.",
+        "// @brief The main entry point for the application.",
         xtd::string::format("wxIMPLEMENT_APP({}::Application);", name),
       };
       
-      xtd::io::file::write_all_lines(xtd::io::path::combine(path, "src", "Program.cpp"), lines);
+      xtd::io::file::write_all_lines(xtd::io::path::combine(path, "src", "Frame1.cpp"), lines);
     }
     
     void generate_cmakelists_txt(const xtd::string& name, const xtd::string& path) const {
