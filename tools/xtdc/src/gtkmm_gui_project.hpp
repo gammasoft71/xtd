@@ -57,28 +57,6 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(xtd::io::path::combine(path, "CMakeLists.txt"), lines);
     }
     
-    void create_include(const xtd::string& name, const xtd::string& path) const {
-      auto lines = xtd::array<xtd::string> {
-        "/// @file",
-        "/// @brief Contains Window1 class.",
-        "#include <gtkmm.h>",
-        "",
-        xtd::string::format("namespace {} {{", name),
-        "  /// @brief Represent the main window",
-        "  class Window1 : public Gtk::Window {",
-        "  public:",
-        "    Window1() {",
-        "      set_title(\"Window1\");",
-        "      move(100, 100);",
-        "      resize(800, 450);",
-        "    }",
-        "  };",
-        "}",
-      };
-      
-      xtd::io::file::write_all_lines(xtd::io::path::combine(path, "src", "Window1.hpp"), lines);
-    }
-    
     void create_source(const xtd::string& name, const xtd::string& path) const {
       auto lines = xtd::array<xtd::string> {
         "#include <gtkmm.h>",
@@ -96,7 +74,7 @@ namespace xtdc_command {
         "    }",
         "",
         "    // @brief The main entry point for the application.",
-        "    [[nodiscard]] static auto Main(int argc, char* argv[]) {",
+        "    [[nodiscard]] static auto main(int argc, char* argv[]) {",
         "      auto application = Application::create(argc, argv);",
         xtd::string::format("      auto window1 = {}::Window1 {{}};", name),
         "      window1.show_all();",
@@ -106,24 +84,11 @@ namespace xtdc_command {
         "}",
         "",
         "auto main(int argc, char* argv[]) -> int {",
-        xtd::string::format("  return {}::Window1::Main(argc, argv);", name),
+        xtd::string::format("  return {}::Window1::main(argc, argv);", name),
         "}",
       };
       
       xtd::io::file::write_all_lines(xtd::io::path::combine(path, "src", "Window1.cpp"), lines);
-    }
-    
-    void create_main(const xtd::string& name, const xtd::string& path) const {
-      auto lines = xtd::array<xtd::string> {
-        "#include \"Window1.hpp\"",
-        "",
-        "using namespace Gtk;",
-        xtd::string::format("using namespace {};", name),
-        "",
-        "// The main entry point for the application.",
-      };
-      
-      xtd::io::file::write_all_lines(xtd::io::path::combine(path, "src", "Program.cpp"), lines);
     }
     
     void generate_cmakelists_txt(const xtd::string& name, const xtd::string& path) const {
