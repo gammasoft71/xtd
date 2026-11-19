@@ -87,8 +87,6 @@ namespace xtdc_command {
     
     void create_include(const xtd::string& name, const xtd::string& path) const {
       auto lines = xtd::array<xtd::string> {
-        "/// @file",
-        "/// @brief Contains Window1 class.",
         "#pragma once",
         "#include <QMainWindow>",
         "",
