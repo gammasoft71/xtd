@@ -2,9 +2,9 @@
 #include "base_project.hpp"
 
 namespace xtdc_command {
-  class gtk3_gui_project : public base_project {
+  class gtk_gui_project : public base_project {
   public:
-    explicit gtk3_gui_project(const xtd::string& path) : base_project(path) {}
+    explicit gtk_gui_project(const xtd::string& path) : base_project(path) {}
     
     void create(const xtd::string& name, bool create_solution) const {
       xtd::io::directory::create_directory(create_solution ? xtd::io::path::combine(current_path(), name, "src") : xtd::io::path::combine(current_path(), "src"));
@@ -40,7 +40,7 @@ namespace xtdc_command {
         ")",
         "source_group(src FILES ${SOURCES})",
         "find_package(PkgConfig)",
-        "pkg_check_modules(GTK gtk+-3.0)",
+        "pkg_check_modules(GTK gtk4)",
         "include_directories(${GTK_INCLUDE_DIRS})",
         "link_directories(${GTK_LIBRARY_DIRS})",
         "link_libraries(${GTK_LIBRARIES})",
@@ -61,17 +61,20 @@ namespace xtdc_command {
       auto lines = xtd::array<xtd::string> {
         "#include <gtk/gtk.h>",
         "",
+        "void on_app_activate(GtkApplication* app, gpointer user_data) {",
+        "  GtkWidget* window1 = gtk_application_window_new(app);",
+        "  gtk_window_set_title(GTK_WINDOW(window1), \"Window1\");",
+        "  gtk_window_set_default_size(GTK_WINDOW(window1), 800, 450);",
+        "  gtk_window_present(GTK_WINDOW(window1));",
+        "}",
+        "",
         "/* The main entry point for the application. */",
         "int main(int argc, char* argv[]) {",
-        "  gtk_init(&argc, &argv);",
-        "  GtkWidget* window1 = gtk_window_new(GTK_WINDOW_TOPLEVEL);",
-        "  gtk_window_set_title(GTK_WINDOW(window1), \"Window1\");",
-        "  gtk_window_move(GTK_WINDOW(window1), 100, 100);",
-        "  gtk_window_resize(GTK_WINDOW(window1), 800, 450);",
-        "  g_signal_connect (window1, \"destroy\", G_CALLBACK(gtk_main_quit), NULL);",
-        "  gtk_widget_show(window1);",
-        "  gtk_main();",
-        "  return EXIT_SUCCESS;",
+        "  GtkApplication *app = gtk_application_new(\"org.gtk.example\", G_APPLICATION_DEFAULT_FLAGS);",
+        "  g_signal_connect(app, \"activate\", G_CALLBACK(on_app_activate), NULL);",
+        "  int status = g_application_run(G_APPLICATION(app), argc, argv);",
+        "  g_object_unref(app);",
+        "  return status;",
         "}",
       };
       
@@ -93,7 +96,7 @@ namespace xtdc_command {
       lines.add(")");
       lines.add("source_group(src FILES ${SOURCES})");
       lines.add("find_package(PkgConfig)");
-      lines.add("pkg_check_modules(GTK gtk+-3.0)");
+      lines.add("pkg_check_modules(GTK gtk4)");
       lines.add("include_directories(${GTK_INCLUDE_DIRS})");
       lines.add("link_directories(${GTK_LIBRARY_DIRS})");
       lines.add("link_libraries(${GTK_LIBRARIES})");

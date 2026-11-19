@@ -2,9 +2,9 @@
 #include "base_project.hpp"
 
 namespace xtdc_command {
-  class qt5_gui_project : public base_project {
+  class qt_gui_project : public base_project {
   public:
-    explicit qt5_gui_project(const xtd::string& path) : base_project(path) {}
+    explicit qt_gui_project(const xtd::string& path) : base_project(path) {}
     
     void create(const xtd::string& name, bool create_solution) const {
       xtd::io::directory::create_directory(create_solution ? xtd::io::path::combine(current_path(), name, "src") : xtd::io::path::combine(current_path(), "src"));
@@ -13,15 +13,11 @@ namespace xtdc_command {
         create_solution_qmake_pro(name);
       }
       create_cmakelists_txt(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
-      create_qmake_pro(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
-      create_include(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
       create_source(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
-      create_main(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
     }
     
     void generate(const xtd::string& name) const {
       generate_cmakelists_txt(name, current_path());
-      generate_qmake_pro(name, current_path());
     }
     
   private:
@@ -51,43 +47,28 @@ namespace xtdc_command {
         "# Project",
         xtd::string::format("project({} VERSION 1.0.0)", name),
         "set(SOURCES",
-        "  src/Window1.hpp",
         "  src/Window1.cpp",
-        "  src/Program.cpp",
         ")",
         "source_group(src FILES ${SOURCES})",
-        "find_package(Qt5 COMPONENTS Widgets REQUIRED)",
+        "find_package(Qt6 REQUIRED COMPONENTS Widgets)",
+        "qt_standard_project_setup()",
         "",
         "# Options",
-        "set(CMAKE_AUTOMOC ON)",
-        "set(CMAKE_AUTORCC ON)",
-        "set(CMAKE_AUTOUIC ON)",
         "set(CMAKE_CXX_STANDARD 17)",
         "set(CMAKE_CXX_STANDARD_REQUIRED ON)",
         "set_property(GLOBAL PROPERTY USE_FOLDERS ON)",
         "",
         "# Application properties",
         "add_executable(${PROJECT_NAME} WIN32 MACOSX_BUNDLE ${SOURCES})",
-        "target_link_libraries(${PROJECT_NAME} Qt5::Widgets)",
+        "target_link_libraries(${PROJECT_NAME} Qt6::Widgets)",
       };
       
       xtd::io::file::write_all_lines(xtd::io::path::combine(path, "CMakeLists.txt"), lines);
     }
     
-    void create_qmake_pro(const xtd::string& name, const xtd::string& path) const {
+    void create_source(const xtd::string& name, const xtd::string& path) const {
       auto lines = xtd::array<xtd::string> {
-        "CONFIG += c++17",
-        "QT = widgets",
-        "HEADERS = src/Window1.hpp",
-        "SOURCES = src/Window1.cpp src/Program.cpp",
-      };
-      
-      xtd::io::file::write_all_lines(xtd::io::path::combine(path, "src", xtd::string::format("{}.pro", name)), lines);
-    }
-    
-    void create_include(const xtd::string& name, const xtd::string& path) const {
-      auto lines = xtd::array<xtd::string> {
-        "#pragma once",
+        "#include <QApplication>",
         "#include <QMainWindow>",
         "",
         xtd::string::format("namespace {} {{", name),
@@ -95,48 +76,30 @@ namespace xtdc_command {
         "  class Window1 : public QMainWindow {",
         "    Q_OBJECT",
         "  public:",
-        "    /// @brief Initializes a new instance of the Window1 class.",
-        "    Window1();",
+        "    Window1() {",
+        "      resize(800, 450);",
+        "      setWindowTitle(\"Window1\");",
+        "    }",
+        "",
+        "    /// @brief The main entry point for the application.",
+        "    static auto main(int argc, char* argv[]) {",
+        "      auto application = QApplication {argc, argv};",
+        "      auto window1 = Window1 {};",
+        "      window1.show();",
+        "      return application.exec();",
+        "    }",
         "  };",
         "}",
-      };
-      
-      xtd::io::file::write_all_lines(xtd::io::path::combine(path, "src", "Window1.hpp"), lines);
-    }
-    
-    void create_source(const xtd::string& name, const xtd::string& path) const {
-      auto lines = xtd::array<xtd::string> {
-        "#include \"Window1.hpp\"",
         "",
-        xtd::string::format("using namespace {};", name),
-        "",
-        "Window1::Window1() {",
-        "  setWindowTitle(\"Window1\");",
-        "  move(100, 100);",
-        "  resize(800, 450);",
+        "auto main(int argc, char* argv[]) -> int {",
+        xtd::string::format("  return {}::Window1::main(argc, argv);", name),
         "}",
+        "",
+        "// Needed for MOC when Q_OBJECT is in a .cpp file (remove if moved to a header).",
+        "#include \"Window1.moc\"",
       };
       
       xtd::io::file::write_all_lines(xtd::io::path::combine(path, "src", "Window1.cpp"), lines);
-    }
-    
-    void create_main(const xtd::string& name, const xtd::string& path) const {
-      auto lines = xtd::array<xtd::string> {
-        "#include \"Window1.hpp\"",
-        "#include <QApplication>",
-        "",
-        xtd::string::format("using namespace {};", name),
-        "",
-        "// The main entry point for the application.",
-        "auto main(int argc, char* argv[]) -> int {",
-        "  auto application = QApplication {argc, argv};",
-        "  auto window1 = Window1 {};",
-        "  window1.show();",
-        "  return application.exec();",
-        "}",
-      };
-      
-      xtd::io::file::write_all_lines(xtd::io::path::combine(path, "src", "Program.cpp"), lines);
     }
     
     void generate_cmakelists_txt(const xtd::string& name, const xtd::string& path) const {
@@ -153,7 +116,7 @@ namespace xtdc_command {
         lines.add(xtd::string::format("  {}", file));
       lines.add(")");
       lines.add("source_group(src FILES ${SOURCES})");
-      lines.add("find_package(Qt5 COMPONENTS Widgets REQUIRED)");
+      lines.add("find_package(Qt6 COMPONENTS Widgets REQUIRED)");
       lines.add("");
       lines.add("# Options");
       lines.add("set(CMAKE_AUTOMOC ON)");
@@ -165,20 +128,9 @@ namespace xtdc_command {
       lines.add("");
       lines.add("# Application properties");
       lines.add("add_executable(${PROJECT_NAME} WIN32 MACOSX_BUNDLE ${SOURCES})");
-      lines.add("target_link_libraries(${PROJECT_NAME} Qt5::Widgets)");
+      lines.add("target_link_libraries(${PROJECT_NAME} Qt6::Widgets)");
       
       xtd::io::file::write_all_lines(xtd::io::path::combine(path, "CMakeLists.txt"), lines);
-    }
-    
-    void generate_qmake_pro(const xtd::string& name, const xtd::string& path) const {
-      auto lines = xtd::collections::generic::list<xtd::string> {};
-      lines.add("CONFIG += c++17");
-      lines.add("QT = widgets");
-      auto [headers, sources] = get_cpp_sources(path, path);
-      lines.add(xtd::string::format("HEADERS = {}", xtd::string::join(" ", headers)));
-      lines.add(xtd::string::format("SOURCES = {}", xtd::string::join(" ", sources)));
-      
-      xtd::io::file::write_all_lines(xtd::io::path::combine(path, "src", xtd::string::format("{}.pro", name)), lines);
     }
   };
 }

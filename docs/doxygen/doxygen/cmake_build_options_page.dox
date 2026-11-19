@@ -32,9 +32,9 @@
 /// | XTD_USE_SYSTEM_CONTROLS                      | bool   | Use system controls (only for debugging)                                                                                                | OFF                 |
 ///
 /// <i>(note 1)</i> The list of the underlying graphic toolkit depends of the operating system :
-/// * Windows : msw wxwidgets qt5 fltk
-/// * macOS : cocoa wxwidgets qt5 fltk
-/// * linux : gtk4 gtk3 wxwidgets qt5 fltk
+/// * Windows : msw wxwidgets qt fltk
+/// * macOS : cocoa wxwidgets qt fltk
+/// * linux : gtk wxwidgets qt fltk
 ///
 /// @remarks Currently, xtd uses only wxWidgets (and its native backends) for all platforms. This simplifies cross-platform behavior and ensures consistency across toolkits. In the future, other toolkits may be supported depending on the platform :
 /// * Windows : msw

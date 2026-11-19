@@ -20,12 +20,9 @@
 #include "csharp_static_library_project.hpp"
 #include "fltk_gui_project.hpp"
 #include "gtest_unit_test_application_project.hpp"
-#include "gtk2_gui_project.hpp"
-#include "gtk3_gui_project.hpp"
-#include "gtk4_gui_project.hpp"
+#include "gtk_gui_project.hpp"
 #include "gtkmm_gui_project.hpp"
-#include "qt5_gui_project.hpp"
-#include "qt6_gui_project.hpp"
+#include "qt_gui_project.hpp"
 #include "objectivec_console_project.hpp"
 #include "objectivec_shared_library_project.hpp"
 #include "objectivec_static_library_project.hpp"
@@ -84,7 +81,7 @@ namespace xtdc_command {
         case project_type::unknown: return {project_sdk::none};
         case project_type::blank_solution: return {project_sdk::xtd, project_sdk::xtd_c};
         case project_type::console: return {project_sdk::none, project_sdk::xtd, project_sdk::xtd_c};
-        case project_type::gui: return {project_sdk::cocoa, project_sdk::fltk, project_sdk::gtk2, project_sdk::gtk3, project_sdk::gtk4, project_sdk::gtkmm, project_sdk::qt5, project_sdk::qt6, project_sdk::win32, project_sdk::win32_c, project_sdk::winforms, project_sdk::wpf, project_sdk::wxwidgets, project_sdk::xtd, project_sdk::xtd_c};
+        case project_type::gui: return {project_sdk::cocoa, project_sdk::fltk, project_sdk::gtk, project_sdk::gtkmm, project_sdk::qt, project_sdk::win32, project_sdk::win32_c, project_sdk::winforms, project_sdk::wpf, project_sdk::wxwidgets, project_sdk::xtd, project_sdk::xtd_c};
         case project_type::shared_library: return {project_sdk::none, project_sdk::xtd, project_sdk::xtd_c};
         case project_type::static_library: return {project_sdk::none, project_sdk::xtd, project_sdk::xtd_c};
         case project_type::unit_test_application: return {project_sdk::catch2, project_sdk::gtest, project_sdk::xtd, project_sdk::xtd_c};
@@ -99,12 +96,9 @@ namespace xtdc_command {
         case project_sdk::cocoa: return {project_language::objectivec};
         case project_sdk::fltk: return {project_language::cpp};
         case project_sdk::gtest: return {project_language::c, project_language::cpp};
-        case project_sdk::gtk2: return {project_language::c, project_language::cpp};
-        case project_sdk::gtk3: return {project_language::c, project_language::cpp};
-        case project_sdk::gtk4: return {project_language::c, project_language::cpp};
+        case project_sdk::gtk: return {project_language::c, project_language::cpp};
         case project_sdk::gtkmm: return {project_language::cpp};
-        case project_sdk::qt5: return {project_language::cpp};
-        case project_sdk::qt6: return {project_language::cpp};
+        case project_sdk::qt: return {project_language::cpp};
         case project_sdk::win32: return {project_language::cpp};
         case project_sdk::win32_c: return {project_language::c};
         case project_sdk::winforms: return {project_language::csharp};
@@ -122,7 +116,7 @@ namespace xtdc_command {
       auto languages = get_valid_languages(sdk);
       if (std::find(languages.begin(), languages.end(), language) == languages.end()) return operation_status::invalid_language;
       if (is_path_already_exist_and_not_empty(path_)) return operation_status::already_exist;
-      if (sdk == project_sdk::qt5 && xtd::string::is_empty(xtd::environment::get_environment_variable("CMAKE_PREFIX_PATH"))) return operation_status::cmake_prefix_path_not_set;
+      if (sdk == project_sdk::qt && xtd::string::is_empty(xtd::environment::get_environment_variable("CMAKE_PREFIX_PATH"))) return operation_status::cmake_prefix_path_not_set;
       if (!xtd::io::file::exists(xtd::io::path::combine(xtd::io::directory::get_parent(path_).full_name(), "CMakeLists.txt"))) return operation_status::unknown_project;
       auto lines = xtd::io::file::read_all_lines(xtd::io::path::combine(xtd::io::directory::get_parent(path_).full_name(), "CMakeLists.txt"));
       //if (std::find_if(lines.begin(), lines.end(), [](const xtd::string & value) {return value.contains("find_package(xtd");}) != lines.end() && sdk != project_sdk::xtd) return operation_status::invalid_sdk_with_current_project;
@@ -172,7 +166,7 @@ namespace xtdc_command {
       auto languages = get_valid_languages(sdk);
       if (std::find(languages.begin(), languages.end(), language) == languages.end()) return operation_status::invalid_language;
       if (is_path_already_exist_and_not_empty(path_)) return operation_status::already_exist;
-      if (sdk == project_sdk::qt5 && xtd::string::is_empty(xtd::environment::get_environment_variable("CMAKE_PREFIX_PATH"))) return operation_status::cmake_prefix_path_not_set;
+      if (sdk == project_sdk::qt && xtd::string::is_empty(xtd::environment::get_environment_variable("CMAKE_PREFIX_PATH"))) return operation_status::cmake_prefix_path_not_set;
       xtd::io::directory::create_directory(xtd::io::path::combine(path_, "build"));
       create_doxygen_txt(name);
       create_readme_md(name);
@@ -194,7 +188,7 @@ namespace xtdc_command {
       auto languages = get_valid_languages(sdk);
       if (std::find(languages.begin(), languages.end(), language) == languages.end()) return operation_status::invalid_language;
       if (!is_path_already_exist_and_not_empty(path_)) return operation_status::already_exist;
-      if (sdk == project_sdk::qt5 && xtd::string::is_empty(xtd::environment::get_environment_variable("CMAKE_PREFIX_PATH"))) return operation_status::cmake_prefix_path_not_set;
+      if (sdk == project_sdk::qt && xtd::string::is_empty(xtd::environment::get_environment_variable("CMAKE_PREFIX_PATH"))) return operation_status::cmake_prefix_path_not_set;
       xtd::io::directory::create_directory(xtd::io::path::combine(path_, "build"));
       create_doxygen_txt(name);
       create_readme_md(name);
@@ -426,12 +420,9 @@ namespace xtdc_command {
       std::map<project_sdk, xtd::action<const xtd::string&, bool>> {
         {project_sdk::cocoa, {cocoa_gui_project {path_}, &cocoa_gui_project::create}},
         {project_sdk::fltk, {fltk_gui_project {path_}, &fltk_gui_project::create}},
-        {project_sdk::gtk2, {gtk2_gui_project {path_}, &gtk2_gui_project::create}},
-        {project_sdk::gtk3, {gtk3_gui_project {path_}, &gtk3_gui_project::create}},
-        {project_sdk::gtk4, {gtk4_gui_project {path_}, &gtk4_gui_project::create}},
+        {project_sdk::gtk, {gtk_gui_project {path_}, &gtk_gui_project::create}},
         {project_sdk::gtkmm, {gtkmm_gui_project {path_}, &gtkmm_gui_project::create}},
-        {project_sdk::qt5, {qt5_gui_project {path_}, &qt5_gui_project::create}},
-        {project_sdk::qt6, {qt6_gui_project {path_}, &qt6_gui_project::create}},
+        {project_sdk::qt, {qt_gui_project {path_}, &qt_gui_project::create}},
         {project_sdk::win32, {win32_gui_project {path_}, &win32_gui_project::create}},
         {project_sdk::win32_c, {win32_c_gui_project {path_}, &win32_c_gui_project::create}},
         {project_sdk::winforms, {winforms_gui_project {path_}, &winforms_gui_project::create}},
@@ -513,12 +504,9 @@ namespace xtdc_command {
       std::map<project_sdk, xtd::action<const xtd::string&>> {
         {project_sdk::cocoa, {cocoa_gui_project {path_}, &cocoa_gui_project::generate}},
         {project_sdk::fltk, {fltk_gui_project {path_}, &fltk_gui_project::generate}},
-        {project_sdk::gtk2, {gtk2_gui_project {path_}, &gtk2_gui_project::generate}},
-        {project_sdk::gtk3, {gtk3_gui_project {path_}, &gtk3_gui_project::generate}},
-        {project_sdk::gtk4, {gtk4_gui_project {path_}, &gtk4_gui_project::generate}},
+        {project_sdk::gtk, {gtk_gui_project {path_}, &gtk_gui_project::generate}},
         {project_sdk::gtkmm, {gtkmm_gui_project {path_}, &gtkmm_gui_project::generate}},
-        {project_sdk::qt5, {qt5_gui_project {path_}, &qt5_gui_project::generate}},
-        {project_sdk::qt6, {qt6_gui_project {path_}, &qt6_gui_project::generate}},
+        {project_sdk::qt, {qt_gui_project {path_}, &qt_gui_project::generate}},
         {project_sdk::win32, {win32_gui_project {path_}, &win32_gui_project::generate}},
         {project_sdk::win32_c, {win32_c_gui_project {path_}, &win32_c_gui_project::generate}},
         {project_sdk::winforms, {winforms_gui_project {path_}, &winforms_gui_project::generate}},
