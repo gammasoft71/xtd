@@ -54,7 +54,7 @@ namespace xtdc_command {
         "qt_standard_project_setup()",
         "",
         "# Options",
-        "set(CMAKE_CXX_STANDARD 17)",
+        "set(CMAKE_CXX_STANDARD 20)",
         "set(CMAKE_CXX_STANDARD_REQUIRED ON)",
         "set_property(GLOBAL PROPERTY USE_FOLDERS ON)",
         "",
@@ -123,7 +123,7 @@ namespace xtdc_command {
       lines.add("set(CMAKE_AUTOMOC ON)");
       lines.add("set(CMAKE_AUTORCC ON)");
       lines.add("set(CMAKE_AUTOUIC ON)");
-      lines.add("set(CMAKE_CXX_STANDARD 17)");
+      lines.add("set(CMAKE_CXX_STANDARD 20)");
       lines.add("set(CMAKE_CXX_STANDARD_REQUIRED ON)");
       lines.add("set_property(GLOBAL PROPERTY USE_FOLDERS ON)");
       lines.add("");
