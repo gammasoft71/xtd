@@ -82,7 +82,7 @@ namespace xtdc_command {
         "    }",
         "",
         "    /// @brief The main entry point for the application.",
-        "    static auto main(int argc, char* argv[]) {",
+        "    [[nodiscard]] static auto main(int argc, char* argv[]) {",
         "      auto application = QApplication {argc, argv};",
         "      auto window1 = Window1 {};",
         "      window1.show();",
