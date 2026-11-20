@@ -55,7 +55,6 @@ namespace xtdc_command {
       switch (status) {
         case operation_status::success: console::write_line("\n** CREATE SUCCEEDED **\n\n"); break;
         case operation_status::already_exist: write_line_error(xtd::string::format("Path {} already exists and not empty! Create project aborted.", path)); break;
-        case operation_status::cmake_prefix_path_not_set: write_line_error("Set your CMAKE_PREFIX_PATH environment variable to the Qt installation prefix! Create project aborted."); break;
         case operation_status::invalid_language: write_line_error("The language param not valid with sdk param! Create project aborted."); break;
         case operation_status::invalid_sdk: write_line_error("The sdk param not valid with type param! Create project aborted."); break;
         case operation_status::invalid_sdk_with_current_project: write_line_error("The sdk param not valid with current project sdk! Create project aborted."); break;

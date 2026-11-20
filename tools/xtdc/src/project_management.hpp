@@ -57,7 +57,6 @@ namespace xtdc_command {
     invalid_sdk,
     invalid_sdk_with_current_project,
     already_exist,
-    cmake_prefix_path_not_set,
     not_exist,
     unknown_project,
   };
@@ -116,7 +115,6 @@ namespace xtdc_command {
       auto languages = get_valid_languages(sdk);
       if (std::find(languages.begin(), languages.end(), language) == languages.end()) return operation_status::invalid_language;
       if (is_path_already_exist_and_not_empty(path_)) return operation_status::already_exist;
-      if (sdk == project_sdk::qt && xtd::string::is_empty(xtd::environment::get_environment_variable("CMAKE_PREFIX_PATH"))) return operation_status::cmake_prefix_path_not_set;
       if (!xtd::io::file::exists(xtd::io::path::combine(xtd::io::directory::get_parent(path_).full_name(), "CMakeLists.txt"))) return operation_status::unknown_project;
       auto lines = xtd::io::file::read_all_lines(xtd::io::path::combine(xtd::io::directory::get_parent(path_).full_name(), "CMakeLists.txt"));
       //if (std::find_if(lines.begin(), lines.end(), [](const xtd::string & value) {return value.contains("find_package(xtd");}) != lines.end() && sdk != project_sdk::xtd) return operation_status::invalid_sdk_with_current_project;
@@ -166,7 +164,6 @@ namespace xtdc_command {
       auto languages = get_valid_languages(sdk);
       if (std::find(languages.begin(), languages.end(), language) == languages.end()) return operation_status::invalid_language;
       if (is_path_already_exist_and_not_empty(path_)) return operation_status::already_exist;
-      if (sdk == project_sdk::qt && xtd::string::is_empty(xtd::environment::get_environment_variable("CMAKE_PREFIX_PATH"))) return operation_status::cmake_prefix_path_not_set;
       xtd::io::directory::create_directory(xtd::io::path::combine(path_, "build"));
       create_doxygen_txt(name);
       create_readme_md(name);
@@ -188,7 +185,6 @@ namespace xtdc_command {
       auto languages = get_valid_languages(sdk);
       if (std::find(languages.begin(), languages.end(), language) == languages.end()) return operation_status::invalid_language;
       if (!is_path_already_exist_and_not_empty(path_)) return operation_status::already_exist;
-      if (sdk == project_sdk::qt && xtd::string::is_empty(xtd::environment::get_environment_variable("CMAKE_PREFIX_PATH"))) return operation_status::cmake_prefix_path_not_set;
       xtd::io::directory::create_directory(xtd::io::path::combine(path_, "build"));
       create_doxygen_txt(name);
       create_readme_md(name);
