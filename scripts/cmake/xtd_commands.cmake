@@ -304,7 +304,7 @@ macro(target_startup ...)
     string(REPLACE "${CMAKE_CURRENT_SOURCE_DIR}/" "" MAIN_FILE ${MAIN_FILE})
     file(RELATIVE_PATH STARTUP_OBJECT_RELATIVE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/Properties ${CMAKE_CURRENT_SOURCE_DIR}/${MAIN_FILE})
     set(INCLUDE_FILE "#include \"${STARTUP_OBJECT_RELATIVE_PATH}\"\n")
-  elseif ("${ARGV0}" STREQUAL "tunit_main_" OR "${ARGV0}" STREQUAL "tunit_main_with_gtest_compatibility_")
+  elseif ("${ARGV0}" STREQUAL "tunit_main_" OR "${ARGV0}" STREQUAL "xtd::tunit::tunit_main::main" OR "${ARGV0}" STREQUAL "tunit_main_with_gtest_compatibility_" OR "${ARGV0}" STREQUAL "xtd::tunit::tunit_main::main_with_gtest_compatibility")
     set(INCLUDE_FILE "#include <xtd/tunit/tunit_main>\n")
   endif ()
   file(WRITE ${STARTUP_FILE}
