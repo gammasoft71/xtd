@@ -7,6 +7,7 @@ namespace xtdc_command {
     fltk,
     gtest,
     gtk,
+    gtk_c,
     gtkmm,
     qt,
     win32,

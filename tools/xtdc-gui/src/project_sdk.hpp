@@ -5,6 +5,7 @@ namespace xtdc_gui {
     cocoa,
     fltk,
     gtk,
+    gtk_c,
     gtkmm,
     wxwidgets,
     qt,

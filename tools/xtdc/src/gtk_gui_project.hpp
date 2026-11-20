@@ -36,7 +36,7 @@ namespace xtdc_command {
         "# Project",
         xtd::string::format("project({} VERSION 1.0.0)", name),
         "set(SOURCES",
-        "  src/program.c",
+        "  src/program.cpp",
         ")",
         "source_group(src FILES ${SOURCES})",
         "find_package(PkgConfig)",
@@ -46,8 +46,8 @@ namespace xtdc_command {
         "link_libraries(${GTK_LIBRARIES})",
         "",
         "# Options",
-        "set(CMAKE_C_STANDARD 17)",
-        "set(CMAKE_C_STANDARD_REQUIRED ON)",
+        "set(CMAKE_CXX_STANDARD 20)",
+        "set(CMAKE_CXX_STANDARD_REQUIRED ON)",
         "set_property(GLOBAL PROPERTY USE_FOLDERS ON)",
         "",
         "# Application properties",
@@ -61,24 +61,24 @@ namespace xtdc_command {
       auto lines = xtd::array<xtd::string> {
         "#include <gtk/gtk.h>",
         "",
-        "void on_app_activate(GtkApplication* app, gpointer user_data) {",
-        "  GtkWidget* window1 = gtk_application_window_new(app);",
+        "auto on_app_activate(GtkApplication* app, gpointer user_data) -> void {",
+        "  auto* window1 = gtk_application_window_new(app);",
         "  gtk_window_set_title(GTK_WINDOW(window1), \"Window1\");",
         "  gtk_window_set_default_size(GTK_WINDOW(window1), 800, 450);",
         "  gtk_window_present(GTK_WINDOW(window1));",
         "}",
         "",
-        "/* The main entry point for the application. */",
-        "int main(int argc, char* argv[]) {",
-        "  GtkApplication *app = gtk_application_new(\"org.gtk.example\", G_APPLICATION_DEFAULT_FLAGS);",
-        "  g_signal_connect(app, \"activate\", G_CALLBACK(on_app_activate), NULL);",
-        "  int status = g_application_run(G_APPLICATION(app), argc, argv);",
+        "// The main entry point for the application.",
+        "auto main(int argc, char* argv[]) -> int {",
+        xtd::string::format("  auto* app = gtk_application_new(\"org.gtk.{}\", G_APPLICATION_DEFAULT_FLAGS);", name),
+        "  g_signal_connect(app, \"activate\", G_CALLBACK(on_app_activate), nullptr);",
+        "  auto status = g_application_run(G_APPLICATION(app), argc, argv);",
         "  g_object_unref(app);",
         "  return status;",
         "}",
       };
       
-      xtd::io::file::write_all_lines(xtd::io::path::combine(path, "src", "program.c"), lines);
+      xtd::io::file::write_all_lines(xtd::io::path::combine(path, "src", "program.cpp"), lines);
     }
     
     void generate_cmakelists_txt(const xtd::string& name, const xtd::string& path) const {
@@ -102,8 +102,8 @@ namespace xtdc_command {
       lines.add("link_libraries(${GTK_LIBRARIES})");
       lines.add("");
       lines.add("# Options");
-      lines.add("set(CMAKE_C_STANDARD 17)");
-      lines.add("set(CMAKE_C_STANDARD_REQUIRED ON)");
+      lines.add("set(CMAKE_CXX_STANDARD 20)");
+      lines.add("set(CMAKE_CXX_STANDARD_REQUIRED ON)");
       lines.add("set_property(GLOBAL PROPERTY USE_FOLDERS ON)");
       lines.add("");
       lines.add("# Application properties");
