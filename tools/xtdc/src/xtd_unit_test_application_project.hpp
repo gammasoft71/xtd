@@ -42,7 +42,7 @@ namespace xtdc_command {
       auto lines = xtd::array<xtd::string> {
         xtd::string::format("target_default_namespace(\"{}\")", name),
         xtd::string::format("target_name(\"{}\")", name),
-        xtd::string::format("target_startup(tunit_main_)", name),
+        xtd::string::format("target_startup(xtd::tunit::tunit_main::main)", name),
       };
       
       xtd::io::file::write_all_lines(xtd::io::path::combine(path, "properties", "target_properties.cmake"), lines);
@@ -98,13 +98,12 @@ namespace xtdc_command {
         "#include <xtd/tunit/test_class_attribute>",
         "#include <xtd/tunit/test_method_attribute>",
         "",
-        "using namespace xtd::tunit;",
-        "",
         xtd::string::format("namespace {} {{", name),
         "  class test_class_(unit_test1) {",
         "  public:",
         "    auto test_method_(test_method1) {",
-        "      assert::ignore(\"Hello, World!\");",
+        "      auto s = \"Hello, World!\";",
+        "      assert::are_equal(\"Hello, World!\", s);",
         "    }",
         "  };",
         "}",
