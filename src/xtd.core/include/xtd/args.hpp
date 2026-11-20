@@ -32,7 +32,7 @@ namespace xtd {
   /// | MyApp \\\alpha \\\\"beta                     | MyApp, \\\alpha, \\beta                    |
   /// | MyApp \\\\\"alpha \"beta                     | MyApp, \\"alpha, "beta                     |
   /// @remarks To obtain the command line as a single string, use the xtd::environment::command_line method.
-  [[nodiscard]] inline auto args() -> xtd::argument_collection {return xtd::environment::get_command_line_args();}
+  [[nodiscard]] inline auto args() -> const xtd::argument_collection& {return xtd::environment::get_command_line_args();}
 }
 
 /// @brief Returns a string array containing the command-line arguments for the current process.
