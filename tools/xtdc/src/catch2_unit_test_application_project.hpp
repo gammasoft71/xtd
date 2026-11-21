@@ -62,9 +62,9 @@ namespace xtdc_command {
         "#include <catch2/catch_test_macros.hpp>",
         "",
         xtd::string::format("namespace {} {{", name),
-        "  TEST_CASE(\"unit_test1::test_method1\") {",
-        "    REQUIRE(true);",
-        "    WARN(\"Hello, World!\");",
+        "  TEST_CASE(\"unit_test1::test_method1\", \"[unit_test1]\") {",
+        "    auto value = 42;",
+        "    REQUIRE(value == 42);",
         "  }",
         "}",
       };
