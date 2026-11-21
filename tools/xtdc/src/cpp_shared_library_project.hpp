@@ -59,7 +59,7 @@ namespace xtdc_command {
         "target_include_directories(${PROJECT_NAME} PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include> $<INSTALL_INTERFACE:include>)",
         "",
         "# Install",
-        xtd::string::format("install(DIRECTORY include/. DEStiffTINATION include/{})", name),
+        xtd::string::format("install(DIRECTORY include/. DESTINATION include/{})", name),
         xtd::string::format("file(WRITE ${{CMAKE_CURRENT_BINARY_DIR}}/{}Config.cmake", name),
         "  \"include(CMakeFindDependencyMacro)\\n\"",
         "  \"include(\\\"\\${CMAKE_CURRENT_LIST_DIR}/${PROJECT_NAME}.cmake\\\")\\n\"",
@@ -169,7 +169,7 @@ namespace xtdc_command {
       lines.add("target_include_directories(${PROJECT_NAME} PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include> $<INSTALL_INTERFACE:include>)");
       lines.add("");
       lines.add("# Install");
-      lines.add(xtd::string::format("install(DIRECTORY include/. DEStiffTINATION include/{})", name));
+      lines.add(xtd::string::format("install(DIRECTORY include/. DESTINATION include/{})", name));
       lines.add(xtd::string::format("file(WRITE ${{CMAKE_CURRENT_BINARY_DIR}}/{}Config.cmake", name));
       lines.add("  \"include(CMakeFindDependencyMacro)\\n\"");
       lines.add("  \"include(\\\"\\${CMAKE_CURRENT_LIST_DIR}/${PROJECT_NAME}.cmake\\\")\\n\"");
