@@ -11,6 +11,11 @@ namespace xtd {
   /// @brief The tunit namespace contains a unit test library.
   namespace tunit {
     /// @biref The xtd::tunit::tunit_main static class contains entry point methods.
+    /// @par Namespace
+    /// xtd::tunit
+    /// @par Library
+    /// xtd.tunit
+    /// @ingroup xtd_tunit tunit
     class tunit_export_ tunit_main final static_ {
     public:
       /// @brief Defines the entry point using xtd::tunit::console_unit_test class.
