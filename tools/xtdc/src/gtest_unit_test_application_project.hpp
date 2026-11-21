@@ -38,7 +38,7 @@ namespace xtdc_command {
         xtd::string::format("project({} VERSION 1.0.0)", name),
         "find_package(GTest REQUIRED)",
         "set(SOURCES",
-        "  src/unit_test1.cpp",
+        "  src/UnitTest1.cpp",
         ")",
         "source_group(src FILES ${SOURCES})",
         "",
@@ -62,13 +62,14 @@ namespace xtdc_command {
         "#include <gtest/gtest.h>",
         "",
         xtd::string::format("namespace {} {{", name),
-        "  TEST(unit_test1, test_method1) {",
-        "    ASSERT_TRUE(false) << \"Hello, World!\";",
+        "  TEST(UnitTest1, TestMethod1) {",
+        "    auto value = 42;",
+        "    EXPECT_EQ(42, value);",
         "  }",
         "}",
       };
       
-      xtd::io::file::write_all_lines(xtd::io::path::combine(path, "src", "unit_test1.cpp"), lines);
+      xtd::io::file::write_all_lines(xtd::io::path::combine(path, "src", "UnitTest1.cpp"), lines);
     }
     
     void create_main(const xtd::string& name, const xtd::string& path) const {
@@ -81,7 +82,7 @@ namespace xtdc_command {
         "}",
       };
       
-      xtd::io::file::write_all_lines(xtd::io::path::combine(path, "src", "main.cpp"), lines);
+      xtd::io::file::write_all_lines(xtd::io::path::combine(path, "src", "Main.cpp"), lines);
     }
     
     void generate_cmakelists_txt(const xtd::string& name, const xtd::string& path) const {
