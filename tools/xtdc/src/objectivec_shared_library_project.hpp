@@ -40,7 +40,7 @@ namespace xtdc_command {
         xtd::string::format("project({} VERSION 1.0.0)", name),
         "set(INCLUDES",
         "  include/Class1.h",
-        "  include/export.hpp",
+        "  include/Export.h",
         ")",
         "set(SOURCES",
         "  src/Class1.m",
@@ -86,7 +86,7 @@ namespace xtdc_command {
         "#endif",
       };
       
-      xtd::io::file::write_all_lines(xtd::io::path::combine(path, "include", "export.hpp"), lines);
+      xtd::io::file::write_all_lines(xtd::io::path::combine(path, "include", "Export.h"), lines);
     }
     
     void create_header(const xtd::string& name, const xtd::string& path) const {
