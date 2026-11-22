@@ -10,9 +10,7 @@ namespace xtdc_command {
       xtd::io::directory::create_directory(create_solution ? xtd::io::path::combine(current_path(), name, "src") : xtd::io::path::combine(current_path(), "src"));
       if (create_solution) create_solution_cmakelists_txt(name);
       create_cmakelists_txt(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
-      create_include(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
       create_source(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
-      create_main(name, create_solution ? xtd::io::path::combine(current_path(), name) : current_path());
     }
     
     void generate(const xtd::string& name) const {
@@ -38,9 +36,7 @@ namespace xtdc_command {
         "# Project",
         xtd::string::format("project({} VERSION 1.0.0)", name),
         "set(SOURCES",
-        "  src/Window1.h",
         "  src/Window1.m",
-        "  src/Program.m",
         ")",
         "source_group(src FILES ${SOURCES})",
         "",
@@ -59,10 +55,8 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(xtd::io::path::combine(path, "CMakeLists.txt"), lines);
     }
     
-    void create_include(const xtd::string& name, const xtd::string& path) const {
+    void create_source(const xtd::string& name, const xtd::string& path) const {
       auto lines = xtd::array<xtd::string> {
-        "/// @file",
-        "/// @brief Contains Window1 class.",
         "#import <Cocoa/Cocoa.h>",
         "",
         "/// @brief Represents the main NSWindow",
@@ -72,14 +66,6 @@ namespace xtdc_command {
         "- (instancetype)init;",
         "- (BOOL)windowShouldClose:(id)sender;",
         "@end",
-      };
-      
-      xtd::io::file::write_all_lines(xtd::io::path::combine(path, "src", "Window1.h"), lines);
-    }
-    
-    void create_source(const xtd::string& name, const xtd::string& path) const {
-      auto lines = xtd::array<xtd::string> {
-        "#import \"Window1.h\"",
         "",
         "@implementation Window1",
         "- (instancetype)init {",
@@ -94,16 +80,8 @@ namespace xtdc_command {
         "   return NO;",
         "}",
         "@end",
-      };
-      
-      xtd::io::file::write_all_lines(xtd::io::path::combine(path, "src", "Window1.m"), lines);
-    }
-    
-    void create_main(const xtd::string& name, const xtd::string& path) const {
-      auto lines = xtd::array<xtd::string> {
-        "#import \"Window1.h\"",
         "",
-        "// The main entry point for the application.",
+        "/// @brief The main entry point for the application.",
         "int main(int argc, char* argv[]) {",
         "  [NSApplication sharedApplication];",
         "  [[[[Window1 alloc] init] autorelease] makeMainWindow];",
@@ -111,7 +89,7 @@ namespace xtdc_command {
         "}",
       };
       
-      xtd::io::file::write_all_lines(xtd::io::path::combine(path, "src", "Program.m"), lines);
+      xtd::io::file::write_all_lines(xtd::io::path::combine(path, "src", "Window1.m"), lines);
     }
     
     void generate_cmakelists_txt(const xtd::string& name, const xtd::string& path) const {
