@@ -25,7 +25,9 @@ namespace xtdc_command {
         "# Solution",
         xtd::string::format("project({})", name),
         "enable_testing()",
-        xtd::string::format("add_subdirectory({})", name)
+        "",
+        "# Projects",
+        xtd::string::format("add_subdirectory({})", name),
       };
       xtd::io::file::write_all_lines(xtd::io::path::combine(current_path(), "CMakeLists.txt"), lines);
     }

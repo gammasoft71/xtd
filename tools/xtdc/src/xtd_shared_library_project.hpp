@@ -31,12 +31,12 @@ namespace xtdc_command {
         "# Solution",
         xtd::string::format("project({} VERSION 1.0.0)", name),
         "find_package(xtd REQUIRED)",
-        "add_projects(",
-        xtd::string::format("  {}", name),
-        ")",
         "",
         "# Install",
         "install_package()",
+        "",
+        "# Projects",
+        xtd::string::format("add_projects({})", name),
       };
       xtd::io::file::write_all_lines(xtd::io::path::combine(current_path(), "CMakeLists.txt"), lines);
     }
