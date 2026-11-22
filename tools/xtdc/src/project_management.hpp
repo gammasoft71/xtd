@@ -118,11 +118,11 @@ namespace xtdc_command {
       if (std::find(languages.begin(), languages.end(), language) == languages.end()) return operation_status::invalid_language;
       if (is_path_already_exist_and_not_empty(path_)) return operation_status::already_exist;
       if (!xtd::io::file::exists(xtd::io::path::combine(xtd::io::directory::get_parent(path_).full_name(), "CMakeLists.txt"))) return operation_status::unknown_project;
-      auto lines = xtd::io::file::read_all_lines(xtd::io::path::combine(xtd::io::directory::get_parent(path_).full_name(), "CMakeLists.txt"));
+      auto lines = xtd::collections::generic::list<string> {xtd::io::file::read_all_lines(xtd::io::path::combine(xtd::io::directory::get_parent(path_).full_name(), "CMakeLists.txt"))};
       //if (std::find_if(lines.begin(), lines.end(), [](const xtd::string & value) {return value.contains("find_package(xtd");}) != lines.end() && sdk != project_sdk::xtd) return operation_status::invalid_sdk_with_current_project;
       //if (std::find_if(lines.begin(), lines.end(), [](const xtd::string & value) {return value.contains("find_package(xtd");}) == lines.end() && sdk == project_sdk::xtd) return operation_status::invalid_sdk_with_current_project;
       
-      lines.resize(lines.length(), xtd::string::format("{}({})", std::find_if(lines.begin(), lines.end(), [](const xtd::string & value) {return value.contains("find_package(xtd");}) != lines.end() ? "add_projects" : "add_subdirectory", xtd::io::path::get_file_name(path_)));
+      lines.add(xtd::string::format("{}({})", lines.where([](auto&& value) {return value.contains("find_package(xtd");}).count() ? "add_projects" : "add_subdirectory", xtd::io::path::get_file_name(path_)));
       std::map<project_type, xtd::action<const xtd::string&, project_sdk, project_language, bool>> {
         {project_type::blank_solution, {*this, &project_management::create_blank_solution}},
         {project_type::console, {*this, &project_management::create_console}},
@@ -132,7 +132,7 @@ namespace xtdc_command {
         {project_type::unit_test_application, {*this, &project_management::create_unit_test_application}}
       } [type](name, sdk, language, false);
       path_ = xtd::io::directory::get_parent(path_).full_name();
-      xtd::io::file::write_all_lines(xtd::io::path::combine(path_, "CMakeLists.txt"), lines);
+      xtd::io::file::write_all_lines(xtd::io::path::combine(path_, "CMakeLists.txt"), lines.to_array());
       generate_project(name);
       return last_exit_code() == EXIT_SUCCESS ? operation_status::success : operation_status::error;
     }
