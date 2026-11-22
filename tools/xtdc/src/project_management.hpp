@@ -79,7 +79,7 @@ namespace xtdc_command {
     static xtd::array<project_sdk> get_valid_sdks(project_type type) {
       switch (type) {
         case project_type::unknown: return {project_sdk::none};
-        case project_type::blank_solution: return {project_sdk::xtd/*, project_sdk::xtd_c*/};
+        case project_type::blank_solution: return {project_sdk::none, project_sdk::xtd/*, project_sdk::xtd_c*/};
         case project_type::console: return {project_sdk::none, project_sdk::xtd/*, project_sdk::xtd_c*/};
         case project_type::gui: return {project_sdk::cocoa, project_sdk::fltk, project_sdk::gtk, project_sdk::gtk_c, project_sdk::gtkmm, project_sdk::qt, project_sdk::win32, project_sdk::win32_c, project_sdk::winforms, project_sdk::wpf, project_sdk::wxwidgets, project_sdk::xtd/*, project_sdk::xtd_c*/};
         case project_type::shared_library: return {project_sdk::none, project_sdk::xtd/*, project_sdk::xtd_c*/};
@@ -394,11 +394,16 @@ namespace xtdc_command {
     xtd::int32 last_exit_code() const {return last_exit_code_;}
     
     void create_blank_solution(const xtd::string& name, project_sdk sdk, project_language language, bool create_solution) {
-      std::map<project_sdk, xtd::action<const xtd::string&, bool>> {
-        {project_sdk::none, {blank_solution_project {path_}, &blank_solution_project::create}},
-        {project_sdk::xtd, {xtd_blank_solution_project {path_}, &xtd_blank_solution_project::create}},
-        //{project_sdk::xtd_c, {xtd_c_blank_solution_project {path_}, &xtd_c_blank_solution_project::create}}
-      } [sdk](name, create_solution);
+      switch (sdk) {
+        case project_sdk::xtd: xtd_blank_solution_project(path_).create(name, create_solution); break;
+          //case project_sdk::xtd_c: xtd_blank_solution_project(path_).create(name, create_solution); break;
+        default: std::map<project_language, xtd::action<const xtd::string&, bool>> {
+          {project_language::c, {blank_solution_project {path_}, &blank_solution_project::create}},
+          {project_language::cpp, {blank_solution_project {path_}, &blank_solution_project::create}},
+          {project_language::csharp, {blank_solution_project {path_}, &blank_solution_project::create}},
+          {project_language::objectivec, {blank_solution_project {path_}, &blank_solution_project::create}}
+        } [language](name, create_solution); break;
+      }
     }
     
     void create_console(const xtd::string& name, project_sdk sdk, project_language language, bool create_solution) const {
@@ -406,11 +411,11 @@ namespace xtdc_command {
         case project_sdk::xtd: xtd_console_project(path_).create(name, create_solution); break;
         //case project_sdk::xtd_c: xtd_c_console_project(path_).create(name, create_solution); break;
         default: std::map<project_language, xtd::action<const xtd::string&, bool>> {
-            {project_language::c, {c_console_project {path_}, &c_console_project::create}},
-            {project_language::cpp, {cpp_console_project {path_}, &cpp_console_project::create}},
-            {project_language::csharp, {csharp_console_project {path_}, &csharp_console_project::create}},
-            {project_language::objectivec, {objectivec_console_project {path_}, &objectivec_console_project::create}}
-          } [language](name, create_solution); break;
+          {project_language::c, {c_console_project {path_}, &c_console_project::create}},
+          {project_language::cpp, {cpp_console_project {path_}, &cpp_console_project::create}},
+          {project_language::csharp, {csharp_console_project {path_}, &csharp_console_project::create}},
+          {project_language::objectivec, {objectivec_console_project {path_}, &objectivec_console_project::create}}
+        } [language](name, create_solution); break;
       }
     }
     
@@ -479,11 +484,16 @@ namespace xtdc_command {
     }
     
     void generate_blank_solution(const xtd::string& name, project_sdk sdk, project_language language) {
-      std::map<project_sdk, xtd::action<const xtd::string&>> {
-        {project_sdk::none, {blank_solution_project {path_}, &blank_solution_project::generate}},
-        {project_sdk::xtd, {xtd_blank_solution_project {path_}, &xtd_blank_solution_project::generate}},
-        //{project_sdk::xtd_c, {xtd_c_blank_solution_project {path_}, &xtd_c_blank_solution_project::generate}}
-      } [sdk](name);
+      switch (sdk) {
+        case project_sdk::xtd: xtd_blank_solution_project(path_).generate(name); break;
+          //case project_sdk::xtd_c: xtd_blank_solution_project(path_).generate(name); break;
+        default: std::map<project_language, xtd::action<const xtd::string&>> {
+          {project_language::c, {blank_solution_project {path_}, &blank_solution_project::generate}},
+          {project_language::cpp, {blank_solution_project {path_}, &blank_solution_project::generate}},
+          {project_language::csharp, {blank_solution_project {path_}, &blank_solution_project::generate}},
+          {project_language::objectivec, {blank_solution_project {path_}, &blank_solution_project::generate}}
+        } [language](name); break;
+      }
     }
     
     void generate_console(const xtd::string& name, project_sdk sdk, project_language language) const {

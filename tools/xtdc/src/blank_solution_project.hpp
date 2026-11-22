@@ -16,14 +16,11 @@ namespace xtdc_command {
     
   private:
     void create_solution_cmakelists_txt(const xtd::string& name) const {
-      xtd::array<xtd::string> lines {
+      auto lines = xtd::array<xtd::string> {
         "cmake_minimum_required(VERSION 3.20)",
         "",
         "# Solution",
-        xtd::string::format("project({})", name),
-        "",
-        "# Install",
-        "install_package()",
+        xtd::string::format("project({} VERSION 1.0.0)", name),
         "",
         "# Projects"
       };
