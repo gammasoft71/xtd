@@ -26,7 +26,6 @@ namespace {
   auto user_cancel_callback = std::function<bool(std::int32_t)> {};
   
   struct console_intercept_signals {
-  private:
     console_intercept_signals() {
       for (auto signal : signal_keys_)
         ::signal(signal.first, console_intercept_signals::signal_handler);
@@ -37,6 +36,7 @@ namespace {
         ::signal(signal.first, SIG_DFL);
     }
     
+  private:
     static auto signal_handler(std::int32_t signal) -> void {
       ::signal(signal, console_intercept_signals::signal_handler);
       if (treat_control_c_as_input) signal_couter_.push_back(signal_keys_[signal]);
@@ -45,34 +45,39 @@ namespace {
     
     // The SIGINT signal catcher conflicts with with xtd::environment::cancel_interrupt signal...
     inline static std::map<int32_t, std::int32_t> signal_keys_ {{SIGQUIT, CONSOLE_SPECIAL_KEY_CTRL_BS}, {SIGTSTP, CONSOLE_SPECIAL_KEY_CTRL_Z}/*, {SIGINT, CONSOLE_SPECIAL_KEY_CTRL_C}*/};
-    static console_intercept_signals console_intercept_signals_;
-  };
-  
-  console_intercept_signals console_intercept_signals::console_intercept_signals_;
+  } ___console_intercept_signals___;
   
   struct terminal_mode {
     terminal_mode() {
       tcgetattr(0, &status_backup_);
-      auto status = termios {};
-      tcgetattr(0, &status);
-      status.c_lflag &= ~ECHO;
-      status.c_lflag &= ~ICANON;
-      status.c_cc[VMIN] = 0;
-      status.c_cc[VTIME] = 0;
-      tcsetattr(0, TCSANOW, &status);
+      echo(false);
     }
     ~terminal_mode() {
+      reset();
+    }
+    
+    static auto echo(bool on) -> bool {
+      auto status = termios {};
+      tcgetattr(0, &status);
+      status.c_cc[VMIN] = on ? 1 : 0;
+      status.c_cc[VTIME] = 0;
+      if (on) status.c_lflag |= ECHO | ICANON;
+      else status.c_lflag &= ~ECHO & ~ICANON;
+      return tcsetattr(0, TCSANOW, &status) == 0;
+    }
+    
+    static auto reset() -> void {
       tcsetattr(0, TCSANOW, &status_backup_);
     }
-
+    
   private:
-    termios status_backup_;
-  };
-
+    inline static termios status_backup_;
+  } ___terminal_mode___;
+  
   class terminal final {
   public:
     static auto getch() -> std::int32_t {
-      if (!terminal_mode_) terminal_mode_ = std::make_shared<terminal_mode>();
+      terminal_mode::echo(false);
       if (peek_characters_.empty()) {
         auto character = '\0';
         while (read(0, &character, 1) != 1);
@@ -86,21 +91,13 @@ namespace {
     }
     
     static auto key_available() -> bool {
-      if (!terminal_mode_) terminal_mode_ = std::make_shared<terminal_mode>();
+      terminal_mode::echo(false);
       auto peek_character = std::int8_t {-1};
       while (read(0, &peek_character, 1) != -1 && peek_character != -1) {
         peek_characters_.push(peek_character);
         peek_character = -1;
       }
       return !peek_characters_.empty();
-    }
-    
-    static auto echo(bool on) -> bool {
-      auto status = termios {};
-      tcgetattr(0, &status);
-      if (on) status.c_lflag |= ECHO;
-      else status.c_lflag &= ~ECHO;
-      return tcsetattr(0, TCSANOW, &status) == 0;
     }
     
     static auto is_ansi_escape_sequence_supported() -> bool {
@@ -118,12 +115,7 @@ namespace {
       return true;
     }
     
-    static auto reset_terminal_mode() -> void {
-      terminal_mode_.reset();
-    }
-
   private:
-    inline static std::shared_ptr<terminal_mode> terminal_mode_;
     inline static std::queue<std::int8_t> peek_characters_;
   };
   
@@ -276,7 +268,7 @@ namespace {
       // Ctrl + [a; z]
       if ((key >= 1 && key <= 7) || (key >= 10 && key <= 11) || (key >= 14 && key <= 18) || (key >= 20 && key <= 26))
         return key_info {key + 'A' - 1, key, false, true, false};
-        
+      
       switch (key) {
         case 50086 : return key_info {0, U'æ', alt, false, false};
         case 50054 : return key_info {0, U'Æ', alt, false, false};
@@ -374,7 +366,7 @@ namespace {
       
       if (key_info::keys.find(std::string(1, toupper((char)key))) != key_info::keys.end())
         return key_info {toupper(key), key, alt, false, key >= 'A' && key <= 'Z'};
-        
+      
       return key_info {0, key, alt, false, key >= 'A' && key <= 'Z'};
     }
     
@@ -568,9 +560,12 @@ int32_t console::background_color() {
 }
 
 bool console::background_color(std::int32_t color) {
-  static auto colors = std::map<int32_t, const char*> {{CONSOLE_COLOR_DEFAULT, "\x1b[49m"}, {CONSOLE_COLOR_BLACK, "\x1b[40m"}, {CONSOLE_COLOR_DARK_BLUE, "\x1b[44m"}, {CONSOLE_COLOR_DARK_GREEN, "\x1b[42m"}, {CONSOLE_COLOR_DARK_CYAN, "\x1b[46m"}, {CONSOLE_COLOR_DARK_RED, "\x1b[41m"}, {CONSOLE_COLOR_DARK_MAGENTA, "\x1b[45m"}, {CONSOLE_COLOR_DARK_YELLOW, "\x1b[43m"}, {CONSOLE_COLOR_GRAY, "\x1b[47m"}, {CONSOLE_COLOR_DARK_GRAY, "\x1b[100m"}, {CONSOLE_COLOR_BLUE, "\x1b[104m"}, {CONSOLE_COLOR_GREEN, "\x1b[102m"}, {CONSOLE_COLOR_CYAN, "\x1b[106m"}, {CONSOLE_COLOR_RED, "\x1b[101m"}, {CONSOLE_COLOR_MAGENTA, "\x1b[105m"}, {CONSOLE_COLOR_YELLOW, "\x1b[103m"}, {CONSOLE_COLOR_WHITE, "\x1b[107m"}};
+  auto colors = std::map<int32_t, const char*> {{CONSOLE_COLOR_DEFAULT, "\x1b[49m"}, {CONSOLE_COLOR_BLACK, "\x1b[40m"}, {CONSOLE_COLOR_DARK_BLUE, "\x1b[44m"}, {CONSOLE_COLOR_DARK_GREEN, "\x1b[42m"}, {CONSOLE_COLOR_DARK_CYAN, "\x1b[46m"}, {CONSOLE_COLOR_DARK_RED, "\x1b[41m"}, {CONSOLE_COLOR_DARK_MAGENTA, "\x1b[45m"}, {CONSOLE_COLOR_DARK_YELLOW, "\x1b[43m"}, {CONSOLE_COLOR_GRAY, "\x1b[47m"}, {CONSOLE_COLOR_DARK_GRAY, "\x1b[100m"}, {CONSOLE_COLOR_BLUE, "\x1b[104m"}, {CONSOLE_COLOR_GREEN, "\x1b[102m"}, {CONSOLE_COLOR_CYAN, "\x1b[106m"}, {CONSOLE_COLOR_RED, "\x1b[101m"}, {CONSOLE_COLOR_MAGENTA, "\x1b[105m"}, {CONSOLE_COLOR_YELLOW, "\x1b[103m"}, {CONSOLE_COLOR_WHITE, "\x1b[107m"}};
   auto it = colors.find(color);
-  if (it == colors.end()) return false;
+  if (it == colors.end()) {
+    color = CONSOLE_COLOR_DEFAULT;
+    it = colors.begin();
+  }
   ::background_color = color;
   if (terminal::is_ansi_escape_sequence_supported()) std::cout << it->second << std::flush;
   return true;
@@ -589,7 +584,7 @@ namespace {
           return;
         }
         close(dev_null);
-
+        
       }
       ~hide_log() {
         if (stderr_copy == -1) return;
@@ -766,8 +761,7 @@ bool console::cursor_visible(bool visible) {
 }
 
 bool console::echo(bool on) {
-  if (!terminal::is_ansi_escape_sequence_supported()) return false;
-  return terminal::echo(on);
+  return terminal_mode::echo(on);
 }
 
 int32_t console::foreground_color() {
@@ -775,9 +769,12 @@ int32_t console::foreground_color() {
 }
 
 bool console::foreground_color(std::int32_t color) {
-  static auto colors = std::map<int32_t, const char*> {{CONSOLE_COLOR_DEFAULT, "\x1b[39m"}, {CONSOLE_COLOR_BLACK, "\x1b[30m"}, {CONSOLE_COLOR_DARK_BLUE, "\x1b[34m"}, {CONSOLE_COLOR_DARK_GREEN, "\x1b[32m"}, {CONSOLE_COLOR_DARK_CYAN, "\x1b[36m"}, {CONSOLE_COLOR_DARK_RED, "\x1b[31m"}, {CONSOLE_COLOR_DARK_MAGENTA, "\x1b[35m"}, {CONSOLE_COLOR_DARK_YELLOW, "\x1b[33m"}, {CONSOLE_COLOR_GRAY, "\x1b[37m"}, {CONSOLE_COLOR_DARK_GRAY, "\x1b[90m"}, {CONSOLE_COLOR_BLUE, "\x1b[94m"}, {CONSOLE_COLOR_GREEN, "\x1b[92m"}, {CONSOLE_COLOR_CYAN, "\x1b[96m"}, {CONSOLE_COLOR_RED, "\x1b[91m"}, {CONSOLE_COLOR_MAGENTA, "\x1b[95m"}, {CONSOLE_COLOR_YELLOW, "\x1b[93m"}, {CONSOLE_COLOR_WHITE, "\x1b[97m"}};
+  auto colors = std::map<int32_t, const char*> {{CONSOLE_COLOR_DEFAULT, "\x1b[39m"}, {CONSOLE_COLOR_BLACK, "\x1b[30m"}, {CONSOLE_COLOR_DARK_BLUE, "\x1b[34m"}, {CONSOLE_COLOR_DARK_GREEN, "\x1b[32m"}, {CONSOLE_COLOR_DARK_CYAN, "\x1b[36m"}, {CONSOLE_COLOR_DARK_RED, "\x1b[31m"}, {CONSOLE_COLOR_DARK_MAGENTA, "\x1b[35m"}, {CONSOLE_COLOR_DARK_YELLOW, "\x1b[33m"}, {CONSOLE_COLOR_GRAY, "\x1b[37m"}, {CONSOLE_COLOR_DARK_GRAY, "\x1b[90m"}, {CONSOLE_COLOR_BLUE, "\x1b[94m"}, {CONSOLE_COLOR_GREEN, "\x1b[92m"}, {CONSOLE_COLOR_CYAN, "\x1b[96m"}, {CONSOLE_COLOR_RED, "\x1b[91m"}, {CONSOLE_COLOR_MAGENTA, "\x1b[95m"}, {CONSOLE_COLOR_YELLOW, "\x1b[93m"}, {CONSOLE_COLOR_WHITE, "\x1b[97m"}};
   auto it = colors.find(color);
-  if (it == colors.end()) return false;
+  if (it == colors.end()) {
+    color = CONSOLE_COLOR_DEFAULT;
+    it = colors.begin();
+  }
   ::foreground_color = color;
   if (terminal::is_ansi_escape_sequence_supported()) std::cout << it->second << std::flush;
   return true;
@@ -844,16 +841,19 @@ void console::register_user_cancel_callback(std::function<bool(std::int32_t)> us
 }
 
 bool console::reset_color() {
-  return console::background_color(CONSOLE_COLOR_DEFAULT) && console::foreground_color(CONSOLE_COLOR_DEFAULT);
+  console::background_color(CONSOLE_COLOR_DEFAULT);
+  console::foreground_color(CONSOLE_COLOR_DEFAULT);
+  return true;
 }
 
 bool console::reset_console() {
+  reset_color();
   reset_terminal_mode();
-  return reset_color();
+  return true;
 }
 
 void console::reset_terminal_mode() {
-  terminal::reset_terminal_mode();
+  terminal_mode::reset();
 }
 
 bool console::set_cursor_position(std::int32_t left, std::int32_t top) {
@@ -867,12 +867,12 @@ std::string console::title() {
   /// @todo get console get title on macos
   /** Didn't work correctly!
    std::cout << "\x1b[21t" << std::endl;
-  
+   
    if (!terminal::key_available()) return ::title;
-  
+   
    std::string title;
    for (auto c = terminal::getch(); terminal::key_available(); c = terminal::getch())
-     title.push_back(static_cast<char>(c));
+   title.push_back(static_cast<char>(c));
    return title;
    */
   return ::title;
