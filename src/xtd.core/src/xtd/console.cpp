@@ -69,6 +69,10 @@ namespace {
   auto __console_mutex__ = std::recursive_mutex {};
   auto __console_background_color = optional<uint32> {};
   auto __console_foreground_color = optional<uint32> {};
+  
+  struct auto_reset_console {
+    ~auto_reset_console() {xtd::console::__internal_rstc__();}
+  } ___auto_reset_console___;
 }
 
 std::ostream console::error {__get_err_rdbuf()};
