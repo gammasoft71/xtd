@@ -96,7 +96,7 @@ namespace xtdc_command {
         "  -h, --help          Displays help for this command.",
         "  -n, --name          The name for the project. If no name is specified, the name of the specified path or of the current directory is used.",
         "  --type              Filters templates based on available types. Predefined values are \"project\", \"item\" or \"other\".",
-        "  -s , --sdk          Filters templates based on SDK/language and specifies the SDK/language of the template to create.",
+        "  -s, --sdk           Filters templates based on SDK/language and specifies the SDK/language of the template to create.",
         "",
         "",
         "Exemples:",
