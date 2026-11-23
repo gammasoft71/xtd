@@ -49,24 +49,6 @@ namespace xtdc_command {
         "",
         "# Application properties",
         "add_executable(${PROJECT_NAME} ${SOURCES})",
-        "",
-        "# Install",
-        xtd::string::format("install(DIRECTORY include/. DESTINATION include/{})", name),
-        xtd::string::format("file(WRITE ${{CMAKE_CURRENT_BINARY_DIR}}/{}Config.cmake", name),
-        "  \"include(CMakeFindDependencyMacro)\\n\"",
-        "  \"include(\\\"\\${CMAKE_CURRENT_LIST_DIR}/${PROJECT_NAME}.cmake\\\")\\n\"",
-        "  \"\\n\"",
-        xtd::string::format("  \"get_filename_component({}_INCLUDE_DIRS \\\"\\${{CMAKE_CURRENT_LIST_DIR}}/../include\\\" ABSOLUTE)\\n\"", name.to_upper()),
-        xtd::string::format("  \"get_filename_component({}_LIBRARIES_DIRS \\\"\\${{CMAKE_CURRENT_LIST_DIR}}/../lib\\\" ABSOLUTE)\\n\"", name.to_upper()),
-        "  \"\\n\"",
-        xtd::string::format("  \"set({}_LIBRARIES {})\\n\"", name.to_upper(), name),
-        xtd::string::format("  \"set({}_FOUND TRUE)\\n\"", name.to_upper()),
-        ")",
-        xtd::string::format("install(FILES ${{CMAKE_CURRENT_BINARY_DIR}}/{}Config.cmake DESTINATION cmake)", name),
-        "install(FILES $<TARGET_FILE_DIR:${PROJECT_NAME}>/${PROJECT_NAME}${CMAKE_DEBUG_POSTFIX}.pdb DESTINATION bin CONFIGURATIONS Debug OPTIONAL)",
-        "install(FILES $<TARGET_FILE_DIR:${PROJECT_NAME}>/${PROJECT_NAME}.pdb DESTINATION bin CONFIGURATIONS Release OPTIONAL)",
-        "install(TARGETS ${PROJECT_NAME} EXPORT ${PROJECT_NAME} DESTINATION bin)",
-        "install(EXPORT ${PROJECT_NAME} DESTINATION cmake)",
       };
       
       xtd::io::file::write_all_lines(xtd::io::path::combine(path, "CMakeLists.txt"), lines);
@@ -79,7 +61,6 @@ namespace xtdc_command {
         "/* The main entry point for the application. */",
         "int main(int argc, char* argv[]) {",
         "  printf(\"Hello, World!\\n\");",
-        "  return 0;",
         "}",
       };
       
