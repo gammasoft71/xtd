@@ -21,7 +21,7 @@ xtdc contains many project template. All project listed below are created with C
 ## GUI Application sdk :
 
 * xtd (C++)
-* cocoa (objective-c)
+* cocoa (Objective-C)
 * fltk (C++)
 * gtk (C++)
 * gtk_c (C)
