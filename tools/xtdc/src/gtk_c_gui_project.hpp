@@ -62,7 +62,7 @@ namespace xtdc_command {
         "#include <gtk/gtk.h>",
         "",
         "void on_app_activate(GtkApplication* app, gpointer user_data) {",
-        "  GtkWidget* window1 = gtk_application_window_new(app);",
+        "  GtkWidget *window1 = gtk_application_window_new(app);",
         "  gtk_window_set_title(GTK_WINDOW(window1), \"Window1\");",
         "  gtk_window_set_default_size(GTK_WINDOW(window1), 800, 450);",
         "  gtk_window_present(GTK_WINDOW(window1));",

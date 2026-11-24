@@ -72,7 +72,7 @@ namespace xtdc_command {
         "      set_default_size(800, 450);",
         "    }",
         "",
-        "    // @brief The main entry point for the application.",
+        "    /// @brief The main entry point for the application.",
         "    [[nodiscard]] static auto main(int argc, char* argv[]) {",
         xtd::string::format("      auto application = Gtk::Application::create(\"org.gtkmm.{}\");", name),
         "      return application->make_window_and_run<Window1>(argc, argv);",

@@ -70,7 +70,7 @@ namespace xtdc_command {
         "    }",
         "  };",
         "",
-        "  // @brief Represent the application",
+        "  /// @brief Represent the application",
         "  class Application : public wxApp {",
         "    auto OnInit() -> bool override {",
         "      (new Frame1 {})->Show();",
