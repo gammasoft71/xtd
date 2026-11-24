@@ -10,10 +10,17 @@ xtdc can build, open, run, install, test or uninstall an existing project.
 
 xtdc contains many project template. All project listed below are created with CMake and target your system (Visual Studio on Windows, Xcode on macOS and Code::Blocks or makefile on Linux).
 
+## Console Application SDK/language :
+
+* xtd (C++)
+* c++
+* c
+* c#
+* objective-c
+
 ## GUI Application sdk :
 
 * xtd (C++)
-* xtd_c (C)
 * cocoa (objective-c)
 * fltk (C++)
 * gtk (C++)
@@ -26,19 +33,9 @@ xtdc contains many project template. All project listed below are created with C
 * winforms (C#)
 * wpf (C#)
 
-## Console Application SDK/language :
+## Shared or Static library SDK/language :
 
 * xtd (C++)
-* xtd_c (C)
-* c++
-* c
-* c#
-* objective-c
-
-## Shared or static library SDK/language :
-
-* xtd (C++)
-* xtd_c (C)
 * c++
 * c
 * c#
@@ -47,14 +44,12 @@ xtdc contains many project template. All project listed below are created with C
 ## Unit Test project SDK/language :
 
 * xtd (C++)
-* xtd_c (C)
 * gtest (C++)
 * catch2 (C++)
 
 ## Solution file SDK/language :
 
 * xtd
-* xtd_c
 * c++
 * c
 * c#
