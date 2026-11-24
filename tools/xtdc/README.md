@@ -85,7 +85,7 @@ run              Compiles and immediately executes a project.
 build            Builds a project.
 install          Install a project.
 clean            Clean build output(s).
-open             Open a project in default ide.
+open             Open a project in default IDE.
 targets          List project targets.
 test             Runs unit tests using the test runner specified in the project.
 uninstall        Uninstall a project.

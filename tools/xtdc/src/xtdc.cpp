@@ -149,7 +149,7 @@ namespace xtdc_command {
         "  build            Builds a project.",
         "  install          Install a project.",
         "  clean            Clean build output(s).",
-        "  open             Open a project in default ide.",
+        "  open             Open a project in default IDE.",
         "  targets          List project targets.",
         "  test             Runs unit tests using the test runner specified in the project.",
         "  uninstall        Uninstall a project.",
@@ -313,7 +313,7 @@ namespace xtdc_command {
     
     static list<string> get_open_help() noexcept {
       return {
-        "Open a project in default ide.",
+        "Open a project in default IDE.",
         "Usage: open [path] [<options>]",
         "",
         "options:",
