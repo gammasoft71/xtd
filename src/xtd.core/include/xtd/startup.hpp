@@ -66,7 +66,7 @@ namespace xtd {
     template<typename main_function_t>
     [[nodiscard]] static auto run(main_function_t&& main_function) noexcept -> int {
       try {
-        scope_exit_ {xtd::threading::thread::join_all();};
+        scope_exit_ {xtd::threading::thread::join_all();}; // Required only if the user forgets to join their threads.
         return internal_run(std::forward<main_function_t>(main_function));
       } catch (const std::exception& e) {
         return xtd::exception::show_exception(e);
