@@ -8,9 +8,9 @@
 
 ## GUI tools
 
+* [xtdc-gui](https://github.com/gammasoft71/xtd/tree/master/tools/xtdc-gui/README.md) is project management GUI application.
 * [guidgen-gui](https://github.com/gammasoft71/xtd/tree/master/tools/guidgen-gui/README.md) is a guid generator GUI application.
 * [keyccodes](https://github.com/gammasoft71/xtd/tree/master/tools/keycodes/README.md) displays information about the keys entered.
-* [xtdc-gui](https://github.com/gammasoft71/xtd/tree/master/tools/xtdc-gui/README.md) is project management GUI application.
 
 ## See also
 
