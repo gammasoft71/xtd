@@ -16,33 +16,32 @@ xtdc contains many project template. All project listed below are created with C
 * xtd_c (C)
 * cocoa (objective-c)
 * fltk (C++)
-* Gtk+ 2 (C)
-* Gtk+ 3 (C)
-* Gtk+ 4 (C)
-* Gtkmm (C++)
-* wxWidgets (C++)
-* Qt 5 (C++)
-* Win32 (C++)
-* Win32_c (C)
-* Winforms (C#)
-* WPF (C#)
+* gtk (C++)
+* gtk_c (C)
+* gtkmm (C++)
+* wxwidgets (C++)
+* qt (C++)
+* win32 (C++)
+* win32_c (C)
+* winforms (C#)
+* wpf (C#)
 
 ## Console Application SDK/language :
 
 * xtd (C++)
 * xtd_c (C)
-* C++
-* C
-* C#
+* c++
+* c
+* c#
 * objective-c
 
 ## Shared or static library SDK/language :
 
 * xtd (C++)
 * xtd_c (C)
-* C++
-* C
-* C#
+* c++
+* c
+* c#
 * objective-c
 
 ## Unit Test project SDK/language :
@@ -51,6 +50,15 @@ xtdc contains many project template. All project listed below are created with C
 * xtd_c (C)
 * gtest (C++)
 * catch2 (C++)
+
+## Solution file SDK/language :
+
+* xtd
+* xtd_c
+* c++
+* c
+* c#
+* objective-c
 
 # Usage
 
