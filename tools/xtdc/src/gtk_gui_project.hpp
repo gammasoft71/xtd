@@ -41,11 +41,8 @@ namespace xtdc_command {
         "  src/program.cpp",
         ")",
         "source_group(src FILES ${SOURCES})",
-        "find_package(PkgConfig)",
-        "pkg_check_modules(GTK gtk4)",
-        "include_directories(${GTK_INCLUDE_DIRS})",
-        "link_directories(${GTK_LIBRARY_DIRS})",
-        "link_libraries(${GTK_LIBRARIES})",
+        "find_package(PkgConfig REQUIRED)",
+        "pkg_check_modules(GTK4 REQUIRED IMPORTED_TARGET gtk4)",
         "",
         "# Options",
         "set(CMAKE_CXX_STANDARD 20)",
@@ -54,6 +51,7 @@ namespace xtdc_command {
         "",
         "# Application properties",
         "add_executable(${PROJECT_NAME} WIN32 MACOSX_BUNDLE ${SOURCES})",
+        "target_link_libraries(${PROJECT_NAME} PRIVATE PkgConfig::GTK4)",
       };
       
       xtd::io::file::write_all_lines(xtd::io::path::combine(path, "CMakeLists.txt"), lines);
