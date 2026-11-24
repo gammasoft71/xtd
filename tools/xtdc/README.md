@@ -18,7 +18,7 @@ xtdc contains many project template. All project listed below are created with C
 * c#
 * objective-c
 
-## GUI Application sdk :
+## GUI Application SDK/language :
 
 * xtd (C++)
 * cocoa (Objective-C)
