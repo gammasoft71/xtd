@@ -12,32 +12,32 @@ xtdc-gui can open an xtd example from xtd.core, xtd.forms or xtd.tunit examples.
 
 xtdc-gui contains many project template. All project listed below are created with CMake and target your system (Visual Studio on Windows, Xcode on macOS and Code::Blocks or makefile on Linux).
 
-## GUI Application sdk :
-
-* xtd (c++)
-* cocoa (objective-c)
-* fltk (c++)
-* Gtk+ 2 (c)
-* Gtk+ 3 (c)
-* Gtk+ 4 (c)
-* Gtkmm (c++)
-* wxWidgets (c++)
-* Qt 5 (c++)
-* Win32 (c)
-* Winforms (c#)
-* WPF (c#)
-
 ## Console Application SDK/language :
 
-* xtd (c++)
+* xtd (C++)
 * c++
 * c
 * c#
 * objective-c
 
-## Shared or static library SDK/language :
+## GUI Application SDK/language :
 
-* xtd (c++)
+* xtd (C++)
+* cocoa (Objective-C)
+* fltk (C++)
+* gtk (C++)
+* gtk_c (C)
+* gtkmm (C++)
+* wxwidgets (C++)
+* qt (C++)
+* win32 (C++)
+* win32_c (C)
+* winforms (C#)
+* wpf (C#)
+
+## Shared or Static library SDK/language :
+
+* xtd (C++)
 * c++
 * c
 * c#
@@ -45,9 +45,17 @@ xtdc-gui contains many project template. All project listed below are created wi
 
 ## Unit Test project SDK/language :
 
-* xtd (c++)
-* gtest (c++)
-* catch2 (c++)
+* xtd (C++)
+* gtest (C++)
+* catch2 (C++)
+
+## Solution file SDK/language :
+
+* xtd
+* c++
+* c
+* c#
+* objective-c
 
 # Create and open a new project
 
