@@ -3,6 +3,7 @@ namespace xtdc_gui {
   enum class project_sdk {
     none,
     appkit,
+    appkit_c,
     fltk,
     gtk,
     gtk_c,

@@ -9,7 +9,8 @@ namespace xtdc_gui {
     c = 0b1000,
     csharp = 0b10000,
     objectivec = 0b100000,
-    all = xtd /*| xtd_c*/ | cpp | c | csharp | objectivec,
+    swift = 0b1000000,
+    all = xtd /*| xtd_c*/ | cpp | c | csharp | objectivec | swift,
   };
   
   /// @cond

@@ -36,9 +36,9 @@ namespace xtdc_command {
         "cmake_minimum_required(VERSION 3.20)",
         "",
         "# Project",
-        xtd::string::format("project({})", name),
+        xtd::string::format("project({} LANGUAGES Swift)", name),
         "set(SOURCES",
-        "  src/Window1.m",
+        "  src/main.swift",
         ")",
         "source_group(src FILES ${SOURCES})",
         "",
@@ -59,39 +59,39 @@ namespace xtdc_command {
     
     void create_source(const xtd::string& name, const xtd::string& path) const {
       auto lines = xtd::array<xtd::string> {
-        "#import <AppKit/AppKit.h>",
+        "import AppKit",
         "",
-        "/// @brief Represents the main NSWindow",
-        "@interface Window1 : NSWindow {",
+        "/// Represents the main NSWindow",
+        "class Window1: NSWindow, NSWindowDelegate {",
+        "  ",
+        "  /// Initializes a new instance of the Window1 class.",
+        "  init() {",
+        "    super.init(",
+        "      contentRect: NSRect(x: 100, y: 500, width: 800, height: 450),",
+        "      styleMask: [.titled, .closable, .miniaturizable, .resizable],",
+        "      backing: .buffered,",
+        "      defer: false",
+        "    )",
+        "    self.title = \"Window1\"",
+        "    self.delegate = self",
+        "    self.makeKeyAndOrderFront(nil)",
+        "  }",
+        "  ",
+        "  func windowShouldClose(_ sender: NSWindow) -> Bool {",
+        "    NSApp.terminate(sender)",
+        "    return false",
+        "  }",
         "}",
-        " /// @brief Initializes a new instance of the Window1 class.",
-        "- (instancetype)init;",
-        "- (BOOL)windowShouldClose:(id)sender;",
-        "@end",
         "",
-        "@implementation Window1",
-        "- (instancetype)init {",
-        "  [super initWithContentRect:NSMakeRect(100, 500, 800, 450) styleMask:NSWindowStyleMaskTitled | NSWindowStyleMaskClosable | NSWindowStyleMaskMiniaturizable | NSWindowStyleMaskResizable backing:NSBackingStoreBuffered defer:NO];",
-        "  [self setTitle:@\"Window1\"];",
-        "  [self setIsVisible:YES];",
-        "  return self;",
-        "}",
+        "/// The main entry point for the application.",
+        "let app = NSApplication.shared",
+        "let window = Window1()",
+        "window.makeMain()",
+        "app.run()",
         "",
-        "- (BOOL)windowShouldClose:(id)sender {",
-        "   [NSApp terminate:sender];",
-        "   return NO;",
-        "}",
-        "@end",
-        "",
-        "/// @brief The main entry point for the application.",
-        "int main(int argc, char* argv[]) {",
-        "  [NSApplication sharedApplication];",
-        "  [[[[Window1 alloc] init] autorelease] makeMainWindow];",
-        "  [NSApp run];",
-        "}",
       };
       
-      xtd::io::file::write_all_lines(xtd::io::path::combine(path, "src", "Window1.m"), lines);
+      xtd::io::file::write_all_lines(xtd::io::path::combine(path, "src", "main.swift"), lines);
     }
     
     void generate_cmakelists_txt(const xtd::string& name, const xtd::string& path) const {
@@ -101,9 +101,7 @@ namespace xtdc_command {
       lines.add("# Project");
       lines.add(xtd::string::format("project({} VERSION 1.0.0)", name));
       lines.add("set(SOURCES");
-      auto [headers, sources] = get_objectivec_sources(path, path);
-      for (const auto& file : headers)
-        lines.add(xtd::string::format("  {}", file));
+      auto sources = get_swift_sources(path, path);
       for (const auto& file : sources)
         lines.add(xtd::string::format("  {}", file));
       lines.add(")");

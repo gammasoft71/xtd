@@ -36,7 +36,7 @@ namespace xtdc_command {
         "cmake_minimum_required(VERSION 3.20)",
         "",
         "# Project",
-        xtd::string::format("project({})", name),
+        xtd::string::format("project({} LANGUAGES OBJC)", name),
         "set(SOURCES",
         "  src/Program.m",
         ")",

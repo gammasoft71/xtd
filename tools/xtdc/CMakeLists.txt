@@ -5,13 +5,14 @@ project(xtdc)
 include("../../scripts/cmake/xtd_commands.cmake")
 include("../../scripts/cmake/xtd_version.cmake")
 add_sources(
+  "src/appkit_gui_project.hpp"
+  "src/appkit_c_gui_project.hpp"
   "src/base_project.hpp"
   "src/blank_solution_project.hpp"
   "src/c_console_project.hpp"
   "src/c_shared_library_project.hpp"
   "src/c_static_library_project.hpp"
   "src/catch2_unit_test_application_project.hpp"
-  "src/appkit_gui_project.hpp"
   "src/cpp_console_project.hpp"
   "src/cpp_shared_library_project.hpp"
   "src/cpp_static_library_project.hpp"

@@ -4,6 +4,7 @@ namespace xtdc_command {
     none,
     catch2,
     appkit,
+    appkit_c,
     fltk,
     gtest,
     gtk,
