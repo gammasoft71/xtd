@@ -11,7 +11,7 @@ add_sources(
   "src/c_shared_library_project.hpp"
   "src/c_static_library_project.hpp"
   "src/catch2_unit_test_application_project.hpp"
-  "src/cocoa_gui_project.hpp"
+  "src/appkit_gui_project.hpp"
   "src/cpp_console_project.hpp"
   "src/cpp_shared_library_project.hpp"
   "src/cpp_static_library_project.hpp"

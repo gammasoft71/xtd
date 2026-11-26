@@ -2,7 +2,7 @@
 namespace xtdc_gui {
   enum class project_sdk {
     none,
-    cocoa,
+    appkit,
     fltk,
     gtk,
     gtk_c,

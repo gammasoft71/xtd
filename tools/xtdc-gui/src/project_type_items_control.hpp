@@ -8,7 +8,7 @@
 #include <xtd/forms/application>
 #include "project_type_item_control.hpp"
 #include "../resources/catch2.xpm"
-#include "../resources/cocoa.xpm"
+#include "../resources/appkit.xpm"
 #include "../resources/console.xpm"
 #include "../resources/fltk.xpm"
 #include "../resources/gtest.xpm"
@@ -60,7 +60,7 @@ namespace xtdc_gui {
         {xtd::drawing::bitmap::from_xpm_data(console_icon), "Console Application (c++)", "A project for creating a c++ command-line application.", project_language::cpp, project_sdk::none, project_platform::all, project_type::console},
         {xtd::drawing::bitmap::from_xpm_data(xtd_console_icon), "xtd Console Application (c++)", "A project for creating a xtd command-line application.", project_language::xtd, project_sdk::none, project_platform::all, project_type::console},
         //{xtd::drawing::bitmap::from_xpm_data(xtd_console_icon), "xtd_c Console Application (c)", "A project for creating a xtd_c command-line application.", project_language::xtd_c, project_sdk::none, project_platform::all, project_type::console},
-        {xtd::drawing::bitmap::from_xpm_data(cocoa_icon), "Cocoa UI Application (objective-c)", "A project for creating a cocoa application with a graphic user\ninterface.", project_language::objectivec, project_sdk::cocoa, project_platform::macos, project_type::gui},
+        {xtd::drawing::bitmap::from_xpm_data(appkit_icon), "Cocoa UI Application (objective-c)", "A project for creating a appkit application with a graphic user\ninterface.", project_language::objectivec, project_sdk::appkit, project_platform::macos, project_type::gui},
         {xtd::drawing::bitmap::from_xpm_data(gtk_icon), "Gtkmm GUI Application (c++)", "A project for creating a gtkmm application with a graphic user\ninterface.", project_language::cpp, project_sdk::gtkmm, project_platform::linux, project_type::gui},
         {xtd::drawing::bitmap::from_xpm_data(gtk_icon), "Gtk GUI Application (c++)", "A project for creating a gtk application with a graphic user\ninterface.", project_language::cpp, project_sdk::gtk, project_platform::all, project_type::gui},
         {xtd::drawing::bitmap::from_xpm_data(gtk_icon), "Gtk GUI Application (c)", "A project for creating a gtk application with a graphic user\ninterface.", project_language::c, project_sdk::gtk_c, project_platform::all, project_type::gui},

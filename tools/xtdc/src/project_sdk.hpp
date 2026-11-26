@@ -3,7 +3,7 @@ namespace xtdc_command {
   enum class project_sdk {
     none,
     catch2,
-    cocoa,
+    appkit,
     fltk,
     gtest,
     gtk,

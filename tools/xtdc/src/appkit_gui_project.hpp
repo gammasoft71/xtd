@@ -2,9 +2,9 @@
 #include "base_project.hpp"
 
 namespace xtdc_command {
-  class cocoa_gui_project : public base_project {
+  class appkit_gui_project : public base_project {
   public:
-    explicit cocoa_gui_project(const xtd::string& path) : base_project(path) {}
+    explicit appkit_gui_project(const xtd::string& path) : base_project(path) {}
     
     void create(const xtd::string& name, bool create_solution) const {
       xtd::io::directory::create_directory(create_solution ? xtd::io::path::combine(current_path(), name, "src") : xtd::io::path::combine(current_path(), "src"));

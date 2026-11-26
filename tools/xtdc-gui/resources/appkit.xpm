@@ -1,6 +1,6 @@
 #pragma once
 /* XPM */
-static const char *cocoa_icon[] = {
+static const char *appkit_icon[] = {
 /* columns rows colors chars-per-pixel */
 "40 40 42 1 ",
 "  c #41BFFB",
