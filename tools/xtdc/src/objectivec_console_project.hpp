@@ -58,9 +58,7 @@ namespace xtdc_command {
         "",
         "// The main entry point for the application.",
         "int main(int argc, const char * argv[]) {",
-        "  @autoreleasepool {",
-        "    NSLog(@\"Hello, World!\");",
-        "  }",
+        "  NSLog(@\"Hello, World!\");",
         "}",
       };
       
