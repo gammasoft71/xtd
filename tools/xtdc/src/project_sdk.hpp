@@ -11,6 +11,7 @@ namespace xtdc_command {
     gtk_c,
     gtkmm,
     qt,
+    swiftui,
     win32,
     win32_c,
     winforms,

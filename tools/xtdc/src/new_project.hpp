@@ -49,8 +49,8 @@ namespace xtdc_command {
       }
       
       auto project_type = xtd::collections::generic::dictionary<xtd::string, xtdc_command::project_type> {{"sln", project_type::blank_solution}, {"gui", project_type::gui}, {"console", project_type::console}, {"sharedlib", project_type::shared_library}, {"staticlib", project_type::static_library}, {"test", project_type::unit_test_application}} [type];
-      auto project_sdk = xtd::collections::generic::dictionary<xtd::string, xtdc_command::project_sdk> {{"none", xtdc_command::project_sdk::none}, {"catch2", xtdc_command::project_sdk::catch2}, {"appkit", xtdc_command::project_sdk::appkit}, {"appkit_c", xtdc_command::project_sdk::appkit_c}, {"fltk", xtdc_command::project_sdk::fltk}, {"gtest", xtdc_command::project_sdk::gtest}, {"gtk", xtdc_command::project_sdk::gtk}, {"gtk_c", xtdc_command::project_sdk::gtk_c}, {"gtkmm", xtdc_command::project_sdk::gtkmm}, {"qt", xtdc_command::project_sdk::qt}, {"win32", xtdc_command::project_sdk::win32}, {"win32_c", xtdc_command::project_sdk::win32_c}, {"winforms", xtdc_command::project_sdk::winforms}, {"wpf", xtdc_command::project_sdk::wpf}, {"wxwidgets", xtdc_command::project_sdk::wxwidgets}, {"xtd", xtdc_command::project_sdk::xtd}/*, {"xtd_c", xtdc_command::project_sdk::xtd_c}*/} [sdk];
-      auto project_language = xtd::collections::generic::dictionary<xtd::string, xtdc_command::project_language> {{"appkit", xtdc_command::project_language::swift}, {"appkit_c", xtdc_command::project_language::objectivec}, {"fltk", xtdc_command::project_language::cpp}, {"gtk", xtdc_command::project_language::cpp}, {"gtk_c", xtdc_command::project_language::c}, {"gtkmm", xtdc_command::project_language::cpp}, {"qt", xtdc_command::project_language::cpp}, {"win32", xtdc_command::project_language::cpp}, {"win32_c", xtdc_command::project_language::c}, {"winforms", xtdc_command::project_language::csharp}, {"wpf", xtdc_command::project_language::csharp}, {"wxwidgets", xtdc_command::project_language::cpp}, {"xtd", xtdc_command::project_language::cpp}/*, {"xtd_c", xtdc_command::project_language::c}*/, {"c++", xtdc_command::project_language::cpp}, {"cpp", xtdc_command::project_language::cpp}, {"cxx", xtdc_command::project_language::cpp}, {"c", xtdc_command::project_language::c}, {"c#", xtdc_command::project_language::csharp}, {"csharp", xtdc_command::project_language::csharp}, {"objective-c", xtdc_command::project_language::objectivec}, {"objectivec", xtdc_command::project_language::objectivec}, {"swift", xtdc_command::project_language::swift}} [sdk];
+      auto project_sdk = xtd::collections::generic::dictionary<xtd::string, xtdc_command::project_sdk> {{"none", xtdc_command::project_sdk::none}, {"catch2", xtdc_command::project_sdk::catch2}, {"appkit", xtdc_command::project_sdk::appkit}, {"appkit_c", xtdc_command::project_sdk::appkit_c}, {"fltk", xtdc_command::project_sdk::fltk}, {"gtest", xtdc_command::project_sdk::gtest}, {"gtk", xtdc_command::project_sdk::gtk}, {"gtk_c", xtdc_command::project_sdk::gtk_c}, {"gtkmm", xtdc_command::project_sdk::gtkmm}, {"qt", xtdc_command::project_sdk::qt}, {"swiftui", xtdc_command::project_sdk::swiftui}, {"win32", xtdc_command::project_sdk::win32}, {"win32_c", xtdc_command::project_sdk::win32_c}, {"winforms", xtdc_command::project_sdk::winforms}, {"wpf", xtdc_command::project_sdk::wpf}, {"wxwidgets", xtdc_command::project_sdk::wxwidgets}, {"xtd", xtdc_command::project_sdk::xtd}/*, {"xtd_c", xtdc_command::project_sdk::xtd_c}*/} [sdk];
+      auto project_language = xtd::collections::generic::dictionary<xtd::string, xtdc_command::project_language> {{"appkit", xtdc_command::project_language::swift}, {"appkit_c", xtdc_command::project_language::objectivec}, {"fltk", xtdc_command::project_language::cpp}, {"gtk", xtdc_command::project_language::cpp}, {"gtk_c", xtdc_command::project_language::c}, {"gtkmm", xtdc_command::project_language::cpp}, {"qt", xtdc_command::project_language::cpp}, {"swiftui", xtdc_command::project_language::swift}, {"win32", xtdc_command::project_language::cpp}, {"win32_c", xtdc_command::project_language::c}, {"winforms", xtdc_command::project_language::csharp}, {"wpf", xtdc_command::project_language::csharp}, {"wxwidgets", xtdc_command::project_language::cpp}, {"xtd", xtdc_command::project_language::cpp}/*, {"xtd_c", xtdc_command::project_language::c}*/, {"c++", xtdc_command::project_language::cpp}, {"cpp", xtdc_command::project_language::cpp}, {"cxx", xtdc_command::project_language::cpp}, {"c", xtdc_command::project_language::c}, {"c#", xtdc_command::project_language::csharp}, {"csharp", xtdc_command::project_language::csharp}, {"objective-c", xtdc_command::project_language::objectivec}, {"objectivec", xtdc_command::project_language::objectivec}, {"swift", xtdc_command::project_language::swift}} [sdk];
       auto status = project_management(get_project_full_path_from_path(path)).create(name, project_type, project_sdk, project_language);
       switch (status) {
         case operation_status::success: console::write_line("\n** CREATE SUCCEEDED **\n\n"); break;
@@ -74,23 +74,24 @@ namespace xtdc_command {
         "  A template short name of the following table. If no short name specified, gui is used.",
         "  Templates               Short Name     SDK/Language                         ",
         "  ----------------------------------------------------------------------------",
-//        "  Console Application     console        [xtd], xtd_c, c++, c, c#,"
-//        "                                         objective-c, swift",
+        //"  Console Application     console        [xtd], xtd_c, c++, c, c#,"
+        //"                                         objective-c, swift",
         "  Console Application     console        [xtd], c++, c, c#, objective-c, swift",
-//        "  GUI Application         gui            [xtd], xtd_c, appkit, appkit_c, fltk,",
-//        "                                         gtk, gtk_c, gtkmm, wxwidgets, qt",
-//        "                                         win32, win32_c, winforms, wpf",
+        //"  GUI Application         gui            [xtd], xtd_c, appkit, appkit_c, fltk,",
+        //"                                         gtk, gtk_c, gtkmm, qt, swiftui,"
+        //"                                         wxwidgets, win32, win32_c, winforms,",
+        //"                                         wpf",
         "  GUI Application         gui            [xtd], appkit, appkit_c, fltk, gtk,",
-        "                                         gtk_c, gtkmm, wxwidgets, qt, win32,",
-        "                                         win32_c, winforms, wpf",
-//        "  Shared library          sharedlib      [xtd], xtd_c, c++, c, c#, objective-c",
+        "                                         gtk_c, gtkmm, qt, swiftui, wxwidgets,",
+        "                                         win32, win32_c, winforms, wpf",
+        //"  Shared library          sharedlib      [xtd], xtd_c, c++, c, c#, objective-c",
         "  Shared library          sharedlib      [xtd], c++, c, c#, objective-c",
-//        "  Static library          staticlib      [xtd], xtd_c, c++, c, c#, objective-c",
+        //"  Static library          staticlib      [xtd], xtd_c, c++, c, c#, objective-c",
         "  Static library          staticlib      [xtd], c++, c, c#, objective-c",
-//        "  Unit Test Project       test           [xtd], xtd_c, gtest, catch2",
+        //"  Unit Test Project       test           [xtd], xtd_c, gtest, catch2",
         "  Unit Test Project       test           [xtd], gtest, catch2",
-//        "  Solution File           sln            [xtd], xtd_c, c++, c, c#,"
-//        "                                         objective-c, swift",
+        //"  Solution File           sln            [xtd], xtd_c, c++, c, c#,"
+        //"                                         objective-c, swift",
         "  Solution File           sln            [xtd], c++, c, c#, objective-c, swift",
         "",
         "path:",

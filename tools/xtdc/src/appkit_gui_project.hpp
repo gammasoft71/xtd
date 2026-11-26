@@ -88,7 +88,6 @@ namespace xtdc_command {
         "let window = Window1()",
         "window.makeMain()",
         "app.run()",
-        "",
       };
       
       xtd::io::file::write_all_lines(xtd::io::path::combine(path, "src", "main.swift"), lines);

@@ -32,6 +32,7 @@
 #include "project_sdk.hpp"
 #include "project_type.hpp"
 #include "swift_console_project.hpp"
+#include "swiftui_gui_project.hpp"
 #include "win32_gui_project.hpp"
 #include "win32_c_gui_project.hpp"
 #include "winforms_gui_project.hpp"
@@ -83,7 +84,7 @@ namespace xtdc_command {
         case project_type::unknown: return {project_sdk::none};
         case project_type::blank_solution: return {project_sdk::none, project_sdk::xtd/*, project_sdk::xtd_c*/};
         case project_type::console: return {project_sdk::none, project_sdk::xtd/*, project_sdk::xtd_c*/};
-        case project_type::gui: return {project_sdk::appkit, project_sdk::appkit_c, project_sdk::fltk, project_sdk::gtk, project_sdk::gtk_c, project_sdk::gtkmm, project_sdk::qt, project_sdk::win32, project_sdk::win32_c, project_sdk::winforms, project_sdk::wpf, project_sdk::wxwidgets, project_sdk::xtd/*, project_sdk::xtd_c*/};
+        case project_type::gui: return {project_sdk::appkit, project_sdk::appkit_c, project_sdk::fltk, project_sdk::gtk, project_sdk::gtk_c, project_sdk::gtkmm, project_sdk::qt, project_sdk::swiftui, project_sdk::win32, project_sdk::win32_c, project_sdk::winforms, project_sdk::wpf, project_sdk::wxwidgets, project_sdk::xtd/*, project_sdk::xtd_c*/};
         case project_type::shared_library: return {project_sdk::none, project_sdk::xtd/*, project_sdk::xtd_c*/};
         case project_type::static_library: return {project_sdk::none, project_sdk::xtd/*, project_sdk::xtd_c*/};
         case project_type::unit_test_application: return {project_sdk::catch2, project_sdk::gtest, project_sdk::xtd/*, project_sdk::xtd_c*/};
@@ -103,6 +104,7 @@ namespace xtdc_command {
         case project_sdk::gtk_c: return {project_language::c};
         case project_sdk::gtkmm: return {project_language::cpp};
         case project_sdk::qt: return {project_language::cpp};
+        case project_sdk::swiftui: return {project_language::swift};
         case project_sdk::win32: return {project_language::cpp};
         case project_sdk::win32_c: return {project_language::c};
         case project_sdk::winforms: return {project_language::csharp};
@@ -433,6 +435,7 @@ namespace xtdc_command {
         {project_sdk::gtk_c, {gtk_c_gui_project {path_}, &gtk_c_gui_project::create}},
         {project_sdk::gtkmm, {gtkmm_gui_project {path_}, &gtkmm_gui_project::create}},
         {project_sdk::qt, {qt_gui_project {path_}, &qt_gui_project::create}},
+        {project_sdk::swiftui, {swiftui_gui_project {path_}, &swiftui_gui_project::create}},
         {project_sdk::win32, {win32_gui_project {path_}, &win32_gui_project::create}},
         {project_sdk::win32_c, {win32_c_gui_project {path_}, &win32_c_gui_project::create}},
         {project_sdk::winforms, {winforms_gui_project {path_}, &winforms_gui_project::create}},
@@ -526,6 +529,7 @@ namespace xtdc_command {
         {project_sdk::gtk_c, {gtk_c_gui_project {path_}, &gtk_c_gui_project::generate}},
         {project_sdk::gtkmm, {gtkmm_gui_project {path_}, &gtkmm_gui_project::generate}},
         {project_sdk::qt, {qt_gui_project {path_}, &qt_gui_project::generate}},
+        {project_sdk::swiftui, {swiftui_gui_project {path_}, &swiftui_gui_project::generate}},
         {project_sdk::win32, {win32_gui_project {path_}, &win32_gui_project::generate}},
         {project_sdk::win32_c, {win32_c_gui_project {path_}, &win32_c_gui_project::generate}},
         {project_sdk::winforms, {winforms_gui_project {path_}, &winforms_gui_project::generate}},

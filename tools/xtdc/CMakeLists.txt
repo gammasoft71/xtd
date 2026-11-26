@@ -33,6 +33,7 @@ add_sources(
   "src/project_type.hpp"
   "src/qt_gui_project.hpp"
   "src/swift_console_project.hpp"
+  "src/swiftui_gui_project.hpp"
   "src/win32_c_gui_project.hpp"
   "src/win32_gui_project.hpp"
   "src/winforms_gui_project.hpp"
