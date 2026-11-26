@@ -13,33 +13,45 @@ xtdc contains many project template. All project listed below are created with C
 ## Console Application SDK/language :
 
 * xtd (C++)
-* c++
 * c
+* c++
 * c#
 * objective-c
+* swift
 
 ## GUI Application SDK/language :
 
 * xtd (C++)
-* cocoa (Objective-C)
+* appkit (Swift)
+* appkit_c (Objective-C)
 * fltk (C++)
 * gtk (C++)
 * gtk_c (C)
 * gtkmm (C++)
-* wxwidgets (C++)
+* swiftui (Swift)
 * qt (C++)
 * win32 (C++)
 * win32_c (C)
 * winforms (C#)
 * wpf (C#)
+* wxwidgets (C++)
 
-## Shared or Static library SDK/language :
+## Shared library SDK/language :
 
 * xtd (C++)
-* c++
 * c
+* c++
 * c#
 * objective-c
+* swift
+
+## Static library SDK/language :
+
+* xtd (C++)
+* c
+* c++
+* objective-c
+* swift
 
 ## Unit Test project SDK/language :
 
@@ -50,10 +62,11 @@ xtdc contains many project template. All project listed below are created with C
 ## Solution file SDK/language :
 
 * xtd
-* c++
 * c
+* c++
 * c#
 * objective-c
+* swift
 
 # Usage
 
