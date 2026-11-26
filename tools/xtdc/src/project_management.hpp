@@ -18,7 +18,6 @@
 #include "cpp_static_library_project.hpp"
 #include "csharp_console_project.hpp"
 #include "csharp_shared_library_project.hpp"
-#include "csharp_static_library_project.hpp"
 #include "fltk_gui_project.hpp"
 #include "gtest_unit_test_application_project.hpp"
 #include "gtk_gui_project.hpp"
@@ -466,7 +465,6 @@ namespace xtdc_command {
         default: std::map<project_language, xtd::action<const xtd::string&, bool>> {
             {project_language::c, {c_static_library_project {path_}, &c_static_library_project::create}},
             {project_language::cpp, {cpp_static_library_project {path_}, &cpp_static_library_project::create}},
-            {project_language::csharp, {csharp_static_library_project {path_}, &csharp_static_library_project::create}},
             {project_language::objectivec, {objectivec_static_library_project {path_}, &objectivec_static_library_project::create}}
           } [language](name, create_solution); break;
       }
@@ -560,7 +558,6 @@ namespace xtdc_command {
         default: std::map<project_language, xtd::action<const xtd::string&>> {
             {project_language::c, {c_static_library_project {path_}, &c_static_library_project::generate}},
             {project_language::cpp, {cpp_static_library_project {path_}, &cpp_static_library_project::generate}},
-            {project_language::csharp, {csharp_static_library_project {path_}, &csharp_static_library_project::generate}},
             {project_language::objectivec, {objectivec_static_library_project {path_}, &objectivec_static_library_project::generate}}
           } [language](name); break;
       }

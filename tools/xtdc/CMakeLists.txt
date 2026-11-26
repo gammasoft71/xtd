@@ -18,7 +18,6 @@ add_sources(
   "src/cpp_static_library_project.hpp"
   "src/csharp_console_project.hpp"
   "src/csharp_shared_library_project.hpp"
-  "src/csharp_static_library_project.hpp"
   "src/fltk_gui_project.hpp"
   "src/gtest_unit_test_application_project.hpp"
   "src/gtk_c_gui_project.hpp"

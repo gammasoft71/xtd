@@ -87,7 +87,7 @@ namespace xtdc_command {
         //"  Shared library          sharedlib      [xtd], xtd_c, c++, c, c#, objective-c",
         "  Shared library          sharedlib      [xtd], c++, c, c#, objective-c",
         //"  Static library          staticlib      [xtd], xtd_c, c++, c, c#, objective-c",
-        "  Static library          staticlib      [xtd], c++, c, c#, objective-c",
+        "  Static library          staticlib      [xtd], c++, c, objective-c",
         //"  Unit Test Project       test           [xtd], xtd_c, gtest, catch2",
         "  Unit Test Project       test           [xtd], gtest, catch2",
         //"  Solution File           sln            [xtd], xtd_c, c++, c, c#,"
