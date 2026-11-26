@@ -42,6 +42,9 @@ namespace xtdc_command {
         ")",
         "source_group(src FILES ${SOURCES})",
         "",
+        "# Options",
+        "set_property(GLOBAL PROPERTY USE_FOLDERS ON)",
+        "",
         "# Application properties",
         "add_executable(${PROJECT_NAME} ${SOURCES})",
       };
