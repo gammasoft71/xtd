@@ -87,8 +87,9 @@ namespace xtdc_command {
         "  Static library          staticlib      [xtd], c++, c, c#, objective-c",
 //        "  Unit Test Project       test           [xtd], xtd_c, gtest, catch2",
         "  Unit Test Project       test           [xtd], gtest, catch2",
-//        "  Solution File           sln            [xtd], xtd_c, c++, c, c#, objective-c",
-        "  Solution File           sln            [xtd], c++, c, c#, objective-c",
+//        "  Solution File           sln            [xtd], xtd_c, c++, c, c#,"
+//        "                                         objective-c, swift",
+        "  Solution File           sln            [xtd], c++, c, c#, objective-c, swift",
         "",
         "path:",
         "  Location to place the generated output. If no path is specified, the current path is used.",
