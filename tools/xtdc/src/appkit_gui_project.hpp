@@ -43,7 +43,7 @@ namespace xtdc_command {
         "source_group(src FILES ${SOURCES})",
         "",
         "# Options",
-        "set(CMAKE_EXE_LINKER_FLAGS \"${CMAKE_EXE_LINKER_FLAGS} -framework Cocoa\")",
+        "set(CMAKE_EXE_LINKER_FLAGS \"${CMAKE_EXE_LINKER_FLAGS} -framework AppKit\")",
         "set(MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION})",
         xtd::string::format("set(MACOSX_BUNDLE_COPYRIGHT \"Copyright © {:yyyy}\")", xtd::date_time::now()),
         xtd::string::format("set(MACOSX_BUNDLE_INFO_STRING \"{} application\")", name),
@@ -59,7 +59,7 @@ namespace xtdc_command {
     
     void create_source(const xtd::string& name, const xtd::string& path) const {
       auto lines = xtd::array<xtd::string> {
-        "#import <Cocoa/Cocoa.h>",
+        "#import <AppKit/AppKit.h>",
         "",
         "/// @brief Represents the main NSWindow",
         "@interface Window1 : NSWindow {",
@@ -110,7 +110,7 @@ namespace xtdc_command {
       lines.add("source_group(src FILES ${SOURCES})");
       lines.add("");
       lines.add("# Options");
-      lines.add("set(CMAKE_EXE_LINKER_FLAGS \"${CMAKE_EXE_LINKER_FLAGS} -framework Cocoa\")");
+      lines.add("set(CMAKE_EXE_LINKER_FLAGS \"${CMAKE_EXE_LINKER_FLAGS} -framework AppKit\")");
       lines.add("set(MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION})");
       lines.add(xtd::string::format("set(MACOSX_BUNDLE_COPYRIGHT \"Copyright © {:yyyy}\")", xtd::date_time::now()));
       lines.add(xtd::string::format("set(MACOSX_BUNDLE_INFO_STRING \"{} application\")", name));

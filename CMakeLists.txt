@@ -190,7 +190,7 @@ endif ()
 
 #add_definitions(-D__XTD_NATIVE_GRAPHIC_TOOLKIT__="${XTD_NATIVE_GRAPHIC_TOOLKIT}")
 if ("${XTD_NATIVE_GRAPHIC_TOOLKIT}" STREQUAL "appkit")
-  message(WARNING "Cocoa toolkit is only supported for development, used wxwidgets instead.\nCocoa toolkit will be disponible in a future release.")
+  message(WARNING "AppKit toolkit is only supported for development, used wxwidgets instead.\AppKit toolkit will be disponible in a future release.")
   set(XTD_DRAWING_NATIVE_LIBRARY xtd.drawing.native.appkit)
   set(XTD_FORMS_NATIVE_LIBRARY xtd.forms.native.appkit)
 endif ()

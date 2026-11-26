@@ -4,7 +4,7 @@
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #import <CoreFoundation/CoreFoundation.h>
 //#if !defined(TARGET_IPHONE_SIMULATOR) && !defined(TARGET_OS_MACCATALYST) && !defined(TARGET_OS_IPHONE)
-#import <Cocoa/Cocoa.h>
+#import <AppKit/AppKit.h>
 //#endif
 #import <Foundation/Foundation.h>
 #include <cstdlib>

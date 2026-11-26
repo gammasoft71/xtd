@@ -8,7 +8,7 @@ add_include_directories("include")
 
 # add external packages
 add_references(dl)
-add_references("-framework Foundation -framework Cocoa -framework AudioUnit")
+add_references("-framework Foundation -framework AppKit -framework AudioUnit")
 add_references(xtd.core.native)
 
 add_sources(

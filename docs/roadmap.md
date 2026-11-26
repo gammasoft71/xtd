@@ -240,8 +240,8 @@ see [Issues](https://github.com/gammasoft71/xtd/issues?q=is%3Aissue+-label%3Aenh
 
 | Issue                                                 | Library                   | Enhancements                             | Developer | status                                           |
 | ----------------------------------------------------- | ------------------------- | ---------------------------------------- | --------- | ------------------------------------------------ |
-|                                                       | xtd.drawing.native.appkit | Implementation of the Cocoa toolkit      | Gammasoft |                                                  |
-|                                                       | xtd.forms.native.appkit   | Implementation of the Cocoa toolkit      | Gammasoft |                                                  |
+|                                                       | xtd.drawing.native.appkit | Implementation of the AppKit toolkit     | Gammasoft |                                                  |
+|                                                       | xtd.forms.native.appkit   | Implementation of the AppKit toolkit     | Gammasoft |                                                  |
 
 ## Release 6.0.0
 

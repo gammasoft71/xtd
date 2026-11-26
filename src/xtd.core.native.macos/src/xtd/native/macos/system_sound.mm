@@ -5,7 +5,7 @@
 #include <map>
 #include <string>
 #include <TargetConditionals.h>
-#import <Cocoa/Cocoa.h>
+#import <AppKit/AppKit.h>
 
 using namespace xtd::native;
 

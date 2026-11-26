@@ -1,5 +1,5 @@
 #if defined(__WXOSX__)
-#import <Cocoa/Cocoa.h>
+#import <AppKit/AppKit.h>
 #import <Foundation/Foundation.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include "../../../../../include/xtd/forms/native/wxwidgets/control_handler"
