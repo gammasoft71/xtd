@@ -1,18 +1,18 @@
 cmake_minimum_required(VERSION 3.20)
 
 # Project
-project(xtd.forms.native.cocoa)
+project(xtd.forms.native.appkit)
 include("../../scripts/cmake/xtd_commands.cmake")
 include("../../scripts/cmake/xtd_version.cmake")
-add_link_options("-framework Cocoa")
+add_link_options("-framework AppKit")
 add_include_directories("include")
 add_references(xtd.drawing xtd.forms.native)
 add_sources(
-  "include/xtd/xtd.forms.native.cocoa.h"
-  "include/xtd/xtd.forms.native.cocoa"
+  "include/xtd/xtd.forms.native.appkit.h"
+  "include/xtd/xtd.forms.native.appkit"
 )
 add_sources(
-  "src/xtd/forms/native/cocoa/forms.cpp"
+  "src/xtd/forms/native/appkit/forms.cpp"
 )
 target_type(${XTD_LIBRARY_TYPE})
 

@@ -33,12 +33,12 @@
 ///
 /// <i>(note 1)</i> The list of the underlying graphic toolkit depends of the operating system :
 /// * Windows : msw wxwidgets qt fltk
-/// * macOS : cocoa wxwidgets qt fltk
+/// * macOS : appkit wxwidgets qt fltk
 /// * linux : gtk wxwidgets qt fltk
 ///
 /// @remarks Currently, xtd uses only wxWidgets (and its native backends) for all platforms. This simplifies cross-platform behavior and ensures consistency across toolkits. In the future, other toolkits may be supported depending on the platform :
 /// * Windows : msw
-/// * macOS : cocoa
+/// * macOS : appkit
 /// * linux : gtk4
 ///
 /// @section xtUserProjectdBuildOptions xtd user project build options

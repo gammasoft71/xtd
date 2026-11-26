@@ -45,7 +45,7 @@ xtd is currently in development mode and the only [xtd.forms.native.wxwidgets](h
 
 **wxWidgets 3.1.5 will be automatically installed with xtd.**
 
-In the future xtd.forms will use [xtd.forms.native.win32](https://github.com/gammasoft71/xtd/tree/master/src/xtd.forms.native.win32/README.md) on Windows, [xtd.forms.native.cocoa](https://github.com/gammasoft71/xtd/tree/master/src/xtd.forms.native.cocoa/README.md) on macOS and [xtd.forms.native.gtk](https://github.com/gammasoft71/xtd/tree/master/src/xtd.forms.native.gtk/README.md) on linux. Other backend like [xtd.forms.native.qt](https://github.com/gammasoft71/xtd/tree/master/src/xtd.forms.native.qt/README.md) will be ported too.
+In the future xtd.forms will use [xtd.forms.native.win32](https://github.com/gammasoft71/xtd/tree/master/src/xtd.forms.native.win32/README.md) on Windows, [xtd.forms.native.appkit](https://github.com/gammasoft71/xtd/tree/master/src/xtd.forms.native.appkit/README.md) on macOS and [xtd.forms.native.gtk](https://github.com/gammasoft71/xtd/tree/master/src/xtd.forms.native.gtk/README.md) on linux. Other backend like [xtd.forms.native.qt](https://github.com/gammasoft71/xtd/tree/master/src/xtd.forms.native.qt/README.md) will be ported too.
 
 ## Installation
 

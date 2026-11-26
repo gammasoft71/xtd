@@ -10,11 +10,11 @@
 // Information about this assembly is defined by the following attributes.
 // Change them to the values specific to your project.
 
-assembly_title_("xtd.forms.native.cocoa");
-assembly_description_("xtd.forms.native.cocoa library is based on Apple AppKit toolkit.");
+assembly_title_("xtd.forms.native.appkit");
+assembly_description_("xtd.forms.native.appkit library is based on Apple AppKit toolkit.");
 assembly_configuration_("");
 assembly_company_("Gammasoft");
-assembly_product_("xtd.forms.native.cocoa");
+assembly_product_("xtd.forms.native.appkit");
 assembly_copyright_("Copyright © Gammasoft 2024");
 assembly_trademark_("");
 assembly_culture_("en_US.UTF-8");
