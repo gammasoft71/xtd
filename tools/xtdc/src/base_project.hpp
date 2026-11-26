@@ -101,7 +101,7 @@ namespace xtdc_command {
         headers.add(file.replace(current_path + xtd::io::path::directory_separator_char(), xtd::string::empty_string));
       for (const auto& file : xtd::io::directory::get_files(path, "*.m"))
         sources.add(file.replace(current_path + xtd::io::path::directory_separator_char(), xtd::string::empty_string));
-        
+      
       for (const auto& sub_path : xtd::io::directory::get_directories(path)) {
         auto [sub_headers, sub_sources] = get_objectivec_sources(current_path, sub_path);
         for (const auto& file : sub_headers)
@@ -113,6 +113,19 @@ namespace xtdc_command {
       return std::make_tuple(headers.to_array(), sources.to_array());
     }
     
+    static xtd::array<xtd::string> get_swift_sources(const xtd::string& current_path, const xtd::string& path) {
+      xtd::collections::generic::list<xtd::string> sources;
+      for (const auto& file : xtd::io::directory::get_files(path, "*.swift"))
+        sources.add(file.replace(current_path + xtd::io::path::directory_separator_char(), xtd::string::empty_string));
+      
+      for (const auto& sub_path : xtd::io::directory::get_directories(path)) {
+        for (const auto& file : get_swift_sources(current_path, sub_path))
+          sources.add(file);
+      }
+      
+      return sources.to_array();
+    }
+
   private:
     xtd::string current_path_ = xtd::environment::current_directory();
   };

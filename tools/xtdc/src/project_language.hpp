@@ -5,5 +5,6 @@ namespace xtdc_command {
     c,
     csharp,
     objectivec,
+    swift
   };
 }

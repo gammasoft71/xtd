@@ -30,6 +30,7 @@
 #include "project_language.hpp"
 #include "project_sdk.hpp"
 #include "project_type.hpp"
+#include "swift_console_project.hpp"
 #include "win32_gui_project.hpp"
 #include "win32_c_gui_project.hpp"
 #include "winforms_gui_project.hpp"
@@ -91,7 +92,7 @@ namespace xtdc_command {
     
     static xtd::array<project_language> get_valid_languages(project_sdk sdk) {
       switch (sdk) {
-        case project_sdk::none: return {project_language::cpp, project_language::c, project_language::objectivec, project_language::csharp};
+        case project_sdk::none: return {project_language::cpp, project_language::c, project_language::csharp, project_language::objectivec, project_language::swift};
         case project_sdk::catch2: return {project_language::c, project_language::cpp};
         case project_sdk::cocoa: return {project_language::objectivec};
         case project_sdk::fltk: return {project_language::cpp};
@@ -401,7 +402,8 @@ namespace xtdc_command {
           {project_language::c, {blank_solution_project {path_}, &blank_solution_project::create}},
           {project_language::cpp, {blank_solution_project {path_}, &blank_solution_project::create}},
           {project_language::csharp, {blank_solution_project {path_}, &blank_solution_project::create}},
-          {project_language::objectivec, {blank_solution_project {path_}, &blank_solution_project::create}}
+          {project_language::objectivec, {blank_solution_project {path_}, &blank_solution_project::create}},
+          {project_language::swift, {blank_solution_project {path_}, &blank_solution_project::create}},
         } [language](name, create_solution); break;
       }
     }
@@ -414,7 +416,8 @@ namespace xtdc_command {
           {project_language::c, {c_console_project {path_}, &c_console_project::create}},
           {project_language::cpp, {cpp_console_project {path_}, &cpp_console_project::create}},
           {project_language::csharp, {csharp_console_project {path_}, &csharp_console_project::create}},
-          {project_language::objectivec, {objectivec_console_project {path_}, &objectivec_console_project::create}}
+          {project_language::objectivec, {objectivec_console_project {path_}, &objectivec_console_project::create}},
+          {project_language::swift, {swift_console_project {path_}, &swift_console_project::create}},
         } [language](name, create_solution); break;
       }
     }
@@ -491,7 +494,8 @@ namespace xtdc_command {
           {project_language::c, {blank_solution_project {path_}, &blank_solution_project::generate}},
           {project_language::cpp, {blank_solution_project {path_}, &blank_solution_project::generate}},
           {project_language::csharp, {blank_solution_project {path_}, &blank_solution_project::generate}},
-          {project_language::objectivec, {blank_solution_project {path_}, &blank_solution_project::generate}}
+          {project_language::objectivec, {blank_solution_project {path_}, &blank_solution_project::generate}},
+          {project_language::swift, {blank_solution_project {path_}, &blank_solution_project::generate}},
         } [language](name); break;
       }
     }
@@ -501,10 +505,11 @@ namespace xtdc_command {
         case project_sdk::xtd: xtd_console_project(path_).generate(name); break;
         //case project_sdk::xtd_c: xtd_c_console_project(path_).generate(name); break;
         default: std::map<project_language, xtd::action<const xtd::string&>> {
-            {project_language::c, {c_console_project {path_}, &c_console_project::generate}},
-            {project_language::cpp, {cpp_console_project {path_}, &cpp_console_project::generate}},
-            {project_language::csharp, {csharp_console_project {path_}, &csharp_console_project::generate}},
-            {project_language::objectivec, {objectivec_console_project {path_}, &objectivec_console_project::generate}}
+          {project_language::c, {c_console_project {path_}, &c_console_project::generate}},
+          {project_language::cpp, {cpp_console_project {path_}, &cpp_console_project::generate}},
+          {project_language::csharp, {csharp_console_project {path_}, &csharp_console_project::generate}},
+          {project_language::objectivec, {objectivec_console_project {path_}, &objectivec_console_project::generate}},
+          {project_language::swift, {swift_console_project {path_}, &swift_console_project::generate}},
           } [language](name); break;
       }
     }
