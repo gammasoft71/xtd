@@ -17,6 +17,7 @@ xtdc contains many project template. All project listed below are created with C
 * c++
 * c#
 * objective-c
+* objective-c++
 * swift
 
 ## GUI Application SDK/language :
@@ -24,6 +25,7 @@ xtdc contains many project template. All project listed below are created with C
 * xtd (C++)
 * appkit (Swift)
 * appkit_c (Objective-C)
+* appkit_c++ (Objective-C++)
 * fltk (C++)
 * gtk (C++)
 * gtk_c (C)
@@ -43,6 +45,7 @@ xtdc contains many project template. All project listed below are created with C
 * c++
 * c#
 * objective-c
+* objective-c++
 * swift
 
 ## Static library SDK/language :
@@ -51,6 +54,7 @@ xtdc contains many project template. All project listed below are created with C
 * c
 * c++
 * objective-c
+* objective-c++
 * swift
 
 ## Unit Test project SDK/language :
@@ -66,6 +70,7 @@ xtdc contains many project template. All project listed below are created with C
 * c++
 * c#
 * objective-c
+* objective-c++
 * swift
 
 # Usage
