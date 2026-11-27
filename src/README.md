@@ -24,7 +24,7 @@ Contains xtd sources.
 * [xtd.drawing.native.appkit](xtd.drawing.native.appkir) library is based on Apple [AppKit](https://developer.apple.com/documentation/appkit/) toolkit.
 * [xtd.drawing.native.fltk](xtd.drawing.native.fltk) library is based on [FLTK](https://fltk.org) toolkit.
 * [xtd.drawing.native.gtk](xtd.drawing.native.gtk) library is based on [Gtk](https://developer.gnome.org/gtk4/stable/index.html) toolkit.
-* [xtd.drawing.native.qt5](xtd.drawing.native.qt5) library is based on [Qt](https://qt.io) toolkit.
+* [xtd.drawing.native.qt](xtd.drawing.native.qt) library is based on [Qt](https://qt.io) toolkit.
 * [xtd.drawing.native.win32](xtd.drawing.native.win32) library is based on Microsoft [Win32](https://docs.microsoft.com/en-us/windows/apps/desktop/) toolkit.
 * [xtd.drawing.native.wxwidgets](xtd.drawing.native.wxwidgets) library is based on [wxWidgets](https://wxwidgets.org/) toolkit.
 
@@ -35,7 +35,7 @@ Contains xtd sources.
 * [xtd.forms.native.appkit](xtd.forms.native.appkit) library is based on Apple [AppKit](https://developer.apple.com/documentation/appkit/) toolkit.
 * [xtd.forms.native.fltk](xtd.forms.native.fltk) library is based on [FLTK](https://www.fltk.org) toolkit.
 * [xtd.forms.native.gtk](xtd.forms.native.gtk) library is based on [Gtk](https://developer.gnome.org/gtk4/stable/index.html) toolkit.
-* [xtd.forms.native.qt5](xtd.forms.native.qt5) library is based on [Qt](https://www.qt.io) toolkit.
+* [xtd.forms.native.qt](xtd.forms.native.qt) library is based on [Qt](https://www.qt.io) toolkit.
 * [xtd.forms.native.win32](xtd.forms.native.win32) library is based on Microsoft [Win32](https://docs.microsoft.com/en-us/windows/apps/desktop/) toolkit.
 * [xtd.forms.native.wxwidgets](xtd.forms.native.wxwidgets) library is based on [wxWidgets](https://www.wxwidgets.org/) toolkit.
 
