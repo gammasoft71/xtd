@@ -27,7 +27,7 @@ namespace {
   wxAssertHandler_t original_assert_handler = nullptr;
   
   void xtd_assert_handler(const wxString& file, int32 line, const wxString& func, const wxString& cond, const wxString& msg) noexcept {
-    static auto show_wx_assert = boolean_switch {"wx_assert", "Shows wxAssert log", "true"};
+    static auto show_wx_assert = boolean_switch {"wx_assert", "Shows wxAssert log", "false"};
     try {
       // Workaround : wxWidgets generates an unknown assertion when there is a double mouse click event on an empty area of wxCalendarCtrl.
       if (func.Contains("wxCalendarCtrl::HitTest") && cond.Contains("Assert failure") && msg.Contains("unexpected")) return;
