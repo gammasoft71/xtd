@@ -63,16 +63,7 @@ namespace xtdc_command {
         "",
         "# Application properties",
         "add_executable(${PROJECT_NAME} WIN32 ${SOURCES})",
-        "set_property(TARGET ${PROJECT_NAME} PROPERTY VS_DOTNET_REFERENCES",
-        "  Microsoft.CSharp",
-        "  PresentationCore",
-        "  PresentationFramework",
-        "  System",
-        "  System.Xaml",
-        "  System.Xml",
-        "  System.Xml.Linq",
-        "  WindowsBase",
-        ")",
+        "set_target_properties(${PROJECT_NAME} PROPERTIES VS_DOTNET_TARGET_FRAMEWORK_VERSION \"v4.8\" VS_DOTNET_REFERENCES \"Microsoft.CSharp;PresentationCore;PresentationFramework;System;System.Xaml;System.Xml;System.Xml.Linq;WindowsBase\")",
       };
       
       xtd::io::file::write_all_lines(xtd::io::path::combine(path, "CMakeLists.txt"), lines);
@@ -180,13 +171,8 @@ namespace xtdc_command {
       lines.add("");
       lines.add("# Application properties");
       lines.add("add_executable(${PROJECT_NAME} WIN32 ${SOURCES})");
-      lines.add("set_property(TARGET ${PROJECT_NAME} PROPERTY VS_DOTNET_REFERENCES");
-      lines.add("  Microsoft.CSharp");
-      lines.add("  PresentationCore");
-      lines.add("  PresentationFramework");
-      lines.add("  System");
-      lines.add("  System.Xaml");
-      lines.add("  System.Xml");
+      lines.add("set_target_properties(${PROJECT_NAME} PROPERTIES VS_DOTNET_TARGET_FRAMEWORK_VERSION \"v4.8\" VS_DOTNET_REFERENCES \"Microsoft.CSharp;PresentationCore;PresentationFramework;System;System.Xaml;System.Xml;System.Xml.Linq;WindowsBase\")");
+      
       lines.add("  System.Xml.Linq");
       lines.add("  WindowsBase");
       lines.add(")");

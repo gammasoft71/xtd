@@ -48,6 +48,7 @@ namespace xtdc_command {
         "",
         "# Application properties",
         "add_library(${PROJECT_NAME} SHARED ${SOURCES})",
+        "set_target_properties(${PROJECT_NAME} PROPERTIES VS_DOTNET_TARGET_FRAMEWORK_VERSION \"v4.8\" VS_DOTNET_REFERENCES \"System;System.Core\")",
         "",
         "# Install",
         xtd::string::format("install(DIRECTORY include/. DESTINATION include/{})", name),
@@ -73,11 +74,8 @@ namespace xtdc_command {
     
     void create_source(const xtd::string& name, const xtd::string& path) const {
       auto lines = xtd::array<xtd::string> {
-        "/// @file",
-        "/// @brief Contains Class1 class.",
         "using System;",
         "",
-        "/// @brief Represents the namespace that contains library objects.",
         xtd::string::format("namespace {} {{", name),
         "  /// @brief Represents the main class.",
         "  public class Class1 {",
@@ -114,6 +112,7 @@ namespace xtdc_command {
       lines.add("");
       lines.add("# Application properties");
       lines.add("add_library(${PROJECT_NAME} SHARED ${SOURCES})");
+      lines.add("set_target_properties(${PROJECT_NAME} PROPERTIES VS_DOTNET_TARGET_FRAMEWORK_VERSION \"v4.8\" VS_DOTNET_REFERENCES \"System;System.Core\")");
       lines.add("");
       lines.add("# Install");
       lines.add(xtd::string::format("install(DIRECTORY include/. DESTINATION include/{})", name));
