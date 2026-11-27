@@ -48,6 +48,7 @@ namespace xtdc_command {
         "",
         "# Application properties",
         "add_executable(${PROJECT_NAME} ${SOURCES})",
+        "set_target_properties(${PROJECT_NAME} PROPERTIES VS_DOTNET_TARGET_FRAMEWORK_VERSION \"v4.8\" VS_DOTNET_REFERENCES \"System;System.Core\")",
       };
       
       xtd::io::file::write_all_lines(xtd::io::path::combine(path, "CMakeLists.txt"), lines);
@@ -55,11 +56,8 @@ namespace xtdc_command {
     
     void create_source(const xtd::string& name, const xtd::string& path) const {
       auto lines = xtd::array<xtd::string> {
-        "/// @file",
-        "/// @brief Contains Program class.",
         "using System;",
         "",
-        "/// @brief Represents the namespace that contains application objects.",
         xtd::string::format("namespace {} {{", name),
         "  /// @brief Represents the main class.",
         "  class Program {",
@@ -97,7 +95,8 @@ namespace xtdc_command {
       lines.add("");
       lines.add("# Application properties");
       lines.add("add_executable(${PROJECT_NAME} ${SOURCES})");
-      
+      lines.add("set_target_properties(${PROJECT_NAME} PROPERTIES VS_DOTNET_TARGET_FRAMEWORK_VERSION \"v4.8\" VS_DOTNET_REFERENCES \"System;System.Core\")");
+
       xtd::io::file::write_all_lines(xtd::io::path::combine(path, "CMakeLists.txt"), lines);
     }
   };
