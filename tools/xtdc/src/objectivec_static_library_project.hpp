@@ -104,7 +104,7 @@ namespace xtdc_command {
       lines.add("cmake_minimum_required(VERSION 3.20)");
       lines.add("");
       lines.add("# Project");
-      lines.add(xtd::string::format("project({} VERSION 1.0.0)", name));
+      lines.add(xtd::string::format("project({} LANGUAGES OBJC VERSION 1.0.0)", name));
       auto [headers, sources] = get_objectivec_sources(path, path);
       lines.add("set(INCLUDES");
       for (const auto& file : headers)

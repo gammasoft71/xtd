@@ -7,6 +7,7 @@ include("../../scripts/cmake/xtd_version.cmake")
 add_sources(
   "src/appkit_gui_project.hpp"
   "src/appkit_c_gui_project.hpp"
+  "src/appkit_cpp_gui_project.hpp"
   "src/base_project.hpp"
   "src/blank_solution_project.hpp"
   "src/c_console_project.hpp"
@@ -26,6 +27,9 @@ add_sources(
   "src/objectivec_console_project.hpp"
   "src/objectivec_shared_library_project.hpp"
   "src/objectivec_static_library_project.hpp"
+  "src/objectivecpp_console_project.hpp"
+  "src/objectivecpp_shared_library_project.hpp"
+  "src/objectivecpp_static_library_project.hpp"
   "src/project_language.hpp"
   "src/project_management.hpp"
   "src/project_sdk.hpp"

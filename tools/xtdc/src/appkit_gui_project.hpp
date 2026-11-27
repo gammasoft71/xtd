@@ -61,10 +61,8 @@ namespace xtdc_command {
       auto lines = xtd::array<xtd::string> {
         "import AppKit",
         "",
-        "/// Represents the main NSWindow",
+        "/// Represents the main window.",
         "class Window1: NSWindow, NSWindowDelegate {",
-        "  ",
-        "  /// Initializes a new instance of the Window1 class.",
         "  init() {",
         "    super.init(",
         "      contentRect: NSRect(x: 100, y: 500, width: 800, height: 450),",

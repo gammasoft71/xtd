@@ -68,7 +68,7 @@ namespace xtdc_command {
         "  }",
         "}",
         "",
-        "// Represents the application and main window",
+        "/// Represents the application and main window",
         "struct Application : App {",
         "  @NSApplicationDelegateAdaptor(ApplicationDelegate.self) var appDelegate",
         "    ",

@@ -61,10 +61,8 @@ namespace xtdc_command {
       auto lines = xtd::array<xtd::string> {
         "#import <AppKit/AppKit.h>",
         "",
-        "/// @brief Represents the main NSWindow",
-        "@interface Window1 : NSWindow {",
-        "}",
-        " /// @brief Initializes a new instance of the Window1 class.",
+        "/// @brief Represents the main window.",
+        "@interface Window1 : NSWindow {}",
         "- (instancetype)init;",
         "- (BOOL)windowShouldClose:(id)sender;",
         "@end",
@@ -99,7 +97,7 @@ namespace xtdc_command {
       lines.add("cmake_minimum_required(VERSION 3.20)");
       lines.add("");
       lines.add("# Project");
-      lines.add(xtd::string::format("project({} VERSION 1.0.0)", name));
+      lines.add(xtd::string::format("project({} LANGUAGES OBJC VERSION 1.0.0)", name));
       lines.add("set(SOURCES");
       auto [headers, sources] = get_objectivec_sources(path, path);
       for (const auto& file : headers)

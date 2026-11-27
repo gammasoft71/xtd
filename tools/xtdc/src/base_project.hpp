@@ -54,6 +54,8 @@ namespace xtdc_command {
     static std::tuple<xtd::array<xtd::string>, xtd::array<xtd::string >> get_cpp_sources(const xtd::string& current_path, const xtd::string& path) {
       xtd::collections::generic::list<xtd::string> headers;
       xtd::collections::generic::list<xtd::string> sources;
+      for (const auto& file : xtd::io::directory::get_files(path, "*.h"))
+        headers.add(file.replace(current_path + xtd::io::path::directory_separator_char(), xtd::string::empty_string));
       for (const auto& file : xtd::io::directory::get_files(path, "*.hpp"))
         headers.add(file.replace(current_path + xtd::io::path::directory_separator_char(), xtd::string::empty_string));
       for (const auto& file : xtd::io::directory::get_files(path, "*.cpp"))
@@ -113,6 +115,27 @@ namespace xtdc_command {
       return std::make_tuple(headers.to_array(), sources.to_array());
     }
     
+    static std::tuple<xtd::array<xtd::string>, xtd::array<xtd::string >> get_objectivecpp_sources(const xtd::string& current_path, const xtd::string& path) {
+      xtd::collections::generic::list<xtd::string> headers;
+      xtd::collections::generic::list<xtd::string> sources;
+      for (const auto& file : xtd::io::directory::get_files(path, "*.h"))
+        headers.add(file.replace(current_path + xtd::io::path::directory_separator_char(), xtd::string::empty_string));
+      for (const auto& file : xtd::io::directory::get_files(path, "*.hpp"))
+        headers.add(file.replace(current_path + xtd::io::path::directory_separator_char(), xtd::string::empty_string));
+      for (const auto& file : xtd::io::directory::get_files(path, "*.mm"))
+        sources.add(file.replace(current_path + xtd::io::path::directory_separator_char(), xtd::string::empty_string));
+      
+      for (const auto& sub_path : xtd::io::directory::get_directories(path)) {
+        auto [sub_headers, sub_sources] = get_objectivec_sources(current_path, sub_path);
+        for (const auto& file : sub_headers)
+          headers.add(file);
+        for (const auto& file : sub_sources)
+          sources.add(file);
+      }
+      
+      return std::make_tuple(headers.to_array(), sources.to_array());
+    }
+
     static xtd::array<xtd::string> get_swift_sources(const xtd::string& current_path, const xtd::string& path) {
       xtd::collections::generic::list<xtd::string> sources;
       for (const auto& file : xtd::io::directory::get_files(path, "*.swift"))

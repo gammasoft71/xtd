@@ -8,6 +8,7 @@
 
 #include "appkit_gui_project.hpp"
 #include "appkit_c_gui_project.hpp"
+#include "appkit_cpp_gui_project.hpp"
 #include "blank_solution_project.hpp"
 #include "c_console_project.hpp"
 #include "c_shared_library_project.hpp"
@@ -27,6 +28,9 @@
 #include "objectivec_console_project.hpp"
 #include "objectivec_shared_library_project.hpp"
 #include "objectivec_static_library_project.hpp"
+#include "objectivecpp_console_project.hpp"
+#include "objectivecpp_shared_library_project.hpp"
+#include "objectivecpp_static_library_project.hpp"
 #include "project_language.hpp"
 #include "project_sdk.hpp"
 #include "project_type.hpp"
@@ -83,7 +87,7 @@ namespace xtdc_command {
         case project_type::unknown: return {project_sdk::none};
         case project_type::blank_solution: return {project_sdk::none, project_sdk::xtd/*, project_sdk::xtd_c*/};
         case project_type::console: return {project_sdk::none, project_sdk::xtd/*, project_sdk::xtd_c*/};
-        case project_type::gui: return {project_sdk::appkit, project_sdk::appkit_c, project_sdk::fltk, project_sdk::gtk, project_sdk::gtk_c, project_sdk::gtkmm, project_sdk::qt, project_sdk::swiftui, project_sdk::win32, project_sdk::win32_c, project_sdk::winforms, project_sdk::wpf, project_sdk::wxwidgets, project_sdk::xtd/*, project_sdk::xtd_c*/};
+        case project_type::gui: return {project_sdk::appkit, project_sdk::appkit_c, project_sdk::appkit_cpp, project_sdk::fltk, project_sdk::gtk, project_sdk::gtk_c, project_sdk::gtkmm, project_sdk::qt, project_sdk::swiftui, project_sdk::win32, project_sdk::win32_c, project_sdk::winforms, project_sdk::wpf, project_sdk::wxwidgets, project_sdk::xtd/*, project_sdk::xtd_c*/};
         case project_type::shared_library: return {project_sdk::none, project_sdk::xtd/*, project_sdk::xtd_c*/};
         case project_type::static_library: return {project_sdk::none, project_sdk::xtd/*, project_sdk::xtd_c*/};
         case project_type::unit_test_application: return {project_sdk::catch2, project_sdk::gtest, project_sdk::xtd/*, project_sdk::xtd_c*/};
@@ -93,10 +97,11 @@ namespace xtdc_command {
     
     static xtd::array<project_language> get_valid_languages(project_sdk sdk) {
       switch (sdk) {
-        case project_sdk::none: return {project_language::cpp, project_language::c, project_language::csharp, project_language::objectivec, project_language::swift};
+        case project_sdk::none: return {project_language::cpp, project_language::c, project_language::csharp, project_language::objectivec, project_language::objectivecpp, project_language::swift};
         case project_sdk::catch2: return {project_language::c, project_language::cpp};
         case project_sdk::appkit: return {project_language::swift};
         case project_sdk::appkit_c: return {project_language::objectivec};
+        case project_sdk::appkit_cpp: return {project_language::objectivecpp};
         case project_sdk::fltk: return {project_language::cpp};
         case project_sdk::gtest: return {project_language::c, project_language::cpp};
         case project_sdk::gtk: return {project_language::cpp};
@@ -406,6 +411,7 @@ namespace xtdc_command {
           {project_language::cpp, {blank_solution_project {path_}, &blank_solution_project::create}},
           {project_language::csharp, {blank_solution_project {path_}, &blank_solution_project::create}},
           {project_language::objectivec, {blank_solution_project {path_}, &blank_solution_project::create}},
+          {project_language::objectivecpp, {blank_solution_project {path_}, &blank_solution_project::create}},
           {project_language::swift, {blank_solution_project {path_}, &blank_solution_project::create}},
         } [language](name, create_solution); break;
       }
@@ -420,6 +426,7 @@ namespace xtdc_command {
           {project_language::cpp, {cpp_console_project {path_}, &cpp_console_project::create}},
           {project_language::csharp, {csharp_console_project {path_}, &csharp_console_project::create}},
           {project_language::objectivec, {objectivec_console_project {path_}, &objectivec_console_project::create}},
+          {project_language::objectivecpp, {objectivecpp_console_project {path_}, &objectivecpp_console_project::create}},
           {project_language::swift, {swift_console_project {path_}, &swift_console_project::create}},
         } [language](name, create_solution); break;
       }
@@ -429,6 +436,7 @@ namespace xtdc_command {
       std::map<project_sdk, xtd::action<const xtd::string&, bool>> {
         {project_sdk::appkit, {appkit_gui_project {path_}, &appkit_gui_project::create}},
         {project_sdk::appkit_c, {appkit_c_gui_project {path_}, &appkit_c_gui_project::create}},
+        {project_sdk::appkit_cpp, {appkit_cpp_gui_project {path_}, &appkit_cpp_gui_project::create}},
         {project_sdk::fltk, {fltk_gui_project {path_}, &fltk_gui_project::create}},
         {project_sdk::gtk, {gtk_gui_project {path_}, &gtk_gui_project::create}},
         {project_sdk::gtk_c, {gtk_c_gui_project {path_}, &gtk_c_gui_project::create}},
@@ -450,11 +458,12 @@ namespace xtdc_command {
         case project_sdk::xtd: xtd_shared_library_project(path_).create(name, create_solution); break;
         //case project_sdk::xtd_c: xtd_c_shared_library_project(path_).create(name, create_solution); break;
         default: std::map<project_language, xtd::action<const xtd::string&, bool>> {
-            {project_language::c, {c_shared_library_project {path_}, &c_shared_library_project::create}},
-            {project_language::cpp, {cpp_shared_library_project {path_}, &cpp_shared_library_project::create}},
-            {project_language::csharp, {csharp_shared_library_project {path_}, &csharp_shared_library_project::create}},
-            {project_language::objectivec, {objectivec_shared_library_project {path_}, &objectivec_shared_library_project::create}}
-          } [language](name, create_solution); break;
+          {project_language::c, {c_shared_library_project {path_}, &c_shared_library_project::create}},
+          {project_language::cpp, {cpp_shared_library_project {path_}, &cpp_shared_library_project::create}},
+          {project_language::csharp, {csharp_shared_library_project {path_}, &csharp_shared_library_project::create}},
+          {project_language::objectivec, {objectivec_shared_library_project {path_}, &objectivec_shared_library_project::create}},
+          {project_language::objectivecpp, {objectivecpp_shared_library_project {path_}, &objectivecpp_shared_library_project::create}},
+        } [language](name, create_solution); break;
       }
     }
     
@@ -463,10 +472,11 @@ namespace xtdc_command {
         case project_sdk::xtd: xtd_static_library_project(path_).create(name, create_solution); break;
         //case project_sdk::xtd_c: xtd_c_static_library_project(path_).create(name, create_solution); break;
         default: std::map<project_language, xtd::action<const xtd::string&, bool>> {
-            {project_language::c, {c_static_library_project {path_}, &c_static_library_project::create}},
-            {project_language::cpp, {cpp_static_library_project {path_}, &cpp_static_library_project::create}},
-            {project_language::objectivec, {objectivec_static_library_project {path_}, &objectivec_static_library_project::create}}
-          } [language](name, create_solution); break;
+          {project_language::c, {c_static_library_project {path_}, &c_static_library_project::create}},
+          {project_language::cpp, {cpp_static_library_project {path_}, &cpp_static_library_project::create}},
+          {project_language::objectivec, {objectivec_static_library_project {path_}, &objectivec_static_library_project::create}},
+          {project_language::objectivecpp, {objectivecpp_static_library_project {path_}, &objectivecpp_static_library_project::create}},
+        } [language](name, create_solution); break;
       }
     }
     
@@ -499,6 +509,7 @@ namespace xtdc_command {
           {project_language::cpp, {blank_solution_project {path_}, &blank_solution_project::generate}},
           {project_language::csharp, {blank_solution_project {path_}, &blank_solution_project::generate}},
           {project_language::objectivec, {blank_solution_project {path_}, &blank_solution_project::generate}},
+          {project_language::objectivecpp, {blank_solution_project {path_}, &blank_solution_project::generate}},
           {project_language::swift, {blank_solution_project {path_}, &blank_solution_project::generate}},
         } [language](name); break;
       }
@@ -513,6 +524,7 @@ namespace xtdc_command {
           {project_language::cpp, {cpp_console_project {path_}, &cpp_console_project::generate}},
           {project_language::csharp, {csharp_console_project {path_}, &csharp_console_project::generate}},
           {project_language::objectivec, {objectivec_console_project {path_}, &objectivec_console_project::generate}},
+          {project_language::objectivecpp, {objectivecpp_console_project {path_}, &objectivecpp_console_project::generate}},
           {project_language::swift, {swift_console_project {path_}, &swift_console_project::generate}},
           } [language](name); break;
       }
@@ -522,6 +534,7 @@ namespace xtdc_command {
       std::map<project_sdk, xtd::action<const xtd::string&>> {
         {project_sdk::appkit, {appkit_gui_project {path_}, &appkit_gui_project::generate}},
         {project_sdk::appkit_c, {appkit_c_gui_project {path_}, &appkit_c_gui_project::generate}},
+        {project_sdk::appkit_cpp, {appkit_cpp_gui_project {path_}, &appkit_cpp_gui_project::generate}},
         {project_sdk::fltk, {fltk_gui_project {path_}, &fltk_gui_project::generate}},
         {project_sdk::gtk, {gtk_gui_project {path_}, &gtk_gui_project::generate}},
         {project_sdk::gtk_c, {gtk_c_gui_project {path_}, &gtk_c_gui_project::generate}},
@@ -534,7 +547,7 @@ namespace xtdc_command {
         {project_sdk::wpf, {wpf_gui_project {path_}, &wpf_gui_project::generate}},
         {project_sdk::wxwidgets, {wxwidgets_gui_project {path_}, &wxwidgets_gui_project::generate}},
         {project_sdk::xtd, {xtd_gui_project {path_}, &xtd_gui_project::generate}},
-        //{project_sdk::xtd_c, {xtd_c_gui_project {path_}, &xtd_c_gui_project::generate}}
+        //{project_sdk::xtd_c, {xtd_c_gui_project {path_}, &xtd_c_gui_project::generate}},
       } [sdk](name);
     }
     
@@ -543,11 +556,12 @@ namespace xtdc_command {
         case project_sdk::xtd: xtd_shared_library_project(path_).generate(name); break;
         //case project_sdk::xtd_c: xtd_c_shared_library_project(path_).generate(name); break;
         default: std::map<project_language, xtd::action<const xtd::string&>> {
-            {project_language::c, {c_shared_library_project {path_}, &c_shared_library_project::generate}},
-            {project_language::cpp, {cpp_shared_library_project {path_}, &cpp_shared_library_project::generate}},
-            {project_language::csharp, {csharp_shared_library_project {path_}, &csharp_shared_library_project::generate}},
-            {project_language::objectivec, {objectivec_shared_library_project {path_}, &objectivec_shared_library_project::generate}}
-          } [language](name); break;
+          {project_language::c, {c_shared_library_project {path_}, &c_shared_library_project::generate}},
+          {project_language::cpp, {cpp_shared_library_project {path_}, &cpp_shared_library_project::generate}},
+          {project_language::csharp, {csharp_shared_library_project {path_}, &csharp_shared_library_project::generate}},
+          {project_language::objectivec, {objectivec_shared_library_project {path_}, &objectivec_shared_library_project::generate}},
+          {project_language::objectivecpp, {objectivecpp_shared_library_project {path_}, &objectivecpp_shared_library_project::generate}},
+        } [language](name); break;
       }
     }
     
@@ -556,10 +570,11 @@ namespace xtdc_command {
         case project_sdk::xtd: xtd_static_library_project(path_).generate(name); break;
         //case project_sdk::xtd_c: xtd_c_static_library_project(path_).generate(name); break;
         default: std::map<project_language, xtd::action<const xtd::string&>> {
-            {project_language::c, {c_static_library_project {path_}, &c_static_library_project::generate}},
-            {project_language::cpp, {cpp_static_library_project {path_}, &cpp_static_library_project::generate}},
-            {project_language::objectivec, {objectivec_static_library_project {path_}, &objectivec_static_library_project::generate}}
-          } [language](name); break;
+          {project_language::c, {c_static_library_project {path_}, &c_static_library_project::generate}},
+          {project_language::cpp, {cpp_static_library_project {path_}, &cpp_static_library_project::generate}},
+          {project_language::objectivec, {objectivec_static_library_project {path_}, &objectivec_static_library_project::generate}},
+          {project_language::objectivecpp, {objectivecpp_static_library_project {path_}, &objectivecpp_static_library_project::generate}},
+        } [language](name); break;
       }
     }
     

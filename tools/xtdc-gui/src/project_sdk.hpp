@@ -4,6 +4,7 @@ namespace xtdc_gui {
     none,
     appkit,
     appkit_c,
+    appkit_cpp,
     fltk,
     gtk,
     gtk_c,
