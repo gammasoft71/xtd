@@ -439,7 +439,7 @@ main_form::main_form() {
   create_language_choice_.width(140);
   create_language_choice_.location({create_panel_.size().width - create_type_choice_.width() - 400, 50});
   create_language_choice_.anchor(anchor_styles::top | anchor_styles::right);
-  create_language_choice_.items().add_range({{"All languages", project_language::all}, {"xtd (C++)", project_language::xtd}/*, {"xtd_c (C)", project_language::xtd_c}*/, {"C++", project_language::cpp}, {"C", project_language::c}, {"C#", project_language::csharp}, {"Objective-C", project_language::objectivec}, {"Objective-Cpp", project_language::objectivecpp}, {"Swift", project_language::swift}});
+  create_language_choice_.items().add_range({{"All languages", project_language::all}, {"xtd (C++)", project_language::xtd}/*, {"xtd_c (C)", project_language::xtd_c}*/, {"C", project_language::c}, {"C++", project_language::cpp}, {"C#", project_language::csharp}, {"Objective-C", project_language::objectivec}, {"Objective-Cpp", project_language::objectivecpp}, {"Swift", project_language::swift}});
   create_language_choice_.selected_value_changed += [&] {
     properties::settings::default_settings().language_index(create_language_choice_.selected_index()).save();
     create_project_type_items_control_.filter_items(create_language_choice_.selected_item().tag().has_value() ? as<project_language>(create_language_choice_.selected_item().tag()) : project_language::all, create_platform_choice_.selected_item().tag().has_value() ? as<project_platform>(create_platform_choice_.selected_item().tag()) : project_platform::all, create_type_choice_.selected_item().tag().has_value() ? as<project_type>(create_type_choice_.selected_item().tag()) : project_type::all);
