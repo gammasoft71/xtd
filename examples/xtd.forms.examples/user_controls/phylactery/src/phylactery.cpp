@@ -31,6 +31,10 @@ public:
   event<phylactery, event_handler> phylactery_color_changed;
   
 protected:
+  [[nodiscard]] auto default_fore_color() const noexcept -> xtd::drawing::color override {
+    return xtd::drawing::color::black;
+  }
+  
   virtual auto on_border_color_changed(const event_args& e) -> void {
     invalidate();
     auto border_color_changed_safe = border_color_changed;
@@ -55,9 +59,9 @@ protected:
   auto on_paint(paint_event_args& e) -> void override {
     user_control::on_paint(e);
     
-    auto clip = e.clip_rectangle();
-    auto ellipse = rectangle_f {border_width_, border_width_, clip.width - 2 * border_width_, clip.height * 0.85f - 2 * border_width_};
-    auto tip = array<point_f> {{clip.x + 60.0f + clip.width * 0.15f, clip.height - clip.height * 0.25f - 2 * border_width_}, {clip.x + 60.0f + clip.width * 0.05f, clip.height - 2 * border_width_}, {clip.x + 60.0f + clip.width * 0.30f, clip.height - clip.height * 0.25f - 2 * border_width_}};
+    auto client = client_rectangle();
+    auto ellipse = rectangle_f {border_width_, border_width_, client.width - 2 * border_width_, client.height * 0.85f - 2 * border_width_};
+    auto tip = array<point_f> {{client.x + 60.0f + client.width * 0.15f, client.height - client.height * 0.25f - 2 * border_width_}, {client.x + 60.0f + client.width * 0.05f, client.height - 2 * border_width_}, {client.x + 60.0f + client.width * 0.30f, client.height - client.height * 0.25f - 2 * border_width_}};
     
     e.graphics().smoothing_mode(xtd::drawing::drawing_2d::smoothing_mode::anti_alias);
     e.graphics().text_rendering_hint(xtd::drawing::text::text_rendering_hint::clear_type_grid_fit);
@@ -65,7 +69,7 @@ protected:
     e.graphics().fill_polygon(solid_brush {phylactery_color_}, tip);
     e.graphics().draw_polygon(drawing::pen {border_color_, border_width_}, tip);
     e.graphics().fill_ellipse(solid_brush {phylactery_color_}, ellipse.inflate(ellipse, size_f {-border_width_ / 2.0f, -border_width_ / 2.0f}));
-    e.graphics().draw_string(text(), {system_fonts::default_font(), clip.height / 8.0f, font_style::bold}, solid_brush {fore_color()}, ellipse, string_format().alignment(string_alignment::center).line_alignment(string_alignment::center));
+    e.graphics().draw_string(text(), {system_fonts::default_font(), client.height / 8.0f, font_style::bold}, solid_brush {fore_color()}, ellipse, string_format().alignment(string_alignment::center).line_alignment(string_alignment::center));
   }
   
 private:
