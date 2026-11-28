@@ -71,6 +71,7 @@ namespace xtdc_command {
     void create_source(const xtd::string& name, const xtd::string& path) const {
       auto lines = xtd::array<xtd::string> {
         "#include <QApplication>",
+        "#include <QFrame>",
         "#include <QMainWindow>",
         "",
         xtd::string::format("namespace {} {{", name),
@@ -81,6 +82,7 @@ namespace xtdc_command {
         "    Window1() {",
         "      move(100, 100);",
         "      resize(800, 450);",
+        "      setCentralWidget(frame);",
         "      setWindowTitle(\"Window1\");",
         "    }",
         "",
@@ -91,6 +93,9 @@ namespace xtdc_command {
         "      window1.show();",
         "      return application.exec();",
         "    }",
+        "",
+        "  private:",
+        "    QFrame* frame = new QFrame {this};",
         "  };",
         "}",
         "",
